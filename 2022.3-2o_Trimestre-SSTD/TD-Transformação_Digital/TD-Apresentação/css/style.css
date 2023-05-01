@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: sans-serif; */
+    transition: all 0.5s ease;
+}
+html { 
+    color-scheme: dark;
+    background-color: #252A36;
+    /* background-color: #19202F; */
+    color: #E1FFFB;
+
+    word-wrap: break-word;
+
+    font-size: 18px;
+    /* font-size: 30px; */
+    font-family: "Source Sans 3";
+
+    padding: 50px 5vw 20px 5vw;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* -------------------------------------------------------------------------- */
+h1,h2,h3,h4,h5,h6 { 
+    /* font-family: "SourceSans3-Bold"; */
+}
+h1 {
+    color: #339E91;
+}
+h2 {
+    color: #66B6AC;
+}
+h3 {
+    color: #99CFC8;
+}
+h4 {
+    color: #CCE7E3;
+}
+/* -------------------------------------------------------------------------- */
+ul {
+    margin-left: 2rem;
+}
+ul li,
+a {
+    font-size: 1.2em;
+}
+.container {
+    /* background: #212121; */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#presentation-area {
+    width: 1000px;
+    height: 500px;
+    position: relative;
+    /* background: purple; */
+}
+/* Styling all three sections */
+#presentation-area .presentation {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* background: #ffffff; */
+    position: relative;
+}
+#presentation-area .counter {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    /* color: #b6b6b6; */
+}
+#presentation-area .navigation {
+    position: absolute;
+    bottom: -45px;
+    right: 0;
+}
+/* On full screen mode */
+#presentation-area.full-screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#presentation-area.full-screen .counter {
+    bottom: 15px;
+    left: 15px;
+}
+#presentation-area.full-screen .navigation {
+    bottom: 15px;
+    right: 15px;
+}
+#presentation-area.full-screen .navigation .btn:hover {
+    /* background: #201e1e;
+    color: #ffffff; */
+}
+#presentation-area.full-screen .navigation .btn-screen:hover {
+    /* background: #201e1e; */
+}
+/* End full screen mode */
+/* Buttons */
+.navigation button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.navigation .btn {
+    background: #464646;
+    color: #ffffff;
+    border-radius: 0.25rem;
+    opacity: 0;
+    transform: scale(0);
+}
+.navigation .btn.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+.navigation .btn-screen {
+    background: transparent;
+    color: #b6b6b6;
+    visibility: hidden;
+}
+.btn-screen.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+.btn-screen.hover {
+    color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+/* End Buttons */
+/* content */
+.presentation .content {
+    padding: 2em;
+    width: 100%;
+    height: calc(100% - 100px);
+    z-index: 11;
+}
+.presentation .content.grid {
+    display: grid;
+}
+.presentation .content.grid.center {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.content .title {
+    font-size: 3em;
+    /* color: purple; */
+}
+.content .sub-title {
+    font-size: 2.5em;
+    /* color: purple; */
+}
+.content p {
+    font-size: 1.25em;
+    margin-bottom: 1rem;
+}
+/* End Content Stylesheet */
+/* Slide */
+.presentation .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: #ffffff; */
+    opacity: 0;
+    transform: scale(0);
+    visibility: none;
+}
+.slide.show {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+}
+.slide .heading {
+    padding: 2rem;
+    /* background: purple; */
+    font-size: 2em;
+    font-weight: bold;
+    /* color: #ffffff; */
+}
