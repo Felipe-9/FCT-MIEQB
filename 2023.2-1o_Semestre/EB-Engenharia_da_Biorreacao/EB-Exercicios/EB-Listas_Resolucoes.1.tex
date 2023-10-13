@@ -1,0 +1,348 @@
+% !TEX root = ./EB-Listas_Resolucoes.1.tex
+\providecommand\mainfilename{"./EB-Listas_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Listas_Resolucoes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Listas_Resolucoes.1}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Listas_Resolucoes.1/graphics/}
+
+\mymakesubfile{1}
+[EB]
+{Exercicios} % Subfile Title
+{Exercicios} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Consider the culture of a bacterium with the following empirical formula:
+    \begin{center}
+        \ch{CH_{1.7}O_{0.46}N_{0.18}}
+        (\(\text{MWB} = 23.6\,\si{\gram/\mole}\))
+    \end{center}
+    This bacterium grows aerobically in a culture medium using glucose as a carbon source (\ch{C6H12O6}).\\
+    Glucose and oxygen yield coefficients were experimentally determined:
+    \begin{BM}[align*]
+        Y_{X/S} &= 85\,\si{\gram\of{biomass}/\mole\of{glucose}}
+        \\
+        Y_{X/O2} &= 39\,\si{\gram\of{biomass}/\mole\of{O2}}
+    \end{BM}
+    This organism does not excrete appreciable amounts of metabolites under growing conditions.
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Show that the measured values of \ch{Y_{X/S}} and \ch{Y_{X/O2}} are consistent.
+    } % Q1.1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        A batch culture of this organism initially contains 0.01\,\si{\gram\of{biomass}} and 20\,\si{\milli\mole\of{glucoes}}. After a few hours of cultivation, the cells stopped growing. The total biomass in the culture is 1.0\,\si{\gram}. Estimate the final amount of glucose in the culture medium (in \si{\milli\mole}) and speculate on the likely cause of cell growth arrest.
+    } % Q1.2
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Consider an anaerobic fermentation by a yeast whose empirical biomass formula is as follows:
+    \begin{center}
+        \ch{CH_{1.7}O_{0.45}N_{0.15}} \((\text{MWB} = 23.0\,\si{\gram\of{DCW}/\mole})\)
+    \end{center}
+    Carbon and nitrogen sources are glucose (\ch{C6H12O6}) and ammonium salts, respectively. Possible products of the growth reaction are biomass, ethanol (\ch{C2H6O}), carbon dioxide and water. Ethanol growth and formation depend on growing conditions.
+} % Q2
+    \begin{questionBox}2{ % Q2.1
+        What is the maximum biomass yield coefficient (\ch{Y_{X/S}}\,\si{\gram\of{DCW}/\mole\of{glucose}}), and under what conditions is it obtainable?
+    } % Q2.1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        What is the maximum ethanol yield coefficient (\ch{Y_{E/S}}\,\si{\mole\of{\ch{EtOH}}/\mole\of{glucose}}), and under what conditions is it obtainable?
+    } % Q2.2
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{6}
+
+\begin{questionBox}1{ % Q7
+    A recombinant protein is produced using genetically modified Escherichia coli. It was found that protein formation is proportional to cell growth. Glucose and ammonia are used as carbon and nitrogen sources respectively. The empirical formulas for biomass and protein are \ch{CH_{1.77}O_{0.49}N_{0.24}} and \ch{CH_{1.55}O_{0.31}N_{0.25}} respectively. It was experimentally determined that the biomass to glucose yield is 0.48 (\si{w/w}) and that the protein to glucose yield is 0.096 (\si{w/w})
+} % Q1.7
+    \begin{questionBox}2{ % Q7.1
+        Assess ammonia requirements.
+    } % Q7.1
+        \answer{}
+        \begin{center}
+            \ch{
+                a C6H12O6
+                + b O2
+                + c NH3
+                ->
+                CH_{1.77}O_{0.49}N_{0.24}
+                + d CH_{1.55}O_{0.31}N_{0.25}
+                + e CO2
+                + f H2O
+            }
+        \end{center}
+        \begin{flalign*}
+            &
+                Y_{\ch{NH3/X}}
+                = \frac{
+                    c\,\si{\mole\of{\ch{NH3}}}
+                }{
+                    \si{\mole\of{X}}
+                }
+                \implies &\\[3ex]&
+                \implies
+                c = 0.24 + 0.25\,d
+                ; &\\[3ex]&
+                d\,\si{\mole\of{P}}
+                = Y_{\ch{P/S}}
+                \,a\,\si{\mole\of{S}}
+                = Y_{\ch{P/S}}
+                \,\frac{1\,\si{\mole\of{X}}}{Y_{\ch{X/S}}}
+                = &\\&
+                \left(
+                    \frac{
+                        0.096\,\si{\gram\of{P}}
+                    }{
+                        \si{\gram\of{S}}
+                    }
+                \right)
+                \,\frac{
+                    1\,\si{\mole\of{X}}
+                }{
+                    \left(
+                        \frac{
+                            \,\si{\gram\of{X}}
+                        }{
+                            \si{\gram\of{S}}
+                        }
+                    \right)
+                }
+                % 
+                % 
+                % 
+                ; &\\[6ex]&
+                Y_{\ch{P/S}}
+                = \frac{d\,\si{\mole\of{P}}}{a\,\si{\mole\of{S}}}
+                = \frac{
+                    0.096\,\si{\gram\of{P}}
+                }{
+                    \si{\gram\of{S}}
+                }
+                \,\frac{
+                    \si{\mole\of{P}}
+                }{
+                    \left(
+                        \begin{aligned}
+                                 1    & *12
+                            \\ + 1.55 & *1
+                            \\ + 0.31 & *16
+                            \\ + 0.25 & *14
+                        \end{aligned}
+                        % 22.01
+                    \right)\,\si{\gram\of{P}}
+                }
+                \,\frac{
+                    \left(
+                        \begin{aligned}
+                                 6  &* 12
+                            \\ + 12 &* 1
+                            \\ + 6  &* 16
+                        \end{aligned}
+                        % 180
+                    \right)
+                    \,\si{\gram\of{S}}
+                }{
+                    \si{\mole\of{S}}
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.2
+        Assess oxygen requirements.
+    } % Q7.2
+        \answer{}
+        \begin{flalign*}
+            &
+                Y_{\ch{O2/X}}
+                = \frac{
+                    b\,\si{\mole\of{\ch{O2}}}
+                }{
+                    \si{\mole\of{X}}
+                }
+                % 
+                % 
+                % 
+                \implies &\\[3ex]&
+                \implies
+                a*6 + b*2
+                = 0.49 + d*0.31 + e*2 + f
+                \implies &\\&
+                \implies
+                b 
+                = (0.49 + d*0.31 + e*2 + f - a*6)/2
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.3
+        If the biomass yield to glucose were the same, what would be the ammonia and oxygen requirements for a wild strain of \textit{E. coli} that fails to synthesize the protein?
+    } % Q7.3
+        \answer{}
+        \subsubquestion{Ammonia}
+        \begin{flalign*}
+            &
+                Y_{\ch{NH3/X}}
+                = \frac{
+                    c\,\si{\mole\of{\ch{NH3}}}
+                }{
+                    \si{\mole\of{X}}
+                }
+                = \frac{
+                    0.24\,\si{\mole\of{\ch{NH3}}}
+                }{
+                    \si{\mole\of{X}}
+                }
+            &
+        \end{flalign*}
+        \subsubquestion{Oxygen}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    \textit{Aerobacter aerogenes} is grown aerobically on glucose (\ch{C6H12O6}) or pyruvate (\ch{C3H4O3}) as a carbon source. The empirical formula for biomass is \ch{CH_{1.78}N_{0.24}O_{0.33}} (\(\text{MWB} = 22.5\,\si{\gram/\mole}\)) and its degree of reduction is \(= 4.4\). The following yields were experimentally determined
+} % Q8
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l *{5}{C}}
+            \toprule
+            
+                & \multicolumn{3}{L}{Y_{\ch{X/S}}}
+                & \multicolumn{2}{L}{Y_{\ch{X/O2}}}
+            
+            \\\midrule
+            
+                Substrate
+                & \si{\gram/\gram}
+                & \si{\gram/\mole}
+                & \si{\gram/\gram\of{\ch{C}}}
+                & \si{\gram/\gram}
+                & \si{\gram/\mole}
+                \\
+                Glucose
+                & 0.40
+                & 0.72
+                & 1.01
+                & 1.11
+                & 35.5
+                \\
+                Pyruvato
+                & 0.20
+                & 17.9
+                & 0.49
+                & 0.48
+                & 15.4
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q8.1
+        Compare the biomass yield per mole of glucose and per mole of pyruvate with their respective thermodynamic maxima. Which of the two substrates is more efficient with respect to biosynthesis? Justique.
+    } % Q8.1
+        \answer{}
+        \begin{center}
+            \ch{
+                a C6H12O6
+                + c NH3
+                ->
+                CH_{1.78}O_{0.33}N_{0.24}
+                \\
+                a C3H4O3
+                + c NH3
+                ->
+                CH_{1.78}O_{0.33}N_{0.24}
+            }
+        \end{center}
+        \begin{flalign*}
+            &
+                \frac{
+                    \max{Y_{\ch{X/G}}}
+                }{
+                    \exp{Y_{\ch{X/G}}}
+                }
+                = \frac{
+                    \left(
+                        \frac{
+                            \si{\mole\of{X}}
+                        }{
+                            a\,\si{\mole\of{G}}
+                        }
+                        \,\frac{
+                            22.5\,\si{\gram\of{X}}
+                        }{
+                            \si{\mole\of{X}}
+                        }
+                    \right)
+                }{
+                }
+                ; &\\[3ex]&
+                Y_{\ch{X/P}}
+                = \frac{
+                    \si{\mole\of{X}}
+                }{
+                    a\,\si{\mole\of{P}}
+                }
+                \,\frac{
+                    22.5\,\si{\gram\of{X}}
+                }{
+                    \si{\mole\of{X}}
+                }
+                ; &\\[6ex]&
+                \gamma(\ch{C3H4O6})
+                = 3*2+4*1-1*2
+                = 8
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q8.2
+        Considering the case of growth on glucose, assess whether excretion of metabolites into the extracellular medium will be expected.
+    } % Q8.2
+        \answer{}
+        \begin{center}
+            \ch{
+                a C6H12O6
+                + c NH3
+                ->
+                CH_{1.78}O_{0.33}N_{0.24}
+                + d CO2
+                + e H2O
+                \\
+                a C3H4O3
+                + c NH3
+                ->
+                CH_{1.78}O_{0.33}N_{0.24}
+                + d CO2
+                + e H2O
+            }
+        \end{center}
+        \begin{flalign*}
+            &
+                \gamma(\ch{C6H12O6})\,a
+                + \gamma(\ch{O2})\,b
+                = (6*4+12*1-6*2)\,a
+                - 4\,b
+                = 24\,a- 4\,b
+                = &\\&
+                = \gamma(\text{biomassa})
+                = 4.4
+                % a)
+                ; &\\[3ex]&
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}
