@@ -1,0 +1,307 @@
+% !TEX root = ./BMC-Exercicios_Resolução.1.tex
+\providecommand\mainfilename{"./BMC-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./BMC-Exercicios_Resolução.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/BMC-Exercicios_Resolução.1/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\date{\Large 16 de Setembro de 2022}
+
+\begin{document}
+
+\mymakesubfile{1}
+[BMC]
+{Exercicios}
+{Exercicios}
+
+\begin{questionBox}1{ % Q1
+    A sequência nucleotídica de um DNA em dupla hélice é:
+} % Q1
+
+    Qual é a sequência da cadeia complementar (escrita de 5'-para-3')?
+
+    \begin{answerBox}{} % RS 
+        TGATTGTGGACAAAAATCC
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    As cadeias de uma dupla hélice de DNA podem ser separadas por aquecimento. Se se aumentar a temperatura de uma solução contendo as três moléculas de DNA indicadas abaixo (apenas uma das cadeias está representada), por que ordem é que elas se separariam?
+} % Q2
+
+    \begin{enumerate}[label=\alph{enumi})]
+        \item 5'-GCGGGCCAGCCCGAGTGGGTAGCCCAGG-3'
+        \item 5'-ATTATAAAATATTTAGATACTATATTTACAA-3'
+        \item 5'-AGAGCTAGATCGAT-3'
+    \end{enumerate}
+
+    \begin{answerBox}{} % RS
+        Quanto maior o numero de guaninas e citosinas mais triplas pontes que implica no maior ponto de fusão
+
+        b,c,a
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Faça corresponder o termo que melhor se adequa a cada uma das seguintes definições:
+} % Q3
+    \begin{itemize}
+        \item A totalidade da informação genética transportada pelo DNA de uma célula ou de um organismo.
+        \item A estrutura tri-dimensional do DNA, em que duas cadeias de DNA, que são mantidas juntas através de pontes de hidrogénio entre as bases azotadas, se enrolam à volta uma da outra.
+        \item Descreve a orientação relativa das duas cadeias de DNA numa dupla hélice; a polaridade de uma das cadeias está orientada na direcção oposta à da outra.
+        \item Dois nucleótidos numa molécula de DNA que são mantidos juntos através de pontes de hidrogénio.
+    \end{itemize}
+
+    \begin{answerBox}{} % RS 
+        \begin{enumerate}
+            \begin{multicols}{2}
+                \item Genoma
+                \item Dupla hélice
+                \item 5'\to 3', antiparalela
+                \item Bases Acetadas
+            \end{multicols}
+        \end{enumerate}
+    \end{answerBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Diga se as seguintes frases são verdadeiras ou falsas, e justifique a sua resposta no caso de as frases serem falsas?
+} % Q4
+    \begin{enumerate}
+        \item Os ácidos nucleicos contêm acúcares.
+        \item O DNA contém quatro diferentes bases azotadas, adenina, guanina, uracilo e citosina.
+        \item Uma cadeia de DNA é polarizada porque uma das extremidades da cadeia é mais carregada do que a outra.
+        \item Os pares de base G-C são mais estáveis que os pares de base A-T.
+        \item As células humanas não contêm nenhuma molécula de DNA circular.
+        \item As células eucariontes têm mitocondrias ou cloroplastos mas não ambos.
+        \item No DNA bacteriano quase todas as sequências de DNA codificam para proteinas mas no genoma humano esta afirmação não é verdade.        
+    \end{enumerate}
+    
+    \begin{answerBox}{} % RS 
+        \begin{enumerate}
+            \begin{multicols}{2}
+                \item V
+                \item F\\Apenas RNA contem uracilas
+                \item F\\Molécula de DNA e RNA sempre é carregado de forma homogenea
+                \item V
+                \item F\\DNA mitocondrial é circular
+                \item F\\Células de plantas contem mitocondrias
+                \item V
+            \end{multicols}
+        \end{enumerate}
+    \end{answerBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Considere a representação dos componentes de um qualquer fragmento de DNA e faça a representação de um nucleotídeo de difosfato de adenina. Qual os números dos carbonos do açúcar envolvidos nas ligações?
+} % Q5
+
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{Screenshot 2022-11-10 at 17.17.40.png}
+    \end{center}
+
+    O grupo fosfato se liga ao carbono 5'
+
+    \begin{center}
+        \chemfig[angle increment=30]{
+            N
+            ([:35]*5(
+                -*6(-N=-N=(-NH2)-=)
+                -
+                -N
+                =
+                -
+            ))
+            (
+                -[-3,.6]O
+                -[-3,]P
+                (=[6,0.8]O)
+                (-[0,.8]O^{-})
+                (
+                    -[-3,.6]O
+                    -[-3]P
+                    (=[6,0.8]O)
+                    (-[0,.8]O^{-})
+                    -[-3]O^{-}
+                )
+            )
+        }
+    \end{center}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Considere a seguinte figura e complete as frases.
+} % Q5
+
+    \begin{enumerate}
+        \item A figura representa um \line(1,0){3em}. 
+        \item A base é uma \line(1,0){3em}. 
+        \item A pentose é uma \line(1,0){3em}. 
+        \item O fosfato \line(1,0){3em} é o que está ligado ao Carbono C5',
+    \end{enumerate}
+    
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-11-10 at 17.47.17.png}
+    \end{center}
+
+    \begin{enumerate}
+        \begin{multicols}{2}
+            \item Nucleotido trifosfatado
+            \item Adeninda
+            \item Ribose
+            \item Fofato alpha
+        \end{multicols}
+    \end{enumerate}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    e acordo com a ``Regra de Chargaff'' qual a proporção de bases encontrada na molécula de DNA em cadeia dupla:
+} % Q6
+    \begin{enumerate}
+        \begin{multicols}{2}
+            \item C=G 
+            \item C»T 
+            \item C»G 
+            \item C=T
+        \end{multicols}
+    \end{enumerate}
+
+    a) e c)
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Um novo vírus foi isolado. A análise do seu genoma revelou ser constítuido de uma cadeia dupla de DNA contendo 14 \% de timinas. Baseando-se nesta informação qual a percentagem que prevê de citosinas?
+} % Q8
+    \begin{enumerate}
+        \item 14\%
+        \item 28\%
+        \item 36\%
+        \item 72\%
+        \item Não pode ser determinado com base na informação disponível.
+    \end{enumerate}
+
+    c)
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    Um novo bacteriófago, denominado PRR1, foi isolado e o seu material genético foi analizado. Verificou-se ser constituído por 25\% A, 33\% T, 22\% C e 20\% G. Como pode explicar estes valores?
+} % Q9
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    O DNA forma uma “right-handed helix”, ou seja, uma hélice dupla do DNA gira para o lado direito. Escolha destas três figuras qual a que melhor poderá representar o DNA.
+} % Q10
+    
+    \begin{center}
+        \includegraphics[width=.5\textwidth]{Screenshot 2022-11-10 at 17.55.12.png}
+    \end{center}
+
+    a)
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q11
+    Tendo em atenção o número de bases necessárias para a dupla helice do DNA dar uma volta completa, identifique qual a opção indicada em baixo que melhor representa a molécula de DNA? Qual o nome geralmente dado a esta forma?
+} % Q11
+    
+    \begin{center}
+        \includegraphics[width=.9\textwidth]{Screenshot 2022-11-10 at 17.56.47.png}
+    \end{center}
+
+    \begin{itemize}
+        \item 5
+        \item 4 é a unica que gira ao contrário
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q12
+    Considere novamente a figura representada acima. Qual a estrutura que melhor representa a forma Z do DNA? Onde é que esta estrutura poderá ser encontrada?
+} % Q12
+\end{questionBox}
+
+\begin{questionBox}1{ % Q13
+    Considere que quer extrair ácidos nucleicos de um vírus de RNA, tipo coronavírus. Qual seria a escolha mais adequada de tampão de lise para lisar as partículas virais?
+} % Q12
+    
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-11-10 at 17.58.29.png}
+    \end{center}
+
+    \begin{itemize}[label=\alph{enumi}.]
+        \item SDS; proteínase K; lisozima
+        \item EDTA; SDS; lisozima
+        \item SDS; proteinase K
+        \item EDTA; SDS; proteínase K
+        \item Nenhuma das hipóteses pode ser utilizadas
+    \end{itemize}
+
+    c)
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q14
+    Considere que quer extrair DNA de uma bactéria Gram-negativa, como E. coli. Qual seria a escolha mais adequada de método para lisar as células?
+} % Q14
+
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-11-10 at 18.01.41.png}
+    \end{center}
+    
+    \begin{enumerate}[label=\alph{enumi}.]
+        \item SDS; proteinase K; ultra-sons (método físico) 
+        \item Nenhuma das hipóteses pode ser utilizadas 
+        \item EDTA; SDS; centrifugação (método físico)
+        \item SDS; proteínase K; lisozima
+        \item EDTA; SDS; ciclos de congelação-descongelação (método físico)
+    \end{enumerate}
+
+    e)
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q15
+    Considere que quer extrair DNA de células vegetais. Qual seria a escolha mais adequada de método para lisar as células?
+} % Q15
+    
+    \begin{enumerate}[label=\alph{enumi}.]
+        \item Nenhuma das hipóteses pode ser utilizadas
+        \item EDTA; SDS; centrifugação (método físico)
+        \item EDTA; SDS; ciclos de congelação-descongelação (método físico) 
+        \item SDS; proteinase K; ultra-sons (método físico)
+        \item EDTA; SDS; lisozima
+    \end{enumerate}
+
+    c)
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q16
+    Pretende extrair apenas RNA pelo método de extração fenólica. Que condições utilizaria?
+} % Q16
+    \begin{enumerate}[label=\alph{enumi}.]
+        \item Uma mistura de fenol-clorofórmio.
+        \item Fenol a pH 7, seguido de um passo de digestão com DNase. 
+        \item Fenol a pH 4.5 seguido de um passo de digestão com DNase. 
+        \item Fenol a pH 4.5.
+        \item Fenol a pH 7.
+    \end{enumerate}
+
+    \begin{answerBox}{} % RS 
+        d). Com o pH ácido a 4.5 o DNA se encontra coagulado com proteínas deixando uma camada liquida de apenas RNA após a centrifugação;\\
+
+        Isso funciona pois o pH ácido protona os grupos fosfátos do DNA tornando-o apolar.
+    \end{answerBox}
+
+\end{questionBox}
+
+\end{document}

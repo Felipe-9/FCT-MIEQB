@@ -1,0 +1,112 @@
+% !TEX root = ./BMC-Exercicios_Resolução-Extra.1.tex
+\providecommand\mainfilename{"./BMC-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./BMC-Exercicios_Resolução-Extra.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{4}
+[BMC]
+{Exercícios extra PubMed} % Subfile Title
+{Extra: PubMed} % Part Title
+
+\begin{questionBox}1m{Desafio} % Q1
+    
+    Precisamos de marcar núcleos em células em cultura, para identificar o no de células na preparação.\\
+
+    Após uma pesquisa na PubMed, indique um método utilizado na investigação científica que permita marcar núcleos.\\
+
+    Indique o nome da técnica utilizada e ilustre a sua resposta com imagens reais, com as respectivas legendas, retiradas de dois artigos científicos. Faça a lista referências bibliográficas utilizadas (formato ao seu critério).\\
+
+    O seu trabalho deve conter os passos todos desde a pesquisa na PubMed até à escolha dos artigos (indique passo a passo o que fez).\\
+
+    \paragraph*{RS:}
+
+    Foram feitas pesquisas com os seguintes queries (sem contar variações que incluem "") sem sucesso:
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Nucleus Marking
+            \item Cell culture nucleus Marking
+            \item Nucleus Marking count cell number
+            \item Nucleus Singalling
+            \item Nucleus Singalling Cell culture
+            \item Nucleus Singalling cell counting
+        \end{multicols}
+    \end{itemize}
+
+    Então voltei ao problema e tentei fazer uma pesquisa com base no objetivo em contexto:
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Cell counting
+            \item Cell counting nucleus
+        \end{multicols}
+    \end{itemize}
+
+    Com a ultima pesquísa li brevemente as descrições dos artigos e encontrei o que queria encontrar no segundo.
+
+    \begin{center}
+        \includegraphics[width=1\textwidth]{
+            ./.build/figures/Screenshot 2022-10-19 at 20.50.39.png
+        }
+        \includegraphics[width=1\textwidth]{
+            ./.build/figures/Screenshot 2022-10-19 at 21.01.20.png
+        }
+    \end{center}
+
+    A unica mensão sobre o nome do método é ``Nucleus Dyeing'' e ultiliza 6-diamidino-2-phenylindole (DAPI) \cite{r1}\\
+
+    Para encontrar o segundo artigo usei duas keywords encontradas no primeiro com um modelo mais avançado de pesquisa que vim a descobrir.
+
+    \begin{center}
+        \includegraphics[width=\textwidth]{
+            ./.build/figures/Screenshot 2022-10-19 at 22.32.21.png
+        }
+        \includegraphics[width=\textwidth]{
+            ./.build/figures/Screenshot 2022-10-19 at 22.38.03.png
+        }
+    \end{center}
+
+    Dentre os primeiros artigos ja encontrei um resultado. \cite{r2}
+
+
+    % \bibliography{./.build/libraries/mylib.1.bib}
+    % \bibliography{mylib.1}
+        
+\end{questionBox}
+
+\begin{questionBox}1m{Pesquisa por autor} % Q2
+    
+    Uma outra opção que o sistema permite (entre muitas que podem explorar) é a pesquisa por autor, ie, conhecermos o autor e querermos saber o que esse autor publica.\\
+
+    Exemplo: Christian de Duve
+
+    Palavras de pesquisa: Duve C (a inicial do 1o nome vem depois do apelido)\\
+
+    Sem recurso a mais nenhuma ferramenta de pesquisa, indiquem qual a área de investigação deste autor e, se conseguirem, qual a sua grande contribuição para a Biologia Celular?\\
+
+    Indique 3 ou 4 referências que corroborem a sua resposta.\\
+
+
+    \paragraph{RS} Inicio minha pesquisa com o query trivial
+    \begin{center}
+            \includegraphics[width=\textwidth]{
+                ./.build/figures/Screenshot 2022-10-19 at 22.47.21.png
+            }
+            \includegraphics[width=\textwidth]{
+                ./.build/figures/Screenshot 2022-10-19 at 23.01.40.png
+            }
+    \end{center}
+    \cite{r4,r5,r6}
+
+    Inicialmente é visto vários artigos dedicados a organelas específicas, pesquisando por intervalo de tempo podemos ver o foco de suas pesquisas mudando de organela para organela, até se encontrar o seguinte artigo: ``The peroxisome: a new cytoplasmic organelle'' \cite{r3} apontando sua descoberta
+    
+\end{questionBox}
+
+\bibliographystyle{plain}
+\bibliography{./.build/libraries/mylib.1}
+
+\end{document}

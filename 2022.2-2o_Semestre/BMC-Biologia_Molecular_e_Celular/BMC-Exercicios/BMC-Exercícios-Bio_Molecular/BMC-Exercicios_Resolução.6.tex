@@ -1,0 +1,288 @@
+% !TEX root = ./BMC-Exercicios_Resolução.6.tex
+\providecommand\mainfilename{"./BMC-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./BMC-Exercicios_Resolução.6.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/BMC-Exercicios_Resolução.6/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\renewcommand\theenumi{\alph{enumi}}
+
+\mymakesubfile{6}
+[BMC]
+{Exercicios}
+{Exercicios}
+
+\begin{questionBox}1{ % Q1
+    What would the expected effect be on a PCR reaction if the primers used were shorter than the intended oligonucleotide sequences?
+} % Q1
+    \begin{enumerate}[label=\alph{enumi})]
+        \item The PCR reaction would not commence
+        \item The PCR reaction would end after one cycle
+        \item The reaction would generate a single short PCR product
+        \item The reaction would yield a mixture of non-specific products
+    \end{enumerate}
+
+    \paragraph*{RS} d)
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Consider the DNA sequence below.
+} % Q2
+    \begin{center}
+        \includegraphics[width=1\textwidth]{Screenshot 2022-12-14 at 16.00.59-cutout.png}
+    \end{center}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.1
+    Design primers (16 nts long) that will allow to obtain a PCR product with 400 pbs.
+} % Q2.1
+
+    A sequencia dada contem exatamente 400\,pbs requerindo buscar as 16 primeiras e ultimas bases para os primers\\
+
+    \begin{multicols}{2}
+        \renewcommand\DNAblock{4}
+
+        Primer:\\
+        \DNA!GGAC CGCG GGGC AGGA!
+
+        Reverse:\\
+        \DNA!AGGC AGGG AGCA GCTG!
+    \end{multicols}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.2
+    Design a PCR program using the Taq enzyme (1000 pbs/min).
+} % Q2.2
+
+    \paragraph*{Melting and Annealing temperature}
+    \begin{flalign*}
+        &
+            T_m \cong
+            \frac{
+                \left(
+                    4*(13) + 2*(3)
+                \right)
+                +
+                \left(
+                    4*(11) + 2*(5)
+                \right)
+            }{2}
+            = 56
+            &\\&
+            T_a 
+            \cong T_m-4
+            \cong 52
+        &
+    \end{flalign*}
+
+    \vspace{-6ex}
+    \begin{table}[H]\centering
+        \begin{tabular}{c r r l}
+            
+            \\\toprule
+
+                \multicolumn{1}{c}{n}
+            &   \multicolumn{1}{c}{T/\si{\celsius}}
+            &   \multicolumn{1}{c}{t/\si{\minute}}
+            &   \multicolumn{1}{c}{Phase}
+
+            \\\midrule
+            
+                1 & 94 & 10 & Initial Desnaturation
+            \\  2 & 94 & 30 & Desnaturation
+            \\  3 & 52 & 30 & Annealing
+            \\  4 & 72 & 60 & Extension
+            \\  5 & 72 & 10 & Final Extension
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{table}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    A researcher was trying to design a PCR experiment. The sequence he wished to amplify is part of a gene \textit{murF} of \textit{Staphylococcus aureus}, that is given below.\\The researcher decided he could only afford to use primers of 6 bases in length.
+} % Q3
+    % \begin{center}
+
+        \renewcommand\DNAblock{6}
+        
+        5'\\
+        \DNA! GCATGTCAATTGGGCCTATATGGCGTAGCAATTTGGCCGGCTATATGGCCGTAGC !
+        \\3'
+        \\
+        3'\\
+        \DNA! CCTACAGTTAACCCGGATATACCGCATCGTTAAACCGGCCGATATACCGGCATCG !
+        \\5'
+    % \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.1
+    Write down the sequence of the two primers he should order to be made.
+} % Q3.1
+    Para expandir essa sequencia ele deve escolher as 6 primeiras e ultimas bases
+    \begin{multicols}{2}
+        Fw:\\\DNA!GCATGT!
+
+        Bw:\\\DNA!GCATCG!
+    \end{multicols}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.2
+    The scientist carried out the experiment, using appropriate primers of 6 bases in length and a plasmid with the gene \textit{mur}F cloned. He then separated the pieces of DNA he had amplified. What technique would he use to separate the amplified pieces of DNA?
+} % Q3.2
+    Electrophoresis could be used to separate the strands of DNA
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.3
+    The scientist obtained \textbf{two} bands of amplified DNA. Explain why at least two bands of amplified DNA would be obtained in the above experiment.
+} % Q3.3
+    The backwards primer can attach in two different sites on the gene, generating the different bands
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.4
+    What is the size of the 2 bands?
+} % Q3.4
+    55\,nts and 29\,nts
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.5
+    When the scientist carried out the experiment using as template genomic DNA from Staphylococcus aureus, he counted 8 bands. Explain why he obtained so many more bands.
+} % Q3.5
+    Even tho the primers have only three matching sites (2 for the reverse) there is still others similar sites that can be avalible in the right conditions generating the other bands
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.6
+    Suggest how he could improve this experiment to obtain more reliable results.
+} % Q3.6
+    \vspace{-4ex}
+    \begin{itemize}
+        \item Increase the annealing temperature, thus diminishing the possibility of primers bindind to wrong sites.
+        \item Setting the optimal expanding time so that bands of greater size than our sequence cant be expanded.
+        \item and if its not enough consider using a larger primer, there will be a compromise in efficiency in promise of precision.
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    The following is the DNA sequence of Gene Z that you want to amplify by PCR.
+} % Q4
+    \vspace{-5ex}
+    \begin{center}
+        \includegraphics[width=1\textwidth]{Screenshot 2022-12-14 at 16.04.43-cutout.png}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q4.1
+    Which set of primers from the options below, would you use for the PCR reaction?
+} % Q4.1
+    \begin{multicols}{2}
+        \renewcommand\DNAblock{5}
+        \begin{minipage}{\textwidth}
+            Primer Fw:
+            \begin{enumerate}
+                \item \hspace{-16.5em}\DNA!AGGTGAATATGAAA!
+                \item \hspace{-16.5em}\DNA!GAGCTCCACTTATA!
+                \item \hspace{-16.5em}\DNA!GAAAGTATAAGTGG!
+                \item \hspace{-16.5em}\DNA!TTCATATTCACCTC!
+            \end{enumerate}
+        \end{minipage}
+
+        \begin{minipage}{1\textwidth}
+            Primer Rv:
+            \begin{enumerate}
+                \item \hspace{-16.5em}\DNA!CCGCGCATTAGCTA!
+                \item \hspace{-16.5em}\DNA!ATAGCTAATGCGCG!
+                \item \hspace{-16.5em}\DNA!TATCGATTACGCGC!
+                \item \hspace{-16.5em}\DNA!TGGCGAGTAATCGATA!
+            \end{enumerate}
+        \end{minipage}
+    \end{multicols}
+
+    \paragraph{RS:} Fw: a), Bw: c)
+\end{questionBox}
+
+\begin{questionBox}2{ % Q4.2
+    What set of primers from the options below, would you use for the PCR reaction? Order them by preference
+} % Q4.2
+    \begin{enumerate}[
+        label={Set \arabic{enumi}:},
+        left={0em}
+    ]
+        \item {\ttfamily{5'-GGTGA ATATG AAAG-3'}} and {\ttfamily 5'-TATCG ATTAC GCGC-3'}
+        \item {\ttfamily{5'-AGGTG AATAT GAAA-3'}} and {\ttfamily 5'-TATCG ATTAC GCGC-3'}
+        \item {\ttfamily{5'-TCGAG GTGAA TATG-3'}} and {\ttfamily 5'-TATCG ATTAC GCGC-3'}
+        \item {\ttfamily{5'-CTCGA GGTGA ATAT-3'}} and {\ttfamily 5'-TATCG ATTAC GCGC-3'}
+    \end{enumerate}
+
+    \paragraph{RS:} 3,4,1,2\\
+    \begin{enumerate}[label=\arabic{enumi}.]
+        \item 5/12 CG, Has as G at the end
+        \item 4/12 CG, some kind of CG clamp at start
+        \item 6/12 CG, has at least one CG in the last 4 bases
+        \item 6/12 CG, Has high CG but no CG clamp at end
+    \end{enumerate}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    What will be the result of a PCR amplification using the following set of primers? Choose from the hypotheses given.
+} % Q5
+    \begin{center}
+        \renewcommand\DNAblock{5}
+        5' \hspace{-16em}\DNA!ACTTCGTTCGCCGGGGCTCGATCGATATTTGGAAT! 3'
+        \\
+        3' \hspace{-16em}\DNA!TGAAGCAAGCGGCCCCGAGCTAGCTATAAACCTTA! 5'
+    \end{center}
+
+    \begin{enumerate}[
+        label={Primer \arabic{enumi}:},
+        left={0em}
+    ]
+        \begin{multicols}{2}
+            \item {\ttfamily 5'-GTTC-3'}
+            \item {\ttfamily 5'-GCCC-3'}
+            \item {\ttfamily 5'-TATT-3'}
+            \item {\ttfamily 5'-TAGC-3'}
+            \item {\ttfamily 5'-GGAA-3'}
+            \item {\ttfamily 5'-ATTC-3'}
+        \end{multicols}
+    \end{enumerate}
+
+    Amplification hypotheses:
+    \begin{enumerate}[label=\arabic{enumi}:]
+        \item no amplified product because the primers face in opposite directions. 
+        \item no amplified product because the primers bind to the same strand.
+        \item A product is amplified.
+        \item No product because one of the primers does not hybridize.
+    \end{enumerate}
+
+    \begin{table}[H]\centering
+        \begin{tabular}{c c}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{Primers}
+            &   \multicolumn{1}{c}{PCR Result}
+            
+            \\\midrule
+            
+                1+2 & 3
+            \\  1+3 & 2
+            \\  2+3 & 1
+            \\  1+4 & 4
+            \\  1+2 & 3
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{table}
+
+\end{questionBox}
+
+\end{document}

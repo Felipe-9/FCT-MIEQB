@@ -1,0 +1,830 @@
+% !TEX root = ./Trabalho_TP9_G19.tex
+\documentclass{article}
+
+
+
+% Colors
+\usepackage[hyperref]{xcolor}
+\usepackage{mypallete}
+    % Options:
+        % gray - black and white
+\colorlet{foreground}{white}
+\colorlet{background}{black}
+% Palette Secondaries
+\colorlet{Emph}  {DarkGreen!70!foreground}
+\colorlet{Link} {LightGreen!25!foreground}
+\colorlet{Comment}   {foreground!60!background}
+\colorlet{Background}{foreground!27!background}
+
+\pagecolor{background}
+\color    {foreground}
+
+
+
+% lua
+\usepackage{luacode}
+
+
+
+% xparse - multiple optional arguments
+\usepackage{xparse}
+
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+    % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
+    % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
+    % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
+    % papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
+    % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
+    % papersize = {320mm, 512mm}, % (16:10)
+    % papersize = {280mm, 448mm}, % (16:10)
+    % papersize = {240mm, 384mm}, % (16:10)
+    a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
+    top       = 21mm,
+    bottom    = 21mm,
+    left      = .06\paperwidth,
+    right     = .06\paperwidth,
+    portrait  = true,
+}
+
+
+
+% fonts
+\usepackage[fontsize=11pt]{fontsize}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+\linespread{1.15}
+% \usepackage[sfdefault, ultralight]{FiraSans}
+
+% default style
+% \renewcommand{\familydefault}{\sfdefault} % sans serif
+
+% Set font family
+\setmainfont[
+    Ligatures = TeX,
+    UprightFont    = {*},
+    ItalicFont     = {* Italic},
+    % SmallCapsFont  = {*SmText-Light},
+    BoldFont       = {* Bold},
+    BoldItalicFont = {* Italic}
+]{
+    % % Serif fonts:
+    % SourceSerif4
+    % % Sanserif fonts:
+    Arial
+    % % Handwritten fonts:
+    % DancingScript
+    % Apple Chancery
+    % Luminari
+    % PetitFormalScript
+    % Merienda
+    % LaBelleAurore
+    % Handlee
+        % BadScript
+        % Calligraffitti
+}
+
+% Monofont
+% \setmonofont[Contextuals = {ligatures}]{FiraCode}
+% \makeatletter
+% \def\verbatim@nolig@list{}
+% \makeatother
+
+
+
+% Linguagem
+\usepackage[portuguese]{babel} % Babel
+%\usepackage{polyglossia}      % Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+% Graphics
+% \usepackage[draft, final]{graphics, graphicx}
+\usepackage{graphicx}
+\graphicspath{{./.build/figures/Trabalho_TP9_G19}}
+\usepackage{wrapfig}
+
+
+
+% calc
+\usepackage{calc}
+
+
+
+% Table of contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{1}    % remove subsubsection from toc
+
+% part
+\renewcommand\cftpartfont{\bfseries}
+%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+\setlength\cftbeforepartskip{1ex}
+
+% sec
+\renewcommand\cftsecfont{}                          % Font
+\renewcommand\cftsecpagefont{}                      % page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+\setlength\cftbeforesecskip{0.5ex}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm}                  % Fix section width
+
+% subsec
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+
+% tab (table)
+\setlength\cfttabindent{0mm}
+
+
+
+% filecontents
+%\usepackage{scontents}     % the better filecontents
+%\usepackage{filecontents}  % Create files
+
+
+
+% Multicols
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+\multicoltolerance = 200
+
+% toggle multicols  on/off
+% \renewenvironment{multicols}[1]{}{\relax}
+
+
+
+% enumitem
+\usepackage{enumitem}  % modify enumerate index
+\setlist[description]{
+    format={\color{Emph}}
+}
+
+
+
+% titlesec
+\usepackage{titlesec}
+
+% Reset section on part
+\counterwithin*{section}{part}
+
+% Spacing: \titlespacing*{<left>}{<before>}{<after>}[<right>]
+\titlespacing*{\part}      {0pt}{ 0pt}{0pt}
+\titlespacing*{\section}   {0pt}{10mm}{0pt}
+\titlespacing*{\subsection}{0pt}{ 5mm}{0pt}
+
+% Part customization
+\titleclass{\part}{straight}
+\titleformat{\part}
+    [block]                         % shape
+    {\bfseries\color{Emph}}         % format
+    {}     % label
+    % {\thepart}                      % label without --
+    {.5em}                          % sep
+    {\bfseries}                     % before-code
+    [\vspace{0em}]                  % after  code
+
+% section customization
+\titleformat{\section}
+    [hang]                         % shape
+    {\bfseries\color{Emph}}         % format
+    {}     % label
+    % {\thepart}                      % label without --
+    {0em}                          % sep
+    {\bfseries}                     % before-code
+    []                 % after  code
+
+% section customization
+\titleformat{\subsection}
+    [hang]                         % shape
+    {\color{Emph}}         % format
+    {}     % label
+    % {\thepart}                      % label without --
+    {0em}                          % sep
+    {}                     % before-code
+    []                 % after  code
+
+% % Chapter customization
+% \titleclass{\chapter}{straight}
+% \titleformat{\chapter}
+%    [block]                         % shape
+%    {\huge\bfseries\color{Emph}}    % format
+%    {\thepart\hspace{5mm}{\(|\)}}   % label
+%    {5mm}                           % sep
+%    {\huge\bfseries}                % before-code
+%    [\vspace{0.5mm}]                % after-code
+
+
+
+% Appendix
+% \usepackage{appendix}
+
+
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+    % scientific / engineering / false / fixed
+    scientific-notation    = engineering,
+    exponent-to-prefix     = false,          % 1000 g -> 1 kg
+    % exponent-product       = *,             % x * 10^y
+    round-mode             = places,        % figures/places/none
+    round-precision        = 2,
+    output-exponent-marker = {\,\mathrm{E}},
+}
+% \DeclareSIUnit\atm{atm}
+% \DeclareSIUnit\calorie{cal}
+% \DeclareSIUnit\Torr{Torr}
+% \DeclareSIUnit\bar{bar}
+% \DeclareSIUnit\mmHg{mmHg}
+% \DeclareSIUnit\molar{M}
+
+
+
+% % Maths
+\usepackage{amsmath, amssymb, bm, xfrac}
+% \usepackage{derivative} % Derivative
+% \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
+% % Math fonts
+% \usepackage[math-style=ISO]{unicode-math} % change math font
+% \usepackage{firamath-otf}
+\usepackage{mathtools}
+
+% % MathOperators Declarations
+% \DeclareMathOperator\E{\,E}
+% % Missing trigonometric math operators
+% \DeclareMathOperator\sech   {sech}
+% \DeclareMathOperator\csch   {csch}
+% \DeclareMathOperator\arcsec {arcsec}
+% \DeclareMathOperator\arccot {arccot}
+% \DeclareMathOperator\arccsc {arccsc}
+% \DeclareMathOperator\arccosh{arccosh}
+% \DeclareMathOperator\arcsinh{arcsinh}
+% % Calculus operators
+% \DeclareMathOperator\fronteira {fr}
+% \DeclareMathOperator\interior  {int}
+% \DeclareMathOperator\exterior  {ext}
+% \DeclareMathOperator\grafico   {Graf}
+% \DeclareMathOperator\dominio   {D}
+% \DeclareMathOperator\visinhanca{\mathcal{V}}
+% % Algebra operators
+% \DeclareMathOperator\adj{adj}
+% \DeclareMathOperator\id{id}
+% \DeclareMathOperator\Img{Im}
+% \DeclareMathOperator\Nuc{Nuc}
+% \DeclareMathOperator\Ker{Ker}
+%
+% BM
+\NewDocumentEnvironment{BM}{ O{gather*} O{\large} +b }{
+    #2\boldmath\bfseries
+    \begin{#1}
+        #3
+    \end{#1}\relax
+}  {\relax}
+% logic division
+\NewDocumentCommand\ldiv{
+    s        % #1 - line break
+    tl       % #2 - Left  column
+    tr       % #3 - Right column
+    O{\land} % #4 - Division
+    O{\,}    % #5 - Space
+    m        % #6 - Before column
+}{%
+    \IfBooleanF{#1}{%
+        \IfBooleanF{#2}{&}#5%
+    }#4%
+    \IfBooleanF{#1}{%
+        \\#4#5#6\IfBooleanF{#3}{&}%
+    }%
+}
+% Logic operators
+\providecommand\lxor{\veebar}
+\providecommand\lnand{\barwedge}
+%
+% % BM old
+% % \newcommand{\BM}[1]{{\large\boldmath\bfseries%
+% %     \begin{align*}
+% %         #1
+% %     \end{align*}%
+% % }}
+
+
+
+% Vectors
+% \usepackage{esvect}      % Vector over-arrow
+% \let\vec\vv
+
+
+
+% Tikz
+% \usepackage{tikz}
+%     \usetikzlibrary{
+%         perspective,
+%         3d,
+%         external,
+%     }
+
+% External remake commands
+% 	ikzset{external/force remake=false} - remake all
+% 	ikzset{external/remake next=true}   - remake next
+
+
+% % External lib
+% \tikzexternalize[
+%     up to date check = {simple}, % faster check
+%     figure list = true, % generate list of figures file
+%     % optimize  = false,
+%     % optimize command away = { % commands to be ignored when optimizing
+%     %     \BM, \endBM,
+%     %     \ldiv,
+%     %     \question, \subquestion, \subsubquestion,
+%     %     % \sobpart,
+%     %     \questionBox, \endquestionBox,
+%     %     \sectionBox,  \endsectionBox,
+%     %     % \codeBox,     \endcodeBox
+%     %     \mymaketitle
+%     % },
+%     prefix = ./.build/figures/graphics/
+% ] % turn externalization on/off
+% \tikzsetfigurename{figure_\arabic{part}.\arabic{section}.} % set figure names
+
+% \tikzset{external/system call={%
+%     lualatex \tikzexternalcheckshellescape
+%     --halt-on-error
+%     --shell-escape
+%     --interaction=batchmode
+%     --jobname "\image" "\texsource"
+%     % --jobname "\image" \subfilename
+% }}
+
+% \let\oldtikzpicture\tikzpicture
+% \renewcommand\tikzpicture{\oldtikzpicture\nopagecolor}
+
+
+
+% \usepackage{varwidth}   % List inside TikzPicture
+
+% Gradient text color
+% \newcommand\fadingtext[3][]{%
+%     \begin{tikzfadingfrompicture}[name=fading letter]
+%         \node[text=transparent!0,inner xsep=0pt,outer xsep=0pt,#1] {#3};
+%     \end{tikzfadingfrompicture}%
+%     \begin{tikzpicture}[baseline=(textnode.base)]
+%         \node[inner sep=0pt, outer sep=0pt,#1](textnode){\phantom{#3}};
+%         \shade[path fading=fading letter,#2,fit fading=false]%
+%             (textnode.south west) rectangle (textnode.north east);%
+%     \end{tikzpicture}%
+% }
+
+% \newcommand\fadingtext[2][]{%
+%   \setbox0=\hbox{{\special{pdf:literal 7 Tr }#2}}%
+%   \tikz[baseline=0]\path [#1] \pgfextra{\rlap{\copy0}} (0,-\dp0) rectangle (\wd0,\ht0);%
+% }
+%
+% \let\oldsection\section
+% \renewcommand\section[1]{
+%     \oldsection{\fadingtext{
+%         left  color   = DarkGreen!00!foreground,
+%         right color   = DarkGreen!30!foreground,
+%         shading angle = 150 % 90 + 60
+%     }{ \relax\parbox[b]{\linewidth}{#1} }}
+% }
+%
+% \let\oldpart\part
+% \renewcommand\part[1]{
+%     \oldpart{\fadingtext{
+%         left  color   = Emph,
+%         right color   = Emph!50!LightGreen,
+%         shading angle = 170 % 90 + 60
+%     }{ #1 }}
+% }
+
+% pgf
+    % \usepackage{pgf}
+    % pgfmath
+    % \usepackage{pgfmath}    % calculations
+
+    % pgfplots
+    % \usepackage{pgfplots}
+    % \usepgfplotslibrary{fillbetween}
+    % 
+    % 1e4 too much
+    % 1e3 fancy
+    % 1e2 simple
+    % 1e1 draft
+    % \newcommand\mysampledensitySimple{1e1}
+    % \newcommand\mysampledensityFancy{1e2}
+    % \pgfplotsset{
+    %     compat       = newest,
+    %     width        = .95\linewidth,   % width
+    %     height       = .22\textheight,  % height
+    %     samples      = \mysampledensityFancy,
+    %     % Color Map
+    %     colormap = {cool}{
+    %         color=(DarkGreen\Light!20!background);
+    %         % color=(DarkGreen\Light!60!background);
+    %         color=(DarkGreen\Light!70!background);
+    %         % color=(DarkGreen\Light!80!background);
+    %         color=(DarkGreen\Light!90!background)
+    %     },
+    %     % Legend
+    %     legend style = {
+    %         draw         = none,
+    %         fill         = foreground\Dark,
+    %         fill opacity = 0.3,
+    %         text opacity = 1,
+    %     },
+    %     % Grid
+    %     major grid style = {
+    %         very thin,
+    %         color= foreground!60!background
+    %     },
+    %     % Tick Label
+    %     ticklabel style = {
+    %         /pgf/number format/.cd,
+    %         set thousands separator={\,},
+    %         tick style = {
+    %             color= foreground!60!background
+    %         },
+    %     },
+    %     % Extra ticks
+    %     every extra x tick/.style = {
+    %         tick style       = {draw=none},
+    %         major grid style = {
+    %             draw, thin,
+    %             color = foreground!90!background,
+    %         },
+    %         ticklabel pos = top,
+    %     },
+    %     every extra y tick/.style = {
+    %         tick style       = {draw=none},
+    %         major grid style = {
+    %             draw, thin,
+    %             color= foreground!90!background
+    %         },
+    %         ticklabel pos    = right,
+    %     },
+    % }
+
+    % % pgfplotstable
+    % \usepackage{pgfplotstable}
+
+
+% Tabular
+% \usepackage{multirow}
+\usepackage{float}  % table position H(ere)
+    \restylefloat{table}
+% \usepackage{longtable}
+%
+\setlength\tabcolsep{6mm}        % width
+\renewcommand\arraystretch{1.25} % height
+
+% booktabs
+\usepackage{booktabs}
+\setlength\heavyrulewidth{.75pt} % Top and bottom rule
+\setlength\lightrulewidth{.50pt} % Middle rule
+% \usepackage{colortbl}            % Colored Cells
+
+
+
+% % Chem
+% \usepackage{chemformula} % formulas quimicas
+% \usepackage{chemfig}     % Estruturas quimicas
+% \usepackage{modiagram}   % Molecular orbital diagram
+% \setmodiagram {
+%     names,           % Display names
+%     labels,          % Display labels
+%     labels-fs=\tiny, % label font
+% }
+% \newlength\AtomVScale    \setlength\AtomVScale{1cm}
+% \newlength\MoleculeVScale\setlength\MoleculeVScale{1cm}
+% \usepackage{chemmacros}
+% \chemsetup[phases]{pos=sub}
+% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+% Constants
+% \usepackage{physconst, physunits}
+
+
+
+% Code
+% % Run on terminal: lualatex --shell-escape [file[.tex]]
+% \usepackage{shellesc, minted}
+% \setminted {
+%     linenos,     % line number
+%     autogobble,  % line trim
+%     tabsize = 4, % tab size
+%     obeytabs,    % tab alignment
+%     breaklines,  % break lines
+%     % python3,     % Python lexer or idk
+% }
+% \usemintedstyle{stata-dark}
+% % \usemintedstyle{fruity}
+% % \usemintedstyle{paraiso}
+% % \usemintedstyle{rainbow_dash}
+% % \usemintedstyle{solarized-dark}
+% % \usemintedstyle{native}
+
+
+
+% tcolorbox
+\usepackage{tcolorbox}
+\tcbuselibrary{
+    breakable,                % allow page break
+    % minted, xparse, listings, % code minted
+}
+\tcbset{ every box/.style = {
+    coltext      = foreground,           % text  color
+    % coltitle     = foreground,           % title color
+    % fonttitle    = \bfseries,       % title font
+    notitle,                        % Remove title
+    opacityfill  = 0.1,             % background opacity
+    opacityframe = 0,               % frame      opacity
+    colback      = Background,      % background color
+    colframe     = Background,      % border     color
+    arc          = 3mm,             % Curvature
+    width        = \linewidth,      % Width
+    top          = 3mm,             % Space between text and top
+    bottom       = 3mm,             % Space between text and bottom
+    before upper = {\parindent2ex}, % Paragraph indentation
+    before skip  = 0mm,             % Set vspace before box
+}}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle   {{Identificação de mutações no DNA mitocondrial na doença de Parkinson's}}
+\newcommand\myauthor  {{Felipe B. Pinto (61387), Ana Rita Muacho (62380), João Serrano (61783)}}
+\newcommand\mycreator {{Felipe B. Pinto}}
+\newcommand\mysubject {{O PCR e técnicas de Biologia Molecular como ferramenta para determinar o papel de mutações no DNA mitocondrial em doenças neurodegenerativas}}
+\newcommand\mykeywords{{{Mitochondria},{mtDNA},{mutations},{Real-time PCR},{Next generation Sequencing}}}
+
+% title, author and date
+\title{
+    \bfseries\color{Emph}\mytitle
+}
+\author{
+    \begin{tabular}{l c c}
+        Felipe B. Pinto & 61387 & MIEQB
+    \\  Ana Rita Muacho & 62380 & LEQB
+    \\  João Serrano    & 61783 & LEQB
+    \end{tabular}
+}
+\date{\today}
+
+
+
+% fancyhdr - Header and Footer customization
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear
+% \fancyhead[R]{\normalsize\thepart}
+% \fancyfoot[L]{\normalsize\myauthor}
+% \fancyfoot[R]{\thepage}
+\renewcommand\footrulewidth{.5pt}
+% Marks 
+% \renewcommand{\partmark}[1]{\markboth{}{\thepart#1}}
+
+
+
+% Subfiles
+\usepackage{subfiles}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+    % Links customization
+    % hidelinks   = true,
+    colorlinks  = true,
+    linkcolor   = Link,
+    anchorcolor = Link,
+    urlcolor    = Link,
+    % Metadata
+    pdfinfo = {
+        Title    = \mytitle,
+        Author   = \myauthor,
+        Creator  = \mycreator,
+        Subject  = \mysubject,
+        Keywords = \mykeywords,
+    },
+    % PDF display customization
+    pdfpagelayout      = {OneColumn},
+    pdfstartview       = {FitH},
+    pdfremotestartview = {FitH}
+    pdfdisplaydoctitle = true,
+    % pdfpagetransition  = Glitter, % wtf
+}
+% Fix links when reseting section on part
+% \renewcommand\theHpart{\theHsobpart.\arabic{part}}
+\renewcommand\theHsection{\theHpart.\arabic{section}}
+
+% get parttitle command
+% \let\oldpart{\part}
+% \newcommand\parttitle{}
+% \renewcommand{part}[1]{\oldpart{#1}\renewcommand{\parttitle}{#1}}
+
+% Color targets
+\let\oldhypertarget\hypertarget
+\renewcommand\hypertarget[3][Link]{\oldhypertarget{#2}{\textcolor{#1}{#3}}}
+
+
+
+% % sobpart
+% \newcounter{sobpart}
+% \renewcommand\thesobpart{\Roman{sobpart}}
+% \newcommand\sobpart[1]{
+%     % reset inner counter
+%     \setcounter{part}{0}
+%     \setcounter{section}{0}
+%     \setcounter{subsection}{0}
+%     \setcounter{subsubsection}{0}
+%     \setcounter{question}{0}
+%     \setcounter{subquestion}{0}
+%     \setcounter{subsubquestion}{0}
+%     % add sobpart line
+%     \refstepcounter{sobpart}
+%     {
+%         \newgeometry{
+%             top    = .12\paperheight,
+%             bottom = .12\paperheight,
+%             left   = .12\paperwidth,
+%             right  = .12\paperwidth,
+%         }
+%         % \begin{center}
+%             % \begin{minipage}{\textwidth}
+%                 % \vspace{.2\pageheight}
+%                 \part*{\huge\thesobpart\hspace{1em}--\hspace{1em}#1}
+%             % \end{minipage}
+%         % \end{center}
+%         \restoregeometry
+%     }
+%     % add to toc
+%     % \addtocontents{toc}{\end{multicols}}
+%     \addcontentsline{toc}{part}{\bfseries\thesobpart\hspace{1em}--\hspace{1em}#1}
+%     % \addtocontents{toc}{\begin{multicols}{2}}
+% }
+
+\usepackage{sections}
+% \usepackage{questions}
+% \usepackage{answers}
+% \usepackage{examples}
+% \usepackage{definitions}
+
+
+% % codeBox
+% \DeclareTCBListing{codeBox}
+%     { s t1 t2 t3 O{5mm} O{left=2.5em} m m }{
+%         \IfBooleanT{#1}{breakable,}%
+%         before = {
+%             \vspace{#5}
+%             \IfBooleanF{#1}{\noindent\begin{minipage}}
+%             \IfBooleanT{#2}{      \question{#8}}
+%             \IfBooleanT{#3}{   \subquestion{#8}}
+%             \IfBooleanT{#4}{\subsubquestion{#8}}
+%         },
+%         \IfBooleanF{#1}{after = {\end{minipage}},}%
+%         listing only,
+%         listing engine  = minted,
+%         minted language = #7,
+%         minted options  = {},
+%         #6
+%     }
+
+
+
+%% Incompleto
+%
+%% Listoftemas: tema e subtema
+%\newlistof{temas}{prog}{}
+%%% Add to document
+%%\section*{Programa}
+%%\begin{multicols}{2} \listoftemas \end{multicols}
+%% tema
+%\newcounter{tema}[section]
+%\newcommand\tema[1]{%
+%    \refstepcounter{tema}%
+%    \addcontentsline{prog}{temas}{%
+%        \thetema\textsuperscript{o} Tema: #1%
+%    }%
+%}
+%% subtema
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%    \refstepcounter{subtema}%
+%    \addcontentsline{prog}{temas}{%
+%        \textbullet\quad#1%
+%    }
+%}
+
+
+
+% Divisions customization
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+% \renewcommand\thepart{Part \arabic{part}}
+
+
+\usepackage{mytitle}    % \mymaketitle
+\usepackage{mysubfile}  % \mymakesubfile
+
+
+\begin{document}
+
+% Cabeçalho
+{\centering
+    % Title
+    {\bfseries\color{Emph}\mytitle}
+    \\[1.5ex]
+    % Author
+    \begin{table}[H]\centering
+        \begin{tabular}{l c c}
+            
+            \toprule
+            
+            Felipe B. Pinto & 61387 & MIEQB
+        \\  Ana Rita Muacho & 62380 & LEQB
+        \\  João Serrano    & 61783 & LEQB
+        
+        \\\bottomrule
+            \multicolumn{3}{r}{TP1 G19}
+        \end{tabular}
+    \end{table}
+    }
+
+\vspace{-7ex}
+
+% \begin{multicols}{2}
+    
+    % Abstract
+    \section{Resumo}
+    O PCR (por amplificação de cadeias de mtDNA) e a eletroforese em gel (por análise quantitativa e comparação com mtDNA padrão) mostram que a origem de doenças como o Parkinson's está em mutações no DNA mitocondrial e consequente mau funcionamento da mitocôndria como fornecedora de energia para a célula. A cadeia de transporte de eletrões é interrompida no complexo I e a falta de ATP conduz à morte celular em massa, irreversível. A relação direta na identificação do problema classifica estas duas técnicas como fundamentais no desenvolvimento de tratamentos e possivelmente, cura.
+    % Introdução
+    \section{Introdução}
+    Esta pesquisa recai sobre o estudo de técnicas de PCR e eletroforese em gel na identificação de mutações no DNA mitocondrial (mtDNA), que por sua vez levam à doença neurodegenerativa de Parkinson's (PD). Para a compreensão dos métodos estudados são necessárias noções prévias sobre mtDNA e as suas mutações.\par
+    % Intro a mtDNA
+    A mitocôndria, localizada no citosol e atipicamente estruturada por duas membranas, possui a caracterização de \textit{``bioenergetic, biosynthetic, and signalling organelles''}. \cite{Wallace:2012aa}\par
+    % 
+    \textit{Bioenergetic} por realizar fosforilação oxidativa do piruvato na respiração aeróbica celular (principais fornecedores de energia à célula); \textit{biosynthetic} pela síntese proteica do seu mtDNA; \textit{signalling organelles} pelos seus diversos mecanismos de resposta a alterações do meio. Constitui um papel vital para a homeostasia celular e de onde doenças neurodegenerativas podem ser geradas quando em desequilíbrio. \cite{Sharma:2019aa}\par
+    %
+    O estudo destas doenças recorre a técnicas da Biologia Molecular que para além do diagnóstico podem fornecer informações mais detalhadas que conduzem a um maior conhecimento sobre a doença e possivelmente processos de tratamento. Neste caso iremos ponderar a utilidade do PCR e da eletroforese em gel para identificar as mutações do mtDNA
+    
+    \section{Mitocondria}
+    \begin{wrapfigure}{l}{.5\textwidth}
+        \centering
+        \vspace{-2ex}
+        \includegraphics[width=.5\textwidth]{Screenshot 2022-12-18 at 23.32.49.png}
+        \caption{Esquema e localização celular da mitocondria [2022, MUACHO]}
+        \label{fig:mitocondria}
+        \vspace{-3ex}
+        % \end{figure}
+    \end{wrapfigure}
+    A origem deste organelo vem da teoria endossimbiótica, que dita que organismos (bactérias) fagocitados por células eucariontes pré-existentes, originando uma relação simbiótica entre os dois. Por executar trocas diretas com o meio extracelular, é composto por dois espaços separados pela membrana interior (espaço intramembranar, entre a membrana exterior e interior, e matriz, dentro da membrana interior, cada um responsável por realizar diferentes reações características) \cite{Roger:2017aa} (figura \ref{fig:mitocondria}). A mitocôndria produz e armazena energia na forma de ATP bem como sintetiza as suas proteínas a partir do mtDNA.
+    % 
+    \section{Mutações no DNA mitocondrial}
+    O mtDNA codifica inúmeras proteínas importantes para a atividade e funcionamento do organelo. Em humanos é constituído por 16569 pares de bases. Mutações no mtDNA são causadas pela interação com radicais de oxigénio livres no interior da mitocôndria. Um resultado possível são mutações somáticas devido à falta de proteção das histonas. Mutações excessivas podem conduzir à disfunção da OXPHOS, uma subunidade envolvida na produção da maioria do ATP celular, que potencia o desenvolvimento de doenças neurodegenerativas, como, \textit{Myoclonic epilepsy with raggedred fibers} (MERRF), uma doença neuromuscular acompanhada por sintomas de epilepsia mioclonia, miopatia, demência e ataxia, causada por uma mutação de ponto no tRNA. \cite{Velez-Bartolomei:1993aa}\cite{Zeviani:2022aa} A maioria das doenças neurodegenerativas surgem de mutações (de ponto ou eliminação) de mtDNA, caso que se verifica para PD, com a ocorrência de mutação de eliminação.
+    % 
+    \section{Doença de Parkinson's}
+    A doença neurodegenerativa de Parkinson's (PD) é caracterizada por tremores quando em repouso, rigidez, postura curvada e distúrbios neurocomportamentais (ex.: depressão) \cite{Sofronova:2016aa}.\par
+    % 
+    Segundo um estudo em pacientes com PD, ocorre um aumento de eliminações de mtDNA (detetou-se uma eliminação de 4.997\,\si{\kilo{b}} em mtDNA de plaquetas \cite{Sandy:1993aa}), que causa a disfunção da cadeia respiratória, devido à falha originada no complexo I (primeira etapa da cadeia de transporte de eletrões) \cite{Swerdlow:1996aa}. Esta alteração no funcionamento da respiração celular provoca o decaimento de 20\% dos produtos obtidos em condições normais. A disfunção em questão pode ser acompanhada por estudos em PCR de mitocôndrias isoladas \cite{Diaz:2009aa}. Isto implica que a cadeia respiratória mitocondrial (e consequentemente a vida celular) é sensível a integridade do mtDNA. Para detetar essas alterações recorremos ao PCR e o eletroforese em gel.
+    % 
+    \section{metodo de identificação de mutações}
+    O PCR copia, ou amplifica uma pequena região da molécula de DNA, através da enzima DNA polimerase (enzimas de restrição). As extremidades da região a ser amplificada devem ser conhecidas e devem ser realizados vários ensaios até chegar a um conjunto de resultados que permite determinar a presença de mutações (por análise detalhada de bases). A eletroforese em gel da amplificação resultante do PCR permite revelar produtos que foram eliminados ou duplicados no mtDNA \cite{Sofronova:2016aa}, facilitando a deteção de mutações responsáveis pela PD, pois já se observou ocorrência dessas mesmas eliminações nas cadeias de mtDNA.\\
+    % 
+    \begin{wrapfigure}{l}{.5\textwidth}
+        \centering
+        \vspace{-2ex}
+        \includegraphics[width=.5\textwidth]{Screenshot 2022-12-19 at 00.14.22.png}
+        \caption{Esquema eletroforese [2022, MUACHO]}
+        \label{fig:eletroforese}
+        \vspace{-1ex}
+    \end{wrapfigure}
+    A eletroforese em gel analisa quantitativa e qualitativamente, por passagem de corrente elétrica, compostos de uma amostra arrastados por um gel poroso que progridem com resistencia, de acordo com o seu tamanho molecular (Figura \ref{fig:eletroforese}). Ao atravessar corrente pelo gel contendo mtDNA (colorado para que as bandas apresentadas sejam observáveis), os fragmentos serão separados (as cargas negativas do mtDNA, pela presença dos grupos fosfatos, são atraídas para o polo positivo da caixa onde a amostra se encontra), que por sua vez são comparados a resultados previamente obtidos de um mtDNA padrão (sem mutações) denominado escada \cite{scitable_2014}. Em determinados casos é possível observar que estão em falta bandas, tornando a técnica importante na deteção das mutações ou alterações que podem ter ocorrido no mtDNA. (eliminação ou duplicação) \cite{Diaz:2009aa}.\\
+
+    % 
+    Através da eletroforese foi possível detetar que a falha na manutenção do mtDNA resultou na interrupção do funcionamento do organelo no estudo das mutações do gene PNPT1 cromossômico \cite{Vedrenne:2012aa}.\\
+    
+    % 
+    O PCR, ao realizar a replicação, é suscetível a que possa ocorrer diversas mutações e assim vamos obtendo cadeias de DNA diferentes.
+    % 
+    Visto que PD ocorre devido a uma eliminação na cadeia de mtDNA, usar a eletroforese após o PCR é ideal, caso seja uma mutação de ponto já não poderíamos utilizar esse método (pois é indetetável por PCR) e teríamos que recorrer a, por exemplo, o 
+    \textit{Next Generation Sequencing} (NGS) \cite{Naini:2020aa}. Com a informação obtida, determina-se a origem dos efeitos e sintomas que a mutação tem no organismo humano.
+    % 
+    \section{Conclusão}
+    A deteção e futuro desenvolvimento de tratamento/cura da doença de Parkinson's vai recair fortemente no uso das técnicas laboratoriais da biologia molecular por depender originalmente da mutação do material genético da mitocôndria. É de notar também que o recurso combinado a ambas as técnicas é necessário para cegar às conclusões obtidas, pelo que percebemos que os métodos utilizados na medicina/biologia recorrem uns aos outros para avançar na pesquisa ou corroborar as conclusões tiradas.
+% \end{multicols}
+
+\newpage
+
+% \bibliographystyle{unsrt}
+\bibliographystyle{ieeetr}
+% \bibliographystyle{unsrt}
+\bibliography{./.build/libraries/Trabalho_TP9_G19.bib}
+
+\end{document}

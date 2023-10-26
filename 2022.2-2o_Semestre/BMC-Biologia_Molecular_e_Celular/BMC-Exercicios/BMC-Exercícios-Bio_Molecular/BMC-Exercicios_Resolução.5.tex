@@ -1,0 +1,236 @@
+% !TEX root = ./BMC-Exercicios_Resolução.5.tex
+\providecommand\mainfilename{"./BMC-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./BMC-Exercicios_Resolução.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/BMC-Exercicios_Resolução.5/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\renewcommand\theenumi{\alph{enumi}}
+
+\mymakesubfile{5}
+[BMC]
+{Exercicios}
+{Exercicios}
+
+\begin{questionBox}1{ % Q1
+    What would be the effect on the PCR reaction if any of the following circumstances arose:
+} % Q1
+    \begin{itemize}
+        \item there are no primers in the reaction
+        \item there are no dNTPs in the reaction
+        \item there is no Taq polymerase in the reaction?
+    \end{itemize}
+
+    \begin{enumerate}[label=\alph{enumi})]
+        \item PCR would proceed normally
+        \item Non-specific PCR of random templates will occur 
+        \item The reaction will cease after a few cycles
+        \item The PCR reaction will not commence
+    \end{enumerate}
+
+    \paragraph*{RS}: d. 
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    What would the generally expected effect on the PCR reaction be of adjustments that increase the temperature of the annealing phase and reduce the length of the elongation phase?
+} % Q2
+    \begin{enumerate}[label=\alph{enumi})]
+        \item Precision and yield will be reduced
+        \item Precision will be reduced, but yield will be increased
+        \item Precision will be increased, but yield will be reduced
+        \item Precision and yield will be increased        
+    \end{enumerate}
+
+    \paragraph*{RS}: c.
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    You have amplified by PCR a Saccharomyces cerevisae (Genomic GC content 38.3\%) DNA sequence of 3500\,pbs to clone the gene of a-amylase in an expression vector using as host the strain E. coli DH5a.
+} % Q3
+
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-12-07 at 15.13.30.png}
+    \end{center}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3
+    Identify the function of each step of the PCR program and which compounds in the reaction mixture are being used or modified in each step.
+} % Q3
+    
+    \begin{table}[H]\centering
+
+        \setlength\tabcolsep{3mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+
+        \begin{tabular}{cclc}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{T/\si{\celsius}}
+            &   \multicolumn{1}{c}{Time/\si{\minute}}
+            &   \multicolumn{1}{c}{Step}
+            &   \multicolumn{1}{c}{Coumponds used/modified}
+            
+            \\\midrule
+            
+                95 &   5 & Ini DNA Desn & /DNA Template
+            \\  95 & 0.5 & DNA Desnat   & /DNA
+            \\  50 &   1 & Annealing    & /Primer
+            \\  72 &   3 & Sequencing   & /
+            \\  72 &  10 & Final seq    & /
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{table}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.2
+    The amplification product was analized by agarose gel electrophoresis. Identify the band that corresponds to the fragment we are trying to amplify. Explain why the other bands appear.
+} % Q3.2
+
+    We can perceive the apperance of greater and smaller bands wich indicates bad precision, for the greater bands we expect a over needed expanding time and for the smaller bands we expect a under annealing temperature.
+
+
+    % We can perceive the apperance of greater and smaller bands wich indicates bad precision, for the greater bands we can lower the expanding time and for the smaller bands we can
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.3
+    Propose one alteration to the PCR program that will reduce or prevent the amplification of the unwanted bands.
+} % Q3.3
+
+    We could diminish the extension time which would diminish the greater bands, but the better option would be to increase the annealing temperature which would decrease differents replicated sequencies, that would affect most bands.
+    
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.4
+    You want to amplify the DNA containing the a-amylase homolog of Streptomyces coelicolor (Genomic GC content 72\%) using the same pair of primers. How would you change the PCR program?
+} % Q3.4
+
+    the greater GC genomic content would indicate a greater melting point
+
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    You want to amplify by PCR a 0.65\,Kb DNA sequence from the genome of E. coli. The desired DNA band is identified by an arrow.
+} % Q4
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-12-07 at 15.17.00.png}
+    \end{center}
+\end{questionBox}
+
+
+\begin{questionBox}2{ % Q4.1
+    The PCR program was optimized by temperature changes (from gel A to D). Propose temperature for the PCR programs corresponding to gels B,C and D.
+} % Q4.1
+\end{questionBox}
+
+\begin{questionBox}2{ % Q4.2
+    Besides altering program temperature, what other parameter have we altered that resulted in the sample analysed in gel E?
+} % Q4.2
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    You have amplified by PCR a DNA fragment of 1000\,pbs using Taq polymerase (1\,kb/min). You have analysed the amplification product in a agarose gel.
+} % Q5
+    \begin{enumerate}[
+        label={Lane \arabic{enumi}:},
+        left={0em}
+    ]
+        \item DNA molecular weight ladder;
+        \item PCR sample.
+    \end{enumerate}
+
+    Consider the following 4 experimental results and associate to the respective PCR program.
+
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-12-07 at 15.19.02.png}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    The graph below shows how the temperature of the DNA in a reaction tube is changed during one PCR cycle.
+} % Q6
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2022-12-07 at 15.19.39-cutout.png}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.1
+    Calculate the maximum change in temperature that the reaction tube experiences during one cycle of PCR.
+} % Q6.1
+
+    \begin{flalign*}
+        &
+            \adif{T}
+            \cong 95.0-54.0 = 41.0
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.2
+    Describe what happens to the DNA during stage X.
+} % Q6.2
+    Stage X is the desnaturation stage, this is when we want to reach the ideal temperature where at least half the molecules are dissociated.
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.3
+    Short sections of DNA called primers are involved in Stage Y. State what happens to these primers during Stage Y.
+} % Q6.3
+    Stage Y is the annealing stage, where we lower the temperature to the ideal point in which primers are able to associate with the free DNA strands.
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.4
+    Suggest why the temperature is increased during Stage Z.
+} % Q6.4
+    Stage Z is the expansion stage where we rely on the protein DNApolymerase to activate therefore we need to increase the temperature to its optimal working point.
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.5
+    A forensic scientist discovered a tiny spot of blood at a crime scene. A sample taken from this spot contained 100 molecules of DNA. The sample underwent PCR cycles for 40 minutes.
+} % Q6.5
+
+    \begin{questionBox}3{ % Q6.5 (i)
+        Use the graph to calculate how many molecules of DNA would be present after this time. 
+    } % Q6.5 (i)
+        \begin{flalign*}
+            &
+                n_{molecules}
+                \cong n_{template} + n_{expanded}
+                = n_{template}
+                + (2*n_{template})^{(1+n_{cycles})}/2
+                = &\\&
+                = n_{template}
+                + (2*n_{template})^{\left(
+                    1+\frac{t_{total}}{t_{cycle}}
+                \right)}
+                /2
+                = 100
+                + (2*100)^{(1+40/5)}/2
+                \cong &\\&
+                \cong 
+                \num{2.56e20}
+            &
+        \end{flalign*}
+        \paragraph*{Note:} During each cycle each strand of DNA template generate two strands of expanded gene, which after all the cycles associates with each other halving its amount.
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q6.5 (ii)
+        What process would then allow an individual to be identified from the DNA?
+    } % Q6.5 (ii)
+        With many copyes of the dna we are able to better profile its sequences, proportion of CG/AT pairs and search for matches in databases trying to identify suspects.
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}
