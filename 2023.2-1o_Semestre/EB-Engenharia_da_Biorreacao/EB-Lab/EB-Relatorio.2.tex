@@ -1,0 +1,88 @@
+% !TEX root = ./EB-Relatorio.2.tex
+\providecommand\mainfilename{"./EB-Relatorio.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Relatorio.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/EB-Relatorio.2}}}
+\tikzsetexternalprefix{./.build/figures/EB-Relatorio.2/graphics/}
+
+\mymakesubfile{2}
+{Introdução} % Subfile Title
+{Introdução} % Part Title
+% \newpage
+
+Para a realização de um processo através de um reator é preciso antes de tudo adequar o tipo de reator ao processo pretendido. Nesta atividade, pretendia-se avaliar o crescimento de uma cultura bacteriana em função da velocidade consumo de oxigénio, por isso, um reator batch ligado a um respirómetro a melhor de forma de se obter resultados. Os resultados são obtidos através da limitação temporária de uma parte da cultura ao acesso a uma fonte continua de oxigénio, estando apenas disponível o \ch{O2} que já se encontrava no meio. O meio tem como fonte de carbono o acetato, proveniente de acetato de potássio (\ch{CH3COOK}), e utiliza extrato de levedura e alguns outros compostos como fonte de nutrientes e a sua fonte de oxigénio é através de um dispersor a introduzir ar atmosférico no meio.\par
+\vspace{1ex}
+Para se poder avaliar a variação do crescimento é preciso compreender as diferentes fases que correspondem ao crescimento:
+    
+\begin{multicols}{2}
+    \includegraphics[width=.4\textwidth]{WhatsApp Image 2023-11-27 at 23.53.49.jpeg}
+    \captionof{figure}{Curva de Crescimento de uma cultura de bactérias (\textit{Bruslind s.d.})}
+    
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[Fase ``lag'']: Fase inicial de adaptação das bactérias ao novo meio. É uma fase onde não ocorre crescimento nem produção de produto, por isso é do maior interesse diminuir ao máximo a sua duração.
+        \item[Fase exponencial:] ocorre o crescimento celular, ou seja, existe um aumento do número de células. É a fase mais importante, já que é a velocidade de crescimento é proporcional ao número de células.
+        \item[Fase estacionária:] ocorre quando ocorre a cessação do crescimento, em que o número de células a serem formadas é igual ao número de células a morrer. Aqui a concentração celular é constante e a velocidade de crescimento é nula. Esta fase ocorre devido ao esgotamento de algum dos substratos, do esgotamento de nutrientes, devido a uma acumulação de metabolito ou até falta de espaço.
+        \item[Fase de morte:] ocorre quando o número de células a sofrer morte é superior ao número de novas células formadas. Ocorre uma diminuição da concentração celular e a velocidade de crescimento é nula.
+    \end{description}
+\end{multicols}
+
+Como estamos a trabalhar com organismos aeróbicos é importante manter uma alimentação adequada de oxigénio à cultura. Como já foi dito, o reator foi alimentado com ar através de um dispersor. Contudo, introduzir oxigénio através de bolhas não significa que será diretamente aceite pela cultura. Portanto é necessário considerar a difusão do \ch{O2} da bolha para as células. Para isso a figura 3 mostra o processo necessário a essa transferência, e entre esses passos, o passo 3 é o mais relevante para a definição do processo, já que onde ocorre a maior resistência ao processo e consequentemente, vai ser o passo limitante.
+
+\begin{center}
+    \begin{multicols}{2}
+        \includegraphics[width=.4\textwidth]{WhatsApp Image 2023-11-28 at 00.53.13.jpeg}
+        \captionof{figure}{Difusão da bolha de ar até à célula através das diferentes interfaces e do meio (\textit{Gupta, Kumar e Pareek 2012})}
+    \end{multicols}
+\end{center}
+
+Considerando o modelo de duplo filme para a transferência de massa gás-líquido por difusão do gás no líquido, surge na interface uma força motriz devido à diferença de concentrações entre o estado líquido e o estado gasoso, o que possibilita a transferência de massa entre os dois.\par
+As condições de transferência podem ser descritas através das seguintes equações:
+\begin{BM}
+    Q_{\ch{O2}}=k'_{L\,a}\,(C^*-C_L)
+    \qquad
+    r_{\ch{O2}}=V_{\ch{O2}}\,X
+\end{BM}
+\(Q_{\ch{O2}}\) é a velocidade de transferência do gás no líquido, \((C^*-C_L)\) é a força eletromotriz causada pela diferença entre as concentrações de saturação e do meio e o  \(k'_{L\,a}\) é o coeficiente de transferência de massa volumétrica. Este último é influenciado pelas características do meio e das bolhas.\par
+Já na segunda equação \(r_{\ch{O2}}\) é a velocidade volumétrica do consumo de oxigénio e o \textit{X} é a concentração da biomassa (bactérias). Já o \(V_{\ch{O2}}\) é a velocidade especifica de consumo de oxigénio e é descrita através:
+\begin{BM}
+    V_{\ch{O2}}=Y'_{\ch{O2}/X}\,\mu+m_{\ch{O2}}
+    \begin{cases}
+        \mu \quad& \text{é a taxa de crescimento celular}
+        \\Y'_{\ch{O2}/X} \quad& \text{é o coeficiente de rendimento de crescimento}
+        \\ m_{\ch{O2}} \quad& \text{o coeficiente de manutenção celular}
+    \end{cases}
+\end{BM}
+Assumindo a velocidade de consumo de \ch{O2} igual à sua velocidade de transferência e desprezando a manutenção obtém se a equação:
+\begin{BM}
+    k'_{L\,a}\,(C^*-C_L)=Y'_{\ch{O2}/X}\,\mu
+\end{BM}
+
+\begin{sectionBox}1bm{Procedimento Experimental} % S
+    \begin{center}
+        \includegraphics[width=.4\textwidth]{Screenshot 2023-11-24 at 17.38.10.png}
+    \end{center}
+    
+    \begin{enumerate}
+        \item Encheu-se o reator com 500\,\si{\milli\litre} do meio de cultura e introduziu-se o elétrodo de oxigénio no reator. Desarejou-se com azoto o meio de cultura até a concentração de oxigénio ser zero. Depois, arejou-se o meio com ar atmosférico e depois mediu-se a concentração de oxigénio através do programa \textit{BioCTR}. 
+        \item Introduziu-se o elétrodo de oxigénio no respirómetro. 
+        \item Adicionou-se ao reator 3\,\si{\milli\litre} da fonte de  carbono e 0.3\,\si{\gram} de extrato de levedura. 
+        \item Inoculou-se o reator com 100\,\si{\milli\litre} (20\%) com uma cultura em crescimento exponencial.
+        \item Ligou-se a bomba peristáltica e fez-se recircular o meio através do respirómetro. 
+        \item Retirou-se aproximadamente 1\,\si{\milli\litre} do meio reacional e mediu-se a densidade ótica a 600\,\si{\nano\metre}. 
+        \item Após a recolha da amostra, parou-se a bomba de recirculação e mediu-se o consumo de oxigénio e religou-se bomba aquando de uma redução de cerca de 30\% da concentração de oxigénio. 
+        \item Repetiu-se os passos 5\to7 com intervalos de 10 minutos até se atingir o estado estacionário
+    \end{enumerate}
+
+
+\end{sectionBox}
+
+\end{document}

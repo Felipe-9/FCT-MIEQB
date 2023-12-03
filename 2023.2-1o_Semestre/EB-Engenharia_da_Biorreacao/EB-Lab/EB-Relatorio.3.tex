@@ -1,0 +1,1424 @@
+% !TEX root = ./EB-Relatorio.3.tex
+\providecommand\mainfilename{"./EB-Relatorio.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Relatorio.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/EB-Relatorio.3}}}
+\tikzsetexternalprefix{./.build/figures/EB-Relatorio.3/graphics/}
+
+
+\mymakesubfile{3}
+{Resultados Experimentais e Discussões} % Subfile Title
+{Resultados Experimentais e Discussões} % Part Title
+
+% Parte A
+\begin{sectionBox}1bm{Determinar o valor de \(k'_{L\,a}\) de transferencia de Oxigênio no meio biológico antes da inoculação} % S1
+    
+    Através do \textit{BioCTR} foi possível obter valores percentuais para a concentração de oxigénio. Nesta parte inicial queremos calcular o valor de \(k'_{L\,a}\) antes de ocorrer a inoculação, ou seja, durante o arejamento do sistema com ar atmosférico após ter sido desarejado com azoto. O arejamento começa quando a concentração de \ch{O2} era zero.
+    \paragraph*{Com as expressões:}
+    \begin{BM}*
+        Q_{\ch{O2}}
+        = k'_{L\,a}(
+            C_{\ch{O2}}^*
+            - C_{\ch{O2}}
+        )
+        = \odv{C_{\ch{O2}}}{t}
+        % \implies \\
+        \implies
+        \ln(C_{\ch{O2}}^*-C_{\ch{O2}})
+        = \ln{C_{\ch{O2}}^*}
+        - k'_{L\,a}\,t
+    \end{BM}
+    % implica que \(\ln(C_{\ch{O2}}^*-C_{\ch{O2}})\times t\) traça uma reta \(y=a\,x+b\) onde \(k'_{L\,a}=-a\text{ e }C_{\ch{O2}^*}=\exp(b)\). Encontrando \(k'_{L\,a}\) podemos tracar o gráfico de \(Q_{\ch{O2}}\times t\).
+
+    E considerando também que a concentração inicial de CO2 era nula conseguimos traçar uma reta de \(\ln(C^*-C_L)\) em função de tem que o \(k_{L\,a}\) é o simétrico do declive e \(C^*\) o exponencial da ordenada na origem.
+
+    \paragraph*{\(C^*\)} Podemos calcular o valor para a concentração de \ch{O2} na fase líquida de equilíbrio de forma teórica através da expressão:
+    \begin{BM}*
+        C_{\ch{O2}}^*
+        =1.16
+        \,\frac{\si{\milli\mole\of{\text{Ar}}}}{\si{\litre}}
+        \,\frac{\num{20.946}\,\si{\milli\mole\of{\ch{O2}}}}{100\,\si{\milli\mole\of{\text{Ar}}}}
+        \,\frac{32\,\si{\milli\gram}}{\si{\milli\mole}}
+        \cong
+        \SI{7.7751552}{\milli\gram/\litre}
+    \end{BM}
+    Obtendo um valor de \SI{7.7751552}{\milli\gram/\litre}.
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels},
+                % xmajorgrids = true,
+                % legend pos  = north west
+                % domain=0:4,
+                xlabel={\((t-19.30)/\si{\min}\)},
+                ylabel={\(\ln(C^*_{\ch{O2}}-C_{\ch{O2}\,L})\)},
+                xtick={0,0.05,...,0.3},
+                x tick label style={
+                    /pgf/number format/.cd,
+                        fixed,
+                        fixed zerofill,
+                        precision=2,
+                }
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphC]{\(y=-\num{2.00513034376008}\,x+\num{1.83968660411963}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphC]{\(R^2=\num{0.98862191567481}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(k'_{L\,a}\cong\SI{2.00513034376008}{\min^{-1}}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(C_{\ch{O2}}^*\cong\SI{6.294565261056239}{\milli\gram\of{\ch{O2}}/\litre}\)}
+            
+            % Plot from csv file
+            \addplot[
+                mark=*,
+                mark size=1,
+                only marks,
+            ]
+            table[
+                % x index=1,      % x column on file
+                % y index=2,      % y column on file
+            ]{graph2.dat};
+
+            \addplot[
+                draw=GraphC,
+                line width={2pt},
+                domain={0:0.3},
+            ]{-2.00513034376008*x+1.83968660411963};
+
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Grafico de \(\ln(C^*-C_L)\times t-19.30\), o tempo foi defasado para alinhar com o começo do arejamento, da regressão podemos derivar \(k'_{L\,a}\text{ e }C^*\)}
+    \end{center}
+
+    Do gráfico obtivemos que o valor de \(k'_{L\,a}\) é \SI{2.00513034376008}{\min^{-1}} e que o valor de \(C^*\) é de \SI{6.294565261056239}{\milli\gram\of{\ch{O2}}/\litre}.\par
+
+
+    Podemos com estes valores traçar um gráfico para o \(Q_{\ch{O2}}\) em função do \(C_L\) e iremos usar o valor teórico de \(C^*\) para o cálculo de \(Q_{\ch{O2}}\). O valor de \(C^*\) teórico também será considerado o padrão para \(C^*\) para o resto do relatório.
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels},
+                % xmajorgrids = true,
+                % legend pos  = north west
+                % domain=0:4,
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(Q_{\ch{O2}/(\si{\milli\gram/\litre.\min})}\)},
+                xtick={19.30,19.35,...,19.60},
+                x tick label style={
+                    /pgf/number format/.cd,
+                        fixed,
+                        fixed zerofill,
+                        precision=2,
+                }
+            ]
+            % % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\(y=-\num{2.00513034376008}\,x+\num{1.83968660411963}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\(R^2=\num{0.98862191567481}\)}
+            
+            % Plot from csv file
+            \addplot[mark=*,mark size=1,only marks] % mesh for colormap
+            table{qo2.dat};
+
+            % \addplot[
+            %     draw=GraphC,
+            %     line width={2pt},
+            %     domain={0:0.3},
+            % ]{-2.00513034376008*x+1.83968660411963};
+
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Grafico de \(Q_{\ch{O2}}\times t\)}
+    \end{center}
+
+    
+    
+    \section*{Discussão}
+    Através da reta que relaciona \(\ln(C^*-C_L)\) com o tempo, retirámos um valor de \(C^* = \exp(\num{1.840549633397487}) = 6.30\,\si{\milli\gram\of{\ch{O2}}/\litre}\) e um valor de \(K'_{L\,a} = 2.01\,\si{\min^{-1}}\). Tendo um desvio percentual em relação ao valor teórico (\(\SI{7.7766}{\milli\gram\of{\ch{O2}}/\litre}\)) de 19.2\%. 
+
+    A velocidade de difusão máxima ocorre quando o \(C_L\) é nulo, e nesta atividade acontece no tempo inicial do arejamento. Assim pode ser calculado de \(Q_{\ch{O2}\,\max} = K'_{L\,a}*C^*\), obtendo o valor de \(Q_{\ch{O2}\,\max}\) igual a 12.64\,\si{\min^{-1}} experimentalmente e com o uso de \(C^*\) teórico obtém-se o valor de 15.63\,\si{\min^{-1}}.
+
+\end{sectionBox} 
+
+% Parte B
+\begin{sectionBox}1bm{
+    Determinação da concentração celular máxima que poderia alcançar no sistema estudado (válida a equação logística). Simular a curva de crescimento e comparar com os dados experimentais.
+} % S
+    % ---------------------------------------------------- %
+    %                       Verhulst                       %
+    % ---------------------------------------------------- %
+    Com os valores das absorvâncias que foram medidos ao longo do tempo, foram calculadas as concentrações de Biomassa (\textit{X}) através da equação:
+    \begin{BM}
+        X=1171.8*\text{Absorvância}+1.5
+    \end{BM}
+    Com isto podemos fazer um gráfico de \textit{X} em função do tempo o que nos irá permitir ver a evolução do crescimento da cultura bacteriana ao longo do tempo.
+    \begin{center}
+        \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % domain=0:4,
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(x/(\si{\milli\gram/\litre})\)},
+                % legend cell align={left},
+            ]
+            % % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\(y=\num{5.75777459936e-3}\,x+\num{6.21474484942480}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\(R^2=\num{0.98402378277518}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[foreground]{\(\mu_{\max}=\SI{5.75777459936e-3}{\min^{-1}}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[foreground]{\(x_{\max}=\SI{754.73304}{\milli\gram/\litre}\)}
+        
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+            ]table[
+                skip coords between index={1}{16},
+            ]{b.xXt.dat};
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+                Graph,
+                mark options={fill=Graph,opacity=1},
+            ]table[
+                skip coords between index={0}{1},
+                skip coords between index={16}{17},
+            ]{b.xXt.dat};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \end{center}
+        \captionof{figure}{Progreção da concentração da biomassa no tempo, os pontos em rosa serão desconsiderados pelo resto do relatório}
+
+        Dá observação do gráfico percebe-se que antes dos \emph{10 minutos} pode existir uma fase lag ou o início de uma fase exponencial, contudo, devido a ainda não ter corrido uma homogeneização completa do reator quando foi realizada a primeira analise esse valor não poderá ser considerado. Dos \emph{10 minutos aos 70 minutos} percebe-se a ocorrência de clara uma fase exponencial. Contudo entre os \emph{80 e 120 minutos} já existe uma maior menor velocidade de crescimento, indicando assim a proximidade de um estado estacionário, contudo, é ainda percetível um crescimento considerável. A partir dos \emph{130 minutos} pode ser considerado um estado estacionário, já que há o crescimento é praticamente inexistente.\par
+        Considerando que se verifica a existência de um estado estacionário, tem de ser considerado o modelo de Verhulst, já que o modelo de Malthus não prevê a existência de um estado estacionário.\par
+        Assim vamos verificar que método de análise se adequa mais ao nosso trabalho. Para isso iremos observar e analisar os métodos de Malthus, Euler, dos 3 pontos e o método polinomial, para assim obter o valor da velocidade de crescimento celular.
+
+
+
+    \begin{sectionBox}2bm{Modelo de Verhulst} % S
+        \begin{BM}*
+            x
+            =\frac{
+                x_{\max}
+                \,x_0
+                \,\exp{(\mu_{\max}\,t)}
+            }{
+                x_{\max}
+                -x_0(1-\exp(\mu_{\max})\,t)
+            }
+            =\frac{
+                \exp{(\mu_{\max}\,t)}
+            }{
+                x_0^{-1}
+                -x_{\max}^{-1}
+                \,(1-\exp(\mu_{\max}\,t))
+            }
+        \end{BM}
+        Encontrando \(\mu_{\max}\text{ e }x_{\max}\) para cada modelo podemos prever os respectivos valores de \textit{x} e assim encontrar o que mais se aproxima dos valores experimentais.
+    \end{sectionBox}
+    % ---------------------------------------------------- %
+    %                        Malthus                       %
+    % ---------------------------------------------------- %
+    \begin{sectionBox}2bm{Método de Malthus} % S
+
+        O método de Malthus permite-nos analisar a fase exponencial, mesmo não sendo adequado analisar a curva inteira (tabela 1 do Anexo).
+
+        \begin{BM}*
+            \odv{X}{t}=\mu\,X
+            \implies 
+            \ln{X}
+            = \mu\,t
+            + \ln{X_0};
+            \quad
+            \mu=\mu_{\max}
+        \end{BM}
+
+        \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % domain=0:4,
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(\ln{x}/(\si{\milli\gram/\litre})\)},
+                % legend cell align={left},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=\num{5.75777459936e-3}\,x+\num{6.21474484942480}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2=\num{0.98402378277518}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(\mu_{\max}=\SI{5.75777459936e-3}{\min^{-1}}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(x_{\max}=\SI{754.73304}{\milli\gram/\litre}\)}
+        
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+            ]table{b.malthus.dat};
+            % Plot from file
+            \addplot[mark=*,draw=none]
+            table[
+                % skip coords between index={0}{1},
+                skip coords between index={7}{30},
+            ]{b.malthus.dat};
+        
+            % line regression
+            \addplot[
+                draw=Graph,thick,
+                domain={10.5:70.5},
+            ]{0.00575777459936*x+6.21474484942480};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \end{center}
+        \captionof{figure}{Curva aplicando o modelo de Malthus de onde pela porção exponencial no tempo de \(\ln{x}\) podemos traçar uma regreção linear que segue o método de Malthus}
+    \end{sectionBox}
+
+    O método de Euler e o dos 3 pontos são bastante similares. Através do tempo e da concentração de \textit{X} calculou se \chemmu (Tabela 3 do Anexo). Desses gráficos retirou-se os  valores de \(\mu_{\max}\) através da ordenada na origem e de \(X_{\max}\) quando a o \chemmu é nulo.
+    % ---------------------------------------------------- %
+    %                         Euler                        %
+    % ---------------------------------------------------- %
+    \begin{sectionBox}2bm{Método de Euler} % S
+        \begin{BM}*
+            \mu_i=\frac{x_i-x_{i-1}}{t_i-t_{i-1}}\,x_i^{-1}
+            \quad
+            \mu=\mu_{\max}-\frac{\mu_{\max}}{x_{\max}}\,x
+        \end{BM}
+
+        \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % domain=0:4,
+                xlabel={\(x/(\si{\milli\gram/\litre})\)},
+                ylabel={\(\mu/\si{\min^{-1}}\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=-\num{3.73872644181514e-5}\,x+\num{3.24982538479515e-2}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2=\num{0.975992882956512}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(\mu_{\max}\cong\SI{3.24982538479515e-2}{\min^{-1}}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(x_{\max}\cong\SI{869.23326308339637}{\milli\gram/\litre}\)}
+        
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+            ]
+            table[
+                x index=0,
+                y index=1,
+            ]{b.euler.dat};
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+            ] table[
+                x index=2,
+                y index=3,
+            ]{b.euler.dat};
+        
+            % line regression
+            \addplot[
+                draw=Graph,thick,
+                domain={662.9811:846.9537},
+            ]{-3.73872644181514e-5*x+3.24982538479515e-2};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Gráfico \(\mu\times x\) para encontrar a regressão linear segundo o método de Euler para aplicar no modelo de Verhulst}
+        \end{center}
+    \end{sectionBox}
+    % ---------------------------------------------------- %
+    %                         3pts                         %
+    % ---------------------------------------------------- %
+    \begin{sectionBox}2bm{Método dos 3 pontos} % S
+        \begin{BM}*
+            \mu_i=\frac{x_{i+1}-x_{i-1}}{t_{i+1}-t_{i-1}}\,x_i^{-1}
+            \quad
+            \mu=\mu_{\max}-\frac{\mu_{\max}}{x_{\max}}\,x
+        \end{BM}
+
+        \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=north east,
+                % domain=0:4,
+                xlabel={\(X/(\si{\milli\gram/\litre})\)},
+                ylabel={\(\mu/\si{\min^{-1}}\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=-\num{2.49596935066880e-05}\,x+\num{2.15405950243889E-02}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2=\num{0.664896458191631}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(\mu_{\max}\cong\SI{2.15405950243889E-02}{\min^{-1}}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(x_{\max}\cong\SI{863.015205640127524}{\milli\gram/\litre}\)}
+        
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+            ]
+            table[
+                x index=0,
+                y index=1,
+            ]{b.3pts.dat};
+            % Plot from file
+            \addplot[
+                mark=*,only marks
+            ] table[
+                x index=2,
+                y index=3,
+            ]{b.3pts.dat};
+        
+            % line regression
+            \addplot[
+                draw=Graph,thick,
+                domain={754.73304:846.9537},
+            ]{-2.49596935066880e-05*x+2.15405950243889E-02};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Gráfico \(\mu\times x\) para encontrar a regressão linear segundo o método dos 3 pontos para aplicar no modelo de Verhulst}
+        \end{center}
+    \end{sectionBox}
+    % ---------------------------------------------------- %
+    %                      Polinomial                      %
+    % ---------------------------------------------------- %
+    \begin{sectionBox}2bm{Método Polinômial} % S
+        
+        No método do polinómio ajustou-se uma regressão polinomial à curva de crescimento que relaciona o tempo com a concentração de biomassa para se calcular \(\mu\) (tabela 2 do anexo) e obteve-se valores de \(\mu_{\max}\) através da ordenada na origem e de \(X_{\max}\) quando a o \(\mu\) é nulo.
+
+        \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % domain=0:4,
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(x/(\si{\milli\gram/\litre})\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(
+                y=
+                - \num{3.9486670391553100E-05}\,x^3 
+                - \num{5.8793741484188300E-03}\,x^2 
+                + \num{4.1562105813850300E+00}\,x 
+                + \num{4.8274725716419100E+02}
+            \)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2=\num{0.98858776539746900}\)}
+
+            % Plot from file
+            \addplot[
+                mark=*,only marks,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+            ]table{b.polinomial.dat};
+        
+            % poli regression
+            \addplot[
+                draw=Graph,thick,
+                domain={10.5:150.25},
+                samples={\mysampledensityFancy},
+            ]{
+                - x^3*3.9486670391553100E-05
+                - x^2*5.8793741484188300E-03
+                + x^1*4.1562105813850300E+00
+                + x^0*4.8274725716419100E+02
+            };
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{
+            Grafico \(X/(\si{\milli\gram/\litre})\times t/\si{\min}\) apresentando o método polinomial com um polinômio de 3º grau, pelo método polinomial \(\odif{x}/\odif{t}=y\).
+        }
+        \end{center}
+
+        \begin{BM}
+            \mu
+            =\frac{\odif{x}/\odif{t}}{x}
+            = 
+            \frac{
+                -\num{11.84600111746593E-5}\,t^2
+                -\num{11.75874829683766E-3}\,t
+                +\num{4.1562105813850300}
+            }{x}
+        \end{BM}
+
+        \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=north east,
+                % domain=0:4,
+                xlabel={\(x/(\si{\milli\gram/\litre})\)},
+                ylabel={\(\mu/\si{\min^{-1}}\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=-\num{1.85117326545549E-05}\,x+\num{1.72895716874992E-02}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2=\num{0.990187642540917}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(\mu_{\max}\cong\SI{1.72895716874992E-02}{\min^{-1}}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(x_{\max}\cong\SI{933.979115306908807}{\milli\gram/\litre}\)}
+        
+            % Plot from file
+            \addplot[
+                mark=*,draw=none,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+            ]
+            table{b.polinomial.2.dat};
+            % Plot from file
+            \addplot[mark=*,draw=none]
+            table[
+                % skip coords between index={0}{1},
+                skip coords between index={10}{30},
+            ]{b.polinomial.2.dat};
+        
+            % poli regression
+            \addplot[
+                draw=Graph,thick,
+                domain={531.38796:801.2535},
+            ]{
+                -1.85117326545549E-05*x+1.72895716874992E-02
+            };
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{
+            Grafico \(\mu\times x\) para valores obtidos de \chemmu{} a partir da equação polinomial de 3º grau obitida no método polinomial, os valores para \(x\geq\num{804.41736}\) foram desconsiderados para maximizar \(R^2\)
+        }
+        \end{center}
+    \end{sectionBox}
+
+    \begin{sectionBox}2bm{Comparando} % S
+        
+        Para se poder verificar qual o melhor método calculou-se a Raiz do erro quadrático médio (em inglês \textit{Root-mean-square error}, \emph{RMSE}) para se descobrir qual deles tem menor variação para com o experimental. Quanto menor o valor mais próximo ele estará do experimental (Tabela 4 do Anexo).
+
+        \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=north west,
+                ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\((t-10.5)/\si{\min}\)},
+                ylabel={\(x/(\si{\milli\gram/\litre})\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphA11]{Experimental}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphA13]{\(RMSE=\num{140.584889579015}\) Malthus}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphA15]{\(RMSE=\num{46.8768513501486}\) Euler}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphA17]{\(RMSE=\num{14.1081244588261}\) 3 Pontos}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphA19]{\(RMSE=\num{16.3512991995859}\) Polinomial}
+        
+            % X
+            \addplot[
+                mark=*,
+                GraphA11, 
+                mark options={fill=GraphA11,opacity=1},
+                draw=GraphA11,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=1,
+            ]{b.all.dat};
+            % Malthus
+            \addplot[
+                mark=*,
+                GraphA13, 
+                mark options={fill=GraphA13,opacity=1},
+                draw=GraphA13,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=2,
+            ]{b.all.dat};
+            % Euler
+            \addplot[
+                mark=*,
+                GraphA15, 
+                mark options={fill=GraphA15,opacity=1},
+                draw=GraphA15,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=3,
+            ]{b.all.dat};
+            % 3 pts
+            \addplot[
+                mark=*,
+                GraphA17, 
+                mark options={fill=GraphA17,opacity=1},
+                draw=GraphA17,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=4,
+            ]{b.all.dat};
+            % polinomio
+            \addplot[
+                mark=*,
+                GraphA19, 
+                mark options={fill=GraphA19,opacity=1},
+                draw=GraphA19,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=5,
+            ]{b.all.dat};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{
+            Grafico \(x\times t\) para valores experimentais e valores previstos pelos modelos estudados, o valor de 10.5 foi reduzido de \textit{t} para eliminar o \textit{outliner} e acomodar a previsão dos modelos
+        }
+        \end{center}
+    \end{sectionBox}
+
+    \section*{Discussão}
+    Depois de processar os dados usando quatro métodos diferentes, ficou evidente que o método dos três pontos é o mais apropriado. Embora matematicamente esse método se tenha mostrado o mais representativo, ao observar o gráfico que compara as curvas do experimento com o método escolhido, percebe-se que ele não reflete completamente o crescimento celular de maneira precisa.\par
+    Sendo assim, a velocidade de crescimento celular máxima observada é \(0.0215\,\si{\min^{-1}}\) e a concentração máxima observada é \(863\,\si{\milli\gram\of{X}/\litre}\).
+
+\end{sectionBox}
+
+% Parte C
+\begin{sectionBox}1bm{Representar a velocidade específica e volumétrica de consumo de oxigénio em função do tempo. Calcular o coeficiente de rendimento de crescimento (\(Y_{\ch{O2}/X}\)).} % S
+    
+    A medição do oxigénio foi realizada com o eletrodo ligado ao respirómetro. Para poder realizar a análise do consumo ao longo do tempo realizaram-se paragens da bomba peristáltica a cada 10 minutos, até que se verificou uma descida da concentração percentual do oxigénio de cerca de 30\% onde se voltava a ligar a bomba.
+    Obteve-se o gráfico Figura 12 em que representa as descidas verificadas e a Figura 13 que exprime os declives de cada uma das descidas de concentração de O2.
+
+    Com esses declives foi calculado os valores para a velocidade volumétrica (\(r_{\ch{O2}}\)) e de velocidade específica de consumo de oxigénio com o tempo (\(V_{\ch{O2}}\)) através das fórmulas :
+    \begin{BM}
+        r_{\ch{O2}}= -C^{\%}_{\ch{O2}}*C^*/100
+        \qquad
+        V_{\ch{O2}}=r_{\ch{O2}}/X
+    \end{BM}
+
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min})\)},
+                xmin={45}, xmax={215},
+                ymin={2}, ymax={7.5},
+            ]
+            % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\(y=\num{4.82707077584026E-02}\,x + \num{2.22083935650271E-03}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\(R^2 = \num{0.943201151061284}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[foreground]{\(Y'_{\ch{O2}/X}=\num{4.82707077584026E-02}\)}
+            % \addlegendimage{empty legend}
+            % \addlegendentry[foreground]{\(m_{\ch{O2}/X}=\num{2.22083935650271E-03}\)}
+        
+            % v o2 X mu todos
+            \addplot[
+                mark=*, only marks,
+                mark size=1,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=1,
+            ]{d.vo2xt.dat};
+            % v o2 X mu considerados
+            \addplot[
+                mark=*, only marks,
+                mark size=1,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=2,
+                y index=3,
+            ]{d.vo2xt.dat};
+
+            % poli regression
+            % 1
+            \addplot[
+                draw=GraphA12,thick,
+                domain={46:49},
+                % y domain={2:8},
+            ]{
+                -1.21170382*x + 62.94053876
+            };
+            % 2
+            \addplot[
+                draw=GraphA13,thick,
+                domain={57:60},
+                % y domain={2:8},
+            ]{
+                -1.197348999*x + 75.49440268
+            };
+            % 3
+            \addplot[
+                draw=GraphA14,thick,
+                domain={66:69},
+                % y domain={2:8},
+            ]{
+                -1.293907436*x + 93.04518429
+            };
+            % 4
+            \addplot[
+                draw=GraphA15,thick,
+                domain={76:79},
+                % y domain={2:8},
+            ]{
+                -1.407286255*x + 114.5555842
+            };
+            % 5
+            \addplot[
+                draw=GraphA16,thick,
+                domain={86:89},
+                % y domain={2:8},
+            ]{
+                -1.561018169*x + 141.803407
+            };
+            % 6
+            \addplot[
+                draw=GraphA17,thick,
+                domain={96:99},
+                % y domain={2:8},
+            ]{
+                -1.689109317*x + 169.3112666
+            };
+            % 7
+            \addplot[
+                draw=GraphA18,thick,
+                domain={106:109},
+                % y domain={2:8},
+            ]{
+                -1.732629839*x + 190.5069783
+            };
+            % 8
+            \addplot[
+                draw=GraphA19,thick,
+                domain={116:119},
+                % y domain={2:8},
+            ]{
+                -1.742324122*x + 208.7324343
+            };
+            % 9
+            \addplot[
+                draw=GraphA22,thick,
+                domain={125:128},
+                % y domain={2:8},
+            ]{
+                -1.812875721*x + 234.3692181
+            };
+            % 10
+            \addplot[
+                draw=GraphA23,thick,
+                domain={136:139},
+                % y domain={2:8},
+            ]{
+                -1.860206283*x + 259.6474981
+            };
+            % 11
+            \addplot[
+                draw=GraphA24,thick,
+                domain={146:148},
+                % y domain={2:8},
+            ]{
+                -1.807094699*x + 270.223195
+            };
+            % 12
+            \addplot[
+                draw=GraphA25,thick,
+                domain={155:158},
+                % y domain={2:8},
+            ]{
+                -1.835255647*x + 292.3475537
+            };
+            % 13
+            \addplot[
+                draw=GraphA26,thick,
+                domain={166:169},
+                % y domain={2:8},
+            ]{
+                -1.821791449*x + 310.0407442
+            };
+            % 14
+            \addplot[
+                draw=GraphA27,thick,
+                domain={175:178},
+                % y domain={2:8},
+            ]{
+                -1.672664605*x + 300.4120448
+            };
+            % 15
+            \addplot[
+                draw=GraphA28,thick,
+                domain={186:189},
+                % y domain={2:8},
+            ]{
+                -1.650415214*x + 314.0318228
+            };
+            % 16
+            \addplot[
+                draw=GraphA29,thick,
+                domain={196:199},
+                % y domain={2:8},
+            ]{
+                -1.651377352*x + 330.0586378
+            };
+            % 17
+            \addplot[
+                draw=GraphA12,thick,
+                domain={206:209},
+                % y domain={2:8},
+            ]{
+                -1.580526007*x + 331.7432375
+            };
+            % % 1
+            % \addplot[
+            %     draw=GraphA12,thick,
+            %     domain={46.430288:48.99395},
+            % ]{
+            %     -1.21170382*x + 62.94053876
+            % };
+            % % 2
+            % \addplot[
+            %     draw=GraphA13,thick,
+            %     domain={57.628289:59.57199},
+            % ]{
+            %     -1.197348999*x + 75.49440268
+            % };
+            % % 3
+            % \addplot[
+            %     draw=GraphA14,thick,
+            %     domain={67.016034:68.967314},
+            % ]{
+            %     -1.293907436*x + 93.04518429
+            % };
+            % % 4
+            % \addplot[
+            %     draw=GraphA15,thick,
+            %     domain={77.027259:78.727063},
+            % ]{
+            %     -1.407286255*x + 114.5555842
+            % };
+            % % 5
+            % \addplot[
+            %     draw=GraphA16,thick,
+            %     domain={87.005091:88.666264},
+            % ]{
+            %     -1.561018169*x + 141.803407
+            % };
+            % % 6
+            % \addplot[
+            %     draw=GraphA17,thick,
+            %     domain={96.826435:98.214937},
+            % ]{
+            %     -1.689109317*x + 169.3112666
+            % };
+            % % 7
+            % \addplot[
+            %     draw=GraphA18,thick,
+            %     domain={106.700518:108.081391},
+            % ]{
+            %     -1.732629839*x + 190.5069783
+            % };
+            % % 8
+            % \addplot[
+            %     draw=GraphA19,thick,
+            %     domain={116.611628:118.100014},
+            % ]{
+            %     -1.742324122*x + 208.7324343
+            % };
+            % % 9
+            % \addplot[
+            %     draw=GraphA22,thick,
+            %     domain={126.278242:127.817259},
+            % ]{
+            %     -1.812875721*x + 234.3692181
+            % };
+            % % 10
+            % \addplot[
+            %     draw=GraphA23,thick,
+            %     domain={136.682318:138.120672},
+            % ]{
+            %     -1.860206283*x + 259.6474981
+            % };
+            % % 11
+            % \addplot[
+            %     draw=GraphA24,thick,
+            %     domain={146.523729:147.83627},
+            % ]{
+            %     -1.807094699*x + 270.223195
+            % };
+            % % 12
+            % \addplot[
+            %     draw=GraphA25,thick,
+            %     domain={156.385041:157.743574},
+            % ]{
+            %     -1.835255647*x + 292.3475537
+            % };
+            % % 13
+            % \addplot[
+            %     draw=GraphA26,thick,
+            %     domain={167.234692:168.563271},
+            % ]{
+            %     -1.821791449*x + 310.0407442
+            % };
+            % % 14
+            % \addplot[
+            %     draw=GraphA28,thick,
+            %     domain={176.407044:177.831353},
+            % ]{
+            %     -1.672664605*x + 300.4120448
+            % };
+            % % 15
+            % \addplot[
+            %     draw=GraphA29,thick,
+            %     domain={187.033875:188.524289},
+            % ]{
+            %     -1.650415214*x + 314.0318228
+            % };
+            % % 16
+            % \addplot[
+            %     draw=GraphA29,thick,
+            %     domain={196.650072:198.129583},
+            % ]{
+            %     -1.651377352*x + 330.0586378
+            % };
+            % % 17
+            % \addplot[
+            %     draw=GraphA29,thick,
+            %     domain={206.45684:208.122269},
+            % ]{
+            %     -1.580526007*x + 331.7432375
+            % };
+
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Apresentação das regressões para a primeira parte os vales de \(V_{\ch{O2}}\times t\) durante o experimento, cada declive está representado na tabela asseguir com sua cor correspondente}
+        % \vspace{1ex}
+
+        \sisetup{
+            % input / scientific / engineering / input / fixed
+            exponent-mode={input},
+            % exponent-to-prefix={false}, % 1000 g -> 1 kg
+            % exponent-product={*}, % x * 10^y
+            % fixed-exponent={0},
+            % round-mode={places},% figures/places/unsertanty/none
+            round-precision={4},
+            % round-minimum={0.01}, % <x => 0
+            % output-exponent-marker={\,\mathrm{E}},
+        }
+
+        \begin{tabular}{*{6}{C}}
+            \toprule
+            
+                & \text{Declive}
+                & R^2
+                && \text{Declive}
+                & R^2
+            
+            \\\midrule
+            
+
+               \color{GraphA12}  1 & \color{GraphA12}\num{-1.211703820} & \color{GraphA12}\num{0.99885733784194}
+            &  \color{GraphA23} 10 & \color{GraphA23}\num{-1.860206283} & \color{GraphA23}\num{0.99734178542062}
+            \\ \color{GraphA13}  2 & \color{GraphA13}\num{-1.197348999} & \color{GraphA13}\num{0.99785790832275}
+            &  \color{GraphA24} 11 & \color{GraphA24}\num{-1.807094699} & \color{GraphA24}\num{0.99655178991376}
+            \\ \color{GraphA14}  3 & \color{GraphA14}\num{-1.293907436} & \color{GraphA14}\num{0.99800617408094}
+            &  \color{GraphA25} 12 & \color{GraphA25}\num{-1.835255647} & \color{GraphA25}\num{0.99640183694702}
+            \\ \color{GraphA15}  4 & \color{GraphA15}\num{-1.407286255} & \color{GraphA15}\num{0.99759797589098}
+            &  \color{GraphA26} 13 & \color{GraphA26}\num{-1.821791449} & \color{GraphA26}\num{0.99654207804830}
+            \\ \color{GraphA16}  5 & \color{GraphA16}\num{-1.561018169} & \color{GraphA16}\num{0.99770591876705}
+            &  \color{GraphA27} 14 & \color{GraphA27}\num{-1.672664605} & \color{GraphA27}\num{0.99636132746758}
+            \\ \color{GraphA17}  6 & \color{GraphA17}\num{-1.689109317} & \color{GraphA17}\num{0.99700943015470}
+            &  \color{GraphA28} 15 & \color{GraphA28}\num{-1.650415214} & \color{GraphA28}\num{0.99717279891830}
+            \\ \color{GraphA18}  7 & \color{GraphA18}\num{-1.732629839} & \color{GraphA18}\num{0.99676684620367}
+            &  \color{GraphA29} 16 & \color{GraphA29}\num{-1.651377352} & \color{GraphA29}\num{0.99731564611419}
+            \\ \color{GraphA19}  8 & \color{GraphA19}\num{-1.742324122} & \color{GraphA19}\num{0.99728286638640}
+            &  \color{GraphA12} 17 & \color{GraphA12}\num{-1.580526007} & \color{GraphA12}\num{0.99752996487922}
+            \\ \color{GraphA22}  9 & \color{GraphA22}\num{-1.812875721} & \color{GraphA22}\num{0.99731079357258}
+            
+            \\\bottomrule
+            % \multicolumn{3}{r}{Declives e \(R^2\) referentes as regreções lineares no gráfico anterior}
+        \end{tabular}
+        \caption{Declives e \(R^2\) referentes as regreções lineares no gráfico anterior}
+        % \captionof{table}{Declives e \(R^2\) referentes as regreções lineares no gráfico anterior}
+    \end{center}
+
+    Podemos assim traçar os gráficos de \(r_{\ch{O2}}\) e de \(V_{\ch{O2}}\) em função do tempo (Figura 14)  para poder analisar a evolução do consumo de oxigénio e o aumento da concentração da biomassa. (Tabela 5 do Anexo)
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend style={at={(0.5,0.03)},anchor=south},
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(r_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\litre.\min})\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\litre})\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphC]{\(r_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\litre.\min})\)}
+        
+            % r o2 X t
+            \addplot[
+                mark=*, only marks,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+                domain={0:160},
+            ]table[
+                x index=0,
+                y index=1,
+            ]{c.ro2-vo2Xt.dat};
+        
+        \end{axis}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=north west,
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                ylabel={\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\litre})\)},
+                axis y line*={right},
+                axis x line={none},
+                % xmin=0,xmax=160,
+            ]
+
+            % V o2 X t
+            \addplot[
+                mark=*, only marks,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+                % draw=Graph,draw opacity=0.2,
+                domain={0:160},
+            ]table[
+                x index=0,
+                y index=2,
+            ]{c.ro2-vo2Xt.dat};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Grafico da velocidade específica e volumétrica de consumo de oxigénio em função do tempo}
+    \end{center}
+
+    Já ao realizarmos o gráfico de \(V_{\ch{O2}}\) em função da velocidade específica de crescimento (\chemmu) que obtivemos com o método dos 3 pontos, conseguimos determinar o coeficiente de rendimento de crescimento a partir do declive.
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\(\mu/\si{\min^{-1}}\)},
+                ylabel={\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min})\)},
+                xmin={.6e-3}
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=\num{4.79257265650152E-02}\,x + \num{2.21725344111648E-03}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2 = \num{0.940552310741722}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(Y'_{\ch{O2}/X}=\num{4.79257265650152E-02}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(m_{\ch{O2}/X}=\num{2.21725344111648E-03}\)}
+
+            % v o2 X mu todos
+            \addplot[
+                mark=*, only marks,
+                GraphC,
+                mark options={fill=GraphC,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=1,
+                y index=0,
+                skip coords between index={0}{0},
+                skip coords between index={17}{20},
+            ]{c.vo2xmu.dat};
+            % v o2 X mu considerados
+            \addplot[
+                mark=*, only marks,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=3,
+                y index=2,
+                % skip coords between index={0}{3},
+                % skip coords between index={8}{30},
+            ]{c.vo2xmu.dat};
+
+            % poli regression
+            \addplot[
+                draw=Graph,thick,
+                domain={1.84761E-03:8.01102E-03},
+            ]{
+                4.79257265650152E-02*x + 2.21725344111648E-03
+            };
+
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Gráfico da velocidade espeçifica de consumo de oxigênio (\(V_{\ch{O2}}\)) em função da taxa especifica de crescimento (\chemmu{})}
+    \end{center}
+    
+    \section*{Discussão}
+    No gráfico da figura 14 deveríamos observar uma velocidade específica de consumo de oxigénio constante ao longo do tempo, mas tal não acontece. Deveria acontecer, pois esta velocidade retrata a quantidade de oxigénio necessária às células. Por isso, como estamos na fase exponencial, as células necessitam da máxima quantidade de \ch{O2} para crescimento celular. No entanto, quando atingimos a fase estacionária, há uma descida ligeira da velocidade especifica. Deveria haver uma grande diminuição porque como se esgotou o substrato, não há crescimento, apenas manutenção celular.\par
+    Nesse mesmo gráfico verificamos um aumento do consumo de oxigénio, durante a fase exponencial. Durante a fase estacionária, há uma diminuição pois não existe grande quantidade de oxigénio a ser consumida.\par
+    Através do gráfico da figura 15, retirámos um valor baixo de coeficiente de rendimento de crescimento (\(m= 0.022\,\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min}\)). Logo concluímos que a maioria do oxigénio foi utilizado no crescimento celular. Para obtermos a melhor linearização possível selecionámos alguns pontos pois havia uma variedade de valores. Apesar de tudo, sabemos que estes valores ficam aquém do esperado.
+
+\end{sectionBox}
+
+% Parte D
+\begin{sectionBox}1bm{Estimar o valor de \(K'_{L\,a}\) durante a fase de crescimento celular} % S
+    
+    Para obter o valor de \(k'_{L\,a}\) na fase de crescimento celular é necessário considerar que o \ch{O2} não se encontra dissolvido no meio, ou seja, que todo o oxigénio transferido pelo dispersor para o sistema é diretamente consumido pela cultura.\par
+    Assim podemos considerar que a velocidade de transferência de \ch{O2} nesse período é igual à velocidade volumétrica de \ch{O2}, o que nos permite chegar a equação:
+    \begin{BM}
+        (C^*-C_L)=r_{\ch{O2}}/k_{L\,a}
+    \end{BM}
+    O declive da função de \(C^*-C_L\) em função de \(r_{\ch{O2}}\), com o declive (\textit{m}) igual ao inverso de \(k_{L\,a}\) permite-nos chegar ao valor do declive.
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\((C^*-C_L)/\si{\milli\gram\of{\ch{O2}}/\litre}\)},
+                ylabel={\(r_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\litre.\min})\)},
+            ]
+            % % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=\num{3.51769652354435E-01}\,x + \num{8.37977452782121E-01}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2 = \num{.822671881415277}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(k'_{L\,a} = \SI{3.51769652354435E-01}{\min^{-1}}\)}
+        
+            % v o2 X mu todos
+            \addplot[
+                mark=*, only marks,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=1,
+                y index=0,
+            ]{d.ro2xccl.dat};
+
+            % poli regression
+            \addplot[
+                draw=Graph,thick,
+                domain={1.15394286994560:2.80046394997120},
+            ]{
+                3.51769652354435E-01*x + 8.37977452782121E-01
+            };
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Gráfico \(r_{\ch{O2}}\times (C^*-C_L)\) usado para obter o valor de \(k'_{L\,a}\)}
+    \end{center}
+    
+    \section*{Discussão}
+    O valor de \(K'_{L\,a}\) obtido antes da inoculação é de \(2.01\,\si{\min^{-1}}\), o que significa que o valor durante a fase exponencial é cerca de 6 vezes menor (\(K'_{L\,a}= 0.352\,\si{\min^{-1}}\)). Esta diferença pode ser explicada pela dificuldade na transferência de oxigénio da fase gasosa para a líquida, devido à existência de microrganismos no sistema e também devido ao aumento de viscosidade do reator.
+\end{sectionBox}
+
+% Parte E
+\begin{sectionBox}1bm{Comparar a velocidade máxima de transferência de massa com a velocidade máxima de consumo de oxigénio.} % S
+    
+    Para podermos analisar se existe algum oxigénio no meio teremos de verificar se a velocidade de transferência de \ch{O2}, \(Q_{\ch{O2}}\) nesse período é igual à velocidade volumétrica de \ch{O2}, \(r_{\ch{O2}}\).
+    Para isso calcula-se os valores máximos para cada uma delas da forma exposta abaixo:
+
+    \begin{BM}
+        Q_{\ch{O2}}
+        =K'_{L\,a}\,C^*
+        \cong\num{3.51769652354435E-01}*\num{7.7766}
+        \cong\SI{2.735571878499499}{\milli\gram/\litre.\min}
+        \\
+        -r_{\ch{O2}}
+        =Y_{\ch{O2}/X}
+        \,\mu_{\max}
+        \,X_{\max}
+        \cong
+        \num{0.0483}
+        *\num{2.154059502438890E-02}
+        *\num{863.0152056401270}
+        \cong\SI{0.897890288453392}{\milli\gram/\litre.\min
+        }
+    \end{BM}
+
+    \section*{Discussão}
+    Os valores que obtivemos para a velocidade de transferência de massa máxima e para a velocidade de consumo de oxigénio máxima foram respetivamente, \(Q_{\ch{O2}\,\max} = 2.74\,\si{\milli\gram/\litre.\min}\) e \(-r_{\ch{O2}\,\max}=0.90\,\si{\milli\gram\of{\ch{O2}}/\litre.\min}\). Verificamos que \(Q_{\ch{O2}\,\max}\) é aproximadamente o triplo de          \(-r_{\ch{O2}\,\max}\), ou seja, a cultura não está a consumir o oxigénio transferido. Verificamos assim que esta situação se trata de uma limitação cinética por metabolismo celular.\par
+    De forma a otimizar o sistema deve-se tentar aproximar o valor de \(Q_{\ch{O2}\,\max}\) ao valor de \(-r_{\ch{O2}\,\max}\).
+\end{sectionBox}
+
+% Parte F
+\begin{sectionBox}1bm{Estimar a velocidade de consumo de acetato ao longo do tempo com base na estequiometria de reação de oxidação do acetato} % S
+    
+    O Acetato de Potássio tem a seguinte reação de dissociação:
+    \begin{center}\large
+        \ch{KCH3COO\aq{} + H2O\lqd{} -> KOH\aq{} + CH3COOH\aq{}}
+    \end{center}
+    O agora ácido acético irá reagir com o oxigénio, através de uma reação de oxidação:
+    \begin{center}\large
+        \ch{CH3COOH\aq{} + 2 O2\aq{} -> 2 CO2\gas{} + 2H2O\lqd{}}
+    \end{center}
+    Assim, através desta última reação, para cada mole de acetato consumida, são consumidas duas moles de oxigénio. Portanto, a velocidade de consumo de \ch{O2} é o dobro da de consumo de acetato.\par
+
+    Essa comparação só pode ser realizada através da unidade de quantidade química (moles) e não em unidades de massa. Assim a equação de \(r_{\ch{O2}}\) para racetato fica:
+    \begin{BM}
+        -r_{\ch{CH3COOH}}
+        = \frac{-r_{\ch{O2}}}{2}
+        \,\frac{M_{w\,\ch{CH3COOH}}}{M_{w\,\ch{O2}}}
+    \end{BM}
+    A massa molecular (\(M_w\)) \(M_{w\,\ch{CH3COOH}}\) tem o valor de \SI{60e3}{\milli\gram/\mole} e o valor de \(M_{w\,\ch{O2}}\) é \SI{32e3}{\milli\gram/\mole}\par
+
+
+    Podemos com isso realizar o gráfico de racetato em função do tempo (Figura 17) (Tabela 6 do Anexo).
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % legend style={at={(1-0.03,0.5)}},
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\(t/\si{\min}\)},
+                ylabel={\(r/(\si{\milli\gram/\litre.\min})\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\ch{O2}}
+            \addlegendimage{empty legend}
+            \addlegendentry[GraphC]{\ch{CH3COOH}}
+        
+            % ro2
+            \addplot[
+                mark=*, only marks,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=1,
+            ]{f.rxt.dat};
+            % rch3ooh
+            \addplot[
+                mark=*, only marks,
+                GraphC, 
+                mark options={fill=GraphC,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+                x index=0,
+                y index=2,
+            ]{f.rxt.dat};
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Gráfico comparando \(r\) de \ch{O2} e \ch{CH3OOH}}
+    \end{center}
+
+    \section*{Discussão}
+    Ao analisar o gráfico, percebemos que tanto a velocidade de consumo do acetato quanto a velocidade de consumo do oxigénio aumentam até atingir um ponto máximo. Após esse ponto, ocorre uma diminuição lenta tal como vimos na alínea \textit{C}, indicando que o substrato (acetato) foi completamente utilizado (fase estacionária). Nessa fase, o acetato é exclusivamente consumido para a manutenção celular, assim como o oxigénio.\par
+    Ao aplicar a estequiometria da reação, concluímos que há uma relação de 2:1, o que significa que, para cada duas moles de oxigénio consumidas, uma mole de acetato é consumida. Essa relação é corroborada pelo gráfico que representa as velocidades de consumo de substrato e oxigénio.
+    
+\end{sectionBox}
+
+% Parte G
+\begin{sectionBox}1bm{Estimar o rendimento verdadeiro (\(Y'_{X/S}\)) e o coeficiente de manutenção de acetato e compare com o rendimento observado (\(Y_{X/S}\))} % S
+    
+    Como já sabemos que o coeficiente do rendimento verdadeiro (\textit{Y'}) só irá ter em conta o substrato usado para o crescimento celular e que este se deu apenas usando o acetato como fonte de carbono. Já o coeficiente de rendimento aparente (\textit{Y}) tem também em conta o consumo de substrato para manutenção.\\
+
+    Através do \textit{Y'} e relacionando-o com o \(r_{\text{Ac}}\) podemos chegar a equação:
+
+    \begin{BM}
+        r_S=\frac{r_X}{Y'_{X/S}}+m\,X
+        \land
+        v_S\,r_X=\odv{x}{t}=r_S/X
+        \land
+        \mu=\odv{X}{t}\,X^{-1}=r_X/X
+        \implies \\
+        \implies
+        v_s=Y'^{-1}_{X/S}\,\mu+m
+    \end{BM}
+    \begin{BM}
+        Y_{X/S}
+        =\adv{X}{S}
+        \\
+        \adif{S}
+        =S_f-S_i
+        =\frac{m_{\text{acetato}}}{V_{\text{reator}}}-0
+        =\frac{9.5*2*10^3/100}{0.5*0.002*0.1\text{(inóculo)}}
+        \cong\num{1.9e6}
+        \implies\\
+        Y_{X/S}
+        \cong\frac{\num{846.9537}-\num{531.38796}}{1.9\E6}
+        \cong\SI{1.66087231578947368e-4}{\milli\gram\of{X}/\milli\gram\of{S}}
+    \end{BM}
+
+    Podemos então realizar um gráfico dessa equação (Figura 18) e obtemos do inverso do declive o \textit{Y'} e o coeficiente de manutenção da ordenada na origem
+    E para chegarmos ao valor coeficiente aparente precisamos de calcular o quociente entre  variação de biomassa e a variação de substrato. (Tabela 8 do Anexo)
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                set layers, mark layer={axis tick labels}, % regression on top
+                % xmajorgrids = true,
+                legend pos=south east,
+                % ymax={1e3},
+                % ytick={50/0,600,...,1100},
+                xlabel={\(\mu/\si{\min^{-1}}\)},
+                ylabel={\(V_{\text{acetato}}/(\si{\milli\gram/\litre.\min})\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(y=\num{3.80408231571302E-02}\,x + \num{2.05465076422611E-03}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\(R^2=\num{0.450493988105184}\)}
+            \addlegendimage{empty legend}
+            \addlegendentry[foreground]{\(Y'_{X/S}=\num{26.287548927882874}\)}
+
+            % ro2
+            \addplot[
+                mark=*, only marks,
+                Graph, 
+                mark options={fill=Graph,opacity=1},
+                % draw=GraphC,draw opacity=0.2,
+            ]table[
+            ]{g.dat};
+            % % rch3ooh
+            % \addplot[
+            %     mark=*, only marks,
+            %     GraphC, 
+            %     mark options={fill=GraphC,opacity=1},
+            %     % draw=GraphC,draw opacity=0.2,
+            % ]table[
+            %     x index=0,
+            %     y index=2,
+            % ]{g.dat};
+
+            % poli regression
+            \addplot[
+                draw=Graph,thick,
+                domain={7.18774230019280E-04:8.01101656098276E-03},
+            ]{
+                3.80408231571302E-02*x + 2.05465076422611E-03
+            };
+
+        
+        \end{axis}
+        \end{tikzpicture}
+        \captionof{figure}{Gráfico da velocidade específica de consumo de acetato (\(V_{\ch{CH3COOH}}\)) em função da velocidade específica de crescimento (\chemmu)}
+    \end{center}
+    \section*{Discussão}
+    De acordo com os cálculos realizados, o coeficiente de rendimento verdadeiro\\\(Y'_{X/S}=\SI{26.287548927882874}{\milli\gram\of{X}/\milli\gram\of{Ac}}\), o coeficiente de manutenção (\textit{m}) é de \(\SI{2.05465076422611E-03}{\milli\gram\of{Ac}/\milli\gram\of{X}}\) e o coeficiente de rendimento aparente (\(Y_{X/S}\)) é \(\SI{1.66087231578947368e-4}{\milli\gram\of{X}/\milli\gram\of{Ac}}\).\par
+    Ao analisar ambos os valores, observa-se que o coeficiente de rendimento verdadeiro é maior do que o aparente, o que é esperado. Isso ocorre porque o coeficiente de rendimento verdadeiro leva em consideração o acetato consumido para o crescimento celular, manutenção e formação de produtos, enquanto o coeficiente de rendimento aparente considera apenas o crescimento celular.
+\end{sectionBox}
+
+\end{document}

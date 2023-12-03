@@ -1,0 +1,320 @@
+% !TEX root = ./EB-Relatorio.6.tex
+\providecommand\mainfilename{"./EB-Relatorio.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Relatorio.6.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Relatorio.6}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Relatorio.6/graphics/}
+
+\mymakesubfile{6}
+{Anexos} % Subfile Title
+{Anexos} % Part Title
+
+\begin{multicols}{2}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{CC}
+            \toprule
+            
+                t\,(\si{\min})
+                & \ln{x}\,(\si{\milli\gram/\litre})
+            
+            \\\midrule
+            
+              \num{10.5   } & \num{6.28}
+            \\\num{20.333 } & \num{6.35}
+            \\\num{30.6666} & \num{6.40}
+            \\\num{40.5666} & \num{6.42}
+            \\\num{50.666 } & \num{6.50}
+            \\\num{60.666 } & \num{6.58}
+            \\\num{70.5   } & \num{6.63}
+            \\\num{80 }     & \num{6.63}
+            \\\num{90.25  } & \num{6.67}
+            \\\num{100.083333 } & \num{6.69}
+            \\\num{110.12 } & \num{6.69}
+            \\\num{120.8333   } & \num{6.71}
+            \\\num{130.0666   } & \num{6.73}
+            \\\num{140.2  } & \num{6.733449605}
+            \\\num{150.25 } & \num{6.74164603}
+            
+            \\\bottomrule
+        \end{tabular}\\\vspace{1ex}
+        \tablecaption{Tabela geradora do gráfico \(\ln{X}\times t\) no método de Máltus}
+        \vspace{2ex}
+    \end{center}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{CC}
+            \toprule
+            
+                t\,(\si{\min})
+                & x\,(\si{\milli\gram/\litre})
+            
+            \\\midrule
+            
+                  \num{10.5} & \num{531.38796}
+                \\\num{20.333} & \num{570.52608}
+                \\\num{30.6666} & \num{599.82108}
+                \\\num{40.5666} & \num{612.5937}
+                \\\num{50.666} & \num{662.9811}
+                \\\num{60.666} & \num{719.34468}
+                \\\num{70.5} & \num{754.73304}
+                \\\num{80} & \num{759.18588}
+                \\\num{90.25} & \num{784.49676}
+                \\\num{100.083333} & \num{801.2535}
+                \\\num{110.12} & \num{804.41736}
+                \\\num{120.8333} & \num{823.5177}
+                \\\num{130.0666} & \num{834.76698}
+                \\\num{140.2} & \num{840.04008}
+                \\\num{150.25} & \num{846.9537}
+            
+            \\\bottomrule
+        \end{tabular}\\\vspace{1ex}
+        \tablecaption{Tabela geradora do gráfico \(X\times t\) no método Polinomial}
+        \vspace{2ex}
+    \end{center}
+\end{multicols}
+
+\begin{center}
+    \vspace{1ex}
+    \begin{tabular}{CCCC}
+        \toprule
+        
+            \multirow{2}{*}{x\,(\si{\milli\gram/\litre})}
+            & \multicolumn{3}{C}{
+                \mu\,(\si{\min^{-1}})
+            }
+            \\\cline{2-4}
+             & \text{Euler} & \text{3 Pontos} & \text{Polinomial}
+        
+        \\\midrule
+        
+          \num{531.38796} & \num{-7.77059382376671E-03}& \num{-3.90429679004550E-04} & \num{7.56449865374486E-03}
+        \\\num{570.52608} & \num{6.97651318840355E-03} & \num{5.94782462714899E-03} & \num{6.77996161811664E-03}
+        \\\num{599.82108} & \num{4.72628744657935E-03} & \num{3.46619552841057E-03} & \num{6.14217355588185E-03}
+        \\\num{612.5937} &  \num{2.10606742505452E-03} & \num{5.15528602868799E-03} & \num{5.68770873677698E-03}
+        \\\num{662.9811} &  \num{7.52532443258264E-03} & \num{8.01101656098276E-03} & \num{4.91167822408189E-03}
+        \\\num{719.34468} & \num{7.83540652583961E-03} & \num{6.43084305529282E-03} & \num{4.18002458743215E-03}
+        \\\num{754.73304} & \num{4.76800684409289E-03} & \num{2.73034378643860E-03} & \num{3.62835971235224E-03}
+        \\\num{759.18588} & \num{6.17398205561983E-04} & \num{1.98505245838918E-03} & \num{3.23684450785650E-03}
+        \\\num{784.49676} & \num{3.14769196285970E-03} & \num{2.67005986458673E-03} & \num{2.71526851535644E-03}
+        \\\num{801.2535} &  \num{2.12676177015457E-03} & \num{1.25122268120120E-03} & \num{2.23746991423842E-03}
+        \\\num{804.41736} & \num{3.91873872071895E-04} & \num{1.33385385963612E-03} & \num{1.77127210880273E-03}
+        \\\num{823.5177} &  \num{2.16493515967288E-03} & \num{1.84761483718152E-03} & \num{1.22130313413198E-03}
+        \\\num{834.76698} & \num{1.45949468717514E-03} & \num{1.02200193803900E-03} & \num{7.46033584507437E-04}
+        \\\num{840.04008} & \num{6.19456499088423E-04} & \num{7.18774230019280E-04} & \num{2.13298575133289E-04}
+        \\\num{846.9537} &  \num{8.12231398315761E-04} & \num{-6.35496954102254E-04} & \num{-3.36244479755440E-04}
+
+        \\\bottomrule
+    \end{tabular}\\\vspace{1ex}
+    \tablecaption{Dados do gráfico \(\mu\times X\) no método de Euler, 3 pontos e Polinomial}
+    \vspace{2ex}
+\end{center}
+
+\begin{center}
+    \vspace{1ex}
+    \begin{tabular}{C*{5}{C}}
+        \toprule
+        
+            \multirow{2}{*}{t-10.5\,(\si{\min})}
+            & \multicolumn{5}{C}{
+                x\,(\si{\milli\gram/\litre})
+            }
+            \\\cline{2-6}
+            & \text{Exp} 
+            & \text{Malthus} 
+            & \text{Euler} 
+            & \text{3 Pontos} 
+            & \text{Polinomial}
+        
+        \\\midrule
+        
+          \num{0} & \num{531.38796} & \num{531.38796} & \num{531.38796} & \num{531.38796} & \num{531.38796} 
+        \\\num{9.833} & \num{570.52608} & \num{542.514135} & \num{594.6013727} & \num{573.4498501} & \num{569.7865781} 
+        \\\num{20.1666} & \num{599.82108} & \num{554.017241} & \num{653.4973681} & \num{614.6019935} & \num{608.6153677} 
+        \\\num{30.0666} & \num{612.5937} & \num{564.8418306} & \num{701.3876669} & \num{650.5649463} & \num{643.9039458} 
+        \\\num{40.166} & \num{662.9811} & \num{575.6741819} & \num{741.4453103} & \num{683.4592766} & \num{677.6230438} 
+        \\\num{50.166} & \num{719.34468} & \num{586.1792673} & \num{772.9749815} & \num{712.1729648} & \num{708.499481} 
+        \\\num{60} & \num{754.73304} & \num{596.285923} & \num{797.1221326} & \num{736.7556453} & \num{736.2926092} 
+        \\\num{69.5} & \num{759.18588} & \num{605.8302318} & \num{815.0832942} & \num{757.2574512} & \num{760.6803367} 
+        \\\num{79.75} & \num{784.49676} & \num{615.8787297} & \num{829.7270943} & \num{776.0995985} & \num{784.314623} 
+        \\\num{89.583333} & \num{801.2535} & \num{625.2690216} & \num{840.1721588} & \num{791.3121458} & \num{804.4695406} 
+        \\\num{99.62} & \num{804.41736} & \num{634.5957446} & \num{848.0634731} & \num{804.3044468} & \num{822.6419534} 
+        \\\num{110.3333} & \num{823.5177} & \num{644.2589548} & \num{854.1799512} & \num{815.7407155} & \num{839.5644076} 
+        \\\num{119.5666} & \num{834.76698} & \num{652.3420311} & \num{858.0319463} & \num{823.8805258} & \num{852.2765851} 
+        \\\num{129.7} & \num{840.04008} & \num{660.9495769} & \num{861.1456322} & \num{831.2725386} & \num{864.4294302} 
+        \\\num{139.75} & \num{846.9537} & \num{669.212677} & \num{863.3839499} & \num{837.2670218} & \num{874.8200558} 
+
+        \\\bottomrule
+    \end{tabular}\\\vspace{1ex}
+    \tablecaption{Dados do gráfico \(X\times t-10.5\) que compara todos os métodos ultilizados junto dos dados experimentais}
+    \vspace{2ex}
+\end{center}
+    
+    \begin{center}
+        \begin{tabular}{CCC}
+            \toprule
+            
+                t\,(\si{\min})
+                & r_{\ch{O2}}\,(\si{\frac{\milli\gram\of{\ch{O2}}}{\litre.\min}})
+                & V_{\ch{O2}}\,(\si{\frac{\milli\gram\of{\ch{O2}}}{\milli\gram\of{\ch{O2}}.\litre}})
+            
+            \\\midrule
+            
+               \num{0.000} &  \num{1.2147889344E+00} &  \num{2.1136153675E-03} 
+            \\ \num{10.500} &  \num{1.2130780736E+00} &  \num{2.2828482482E-03} 
+            \\ \num{20.333} &  \num{1.3200846400E+00} &  \num{2.3138024470E-03} 
+            \\ \num{30.667} &  \num{1.4368120064E+00} &  \num{2.3954009859E-03} 
+            \\ \num{40.567} &  \num{1.5806798464E+00} &  \num{2.5803070557E-03} 
+            \\ \num{50.666} &  \num{1.7424339584E+00} &  \num{2.6281804389E-03} 
+            \\ \num{60.666} &  \num{1.7839612160E+00} &  \num{2.4799811072E-03} 
+            \\ \num{70.500} &  \num{1.7915045568E+00} &  \num{2.3736930303E-03} 
+            \\ \num{80.000} &  \num{1.8693487232E+00} &  \num{2.4623070218E-03} 
+            \\ \num{90.250} &  \num{1.8886347904E+00} &  \num{2.4074475341E-03} 
+            \\ \num{100.083} &  \num{1.8614943168E+00} &  \num{2.3232276886E-03} 
+            \\ \num{110.120} &  \num{1.9069098944E+00} &  \num{2.3705479136E-03} 
+            \\ \num{120.833} &  \num{1.8831133760E+00} &  \num{2.2866701906E-03} 
+            \\ \num{130.067} &  \num{1.7385456384E+00} &  \num{2.0826717875E-03} 
+            \\ \num{140.200} &  \num{1.6883863104E+00} &  \num{2.0098878025E-03} 
+            \\ \num{150.250} &  \num{1.6664561856E+00} &  \num{1.9675882939E-03} 
+            \\ \num{160.012} &  \num{1.6120197056E+00} &  \num{1.9436520288E-03} 
+            
+            \\\bottomrule
+        \end{tabular}\\\vspace{1ex}
+        \tablecaption{Dados do gráfico duplo \(r_{\ch{O2}}\times t\text{ e }V_{\ch{O2}}\times t\)}
+    \end{center}
+    % \vspace{10ex}
+    \begin{center}
+        \begin{tabular}{CCC}
+            \toprule
+            
+                \multirow{2}{*}{t\,(\si{\min})}
+                & \multicolumn{2}{C}{r (\si{\milli\gram/\litre.\min})}
+                \\\cline{2-3}
+                & \ch{O2}
+                & \ch{CH3COOH}
+            
+            \\\midrule
+               \num{  0.000} &  \num{1.21170382000085E+00} &  \num{1.13695684060455E+00}
+            \\ \num{ 10.500} &  \num{1.19734899860542E+00} &  \num{1.12348753225395E+00}
+            \\ \num{ 20.333} &  \num{1.29390743609623E+00} &  \num{1.21408952113204E+00}
+            \\ \num{ 30.667} &  \num{1.40728625543469E+00} &  \num{1.32047428455257E+00}
+            \\ \num{ 40.567} &  \num{1.56101816880516E+00} &  \num{1.46472286051700E+00}
+            \\ \num{ 50.666} &  \num{1.68910931680410E+00} &  \num{1.58491238582375E+00}
+            \\ \num{ 60.666} &  \num{1.73262983877155E+00} &  \num{1.62574823559233E+00}
+            \\ \num{ 70.500} &  \num{1.74232412159864E+00} &  \num{1.63484450234752E+00}
+            \\ \num{ 80.000} &  \num{1.81287572080843E+00} &  \num{1.70104394978106E+00}
+            \\ \num{ 90.250} &  \num{1.86020628268941E+00} &  \num{1.74545480762601E+00}
+            \\ \num{100.083} &  \num{1.80709469943082E+00} &  \num{1.69561954515968E+00}
+            \\ \num{110.120} &  \num{1.83525564666002E+00} &  \num{1.72204331395668E+00}
+            \\ \num{120.833} &  \num{1.82179144930945E+00} &  \num{1.70940968928018E+00}
+            \\ \num{130.067} &  \num{1.67266460450032E+00} &  \num{1.56948210671021E+00}
+            \\ \num{140.200} &  \num{1.65041521369345E+00} &  \num{1.54860522519874E+00}
+            \\ \num{150.250} &  \num{1.65137735195900E+00} &  \num{1.54950801156003E+00}
+            \\ \num{160.012} &  \num{1.58052600732853E+00} &  \num{1.48302730925145E+00}
+            \\\bottomrule
+        \end{tabular}\\\vspace{1ex}
+        \tablecaption{Dados do gráfico \(r\times t\)}
+    \end{center}
+% \vspace{10ex}
+% \begin{multicols}{2}
+\begin{center}
+    \begin{tabular}{CCC}
+        \toprule
+        
+            \mu\,(\si{\min^{-1}})
+            & r_{\ch{O2}}\,(\si{\frac{\milli\gram\of{\ch{O2}}}{\litre.\min}})
+        
+        \\\midrule
+        
+            \num{2.31380244703275E-03} &  \num{5.94782462714899E-03}
+        \\ \num{2.39540098590733E-03} &  \num{3.46619552841057E-03}
+        \\ \num{2.58030705572062E-03} &  \num{5.15528602868799E-03}
+        \\ \num{2.62818043892956E-03} &  \num{8.01101656098276E-03}
+        \\ \num{2.47998110724889E-03} &  \num{6.43084305529282E-03}
+        \\ \num{2.37369303031970E-03} &  \num{2.73034378643860E-03}
+        \\ \num{2.46230702183239E-03} &  \num{1.98505245838918E-03}
+        \\ \num{2.40744753413641E-03} &  \num{2.67005986458673E-03}
+        \\ \num{2.32322768861540E-03} &  \num{1.25122268120120E-03}
+        \\ \num{2.37054791358555E-03} &  \num{1.33385385963612E-03}
+        \\ \num{2.28667019057392E-03} &  \num{1.84761483718152E-03}
+        \\ \num{2.08267178752087E-03} &  \num{1.02200193803900E-03}
+        \\ \num{2.00988780249628E-03} &  \num{7.18774230019280E-04}
+
+        \\\bottomrule
+    \end{tabular}\\\vspace{1ex}
+    \tablecaption{Dados do gráfico \(\mu\times r_{\ch{O2}}\) usado para calcular o coeficiente de crescimento \(Y_{\ch{O2}/X}\)}
+\end{center}
+% \newpage
+% \begin{multicols}{2}
+    
+    % % \vspace{10ex}
+    % \begin{center}
+    %     \begin{tabular}{CCC}
+    %         \toprule
+            
+    %             \multirow{2}{*}{t\,(\si{\min})}
+    %             & \multicolumn{2}{C}{r (\si{\milli\gram/\litre.\min})}
+    %             \\\cline{2-3}
+    %             & \ch{O2}
+    %             & \ch{CH3OO-}
+            
+    %         \\\midrule
+    %            \num{0} &  \num{1.21170382} &  \num{1.136956841}
+    %         \\ \num{10.5} &  \num{1.197348999} &  \num{1.123487532}
+    %         \\ \num{20.333} &  \num{1.293907436} &  \num{1.214089521}
+    %         \\ \num{30.6666} &  \num{1.407286255} &  \num{1.320474285}
+    %         \\ \num{40.5666} &  \num{1.561018169} &  \num{1.464722861}
+    %         \\ \num{50.666} &  \num{1.689109317} &  \num{1.584912386}
+    %         \\ \num{60.666} &  \num{1.732629839} &  \num{1.625748236}
+    %         \\ \num{70.5} &  \num{1.742324122} &  \num{1.634844502}
+    %         \\ \num{80} &  \num{1.812875721} &  \num{1.70104395}
+    %         \\ \num{90.25} &  \num{1.860206283} &  \num{1.745454808}
+    %         \\ \num{100.083333} &  \num{1.807094699} &  \num{1.695619545}
+    %         \\ \num{110.12} &  \num{1.835255647} &  \num{1.722043314}
+    %         \\ \num{120.8333} &  \num{1.821791449} &  \num{1.709409689}
+    %         \\ \num{130.0666} &  \num{1.672664605} &  \num{1.569482107}
+    %         \\ \num{140.2} &  \num{1.650415214} &  \num{1.548605225}
+    %         \\ \num{150.25} &  \num{1.651377352} &  \num{1.549508012}
+    %         \\ \num{160.0117} &  \num{1.580526007} &  \num{1.483027309}
+    %         \\\bottomrule
+    %     \end{tabular}\\\vspace{1ex}
+    %     \tablecaption{Dados do gráfico \(r\times t\)}
+    % \end{center}
+    
+    \begin{center}
+        \begin{tabular}{CC}
+            \toprule
+            
+                \mu\,(\si{\min^{-1}})
+                & V_{\ch{CH3COOH}}\,(\si{\frac{\milli\gram\of{\ch{CH3COOH}}}{\milli\gram\of{X}.\min}})
+            
+            \\\midrule
+               \num{5.94782462714899E-03} &  \num{2.11425101211165E-03}
+            \\ \num{3.46619552841057E-03} &  \num{2.12801756780697E-03}
+            \\ \num{5.15528602868799E-03} &  \num{2.20144694573350E-03}
+            \\ \num{8.01101656098276E-03} &  \num{2.39101848503665E-03}
+            \\ \num{6.43084305529282E-03} &  \num{2.39058456692619E-03}
+            \\ \num{2.73034378643860E-03} &  \num{2.26004067423190E-03}
+            \\ \num{1.98505245838918E-03} &  \num{2.16612287484794E-03}
+            \\ \num{2.67005986458673E-03} &  \num{2.24061589472799E-03}
+            \\ \num{1.25122268120120E-03} &  \num{2.22493564871576E-03}
+            \\ \num{1.33385385963612E-03} &  \num{2.11620859710402E-03}
+            \\ \num{1.84761483718152E-03} &  \num{2.14073365343170E-03}
+            \\ \num{1.02200193803900E-03} &  \num{2.07574128556093E-03}
+            \\ \num{7.18774230019280E-04} &  \num{1.88014397348372E-03}
+            \\\bottomrule
+        \end{tabular}\\\vspace{1ex}
+        \tablecaption{Dados do gráfico \(V_{\ch{CH3COOH}}\times\mu\)}
+    \end{center}
+%     \vspace{10ex}
+%     \phantom{.}
+% \end{multicols}
+
+
+\end{document}

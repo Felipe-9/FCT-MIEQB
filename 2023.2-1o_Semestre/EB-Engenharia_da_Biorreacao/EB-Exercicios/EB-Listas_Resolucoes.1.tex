@@ -20,7 +20,7 @@
     Consider the culture of a bacterium with the following empirical formula:
     \begin{center}
         \ch{CH_{1.7}O_{0.46}N_{0.18}}
-        (\(\text{MWB} = 23.6\,\si{\gram/\mole}\))
+        (\(\text{M}_{w\,B} = 23.6\,\si{\gram/\mole}\))
     \end{center}
     This bacterium grows aerobically in a culture medium using glucose as a carbon source (\ch{C6H12O6}).\\
     Glucose and oxygen yield coefficients were experimentally determined:
@@ -34,29 +34,261 @@
     \begin{questionBox}2{ % Q1.1
         Show that the measured values of \ch{Y_{X/S}} and \ch{Y_{X/O2}} are consistent.
     } % Q1.1
+        \answer{}
+        \begin{center}\large
+            \ch{
+                a C6H12O6 % S:Glucose
+                + b O2 % Aerobic:TRUE
+                + c NH3 % N source
+                -> 
+                CH_{1.7}O_{0.46}N_{0.18} % X:Biomass
+                + d CO2 + e H2O % Resp products
+            }
+        \end{center}
+        \begin{flalign*}
+            &
+                Y_{X/S}
+                =\frac
+                {85\,\si{\gram\of{X}}}
+                {\si{\mole\of{S}}}
+                = \frac
+                {1\,\si{\mole\of{X}}}
+                {a\,\si{\mole\of{S}}}
+                \,\frac
+                {M_{w\,B}\,\si{\gram\of{X}}}
+                {1\,\si{\mole\of{X}}}
+                \implies &\\&
+                \implies
+                % 
+                a 
+                = M_{w\,B}/85 
+                = 23.6/85 
+                \cong\num{0.2776470588}
+                &\\[3ex]&
+                Y_{X/\ch{O2}}
+                = \frac
+                    {39\,\si{\gram\of{X}}}
+                    {\si{\mole\of{\ch{O2}}}}
+                = \frac
+                    {1*M_{w\,B}\,\si{\gram\of{X}}}
+                    {b\,\si{\mole\of{\ch{O2}}}}
+                \implies &\\&
+                \implies
+                b
+                = \frac{M_{w\,B}}{39}
+                = \frac{23.6}{39}
+                \cong \num{0.605128205128205}
+            &
+        \end{flalign*}
+        \paragraph*{Balanço Mássico}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    \ch{C}:& 6\,a = 1+d
+                    \\
+                    \ch{O}:& 6\,a+2\,b=0.46+2\,d+e
+                    \\
+                    \ch{N}:& c=0.18
+                    \\
+                    \ch{H}:& 12\,a+3\,c=1.7+2\,e
+                \end{cases}
+                &\\[3ex]&
+                \therefore
+                % D
+                d\cong6*\num{0.2776470588}-1\cong\num{0.6658823528}
+                ; &\\[3ex]&
+                % B
+                2\,(6\,a+2\,b)-(12\,a+3\,c)
+                = 4\,b-3\,c
+                = &\\&
+                = 2\,(0.46+2\,d+e)-(1.7+2\,e)
+                = 0.92+4\,d-1.7
+                \implies &\\&
+                \implies
+                b
+                \cong \frac{
+                    0.92
+                    +4*\num{0.6658823528}
+                    -1.7
+                    +3*0.18
+                }{4}
+                \cong\num{0.6058823528}\cong\num{0.605128205128205}
+            &
+        \end{flalign*}
+        \paragraph*{Balanço Energetico}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    \gamma_S
+                    =  {
+                           6*\gamma_{\ch{C}}
+                        + 12*\gamma_{\ch{H}}
+                        +  6*\gamma_{\ch{O}}
+                    }
+                    = 6*4+12*1+  6*(-2)
+                    = 24
+                    \\
+                    \gamma_{\ch{O2}}
+                    = 2*\gamma_{\ch{O}}
+                    = -4
+                    \\
+                    \gamma_{\ch{NH3}}
+                    = {
+                        1*\gamma_{\ch{N}}
+                        + 3*\gamma{\ch{H}}
+                    } = 1*(-3)+3*1 = 0
+                    \\
+                    \gamma_{X}
+                    = {
+                           1   *\gamma_{\ch{C}}
+                        +  1.7 *\gamma_{\ch{H}}
+                        +  0.46*\gamma_{\ch{O}}
+                        +  0.18*\gamma_{\ch{N}}
+                    }
+                    = 4.24
+                    \\
+                    \gamma_{\ch{CO2}}
+                    = {
+                          1*\gamma_{\ch{C}}
+                        + 2*\gamma_{\ch{O}}
+                    }
+                    = 1*4+ 2*(-2) = 0
+                    \\
+                    \gamma_{\ch{H2O}}
+                    = 2*\gamma_{\ch{H}}+\gamma_{\ch{O}}
+                    = 0
+                \end{cases}
+                &\\[3ex]&
+                a\,\gamma_{S}
+                + b\,\gamma_{\ch{O2}}
+                + c\,\gamma_{\ch{NH3}}
+                = a\,24
+                + b\,-4
+                = &\\&
+                = \gamma_{X}
+                + d\,\gamma_{\ch{CO2}}
+                + e\,\gamma_{\ch{H2O}}
+                = 4.24
+                \implies &\\&
+                \implies
+                b
+                =(24*a-4.24)/4
+                \cong(24*\num{0.2776470588}-4.24)/4
+                \cong &\\&
+                \cong\num{0.6058823528}
+                \cong\num{0.605128205128205}
+            &
+        \end{flalign*}
     \end{questionBox}
 
     \begin{questionBox}2{ % Q1.2
-        A batch culture of this organism initially contains 0.01\,\si{\gram\of{biomass}} and 20\,\si{\milli\mole\of{glucoes}}. After a few hours of cultivation, the cells stopped growing. The total biomass in the culture is 1.0\,\si{\gram}. Estimate the final amount of glucose in the culture medium (in \si{\milli\mole}) and speculate on the likely cause of cell growth arrest.
+        A batch culture of this organism initially contains 0.01\,\si{\gram\of{biomass}} and 20\,\si{\milli\mole\of{glucose}}. After a few hours of cultivation, the cells stopped growing. The total biomass in the culture is 1.0\,\si{\gram}. Estimate the final amount of glucose in the culture medium (in \si{\milli\mole}) and speculate on the likely cause of cell growth arrest.
     } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                Y_{X/S}
+                =\frac
+                    {85\,\si{\gram\of{X}}}
+                    {\si{\mole\of{S}}}
+                =-\adv{X}{S}
+                =\frac{X_1-X_0}{S_0-S_1}
+                \implies &\\&
+                \implies
+                S_1/\si{\milli\mole}
+                = S_0-\frac{X_1-X_0}{85*10^{-3}}
+                = 20-\frac{1-0.01}{85*10^{-3}}
+                \cong\num{8.352941176470588}
+            &
+        \end{flalign*}
+        The non nule amount of glucose indicates that the arrest was due to the lack of another nutrient: \ch{NH3,O2}, micronutrients
     \end{questionBox}
 \end{questionBox}
 
 \begin{questionBox}1{ % Q2
     Consider an anaerobic fermentation by a yeast whose empirical biomass formula is as follows:
     \begin{center}
-        \ch{CH_{1.7}O_{0.45}N_{0.15}} \((\text{MWB} = 23.0\,\si{\gram\of{DCW}/\mole})\)
+        \ch{CH_{1.7}O_{0.45}N_{0.15}} \((M_{w\,B} = 23.0\,\si{\gram\of{DCW}/\mole})\)
     \end{center}
     Carbon and nitrogen sources are glucose (\ch{C6H12O6}) and ammonium salts, respectively. Possible products of the growth reaction are biomass, ethanol (\ch{C2H6O}), carbon dioxide and water. Ethanol growth and formation depend on growing conditions.
 } % Q2
+    \answer{}
+    \begin{center}\large
+        \ch{
+            a C6H12O6
+            + b NH3
+            -> 
+            CH_{1.7}O_{0.45}N_{0.15}
+            + c C2H6O
+            + d CO2
+            + e H2O
+        }
+    \end{center}
     \begin{questionBox}2{ % Q2.1
         What is the maximum biomass yield coefficient (\ch{Y_{X/S}}\,\si{\gram\of{DCW}/\mole\of{glucose}}), and under what conditions is it obtainable?
     } % Q2.1
+        \answer{}
+        \(DCW=X\)
+        % Y_{X/S\,\max} => no ethanol production
+        \begin{flalign*}
+            &
+                Y_{X/S\,\max}
+                = \frac
+                    {\si{\mole\of{X}}}
+                    {a\,\si{\mole\of{S}}}
+                \,\frac
+                    {23.0\,\si{\gram\of{X}}}
+                    {\si{\mole\of{X}}}
+                ; &\\[3ex]&
+                \text{Balanço energético:}&\\&
+                \begin{cases}
+                    Y_{X/S\,\max}: c=0
+                    \\
+                    \gamma_{\ch{NH3}}
+                    = \gamma_{\ch{CO2}}
+                    = \gamma_{\ch{H2O}}
+                    = 0
+                    \\
+                    \gamma_{S}
+                    = 6*4+12+6*(-2) = 24
+                    \\
+                    \gamma_{X}
+                    = 4+1.7+0.45*(-2)+0.15*(-3)
+                    = 4.35
+                \end{cases}
+                &\\&
+                \therefore a\,\gamma_{S}=\gamma_{X}
+                \implies
+                a = 24/4.35\cong\num{0.18125000000034}
+                \implies &\\&
+                \implies
+                \frac{Y_{X/S\,\max}}{
+                    \si{\gram\of{X}/\mole\of{S}}
+                }
+                = 23/\num{0.18125000000034}
+                \cong\num{126.896551723899891}
+            &
+        \end{flalign*}
     \end{questionBox}
 
     \begin{questionBox}2{ % Q2.2
         What is the maximum ethanol yield coefficient (\ch{Y_{E/S}}\,\si{\mole\of{\ch{EtOH}}/\mole\of{glucose}}), and under what conditions is it obtainable?
     } % Q2.2
+        \answer{}
+        EtOH=E
+        \begin{flalign*}
+            &
+                Y_{E/S\,\max}
+                = \frac
+                    {c\,\si{\mole\of{E}}}
+                    {a\,\si{\mole\of{X}}}
+                &\\[3ex]&
+                \text{Balanço Energético}&\\&
+                \begin{cases}
+                    Y_{E/S\,\max}:
+                \end{cases}
+            &
+        \end{flalign*}
     \end{questionBox}
 \end{questionBox}
 
