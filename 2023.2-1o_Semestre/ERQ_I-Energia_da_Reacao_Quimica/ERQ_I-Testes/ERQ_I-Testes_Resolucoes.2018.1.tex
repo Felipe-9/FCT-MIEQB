@@ -1,0 +1,530 @@
+% !TEX root = ./ERQ_I-Testes_Resolucoes.2018.1.tex
+\providecommand\mainfilename{"./ERQ_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Testes_Resolucoes.2018.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2018.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Testes_Resolucoes.2018.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ I]
+{Teste 1 Resolução} % Subfile Title
+{Teste 1 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    The reversible reaction \ch{A<>B} is carried out in a battery of two CSTR reactors arranged in series, it being known that the second reactor is double the volume of the first reactor. Reagent A is fed to the reactor battery in a concentration of 0.5\,\si{\molar} at a volumetric flow rate of 20\,\si{\litre/\min}. The direct and reverse reactions are elementary and the values of the direct reaction kinetic constant and the equilibrium constant are 0.15\,\si{\min^{-1}} and 28, respectively.
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Derive the expression of the rate law.
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                -r_{A}
+                = k\,\left(
+                    \ch{[A]}
+                    -\ch{[B]}/k_e
+                \right)
+                = k\,\left(
+                    \ch{[A]}_0\,(1-X)
+                    -\ch{[A]}_0\,X/k_e
+                \right)
+                = &\\&
+                = k\,\ch{[A]}_0\left(
+                    1-X\,(1+1/k_e)
+                \right)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        For each of the reactors, derive the expressions that relate the volume of the reactor to the conversion.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                % =============== 1 Reator =============== %
+                \text{1 Reator:}&\\&
+                \tau_1
+                =V_1/v
+                ; &\\[3ex]&
+                0
+                = F_{A\,0}-F_A+r_{A\,1}\,V_1
+                = F_{A\,0}
+                - F_{A\,0}\,(1-X_1)
+                + r_{A\,1}\,V_1
+                = &\\&
+                = F_{A\,0}\,X_1
+                + r_{A\,1}\,V_1
+                \implies &\\&
+                \implies
+                0
+                = F_{A\,0}\,X_1/v
+                + r_{A\,1}\,V/v
+                = C_{A\,0}\,X_1
+                + r_{A\,1}\,\tau_1
+                \implies &\\&
+                \implies
+                \tau_1
+                =\frac{C_{A\,0}\,X_1}{-r_{A\,1}}
+                =\frac{C_{A\,0}\,X_1}{
+                    k\,C_{A\,0}\,\left(
+                        1-X_1\,(1+1/k_e)
+                    \right)
+                }
+                = &\\&
+                =\frac{1}{
+                    k\,\left(
+                        1/X_1-1-1/k_e
+                    \right)
+                }
+                &\\[3ex]&
+                % =============== 2 Reator =============== %
+                \text{2 Reator:}&\\&
+                \tau_2=V_2/v
+                ; &\\[3ex]&
+                0
+                = F_{A\,1}
+                - F_{A\,2}
+                + r_{A\,2}\,V_2
+                = &\\&
+                = F_{A\,0}\,(1-X_1)
+                - F_{A\,0}\,(1-X_2)
+                + r_{A\,2}\,V_2
+                = &\\&
+                = F_{A\,0}\,(X_1-X_2)
+                + r_{A\,2}\,V_2
+                \implies &\\[1.5ex]&
+                \implies
+                0
+                = F_{A\,0}\,(X_1-X_2)/v
+                + r_{A\,2}\,V_2/v
+                = &\\&
+                = C_{A\,0}\,(X_1-X_2)
+                + r_{A\,2}\,\tau_2
+                \implies &\\[1.5ex]&
+                \implies
+                \tau_2
+                = \frac{
+                    C_{A\,0}\,(X_1-X_2)
+                }{-r_{A\,2}}
+                = \frac{
+                    C_{A\,0}\,(X_1-X_2)
+                }{
+                    k\,C_{A\,0}\,\left(
+                        1-X_2\,(1+1/k_e)
+                    \right)
+                }
+                = &\\&
+                = \frac{
+                    X_1-X_2
+                }{
+                    k\,\left(
+                        1-X_2\,(1+1/k_e)
+                    \right)
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        Determine the value of the equilibrium conversion.
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                X_e
+                =\frac{\ch{[B]}_e}{\ch{[A]}_0}
+                =1-\frac{\ch{[A]}_e}{\ch{[A]}_0}
+                ; &\\[3ex]&
+                \frac{\ch{[B]}_e}{\ch{[A]}_e}
+                = \frac{\ch{[A]}_0\,X_e}{\ch{[A]}_0\,(1-X_e)}
+                = \frac{1}{1/X_e-1}
+                = k_e
+                \implies &\\&
+                \implies
+                X_e
+                = \frac{1}{1/k_e+1}
+                = \frac{1}{1/28+1}
+                \cong
+                \num{0.96551724137931}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.4
+        Knowing that the conversion at the exit of the 2nd reactor corresponds to 99\% of the equilibrium conversion, determine the conversion at the exit of the 1st reactor.
+    } % Q1.4
+        \answer{}
+        \begin{flalign*}
+            &
+                \frac{1}{
+                    k\,\left(
+                        1/X_1-1-1/k_e
+                    \right)
+                }
+                =\tau_1
+                = &\\&
+                =\tau_2/2
+                =\frac{
+                    X_1-X_2
+                }{
+                    2\,k\,\left(
+                        1-X_2\,(1+1/k_e)
+                    \right)
+                }
+                % = &\\&
+                % =-\frac{
+                %     X_1-(X_e\,0.99)
+                % }{
+                %     2\,k\,\left(
+                %         1-(X_e\,0.99)\,(1+1/k_e)
+                %     \right)
+                % }
+                \implies &\\&
+                \implies
+                0=
+                \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,\left(
+                                1+1/k_e
+                            \right)
+                        &+\\-&
+                            X_1\,\left(
+                                1
+                                +X_2\left(
+                                    1+5/k_e+4
+                                \right)
+                            \right)
+                        &+\\+&
+                            X_2
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,\left(
+                                1+1/k_e
+                            \right)
+                        &+\\-&
+                            X_1\,\left(
+                                1
+                                +X_e\,0.99\left(
+                                    1+5/k_e+4
+                                \right)
+                            \right)
+                        &+\\+&
+                            X_e\,0.99
+                        &
+                    \end{aligned}
+                \right)
+                \cong &\\&
+                \cong \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,\left(
+                                1+1/28
+                            \right)
+                        &+\\-&
+                            X_1\,\left(
+                                1
+                                +\num{0.96551724137931}
+                                *0.99\left(
+                                    1+5/28+4
+                                \right)
+                            \right)
+                        &+\\+&
+                            \num{0.96551724137931}
+                            *0.99
+                        &
+                    \end{aligned}
+                \right)
+                \cong &\\&
+                \cong 
+                % X_1 linear coeff was wrong before
+                \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,\num{1.035714285714286}
+                        &+\\-&
+                            X_1\,\num{2.009854}
+                        &+\\+&
+                            \num{0.955862068965517}
+                        &
+                    \end{aligned}
+                \right)
+                \begin{cases}
+                      \num{1.1064029467593446}
+                    \\\emph{\num{0.8341457428958271}}
+                \end{cases}
+                % &\\&
+                \therefore 
+                X_1\cong\num{0.8341457428958271}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.5
+        Determine the volumes of the reactors.
+    } % Q1.5
+        \answer{}
+        \begin{flalign*}
+            &
+                V_i=v\,\tau_i;
+                &\\[3ex]&
+                \text{1 Reator}&\\&
+                V_1
+                =v\,\tau_1
+                =v\,\left(
+                    \frac{1}{
+                        k\,\left(
+                            1/X_1-1-1/k_e
+                        \right)
+                    }
+                \right)
+                \cong &\\&
+                \cong
+                \frac{20}{
+                    0.15\,\left(
+                        1/\num{0.8341457428958271}
+                        -1
+                        -1/28
+                    \right)
+                }
+                \cong
+                \num{817.409261406201231}
+                &\\[3ex]&
+                \text{2 Reator}&\\&
+                V_2
+                =v\,\tau_2
+                =v\,2\,\tau_1
+                =2\,V_1
+                \cong 2\,\num{817.409261406201231}
+                \cong \num{1634.818522812402461}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % 
+    The figure shows the kinetic curve obtained in a batch reactor, corresponding to the elemental liquid phase reaction \ch{2 A -> B}. The reaction is carried out in batch reactors of 5\,\si{\metre^3}, which are loaded with pure A.
+} % Q2
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{Screenshot 2023-11-08 at 18.33.05}
+    \end{center}
+    \paragraph*{Data:}
+    \begin{itemize}
+        \item \(t_d=120\,\si{\min}\). 
+        \item Molecular weight of A: 58\,\si{\gram/\mole}.
+        \item Molecular weight of B: 116\,\si{\gram/\mole}.
+        \item Density of A: 0.791\,\si{\gram/\litre}. 
+        \item If you were not able to solve b) use \(k=0.074\,\si{\deci\metre^3.\mole^{-1}.\hour^{-1}}\).
+    \end{itemize}
+    \begin{questionBox}2{ % Q2.1
+        Write the expression of the rate law.
+    } % Q2.1
+        \begin{flalign*}
+            &
+                -r_A
+                =k\,C_A^2
+                =k\,(C_{A\,0}\,(1-X))^2
+                =k\,C_{A\,0}^2\,(1-X)^2
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.2
+        Write the equation of the curve shown in the graphic.
+    } % Q2.2
+        \answer{}
+        \begin{flalign*}
+            &
+                X=f(t):
+                -r_A\,V
+                =k\,C_{A\,0}^2\,(1-X)^2\,V
+                = &\\&
+                =-\odv{N_A}{t}
+                =-\odv{(N_{A\,0}(1-X))}{t}
+                =-N_{A\,0}\,\odv{(1-X)}{t}
+                = &\\&
+                =-C_{A\,0}\,V\,\odv{(1-X)}{t}
+                \implies &\\[3ex]&
+                \implies
+                -\int_{1}^{1-X}{
+                    \frac{\odif{(1-X)}}{(1-X)^2}
+                }
+                = &\\&
+                =-(-1)
+                \,\adif{(X^{-1})}
+                \big\vert_{1}^{1-X}
+                =1/(1-X)-1
+                =\frac{1}{1/X-1}
+                = &\\[3ex]&
+                =\int_{0}^{t}{
+                    k\,C_{A\,0}\,\odif{t}
+                }
+                =k\,C_{A\,0}
+                \,\int_{0}^{t}{
+                    \odif{t}
+                }
+                =k\,C_{A\,0}\,t
+                \implies &\\[3ex]&
+                \implies
+                X
+                =(1+1/k\,C_{A\,0}\,t)^{-1}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.3
+        Evaluate the value of the kinetic constant. Use the graphic.
+    } % Q2.3
+        \answer{}
+        \begin{flalign*}
+            &
+                k:
+                X
+                =(1+1/k\,C_{A\,0}\,t)^{-1}
+                \implies &\\&
+                \implies
+                k 
+                = \left(
+                    (1/X-1)
+                    \,C_{A\,0}
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(N_{A\,0}/V)
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(m_{A\,0}/M_{A}\,V)
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(\rho_{A}\,V/M_{A}\,V)
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(\rho_{A}/M_{A})
+                    \,t
+                \right)^{-1}
+                \cong &\\&
+                \cong \left(
+                    (1/0.6-1)
+                    \,(791/58)
+                    \,1.9
+                \right)^{-1}
+                \,\si{\litre/\mole.\hour}
+                \cong &\\&
+                \cong
+                \SI{57.888083039457}{\milli\litre/\mole.\hour}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.4
+        Calculate the optimal conversion and the optimal reaction time.
+    } % Q2.4
+        \answer{}
+        Traça uma reta entre \((0,-t_d)\) e o gráfico, o ponto tangente é o optimo:
+        \begin{BM}
+            X_{opt}\cong 0.68
+            \qquad
+            t_{opt}\cong 2.3\,\si{\hour}
+        \end{BM}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.5
+        If the plant works 24\,\si{\hour} day and 330\,\si{\day/\year}, determine the number of reactors needed for an annual production of B of 1500\,\si{\tonne}. Use the conversion calculated in d) but if you were not able to, use any value at your choice.
+    } % Q2.5
+        \answer{}
+        \center{\ch{A-> 1/2 B}}
+        \begin{flalign*}
+            &
+                N_R
+                =\ceil{V_R/5\,\si{\metre^2}}
+                % 1.15 é margem de erro
+                =\ceil{1.15\,V/5\,\si{\metre^2}}
+                =\left\lceil
+                    \frac{
+                        1.15
+                        \,(N_{A\,0}/C_{A\,0})
+                    }{5\,\si{\metre^2}}
+                \right\rceil
+                ; &\\[3ex]&
+                N_{A\,0}\,X/2
+                % /2 pela conversão 1 A -> 1/2 B
+                = N_B
+                % N_B é em mol quantos
+                % 1 tonne = 1e6 gram
+                = \frac{1500*10^6}{
+                    M_B*N_{batch}
+                }
+                = \frac{1500*10^6}{
+                    116*\frac{
+                        330*24
+                    }{
+                        t_{batch}
+                    }
+                }
+                = &\\&
+                = \frac{1500*10^6}{
+                    \frac{
+                        116*330*24
+                    }{
+                        t_{opt}+t_{d}
+                    }
+                }
+                = \frac{1500*10^6}{
+                    \frac{
+                        116*330*24
+                    }{
+                        2.3+2
+                    }
+                }
+                \cong
+                \SI{7.020637408568443e3}{\mole}
+                \implies &\\[3ex]&
+                \implies
+                N_{A\,0}
+                \cong
+                2*\num{7.020637408568443e3}/0.68
+                \cong
+                \num{20.648933554613068}
+                \implies &\\[3ex]&
+                \implies
+                N_R
+                \cong
+                \left\lceil
+                    \frac{
+                        1.15*\num{20.648933554613068}
+                    }{
+                        (\rho_A/M_A)
+                    }
+                \right\rceil
+                = \left\lceil
+                    \frac{
+                        1.15*\num{20.648933554613068}
+                    }{
+                        5*(0.791*10^{3}/58)
+                    }
+                \right\rceil
+                \cong &\\&
+                \cong
+                \ceil{\num{0.348238651856559}}
+                = 1
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

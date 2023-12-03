@@ -1,0 +1,165 @@
+% !TEX root = ./EB-Testes_Resolucoes.1.tex
+\providecommand\mainfilename{"./EB-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Testes_Resolucoes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Testes_Resolucoes.1}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Testes_Resolucoes.1/graphics/}
+
+\mymakesubfile{1}
+[EB]
+{Teste 1 Resolução} % Subfile Title
+{Teste 1 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    pross biotec em que x cresce aerobicamente, consumindo s e prod P
+    \begin{center}\large\ch{
+        S + O2 + NH3 -> X + P + CO2 + H2O
+    }
+    \end{center}
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Prop uma eq de bal mat ao substrato em cstr em estado estacio
+    } % Q1.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        Prop uma eq de bal mate ao subs em PFR
+    } % Q1.2
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Considere as seguintes cine de sint de prod
+    \begin{enumerate}[label={Caso \arabic{enumi}: },left=0px]
+        \item \(r_p=\alpha\,\mu\,x\)
+        \item \(r_p=\alpha\,\mu\,x+\beta\,x\)
+        \item \(r_p=\beta\,x\)
+    \end{enumerate}
+} % Q2
+    \begin{questionBox}2{ % Q2.1
+        de aco com a class gaden, como class a cinet
+    } % Q2.1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        qual o signif dos parametros \chemalpha, \chembeta
+    } % Q2.2
+        \answer{}
+        \begin{description}
+            \item[\chemalpha] fator relacionado com a quantidade de estrato consumida
+            \item[\chembeta] Fator relacionado a quantidade de substrato estocado na biomassa
+        \end{description}
+    \end{questionBox}
+\end{questionBox}
+
+% Massa atomica do N=14
+
+\begin{questionBox}1{ % Q3
+    % um micro com form elementar \ch{CH_{1.75}O_{0.45}N_{0.16}} (\(MW=23.19\,\si{\gram/\mole}\)) é usado para prod biom a partir de glicerol \ch{C3H8O3} (\(MW=92.09\,\si{\gram/\mole}\)). A fonte de azo é \ch{NH3}. Consi o cres segue a lei de monod \(\mu_{\max}=0.25\,\si{\hour^{-1}}\text{ e }k_s=0.05\,\si{\gram/\litre}\), e que a manut é desp
+    \begin{itemize}
+        \item \ch{CH_{1.75}O_{0.45}N_{0.16}} (\(MW=23.19\,\si{\gram/\mole}\))
+        \item glicerol \ch{C3H8O3} (\(MW=92.09\,\si{\gram/\mole}\))
+        \item A fonte de azo é \ch{NH3}
+        \item lei de monod \(\mu_{\max}=0.25\,\si{\hour^{-1}}\text{ e }k_s=0.05\,\si{\gram/\litre}\)
+        \item e que a manut é desp
+    \end{itemize}
+} % Q3
+    \begin{questionBox}2{ % Q3.1
+        Det exp form 0.51\,\si{\gram\of{P}/\gram\of{S}}. Avalie a ness de amon (rendimento amonia/biomassa) e de oxigenio (rend oxi/biomass) numa base mass
+    } % Q3.1
+        \answer{}
+        \begin{center}\large\ch{
+            a C3H8O3 
+            + b O2 
+            + c NH3
+            ->
+            d CH_{1.75}O_{0.45}N_{0.16}
+            + e CO2
+            + f H2O
+        }
+        \end{center}
+
+        \begin{flalign*}
+            &
+                \mu 
+                = \frac{\mu_{\max}\,S}{k_m+S}
+                = \frac{0.25\,S}{0.05+S}
+                = \frac{1}{0.2/S+4}
+            &
+        \end{flalign*}
+        \subsubquestion{Amonina}
+        \begin{flalign*}
+            &
+                Y_{P/S}
+                = 0.51\,\frac{
+                    \si{\gram\of{P}}
+                }{\si{\gram\of{S}}}
+                ; &\\[3ex]&
+                Y_{\ch{NH3}/X}
+                = \frac{
+                    c\,\si{\mole\of{\ch{NH3}}}
+                }{
+                    \si{\mole\of{X}}
+                }
+                % \implies &\\&
+                \implies
+                c 
+                = 0.16*d
+                = 0.16
+                * 0.51
+                \cong
+                \num{8.16e-2}
+            &
+        \end{flalign*}
+
+        \subsubquestion{Oxigênio}
+        \begin{flalign*}
+            &
+                Y_{\ch{O2}/X}
+                = \frac{
+                    0.45*d
+                    + 2*e
+                    + f
+                }{
+                    a*3
+                    + b*2
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.2
+    % Sabendo q o meio contem 4\%\,\si{(w/v)} de glic e que pretende atingir uma conv de substrato de 98\% num reac 100 L
+    \begin{itemize}
+        \item glicerol 4\,\si{\percent.w/v}
+        \item Pretende atingit 98\,\si{\percent}
+        \item reator 100\,\si{\litre}
+        \item Modo continuo
+        \item alimentado com meio estéril
+        \item Estado estácionário
+    \end{itemize}
+    Det a conc de biomass e a prod vol em biomass.
+} % Q3.2
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.3
+    \begin{itemize}
+        \item mesma cultura, condições, reator
+        \item Fluxo pistão
+        \item Crescimento é despresivel
+        \item Concentração celular é de 20\,\si{\gram.\litre}
+        \item \(V_{s,\max}=0.75\,\si{\gram\of{S}/\gram\of{X}.\hour}\)
+        \item \(K_s=0.05\,\si{\gram/\litre}\)
+        \item manut desprezavel
+    \end{itemize}
+    det o caudal nesse reator
+} % Q3.3
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,89 @@
+% !TEX root = ./FT_I-Aulas_Anotações.6.tex
+\providecommand\mainfilename{"./FT_I-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Aulas_Anotações.6.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{6}
+[FT\,I]
+{Aula 24/10/2022} % Subfile Title
+{Aula 24/10/2022} % Part Title
+
+\begin{sectionBox}1{Balanço de Energia} % S1
+    
+    \begin{BM}
+        E_{in} =E_{out}
+        \\
+        z_1\,\rho\,g
+        + \frac{v_1^2\,\rho}{2}
+        + P_1
+        =
+        z_2\,\rho\,g
+        + \frac{v_2^2\,\rho}{2}
+        + P_2
+    \end{BM}
+
+    \begin{itemize}
+        \item Z é a altura
+    \end{itemize}
+
+    \paragraph*{Assunções}
+    \begin{itemize}
+        \begin{multicols}{3}
+           \item Steady State
+           \item \(Q=0\)
+           \item \(U_1=U_2\)
+           \item \(W_s=0\)
+           \item Fluido Inviscoso
+           \item Fluxo turbulento
+        \end{multicols}
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{\(\adif{z}<0\)} % S2
+    
+    \begin{BM}
+        h_b
+        + z_1
+        + \frac{v_1^2}{2\,g}
+        + \frac{P_1}{\rho\,g}
+        =
+        z_2
+        + \frac{v_2^2}{2\,g}
+        + \frac{P_2}{\rho\,g}
+        + H_{at}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            -\adif{P}_{at}
+            = 4\,\Phi\frac{L_{eqv}}{D}
+            \,\rho\,v^2
+            % &\\&
+            % \Psi
+            % = \frac{}
+            &\\&
+            h_b 
+            = \frac{\adif{P}_b}{\rho\,g}
+            &\\&
+            P_{b, L}
+            = \adif{P}_{b}\,G_v
+            % &\\&
+            \qquad
+            \qquad
+            P_{b}
+            = \frac{\adif{P}_{b}\,G_v}{\eta}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+
+
+\end{document}

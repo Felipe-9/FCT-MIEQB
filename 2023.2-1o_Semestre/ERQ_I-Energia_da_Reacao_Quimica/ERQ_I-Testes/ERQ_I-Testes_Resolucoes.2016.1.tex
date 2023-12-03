@@ -1,0 +1,497 @@
+% !TEX root = ./ERQ_I-Testes_Resolucoes.2016.1.tex
+\providecommand\mainfilename{"./ERQ_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Testes_Resolucoes.2016.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2016.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Testes_Resolucoes.2016.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ I]
+{Teste 1 2016 Resolução} % Subfile Title
+{Teste 1 2016 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A reação reversível \ch{A <> B} é conduzida numa bateria de dois reactores CSTR iguais. O 1º Teste reagente A é alimentado à bateria de reactores numa concentração de 1\,\si{\M}, a um caudal volumétrico de 10\,\si{\litre/\min}. As reacções directa e inversa são elementares e os valores da constante cinética da reacção directa e da conversão de equilíbrio são respectivamente 0.05\,\si{\min^{-1}} e 96\%.
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Deduza a expressão da lei cinética.
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                -r_{A}
+                = k\,(C_{A}-C_{B}/k_e)
+                = &\\&
+                = k\,(C_{A\,0}(1-X)-C_{A\,0}\,X/k_e)
+                = &\\&
+                = k\,C_{A\,0}\,(
+                    1 - X\,(1+1/k_e)
+                )
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        Para cada um dos reactores deduza as expressões que relacionam o volume do reactor com a conversão.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                V_i(X)
+                : 0
+                = F_{A\,i\,i}
+                - F_{A\,i\,o}
+                + r_{A\,i}\,V_i
+                \implies &\\[6ex]&
+                % Reator 2
+                i=1
+                \implies &\\&
+                \implies 
+                0
+                = F_{A\,1\,i}
+                - F_{A\,1\,o}
+                + r_{A\,1}\,V_1
+                = &\\&
+                = F_{A\,1\,i}
+                - F_{A\,1\,i}(1-X_1)
+                + (
+                    - k\,C_{A\,1\,i}\,(
+                        1 - X_1\,(1+1/k_e)
+                    )
+                )\,V_1
+                = &\\&
+                = F_{A\,1\,i}\,X_1
+                - k\,C_{A\,1\,i}\,(
+                    1 - X\,(1+1/k_e)
+                )\,V_1
+                = &\\&
+                = v_{1\,i}\,C_{A\,1\,i}\,X_1
+                - k\,C_{A\,1\,i}\,(
+                    1 - X\,(1+1/k_e)
+                )\,V_1
+                \implies &\\[3ex]&
+                \implies
+                V_1
+                = \frac{
+                    v_{A\,1\,i}
+                    \,X_1
+                }{
+                    k\,(
+                        1 - X_1\,(1+1/k_e)
+                    )
+                }
+                % = &\\&
+                = \frac{
+                    v_{A\,1\,i}
+                }{
+                    k\,(
+                        1/X_1 - 1 + 1/k_e
+                    )
+                }
+                ;&\\[6ex]&
+                % Reator 2
+                i=2
+                \implies &\\&
+                \implies
+                0 
+                = F_{A\,2\,i}
+                - F_{A\,2\,o}
+                + r_{A\,2}\,V_2
+                = &\\&
+                = F_{A\,1\,o}
+                - F_{A\,1\,i}\,(1-X_2)
+                + (
+                    k\,C_{A\,1\,i}\,(
+                        1 - X_2\,(1+1/k_e)
+                    )
+                )\,V_2
+                = &\\&
+                = F_{A\,1\,i}\,(1-X_1)
+                - F_{A\,1\,i}\,(1-X_2)
+                + k\,C_{A\,1\,i}\,(
+                    1 - X_2\,(1+1/k_e)
+                )\,V_2
+                = &\\&
+                = F_{A\,1\,i}\,(X_2-X_1)
+                + k\,C_{A\,1\,i}\,(
+                    1 - X_2\,(1+1/k_e)
+                )\,V_2
+                = &\\&
+                = C_{A\,1\,i}\,v_{1\,i}\,(X_2-X_1)
+                + k\,C_{A\,1\,i}\,(
+                    1 - X_2\,(1+1/k_e)
+                )\,V_2
+                \implies &\\[3ex]&
+                \implies
+                V_2
+                = \frac{
+                    v_{1\,i}\,(X_2-X_1)
+                }{
+                    k\,(
+                        1 - X_2(1 + 1/k_e)
+                    )
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        Determine o valor da constante de equilíbrio.
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                k_e
+                = \frac{C_{B\,e}}{C_{A\,e}}
+                = \frac{C_{A\,0}\,X_e}{C_{A\,0}(1-X_e)}
+                = (1/X_e-1)^{-1}
+                = (1/0.96-1)^{-1}
+                = 24
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.4
+        Sabendo que a conversão à saída do 2º reactor corresponde a 90\% da conversão de equilíbrio, determine a conversão à saída do 1º reactor.
+    } % Q1.4
+        \answer{}
+        \begin{flalign*}
+            &
+                X_1:
+                V_2
+                = \frac{
+                    v_{1\,i}\,(X_2-X_1)
+                }{
+                    k\,(
+                        1 - X_2(1 + 1/k_e)
+                    )
+                }
+                = &\\&
+                = V_1
+                = \frac{
+                    v_{1\,i}
+                }{
+                    k\,(
+                        1/X_1 - 1 + 1/k_e
+                    )
+                }
+                \implies &\\[3ex]&
+                \implies
+                0
+                = \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,(1 - 1/k_e)
+                        &+\\+&
+                            X_1\,2\,(X_2/k_e- 1)
+                        &+\\+&
+                            X_2
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,(1 - 1/24)
+                        &+\\+&
+                            X_1\,2\,(0.9*0.96/24 - 1)
+                        &+\\+&
+                            X_2
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            X_1^2\,\num{0.9583333333}
+                        &+\\-&
+                            X_1\,1.928
+                        &+\\+&
+                            0.864
+                        &
+                    \end{aligned}
+                \right)
+                \begin{cases}
+                    \num{1.4841091729140812}
+                    \\\emph{\num{0.7473723085674003}}
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.5
+        Determine o volume dos reactores.
+    } % Q1.5
+        \answer{}
+        \begin{flalign*}
+            &
+                V
+                = \frac{
+                    v_{1\,i}
+                }{
+                    k\,(
+                        1/X_1 - 1 + 1/k_e
+                    )
+                }
+                \cong \frac{
+                    10
+                }{
+                    0.05\,(
+                        1/\num{0.7473723085674003} - 1 + 1/24
+                    )
+                }
+                \cong
+                \SI{526.748449804993057}{\litre}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A reacção elementar, em fase gasosa, \ch{2 A -> 3 B + C} é conduzida à temperatura de 493\,\si{\kelvin} e à pressão de 7\,\si{\atm} num reactor PFR (\(k = 0.45\,\si{\litre.\mole^{-1}.\second^{-1}}\)). Assumindo que o reagente A é alimentado puro ao reactor, a um caudal volumétrico de 15\,\si{\litre/\second} e que se obtém uma conversão de 90\%, determine:
+} % Q2
+    \begin{BM}
+        P\left(
+            \frac{1+\varepsilon\,X}{1-X}
+        \right)^2
+        = \frac{(1+\varepsilon)^2}{1-X}
+        - 2\,\varepsilon(1+\varepsilon)
+        \,\ln(1-X)^{-1}
+        +\varepsilon^2\,X
+    \end{BM}
+    \begin{questionBox}2{ % Q2.1
+        O valor da velocidade de reacção à entrada do reactor.
+    } % Q2.1
+        \answer{}
+        \centering{\ch{A -> 3/2 B + 1/2 C}}
+        \begin{flalign*}
+            &
+                -r_{A\,0}:
+                -r_A
+                = k\,C_{A}^2
+                = k\,\left(
+                    \frac{F_{A}}{v}
+                \right)^2
+                = &\\&
+                = k\,\left(
+                    \frac{
+                        C_{A\,0}(1-X)
+                    }{
+                        (1+\varepsilon\,X)
+                        \,(T/T_0)
+                        \,(P_0/P)
+                    }
+                \right)^2
+                = &\\&
+                = k\,\left(
+                    \frac{
+                        (P_{A\,0}/R\,T)(1-X)
+                    }{
+                        (1+\varepsilon\,X)
+                        \,(1)
+                        \,(1)
+                    }
+                \right)^2
+                = &\\&
+                = k
+                \,\frac{
+                    (P_{A\,0}/R\,T)^2
+                    \,(1-X)^2
+                }{
+                    (1+\varepsilon\,X)^2
+                }
+                \implies &\\[3ex]&
+                \implies
+                -r_{A\,0}
+                = k\,\left(
+                    \frac{P_{A\,0}}{R\,T}
+                \right)^2
+                \cong
+                0.45\,\left(
+                    \frac{7}{
+                        \num{0.082057366080960}
+                        *493
+                    }
+                \right)^2
+                \cong &\\&
+                \cong
+                \SI{1.3473474661319e-2}{\mole.\litre^{-1}.\second^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.2
+        O volume do reactor.
+    } % Q2.2
+        \answer{}
+        \begin{flalign*}
+            &
+                V:
+                \odif{V}
+                =F_{A\,0}\,\frac{\odif{X}}{-r_A}
+                =C_{A\,0}
+                \,v_0
+                \,\frac{\odif{X}}{
+                    k
+                    \,\frac{
+                        C_{A\,0}^2
+                        \,(1-X)^2
+                    }{
+                        (1+\varepsilon\,X)^2
+                    }
+                }
+                ; &\\&
+                \varepsilon 
+                = y_{A\,0}\,\delta
+                = - 1 + 3/2 + 1/2 = 1
+                \implies &\\[3ex]&
+                \implies
+                \int_{0}^{V}{\odif{V}}
+                =V
+                = &\\&
+                = 
+                \int_{0}^{X}{
+                    \frac{
+                        v_0
+                    }{
+                        k\,C_{A\,0}
+                    }
+                    \,\frac{
+                        (1+\varepsilon\,X)^2
+                    }{
+                        \,(1-X)^2
+                    }\,\odif{X}
+                }
+                = &\\&
+                = 
+                \frac{
+                    v_0
+                }{
+                    k\,C_{A\,0}
+                }
+                \adif{\left(
+                    \frac{(1+\varepsilon)^2}{1-X}
+                    - 2\,\varepsilon(1+\varepsilon)
+                    \,\ln(1-X)^{-1}
+                    +\varepsilon^2\,X
+                \right)}
+                \Bigg\vert_{0}^{X}
+                = &\\&
+                = 
+                \frac{
+                    v_0
+                }{
+                    k\,C_{A\,0}
+                }
+                \left(
+                    % X
+                    \frac{(1+\varepsilon)^2}{1-X}
+                    - 2\,\varepsilon(1+\varepsilon)
+                    \,\ln(1-X)^{-1}
+                    +\varepsilon^2\,X
+                    % 0
+                    - (1+\varepsilon)^2
+                \right)
+                = &\\&
+                = 
+                \frac{
+                    v_0
+                }{
+                    k\,C_{A\,0}
+                }
+                \left(
+                    (1+\varepsilon)^2
+                    \frac{1}{1/X-1}
+                    - 2\,\varepsilon(1+\varepsilon)
+                    \,\ln(1-X)^{-1}
+                    +\varepsilon^2\,X
+                \right)
+                \cong &\\&
+                \cong 
+                \frac{
+                    15
+                }{
+                    0.45
+                    *\num{0.173034836963345}
+                }
+                \left(
+                    4
+                    \frac{1}{1/0.9-1}
+                    % 36
+                    - 4
+                    \,\ln(1-0.9)^{-1}
+                    % 9.210340371976183
+                    +0.9
+                \right)
+                % 27.689659628023817
+                \cong &\\&
+                \cong
+                \SI{5334.12040295089687}{\litre}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.3
+        O valor do caudal volumétrico à saída do reactor.
+    } % Q2.3
+        \answer{}
+        \begin{flalign*}
+            &
+                v
+                =v_0\,(1+\varepsilon\,X)
+                =15\,(1+0.9)
+                =2.85\,\si{\litre/\second}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.4
+        O valor do caudal molar do produto B, à saída do reactor.
+    } % Q2.4
+        \answer{}
+        \begin{flalign*}
+            &
+                F_B
+                = F_{A\,0}\,X\,3/2\
+                = &\\&
+                = C_{A\,0}\,v_0\,X\,3/2
+                \cong &\\&
+                \cong
+                \num{0.173034836963345}
+                * 15
+                * 0.9 * 3/2
+                \cong &\\&
+                \cong
+                \SI{3.503955448507736}{\mole/\second}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.5
+        Caso a reacção seja conduzida num reactor batch, a volume constante, nas mesmas condições de temperatura e pressão inicial, determine o valor da pressão à conversão de 90\%
+    } % Q2.5
+        \answer{}
+        \begin{flalign*}
+            &
+                P:
+                % Eq geral de reações gasosas
+                \frac{P_0}{P}
+                \,\frac{T}{T_0}
+                (1+\varepsilon\,X)
+                = \frac{P_0}{P}
+                (1+\varepsilon\,X)
+                = &\\&
+                = \frac{V}{V_0}
+                = 1
+                \implies &\\[3ex]&
+                \implies
+                P
+                = P_0(1+\varepsilon\,X)
+                = 7\,(1+0.9)
+                = 13.3\,\si{\atm}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,152 @@
+% !TEX root = ./FT_I-Aulas_Anotações.2.tex
+\providecommand\mainfilename{"./FT_I-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Aulas_Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[FT\,I]
+{Aula 26/09/22 -- Transporte de propriedades: Calor, Massa, Quantidade de Movimento}
+{Aula 26/09/22 -- Transporte de propriedades: Calor, Massa, Quantidade de Movimento}
+
+\begin{sectionBox}1{Transporte Molecular}
+    
+    Ocorre em sólidos liq e gáses.
+
+    \paragraph*{Da teoria Cinética dos gáses}
+    \begin{BM}
+        \Psi
+        = -\frac{1}{6}l\,c\,\odv{\Gamma}{x}
+        \cong 
+        -\delta\,\odv{\Gamma}{x}
+    \end{BM}
+    \begin{itemize}
+        \item[\(\delta\):] Difusividade de transporte
+    \end{itemize}
+
+    \paragraph*{Para gases reais e liquidos}
+    \begin{BM}
+        \frac{N_a}{A} = -D\,\odv{C_A}{x}
+    \end{BM}
+    \begin{itemize}
+        \item[\(N_a\):] Taxa do transporte de massa (\si{\mole/\second})
+        \item[\(A\):] Area do transporte (\si{\metre^2})
+        \item[\(D\):] Massa da difusidade (\si{\metre^2/\second})
+        \item[\(C_a\):] Concentração (\si{\mole/\metre^3}) 
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Transporte de Calor}
+    
+    \begin{BM}
+        \Psi
+        = -\delta\,\odv{\Gamma}{x}
+        \\
+        \frac{q}{A}
+        = -\alpha
+        \odv{(\rho\,C_p\,T)}{x}
+        = -k\,\odv{T}{x}
+    \end{BM}
+    \begin{itemize}
+        \item[\(\alpha\):] Difusividade térmica (\si{\metre^2/\second})
+        \item[\(k\):] Condutividade térimica (\si{\frac{\joule}{\metre\,\celsius\,\second}})
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Transporte de Momento}
+    
+    \begin{BM}
+        \Psi = -\delta\odv{\Gamma}{x}
+        \\
+        \tau_y
+        = - \nu\odv{\rho\,v}{r}
+        = - \nu\,\rho\,\odv{v}{r}
+        = - \mu\odv{v}{r}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Forças que atuam em fluido}
+    
+    \paragraph{Tipos de Força}
+    \begin{itemize}
+        \item Forças físicas: atuam sem contáto físico
+        \item Forças de Superfície: atuão com contáto físico e é necessária uma superfície de contato para a ação dessas forças 
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{}
+    
+    Qual é a tensão tangencial que se deve aplicar a uma placa plana móvel que se encontra separada 1\,\si{\milli\metre} de outra placa plana fixa, para que ela se movimente a uma velocidade de 0.5\,\si{\metre/\second}, sabendo que entre as 2 existe água a 20\,\si{\celsius}? Se a placa tiver 1\,\si{\metre} de comprimento e 1.5\,\si{\metre} de largura, qual o valor da força aplicada?
+
+    \begin{exampleBox}3{}
+        
+        \begin{flalign*}
+            &
+                \tau 
+                = -\mu\odv{v}{x}
+                \implies
+                \int_{x_1}^{x_2} \tau\odif{x}
+                = \tau\,\adif{x}\big\vert_{x_1}^{x_2}
+                = -\int_{v_1}^{v_2} \mu\odif{v}
+                = -\mu\adif{v}\big\vert_{v_1}^{v_2}
+                \implies &\\&
+                \implies
+                \tau
+                = -\mu\frac{v_2-v_1}{x_2-x_1}
+                = -1.002\E-3\,\frac{0-0.5}{1\E-3}
+                \cong
+                \num{0.501}
+            &
+        \end{flalign*}
+        
+    \end{exampleBox}
+
+    \begin{exampleBox}3{}
+        
+        \begin{flalign*}
+            &
+                F 
+                = \tau\,A
+                \cong \num{0.501}*1.5*1
+                \cong \num{0.7515}
+            &
+        \end{flalign*}
+        
+    \end{exampleBox}
+    
+\end{exampleBox}
+
+\begin{exampleBox}1{}
+    
+    Considere duas placas planas paralelas que estão separadas entre si de 5.1 cm. Uma delas movimenta-se a 5.1 cm s-1 e a outra, no sentido oposto a 17.8 cm s-1 A viscosidade (m) do fluído entre elas é constante e vale 363 lb ft-1 h-1
+    
+\end{exampleBox}
+
+\begin{exampleBox}2{}
+    
+    Calcular a tensão de corte (t) em cada placa.
+    
+\end{exampleBox}
+
+\begin{exampleBox}2{}
+    
+    Calcular a velocidade do fluído em intervalos de 1.3 cm duma placa à outra.
+    
+\end{exampleBox}
+
+\begin{exampleBox}2{}
+    
+    Determinar a tensão de corte e os perfis de velocidade se o fluído não fôr
+    
+\end{exampleBox}
+
+\end{document}

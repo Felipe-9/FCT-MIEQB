@@ -13,7 +13,234 @@
 
 \mymakesubfile{2}
 [CM A]
-{Exercicios} % Subfile Title
-{Exercicios} % Part Title
+{Difração de Raios X} % Subfile Title
+{Difração de Raios X} % Part Title
+
+
+\setcounter{question}{6}
+
+\begin{questionBox}1{ % Q7
+    Sabendo os critérios para determinar a existência de difração por parte de uma família de planos são na estrutura:
+    \begin{description}[
+        % leftmargin=!,
+        % labelwidth=\widthof{} % Longest item
+    ]
+        \item [Cúbica simples (CS)]: todos os índices possíveis
+        \item [Cúbica de Corpo Centrado (CCC)]: Soma dos índices é par
+        \item [Cúbica de Faces Centradas (CFC)]: Indices todos pares ou todos ímpares
+    \end{description}
+    Assinale abaixo nas colunas correspondentes as reflexões possíveis para casa caso:
+} % Q7
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{7}{C}}
+            \toprule
+            
+                h & k & l & N & CS & CFC & CCC
+            
+            \\\midrule
+            
+                   1 & 0 & 0 &  1 & \CellTRUE{X} & \CellFALSE{} & \CellFALSE{}
+                \\ 1 & 1 & 0 &  2 & \CellTRUE{X} & \CellFALSE{} & \CellTRUE{X}
+                \\ 1 & 1 & 1 &  3 & \CellTRUE{X} & \CellTRUE{X} & \CellFALSE{}
+                \\ 2 & 0 & 0 &  4 & \CellTRUE{X} & \CellTRUE{X} & \CellTRUE{X}
+                \\ 2 & 1 & 0 &  5 & \CellTRUE{X} & \CellFALSE{} & \CellFALSE{}
+                \\ 2 & 1 & 1 &  6 & \CellTRUE{X} & \CellFALSE{} & \CellTRUE{X}
+                \\ 2 & 2 & 0 &  8 & \CellTRUE{X} & \CellTRUE{X} & \CellTRUE{X}
+                \\ 2 & 2 & 1 &  9 & \CellTRUE{X} & \CellFALSE{} & \CellFALSE{}
+                \\ 3 & 0 & 0 &  9 & \CellTRUE{X} & \CellFALSE{} & \CellFALSE{}
+                \\ 3 & 1 & 0 & 10 & \CellTRUE{X} & \CellFALSE{} & \CellTRUE{X}
+                \\ 3 & 1 & 1 & 11 & \CellTRUE{X} & \CellTRUE{X} & \CellFALSE{}
+                \\ 2 & 2 & 2 & 12 & \CellTRUE{X} & \CellTRUE{X} & \CellTRUE{X}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Os elementos do Grupo IV-A da tabela periódica apresentam uma estrutura cristalina designada de diamante em que as reflexões ocorrem nos planos nos quais os índices (\textit{h\,k\,l}) são: 
+    \begin{enumerate}[label={\roman{enumi}:}]
+        \item todos ímpares ou 
+        \item todos pares e \(h+k+l = 4\,n\), i.e., a soma é um múltiplo de 4. 
+    \end{enumerate}
+    Determine as posições \(2\,\theta\) em que deverá obter os primeiros 12 picos de difração do Si (\(a_{\ch{Si}} = 5.4309\,\si{\angstrom}\)), utilizando o comprimento de onda da radiação
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(K\,\alpha_{\ch{Mo}} = 0.71073\,\si{\angstrom}\) 
+            \item \(K\,\alpha_{\ch{Cu}} = 1.5406\,\si{\angstrom}\)
+        \end{multicols}
+    \end{itemize}
+} % Q8
+    \answer{}
+    \begin{flalign*}
+        &
+            n\,\lambda
+            =2\,d_{h\,k\,l}\,\sin(\theta)
+            \implies &\\&
+            \implies
+            2\,\theta
+            =2\,\arcsin{
+                \frac{n\,\lambda}{2\,d_{h\,k\,l}}
+            }
+            =2\,\arcsin{
+                \frac
+                {1*\lambda}
+                {
+                    2\,\left(
+                        a/\sqrt{h^2+k^2+l^2}
+                    \right)
+                }
+            }
+            = &\\&
+            = 2\,\arcsin{
+                \frac
+                {\lambda}
+                {2\,a/\sqrt{N}}
+            }
+            = 2\,\arcsin{
+                \frac{\lambda\,\sqrt{N}}{2\,a}
+            }
+        &
+    \end{flalign*}
+    \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{*{6}{C}}
+        \toprule
+        
+            h & k & l & N 
+            & 2\,\theta_{\ch{Mo}}
+            & 2\,\theta_{\ch{Cu}}
+        
+        \\\midrule
+
+               1 & 1 & 1 & 3  & \num{0.2271577799212618}  & \num{0.4964176526627561}
+            \\ 2 & 2 & 0 & 8  & \num{0.37229643079182634} & \num{0.8255969055372879}
+            \\ 3 & 1 & 1 & 11 & \num{0.43752076202560913} & \num{0.9795300408828223}
+            \\ 4 & 0 & 0 & 16 & \num{0.5296401588834614}  & \num{1.2065589800025225}
+            \\ 3 & 3 & 1 & 19 & \num{0.5784714580025393}  & \num{1.3330312444727548}
+            \\ 4 & 2 & 2 & 24 & \num{0.6526399087814267}  & \num{1.5364343977148072}
+            \\ 3 & 3 & 3 & 27 & \num{0.6938434696156168}  & \num{1.6572544356990346}
+            \\ 5 & 1 & 1 & 27 & \num{0.6938434696156168}  & \num{1.6572544356990346}
+            \\ 4 & 4 & 0 & 32 & \num{0.7583411174226298}  & \num{1.8624395464317756}
+            \\ 5 & 3 & 1 & 35 & \num{0.7949950826472407}  & \num{1.9913128689472925}
+            \\ 6 & 2 & 0 & 40 & \num{0.8533371822942181}  & \num{2.2261101048348797}
+            \\ 5 & 3 & 3 & 43 & \num{0.8869453875337996}  & \num{2.38928459392476}
+            
+        \\\bottomrule
+    \end{tabular}
+    % 0.71073
+    \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    \begin{itemize}
+        \item \(r_{\ch{Fe}} = 1.24\,\si{\angstrom}\)
+        \item \(\lambda\,K\,\alpha_{\ch{Cu}} = 1.54\,\si{\angstrom}\)
+        \item \(\lambda\,K\,\alpha_{\ch{Cr}} = 2.29\,\si{\angstrom}\)
+    \end{itemize}
+} % Q9
+    \begin{questionBox}2{ % Q9.1
+        Usando a lei de Bragg, calcule os ângulos de difração \(2\,\theta\) para os três primeiros
+        picos do \ch{Fe-\chemalpha} (CCC) obtidos com uma ampola de cobre e com uma ampola de crómio.
+    } % Q9.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q9.2
+        Compare os dados obtidos a partir destes cálculos com os valores do espectro do aço ferramenta H13.
+    } % Q9.2
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    Considere uma estrutura cúbica simples. Liste por ordem crescente de densidade atómica os seguintes planos:
+    \begin{itemize}
+        \begin{multicols}{4}
+            \item \{1\,0\,0\}
+            \item \{1\,1\,0\}
+            \item \{2\,1\,0\}
+            \item \{1\,1\,1\}
+            \item \{2\,1\,1\}
+            \item \{3\,1\,1\}
+            \item \{2\,2\,1\}
+        \end{multicols}
+    \end{itemize}
+} % Q10
+\end{questionBox}
+
+\begin{questionBox}1{ % Q11
+    Considere os seguintes ângulos de difração para os primeiros três picos do padrão de difração de raios X de um metal. Utilizou-se radiação monocromática que possui um
+    comprimento de onda de 0.1542\,\si{\nano\metre}.
+} % Q11
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{c C}
+            \toprule
+            
+                Ordem dos picos
+                &
+                \multicolumn{1}{c}{ângulo de difração}
+            
+            \\\midrule
+            
+                   1 & 38.6
+                \\ 2 & 55.7
+                \\ 3 & 70.0
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{questionBox}2{ % Q11.1
+        Determinar se esta estrutura cristalina é CFC ou CCC, ou nenhuma delas, justificando a sua escolha.
+    } % Q11.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q11.2
+        Com base na seguinte tabela identifique qual dos metais possui esse padrão de difração
+    } % Q11.2
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{l c C}
+                \toprule
+                
+                    \multicolumn{1}{c}{Metal}
+                    &\multicolumn{1}{c}{
+                        \begin{tabular}{c}
+                            Estrutura\\Cristalina
+                        \end{tabular}
+                    }
+                    &\multicolumn{1}{c}{
+                        \begin{tabular}{c}
+                            Raio Atómico\\(\si{\nano\metre})
+                        \end{tabular}
+                    }
+                
+                \\\midrule
+                
+                  Alumínio   & CFC  & 0.1431
+                \\Cadmio     & HC   & 0.1490
+                \\Crómio     & CCC  & 0.1249
+                \\Cobalto    & HC   & 0.1253
+                \\Cobre      & CFC  & 0.1278
+                \\Ouro       & CFC  & 0.1442
+                \\Ferro-a    & CCC  & 0.1241
+                \\Chumbo     & CFC  & 0.1750
+                \\Molibdénio & CCC  & 0.1363
+                \\Níquel     & CFC  & 0.1246
+                \\Platina    & CFC  & 0.1387
+                \\Prata      & CFC  & 0.1445
+                \\Tântalo    & CCC  & 0.1430
+                \\Titânio-a  & HC   & 0.1445
+                \\Tungsténio & CCC  & 0.1371
+                \\Zinco      & HC   & 0.1332
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+    \end{questionBox}
+\end{questionBox}
+
 
 \end{document}

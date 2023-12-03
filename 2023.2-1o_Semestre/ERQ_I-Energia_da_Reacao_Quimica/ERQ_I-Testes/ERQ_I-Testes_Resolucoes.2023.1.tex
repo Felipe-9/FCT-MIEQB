@@ -1,0 +1,459 @@
+% !TEX root = ./ERQ_I-Testes_Resolucoes.2023.1.tex
+\providecommand\mainfilename{"./ERQ_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Testes_Resolucoes.2023.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2023.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Testes_Resolucoes.2023.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ I]
+{Teste 1 2023 Resolução} % Subfile Title
+{Teste 1 2023 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    \begin{itemize}
+        \item Fase liq
+        \item \ch{A + B -> C}
+        \item 3 reatores batch
+        \item \(V=5\,\si{\metre^3}\)
+        \item \(C_{A\,0}=C_{B\,0}=1\,\si{\M}\)
+        \item \(t_{d}=2\,\si{\hour}\)
+        \item \(M_A = 60\,\si{\gram/\mole}\)
+        \item \(M_B = 130\,\si{\gram/\mole}\)
+        \item Caso n res a): \(k=2.8\,\si{\deci\metre^3.\mole^{-1}.\hour^{-1}}\)
+    \end{itemize}
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Lei cin
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                -r_A
+                = k\left(
+                    C_{A}
+                    \,C_{B}
+                \right)
+                = k\left(
+                    C_{A\,0}(1-X)
+                    \,C_{A\,0}(1-X)
+                \right)
+                = &\\&
+                = k\,C_{A\,0}^2(1-X)^2
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        eq da curva \(X=f(t)\)
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                X=f(t):&\\& 
+                -r_A\,V
+                = (k\,C_{A\,0}^2(1-X)^2)\,V
+                = k\,C_{A\,0}^2(1-X)^2\,V
+                = &\\&
+                =\odv{N_A}{t}
+                =\odv{(N_{A\,0}(1-X))}{t}
+                =N_{A\,0}\odv{(1-X)}{t}
+                \implies &\\[6ex]&
+                \implies
+                \int_0^t{
+                    k\,C_{A\,0}^2(1-X)^2\,V
+                    \,\odif{t}
+                }
+                = k\,C_{A\,0}^2\,V
+                \,\int_0^t{
+                    \,\odif{t}
+                }
+                = k\,C_{A\,0}^2\,V\,t
+                = &\\[3ex]&
+                = \int_{1}^{1-X}{
+                    N_{A\,0}
+                    \frac{\odif{(1-X)}}{(1-X)^2}
+                }
+                = &\\&
+                = N_{A\,0}
+                \,\int_{1}^{1-X}{
+                    \frac{\odif{(1-X)}}{(1-X)^2}
+                }
+                % = &\\&
+                = -N_{A\,0}
+                \adif{(1-X)^{-1}}
+                \big\vert_{1}^{1-X}
+                = &\\&
+                = N_{A\,0}\left(
+                    \frac{1}{1-X}
+                    -1
+                \right)
+                = \frac{N_{A\,0}}{1/X-1}
+                \implies &\\[3ex]&
+                \implies
+                X
+                = \left(
+                    1+\frac{N_{A\,0}}{k\,C_{A\,0}^2\,V\,t}
+                \right)^{-1}
+                % = &\\&
+                = \left(
+                    1+\frac{C_{A\,0}\,V}{k\,C_{A\,0}^2\,V\,t}
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    1+1/k\,C_{A\,0}\,t
+                \right)^{-1}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        const cine
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                k:
+                X=\left(
+                    1+1/k\,C_{A\,0}\,t
+                \right)^{-1}
+                \implies &\\&
+                \implies
+                k
+                = \left(
+                    C_{A\,0}\,t\,(X^{-1}-1)
+                \right)^{-1}
+                \cong \left(
+                    1*1.5*(0.8^{-1}-1)
+                \right)^{-1}
+                \cong &\\&
+                \cong
+                \SI{2.666666666666667}{\M^{-1}.\hour^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.4
+        \(t_{opt}\land X_{opt}\) (usando graf)
+    } % Q1.4
+        \answer{}
+        traçando do ponto \((0,-t_d)\) até tangenciar o gráfico temos:
+        \begin{BM}
+            X_{opt} \cong 0.7
+            \qquad
+            t_{opt} \cong 1\,\si{\hour}
+        \end{BM}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.5
+        Prod anual de C
+        \begin{itemize}
+            \item 24\,\si{\hour/\day}
+            \item 330\,\si{\day/\year}
+        \end{itemize}
+    } % Q1.5
+        \answer{}
+        \begin{flalign*}
+            &
+                m_C
+                = N_{C}\,M_C\,N_{batches}
+                = N_{C}*130
+                * (3*24*330/t_{batch})
+                = &\\&
+                = N_{C}
+                \,3088800
+                /(t_{opt}+t_d)
+                = N_{C}
+                \,3088800
+                /(1+2)
+                = N_{C}\,1029600
+                ; &\\[3ex]&
+                % N_B
+                N_C
+                = N_{A\,0}\,X
+                = C_{A\,0}\,V*3\,X
+                \cong &\\&
+                \cong 1*5*0.7
+                \cong 3.5
+                \implies &\\[3ex]&
+                \implies
+                m_C \cong \SI{3.603600}{\tonne}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.6
+        expl proc p det analit \(X_{opt}\land t_{opt}\)
+    } % Q1.6
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    \begin{itemize}
+        \item \ch{A -> 3 B}
+        % \item fase gas
+        % \item vol const
+        \item \(T_0=500\,\si{\celsius}=773.15\,\si{\kelvin}\)
+        \item \(k=0.03\,\si{\min^{-1}}\)
+    \end{itemize}
+} % Q2
+    \begin{BM}
+        \int{\frac{1+a\,X}{1-X}\odif{X}}
+        = -a\,X
+        + (1+a)
+        \,\ln\frac{1}{1-X}
+    \end{BM}
+    \begin{questionBox}2{ % Q2.1
+        det P de conv
+        \begin{itemize}
+            \item batch
+            \item vol const
+            \item fase gas
+            \item \(X=0.99\)
+            \item Carreg A puro
+            \item \(P_{0}=2\,\si{\atm}\)
+        \end{itemize}
+    } % Q2.1
+        \answer{}
+        \begin{flalign*}
+            &
+                P
+                =P_0
+                \,\frac{V_0}{V}
+                \,\frac{T}{T_{0}}
+                \,(1+\varepsilon\,X)
+                =2\,(1+(-1+3)\,0.99)\,\si{\atm}
+                \cong
+                \SI{5.96}{\atm}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.2
+        nas cond de a), qual o t para \(X=99\)
+    } % Q2.2
+        \answer{}
+        \begin{flalign*}
+            &
+                t
+                = C_{A\,0}
+                \int_0^{X}{
+                    \frac{\odif{X}}{-r_A}
+                }
+                = C_{A\,0}
+                \int_0^{X}{
+                    \frac{\odif{X}}{
+                        k\,C_{A}
+                    }
+                }
+                = C_{A\,0}
+                \int_0^{X}{
+                    \frac{\odif{X}}{
+                        k\,(F_{A}/v)
+                    }
+                }
+                = &\\&
+                = C_{A\,0}
+                \int_0^{X}{
+                    \frac{
+                        (v_0(1+\varepsilon\,X))
+                    }{
+                        k\,(F_{A\,0}(1-X))
+                    }\odif{X}
+                }
+                = &\\&
+                = \frac{
+                    C_{A\,0}
+                }{
+                    k\,(F_{A\,0}/v_0)
+                }
+                \int_0^{X}{
+                    \frac{
+                        1+\varepsilon\,X
+                    }{
+                        1-X
+                    }\odif{X}
+                }
+                = &\\&
+                = \frac{
+                    C_{A\,0}
+                }{
+                    k\,(C_{A\,0})
+                }
+                \adif{\left(
+                    -\varepsilon\,X
+                    + (1+\varepsilon)
+                    \,\ln\frac{1}{1-X}
+                \right)}\big\vert_0^X
+                = &\\&
+                = k^{-1}\left(
+                    -\varepsilon\,X
+                    + (1+\varepsilon)
+                    \,\ln\frac{1}{1-X}
+                \right)
+                = &\\&
+                = (0.03*60)^{-1}\left(
+                    -2*0.99
+                    + (1+2)
+                    \,\ln\frac{1}{1-0.99}
+                \right)
+                \cong
+                \SI{6.575283643313486}{\hour}
+                % ================ 1st try =============== %
+                % ================ 1st try =============== %
+                % ================ 1st try =============== %
+                % t
+                % = C_{A\,0}
+                % \int_0^{0.99}{
+                %     \frac{\odif{X}}{-r_A}
+                % }
+                % = C_{A\,0}
+                % \int_0^{0.99}{
+                %     \frac{\odif{X}}{
+                %         k\,C_{A}
+                %     }
+                % }
+                % = &\\&
+                % = C_{A\,0}
+                % \int_0^{0.99}{
+                %     \frac{\odif{X}}{
+                %         k\,C_{A\,0}(1-X)
+                %     }
+                % }
+                % % = &\\&
+                % = \frac{C_{A\,0}}{k\,C_{A\,0}}
+                % \int_0^{0.99}{
+                %     \frac{\odif{X}}{
+                %         (1-X)
+                %     }
+                % }
+                % = &\\&
+                % = -k^{-1}
+                % \int_{1}^{1-0.99}{
+                %     \frac{\odif{(1-X)}}{(1-X)}
+                % }
+                % % = &\\&
+                % = -k^{-1}
+                % \adif{\log(1-X)}
+                % \big\vert_{1}^{0.01}
+                % = &\\&
+                % = -(0.03*60)^{-1}\,\log(0.01)
+                % = 3.6\,\si{\hour}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.3
+        Det o vol
+        \begin{itemize}
+            \item PFR
+            \item \(v_A=100\,\si{\litre/\second}\)
+            \item \(P=2\,\si{\atm}\)
+        \end{itemize}
+    } % Q2.3
+        \answer{}
+        \begin{flalign*}
+            &
+                V:
+                \odif{V}
+                = F_{A\,0}\,\frac{\odif{X}}{-r_A}
+                = C_{A\,0}\,v_0
+                \,\frac{\odif{X}}{
+                    k\,(F_{A}/v)
+                }
+                = &\\&
+                = C_{A\,0}\,v_0
+                \,\frac{\odif{X}}{
+                    \frac{
+                        k\,(C_{A\,0}(1-X))
+                    }{
+                        (1+\varepsilon\,X)
+                        \,(T/T_0)
+                        \,(P_0/P)
+                    }
+                }
+                = \frac{v_0}{k}
+                \,\frac{\odif{X}}{
+                    \frac{
+                        1-X
+                    }{
+                        1+\varepsilon\,X
+                    }
+                }
+                = \frac{v_0}{k}
+                \,\frac{
+                    1+\varepsilon\,X
+                }{
+                    1-X 
+                }\odif{X}
+                \implies &\\[3ex]&
+                \implies
+                V
+                = \frac{v_0}{k}
+                \,\int{
+                    \frac{
+                        1+\varepsilon\,X
+                    }{
+                        1-X 
+                    }\odif{X}
+                }
+                = &\\&
+                = \frac{v_0}{k}
+                \adif{\left(
+                    -\varepsilon\,X
+                    + (1+\varepsilon)
+                    \,\ln\frac{1}{1-X}
+                \right)}
+                \Bigg\vert_0^X
+                = &\\&
+                = \frac{v_0}{k}
+                \left(
+                    -\varepsilon\,X
+                    + (1+\varepsilon)
+                    \,\ln\frac{1}{1-X}
+                \right)
+                = &\\&
+                = \frac{100}{(0.03/60)}
+                \left(
+                    -2*0.99
+                    + (1+2)
+                    \,\ln\frac{1}{1-0.99}
+                \right)
+                \cong
+                \SI{2.367102111592854820822e6}{\litre}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Det numero de reatores
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \ch{A -> B}
+            \item bateria de R CSTR
+            \item \(V_r=1\,\si{\metre^3}\)
+            \item \(k=0.5\,\si{\hour^{-1}}\)
+            \item \(C_{A\,0}=5\,\si{\M}\)
+            \item \(v_0=1759\,\si{\deci\metre^3/\hour}\)
+            \item \(X\geq 89\%\)
+        \end{multicols}
+    \end{itemize}
+} % Q3
+    \answer{}
+    \begin{flalign*}
+        &
+            N_R
+            = \ceil{V_R/V_r}
+            = \ceil{1.15*V/1}
+            = \ceil{1.15*(N_{A\,0}/C_{A\,0})}
+            = &\\&
+            = \ceil{1.15*(N_{A}/(1-X))/C_{A\,0}}
+            ; &\\[6ex]&
+            -r_A 
+            = k\,C_{A}
+            = k\,C_{A\,0}\,(1-X)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

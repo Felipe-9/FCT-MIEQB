@@ -1,0 +1,40 @@
+% !TEX root = ./EB-Listas_Resolucoes.5.tex
+\providecommand\mainfilename{"./EB-Listas_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Listas_Resolucoes.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Listas_Resolucoes.2}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Listas_Resolucoes.2/graphics/}
+
+\mymakesubfile{5}
+[EB]
+{Resolução lista} % Subfile Title
+{Resolução lista} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Pretende-se operar um fermentador cilíndrico a uma temperatura de 40\,\si{\celsius} e a uma taxa de arejamento de 0.02\,\si{\centi\metre^3.\centi\metre^{-3}.\second^{-1}}. Considerando que o fermentador tem um diâmetro interno de 40\,\si{\centi\metre}, uma altura de 2\,\si{\metre} e um diâmetro de orifício de passagem de ar com 0.65\,\si{\milli\metre}, calcule:\\
+    A velocidade máxima de transferência de oxigénio para o meio de cultura com as seguintes características:
+    \begin{itemize}
+        \item Densidade do meio de cultura: 1\,\si{\gram.\centi\metre^{-1}.\second^{-1}}
+        \item Viscosidade do meio de cultura: \(\mu=1.5\E-2\,\si{\gram.\centi\metre^{-1}.\second^{-1}}\)
+        \item Tensão superfícial: 72\,\si{\gram.\second^{-2}}
+        \item Densidade do gás: \(\rho_g=1.4\E-3\,\si{\gram,\centi\metre^{-3}}\)
+        \item Difusividade do oxigénio: \(2\E-5\,\si{\centi\metre^2.\second^{-1}}\)
+        \item Concentração de equilíbrio do oxigénio no meio líquido a 40\si{\celsius}: \(1.03\,\si{\milli\molar}\)
+    \end{itemize}
+} % Q1
+    \paragraph*{Nota:}Utilize a lei de Newton no cálculo da velocidade terminal:
+    \begin{BM}
+        v_t=\sqrt{
+            \frac{3.33\,g\,\adif{\rho}}{\rho_L}
+            \,D_P
+        }
+    \end{BM}
+\end{questionBox}
+
+\end{document}

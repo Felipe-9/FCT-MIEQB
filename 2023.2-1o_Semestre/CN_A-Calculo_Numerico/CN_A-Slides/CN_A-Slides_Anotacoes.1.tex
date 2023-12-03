@@ -1,0 +1,433 @@
+% !TEX root = ./CN_A-Slides_Anotacoes.1.tex
+\providecommand\mainfilename{"./CN_A-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CN_A-Slides_Anotacoes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CN_A-Slides_Anotacoes.1}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Slides_Anotacoes.1/graphics/}
+
+\mymakesubfile{1}
+[CN A]
+{Teoria dos Erros} % Subfile Title
+{Teoria dos Erros} % Part Title
+
+\begin{sectionBox}1{Definindo Erros} % S
+    
+    \paragraph{Erros iniciais do problema:}
+    erros iniciais independentes do processo de cálculo
+    \begin{itemize}
+        \item Relativos ao modelo matemático escolhido
+        \item prevenientes dos dados iniciais
+    \end{itemize}
+
+    \paragraph{Erros que ocorrem durante a aplicação de métodos numéricos:}
+    erros que ocorrem durante o processo de cálculo
+    \begin{itemize}
+        \item Erros de arredondamento
+        \item Erros de truncatura
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Definições} % S
+    
+    \begin{BM}
+        x\approx\hat{x}
+        \implies
+        \begin{cases}
+            \text{Erro:}\quad&
+            \varepsilon_x=x-\hat{x}
+            \\
+            \text{Erro absoluto:}\quad&
+            \myvert{\varepsilon_x}=\myvert{x-\hat{x}}
+            \\
+            \text{Erro relativo:}\quad&
+            r_x = \frac{\myvert{x-\hat{x}}}{\myvert{x}}
+        \end{cases}
+        \\
+        \varepsilon_x
+        \begin{cases}
+            >0,\therefore\hat{x}\text{ é um valor aproximado por \textcolor{red\Light}{defeito}}
+            \\
+            <0,\therefore\hat{x}\text{ é um valor aproximado por \textcolor{green\Light}{excesso}}
+        \end{cases}
+    \end{BM}
+    \paragraph{Erro relativo:} Mede a precisão do valor aproximado \(\hat{x}\)
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Intervalo que contem \(x\)} % S
+    
+    \begin{BM}
+        I_x=\myrange{\hat{x}-\eta_x,\hat{x}+\eta_x}
+        : \myvert{x-\hat{x}}\leq\eta_x
+        \\[2ex]
+        \eta_x\begin{cases}
+            0.5*10^{-i}
+            \quad&
+            :\hat{x}*10^i\in\mathbb{Z}
+            \\
+            \eta_x
+            \quad&
+            :\hat{x}\pm\eta_x
+            \\
+            y*10^{-i}
+            \quad&
+            :\hat{x}\,(y)\land\hat{x}*10^i\in\mathbb{Z}
+        \end{cases}
+    \end{BM}
+
+    \begin{multicols}{2}
+        \begin{exampleBox}1{ % E1
+            12.3
+        } % E1
+            \answer{}
+            \begin{flalign*}
+                &
+                    \myvert{x-\hat{x}}
+                    \leq0.5*10^{-1}
+                    =\eta_x
+                    &\\&
+                    \therefore
+                    I_x
+                    = \myrange{
+                        12.3-0.05,
+                        12.3+0.05
+                    }
+                    = &\\&
+                    = \myrange{
+                        12.25,12.35
+                    }
+                &
+            \end{flalign*}
+        \end{exampleBox}
+        \begin{exampleBox}1{ % E2
+            \(87.9\pm0.07\)
+        } % E2
+            \answer{}
+            \begin{flalign*}
+                &
+                    \myvert{x-\hat{x}}
+                    \leq0.07
+                    = \eta_x
+                    &\\&
+                    \therefore
+                    I_x
+                    =\myvert{
+                        87.9-0.07,
+                        87.9+0.07
+                    }
+                    = &\\&
+                    =\myvert{87.83,87.97}
+                &
+            \end{flalign*}
+        \end{exampleBox}
+        \begin{exampleBox}1{ % E3
+            \(400.32\,(6)\)
+        } % E3
+            \answer{}
+            \begin{flalign*}
+                &
+                    \myvert{x-\hat{x}}
+                    \leq6*10^{-2}
+                    = \eta_x
+                    &\\&
+                    \therefore
+                    I_x
+                    =\myrange{400.26,400.38}
+                &
+            \end{flalign*}
+        \end{exampleBox}
+    \end{multicols}
+    \begin{exampleBox}1{ % E4
+        \begin{BM}
+            x=1/17
+            \qquad
+            \hat{x}=0.059
+        \end{BM}
+    } % E4
+        \answer{}
+        \sisetup{
+            round-mode={places},% figures/places/unsertanty/none
+            round-precision={3},
+        }
+        \subsubquestion{Erro Absoluto}
+        \begin{flalign*}
+            &
+                \myvert{\varepsilon_x}
+                = \myvert{x-\hat{x}}
+                = \myvert{1/17-0.059}
+                = 0.17647\dots\E-3
+                \leq 0.177\E-3
+            &
+        \end{flalign*}
+        \subsubquestion{Erro relativo}
+        \begin{flalign*}
+            &
+                r_x
+                = \frac{\myvert{x-\hat{x}}}{\myvert{x}}
+                = \frac{\myvert{1/17-0.059}}{\myvert{1/17}}
+                = 0.300\E-2
+            &
+        \end{flalign*}
+    \end{exampleBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Significancia} % S
+    
+    Disemos que \(\hat{x}\) se aproxima de \textit{x} com, no mínimo \textit{k} \emph{casas decimais significativas} \(\iff\)
+    \begin{BM}
+        k\in\mathbb{N}_0
+        : \myvert{\varepsilon_x}\leq0.5*10^{-k}
+    \end{BM}
+
+    Disemos que \(\hat{x}\) se aproxima de \textit{x} com, com \textit{n} \emph{algarismos significativos} \(\iff\)
+    \begin{BM}
+        n\in\mathbb{N}_0
+        : \begin{cases}
+            \myvert{\varepsilon_x}
+            \leq0.5*10^{m+1-n}
+            \\
+            m\in\mathbb{Z}: 10^m\leq\myvert{x}<10^{m+1}
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E
+    Na determinação de \textit{x} obteve-se o resultado \num{0.001773(8)}.\\
+} % E
+    \answer{}
+    \subsubexample{Casas decimais significativas}
+    \begin{flalign*}
+        &
+            k
+            :\myvert{x-\hat{x}}
+            =\myvert{\varepsilon_x}
+            \leq 0.8*10^{-5}
+            = 0.5*10^{-4}
+            \implies k=4
+        &
+    \end{flalign*}
+    \subsubexample{Algarismos significativos}
+    \begin{flalign*}
+        &
+            n:10^{-3}
+            \leq\myvert{x}
+            \approx\myvert{\hat{x}}
+            <10^{-2}
+            \implies &\\&
+            \implies
+            m+1-n
+            = -2-n
+            % = &\\&
+            = -k
+            = -4
+            \implies &\\&
+            \implies
+            n=2
+        &
+    \end{flalign*}
+\end{exampleBox}
+
+\part*{Condicionamento de um problema}
+
+\begin{sectionBox}1{Propagação de erro absoluto} % S
+    
+    \paragraph{Fórmula fundamental do cálculo dos erros}
+    \begin{BM}
+        \myvert{\varepsilon_{g_{(x)}}}
+        \leq M_1\,\myvert{\varepsilon_x}
+        : \myvert{\odv{g_{(z)}}{x}}\leq M_1,z\in V_{\delta\,(x)}
+    \end{BM}
+
+    \begin{sectionBox}*2{Desenvolvimento} % S
+        Seja \textit{g} uma função diferenciável numa vizinhança \(V_{\delta\,(x)}\) de \textit{x}.\\
+        Utilizando a fórmula de Taylor tem-se:
+        \begin{flalign*}
+            &
+                g_{(x)} 
+                = g_{(\hat{x})}
+                + \odv{g_{(\xi)}}{x}(x-\hat{x})
+                : \quad \xi\in\myrange{x,\hat{x}}
+                \implies &\\&
+                \implies
+                \varepsilon_{g_{(x)}}
+                = g_{(x)} - g_{(\hat{x})}
+                = \odv{g_{(\xi)}}{x}(x-\hat{x})
+                = M_1\,\varepsilon_x
+                \implies &\\&
+                \implies
+                \myvert*{\varepsilon_{g_{(x)}}}
+                \leq M_1\,\myvert{\varepsilon_x}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Propagação do erro relativo} % S
+    
+    \begin{BM}
+        r_{g(x)}
+        \approx
+        C_{g\,(x)}\,r_x
+    \end{BM}
+
+    \begin{sectionBox}*3{Desenvolvimento} % S
+        
+        Considerando novamente \textit{g}, mas de classe \(C^2(V_{\delta\,(x)})\), aplicando a formula de Taylor:
+        \begin{flalign*}
+            &
+                g_{(\hat{x})}
+                = g_{(x)}
+                + \odv{g_{(x)}}{x}(x-\hat{x})
+                + \odv[order=2]{g_{(x)}}{x}\frac{(x-\hat{x})^2}{2}
+                \underset{x\approx\hat{x}}{\approx}
+                g_{(x)}
+                + \odv{g_{(x)}}{x}(x-\hat{x})
+                + \odv[order=2]{g_{(x)}}{x}\frac{0}{2}
+                = &\\&
+                = g_{(x)}
+                + \odv{g_{(x)}}{x}(x-\hat{x})
+                % \implies &\\&
+                \implies
+                \myvert{g_{(x)}-g_{(\hat{x})}}
+                \approx
+                \myvert{\odv{g_{(x)}}{x}}
+                \myvert{x-\hat{x}}
+                \implies &\\&
+                \implies
+                \frac{\myvert{g_{(x)}-g_{(\hat{x})}}}{\myvert{g_{(x)}}}
+                = r_{g(x)}
+                \approx
+                \myvert{
+                    \frac{x}{g_{(x)}}
+                    \odv{g_{(x)}}{x}
+                }
+                \frac{\myvert{x-\hat{x}}}{\myvert{x}}
+                = \myvert{
+                    \frac{x}{g_{(x)}}
+                    \odv{g_{(x)}}{x}
+                }
+                r_{x}
+                = C_{g\,(x)}
+                r_{x}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    \paragraph{Numero de condição de uma função \textit{g} num ponto \textit{x}}
+    \begin{BM}
+        C_{g\,(x)} 
+        = \myvert{
+            \frac{x}{g_{(x)}}
+            \,\odv{g_{(x)}}{x}
+        }
+        ,\quad g_{(x)}\neq0
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E
+    \begin{BM}
+        g_{1\,(x)} = x^2\quad (x>0).
+    \end{BM}
+} % E
+    \vspace{-10ex}
+    \begin{flalign*}
+        &
+            C_{g_1\,(x)}
+            = \myvert{
+                \frac{x}{g_{1\,(x)}}
+                \,\odv{g_{1\,(x)}}{x}
+            }
+            = \myvert{
+                \frac{x}{x^x}
+                \,(x\,x^{x-1} + x^x\,\ln(x))
+            }
+            = \myvert{x\,(1+\ln(x))}
+        &
+    \end{flalign*}
+\end{exampleBox}
+
+\begin{sectionBox}1{Condicionamento de uma função/problema} % S
+    
+    Uma função diz-se:
+    \begin{itemize}
+        \item \textcolor{green\Light}{Bem condicionado:} Pequenas variações nos dados iniciais/parametros implicam em pequenas variações nos resultados
+        \item \textcolor{red\Light}{Mal condicionado:} Situação inversa
+    \end{itemize}
+    \paragraph{Nota:} \emph{Independe} do método numérico utilizado
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Estabilidade de um método numérico} % S
+    
+    Um método numérico diz-se
+    \begin{itemize}
+        \item \textcolor{green\Light}{Estável:} Acumulação dos erros não afeta significativamente o resultado final;
+        \item \textcolor{red\Light}{Instável: } Caso contrário
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E
+    Considere as duas funções matematicamente idênticas:
+    \begin{BM}
+        f_{(\theta)}
+        = \frac{\tan^2\theta}{\theta^2}
+        \qquad
+        g_{(\theta)}
+        = \frac{1-\cos(2\,\theta)}{\theta^2\,(1+\cos(2\,\theta))}
+        \\
+        \lim_{\theta\to0}{f_{(\theta)}}
+        = \lim_{\theta\to0}{g_{(\theta)}}
+        = 1
+    \end{BM}
+} % E
+    \begin{center}
+        \vspace{1ex}
+        \sisetup{
+            round-precision={9},
+        }
+        \begin{tabular}{*{3}{C}}
+            \toprule
+            
+                \theta
+                & f_{(\theta)}
+                & g_{(\theta)}
+            
+            \\\midrule
+            
+               10^{-1} & \num{1.0067046422494887} & \num{1.006704642249489}
+            \\ 10^{-2} & \num{1.0000666704446415} & \num{1.0000666704447514}
+            \\ 10^{-3} & \num{1.0000006666670447} & \num{1.0000006666846255}
+            \\ 10^{-4} & \num{1.0000000066666668} & \num{1.0000000039225287}
+            \\ 10^{-5} & \num{1.0000000000666665} & \num{1.0000000828403706}
+            \\ 10^{-6} & \num{1.0000000000006666} & \num{0.9999778782808777}
+            \\ 10^{-7} & \num{1.0000000000000067} & \num{0.9992007221626502}
+            \\ 10^{-8} & 1 & \num{1.1102230246251554}
+            \\ 10^{-9} & 1 & 0
+            \\ 10^{-10} & 1 & 0
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{BM}
+        \therefore\begin{cases}
+            f_{(\theta)}:&\text{\textcolor{green\Light}{estável}}
+            \\
+            g_{(\theta)}:&\text{\textcolor{red\Light}{instável}}
+        \end{cases}
+    \end{BM}
+\end{exampleBox}
+
+\end{document}

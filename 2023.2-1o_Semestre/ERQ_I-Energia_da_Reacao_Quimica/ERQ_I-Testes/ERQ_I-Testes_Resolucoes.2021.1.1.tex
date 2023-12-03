@@ -1,0 +1,310 @@
+% !TEX root = ./ERQ_I-Testes_Resolucoes.2021.1.1.tex
+\providecommand\mainfilename{"./ERQ_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Testes_Resolucoes.2021.1.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2021.1.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Testes_Resolucoes.2021.1.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ I]
+{Teste 2021.1 Repescagem Resolução} % Subfile Title
+{Teste 2021.1 Repescagem Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A fugura mostra a curva cinética obtida em reator bath para a reação elementar, em fase líquida \ch{A + B <> C + D}. A reação é conduzida em reatores batch com volume de 5\,\si{\metre^3} cada, que são carregados com uma solução 1\,\si{\M} em \ch{A}. Determine, mostrando todos os calculos e tambem usando os gráfico:
+} % Q1
+    \paragraph*{Dados:}
+    \begin{description}[
+        % leftmargin=!,
+        % labelwidth=\widthof{} % Longest item
+    ]
+        \item[Tempos mortos] 1.5\,\si{\hour}
+        \item[Peso molecular]\ \vspace{-2ex}
+        \begin{itemize}
+            \begin{multicols}{3}
+                \item \(C:\) 130;
+                \item \(C_{A\,0}:\) 1\,\si{\M};
+                \item \(C_{B\,0}:\) 2\,\si{\M}
+            \end{multicols}
+        \end{itemize} 
+    \end{description}
+    \begin{questionBox}2{ % Q1.1
+        A experssão da lei cinética
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                r
+                = k\left(
+                    C_{A}\,C_{B}
+                    -\frac{C_{C}\,C_D}{k_e}
+                \right)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        O valor da converão de equilíbrio.
+    } % Q1.2
+        \answer{}
+        O valor de X quando a curva está horizontal: 0.8
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        O valor da constante de equilíbrio.
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                r 
+                = 0
+                = k\left(
+                    C_{A}\,C_{B}
+                    -\frac{C_{C}\,C_D}{k_e}
+                \right)
+                = &\\&
+                = k\left(
+                    C_{A\,0}(1-X_e)
+                    \,C_{A\,0}(\theta_B-X_e)
+                    -\frac{
+                        C_{A\,0}\,X_e
+                        \,C_{A\,0}\,X_e
+                    }{k_e}
+                \right)
+                = &\\&
+                = k\,C_{A\,0}^2\left(
+                    (1-X_e)
+                    \,(\theta_B-X_e)
+                    -\frac{X_e^2}{k_e}
+                \right)
+                \implies &\\&
+                \implies
+                (1-X_e)
+                \,(\theta_B-X_e)
+                -\frac{X_e^2}{k_e}
+                = \theta_B-X_e
+                -X_e\,\theta_B
+                +X_e^2
+                -\frac{X_e^2}{k_e}
+                =0
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.4
+        Os valores do tempo ótimo e da converção ótima.
+    } % Q1.4
+        \answer{}
+        \(\cong1\). No grafico conecta do ponto (-1.5,0) até tangenciar a reta, o valor T do ponto tangente é o tempo ótimo.
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.5
+        O valor da constante cinética da reação direta
+    } % Q1.5
+        \answer{}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.6
+        O numero de reatores necessário a uma produção anual de \(C\) de 1000\,\si{\tonne}, supondo que a fabrica funciona 24\,\si{\hour} por dia e 330\,\si{\day/\year}, supondo que se pretende uma conversão correspondente a 99\,\si{\percent} da converão de equilíbrio.
+    } % Q1.6
+
+        \answer{}
+        \begin{flalign*}
+            &
+                V_R
+                = 1.15*V
+                = 1.15*\frac{N_{A\,0}}{C_{A\,0}}
+                = 1.15*\frac{N_C/X}{1}
+                = 1.15*\frac{N_C}{X}
+                = &\\&
+                = 1.15*\frac{
+                    \frac{1\e9}{130*\text{batch}_{\text{ano}}}
+                }{0.99\,X_e}
+                = 1.15*\frac{
+                    \frac{
+                        1\e9
+                    }{
+                        130
+                        *\frac{24*330}{t_{\text{batch}}}
+                    }
+                }{0.792}
+                % = &\\&
+                = 1.15*\frac{
+                    \frac{
+                        1\e9
+                    }{
+                        130
+                        *\frac{24*330}{t+t_d}
+                    }
+                }{0.792}
+                = &\\&
+                = 1.15*\frac{
+                    \frac{
+                        1\e9
+                    }{
+                        130
+                        *\frac{24*330}{2+1.5}
+                    }
+                }{0.792}
+                \cong
+                \num{402.936008996615057}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A reaçõa elelemtar, em fase gasosa, \ch{2 A -> 3 B + C} é conduzida à temperatura de 473\,\si{\kelvin} e à pressão de 5\,\si{\atm} num reator PFR (\(k=0.4\,\si{\litre.\mole^{-1}.\second^{-1}}\)). Assumindo que o reagente A é alimentado puro ao reator, a um caudal volumétrico de 15\,\si{\litre/\second} e que se obtém uma conversão de 99\,\si{\percent}, Determine:
+} % Q2
+    \begin{BM}
+        P\left(
+            \frac{1+\varepsilon\,X}{1-X}
+        \right)
+        = \frac{(1+\varepsilon)^2}{1-X}
+        - 2\,\varepsilon(1+\varepsilon)
+        \,\ln\frac{1}{1-X}
+        + \varepsilon^2\,X
+        \\
+        R=0.082\,\si{\litre.\atm.\kelvin^{-1}.\mole^{-1}}
+    \end{BM}
+    \begin{questionBox}2{ % Q2.1
+        O volume do reator
+    } % Q2.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \int_{0}^{V}{\odif{V}}
+                = V
+                = \int_{0}^{X}{
+                    \frac{F_{A\,0}}{-r_A}\odif{X}
+                }
+                = F_{A\,0}
+                \,\int_{0}^{X}{
+                    \frac{\odif{X}}{-r_A}
+                }
+                ; &\\[3ex]&
+                r_A 
+                = -k\,C_{A}^2
+                = -k\,\left(
+                    \frac{F_A}{v}
+                \right)^2
+                = -k\,\left(
+                    \frac{F_{A\,0}\,(1-X)}{v}
+                \right)^2
+                = &\\&
+                = -k\,\left(
+                    \frac{
+                        F_{A\,0}\,(1-X)
+                    }{
+                        v_0(1+\varepsilon\,X)
+                    }
+                \right)^2
+                = -k\,C_{A\,0}^2\,\left(
+                    \frac{
+                        1-X
+                    }{
+                        1+\varepsilon\,X
+                    }
+                \right)^2
+                ; &\\[3ex]&
+                C_{A\,0}
+                = \frac{P_{A\,0}}{R\,T}
+                = \frac{P\,Y_{A\,0}}{R\,T}
+                &\\[3ex]&
+                \varepsilon
+                = Y_{A\,0}\,\delta
+                = Y_{A\,0}\,(-1+3/2+1/2)
+                = Y_{A\,0}
+                \implies &\\[3ex]&
+                \implies
+                V
+                = F_{A\,0}
+                \int_{0}^{X}{
+                    \frac{\odif{X}}{
+                        k\,C_{A\,0}^2
+                        \left(
+                            \frac{1-X}{
+                                1+\varepsilon\,X
+                            }
+                        \right)^2
+                    }
+                }
+                = &\\&
+                = \frac{(v_0\,C_{A\,0})}{C_{A\,0}^2\,k}
+                \int_{0}^{X}{
+                    \left(
+                        \frac{1+\varepsilon\,X}{1-X}
+                    \right)^2
+                    \,\odif{X}
+                }
+                = \frac{v_0}{C_{A\,0}\,k}
+                \int_{0}^{X}{
+                    \left(
+                        \frac{1+\varepsilon\,X}{1-X}
+                    \right)^2
+                    \,\odif{X}
+                }
+                = &\\&
+                = \frac{v_0}{C_{A\,0}\,k}
+                \adif{\left(
+                    \frac{(1+\varepsilon)^2}{1-X}
+                    - 2\,\varepsilon(1+\varepsilon)
+                    \,\ln\frac{1}{1-X}
+                    + \varepsilon^2\,X
+                \right)}\Bigg\vert_0^X
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.2
+        O valor do caudal volumétrico à saída do reator.
+    } % Q2.2
+        \answer{}
+        \begin{flalign*}
+            &
+                v
+                =v_0\,(1+\varepsilon\,X)
+                =15\,(1+1*0.99)
+                \cong\num{29.85}\,\si{\litre/\second}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.3
+        O valor do caudal molar do produto B, à saída do reator.
+    } % Q2.3
+        \answer{}
+        \begin{flalign*}
+            &
+                F_B
+                = \frac{3}{2}\,F_{A\,0}\,X
+                = \frac{3}{2}\,C_{A\,0}\,v_0\,X
+                = \frac{3}{2}
+                *\num{0.128978675645342}
+                *15
+                *0.99
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.4
+        Caso a reação seja conduzida num reator batch, a volume constante, nas mesmas condições de temperatura e pressão inicial, determine o valor da pressão à conversão de 99\,\si{\percent}
+    } % Q2.4
+        \answer{}
+        \begin{flalign*}
+            &
+                \frac{P}{P_0}
+                \,\frac{V}{V_0}
+                = \frac{P}{P_0}
+                =1+\varepsilon\,X\,\frac{T}{T_0}
+                =1+\varepsilon\,X
+                \implies &\\&
+                \implies
+                P
+                = P_0\,(1+\varepsilon\,X)
+                = 5\,(1+1*.99)
+                = 9.95
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

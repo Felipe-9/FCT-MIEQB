@@ -12,7 +12,7 @@
 \usepackage{mypallete}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
-% \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
+\usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
 \colorlet{Link}      {LightGreen!25!foreground}
@@ -57,6 +57,9 @@
 \usepackage{fontspec}
 % \usepackage[sfdefault, ultralight]{FiraSans}
 % \renewcommand{\familydefault}{\sfdefault} % set sans serif as defalt
+% Redeclare emph
+\let\emph\relax
+\DeclareTextFontCommand{\emph}{\bfseries\color{Emph}}
 % % ==================== Set font family =================== %
 \setmainfont[
     Ligatures = TeX,
@@ -181,13 +184,13 @@
 % -------------------------------------------------------- %
 \usepackage{siunitx}
 \sisetup{
-    % scientific / engineering / false / fixed
-    scientific-notation    = engineering,
-    exponent-to-prefix     = false, % 1000 g -> 1 kg
-    % exponent-product       = *, % x * 10^y
-    round-mode             = places, % figures/places/none
-    round-precision        = 2,
-    output-exponent-marker = {\,\mathrm{E}},
+    % input / scientific / engineering / false / fixed
+    exponent-mode={input},
+    exponent-to-prefix={false}, % 1000 g -> 1 kg
+    % exponent-product={*}, % x * 10^y
+    round-mode={places}, % figures/places/none
+    round-precision={3},
+    output-exponent-marker={\,\mathrm{E}},
 }
 % ==================== Declaring units =================== %
 \DeclareSIUnit\atm{atm}
@@ -210,9 +213,11 @@
 % \usepackage{firamath-otf}
 % % ======================================================== %
 \usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 % % ======================================================== %
 % % ============== MathOperators Declarations ============== %
-% \DeclareMathOperator\E{\,E}
+\DeclareMathOperator\E{\,E}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
 % \DeclareMathOperator\csch   {csch}
@@ -268,10 +273,20 @@
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
 \usepackage{tikz}\usetikzlibrary{babel}
-% \usetikzlibrary{
-%     % perspective,
-%     % 3d,
-% }
+\usetikzlibrary{
+    through,
+    % perspective,
+    3d,
+}
+\tikzset{
+    dot/.style={
+        circle, fill, 
+        minimum size=#1,
+        inner sep=0pt, 
+        outer sep=0pt
+    },
+    dot/.default={6pt}, % size of the circle diameter
+}
 % ===================== External lib ===================== %
 \usepackage{tikz-external-setup}
 \tikzexternalize[
@@ -305,7 +320,10 @@
 % -------------------------------------------------------- %
 \setlength\tabcolsep{6mm}        % width
 \renewcommand\arraystretch{1.25} % height
-% \usepackage{colortbl} % Colored Cells
+\usepackage{colortbl} % Colored Cells
+% ==================== Color commands ==================== %
+\newcommand\CellTRUE[1] {\cellcolor{green!20!background}{#1}}
+\newcommand\CellFALSE[1]{\cellcolor{red!20!background}{#1}}
 \usepackage{multirow}
 % \usepackage{longtable}
 % \usepackage{float}\restylefloat{table}  % table position H(ere)
@@ -330,8 +348,8 @@
 % % -------------------------------------------------------- %
 % %                           Chem                           %
 % % -------------------------------------------------------- %
-% \usepackage{chemformula} % formulas quimicas
-\usepackage{chemfig}     % Estruturas quimicas
+\usepackage{chemformula} % formulas quimicas
+% \usepackage{chemfig}     % Estruturas quimicas
 % \usepackage{modiagram}   % Molecular orbital diagram
 % % ======================= modiagram ====================== %
 % \setmodiagram {

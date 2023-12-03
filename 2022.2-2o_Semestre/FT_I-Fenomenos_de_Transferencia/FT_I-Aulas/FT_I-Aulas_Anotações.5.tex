@@ -1,0 +1,113 @@
+% !TEX root = ./FT_I-Aulas_Anotações.5.tex
+\providecommand\mainfilename{"./FT_I-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Aulas_Anotações.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{5}
+[FT\,I]
+{Aula 20/10/22} % Subfile Title
+{Aula 20/10/22} % Part Title
+
+\begin{sectionBox}1{Var P at} % S1
+    
+    \begin{BM}
+        L_{eq} = L_{tubo} + \sum_{i\,\in\,\text{acessórios}} L_{i,\,eq}
+        \\
+        \left(
+            -\adif{P}
+        \right)_{at}
+        = 4\,\Phi\,L_{eq}\,\rho\,v^2/D
+        \\
+        h_{at}
+        = \frac{-\adif{P}_{at}}{\rho\,g}
+        = \frac{4\,\Phi\,L_{eq}\,v^2}{D\,g}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{} % E1
+    
+    \begin{flalign*}
+        &
+            -\adif{P}_{at}
+            = \left(
+                \begin{aligned}
+                      & (-\adif{P}_{at,tb})
+                    \\
+                    + 2\, & (-\adif{P}_{at,jo})
+                \end{aligned}
+            \right)
+            = \left(
+                \begin{aligned}
+                      & \frac{4\,\Phi\,\rho\,v^2}{D}\,L_{tb}
+                    \\
+                    + 2\, & \frac{4\,\Phi\,\rho\,v^2}{D}\,L_{jo}
+                \end{aligned}
+            \right)
+            % = &\\&
+            = \frac{4\,\Phi\,\rho\,v^2}{D}
+            \,\left(
+                \begin{aligned}
+                    L_{tb}
+                    + 2\,L_{jo}
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{sectionBox}1{Var atrito em alargamento súbito} % S2
+    
+    \begin{BM}
+        -\adif{P}_{at}
+        = \rho\,\left(v_1-v_2\right)^2/2
+        \\
+        h_{at}
+        = \frac{(v_1-v_2)^2}{2\,g}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \adif{G_{m}}
+            =\adif{G_{v}\,\rho}
+            =\adif{v\,S\,\rho}
+            =0
+            \implies
+            v_1\,S_1 = v_2\,S_2
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Contração Súbita} % S3
+    
+    \begin{BM}
+        -\adif{P}_{at}
+        = \frac{\rho\,v_2^2}{2}
+        \,\left(
+            C_c^{-1}-1
+        \right)^2
+        \\
+        h_{at}
+        = \frac{v_2^2}{2\,g}
+        \,\left(
+            C_c^{-1}-1
+        \right)^2
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{Q4.2} % E2
+    
+    
+    
+\end{exampleBox}
+
+\end{document}

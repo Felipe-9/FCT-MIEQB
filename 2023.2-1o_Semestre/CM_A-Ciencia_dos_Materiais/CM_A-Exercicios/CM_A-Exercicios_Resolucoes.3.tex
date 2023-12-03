@@ -1,0 +1,149 @@
+% !TEX root = ./CM_A-Exercicios_Resolucoes.3.tex
+\providecommand\mainfilename{"./CM_A-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CM_A-Exercicios_Resolucoes.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CM_A-Exercicios_Resolucoes.3}}}
+% \tikzsetexternalprefix{./.build/figures/CM_A-Exercicios_Resolucoes.3/graphics/}
+
+\mymakesubfile{3}
+[CM A]
+{Estruturas Cristalinas -- Interstícios, Impurezas} % Subfile Title
+{Estruturas Cristalinas -- Interstícios, Impurezas} % Part Title
+
+\setcounter{question}{11}
+
+\begin{questionBox}1{ % Q12
+    Quais são as posições intersticiais de maior volume nas redes CCC e CFC? Calcular o raio máximo dos átomos que podem entrar nessas posições.
+} % Q12
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l c c}
+            \toprule
+            
+                & Oct. & Tetr.
+            
+            \\\midrule
+            
+                CFC & 0.414 & 0.255
+                \\
+                CCC & 0.155 & 0.291
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q13
+    Calcule o raio do maior interstício da rede do ferro-\chemgamma{} (CFC). O raio atómico do ferro na rede CFC é 0.129\,\si{\nano\metre} e os maiores intrestícios surgem em posições do tipo:
+    \((1/2,0,0),(0,1/2,0),(0,0,1/2)\), etc.
+} % Q13
+\end{questionBox}
+
+\begin{questionBox}1{ % Q14
+    Nos metais de estrutura CFC o escorregamento dá-se em planos do tipo \{1\,1\,1\} ao longo de direções <110> paralelas a esses planos. Escreva todas as combinações possíveis de plano e direção de escorregamento para estes metais.
+} % Q14
+    \answer{}
+    \begin{flalign*}
+        &
+            \{1,1,1\}
+            \begin{cases}
+                (1,1,1)
+                \\ 
+                (\bar{1},1,1)
+                , (\bar{1},\bar{1},1)
+                , (\bar{1},1,\bar{1})
+                , (\bar{1},\bar{1},\bar{1})
+                \\ 
+                (1,\bar{1},1)
+                , (1,\bar{1},\bar{1})
+                \\
+                (1,1,\bar{1})
+            \end{cases}
+            &\\&
+            [1,1,0]
+            \begin{cases}
+                [1,1,0]
+                , [1,0,1]
+                , [0,1,1]
+                \\
+                [\bar{1},1,0]
+                , [\bar{1},\bar{1},0]
+                , [1,\bar{1},0]
+                \\
+                [\bar{1},0,1]
+                , [\bar{1},0,\bar{1}]
+                , [1,0,\bar{1}]
+                \\
+                [0,\bar{1},1]
+                , [0,\bar{1},\bar{1}]
+                , [0,1,\bar{1}]
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q15
+    Usando os dados da tabela, compare o grau de solubilidade no estado sólido dos seguintes elementos no cobre: \ch{Zn, Pb, Si, Ni, Al} e \ch{Be}.
+} % Q15
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{1.5mm} % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{l *{4}{c}}
+            \toprule
+            
+                Elemento
+                & \begin{tabular}{c@{}c}
+                    Raio atómico
+                    \\(\si{\nano\metre})
+                \end{tabular}
+                & \begin{tabular}{c}
+                    Estrutura\\Cristalina
+                \end{tabular}
+                & \begin{tabular}{c}
+                    Eletro-\\negatividade
+                \end{tabular}
+                & Valência
+            
+            \\\midrule
+            
+                Cobre
+                & 0.128 & CFC & 1.8 & +2
+                \\
+                Zinco
+                & 0.133 & HC & 1.7 & +2
+                \\
+                Chumbo
+                & 0.175 & CFC & 1.6 & +2,+4
+                \\
+                Silício
+                & 0.117 
+                & \begin{tabular}{c}
+                    Cúbica\\Diamante
+                \end{tabular}
+                & 1.8 & +4
+                \\
+                Níquel
+                & 0.125 & CFC & 1.8 & +2
+                \\
+                Alumínio
+                & 0.143 & CFC & 1.5 & +3
+                \\
+                Berílio
+                & 0.114 & HC & 1.5 & +2
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\end{document}

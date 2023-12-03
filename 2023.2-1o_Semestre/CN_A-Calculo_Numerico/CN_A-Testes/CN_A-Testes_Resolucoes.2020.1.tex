@@ -1,0 +1,242 @@
+% !TEX root = ./CN_A-Testes_Resolucoes.2020.1.tex
+\providecommand\mainfilename{"./CN_A-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CN_A-Testes_Resolucoes.2020.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CN_A-Testes_Resolucoes.2020.1}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Testes_Resolucoes.2020.1/graphics/}
+
+\mymakesubfile{1}
+[CN A]
+{Teste 2020 Resolução} % Subfile Title
+{Teste 2020 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Seja \(x\in\mathbb{R}\text{ e }\hat{x}\) uma aproximação de \textit{x} com 5 algarismos significativos e \(10^3\leq\myvert{x}<10^4\). Quantas casas decimais podemos garantir para \(\hat{x}\)?
+} % Q1
+    \answer{}
+    \begin{flalign*}
+        &
+            k: \myvert{\varepsilon_x}\leq
+            0.5*10^{-k}
+            = 0.5*10^{m+1-5}
+            ; &\\&
+            10^3
+            \leq
+            \myvert{x}
+            <10^{m+1}
+            =10^{4}
+            \implies 
+            k = 1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    seja \(m_3\) um polinómio de grau 3 que ajusta o conjunto de pontos \((x_i,y_i),i\in\myrange{0,4}\) contidos no intervalo \(\myrange{a,b}\), usando o método dos mínimos quadrados. Seja \(p_4\) o polinómio de grau \(\leq4\) interpolador de pontos \((x_i,y_i),i\in\myrange{0,4}\) e \textit{S} o spline cúbico interpolador dos mesmos pontos. Qual das seguintes afirmações não é verdadeira?
+    \begin{enumerate}[label=\alph{enumi})]
+        \item \(
+            \sum_{i=0}^4{(m_{3\,(x_i)}-y_i)^2}
+            >
+            \sum_{i=0}^4{(S_{(x_i)}-p_{4\,(x_i)})^2}
+        \)
+        \item Existe pelomenos um \(x_i,i\in\myrange{0,4}:m_{3\,(x_i)}\neq p_{4\,(x_i)}\)
+        \item \(\sum_{i=0}^{4}{(p_{4\,(x_i)}-S_{(x_i)})^2}=0\)
+        \item \(S_{(x)}=p_{4\,(x)},\quad\forall\,x\in\myrange{a,b}\)
+    \end{enumerate}
+} % Q2
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Seja \(f_{(x)}=\int_{i=0}^{3}{a_i\,x^i}\) com \(a_3=1\text{ e }p_2\) um polinómio interpolador de \textit{f} nos nodos distintos \(x_i\in\mathbb{R},i=\{0,1,2\}\). A expressão para \(f_{(x)}\) pode ser obtida por:
+    \begin{enumerate}[label=\alph{enumi})]
+        \item \(f_{(x)}=p_{2\,(x)}+6\,\prod_{i=0}^{2}{(x-x_i)},\quad\forall\,x\in\mathbb{R}\)
+        \item \(f_{(x)}=p_{2\,(x)}+\frac{1}{6}\,\prod_{i=0}^{2}{(x-x_i)},\quad\forall\,x\in\mathbb{R}\)
+        \item \(f_{(x)}=p_{2\,(x)}+x^3,\quad\forall\,x\in\mathbb{R}\)
+        \item \(f_{(x)}=p_{2\,(x)}+\prod_{i=0}^{2}{(x-x_i)},\quad\forall\,x\in\mathbb{R}\)
+    \end{enumerate}
+} % Q3
+    \answer{}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Seja 
+    \begin{BM}
+        I=\int_0^4{f_{(x)}\,\odif{x}}
+        \qquad
+        f_{(x)}\in C^4\myrange{0,4}
+        \\
+        f\text{ verifica }
+        \myvert{f^{(n)}_{(x)}}\leq\frac{2^n}{n!},\,\forall\,x\in\myrange{0,4}
+        \land
+        n\in\mathbb{N}
+    \end{BM}
+    Se pretende determinar um valor aproximado de \textit{I}, com pelomenos 4 casa decimais significativas, utilizando a regra de Simpson, qual o menor número de sub-intervalos de qual amplitude em que teria de dividir o intervalo \(\myrange{0,4}\)?
+} % Q4
+    \answer{}
+    \sisetup{
+        % scientific / engineering / input / fixed
+        exponent-mode           = engineering,
+        exponent-to-prefix      = false,          % 1000 g -> 1 kg
+        round-mode              = places,        % figures/places/unsertanty/none
+        round-precision         = 4,
+    }
+    \begin{flalign*}
+        &
+            \myvert{I-\hat{I}_S}
+            = \myvert{
+                -n\,\frac{h^5}{90}\,f^{(4)}_{(x)}
+            }
+            \leq \myvert{
+                -n
+                \,\frac{\left(\frac{b-a}{2\,n}\right)^5}{90}
+                \,\frac{2^4}{4!}
+            }
+            = \myvert{
+                \,\frac{-n\left(4-0\right)^5*2^4}{90*2^5\,n^5\,4!}
+            }
+            = &\\&
+            = \myvert{
+                \frac{-4^4}{90*2\,n^4\,3!}
+            }
+            = \frac{4^4}{90*2\,n^4\,3!}
+            \leq 0.5\E-4
+            \implies &\\&
+            \implies
+            n=\ceil{\num{8.297773030513044}}=9
+            \implies
+            \text{ numero de subintervalos: }2\,n=18
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Seja
+    \begin{BM}
+        I=\int_0^1{\frac{\log(x)}{x+1}\odif{x}}
+    \end{BM}
+    Qual dos valores seguintes representa um valor aproximado para \textit{I}, \(\hat{I}\), com 5 casas décimais devidamente arredondadas, utilizando uma regra de integração numérica de aplicação simples que permita obter um grau de precisão de 3?
+} % Q5
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Considere a seguinte tabela de dados para a função \textit{f}:
+} % Q6
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C || *{4}{C}}
+            
+                x_i
+                & 0 & 1 & 2 & 3
+            \\\hline
+                f_{(x_i)}
+                & f_{(0)}
+                & 0
+                & f_{(2)}
+                & 2
+                
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Sabe-se que
+    \begin{BM}
+        f_{\myrange{x_2,x_3}}
+        =3;
+        % \\
+        \qquad
+        f_{\myrange{x_1,x_2,x_3}}
+        =2;
+        % \\
+        \qquad
+        f_{\myrange{x_1,x_2,x_3,x_4}}
+        =2/3
+    \end{BM}
+    \begin{questionBox}2{ % Q6.1
+        Determine \(
+            f_{\myrange{x_0,x_1}}
+            ; f_{\myrange{x_1,x_2}}
+            ; f_{\myrange{x_0,x_1,x_2}}
+            ; f_{(0)}; f_{(2)}
+        \).
+    } % Q6.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q6.2
+        Determine o polinómio de Newton de grau \(\leq3\) interpolador de \textit{f} nos nodos \(x_i,i=\{0,1,2,3\}\).
+        \\(caso não tenha conseguido fazer a linha a) considere \(f_{(0)}=-1/2\text{ e }f_{(2)}=1/2\)).
+    } % Q6.2
+    \end{questionBox}
+    \begin{questionBox}2{ % Q6.3
+        Obtenha o polinómio de grau 1, \(q_{1\,(x)}\), que ajusta o conjunto de pontos \((x_i,f_{(x_i)}),i=\{0,1,2,3\}\), utilizando a técnica dos mínimos quadrados e considerando \(f_{(3)}=-1/2\) em véz de 2.
+    } % Q6.3
+    \end{questionBox}
+    \begin{questionBox}2{ % Q6.4
+        Seja \(p_{1\,(x)}=a+b\,x,\,\{a,b\}\in\mathbb{R}\). Prove usando a alínea anterior que \(\sum_{i=0}^3{(f_{(x_i)}-p_{1\,(x_i)})^2}\)
+    } % Q6.4
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Considere o seguinte spline cúbico interpolador duma função \(f_{(x)}\) no intervalo \(\myrange{0,2}\):
+    \begin{BM}
+        S_{(x)}
+        =\begin{cases}
+            1+a\,x+2\,x^2-2\,x^3,
+            \quad& 0\leq x<1
+            \\
+            1 + b\,(x-1) -4\,(x-1)^2 + 7\,(x-1)^3,
+            \quad& 1\leq x\leq2
+        \end{cases}
+    \end{BM}
+} % Q7
+    \begin{questionBox}2{ % Q7.1
+        Encontre \textit{a} e \textit{b} e escreva a expressão do spline.
+    } % Q7.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q7.2
+        considere a tabela de valores para a função \textit{f}
+    } % Q7.2
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{C || *{3}{C}}
+                % \toprule
+                
+                    x_i
+                    & 0 & 1 & 2
+                
+                \\\hline
+                    f_{(x_i)} & 1 & 1 & 2
+                \\  f'_{(x_i)} & 0 & 4 & 11
+                    
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+        Que tipo de spline é \(S_{(x)}\)? Completo ou natural? Justifique
+    \end{questionBox}
+    \begin{questionBox}2{ % Q7.3
+        Obtenha uma aproximação para \(f_{(0,5)}\). Quantas casa decimáis significativas se pode no minimo garantir para essa aproximação sabendo que \(\myvert{f^{(3)}_{(x)}}\leq0.1\)?
+    } % Q7.3
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Considere o integral
+    \begin{BM}
+        I=\int_{-2}^{0}{x\,e^{-x}\,\odif{x}}
+    \end{BM}
+} % Q8
+    \begin{questionBox}2{ % Q8.1
+        Determine um valor aproximado \(\hat{I}\) de \textit{I} pela regra do ponto médio com 4 aplicações. Obtenha um majorante para o erro absoluto associado a essa aproximação. Nos cálculos ultilize 6 casas decimais convenientemente arredondadas.
+    } % Q8.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q8.2
+        Determine um valor aproximado \(\hat{I}\) de \textit{I} pela regra do ponto médio com 2 aplicações. Obtenha um majorante para o erro absoluto associado a essa aproximação. Nos cálculos ultilize 6 casas decimais convenientemente arredondadas.
+    } % Q8.2
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

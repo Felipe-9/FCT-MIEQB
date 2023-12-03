@@ -1,0 +1,322 @@
+% !TEX root = ./FT_I-Exercicios_Resolução.8.tex
+\providecommand\mainfilename{"./FT_I-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Exercicios_Resolução.8.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/FT_I-Exercicios_Resolução.8}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{8}
+[FT\,I]
+{Exercicios}
+{Exercicios}
+
+
+\begin{questionBox}1m{ % Q1
+} % Q1
+
+    \paragraph*{Numero de Reynald}
+    \begin{flalign*}
+        &
+            \phi\,Re^2
+            = \frac{(-\adif{P})D\,\rho^3}{L\,4\,\mu^2}
+            \cong
+            \num{3298978.97727273}
+            &\\&
+            \frac{D}{e}
+            = \frac{0.115*10^{-3}}{26.5*10^{-3}}
+            \cong
+            \num{0.004339622641509}
+            \implies &\\&
+            \implies
+            2.8*10^{4}
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            L
+            = \frac{A_{e}}{2\,\pi\,r_{e}}
+            = \frac{A_{i}}{2\,\pi\,r_{i}}
+            % ; &\\[2ex]&
+            ; \qquad
+            % ---------------------------------------------------------------------------- %
+            %                                 \bar{h}\,A_i                                 %
+            % ---------------------------------------------------------------------------- %
+            (\bar{h}_i\,A_i)^{-1}
+            % ------------------------------------- 1 ------------------------------------ %
+            = &\\[2ex]&
+            = \frac{\adif{(\adif{T})}_{\ln{}}}{Q}
+            = \frac{
+                \frac{
+                    \adif{T}_1
+                    - \adif{T}_0
+                }{
+                    \ln{(
+                        \adif{T}_1/\adif{T}_0
+                    )}
+                }
+            }{
+                \left(
+                    G_{rea}
+                    \,\adif{H}_{R^{\circ}}
+                \right)
+            }
+            = &\\&
+            = \frac{
+                330 - \adif{T}_0
+            }{
+                \left(
+                    G_{m,agua}
+                    \,C_{p,agua}
+                    \,\adif{T}_{agua}
+                \right)
+                \,\ln{(
+                    \adif{T}_1/\adif{T}_0
+                )}
+            }
+            % 2661.379869479304424
+            % = \frac{
+            %     y
+            %     (\adif{T}_1 - \adif{T}_0)
+            %     \,C_{p,oleo}
+            %     \,\adif{T}_{oleo}
+            % }{
+            %     \left(
+            %         -Q_{agua}
+            %     \right)
+            %     \,\ln{(
+            %         \adif{T}_1/\adif{T}_0
+            %     )}
+            % }
+            % = &\\&
+            % = \frac{
+            %     y
+            %     (\adif{T}_1 - \adif{T}_0)
+            %     \,C_{p,oleo}
+            %     \,\adif{T}_{oleo}
+            % }{
+            %     -\left(
+            %         G_{m,agua}
+            %         \,C_{p,agua}
+            %         \,\adif{T}_{agua}
+            %     \right)
+            %     \,\ln{(
+            %         \adif{T}_1/\adif{T}_0
+            %     )}
+            % }
+            % ------------------------------------- 2 ------------------------------------ %
+            = &\\[2ex]&
+            =
+            \left(
+                h_i\,A_i
+            \right)^{-1}
+            +\left(
+                h_e\,A_e
+            \right)^{-1}
+            +\frac{x_w}{k_w\,A_w}
+            +\frac{R_{ext,incrust}}{A_{incrust,interna}}
+            +\frac{x_{int}}{K_{int}\,A_{incrust,int}}
+            = &\\&
+            =
+            \left(
+                \begin{aligned}
+                    &
+                        \left(
+                            0.023
+                            \,\frac{K}{D_i}
+                            \,\left(
+                                \frac{\rho\,D_i\,u}{\mu}
+                            \right)^{0.8}
+                            \,\left(
+                                \frac{C_p\,\mu}{K}
+                            \right)^{0.4}
+                            \,\left(
+                                1
+                                +3.5
+                                \,(D_i/D_s)
+                            \right)
+                        \right)^{-1}
+                        A_i^{-1}
+                    & + \\ + &
+                        \left(
+                            \frac{
+                                0.87
+                                \,K
+                            }{
+                                d_r
+                            }
+                            \left(
+                                \frac{
+                                    \mu
+                                }{
+                                    \mu_s
+                                }
+                            \right)^{0.14}
+                            \left(
+                                \frac{
+                                    C_p\,\mu
+                                }{
+                                    K
+                                }
+                            \right)^{1/3}
+                            \left(
+                                \frac{
+                                    L^2\,N\,\rho
+                                }{
+                                    \mu
+                                }
+                            \right)^{0.62}
+                        \right)^{-1}
+                        \,A_e^{-1}
+                    & + \\ + &
+                        \frac{
+                            (D_e-D_i)/2
+                        }{
+                            k_w
+                        }
+                        \,\left(
+                            \frac{A_e-A_i}{\ln{(A_e/A_i)}}
+                        \right)^{-1}
+                    & + \\ + &
+                        \frac{R_{ext,incrust}}{A_{incrust,interna}}
+                    & + \\ + &
+                        \frac{x_{int}}{K_{int}\,A_{incrust,int}}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            =
+            \left(
+                \begin{aligned}
+                    &
+                        \left(
+                            1067
+                            \left(
+                                1
+                                +0.00293
+                                \,\frac{
+                                    T_{agua,0}
+                                    + T_{agua,1}
+                                }{2}
+                            \right)
+                            \frac{
+                                u^{0.8}
+                            }{
+                                d_i^{0.2}
+                            }
+                            \left(
+                                1
+                                +3.5
+                                \,D_i/D_s
+                            \right)
+                            \,A_i^{-1}
+                        \right)^{-1}
+                    & + \\ + &
+                        \frac{
+                            d_r
+                            \,\mu_s^{0.14}
+                            \,\mu^{0.44/3}
+                        }{
+                            0.87
+                            \,K^{2/3}
+                            \,C_p^{1/3}
+                            \,N^{0.62}
+                            \,\rho^{0.62}
+                            \,(\pi\,D_e\,L)
+                        }
+                        \,L^{-1.24}
+                    & + \\ + &
+                        \frac{
+                            (D_e-D_i)/2
+                        }{
+                            k_w
+                        }
+                        \,\left(
+                            \frac{
+                                \ln{(D_e/D_i)}
+                            }{
+                                D_e-D_i
+                            }
+                        \right)
+                        \left(
+                            \pi\,L
+                        \right)^{-1}
+                    & + \\ + &
+                        \frac{R_{ext,incrust}}{A_{incrust,interna}}
+                    & + \\ + &
+                        \frac{x_{int}}{K_{int}\,A_{incrust,int}}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            =
+            \left(
+                \begin{aligned}
+                    &
+                        \left(
+                            h_i\,A_i
+                        \right)^{-1}
+                    & + \\ + &
+                        \frac{
+                            1.1
+                            *(0.01*10^{-1})^{0.14}
+                            *(0.0065*)^{0.44/3}
+                            % 0.199811268746598
+                        }{
+                            0.87
+                            * (0.5)^{2/3}
+                            * (2.55*10^3)^{1/3}
+                            * (130)^{0.62}
+                            * (1340)^{0.62}
+                            * \pi
+                            * (28*10^{-3})
+                            % 1169.778782304531624
+                        }
+                        % 0.000170811158288
+                        \,L^{-2.24}
+                    & + \\ + &
+                        \frac{
+                            \ln{(28/26.5)}
+                        }{
+                            (2*15.9)
+                            \,\pi
+                        }
+                        % 0.00055113432102
+                        \,L^{-1}
+                    & + \\ + &
+                        \frac{R_{ext,incrust}}{A_{incrust,interna}}
+                    & + \\ + &
+                        \frac{x_{int}}{K_{int}\,A_{incrust,int}}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            =
+            \left(
+                \begin{aligned}
+                    &
+                        \left(
+                            h_i\,A_i
+                        \right)^{-1}
+                    & + \\ + &
+                        \num{0.000170811158288}
+                        \,L^{-2.24}
+                    & + \\ + &
+                        \frac{x_w}{k_w\,A_w}
+                    & + \\ + &
+                        \frac{R_{ext,incrust}}{A_{incrust,interna}} 
+                    & + \\ + &
+                        \frac{x_{int}}{K_{int}\,A_{incrust,int}}
+                    &
+                \end{aligned}
+            \right)
+            =\num{2661.379869479304424}^{-1}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

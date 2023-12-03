@@ -1,0 +1,249 @@
+% !TEX root = ./ERQ_I-Testes_Resolucoes.2020.1.tex
+\providecommand\mainfilename{"./ERQ_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Testes_Resolucoes.2020.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2020.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Testes_Resolucoes.2020.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ I]
+{Teste 1 2020 Resolução} % Subfile Title
+{Teste 1 2020 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    The figure shows the kinetic curve obtained in a batch reactor, corresponding to the elemental liquid phase reaction \ch{2 A -> B}. The reaction is carried out in batch reactors of 5\,\si{\metre^3}, which are loaded with pure A.
+} % Q1
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{Screenshot 2023-11-08 at 18.33.05}
+    \end{center}
+    \paragraph*{Data:}
+    \begin{itemize}
+        \item \(t_d=120\,\si{\min}\). 
+        \item Molecular weight of A: 58\,\si{\gram/\mole}.
+        \item Molecular weight of B: 116\,\si{\gram/\mole}.
+        \item Density of A: 0.791\,\si{\gram/\litre}. 
+        \item If you were not able to solve b) use \(k=0.074\,\si{\deci\metre^3.\mole^{-1}.\hour^{-1}}\).
+    \end{itemize}
+    \begin{questionBox}2{ % Q1.1
+        Write the expression of the rate law.
+    } % Q1.1
+        \begin{flalign*}
+            &
+                -r_A
+                =k\,C_A^2
+                =k\,(C_{A\,0}\,(1-X))^2
+                =k\,C_{A\,0}^2\,(1-X)^2
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        Write the equation of the curve shown in the graphic.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                X=f(t):
+                -r_A\,V
+                =k\,C_{A\,0}^2\,(1-X)^2\,V
+                = &\\&
+                =-\odv{N_A}{t}
+                =-\odv{(N_{A\,0}(1-X))}{t}
+                =-N_{A\,0}\,\odv{(1-X)}{t}
+                = &\\&
+                =-C_{A\,0}\,V\,\odv{(1-X)}{t}
+                \implies &\\[3ex]&
+                \implies
+                -\int_{1}^{1-X}{
+                    \frac{\odif{(1-X)}}{(1-X)^2}
+                }
+                = &\\&
+                =-(-1)
+                \,\adif{(X^{-1})}
+                \big\vert_{1}^{1-X}
+                =1/(1-X)-1
+                =\frac{1}{1/X-1}
+                = &\\[3ex]&
+                =\int_{0}^{t}{
+                    k\,C_{A\,0}\,\odif{t}
+                }
+                =k\,C_{A\,0}
+                \,\int_{0}^{t}{
+                    \odif{t}
+                }
+                =k\,C_{A\,0}\,t
+                \implies &\\[3ex]&
+                \implies
+                X
+                =(1+1/k\,C_{A\,0}\,t)^{-1}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        Evaluate the value of the kinetic constant. Use the graphic.
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                k:
+                X
+                =(1+1/k\,C_{A\,0}\,t)^{-1}
+                \implies &\\&
+                \implies
+                k 
+                = \left(
+                    (1/X-1)
+                    \,C_{A\,0}
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(N_{A\,0}/V)
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(m_{A\,0}/M_{A}\,V)
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(\rho_{A}\,V/M_{A}\,V)
+                    \,t
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (1/X-1)
+                    \,(\rho_{A}/M_{A})
+                    \,t
+                \right)^{-1}
+                \cong &\\&
+                \cong \left(
+                    (1/0.6-1)
+                    \,(791/58)
+                    \,1.9
+                \right)^{-1}
+                \,\si{\litre/\mole.\hour}
+                \cong &\\&
+                \cong
+                \SI{57.888083039457}{\milli\litre/\mole.\hour}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.4
+        Calculate the optimal conversion and the optimal reaction time.
+    } % Q1.4
+        \answer{}
+        Traça uma reta entre \((0,-t_d)\) e o gráfico, o ponto tangente é o optimo:
+        \begin{BM}
+            X_{opt}\cong 0.68
+            \qquad
+            t_{opt}\cong 2.3\,\si{\hour}
+        \end{BM}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.5
+        If the plant works 24\,\si{\hour} day and 330\,\si{\day/\year}, determine the number of reactors needed for an annual production of B of 1500\,\si{\tonne}. Use the conversion calculated in d) but if you were not able to, use any value at your choice.
+    } % Q1.5
+        \answer{}
+        \center{\ch{A-> 1/2 B}}
+        \begin{flalign*}
+            &
+                N_R
+                =\ceil{V_R/5\,\si{\metre^2}}
+                % 1.15 é margem de erro
+                =\ceil{1.15\,V/5\,\si{\metre^2}}
+                =\left\lceil
+                    \frac{
+                        1.15
+                        \,(N_{A\,0}/C_{A\,0})
+                    }{5\,\si{\metre^2}}
+                \right\rceil
+                ; &\\[3ex]&
+                N_{A\,0}\,X/2
+                % /2 pela conversão 1 A -> 1/2 B
+                = N_B
+                % N_B é em mol quantos
+                % 1 tonne = 1e6 gram
+                = \frac{1500*10^6}{
+                    M_B*N_{batch}
+                }
+                = \frac{1500*10^6}{
+                    116*\frac{
+                        330*24
+                    }{
+                        t_{batch}
+                    }
+                }
+                = &\\&
+                = \frac{1500*10^6}{
+                    \frac{
+                        116*330*24
+                    }{
+                        t_{opt}+t_{d}
+                    }
+                }
+                = \frac{1500*10^6}{
+                    \frac{
+                        116*330*24
+                    }{
+                        2.3+2
+                    }
+                }
+                \cong
+                \SI{7.020637408568443e3}{\mole}
+                \implies &\\[3ex]&
+                \implies
+                N_{A\,0}
+                \cong
+                2*\num{7.020637408568443e3}/0.68
+                \cong
+                \num{20.648933554613068}
+                \implies &\\[3ex]&
+                \implies
+                N_R
+                \cong
+                \left\lceil
+                    \frac{
+                        1.15*\num{20.648933554613068}
+                    }{
+                        (\rho_A/M_A)
+                    }
+                \right\rceil
+                = \left\lceil
+                    \frac{
+                        1.15*\num{20.648933554613068}
+                    }{
+                        5*(0.791*10^{3}/58)
+                    }
+                \right\rceil
+                \cong &\\&
+                \cong
+                \ceil{\num{0.348238651856559}}
+                = 1
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A reacção de 1ª ordem \ch{A -> 2 B}, em fase líquida, é conduzida num sistema de reactores contínuos, sendo uma solução de A com a concentração de 0.1\,\si{\mole/\deci\metre^3} alimentada a um caudal volumétrico de 10\,\si{\deci\metre^3/\min}. Sabendo-se que a constante cinética à temperatura da reacção é \(k = 0.02\,\si{\min^{-1}}\), e que se pretende obter uma conversão final de 70\%, determine mostrando todos os cálculos:
+} % Q2
+    \begin{questionBox}2{ % Q2.1
+        O volume de um único reactor CSTR.
+    } % Q2.1
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.2
+        O número de reactores CSTR de 1\,\si{\metre^3} de volume, associados em série.
+    } % Q2.2
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,68 @@
+% !TEX root = ./FT_I-Slides-Anotações.2.tex
+\providecommand\mainfilename{"./FT_I-Slides-Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Slides-Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[FT\,I]
+{Slide 2 -- Unidades e teorema \(\pi\) de Buckingham}
+{Unidades e teorema \(\pi\) de Buckingham}
+
+\begin{sectionBox}1{Teorema \(\pi\) de Buckingham} % S1
+    
+    \begin{BM}
+        f(q_1,\dots,q_n) = g(\pi)
+        \\
+        \pi\subset\mathbb{R}^p
+        : \pi_i = \prod_m q_j^{a_{i.j}}
+        \\
+        \{p,n,n\}\subset\mathbb{R} 
+        : p = n-m
+    \end{BM}
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(q\) : Parametros da função
+            \item \(\pi\) : Gandezas adimensionais
+            \item \(p\) : \# grupos adimensionais
+            \item \(n\) : \# variáveis
+            \item \(m\) : \# grandezas fundamentais presentes nas variáveis
+        \end{multicols}
+    \end{itemize}
+
+    \paragraph{Note:} Se eu desejar uma relação funcional explícita para uma determinada variável, não devo incluí-la no conjunto de recurso (pois vai aparecer em mais do que um grupo adimensional e portante é mais difícil isolá-la num termo).
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Numero de Reinald} % S2
+    
+    \begin{BM}
+        Re = \frac{D\,V\,\rho}{\mu}
+    \end{BM}
+
+    \begin{itemize}
+        \item \(v\) - velocidade média do fluido
+        \item \({\displaystyle D}\) - longitude característica do fluxo, o diâmetro para o fluxo no tubo
+        \item \(\mu\)  - viscosidade dinâmica do fluido
+        \item \(\rho\)  - massa específica do fluido
+    \end{itemize}
+
+    A significância fundamental do número de Reynolds é que ele permite avaliar o tipo do escoamento (a estabilidade do fluxo) e pode indicar se flui de forma laminar ou turbulenta.
+
+    \paragraph*{Exemplo:} Agua
+    Limites \(2.000-2.400\)
+    \begin{itemize}
+        \item \(Re<2.000\) fluxo linear
+        \item \(Re>2.400\) fluxo turbulento
+        \item \(2.000<Re<2.400\) fluxo transitório
+    \end{itemize}
+    
+\end{sectionBox}
+
+\end{document}
