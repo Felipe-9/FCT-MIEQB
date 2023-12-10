@@ -190,7 +190,9 @@
     % exponent-product={*}, % x * 10^y
     round-mode={places}, % figures/places/none
     round-precision={3},
-    output-exponent-marker={\,\mathrm{E}},
+    % output-exponent-marker={\,\mathrm{E}},
+    exponent-product={\,},
+    exponent-base={\mathrm{E}},
 }
 % ==================== Declaring units =================== %
 \DeclareSIUnit\atm{atm}
@@ -217,8 +219,8 @@
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 % ======================================================== %
 % ============== MathOperators Declarations ============== %
-\DeclareMathOperator\E{\,E}
-\DeclareMathOperator\e{\,e}
+\newcommand\E[1]{\,\mathrm{E}^{#1}}
+\newcommand\e[1]{\,\mathrm{e}^{#1}}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
 % \DeclareMathOperator\csch   {csch}
@@ -306,24 +308,24 @@
 % \newcommand\mysampledensitySimple{1e1}
 % \newcommand\mysampledensityFancy{1e2}
 % \usepackage{myPGFSetup}
-% % -------------------------------------------------------- %
-% %                          Tables                          %
-% % -------------------------------------------------------- %
-% \setlength\tabcolsep{6mm}        % width
-% \renewcommand\arraystretch{1.25} % height
+% -------------------------------------------------------- %
+%                          Tables                          %
+% -------------------------------------------------------- %
+\setlength\tabcolsep{6mm}        % width
+\renewcommand\arraystretch{1.25} % height
 % \usepackage{colortbl} % Colored Cells
 % \usepackage{multirow}
 % \usepackage{longtable}
 % \usepackage{float}\restylefloat{table}  % table position H(ere)
-% % ======================= booktabs ======================= %
-% \usepackage{booktabs}
-% \setlength\heavyrulewidth{.75pt} % Top and bottom rule
-% \setlength\lightrulewidth{.30pt} % Middle rule
-% % ======================= Mathtable ====================== %
-% \usepackage{array} % for \newcolumntype macro
-% \newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
-% \newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
-% \newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
+% ======================= booktabs ======================= %
+\usepackage{booktabs}
+\setlength\heavyrulewidth{.75pt} % Top and bottom rule
+\setlength\lightrulewidth{.30pt} % Middle rule
+% ======================= Mathtable ====================== %
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
 % % ===================== Table Caption ==================== %
 % \newcounter{tablecounter}
 % % \newcommand\thetable{Tabela \arabic{tablecounter}:}

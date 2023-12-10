@@ -1,0 +1,279 @@
+% !TEX root = ./ERQ_I-Slides_Anotacoes.1.tex
+\providecommand\mainfilename{"./ERQ_I-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Slides_Anotacoes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/ERQ_I-Slides_Anotacoes.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Slides_Anotacoes.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ I]
+{Slide: Chemical Reactors} % Subfile Title
+{Slide: Chemical Reactors} % Part Title
+
+\begin{sectionBox}*{} % S
+    
+    \begin{itemize}
+        \item Ideal reactors dimensioning
+        \item Isothermic and non-isothermic operations
+        \item Catalysts preparation and characterization
+    \end{itemize}
+    
+\end{sectionBox}
+
+
+\begin{sectionBox}1{General equaltion of molar balance} % S
+    
+    \begin{center}\large
+        \ch{
+            a A + b B + \dots -> d D + e E + \dots
+        }
+    \end{center}
+    \begin{BM}
+        F_{i\,0} - F_{i\,1} + F_{i\,P} = \odv{N_i}{t}
+    \end{BM}
+    \paragraph*{Molar balance to the limitant reagent \ch{A}}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(\adif{F}/\si{\mole\of{A}}\)} % Longest item
+    ]
+        \begin{multicols}{2}
+            \item[\(F_{A\,0}/\si{\mole\of{A}/\litre\of{0}.\hour}\)] input
+            \item[\(F_{A\,1}/\si{\mole\of{A}/\litre\of{1}.\hour}\)] output
+            \item[\(F_{A\,P}/\si{\mole\of{A}/\litre.\hour}\)] produced
+            \item[\(\odv{N_A}{t}/\si{\mole\of{A}/\litre.\hour}\)] Acumulated
+        \end{multicols}
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Reaction rate} % S
+    
+    \begin{BM}
+        r_{A}= V^{-1}\,\odv{N_A}{t}
+        \qquad
+        r'_{A}= W^{-1}\,\odv{N_A}{t}
+        \qquad
+        r"_{A}= S^{-1}\,\odv{N_A}{t}
+        \\
+        F_{A\,P}=\int_V{r_A\,\odif{V}}
+    \end{BM}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Ideal reactors} % S
+
+    \begin{multicols}{2}
+        
+        \begin{sectionBox}*2{\emph{CSTR}: Continuous stirred-tank reactor} % S
+            
+            Homogenous mix trought \emph{every point} of the reactor
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{Cstr.png}
+            \end{figure}
+            
+        \end{sectionBox}
+    
+        \begin{sectionBox}*2{\emph{PFR}: Plug flow reactor model} % S
+            
+            Homogeneous mix trought a \emph{disk section}
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{Pipe-PFR.svg.png}
+            \end{figure}
+            
+        \end{sectionBox}
+    \end{multicols}
+
+    \paragraph*{Batch:} Similar to CSTR but descontinous (no input/output)
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{How to balance each reactor} % S
+    
+    \paragraph*{General equation}
+    \begin{BM}
+        F_{i\,0}-F_{i\,1}+F_{i\,P}=\odv{N_i}{t}
+    \end{BM}
+    \paragraph*{\emph{X}: Conversion}
+    \begin{BM}
+        X
+        =1-N_{i\,1}/N_{i\,0}
+        =1-F_{i\,1}/F_{i\,0}
+    \end{BM}
+
+    \subsection{Continuous reactors}
+    \paragraph*{Steady State:}
+    Maintaining constant all functioning conditions (input current, temperature, pressure, \dots), after a certain time the reactor reaches a steady state where all the output parameters (caudal, concentration, temperature, \dots) become constant in time.
+    \paragraph*{Spatial time:}
+    \begin{BM}
+        \tau=\frac{V\,\text{(reactor volume)}}{v\,\text{(volumetric caudal)}}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Batch balance} % S
+    
+    \begin{figure}\centering
+        \includegraphics[height=15ex]{batch.png}
+    \end{figure}
+
+    \begin{BM}
+        r_i\,V=\odv{N_i}{t}
+        \iff
+        t=C_{i\,0}\,\int_{0}^{X}{\frac{\odif{X}}{-r_A}}
+        ;\\[2ex]
+        \left(\small
+            \begin{aligned}
+                F_{i\,0} = F_{i\,1} = 0
+                &\,\text{(No input/output)}
+                \\
+                \int_V{r_i\,\odif{V}}=r_i\,V
+                &\,\text{(Continously agitated)}
+            \end{aligned}
+        \right)
+    \end{BM}
+    \begin{flalign*}
+        &
+            F_{i\,0}+F_{i\,1}+F_{i\,P}
+            = F_{i\,P}
+            = \int_V\,r_i\,\odif{V}
+            = r_i\int_V\,\odif{V}
+            = {\color{Emph}
+                r_i\,V
+                = \odv{N_i}{t}
+            }
+            ; &\\[3ex]&
+            X=1-N_{i\,1}/N_{i\,0}
+            \implies
+            N_{i\,1}=N_{i\,0}\,(1-X)
+            \implies &\\[3ex]&
+            \implies
+            \odv{N_i}{t}
+            = \odv{N_{i\,0}\,(1-X)}{t}
+            = -N_{i\,0}\,\odv{X}{t}
+            r_i\,V
+            \implies &\\&
+            \implies
+            \int_0^t{\odif{t}}
+            = {\color{Emph}t}
+            = \int_0^X{
+                \frac
+                    {-N_{i\,0}}
+                    {r_i\,V}
+                \,\odif{X}
+            }
+            = \frac{N_{i\,0}}{V}
+            \int_0^X{
+                \frac
+                    {\odif{X}}
+                    {-r_i}
+            }
+            = {\color{Emph}
+                C_{i\,0}
+                \int_0^X{
+                    \frac
+                        {\odif{X}}
+                        {-r_i}
+                }
+            }
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{CSTR balance} % S
+    
+    \begin{figure}\centering
+        \includegraphics[height=15ex]{cstr2.png}
+    \end{figure}
+    \begin{BM}
+        \tau=C_{i\,0}\,\frac{X}{-r_i}
+        ; \\[2ex]
+        \left(\small
+            \begin{aligned}
+                \odv{N_i}{t}=0
+                &\,\text{(Steady state)}
+                \\
+                \int_V{r_A\,\odif{V}}=r_A\,V
+                &\,\text{(Continously agitated)}
+            \end{aligned}
+        \right)
+    \end{BM}
+    \begin{flalign*}
+        &
+            F_{i\,0}-F_{i\,1}+F_{i\,P}
+            = F_{i\,0}-(F_{i\,0}(1-X))+(r_i\,V)
+            = F_{i\,0}\,X+r_i\,V
+            = (v_0\,C_{i\,0})\,X+r_i\,V
+            = &\\&
+            = \odv{N_A}{t}
+            = 0
+            % \implies &\\&
+            \implies
+            \frac{V}{v_0}
+            ={\color{Emph}
+                \tau
+                =C_{i\,0}\,\frac{X}{-r_i}
+            }
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{PFR Balance} % S
+    
+    \begin{figure}\centering
+        \includegraphics[height=15ex]{pfr.png}
+    \end{figure}
+    \begin{BM}
+        \tau=C_{i\,0}\int_{0}^{X}{\frac{\odif{X}}{-r_A}}
+        ; \\[2ex]
+        \left(
+            \begin{aligned}
+                \text{steady state elementar disk}
+            \end{aligned}
+        \right)
+    \end{BM}
+    \begin{flalign*}
+        &
+            F_{i\,j}-F_{i\,(j+1)}+F_{i}
+            = F_{i\,j}-(F_{i\,j}+\odif{F_{i\,j}})+(r_{i}\,\odif{V})
+            = -\odif{F_{i\,j}}+r_{i}\,\odif{V}
+            = &\\&
+            = -\odif{F_{i\,0}(1-X)}+r_{i}\,\odif{V}
+            = F_{i\,0}\,\odif{X}+r_{i}\,\odif{V}
+            = {\color{Emph}
+                (C_{i\,0}\,v_0)\,\odif{X}+r_{i}\,\odif{V}
+            }
+            = &\\&
+            % 
+            =\odv{N_i}{t}
+            ={\color{Emph}
+                0
+            }
+            \implies &\\&
+            \implies
+            \frac{1}{v_0}\int_0^V{\odif{V}}
+            \frac{V}{v_0}
+            = {\color{Emph}
+                \tau
+            }
+            = \int_0^X{
+                C_{i\,0}
+                \frac{\odif{X}}{-r_i}
+            }
+            = {\color{Emph}
+                C_{i\,0}\int_0^X{
+                    \frac{\odif{X}}{-r_i}
+                }
+            }
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\end{document}

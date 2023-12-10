@@ -1,0 +1,478 @@
+% !TEX root = ./ERQ_I-Testes_Resolucoes.2017.2.tex
+\providecommand\mainfilename{"./ERQ_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_I-Testes_Resolucoes.2017.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2017.2}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_I-Testes_Resolucoes.2017.2/graphics/}
+
+\mymakesubfile{2}
+[ERQ\,I]
+{Teste 2017.2 Resolução} % Subfile Title
+{Teste 2017.2 Resolução} % Part Title
+
+
+
+\begin{questionBox}1{ % Q1
+    A reacção reversível \ch{A<>B} é conduzida, na fase gasosa, num reactor tubular adiabático. O reagente A (30\%) e um inerte são alimentados, à temperatura de 773\,\si{\kelvin}, a um caudal volumétrico de 100\,\si{\litre/\min}. A figura representa a variação da conversão de equilíbrio com a temperatura.
+    \begin{figure}\centering
+        \includegraphics[width=.6\textwidth]{test1-cutout.png}
+        % Curva X\times T
+    \end{figure}
+} % Q1
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \vspace{-3ex}
+        \begin{multicols}{2}
+            \item \(C_{p\,A}=C_{p\,B}=10\,\si{\calorie/\mole.\kelvin}\)
+            \item \(C_{p\,I}=12\,\si{\calorie/\mole.\kelvin}\)
+            \item \(K_{e\,(773\,\si{\kelvin})}=30\)
+            \item \(Ea=25\,\si{\kilo\calorie/\mole}\)
+            \item \(R=\SI{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(\adif{H_R}=20\,\si{\kilo\calorie/\mole}\)
+        \end{multicols}
+        \item Constante cinética da reação direta \(k_{(773\,\si{\kelvin})}=8.57\,\si{\min^{-1}}\)
+    \end{itemize}
+    \begin{questionBox}2{ % Q1.1
+        Determine, usando o gráfico, o valor do calor de reação
+    } % Q1.1
+        \answer{}
+        % Calor da reação     => Lei de Vant Hoff
+        % Energia de ativação => Lei de Arrhenius
+        \begin{flalign*}
+            &
+                \adif{H}:
+                k_{e\,(T)}
+                =k_{e\,(T_R)}
+                \,\exp{\left(
+                    -\frac{\adif{H}}{R}
+                    \,(T^{-1}-T_R^{-1})
+                \right)}
+                &\\[3ex]&
+                % Grafico X\times t, arranjar forma de relacionar X com k_e
+                % (reação reversivel)
+                k_e
+                =\frac{\sum{p_{1\,E}}}{\sum{p_{0\,E}}}
+                =\frac{p_{B\,E}}{p_{A\,E}}
+                = &\\&
+                % por ser fase gasosa usa gases perfeitos
+                = \frac{C_{B\,E}\,R\,T}{C_{A\,E}\,R\,T}
+                = \frac{C_{A\,0}\,X}{C_{A\,0}(1-X)}
+                = \frac{1}{-1+1/X}
+                \implies &\\&
+                \implies
+                X = \frac{1}{1+1/K_e}
+                \implies
+                X=0.5
+                \begin{cases}
+                    K_e=1\\T\cong 610\,\si{\kelvin}
+                \end{cases}
+                % Pega o valor de da temperatura que X=0.5=>k_e=1=>t=(grafico)
+                % Com os dois valordes de ke e t aplica a lei de vant hoff e retira o Delta H_r
+                \implies &\\[3ex]&
+                \implies
+                \adif{H}
+                = -\frac{R}{(610^{-1}-773^{-1})}
+                \,\ln\frac{k_{e\,(610\,\si{\kelvin})}}{k_{e\,(773\,\si{\kelvin})}}
+                \cong &\\&
+                \cong -\frac{\num{1.987204258640832}}{(610^{-1}-773^{-1})}
+                \,\ln\frac{1}{30}
+                \cong
+                \SI{19.552219755329109539}{\kilo\calorie/\mole}
+                % Caso n seja dado ke faz esse processo duas vezes
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        Determine a conversão de equilíbrio e a correspondente temperatura de equilíbrio.
+        % X_{eq}; T_{eq}
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                % T0=773k=>X=0
+                % Escolhe outra temperatura qualquer
+                % T1=520k=>X=?
+                X_{1\,(520\,\si{\kelvin})}
+                =\frac{C_{p\,A}+\theta_{I}\,C_{p\,I}(T-T_0)}{-\adif{H_R}}
+                =\frac{C_{p\,A}+\frac{Y_{I\,0}}{Y_{A\,0}}\,C_{p\,I}(T-T_0)}{-\adif{H_R}}
+                \cong &\\&
+                \cong\frac{(10+\frac{0.7}{0.3}\,12)(520-773)}{-\num{19.552219755329109539e3}}
+                \cong\num{0.491708876041025}
+                &\\[3ex]&
+                \begin{cases}
+                    T_0=773\,\si{\kelvin};& X_0=0
+                    \\
+                    T_1=520\,\si{\kelvin};& X_1=\num{0.491708876041025}
+                \end{cases}
+                % Junta os dados com o theta e a eq acima e acha o segundo ponto, traça no gráfico interecptando a reta e esse ponto é o Xeq e o Teq
+            &
+        \end{flalign*}
+        \begin{figure}\centering
+            \includegraphics[width=.6\textwidth]{test1-cutout2.png}
+        \end{figure}
+        \begin{BM}
+            X_{eq}\cong 0.29
+            \land
+            T_{eq}\cong 580\,\si{\kelvin}
+        \end{BM}
+
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        Calcule o volume do reactor, necessário a uma conversão de 95\% da conversão de equilíbrio.
+        % Vol do reator para \(X=95\%\,X_{eq}\)
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                V:
+                % X
+                % =.95\,X_{eq}
+                % \cong .95*2.9
+                % =2.755;
+                % &\\[3ex]&
+                V
+                =F_{A\,0}
+                \,\int_{0}^{X}{\frac{\odif{X}}{-r_A}}
+                =C_{A\,0}\,v_0
+                \,\int_{0}^{X}{\frac{\odif{X}}{-r_A}}
+                ; &\\[3ex]&
+                % faz a lei cinética usando a constante de eq
+                -r_A
+                =k(C_A-C_B/K_e)
+                = &\\&
+                =k\left(
+                    \left(
+                        \frac{C_{A\,0}(1-X)}{1+\varepsilon\,X}
+                        \frac{T_0}{T}
+                    \right)
+                    -\left(
+                        \frac{C_{A\,0}\,X}{1+\varepsilon\,X}
+                        \frac{T_0}{T}
+                    \right)
+                    /K_e
+                \right)
+                = &\\&
+                = k\,\left(
+                    \frac{
+                        C_{A\,0}(1-X(1-1/K_e))
+                    }{1+\varepsilon\,X}
+                    \frac{T_0}{T}
+                \right)
+                = &\\&
+                = k\,\left(
+                    \frac{
+                        C_{A\,0}(1-X(1-1/K_e))
+                    }{1+y_{A\,0}\,\delta\,X}
+                    \frac{T_0}{T}
+                \right)
+                = &\\&
+                = k\,\left(
+                    \frac{
+                        C_{A\,0}(1-X(1-1/K_e))
+                    }{1+y_{A\,0}\,(1-1)\,X}
+                    \frac{T_0}{T}
+                \right)
+                = &\\&
+                = k\,C_{A\,0}(1-X(1-K_e))
+                \frac{T_0}{T}
+                \implies &\\[3ex]&
+                \implies
+                V
+                =\int_0^{.95*.29}{
+                    \frac{v_0}{k\,\frac{T_0}{T}(1-X\,(1-1/K_e))}
+                    \,\odif{X}
+                }
+                = &\\&
+                =\int_0^{0.2755}{
+                    \frac{100}{k\,\frac{773}{T}(1-X\,(1-1/K_e))}
+                    \,\odif{X}
+                }
+                % Integral dificil de calcular usa lei de simpson
+                % x=> pela lei de arrhenius 3 pontos
+                % t=>pelo balanço (alinha anterior) 3 pontos
+                % k_e=>lei de arrhenius em 3 pontos
+                % encontra f(X_i) para os 3 pontos e substitui na formula
+                ; &\\[3ex]&
+                % Balanço de energia
+                {\color{Emph}T}:
+                X
+                =\frac{(C_{p\,A}+\theta_I\,C_{p\,I})(T-T_0)}{-\adif{H_R}}
+                \implies &\\&
+                \implies 
+                T
+                =T_0-\frac
+                    {X\,\adif{H_R}}
+                    {C_{p\,A}+\theta_I\,C_{p\,I}}
+                \cong
+                773
+                - \frac
+                    {X\,\num{19.552219755329109539e3}}
+                    {10+\frac{0.7}{0.3}\,12}
+                \cong &\\&
+                \cong
+                    {\color{Emph}
+                        773-X\,\num{5.1453209882445e2}
+                    }
+                ; &\\[3ex]&
+                % Arrhenios
+                {\color{Emph}
+                    k_{(T)}
+                }
+                =k_{(T_R)}
+                \,\exp{\left(
+                    -\frac{Ea}{R}(T^{-1}-T_R^{-1})
+                \right)}
+                \cong &\\&
+                \cong
+                8.57
+                \,\exp{\left(
+                    -\frac{25\E{3}}{\num{1.987204258640832}}
+                    (T^{-1}-773^{-1})
+                \right)}
+                \cong &\\&
+                \cong {\color{Emph}
+                    8.57
+                    \,\exp{\left(
+                        -\num{12.580488337469142e3}
+                        (T^{-1}-773^{-1})
+                    \right)}
+                }
+                ; &\\[3ex]&
+                % Vant Hoff
+                {\color{Emph}
+                    K_{e\,(T)}
+                }
+                = K_{e\,(T_R)}
+                \,\exp{\left(
+                    -\frac{\adif{H}}{R}
+                    \,(T^{-1}-T_R^{-1})
+                \right)}
+                \cong &\\&
+                \cong 
+                30\,\exp{\left(
+                    -\frac
+                        {\num{19.552219755329109539e3}}
+                        {\num{1.987204258640832}}
+                    \,(T^{-1}-773^{-1})
+                \right)}
+                \cong &\\&
+                \cong {\color{Emph}
+                    30\,\exp{\left(
+                        -\num{9.839058904142065e3}
+                        \,(T^{-1}-773^{-1})
+                    \right)}
+                }
+                ; &\\[3ex]&
+                h
+                =\frac{X_1-X_0}{2}
+                =\frac{0.2755}{2}
+                =0.13775
+                ; \qquad
+                X_1=0.13775
+            &
+        \end{flalign*}
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{5}{C}}
+                \toprule
+                
+                    X & T & k & K_e & f_{(X)}
+                    % Usa tabela para calcular os Fs de X para aplicar no simpson
+                
+                \\\midrule
+                    % T:   5.1453209882445e2
+                    % k:  12.580488337469142e3
+                    % k_e: 9.839058904142065e3
+                
+                    0 & 773 & 8.57 & 30 & \num{11.668611435239207}
+                    \\
+                    0.13775 
+                    & \num{702.123203386932013}
+                    & \num{44.307713036601854}
+                    & \num{108.427749331313463}
+                    \\
+                    \dots
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                V
+                =\frac{h}{3}\left(
+                    f_{(X_0)}
+                    + 4\,f_{(X_1)}
+                    + f_{(X_2)}
+                \right)
+                = &\\&
+                =\frac{0.13775}{3}\left(
+                    f_{(X_0)}
+                    + 4\,f_{(X_1)}
+                    + f_{(X_2)}
+                \right)
+                =\dots
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A reacção elementar em fase líquida, \ch{A -> B}, é conduzida num reactor CSTR adiabático, de 1\,\si{\metre^3}, a funcionar em estado estacionário. A alimentação ao reactor, a um caudal volumétrico de 20\,\si{\litre/\min} é constituída por A (10\,\si{\mole\percent}) e um inerte I. A figura mostra a curva de geração de calor.
+    \begin{figure}\centering
+        \includegraphics[width=.6\textwidth]{test2.png}
+        % Grafico G_{(T)}\times t
+    \end{figure}
+} % Q2
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \vspace{-2ex}
+            \item \(\adif{H_R}=-25\,\si{\kilo\calorie/\mole}\)
+            \item \(C_{p\,A}=C_{p\,B}=8\,\si{\calorie/\mole.\kelvin}\)
+            \item \(C_{p\,I}=18\,\si{\calorie/\,mole.\kelvin}\)
+            \item \(R=\SI{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+    Determine:
+
+    \begin{questionBox}2{ % Q2.1
+        O valor da temperatura da corrente de saída, correspondente a uma conversão de 90\%
+    } % Q2.1
+        \answer{}
+        % Gt=>Calor gerado
+        % Grafico G(t)\times temperatura
+        \begin{flalign*}
+            &
+                T:
+                G_{(T)}
+                =-\adif{H_{R\,T}}\,X
+                =25\E{3}*.90
+                \cong
+                \SI{22.5e3}{\calorie/\mole}
+                % Busca o t no gráfico a partir do G_{(T)}
+                \implies &\\&
+                \implies
+                T_{(22.5\E{3})}\cong 370\,\si{\kelvin}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.2
+        O valor da temperatura da alimentação, nas condições da alínea a).
+    } % Q2.2
+        \begin{flalign*}
+            &
+                T_0:
+                R_{(T)}
+                =\left(
+                    C_{p\,A}+\theta_I\,C_{p\,I}
+                \right)
+                (T-T_0)
+                = G_{(T)}
+                \implies &\\&
+                \implies 
+                T_0
+                = T-\frac{G_{(T)}}{C_{p\,A}+\theta_I\,C_{p\,I}}
+                \cong
+                370
+                -\frac{22.5\E{3}}{8+\frac{0.9}{0.1}\,18}
+                \cong
+                \SI{237.647058823529412}{\kelvin}
+                % Estado estácionário: G_{(T)}=R_{(T)} 
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.3
+        Os valores das temperaturas de ignição e extinção.
+    } % Q2.3
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    T_0\cong\SI{237.647058823529412}{\kelvin}
+                    ;& G_{(T_0)}=0
+                    \\
+                    T_1\cong370\,\si{\kelvin}
+                    ;& G_{(T_1)}=22.5\E{3}
+                \end{cases}
+                &\\&
+                G_{(T)}
+                =m\,T+b
+                =m\,T+(-m\,T_0)
+                =m\,(T-T_0)
+                = &\\&
+                =\adv{22.5\E3}{370-\num{237.647058823529412}}\,(T-\num{237.647058823529412})
+                =170\,T-40400
+                \implies &\\&
+                \implies
+                \begin{cases}
+                    T_2=250;& G_{(T_2)}=2100
+                \end{cases}
+            &
+        \end{flalign*}
+        \begin{figure}\centering
+            \includegraphics[width=.6\textwidth]{test2.1.png}
+            % Une no grafico uma reta do t entrada e t de saída
+            % traça paralelamente para tangenciar a curva por cima e baixo,
+            % a tangente inferior vai ser a t de ignição e a superior a de extinção
+        \end{figure}
+        \begin{BM}
+            T_{\text{ignição}}\cong 319\,\si{\kelvin}
+            \quad\land\quad
+            T_{\text{extinção}}\cong 370\,\si{\kelvin}
+        \end{BM}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.4
+        A composição da alimentação, nas condições da alínea a), para uma temperatura da alimentação de 298\,\si{\kelvin}.
+    } % Q2.4
+        \begin{flalign*}
+            &
+                Y_{A\,0}:
+                R_{(T)}
+                = G_{(T)}
+                = \left(
+                    C_{p\,A}+\theta_I\,C_{p\,I}
+                \right)
+                (T-T_0)
+                = &\\&
+                = \left(
+                    C_{p\,A}
+                    +\frac{1-Y_{A\,0}}{Y_{A\,0}}
+                    \,C_{p\,I}
+                \right)
+                (T-T_0)
+                \implies &\\&
+                \implies
+                Y_{A\,0}
+                =
+                \left(
+                    1+\frac{
+                        \frac{G_{(T)}}{T-T_0}
+                        -C_{p\,A}
+                    }{
+                        C_{p\,I}
+                    }
+                \right)^{-1}
+                = \left(
+                    1+\frac{
+                        \frac{22.5\E{3}}{370-298}
+                        -8
+                    }{
+                        18
+                    }
+                \right)^{-1}
+                \cong &\\&
+                \cong
+                \num{0.055813953488372}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}
