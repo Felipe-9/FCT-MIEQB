@@ -1,0 +1,300 @@
+% !TEX root = ./CM_A-Exercises_Resolutions.2.1.tex
+\providecommand\mainfilename{"./CM_A-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CM_A-Exercises_Resolutions.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/CM_A-Exercises_Resolutions.2.1}}}
+\tikzsetexternalprefix{./.build/figures/CM_A-Exercises_Resolutions.2.1/graphics/}
+
+\mymakesubfile{1}
+[CM\,A]
+{Polímers} % Subfile Title
+{Polímers} % Part Title
+
+\begin{questionBox}1{ % Q1
+    O que são homopolímeros e copolímeros?
+} % Q1
+    \answer{}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{Homopolímeros} % Longest item
+    ]
+        \item[Homopolímeros] Cadeias da mesma unidade moleculares ligadas covalentemente entre si
+        \item[Copolímeros] Homopolímeros porem composto por diferentes unidades moleculáres
+    \end{description}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Quais as diferenças entre copolímero aleatório e copolímero alternado.
+} % Q2
+    \answer{}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{Alternado} % Longest item
+    ]
+        \def\A{\color{Graph21}A}
+        \def\B{\color{Graph22}B}
+        \begin{multicols}{2}
+            \item[Aleatório] {\A\A\B\A\A\B\B\B\A}
+            \item[Alternado] {\A\B\A\B\A\B\A\B\A}
+        \end{multicols}
+    \end{description}
+    \paragraph*{Nota:} Consideremos A e B diferentes monómeros
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Qual a motivação para a produção de copolímeros em substituição aos correspondentes homopolímeros?
+} % Q3
+    \answer{}
+    Combinação e/ou modificação de propríedades do material formado
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Polímeros formados por mais de um tipo de unidade monomérica são chamados copolímeros. Um exemplo é o Nylon-66, no qual as unidades repetitivas são formadas por \iupac{1,6-diaminohexano} (\ch{H2N(CH2)6NH2}) e por ácido adípico (\ch{HOOC(CH2)4COOH}).
+    \begin{enumerate}[label=\arabic{enumi}]
+        \begin{multicols}{2}
+            \def\A{\textcolor{Graph21}{A}}
+            \def\B{\textcolor{Graph22}{B}}
+            \item {\A\A\A\A\B\B\B\B}
+            \item {\A\B\A\B\A\B\A\B}
+            \item {\A\A\B\A\A\B\A\B}
+            \item \chemfig[atom sep={1em}]{
+                \A-\A-\A
+                (-[90,2]\B)
+                -\A-\A-\A
+                (-[90,2]\B)
+                -\A-\A
+            }
+        \end{multicols}
+        Identifique nas figuras de 1 a 4 os tipos de copolímeros formados pelos monómeros A e B.
+    \end{enumerate}
+    \begin{enumerate}[label=\alph{enumi}.]
+        \item \textcolor{Graph41}{1 — ramificado}, 
+              \textcolor{Graph42}{2 — bloco}, 
+              \textcolor{Graph43}{3 — alternado} e 
+              \textcolor{Graph44}{4 — aleatório}.
+        \item \textcolor{Graph42}{1 — bloco}, 
+              \textcolor{Graph41}{2 — ramificado}, 
+              \textcolor{Graph44}{3 — aleatório} e 
+              \textcolor{Graph43}{4 — alternado}.
+        \item \textcolor{Graph42}{1 — bloco}, 
+              \textcolor{Graph43}{2 — alternado}, 
+              \textcolor{Graph44}{3 — aleatório} e 
+              \textcolor{Graph41}{4 — ramificado}.
+        \item \textcolor{Graph44}{1 — aleatório}, 
+              \textcolor{Graph42}{2 — bloco}, 
+              \textcolor{Graph41}{3 — ramificado} e 
+              \textcolor{Graph43}{4 — alternado}.
+        \item \textcolor{Graph43}{1 — alternado}, 
+              \textcolor{Graph41}{2 — ramificado}, 
+              \textcolor{Graph42}{3 — bloco} e 
+              \textcolor{Graph44}{4 — aleatório}.
+    \end{enumerate}
+    } % Q4
+    \answer{C.}
+    \begin{enumerate}
+        \begin{multicols}{4}
+            \item \textcolor{Graph42}{Bloco}
+            \item \textcolor{Graph43}{Alternado}
+            \item \textcolor{Graph44}{Aleatório}
+            \item \textcolor{Graph41}{Ramificado}
+        \end{multicols}
+    \end{enumerate}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Desenha uma secção de três unidades repetitivas dos seguintes polímeros:
+} % Q5
+    \begin{questionBox}3b{ % Q5.1
+        Poliestireno
+    } % Q5.1
+        \begin{center}
+            % \tikzset{external/remake next=true}
+            \chemfig{
+                -C(-[90])(-[-90])
+                -C(-[90])(-[-90,.7]*6([-90,.4]=-=-=-))
+                -C(-[90])(-[-90])
+                -C(-[90])(-[-90,.7]*6([-90,.4]=-=-=-))
+                -C(-[90])(-[-90])
+                -C(-[90])(-[-90,.7]*6([-90,.4]=-=-=-))
+                -
+            }
+        \end{center}
+        \answer{}
+        % \tikzset{external/remake next=true}
+        \chemfig{
+            -C(-[90])(-[-90])
+            -C(-[90])(-[-90,.7]*6([-90,.4]=-=-=-))
+            -
+        }
+    \end{questionBox}
+    \begin{questionBox}3b{ % Q5.2
+        Policloreto de vinilo
+    } % Q5.2
+        \begin{center}
+            \chemfig{
+                -C(-[90])(-[-90])
+                -C(-[90])(-[-90]Cl)
+                -C(-[90])(-[-90])
+                -C(-[90])(-[-90]Cl)
+                -C(-[90])(-[-90])
+                -C(-[90])(-[-90]Cl)
+                -
+            }
+        \end{center}
+        \answer{}
+        % \chemfig{-[@{op,.25}]
+        %      C(-[90,.5])(-[-90,.5])
+        %     -C(-[90,.5])(-[-90,.5]Cl)
+        % -[@{cl,.75}]}
+        % \polymerdelim{op}{cl}
+        \chemfig{
+            -C(-[90,.5])(-[-90,.5])
+            -C(-[90,.5])(-[-90,.5]Cl)
+            -
+        }
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Considere as fórmulas destes dois polímeros.
+    \begin{center}
+        \chemfig{
+            -C(-[2]H)(-[6]H)
+            -C(-[2]H)(-[6]CH3)
+            -
+            \qquad
+            -C(-[2]H)(-[6]H)
+            -C(-[2]H)(-[6]Cl)
+            -
+        }
+    \end{center}
+    Os monómeros correspondentes aos polímeros I e II são, respectivamente,
+} % Q6
+    \begin{enumerate}[label=\alph{enumi}.]
+        \def\pano{\textcolor{Graph21}{Propano}}
+        \def\peno{\textcolor{Graph22}{Propeno}}
+        \def\cano{\textcolor{Graph21}{cloroetano}}
+        \def\ceno{\textcolor{Graph22}{cloroeteno}}
+        \begin{multicols}{2}
+            \item \pano{} e \cano
+            \item \pano{} e \ceno
+            \item \peno{} e \cano
+            \item \peno{} e \ceno
+        \end{multicols}
+    \end{enumerate}
+    \answer{a}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Na tabela, são apresentadas algumas características de quatro importantes polímeros.
+    } % Q7
+    \def\X{\textcolor{Graph41}X}
+    \def\Y{\textcolor{Graph42}Y}
+    \def\Z{\textcolor{Graph43}Z}
+    \def\W{\textcolor{Graph44}W}
+
+    % \tikzset{external/force remake=true}
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{3mm} % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{c@{}c m{10em}}
+            \toprule
+            
+                \multicolumn{1}{c}{Polímero}
+                & \multicolumn{1}{c}{Estrutura química}
+                & \multicolumn{1}{c}{Aplicações}
+            
+            \\\midrule
+                    \X 
+                    & \chemfig{-CH2-CH2-}
+                    & Copos, sacos de plástico, embalágens de garrafas
+                \\  \Y 
+                    & \chemfig{-CH2-CH(-[6,.5]CH3)-}
+                    & Fibras, cordas, assentos de cadeiras
+                \\  \Z 
+                    & \chemfig{-CH2-CH(-[6,.5]*6([6,.2]=-=-=-))-}
+                    & Embalagens descartáveis de alimentos, pratos
+                \\  \W 
+                    & \chemfig{-CH2-CH(-[6,.5]Cl)-}
+                    & Tubos, filmes para embalágens
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{questionBox}2{ % Q7.1
+        Polipropileno, poliestireno e polietileno são, respectivamente, os polímeros:
+    } % Q7.1
+        \begin{enumerate}[label=\alph{enumi}.]
+            \begin{multicols}{3}
+                \item \X{}, \Y{} e \Z{}
+                \item \X{}, \Z{} e \W{}
+                \item \Y{}, \W{} e \Z{}
+                \item \Y{}, \Z{} e \X{}
+                \item \Z{}, \Y{} e \X{}
+            \end{multicols}
+        \end{enumerate}
+        \answer{}
+        \begin{description}[
+            leftmargin=!,
+            labelwidth=\widthof{} % Longest item
+        ]
+            \begin{multicols}{3}
+                \item[\X] Polietileno
+                \item[\Y] Polipropileno
+                \item[\Z] Poliestireno
+            \end{multicols}
+        \end{description}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q7.2
+        Identifica o polímero \W
+    } % Q7.2
+        \answer{}
+        Policloreto de vinilo
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Identifique os polímeros
+} % Q8
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{3}{c}}
+            \hline
+
+              \cellF{Sal}
+            & \cellT{Esferovite}
+            & \cellT{DNA}
+            \\\cellT{Cabelo}
+            & \cellT{Unhas}
+            & \cellF{Ferro}
+            \\\cellF{Açúcar}
+            & \cellT{Papel}
+            & \cellF{Neon}
+            \\\cellT{Nylon}
+            & \cellF{Vinagre}
+            & \cellF{Músculos}
+            \\\cellF{Bicarbonato}
+            & \cellT{Seda}
+            & \cellT{Slime}
+            \\\cellF{Vidro}
+            & \cellT{Lã}
+            & \cellT{Polietileno}
+            \\\cellF{Madeira}
+            & \cellF{Ouro}
+            & \cellF{Prata}
+
+            \\\hline
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,184 @@
+% !TEX root = ./CM_A-Slides_Annotations.2.1.tex
+\providecommand\mainfilename{"./CM_A-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CM_A-Slides_Annotations.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/CM_A-Slides_Annotations.2.1}}}
+% \tikzsetexternalprefix{./.build/figures/CM_A-Slides_Annotations.2.1/graphics/}
+
+\mymakesubfile{1}
+[CM\,A]
+{Polímeros da vida quotidiana} % Subfile Title
+{Polímeros da vida quotidiana} % Part Title
+
+\begin{sectionBox}1{Lista de plásticos} % S
+    
+    \paragraph*{Plastico:} Tipo de polímero que tem a capacidade de ser coldado de diversas fórmas.
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l l}
+            \toprule
+            
+               PE-LD & Polietileno de baixa densidade, 
+            \\ PE-HD & Polietileno de alta densidade
+            \\ PP    & Polipropileno 
+            \\ PVC   & Policloreto de vinilo 
+            \\ PS    & Poliestireno sólido
+            \\ PS-E  & Poliestireno expandido 
+            \\ PET   & Polietileno tereftalato 
+            \\ PUR   & Poliuretano 
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Caracterização} % S
+    
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{Copolímero:} % Longest item
+    ]
+        \item[Polímero:] Conjunto de unidades moleculars (monómeros) ligadas covalentemente entre si
+        \item[Copolímero:] Polímero formado por diferentes monomeros (A e B)
+        \item[Monomero:] Unidade repetitiva da cadeia de poímeros
+    \end{description}
+
+    \subsection{Caracterização por natureza:}
+    \begin{multicols}{2}
+        \paragraph*{Naturais:} Não produzidos pelo homem, como: Seda, Lã, Ambar.
+        \paragraph*{Sintéticos:} usados na produção de plástico, silicone, borracha.
+    \end{multicols}
+
+    \subsection{Caracterização por Cadeias:}
+    \begin{sectionBox}*2m{Homopolímero} % S
+        \begin{figure}\centering
+            \includegraphics[width=.5\textwidth]{homo.png}
+        \end{figure}
+    \end{sectionBox}
+    \begin{multicols}{2}
+        \begin{sectionBox}*2m{Copolímero aleatório} % S
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{copoale.png}
+            \end{figure}
+        \end{sectionBox}
+        \begin{sectionBox}*2m{Copolímero alternado} % S
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{copoalter.png}
+            \end{figure}
+        \end{sectionBox}
+        \begin{sectionBox}*2m{Copolímero de blocos} % S
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{copoblock.png}
+            \end{figure}
+        \end{sectionBox}
+        \begin{sectionBox}*2m{Copolímero ramificado} % S
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{coporamif.png}
+            \end{figure}
+        \end{sectionBox}
+    \end{multicols}
+
+    \paragraph*{Propriedades:}
+
+    \begin{description}[
+        leftmargin=!,
+        % labelwidth=\widthof{} % Longest item
+    ]
+        \vspace{-3ex}
+        \begin{multicols}{2}
+            \item[Copolímero aleatório:] Propriedades \emph{intermédias} entre os homopolímeros A e B
+            \item[Copolímero de blocos:] Depende do tamanho das sequencias A e B
+            \item[Copolímero alternado:] Propriedades \emph{\pm{} intermédias} entre os homopolímeros A e B
+            \item[Copolímero ramificado:] Modificação das propriedades do principal
+        \end{multicols}
+    \end{description}
+\end{sectionBox}
+    
+    
+\begin{sectionBox}1{Polímeros para lembrar} % S
+    
+    \paragraph*{Monomero:} Etoleno \chemfig{CH2=CH2}
+    \vspace{1ex}
+    \paragraph*{Polímero:}
+    \chemfig{-[@{op}]
+        C(-[90,.5])(-[-90,.5])
+        -C(-[90,.5])(-[-90,.5])
+    -[@{cl}]}
+    \polymerdelim{op}{cl}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l l}
+            \toprule
+            
+                \multicolumn{1}{c}{X}
+            
+            \\\midrule
+            
+                \chemfig{-H} & Polietileno
+                \\ \chemfig{-CH3} & Polipropuleno
+                \\ \chemfig{-Cl} & Policloreto de vinilo
+                \\ \chemfig[atom sep=1.5ex]{*6(=-=-=-)} 
+                & Poliestireno
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Nomenclatura} % S
+    
+    \subsection{IUPAC}
+    \begin{center}\large
+        Poli/Poly\\+\\(<designação IUPAC do monomero com estrutura exata>)
+    \end{center}
+    \paragraph*{Ex:} \iupac{Poly (oxyspiro[3.5]nona-2,5-dien-7,1-ylene-4-cyclohexen-1,3-ylene)}
+    \subsection{Nomenclatura geral}
+    \begin{center}\large
+        Poli/poly + (<monomero>)/<monomero>
+    \end{center}
+    \paragraph*{Ex.}
+    \begin{itemize}
+        \begin{multicols}{3 }
+            \item Poli(propileno) (PP)
+            \item Polipropileno (PP)
+            \item Polietileno (PE)
+        \end{multicols}
+    \end{itemize}
+
+    \subsection{Nomes comerciais}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l l}
+            \toprule
+            
+                \multicolumn{1}{c}{Comercial}
+                & \multicolumn{1}{c}{IUPAC}
+            
+            \\\midrule
+            
+               NYLON    & poliamida
+            \\ TEFLON   & politetrafluoretileno
+            \\ TERYLENE & poliéster
+            \\ PLEXIGLÁS& polimetacrilato de metilo
+            \\ KEVLAR   & poliaramida
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+
+\end{document}

@@ -1,4 +1,4 @@
-% !TEX root = ./main_file.tex
+% !TEX root = ./CM_A-Exercises_Resolutions.tex
 % \documentclass{article}
 \documentclass[
     class=article,
@@ -12,7 +12,7 @@
 \usepackage{mypallete}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
-% \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
+\usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
 \colorlet{Link}      {LightGreen!25!foreground}
@@ -190,22 +190,23 @@
     % exponent-product={*}, % x * 10^y
     round-mode={places}, % figures/places/none
     round-precision={3},
-    output-exponent-marker={\,\mathrm{E}},
+    exponent-product={},
+    exponent-base={athrm{E}},
 }
-% % ==================== Declaring units =================== %
-% \DeclareSIUnit\atm{atm}
-% \DeclareSIUnit\calorie{cal}
-% \DeclareSIUnit\Torr{Torr}
-% \DeclareSIUnit\bar{bar}
-% \DeclareSIUnit\mmHg{mmHg}
-% \DeclareSIUnit\molar{M}
-% \DeclareSIUnit\M{M}
-% \DeclareSIUnit\angstrom{\textup{\AA}}
+% ==================== Declaring units =================== %
+\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\calorie{cal}
+\DeclareSIUnit\Torr{Torr}
+\DeclareSIUnit\bar{bar}
+\DeclareSIUnit\mmHg{mmHg}
+\DeclareSIUnit\molar{M}
+\DeclareSIUnit\M{M}
+\DeclareSIUnit\angstrom{\textup{\AA}}
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
 \usepackage{amsmath, amssymb, bm}
-\usepackage{derivative} % Derivative
+% \usepackage{derivative} % Derivative
 % \DeclareDifferential{\gdif}{\nabla} % Gradient
 % \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
 % % ====================== Math fonts ====================== %
@@ -213,10 +214,12 @@
 % \usepackage{firamath-otf}
 % % ======================================================== %
 \usepackage{mathtools}
-% \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 % % ======================================================== %
-% ============== MathOperators Declarations ============== %
-\DeclareMathOperator\E{\,E}
+% % ============== MathOperators Declarations ============== %
+\newcommand\E[1]{\,\mathrm{E}^{#1}}
+\newcommand\e[1]{\,\mathrm{e}^{#1}}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
 % \DeclareMathOperator\csch   {csch}
@@ -271,46 +274,60 @@
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
-% \usepackage{tikz}\usetikzlibrary{babel}
-% \usetikzlibrary{
-%     % perspective,
-%     % 3d,
-% }
-% % ===================== External lib ===================== %
-% \usepackage{tikz-external-setup}
-% \tikzexternalize[
-%     up to date check = {simple}, % faster check
-%     figure list = true, % generate list of figures file
-%     prefix = ./.build/figures/graphics/
-% ] % turn externalization on/off
-% % Fix background
-% \let\oldtikzpicture\tikzpicture
-% \RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
+\usepackage{tikz}\usetikzlibrary{babel}
+\usetikzlibrary{
+    through,
+    % perspective,
+    3d,
+}
+\tikzset{
+    dot/.style={
+        circle, fill, 
+        minimum size=#1,
+        inner sep=0pt, 
+        outer sep=0pt
+    },
+    dot/.default={6pt}, % size of the circle diameter
+}
+% ===================== External lib ===================== %
+\usepackage{tikz-external-setup}
+\tikzexternalize[
+    up to date check={simple}, % faster check
+    figure list={true}, % generate list of figures file
+    prefix={./.build/figures/graphics/}
+] % turn externalization on/off
+% Fix background
+\let\oldtikzpicture\tikzpicture
+\RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
 % % ==================== Other packages ==================== %
 % \usepackage{myTikzGraphs} % For graphs
 % \usepackage{varwidth}   % List inside TikzPicture
-% % -------------------------------------------------------- %
-% %                            pgf                           %
-% % -------------------------------------------------------- %
-% \usepackage{pgf,pgfmath,pgfplots}
+% -------------------------------------------------------- %
+%                            pgf                           %
+% -------------------------------------------------------- %
+\usepackage{pgf,pgfmath,pgfplots}
 % \usepackage{pgfplotstable}
-% \usepgfplotslibrary{fillbetween}
-% % ========================= Setup ======================== %
-% % 1e4 too much
-% % 1e3 fancy
-% % 1e2 simple
-% % 1e1 draft
-% \newcommand\mysampledensityDouble{2}
-% \newcommand\mysampledensitySimple{1e1}
-% \newcommand\mysampledensityFancy{1e2}
-% \usepackage{myPGFSetup}
+\usepgfplotslibrary{fillbetween}
+% ========================= Setup ======================== %
+% 1e4 too much
+% 1e3 fancy
+% 1e2 simple
+% 1e1 draft
+\newcommand\mysampledensityDouble{2}
+\newcommand\mysampledensitySimple{1e1}
+\newcommand\mysampledensityFancy{1e2}
+\usepackage{myPGFSetup}
 % -------------------------------------------------------- %
 %                          Tables                          %
 % -------------------------------------------------------- %
 \setlength\tabcolsep{6mm}        % width
 \renewcommand\arraystretch{1.25} % height
-% \usepackage{colortbl} % Colored Cells
-% \usepackage{multirow}
+\usepackage{colortbl} % Colored Cells
+% ==================== Color commands ==================== %
+\newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
+\newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
+\newcommand\cellemph[1]{\cellcolor{Emph!20!background}{#1}}
+\usepackage{multirow}
 % \usepackage{longtable}
 % \usepackage{float}\restylefloat{table}  % table position H(ere)
 % ======================= booktabs ======================= %
@@ -331,11 +348,11 @@
 %     \ifblank{#2}{}{\label{table:#1}}
 %     \addcontentsline{lot}{table}{Tabela \thetable{}: #2}
 % }
-% -------------------------------------------------------- %
-%                           Chem                           %
-% -------------------------------------------------------- %
+% % -------------------------------------------------------- %
+% %                           Chem                           %
+% % -------------------------------------------------------- %
 \usepackage{chemformula} % formulas quimicas
-% \usepackage{chemfig}     % Estruturas quimicas
+\usepackage{chemfig}     % Estruturas quimicas
 % \usepackage{modiagram}   % Molecular orbital diagram
 % % ======================= modiagram ====================== %
 % \setmodiagram {
@@ -345,9 +362,9 @@
 % }
 % \newlength\AtomVScale    \setlength\AtomVScale{1cm}
 % \newlength\MoleculeVScale\setlength\MoleculeVScale{1cm}
-% ====================== chemmacros ====================== %
+% % ====================== chemmacros ====================== %
 \usepackage{chemmacros}
-% \chemsetup[phases]{pos=sub}
+\chemsetup[phases]{pos=sub}
 % \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
 % % -------------------------------------------------------- %
 % %                          Biology                         %
@@ -444,7 +461,7 @@
     -- Files Directory
     dir = "./"
     -- Prefix and sufix
-    prefix = ""
+    prefix = "CM_A-Exercises_Resolutions.2."
     sufix  = ""
     -- Print file range
     firstFile = 1 -- first file number

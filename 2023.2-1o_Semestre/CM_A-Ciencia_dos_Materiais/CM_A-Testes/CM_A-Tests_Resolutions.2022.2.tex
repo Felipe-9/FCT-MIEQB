@@ -1,0 +1,286 @@
+% !TEX root = ./CM_A-Tests_Resolutions.2022.2.tex
+\providecommand\mainfilename{"./CM_A-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CM_A-Tests_Resolutions.2022.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CM_A-Tests_Resolutions.2022.2}}}
+% \tikzsetexternalprefix{./.build/figures/CM_A-Tests_Resolutions.2022.2/graphics/}
+
+\mymakesubfile{2}
+[CM\,A]
+{Test 2022 Resolution} % Subfile Title
+{Test 2022 Resolution} % Part Title
+
+\part*{Teoric (T/F):}
+
+\def\AT{\textcolor{green!40!foreground}{True}}
+\def\AF{\textcolor{red!40!foreground}{False}}
+
+\begin{questionBox}1{ % Q1
+    Um polímero é um plástico, mas nem todos os plásticos são polímeros.
+} % Q1
+    \answer{}
+    \AF{}, All plastics are polymers
+\end{questionBox}
+\begin{questionBox}1{ % Q2
+    Um polímero é um conjunto de unidades moleculares ligadas covalentemente entre si.
+} % Q2
+    \answer{}
+    \AT{}, Literalmente definição de polímeros
+\end{questionBox}
+\begin{questionBox}1{ % Q3
+    A vulcanização da borracha corresponde à reticulação das suas cadeias com enxofre.
+} % Q3
+    \answer{}
+    \AT{}, Descoberta por charles Goodyear 1830
+\end{questionBox}
+\begin{questionBox}1{ % Q4
+    Um polímero do tipo AABAABAB é um copolímero aleatório.
+} % Q4
+    \answer{}
+    \AT{}
+\end{questionBox}
+\begin{questionBox}1{ % Q5
+    O grupo funcional característico de do polipropileno é um anel benzénico.
+} % Q5
+    \answer{}
+    \AF{}, Propileno o grupo funcional é \ch{CH3}
+\end{questionBox}
+\begin{questionBox}1{ % Q6
+    Um polímero sintético termoendurecível não pode ser reciclado. 
+} % Q6
+    \answer{}
+    \AT{}, Polímeros fortemente reticulados, sem
+    temperatura de fusão definida, porque a essa
+    temperatura se degradam por quebra da
+    reticulação.
+\end{questionBox}
+\begin{questionBox}1{ % Q7
+    O nosso cabelo, unhas e músculos não são constituídos por polímeros de origem natural.
+} % Q7
+    \answer{}
+    \AF{}, Constituidos por Queratina
+\end{questionBox}
+\begin{questionBox}1{ % Q8
+    O polietileno, policloreto de vinilo e poliestireno são exemplos de materiais termoplásticos.
+} % Q8
+    \answer{}
+    \AT{}
+\end{questionBox}
+\begin{questionBox}1{ % Q9
+    O preço e a disponibilidade dos materiais termoplásticos está directamente relacionada com o preço do petróleo. 
+} % Q9
+    \answer{}
+    \AT{}, A marioria dos plásticos são derivados do petróleo
+\end{questionBox}
+\begin{questionBox}1{ % Q10
+    O teste de fio de cobre permite identificar materiais que contenham chumbo.
+} % Q10
+    \answer{}
+    \AF{}, Identifica materias que contém cloro
+\end{questionBox}
+\begin{questionBox}1{ % Q11
+    Os testes físico-químicos permitem identificar rigorosamente materiais poliméricos. 
+} % Q11
+    \answer{}
+    \AF{}, Identificação rigorosa feita por:
+    \begin{itemize}
+        \item Espectrometria de infravermelho (\emph{FTIR})
+        \item Ressonância magnética nuclear (\emph{RMN})
+    \end{itemize}
+\end{questionBox}
+\begin{questionBox}1{ % Q12
+    A massa molecular de um polímero pode ser definida pelo produto da massa molecular do monómero com o número de monómeros da cadeia.
+} % Q12
+    \answer{}
+    \AT{}, Polimeros são sequencias de monomeros
+\end{questionBox}
+\begin{questionBox}1{ % Q13
+    A reação de polimerização é um fenómeno aleatório sendo esta a razão pela qual não se definem massas moleculares médias.
+} % Q13
+    \answer{}
+    \AF{},
+\end{questionBox}
+\begin{questionBox}1{ % Q14
+    As propriedades dos polímeros dependem do seu peso molecular. 
+} % Q14
+    \answer{}
+    \AT{}
+\end{questionBox}
+\begin{questionBox}1{ % Q15
+    Quanto mais perto de 1 for o índice de polidispersividade de um polímero mais homogéneo será o material.
+} % Q15
+    \answer{}
+    \AT{}, A razão entre \(M_w\text{ e }M_n\) é então uma medida da largura de distribuição, ou seja quanto mais
+    afastado de 1 mais larga é a distribuição de peso molecular ou mais heterogéneo é o polímero.
+
+    \begin{BM}
+        \alpha=\frac{M_w}{M_n}
+        ; \\[3ex]
+        M_n
+        = M_0\,x_n
+        = \frac
+            {\sum{M_0\,x_i\,N_i}}
+            {\sum{N_i}}
+        = \frac
+            {\sum{M_i\,N_i}}
+            {\sum{N_i}}
+        ; \\[3ex]
+        M_w
+        = M_0\,x_w
+        = \sum{M_0\,x_i\,\frac{w_i}{\sum{w_i}}}
+        = \sum{M_i\,\frac{w_i}{\sum{w_i}}}
+        = \\
+        = \sum{M_i\,\frac{M_i\,N_i}{\sum{M_i\,N_i}}}
+        = \sum{\frac{M_i^2\,N_i}{\sum{M_i\,N_i}}}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(M_W\)} % Longest item
+    ]
+        \item[\(\alpha\)] Indice de polidispersividade
+        \item[\(M_0\)] massa molecular do monómero
+        \item[\(N\)] número de cadeias moleculares
+        \item[\(M_W\)] Massa molecular média ponderal 
+    \end{description}
+\end{questionBox}
+\begin{questionBox}1{ % Q16
+    A técnica de cromatografica líquida de exclusão molecular para determinação da massa molecular baseia-se no tamanho das cadeias poliméricas.
+} % Q16
+    \answer{}
+    \AT{}, Durante o fluxo de um determinado
+    solvente, cadeias de tamanhos diferentes
+    percorrem caminhos diferetens ao longo
+    da coluna de GPC\par
+    Principio: separação fisíca das cadeias
+    constituintes do polímero nos seus
+    diferentes tamanhos
+\end{questionBox}
+\begin{questionBox}1{ % Q17
+    A temperatura não altera a forma espacial das cadeias poliméricas. 
+} % Q17
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q18
+    O escoamento dos materiais ocorre quando as forças intermoleculares enfraquecem pelo aumento da temperatura.
+} % Q18
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q19
+    O movimento das cadeias de polímeros cristalinos no estado fundido é semelhante ao que ocorre num líquido de baixo peso molecular.
+} % Q19
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q20
+    O tempo de Kuhn está associado à passagem pela temperatura de transição vítrea do material.
+} % Q20
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q21
+    O tempo de Kuhn é o tempo que cada cadeia leva a percorrer uma distância comparável ao seu comprimento.
+} % Q21
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q22
+    Um termoplástico amorfo é caracterizado por uma temperatura de transição vítrea.
+} % Q22
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q23
+    Um termoplástico semi-cristalino apresenta um ponto de fusão definido.
+} % Q23
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q24
+    Um termoplástico cristalino é caracterizado por uma temperatura de fusão e uma temperatura de transição vítrea.
+} % Q24
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q25
+    A temperatura de fusão não depende da história térmica do polímero.
+} % Q25
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q26
+    A temperatura de transição vítrea é uma transição de fase de 2ª ordem. 
+} % Q26
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q27
+    Copolímeros apresentam duas Tg's.
+} % Q27
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q28
+    Não podemos determinar a temperatura de amolecimento através de técnicas de calorimetria.
+} % Q28
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q29
+    O processo de cristalização de um polímero é caracterizado por duas fases.
+} % Q29
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q30
+    O modelo das micelas explica o comportamento mecânico dos materiais.
+} % Q30
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q31
+    O modelo das esferulites não explica o padrão de simetria radial em cruz de malta.
+} % Q31
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q32
+    O grau de cristalidade de um polímero semicristalino não pode ser aumentado através de um recozimento.
+} % Q32
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q33
+    Maior simetria, maior peso molecular e mais ramificações dão origem a polímeros mais cristalinos.
+} % Q33
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q34
+    Segundo a Lei de Newton a tensão depende de deformação.
+} % Q34
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q35
+    Um fluido Newtoniano tem uma viscosidade que depende da velocidade de deformação.
+} % Q35
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q36
+    Segundo a Lei de Hooke a tensão é independente da velocidade de deformação.
+} % Q36
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q37
+    A Lei de Hooke descreve a proporcionalidade entre a tensão e a deformação do material.
+} % Q37
+    \AT
+\end{questionBox}
+\begin{questionBox}1{ % Q38
+    Os polímeros têm normalmente um comportamento viscoelástico, caracterizado pelos modelos de Newton e Voight-Kelvin.
+} % Q38
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q39
+    Num ensaio de relaxação de tensão aplica- se uma tensão constante medindo-se a deformação resultante em função do tempo.
+} % Q39
+    \AF
+\end{questionBox}
+\begin{questionBox}1{ % Q40
+    Um elastómero é caracterizado por um módulo de Young baixo e dependente da temperatura.
+} % Q40
+    \AT
+\end{questionBox}
+
+
+\end{document}
