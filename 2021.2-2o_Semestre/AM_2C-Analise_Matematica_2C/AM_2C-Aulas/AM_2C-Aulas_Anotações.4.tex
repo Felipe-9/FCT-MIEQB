@@ -1,0 +1,208 @@
+% !TEX root = ./AM_2C-Aulas_Anotações.4.tex
+\providecommand\mainfilename{"./AM_2C-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aulas_Anotações.4"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{./.build/figures/\subfilename/}}}
+% \graphicspath{./.build/figures/AM_2C-Aulas_Anotações.4/}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{4}
+[AM\,2C]
+{Aula 21/10} % Subfile Title
+{Aula 21/10} % Part Title
+
+\part*{funções implícitas}
+% \begin{definitionBox}1{Função Implícita} % DEF1
+    
+%     \begin{center}
+%         \includegraphics[\width=.9\textwidth]{
+%             ./.build/figures/AM_2C-Aulas_Anotações.4/Screenshot 2022-10-21 at 11.52.50.png
+%         }
+%     \end{center}
+    
+% \end{definitionBox}
+
+\begin{exampleBox}1m{} % E1
+    
+    \begin{BM}
+        \begin{cases}
+            a^3 + u\,b-v = 0
+            \\
+            b^3 + v\,a-u = 0
+        \end{cases}
+    \end{BM}
+
+    Defina implicitamente numa viz de (0,1,1,-1) e \textit{a} e \textit{b} como funções de \textit{u} e \textit{v}
+
+    \begin{align*}
+        1 \quad & \begin{cases}
+            f_1(u,v,a,b) = a^3 + u\,b - v
+            \\
+            f_2(u,v,a,b) = b^3+v\,a-u
+        \end{cases}
+        \\
+        2 \quad & \{f_1,f_2\}\in c^1(\mathbb{R}^4)
+        \\
+        3 \quad & f_1(0,1,1,-1) 
+        = 1^3 -(-1)
+        = 1^3 + 1
+        = f_2(0,1,1,-1)
+        \\
+        4 \quad & 
+        \pdv{f_1,f_2}{a,b}(0,1,1,-1)
+        = \begin{pmatrix}
+            3\,a^2 & u
+            \\
+            v & 3\,b^2
+        \end{pmatrix}
+        (0,1,1,-1)
+        = \begin{pmatrix}
+            3 & 0
+            \\
+            1 & 3
+        \end{pmatrix}
+        = 9
+    \end{align*}
+
+    \begin{flalign*}
+        &
+            \begin{cases}
+                a = \psi_1(u,v)
+                \\
+                b = \psi_2(u,v)
+            \end{cases}
+            &\\&
+            \pdv{a}{u}(0,1)
+            = -\frac{1}{\Delta}
+            \pdv{f_1,f_2}{u,b}
+            (0,1,1,-1)
+            = -\frac{1}{\Delta}
+            \begin{pmatrix}
+                b & u
+                \\
+                -1 & 3\,b^2
+            \end{pmatrix}
+            (0,1,1,-1)
+            = 1/3
+            &\\&
+            \left\{
+                \begin{aligned}
+                    \phi_1(u,v)^3 + u\,\phi_2(u,v) -v = 0
+                    \\
+                    \phi_2(u,v)^3 + v\,\phi_1(u,v) -u = 0
+                \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+            \left\{
+                \begin{aligned}
+                    3\phi_1(u,v)^2\pdv{\phi_1}{u}(u,v) 
+                    + \phi_2(u,v) 
+                    + \pdv{\phi_2}{u}(u,v) = 0
+                    \\
+                    3\phi_2(u,v)^2\pdv{\phi_2}{u}(u,v) 
+                    + v\,\pdv{\phi_1(u,v)}{u}(u,v)
+                    - u = 0
+                \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+            \left\{
+                \begin{aligned}
+                    3\pdv{\phi_1}{u}(0,1)
+                    - 1 + 0 = 0
+                    \\
+                    3\pdv{\phi_2}{u}(0,1)
+                    +\pdv{\phi_1}{u}(0,1)
+                    - 1 
+                    =0
+                \end{aligned}
+            \right\}
+            % \implies &\\&
+            \implies
+            \left\{
+                \begin{aligned}
+                    \pdv{\phi_1}{u}(0,1) = 1/3
+                    \\
+                    \pdv{\phi_2}{u}(0,1) = 2/9
+                \end{aligned}
+            \right\}
+        &
+    \end{flalign*}
+
+\end{exampleBox}
+
+\begin{definitionBox}1{Teorema da F invérsa} % DEF2
+    
+    Seja \textit{D} um conjunto aberto de \(\mathbb{R}^n, F:D\subset\mathbb{R}^n\to\mathbb{R}^n\), uma função de classe \(C^1\) em \textit{D}, definida pelas \textit{n} condições \(y_i = F_i(x_1,\dots,x_n)\), com \(i=1,\dots,n\).\\
+
+    Dado \(a\in D\) suponhamos que \(\det(F'(a))=\pdv{F_1,\dots,F_n}{x_1,\dots,x_n}(a)\neq 0\)
+
+    \begin{enumerate}
+        \item \(a \in A,F(a)\in B\)
+        \item \(F_{/a}(F \text{ restrita a } A)\) é uma bijecção de \textit{A} sobre \textit{B}
+        \item A função invérsa de \(F_{/A}\) é de classe \(C^1\) em \textit{B}
+        \item \((F^{-1})'(y) = (F'(x))^{-1} \text{, onde } x = F^{-1}(y),y\in B\)
+    \end{enumerate}
+    
+\end{definitionBox}
+
+\begin{exampleBox}1{} % E2
+    
+    \begin{BM}[align*]
+        F:D \subseteq\mathbb{R}^2 & \to\mathbb{R}^2\\
+        (x,y) & \mapsto(u,v) = (e^x\,\cos(y),e^x\,\sin(y))
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            F_1,F_2\in C^1(\mathbb{R}^2)
+        &\\&
+            \begin{pmatrix}
+                \pdv{F_1}{x} & \pdv{F_1}{y}\\
+                \pdv{F_2}{x} & \pdv{F_2}{y}
+            \end{pmatrix}
+            (x_0,y_0)
+            = \dots
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{exampleBox}1{} % E3
+    
+    \begin{BM}
+        F(0,\pi/4) = \left(
+            \frac{\sqrt{2}}{2},
+            \frac{\sqrt{2}}{2}
+        \right)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \begin{bmatrix}
+                \pdv{x}{u} & \pdv{x}{v}\\
+                \pdv{y}{u} & \pdv{y}{v}
+            \end{bmatrix}
+            _{
+                \left(
+                    \frac{\sqrt{2}}{2},
+                    \frac{\sqrt{2}}{2}
+                \right)
+            }
+            = - J_{F^{-1}}
+            \,\left(
+                \frac{\sqrt{2}}{2},
+                \frac{\sqrt{2}}{2}
+            \right)
+            \dots
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\end{document}

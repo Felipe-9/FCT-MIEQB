@@ -1,0 +1,321 @@
+% !TEX root = ./AM_2C_-_Teste_2021.1_2_Resolução.tex
+% !TEX root = ./AM_2C_-_Testes_Anteriores_Resolucoes.tex
+\providecommand\mainfilename{"./AM_2C_-_Testes_Anteriores_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C_-_Teste_2021.1_2_Resolução.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+\tikzset{external/force remake = true} % remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+{AM\,2C -- Teste 2 Repetição 2021.1}
+{AM\,2C -- Teste 2 Repetição 2021.1}
+
+\group{}
+\begin{questionBox}1m{}
+
+    O integral repetido
+    \begin{BM}
+        \int_0^1 \left(
+            \int_{\sqrt{1-x^2}}^{\sqrt{9-9\,x^2}}
+            \cos(x\,y)
+            \odif{y}
+        \right)
+        \odif{x}
+    \end{BM}
+
+    Utilizando a ordem de integração inversa da apresentdada, pode ser calculada a partir de:
+
+    \begin{flalign*}
+        &
+            \left.
+                \begin{aligned}
+                    y = \sqrt{9-9\,x^2}
+                    \implies 
+                    \left(
+                        \frac{y}{3}
+                    \right)^2
+                    + x^2 = 1
+                 \\ y = \sqrt{1-x^2}
+                    \implies
+                    y^2+x^2 = 1
+                 \\ x=1
+                 \\ x=0
+                \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+            \int_0^1
+            \left(
+                \int_{\sqrt{1-y^2}}^{1-y^2/9}
+                \cos(x\,y)
+                \odif{x}
+            \right)
+            \odif{y}
+            + \int_1^3
+            \left(
+                \int_0^{\sqrt{1-y^2/9}}
+                \cos(x,y)
+                \odif{x}
+            \right)
+            \odif{y}
+        &
+    \end{flalign*}
+
+    % \begin{center}
+    %     %\pgfplotsset{height=7cm, width= .6\textwidth}
+    %     \begin{tikzpicture}
+    %     \begin{axis}
+    %         [
+    %             % xmajorgrids = true,
+    %             % legend pos  = north west
+    %         ]
+    %         % Legends
+    %         % \addlegendimage{empty legend}
+    %         % \addlegendentry[Red]{\( x \)}
+            
+    %         % % Plot from csv file
+    %         % \addplot[smooth, thick, mark=*] % mesh for colormap
+    %         % table[
+    %         %     col sep=comma,  % csv: comma,
+    %         %     header=true,
+    %         %     x index=3,      % x column on file
+    %         %     y index=4,      % y column on file
+    %         %     point meta=x,   % value to colormap
+    %         % ]{  file.csv };
+            
+    %         % Plot from equation
+    %         \addplot[
+    %             smooth,
+    %             thick,
+    %             red\Light,
+    %             % domain  = -2:2,
+    %             % samples = 0.4*\mysampledensity,
+    %             % variable y = x,
+    %         ]{  sqrt{9-9*x^2} };
+            
+    %         % Plot from equation
+    %         \addplot[
+    %             smooth,
+    %             thick,
+    %             red\Light,
+    %             % domain  = -2:2,
+    %             % samples = 0.4*\mysampledensity,
+    %             % variable y = x,
+    %         ]{  sqrt{1-x^2} };
+            
+    %     \end{axis}
+    %     \end{tikzpicture}
+    % \end{center}
+    
+\end{questionBox}
+
+\begin{questionBox}1m{}
+    
+    Seja \(D\subset\mathbb{R}^3\) o domínio fechado, limitado superiormente pelo parabolóide \(z=1-(x^2+y^2)\) e inferiormente pelo parabolóide \(z=x^2+y^2\). O volume do domínio \textit{D} pode ser calculado a partir do seguinte integral triplo (seguindo a ordem z,y,x)
+
+    \begin{flalign*}
+        &
+            \left.
+                \begin{aligned}
+                    z = 1-(x^2+y^2)
+                 \\ z = x^2 + y^2
+                 \\ 1-(x^2+y^2) = x^2 + y^2 
+                    \implies
+                    1/2 = x^2 + y^2
+                \end{aligned}
+            \right\}
+            \implies
+        &
+    \end{flalign*}
+
+    % \begin{center}
+    %     % \pgfplotsset{height=0.3\pageheight, width= .95\textwidth}
+        
+    %     % \tikzset{external/remake next=true}
+    %     \begin{tikzpicture}
+    %         \begin{axis}
+    %         [
+    %             z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+    %             % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+    %             % xmajorgrids = true,
+    %             % legend pos  = north west,
+    %             % 3d view,
+    %             % perspective,
+    %             % view = {10}{10}, % rot/elevation
+    %             hide axis,
+    %             % axis lines = {center}, % 3D center/box/left/right
+    %             % axis on top,
+    %             % ticks = {none} % minor/major/both/none,
+    %             domain = -1:2,
+    %         ]
+    %             % Legends
+    %             % \addlegendimage{empty legend}
+    %             % \addlegendentry[Red]{\( x \)}
+                
+    %             % Conical surface
+    %             \addplot3 [
+    %                 % Aparence
+    %                 surf,
+    %                 opacity      = 0.2,
+    %                 fill opacity = 0.4,
+    %                 faceted color = White,
+    %                 shader = faceted interp,
+    %                 % Scope
+    %                 data cs = cart, % cart/polar/polarrad
+    %                 samples = \mysampledensity,
+    %                 % Variable
+    %                 % variable   = z,
+    %                 % variable y = z,
+    %                 % domain   = -1:1,
+    %                 % domain x = -1:2,
+    %             ]{
+    %                 x^2+y^2
+    %             };
+
+    %             % Conical surface
+    %             \addplot3 [
+    %                 % Aparence
+    %                 surf,
+    %                 opacity      = 0.2,
+    %                 fill opacity = 0.4,
+    %                 faceted color = White,
+    %                 shader = faceted interp,
+    %                 % Scope
+    %                 data cs = cart, % cart/polar/polarrad
+    %                 samples = \mysampledensity,
+    %                 % Variable
+    %                 % variable   = z,
+    %                 % variable y = z,
+    %                 % domain   = -1:1,
+    %                 % domain y = -1:1,
+    %             ]{
+    %                 1-(x^2+y^2)
+    %             };
+
+    %             % % Conical surface
+    %             % \addplot3 [
+    %             %     % Aparence
+    %             %     surf,
+    %             %     opacity      = 0.2,
+    %             %     fill opacity = 0.4,
+    %             %     faceted color = White,
+    %             %     shader = faceted interp,
+    %             %     % Scope
+    %             %     data cs = cart, % cart/polar/polarrad
+    %             %     samples = \mysampledensity,
+    %             %     % Variable
+    %             %     % variable   = z,
+    %             %     % variable y = z,
+    %             %     % domain   = -1:1,
+    %             %     % domain y = -1:1,
+    %             % ]{
+    %             %     0.5 = x^2 + y^2
+    %             % };
+
+
+                
+            
+    %         \end{axis}
+    %     \end{tikzpicture}
+    % \end{center}
+        
+    \begin{flalign*}
+        &
+            \implies
+            \int_{-\sqrt{1/2}}^{\sqrt{1/2}}
+            \left(
+                \int_{-\sqrt{1/2 - x^2}}^{\sqrt{1/2 - x^2}}
+                \left(
+                    \int_{x^2+y^2}^{1-(x^2+y^2)}
+                    \odif{z}
+                \right)
+                \odif{y}
+            \right)
+            \odif{x}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Question 3
+\begin{questionBox}1m{}
+    
+    Seja \textit{L} uma linha admitindo a representação paramétrica regular
+    \begin{BM}[align*]
+        \left\{
+            \begin{aligned}
+                x =& \cos(t)
+             \\ y =& \sin(t)
+             \\ z =& \log(1+t)
+            \end{aligned}
+        \right.
+      & \quad
+        0 \leq t \leq \pi/2
+    \end{BM}
+
+    Percorrida no sentido crescente do parâmetro \textit{t}, \(\varphi(x,y,z)=\exp(x\,y + y\,z+z\,x)\) e
+    \begin{BM}
+        \vec{u} 
+        = u_1(x,y,z)\hat{\imath}
+        + u_2(x,y,z)\hat{\jmath}
+        + u_3(x,y,z)\hat{k}
+        = \nabla\varphi(x,y,z)
+    \end{BM}
+
+    Seja
+    \begin{BM}
+        I
+        = \int_L
+          u_1(x,y,z)\odif{x}
+        + u_2(x,y,z)\odif{y}
+        + u_3(x,y,z)\odif{z}
+    \end{BM}
+
+    Então: \(I =\) ?
+
+    \begin{flalign*}
+        &
+            I
+            = \int_L
+              u_1(x,y,z)\odif{x}
+            + u_2(x,y,z)\odif{y}
+            + u_3(x,y,z)\odif{z}
+            = &\\&
+            = \int_L
+              (
+                u_1(x,y,z)\hat{\imath}
+                + u_2(x,y,z)\hat{\jmath}
+                + u_3(x,y,z)\hat{k}
+            )
+            \cdot \vec{\odif{r}}
+            = &\\&
+            = \int_L
+              \vec{u}\cdot \vec{\odif{r}}
+            % = &\\&
+            = \int_L
+              \nabla\varphi(x,y,z)
+              \cdot \vec{\odif{r}}
+            = &\\&
+            = \varphi(0,1,\log(1+\pi/2))
+            - \varphi(1,0,0)
+            % = &\\&
+            = \exp(0 + \log(1+\pi/2) + 0)
+            - \exp(0)
+            = &\\&
+            = \pi/2
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Seja \(g(x,y,z)\) um campo escalar, definido e admitindo derivadas parciais contínuas até à segunda ordem num subconjunto aberto \textit{A} de \(\mathbb{R}^3\). uma esperssão de \(\nabla\cdot\nabla g^2\) em função de \(g,\lVert \nabla g\rVert\) e \(\nabla^2 g\)
+    
+\end{questionBox}
+
+\end{document}

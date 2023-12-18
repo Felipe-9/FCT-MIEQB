@@ -1,0 +1,143 @@
+% !TEX root = ./AAM_2C-Aulas_Anotações.1.tex
+\providecommand\mainfilename{"./AM_2C-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aulas_Anotações.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{1}
+{AM\,2C Aula 14/mar Anotações}
+{AM\,2C Aula 14/mar Anotações}
+
+% Slide 1 e 2
+\part*{Geometria em R2 e revisão AM 1 (Slide 1)}
+\begin{definitionBox}1{Ponto Fronteiro}
+    
+    \begin{BM}
+        X_0\in\mathbb{R}^n:X_0\nin\{ \exterior A\cup\interior A \}
+    \end{BM}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1{Fronteira}
+    \begin{BM}
+        \fronteira A = \rho A = \dots
+    \end{BM}
+\end{definitionBox}
+
+\begin{exampleBox}1{}
+    
+    \begin{flalign*}
+        &
+            X_0\in A\cap A'\therefore\dots
+            X_0\text{ não é ponto isolado}
+        &
+    \end{flalign*}
+
+\end{exampleBox}
+
+\begin{sectionBox}1{Caracterização de Conjuntos}
+    
+    \begin{sectionBox}2{Conjunto Limitado}
+        
+        \begin{BM}
+            A\subset B(x,r)\quad
+            \begin{aligned}
+            \ldiv{}
+                r>0
+            \ldiv{}
+                x\in\mathbb{R}^n
+            \end{aligned}
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        A = \{
+            X\in\mathbb{R}^n : 0 < \lVert X \rVert \leq 1
+        \}
+        \cup \{(0,2)\}
+    \end{BM}
+
+    [Inserir função graficos]
+    
+\end{questionBox}
+
+\part*{Conexão}
+
+\begin{sectionBox}1{Conjuntos Separados}
+    
+    \begin{exampleBox}*1{}
+        
+        \begin{BM}
+            \frac{x^2}{4}+y^2 \leq 1\land x^2>y^2
+        \end{BM}
+
+        \begin{center}
+            \begin{tikzpicture}
+                \begin{axis}
+                    [
+                        axis lines = {middle},
+                        axis on top,
+                    ]
+                    
+                    \addplot [
+                        % opacity = 0.5,
+                        fill opacity = 0.2,
+                        DarkGreen\Light,
+                        fill = DarkGreen\Light,
+                        domain y = 0:1,
+                    ] gnuplot { \sqrt{1-0.25*x**2} }
+                    
+                    \addplot [
+                        % opacity = 0.5,
+                        fill opacity = 0.2,
+                        DarkGreen\Light,
+                        fill = DarkGreen\Light,
+                        domain y = -1:0,
+                    ] gnuplot { 0\sqrt{1-0.25*x**2} }
+                    
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        
+        \begin{exampleBox}*2{\(\bar{A}\cap B=\emptyset\)?}
+            
+            \begin{flalign*}
+                &
+                    0\in\bar{A}\land 0\in B\therefore \bar{A}\cap B=\{ 0 \}
+                &
+            \end{flalign*}
+            
+        \end{exampleBox}
+
+        \begin{exampleBox}*2{\( \bar{A}\cap B=\emptyset \)?}
+            
+            \begin{flalign*}
+                &
+                    0\in\bar{A}\land 0\in B\therefore \bar{A}\cap B=\{ 0 \}
+                &
+            \end{flalign*}
+            
+        \end{exampleBox}
+
+        \begin{exampleBox}*2{\( A\cap \bar{B}=\emptyset \)?}
+            
+            Mesma dem da anterior
+            
+        \end{exampleBox}
+
+    \end{exampleBox}
+    
+\end{sectionBox}
+
+
+\end{document}

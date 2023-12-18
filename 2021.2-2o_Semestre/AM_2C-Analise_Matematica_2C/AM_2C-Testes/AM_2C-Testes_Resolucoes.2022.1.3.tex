@@ -1,0 +1,938 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes-2022.1.3.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes-2022.1.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{../images/AM_2C-Testes_Resolucoes-2022.1.3/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[AM\,2C]
+{Teste de Exame}
+{Teste de Exame}
+
+\group{}
+
+% Q1
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        \mathcal{P}ar_2:\left\{
+            F = (2,0)
+            \land
+            D = \{(x,y)\in\mathbb{R}^2:x=-2\}
+        \right\}
+        \\
+        \mathcal{E}li_2:\left\{
+            P' = (0,1)
+            \land
+            F= (\sqrt{7},1)
+            \land
+            V = (4,1)
+        \right\}
+    \end{BM}
+
+    \begin{questionBox}3{\(\mathcal{P}ar_2\)}
+        
+        \begin{flalign*}
+            &
+                x 
+                = \frac{y^2}{4*2}
+                = \frac{y^2}{8}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\mathcal{E}li_2\)}
+        
+        \begin{flalign*}
+            &
+                1
+                = \frac{x^2}{r_1^2}
+                + \frac{(y-1)^2}{r_2^2}
+                = \frac{4^2}{r_1^2}
+                + \frac{(1-1)^2}{r_2^2}
+                = \frac{16}{r_1^2}
+                \land &\\&
+                \land
+                r_2^2 
+                = r_1^2 - c^2
+                = 16 - \sqrt{7}^2
+                = 9
+                \implies &\\&
+                \implies
+                1
+                = \frac{x^2}{16}
+                + \frac{(y-1)^2}{9}
+                \implies
+                9*16
+                = 144
+                = 9\,x^2
+                + 16(y-1)^2
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+% Q2
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(x,y):\mathbb{R}^2\to\mathbb{R} 
+        = (3\,x-y^2,x^3-3\,y^2) = (u,v)
+        \\
+        \visinhanca(f(1,1))\text{ é invertivel}
+    \end{BM}
+    
+    \begin{flalign*}
+        &
+            f(1,1)
+            = (3*1-1^2, 1^3-3*1^2) 
+            = (2,-2) 
+            = (u,v)
+            &\\[2ex]&
+            \pdv{f(1,1)}{u}
+            = \left(
+                3\,\pdv{x}{u}
+                -(1^2),
+                1^3 - 3*2*1\,\pdv{y}{u}
+            \right)
+            = \left(
+                3\,\pdv{x}{u}
+                -1,
+                1 - 6\,\pdv{y}{u}
+            \right)
+            &\\[2ex]&
+            \pdv{f(1,1)}{v}
+            = \left(
+                3\,\pdv{x}{v}
+                -(1^2),
+                1^3 - 3*2*1\,\pdv{y}{v}
+            \right)
+            = \left(
+                3\,\pdv{x}{v}
+                -1,
+                1 - 6\,\pdv{y}{v}
+            \right)
+            &\\[2ex]&
+            \implies
+            % 
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q3
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        x^4 + y^4 + (x+1)e^z + 8\sin(z) - 4 = 0
+        \\
+        (x',y',z') = (1,-1,0)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            % 0 
+            % = 1^4 + (-1)^4 + (1+1)e^0 + 8\sin(0) - 4
+            % = 1 + 1 + -2
+            &\\[2ex]&
+            % \pdv{f(1,-1,0)}{x}
+            % = 
+            \left(
+                4\,x^3
+                + y^4
+                + e^z(1)
+                + (x+1)
+                \,e^z
+                \,\pdv{z}{x}
+                - 8\cos(z)\pdv{z}{x}
+            \right)
+            (1,-1,0)
+            = &\\&
+            = 4
+            + 1
+            + 1
+            + 2\pdv{z}{x}
+            - 8\pdv{z}{x}
+            = 6
+            - 6\pdv{z}{x}
+            &\\[2ex]&
+            \pdv{f(1,-1,0)}{y}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q4
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(x,y,z) 
+        = (
+            x\,g(x/z),
+            h(x^2\,y)
+        )
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            J 
+            = (f\circ g)'(x)\in\mathcal{M}_{p\times n}
+            : (f\circ g)'(x)_{(i,j)}
+            = \jdv{f(g(x))_i}{x_j}
+            \implies &\\&
+            \implies
+            J
+            = \begin{bmatrix}
+                  \pdv{f(g(-1,0,1))_1}{x}
+                & \pdv{f(g(-1,0,1))_1}{y}
+                & \pdv{f(g(-1,0,1))_1}{z}
+                \\ 
+                  \pdv{f(g(-1,0,1))_2}{x}
+                & \pdv{f(g(-1,0,1))_2}{y}
+                & \pdv{f(g(-1,0,1))_2}{z}
+            \end{bmatrix}
+            % = &\\&
+            % = \begin{bmatrix}
+            %       \pdv{x\,g(x/z)}{x}
+            %     & \pdv{f(g(x))_1}{y}
+            %     & \pdv{f(g(x))_1}{z}
+            %     \\ 
+            %       \pdv{f(g(x))_2}{x}
+            %     & \pdv{f(g(x))_2}{y}
+            %     & \pdv{f(g(x))_2}{z}
+            % \end{bmatrix}
+            = &\\&
+            = \begin{bmatrix}
+                g(1)
+                +g'(1)
+                & 
+                0
+                &
+                -g'(1)
+                \\
+                0
+                & 
+                h'(0)
+                & 
+                0
+            \end{bmatrix}
+            % \pdv{(x+1)^2}{x}
+            % = \pdv{x^2}{(x+1)}
+            % \,\pdv{x+1}{x}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q5
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        A = \left\{
+            (x,y)\in\mathbb{R}^2
+            : x^2 + y^2 \geq 1
+            \land
+            (x-1)^2 + y^2 \leq 1
+        \right\}
+        \\[2ex]
+        \int_L {
+            \left(
+                x^3 - \frac{y^2}{2}
+            \right)
+            \odif{x}
+            + 
+            \left(
+                y^5-1
+            \right)
+            \odif{y}
+        }
+    \end{BM}
+
+    em coordenadas polares
+
+    % \begin{center}
+    %     %\pgfplotsset{height=7cm, width= .6\textwidth}
+    %     \begin{tikzpicture}
+    %     \begin{axis}
+    %         [
+    %             % xmajorgrids = true,
+    %             % legend pos  = north west
+    %         ]
+    %         % Legends
+    %         % \addlegendimage{empty legend}
+    %         % \addlegendentry[Red]{\( x \)}
+            
+    %         % % Plot from csv file
+    %         % \addplot[smooth, thick, mark=*] % mesh for colormap
+    %         % table[
+    %         %     col sep=comma,  % csv: comma,
+    %         %     header=true,
+    %         %     x index=3,      % x column on file
+    %         %     y index=4,      % y column on file
+    %         %     point meta=x,   % value to colormap
+    %         % ]{  file.csv };
+            
+    %         % Plot from equation
+    %         \addplot[
+    %             smooth,
+    %             thick,
+    %             % Red,
+    %             domain  = -2:2,
+    %             samples = 0.4*\mysampledensity,
+    %         ]{ sqrt(x^2-1) };
+    %         \addplot[
+    %             smooth,
+    %             thick,
+    %             % Red,
+    %             domain  = -2:2,
+    %             samples = 0.4*\mysampledensity,
+    %         ]{ sqrt((x-1)^2-1) };
+            
+    %     \end{axis}
+    %     \end{tikzpicture}
+    % \end{center}
+
+    \begin{flalign*}
+        &
+            x^2 + y^2
+            = (x-1)^2 + y^2
+            \implies
+            \lvert x \rvert 
+            = \lvert (x-1) \rvert
+            \implies
+            \left\{
+                \begin{aligned}
+                    x &= 1/2
+                    \\
+                    y &
+                    = \pm\sqrt{1-1/4}
+                    = \pm\sqrt{3}/2
+                \end{aligned}
+            \right\}
+            % &\\[2ex]&
+            % \int_L {
+            %     \left(
+            %         x^3 - \frac{y^2}{2}
+            %     \right)
+            %     \odif{x}
+            %     + 
+            %     \left(
+            %         y^5-1
+            %     \right)
+            %     \odif{y}
+            % }:
+            % \left(
+            %     \begin{aligned}
+            %         &
+            %         x = \cos(\theta)
+            %         \ldiv{}
+            %         y = \sin(\theta)
+            %         \ldiv{}
+            %         \lVert (x,y) \rVert
+            %         = r
+            %         &
+            %     \end{aligned}
+            % \right)
+            % = &\\&
+            % \int_L {
+            %     \left(
+            %         \cos(\theta)^3 - \frac{y^2}{2}
+            %     \right)
+            %     \odif{x}
+            %     + 
+            %     \left(
+            %         y^5-1
+            %     \right)
+            %     \odif{y}
+            % }
+            &\\[2ex]&
+            L = \left\{
+                (x,y):
+                \left(
+                    \begin{aligned}
+                        x &=\cos(\theta):
+                        \quad&  0\leq&\theta\leq \pi/2
+                        \\ 
+                        x &=\cos(\theta)+1: 
+                        \quad& \pi/2\leq&\theta\leq 2\,\pi
+                        \\
+                        y &=\sin(\theta)
+                    \end{aligned}
+                \right)
+            \right\}
+            &\\[2ex]&
+            \int_L {
+                \left(
+                    x^3 - \frac{y^2}{2}
+                \right)
+                \odif{x}
+                + 
+                \left(
+                    y^5-1
+                \right)
+                \odif{y}
+            }
+            % = &\\&
+            % \int_
+            = &\\&
+            = \int_0^{\pi/2}{
+                \left(
+                    \left(
+                        \cos(\theta)+1
+                    \right)^3-
+                    \left(
+                        \sin(\theta)
+                    \right)^2
+                \right)
+                (-\sin(\theta))
+                \odif{\theta}
+                + \left(
+                    \left(
+                        \sin(\theta)
+                    \right)^5 - 1
+                \right)
+                \cos(\theta)
+                \odif{\theta}
+            }
+            + &\\&
+            + \int_{\pi/2}^{2\pi}{
+                \left(
+                    \left(
+                        \cos(\theta)
+                    \right)^3-
+                    \left(
+                        \sin(\theta)
+                    \right)^2
+                \right)
+                (-\sin(\theta))
+                \odif{\theta}
+                + \left(
+                    \left(
+                        \sin(\theta)
+                    \right)^5 - 1
+                \right)
+                \cos(\theta)
+                \odif{\theta}
+            }
+            % 
+            = &\\&
+            % 
+            = \int_0^{\pi/2}{
+                \left(
+                    \left(
+                        \cos(\theta)+1
+                    \right)^3-
+                    \left(
+                        \sin(\theta)
+                    \right)^2
+                \right)
+            }
+            + &\\&
+            + \int_{\pi/2}^{2\pi}{
+                \left(
+                    \left(
+                        \cos(\theta)
+                    \right)^3-
+                    \left(
+                        \sin(\theta)
+                    \right)^2
+                \right)
+                (-\sin(\theta))
+                \odif{\theta}
+            }
+            + &\\&
+            + \int_{0}^{2\pi}{
+                \left(
+                    \left(
+                        \sin(\theta)
+                    \right)^5 - 1
+                \right)
+                \cos(\theta)
+                \odif{\theta}
+            }
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q6
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        D = 
+        (x,y,z):\\
+        \left\{
+            \begin{aligned}
+                &
+                \limsup D = \{(x,y,z): z = \sqrt{1-x^2-y^2}\}
+                \ldiv{}
+                \liminf D = \{(x,y,z): z = 1 - \sqrt{x^2+y^2}\}
+                \ldiv{}
+                y \geq 0
+                \land
+                y\leq x
+                &
+            \end{aligned}
+        \right\}
+    \end{BM}
+    
+\end{questionBox}
+
+% Q7
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        \int_{-2}^{0} {
+            \left(
+                \int_{0}^{x^2}{
+                    x^2
+                    \odif{y}
+                }
+            \right)
+            \odif{x}
+        }
+        + \int_{0}^{2} {
+            \left(
+                \int_{0}^{x^2} {
+                    x^2
+                    \odif{y}
+                }
+            \right)
+            \odif{x}
+        }
+    \end{BM}
+
+    % \begin{center}
+    %     %\pgfplotsset{height=7cm, width= .6\textwidth}
+    %     % \tikzset{external/remake next=true}
+    %     \begin{tikzpicture}
+    %     \begin{axis}
+    %         [
+    %             % xmajorgrids = true,
+    %             % legend pos  = north west
+    %         ]
+    %         % Legends
+    %         % \addlegendimage{empty legend}
+    %         % \addlegendentry[Red]{\( x \)}
+            
+    %         % % Plot from csv file
+    %         % \addplot[smooth, thick, mark=*] % mesh for colormap
+    %         % table[
+    %         %     col sep=comma,  % csv: comma,
+    %         %     header=true,
+    %         %     x index=3,      % x column on file
+    %         %     y index=4,      % y column on file
+    %         %     point meta=x,   % value to colormap
+    %         % ]{  file.csv };
+            
+    %         % Plot from equation
+    %         \addplot[
+    %             smooth,
+    %             thick,
+    %             % Red,
+    %             domain  = -2:2,
+    %             samples = 0.4*\mysampledensity,
+    %         ]{  x^2 };
+            
+    %     \end{axis}
+    %     \end{tikzpicture}
+    % \end{center}
+
+    \begin{flalign*}
+        &
+            y = x^2 \implies x = \pm\sqrt{y}
+            &\\[2ex]&
+            \int_{-2}^{0} {
+                \left(
+                    \int_{0}^{x^2}{
+                        x^2
+                        \odif{y}
+                    }
+                \right)
+                \odif{x}
+            }
+            + \int_{0}^{2} {
+                \left(
+                    \int_{0}^{x^2} {
+                        x^2
+                        \odif{y}
+                    }
+                \right)
+                \odif{x}
+            }
+            = &\\&
+            = \int_0^4 {
+                \left(
+                    \int_{-2}^{-\sqrt{y}} {
+                        x^2
+                        \odif{y}
+                    }
+                    +\int_{\sqrt{y}}^{2} {
+                        x^2
+                        \odif{y}
+                    }
+                \right)
+                \odif{y}
+            }
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q8
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        L = \fronteira (D)
+        \\[2ex]
+        D = \left\{
+            (x,y) \in\mathbb{R}^2
+            : \left(
+                \begin{aligned}
+                    &
+                    (x^2+y^2) \leq 4
+                    \ldiv{}
+                    x^2 + (y-1)^2 \geq 1
+                    \ldiv{}
+                    x \leq 0
+                    \land
+                    y \geq 0
+                    &
+                \end{aligned}
+            \right)
+        \right\}
+    \end{BM}
+
+    % \begin{center}
+    %     %\pgfplotsset{height=7cm, width= .6\textwidth}
+    %     \tikzset{external/remake next=true}
+    %     \begin{tikzpicture}
+    %     \begin{axis}
+    %         [
+    %             % xmajorgrids = true,
+    %             % legend pos  = north west
+    %             % domain = -5:5,
+    %         ]
+    %         % Legends
+    %         % \addlegendimage{empty legend}
+    %         % \addlegendentry[Red]{\( x \)}
+            
+    %         % % Plot from csv file
+    %         % \addplot[smooth, thick, mark=*] % mesh for colormap
+    %         % table[
+    %         %     col sep=comma,  % csv: comma,
+    %         %     header=true,
+    %         %     x index=3,      % x column on file
+    %         %     y index=4,      % y column on file
+    %         %     point meta=x,   % value to colormap
+    %         % ]{  file.csv };
+            
+    %         % % Plot from equation
+    %         % \addplot[
+    %         %     smooth,
+    %         %     thick,
+    %         %     % Red,
+    %         %     domain  = -2:2,
+    %         %     samples = 0.4*\mysampledensity,
+    %         % ]{  x };
+
+    %         \draw[white] (0,0) circle (4);
+            
+    %     \end{axis}
+    %     \end{tikzpicture}
+    % \end{center}
+
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    x &= \sin(t) \quad \pi \leq t \leq 2\pi
+                    \\ 
+                    y &= 1+\cos(t)
+                \end{aligned}
+            \right.
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        g(x,y)
+        = \left\{
+            \begin{aligned}
+                \frac{
+                    x^3 - 3\,x\,y^2
+                }{
+                    x^2 - y^2
+                }
+                \quad& se (x,y)\neq(0,0)
+                \\
+                0
+                \quad& se (x,y)=(0,0)
+            \end{aligned}
+        \right\}
+    \end{BM}
+    
+\end{questionBox}
+
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{}
+    
+    \begin{questionBox}3{}
+        
+        \begin{flalign*}
+            &
+                \pdv{g}{x}(0,0)
+                = \frac{
+                    3\,x^2 - 3\,y^2
+                }{
+                    x^2 - y^2
+                }(0,0)
+                = \frac{
+                    3\,(x^2 - y^2)
+                }{
+                    x^2 - y^2
+                }(0,0)
+                = 3
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        
+        \begin{flalign*}
+            &
+                \pdv{g}{y}
+                = \frac{
+                    3\,x\,(2\,y)
+                }{
+                    2\,y
+                }(0,0)
+                = 3\,(0)
+                = 0
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    \begin{flalign*}
+        &
+            \pdv{g}{x} = 3
+            &\\[2ex]&
+            \pdv{g}{y} = 0
+            &\\[2ex]&
+            \pdv{g}{x,x}
+            = \pdv{
+                \frac{
+                    3\,x^2 - 3\,y^2
+                }{
+                    2\,x - y^2
+                }
+            }{x}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f:\mathbb{R}^2 
+        \to \mathbb{R}^2
+        \\
+        (x,y)
+        \to x^2+x\,y+y^2
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            0 = \pdv{f(x,y)}{x}
+            = 2\,x+y
+            \implies
+            y=-2\,x
+            &\\[2ex]&
+            \pdv{f(x,y)}{x,x}
+            = \pdv{2\,x+y}{x}
+            = 2
+            &\\[2ex]&
+            0
+            = \pdv{f(x,y)}{y}
+            = x+2\,y
+            \implies y=-x/2
+            &\\[2ex]&
+            \pdv{f(x,y)}{y,y}
+            = \pdv{x+2\,y}{y}
+            = 2
+            &\\[4ex]&
+            \left\{
+                (x,y)\in\mathbb{R}^2
+                : y=-2\,x \lor y = -x/2
+            \right\}
+            \text{ são extremos inferiores}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        x^2+y^2+(z-2)^2 = 4
+        \\
+        z = x^2+y^2
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            (z-2)^2 = 4
+            \implies
+            z = 4
+            &\\&
+            z + (z-2)^2 
+            = z^2-3\,z + 4
+            = z(z-3) + 4
+            = 4
+            \implies
+            z = 3 \lor z=0
+            &\\&
+            \int_{0}^{3} {
+                2\,\pi\,\sqrt{z}
+                \odif{z}
+            }
+            = 2\,\pi
+            \,\int_{0}^{3} {
+                z^{1/2}
+                \odif{z}
+            }
+            = 2\,\pi
+            (2/3)(z^{3/2})\big\vert_0^3
+            = (4/3)\,\pi
+            (3^{3/2})
+            = 4\pi\sqrt{3}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        D\subset\mathbb{R}^3
+        : D
+        = \left\{
+            \begin{aligned}
+                &
+                (x,y,z)\in\mathbb{R}^3
+                : x^2+y^2+z^2
+                \leq 0
+                \ldiv{}
+                3\,x^2+3\,y^2\leq z^2
+                \land
+                z\geq0
+                &
+            \end{aligned}
+        \right\}
+    \end{BM}
+
+    \begin{questionBox}3{}
+
+        \begin{BM}
+            \iiint_D{
+                (x^2+y^2)
+                \odif{x,y,z}
+            }
+        \end{BM}
+        
+        \begin{flalign*}
+            &
+                z^2 
+                = 3(z^2-9)
+                = 3z^2-27
+                \implies
+                3\sqrt{3/2} = z
+                \implies
+                \rho = \sin^{-1}(3\sqrt{3/2})
+                &\\&
+                \iiint_D{
+                    (x^2+y^2)
+                    \odif{x,y,z}
+                }
+                = \int_{0}^{2\pi} {
+                    \left(
+                        \int_{0}^{\sin^{-1}(3\sqrt{3/2})} {
+                            3
+                            \odif{\rho}
+                        }
+                    \right)
+                    \odif{\theta}
+                }
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        z = 1+x^2+y^2:\quad 1\leq z\leq 2
+        \\[2ex]
+        \iint_S {
+            \nabla\times\left(
+                y\,\hat{\imath}
+                + x\,z\,\hat{\jmath}
+                + \hat{k}
+            \right)
+            \cdot
+            \vec{n}\odif{S}
+        }
+    \end{BM}
+    
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        C\subset S
+        = \left\{
+            (x,y,z):
+            a\,x+b\,y+c\,z+d=0
+        \right\}
+        \\[2ex]
+        \frac{1}{2\,\lVert \vec{N} \rVert}
+        \int_C {
+            (b\,z-c\,y)
+            \odif{x}
+            + (c\,x-a\,z)
+            \odif{y}
+            + (a\,y-b\,x)
+            \odif{z}
+        }
+    \end{BM}
+    
+\end{questionBox}
+
+\end{document}

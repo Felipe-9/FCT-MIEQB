@@ -1,0 +1,321 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes-2022.1.2.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes-2022.1.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true}
+
+
+
+\begin{document}
+
+\mymakesubfile{2}
+[AM\,2C]
+{Teste 2 2022.1 Resolução}
+{Teste 2 2022.1 Resolução}
+
+
+
+%   ,ad8888ba,                                                              88
+%  d8"'    `"8b                                                           ,d88
+% d8'                                                                   888888
+% 88             8b,dPPYba,  88       88  8b,dPPYba,    ,adPPYba,           88
+% 88      88888  88P'   "Y8  88       88  88P'    "8a  a8"     "8a          88
+% Y8,        88  88          88       88  88       d8  8b       d8          88
+%  Y8a.    .a88  88          "8a,   ,a88  88b,   ,a8"  "8a,   ,a8"          88
+%   `"Y88888P"   88           `"YbbdP'Y8  88`YbbdP"'    `"YbbdP"'           88
+%                                         88
+%                                         88
+
+\group{}
+
+\begin{questionBox}1{ % 1 Q1
+} % 1 Q1
+
+    \paragraph{Considere o conjunto}
+    \begin{BM}
+        A = \left\{
+            (x,y)\in\mathbb{R}^2
+            :x^2+y^2\geq 1 
+            \land (x-1)^2 + y^2\leq 1
+        \right\}
+    \end{BM}
+    E seja \textit{L} a fronteira de \textit{A} percorrida no sentido direto. O integral de linha
+    \begin{BM}
+        \int_L{
+            \left(
+                x^3-y^2/2
+            \right)
+            \odif{x}
+            + (y^5-1)
+            \odif{y}
+        }
+    \end{BM}
+    pode ser calculado, utilizando coordenadas polares, a partir do seguinte integral repetido:
+
+    \begin{flalign*}
+        &
+            % ------------------------------ Meeting points ------------------------------ %
+            (x,y):
+            x^2+y^2
+            =(x-1)^2+y^2
+            \implies
+            (x,y):
+            \myvert{x}
+            =\myvert{(x-1)}
+            \implies &\\&
+            \implies
+            (x,y)=
+            (0.5,\pm\sqrt{3}/2)
+            \implies &\\&
+            \implies
+            (\rho,\theta) 
+            =\left(
+                \sqrt{(0.5)^2+(\sqrt{3}/2)^2},
+                \arccos\left(
+                    \frac{\sqrt{3}/2}{\rho}
+                \right)
+            \right)
+            = (1,\pm\pi/3)
+            &\\[3ex]&
+            \begin{cases}
+                1 
+                = x^2+y^2
+                = (\rho\,\cos(\theta))^2
+                + (\rho\,\sin(\theta))^2
+                = \rho^2
+                \\
+                1
+                = (x-1)^2+y^2
+                = \rho^2 - 2\,\rho\,\cos(\theta) + 1
+                \implies
+                \rho=2\,\cos(\theta)
+            \end{cases}
+            &\\[3ex]&
+            % ------------------------------ Limite superior ----------------------------- %
+            (x-1)^2+y^2
+            = (\rho\,\cos(\theta)-1)^2+(\rho\,\sin(\theta))^2
+            = &\\&
+            = \rho^2\,\cos^2(\theta)
+            -2\rho\,\cos(\theta)
+            +1
+            +\rho^2\,\sin^2(\theta)
+            = \rho^2
+            -2\rho\,\cos(\theta)
+            +1
+            =1
+            \implies &\\&
+            \implies
+            \rho=2\cos\theta
+            &\\[3ex]&
+            % --------------------------------- Jacobiana -------------------------------- %
+            \myvert{\Jacobian}
+            = \begin{vmatrix}
+                \pdv{x}{\rho} & \pdv{x}{\theta}
+                \\
+                \pdv{y}{\rho} & \pdv{y}{\theta}
+            \end{vmatrix}
+            = \begin{vmatrix}
+                \cos\theta & -\rho\sin\theta
+                \\
+                \sin\theta & \rho\cos\theta
+            \end{vmatrix}
+            = \rho\cos^2(\theta)
+            + \rho\sin^2(\theta)
+            = \rho
+            &\\[3ex]&
+            % ----------------------------------- Start ---------------------------------- %
+            \int_L{
+                \left(
+                    x^3-y^2/2
+                \right)
+                \odif{x}
+                + (y^5-1)
+                \odif{y}
+            }
+            \overset{Riemmann-Green}{=} &\\&
+            =
+            \iint_A{
+                \left(
+                    \pdv{\psi(x,y)}{x}
+                    -\pdv{\varphi(x,y)}{y}
+                \right)
+                \odif{x,y}
+            }
+            = &\\&
+            =
+            \iint_A{
+                \left(
+                    \pdv{}{x}\left(
+                        y^5-1
+                    \right)
+                    -\pdv{}{y}\left(
+                        x^3-y^2/2
+                    \right)
+                \right)
+                \odif{x,y}
+            }
+            = &\\&
+            = \iint_A{
+                y
+                \odif{x,y}
+            }
+            = &\\&
+            = \int_{-\pi/3}^{\pi/3}{
+                \int_{1}^{2\,\cos\theta}{
+                    \left(
+                        \rho
+                        \,\sin{\theta}
+                    \right)
+                    (\rho)
+                    \,\odif{\rho}
+                }
+                \,\odif{\theta}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q2
+    Utilizando coordenadas polares, o volume de um domínio fechado \(\dominio\), limitado superiormente pela semisuperfície esférica \(z=\sqrt{1-x^2-y^2}\), inferiormente pela superfície cónica \(z=1-\sqrt{x^2+y^2}\) e compreendida entre os planos \(y=0\) e \(y=x\) pode ser calculado, utilizando coordenadas polares, a partir do seguinte integral repetido:
+} % 1 Q2
+    \begin{flalign*}
+        &
+            z
+            =\sqrt{1-x^2-y^2}
+            =\sqrt{1-(\rho\cos\theta)^2-{\rho\sin\theta}^2}
+            =\sqrt{1-\rho^2}
+            &\\[3ex]&
+            z
+            = 1- \sqrt{x^2+y^2}
+            = 1- \sqrt{(\rho\cos\theta)^2+(\rho\sin\theta)^2}
+            = 1 - \rho
+            &\\[3ex]&
+            z
+            =\sqrt{1-x^2-y^2}
+            =\sqrt{1-(1-z)^2}
+            =\sqrt{2z-z^2}
+            \implies
+            z^2=2\,z-z^2
+            \implies z=1
+            &\\&
+            z-1=0=-\sqrt{x^2+y^2}
+            \implies
+            (x,y)=(0,0)
+            \implies &\\&
+            \implies
+            (0,0,1)\to()
+            \implies &\\[3ex]&
+            \implies
+            \int_{0}^{\pi/4}{
+                \int_{0}^{1}
+                (
+                    \sqrt{1-\rho^2}
+                    -(1-\rho)
+                )
+                \,\rho
+                \,\odif{\rho}
+            }\,\odif{\theta}
+            = 
+            \int_{0}^{\pi/4}{
+                \int_{0}^{1}
+                (
+                    \sqrt{1-\rho^2}
+                    -1+\rho
+                )
+                \,\rho
+                \,\odif{\rho}
+            }\,\odif{\theta}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q3
+    O integral repetido
+} % 1 Q3
+    \begin{BM}
+        \int_{-2}^{0}{
+            \int_{0}^{x^2}{
+                x^2\,\odif{y}
+            }
+            \odif{x}
+        }
+        + \int_{0}^{2}{
+            \int_{0}^{x^2}{
+                x^2\,\odif{y}
+            }\odif{x}
+        }
+    \end{BM}
+
+    Ultilizando a ordem de integração inversa da apresentada, pode ser calculado a partir de:
+
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    y_1: & 0\to x^2
+                    \\
+                    x_1: & -2\to0
+                    \\
+                    y_2: & 0\to x^2
+                    \\
+                    x_2: & 0\to2
+                \end{aligned}
+            \right\}
+            \implies
+            \left\{
+                \begin{aligned}
+                    x_1: & -2\to -\sqrt{y}
+                    \\
+                    y_1: & 0\to(-2)^2
+                    \\
+                    x_2: & \sqrt{y}\to 2
+                    \\
+                    y_2: & 0\to2^2
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        &
+                            0\leq y\leq4
+                        \ldiv{}
+                            -2\leq x \leq -\sqrt{y}
+                        &
+                    \end{aligned}
+                \right)
+            \right\}
+            \cup 
+            \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        &
+                            0\leq y\leq4
+                        \ldiv{}
+                            \sqrt{y}\leq x \leq 2
+                        &
+                    \end{aligned}
+                \right)
+            \right\}
+            &\\[3ex]&
+            \therefore
+            \int_{0}^{4}{
+                \int_{-2}^{-\sqrt{y}}{
+                    x^2\odif{x}
+                }\odif{y}
+            }
+            +\int_{0}^{4}{
+                \int_{\sqrt{y}}^{2}{
+                    x^2\odif{x}
+                }\odif{y}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

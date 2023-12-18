@@ -1,0 +1,956 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes.2022.1.1.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes.2022.1.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+
+
+\begin{document}
+
+\graphicspath{{\subfix{.build/figures/AM_2C-Testes_Resolucoes.2022.1.1}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Testes_Resolucoes.2022.1.1/graphics/}
+
+\mymakesubfile{1}
+[AM 2C]
+{Teste Resolução 2022.1}
+{Teste Resolução 2022.1}
+
+\group{}
+
+\begin{questionBox}1{ % 1 Q1
+    A parábola com foco em (2,0) e recta directriz \(x=-2\), e a elipse com centro em (0,1), foco em \((\sqrt{7},1)\) e vértice em (4,1) admitem, respectivamente, as seguintes equações:
+} % 1 Q1
+    \answer{}
+    % --------------------------------- Parabola --------------------------------- %
+    \subsubquestion{Parabola}
+    \begin{flalign*}
+        &
+            P 
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        &
+                            (y-y') = (x-x')^2/(4\,a)
+                        \ldiv{}
+                            f' = (x'+a,y') = (2,0)
+                        \ldiv{}
+                            L \subset\mathbb{R}^2: x = x'-a = -2
+                        \ldiv{}
+                            y' = 0
+                        \ldiv{}
+                            x'+a+x'-a = 2\,x' = 2-2 = 0 
+                        \ldiv{}
+                            a = 2+x' = 2
+                        &
+                    \end{aligned}
+                \right)
+            \right\}
+            = &\\&
+            = \left\{
+                (x,y)\in\mathbb{R}^2:y = x^2/8
+            \right\}
+        &
+    \end{flalign*}
+
+    \subsubquestion{Elipse}
+    \begin{flalign*}
+        &
+            E
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        &
+                            \frac{(x-x')^2}{r_1^2}
+                            + \frac{(y-y')^2}{r_2^2}
+                            = 1
+                        \ldiv{}
+                            (x',y') = (0,1)
+                        \ldiv{}
+                            f_2 = (x'+c,y') = (c,1) = (\sqrt{7},1)
+                        \ldiv{}
+                            P_x = (x'+r_1,y') = (r_1,y') = (4,1)
+                        \ldiv{}
+                            r_2^2
+                            = r_1^2-c^2
+                            = 16-7
+                            = 9
+                        &
+                    \end{aligned}
+                \right)
+            \right\}
+            = &\\&
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                \frac{x^2}{16}
+                + \frac{(y-1)^2}{9}
+                = 9\,x^2+16(y-1)^2
+                = 1*9*16
+                = 144
+            \right\}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q2
+    Considere-se as seguintes funções reais de variável real:
+} % 1 Q2
+    \begin{BM}
+        \textcolor{red\Light}{f}(x,y) = \frac{y\,x^3}{y+x^3};
+        % \\
+        \qquad
+        \textcolor{green\Light}{g}(x,y) = \frac{\sin(x^2+y^2)}{e^{(x^2+y^2)^{-1}}};
+        \\
+        \textcolor{blue\Light}{h}(x,y) = \frac{2\,x+y}{x-y}
+    \end{BM}
+
+    Relativamente ao limite de cada uma delas no ponto (0,0) tem-se que:
+
+    \begin{alternativelist}
+        \item \textit{\textcolor{red\Light}{f}} e \textit{\textcolor{green\Light}{g}} têm limite zero, e \textit{\textcolor{blue\Light}{h}} não tem limite.
+        \item \textit{\textcolor{red\Light}{f}} e \textit{\textcolor{green\Light}{g}} têm limite zero, e \textit{\textcolor{blue\Light}{h}} tem limite 2.
+        \item \textit{\textcolor{red\Light}{f}} e \textit{\textcolor{green\Light}{g}} têm limite zero, e \textit{\textcolor{blue\Light}{h}} tem limite -1.
+        \item \textit{\textcolor{red\Light}{f}} têm limite zero, \textit{\textcolor{blue\Light}{h}} tem limite 2 e o limite de \textit{\textcolor{green\Light}{g}} é infinito.
+        \item \textit{\textcolor{red\Light}{f}} e \textit{\textcolor{blue\Light}{h}} não têm limite e o limite de \textit{\textcolor{green\Light}{g}} é infinito.
+        \item \textit{\textcolor{red\Light}{f}} e \textit{\textcolor{blue\Light}{h}} não têm limite e o limite de \textit{\textcolor{green\Light}{g}} é zero.
+    \end{alternativelist}
+
+    \subsubquestion{\textcolor{red\Light}{f}}
+    \begin{flalign*}
+        &
+            \lim_{(x,y)\to(0,0)}
+            {f(x,y)}
+            = \lim_{(x,y)\to(0,0)}{
+                \frac{y\,x^3}{y+x^3}
+            }
+            = \lim_{x\to0}{f(x,0)}
+            = \lim_{x\to0}{
+                \frac{0}{x^3}
+            }
+            = 0
+            = &\\&
+            = \lim_{x\to0}{f(x,x^6-x^3)}
+            = \lim_{x\to0}{
+                \frac{
+                    (x^6-x^3)\,x^3
+                }{
+                    (x^6-x^3)+x^3
+                }
+            }
+            = \lim_{x\to0}{x^3-1}
+            = -1
+        &
+    \end{flalign*}
+
+    \subsubquestion{\textcolor{green\Light}{g}}
+    \begin{flalign*}
+        &
+            -1 \leq \sin(x^2+y^2) \leq 1
+            \land
+            \lim_{(x^2+y^2)\to0}{e^{(x^2+y^2)^{-1}}} = +\infty
+            % &\\&
+            \therefore
+            \lim_{(x,y)\to(0,0)}{g(x,y)} = 0
+        &
+    \end{flalign*}
+
+    \subsubquestion{\textcolor{blue\Light}{h}}
+    \begin{flalign*}
+        &
+            \lim_{x\to0}{\left(
+                \lim_{y\to0}{
+                    h(x,y)
+                }
+            \right)
+            }
+            =\lim_{x\to0}{\left(
+                \lim_{y\to0}{
+                    \frac{2\,x+y}{x-y}
+                }
+            \right)
+            }
+            = 2
+            \neq
+            \lim_{y\to0}{\left(
+                \lim_{x\to0}{
+                    \frac{2\,x+y}{x-y}
+                }
+            \right)
+            }
+            = -1
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q3
+    Considere a função \(f:\mathbb{R}^2\to\mathbb{R}^2\) definida por
+} % 1 Q3
+    \begin{BM}
+        f(x,y) 
+        = (3\,x-y^2,x^3-3\,y^2)
+        f(u,v) 
+    \end{BM}
+
+    Que é invertivel numa vizinhança do ponto (1,1). Tem-se que:
+
+    \begin{alternativelist}
+        \begin{multicols}{2}
+            \item \(\textcolor{blue\Light}{\pdv{x}{u}}(2,-2) =   \textcolor{green\Light}{\pdv{x}{v}}(2,-2)\)
+            \item \(\textcolor{blue\Light}{\pdv{x}{u}}(2,-2) = - \textcolor{green\Light}{\pdv{x}{v}}(2,-2)\)
+            \item \(\textcolor{ red\Light}{\pdv{y}{u}}(2,-2) = - \textcolor{orange\Light}{\pdv{y}{v}}(2,-2)\)
+            \item \(\textcolor{blue\Light}{\pdv{x}{u}}(2,-2) =   \textcolor{ red\Light}{\pdv{y}{u}}(2,-2)\)
+            \item \(\textcolor{ red\Light}{\pdv{y}{u}}(2,-2) =   \textcolor{orange\Light}{\pdv{y}{v}}(2,-2)\)
+            \item \(\textcolor{green\Light}{\pdv{x}{v}}(2,-2) =   \textcolor{orange\Light}{\pdv{y}{v}}(2,-2)\)
+        \end{multicols}
+    \end{alternativelist}
+
+    \begin{flalign*}
+        &
+            f(1,1)
+            = (3*1-1^2,1^3-3*1^2)
+            = (2,-2)
+            &\\&
+            \begin{bmatrix}
+                \textcolor{blue\Light}   {\pdv{x}{u}} 
+                & \textcolor{green\Light}{\pdv{x}{v}}
+                \\
+                \textcolor{red\Light}     {\pdv{y}{u}} 
+                & \textcolor{orange\Light}{\pdv{y}{v}}
+            \end{bmatrix}_{(2,2)}
+            = \Jacobian_{f^{-1}}{(2,-2)}
+            = \Jacobian_{f^{-1}}{(f(1,1))}
+            = \Jacobian_{f}     {(f(1,1))^{-1}}
+            = \begin{bmatrix}
+                \pdv{u}{x} & \pdv{u}{y}
+                \\
+                \pdv{v}{x} & \pdv{v}{y}
+            \end{bmatrix}^{-1}_{(1,1)}
+            = &\\&
+            = \begin{bmatrix}
+                3 & -2\,y
+                \\
+                3\,x^2 & -6\,y
+            \end{bmatrix}^{-1}_{(1,1)}
+            % = &\\&
+            = \begin{bmatrix}
+                3 & -2
+                \\
+                3 & -6
+            \end{bmatrix}^{-1}
+            = \begin{vmatrix}
+                3 & -2
+                \\
+                3 & -6
+            \end{vmatrix}^{-1}
+            \adj\begin{bmatrix}
+                3 & -2
+                \\
+                3 & -6
+            \end{bmatrix}
+            = -12^{-1}
+            \begin{bmatrix}
+                -6 & 2
+                \\
+                -3 & 3
+            \end{bmatrix}
+            = &\\&
+            = \begin{bmatrix}
+                \textcolor{blue\Light}   { 1/2}
+                & \textcolor{green\Light}{-1/6}
+                \\
+                \textcolor{red\Light}     { 1/4}
+                & \textcolor{orange\Light}{-1/4}
+            \end{bmatrix}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q4
+    A equação define \textit{z} como função de \textit{x} e de \textit{y} numa vizinhança do ponto \((x_0,y_0,z_0)=(1,-1,0)\). Então:
+} % 1 Q4
+    \begin{BM}
+        x^4+y^4+(x+1)\,e^z + 8\,x\,\sin(z)-4=0
+    \end{BM}
+
+    \begin{alternativelist}
+        \begin{multicols}{2}
+            \item \(\pdv{z}{x}(1,-1)=+1/2, \pdv{z}{y}(1,-1)=+2/5\)
+            \item \(\pdv{z}{x}(1,-1)=-1/2, \pdv{z}{y}(1,-1)=-2/5\)
+            \item \(\pdv{z}{x}(1,-1)=-1/2, \pdv{z}{y}(1,-1)=+2/5\)
+            \item \(\pdv{z}{x}(1,-1)=+1/2, \pdv{z}{y}(1,-1)=+2\)
+            \item \(\pdv{z}{x}(1,-1)=-1/2, \pdv{z}{y}(1,-1)=+2\)
+            \item \(\pdv{z}{x}(1,-1)=-1/2, \pdv{z}{y}(1,-1)=-2\)
+        \end{multicols}
+    \end{alternativelist}
+
+    \subsubquestion{\(\pdv{z}{x}\)}
+    \begin{flalign*}
+        &
+            \pdv{z}{x}(1,-1)
+            = -\frac{
+                \pdv{f}{x}(1,-1,0)
+            }{
+                \pdv{f}{z}(1,-1,0)
+            }
+            = -\frac{
+                \left(
+                    4\,x^3+e^z + 8\,\sin(z)
+                \right)(1,-1,0)
+            }{
+                \left(
+                    (x+1)\,e^z + 8\,x\,\cos(z)
+                \right)(1,-1,0)
+            }
+            = -\frac{
+                4*(1)^3+e^0 + 8*\sin(0)
+            }{
+                (1+1)*e^0 + 8*1*\cos(0)
+            }
+            = -\frac{1}{2}
+        &
+    \end{flalign*}
+    % \begin{flalign*}
+    %     &
+    %         0
+    %         = \pdv{}{x}\left(
+    %             x^4+y^4+(x+1)\,e^z + 8\,x\,\sin(z)-4
+    %         \right)\left(
+    %             1,-1,0
+    %         \right)
+    %         = &\\&
+    %         = 
+    %         \left(
+    %             4\,x^3
+    %             +\left(
+    %                 (x+1)\,e^z\,\pdv{z}{x}
+    %                 +
+    %                 e^z
+    %             \right)
+    %             +8\left(
+    %                 \sin(z)
+    %                 + x\,\cos(z)\,\pdv{z}{x}
+    %             \right)
+    %         \right)\left(
+    %             1,-1,0
+    %         \right)
+    %         = &\\&
+    %         = 
+    %         4
+    %         + 2\,\pdv{z}{x} 
+    %         + 1
+    %         + 8\,\pdv{z}{x}
+    %         \implies
+    %         \pdv{z}{x} 
+    %         = -1/2
+    %     &
+    % \end{flalign*}
+
+    \subsubquestion{\(\pdv{z}{y}\)}
+    \begin{flalign*}
+        &
+            \pdv{z}{y}(1,-1)
+            = -\frac{
+                \pdv{f}{y}(1,-1,0)
+            }{
+                \pdv{f}{z}(1,-1,0)
+            }
+            = -\frac{
+                \left(
+                    4\,y^3
+                \right)(1,-1,0)
+            }{
+                \left(
+                    (x+1)\,e^z + 8\,x\,\cos(z)
+                \right)(1,-1,0)
+            }
+            = &\\&
+            = -\frac{
+                4\,(-1)^3
+            }{
+                (1+1)*e^{(0)} + 8*1*\cos(0)
+            }
+            = \frac{2}{5}
+        &
+    \end{flalign*}
+    % \begin{flalign*}
+    %     &
+    %         0
+    %         = \pdv{}{y}\left(
+    %             x^4+y^4+(x+1)\,e^z + 8\,x\,\sin(z)-4
+    %         \right)\left(
+    %             1,-1,0
+    %         \right)
+    %         = &\\&
+    %         =\left(
+    %             +4\,y^3
+    %             +(x+1)\,e^z\,\pdv{z}{y}
+    %             + 8\,x\,\cos(z)\,\pdv{z}{y}
+    %         \right)\left(
+    %             1,-1,0
+    %         \right)
+    %         = &\\&
+    %         = 4*(-1)^3
+    %         + (1+1)*e^0*\pdv{z}{y}
+    %         + 8*1*\cos(0)*\pdv{z}{y}
+    %         % = &\\&
+    %         = -4
+    %         + 10\,\pdv{z}{y}
+    %         \implies &\\&
+    %         \implies
+    %         \pdv{z}{y}
+    %         = 4/10=2/5
+    %     &
+    % \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q5
+    Sejam \textit{g} e \textit{h} duas funções reais e de classe \(C^1\) em \(\mathbb{R}\). Considere a função \(f:\mathbb{R}^3\to\mathbb{R}^2\) definida por
+} % 1 Q5
+    \begin{BM}
+        f(x,y,z) = \left(
+            x\,g\,\left(
+                \frac{x}{z}
+            \right)
+            ,
+            h\,(x^2\,y)
+        \right)
+    \end{BM}
+
+    Determine a matriz jacobiana de \textit{f} no ponto (-1,0,-1) em função das derivadas de \textit{g} e de \textit{h}.
+
+    \begin{flalign*}
+        &
+            J_f(-1,0,-1)
+            = \begin{bmatrix}
+                    \pdv{f_1}{x} 
+                &   \pdv{f_1}{y}
+                &   \pdv{f_1}{z}
+                \\
+                    \pdv{f_2}{x} 
+                &   \pdv{f_2}{y}
+                &   \pdv{f_2}{z}
+            \end{bmatrix}_{(-1,0,-1)}
+            = &\\&
+            = \begin{bmatrix}
+                    g\left(
+                        \frac{x}{z}
+                    \right)
+                    +x\,g'\left(
+                        \frac{x}{z}
+                    \right)\,z^{-1}
+                &   0
+                &   -g'\left(
+                        \frac{x}{z}
+                    \right)\,z^{-2}
+                \\
+                    h'(x^2\,y)\,y\,2\,x 
+                &   h'(x^2\,y)\,x^2
+                &   0
+            \end{bmatrix}_{(-1,0,-1)}
+            = &\\&
+            = \begin{bmatrix}
+                    g\left(
+                        \frac{-1}{-1}
+                    \right)
+                    +(-1)\,g'\left(
+                        \frac{-1}{-1}
+                    \right)(-1)^{-1}
+                &   0
+                &   -g'\left(
+                        \frac{-1}{-1}
+                    \right)\,(-1)^{-2}
+                \\
+                    h'((-1)^2\,0)\,(0)\,2\,(-1) 
+                &   h'((-1)^2\,0)\,(-1)^2
+                &   0
+            \end{bmatrix}
+            = &\\&
+            = \begin{bmatrix}
+                    g(1)+g'(1)
+                &   0
+                &   -g'(1)
+                \\
+                    0
+                &   h'(0)
+                &   0
+            \end{bmatrix}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{ % 2 Q1
+    Considere a função real \textit{g}, de duas variáveis reais, definida por
+} % 2 Q1
+    \begin{BM}
+        g(x,y)
+        = \begin{cases}
+            \frac{x^3-3\,x\,y^2}{x^2+y^2}
+            \quad& (x,y)\neq(0,0)
+            \\
+            0 \quad& (x,y)=(0,0)
+        \end{cases}
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q1.1
+    Estude, por definição, a continuidade de \textit{g(x,y)} em (0,0).
+} % 2 Q1.1
+    \begin{flalign*}
+        &
+            \forall\,\delta>0\,
+            \exists\,\varepsilon>0:
+            \left(
+                \left(
+                    \forall (x,y)\neq(0,0)
+                    \land
+                    \myVert{\sqrt{x^2+y^2}}<\varepsilon
+                \right)
+                \implies
+                \myvert{
+                    g(x,y)-0
+                }<\delta
+            \right)
+            \implies &\\&
+            \implies
+            \myvert{
+                \frac{
+                    x^3-3\,x\,y^2
+                }{
+                    x^2+y^2
+                }
+            }
+            \leq 
+            \myvert{x}
+            \frac{
+                (x^2+3\,y^2)
+            }{
+                x^2+y^2
+            }
+            \leq 
+            \myvert{x}
+            \frac{
+                (3\,x^2+3\,y^2)
+            }{
+                x^2+y^2
+            }
+            \leq &\\&
+            \leq 
+            3\,\myvert{x}
+            \leq 
+            3\,\sqrt{x^2+y^2}
+            \leq
+            3\,\varepsilon=\delta
+            \implies \varepsilon=\delta/3
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q1.2
+    Determine \(\pdv{g}{x}(0,0) e \pdv{g}{y}(0,0)\)
+} % 2 Q1.2
+    \subsubquestion{}
+    \begin{flalign*}
+        &
+            \pdv{g}{x}(0,0)
+            = \lim_{h\to0}{
+                \frac{g(h,0)-g(0,0)}{h}
+            }
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{h^3-3*h*0^2}{h^2+0^2}
+                }{h}
+            }
+            = \lim_{h\to0}{
+                1
+            }
+            = 1
+        &
+    \end{flalign*}
+
+    \subsubquestion{}
+    \begin{flalign*}
+        &
+            \pdv{g}{y}(0,0)
+            = \lim_{h\to0}{
+                \frac{g(0,h)-g(0,0)}{h}
+            }
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{0^3-3*0*h^2}{0^2+h^2}
+                }{h}
+            }
+            = \lim_{h\to0}{
+                0
+            }
+            = 0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q1.3
+    Estude a diferenciabilidade de \textit{g} no ponto (0,0).
+} % 2 Q1.3
+    \begin{flalign*}
+        &
+            g(a,b)-g(0,0)
+            = \frac{a^3-3\,a\,b^2}{a^2+b^2}
+            = 
+            \pdv{g}{x}(0,0)\,a
+            + \pdv{g}{y}(0,0)\,b
+            + \varepsilon(a,b)\,\sqrt{a^2+b^2}
+            = &\\&
+            = 1\,a
+            + \varepsilon(a,b)\,\sqrt{a^2+b^2}
+            \implies
+            \varepsilon(a,b)
+            = 
+            \frac{
+                -4\,a\,b^2
+            }{
+                (a^2+b^2)^{3/2}
+            }
+            \implies &\\&
+            \implies
+            \lim_{a\to0^+}{\varepsilon(a,a)}
+            = \lim_{a\to0^+}{
+                \frac{
+                    -4*a*a^2
+                }{
+                    (a^2+a^2)^{3/2}
+                }
+            }
+            = \lim_{a\to0^+}{
+                -2^{1/2}
+            }
+            = -\sqrt{2} \neq 0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % 2 Q2
+    Considere a função real \textit{f} de duas variáveis reais, definida por
+} % 2 Q2
+    \begin{BM}
+        f(x,y)
+        = \frac{
+            \log(x^2+y^2-1)\,\log(x^2-y^2)
+        }{
+            \sqrt{4-x^2-y^2}
+        }
+    \end{BM}
+
+    Indique o seu domínio \(\dominio\) e esboce-o. Caracterize \(\interior\dominio\) usando coordenadas polares. Diga, justificando, se \(\dominio\) é um conjunto aberto ou fechado.
+
+    \begin{flalign*}
+        &
+            \dominio{(f)}
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        &
+                            4-x^2-y^2\geq0
+                        \ldiv{}
+                            \sqrt{4-x^2-y^2}\neq0
+                        \ldiv{}
+                            x^2+y^2-1>0
+                        \ldiv{}
+                            x^2-y^2>0
+                        &
+                    \end{aligned}
+                \right)
+            \right\}
+            = &\\&
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                1 < x^2+y^2 < 4
+                \land
+                \myvert{x}>\myvert{y}
+            \right\}
+        &
+    \end{flalign*}
+
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{Screenshot 2023-01-10 at 22.07.02.png}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            \interior{(\dominio)} = \dominio
+            = \left\{
+                (\rho,\theta)\in
+                \myrange*{1,4}\times
+                \myrange*{-\pi/4,\pi/4}
+            \right\}
+            \cup \left\{
+                (\rho,\theta)\in
+                \myrange*{1,4}\times
+                \myrange*{3\pi/4,5\pi/4}
+            \right\}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{ % 3 Q1
+    Considere a função:
+} % 3 Q1
+    \begin{BM}[align*]
+        f:\dominio\subset\mathbb{R}^2 & \to\mathbb{R}^2
+        \\
+        (x,y) & \to x^2+x\,y+y^2
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % 3 Q1.1
+    Calcule os extremos locais de \(f(x,y)\) quando \(\dominio=\mathbb{R}^2\).
+} % 3 Q1.1
+    \begin{flalign*}
+        &
+            \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left\{
+                    \begin{aligned}
+                        \pdv{f}{x}=2\,x+y=0
+                        \\
+                        \pdv{f}{y}=x+2\,y=0
+                    \end{aligned}
+                \right\}
+            \right\}
+            = &\\&
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left\{
+                    \begin{aligned}
+                        -3\,y=0
+                        \\
+                        x=-2\,y
+                    \end{aligned}
+                \right\}
+            \right\}
+            = \left\{(0,0)\right\}
+            &\\[3ex]&
+            \det\Hessiana(f(x,y))
+            = \det\begin{bmatrix}
+                \pdv[order=2]{f}{x}
+                & \pdv{f}{x,y}
+                \\
+                \pdv[order=2]{f}{y}
+                & \pdv{f}{y,x}
+            \end{bmatrix}_{(0,0)}
+            = 
+            \det\begin{bmatrix}
+                2 & 1
+                \\
+                1 & 2
+            \end{bmatrix}_{(0,0)}
+            = 4-1 = 3
+            &\\[3ex]&
+            \therefore (0,0)\text{ é um mínimo local}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % 3 Q1.2
+    No conjunto \(D={(x,y)\in\mathbb{R}^2:x^2+y^2=1}\) a função \(f(x,y)\) admite mínimo e máximo absolutos. Escreva a função lagrangiana associada a este problema e determine os referidos extremos.
+} % 3 Q1.2
+    \begin{flalign*}
+        &
+            \Lagrangiana
+            = f + \lambda\,g
+            = x^2+x\,y+y^2
+            + \lambda(x^2+y^2-1)
+            \implies &\\&
+            \implies
+            \left\{
+                \begin{aligned}
+                    \pdv{\Lagrangiana}{x} & = 0
+                    \\
+                    \pdv{\Lagrangiana}{y} & = 0
+                    \\
+                    \pdv{\Lagrangiana}{\lambda} & = 0
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    2\,x+y+\lambda(2\,x) & = 0
+                    \\
+                    x+2\,y+\lambda(2\,y) & = 0
+                    \\
+                    x^2+y^2-1 & = 0
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    2\,x(\lambda+1)+y & = 0
+                    \\
+                    2(\lambda+1)(x-y)
+                    & = x-y
+                    \\
+                    x^2+y^2 & = 1
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \left\{
+                \begin{aligned}
+                    \left(
+                        \begin{aligned}
+                            &
+                                (
+                                    \lambda = -1/2 
+                                    \land 
+                                    x=y
+                                )
+                            \ldiv[\lor]{}
+                                (
+                                    x = -y 
+                                    \land 
+                                    \lambda = -3/2
+                                )
+                            &
+                        \end{aligned}
+                    \right)
+                    \\
+                    x^2+y^2 = 1
+                \end{aligned}
+            \right\}
+            \implies 
+            C_f = \left\{
+                \begin{aligned}
+                        &\textcolor{blue\Light}  {(+2^{-1/2},+2^{-1/2})},
+                    \\  &\textcolor{green\Light} {(+2^{-1/2},-2^{-1/2})},
+                    \\  &\textcolor{orange\Light}{(-2^{-1/2},+2^{-1/2})},
+                    \\  &\textcolor{red\Light}   {(-2^{-1/2},-2^{-1/2})}
+                \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+            \begin{cases}
+                    f\textcolor{blue\Light}  {(+2^{-1/2},+2^{-1/2})}=3/2
+                \\  f\textcolor{green\Light} {(+2^{-1/2},-2^{-1/2})}=1/2
+                \\  f\textcolor{orange\Light}{(-2^{-1/2},+2^{-1/2})}=1/2
+                \\  f\textcolor{red\Light}   {(-2^{-1/2},-2^{-1/2})}=3/2
+            \end{cases}
+            &\\&
+            \therefore
+            \begin{cases}
+                \text{Minimizantes:}\{
+                    \textcolor{green\Light} {(+2^{-1/2},-2^{-1/2})},
+                    \textcolor{orange\Light}{(-2^{-1/2},+2^{-1/2})}
+                \}
+                \\
+                \text{Maximizantes:}\{
+                    \textcolor{blue\Light}{(+2^{-1/2},+2^{-1/2})},
+                    \textcolor{red\Light} {(-2^{-1/2},-2^{-1/2})}
+                \}
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{ % 4 Q1
+    Determine os pontos da superfície de equação \(x^2+2\,y^2-3\,z^2=1\) nos quais o plano tangente é paralelo ao plano de equação \(3\,x-2\,y+3\,z=1\)
+} % 1 Q4
+    \begin{flalign*}
+        &
+            % Plano paralelo
+            ( 2\,x_0)(x-x_0)
+            + ( 4\,y_0)(y-y_0)
+            + (-6\,z_0)(z-z_0)
+            = &\\&
+            = 
+            \begin{bmatrix}
+                x\\y\\z
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                -2\,x_0
+                \\ 4\,y_0
+                \\ -6\,z_0
+            \end{bmatrix}
+            -2\,x_0^2
+            -4\,y_0^2
+            +6\,z_0^2
+            = 0
+            &\\[3ex]&
+            3\,x-2\,y+3\,z-1
+            = \begin{bmatrix}
+                x\\y\\z
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                3\\-2\\3
+            \end{bmatrix}
+            -1
+            =0
+            \implies &\\[3ex]&
+            \implies
+            % Garantir que vetores são paralelos
+            \begin{bmatrix}
+                -2\,x_0
+                \\ 4\,y_0
+                \\-6\,z_0
+            \end{bmatrix}
+            = \alpha
+            \begin{bmatrix}
+                3\\-2\\3
+            \end{bmatrix}
+            \implies
+            \begin{bmatrix}
+                x_0
+                \\ y_0
+                \\ z_0
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                3\,\alpha/2
+                \\-\alpha/2
+                \\-\alpha/2
+            \end{bmatrix}
+            \implies &\\&
+            \implies
+            (3\,\alpha/2)^2
+            +2\,(-\alpha/2)^2
+            -3\,(-\alpha/2)^2
+            -1
+            = &\\&
+            = 9\,\alpha^2
+            +2\,\alpha^2
+            -3\,\alpha^2
+            -4
+            = 8\,\alpha^2
+            -4
+            =0
+            \implies &\\&
+            \implies
+            \alpha = \pm\sqrt{1/2}
+            &\\[3ex]&
+            \therefore
+            \left\{
+                \begin{aligned}
+                    &(+3/2^{3/2},-2^{-3/2},-2^{-3/2}),
+                    \\
+                    &(-3/2^{3/2},+2^{-3/2},+2^{-3/2})
+                \end{aligned}
+            \right\}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{minipage}{1\textwidth}
+    \ 
+    \vspace{10cm}
+\end{minipage}
+
+\end{document}

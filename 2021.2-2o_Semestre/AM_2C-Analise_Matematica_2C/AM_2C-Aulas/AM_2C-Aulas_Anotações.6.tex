@@ -1,0 +1,140 @@
+% !TEX root = ./AM_2C-Aulas_Anotações.6.tex
+\providecommand\mainfilename{"./AM_2C-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aulas_Anotações.6.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\mymakesubfile{5}
+[AM\,2C]
+{Aula 18/11/2022: Superfícies (slide 122)} % Subfile Title
+{Aula 18/11/2022: Superfícies (slide 122)} % Part Title
+
+\begin{definitionBox}{} % DEF
+    
+    \begin{BM}[align*]
+        P:D\subset\mathbb{R}^2 & \to\mathbb{R}^3
+        \\
+        (u,v) & \mapsto(x,y,z)
+        =(
+            \varphi(u,v),
+            \psi   (u,v),
+            \theta (u,v)
+        )
+    \end{BM}
+
+    \begin{BM}
+        \begin{cases}
+                x=\varphi(u,v)
+            \\  y=\psi   (u,v)
+            \\  z=\theta (u,v)
+        \end{cases}
+        % \\[2ex]
+        \qquad
+        P = P' + \left(
+            \begin{aligned}
+                &
+                \varphi(u,v)\hat{\imath}
+                & + \\ + &
+                \psi   (u,v)\hat{\jmath}
+                & + \\ + &
+                \theta (u,v)\hat{k}
+                &
+            \end{aligned}
+        \right)
+    \end{BM}
+    
+\end{definitionBox}
+
+
+\begin{definitionBox}1{Plano} % DEF
+    
+    \begin{flalign*}
+        &
+            P = 0 + P' + \lambda\,\vec{a} + \mu\,\vec{b}
+            = P' + \left(
+                \begin{aligned}
+                    &
+                      \lambda\,a_1\,\hat{\imath}
+                    + \lambda\,a_2\,\hat{\jmath}
+                    + \lambda\,a_3\,\hat{k}
+                    & + \\ + &
+                      \mu\,b_1\,\hat{\imath}
+                    + \mu\,b_2\,\hat{\jmath}
+                    + \mu\,b_3\,\hat{k}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    & 
+                    x' + \lambda\,a_1 + \mu\,b_1
+                    , \\ &
+                    y' + \lambda\,a_2 + \mu\,b_2
+                    , \\ &
+                    z' + \lambda\,a_3 + \mu\,b_3
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+    
+\end{definitionBox}
+
+\begin{sectionBox}1{Vetor tangente a uma superficie} % 
+    
+    \begin{BM}[align*]
+        S\subset\mathbb{R}^2 & \to\mathbb{R}^3
+        \\
+        (u,v) & \mapsto(\varphi,\psi,\theta)
+    \end{BM}
+    \vspace{-5ex}
+    \begin{BM}
+        T = t_1\times t_2
+        = \begin{pmatrix}
+            \hat{\imath} & \hat{\jmath} & \hat{k}
+            \\
+              \pdv{x}{u}
+            & \pdv{y}{u}
+            & \pdv{z}{u}
+            \\
+              \pdv{x}{v}
+            & \pdv{y}{v}
+            & \pdv{z}{v}
+        \end{pmatrix}
+        = 
+        \left(
+            \pdv{z,y}{u,v}\,\hat{\imath}
+          + \pdv{z,x}{u,v}\,\hat{\jmath}
+          + \pdv{x,y}{u,v}\,\hat{k}
+        \right)_{(u',v')}
+        \\
+        T = 0 + T' + \alpha\,t_1 + \beta\,t_2 
+        % = \\ 
+        =
+        \left(
+            \begin{aligned}
+                &
+                x' 
+                + \alpha\,\pdv{x}{u}(u',v')
+                + \beta \,\pdv{x}{v}(u',v')
+                , \\ &
+                y' 
+                + \alpha\,\pdv{y}{u}(u',v')
+                + \beta \,\pdv{y}{v}(u',v')
+                , \\ &
+                z' 
+                + \alpha\,\pdv{z}{u}(u',v')
+                + \beta \,\pdv{z}{v}(u',v')
+            \end{aligned}
+        \right)
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

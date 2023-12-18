@@ -1,0 +1,206 @@
+% !TEX root = ./AM_2C-Aulas_Anotações.5.tex
+\providecommand\mainfilename{"./AM_2C-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aulas_Anotações.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{5}
+[AM\,2C]
+{Aula 24/10/2022: Maximos e Mínimos} % Subfile Title
+{Aula 24/10/2022: Maximos e Mínimos} % Part Title
+
+\begin{exampleBox}1{} % E1
+    
+    \begin{BM}
+        f(x,y)
+        = (3,x-y^2,x^3-3\,y^2)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \det J\,f(1,1)
+            = \begin{pmatrix}
+                3 & -2\,y
+                \\
+                3\,x^2 & - 6\,y
+            \end{pmatrix}_{(1,1)}
+            = \begin{pmatrix}
+                3 & -2
+                \\
+                3 & - 6
+            \end{pmatrix}
+            = -18 + 6 = -12 \neq 0
+            &\\&
+            f(1,1) = (2,-2)
+            &\\&
+            \begin{bmatrix}
+                    \pdv{x}{u} 
+                &   \pdv{x}{v}
+                \\  \pdv{y}{u} 
+                &   \pdv{y}{v}
+            \end{bmatrix}
+            = J f^{-1}(2,-2)
+            = J f^{-1}(f(1,1))
+            % = &\\&
+            = (J f(1,1))^{-1}
+            = \begin{bmatrix}
+                    \pdv{u}{x} 
+                &   \pdv{u}{y}
+                \\  \pdv{v}{x} 
+                &   \pdv{v}{y}
+            \end{bmatrix}^{-1}
+            = &\\&
+            = \begin{bmatrix}
+                     3
+                &   -2
+                \\   3
+                &   -6
+            \end{bmatrix}^{-1}
+            = -12^{-1}
+            \begin{bmatrix}
+                -6 & 2
+                \\
+                -3 & 3
+            \end{bmatrix}
+            = -12^{-1}
+            \begin{bmatrix}
+                1/2 & -1/6
+                \\
+                1/4 & -1/4
+            \end{bmatrix}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{definitionBox}1{Invérsa por Adjunta} % DEF1
+    
+    \begin{BM}
+        A^{-1}
+        = \frac{\hat{A}^T}{\lvert A \rvert}
+    \end{BM}
+
+    \begin{definitionBox}3{Exemplo} % DEF1 (i)
+        
+        Para matriz 2\times 2
+        \begin{flalign*}
+            &
+                A^{-1}
+                = \begin{bmatrix}
+                    a & b
+                    \\
+                    c & d
+                \end{bmatrix}^{-1}
+                = \left(
+                    a\,d - b\,c
+                \right)^{-1}
+                \begin{bmatrix}
+                    d & -b
+                    \\
+                    -c & a
+                \end{bmatrix}
+            &
+        \end{flalign*}
+        
+    \end{definitionBox}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1{Extremos} % DEF2
+    
+    Seja \(f:D\subset\mathbb{R}^n\to\mathbb{R}\) e \(x_0\in\int{D}\). Diz-se que \(f(x_0)\) é um mínimo local ou relativo da função \textit{f}, se existir \(B(x_0,\delta)\) tal que
+    \begin{BM}
+        f(x_0)\leq f(x),\ \forall\,x\in B(x_0,\delta)
+    \end{BM}
+    \begin{itemize}
+        \item Ao ponto \(x_0\) chama-se um minimizante local da função f.
+        \item Diz-se que \(f(x_0)\) é um extremo local ou relativo de \textit{f} se for um mínimo local ou um máximo local
+    \end{itemize}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1{Teorema de Weierstraß} % DEF3
+    
+    Seja \(D\subset\mathbb{R}^n\) um conjunto fechado e limitado (compacto) e \(f:D\subset\mathbb{R}^n\to\mathbb{R}\) uma função contínua. Então \textit{f} tem em \textit{D} um máximo e um mínimo.
+
+    \begin{definitionBox}3{Exemplo} % DEF3 (i)
+        
+        \begin{BM}
+            y = x^2,\ \mathbb{R}
+        \end{BM}
+
+    \tikzset{external/remake next=true}
+    \begin{center}
+        \pgfplotsset{
+            height=4cm, 
+            width =10cm}
+        \begin{tikzpicture}
+            \begin{axis}
+                [
+                    xmajorgrids = true,
+                    % legend pos  = north west
+                    axis lines=center, % 3D center/box/left/right
+                    hide axis
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+
+                % Circunferencia
+                \addplot[
+                    smooth,
+                    thick,
+                    red\Light,
+                    domain  = -1:1,
+                    samples = 0.4*\mysampledensityFancy,
+                ]{  x^2 };
+                
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+        
+    \end{definitionBox}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1{} % DEF 4
+    
+    \begin{BM}
+        f:D\subset\mathbb{R}^n\to \mathbb{R}
+        \quad
+        a\in\int{D}
+    \end{BM}
+    O ponto \textit{a} diz-se um ponto crítico ou de estacionaridade de \textit{f} se:
+    \begin{enumerate}
+        \item Pelo menos uma das dervadas \(\pdv{f}{x_i}(a),i\in\{1,\dots,n\}\) não existir, ou
+        \item \(\pdv{f}{x_i}(a)= 0,\quad\forall\,i\in\{1,\dots,n\}\)
+    \end{enumerate}
+    
+\end{definitionBox}
+
+\begin{exampleBox}1{} % E2
+    
+    \begin{BM}
+        f(x,y)=x^2-y^2
+        \\
+        \left(
+            \pdv{f}{x},
+            \pdv{f}{y}
+        \right)
+        = (0,0)
+        \iff
+        (2\,x,-2\,y)
+        = (0,0)
+        \\
+        \therefore
+        (0,0)\text{ é o único ponto crítico}
+    \end{BM}
+    
+\end{exampleBox}
+
+\end{document}

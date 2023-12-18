@@ -1,0 +1,671 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes.2023.1.1.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes.2023.1.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Testes_Resolucoes.2023.1.1}}}
+
+\mymakesubfile{1}
+[AM 2C]
+{Teste 2023} % Subfile Title
+{Teste 2023} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Seja \(\mathcal{D}=\{(x,y)\in\mathbb{R}^2:x^2+y^2\leq 2,y\leq-1\}\) e r, \(\theta\) as coordenadas polares. Tem se:
+} % Q1
+    \begin{enumerate}[label=\Alph{enumi}.]
+        \item \(\mathcal{D}=\{(x,y)=(r\,\cos\theta,r\,\sin\theta):\pi\,1/4\leq\theta\leq\pi\,3/4,-\sin^{-1}\theta\leq{r}\leq\sqrt{2}\}\)
+        \item \(\mathcal{D}=\{(x,y)=(r\,\cos\theta,r\,\sin\theta):\pi\,3/4\leq\theta\leq\pi\,5/4,+\sin^{-1}\theta\leq{r}\leq\sqrt{2}\}\)
+        \item \(\mathcal{D}=\{(x,y)=(r\,\cos\theta,r\,\sin\theta):\pi\,5/4\leq\theta\leq\pi\,7/4,-\sin^{-1}\theta\leq{r}\leq\sqrt{2}\}\)
+        \item \(\mathcal{D}=\{(x,y)=(r\,\cos\theta,r\,\sin\theta):\pi\,5/4\leq\theta\leq\pi\,7/4,+\sin^{-1}\theta\leq{r}\leq\sqrt{2}\}\)
+        \item Nenhum dos casos anteriores
+    \end{enumerate}
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x = r\cos\theta
+                \\
+                y = r\sin\theta
+            \end{cases}
+        &\\[3ex]&    
+            x^2+y^2
+            = (r\cos\theta)^2+(r\sin\theta)^2
+            = r^2\cos^2\theta+r^2\sin^2\theta
+            = r^2(\cos^2\theta+\sin^2\theta)
+            = r^2
+            \leq 2
+            \implies &\\&
+            \implies
+            r \leq \pm\sqrt{2}
+            \iff
+            \myvert{r} \leq \sqrt{2}
+        &\\[3ex]&
+            y
+            =r\sin\theta
+            \leq \sqrt{2}\sin\theta
+            \leq -1
+            \implies &\\&
+            \implies
+            \theta 
+            \leq \sin^{-1}(-1/\sqrt{2})
+            = \sin^{-1}(-\sqrt{2}/2)
+            = -\pi/4
+            = -\pi/4 + 2\pi
+            = 7\pi/4
+        &\\[3ex]&
+            y 
+            = r\sin\theta 
+            \leq -1
+            \implies
+            r\leq -1/\sin\theta
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Plano tangente no ponto \(0,0,1\)
+} % Q2
+    \begin{BM}
+        f(x,y) = e^{-y^2}+\sin(2\,x-y)
+    \end{BM}
+
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Considere a função \textit{f}. A curva de nível de valor -4 de \textit{f} é
+} % Q3
+    \begin{BM}
+        f(x,y) = \frac{y^2}{1-x^2}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \frac{y^2}{1-x^2}
+            =-4
+            \implies &\\&
+            \implies
+            y^2 = -4+(2\,x)^2
+            \implies &\\&
+            \implies
+            -y^2/4+x^2=1
+            &\\[3ex]&
+            \myvert{x}\neq 1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Seja \(T(\rho,\theta,\phi)\) onde \(\rho,\theta,\phi\) são as c esfericas. a região do espaço limitada pelas superficies
+} % Q4
+    \begin{BM}
+        T(\rho,\theta,\phi)
+        = \left(
+            \begin{aligned}
+                & \rho\,\cos\theta\,\sin\phi,
+                \\
+                & \rho\,\sin\theta\,\sin\phi,
+                \\
+                & \rho\,\cos\phi
+            \end{aligned}
+        \right)
+        \\[1.5ex]
+        z=\sqrt{3-x^2-y^2}
+        \qquad
+        z^2=3(x^2+y^2)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            3-x^2-y^2
+            = \pm\left(
+                3(x^2+y^2)
+            \right)
+            = 
+            \pm 3\,x^2\pm 3\,y^2
+            % \implies &\\&
+            \implies
+            3=x^2(1\pm3)+y^2(1\pm3)
+            \implies &\\&
+            \implies
+            \begin{cases}
+                3=+4\,(x^2+y^2)
+                \\
+                3=-2\,(x^2+y^2)
+            \end{cases}
+            &\\[3ex]&
+            3=4\,((x)^2+y^2)
+            &\\[3ex]&
+            \rho\cos\phi
+            = \sqrt{
+                3
+                -\left(
+                    \rho\,\cos\theta\,\sin\phi
+                \right)^2
+                -\left(
+                    \rho\,\sin\theta\,\sin\phi
+                \right)^2
+            }
+            = &\\&
+            = \sqrt{
+                3
+                -\rho^2\,\sin^2\phi\left(
+                    \cos^2\theta+\sin^2\theta
+                \right)
+            }
+            = \sqrt{
+                3-\rho^2\,\sin^2\phi
+            }
+            \implies &\\&
+            \implies
+            \rho^2\cos^2\phi
+            =3-\rho^2\,\sin^2\phi
+            \implies
+            \rho^2(\cos^2\phi+\sin^2\phi)
+            \rho^2
+            =3
+            % \implies &\\&
+            \implies
+            \rho = \pm\sqrt{3}
+            &\\[3ex]&
+            \rho^2\,\cos^2\theta
+            =3\left(
+                (\rho\,\cos\theta\,\sin\phi)^2
+                +
+                (\rho\,\sin\theta\,\sin\phi)^2
+            \right)
+            =3\left(
+                \rho^2\,\cos^2\theta\,\sin^2\phi
+                +
+                \rho^2\,\sin^2\theta\,\sin^2\phi
+            \right)
+            =3\rho^2\,\sin^2\phi
+            \implies
+            \cos^2\theta = 3\sin^2\phi
+            &\\&
+            3-x^2-y^2
+            = 3
+            -\left(
+                \rho\,\cos\theta\,\sin\phi
+            \right)^2
+            -\left(
+                \rho\,\sin\theta\,\sin\phi
+            \right)^2
+            = 3-\rho^2\,\sin^2\theta
+            \geq 0
+            \implies
+            \rho^2\,\sin^2\theta
+            \leq 3
+            \implies &\\&
+            \implies
+            \rho\leq\sqrt{3}
+            &\\[3ex]&
+            3(x^2+y^2)
+            =3\left(
+                (\rho\,\cos\theta\,\sin\phi)^2
+                +
+                (\rho\,\sin\theta\,\sin\phi)^2
+            \right)
+            =3\left(
+                \rho^2\,\cos^2\theta\,\sin^2\phi
+                +
+                \rho^2\,\sin^2\theta\,\sin^2\phi
+            \right)
+            =3\rho^2\,\sin^2\phi
+            \leq 0
+            \implies &\\&
+            \implies
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Seja \textit{C} a curva em \(\mathbb{R}^3\) definida por
+} % Q5
+    \begin{BM}
+        z = 8-4\,x^2-y^2;
+        \qquad
+        z = 4
+    \end{BM}
+
+    tem-se:
+    \begin{flalign*}
+        &
+            4
+            = 8-4\,x^2-y^2
+            \implies
+            4\,x^2+y^2
+            = 4
+            &\\&
+            4\,(2\,\cos t)^2
+            +\sin^2t
+            = 15\,\cos^2t
+            + \cos^2t
+            + \sin^2t
+            = 15\,\cos^2t
+            = 4
+            \implies &\\&
+            \implies
+            t = \cos^{-1}\sqrt(4/15)
+            &\\[6ex]&
+            \nabla{f(x,y)}(1/2,\sqrt{3})
+            = \left(
+                \begin{aligned}
+                    &
+                        -8\,x
+                    &\\&
+                        -2\,y
+                    &
+                \end{aligned}
+            \right)(1/2,\sqrt{3})
+            = \left(
+                \begin{aligned}
+                    &
+                        -4
+                    &\\&
+                        -2\,\sqrt{3}
+                    &
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Comprimento da curva
+} % Q6
+    \begin{flalign*}
+        &
+            \begin{cases}
+                y=x^2
+                \\
+                x^2+y^2=2
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Considere
+} % Q7
+    \begin{BM}
+        \lim_{(x,y)\to(0,0)}{
+            \frac{
+                -x^2-y^2-2\,x^4
+            }{
+                x^2+y^2
+            }
+        }
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \lim_{(x,y)\to(0,0)}{
+                \frac{
+                    -x^2-y^2-2\,x^4
+                }{
+                    x^2+y^2
+                }
+            }
+            = &\\[3ex]&
+            = \lim_{y\to0}{
+                \lim_{x\to0}{
+                    \frac{
+                        -x^2-y^2-2\,x^4
+                    }{
+                        x^2+y^2
+                    }
+                }
+            }
+            = \lim_{y\to0}{
+                \frac{
+                    -y^2
+                }{
+                    y^2
+                }
+            }
+            = \lim_{y\to0}{
+                -1
+            }
+            =-1
+            = &\\[3ex]&
+            = \lim_{x\to0}{
+                \lim_{y\to0}{
+                    \frac{
+                        -x^2-y^2-2\,x^4
+                    }{
+                        x^2+y^2
+                    }
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -x^2-2\,x^4
+                }{
+                    x^2
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -x^2(1+2\,x^2)
+                }{
+                    x^2
+                }
+            }
+            = \lim_{x\to0}{
+                -(1+2\,x^2)
+            }
+            = -1
+            = &\\[3ex]&
+            = \lim_{x\to0}{
+                \lim_{y\to x}{
+                    \frac{
+                        -x^2-y^2-2\,x^4
+                    }{
+                        x^2+y^2
+                    }
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -x^2-x^2-2\,x^4
+                }{
+                    x^2+x^2
+                }
+            }
+            = \lim_{x\to0}{
+                -(1-x^2)
+            }
+            = -1
+            = &\\&
+            = \lim_{x\to0}{
+                \lim_{y\to x^2}{
+                    \frac{
+                        -x^2-y^2-2\,x^4
+                    }{
+                        x^2+y^2
+                    }
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -x^2-x^4-2\,x^4
+                }{
+                    x^2+x^4
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -x^2-3\,x^4
+                }{
+                    x^2+x^4
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -2\,x^4
+                }{
+                    x^2+x^4
+                }
+                - \frac{
+                    x^2+x^4
+                }{
+                    x^2+x^4
+                }
+            }
+            = \lim_{x\to0}{
+                \frac{
+                    -2\,x^2
+                }{
+                    1+x^2
+                }
+                - 1
+            }
+            = -1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    A eq do plano tg a sup no ponto \((1,-1,0)\)
+} % Q8
+    \begin{BM}
+        y^3+(x+1)\,e^z=2-x^3
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            (1,-1,0)
+            +\nabla(f(x))(1,-1,0)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    Considere a função \(f:\mathbb{R}^2\to\mathbb{R}\) definia por
+} % Q9
+    \begin{BM}
+        f(x,y)
+        = \begin{cases}
+            \frac{x^3-y^5}{x^2+2\,y^4},\quad& (x,y)\neq(0,0)
+            \\
+            0\quad& (x,y)=(0,0)
+        \end{cases}
+        \\
+        \vec{u} = (2^{-1/2},2^{-1/2})
+        \qquad
+        \nabla f(0,0) = (1,-1/2)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    \(\odv{f}{x}(0,0)\) e \(\odv{f}{y}(0,1)\) de \textit{f}
+} % Q10
+    \begin{BM}
+        f(x,y)
+        = \begin{cases}
+            \frac{5\,x^3+3\,y^4}{x^2+y^2}
+            \quad& (x,y)\neq(0,0)
+            \\
+            0
+            \quad& (x,y)=(0,0)
+        \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \odv{f}{x}(0,0)
+            = \frac{
+                15\,x^2\,(x^2+y^2)
+                - (5\,x^3+3\,y^4)(2\,x)
+            }{
+                (x^2+y^2)^2
+            }(0,0)
+            = &\\&
+            = \frac{
+                15\,x^4
+                - 10\,x^4
+                15\,x^2\,y^2
+                - 6\,y^4\,x
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,0)
+            = &\\&
+            = \frac{
+                5\,x^4
+                + 15\,x^2\,y^2
+                - 6\,x\,y^4
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,0)
+            = &\\&
+            = \frac{
+                5\,x^4
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,0)
+            + \frac{
+                15\,x^2\,y^2
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,0)
+            + \frac{
+                - 6\,x\,y^4
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,0)
+            = &\\&
+            = \frac{
+                5
+            }{
+                1
+                + 2\,y^2/x^2
+                + y^4/x^4
+            }(0,0)
+            + \frac{
+                15
+            }{
+                x^2/y^2
+                + 2
+                + y^2/x^2
+            }(0,0)
+            + \frac{
+                - 6\,x
+            }{
+                x^4/y^4
+                + 2\,x^2/y^2
+                + 1
+            }(0,0)
+            = &\\&
+            = \frac{
+                5
+            }{
+                1
+                + 2
+                + 1
+            }(0,0)
+            + \frac{
+                15
+            }{
+                1
+                + 2
+                + 1
+            }(0,0)
+            + \frac{
+                - 6\,x
+            }{
+                1
+                + 2
+                + 1
+            }(0,0)
+            = &\\&
+            = \frac{5}{4}
+            + \frac{15}{4}
+            = 5
+            &\\[3ex]&
+            \odv{f}{y}(0,1)
+            = \frac{
+                (12\,y^3)(x^2+y^2)
+                - (5\,x^3+3\,y^4)(2\,y)
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,1)
+            = &\\&
+            = \frac{
+                12\,y^3\,x^2
+                + 12\,y^5
+                - 10\,x^3\,y
+                - 6\,y^5
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,1)
+            = &\\&
+            = \frac{
+                + 6\,y^5
+                12\,y^3\,x^2
+                - 10\,x^3\,y
+            }{
+                x^4
+                + 2\,x^2\,y^2
+                + y^4
+            }(0,1)
+            = &\\&
+            = 6
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{14}
+
+\begin{questionBox}1{ % Q15
+    \(\odv{z}{x}\)
+} % Q11
+    \begin{BM}
+        F(x,y,z) 
+        = \frac{y}{z}
+        - \frac{3\,x}{y}
+        - \frac{2\,z}{x}
+        \\
+        z=z(x,y)
+        : P(1,-1,1)\land F(x,y,z)=0
+    \end{BM}
+    
+    \begin{flalign*}
+        &
+            0
+            = \frac{y}{z}
+            - \frac{3\,x}{y}
+            - \frac{2\,z}{x}
+            = y^2\,x
+            - 3\,x^2\,z
+            - 2\,z^2\,y
+            &\\&
+            0
+            = \odv{y^2\,x}{x}(1,-1,1)
+            - \odv{3\,x^2\,z}{x}(1,-1,1)
+            - \odv{2\,z^2\,y}{x}(1,-1,1)
+            = 1
+            - 6
+            - 3\odv{z}{x}(1,-1)
+            + 4 \odv{z}{x}(1,-1)
+            - 2
+            = -7
+            + \odv{z}{x}(1,-1)
+            \implies &\\&
+            \implies
+            \odv{z}{x}(1,-1)
+            = 7
+        &
+    \end{flalign*}
+\end{questionBox}
+
+
+
+\end{document}

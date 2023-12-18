@@ -1,0 +1,186 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes.2022.2.1.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes.2022.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Testes_Resolucoes.2022.2.1}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Testes_Resolucoes.2022.2.1/}
+
+\mymakesubfile{2}
+[AM 2C]
+{02/11/22 - Teste 2 Resolução} % Subfile Title
+{02/11/22 - Teste 2 Resolução} % Part Title
+
+\group{}
+
+\begin{questionBox}1{ % Q1
+    Seja \textit{E} um espaço vectorial onde está definido um produto interno notado com o símbolo \(\vert\) e seja \(\myVert{\cdot}\) a norma induzida pelo produto interno. Apenas uma das seguintes afirmações é verdadeira. Indique qual.
+    \paragraph*{Nota: }  No que segue \textit{u,v} são elementos arbitrários de \textit{E}
+} % Q1
+    \begin{enumerate}
+        \item \(\myVert{u+v}<\myvert{u}+\myvert{v}\)
+        \item se \(
+            u\neq0
+            ,\myVert{u}+\myVert{-u}=0
+        \)
+        \item \(
+            (\lambda\,u\vert v)=\myvert{\lambda}(u\vert v)
+            ,\forall\,\lambda\in\mathbb{R}
+        \)
+        \item se \(
+            u\neq0\land v=\frac{u}{\myVert{u}}
+            \implies u\vert v=1
+        \)
+        \item se \(
+            \myVert{u}=\myVert{v}=1
+            \implies \myVert{u+v}=2
+        \)
+        \item se \(
+            \myVert{u}=1
+            \implies-\myVert{v}\leq(u\vert v)\leq\myVert{v}
+        \)
+    \end{enumerate}
+    \answer{}
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{ % Q2.1
+    Considere a função real \textit{g}, de duas variáveis reais, definda por
+    \begin{BM}
+        g_{(x,y)}
+        =\begin{cases}
+            \frac{x^4\,\cos(2\,x)-2\,x^2\,y^2}{(x^2+y^2)^{3/2}}
+            ,\quad&\text{se } (x,y)\neq(0,0)
+            \\
+            0,\quad&\text{se } (x,y)=(0,0)
+        \end{cases}
+    \end{BM}
+} % Q1
+    \begin{questionBox}2{ % Q2.1.1
+        Montre, por definiçao, que \textit{g(x,y)} é continua em (0,0).
+    } % Q2.1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \forall\,\delta>0\,\exists\epsilon>0
+                :(x,y)\neq0\land\sqrt{x^2+y^2}<\epsilon
+                \implies &\\&
+                \implies
+                \myvert{g(x,y)-0}
+                =
+                \myvert{
+                    \frac{
+                        x^4\,\cos(2\,x)-2\,x^2\,y^2
+                    }{
+                        (x^2+y^2)^{3/2}
+                    }
+                }
+                = &\\&
+                =
+                \frac{
+                    x^4\,\myvert{\cos(2\,x)}+2\,x^2\,y^2
+                }{
+                    (x^2+y^2)^{3/2}
+                }
+                \leq &\\&
+                \leq
+                \frac{
+                    x^4*1+2\,x^2\,y^2 + y^4
+                }{
+                    (x^2+y^2)^{3/2}
+                }
+                = &\\&
+                =
+                \frac{
+                    (x^2+y^2)^2
+                }{
+                    (x^2+y^2)^{3/2}
+                }
+                = &\\&
+                = (x^2+y^2)^{1/2}
+                <\epsilon
+                =\delta
+                \implies &\\&
+                \implies
+                \lim_{(x,y)\to(0,0)}{
+                    g(x,y)
+                }=0=g(0,0)
+                &\\&\therefore g\text{ é continua em }(0,0)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.1.2
+        Determine, por definição, \(\pdv{g}{x}(0,0)\text{ e }\pdv{g}{y}(0,0)\).
+    } % Q2.1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \pdv{g}{x}(0,0)
+                = \lim_{h\to0}{
+                    \frac{g(h,0)-g(0,0)}{h}
+                }
+                = \lim_{h\to0}{
+                    \frac{
+                        \frac{h^4\,\cos(2\,h)-2\,h^2\,0^2}{(h^2+0^2)^{3/2}}
+                        -0
+                    }{h}
+                }
+                = &\\&
+                = \lim_{h\to0}{
+                    \frac{
+                        h^4\,\cos(2\,h)
+                    }{
+                        h\,\myvert{h}^3
+                    }
+                }
+                = \lim_{h\to0}{
+                    \frac{
+                        \myvert{h}^4\,\cos(2\,h)
+                    }{
+                        h\,\myvert{h}^3
+                    }
+                }
+                = \lim_{h\to0}{
+                    \frac{\myvert{h}}{h}
+                    \,\cos(2\,h)
+                }
+                = &\\&
+                = \lim_{h\to0}{
+                    \sgn(h)
+                    \,\cos(2\,h)
+                }
+                = \sgn(h)
+                % ============= Partial on y ============= %
+                \neq &\\[3ex]&
+                \neq \pdv{g}{y}(0,0)
+                = \lim_{h\to0}{
+                    \frac{g(0,h)-g(0,0)}{h}
+                }
+                % = &\\&
+                = \lim_{h\to0}{
+                    \frac{
+                        \frac{0^4\,\cos(2*0)-2*0^2\,h^2}{(0^2+h^2)^{3/2}}
+                        -0
+                    }{h}
+                }
+                = &\\&
+                = \lim_{h\to0}{
+                    \frac{0}{h\,\myvert{h}^3}
+                }
+                = 0
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q2.1.3
+        Estude a diferenciabilidade em \textit{g} no ponto (0,0).
+    } % Q2.1.3
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

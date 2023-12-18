@@ -1,0 +1,272 @@
+% !TEX root = ./AM_2C-Aulas_Anotações.2.tex
+\providecommand\mainfilename{"./AM_2C-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aulas_Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{2}{03/21 -- Limites}{03/21 -- Limites}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(x,y) =
+        \begin{cases}
+            5\,x - y &\quad se\ x-y\leq 2
+        \\  \frac{x^2-y^2+4\,x+8}{x-y} &\quad se\ x-y>2
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}3{}
+        
+        \begin{BM}
+            \lim_{
+                \begin{subarray}{c}
+                    (x,y)\to(a,b)
+                \\  (x,y)\in D_1
+                \end{subarray}
+            } f(x,y) :
+            \left\{
+            \begin{aligned}
+                &
+                    (a,b)\in\fronteira D_1=\fronteira D_2
+                \ldiv
+                    (a-b=2)
+                &
+            \end{aligned}
+            \right\}
+        \end{BM}
+
+        \begin{flalign*}
+            &
+               =\lim_{
+                    \begin{subarray}{c}
+                        (x,y)\to(a,b)
+                    \\  (x,y)\in D_2
+                    \end{subarray}
+                }
+                \frac{x^2-y^2+4\,x+8}{x-y}
+               =\frac{a^2-b^2+4\,a+8}{a-b}
+               =&\\&
+               =\frac{(a+b)(a-b)+4\,a+8}{2}
+               =3\,a+b+4
+               =3\,a+(a-2)+4
+               =4\,a+2
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{sectionBox}1{Testes para encontrar Limites}
+    
+    \begin{enumerate}
+        \item Iterados
+        \item Direcionais
+        \item Parabolas
+        \item Provar por definição
+    \end{enumerate}
+    
+\end{sectionBox}
+
+\begin{questionBox}1m{}
+    
+    \begin{BM}
+        f(x,y)
+       =\frac{x\,y}{\sqrt{x^2+y^2}}
+       :\begin{cases}
+           \dominio = \mathbb{R}^2\backslash\{0,0\}
+        \end{cases}
+    \end{BM}
+
+    \begin{multicols}{2}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \lim_{x\to0}
+                \left(
+                    \lim_{y\to0}
+                    f(x,y)
+                \right)
+               =0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \lim_{y\to0}
+                \left(
+                    \lim_{x\to0}
+                    f(x,y)
+                \right)
+               =0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \end{multicols}
+
+    \begin{questionBox}3{\(y=m\,x:m\in\mathbb{R}\backslash\{0\}\land x>0\)}
+        \begin{flalign*}
+            &
+                \lim_{x\to0}
+                \frac{m\,x^2}{\sqrt{x^2+m^2\,x^2}}
+               =\lim_{x\to0}
+                \frac{m\,x^2}{x\sqrt{1+m^2}}
+               =0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{\(y=m\,x^2:m\in\mathbb{R}\backslash\{0\}\)}
+        \begin{flalign*}
+            &
+                \lim_{x\to 0}
+                \frac{x\,(m\,x^2)}{\sqrt{x^2+m^2\,x^4}}
+               =\lim_{x\to 0}
+                \frac{m\,x^3}{x\sqrt{1+m^2\,x^2}}
+               =\lim_{x\to 0}
+                \frac{m\,x^2}{\sqrt{1+m^2\,x^2}}
+               =0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{Definição}
+
+        \begin{BM}
+            \begin{aligned}
+                &
+                    (x,y)\in\dominio
+                \ldiv
+                    \lVert
+                        (x,y)-(0,0)
+                    \rVert
+                =\sqrt{x^2+y^2}\leq\varepsilon
+                &
+            \end{aligned}
+        \end{BM}
+
+        \begin{flalign*}
+            &
+                \Bigg\lvert
+                    \frac{x\,y}{\sqrt{x^2+y^2}}-0
+                \Bigg\rvert
+               =\frac{\lvert x\,y \rvert}{\sqrt{x^2+y^2}}
+               =\frac{\lvert x \rvert\lvert y \rvert}{\sqrt{x^2+y^2}}
+            \leq\frac{\sqrt{x^2+y^2}\sqrt{x^2+y^2}}{\sqrt{x^2+y^2}}
+               =&\\&
+               =\sqrt{x^2+y^2}
+            \leq\varepsilon=\delta
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(x,y,z) 
+       =\frac{z}{\sqrt{(x-1)^2+(y+1)^2+z^2}}:
+        \begin{cases}
+            \dominio=\mathbb{R}^3\backslash\{1,-1,0\}
+        \end{cases}
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(x,y) = x^2+y^2
+    \end{BM}
+
+    \begin{questionBox}3{}
+        
+        \begin{flalign*}
+            &
+                \lim_{(x,y)\to(2,1)}f(x,y)
+               =2^2+1^2 = 5
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Definição}
+        
+        \begin{BM}
+            \forall\delta>0\,\exists\,\varepsilon>0:
+            (x,y)\in\mathbb{R}^2\land\sqrt{(x-2)^2+(y-1)^2}\leq\varepsilon
+        \end{BM}
+
+        \begin{flalign*}
+            &
+                \lvert
+                    x^2 + y^2 - 5
+                \rvert
+               =\lvert
+                   (x-2)^2 + (y-1)^2 - 4 + 4\,x-1+2\,y-5
+                \rvert
+               =&\\&
+               =\lvert
+                   (x-2) + (y-1)^2+ 4\,x-2\,y-10
+                \rvert
+            \leq&\\&
+            \leq\lvert
+                   (x-2) + (y-1)^2
+                \rvert
+               +\lvert
+                    4\,(x-2) + 2\,(y-1)+8+2-10
+                \rvert
+            \leq&\\&
+            \leq(x-2) + (y-1)^2
+               +4\,\lvert x-2 \rvert 
+               +2\,\lvert y-1 \rvert
+               <\varepsilon^2+6\,\varepsilon
+               =\delta
+                \implies &\\&
+                \implies 
+                \varepsilon
+               =\frac{ -6\pm\sqrt{36+4\,\delta} }{2}
+               =-3\pm\sqrt{9+\delta}
+                \varepsilon
+               =-3+\sqrt{9+\delta}
+               >0
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(x,y) = \frac{ x^3\,y }{ 2\,x^6 + y^2 }
+       :\begin{cases}
+           \dominio = \mathbb{R}^2\backslash\{(0,0)\}
+        \\ (0,0)\in\overline{f(x,y)}
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}3{\(y=x^3\)}
+        \begin{flalign*}
+            &
+                \lim_{x\to0}
+                \frac{x^6}{2\,x^6+x^6}
+               =1/3
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\end{document}

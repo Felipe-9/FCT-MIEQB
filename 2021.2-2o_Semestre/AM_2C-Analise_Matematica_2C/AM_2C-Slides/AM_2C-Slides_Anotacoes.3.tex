@@ -1,0 +1,59 @@
+% !TEX root = ./AM_2C-Slides_Anotacoes.3.tex
+\providecommand\mainfilename{"./AM_2C-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Slides_Anotacoes.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Slides_Anotacoes.3}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Slides_Anotacoes.3/graphics/}
+
+\mymakesubfile{3}
+[AM 2C]
+{Slides Anotações} % Subfile Title
+{Slides Anotações} % Part Title
+
+\begin{exampleBox}1{ % E
+    Determinar a reta tangente à elipse \(x^2/4+y^2=1\) no ponto \(P = (\sqrt{2},1/\sqrt{2})\)
+} % E
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x = 2\,\cos(t)
+                \\
+                y = \sin{t}
+            \end{cases}
+            &\\&
+            \vv{r}(t) 
+            = 2\,\cos(t)\,\hat{\imath}
+            + \sin(t)\,\hat{\jmath}
+            ; &\\[3ex]&
+            t
+            \left\{
+                \begin{aligned}
+                    \sqrt{2}=2\,cos(t)
+                    \implies
+                    \cos(t)=\sqrt{2}/2
+                    \\
+                    1/\sqrt{2}=cos(t)
+                    \implies\sin(t)=\sqrt{2}/2
+                \end{aligned}
+            \right\}
+            \implies 
+            t=\pi/4
+            ; &\\[3ex]&
+            \vv{r}'(\pi/4)
+            = -2\sin(\pi/4)\,\hat{\imath}
+            + \cos(\pi/4)\,\hat{\imath}
+            = -\sqrt{2}\,\hat{\imath}
+            + \frac{\sqrt{2}}{2}\,\hat{\imath}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\end{document}

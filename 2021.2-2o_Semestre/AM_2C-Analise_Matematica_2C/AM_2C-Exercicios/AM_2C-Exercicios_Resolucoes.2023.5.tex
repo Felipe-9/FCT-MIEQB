@@ -1,0 +1,293 @@
+% !TEX root = ./AM_2C-Exercicios_Resolucoes.2023.5.tex
+\providecommand\mainfilename{"./AM_2C-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Exercicios_Resolucoes.2023.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Exercicios_Resolucoes.2023.5}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Exercicios_Resolucoes.2023.5/graphics/}
+
+\mymakesubfile{5}
+[AM 2C]
+{Limites, Continuidade e cálculo diferencial} % Subfile Title
+{Limites, Continuidade e cálculo diferencial} % Part Title
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % Q2
+    Estude a existencia dos seguintes limites:
+} % Q2
+    \setcounter{subquestion}{4}
+    \begin{questionBox}2{ % Q2.5
+        \begin{BM}
+            \lim_{(x,y)\to(0,0)}{
+                \frac{
+                    4\,x^2+3\,y^2+x^3\,y^3
+                }{
+                    x^2+y^2+x^4+y^4
+                }
+            }
+        \end{BM}
+    } % Q2.5
+        \answer{}
+        \begin{flalign*}
+            &
+                % \lim_{(x,y)\to(0,0)}{
+                %     \frac{
+                %         4\,x^2+3\,y^2+x^3\,y^3
+                %     }{
+                %         x^2+y^2+x^4+y^4
+                %     }
+                % }
+                = \lim_{x\to0}{
+                    \lim_{y\to0}{
+                        \frac{
+                            4\,x^2+3\,y^2+x^3\,y^3
+                        }{
+                            x^2+y^2+x^4+y^4
+                        }
+                    }
+                }
+                = \lim_{x\to0}{
+                    \frac{
+                        4\,x^2
+                    }{
+                        x^2+x^4
+                    }
+                }
+                = &\\&
+                = \lim_{x\to0}{
+                    \frac{
+                        4
+                    }{
+                        1+x^2
+                    }
+                }
+                = 4
+                \neq &\\[3ex]&
+                \neq \lim_{y\to0}{
+                    \lim_{x\to0}{
+                        \frac{
+                            4\,x^2+3\,y^2+x^3\,y^3
+                        }{
+                            x^2+y^2+x^4+y^4
+                        }
+                    }
+                }
+                = \lim_{y\to0}{
+                    \frac{
+                        3\,y^2
+                    }{
+                        y^2+y^4
+                    }
+                }
+                = \lim_{y\to0}{
+                    \frac{
+                        3
+                    }{
+                        1+y^2
+                    }
+                }
+                = 3
+            &
+        \end{flalign*}
+        \(\therefore\) não existe
+        \vspace{3ex}
+        \answer{alternativa: usando limite direcional}
+        \begin{flalign*}
+            &
+                y=m\,x
+                \implies &\\&
+                \implies
+                \lim_{(x,y)\to(0,0)}{
+                    \frac{
+                        4\,x^2+3\,y^2+x^3\,y^3
+                    }{
+                        x^2+y^2+x^4+y^4
+                    }
+                }
+                =\lim_{(x)\to0}{
+                    \frac{
+                        4\,x^2+3\,(m\,x)^2+x^3\,(m\,x)^3
+                    }{
+                        x^2+(m\,x)^2+x^4+(m\,x)^4
+                    }
+                }
+                = &\\&
+                = \lim_{(x)\to0}{
+                    \frac{
+                        (3\,m^2+4)\,x^2
+                        + m^3\,x^6
+                    }{
+                        (1+m^2)\,x^2
+                        + (1+m^4)\,x^4
+                    }
+                }
+                = \lim_{(x)\to0}{
+                    \frac{
+                        (3\,m^2+4)
+                        + m^3\,x^4
+                    }{
+                        (1+m^2)
+                        + (1+m^4)\,x^2
+                    }
+                }
+                = &\\&
+                =\frac{
+                    3\,m^2+4
+                }{
+                    1+m^2
+                }
+            &
+        \end{flalign*}
+        \(\therefore\) como o valor do limite depende de \textit{m}, o limite não existe
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Estude as seguintes funções quanto à continuidade:
+} % Q3
+    \setcounter{subquestion}{1}
+    \begin{questionBox}2{ % Q3.2
+        \begin{BM}
+            f(x,y)
+            = \begin{cases}
+                1 + \frac{(x-2)^3}{(x-2)^2+(y-1)^2}
+                ,\quad&\text{se }(x,y)\neq(2,1)
+                \\
+                1,\quad&\text{se }(x,y)=(2,1)
+            \end{cases}
+        \end{BM}
+    } % Q3.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \lim_{(x,y)\to(2,1)}{f(x,y)}
+                = f(2,1) = 1
+                \iff &\\&
+                \iff
+                0\leq 
+                \left(
+                    \lim_{(x,y)\to(2,1)}{f(x,y)}
+                \right)
+                -f(2,1)
+                \leq g(x,y)
+                \implies &\\[3ex]&
+                \implies
+                \myvert{
+                    \left(
+                        \lim_{(x,y)\to(2,1)}{f(x,y)}
+                    \right)
+                    -f(2,1)
+                }
+                = \myvert{
+                    1 + \frac{(x-2)^3}{(x-2)^2+(y-1)^2}
+                    -1
+                }
+                = &\\&
+                = \myvert{
+                    \frac{(x-2)^3}{(x-2)^2+(y-1)^2}
+                }
+                \leq \myvert{
+                    \frac{
+                        (x-2)\,((x-2)^2+(y-1)^2)
+                    }{
+                        (x-2)^2+(y-1)^2
+                    }
+                }
+                = &\\&
+                =\myvert{x-2}
+                \leq\sqrt{
+                    (x-2)^2+(y-1)^2
+                }
+                \implies &\\&
+                \implies
+                \lim_{(x,y)\to(2,1)}{f(x,y)}
+                \leq
+                \lim_{(x,y)\to(2,1)}{
+                    \sqrt{(x-2)^2+(y-1)^2}
+                }
+                =0
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{25}
+
+\begin{questionBox}1{ % Q26
+    Estude as seguintes funções quanto à diferenciabilidade no ponot \((0,0)\):
+} % Q26
+    \setcounter{subquestion}{1}
+    \begin{questionBox}2{ % Q26.2
+        \begin{BM}
+            f(x,y)
+            \begin{cases}
+                \frac{x\,y^2}{x^2+y^2}
+                ,\quad&\se(x,y)\neq(0,0)
+                \\
+                0,\quad&
+                \se(x,y)=(0,0)
+            \end{cases}
+        \end{BM}
+    } % Q26.2
+        \answer{}
+        \begin{flalign*}
+            &
+                f\text{ é diferenciavel em }(0,0)
+                \iff &\\&
+                \iff
+                \lim_{(h,k)\to(0,0)}{
+                    \frac{
+                        \myvert{
+                            f_{(0+h,0+k)}
+                            - f_{(0,0)}
+                            - h\,\pdv{f}{x}_{(0,0)}
+                            - k\,\pdv{f}{y}_{(0,0)}
+                        }
+                    }{
+                        \sqrt{k^2+h^2}
+                    }
+                }
+                = &\\&
+                \lim_{(h,k)\to(0,0)}{
+                    \frac{
+                        \myvert{
+                            f_{(0+h,0+k)}
+                            - f_{(0,0)}
+                            - h\,\left(
+                                \lim_{h\to0}{
+                                    \frac{f_{(h,0)-f(0,0)}}{h}
+                                }
+                            \right)
+                            - k\,\left(
+                                \lim_{k\to0}{
+                                    \frac{f_{(0,k)-f(0,0)}}{k}
+                                }
+                            \right)
+                        }
+                    }{
+                        \sqrt{k^2+h^2}
+                    }
+                }
+                = &\\&
+                = \lim_{(h,k)\to(0,0)}{
+                    \frac{
+                        \myvert{
+                            f_{(h,k)}
+                        }
+                    }{
+                        \sqrt{k^2+h^2}
+                    }
+                }
+                = 0
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

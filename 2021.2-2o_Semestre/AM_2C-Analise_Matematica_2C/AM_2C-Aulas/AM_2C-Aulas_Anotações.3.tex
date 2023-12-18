@@ -1,0 +1,206 @@
+% !TEX root = ./AM_2C-Aulas_Anotações.3.tex
+\providecommand\mainfilename{"./AM_2C-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aulas_Anotações.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[AM\,2C]
+{Aula}
+{Aula}
+
+\begin{sectionBox}1{Proposição}
+    
+    \begin{BM}
+        \lim_{(x,y)\to(x_0,y_0)}
+        f(x,y) = a
+    \end{BM}
+
+    \begin{BM}
+        \lvert
+            f(x_0+r\,\cos\theta,y_0+r\,\sin\theta)
+            -a
+        \rvert
+        \leq g(r)
+        \quad\forall\,r,\theta
+        \\
+        g(r)\to 0
+        \quad\land\quad
+        r \to 0
+    \end{BM}
+
+\end{sectionBox}
+
+\begin{exampleBox}1{}
+    
+    \begin{BM}
+        f(x,y)
+        = \frac{x^4+y^4}{x^2+y^2}
+        % \\
+        \qquad
+        D = \mathbb{R}^4\backslash\{(0,0)\}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            0
+            \leq
+            \frac{x^4+y^4}{x^2+y^2}
+            = \frac{(R\,\cos\theta)^4+(R\,\sin\theta)^4}{(R\,\cos\theta)^2+(R\,\sin\theta)^2}
+            = \frac{R^4\,(\cos^4\theta+\sin^4\theta)}{R^2(\cos^2\theta+\sin^2\theta)}
+            = &\\&
+            = R^2\,(\cos^4\theta+\sin^4\theta)
+            \leq 2\,R^2
+            \to 0
+            &\\[1.5em]&
+            \therefore
+            \lim_{(x,y)\to(0,0)}f(x)
+            =0
+            &
+    \end{flalign*}
+
+    \paragraph*{Nota}
+    \begin{BM}
+        \cos^4\theta + \sin^4\theta\leq 1
+    \end{BM}
+    \begin{flalign*}
+        &
+            \because
+            1^2 
+            = (\cos^2\theta + \sin^2\theta)^2
+            = \cos^4\theta + \sin^4\theta + 2\,\sin^2\,\cos^2
+            \geq
+            \cos^4\theta+\sin^4\theta
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{exampleBox}1{}
+    
+    \begin{BM}
+        f(x,y)
+        = \frac{x^2\,y}{x^4+y^2}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            f(
+                R\,\cos\theta,
+                R\,\sin\theta
+            )
+            = \frac{
+                (R\,\cos\theta)^2
+                \, (R\,\sin\theta)
+            }{
+                (R\,\cos\theta)^4
+                + (R\,\sin\theta)^2
+            }
+            = \frac{
+                R^3
+                \, \cos^2\theta
+                \, \sin\theta
+            }{
+                R^2(
+                    R^2\,\cos^4\theta
+                    + \sin^2\theta
+                )
+            }
+            = &\\&
+            = \frac{
+                R
+                \, \cos^2\theta
+                \, \sin\theta
+            }{
+                R^2\,\cos^4\theta
+                + \sin^2\theta
+            }
+            &\\&
+            0
+            \leq
+            \left\lvert
+                \frac{x^2\,y}{x^4+y^2}
+            \right\rvert
+            = \left\lvert
+                \frac{
+                    R
+                    \, \cos^2\theta
+                    \, \sin\theta
+                }{
+                    R^2\,\cos^4\theta
+                    + \sin^2\theta
+                }
+            \right\rvert
+            = \frac{
+                R
+                \, \cos^2\theta
+                \, \lvert\sin\theta\rvert
+            }{
+                R^2\,\cos^4\theta
+                + \sin^2\theta
+            }
+            \land
+            R\to0
+            \implies &\\&
+            \implies
+            \frac{0}{\sin^2\theta}
+            \land(\theta=0\lor\theta=\pi)
+            % \implies 
+            \implies
+            \text{Indeterminação: }0/0
+        &
+    \end{flalign*}
+
+    Teorema não é aplicável
+
+    \paragraph*{Buscando dois limites diferentes}
+    \begin{flalign*}
+        &
+            \lim_{(x,y)\to(0,0)}
+            f(x,x)
+            = \frac{x^2\,x}{x^4+x^2}
+            = \frac{x^3}{x^2(x^2+1)}
+            = \frac{x}{x^2+1}
+            = \frac{0}{1}
+            = 0
+            &\\[1.5em]&
+            \lim_{(x,y)\to(0,0)}
+            f(x,x^2)
+            = \frac{x^2\,x^2}{x^4+(x^2)^2}
+            = \frac{x^4}{x^4+x^4}
+            = \frac{1}{2}
+            &\\[1.5em]&
+            \therefore
+            \nexists\lim_{(x,y)\to(0,0)}f(x,y)
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{exampleBox}1{}
+    
+    \begin{BM}
+        \lim_{\lVert{(x,y)}\rVert\to\infty}
+        \frac{1}{x^2+y^2+5}
+        = 0
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \forall\,\delta>0
+            \exists L>0
+            : \lVert(x,y)\rVert>L
+            \implies &\\&
+            \implies
+            \dots
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\end{document}

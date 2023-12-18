@@ -1,0 +1,319 @@
+% !TEX root = ./AM_2C-Exercicios_Resolucoes.2023.4.tex
+\providecommand\mainfilename{"./AM_2C-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Exercicios_Resolucoes.2023.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Exercicios_Resolucoes.2023.4}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Exercicios_Resolucoes.2023.4/graphics/}
+
+\mymakesubfile{4}
+[AM 2C]
+{Curvas e funções vetoriais} % Subfile Title
+{Curvas e funções vetoriais} % Part Title
+
+\setcounter{question}{4}
+
+\begin{questionBox}1{ % Q5
+    Determine uma representação paramétrica da curva indicada e a reta tangente à curva referida no ponto \(P_0\):
+} % Q5
+    \begin{questionBox}2{ % Q5.1
+        \begin{BM}
+            x^2/4+2\,y^2=1
+            \quad\text{e}\quad
+            z=2,
+            P_0=\left(\sqrt{2},1/2,2\right)
+        \end{BM}
+    } % Q5.1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q5.2
+        \begin{BM}
+            z
+            =x^2 + y^2/4
+            \quad\text{e}\quad
+            z=4\,x,P_0 = (4,0,16).
+        \end{BM}
+    } % Q5.2
+        \answer{}
+        \begin{flalign*}
+            &
+                z
+                = x^2 + y^2/4
+                = 4\,x
+                % \implies &\\&
+                \implies
+                \begin{cases}
+                    \left(
+                        \frac{x-2}{2}
+                    \right)^2
+                    + \left(
+                        \frac{y^2}{4}
+                    \right)^2
+                    \\
+                    z=4\,x
+                \end{cases}
+                % \implies &\\&
+                \implies
+                \begin{cases}
+                    x = 2+2\,\cos{t}
+                    \\
+                    y=4\,\sin{t}
+                    \\
+                    z=4\,x = 8+8\,\cos{t}
+                    \\
+                    t\in\myrange{0,2\,\pi}
+                \end{cases};
+                &\\[3ex]&
+                \vv{r}(t)
+                = \left(
+                    \begin{aligned}
+                        &
+                            \hat{\imath}
+                            \,(2+2\,\cos{t})
+                        &+\\+&
+                            \hat{\jmath}
+                            \,(4\,\sin{t})
+                        &+\\+&
+                            \hat{k}
+                            \,(4\,x = 8+8\,\cos{t})
+                        &
+                    \end{aligned}
+                \right)
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Para cada uma das seguintes curvas determine a reta tangente no ponto \(P_0\):
+} % Q6
+    \begin{questionBox}2{ % Q6.1
+        \begin{BM}
+            y = 3\,x-2\text{ em }\mathbb{R}^2,P_0=(2/3,0)
+        \end{BM}
+    } % Q6.1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q6.2
+        \begin{BM}
+            x=y^2=z^2+1
+            \text{ em }\mathbb{R}^2, P_0=(1,1,0)
+        \end{BM}
+    } % Q6.2
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Seja a curva \textit{C} a curva em \(\mathbb{R}^3\) definida pelas equações paramétricas
+    \begin{BM}
+        \begin{cases}
+                x=\cos(2\,t)
+            \\  y=(2/3)\sqrt{t^3}
+            \\  z=\sin(2\,t)
+            \\  t\in\myrange{0,4}
+        \end{cases}
+    \end{BM}
+    Suponha que a curva \textit{C} corresponde à trajetória de uma partícula P.
+} % Q7
+    \begin{questionBox}2{ % Q7.1
+        Calcule o comprimento do caminho percorrido pela partícula P.
+    } % Q7.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \vv{r}(t)
+                = \left(
+                    \begin{aligned}
+                        \cos(2\,t),
+                    \\  (2/3)\sqrt{t^3},
+                    \\  \sin(2\,t)
+                    \end{aligned}
+                \right)
+                \implies &\\[3ex]&
+                \implies 
+                \vv{r}'(t)
+                = \left(
+                    \begin{aligned}
+                        - 2\,\sin(2\,t),
+                    \\  t^{1/2},
+                    \\  2\,\cos(2\,t)
+                    \end{aligned}
+                \right)
+                \implies &\\[3ex]&
+                \implies
+                \myVert{\vv{r}'(t)}
+                = \sqrt{\left(
+                    \begin{aligned}
+                        &
+                            (- 2\,\sin(2\,t))^2
+                        &+\\+&
+                            (t^{1/2})^2
+                        &+\\+&
+                            (2\,\cos(2\,t))^2
+                        &
+                    \end{aligned}
+                \right)}
+                = \sqrt{4+t}
+                \implies &\\[3ex]&
+                \implies
+                \begin{cases}
+                    1=t^2+1
+                    \\
+                    1=(t^2+1)^{1/3}
+                    \\
+                    0=t
+                \end{cases}
+                , t=0
+                ; &\\[3ex]&
+                \vv{r}'(0)
+                = \hat{k}
+                ; &\\[6ex]&
+                \therefore
+                \text{Reta tangente}
+                = P_0+\lambda\,\myVert{\vv{r}'(P_0)}
+                = \begin{bmatrix}
+                    1\\1\\0
+                \end{bmatrix}
+                + \lambda
+                \begin{bmatrix}
+                    0\\0\\1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.2
+        Determine uma equação da reta tangente à trajetória no ponto \(0,\sqrt{\pi^3}/12,1\).
+    } % Q7.2
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{12}
+
+\begin{questionBox}1{ % Q13
+    Considere a função vetorial
+    \begin{BM}
+        \vv{\sigma}(t)
+        = \frac{t}{2}\,\hat{\imath}
+        + \cos(\sqrt{2}\,t)\,\hat{\jmath}
+        + \sin(\sqrt{2}\,t)\,\hat{k},
+        \quad t\in\myrange{0,2\,\pi}
+    \end{BM}
+    e designe por \textit{C} a curva paramétrica definida por \(\vv{\sigma}\). Suponha que \textit{C} corresponde à trajetória de uma partícula \textit{P}.
+} % Q13
+    \begin{questionBox}2{ % Q13.1
+        Determine o vetor tangente unitário em cada ponto da curva \textit{C}
+    } % Q13.1
+        \answer{}
+        \begin{flalign*}
+            &
+                T(t) 
+                = \frac{\vv{\sigma}(t)}{\myVert{\vv{\sigma}(t)}}
+                = \frac{
+                    \frac{t}{2}\,\hat{\imath}
+                    + \cos(\sqrt{2}\,t)\,\hat{\jmath}
+                    + \sin(\sqrt{2}\,t)\,\hat{k}
+                }{
+                    \sqrt{
+                        \left(
+                            \frac{t}{2}
+                        \right)^2
+                        + \left(
+                            \cos(\sqrt{2}\,t)
+                        \right)^2
+                        + \left(
+                            \sin(\sqrt{2}\,t)
+                        \right)^2
+                    }
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q13.2
+        Calcule o comprimento da curva \textit{C}
+    } % Q13.2
+        \answer{}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q13.3
+        Determine a função comprimento de arco da curva \textit{C}.
+    } % Q13.3
+        body
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q13.4
+        Determine a parametrização de \textit{C} por comprimento de arco \(s(t)\) verificando \(s(0)=0\)
+    } % Q13.4
+        \answer{}
+        \begin{flalign*}
+            &
+                \vv{\sigma}\left(
+                    \frac{2}{3}\,s
+                \right)
+                = \frac{s\,2/3}{2}\,\hat{\imath}
+                + \cos(\sqrt{2}\,s\,2/3)\,\hat{\jmath}
+                + \sin(\sqrt{2}\,s\,2/3)\,\hat{k}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q13.5
+        Determine as posições inicial e final da partícula \textit{P}
+    } % Q13.5
+        \answer{}
+        \begin{flalign*}
+            &
+                P_i
+                =\vv{\sigma}(0)
+                = \hat{\jmath}
+                \implies (0,1,0)
+                ; &\\[3ex]&
+                P_f
+                = \vv{\sigma}(2\,\pi)
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q13.6
+        Determine a dinstância percorrida pela partícula \textit{P} para \(t=\pi/2\).
+    } % Q13.6
+        \answer{}
+        \begin{flalign*}
+            &
+                s(\pi/2)
+                =(3/2)\,\pi/2
+                = (3/4)\,\pi
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q13.7
+        Em que ponto se encontra a partícula \(P\) após ter percorrido uma distância de \(\pi/2\sqrt{2}\)
+    } % Q13.7
+        \answer{}
+        \begin{flalign*}
+            &
+                \vv{\sigma}(t): s(t)=(3/2)\,t=\pi/2\sqrt{2}
+                \implies &\\[3ex]&
+                \implies
+                t
+                = (2/3)\,\pi/2\sqrt{2}
+                = (\sqrt{2}/6)\,\pi
+                \implies &\\[3ex]&
+                \implies
+                \vv{\sigma}\left(
+                    (\sqrt{2}/6)\,\pi
+                \right)
+                = \dots
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

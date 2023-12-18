@@ -1,0 +1,481 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes-2022.1.1.tex
+% !TEX root = ./AM_2C_-_Testes_Resolucoes.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes-2022.1.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{1}
+[AM\,2C]
+{Teste Resolução}
+{Teste Resolução}
+
+\group{}
+
+\begin{questionBox}1{} % I Q1
+    
+    % A elipse centrada em (1,-4), com um dos vértices em \((1,-1)\) e um dos focos em \((1,-4+\sqrt{5})\) tem por equação:
+
+    \begin{BM}
+        \text{Elipse}:
+        \begin{cases}
+            P' = (1,-4)
+         \\ \text{Vertice} = (1,-1)
+         \\ f_1 = (1,-4+\sqrt{5})
+        \end{cases}
+    \end{BM}
+
+    % \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                1
+                =
+                \left(
+                    \frac{x-x'}{r_1}
+                \right)^2
+                +
+                \left(
+                    \frac{y-y'}{r_2}
+                \right)^2
+                = &\\&
+                =
+                \left(
+                    \frac{x-1}{
+                        \sqrt{
+                            (-4-(-1))^2
+                            -(-4-(-4+\sqrt{5}))^2
+                        }
+                    }
+                \right)^2
+                +
+                \left(
+                    \frac{
+                        y+4
+                    }{
+                        (\lvert-4-(-1)\rvert)
+                    }
+                \right)^2
+                = &\\&
+                =
+                \left(
+                    \frac{x-1}{2}
+                \right)^2
+                +
+                \left(
+                    \frac{y+4}{3}
+                \right)^2
+                \implies &\\&
+                \implies
+                0
+                =
+                9
+                \left(
+                    x^2
+                    -2\,x
+                    +1
+                \right)
+                +
+                4\left(
+                    y^2
+                    +8\,y
+                    +16
+                \right)
+                -9*4
+                = &\\&
+                =
+                9\,x^2
+                -18\,x
+                +4y^2
+                +32\,y
+                +37
+            &
+        \end{flalign*}
+    % \end{answerBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1m{} % I Q2
+
+    Relativamente a função
+    
+    \begin{BM}
+        f(x,y) = (3\,x+3\,x^3)(y^2+2\,y)
+    \end{BM}
+
+    Tem-se que
+
+    \begin{itemize}[label=\square]
+        \item O ponto (0,0) é de sela e o ponto (0,2) é maximizante,
+        \item O ponto (0,0) é de sela e o ponto (0,-2) é de sela,
+        \item O ponto (0,0) é de sela e o ponto (0,-2) é maximizante,
+        \item O ponto (0,0) é de sela e o ponto (0,2) é de sela,
+        \item O ponto (0,0) é maximizante e o ponto (0,-2) é de sela,
+        \item O ponto (0,0) é maximizante e o ponto (0,-2) é de sela,
+    \end{itemize}
+
+    % \begin{answerBox}{} % RS 
+        \paragraph*{Pontos de inflexão}
+        \begin{flalign*}
+            &
+            \nabla f
+            = \left(
+                \pdv{f}{x},
+                \pdv{f}{y}
+            \right)
+            = \left(
+                \begin{aligned}
+                    \left(
+                        3+9\,x^2
+                    \right)(y^2+2\,y),
+                    \\
+                    (3\,x+3\,x^3)
+                    \left(
+                        2\,y + 2
+                    \right)
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    y\,\left(
+                        3+9\,x^2
+                    \right)(y+2),
+                    \\
+                    6\,x(1+x^2)
+                    \left(
+                        y + 1
+                    \right)
+                \end{aligned}
+            \right)
+            = (0,0)
+            \implies &\\&
+            \implies
+            x=0\lor y=-1
+            ;
+            \begin{cases}
+                x=0 & \implies y=-2\lor y=0
+                \\
+                y=-1 & \implies x=\sqrt{-1/3}
+            \end{cases}
+            &
+        \end{flalign*}
+
+        \paragraph*{Caracterizando pontos}
+        \begin{flalign*}
+            &
+                \det H_f 
+                = \begin{vmatrix}
+                        \pdv{f}{x,x}
+                    &   \pdv{f}{x,y}
+                    \\  \pdv{f}{y,x}
+                    &   \pdv{f}{y,y}
+                \end{vmatrix}
+                = \begin{vmatrix}
+                        18\,x\,(y^2+2\,y)
+                    &   (3+9\,x^2)(2\,y+2)
+                    \\  (3+9\,x^2)(2\,y+2)
+                    &   2\,(3\,x+3\,x^3)
+                \end{vmatrix}
+                &\\&
+                \begin{cases}
+                    \det h_f(0,0) = \begin{vmatrix}
+                        0 & 6 \\ 6 & 0
+                    \end{vmatrix}
+                    = -36 < 0
+                    \\
+                    \det h_f(0,-2) = \begin{vmatrix}
+                        0 & -6 \\ -6 & 0
+                    \end{vmatrix}
+                    = -36 < 0
+                \end{cases}
+            &
+        \end{flalign*}
+    % \end{answerBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % I Q3
+    
+    Considere a função \(f:\mathbb{R}^2\to\mathbb{R}\) definida por
+    \begin{BM}
+        f(x,y) = (4\,x+y^3,x^2+3\,y)
+    \end{BM}
+    Invertível numa vizinhança do ponto (-1,1). Tem-se que:
+    \begin{BM}
+        J_{f^{-1}}(-3,4) = ?
+    \end{BM}
+
+    % \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                J_{f^{-1}}(-3,4)
+                J_{f^{-1}}\left(
+                    % (4\,(-1)+(1)^3,(-1)^2+3\,(1))
+                    % (-4+1,1+3)
+                    f(-1,1)
+                \right)
+                (J_{f}\left(f(-1,1)\right))^{-1}
+                =\begin{bmatrix}
+                        \pdv{f_1}{x}(-1,1)
+                    &   \pdv{f_1}{y}(-1,1)
+                    \\  \pdv{f_2}{x}(-1,1)
+                    &   \pdv{f_2}{y}(-1,1)
+                \end{bmatrix}^{-1}
+                = &\\&
+                =\begin{bmatrix}
+                         4  &   3
+                    \\  -2 &   3
+                \end{bmatrix}^{-1}
+                =\left(
+                    12-(-6)
+                \right)^{-1}
+                \begin{pmatrix}
+                    3 & -3
+                    \\
+                    2 & 4
+                \end{pmatrix}
+                =
+                \begin{pmatrix}
+                    \sfrac{1}{6} & \sfrac{-1}{6}
+                    \\
+                    \sfrac{1}{9} & \sfrac{2}{9}
+                \end{pmatrix}
+            &
+        \end{flalign*}
+    % \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{} % I Q4
+    
+    Pretende-se determinar o ponto da porção da superfície cónica \(z=\sqrt{(x-1)^2+y^2}\) que se encontra à distância mínima da origem. A função de Lagrange para o problema considerado é:
+    
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                L(x,y,z,\lambda)
+                = x^2+y^2+z^2
+                +\lambda\left(
+                    z-\sqrt{(x-1)^2+y^2}
+                \right)
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{} % I Q5
+    Seja \(f(x,y):\mathbb{R}^2\to\mathbb{R}\) uma função diferenciável e \(x=\varphi(s,t)=s+t,y=\psi(s,t)=s-t\). Considere a função composta \(u=f\circ g\), onde \(g=(\varphi,\psi)\). Para que a igualdade
+
+    \begin{BM}
+        \pdv[order=2]{f}{x}
+        +\pdv[order=2]{f}{y}
+        = A\left(
+            \pdv[order=2]{u}{s}
+            +\pdv[order=2]{u}{t}
+        \right)
+    \end{BM}
+
+    Seja verificada, \textit{A} tem de ser igual a:
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                A
+                =\frac{
+                    \pdv[order=2]{f}{x}
+                    +\pdv[order=2]{f}{y}
+                }{
+                    \pdv[order=2]{u}{s}
+                    +\pdv[order=2]{u}{t}
+                };
+                &\\[1.5ex]&
+                % 
+                % 
+                \pdv{u}{s}
+                = 
+                \pdv{f}{x}\pdv{x}{s}
+                +\pdv{f}{y}\pdv{y}{s}
+                =
+                \pdv{f}{x}
+                +\pdv{f}{y}
+                &\\[1.5ex]&
+                % 
+                % 
+                \pdv{u}{t}
+                = 
+                \pdv{f}{x}\pdv{x}{t}
+                +\pdv{f}{y}\pdv{y}{t}
+                =
+                \pdv{f}{x}
+                -\pdv{f}{y}
+                &\\[1.5ex]&
+                \pdv[order=2]{u}{s}
+                = \pdv{}{s}\left(
+                    \pdv{f}{x}
+                    +
+                    \pdv{f}{y}
+                \right)
+                =
+                \pdv[order=2]{f}{x}
+                \,\pdv{x}{s}
+                +\pdv{f}{x,y}
+                \,\pdv{y}{s}
+                +\pdv{f}{y,x}
+                \,\pdv{x}{s}
+                +
+                \pdv[order=2]{f}{y}
+                \pdv{y}{s}
+                = &\\&
+                =
+                \pdv[order=2]{f}{x}
+                +2\,\pdv{f}{x,y}
+                +\pdv[order=2]{f}{y}
+                % 
+                % 
+                % 
+                &\\[1.5ex]&
+                \pdv[order=2]{u}{t}
+                = \pdv{}{t}\left(
+                    \pdv{f}{x}
+                    +
+                    \pdv{f}{y}
+                \right)
+                =
+                \pdv[order=2]{f}{x}
+                \,\pdv{x}{t}
+                +\pdv{f}{x,y}
+                \,\pdv{y}{t}
+                -\pdv{f}{y,x}
+                \,\pdv{x}{t}
+                -\pdv[order=2]{f}{y}
+                \,\pdv{y}{t}
+                = &\\&
+                =
+                \pdv[order=2]{f}{x}
+                -2\,\pdv{f}{x,y}
+                +\pdv[order=2]{f}{y}
+                &\\[2ex]&
+                \therefore
+                A
+                =\cfrac{
+                    \pdv[order=2]{f}{x}
+                    +\pdv[order=2]{f}{y}
+                }{
+                    \pdv[order=2]{f}{x}
+                    +2\,\pdv{f}{x,y}
+                    +\pdv[order=2]{f}{y}
+                    +
+                    \pdv[order=2]{f}{x}
+                    -2\,\pdv{f}{x,y}
+                    +\pdv[order=2]{f}{y}
+                } 
+                % = &\\&
+                =\frac{1}{2} 
+                % 
+                % 
+            &
+        \end{flalign*}
+    \end{answerBox}
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{} % QII 1
+    
+    Considere a função real \textit{g}, de duas variáveis reais, definida por
+    \begin{BM}
+        g(x,y)
+        =\begin{cases}
+            \frac{x^2-2\,y^2\,\sin(x^2+y^2)}{\sqrt{x^2+y^2}}
+            & \text{se } (x,y)\neq (0,0)
+            \\
+            0
+            & \text{se } (x,y)= (0,0)
+        \end{cases}
+    \end{BM}
+
+\end{questionBox}
+
+\begin{questionBox}2{} % QII 1.1
+
+    Considere que dado um número real positivo \(\delta\) existe um número real positivo \(\epsilon\), tal que se \((x,y)\neq (0,0)\) e \(\sqrt{x^2+y^2}<\epsilon\), então \(\lvert g(x,y) \rvert < \delta\).
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                \forall\,\delta>0\,\exists\,\epsilon>0:
+                (x,y)\neq(0,0)\land\sqrt{x^2+y^2}<\epsilon
+                \implies
+                \lvert g(x,y)-0 \rvert
+                <\delta
+                \implies &\\&
+                \implies
+                \left\lvert
+                    \frac{x^2-2\,y^2\,\sin(x^2+y^2)}{\sqrt{x^2+y^2}}
+                \right\rvert
+                \leq
+                \frac{x^2+2\,y^2\,\lvert\sin(x^2+y^2)\rvert}{\sqrt{x^2+y^2}}
+                \leq
+                \frac{x^2+2\,y^2}{\sqrt{x^2+y^2}}
+                \leq &\\&
+                \leq
+                \frac{2\,x^2+2\,y^2}{\sqrt{x^2+y^2}}
+                \leq
+                2\,\sqrt{x^2+y^2}
+                \leq
+                2\,\epsilon
+                = \delta
+                &\\&
+                \therefore
+                \exists \epsilon=\delta/2;
+                % &\\&
+                \qquad
+                \lim_{(x,y)\to(0,0)}{
+                    \frac{x^2-2\,y^2\,\sin(x^2+y^2)}{\sqrt{x^2+y^2}}
+                }
+                =0
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{questionBox}
+
+
+
+\begin{questionBox}2{} % QII 1.2
+
+    Determine, por definição, caso existam,
+
+    \begin{BM}
+        \pdv{g}{y}(0,0)\text{ e }
+        \mdif{\left(
+            \frac{2}{\sqrt{5}},
+            \frac{1}{\sqrt{5}},
+        \right)}
+        \,g(0,0)
+    \end{BM}
+    
+    Diga, justificando, se \textit{g} é diferenciável no ponto (0,0).
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                \pdv{g}{y}(0,0)
+                = \lim_{h\to0}\frac{g(0,h)-0}{h}
+                = \lim_{h\to0}{
+                    \cfrac{
+                        \cfrac{-2\,h^2\,\sin{h^2}}{\sqrt{h^2}}
+                    }{h}
+                }
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{questionBox}
+
+\end{document}

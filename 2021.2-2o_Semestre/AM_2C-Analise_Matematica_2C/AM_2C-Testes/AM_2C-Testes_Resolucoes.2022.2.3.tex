@@ -1,0 +1,579 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes.2022.2.3.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes.2022.2.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\date{11/01/2023}
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/AM_2C-Testes_Resolucoes.2022.2.3/}}}
+
+\mymakesubfile{1}
+[AM\,2C]
+{Exame 3: Resolução} % Subfile Title
+{Exame 3: Resolução} % Part Title
+
+\group{}
+
+\begin{questionBox}1{ % 1 Q1
+    Parabola\to Vertice, foco e diretriz
+} % 1 Q1
+    \begin{BM}
+        x = 2-y-y^2/4
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            x
+            = \frac{(y-y')^2}{4\,a}+x'
+            % &\\[3ex]&
+            \begin{cases}
+                a 
+                = (4*(-1/4))^{-1}
+                = -1
+                \\
+                y' 
+                = -(-1)*2*(-1)
+                = -2
+                \\
+                x'
+                = 2 - \frac{(-2)^2}{4*(-1)}
+                = 3
+            \end{cases}
+            &\\&
+            \therefore
+            x 
+            = \frac{(y+2)^2}{-4}+3
+            \begin{cases}
+                X' = (3,-2)
+                \\
+                F = (x'+a,y') = (3-1,-2) = (2,-2)
+                \\
+                L \subset\mathbb{R}^2: 
+                x
+                =x'-a
+                =3+1 = 4
+            \end{cases}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q2
+    Seja \(f:\mathbb{R}^2\to\mathbb{R}\) uma norma.
+} % 1 Q2
+    b) \(f(\lambda\,x) = \lambda\,f(x)\)
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q3
+    Considere o sistema de equações
+} % 1 Q3
+    \begin{BM}
+        \begin{cases}
+            \log(x\,u^2)-y+2\,v=0
+            \\
+            x\,e^v - y\,v^2 + u = 0
+        \end{cases}
+    \end{BM}
+    
+    Define u e v como funções de x e y na viz de \(P_0=(x_0,y_0,u_0,v_0)=(1,0,-1,0)\)
+
+    \begin{flalign*}
+        &
+            \frac{\pdv{f_1}{x}}{\pdv{f_1}{u}}
+            = \frac{
+                \frac{(u^2)}{x\,u^2}\log(e)
+            }{
+                \frac{x\,2\,u}{x\,u^2}\log(e)
+            }
+            = \frac{
+                \log(e)
+            }{
+                -2\log(e)
+            }
+            =-1/2
+            &\\&
+            \frac{\pdv{f_1}{x}}{\pdv{f_1}{v}}
+            = \frac{
+                \frac{(u^2)}{x\,u^2}\log(e)
+            }{
+                2
+            }
+            = \frac{
+                \log(e)
+            }{
+                2
+            }
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &  
+            \pdv{f_1}{x}(P_0)
+            = \frac{
+                \left(
+                    u^2
+                    + x\,2\,u\,\pdv{u}{x}
+                \right)
+            }{x\,u^2}
+            \,\log(e)
+            + 2\,\pdv{v}{x}
+            = \frac{u_0^2\,\log(e)}{x_0\,u_0^2}
+            + \frac{x_0\,2\,u_0\,\pdv{u}{x}\,\log(e)}{x_0\,u_0^2}
+            + 2\,\pdv{v}{x}
+            = &\\& 
+            = \frac{\log(e)}{1}
+            + \frac{2\,\pdv{u}{x}\,\log(e)}{(-1)}
+            + 2\,\pdv{v}{x} 
+            = \log(e)
+            - 2\,\pdv{u}{x}\,\log(e)
+            + 2\,\pdv{v}{x} 
+            = 0
+            &\\[3ex]&
+            \pdv{f_2}{x}(P_0)
+            = e^{v_0}+x_0\,e^{v_0}\,\pdv{v}{x}
+            -y_0\,2\,v_0\,\pdv{v}{x}
+            +\pdv{u}{x}
+            = 
+            1+\pdv{v}{x}+\pdv{u}{x}
+            =0
+            \implies &\\[3ex]&
+            \implies
+            \pdv{u}{x}
+            = \pdv{v}{x}\log(e)^{-1}+1/2
+            = \left(
+                -\pdv{u}{x}-1
+            \right)\log(e)^{-1}+1/2
+            = &\\&
+            =
+            -\pdv{u}{x}\log(e)^{-1}
+            -\log(e)^{-1}
+            1/2
+            \implies
+            \pdv{u}{x}
+            =
+            % 
+            \pdv{u}{x}
+            =
+            \frac{
+                -\log(e)^{-1}
+                1/2
+            }{
+                \log(e)^{-1}+1
+            }
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q4
+    Seja \(g(s,t)=f(u,v)\) em q f é dif e \(u=s^2-t^2,v=t^2-s^2\). Sabendo q g satisfaz a eq
+} % 1 Q4
+    \begin{BM}
+        (t+2)\pdv{g}{s}
+        +(s+2)\pdv{g}{t}
+        =h(s,t)\left(
+            \pdv{f}{u}
+            -\pdv{f}{v}
+        \right)
+    \end{BM}
+
+    % \begin{flalign*}
+    %     &
+    %     (t+2)\pdv{g}{s}
+    %     +(s+2)\pdv{g}{t}
+    %     = (t+2)\frac{\pdf{f}{s}}{\pdv{f}{g}}
+    %     + (s+2)\pdv{g}{t}
+    %     = 
+    %     h(s,t)\left(
+    %         \pdv{f}{u}
+    %         -\pdv{f}{v}
+    %     \right)
+    %     &
+    % \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q5
+    Considere o conjunto
+} % 1 Q5
+    \begin{BM}
+        A = \left\{
+            (x,y)\in\mathbb{R}^2:
+            y\geq x 
+            \land
+            x\geq y^2
+        \right\}
+    \end{BM}
+
+    Seja \textit{L} a fronteira de A percorrida no sentido +. O integral de linha
+
+    \begin{BM}
+        \int_L{
+            (x^3-2\,y)
+            \odif{x}
+            +(2\,x-y^3)
+            \odif{y}
+        }
+    \end{BM}
+
+    Pode ser calc usando coord polares
+
+    \begin{flalign*}
+        &
+            \begin{cases}
+                P_1 = (0,0)
+                \\
+                P_2:y=x=y^2\implies P_2 = (1,1)
+            \end{cases}
+            &\\&
+            \begin{cases}
+                P_1 = (0,0)
+                \\
+                P_2 
+                = (\sqrt{1+1},\arccos(1/\sqrt{2}))
+                = (\sqrt{2},\pi/4)
+            \end{cases}
+            &\\[3ex]&
+            % --------------------------------- Jacobiana -------------------------------- %
+            \det\Jacobian
+            = \rho
+            &\\[3ex]&
+            x=y^2
+            \implies 
+            \rho\cos\theta = \rho^2\sin^2\theta
+            \implies 
+            \rho
+            =\frac{\cos\theta}{\sin^2{\theta}}
+            &\\[3ex]&
+            \therefore
+            \int_L{
+                (x^3-2\,y)
+                \odif{x}
+                +(2\,x-y^3)
+                \odif{y}
+            }
+            = \iint_A{
+                4 \odif{x,y}
+            }
+            = \int_{\pi/4}^{\pi/2}{
+                \int_{0}^{\frac{\cot(\theta)}{\sin^{\theta}}}{
+                    4\rho
+                    \odif{\rho}
+                }\odif{\theta}
+            }
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q6
+    plano tg ao cone elip \(x^2+4\,y^2=z^2\) no p (3,2,5)
+} % 1 Q6
+    \begin{flalign*}
+        &   
+            (x)(2\,x')
+            + (y)(8\,y')
+            - (z)(2\,z')
+            = &\\&
+            =
+            2\,x'\,x
+            + 8\,y'\,y
+            - 2\,z'\,z
+            -2\,x'^2
+            -8\,y'^2
+            +2\,z'^2
+            = &\\&
+            = 6\,x
+            + 16\,y
+            - 10\,z
+            = &\\&
+            = 6\,x
+            + 16\,y
+            - 10\,z
+            =0
+            \implies &\\&
+            \implies
+            3\,x
+            + 8\,y
+            - 5\,z
+            =0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % 1 Q7
+    O integral repetido
+} % 1 Q7
+    \begin{BM}
+        \int_{-2}^{0}{
+            \int_{x}^{0}{
+                x^2\,\odif{x}
+            }
+        }
+        + \int_{0}^{2}{
+            \int_{0}^{x}{
+                x^2\,\odif{x}
+            }
+        }
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \int_{-2}^{0}{
+                \int_{-2}^{y}{
+                    x^2\odif{x}
+                }\odif{y}
+            }
+            +\int_{0}^{2}{
+                \int_{y}^{2}{
+                    x^2\odif{x}
+                }\odif{y}
+            }
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{ % 2 Q1
+    Considere a função real g, continua de 2 var
+} % 2 Q1
+    \begin{BM}
+        g(x,y)
+        =\begin{cases}
+            \frac{x^4+y^4}{x^2+y^2} 
+            \quad &:(x,y)\neq(0,0)
+            \\
+            0
+            \quad &:(x,y)=(0,0)
+        \end{cases}
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q1.1
+    Determine \(\pdv{g}{x}(x,y),\forall\,(x,y)\in\mathbb{R}^2\)
+} % 2 Q1.1
+    \begin{flalign*}
+        &
+            \pdv{g}{x}(x,y)
+            = \frac{
+                4\,x^3(x^2+y^2)
+                - 2\,x(x^4+y^4)
+            }{
+                (x^2+y^2)^2
+            }
+            &\\&
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q1.2
+    Estude a continuidade de \(\pdv{g}{x}(x,y)\) em (0,0)
+} % 2 Q1.2
+    \begin{flalign*}
+        &
+            \forall\,\delta>0\,
+            \exists\,\varepsilon>0:
+            \left(
+                \left(
+                    \forall (x,y)\neq(0,0)
+                    \land
+                    \myVert{\sqrt{x^2+y^2}}<\varepsilon
+                \right)
+                \implies
+                \myvert{
+                    g(x,y)-0
+                }<\delta
+            \right)
+            \implies &\\&
+            \implies
+            \myvert{
+                \frac{
+                    x^4+y^4
+                }{
+                    x^2+y^2
+                }
+            }
+            \leq \frac{
+                x^4
+                +2\,x^2\,y^2
+                +y^4
+            }{
+                x^2+y^2
+            }
+            = \frac{
+                (x^2+y^2)^2
+            }{
+                x^2+y^2
+            }
+            = x^2+y^2
+            \leq \varepsilon^2
+            =\delta
+            &\\&
+            \therefore
+            \varepsilon=\sqrt{\delta}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q1.3
+    Estude a dif de g em (0,0)
+} % 2 Q1.3
+    \begin{flalign*}
+        &
+            \pdv{g}{x}(0,0)
+            = \lim_{h\to0}{
+                \frac{g(h,0)-g(0,0)}{h}
+            }
+            = \lim_{h\to0}{
+                \frac{g(h,0)-g(0,0)}{h}
+            }
+            = &\\&
+            = \lim_{h\to0}{
+                \frac{
+                    h^2
+                }{h}
+            }
+            = \lim_{h\to0}{
+                h
+            }
+            =0
+            =\pdv{g}{y}(0,0)
+            &\\[3ex]&
+            g(a,b)-g(0,0)
+            = \frac{a^4+b^4}{a^2+b^2}-0
+            = &\\&
+            = \pdv{g}{x}(0,0)\,a
+            + \pdv{g}{y}(0,0)\,b
+            + \varepsilon(a,b)\,\sqrt{a^2+b^2}
+            = \varepsilon(a,b)\,\sqrt{a^2+b^2}
+            \implies &\\&
+            \implies
+            \varepsilon(a,b)
+            = \frac{a^4+b^4}{(a^2+b^2)^2}
+            = \frac{a^4+b^4}{a^4+2\,a^2\,b^2+b^4}
+            \implies &\\&
+            \implies
+            \lim_{a\to0^+}{\varepsilon(a,a)}
+            = \lim_{a\to0^+}{
+                \frac{a^4+a^4}{(a^2+a^2)^2}
+            }
+            = \lim_{a\to0^+}{
+                \frac{2\,a^4}{4\,a^4}
+            }
+            =1/2\neq0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % 2 Q2
+    Considere a função \(f:\mathbb{R}^2\to\mathbb{R}\) definida por
+} % 2 Q2
+    \begin{BM}
+        f(x,y)=2\,x^3+x\,y^2+2\,x\,y
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q2.1
+    Determine os extremos locais de f
+} % 2 Q2.1
+    \begin{flalign*}
+        &
+            \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        & \pdv{f}{x} = 6\,x+y^2+2\,y=0
+                        \\
+                        & \pdv{f}{y} = 2\,x\,y+2\,x=0
+                    \end{aligned}
+                \right)
+            \right\}
+            = &\\&
+            = \left\{
+                (x,y)\in\mathbb{R}^2:
+                \left(
+                    \begin{aligned}
+                        & x = -\frac{y(y+2)}{6}
+                        % & y(y+2)/-6=x
+                        \\
+                        & 2\,x\,(y+1)=0
+                        \\
+                        & y(y+2)(y+1)=0
+                    \end{aligned}
+                \right)
+            \right\}
+            = &\\&
+            = \left\{
+                (0,0),
+                (1/6,-1),
+                (0,-2)
+            \right\}
+            &\\[3ex]&
+            \det\Hessiana(f(x,y))
+            = \begin{vmatrix}
+                \pdv[order=2]{f}{x}
+                & \pdv{f}{x,y}
+                \\
+                \pdv[order=2]{f}{y}
+                & \pdv{f}{y,x}
+            \end{vmatrix}
+            = \begin{vmatrix}
+                6
+                & 2\,y+2
+                \\
+                2\,x
+                & 2\,y+2
+            \end{vmatrix}
+            = (12- 4\,x)(y+1)
+            &\\[3ex]&
+            \begin{cases}
+                \det\Hessiana(f(0,0)) = 12 \land \pdv[order=2]{f}{x} = 6 & \therefore \text{ minimo local}
+                \\
+                \det\Hessiana(f(1/6,-1)) = 0 & \therefore \text{ indeterminado}
+                \\
+                \det\Hessiana(f(0,-2)) = -12 & \therefore \text{ ponto de cela}
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % 2 Q2.2
+    Extremos locais restrita a
+} % 2 Q2.2
+    \begin{BM}
+        \left\{
+            (x,y)\in\mathbb{R}^2:
+            x-y=1
+        \right\}
+    \end{BM}
+
+    e com x,y verificando \(\myvert{x},\myvert{y}<4\)
+
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{ % 3 Q1
+    Calcule o integral de linha
+} % 2 Q2.3
+    \begin{BM}
+        \int_L{
+            2\,y\,e^{z^2}\odif{x}
+            +(x^2+y-z)\odif{y}
+            +(y+z)\odif{z}
+        }
+    \end{BM}
+\end{questionBox}
+
+\begin{minipage}{\textwidth}
+    \ \vspace{10cm}
+\end{minipage}
+
+\end{document}

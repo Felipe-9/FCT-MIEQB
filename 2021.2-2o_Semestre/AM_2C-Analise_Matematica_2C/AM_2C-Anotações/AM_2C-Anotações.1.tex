@@ -1,0 +1,2062 @@
+% !TEX root = ./AM_2C-Anotações.1.tex
+\providecommand\mainfilename{"./AM_2C-Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Anotações.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Anotações.1}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Anotações.1/graphics/}
+
+\mymakesubfile{1}
+[AM\,2C]
+{Anotações 0: Cónicas} % Subfile Title
+{Cónicas} % Part Title
+
+\begin{sectionBox}1{Cônicas}
+    
+    \subsection*{Definições}
+    \begin{sectionBox}*2{Intersecção de um plano com um cone}
+        
+        % \tikzset{external/remake next=true}
+        \begin{center}
+            \pgfplotsset{
+                height=0.45\pageheight,
+                width =0.6\textwidth
+            }
+
+            \begin{tikzpicture}
+
+            % % Axes 3D
+            % \draw[-stealth] (-0.5,0,0) -- (1,0,0) node[pos=1.1]{\(x\)};
+            % \draw[-stealth] (0,-0.5,0) -- (0,1,0) node[pos=1.1]{\(y\)};
+            % \draw[-stealth] (0,0,-0.5) -- (0,0,1) node[pos=1.1]{\(z\)};
+
+                \begin{axis}
+                    [
+                        % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                        % xmajorgrids = true,
+                        % legend pos  = north west,
+                        % 3d view,
+                        % perspective,
+                        view = {-10}{15}, % rot/elevation
+                        % axis lines=center, % 2D middle/box/left/right
+                        axis lines=center, % 3D center/box/left/right
+                        axis on top,
+                        ticks = {none},
+                        % z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+                    ]
+                    % Legends
+                    % \addlegendimage{empty legend}
+                    % \addlegendentry[Red]{\( x \)}
+                    
+
+                    % Conical surface
+                    \addplot3 [
+                        % Aparence
+                        surf,
+                        opacity=0.3,
+                        shader=interp,
+                        thick,
+                        % Scope
+                        data cs = cart, % cart/polar/polarrad
+                        samples = \mysampledensitySimple,
+                        % Variable
+                        % variable = z,
+                        domain   = -1:1,
+                        domain y = -1:1,
+                    ]
+                    {sqrt(x^2+y^2)};
+                    \addplot3 [
+                        % Aparence
+                        surf,
+                        opacity=0.3,
+                        shader=interp,
+                        thick,
+                        % Scope
+                        data cs = cart, % cart/polar/polarrad
+                        samples = \mysampledensitySimple,
+                        % variable = z,
+                        domain   = -1:1, % variable
+                        domain y = -1:1, % y
+                    ]
+                    {-sqrt(x^2+y^2)};
+                    
+                    % plano do Ponto
+                    \addplot3 [
+                        % Aparence
+                        surf,
+                        opacity=0.3,
+                        shader=interp,
+                        thick,
+                        colormap = {cool}{
+                            color=(red!20!White);
+                            color=(red!40!White);
+                            color=(red!90!White)
+                        },
+                        % Scope
+                        data cs = cart, % cart/polar/polarrad
+                        samples = 2,
+                        % variable = z,
+                        domain   = -1:1, % variable
+                        domain y = -1:1, % y
+                    ]{
+                        0
+                    };
+                    
+                    % ponto
+                    \addplot3[mark=*,red] coordinates { (0,0,0) };
+
+                    % Reta
+                    \addplot3 [
+                        % Aparence
+                        surf,
+                        opacity=0.3,
+                        shader=interp,
+                        thick,
+                        colormap = {cool}{
+                            color=(green!20!White);
+                            color=(green!40!White);
+                            color=(green!90!White)
+                        },
+                        % Scope
+                        data cs = cart, % cart/polar/polarrad
+                        samples = 2,
+                        % variable = z,
+                        domain   = -1:1, % variable
+                        domain y = -1:1, % y
+                    ]{
+                        x
+                    };
+                    \addplot3 [
+                        % Aparence
+                        surf,
+                        % opacity=0.9,
+                        % shader=interp,
+                        thick,
+                        % green,
+                        colormap = {cool}{
+                            % color(0cm)=(green!20!White);
+                            % color(1cm)=(green!40!White);
+                            color=(green!90!White);
+                            color=(green!90!White)
+                        },
+                        % Scope
+                        data cs = cart, % cart/polar/polarrad
+                        samples = 2,
+                        variable = t,
+                        domain   = -1:1, % variable
+                        domain y = -1:1, % y
+                    ](
+                        t,0,t
+                    );
+
+                    % % Modulo
+                    % \addplot3 [
+                    %     % Aparence
+                    %     surf,
+                    %     opacity=0.3,
+                    %     shader=interp,
+                    %     thick,
+                    %     % green,
+                    %     colormap = {cool}{
+                    %         color(0cm)=(blue!20!White);
+                    %         color(1cm)=(blue!40!White);
+                    %         color(2cm)=(blue!90!White)
+                    %     },
+                    %     % Scope
+                    %     data cs = cart, % cart/polar/polarrad
+                    %     samples = \mysampledensitySimple,
+                    %     % variable = t,
+                    %     domain   = -1:1, % variable
+                    %     domain y = -1:1, % y
+                    % ]{
+                    %     x
+                    % };
+
+                \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Focos e Diretrizes}
+        
+        \begin{BM}
+            \mathcal{C}on_m\subset\mathbb{R}^m
+            :\lvert \vv{P\,F} \rvert
+            = e \lvert \vv{P\,D} \rvert
+            \\[2ex]
+            \left(
+                \begin{aligned}
+                    &
+                        P\in\mathcal{C}on_m
+                    \ldiv{}
+                        F\in\mathbb{R}^m
+                    \ldiv{}
+                        D\subset\mathbb{R}^m
+                    \ldiv{}
+                        e\in\mathbb{R}
+                    &
+                \end{aligned}
+            \right)
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Ecentricidade}
+    
+    Podemos classificar as conicas em grupos distintos pela ecentricidade
+    \begin{BM}
+        \begin{aligned}
+            e=0   \quad&\implies\quad \text{Circunferencia}
+         \\ 0<e<1 \quad&\implies\quad \text{Elipse}
+         \\ e=1   \quad&\implies\quad \text{Parabola}
+         \\ e>1   \quad&\implies\quad \text{Hipérbole}
+         \\ \lim(e)=\infty\quad&\implies\quad \text{Reta}
+        \end{aligned}
+    \end{BM}
+
+    % \tikzset{external/remake next=true}
+    \begin{center}
+        \pgfplotsset{
+            height=10cm, 
+            width =10cm}
+        \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    % axis lines=center, % 3D center/box/left/right
+                    hide axis
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+
+                % Circunferencia
+                \addplot[
+                    smooth,
+                    thick,
+                    red\Light,
+                    domain  = -1:1,
+                    samples = 0.4*\mysampledensityFancy,
+                ]{  sqrt(1-x^2) };
+                \addplot[
+                    smooth,
+                    thick,
+                    red\Light,
+                    domain  = -1:1,
+                    samples = 0.4*\mysampledensityFancy,
+                ]{  -sqrt(1-x^2) };
+                
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+    Para encontrar a eccentricidade de uma conica podemos usar imágens simétricas de mesma eccentricidade para que esta seja nula
+    \begin{BM}
+          {\lvert \vv{P\,F_1} \rvert} \Big/ {\lvert \vv{P\,D_1} \rvert}
+        = {\lvert \vv{P\,F_2} \rvert} \Big/ {\lvert \vv{P\,D_2} \rvert}
+    \end{BM}
+
+    \paragraph{Notas:}
+    \begin{itemize}
+        \item Em parabolas temos \(e=1\) desnessitando tal ferramenta
+        \item Em elipses a imagem da original é sobreposta com sua simétrica
+    \end{itemize}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Degeneração}
+    
+    Quando o plano que intersecta a superfície cônica contem o vértice da superfície cônica está é considerada degenerada
+
+    \begin{multicols}{2}
+        
+        \begin{sectionBox}*2{Degeneradas}
+            \begin{itemize}
+                \item Ponto
+                \item Reta
+                \item Módulo
+            \end{itemize}
+
+            \begin{center}
+                \pgfplotsset{height=0.3\pageheight}
+
+                \begin{tikzpicture}
+
+                % % Axes 3D
+                % \draw[-stealth] (-0.5,0,0) -- (1,0,0) node[pos=1.1]{\(x\)};
+                % \draw[-stealth] (0,-0.5,0) -- (0,1,0) node[pos=1.1]{\(y\)};
+                % \draw[-stealth] (0,0,-0.5) -- (0,0,1) node[pos=1.1]{\(z\)};
+
+                    \begin{axis}
+                        [
+                            % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                            % xmajorgrids = true,
+                            % legend pos  = north west,
+                            % 3d view,
+                            % perspective,
+                            view = {-10}{15}, % rot/elevation
+                            % axis lines=center, % 2D middle/box/left/right
+                            axis lines=center, % 3D center/box/left/right
+                            axis on top,
+                            ticks = {none},
+                            % z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+                        ]
+                        % Legends
+                        % \addlegendimage{empty legend}
+                        % \addlegendentry[Red]{\( x \)}
+                        
+
+                        % Conical surface
+                        \addplot3 [
+                            % Aparence
+                            surf,
+                            opacity=0.3,
+                            shader=interp,
+                            thick,
+                            % Scope
+                            data cs = cart, % cart/polar/polarrad
+                            samples = \mysampledensitySimple,
+                            % Variable
+                            % variable = z,
+                            domain   = -1:1,
+                            domain y = -1:1,
+                        ]
+                        {sqrt(x^2+y^2)};
+                        \addplot3 [
+                            % Aparence
+                            surf,
+                            opacity=0.3,
+                            shader=interp,
+                            thick,
+                            % Scope
+                            data cs = cart, % cart/polar/polarrad
+                            samples = \mysampledensitySimple,
+                            % variable = z,
+                            domain   = -1:1, % variable
+                            domain y = -1:1, % y
+                        ]
+                        {-sqrt(x^2+y^2)};
+                        
+                        % plano do Ponto
+                        \addplot3 [
+                            % Aparence
+                            surf,
+                            opacity=0.3,
+                            shader=interp,
+                            thick,
+                            colormap = {cool}{
+                                color=(red!20!White);
+                                color=(red!40!White);
+                                color=(red!90!White)
+                            },
+                            % Scope
+                            data cs = cart, % cart/polar/polarrad
+                            samples = 2,
+                            % variable = z,
+                            domain   = -1:1, % variable
+                            domain y = -1:1, % y
+                        ]{
+                            0
+                        };
+                        
+                        % ponto
+                        \addplot3[mark=*,red] coordinates { (0,0,0) };
+
+                        % Reta
+                        \addplot3 [
+                            % Aparence
+                            surf,
+                            opacity=0.3,
+                            shader=interp,
+                            thick,
+                            colormap = {cool}{
+                                color=(green!20!White);
+                                color=(green!40!White);
+                                color=(green!90!White)
+                            },
+                            % Scope
+                            data cs = cart, % cart/polar/polarrad
+                            samples = 2,
+                            % variable = z,
+                            domain   = -1:1, % variable
+                            domain y = -1:1, % y
+                        ]{
+                            x
+                        };
+                        \addplot3 [
+                            % Aparence
+                            surf,
+                            % opacity=0.9,
+                            % shader=interp,
+                            thick,
+                            % green,
+                            colormap = {cool}{
+                                % color(0cm)=(green!20!White);
+                                % color(1cm)=(green!40!White);
+                                color=(green!90!White);
+                                color=(green!90!White)
+                            },
+                            % Scope
+                            data cs = cart, % cart/polar/polarrad
+                            samples = 2,
+                            variable = t,
+                            domain   = -1:1, % variable
+                            domain y = -1:1, % y
+                        ](
+                            t,0,t
+                        );
+
+                        % % Modulo
+                        % \addplot3 [
+                        %     % Aparence
+                        %     surf,
+                        %     opacity=0.3,
+                        %     shader=interp,
+                        %     thick,
+                        %     % green,
+                        %     colormap = {cool}{
+                        %         color(0cm)=(blue!20!White);
+                        %         color(1cm)=(blue!40!White);
+                        %         color(2cm)=(blue!90!White)
+                        %     },
+                        %     % Scope
+                        %     data cs = cart, % cart/polar/polarrad
+                        %     samples = \mysampledensitySimple,
+                        %     % variable = t,
+                        %     domain   = -1:1, % variable
+                        %     domain y = -1:1, % y
+                        % ]{
+                        %     x
+                        % };
+
+                    \end{axis}
+                \end{tikzpicture}
+            \end{center}
+        \end{sectionBox}
+
+        \begin{sectionBox}*2{Não Degeneradas}
+            \begin{itemize}
+                \item Parábolas
+                \item Elípses
+                \item Hipérboles
+            \end{itemize}
+        \end{sectionBox}
+
+    \end{multicols}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1m{Expressão geral}
+    
+    % A partir desta expressão se pode encontrar qualquer equação canônica, especificando para cada classe uma particularidade como \(z=0\) para equações bidimensionais
+
+    \begin{BM}
+        \mathcal{C}on_m\subset\mathbb{R}^n:
+        \left\{
+            \begin{aligned}
+            &
+                (\lambda^T + (p-p')^T\,A)(p-p')=k
+            &
+            \end{aligned}
+        \right\}
+        \\[2ex]
+        \left(
+            \begin{aligned}
+                &
+                    \{\lambda, p'\}\subset\mathbb{R}^n
+                \ldiv{}
+                    p\in\mathcal{C}_m
+                \ldiv{}
+                    A\in\mathcal{M}_{n\times n}
+                \ldiv{}
+                    k\in\mathbb{R}
+                &
+            \end{aligned}
+        \right)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \lvert \vv{P\,F} \rvert
+            =e\,\lvert \vv{P\,D} \rvert
+            \implies &\\&
+            \implies
+            \sqrt{(x-x')^2 + (y-(y'+c))^2}
+            = e\,\sqrt{(x-x')^2 + (y-(y'-e\,c))^2}
+            \dots
+        &
+    \end{flalign*}
+
+    \begin{sectionBox}*2{Forma canônica}
+        
+        \begin{BM}
+            \mathcal{C}on_m\subset\mathbb{R}^n:
+            \left\{
+                (\lambda^T + p^T\,A)p=k
+            \right\}
+            \\[2ex]
+            \left(
+                \begin{aligned}
+                &
+                    \{\lambda, p'\}\subset\mathbb{R}^n
+                \ldiv{}
+                    p\in\mathcal{C}on_m
+                \ldiv{}
+                    A\in\mathcal{M}_{n\times n}:
+                    \begin{cases}
+                        a_{i,j}=0\forall\,i\neq j
+                    \end{cases}
+                \ldiv{}
+                    k\in\mathbb{R}
+                &
+                \end{aligned}
+            \right)
+        \end{BM}
+
+        \paragraph{Despresa:}
+        \begin{itemize}
+            \item Ponto central (\(p'\))
+            \item Rotações (apenas matrizes \textit{A} diagonais)
+        \end{itemize}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{para \(\mathbb{R}^2\) e \(p'=0_2\)}
+        \begin{BM}[flalign*]
+        &
+            \left(
+                \begin{bmatrix}
+                    d\\e
+                \end{bmatrix}^T
+            +   \begin{bmatrix}
+                    x\\y
+                \end{bmatrix}
+                \begin{bmatrix}
+                    a   & c/2
+                \\  c/2 & b
+                \end{bmatrix}
+            \right)
+            \begin{bmatrix}
+                x\\y
+            \end{bmatrix}
+        =   -f
+        \implies &\\&
+        \implies
+            a\,x^2+b\,y^2+c\,x\,y+d\,x+e\,y+f=0
+        &
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Para \(\mathbb{R}^3\) e \(p'=0_3\)}
+        \begin{BM}[flalign*]
+        &
+            \left(
+                \begin{bmatrix}
+                    g\\h\\i
+                \end{bmatrix}^T
+            +   \begin{bmatrix}
+                    x\\y\\z
+                \end{bmatrix}^T
+            \,  \begin{bmatrix}
+                    a   & d/2 & e/2
+                \\  d/2 & b   & f/2
+                \\  e/2 & f/2 & c
+                \end{bmatrix}
+            \right)
+        \,  \begin{bmatrix}
+                x\\y\\z
+            \end{bmatrix}
+        =   -j
+        \implies &\\&
+        \implies
+            a\,x^2
+        +   b\,y^2
+        +   c\,z^2
+        +   d\,x\,y
+        +   e\,x\,z
+        +   f\,y\,z
+        + &\\&
+        +   g\,x
+        +   h\,y
+        +   i\,z
+        +   j
+        =   0
+        &
+        \end{BM}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1m{Espaço}
+    
+    \subsection*{Equação vetorial}
+    \begin{BM}
+        E_m\subset\mathbb{R}^n:
+        \left\{
+            P = A + \sum_{i=1}^{m}\lambda_i\,U_i
+        \right\}
+        \\[2ex]
+        \left(
+            \begin{array}{lll}
+            &
+                \{P,A\}\subset E
+            &\land\\\land&
+                \{i,n,m\}\subset\mathbb{N}
+            &\land\\\land&
+                m\leq n
+            &
+            \end{array}
+        \right)
+    \end{BM}
+    
+    \begin{sectionBox}*2{Equações paramétricas}
+        \begin{BM}
+            P_i = A_i + \sum_{j=1}^{m}\lambda_{j,i}\,U_{j,i}
+        \end{BM}
+    \end{sectionBox}
+
+    \paragraph{Exemplos}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(m=0\implies\) ponto
+            \item \(m=1\implies\) reta
+            \item \(m=2\implies\) plano
+        \end{multicols}
+    \end{itemize}
+
+\end{sectionBox}
+
+\begin{sectionBox}1m{Reta}
+
+    \subsection*{Equação vetorial}
+    \begin{BM}
+        r\subset\mathbb{R}^n:
+        \left\{
+            P=A+\lambda\,U
+        \right\}
+        \\[2ex]
+        \left(
+            \begin{aligned}
+                &  
+                    \{P,A\}\in r
+                \ldiv{}
+                    U\in\mathbb{R}^n\backslash\{0_{\mathbb{R}^n}\}
+                \ldiv{}
+                    \lambda\in\mathbb{R}
+                &
+            \end{aligned}
+        \right)
+    \end{BM}
+    
+    \subsubsection*{Definem uma reta:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item 2 Pontos
+            \item 1 Ponto e 1 vetor
+        \end{multicols}
+    \end{itemize}
+
+    \paragraph{Vetor diretor:} Vetor não nulo paralelo a reta
+
+    \subsection*{Equações cartezianas}
+
+    \begin{sectionBox}3{Equações paramétricas}
+        \begin{BM}
+            P_i = A_i + \lambda\,U_i \quad\forall\,i\leq n
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}3{Equações normais}
+        \begin{BM}[flalign*]
+        &
+            \left\{
+                \begin{aligned}
+                &
+                    P_i = A_i + \lambda\,U_i
+                \ldiv{}
+                    P_j = A_j + \lambda\,U_j
+                &
+                \end{aligned}
+            \right\}
+            % \implies &\\&
+            \implies
+                \lambda 
+            =   \frac{P_i - A_i}{U_i}
+            =   \frac{P_j - A_j}{U_j}
+            &\\&
+            \left(
+                \begin{aligned}
+                &
+                    \{i,j\}\leq n
+                \ldiv{}
+                    \{U_i,U_j\}\neq 0
+                &
+                \end{aligned}
+            \right)
+        &
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}3{Equações reduzidas}
+        \begin{BM}
+            r\subset\mathbb{R}^n:
+            \left\{
+                P_i = A'_i + P_j\,U'_i
+            \right\}
+            \\[2ex]
+            \left(
+                \begin{aligned}
+                &
+                    \{i,j\}\in\mathbb{N}
+                \ldiv{}
+                    \{i,j\}\leq n
+                \ldiv{}
+                    i\neq j
+                \ldiv{}
+                    U'_i = U_i/U_j
+                \ldiv{}
+                    A'_i = A_i - A_j\,U'_i
+                \ldiv{}
+                    U_j\neq 0
+                &
+                \end{aligned}
+            \right)
+        \end{BM}
+
+        \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                &
+                    P_i = A_i + \lambda\,U_i
+                \ldiv{}
+                    \lambda = (P_j-A_j)/U_j : U_j\neq 0
+                &
+                \end{aligned}
+            \right\}
+        \implies &\\&
+        \implies
+            P_i 
+        =   A_i + U_i\,(P_j-A_j)/U_j
+        = &\\&
+        =   A'_i + U'_i\,P_j
+        :   \left\{
+                \begin{aligned}
+                &
+                    U'_i = U_i/U_j
+                \ldiv{}
+                    A'_i = A_i - A_j\,U'_i
+                \ldiv{}
+                    U_j\neq 0
+                &
+                \end{aligned}
+            \right\}
+        &
+        \end{flalign*}
+
+        Reduzida pois possui uma equação a menos comparando com as equações cartezianas
+
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Plano}
+
+    \subsection*{Equação vetorial}
+    \begin{BM}
+        \pi\in\mathbb{R}^n:
+        \left\{
+            P = A + \sum_{j=1}^{2}\lambda_j\,U_j
+        \right\}
+        \\[2ex]
+        \left(
+            \begin{aligned}
+            &
+                \{P,A\}\in\pi
+            \ldiv{}
+                \{n,j\}\in\mathbb{N}
+            \ldiv{}
+                n\geq2
+            \ldiv{}
+                \lambda\in\mathbb{R}^2
+            \ldiv{}
+                U_j\in\mathbb{R}^n\,\forall\,j
+            &
+            \end{aligned}
+        \right)
+    \end{BM}
+    
+    \paragraph{Definem um plano:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item 3 Pontos
+            \item 1 Ponto e 2 vetores não paralelos
+            \item 1 Ponto e 1 Vetor
+        \end{multicols}
+    \end{itemize}
+
+    \paragraph{Vetores diretores:} Vetores não nulos e não colineares paralelos ao plano.
+    
+    \subsection*{Equações cartesianas}
+
+    \begin{multicols}{2}
+
+        \begin{sectionBox}3{Equações paramétricas}
+            \begin{BM}
+                P_i = A_i + \sum_{j=1}^{2}\lambda_{j,i}\,U_{j,i}
+            \end{BM}
+        \end{sectionBox}
+
+        \begin{sectionBox}3{Equação geral}
+            \begin{BM}
+                A + \sum_{i=1}^{n}\lambda_i\,P_i = 0
+            \end{BM}
+        \end{sectionBox}
+
+    \end{multicols}
+
+\end{sectionBox}
+
+
+
+\begin{sectionBox}1m{Parabolas e Paraboloides}
+    
+    \begin{multicols}{2}\centering
+
+        \pgfplotsset{
+            height = 0.3\pageheight,
+            width  = 0.6\textwidth, 
+            % title style = {at={(0.5,0)}, anchor={north}},
+        }
+
+        % \begin{figure}[h]
+            % \centering
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                    % xmajorgrids = true,
+                    % legend pos  = north west,
+                    % 3d view,
+                    % perspective,
+                    % view = {10}{10}, % rot/elevation
+                    hide axis,
+                    % title = {Paraboloide},
+                    z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+                
+                % Conical surface
+                \addplot3 [
+                    % Aparence
+                    surf,
+                    opacity=0.5,
+                    fill opacity= 1,
+                    faceted color = White,
+                    shader=faceted interp,
+                    % thick,
+                    % Scope
+                    data cs = cart, % cart/polar/polarrad
+                    samples = \mysampledensitySimple,
+                    % Variable
+                    % variable = z,
+                    domain   = -1:1,
+                    domain y = -1:1,
+                ]{
+                    x^2+y^2
+                };
+            
+                \end{axis}
+            \end{tikzpicture}
+            Elíptico
+            % \caption{Elíptico}
+        % \end{figure}
+
+        % \begin{figure}
+            % \centering
+            
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                    % xmajorgrids = true,
+                    % legend pos  = north west,
+                    % 3d view,
+                    % perspective,
+                    % view = {10}{10}, % rot/elevation
+                    hide axis,
+                    % title = {Paraboloide Hiperbólico},
+                    z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+                
+                % Conical surface
+                \addplot3 [
+                    % Aparence
+                    surf,
+                    opacity=0.5,
+                    fill opacity= 1,
+                    faceted color = White,
+                    shader=faceted interp,
+                    % thick,
+                    % Scope
+                    data cs = cart, % cart/polar/polarrad
+                    samples = \mysampledensitySimple,
+                    % Variable
+                    % variable = z,
+                    domain   = -1:1,
+                    domain y = -1:1,
+                ]{
+                    x^2-y^2
+                };
+            
+                \end{axis}
+            \end{tikzpicture}
+            Hiperbólico
+        %     \caption{Hiperbólico}
+        % \end{figure}
+    \end{multicols}
+
+    \section*{Definição}
+    \begin{BM}
+        \mathcal{P}ar_m\subset\mathcal{C}on_m
+        : e = 1
+    \end{BM}
+    % \begin{BM}
+    %     \mathcal{P}ar_m\subset\mathcal{C}on_m:
+    %     \lvert\vv{p\,f}\rvert
+    %     = \lvert\vv{p\,L}\rvert
+    %     \\[2ex]
+    %     \left(
+    %         \begin{aligned}
+    %         &
+    %             p\in \mathcal{P}ar
+    %         \ldiv{}
+    %             f\in\mathbb{R}^m
+    %         \ldiv{}
+    %             L \subset \mathbb{R}^m
+    %         \ldiv{}
+    %             L \in E_{m-1}
+    %         \ldiv{}
+    %             \{m\}\in\mathbb{N}
+    %         \ldiv{}
+    %             2 \leq m
+    %         &
+    %         \end{aligned}
+    %     \right)
+    % \end{BM}
+
+    Um conjunto que consiste em todos os pontos em um plano equidistantes de um determinado ponto fixo e uma determinada linha fixa no plano é uma parábola. O ponto fixo é o foco da parábola. A linha fixa é a diretriz.
+
+    % \begin{BM}
+    %     P\subset\mathbb{R}^n
+    %     \left\{
+    %         \begin{aligned}
+    %         &   
+    %             \left\{
+    %                 \begin{aligned}
+    %                 &
+    %                     |\vv{p\,f}|=|\vv{p\,L}|
+    %                 \land\\\land&
+    %                     p\in P
+    %                 \land\\\land&
+    %                     f\in\mathbb{R}^n
+    %                 \land\\\land&
+    %                     L\subset\mathbb{R}^n:L \text{ é um espaço em R}
+    %                 \end{aligned}
+    %             \right\}
+    %         \lor\\\lor&
+    %             \left\{
+    %                 \begin{aligned}
+    %                 &   p_n - p'_n=\sum_{i=1}^{n-1}\left(\frac{p_i-p'_i}{\lambda_i}\right)^2
+    %                 \land\\\land&
+    %                     \{p',\lambda\}\subset\mathbb{R}^n
+    %                 \land\\\land&
+    %                     p\in P
+    %                 \end{aligned}
+    %             \right\}
+    %         \end{aligned}
+    %     \right\}
+    % \end{BM}
+
+    % \begin{sectionBox}*2{Paraboloide Hiperbólico}
+        
+    %     \begin{BM}[flalign*]
+    %     &
+    %         \mathcal{P}ar_\mathcal{H}\subset\mathbb{R}^3:
+    %     &\\&
+    %         \left\{
+    %             \begin{aligned}
+    %             &
+    %                 (p-p')^T + A(p-p') = 0
+    %             \ldiv{}
+    %                 A \in\mathcal{M}_{n\times n}:
+    %                 \begin{cases}
+    %                     a_{i,j}=\lambda'_i/\lambda_i\,&\forall\, i =j
+    %                 \\  a_{i,j}=0\,&\forall\, i\neq j
+    %                 \end{cases}
+    %             &
+    %             \end{aligned}
+    %         \right\}
+    %     &
+    %     \end{BM}
+
+    %     \begin{center}
+    %         \pgfplotsset{height=0.3\pageheight}
+                
+    %             \begin{tikzpicture}\begin{axis}
+    %             [
+    %                 % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+    %                 % xmajorgrids = true,
+    %                 % legend pos  = north west,
+    %                 % 3d view,
+    %                 % perspective,
+    %                 % view = {10}{10}, % rot/elevation
+    %                 hide axis,
+    %             ]
+    %                 % Legends
+    %                 % \addlegendimage{empty legend}
+    %                 % \addlegendentry[Red]{\( x \)}
+                    
+    %                 % Conical surface
+    %                 \addplot3 [
+    %                     % Aparence
+    %                     surf,
+    %                     opacity=0.5,
+    %                     fill opacity= 1,
+    %                     faceted color = White,
+    %                     shader=faceted interp,
+    %                     % thick,
+    %                     % Scope
+    %                     data cs = cart, % cart/polar/polarrad
+    %                     samples = \mysampledensitySimple,
+    %                     % Variable
+    %                     % variable = z,
+    %                     domain   = -1:1,
+    %                     domain y = -1:1,
+    %                 ]{
+    %                     x^2-y^2
+    %                 };
+                
+    %             \end{axis}
+    %         \end{tikzpicture}
+    %     \end{center}
+        
+    % \end{sectionBox}
+    
+\end{sectionBox}
+
+\newpage
+\begin{sectionBox}2m{Parabolas em \(\mathbb{R}^2\)}
+
+    \begin{BM}
+        \mathcal{P}ar_2 \subset\mathcal{C}on_2
+        : (\lambda^T + (p-p')A)(p-p') = k
+        \implies \\
+        \implies
+        \left(
+            \begin{bmatrix}
+                0\\-1
+            \end{bmatrix}^T
+            + \begin{bmatrix}
+                x - x' \\ y - y'
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                \frac{1}{4\,a} & 0
+            \\  0 & 0
+            \end{bmatrix}
+        \right)
+        \begin{bmatrix}
+            x - x' \\ y - y'
+        \end{bmatrix}
+        =   0
+        \implies \\
+        \implies
+        \left\{
+            \begin{aligned}
+                   & y = \frac{(x-x')^2}{4\,a} + y'
+                \\ & \lor 
+                \\ & x = \sqrt{4\,a(y-y')} + x'
+            \end{aligned}
+        \right\}
+        \implies \\
+        \implies
+        y 
+        = x^2\, \left( \frac{1}{4\,a} \right)
+        + x\,   \left( \frac{-x'}{2\,a} \right)
+        + \left(
+            \frac{x'^2}{4\,a} 
+            + y'
+        \right)
+        \\[2ex]
+        \begin{aligned}
+            f \in     \mathbb{R}^2 &: (x', y'+a)
+         \\ L \subset \mathbb{R}^2 &: y =  y'-a
+        \end{aligned}
+    \end{BM}
+
+    \begin{sectionBox}*2{Demonstração}
+        \begin{flalign*}
+            &
+                \lvert\vv{p\,f}\rvert
+                = \sqrt{(x-x')^2 + (y-(a+y'))^2}
+                = &\\&
+                = \lvert\vv{p\,L}\rvert
+                = \sqrt{(x-x)^2 + (y-(-a+y'))^2}
+                \implies &\\&
+                \implies
+                (x-x')^2 + ((y-y')-a)^2
+                = (x-x')^2 
+                + (y-y')^2
+                - 2\,a(y-y')
+                + a^2
+                = &\\&
+                = ((y-y')+a)^2
+                = (y-y')^2
+                + 2\,a(y-y')
+                + a^2
+                \implies &\\&
+                \implies
+                y = \frac{(x-x')^2}{4\,a} + y'
+                \lor
+                x = \sqrt{4\,a(y-y')} + x'
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Partindo da forma reduzida}
+        \begin{BM}
+            % &
+                y 
+                = \alpha\,x^2 + \beta\,x + \gamma
+                \implies \\[2ex]
+                \implies
+                \left\{
+                    \begin{aligned}
+                        a  &= (4\,\alpha)^{-1}
+                     \\ x' &
+                        = -\beta\,2\,a 
+                        = -\beta/2\,\alpha
+                     \\ y' &
+                        = \gamma - x'^2/4\,a 
+                        = \gamma - (\beta^2/4\,\alpha)
+                    \end{aligned}
+                \right\}
+            % &
+        \end{BM}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2m{Parabolas em \(\mathbb{R}^3\)}
+    
+    \begin{BM}
+        % &
+            % (\lambda^T + (p-p')^T\,A)(p-p')=k
+            \mathcal{P}ar_3\subset\mathcal{C}on_3
+            : (\lambda^T + (p-p')A)(p-p') = k
+            \implies \\
+            \implies
+            \left(
+                \begin{bmatrix}
+                    0\\0\\-1
+                \end{bmatrix}^T
+                + \begin{bmatrix}
+                    x-x'\\y-y'\\z-z'
+                \end{bmatrix}^T
+                \begin{bmatrix}
+                       4\,a & 0    & 0
+                    \\ 0    & 4\,b & 0
+                    \\ 0    & 0    & 0
+                \end{bmatrix}
+            \right)
+            \begin{bmatrix}
+                x-x'\\y-y'\\z-z'
+            \end{bmatrix}
+            = \\
+            = 0
+            % \implies \\
+            \implies
+            {
+                z 
+                = \frac{(x-x')^2}{4\,a}
+                + \frac{(y-y')^2}{4\,b}
+                + z'
+            }
+            % \implies \\
+            % \implies
+            % {
+            %     z 
+            %     = \frac{x^2}{4\,a}
+            %     + \frac{-2\,x\,x'}{4\,a}
+            %     + \frac{x'^2}{4\,a}
+            %     + \frac{y^2}{4\,b}
+            %     + \frac{-2\,y\,y'}{4\,b}
+            %     + \frac{y'^2}{4\,b}
+            %     + z'
+            % }
+        % &
+    \end{BM}
+
+    \begin{sectionBox}*2{Demonstração}
+        \begin{flalign*}
+            &
+                p \in \left\{
+                    p\in\mathcal{P}ar_3:
+                    y = y'
+                \right\}
+                \implies &\\&
+                \implies
+                \lvert \vv{p\,f} \rvert
+                = \sqrt{
+                    (x-x')^2
+                  + (y'-y')^2
+                  + (z-(z'+a))^2
+                }
+                = &\\&
+                = \lvert \vv{p\,L} \rvert
+                = \sqrt{
+                    (x-x)^2
+                  + (y'-y')^2
+                  + (z-(z'-a))^2
+                }
+                \implies &\\&
+                \implies
+                {
+                    (x-x')^2
+                    + (z-z')^2
+                    - 2\,a(z-z')
+                    + a^2
+                }
+                = &\\&
+                = {
+                    (z-z')^2
+                    + 2\,a(z-z')
+                    + a^2
+                }
+                \implies &\\&
+                \implies
+                z
+                = \frac{(x-x')^2}{4\,a}
+                + z'
+                &\\[2ex]&
+                p \in \left\{
+                    p\in\mathcal{P}ar_3:
+                    x=x'
+                \right\}
+                \implies &\\&
+                \implies
+                \lvert \vv{p\,f} \rvert
+                = \sqrt{
+                    (x'-x')^2
+                  + (y-y')^2
+                  + (z-(z'+b))^2
+                }
+                = &\\&
+                = \lvert \vv{p\,L} \rvert
+                = \sqrt{
+                    (x'-x')^2
+                  + (y-y')^2
+                  + (z-(z'-b))^2
+                }
+                \implies &\\&
+                \implies
+                {
+                    (y-y')^2
+                    + (z-z')^2
+                    - 2\,b(z-z')
+                    + b^2
+                }
+                = &\\&
+                = {
+                    (z-z')^2
+                    + 2\,b(z-z')
+                    + b^2
+                }
+                \implies &\\&
+                \implies
+                z
+                = \frac{(y-y')^2}{4\,b}
+                + z'
+                &\\[2ex]&
+                \therefore
+                z 
+                = \frac{(x-x')^2}{4\,a}
+                + \frac{(y-y')^2}{4\,b}
+                + z'
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    \paragraph{Paraboloide Hiperbólico:} Possume um dos termos negativos.
+    \begin{BM}
+        \mathcal{P}ar_3: b < 0 \lxor a < 0
+    \end{BM}
+    
+\end{sectionBox}
+
+
+\begin{sectionBox}1m{Elipse e Elipsóides}
+    
+    \begin{center}
+        \pgfplotsset{height=0.4\pageheight}
+        \begin{tikzpicture}
+            \begin{axis}[
+                    % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                    % xmajorgrids = true,
+                    % legend pos  = north west,
+                    % 3d view,
+                    % perspective,
+                    view = {0}{30}, % rot/elevation
+                    hide axis,
+                    z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+                
+                % Elipse
+                \addplot3 [
+                    % Aparence
+                    surf,
+                    opacity = 0.5,
+                    fill opacity = 1,
+                    faceted color = White,
+                    shader = faceted interp,
+                    % thick,
+                    % Scope
+                    data cs = cart, % cart/polar/polarrad
+                    samples = 2*\mysampledensitySimple,
+                    % Variable
+                    variable   = \u,
+                    variable y = \v,
+                    domain   = -90:90,
+                    domain y =   0:360,
+                ](
+                    % {-1-x*x-y*y}
+                    {cos(u)*cos(v)}, % x
+                    {cos(u)*sin(v)}, % y
+                    {sin(u)} % z
+                );
+            
+            \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \section*{Definição}
+    \begin{BM}
+        \mathcal{E}li_m\subset\mathcal{C}on_m
+        : 0<e<1
+        \implies \\
+        \implies
+        \lvert \vv{f_1\,p} \rvert
+        + \lvert \vv{f_2\,p} \rvert
+        = k
+        % \\[2ex]
+        \qquad
+        \left(
+            % \begin{aligned}
+                % &
+                    k\in\mathbb{R}
+                % &
+            % \end{aligned}
+        \right)
+    \end{BM}
+    % \begin{BM}
+    %     % &
+    %         \mathcal{E}li_m\subset\mathcal{C}on_m
+    %         : \lvert \vv{f_1\,p} \rvert
+    %         + \lvert \vv{f_2\,p} \rvert
+    %         = k
+    %         \\[2ex]
+    %         \left(
+    %             \begin{aligned}
+    %                 &
+    %                     m\in\mathbb{N}: m\geq 2
+    %                 \ldiv{}
+    %                     k\in\mathbb{R}
+    %                 \ldiv{}
+    %                     p\in\mathcal{E}li_m
+    %                 \ldiv{}
+    %                     \{f_1,f_2\}\subset\mathbb{R}^m
+    %                 &
+    %             \end{aligned}
+    %         \right)
+    %     % &
+    % \end{BM}
+
+    Uma elipse é o conjunto de pontos em um plano cujas distâncias de dois pontos fixos no plano têm uma soma constante. Os dois pontos fixos são os focos da elipse.
+
+    A linha através dos focos de uma elipse é o eixo focal da elipse. O ponto no eixo a meio caminho entre os focos é o centro. Os pontos onde o eixo focal e a elipse se cruzam são os vértices da elipse.
+
+    % Conjunto de pontos os quais a soma da distancia de qualquer ponto a ambos os focos é igual para qualquer ponto.
+
+    \begin{sectionBox}*2{Ecentricidade}
+        
+        \vspace{-2ex}
+        \begin{BM}
+            e 
+            = \frac{
+                \lvert \vv{p'\,f} \rvert
+            }{
+                \max(\lvert \vv{p'\,p} \rvert)
+            }
+            % = \frac{c}{r_1}
+            % = \sqrt{
+            %     1
+            %     - (r_2/r_1)^2
+            % }
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Elipses em \(\mathbb{R}^2\)}
+    
+    \begin{BM}
+        \mathcal{E}li_2\subset\mathcal{C}on_2
+        : ((p-p')^T\,A)\,(p-p') = 1
+        \implies \\
+        \implies
+        \left(
+            \begin{bmatrix}
+                x-x'\\y-y'
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                r_1^{-2} & 0
+            \\  0 & r_2^{-2}
+            \end{bmatrix}
+        \right)
+            \begin{bmatrix}
+                x-x'\\y-y'
+            \end{bmatrix}
+        =   1
+        \implies \\
+        \implies
+          \frac{(x-x')^2}{r_1^2}
+        + \frac{(y-y')^2}{r_2^2}
+        = 1
+        % 
+        \\[2ex]
+        A \cup \{c\}\subset\mathbb{R}^+ : c<r_1>r_2
+        \\ \begin{aligned}
+            r_1 &= \lvert \vv{p'\,p} \rvert : p = (\max(x),y')
+         \\ r_2 &= \lvert \vv{p'\,p} \rvert : p = (x',\max(y))
+         \\ c   &= \lvert \vv{p'\,f} \rvert = \sqrt{r_1^2-r_2^2}
+        \end{aligned}
+        \\[2ex]
+           f_1\in\mathbb{R}^2 : f_1 = (x'-c, y')
+        \\ f_2\in\mathbb{R}^2 : f_1 = (x'+c, y')
+    \end{BM}
+
+    % \paragraph{\textit{a}} Distancia dentre o centro e o máximo x
+    % \paragraph{\textit{b}} Distancia dentre o centro e o máximo y
+    % \paragraph{\textit{c}} Distancia dentre o centro e um dos focos
+
+    \begin{sectionBox}*2{Demonstração}
+        \begin{flalign*}
+            &
+                \lvert \vv{p\,f_1} \rvert
+                + \lvert \vv{p\,f_2} \rvert
+                = k 
+                \land 
+                \{f_1,f_2\} \subset \mathbb{R}^2
+                : \lvert \vv{p'\,f} \rvert = c
+                \land y = y'
+                \implies &\\&
+                \implies
+                \sqrt{
+                    (x - (x'-c))^2
+                    + (y - y')^2
+                }
+                + \sqrt{
+                        (x-(x'+c))^2
+                        + (y - y')^2
+                }
+                % = &\\&
+                = 2\,r_1
+                \implies &\\&
+                \implies
+                \frac{x^2}{r_1^2}
+                + \frac{y^2}{r_1^2-c^2}
+                = 1
+                \land
+                r_2^2 + c^2 = r_1^2
+                \implies
+                \frac{x^2}{r_1^2}
+                + \frac{y^2}{r_2^2}
+                = 1
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Elípses em \(\mathbb{R}^3\)}
+    
+    \begin{BM}
+        \mathcal{E}li_3\subset\mathcal{C}on_3
+        :((p-p')^T\,A)(p-p') = 1
+        \implies \\
+        \implies
+        \left(
+            \begin{bmatrix}
+                x-x'\\y-y'\\z-z'
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                r_1^{-2} & 0 & 0
+             \\ 0 & r_2^{-2} & 0
+             \\ 0 & 0 & r_3^{-2}
+            \end{bmatrix}
+        \right)
+            \begin{bmatrix}
+                x-x'\\y-y'\\z-z'
+            \end{bmatrix}
+        =   1
+        \implies \\
+        \implies
+        \frac{(x-x')^2}{r_1^2}
+        + \frac{(y-y')^2}{r_2^2}
+        + \frac{(z-z')^2}{r_3^2}
+        = 1
+        % 
+        \\[2ex] 
+        A\cup\{c\}\subset\mathbb{R}^+ : c<r_1 \land r_2<r_1>r_3
+        \\ \begin{aligned}
+            r_1 &= \lvert \vv{p'\,p} \rvert : p = (\max(x),y',z')
+         \\ r_2 &= \lvert \vv{p'\,p} \rvert : p = (x',\max(y),z')
+         \\ r_3 &= \lvert \vv{p'\,p} \rvert : p = (x',y',\max(z))
+         \\ c   &= \lvert \vv{p'\,f} \rvert
+        \end{aligned}
+        % 
+        \\[2ex] f_1\in\mathbb{R}^3 : f_1 = (x'-c, y', z')
+        \\      f_2\in\mathbb{R}^3 : f_1 = (x'+c, y', z')
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Parametrização em \(\mathbb{R}^3\)}
+
+    \begin{BM}
+        \mathcal{E}li_3\subset\mathbb{R}^3:
+        e = e' + \lambda\,
+        \begin{bmatrix}
+            \cos(\theta)\,\cos(\lambda)
+        \\  \cos(\theta)\,\sin(\lambda)
+        \\  \sin(\theta)
+        \end{bmatrix}
+        \\[2ex]
+        \left(
+            \begin{aligned}
+            &
+                e\in\mathcal{E}li_3
+            \ldiv{}
+                \{e',\lambda\}\subset\mathbb{R}^3
+            \ldiv{}
+                \{\theta,\lambda\}\subset\mathbb{R}
+            \ldiv{}
+                \lvert\theta\rvert\leq \pi/2
+            \ldiv{}
+                0\leq\lambda\leq2\,\pi
+            &
+            \end{aligned}
+        \right)
+    \end{BM}
+
+\end{sectionBox}
+
+% ---------------------------------------------------------------------------- %
+%                                  Hiperboles                                  %
+% ---------------------------------------------------------------------------- %
+
+\begin{sectionBox}1{Hiperboles e Hiperbolóides}
+    
+
+    \begin{multicols}{2}\centering
+
+        \pgfplotsset{
+            height = 0.4\pageheight, 
+            width  = 0.5\pagewidth,
+        }
+
+        \begin{tikzpicture}
+            \begin{axis}
+            [
+                % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                % xmajorgrids = true,
+                % legend pos  = north west,
+                % 3d view,
+                % perspective,
+                % view = {10}{10}, % rot/elevation
+                hide axis,
+                % axis lines = {center}, % 3D center/box/left/right
+                % axis on top,
+                % ticks = {none} % minor/major/both/none,
+                z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+            ]
+                
+                % Conical surface
+                \addplot3 [
+                    % Aparence
+                    surf,
+                    opacity      = 0.5,
+                    fill opacity = 1,
+                    faceted color = White,
+                    shader = faceted interp,
+                    % Scope
+                    data cs = cart, % cart/polar/polarrad
+                    samples = \mysampledensitySimple,
+                    % Variable
+                    variable   = \u,
+                    variable y = \v,
+                    domain   = -1:1,
+                    domain y = 0:360,
+                ](
+                    {cosh(u)*cos(v)},
+                    {cosh(u)*sin(v)},
+                    {sinh(u)}
+                );
+            
+            \end{axis}
+        \end{tikzpicture}
+
+        \begin{tikzpicture}
+            \begin{axis}
+            [
+                % xlabel={\(x\)}, ylabel={\(y\)}, zlabel={\(z\)}
+                % xmajorgrids = true,
+                % legend pos  = north west,
+                % 3d view,
+                % perspective,
+                % view = {10}{10}, % rot/elevation
+                hide axis,
+                % axis lines = {left}, % center/box/left/right
+                % axis on top,
+                % ticks = {none},
+                z buffer = {sort}, % default|none|auto|sort|reverse x seq|reverse y seq|reverse xy seq
+            ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+                
+                % hiperbole 2 folhas
+                \addplot3 [
+                    % Aparence
+                    surf,
+                    opacity      = 0.5,
+                    fill opacity = 1,
+                    faceted color = White,
+                    shader = faceted interp,
+                    % Scope
+                    data cs = cart, % cart/polar/polarrad
+                    samples = \mysampledensitySimple,
+                    % Variable
+                    variable   = \u,
+                    variable y = \v,
+                    domain   = 0:2,
+                    domain y = 0:360,
+                ](
+                    {sinh(u)*cos(v)},
+                    {sinh(u)*sin(v)},
+                    {cosh(u)}
+                );
+                \addplot3 [
+                    % Aparence
+                    surf,
+                    opacity      = 0.5,
+                    fill opacity = 1,
+                    faceted color = White,
+                    shader = faceted interp,
+                    % Scope
+                    data cs = cart, % cart/polar/polarrad
+                    samples = \mysampledensitySimple,
+                    % Variable
+                    variable   = \u,
+                    variable y = \v,
+                    domain   = 0:2,
+                    domain y = 0:360,
+                ](
+                    {sinh(u)*cos(v)},
+                    {sinh(u)*sin(v)},
+                    {-cosh(u)}
+                );
+
+            \end{axis}
+        \end{tikzpicture}
+
+        % \tikzset{external/force remake=false}
+
+    \end{multicols}
+
+    \section*{Definição}
+    \begin{BM}
+        \mathcal{H}ip_m\subset\mathcal{C}on_m
+        : e>1
+        \implies \\
+        \implies 
+        \Big\lvert
+             \lvert \vv{P\,F_1} \rvert
+            -\lvert \vv{P\,F_2} \rvert
+        \Big\rvert
+        =k\quad (k\in\mathbb{R})
+    \end{BM}
+
+    Uma hipérbole é o conjunto de pontos em um plano cujas distâncias de dois pontos fixos no plano têm uma diferença constante. Os dois pontos fixos são os focos da hipérbole.
+    \\
+
+    A linha através dos focos de uma hipérbole é o eixo focal. O ponto no eixo a meio caminho entre os focos é o centro da hipérbole. Os pontos onde o eixo focal e a hipérbole se cruzam são os vértices
+
+    \begin{sectionBox}*3{Eccentricidade}
+        
+        \begin{BM}
+            e = 
+            % \frac{
+                \left\lvert
+                    \vv{P'\,F}
+                \right\rvert
+            \Bigg/
+            % }{
+                \left\lvert
+                    \vv{P'\,V}
+                \right\rvert
+            % }
+        \end{BM}
+        
+    \end{sectionBox}
+
+\end{sectionBox}
+
+% ----------------------------- Hiperboles em R2 ----------------------------- %
+
+\begin{sectionBox}2m{Hipérboles em \(\mathbb{R}^2\)}
+    \begin{BM}
+        \mathcal{H}ip_2\subset\mathcal{C}on_2
+        : 
+        \left(
+            (P-P')^T
+            \,A
+        \right)
+        (P-P')
+        = 1
+        % \implies \\
+        % \implies
+        % \lvert \vv{P\,F_1}
+        \implies \\
+        \implies
+        \left(
+            \begin{bmatrix}
+                x-x'\\y-y'
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                1/r_1^2 & 0
+             \\ 0     & -1/r_2^2
+            \end{bmatrix}
+        \right)
+        \begin{bmatrix}
+            x-x'\\y-y'
+        \end{bmatrix}
+        = 1
+        \implies \\
+        \implies
+        \left(
+            \frac{x}{r_1}
+        \right)^2
+        -\left(
+            \frac{y}{r_2}
+        \right)^2
+        = 1
+        \\[2ex]
+        c 
+        = \lvert \vv{P'\,F} \rvert
+        = \sqrt{r_1^2+r_2^2}
+        \\
+        V = (x'\pm r_1,y')
+        \\
+        f = (x'\pm c, y')
+    \end{BM}
+
+    \begin{sectionBox}*3{Demonstração}
+        \begin{flalign*}
+            &
+                2\,r_1
+                = 
+                \lvert P\,F_2 \rvert
+                -\lvert P\,F_1 \rvert
+                = &\\&
+                = 
+                \sqrt{
+                    (x-(x'-c))^2
+                    + (y-y')^2
+                }
+                -\sqrt{
+                    (x-(x'+c))^2
+                    + (y-y')^2
+                }
+                \implies &\\[1.5ex]&
+                % 
+                % 
+                % 
+                \implies
+                \left(
+                    2\,r_1
+                    + \sqrt{
+                        (x-(x'+c))^2
+                        + (y-y')^2
+                    }
+                \right)^2
+                = &\\&
+                =
+                4\,r_1^2 
+                + 4\,r_1
+                \sqrt{
+                    (x-x'-c)^2
+                    + (y-y')^2
+                }
+                + \left(
+                    (x-(x'+c))^2
+                    + (y-y')^2
+                \right)
+                = &\\&
+                =
+                4\,r_1^2 
+                + 4\,r_1
+                \left(
+                    \sqrt{
+                        \begin{aligned}
+                                &  (x-x')^2
+                            \\ - &  2\,c\,(x-x')+c^2
+                            \\ + &  (y-y')^2
+                        \end{aligned}
+                    }
+                \right)
+                % \, + &\\&
+                + \left(
+                    \begin{aligned}
+                           + & (x-x')^2
+                        \\ - & 2\,c(x-x')
+                        \\ + & c^2
+                        \\ + & (y-y')^2
+                    \end{aligned}
+                \right)
+                % 
+                % 
+                % 
+                = &\\[1.5ex]&
+                = \left(
+                    \sqrt{
+                        (x-(x'-c))^2
+                        + (y-y')^2
+                    }
+                \right)^2
+                % = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                             & (x-x')^2
+                        \\ + & 2\,c\,(x-x')
+                        \\ + & c^2
+                        \\ + & (y-y')^2
+                    \end{aligned}
+                \right)
+                \implies
+                &
+            \end{flalign*}
+        \end{sectionBox}
+
+        \begin{sectionBox}{}
+            \begin{flalign*}
+                &
+                \implies
+                \frac{c\,(x-x')}{r_1}-r_1
+                =
+                \sqrt{
+                    \begin{aligned}
+                             & (x-x')^2
+                        \\ - & 2\,c\,(x-x')
+                        \\ + & c^2
+                        \\ + & (y-y')^2
+                    \end{aligned}
+                }
+                \implies &\\[1.5ex]&
+                \implies
+                \left(
+                    \frac{c\,(x-x')}{r_1}-r_1
+                \right)^2
+                = 
+                \left(
+                    \begin{aligned}
+                        & \frac{
+                            c^2\,(x-x')^2
+                        }{
+                            r_1^2
+                        }
+                        \\ - & 2\,c\,(x-x')
+                        \\ + & r_1^2
+                    \end{aligned}
+                \right)
+                =
+                \left(
+                    \begin{aligned}
+                             & (x-x')^2
+                        \\ - & 2\,c\,(x-x')
+                        \\ + & c^2
+                        \\ + & (y-y')^2
+                    \end{aligned}
+                \right)
+                \implies &\\[1.5ex]&
+                \implies
+                \left(
+                    \frac{x-x'}{r_1}
+                \right)^2
+                \left(
+                    c^2
+                    -r_1^2
+                \right)
+                - (y-y')^2
+                =
+                c^2 - r_1^2
+                \implies &\\[1.5ex]&
+                \implies 
+                \left(
+                    \frac{x-x'}{r_1}
+                \right)^2
+                - \left(
+                    \frac{
+                        y-y'
+                    }{
+                        \sqrt{c^2-r_1^2}
+                    }
+                \right)^2
+                = 
+                \left(
+                    \frac{x-x'}{r_1}
+                \right)^2
+                - \left(
+                    \frac{y-y'}{r_2}
+                \right)^2
+                =
+                1
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    
+\end{sectionBox}
+
+% -------------------------------- Assintotas -------------------------------- %
+
+\begin{sectionBox}3{Assintotas}
+    
+    \begin{BM}
+        A(\mathcal{H}ip_2) = \left\{
+            (x,y):
+            (y-y') = \pm\frac{r_2}{r_1}(x-x')
+        \right\}
+    \end{BM}
+    
+\end{sectionBox}
+
+% ----------------------------- Hiperboles em R3 ----------------------------- %
+
+\begin{sectionBox}2{Hipérboles em \(\mathbb{R}^3\)}
+
+    \subsubsection*{Hiperbole de 1 folha}
+    \begin{BM}[flalign*]
+    &
+        % (\lambda^T + (p-p')^T\,A)(p-p')=k
+        \left(
+            \begin{bmatrix}
+                x\\y\\z
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                1/a^2 & 0 & 0
+            \\  0 & 1/b^2 & 0
+            \\  0 & 0 & -1/c^2
+            \end{bmatrix}
+        \right)
+        \begin{bmatrix}
+            x\\y\\z
+        \end{bmatrix}
+    =   1
+    \implies &\\&
+    \implies
+        \frac{x^2}{a^2} 
+    +   \frac{y^2}{b^2} 
+    -   \frac{z^2}{c^2} 
+    =   1
+    &
+    \end{BM}
+
+    \subsubsection*{Hiperbole de 2 folha}
+    \begin{BM}[flalign*]
+    &
+        % (\lambda^T + (p-p')^T\,A)(p-p')=k
+        \left(
+            \begin{bmatrix}
+                x\\y\\z
+            \end{bmatrix}^T
+            \begin{bmatrix}
+                1/a^2 & 0 & 0
+            \\  0 & -1/b^2 & 0
+            \\  0 & 0 & -1/c^2
+            \end{bmatrix}
+        \right)
+        \begin{bmatrix}
+            x\\y\\z
+        \end{bmatrix}
+    =   1
+    \implies &\\&
+    \implies
+        \frac{x^2}{a^2} 
+    -   \frac{y^2}{b^2} 
+    -   \frac{z^2}{c^2} 
+    =   1
+    &
+    \end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}3{Equações paramétricas para \(\mathbb{R}^3\)}
+    \begin{multicols}{2}
+        \subsection*{unica folha}
+        \begin{BM}
+            \begin{cases}
+                x = a\hspace{-0.9em}&\cosh(v)\cos(\theta)
+            \\  y = b\hspace{-0.9em}&\cosh(v)\sin(\theta)
+            \\  z = c\hspace{-0.9em}&\sinh(v)
+            \end{cases}
+        \\  \begin{cases}
+                v\in(-\infty,\infty)
+            \\  \theta\in[0,2\,pi)
+            \end{cases}
+        \end{BM}
+
+        \subsection*{duas folhas}
+        \begin{BM}
+            \begin{cases}
+                x = \phantom{\pm}a\hspace{-0.9em}&\sinh(v)\cos(\theta)
+            \\  y = \phantom{\pm}b\hspace{-0.9em}&\sinh(v)\sin(\theta)
+            \\  z = \pm c\hspace{-0.9em}&\cosh(v)
+            \end{cases}
+        \\  \begin{cases}
+                v\in[0,\infty)
+            \\  \theta\in[0,2\,pi)
+            \end{cases}
+        \end{BM}
+    \end{multicols}
+\end{sectionBox}
+
+\end{document}

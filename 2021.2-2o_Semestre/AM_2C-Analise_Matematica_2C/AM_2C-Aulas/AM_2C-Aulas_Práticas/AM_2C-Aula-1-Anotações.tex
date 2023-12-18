@@ -1,0 +1,52 @@
+% !TEX root = ./AM_2C-Aula-1-Anotações.tex
+% !TEX root = ./AM_2C-Aulas-Anotações.tex
+\providecommand\mainfilename{"./AM_2C-Aulas-Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Aula-1-Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[AM\,2C]
+{Anotações}
+{Anotações}
+
+\part*{Elipses}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        4\,x^2 + y^2 - 8\,x + 4\,y - 8 = 0
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            0
+            = 4\,x^2 + y^2 - 8\,x + 4\,y - 8
+            = 4\,(x^2-2\,x+1)-4 + (y^2 + 4\,y + 4) - 4 - 8
+            = &\\&
+            = 4\,(x - 1)^2 + (y + 2)^2 - 16
+            % \implies &\\&
+            \implies
+            1 = \frac{(x-1)^2}{2^2} + \frac{(y+2)^2}{4^2}
+        &
+    \end{flalign*}
+
+    \begin{itemize}
+        \begin{multicols}{3}
+            \item \(p'  = (1,-2)\)
+            \item \(r_1 = 2\)
+            \item \(r_2 = 4\)
+            \item \(c = \sqrt{16-4} = 2\sqrt{3}\)
+            \item \(f_1 = (1-2\sqrt{3},-2)\)
+            \item \(f_2 = (1+2\sqrt{3},-2)\)
+        \end{multicols}
+    \end{itemize}
+    
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,92 @@
+% !TEX root = ./AM_2C-Anotações.2.tex
+\providecommand\mainfilename{"./AM_2C-Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Anotações.2}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Anotações.2/graphics/}
+
+\mymakesubfile{2}
+[AM\,2C]
+{Anotações 2} % Subfile Title
+{Anotações} % Part Title
+
+\part*{Preface}
+
+\begin{definitionBox}1{Matriz Adjunta} % S2
+    
+    \begin{BM}
+        \adj{A} = C^T(A)
+        \\
+        \adj{A}\in\mathcal{M}_{m\times m}:
+        (\adj{A})_{i,j}=(C_{(A)})_{j,i}=(-1)^{i+j}\,(M_{(A)})_{j,i}
+        \\
+        A\in\mathcal{M}_{m\times m}
+    \end{BM}
+
+    \begin{definitionBox}*2{Determinação da invérsa} % S2.1
+        
+        \begin{BM}
+            \adj{A}*A = A*\adj{A} = \det{A}*I
+            \\
+            A^{-1} = (\det A)^{-1}*\adj{A}
+        \end{BM}
+        
+    \end{definitionBox}
+    
+\end{definitionBox}
+
+\part*{Conteúdo}
+
+\begin{sectionBox}1{Matriz Jacobiana} % S2
+    
+    \begin{BM}
+        J_f\in\mathbb{M}_{n\times m}:
+        (J_f)_{i,j} = \pdv{f_i}{x_j}
+        \\
+        f:\mathbb{R}^n\to\mathbb{R}^m
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Matriz Hessiana} % S3
+    
+    \begin{BM}
+        H(f(x)) = J(\nabla f(x))
+        \\
+        H_{f}\in\mathcal{M}_{n\times n}
+        :(H_f)_{i,j}=\pdv{f}{x_i,x_j}
+        \\
+        f:\mathbb{R}^n\to\mathbb{R}
+    \end{BM}
+
+    É usada para estudar os pontos extremos locais de uma função
+
+    \begin{sectionBox}{Determinante}
+        
+        \begin{BM}
+            \det H_f
+            \begin{cases}
+                > 0\implies\text{crítico local}
+                \\ = 0\implies\text{Indeterminável}
+                \\ < 0\implies\text{Ponto de Sela}
+            \end{cases}
+            \\
+            \det H_f > 0 \land \pdv[order=2]{f}{x}
+            \begin{cases}
+                > 0 \implies \text{Mínimo local}
+                \\
+                < 0 \implies \text{Máximo local}
+            \end{cases}
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\end{document}

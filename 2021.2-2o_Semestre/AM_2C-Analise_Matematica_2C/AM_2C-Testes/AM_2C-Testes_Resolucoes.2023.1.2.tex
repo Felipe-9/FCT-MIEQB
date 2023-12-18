@@ -1,0 +1,1028 @@
+% !TEX root = ./AM_2C-Testes_Resolucoes.2023.1.2.tex
+\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes.2023.1.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/AM_2C-Testes_Resolucoes.2023.1.2}}}
+\tikzsetexternalprefix{./.build/figures/AM_2C-Testes_Resolucoes.2023.1.2/graphics/}
+
+\mymakesubfile{2}
+[AM 2C]
+{Teste Resolução} % Subfile Title
+{Teste Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Considere a superfície não limitada \(\mathcal{S}\) e o ponto \textit{P}. Escolha a afirmação correta
+} % Q1
+    \begin{BM}
+        \mathcal{S}=\{(x,y,z)\in\mathbb{R}^3:x^2+y^2-z^2=1\}
+        \\
+        P = (2\sqrt{2},0,0)
+    \end{BM}
+
+    \begin{enumerate}[label=\alph{enumi})]
+        \item Existem exatamente {\color{Graph21}2} pontos de \(\mathcal{S}\) à distancia mínima, {\color{Graph22}\(\sqrt{3}\)}, de \textit{P}
+        \item Existem exatamente {\color{Graph21}4} pontos de \(\mathcal{S}\) à distancia mínima, {\color{Graph22}\(\sqrt{3}\)}, de \textit{P}
+        \item Existem apenas {\color{Graph21}1} ponto de \(\mathcal{S}\) à distancia mínima, {\color{Graph22}3}, de \textit{P}
+        \item Existem exatamente {\color{Graph21}2} pontos de \(\mathcal{S}\) à distancia mínima, {\color{Graph22}\(2\sqrt{2}-1\)}, de \textit{P}
+        \item Nenhuma das afirmações é verdadeira
+    \end{enumerate}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    \gdif{f(X)}=\lambda\,\gdif{g(X)}
+                    \\
+                    g(X)=0
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            f(X)
+            = {d(P,X)}^2
+            =\myVert{P-X}^2
+            =\myVert{\left(
+                2\sqrt{2}-x,
+                0-y,
+                0-z
+            \right)}^2
+            = &\\&
+            =
+            (2\sqrt{2}-x)^2
+            +y^2
+            +z^2
+            % =(2\,(2\sqrt{2}-x),2\,y,2\,z)
+            ; &\\[3ex]&
+            g(X)
+            = x^2+y^2-z^2-1
+            % = (2\,x,2\,y,-2\,z)
+            &\\[3ex]&
+            \implies
+            \left\{
+                \begin{aligned}
+                    \gdif{f(X)}=\lambda\,\gdif{g(X)}
+                    \\
+                    g(X)=0
+                \end{aligned}
+            \right\}
+            =\left\{
+                \begin{aligned}
+                    (-2\,(2\sqrt{2}-x),2\,y,2\,z)
+                    = \lambda (2\,x,2\,y,-2\,z)
+                    \\
+                    x^2+y^2-z^2=1
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \left\{
+                \begin{aligned}
+                    -2\,(2\sqrt{2}-x) =  2\,\lambda\,x\\
+                    2\,y=  2\,\lambda\,y\\
+                    2\,z= -2\,\lambda\,z
+                    \\
+                    x^2+y^2-z^2=1
+                \end{aligned}
+            \right\}
+            % = &\\&
+            = \left\{
+                \begin{aligned}
+                    x=\frac{2\sqrt{2}}{(1-\lambda)}
+                    \\
+                    y= y\,\lambda
+                    \\
+                    z=-z\,\lambda
+                    \\
+                    x^2+y^2-z^2=1
+                \end{aligned}
+            \right\}
+            \implies &\\[3ex]&
+            \implies
+            \left\{
+                \begin{aligned}
+                    &
+                        x=2\,\sqrt{2}/(1-\lambda)
+                    \ldiv{}
+                        \lambda\neq1
+                    \ldiv{}
+                        \left(
+                            \begin{aligned}
+                                &
+                                    y=0
+                                \ldiv[\lor]{}
+                                    (y\neq0\land\lambda=1)
+                                &
+                            \end{aligned}
+                        \right)
+                    \ldiv{}
+                        \left(
+                            \begin{aligned}
+                                &
+                                    z=0
+                                \ldiv[\lor]{}
+                                    (z\neq0\land\lambda=-1)
+                                &
+                            \end{aligned}
+                        \right)
+                    \ldiv{}
+                        x^2+y^2-z^2=1
+                    &
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \left\{
+                \begin{aligned}
+                    &
+                        x=2\,\sqrt{2}/(1-\lambda)
+                    \ldiv{}
+                        \lambda\neq1
+                    \ldiv{}
+                        y=0
+                    \ldiv{}
+                        \left(
+                            \begin{aligned}
+                                &
+                                    z=0
+                                \ldiv[\lor]{}
+                                    (z\neq0\land\lambda=-1)
+                                &
+                            \end{aligned}
+                        \right)
+                    \ldiv{}
+                        x^2+y^2-z^2=1
+                    &
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \left\{
+                \begin{aligned}
+                    &
+                        X=(+1,0,0)
+                    \ldiv*[\lor]{}
+                        X=(-1,0,0)
+                    \ldiv[\lor]{}
+                        X=\left(\sqrt{2},0,+1\right)
+                    \ldiv[\lor]{}
+                        X=\left(\sqrt{2},0,-1\right)
+                    &
+                \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+            \left\{
+                \begin{aligned}
+                    &d(+1,0,0) 
+                    &=& \sqrt{
+                        (2\sqrt{2}-1)^2
+                        + 0^2 + 0^2
+                    }
+                    &=2\sqrt{2}-1
+                    \\
+                    &d(-1,0,0) 
+                    &=& \sqrt{
+                        (2\sqrt{2}+1)^2
+                        + 0^2 + 0^2
+                    }
+                    &=2\sqrt{2}+1
+                    \\
+                    &d(\sqrt{2},0,+1) 
+                    &=& \sqrt{
+                        (2\sqrt{2}+\sqrt{2})^2
+                        + 0^2 + 1^2
+                    }
+                    &=\sqrt{3}
+                    \\
+                    &d(\sqrt{2},0,-1) 
+                    &=& \sqrt{
+                        (2\sqrt{2}+\sqrt{2})^2
+                        + 0^2 + (-1)^2
+                    }
+                    &=\sqrt{3}
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            \sqrt{3}<2\,\sqrt{2}\pm1
+            \,\therefore \text{a)}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Seja \textit{D} a região do plano limitada pelas curvas \(y=x^2\text{ e }x=y^2\). O valor do integral \(\iint_D{x\,y\,\odif{x,y}}\) é:
+} % Q2
+    \begin{enumerate}[label=\Alph{enumi}.]
+        \begin{multicols}{4}
+            \item 1/2
+            \item -1/4
+            \item -1/2
+            \item 1/4
+        \end{multicols}
+        \item Nenhum dos anteriores
+    \end{enumerate}
+
+    \answer{}
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                axis lines={left},
+                % xmajorgrids = true,
+                legend pos={south east},
+                % xmin={},
+                % xmax={},
+                % ymin={},
+                % ymax={},
+                % domain=0:4,
+                % xlabel={},
+                % ylabel={},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\( 
+                {\color{Graph}x^2},
+                {\color{GraphC}\sqrt{x}} 
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                name path={A},
+                smooth,
+                thick,
+                Graph,
+                domain  = 0:1.1,
+                samples = \mysampledensitySimple,
+            ]{ x^2 };
+            % Plot from equation
+            \addplot[
+                name path={B},
+                smooth,
+                thick,
+                GraphC,
+                domain  = 0:1.1,
+                samples = 2\mysampledensitySimple,
+            ]{ sqrt(x) };
+
+            % ================ fillbetween =============== %
+            \addplot [
+                fill opacity=0.1,
+                foreground,
+            ] fill between [
+                of={A and B},
+                soft clip={domain={0:1}},
+            ];
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    \begin{flalign*}
+        &
+            \iint_D{x\,y\,\odif{x,y}}
+            =\int_{0}^{1}{
+                \int_{y^2}^{\sqrt{y}}{
+                    x\,y\,\odif{x,y}
+                }
+            }
+            =\int_{0}^{1}{
+                \adif{(x^2)}\big\vert_{y^2}^{\sqrt{y}}
+                \,y\,\odif{y}/2
+            }
+            =\int_{0}^{1}{
+                (y-y^4)\,y\,\odif{y}/2
+            }
+            = &\\&
+            =\int_{0}^{1}{
+                y^2\,\odif{y}/2
+            }
+            -\int_{0}^{1}{
+                y^5\,\odif{y}/2
+            }
+            =\adif{(y^3)}\big\vert_{0}^{1}/6
+            -\adif{(y^6)}\big\vert_{0}^{1}/12
+            =1/12
+            &\\&
+            \therefore\text{ E.}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Considere o integral \textit{I}. Tem-se:
+} % Q3
+    \begin{BM}
+        I
+        =\int_{0}^{1}{
+            \int_{y^{1/2}}^{\sqrt{2-y^2}}{
+                y\,\odif{x,y}
+            }
+        }
+    \end{BM}
+
+    \begin{enumerate}[label=\Alph{enumi}.]
+        % \begin{multicols}{2}
+            \item \(
+                I=\int_{0}^{1}{\int_{0}^{{\color{Graph21}x^2}}{
+                    y\,\odif{y,x}
+                }}
+                +\int_{1}^{{\color{Graph21}\sqrt{2}}}{\int_{0}^{{\color{Graph31}x^2+y^2}}{
+                    y\,\odif{y,x}
+                }}
+            \)
+            \item \(
+                I=\int_{0}^{1}{\int_{0}^{{\color{Graph22}\sqrt{2-x^2}}}{
+                    y\,\odif{y,x}
+                }}
+                +\int_{1}^{{\color{Graph21}\sqrt{2}}}{\int_{0}^{{\color{Graph32}x^2}}{
+                    y\,\odif{y,x}
+                }}
+            \)
+            \item \(
+                I=\int_{0}^{1}{\int_{0}^{{\color{Graph21}x^2}}{
+                    y\,\odif{y,x}
+                }}
+                +\int_{1}^{{\color{Graph21}\sqrt{2}}}{\int_{0}^{{\color{Graph33}\sqrt{2-x^2}}}{
+                    y\,\odif{y,x}
+                }}
+            \)
+            \item \(
+                I=\int_{0}^{1}{\int_{0}^{{\color{Graph22}\sqrt{2-x^2}}}{
+                    y\,\odif{y,x}
+                }}
+                +\int_{1}^{{\color{Graph22}2}}{\int_{0}^{{\color{Graph32}x^2}}{
+                    y\,\odif{y,x}
+                }}
+            \)
+            \item Nenhum dos casos anteriores
+        % \end{multicols}
+    \end{enumerate}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x=\sqrt{2-y^2}\implies y^2=2-x^2
+                \\
+                x=\sqrt{y}\implies y=x^2
+                \\
+                \sqrt{2-y^2}=\sqrt{y}
+                \implies
+                X=(1, 1);
+            \end{cases}
+        &
+    \end{flalign*}
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                axis lines={center},
+                % xmin={},
+                % xmax={},
+                % ymin={},
+                % ymax={},
+                % xmajorgrids = true,
+                % legend pos  = north west
+                % domain=0:1.5,
+                % y domain=0:1.1,
+                % xlabel={},
+                % ylabel={},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{\(
+                {\color{Graph} x^2},
+                {\color{GraphC}\sqrt{2-x^2}}
+            \)}
+
+            % Plot from equation
+            \addplot[
+                name path={A},
+                smooth,
+                thick,
+                Graph,
+                domain  = 0:1,
+                samples = \mysampledensitySimple,
+            ]{ x^2 };
+
+            % Plot from equation
+            \addplot[
+                name path={B},
+                smooth,
+                thick,
+                GraphC,
+                domain  = 1:sqrt(2),
+                samples = 2\mysampledensitySimple,
+            ]{ sqrt(2-x^2) };
+
+            % \path [name path={B}]
+            % (\pgfkeysvalueof(/pgfplots/xmin),0)
+            % -- (\pgfkeysvalueof(/pgfplots/xmax),0);
+
+            % % ================ fillbetween =============== %
+            % \addplot [
+            %     fill opacity=0.1,
+            %     foreground,
+            % ] fill between [
+            %     of={B and A1},
+            %     soft clip={domain={0:1}},
+            % ];
+            % \addplot [
+            %     fill opacity=0.1,
+            %     foreground,
+            % ] fill between [
+            %     of={B and A2},
+            %     soft clip={domain={1:1.414}},
+            % ];
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            I
+            =\int_{0}^{1}{
+                \int_{y^{1/2}}^{\sqrt{2-y^2}}{
+                    y\,\odif{x,y}
+                }
+            }
+            =\int_{0}^{1}{
+                \int_{0}^{x^2}{
+                    y\,\odif{y,x}
+                }
+            }
+            +\int_{1}^{\sqrt{2}}{
+                \int_{0}^{\sqrt{2-x^2}}{
+                    y\,\odif{y,x}
+                }
+            }
+            \quad
+            \therefore\text{ C.}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Considere o domínio de \(\mathbb{R}^2\) definido por
+} % Q4
+    \begin{BM}
+        R=
+        \{
+            (x,y)\in\mathbb{R}^2
+            : x\geq 0
+            , y\geq 0
+            , 1\leq x + y \leq 4
+        \}
+    \end{BM}
+
+    Usando a transformação de variáveis \(x=u-u\,v\text{, }y=u\,v\). Tem-se:
+
+    \begin{enumerate}[label=\Alph{enumi}.]
+        \item \(
+            \iint_{R}{\frac{y}{x+y}\,\odif{x,y}}
+            =\int_{1}^{4}{\int_{0}^{1}{v\,\odif{vu}}}
+        \)
+        \item \(
+            \iint_{R}{\frac{1}{x+y}\,\odif{x,y}}
+            =3
+        \)
+        \item \(
+            \iint_{R}{\frac{y}{x+y}\,\odif{x,y}}
+            =\int_{0}^{4}{\int_{0}^{1}{v\,\odif{vu}}}
+        \)
+        \item \(
+            \iint_{R}{\frac{y}{x+y}\,\odif{x,y}}
+            =\int_{1}^{4}{\int_{0}^{1}{u^{-1}\,\odif{vu}}}
+        \)
+        \item Nenhum dos casos anteriores.
+    \end{enumerate}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                y\geq 1-x
+                \\
+                y\leq4-x
+            \end{cases}
+        &
+    \end{flalign*}
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos={north east},
+                % domain=0:4,
+                % xlabel={},
+                % ylabel={},
+                axis lines={center}, % left|right|center|box
+                xmin={-0.1},
+                xmax={ 4.1},
+                ymin={-0.1},
+                ymax={ 4.1},
+            ]
+            Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\( 
+                {\color{Graph41}C_1},
+                {\color{Graph42}C_2}, 
+                {\color{Graph43}C_3}, 
+                {\color{Graph44}C_4} 
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                % name path={A},
+                smooth,
+                thick,
+                Graph41,
+                domain  = 0:1,
+                samples = \mysampledensityDouble,
+            ]{ 1-x };
+            % Plot from equation
+            \draw[
+                % name path={A},
+                % smooth,
+                thick,
+                Graph42,
+                % domain  = 0:1,
+                % samples = \mysampledensityDouble,
+            ] (1,0) -- (4,0);
+            % Plot from equation
+            \addplot[
+                % name path={B},
+                smooth,
+                thick,
+                Graph43,
+                domain  = 0:4,
+                samples = 2\mysampledensityDouble,
+            ]{ 4-x };
+            % Plot from equation
+            \draw[
+                % name path={A},
+                % smooth,
+                thick,
+                Graph44,
+                % domain  = 0:1,
+                % samples = \mysampledensityDouble,
+            ] (0,1) -- (0,4);
+            
+            % % ================ fillbetween =============== %
+            % \addplot [
+            %     fill opacity=0.1,
+            %     foreground,
+            % ] fill between [
+            %     of={A and B},
+            %     soft clip={domain={0:1}},
+            % ];
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    x& =u-u\,v
+                    \\
+                    y& =u\,v
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    x& =u-y
+                    \\
+                    y& =u\,v
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    u& =x+y
+                    \\
+                    y& =(x+y)\,v
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    u& =x+y
+                    \\
+                    v& =\frac{y}{x+y}
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            \left\{
+                \begin{aligned}
+                    C_1
+                    & = \{y=1-x,& x\in\myrange{0,1}\}
+                    \\
+                    C_2
+                    & = \{y=0,& x\in\myrange{1,4}\}
+                    \\
+                    C_3
+                    & = \{y=4-x,& x\in\myrange{0,4}\}
+                    \\
+                    C_4
+                    & = \{x=0,& y\in\myrange{1,4}\}
+                \end{aligned}
+            \right\}
+            \implies &\\[6ex]&
+            % ================== C_{1,*} ================= %
+            C_{1,*}
+            % =&\\&
+            = \{u\,v=1-(u-u\,v), (u-u\,v)\in\myrange{0,1}\}
+            = \{u=1, 0\leq 1-v \leq 1\}
+            =&\\&
+            = \{u=1, v\in\myrange{0,1}\}
+            ;&\\[3ex]&
+            % ================== C_{2,*} ================= %
+            C_{2,*}
+            % =&\\&
+            = \{u\,v=0, (u-u\,v)\in\myrange{1,4}\}
+            % =&\\&
+            = \left\{
+                \begin{aligned}
+                    &
+                        \{u=0,(u-u\,v)\in\myrange{1,4}\}
+                    \ldiv[\lor]{}
+                        \{v=0,u\in\myrange{1,4}\}
+                    &
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \{v=0, u\in\myrange{1,4}\}
+            ;&\\[3ex]&
+            % ================== C_{3,*} ================= %
+            C_{3,*}
+            % =&\\&
+            = \{u\,v=4-(u-u\,v), (u-u\,v)\in\myrange{0,4}\}
+            = \{u=4, 0 \leq 4-4\,v \leq 4\}
+            = &\\&
+            = \{u=4, v\in\myrange{0,1}\}
+            ;&\\[3ex]&
+            % ================== C_{4,*} ================= %
+            C_{4,*}
+            = \{u-u\,v=0, (u\,v)\in\myrange{1,4}\}
+            = \{u(1-v)=0, u\,v\in\myrange{1,4}\}
+            =&\\&
+            = \left\{
+                \begin{aligned}
+                    &
+                        u=0\land u\,y\in\myrange{1,4}
+                    \ldiv[\lor]{}
+                        v=1\land u\in\myrange{1,4}
+                    &
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \{v=1,  u\in\myrange{1,4}\}
+            \implies &\\[3ex]&
+            \implies
+            \left\{
+                \begin{aligned}
+                    C_{1,*}
+                    & = \{u=1, v\in\myrange{0,1}\}
+                    \\
+                    C_{2,*}
+                    & = \{v=0, u\in\myrange{1,4}\}
+                    \\
+                    C_{3,*}
+                    & = \{u=4, v\in\myrange{0,1}\}
+                    \\
+                    C_{4,*}
+                    & = \{v=1,  u\in\myrange{1,4}\}
+                \end{aligned}
+            \right\}
+            &
+        \end{flalign*}
+
+        \begin{center}
+            % \tikzset{external/remake next=true}
+            % \pgfplotsset{height=7cm, width= .6\textwidth}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    legend pos={north east},
+                    % domain=0:2,
+                    xmin={0.9}, 
+                    xmax={4.1},
+                    ymin={-0.1}, 
+                    ymax={1.3},
+                    % xlabel={},
+                    % ylabel={},
+                    axis lines={center}, % left|right|center|box
+                ]
+                % Legends
+                \addlegendimage{empty legend}
+                \addlegendentry{\( 
+                    {\color{Graph41}C_{1,*}},
+                    {\color{Graph42}C_{2,*}},
+                    {\color{Graph43}C_{3,*}},
+                    {\color{Graph44}C_{4,*}},
+                \)};
+                
+                \draw[Graph41,thick] (1,0) -- (1,1);
+                \draw[Graph42,thick] (1,0) -- (4,0);
+                \draw[Graph43,thick] (4,0) -- (4,1);
+                \draw[Graph44,thick] (1,1) -- (4,1);
+
+                % % Plot from equation
+                % \addplot[
+                %     % name path={A},
+                %     smooth,
+                %     thick,
+                %     Graph41,
+                %     domain  = 0:1,
+                %     samples = \mysampledensityDouble,
+                % ]{ 1 };
+                % % Plot from equation
+                % \addplot[
+                %     % name path={B},
+                %     smooth,
+                %     thick,
+                %     GraphC,
+                %     domain  = 0:1.1,
+                %     samples = \mysampledensitySimple,
+                % ]{ x^2 };
+                
+                % % ================ fillbetween =============== %
+                % \addplot [
+                %     fill opacity=0.1,
+                %     foreground,
+                % ] fill between [
+                %     of={A and B},
+                %     soft clip={domain={0:1}},
+                % ];
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                \det\jacobiana_f
+                = \begin{pmatrix}
+                    \pdv{x}{u} & \pdv{x}{v}
+                    \\
+                    \pdv{y}{u} & \pdv{y}{v}
+                \end{pmatrix}
+                = \begin{pmatrix}
+                    1-v & -u
+                    \\
+                    v & u
+                \end{pmatrix}
+                = u-u\,v + (u\,v)
+                = u
+                ; &\\[3ex]&
+                \iint_{R}{\frac{1}{x+y}\,\odif{x,y}}
+                = \iint_{R_{*}}{
+                    \frac{1}{u}\,\det{J}\,\odif{u,v}
+                }
+                = \int_{1}^{4}{
+                    \int_{0}^{1}{
+                        \frac{1}{u}\,u\,\odif{v,u}
+                    }
+                }
+                = \int_{1}^{4}{
+                    \odif{u}
+                }
+                = 3
+                &\\&
+                \therefore\text{ B.}
+            &
+        \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Recorrendo a coordenadas esféricas \(\rho,\theta,\phi\), o volume do sólido
+} % Q5
+    \begin{BM}
+        S
+        = \left\{
+            (x,y,z)\in\mathbb{R}^3
+            : x^2+y^2+z^2\leq 16
+            \land
+            z^2\leq 3\,x^2+3\,y^2
+        \right\}
+    \end{BM}
+    é igual a:
+    \begin{enumerate}[label=\Alph{enumi}.]
+        \item \(
+            \int_{0}^{2\,\pi}{
+                \int_{0}^{4}{
+                    \int_{\pi/4}^{3\,\pi/4}{
+                        \rho^2\,\sin\phi
+                        \,\odif{\phi,\rho,\theta}
+                    }
+                }
+            }
+        \)
+        \item \(
+            \int_{0}^{2\,\pi}{
+                \int_{0}^{4}{
+                    \int_{\pi/6}^{5\,\pi/6}{
+                        \rho^2\,\cos\phi
+                        \,\odif{\phi,\rho,\theta}
+                    }
+                }
+            }
+        \)
+        \item \(
+            4\,\int_{0}^{\pi/2}{
+                \int_{0}^{4}{
+                    \int_{\pi/6}^{5\,\pi/6}{
+                        \rho^2\,\sin\phi
+                        \,\odif{\phi,\rho,\theta}
+                    }
+                }
+            }
+        \)
+        \item \(
+            4\,\int_{0}^{\pi/2}{
+                \int_{0}^{4}{
+                    \int_{\pi/3}^{2\,\pi/3}{
+                        \rho^2\,\sin\phi
+                        \,\odif{\phi,\rho,\theta}
+                    }
+                }
+            }
+        \)
+        \item \(
+            \int_{0}^{2\,\pi}{
+                \int_{0}^{4}{
+                    \int_{\pi/3}^{2\,\pi/3}{
+                        \rho^2\,\cos\phi
+                        \,\odif{\phi,\rho,\theta}
+                    }
+                }
+            }
+        \)
+    \end{enumerate}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            y=0\begin{cases}
+                z^2\leq 16-x^2
+                \\
+                z^2\leq 3\,x^2
+            \end{cases}
+            % &\\&
+            ;\quad
+            16-x^2=3\,x^2
+            \implies
+            (x,z)
+            =\begin{cases}
+                   ( 2, 4),
+                \\ (-2, 4),
+                \\ ( 2,-4),
+                \\ (-2,-4),
+            \end{cases}
+        &
+    \end{flalign*}
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                legend pos={south east},
+                % domain=0:4,
+                % xlabel={},
+                % ylabel={},
+                xmin={-4.1},
+                xmax={ 4.1},
+                ymin={-4.5},
+                ymax={ 4.5},
+                axis lines={center}, % left|right|center|box
+            ]
+            % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{\( 
+            %     {\color{Graph}x},
+            %     {\color{GraphC}x^2} 
+            % \)}
+            
+            % Plot from equation
+            \addplot[
+                % name path={A},
+                smooth,
+                thick,
+                Graph,
+                domain={-4:4},
+                samples = 50*\mysampledensitySimple,
+            ]{ sqrt(16-x^2) };
+            % Plot from equation
+            \addplot[
+                % name path={A},
+                smooth,
+                thick,
+                Graph,
+                domain={-4:4},
+                samples = 50*\mysampledensitySimple,
+            ]{ -sqrt(16-x^2) };
+            % Plot from equation
+            \addplot[
+                % name path={B},
+                smooth,
+                thick,
+                GraphC,
+                domain={-2.1:2.1},
+                samples = \mysampledensitySimple,
+            ]{ x*sqrt(3) };
+            % Plot from equation
+            \addplot[
+                % name path={B},
+                smooth,
+                thick,
+                GraphC,
+                domain={-2.1:2.1},
+                samples = \mysampledensitySimple,
+            ]{ -x*sqrt(3) };
+            
+            % % ================ fillbetween =============== %
+            % \addplot [
+            %     fill opacity=0.1,
+            %     foreground,
+            % ] fill between [
+            %     of={A and B},
+            %     soft clip={domain={0:1}},
+            % ];
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            R_*
+            =\left\{
+                \begin{aligned}
+                       x&=\rho\sin\phi\cos\theta
+                    \\ y&=\rho\sin\phi\sin\theta
+                    \\ z&=\rho\cos\phi
+                \end{aligned}
+            \right\}
+            = &\\&
+            =\left\{
+                \begin{aligned}
+                       \theta & \in\myrange{0,2\,\phi}
+                    \\ \rho   & \in\myrange{0,4}
+                    \\ \phi   & \in\myrange{\pi/2-\tan^{-1}{\sqrt{3}},\pi/2+\tan^{-1}{\sqrt{3}}}
+                \end{aligned}
+            \right\}
+            =\left\{
+                \begin{aligned}
+                       \theta & \in\myrange{0,2\,\phi}
+                    \\ \rho   & \in\myrange{0,4}
+                    \\ \phi   & \in\myrange{\pi/6,\pi\,5/6}
+                \end{aligned}
+            \right\}
+            &\\&
+            \int_{0}^{2\,\pi}{
+                \int_{0}^{4}{
+                    \int_{\pi/6}^{\pi\,5/6}{
+                        \odif{\phi,\rho,\theta}
+                    }
+                }
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+} % Q6
+    \begin{BM}
+        I=\int_C{\vv{F}\cdot\odif{\vv{r}}}
+    \end{BM}
+
+    Se I é conservativo
+
+    \begin{BM}
+        I = f(B)-f(A)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \pdv{f}{x} = F_x;
+            \pdv{f}{y} = F_y;
+            \implies
+            f = (...) + h(y);
+            h'(y)= 0; h(y) = c (constante), escolhemos c=0 e resolvemos
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,142 @@
+% !TEX root = ./AM_2C-Exercicios_Resolucoes.2023.2.1.tex
+\providecommand\mainfilename{"./AM_2C-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Exercicios_Resolucoes.2023.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Exercicios_Resolucoes.2023.2.1}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Exercicios_Resolucoes.2023.2.1/graphics/}
+
+\mymakesubfile{1}
+[AM 2C]
+{Exercicios} % Subfile Title
+{Exercicios} % Part Title
+
+\setcounter{question}{2}
+\begin{questionBox}1{ % Q3
+    \begin{BM}
+        A = (1,-1,2),
+        \quad B=(2,1,-1),
+        \quad C=(1,1,5)
+    \end{BM}
+} % Q3
+    \begin{questionBox}2{ % Q3.1
+        Plano definido por \textit{A},\textit{B} e \textit{C}
+    } % Q3.1
+        \begin{flalign*}
+            &
+                \vv{A\,B} = B-A = (1,2,-3);
+                \quad
+                \vv{A\,C} = C-A = (0,2,3);
+                &\\&
+                \mathcal{P}
+                = \left\{
+                    (x,y,z)\in\mathbb{R}^3
+                    : (x,y,z) 
+                    = (1,-1,2)
+                    + \lambda\,(1,2,-3)
+                    + \mu\,(0,2,3)
+                \right\}
+                = &\\&
+                = \left\{
+                    (x,y,z)\in\mathbb{R}^3
+                    : 
+                    \left(
+                        \begin{aligned}
+                            &
+                                x = 1 + \lambda
+                            &\\&
+                                y = -1+2\,\lambda+2\,\mu
+                            &\\&
+                                z = 2-3\,\lambda+3\,\mu
+                            &
+                        \end{aligned}
+                    \right)
+                \right\}
+                ;&\\&
+                \begin{cases}
+                    \lambda = \dots
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{5}
+
+\begin{questionBox}1{ % Q6
+    question
+} % Q6
+    \begin{questionBox}2{ % Q6.1
+        \begin{BM}
+            x^2+2\,x+y^2-2\,y=2
+        \end{BM}
+    } % Q6.1
+        \begin{flalign*}
+            &
+                2
+                = x^2+2\,x+y^2-2\,y
+                = (x^2+2\,x+1)
+                + (y^2-2\,y+1)-2
+                = &\\&
+                = (x+1)^2
+                + (y-1)^2-2
+                \implies &\\[3ex]&
+                \implies
+                4
+                = (x+1)^2
+                + (y-1)^2
+                % \implies &\\&
+                \implies
+                \begin{cases}
+                    \text{Circuferencia}
+                    \\ r=\sqrt{4}=2
+                    \\ X_0=(-1,1)
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q6.2
+        \begin{BM}
+            a\,x^2+18\,x-y^2+2\,y-8=0
+        \end{BM}
+    } % Q6.2
+        \begin{flalign*}
+            &
+                0
+                = 9\,x^2+18\,x
+                - y^2+2\,y
+                - 8
+                = 9(x^2+2\,x+1) 
+                - 9
+                - (y^2+2\,y+1) + 1
+                - 8
+                = &\\&
+                = 9(x+1)^2 
+                - (y+1)^2
+                - 16
+                \implies &\\&
+                \implies
+                1
+                = \left(
+                    \frac{x+1}{4/3}
+                \right)^2
+                - \left(
+                    \frac{y+1}{4}
+                \right)^2
+                \implies &\\[3ex]&
+                \implies
+                \begin{cases}
+                    \text{Hiperbole}
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}
