@@ -1,0 +1,708 @@
+% !TEX root = ./CN_A-Tests_Resolutions.2022.3.tex
+\providecommand\mainfilename{"CN_A-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CN_A-Tests_Resolutions.2022.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CN_A-Tests_Resolutions.2022.3}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Tests_Resolutions.2022.3/graphics/}
+
+\mymakesubfile{3}
+[CN\,A]
+{Exame Resolução} % Subfile Title
+{Exame Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Considere o intervalo \([a,b]\), com \(a=x_0 < x_1 < \dots< x_{10}=b\) e uma função não linear, \textit{f}, da qual se conhece a seguinte tabela:
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C | C C @{\quad\dots\quad} C}
+                x
+                & x_0
+                & x_1
+                & x_{10}
+            \\\hline
+                f(x)
+                & y_0
+                & y_1
+                & y_{10}
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Pretende-se aproximar \textit{f} por uma função interpoladora nos pontos da tabela de forma a que esta tenha poucas ou nenhumas oscilações junto das extremidades do intervalo \([a,b]\). Para o efeito deve utilizar-se:
+} % Q1
+    \begin{enumerate}[label=\alph{enumi}.]
+        \item O polinómio de \emph{Lagrange} interpolador de \textit{f} nos pontos da tabela.
+        \item O polinómio do \emph{grau 2} que aproxima a função tabelada segundo o método dos mínimos quadrados.
+        \item O polinómio de \emph{Newton} com diferenças divididas interpolador de \textit{f} nos pontos da tabela.
+        \item O \emph{spline cúbico natural}, interpolador de \textit{f} dos pontos da tabela.
+    \end{enumerate}
+    \answer{d}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Seja \(f(x)\in C^2{[1,3]}\) uma função que verifica \(f^{n}(x) = x^n/3, \forall\,x\in {[1,3]}\). Se pretendesse calcular um valor aproximado de \(I= \int_1^3{f(x)\,\odif{x}}\) utilizando a regra dos trapézios, qual o menor número de sub-intervalos de igual amplitude em que teria de dividir o intervalo \([1,3]\), por forma a garantir pelo menos 1 casa decimal significativa para do erro absoluto da aproximação?
+} % Q2
+    \answer{7}
+    \begin{flalign*}
+        &
+            n:
+            \myvert{I-I_{t,n}}
+            = \myvert{-n\,\frac{h^3}{12}\,f^{(2)}(x)}
+            = \myvert{
+                -n
+                \,\frac{\left(
+                    \frac{3-1}{n}
+                \right)^3}{12}
+                \,\frac{3^2}{3}
+            }
+            % = &\\&
+            = \frac{2}{n^2}
+            \leq 0.5\E{-1}
+            \implies &\\&
+            \implies
+            n
+            =\ceil{\sqrt{\frac{2}{0.5\E{-1}}}}
+            =\ceil{\num{6.324555320336759}}
+            =7
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Considere a função \(f(x)=\frac{x}{e^x}\text{ e }S(x)\) o spline cúbico natural interpolador de \textit{f} nos pontos \(0=x_0<x_1<x_2<x_3<x_4=1\). Qual o valor da expressão \(S(0)-S"(0)-2\,S(1)+2\,S"(1)\)?
+} % Q3
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{Spline natural interpolador de } f
+            \implies &\\&
+            \implies
+            S"(x_0)=S"(0)=S"(x_4)=S"(1)=0
+            % Spline natural a deriv 2 no começo e fim = 0
+            &\\[3ex]&
+            S(0)-S"(0)-2\,S(1)+2\,S"(1)
+            = S(0)-2\,S(1)
+            = f(0)-2\,f(1)
+            = &\\&
+            = \frac{0}{e^0}
+            - 2\,\frac{1}{e^1}
+            = -\frac{2}{e}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Seja \(\alpha\) a raiz única da equação não linear \(f(x)=0\) no intervalo \([a,b]\). Considere as sucessões definidas por recorrência \(x_n=g_1(x_{n-1})\text{ e }y_n=g_2(y_{n-1}),n\in\mathbb{N}\), ambas convergentes para \(\alpha\), com \(g_1\text{ e }g_2\) duas funções definidas e continuas em \([a,b]\) tais que \(g_1(\alpha)=\alpha\text{ e }g_2(x)=x-f(x)/f'(x)\). Além disso tem-se \(0\neq\myvert{g'_1(\alpha)}<1\text{ e }g'_2(\alpha)=0\). Considerando que \(x_0=y_0\in{[a,b]}\), qual das opções seguintes é correta
+} % Q4
+    \begin{enumerate}[label=\alph{enumi}.]
+        \item A sucessão \textcolor{GraphA11}{\(x_n\)} tem ordem de convergencia \textcolor{GraphA15}{\(p>1\)}
+        \item A sucessão \textcolor{GraphA11}{\(x_n\)} converge mais rapidamente que \textcolor{GraphA17}{\(y_n\)}
+        \item A sucessão \textcolor{GraphA13}{\(y_n\)} converge mais rapidamente que \textcolor{GraphA19}{\(x_n\)}
+        \item A sucessão \textcolor{GraphA13}{\(y_n\)} tem ordem de convergencia \textcolor{GraphA15}{\(p>1\)}
+    \end{enumerate}
+    \answer{c.}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Considere a matrix \textit{A} do sistema de equações lineares \(A\,X=B\) com \(a\in\mathbb{R} \textit{ e } X,B\in\mathbb{R}^3\). De forma a garantir a vonvergência do método de Gauss-Siedel para a solução de \(A\,X=B\), qual dos seguintes valores pode ser assumido por \textit{a}?
+    \begin{BM}
+        A=\begin{bmatrix}
+            a/2 & -2 & 0
+            \\ 0 & 7 & -a
+            \\ 0 & -3 & a
+        \end{bmatrix}
+    \end{BM}
+} % Q5
+    \begin{enumerate}[label=\alph{enumi}.]
+        \begin{multicols}{4}
+            \item 4
+            \item 5.5
+            \item -3
+            \item 8
+        \end{multicols}
+    \end{enumerate}
+
+    \answer{5.5}
+    \begin{flalign*}
+        &
+            % Metodo de Gauss-Stidel: A precisa ser diagonal estritamente dominante para o método convergir
+            A
+            \left\{
+                \begin{aligned}
+                    \myvert{a/2} &>\myvert{-2}+0
+                    \\
+                    7 &> 0 + \myvert{-a}
+                    \\ 
+                    \myvert{a} &> 0 + \myvert{-3}
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    \myvert{a} &> 4
+                    \\
+                    7 &> \myvert{a}
+                    \\ 
+                    \myvert{a} &> 3
+                \end{aligned}
+            \right\}
+            = 4<\myvert{a}<7
+            \implies &\\&
+            \implies
+            a\in\myrange*{-7,-4}\cup\myrange*{4,7}
+            \therefore a=5.5
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Seja \textit{f} uma função da qual se conhece a seguinte tabela de valores
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C | *{3}{C}}
+            x & -1 & 0 & 1
+            \\\hline
+            f(x) & 10 & 3 & 7
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+} % Q6
+    \begin{questionBox}2{ % Q6.1
+        Construa uma tabela de diferenças divididas e o correspondente polinómio de Newton interpolador de \textit{f} na tabela dada. Determine um valor aproximado de \(f(-0.5)\) (Não necessita apresentar o polinómio na forma simplificada).
+    } % Q6.1
+        \answer{}
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{C C *2{C}}
+                \toprule
+                
+                    x_i & f(x_i) 
+                    & f[\cdot,\cdot]
+                    & f[\cdot,\cdot,\cdot]
+                
+                \\\midrule
+                    -1 & 10
+                    & \multirow{2}{*}{-7}
+                    & \multirow{3}{*}{11/2}
+                    \\
+                    0 & 3
+                    & \multirow{2}{*}{4}
+                    \\
+                    1 & 7
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                f(-0.5) \approx p_2(-0.5): &\\[3ex]&
+                p_2(x)
+                = &\\&
+                = f(x_0)
+                + (x-x_0)
+                \,f{[x_0,x_1]}
+                + (x-x_0)(x-x_1)
+                \,f{[x_0,x_1,x_2]}
+                = &\\&
+                = 10
+                + (x-(-1))
+                \,-7
+                + (x-(-1))(x-0)
+                \,11/2
+                = &\\&
+                = 10 + (x+1)(-7+x\,11/2)
+                \implies &\\[3ex]&
+                \implies
+                f(-0.5)
+                \approx
+                10 + (-0.5+1)(-7-0.5*11/2)
+                =5.125
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q6.2
+        Sabendo que \(f^{(3)}(x) = 12\), determine um majorante do erro absoluto para a aproximação de \(f(-0.5)\) obtida em a.
+    } % Q6.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \varepsilon_{abs}
+                = \myvert{f(x^*)-p_2(x^*)}
+                = &\\&
+                = \myvert{
+                    (x^*-x_0)
+                    (x^*-x_1)
+                    (x^*-x_2)
+                    f^{(3)}(\theta)/3!
+                }
+                = &\\&
+                = \myvert{
+                    (x^*-x_0)
+                    (x^*-x_1)
+                    (x^*-x_2)
+                    12/6
+                }
+                = &\\&
+                = 2\myvert{
+                    (x^*-x_0)
+                    (x^*-x_1)
+                    (x^*-x_2)
+                }
+                \implies&\\[3ex]&
+                \implies
+                \myvert{f(-0.5)-p_2(-0.5)}
+                = &\\&
+                = 2\myvert{
+                    (-0.5-(-1))
+                    (-0.5-0)
+                    (-0.5-1)
+                }
+                = &\\&
+                = 0.75
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Considere a seguinte tabela relativa a uma função \textit{f}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C | *{5}{C}}
+            x 
+            & -1 & 0 & 1 & 2 & 3
+            \\\hline
+            f(x)
+            & -2 & -5 & -6 & k & 22
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Com \(k\in\mathbb{R}\text{ e }I=\int_{-1}^3{f(x)\,\odif{x}}\).
+    Sabe-se que \textit{f} é uma função do tipo \(a\,x^4+b\,x^3+c\,x^2+d\,x+e\) em que \(a=1\text{ e }b,c,d,e\in\mathbb{R}\)
+} % Q7
+    \begin{questionBox}2{ % Q7.1
+        Determine uma aproximação de \textit{I} usando a regra de Simpson simples.
+    } % Q7.1
+        \answer{}
+        \begin{flalign*}
+            &
+                I\approx
+                \hat{I}_S
+                \approx 
+                \frac{h}{3}\,(f_0+4\,f_1+f_2)
+                = \frac{4/2}{3}\,(-2+4\,(-6)+22)
+                = -\frac{8}{3}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q7.2
+        Determine uma aproximação de \textit{I} usando a regra de Simpson composta em função de \textit{k}.
+    } % Q7.2
+        \answer{}
+        \begin{flalign*}
+            &
+                I\approx \hat{I}
+                = \frac{h}{3}\left(
+                    f(x_0)
+                    + 4\,\sum_{j=1}^{n  }{f(x_{2\,j-1})}
+                    + 2\,\sum_{j=1}^{n-1}{f(x_{2\,j  })}
+                    + f(x_{2\,n})
+                \right)
+                = &\\&
+                = \frac{2/2}{3}\left(
+                    f(x_0)
+                    + 4\,(f(x_1)+f(x_3))
+                    + 2\,(f(x_2))
+                    + f(x_{4})
+                \right)
+                = &\\&
+                = \frac{1}{3}\left(
+                    -2
+                    + 4\,(-5+k)
+                    + 2\,(-6)
+                    + 22
+                \right)
+                = &\\&
+                = k\,4/3-4
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q7.3
+        Usando as alineas anteriores determine \textit{k}
+    } % Q7.3
+        \answer{}
+        \begin{flalign*}
+            &
+                f \text{ é Poli de grau 4 com } a=1\
+                \implies
+                f^{(4)}(x)=4! =24\quad\forall\,x\in\mathbb{R}
+                ; &\\[3ex]&
+                \text{Erro simpson simples:} &\\&
+                % Integração
+                \varepsilon_{I,s}
+                = I-\hat{I}_s
+                = I-(-8/3)
+                = -\frac{h^5}{90}\,f^{(4)}(\xi)
+                = -\frac{2^5}{90}\,24
+                \implies &\\&
+                \implies
+                I = 11.2
+                ; &\\[3ex]&
+                % 
+                % 
+                % 
+                \text{Erro simpson composta:} &\\&
+                \varepsilon_{I,c}
+                = I-\hat{I}_c
+                = I-(k\,4/3-4)
+                = -n\,\frac{h^5}{90}\,f^{(4)}(\sigma)
+                = -2\,\frac{1^5}{90}\,24
+                = &\\&
+                = -\frac{8}{15}
+                \implies &\\&
+                \implies 
+                k
+                = -5
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Considere a equação \(1-x-\sin(x)=0\) a qual tem uma \emph{única solução} \(
+    \alpha\) no intervalo {[0.1,1]}.
+} % Q8
+    \begin{questionBox}2{ % Q8.1
+        Prove que \(\alpha\) é o ponto fixo de \(\varphi(x)=1-\sin(x)\)
+    } % Q8.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \alpha\text{ é raíz de } 1-x-\sin(x)=0
+                \iff &\\&
+                \iff
+                1-\alpha-\sin(\alpha)=0
+                \iff &\\&
+                \iff
+                1-\sin(\alpha)=\alpha=\varphi(\alpha)
+                \iff &\\&
+                \iff
+                \alpha \text{ é ponto fixo de }
+                \varphi(x)=1-\sin(x)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q8.2
+        Prove que a sucessão \(x_n=\varphi(x_{n-1}),n=1,2,\dots\text{ que }x_0=0.5\) converge para \(\alpha\).
+    } % Q8.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    x_0=0.5
+                    \\
+                    x_n=\varphi(x_{n-1}),n=1,2,\dots
+                \end{cases}
+                &\\[3ex]&
+                \text{Condições de convergencia:}&\\&
+                \begin{cases}
+                    \varphi(x)\text{ é continua em } I
+                    \\
+                    \varphi(x)\in I,\forall\,x\in I
+                    \\
+                    \myvert{\varphi'(x)}\leq\myvert{\varphi'(\alpha)}
+                \end{cases}
+                &\\[3ex]&
+                \begin{cases}
+                    % Lembrar de usar rad
+                    \varphi(1)=1-\sin(1)
+                    \cong \num{0.158529015192103}
+                    \in I
+                    \\
+                    \varphi(0.1)=1-\sin(0.1)
+                    \cong\num{0.900166583353172}
+                    \in I
+                    \\
+                    \varphi'(x)=-\cos(x)<0\quad\forall\,x\in\mathbb{R}
+                \end{cases}
+                &\\&
+                \implies
+                0.1 
+                < \varphi(1)
+                \leq \varphi(x)
+                \leq \varphi(0.1)
+                < 1
+                \implies &\\&
+                \implies
+                \varphi(x)\in I\quad\forall\,x\in I
+                ; &\\[3ex]&
+                % 
+                % 
+                % 
+                \myvert{\varphi'(x)}
+                =\myvert{-\cos(x)}
+                =\cos(x)
+                \leq
+                \myvert{-\cos(0.1)}
+                = \cos(0.1)
+                < k < 1
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q8.3
+        Determine \(x_2\). Quantas casas decimais significativas pode garantir para \(x_2\). Justifique
+    } % Q8.3
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    x_0= 0.5
+                    \\ x_1= \varphi(0.5)=1-\sin(0.5)\cong\num{0.520574461395797}
+                    \\ x_2= \varphi(\num{0.520574461395797})
+                    =1-\sin(\num{0.520574461395797})\cong\num{0.502621415553111}
+                \end{cases}
+                &\\[3ex]&
+                % Formula do erro a posteriori
+                \myvert{\alpha-x_2}
+                \leq
+                \frac{k}{1-k}\myvert{x_2-x_1}
+                \cong \frac{0.996}{1-0.996}\myvert{\num{0.502621415553111}-\num{0.520574461395797}}
+                = &\\&
+                = \frac{0.996}{1-0.996}\myvert{\num{0.502621415553111}-\num{0.520574461395797}}
+                \cong\num{4.470308414828814}
+                <0.5\E1
+                &\\&
+                \therefore\text{ Não tem casas decimais significativas}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    Considere o sistema de equações lineares \(A\,X=B\)
+    \begin{BM}
+        \begin{bmatrix}
+            2 & -1 & 0
+            \\ 3 & -5 & 1
+            \\ 1 & -2 & 4
+        \end{bmatrix}
+        \begin{bmatrix}
+            x_1\\x_2\\x_3
+        \end{bmatrix}
+        =\begin{bmatrix}
+            1 \\ 2 \\ -1
+        \end{bmatrix}
+    \end{BM}
+} % Q9
+    \paragraph*{Nota:} Em todas as alíneas utilize 3 casas decimais convenientemente arredondadas.
+
+    \begin{questionBox}2{ % Q9.1
+        Obtenha a matriz de iteração para o método de Jacobi e com base nessa matriz verifique a convergência da sucessão definida pelo mesmo método para a solução de \(A\,X=B\).
+    } % Q9.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \myVert{G_J}<1:
+                G_J
+                =-D^{-1}(L+U):&\\&
+                % Método de jacobi
+                D = \begin{bmatrix}
+                    2 & 0 & 0
+                    \\ 0 & -5 & 0
+                    \\ 0 & 0 & 4
+                \end{bmatrix}
+                ;\quad
+                L = \begin{bmatrix}
+                    0 & 0 & 0
+                    \\ 3 & 0 & 0
+                    \\ 1 & -2 & 0
+                \end{bmatrix}
+                ;\quad
+                U = \begin{bmatrix}
+                    0 & -1 & 0
+                    \\ 0 & 0 & 1
+                    \\ 0 & 0 & 0
+                \end{bmatrix};
+                &\\&
+                D^{-1}=\begin{bmatrix}
+                    1/2 & 0 & 0
+                    \\ 0 & -1/5 & 0
+                    \\ 0 & 0 & 1/4
+                \end{bmatrix}
+                \implies &\\&
+                \implies
+                G_J
+                = -\begin{bmatrix}
+                    1/2 & 0 & 0
+                    \\ 0 & -1/5 & 0
+                    \\ 0 & 0 & 1/4
+                \end{bmatrix}
+                \begin{bmatrix}
+                    0 & -1 & 0
+                    \\ 3 & 0 & 1
+                    \\ 1 & -2 & 0
+                \end{bmatrix}
+                = &\\&
+                =\begin{bmatrix}
+                    0 & 1/2 & 0
+                    \\ 3/5 & 0 & 1/5
+                    \\ -1/4 & 1/2 & 0
+                \end{bmatrix}
+                \implies &\\&
+                \implies
+                \myVert{G_J}
+                =\max(0.5,0.8,0.75)
+                =0.8<1
+                \therefore
+                \text{o método converge}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q9.2
+        Considerando como aproximação inicial \(X^{(0)} = \begin{bmatrix}1&1&1\end{bmatrix}^T\) obtenha \(X^{(3)}\).
+    } % Q9.2
+        \answer{}
+        \begin{flalign*}
+            &
+                H_J=D^{-1}\,B
+                =\begin{bmatrix}
+                    0.5\\-0.4\\-0.25
+                \end{bmatrix}
+                ; &\\[3ex]&
+                % X1
+                X^{(1)}
+                =G_J\,X^{(0)}+H_J
+                = &\\&
+                =\begin{bmatrix}
+                    0 & 1/2 & 0
+                    \\ 3/5 & 0 & 1/5
+                    \\ -1/4 & 1/2 & 0
+                \end{bmatrix}
+                \begin{bmatrix}
+                    1\\1\\1
+                \end{bmatrix}
+                + \begin{bmatrix}
+                    0.5\\-0.4\\-0.25
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    1\\0.4\\0
+                \end{bmatrix}
+                ; &\\[3ex]&
+                % X2
+                X^{(2)}
+                =G_J\,X^{(1)}+H_J
+                = &\\&
+                =\begin{bmatrix}
+                    0 & 1/2 & 0
+                    \\ 3/5 & 0 & 1/5
+                    \\ -1/4 & 1/2 & 0
+                \end{bmatrix}
+                \begin{bmatrix}
+                    1\\0.4\\0
+                \end{bmatrix}
+                + \begin{bmatrix}
+                    0.5\\-0.4\\-0.25
+                \end{bmatrix}
+                =\begin{bmatrix}
+                    0.7\\0.2\\-0.3
+                \end{bmatrix}
+                ; &\\[3ex]&
+                % X3
+                X^{(3)}
+                =G_J\,X^{(2)}+H_J
+                = &\\&
+                =\begin{bmatrix}
+                    0 & 1/2 & 0
+                    \\ 3/5 & 0 & 1/5
+                    \\ -1/4 & 1/2 & 0
+                \end{bmatrix}
+                \begin{bmatrix}
+                    0.7\\0.2\\-0.3
+                \end{bmatrix}
+                + \begin{bmatrix}
+                    0.5\\-0.4\\-0.25
+                \end{bmatrix}
+                =\dots
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q9.3
+        Sabendo que 
+        \begin{BM}
+            X^{(9)}=\begin{bmatrix}
+                0.372\\-0.270\\-472
+            \end{bmatrix}
+            ; \qquad
+            X^{(10)}=\begin{bmatrix}
+                0.365\\-0.271\\-0.478
+            \end{bmatrix}
+        \end{BM}
+        São iteradas obtidas por aplicação do método de \emph{jacobi} com 3 casas decimais davidamente arredondadas, quantas casas decimais significativas pode garantir \(X^{(10)}\)? Justifique
+    } % Q9.3
+        \answer{}
+        \begin{flalign*}
+            &
+                X^{(10)}-X^{(9)}
+                =\begin{bmatrix}
+                    -0.007\\-0.001\\-0.006
+                \end{bmatrix}
+                ; &\\[3ex]&
+                \myVert{X^{(10)}-X^{(9)}}_{\infty}
+                =0.007
+                ; &\\[3ex]&
+                % Erro a posteriori
+                \myVert{X^*-X^{(10)}}_{\infty}
+                \leq
+                \frac{\myVert{G}_{\infty}}{1-\myVert{G}_{\infty}}
+                \myVert{X^{(10)}-X^{(9)}}_{\infty}
+                = &\\&
+                = \frac{0.8}{1-0.8}*0.007
+                = 0.028<0.5\E1
+                &\\[3ex]&
+                \therefore
+                \text{ Garante pelo menos 1 casa decimal}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q9.4
+        Sabendo que a solução exata do sistema é
+        \begin{BM}
+            X^*
+            =\begin{bmatrix}
+                0.36&-0.28&-0.48
+            \end{bmatrix}^T
+        \end{BM}
+        Determine o erro relativo associado a cada componente de \(X^{(10)}\)
+    } % Q9.4
+        \answer{}
+        \begin{flalign*}
+            &
+                % Erro relativo
+                r_{x^*}=\frac{\myvert{x^*-\tilde{x}}}{\myvert{x^*}}\
+                \begin{cases}
+                    r_{x^*_1} 
+                    = \frac
+                    {\myvert{0.36-0.365}}
+                    {\myvert{0.36}}
+                    \\
+                    r_{x^*_2} 
+                    = \frac
+                    {\myvert{-0.28+0.271}}
+                    {\myvert{-0.28}}
+                    \\
+                    r_{x^*_3} 
+                    = \frac
+                    {\myvert{-0.48+0.478}}
+                    {\myvert{-0.48}}
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

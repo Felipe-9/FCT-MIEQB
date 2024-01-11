@@ -1,0 +1,362 @@
+% !TEX root = ./CN_A-Tests_Resolutions.2023.1.tex
+\providecommand\mainfilename{"./CN_A-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./CN_A-Tests_Resolutions.2023.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CN_A-Tests_Resolutions.2023.1}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Tests_Resolutions.2023.1/graphics/}
+
+\mymakesubfile{1}
+[CN A]
+{Teste Resolução} % Subfile Title
+{Teste Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    \begin{BM}
+        x=1/13
+        \qquad
+        \bar{x}=0.0769
+        \\
+        g(x)=\frac{1}{2/25-x}
+        ;\qquad
+        r_{g(x)}\approx\myvert{\frac{x\,g'(x)}{g(x)}}r_x,\quad g(x)\neq 0
+    \end{BM}
+} % Q1
+    \answer{c)}
+    % \begin{flalign*}
+    %     &
+    %         \frac{r_{g(x)}}{r_x}
+    %         \approx 
+    %         \myvert{\frac{x\,g'(x)}{g(x)}}
+    %         =
+    %         \myvert{\cfrac{
+    %             (1/13)
+    %             \left(
+    %                 \,(-1)
+    %                 \,(2/25-1/13)^{-2}
+    %                 (-1)
+    %             \right)
+    %         }{
+    %             (2/25-1/13)
+    %         }}
+    %         = 2640625
+    %         &\\&
+    %         \therefore\text{ é mal condicionada}
+    %     &
+    % \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    \begin{BM}
+        \myrange{a,b}
+        \quad a<x_0<x_1<\dots<x_n=b
+        \\
+        f_{(x_i)},i=1,\dots,n
+        \quad
+        n\geq3
+        \\
+        \begin{cases}
+            p\text{ polinomio lagrange grau n}
+            \\
+            q\text{ polinomio 2 grau minimos quadrados}
+            \\
+            S\text{ spline cubico para } x_i
+        \end{cases}
+    \end{BM}
+} % Q2
+    \answer{c)}?
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Considere a tabela para f
+} % Q3
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C || *{3}{C}}
+            
+                x_i
+                & 0 & 1 & 3
+            \\\hline
+                f(x_i)
+                & c & -1 & 2
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{BM}
+        c\in\mathbb{R}\quad p_1(x)\text{ approx f por min quadr}
+        :p_1(x_i)=f(x_i),i=0,1,2
+    \end{BM}
+    \answer{a)}
+    \begin{flalign*}
+        &
+            p_{1\,(x_i)} 
+            = \alpha_0 + \alpha_1\,x_i
+            &\\[3ex]&
+            \begin{cases}
+                \alpha_0
+                +\alpha_1\,(x_0+x_1+x_2)
+                = y_0+y_1+y_2
+                \\
+                \alpha_0\,(x_0+x_1+x_2)
+                +\alpha_1\,(x_0^2+x_1^2+x_2^2)
+                = x_0\,y_0
+                + x_1\,y_1
+                + x_2\,y_2
+                \\
+                \alpha_0\,(x_0^2+x_1^2+x_2^2)
+                +\alpha_1\,(x_0^3+x_1^3+x_2^3)
+                = x_0^2\,y_0
+                + x_1^2\,y_1
+                + x_2^2\,y_2
+            \end{cases}
+            = &\\&
+            = \begin{cases}
+                \alpha_0
+                +\alpha_1\,(1+3)
+                = c-1+2
+                \\
+                \alpha_0\,(1+3)
+                +\alpha_1\,(1+9)
+                = -1
+                + 3*2
+                \\
+                \alpha_0\,(1+9)
+                +\alpha_1\,(1+27)
+                = 1*-1
+                + 9*2
+            \end{cases}
+            \implies &\\&
+            \implies
+            \begin{cases}
+                5/2 = c
+                \\
+                \alpha_1
+                = 18/12
+                = 3/2
+                \\
+                \alpha_0
+                = 1.7-\alpha_1\,28/10
+                = -5/2
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    \begin{BM}
+        I=\int_{-1}^{1}{f(x)\,\odif{x}}
+        \\
+        \odv[order=2]{f(x)}{x}
+        = C,\,\forall\,x\in\mathbb{R}
+        ,C\neq0
+    \end{BM}
+} % Q4
+    \answer{b)}
+    \begin{flalign*}
+        &
+            I_{T}
+            \approx 
+            \frac{h}{2}\,(f_0+f_1)
+            = \frac{1}{2}\,(f_0+f_1)
+            &\\[6ex]&
+            I_{PM}
+            \approx 
+            h\,f_{\left(\frac{x_0+x_1}{2}\right)}
+            = f_{\left(\frac{-1+1}{2}\right)}
+            = f_0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    \begin{BM}
+        I=\int_a^b{f(x)\,\odif{x}}
+        ;\qquad
+        J=\int_a^b{p_2(x)\,\odif{x}}
+        \\
+        x=\{a,(a+b)/2,b\}
+    \end{BM}
+} % Q5
+    \answer{b)}
+    \begin{flalign*}
+        &
+            I_S
+            \approx \frac{(b-a)/2}{3}\,(f_0+4\,f_1+f_2)
+            &\\[3ex]&
+            I_T
+            \approx \frac{(b-a)/2}{2}\,(f_0+f_1)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Considere a seguinte tabela de val da fun \textit{g}
+} % Q6
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C || *{4}{C}}
+                x_i & -2 & -1 & 4 & 5
+            \\\hline
+                g(x_i)
+                & -1/3 & -1/24 & 8/3 & 1/8
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{questionBox}2{ % Q6.1
+        Pol de N com diff div interp da tabela
+    } % Q6.1
+        \answer{}
+        \begin{flalign*}
+            &
+                p_{n\,(x)}
+                = g_0
+                + \sum_{i=0}^{n-1}{
+                    \left(\prod_{j=0}^{i}{x-x_j}\right)
+                    \,g_{[x_0,\dots,x_{i+1}]}
+                }
+                % = &\\&
+                % = -1/3
+                % + \sum_{i=0}^{n-1}{
+                %     \left(\prod_{j=0}^{i}{x-x_j}\right)
+                %     \,g_{[x_0,\dots,x_{i+1}]}
+                % }
+                % &\\[6ex]&
+                % p_{n\,(x)}=\sum_{i=0}^{n}{y_i\,L_{i\,(x)}}
+                % ;&\\&
+                % L_{i\,(x)}
+                % =\varphi_{i(x)}
+                % =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
+                % \,\prod_{j=i+1}^{n}{\frac{x-x_j}{x_i-x_j}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Considere o integral
+    \begin{BM}
+        I=\int_0^3{\ln(x^2)\odif{x}}
+    \end{BM}
+} % Q7
+    \begin{questionBox}2{ % Q7.1
+        Determine \(\hat{I}\) por ponto med comp h=1
+    } % Q7.1
+        % \answer{}
+        % \begin{flalign*}
+        %     &
+        %         % Integração
+        %         \int_{a=x_0}^{b=x_1}{f_{(x)}\,\odif{x}}
+        %         \approx h\,f_{\left(\frac{x_0+x_1}{2}\right)}
+        %     &
+        % \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q7.2
+        \(\hat{I}_S,n=2\)
+    } % Q7.2
+        \begin{flalign*}
+            &
+                \hat{I}_S
+                \approx 
+                \frac{h}{3}
+                \,(f_0+4\,f_1+f_2)
+                = \frac{(3-1)/2}{3}
+                \,(\ln(0^2)+4\,\ln(1^2)+\ln(2^2))
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Seja \textit{S} a função definida por
+    \begin{BM}
+        S\begin{cases}
+            -x^3-6\,x^2-8\,x+2,\quad&-2\leq x< -1
+            \\
+            \alpha\,x^3+\beta\,x+4,\quad&-1\leq x<0
+            \\
+            -2\,x+4,\quad0\leq x<1
+        \end{cases}
+    \end{BM}
+    Det \(\alpha\text{ e }\beta\) de forma que seja spline cubico interp, s é spline nat?
+} % Q8
+    \answer{}
+    \begin{flalign*}
+        &
+            \lim_{x\to-1^-}{S(x)}
+            = 1-6+8
+            = 3
+            = \lim_{x\to-1^+}{S(x)}
+            = -\alpha-\beta+4
+            &\\[3ex]&
+            \lim_{x\to0^-}{S(x)}
+            = 4
+            = \lim_{x\to0^+}{S(x)}
+            = 4
+            &\\[6ex]&
+            % ================== order=1 ================= %
+            \odv[order=1]{S(x)}{x}
+            =\begin{cases}
+                -3\,x^2-12\,x-8,\quad&-2\leq x< -1
+                \\
+                3\,\alpha\,x^2+\beta,\quad&-1\leq x<0
+                \\
+                -2,\quad0\leq x<1
+            \end{cases}
+            &\\[3ex]&
+            \lim_{x\to-1^-}{\odv[order=1]{S(x)}{x}}
+            = -3+12-8 = 1
+            = \lim_{x\to-1^+}{\odv[order=1]{S(x)}{x}}
+            = 3\,\alpha+\beta
+            &\\[3ex]&
+            \lim_{x\to0^-}{\odv[order=1]{S(x)}{x}}
+            = \beta
+            = \lim_{x\to0^+}{\odv[order=1]{S(x)}{x}}
+            = -2
+            % ================== order=2 ================= %
+            &\\[6ex]&
+            \odv[order=2]{S(x)}{x}
+            =\begin{cases}
+                -6\,x-12,\quad&-2\leq x< -1
+                \\
+                6\,\alpha\,x,\quad&-1\leq x<0
+                \\
+                0,\quad0\leq x<1
+            \end{cases}
+            &\\[3ex]&
+            \lim_{x\to-1^-}{\odv[order=2]{S(x)}{x}}
+            = 6-12=-6
+            = \lim_{x\to-1^+}{\odv[order=2]{S(x)}{x}}
+            = -6\,\alpha
+            &\\[3ex]&
+            \lim_{x\to0^-}{\odv[order=2]{S(x)}{x}}
+            = 0
+            = 0
+            &\\[6ex]&
+            \implies
+            \begin{cases}
+                \beta=-2
+                \\
+                -\alpha-\beta+4
+                = -\alpha+2+4
+                =3
+                \implies
+                \alpha = 3
+                \\
+                1 
+                \neq 3\,\alpha+\beta
+                = 3*3-2
+                = 7
+            \end{cases}
+            &\\&
+            \therefore
+            \text{não interpola nem é spline nat}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}
