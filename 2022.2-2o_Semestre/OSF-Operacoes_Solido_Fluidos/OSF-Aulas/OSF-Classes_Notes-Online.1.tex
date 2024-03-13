@@ -1,0 +1,362 @@
+% !TEX root = ./OSF-Classes_Notes-Online.1.tex
+\providecommand\mainfilename{"./OSF-Classes_Notes-Online.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Classes_Notes-Online.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/OSF-Classes_Notes-Online.1}}}
+% \tikzsetexternalprefix{./.build/figures/OSF-Classes_Notes-Online.1/graphics/}
+
+\mymakesubfile{1}
+[OSF]
+{Introdução} % Subfile Title
+{Introdução} % Part Title
+
+\begin{sectionBox}1{Physichomemical Properties of solids} % S
+    
+    \subsection{Single particles:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Shape
+            \item hardness
+            \item compressive resistence
+            \item electrical charge
+            \item (intraparticle) porosity
+        \end{multicols}
+    \end{itemize}
+
+    \subsection{Bulk solids:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Particle size distribution
+            \item (interparticle) porosity
+            \item humidity
+            \item agglomeration
+            \item flowability
+            \item \dots
+        \end{multicols}
+    \end{itemize}
+
+    \subsection{Solids suspensions (heterogenius mixture in a fluid, gás or liquid)}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Particle size distribution
+            \item Concentration of solids
+            \item viscosity of suspension
+            \item flocculation
+            \item settleability
+            \item \dots
+        \end{multicols}
+    \end{itemize}
+    
+\end{sectionBox}
+
+\section*{Properties of single particles}
+
+\begin{sectionBox}2{Shape} % S
+    
+    \subsubsection{Regular shape:}
+    particles which its geometry is well defined by matematical equations
+    \begin{itemize}
+        \begin{multicols}{4}
+            \item Sphere
+            \item Cylinder
+            \item Cube\dots
+        \end{multicols}
+    \end{itemize}
+    \paragraph*{Sphere:}
+    \begin{BM}[align*]
+        \text{Volume:}\quad&
+        \pi\,d^3/6
+        = 4\,\pi\,r^3/3
+        \\
+        \text{Surface Area:}\quad&
+        \pi\,d^2
+        = 4\,\pi\,r^2
+        \\
+        \text{Projected area in a plane:}\quad&
+        \pi\,d^2/2
+        = \pi\,r^2
+    \end{BM}
+    \paragraph*{Note:} Spheres are special as its compleetely symmetrical whilist the others depend on the orientation
+    
+    \subsubsection{Complex regular shapes}
+    \begin{itemize}
+        \item Maximize surface area per Volume
+        \item Used in packed columns in chem and biochem enginneering
+    \end{itemize}
+
+
+\end{sectionBox}
+
+\begin{sectionBox}3{Irregular shapes} % S
+    \begin{itemize}
+        \item Cannot be identified by math equations
+        \item Characteristic dimension \textit{d}
+        \begin{itemize}
+            \item Sphere Diameter with same volume 
+            \\\(V_{\text{particle}}=V_{\text{sphere}}\)
+            \item Sphere Diameter with same Surface area
+            \\\(S_{\text{particle}}=S_{\text{sphere}}\)
+            \item Sphere Diameter with same Surface per volume
+            \\\(
+                \frac
+                {S_{\text{particle}}}
+                {V_{\text{particle}}}
+                = \frac
+                {S_{\text{Sphere}}}
+                {V_{\text{Sphere}}}
+            \)
+        \end{itemize}
+    \end{itemize}
+    \subsection*{Derivando propriedades:}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{Surface area} % Longest item
+    ]
+        \begin{multicols}{2}
+            \item[Length] \(L=d\)
+            \item[Surface area] \(S=\dot{k}\,d^2\)
+            \item[Volume] \(V=\ddot{k}\,d^3\)
+            \item[Mass] \(m=\rho_S\,V=\rho_S\,\ddot{k}\,d^3\)
+        \end{multicols}
+    \end{description}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Surface factor: \(\dot{k}_{\text{sphere}}=\pi\)
+            \item Volume factor: \(\ddot{k}_{\text{sphere}}=\pi/6\)
+        \end{multicols}
+    \end{itemize}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Particle Distribution Curves} % S
+
+    \begin{BM}
+        \text{Cumulative}
+        \iff
+        \text{Frequency}
+    \end{BM}
+
+    \paragraph*{Diff ways to measure quantity}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \begin{multicols}{3}
+            \item[n:] Number fraction
+            \item[l:] lenght fraction
+            \item[s:] surface fraction
+            \item[v:] volume fraction
+            \item[x:] weight fraction
+        \end{multicols}
+    \end{description}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l@{:\quad} LL}
+            \toprule
+
+                \multicolumn{1}{c}{Property}
+                & \multicolumn{1}{c}{Whole}
+                & \multicolumn{1}{c}{Fraction}
+
+            \\\midrule
+                Number
+                & n_i,d_i
+                & n_i
+                % 
+                \\Length (\unit{\metre})
+                & l=n_i\,d_i
+                & l_i=\frac{n_i\,d_i}{\sum{n_j\,d_j}}
+                % 
+                \\Surface (\unit{\metre^2})
+                & s = n_i\,\dot{k}\,d_i^2
+                & s_i = \frac{n_i\,d_i^2}{\sum{n_j\,d_j^2}}
+                % 
+                \\Volume (\unit{\metre^3})
+                & v = n_i\,\ddot{k}\,d_i^3
+                & v_i = \frac{n_i\,d_i^3}{\sum{n_j\,d_j^3}}
+                % 
+                \\Mass (\unit{\kilo\gram})
+                & x   = n_i\,\rho\,\ddot{k}\,d_i^3
+                & x_i = \frac{n_i\,d_i^3}{\sum{n_j\,d_j^3}}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \subsection*{Mean diameter:}
+    Can be based on different properties of solid like weight, number or volume.
+    \begin{BM}
+        \bar{d_{\alpha}}
+        = \frac{\int{d\,\odif{\alpha}}}{\int{\odif{\alpha}}}
+        = \frac{\sum{d_i\,\alpha_i}}{\sum{\alpha_i}}
+        : \alpha
+        \begin{cases}
+               x: & \text{Weight}
+            \\ n: & \text{Number}
+            \\ v: & \text{Volume}
+            \\ s: & \text{Surface}
+            \\ l: & \text{Lenght}
+        \end{cases}
+    \end{BM}
+    \begin{BM}[flalign*]
+        &
+        % ------------------------------------------------ %
+        %                 Weight and Number                %
+        % ------------------------------------------------ %
+        \text{Weight and Number}&\\&
+        \begin{cases}
+            \text{Measured in number }n\\
+            \bar{d_{x}}
+            = \bar{d_{v}}
+            = \cfrac
+            {\int{d\,\odif{(n\,\rho\,\ddot{k}\,d^3)}}}
+            {\int{   \odif{(n\,\rho\,\ddot{k}\,d^3)}}}
+            = {\color{Emph}
+                \cfrac
+                {\int{n\,d^3\odif{d}}}
+                {\int{n\,d^2\odif{d}}}
+            }
+            = \\
+            = \cfrac
+            {\sum{d_i\,(n_i\,\rho\,\ddot{k}\,d_i^3)}}
+            {\sum{     (n_i\,\rho\,\ddot{k}\,d_i^3)}}
+            = {\color{Emph}
+                \cfrac
+                {\sum{n_i\,d_i^4}}
+                {\sum{n_i\,d_i^3}}
+            }
+            = \\
+            \text{Measured in Weight }x\\
+            = {\color{Emph}
+                \cfrac
+                {\sum{x_i\,d_i}}
+                {\sum{x_i}}
+            }
+        \end{cases}
+        % ------------------------------------------------ %
+        %                      Surface                     %
+        % ------------------------------------------------ %
+        &\\[3ex]&
+        \text{Surface}&\\&
+        \begin{cases}
+            \text{Measured in number }n\\
+            \bar{d}_S
+            = \cfrac
+            {\int{d\,\odif{(n\,\dot{k}\,d^2)}}}
+            {\int{   \odif{(n\,\dot{k}\,d^2)}}}
+            = {\color{Emph}
+                \cfrac
+                {\int{d^2\,n_i\odif{d}}}
+                {\int{d  \,n_i\odif{d}}}
+            }
+            = \\
+            = \cfrac
+            {\sum{d_i\,(n_i\,\dot{k}\,d_i^2)}}
+            {\sum{     (n_i\,\dot{k}\,d_i^2)}}
+            = {\color{Emph}
+                \cfrac
+                {\sum{n_i\,d_i^3}}
+                {\sum{n_i\,d_i^2}}
+            }
+            = \\
+            \text{Measured in Weight }x\\
+            = \cfrac
+            {\sum{
+                \left(
+                    \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+                \right)\,d_i^3}}
+            {\sum{\left(
+                \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+            \right)\,d_i^2}}
+            = {\color{Emph}
+                \cfrac
+                {\sum{x_i}}
+                {\sum{x_i/d_i}}
+            }
+        \end{cases}
+        % ------------------------------------------------ %
+        %                      Lenght                      %
+        % ------------------------------------------------ %
+        &\\[3ex]&
+        \text{Lenght}&\\&
+        \begin{cases}
+            \text{Measured in number }n\\
+            \bar{d}_L
+            = \cfrac
+            {\int{d\,\odif{(n\,d)}}}
+            {\int{   \odif{(n\,d)}}}
+            = {\color{Emph}
+                \cfrac
+                {\int{d\,n\,\odif{d}}}
+                {\int{   n\,\odif{d}}}
+            }
+            = \\
+            = \cfrac
+            {\sum{d_i\,(n_i\,d_i)}}
+            {\sum{     (n_i\,d_i)}}
+            = {\color{Emph}
+                \cfrac
+                {\sum{n_i\,d_i^2}}
+                {\sum{n_i\,d_i  }}
+            }
+            =\\
+            \text{Measured in Weight }x\\
+            = \cfrac
+            {\sum{\left(
+                \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+            \right)\,d_i^2}}
+            {\sum{\left(
+                \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+            \right)\,d_i  }}
+            = {\color{Emph}
+                \cfrac
+                {\sum{x_i/d_i  }}
+                {\sum{x_i/d_i^2}}
+            }
+        \end{cases}
+        &\\[3ex]&
+        \text{Volume}&\\&
+        \begin{cases}
+            \bar{d}_V
+            = \cfrac
+            {\int{d\,\odif{n\,\ddot{k}\,d^3}}}
+            {\int{   \odif{n\,\ddot{k}\,d^3}}}
+            = {\color{Emph}
+                \cfrac
+                {\int{n\,d^3\odif{d}}}
+                {\int{n\,d^2\odif{d}}}
+            }
+            = \\
+            = \cfrac
+            {\sum{d_i\,(n_i\,\ddot{k}\,d_i^3)}}
+            {\sum{     (n_i\,\ddot{k}\,d_i^3)}}
+            = \cfrac
+            {\sum{n_i\,d_i^4}}
+            {\sum{n_i\,d_i^3}}
+            \\\text{Assuming all particles have the same size}\\
+            \sum{n_i\,\ddot{k}\,\bar{d}_V^3}
+            =\ddot{k}\,\bar{d}_V^3\,\sum{n_i}
+            = \sum{n_i\,\ddot{k}\,d_i^3}
+            \implies\\
+            \implies
+            \bar{d}_V
+            = {\color{Emph}
+                \sqrt{
+                    \frac
+                    {\sum{n_i\,d_i^3}}
+                    {\sum{n_i}}
+                }
+            }
+        \end{cases}
+    \end{BM}
+\end{sectionBox}
+
+\end{document}

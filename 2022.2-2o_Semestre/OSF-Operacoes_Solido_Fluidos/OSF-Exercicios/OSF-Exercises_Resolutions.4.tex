@@ -1,0 +1,108 @@
+% !TEX root = ./OSF-Exercises_Resolutions.4.tex
+\providecommand\mainfilename{"./OSF-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Exercises_Resolutions.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/OSF-Exercises_Resolutions.4}}}
+% \tikzsetexternalprefix{./.build/figures/OSF-Exercises_Resolutions.4/graphics/}
+
+\mymakesubfile{4}
+[OSF]
+{Sendimentação e Espressamento} % Subfile Title
+{Sendimentação e Espressamento} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Um ensaio de decantação em tubo de ensaio foi realizado com uma suspensão de carbonato de cálcio (massa específica: 2710\,\unit{\kilo\gram/\metre^3}) em água, cuja concentração inicial é de 236\,\unit{\gram/\litre}. Os resultados do ensaio vêm expressos na seguinte tabela.
+} % Q1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C C}
+            \toprule
+            
+                \multicolumn{1}{c}{Tempo (\unit{\hour})}
+                & \multicolumn{1}{c}{Altura de interface (\unit{\centi\metre})}
+            
+            \\\midrule
+            
+               0.0  & 36.0
+            \\ 0.25 & 32.4
+            \\ 0.5  & 28.6
+            \\ 1.0  & 21.0
+            \\ 1.75 & 14.7
+            \\ 3.0  & 12.3
+            \\ 4.75 & 11.6
+            \\ 12.0 & 9.8
+            \\ 20.0 & 8.0
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{t (\unit{\second})}
+                & \multicolumn{1}{c}{C (\unit{\kilo\gram/\metre^3})}
+                & \multicolumn{1}{c}{e (\unit{\frac{\metre^3\of{sólido}}{\metre^3\of{solução}}})}
+                & \multicolumn{1}{c}{u (\unit{\gram/\metre^3})}
+            
+            \\\midrule
+            
+               0.0   & \num{236}                & \num{0.9129151291512915} & 
+            \\ 0.25  & \num{262.22222222222223} & \num{0.9032390323903239} & 
+            \\ 0.5   & \num{297.06293706293707} & \num{0.8903826800505767} & 
+            \\ 1.0   & \num{404.57142857142856} & \num{0.8507116499736426} & 
+            \\ 1.75  & \num{577.9591836734694}  & \num{0.7867309285337751} & 
+            \\ 3.0   & \num{690.7317073170732}  & \num{0.7451174511745118} & 
+            \\ 4.75  & \num{732.4137931034483}  & \num{0.7297366077109047} & 
+            \\ 12.0  & \num{866.938775510204}   & \num{0.6800963928006627} & 
+            \\ 20.0  & \num{1062}               & \num{0.6081180811808118} & 
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{questionBox}2{ % Q1.1
+        Determine a concentração de sólidos na zona de espessado em função do tempo
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                C\,h\,A
+                = C_0\,h_0\,A 
+                % \implies
+                \implies
+                C = C_0\,\frac{h_0}{h}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        Determine a porosidade na zona de espessado em função do tempo.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                e: 
+                C 
+                = (1-e)\,\rho_s
+                \implies
+                e = 1-\frac{C}{2710}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        question
+    } % Q1.3
+        body
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

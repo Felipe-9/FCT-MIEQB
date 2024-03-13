@@ -1,0 +1,182 @@
+% !TEX root = ./OSF-Exercises_Resolutions.1.tex
+\providecommand\mainfilename{"./OSF-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Exercises_Resolutions.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/OSF-Exercises_Resolutions.1}}}
+% \tikzsetexternalprefix{./.build/figures/OSF-Exercises_Resolutions.1/graphics/}
+
+\mymakesubfile{1}
+[OSF]
+{Subfile Title} % Subfile Title
+{Subfile Title} % Part Title
+
+\setcounter{question}{2}
+
+\begin{questionBox}1{ % Q3
+    \sisetup{round-precision=0}
+    A análise granulométrica de um material em pó numa base de peso é representada por uma linha recta que vai de \qty{0}{\percent} em peso na dimensão de partícula de \qty{1}{\micro\metre} até \qty{100}{\percent} em peso na dimensão de partícula de \qty{101}{\micro\metre}.
+} % Q3
+    \begin{questionBox}2{ % Q3.1
+        Calcular o diâmetro médio em volume das partículas que constituem o sistema.
+    } % Q3.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \bar{d_V}
+                = \frac
+                {\int{d\,\odif{V}}}
+                {\int{   \odif{V}}}
+                = \frac
+                {\rho_s\int{d\,\odif{V}}}
+                {\rho_s\int{   \odif{V}}}
+                = \frac
+                {\int{d\,\odif{x}}}
+                {\int{   \odif{x}}}
+                = \frac
+                {\int_0^1{(100\,x+1)\,\odif{x}}}
+                {\int_0^1{            \odif{x}}}
+                = &\\&
+                = \frac{
+                    100
+                    \,\int_0^1{
+                        (x+1/100)
+                        \,\odif[var]{x+1/100}
+                    }
+                }{1-0}
+                = 100/2
+                \,\adif{\left(
+                    (x+1/100)^2
+                \right)}\big\vert_0^1
+                = &\\&
+                = 100/2
+                \,\left(
+                    (1+1/100)^2
+                    - (1/100)^2
+                \right)
+                = 100/2
+                \,\left(
+                    1+2/100
+                \right)
+                = &\\&
+                = \qty{51}{\micro\metre}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q3.2
+        Calcular o diâmetro médio superficial das partículas que constituem o sistema.
+    } % Q3.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \bar{d}_s
+                = \frac{
+                    \int{d\,\odif{s}}
+                }{
+                    \int{\odif{s}}
+                }
+                = \frac{
+                    \int{d\,\odif{\left(
+                        n\,\dot{k}\,d^2
+                    \right)}}
+                }{
+                    \int{\odif{\left(
+                        n\,\dot{k}\,d^2
+                    \right)}}
+                }
+                % = &\\&
+                = \frac{
+                    \int{d\,\odif{\left(
+                        \left(
+                            \frac{x}{\ddot{k}\,d^3\,\rho_s}
+                        \right)\,\dot{k}\,d^2
+                    \right)}}
+                }{
+                    \int{\odif{\left(
+                        \left(
+                            \frac{x}{\ddot{k}\,d^3\,\rho_s}
+                        \right)\,\dot{k}\,d^2
+                    \right)}}
+                }
+                = &\\&
+                = \frac{
+                    \int{
+                        \frac{
+                            \dot{k}
+                        }{
+                            \ddot{k}\,\rho_s
+                        }\,\odif{x}
+                    }
+                }{
+                    \int{
+                        \frac{\dot{k}}{
+                            \ddot{k}\,d\,\rho_s
+                        }
+                        \odif{x}
+                    }
+                }
+                % = &\\&
+                = \frac{
+                    \frac{
+                        \dot{k}
+                    }{
+                        \ddot{k}\,\rho_s
+                    }
+                    \int{
+                        \odif{x}
+                    }
+                }{
+                    \frac{\dot{k}}{
+                        \ddot{k}\,\rho_s
+                    }
+                    \int{
+                        d^{-1}\,\odif{x}
+                    }
+                }
+                &\\[6ex]&
+                d_s
+                = 1\Biggr{/}\sum{x_i/d_i}
+                = 1\Biggr{/}\int_0^1{
+                    \frac{\odif{x}}{d}
+                }
+                = 1\Biggr{/}\int_0^1{
+                    \frac{\odif{x}}{
+                        100\,x+1
+                    }
+                }
+                = &\\&
+                = 100\Biggr{/}\int_0^1{
+                    \frac{\odif{x}}{
+                        x+1/100
+                    }
+                }
+                = 100\Biggr{/}\int_0^1{
+                    \frac{\odif[var]{x+1/100}}{
+                        x+1/100
+                    }
+                }
+                = &\\&
+                = 100\Biggr{/}\left(
+                    \adif{\ln(x+1/100)}\big\vert_0^1
+                \right)
+                = &\\&
+                = 100\Big{/}\left(
+                    \ln(1+1/100)
+                    -\ln(1/100)
+                \right)
+                = &\\&
+                = 100/\ln{101}
+                % \cong &\\&
+                \cong
+                \SI{21.667906533553168}{\micro\metre}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

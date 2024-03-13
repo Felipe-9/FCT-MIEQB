@@ -1,0 +1,218 @@
+% !TEX root = ./OSF-Tests_Resolutions.2023.1.tex
+\providecommand\mainfilename{"./OSF-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Tests_Resolutions.2023.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/OSF-Tests_Resolutions.2023.1}}}
+% \tikzsetexternalprefix{./.build/figures/OSF-Tests_Resolutions.2023.1/graphics/}
+
+\mymakesubfile{1}
+[OSF]
+{Teste 2023 Resolução} % Subfile Title
+{Teste 2023 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Um moinho de rolos com 1\,\unit{\metre} de diâmetro e 0.4\,\unit{\metre} de comprimento gasta 16.3\,\unit{\kilo\joule/\kilo\gram} para reduzir o tamanho dum sólido com tamanho entre 15 e 35\,\unit{\milli\metre} até um tamanho final médio de 4.7\,\unit{\milli\metre}. O sólido tem massa específica de 1870\,\unit{\kilo\gram/\metre^3} e resistência ao esmagamento de 31\,\unit{\mega\newton/\metre^2}. O moinho opera a uma velocidade angular de 18\,\unit{\rpm} e sabe-se que o caudal mássico real é 15\% do teórico.
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Que distância entre rolos escolheria por forma a que o moinho opere adequadamente?
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                % r_1: raio do moinho
+                % r_2: raio maximo do sólido
+                b:&\\&
+                \cos(\beta/2)
+                = \frac{r_1+b/2}{r_1+r_2}
+                \implies &\\&
+                \implies
+                b
+                = 
+                2\,\cos(\beta/2)\,(
+                    r_1+r_2
+                )
+                -2\,r_1
+                = &\\&
+                = 
+                2\,\cos(31/2)\,(
+                    (1/2)
+                    +(35\E-3/2)
+                )
+                -2\,(1/2)
+                \cong &\\&
+                \cong
+                \qty{-2.642480929075}{\milli\metre}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.2
+        Calcule a potência do moinho nas condições descritas.
+    } % Q1.2
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        Qual seria a potência de operação se a distribuição de tamanhos em base mássica fosse: 
+        \begin{itemize}
+            \begin{multicols}{2}
+                \item 10\% - 3\,\unit{\milli\metre}
+                \item 20\% - 4\,\unit{\milli\metre}
+                \item 60\% - 5\,\unit{\milli\metre}
+                \item 10\% - 6\,\unit{\milli\metre}
+            \end{multicols}
+        \end{itemize}
+    } % Q1.3
+    \end{questionBox}
+\end{questionBox}
+
+% \begin{questionBox}1{} % Q1
+
+    
+%     Redução de tamanhos
+%     Tamanho médio: 5\,\unit{\micro\metre}
+%     Reduzido a tamanho inferior a 100 mícron.
+%     Análize geométrica segue uma reta que vai de 0\% em numero de dimenção de 0 mícrom a 100\% em número dimensão de particula a 100 mícron.
+    
+% \end{questionBox}
+
+% \begin{questionBox}2{} % Q1.1
+    
+%     A distribuição de tamanhos do produto referida é de referencia ou cumulativa? Justifique
+%     % [1 val]
+
+%     \paragraph*{RS:}Pela caracterização de uma reta de 0\% a 100\% no eixo horizontal e 0 a 100 mícron no eixo vertical o gráfico aponta uma distribuição culmulativa.
+%     \\
+
+%     \begin{itemize}
+%         \begin{multicols}{2}
+%            \item Referencia: Diferenciada, comportamento de histograma
+%            \item Culmulativa: Integrada, injetiva, frequencia de 0 a 1
+%         \end{multicols}
+%     \end{itemize}
+    
+% \end{questionBox}
+
+\begin{questionBox}2{} % Q1.2
+    
+    Calcule o diametro médio em base mássica das partículas
+    % 1cq 10\E-6 pa
+
+    \begin{BM}
+        x_1 = n_1\,k'\,d_1^3\,\rho_{s}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \odv{d_1}{n_1}
+            = \frac{1-0}{100-0}
+            = 1\E-2
+            &\\&
+            \int_0^1\odif{x_1}
+            = \adif{n_1\,k'\,d_1^3\,\rho_{s}}
+            &\\&
+            \bar{d}_m
+            = \frac{
+                \int_0^1{d^3\,\odif{n}}
+            }{
+                \int_0^1{d^2\,\odif{n}}
+            }
+            = \frac{
+                \int_0^1{
+                    \left(
+                        \frac{x}{n\,k'\,\rho_s}
+                    \right)\,\odif{n}
+                }
+            }{
+                \int_0^1{
+                    \left(
+                        \frac{x}{n\,k'\,\rho_s}
+                    \right)^{2/3}
+                    \,\odif{n}
+                }
+            }
+            = \cfrac{
+                \int_0^1{
+                    \left(
+                        \frac{x}{n\,k'\,\rho_s}
+                    \right)\,\odif{n}
+                }
+            }{
+                \int_0^1{
+                    \left(
+                        \frac{x}{n\,k'\,\rho_s}
+                    \right)^{2/3}
+                    \,\odif{n}
+                }
+            }
+            &\\&
+            d = 
+            % 
+            % d_m
+            % = \frac{
+            %     \int_0^1{d_m\,\odif{x}}
+            % }{
+            %     \int_0^1{\odif{x}}
+            % }
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.3
+    
+    A energia específica desta operação é \(E=78.0\,\unit{\kilo\gram}\). A resistência ao esmagamento é 33.0\,\unit{\mega\pascal}. Calcule a constante que caracteriza o equipamento de redução.
+
+    \paragraph*{RS}
+    
+\end{questionBox}
+
+% Dica: Força de atrito a area q intereça é projetada num plano a area das contas é da particula representada num plano
+
+\begin{questionBox}1{} % Q2
+    
+    \begin{BM}
+        V_p = \frac{\pi}{4}\left(
+            d^2-d_i^2
+        \right)
+        h
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q2.1
+    
+    Apesar do anel de Raschig ter uma forma regular, ela não é Simétrica como a esfera. Que parâmetro propõe para avaliar a assimetria? Calcule-o e interprete.
+
+    \paragraph*{RS:} Proporção dentre area da projeçã de superfície quando vertical e quando horizontal
+
+    \begin{flalign*}
+        &
+            \frac{
+                \pi\,(d^2-d_i^2)
+            }{
+                d*h
+            }
+            = \frac{
+                \pi\,((6\E-3)^2-(4.8\E-3)^2)
+            }{
+                6\E-3*6\E-3
+            } 
+            = \frac{
+                \pi\,((6)^2-(4.8)^2)
+            }{
+                6*6
+            } 
+            \cong
+            \num
+            [round-precision=4]
+            {1.130973355292326}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\end{document}

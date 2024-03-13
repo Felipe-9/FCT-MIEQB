@@ -1,0 +1,238 @@
+% !TEX root = ./OSF-Exercícios_Resolução.2.tex
+\providecommand\mainfilename{"./OSF-Exercícios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Exercícios_Resolução.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[OSF]
+{Redução da Granulometria de Sólidos}
+{Redução da Granulometria de Sólidos}
+
+% Q1
+\begin{questionBox}1{}
+    
+    Tritura-se um material num triturador de maxilas Blake e reduz-se o tamanho médio das partículas de 50 mm para 10 mm, com um consumo de energia de 13.0 kw s kg-1. Qual será o consumo de energia necessário para triturar o mesmo material do tamanho médio 75 mm até à dimensão média de 25 mm
+    
+\end{questionBox}
+
+% Q1.1
+\begin{questionBox}2{}
+
+    supondo aplicável a lei de Rittinger, e
+
+    \begin{flalign*}
+        &
+            L_1
+            = 50\,\unit{\milli\metre}
+            \to
+            L_2 = 10\,\unit{\milli\metre}
+            &\\&
+            E=13.0\,\unit{\kilo\joule/\kilo\gram}
+            &\\&
+            E = C(L_2^{-1}-L_1^{-1})
+            % \implies &\\&
+            \implies
+            C = 162.5\,\unit{\kilo\joule/\kilo\gram}
+        &
+    \end{flalign*}
+    
+    % \paragraph*{RS} 4.3
+    
+\end{questionBox}
+
+% Q1.2
+\begin{questionBox}2{}
+    
+    supondo aplicável a lei de Kick?
+
+    \begin{flalign*}
+        &
+            L_1 = 50\,\unit{\milli\metre}
+            \to
+            L_2 = 10\,\unit{\milli\metre}
+            &\\&
+            E=13.0\,\unit{\kilo\joule/\kilo\gram}
+            &\\&
+            E = C\,ln(L_1/L_2)
+            % \implies &\\&
+            \implies
+            C = 8.08\,\unit{\kilo\joule/\kilo\gram}
+            &\\[1.5ex]&
+            L_{(75\to25)\unit{\milli\metre}}
+            \implies &\\&
+            \implies
+            E 
+            = C\,\ln(L_1/L_2)
+            = 8.08\,\ln(75/25)
+            \cong 
+            \num{8.88}\,\unit{\kilo\joule\per\kilo\gram}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q2
+\begin{questionBox}1m{}
+    
+    Usou-se um triturador para triturar um material cuja resistência à compressão era de 22.5\,\unit{\mega\newton/\metre^2}. O tamanho da alimentação era menor que 50\,\unit{\milli\metre}, maior que 40\,\unit{\milli\metre} e a potência necessária era 13.0\,\unit{\kilo\watt\,\second\,\kilo\gram^{-1}}. A análise por peneiração do produto produziu o seguinte resultado:
+
+    \begin{table}[H]\centering
+        \setlength\tabcolsep{3mm}        % width
+        \begin{tabular}{*{4}{c}}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{Peneiro}
+                &
+                \multicolumn{2}{c}{
+                        \begin{tabular}{c}
+                            Dimensão da abertura
+                            \\
+                            (mm)
+                        \end{tabular}
+                }
+                &
+                \multicolumn{1}{c}{
+                    \begin{tabular}{c}
+                        Percentagem do produto
+                        \\
+                        (\% em número)
+                    \end{tabular}
+                }
+            
+            \\\midrule
+            
+                1 & Passando por    & 6.00  & 100
+            \\  2 & Retido em       & 4.00  & 26
+            \\  3 & Retido em       & 2.00  & 18
+            \\  4 & Retido em       & 0.75  & 23
+            \\  5 & Retido em       & 0.50  & 8
+            \\  6 & Retido em       & 0.25  & 17
+            \\  7 & Retido em       & 0.125 & 3
+            \\  8 & Passando por    & 0.125 & 5
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{table}
+
+    Qual seria a potência necessária para triturar um \unit{\kilo\gram} por segundo de um material com resistência à compressão de 45\,\unit{\mega\newton\per\metre^2} a partir de uma alimentação de menor que 45\,\unit{\milli\metre}, maior que 40\,\unit{\milli\metre} para dar um produto de tamanho médio de 0.50\,\unit{\milli\metre}?
+
+    \begin{flalign*}
+        &
+            E
+            = C'\,f_C\,(
+                L_2^{-0.5}
+                - L_1^{-0.5}
+            )
+            &\\&
+            C'
+            = E\,\left(
+                f_C (
+                    L_2^{-0.5}
+                    - L_1^{-0.5}
+                )
+            \right)
+            \cong
+            \num{1.903}
+            \implies &\\&
+            \implies
+            E_{(4.25\to0.5)\unit{\milli\metre}}
+            = \num{1.903}*22.5\,(
+                0.5^{-0.5}
+                - 4.25^{-0.5}
+            )
+            \cong
+            108.0
+            \implies &\\&
+            \implies
+            P 
+            = 1\,\unit{\frac{\kilo\gram}{\sec}}
+            * 108.0\unit{\frac{\kilo\joule}{\kilo\gram}}
+            = 108.0
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            L_1 
+            = \frac{40+50}{2}
+            = 45
+            L_{(45)\unit{\milli\metre}}
+            \implies &\\&
+            \implies
+            E 
+            = 2\,C'\,f_C (
+                L_2^{-0.5}
+                - L_1^{-0.5}
+            )
+            \implies
+            C'
+            = E \left(
+                2\,f_C (
+                    L_2^{-0.5}
+                    - L_1^{-0.5}
+                )
+            \right)^{-1}
+            = &\\&
+            = E \left(
+                2*22.5\,\unit{\mega\newton\per\metre^2} (
+                    0.5^{-0.5}
+                    - 45^{-0.5}
+                )
+            \right)^{-1}
+            \cong
+            E\,\num{0.017564997313181}
+            \num{465.65}
+        &
+    \end{flalign*}
+
+    
+
+    \paragraph*{RS} 4.68
+    
+\end{questionBox}
+
+\setcounter{question}{5}
+
+% Q6
+\begin{questionBox}1{}
+    
+    Um moinho de bolas com 1.2\,\unit{\metre} de diâmetro está a trabalhar a 0.80\,\unit{\hertz} verificando-se que o moinho não está a trabalhar satisfatoriamente. Sugere alguma modificação nas condições de funcionamento?
+
+    \paragraph*{RS}
+    \begin{flalign*}
+        &
+            w_o
+            = [
+                w_c/2,
+                w_c\,2/3
+            ]   
+            = [
+                \sqrt{g/r}/2,
+                \sqrt{g/r}\,2/3
+            ]
+            = &\\&
+            = [
+                \sqrt{\num{9.780327}/(1.2/2)}/2,
+                \sqrt{\num{9.780327}/(1.2/2)}\,2/3
+            ]
+            = [
+                \num{2.018696671122237},
+                \num{2.691595561496316}
+            ]
+            &\\&
+            \therefore
+            w >> w_o
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\end{document}

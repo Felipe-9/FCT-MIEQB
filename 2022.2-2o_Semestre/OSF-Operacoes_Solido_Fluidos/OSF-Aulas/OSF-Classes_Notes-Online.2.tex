@@ -1,0 +1,132 @@
+% !TEX root = ./OSF-Classes_Notes-Online.2.tex
+\providecommand\mainfilename{"./OSF-Classes_Notes-Online.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Classes_Notes-Online.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/OSF-Classes_Notes-Online.2}}}
+% \tikzsetexternalprefix{./.build/figures/OSF-Classes_Notes-Online.2/graphics/}
+
+\mymakesubfile{2}
+[OSF]
+{Equipment Size reduction} % Subfile Title
+{Equipment Size reduction} % Part Title
+
+\begin{sectionBox}1{Crushing rolls} % S
+    
+    % Triturador de rolos
+    Compress particles between two rolls
+
+    % Nip angle
+    \begin{BM}
+        \cos{\beta/2}
+        = \frac
+        {r_1+b/2}
+        {r_1+r_2}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[\(r_1\):] Roll radius
+        \item[\(r_2\):] Feed particle size
+        \item[\(b\):] Distance between rolls
+        \item[\(\beta=31^\circ\):] Parametrizado em 31º
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Jaw Crushers} % S
+    
+    % Triturador de Maxilas
+    Crush the particles between two jaw like contraptions
+    \begin{itemize}
+        \item Two jaws one fixed one mobile
+        \item Nip angle \(\sim30^\circ\)
+        \item Coarse reduction
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Energy for size reduction} % S
+    
+    Very low efficiency \(\numrange{0.1}{2.0}\) but effetive size reduction
+    \begin{itemize}
+        \item In producing elastic deformation of the particles before fracture occurs
+        \item In causing elastic distortion of the equipment.
+        \item In friction between particles, and between particles and the machine.
+        \item In noise, heat and vibration in the plant, and In friction losses in the plant itself.
+    \end{itemize}
+
+    \subsection*{Empirical Law of Energy for size reduction}
+    \begin{BM}
+        \odv{E}{L}
+        =-C\,L^p
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(E\)} % Longest item
+    ]
+        \item[\(E\)] Energy spent for size reduction 
+        {[\unit{\kilo\joule/\kilo\gram}]}
+        \item[\(L\)] size of solids calculated as the mean diameter based on voume (\(d_V/\unit{\metre}\)) \\Alternativelly Bond's diameter (\(d_{bond}/\unit{\metre}\)) can be used, its estimated as the mesh size trough which 80\% of the material passes in a sieving characterization experiment.
+        \item[\(C\)] empirical constant related to the solid properties and equipment properties
+        \item[\(p\)] empirical constant related to the size of solids
+        \begin{itemize}
+            \item \(=-1.0\) Coarse reduction
+            \item \(=-1.5\) Intermediate reduction
+            \item \(=-2.0\) Fine reduction
+        \end{itemize}
+    \end{description}
+    Specifying \(p\) for each reduction and integrating we derive the following three laws
+    \subsection*{Rittinger's law (Fine reduction,\(p=-2.0\))}
+    \begin{BM}
+        E 
+        = C\,\adif{L^{-1}}
+        = K_R\,f_c\,\adif{L^{-1}}
+        \\
+        C=K_R\,f_c
+        \begin{cases}
+              K_R: &\text{Depende do triturador}
+            \\f_c: &\text{Depende das particulas}
+        \end{cases}
+    \end{BM}
+    \paragraph*{Note:} Greater efficiency, \(E\propto d^{-1}\)
+    \subsection*{Bond's Law (Intermediate reduction, \(p=-1.5\))}
+    \begin{BM}
+        E
+        =2\,C\,\adif{L^{-1/2}}
+        =E_i\,\sqrt{100/L_1}
+        \left(
+            1 - q^{-1/2}
+        \right)
+        \\
+        \begin{cases}
+            C=E_i\,\sqrt{100}
+            \\
+            q=L_0/L_1
+        \end{cases}
+    \end{BM}
+    \paragraph*{Notes:} Intermediate Efficiency, \(E\propto L_0^{-1}\)
+    \subsection*{Kick's Law (Coarse reduction, \(p=-1.0\))}
+    \begin{BM}
+        E
+        =C\,\adif{\ln{L}}
+        =K_K\,f_c\,\adif{\ln{L}}
+        \\
+        C=K_K\,f_c
+        \begin{cases}
+              K_K: &\text{Depende do triturador}
+            \\f_c: &\text{Depende das particulas}
+        \end{cases}
+    \end{BM}
+    \paragraph*{Notes:} Less energy efficiency, 
+    \(E\propto L_0/L_1\)
+    
+\end{sectionBox}
+
+\end{document}

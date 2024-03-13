@@ -1,0 +1,76 @@
+% !TEX root = ./OSF-Aulas_Anotações.1.tex
+\providecommand\mainfilename{"./OSF-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Aulas_Anotações.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[OSF]
+{Aula}
+{Aula}  
+
+\begin{sectionBox}1{Energia com base na redução de tamanho}
+    
+    % \paragraph{Classificação de tamanho}
+    % \begin{table}[H]\centering
+    %     \begin{tabular}{c c c}
+            
+    %         \\\toprule
+            
+    %             \multicolumn{1}{c}{Fine}
+    %         &   \multicolumn{1}{c}{Intermediate}
+    %         &   \multicolumn{1}{c}{Coarse}
+            
+    %         \\\midrule
+            
+                
+            
+    %         \\\bottomrule
+            
+    %     \end{tabular}
+    % \end{table}
+
+    \begin{BM}
+        \odv{E}{L} = -C\,L^p
+    \end{BM}
+    \begin{itemize}
+        \item[\textit{E}:] Energia Gasta para redução \([E]= \unit{\kilo\joule\per\kilo\gram}\)
+        \item[\textit{L}:] Tamanho dos sólidos \([L]=\unit{\metre}\)
+        \item[\textit{C}:] Constante empírica relacionada com as propríedades empíricas do equipamento
+        \item[\textit{P}:] constante empírica relacionada com a grandeza dos sólidos
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Redução Fina}
+    
+    
+    \begin{itemize}
+        \item Energia ultilizada de forma mais eficiente
+        \item Energia necessária almenta com o tamanho do recebimento decresce
+    \end{itemize}
+
+    \begin{BM}
+        E = C\,(L_2^{-1}-L_1^{-1})
+        \\
+        E = K_r\,f_C\,(L_2^{-1}-L_1^{-1})
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Redução Intermediata}
+    
+    \begin{BM}
+        E = 2\,C\,(\sqrt{L_2}^{-1}-\sqrt{L_1}^{-1})
+        \\
+        E = E_i\,\sqrt{\frac{100}{L_2}}(1-\sqrt{q}^{-1})
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

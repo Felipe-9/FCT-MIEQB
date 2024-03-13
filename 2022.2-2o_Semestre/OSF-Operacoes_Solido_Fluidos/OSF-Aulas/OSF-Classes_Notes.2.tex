@@ -1,0 +1,122 @@
+% !TEX root = ./OSF-Aulas_Anotações.2.tex
+\providecommand\mainfilename{"./OSF-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Aulas_Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[OSF]
+{Aula}
+{Aula}
+
+\begin{sectionBox}1{Equipment Size for Reduction}
+    
+    
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Jaw Crusher}
+    
+    Duas mandibulas com dentes compatíveis
+    
+\end{sectionBox}
+
+\part*{Capítulo 3}
+
+\begin{definitionBox}1{Reynold Number}
+    
+    \begin{BM}
+        Re' = F(\pi\,d\,\rho/\mu)^{-1}
+    \end{BM}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1{Navier-Stokes}
+    
+    \begin{BM}
+        F = 3\,\pi\,\mu\,d\,u
+    \end{BM}
+
+    Aplicado ao movimento de uma esféra em velocidades baixas proporcionalmente.
+    Apenas valido para valores pequenos de \(Re\) pois a linha em valores maiores devia.
+    
+\end{definitionBox}
+
+\begin{sectionBox}1{Queda livre de uma esfera em um líquido}
+    
+    \begin{multicols}{2}
+       
+        \begin{minipage}{\textwidth}
+            
+            \paragraph*{Forças relacionadas}
+            \begin{itemize}
+                \item Atrito
+                \item Gravidade
+                \item Buoyance
+            \end{itemize}
+
+        \end{minipage}
+    
+        \begin{BM}
+            \vec{F_g}
+            = \frac{\pi\,r^3}{6}\rho_{s}\,\vec{g}
+            \\
+            \vec{F_I}
+            = \frac{\pi\,r^3}{6}\rho\,\vec{g}
+            \\
+            \vec{F_g} - \vec{F_I}
+            = \frac{\pi\,r^3}{6}(\rho_s-\rho)\,\vec{g}
+        \end{BM}
+    \end{multicols}
+
+    \paragraph*{Fases}
+    O fenomeno pode ser definido em 4 etapas definidas pelo numero do Reynold
+    \begin{BM}[align*]
+           1\E-4       & <    Re < 0.2          % & \quad \text{}
+        \\ 0.2         & \leq Re < 500\lor1000  % & \quad \text{}
+        \\ 500\lor1000 & \leq Re < Ca\,2\E5     % & \quad \text{}
+        \\ Ca\,2\E5    & < Re                   % & \quad \text{}
+    \end{BM}
+    % \begin{enumerate}
+    %     \item \(1\E-4       <    Re < 0.2\)
+    %     \item \(0.2         \leq Re < 500\lor1000\)
+    %     \item \(500\lor1000 \leq Re < Ca\,2\E5\)
+    %     \item \(Ca\,2\E5 < Re\)
+    % \end{enumerate}
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{Atrito}
+    
+    Ha duas formas de atrito agindo sobre um corpo dentro do flúido
+    \begin{itemize}
+        \item Superfície: Relacionado com a viscosidade do flúido
+        \item Forma: Relacionado com a diferença de pressão do flúido entre os lados do corpo
+    \end{itemize}
+
+    \begin{sectionBox}*3{Atrito de Superfície}
+        
+        Relacionado com a viscosidade do flúido
+
+        \begin{BM}
+            F = 3\,\pi\,\mu\,u\,d
+        \end{BM}
+
+        \paragraph*{Stronkes Law}
+        \begin{BM}
+            \frac{R'}{\rho\,u^2}
+            = 12\,\frac{\mu}{u\,d\,\rho}
+            = 12\,Re'^{-1}
+        \end{BM}
+        Limite da lei de Stronks: \(Re' = 2\)
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\end{document}

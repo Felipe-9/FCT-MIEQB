@@ -1,0 +1,112 @@
+% !TEX root = ./OSF-Exercícios_Resolução.3.tex
+\providecommand\mainfilename{"./OSF-Exercícios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./OSF-Exercícios_Resolução.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[AM\,2C]
+{Exercícios}
+{Exercícios}
+
+\setcounter{question}{1}
+
+\begin{sectionBox}{}
+    
+    \paragraph*{Força de Atrito}
+    \begin{BM}
+        F_{atr}
+        = \frac{\pi\,d^3}{6}
+        \, (\rho_s-\rho)
+        \, g
+    \end{BM}
+
+    \paragraph*{Stokes}
+    \begin{BM}
+        F = 3\,\pi\,\mu\,u\,d
+    \end{BM}
+    \begin{BM}
+        \mu_o
+        = \frac{d^2\,(\rho_s-\rho)\,g}{18\,\mu}
+    \end{BM}
+    
+\end{sectionBox}
+
+% Q2
+\begin{questionBox}1{}
+    
+    Calcular a velocidade limite de uma bola de aço com 2 mm de diâmetro (massa específica = 7.87\,\unit{\gram/\centi\metre^3}) em óleo (massa específica 0.9\,\unit{\gram/\centi\metre^3} , viscosidade 50\,\unit{\milli\newton\,\second\,\metre^{-1}}).
+
+    \begin{flalign*}
+        &
+            u_0
+            = \frac{d^2\,(\rho_s-\rho)\,g}{18\,\mu}
+            \cong 
+            \frac{
+                (2\E-3)^2\,(7.87\E3-0.9\E3)\,\num{9.780327}
+            }{
+                18*50\E-3
+            }
+            = &\\&
+            = \frac{
+                (2)^2\,(7.87-0.9)\,\num{9.780327}
+            }{
+                18*50
+            }
+            \cong 
+            \num{0.3029727964}
+            &\\[1.5em]&
+            Re'
+            = \frac{\rho\,u\,d}{\mu}
+            \cong 
+            \frac{0.9\E3*\num{0.3029727964}*2\E-3}{50\E-3}
+            = \frac{0.9\E3*\num{0.3029727964}*2}{50}
+            \cong
+            \num{10.9070206704}
+            &\\[1.5ex]&
+            F
+            = R'\,\frac{\pi\,d^2}{4}
+            = \rho\,u^2
+            \,\frac{12}{Re'}
+            \left(
+                1 + 0.15\,Re'^{0.687}
+            \right)
+            \,\frac{\pi\,d^2}{4}
+            \cong &\\&
+            \cong {
+                0.9\E3*u^2
+                \,\frac{12}{Re'}
+                \left(
+                    1 + 0.15\,(Re')^{0.687}
+                \right)
+                \,\frac{\pi\,(2\E-3)^2}{4}
+            }
+            = &\\&
+            = {
+                0.9*(u)^2
+                \,\frac{12}{Re'}
+                \left(
+                    1 + 0.15\,(Re')^{0.687}
+                \right)
+                \,\frac{\pi\,2^2\E-3}{4}
+            }
+            = &\\&
+            = \frac{\pi\,(2\E-3)^3}{6}
+            \,(7.87\E3-0.9\E3)\,\num{9.780327}
+            = \frac{\pi\,2^3\E-3}{6}
+            \,(7.87-0.9)\,\num{9.780327}
+            &\\[1.5ex]&
+            u \cong \qty{0.19}{\metre\per\second}
+            &\\&
+            Re' \cong 6.95
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\end{document}
