@@ -1,0 +1,339 @@
+% !TEX root = ./FT_II-Slides_Annotations.4.tex
+\providecommand\mainfilename{"./FT_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Slides_Annotations.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/FT_II-Slides_Annotations.4}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Slides_Annotations.4/}
+
+\mymakesubfile{4}
+[FT II]
+{Anotações: Difusão em estádo estacionário} % Subfile Title
+{Difusão em estádo estacionário} % Part Title
+
+\begin{sectionBox}1{Difusão em estado estacionário para todas as geometrias} % S
+
+    \begin{BM}
+        N_{A,z_1}
+        = \frac{c\,D_{A,B}}{\Theta\,\eta_d\,z_1}
+        \,\ln\frac
+        {1-\Theta\,y_{A,1}}
+        {1-\Theta\,y_{A,0}}
+        % \\[2ex]
+        ; \qquad
+        \Theta = 1+\frac{N_{B,z}}{N_{A,z}}
+    \end{BM}
+
+    \begin{multicols}{2}
+        \paragraph*{\(z\):} Dimensão caracteristica
+        \begin{itemize}
+            \item \textit{z} para película plana
+            \item \(r_1\) para cilindros e esferas
+        \end{itemize}
+
+        \begin{minipage}{1\textwidth}
+            \paragraph*{\(\eta_d\):} Fator adimensional
+            \begin{itemize}
+                \item 1 para plano
+                \item \(\ln(r_2/r_1)\) para cilíndro
+                \item \(1-r_2/r_1\) para esféra
+            \end{itemize}
+        \end{minipage}
+    \end{multicols}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Geometria cilíndrica} % S
+    
+    \section*{Equação de concervação}
+    \begin{BM}
+        2\,\pi\,r\,L\,N_{A,r}\big\vert_{r}
+        = 2\,\pi\,r\,L\,N_{A,r}\big\vert_{r+\adif{r}}
+        \implies
+        \begin{cases}
+            r\,N_{A,r} \text{ é constante}
+            \\ 
+            r\,N_{B,r} \text{ é constante}
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Casos espeçíficos em dif plana} % S
+    
+    \subsection*{Difusão através de componente estagnado} % S
+    \begin{BM}
+        N_{A,z_1}
+        = \frac{c\,\mathscr{D}_{A,B}}{z_1}
+        \,\ln\frac
+        {1-y_{A,1}}
+        {1-y_{A,0}}
+        \quad
+        N_B=0
+    \end{BM}
+
+    \subsection*{Contra Difusão Equimolar}
+    \begin{BM}
+        N_{A,z_1}
+        =-\frac
+        {c\,\mathscr{D}_{A,B}}
+        {z_1}
+        (y_{A,1}-y_{A,0})
+        ;\quad
+        N_B=-N_A
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % MARK:E1
+    Um componente A difunde-se através de uma camada em repouso de um componente \textit{B} de espessura \textit{Z}. A pressão parcial de \textit{A} num dos lados da camada é \(p_{A,1}\) e no outro lado \(p_{A,2} < p_{A,1}\). Mostre que o fluxo máximo possível de A através dessa camada é dado por:
+    \begin{BM}
+        N_{A\,\max{}}
+        = \frac{\mathscr{D}\,P}{R\,T\,Z}
+        \,\ln\frac{P}{P-p_{A,1}}
+    \end{BM}
+} % E1
+    \answer{}
+    \begin{flalign*}
+        &
+            N_{A,\max,z}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,\eta_d\,z}
+            \ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            = \frac
+            {
+                \frac{P}{R\,t}
+                \,\mathscr{D}_{A,B}
+            }
+            {\Theta\,\eta_d\,z}
+            \ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            N_{A,\max,z}\implies y_{A,2}=0
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B,z}/N_{A,z}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            N_{A,\max,z}
+            = \frac
+            {P\,\mathscr{D}_{A,B}}
+            {R\,T\,(1)\,z}
+            \ln{\frac
+                {1}
+                {1-y_{A,1}}
+            }
+            = &\\&
+            = \frac
+            {P\,\mathscr{D}_{A,B}}
+            {R\,T\,z}
+            \ln{\frac
+                {1}
+                {1-P_{A,1}/P}
+            }
+            = \mathemph{
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {z\,R\,T}
+                \ln{\frac
+                    {P}
+                    {P-P_{A,1}}
+                }
+            }
+        &
+    \end{flalign*}
+
+    \answer{}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{IMG_6431}
+    \end{center}
+    
+\end{exampleBox}
+
+\begin{exampleBox}1{ % MARK: E2
+    Moldou-se naftaleno sob a forma de um cilindro de raio \(R_1\) que se deixou sublimar no ar em repouso. Mostre que a velocidade de sublimação é dada por:
+    \begin{BM}
+        Q
+        =\frac
+        {2\,\pi\,L\,\mathscr{D}\,P}
+        {
+            R\,T
+            \,\ln(R_2/R_1)
+        }
+        \,\ln{\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+        }
+    \end{BM}
+    Sendo a fracção molar correspondente à pressão de vapor do naftaleno e \(y_{A,2}\) a fracção molar correspondente a \(R_2\).\\
+    Explique o que sucede à velocidade de sublimação quando \(R_2\) se torna muito grande.
+} % E2
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = N_{A,R_1}\,S_{R_1}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,R_1\,\ln{(R_2/R_1)}}
+            \,\ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            \,(2\,\pi\,R_1\,L)
+            = &\\&
+            = \frac{
+                \left(\frac{P}{R\,T}\right)
+                \,\mathscr{D}_{A,B}
+                \,2\,\pi\,L
+            }
+            {\Theta\,\ln{(R_2/R_1)}}
+            \,\ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B}/N_{A}
+            = 1+0/N_{A}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            Q
+            % = &\\&
+            = \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,2\,\pi\,L
+            }
+            {R\,T\,\ln{(R_2/R_1)}}
+            \,\ln{\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+        &
+    \end{flalign*}
+
+    \answer{}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{IMG_6432}
+    \end{center}
+    \paragraph*{Maximizar Q} removemos \(y_{A,2}\)
+    
+\end{exampleBox}
+
+\begin{exampleBox}2{ % E2.1
+    E se a geometria for esférica
+} % E2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = N_{A,R_1}\,S_{R_1}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,R_1(1-R_1/R_2)}
+            \,\ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            \,(4\,\pi\,R_1^2)
+            = &\\&
+            = \frac
+            {
+                \left(
+                    \frac{P}{R\,T}
+                \right)
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {R_1^{-1}-R_2^{-1}}
+            \,\ln{\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \lim_{R_2\to\infty}{Q}
+            = \lim_{R_2\to\infty}{
+                \frac
+                {
+                    P\,\mathscr{D}_{A,B}
+                    \,4\,\pi
+                }
+                {R\,T\,(R_1^{-1}-R_2^{-1})}
+                \,\ln\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+            = &\\&
+            = 
+            \frac
+            {
+                P\,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {
+                R\,T
+                \,\lim_{R_2\to\infty}{
+                    {(R_1^{-1}-R_2^{-1})}
+                }
+            }
+            \,\ln\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+            = &\\&
+            = 
+            \frac
+            {
+                P\,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {
+                R\,T
+                (R_1^{-1})
+            }
+            \,\ln\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+        &
+    \end{flalign*}
+
+    \answer{}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{IMG_6433}
+    \end{center}
+    
+\end{exampleBox}
+
+\end{document}

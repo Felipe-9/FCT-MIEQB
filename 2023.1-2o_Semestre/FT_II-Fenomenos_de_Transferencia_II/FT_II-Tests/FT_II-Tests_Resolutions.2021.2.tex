@@ -1,0 +1,409 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2021.2.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2021.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2021.2}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2021.2/graphics/}
+
+\mymakesubfile{2}
+[FT II]
+{Teste 2021.2 Resolução} % Subfile Title
+{Teste 2021.2 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Ar a \qty*{10}{\celsius} e \qty*{1}{\atm} move-se a uma velocidade de \qty*{30}{\metre/\second} paralelamente a uma placa quadrada de naftaleno com \qty*{3}{\milli\metre} de espessura e \qty*{40}{\centi\metre} de lado.
+} % Q1
+    \def\naft{\text{naft}}
+    \def\ar{\text{ar}}
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item \(Sh_x=0.3320\,Re_x^{0.5}\,Sc^{0.33}\) Regime \emph{laminar}
+        \item \(Sh_x=0.0292\,Re_x^{0.8}\,Sc^{0.33}\) Regime \emph{turbulento}
+        \begin{multicols}{2}
+            \item \(Re_{x,c}=x_c\,u/v=32\E{5}\)
+            \item \(\mathscr{D}_{\naft,\ar}=\qty*{0.051}{\centi\metre^{2}/\second}\)
+            \item \(\rho_{\naft}=\qty{1.2}{\gram/\centi\metre^3}\)
+            \item \(M_{\naft}=\qty*{128}{\gram/\mole}\)
+            \item \(P^*_{\naft}=\qty{1e-3}{\atm}\)
+        \end{multicols}
+        \begin{multicols}{2}
+            \item \(R=\qty{8.314462618}{\joule.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(\qty*{1}{\atm}=\qty*{1e5}{\Pa}\)
+            \item \(Sh_x=k_C\,x/\mathscr{D}\)
+            \item \(Re_x=x\,u/v\)
+            \item \(Sc=v/\mathscr{D}=2.57\)
+        \end{multicols}
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Por quanto tempo deverá ser a placa exposta ao ar de modo a desaparecer completamente? (4v)
+} % Q1.1
+    \def\naft{\text{naft}}
+    \answer{}
+    \begin{flalign*}
+        &
+            t 
+            = \frac{n}{W}
+            = \frac{
+                Vol_{\naft}\,\frac{\rho_{\naft}}{M_{\naft}}
+            }{
+                \bar{k_C}\,(C_{A,S}-C_{A,\infty})\,A
+            }
+            = \frac{
+                L^2\,D
+                \,\frac{\rho_{\naft}}{M_{\naft}}
+            }{
+                \bar{k_C}
+                \,\left(
+                    \left(
+                        \frac{n}{V}
+                    \right)
+                    -0
+                \right)\,L^2
+            }
+            = \frac{
+                D\,\frac{\rho_{\naft}}{M_{\naft}}
+            }{
+                \bar{k_C}\,
+                \left(\frac{P}{R\,T}\right)
+            }
+            % 
+            % 
+            % 
+            % ; &\\[3ex]&
+            % \text{\emph{Quantidade de Naftaleno}:}
+            % n
+            % = Vol_{\naft}\,\frac{\rho_{\naft}}{M_{\naft}}
+            % = 40^2\,3\E{-1}
+            % \,\unit{\centi\metre^3}
+            % \,\frac
+            % {\qty*{1.200}{\gram/\centi\metre^3}}
+            % {\qty*{128}{\gram/\mole}}
+            % =
+            % \qty*{4.5}{\mole\of{\naft}}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \bar{k_C}
+            = \frac{
+                \int_0^L{k_C\,\odif{x}}
+            }{
+                \int_0^L{\odif{x}}
+            }
+            = \frac{
+                \int_0^{x_c}{k_{C,L}\,\odif{x}}
+                + \int_{x_c}^{L}{k_{C,T}\,\odif{x}}
+            }{
+                L
+            }
+            = &\\&
+            = \frac{1}{L}
+            \left(
+                \int_0^{x_c}{
+                    \frac{\mathscr{D}}{x}
+                    \,Sh_{x,L}
+                    \,\odif{x}
+                }
+                + \int_{x_c}^{L}{
+                    \frac{\mathscr{D}}{x}
+                    \,Sh_{x,T}
+                    \,\odif{x}
+                }
+            \right)
+            = &\\&
+            = \frac{1}{L}
+            \left(
+                \int_0^{x_c}{
+                    \mathscr{D}
+                    \,0.332
+                    \,Re_x^{0.5}
+                    \,Sc^{0.33}
+                    \,\frac{\odif{x}}{x}
+                }
+                + \int_{x_c}^{L}{
+                    \mathscr{D}
+                    \,0.0292
+                    \,Re_x^{0.8}
+                    \,Sc^{0.33}
+                    \,\frac{\odif{x}}{x}
+                }
+            \right)
+            = &\\&
+            = \frac{1}{L}
+            \left(
+                \begin{aligned}
+                    &
+                    \mathscr{D}
+                    \,0.332
+                    \,Sc^{0.33}
+                    \int_0^{x_c}{
+                        \,\left(
+                            \frac{x\,u}{v}
+                        \right)^{0.5}
+                        \,\frac{\odif{x}}{x}
+                    }
+                    &+\\+&
+                    \mathscr{D}
+                    \,0.0292
+                    \,Sc^{0.33}
+                    \int_{x_c}^{L}{
+                        \left(
+                            \frac{x\,u}{v}
+                        \right)^{0.8}
+                        \,\frac{\odif{x}}{x}
+                    }
+                \end{aligned}
+            \right)
+            = &\\&
+            = \frac{\mathscr{D}\,Sc^{0.33}}{L}
+            \left(
+                \begin{aligned}
+                    &
+                    0.332
+                    \,\frac{u^{0.5}}{v^{0.5}}
+                    \int_0^{x_c}{
+                        x^{-0.5}\,\odif{x}
+                    }
+                    &+\\+&
+                    0.0292
+                    \,\frac{u^{0.8}}{v^{0.8}}
+                    \int_{x_c}^{L}{
+                        x^{-0.2}\,\odif{x}
+                    }
+                \end{aligned}
+            \right)
+            = &\\&
+            = \frac{
+                0.051\E{-4}
+                * 2.57^{0.33}
+            }{  0.4 }
+            \left(
+                \begin{aligned}
+                    &
+                    0.332
+                    \,\frac{(3.2\E{5})^{0.5}}{(0.14)^{0.5}}
+                    \,x_c^{0.5}
+                    &+\\+&
+                    0.0292
+                    \,\frac{u^{0.8}}{v^{0.8}}
+                    \left(
+                        L^{0.8}
+                        - x_c^{0.8}
+                    \right)
+                    &
+                \end{aligned}
+            \right)
+            ; &\\[3ex]&
+            \mathemph{x_c}
+            &\\&
+            \frac{x_c\,u}{v}
+            = \frac{x_c\,u}{Sc\,\mathscr{D}}
+            = Re_{x_c}
+            \implies &\\&
+            \implies
+            x_c
+            = \frac{Re\,Sc\,\mathscr{D}}{u}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Determine o valor do coeficiente de transferência de massa a uma distância de \qty*{5}{\centi\metre} do início da
+    placa. (2v)
+} % Q1.2
+    \answer{}
+    A \qty*{5}{\centi\metre} acida da placa o regime é laminar
+    \begin{flalign*}
+        &
+            \frac{k_C\,x}{\mathscr{D}}
+            = Sh_x
+            = 0.332
+            \,Re_x^{0.5}
+            \,Sc^{0.33}
+            = 0.332
+            \,\left(
+                \frac{x\,u}{v}
+            \right)^{0.5}
+            \,Sc^{0.33}
+            \implies &\\[3ex]&
+            \implies
+            k_C
+            = \frac{\mathscr{D}}{x}
+            \,0.332
+            \,\left(
+                \frac{x\,u}{v}
+            \right)^{0.5}
+            \,Sc^{0.33}
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q1.3
+    De acordo com a teoria do filme, qual seria a espessura do filme estagnado junto à superfície, a essa distância? (1v)
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            k_C
+            = \frac{\mathscr{D}_{A,B}}{\delta}
+            \implies
+            \delta
+            \cong
+            \frac{\mathscr{D}_{A,B}}{k_C}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Se pretender comprar ambientadores sólidos perfumados tendo para escolha com a forma de esferas ou de cubos, com as mesmas dimensões e custo, quais escolheria? Justifique a sua resposta. (3v)
+} % Q1.4
+    \answer{}
+    A minha escolha dependeria do meu objetivo as utilizar o am- bientador. Para esferas e cubos com as mesmas dimensões, a áRea exposta de um cubo é maior que a da esfera e o volume do cubo tambem é maior. Isto quere dizeR que, se pretencer um cheiro mais intenso, escolho: o cuba (por ter uma velocida- de de sublimação mais alta) e se pretender que o cheiro dure mais itempo, escolho a esfera.
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Pretende-se remover \ch{SO2} de uma mistura gasosa constituída por \ch{SO2} e ar por absorção em água, usando uma coluna de enchimento. Num dado ponto da coluna a percentagem molar de \ch{SO2} no ar é 22\% e 1\% na água. A coluna opera a uma pressão de \qty*{3.5}{\atm} e à temperatura de \qty*{15}{\celsius}. A linha de equilíbrio é dada por \(y^*= 7.6\,x\). Sabendo que \(k_y = \qty*{2}{\mole/\metre^2.\hour}\) e ambas as fases contribuem com igual resistência calcule:
+} % Q2
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(y_A=0.22\)
+            \item \(x_A=0.01\)
+            \item \(P=\qty*{3.5}{\atm}\)
+            \item \(T=\qty*{288.15}{\kelvin}\)
+            \item \(y^*_A=7.6\,x_A\)
+            \item \(k_y=\qty*{2}{\mole/\metre^2.\hour}\)
+        \end{multicols}
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    O coeficiente individual de transferência de massa de massa, \(k_x\).
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \frac{k_y^{-1}}{K_y^{-1}}
+            = \frac{k_x^{-1}}{K_x^{-1}}
+            = 0.5
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \frac{1}{K_y}
+            = \frac{1}{k_y}
+            + \frac{m}{k_x}
+            % \implies &\\&
+            \implies
+            k_x
+            = m
+            \,\left(
+                \frac{1}{K_y}
+                - \frac{1}{k_y}
+            \right)^{-1}
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q2.2
+    Os coeficientes globais de transferência de massa, \(K_y\text{ e }K_G\). (2v)
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            K_G
+            \,\left(
+                P_{A,G}-P_{A}^*
+            \right)
+            = N_A
+            = K_y
+            \,\left(
+                y_{A}-y_{A}^*
+            \right)
+            = K_y
+            \,\left(
+                y_{A}-7.6\,x_A
+            \right)
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            P_{A,G}
+            = 0.22*3.5
+            = \qty*{0.77}{\atm}
+            \quad
+            y^*_A=7.6\,x_A=0.076
+            \quad
+            y_A=0.22
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q2.3
+    O fluxo de transferência de massa. (2v)
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            N_A
+            = K_y
+            \,\left(
+                y_{A}-y_{A}^*
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    O fluxo de transferência de massa. (2v)
+} % Q2.4
+    \answer{}
+    \begin{flalign*}
+        &
+            x_{A,i}
+            = y_{A,i}/7.6
+            ; &\\[3ex]&
+            \frac{k_y^{-1}}{K_y^{-1}}
+            = \frac
+            {y_A-y_{A,i}}
+            {y_A-y^*_{A}}
+            = 0.5
+            \implies &\\&
+            \implies 
+            = y_{A,i}
+            = y_A
+            - 0.5
+            \,(y_A-y^*_{A})
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.5
+    Se em vez de usar água como fase líquida, usar uma solução aquosa de \ch{NaOH}, ocorrerá a sequinte reacção química (reacção de segunda ordem irreversível) com uma cinética muito rápida. \ch{SO2 + 2 NaOH -> Na2SO3 + H2O} Explique qual a vantagem de usar uma concentração de \ch{NaOH} superior à crítica e calcule o fluxo de transferência de massa nesta situação. Compare com o valor obtido em 2.b e comente. (2v)
+} % Q2.5
+    \answer{}
+    \begin{flalign*}
+        &
+            \frac{N_A}{N_A^0}
+            ; &\\[3ex]&
+            N_A
+            = k_y
+            \,(y_{A}-y_{A,i})
+            = k_y
+            \,(y_{A}-0)
+            = 2*0.22
+            = \qty*{0.44}{\mole/\metre^2.\hour}
+            \implies &\\[3ex]&
+            \implies
+            \frac{N_A}{N_A^0}
+            = \frac{0.44}{0.144}
+            \cong 4
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

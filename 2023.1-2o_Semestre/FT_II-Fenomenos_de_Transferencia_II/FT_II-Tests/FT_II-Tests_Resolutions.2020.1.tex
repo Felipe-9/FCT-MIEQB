@@ -1,0 +1,366 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2020.1.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2020.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2020.1}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2020.1/graphics/}
+
+\mymakesubfile{1}
+[FT II]
+{Test 2020.1 Resolution} % Subfile Title
+{Test 2020.1 Resolution} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Uma partícula de carvão queima numa atmosfera gasosa (21\,\% de percentagem molar em oxigénio) a \qty*{1200}{\K}, à pressão atmosférica (\qty*{1.013e5}{\Pa}). O processo é limitado pela difusão de \ch{O2} em sentido oposto ao do \ch{CO2} que se forma, através de uma reacção instantânea com o carvão à sua superfície. O carvão, constituído por esferas com diâmetro de \qty*{0.2}{\mm}, consiste em carbono puro com uma massa específica de \qty*{1280}{\kg.\m^{-3}}.
+    \begin{center}
+        \large\bfseries\ch{
+            C\sld{} + O2\gas{} -> CO2\gas{}
+        }
+    \end{center}
+} % Q1
+    \paragraph*{Considere}
+    \begin{align*}
+        \mathscr{D}_{\ch{O2},\text{mist gas}}
+        &=\qty*{1e-4}{\m^2/\s}
+        ;& R&=\qty{8.20573660809596}{\metre^3.\Pa/\mole.\kelvin}
+    \end{align*}
+    \paragraph*{Nota:} Nas alíneas seguintes, de b) a e) assuma que o processo de difusão ocorre em \emph{estado estacionário}.
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Faça uma estimativa do coeficiente de difusão do oxigénio no ar se a pressão for o dobro da presssão atmosférica e a temperatura for \qty*{1500}{\K}.
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                A:& \ch{O2}
+                \\ B:& \text{Mist gasosa}
+            \end{cases}
+            % 
+            % 
+            % 
+            &\\[2ex]&
+            \mathscr{D}_{A,B,1500\,\unit{\kelvin},2\,P_1\,\unit{\atm}}
+            = \mathscr{D}_{A,B,1200\,\unit{\kelvin},P_1\,\unit{\atm}}
+            \,\frac{P_1}{P_2}
+            \,\left(
+                \frac{T_2}{T_1}
+            \right)^{3/2}
+            = &\\&
+            = 1\E{-4}
+            \,\frac{P_1}{2\,P_1}
+            \,\left(
+                \frac{1500}{1200}
+            \right)^{3/2}
+            % \cong &\\&
+            \cong\qty
+            {6.98771242968684e-5}
+            {\m/\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Voltando às condições referidas no enunciado, faça um esquema do processo que está a ocorrer, apresente a respectiva equação de conservação de massa e explicite as condições fronteira que considerou.
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                    A: \ch{O2}
+                \\  B: \ch{CO}
+                \\  N_{\ch{CO}}=-N{\ch{O2}}
+                \quad\text{Reação Instantanea}
+            \end{cases}
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            N_{A,r}
+            = -\frac
+            {C\,\mathscr{D}_{A,B}}
+            {1-\Theta\,y_A}
+            \,\odv{y_A}{r}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B}/N_A
+            = 0
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            N_{A,r}
+            = -C\,\mathscr{D}_{A,B}
+            \,\odv{y_A}{r}
+            % &\\&
+            \quad
+            \begin{cases}
+                r_0=R
+                \\ y_{A,0}=0
+                &\quad\text{(Reação instantanea)}
+                \\
+                r_1=\infty
+                &\quad\text{(Atmosfera)}
+                \\
+                y_{A,1}=0.21
+                &\quad\text{(\unit{\percent\of{\ch{O2}}} na atmosfera)}
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    Com base na sua resposta à alínea b) deduza uma expressão para a velocidade de difusão do oxigénio.
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = -N_{A,r}\,S_{r}
+            = C\,\mathscr{D}_{A,B}
+            \,\odv{y_A}{r}
+            \,(4\,\pi\,r^2)
+            \implies &\\&
+            \implies
+            \int_{r_0}^{\infty}{
+                Q\,\frac{\odif{r}}{r^2}
+            }
+            = Q\,\int_{r_0}^{\infty}{
+                \frac{\odif{r}}{r^2}
+            }
+            = -Q\,(0-r_0^{-1})
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{y_{A,r_0}}^{y_{A,\infty}}{
+                C\,\mathscr{D}_{A,B}
+                \,4\,\pi
+                \,\odif{y_{r}}
+            }
+            = 
+            C\,\mathscr{D}_{A,B}
+            \,4\,\pi
+            \int_{0}^{.21}{
+                \odif{y_{A,r}}
+            }
+            = &\\&
+            = 
+            \left(
+                \frac{P}{R\,T}
+            \right)
+            \,\mathscr{D}_{A,B}
+            \,4\,\pi
+            \,0.21
+            \implies &\\[3ex]&
+            \implies
+            Q
+            = \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+                \,0.21
+                \,r_1
+            }
+            {R\,T}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Calcule o valor da velocidade de difusão do oxigénio.
+} % Q1.4
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+                \,0.21
+                \,r_1
+            }
+            {R\,T}
+            = &\\&
+            = \frac
+            {
+                1.013\E5
+                * (1\E{-4})
+                * 4\,\pi
+                * 0.21
+                * 0.1\E{-3}
+            }
+            {
+                \num{8.314462618}
+                *1200
+            }
+            \cong &\\&
+            \cong\qty
+            {2.679311283254509e-7}
+            {\mole/\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.5
+    Quanto tempo demora uma partícula de carvão a arder completamente?
+} % Q1.5
+    \answer{}
+    \begin{flalign*}
+        &   
+            -C_{A,L}
+            \,\odv{V}{t}
+            =-C_{A,L}
+            \,\odv{(4\,\pi\,r^3/3)}{t}
+            =-C_{A,L}
+            \,4\,\pi\,r^2
+            \,\odv{r}{t}
+            = &\\&
+            = Q
+            = \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+                \,0.21
+                \,r
+            }
+            {R\,T}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{r_0}^{r_1}{
+                -C_{A,L}
+                \,4\,\pi\,r
+                \,\odif{r}
+            }
+            = 
+            -C_{A,L}
+            \,4\,\pi
+            \int_{r}^{0}{
+                r\,\odif{r}
+            }
+            = &\\&
+            = 
+            -C_{A,L}
+            \,4\,\pi
+            (0^2-r^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_0^{t}{
+                \frac
+                {
+                    P
+                    \,\mathscr{D}_{A,B}
+                    \,4\,\pi
+                    \,0.21
+                }
+                {R\,T}
+                \,\odif{t}
+            }
+            = 
+            \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+                \,0.21
+            }
+            {R\,T}
+            \int_0^{t}{
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+                \,0.21
+            }
+            {R\,T}
+            t
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            t
+            = \frac{
+                C_{A,L}
+                \,r^2
+                \,R\,T
+            }{
+                P
+                \,\mathscr{D}_{A,B}
+                \,2
+                *0.21
+            }
+            = \frac{
+                (1280\E{3}/12)
+                * (0.1\E{-3})^2
+                * \num{8.314462618}
+                * 1200
+            }{
+                (1.013\E{5})
+                * 1\E{-4}
+                * 2
+                * 0.21
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.6
+    Assuma agora que o processo de difusão ocorre em estado pseudo-estacionário. Nestas circunstâncias, quanto tempo demora uma partícula de carvão a arder completamente. Compare com o resultado obtido na alínea e) e comente.
+} % Q1.6
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            =\frac{N}{t}
+            \implies &\\&
+            \implies
+            t
+            =\frac{N}{Q}
+            =Q^{-1}
+            \,\frac{V\,\rho}{M}
+            =
+            \frac{(4\,\pi\,r^3/3)\,\rho}{M\,Q}
+            \cong
+            \frac{
+                (4*\pi\,(0.1\E{-3})^3/3)
+                \,1280
+            }{
+                12\E{-3}
+                \,\num{2.679311283254509e-7}
+            }
+            \cong &\\&
+            \cong
+            \qty
+            {1.66760872953822525}
+            {\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

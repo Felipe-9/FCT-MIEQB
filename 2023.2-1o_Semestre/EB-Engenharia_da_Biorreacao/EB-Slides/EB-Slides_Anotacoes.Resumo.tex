@@ -25,9 +25,9 @@
         r_x=\mu\,x
         \qquad
         \begin{cases}
-            (r_x)=\si{\gram\of{X}/\litre.\hour}
+            (r_x)=\unit{\gram\of{X}/\litre.\hour}
             \\
-            (\mu)=\si{\hour^{-1}}
+            (\mu)=\unit{\hour^{-1}}
         \end{cases}
     \end{BM}
 
@@ -51,9 +51,9 @@
         + m\,x
         \\
         \begin{cases}
-            (r_s)=\si{\gram\of{S}/\litre.\hour}
-            \\(V_{s\,\max})=\si{\gram\of{S}/\gram\of{X}.\hour}
-            \\(m)=\si{\gram\of{S}/\gram\of{X}.\hour}\ (\text{maintenance coefficient})
+            (r_s)=\unit{\gram\of{S}/\litre.\hour}
+            \\(V_{s\,\max})=\unit{\gram\of{S}/\gram\of{X}.\hour}
+            \\(m)=\unit{\gram\of{S}/\gram\of{X}.\hour}\ (\text{maintenance coefficient})
         \end{cases}
     \end{BM}
 
@@ -65,7 +65,7 @@
         = Y'_{x/s}\,\mu+m
         \\
         \begin{cases}
-            (V_s)=\si{\gram\of{S}/\gram\of{X}.\hour}
+            (V_s)=\unit{\gram\of{S}/\gram\of{X}.\hour}
         \end{cases}
     \end{BM}
     
@@ -84,8 +84,8 @@
         = Y_{p/x}\,\mu
         \\
         \begin{cases}
-            (r_P)=\si{\gram\of{P}/\litre.\hour}\,\text{(volumetric product production rate)}
-            \\ (v_P)=\si{\gram\of{P}/\gram\of{X}.\hour}\,\text{(specific product production rate)}
+            (r_P)=\unit{\gram\of{P}/\litre.\hour}\,\text{(volumetric product production rate)}
+            \\ (v_P)=\unit{\gram\of{P}/\gram\of{X}.\hour}\,\text{(specific product production rate)}
         \end{cases}
     \end{BM}
 
@@ -102,9 +102,9 @@
         \alpha = Y_{P/s}^{'}
         \\
         \begin{cases}
-            (\alpha)=\si{\gram\of{P}/\gram\of{X}}\,\text{(true yeld coefficient of product formation)}
+            (\alpha)=\unit{\gram\of{P}/\gram\of{X}}\,\text{(true yeld coefficient of product formation)}
             \\
-            (\beta)=\si{\gram\of{P}/\gram\of{X}.h}\,\text{(specific product formation rate due to maintenace)}
+            (\beta)=\unit{\gram\of{P}/\gram\of{X}.h}\,\text{(specific product formation rate due to maintenace)}
         \end{cases}
     \end{BM}
 
@@ -139,7 +139,7 @@
                 \\\mu\,x:&\ \text{Cell growth}
                 \\k_d\,x:&\ \text{Cell death}
             \end{aligned}
-            \\ (D)=\si{\hour^{-1}}\ \text{(Dilution rate)}
+            \\ (D)=\unit{\hour^{-1}}\ \text{(Dilution rate)}
         \end{cases}
     \end{BM}
     
@@ -269,11 +269,11 @@
         \\
         \begin{cases}
             (D\,P)
-            =\si{\gram\of{P}/\litre.\hour}
+            =\unit{\gram\of{P}/\litre.\hour}
             \,\text{(Volumetric Productivity)}
             \\
             (V_P)
-            = \si{\gram\of{P}/\gram\of{X}.\hour}
+            = \unit{\gram\of{P}/\gram\of{X}.\hour}
             \,\text{(Specific productivity)}
         \end{cases}
     \end{BM}
@@ -291,7 +291,7 @@
         D\,P = (Y_{p/x}^{'}\,\mu+m_p)\,X
     \end{BM}
     \begin{description}
-        \item[\(r_p\)] volumetric rate of production formation (\si{\gram\of{P}/\litre.\hour})
+        \item[\(r_p\)] volumetric rate of production formation (\unit{\gram\of{P}/\litre.\hour})
     \end{description}
     
 \end{sectionBox}
@@ -348,23 +348,23 @@
     \begin{itemize}
         \item \textit{F} enters at the bottom and leaves at the top
         \item \textit{z} at bottom \(z=0\) at top \(z=L\)
-        \item \((C_i(z))=\si{\kilo\gram/\metre^3}\) Concentration of a generic i component at heigh \textit{z} of the column
-        \item \((u)=\si{\metre/\second}\) axial velocity of the fluid inside the column
+        \item \((C_i(z))=\unit{\kilo\gram/\metre^3}\) Concentration of a generic i component at heigh \textit{z} of the column
+        \item \((u)=\unit{\metre/\second}\) axial velocity of the fluid inside the column
     \end{itemize}
 
     \begin{description}[
         leftmargin=!,
-        labelwidth=\widthof{\((F)=\si{\metre^3/\hour}\)} % Longest item
+        labelwidth=\widthof{\((F)=\unit{\metre^3/\hour}\)} % Longest item
     ]
-        \item[\((z)=\si{\metre}\)] 
+        \item[\((z)=\unit{\metre}\)] 
         Position on a vertical axis 
-        \item[\((L)=\si{\metre}\)]
+        \item[\((L)=\unit{\metre}\)]
         Column height
-        \item[\((F)=\si{\metre^3/\hour}\)] 
+        \item[\((F)=\unit{\metre^3/\hour}\)] 
         fluid flow rate in ascending flow
-        \item[\((A)=\si{\metre^2}\)] 
+        \item[\((A)=\unit{\metre^2}\)] 
         Cross section area
-        \item[\((d)=\si{\metre}\)] 
+        \item[\((d)=\unit{\metre}\)] 
         Diameter of the cylindrical column
         \item[\(V=A\,L\)] Column volume
     \end{description}
@@ -380,10 +380,10 @@
         Re = \frac{\rho\,u\,d}{\mu}>2000
     \end{BM}
     \begin{description}
-        \item[\(\rho\)] Specific mass of fluid (\si{\kilo\gram/\metre^3})
-        \item[\textit{u}] axial velocity of the fluid (\si{\metre/\second})
-        \item[\textit{d}] column diameter (\si{\metre})
-        \item[\(\mu\)] Viscosity of the fluid (\si{\pascal.\second})
+        \item[\(\rho\)] Specific mass of fluid (\unit{\kilo\gram/\metre^3})
+        \item[\textit{u}] axial velocity of the fluid (\unit{\metre/\second})
+        \item[\textit{d}] column diameter (\unit{\metre})
+        \item[\(\mu\)] Viscosity of the fluid (\unit{\pascal.\second})
     \end{description}
 
     \paragraph*{Note}
@@ -457,7 +457,7 @@
         = \frac{F\,P(z=L)}{V}
         = D\,P(z=L)
         \\
-        (\text{Prod})=\si{\gram\of{P}/\litre.\hour}
+        (\text{Prod})=\unit{\gram\of{P}/\litre.\hour}
     \end{BM}
     
 \end{sectionBox}

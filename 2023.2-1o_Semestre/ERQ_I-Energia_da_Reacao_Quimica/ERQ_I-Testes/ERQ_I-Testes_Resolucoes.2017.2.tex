@@ -19,7 +19,7 @@
 
 
 \begin{questionBox}1{ % Q1
-    A reacção reversível \ch{A<>B} é conduzida, na fase gasosa, num reactor tubular adiabático. O reagente A (30\%) e um inerte são alimentados, à temperatura de 773\,\si{\kelvin}, a um caudal volumétrico de 100\,\si{\litre/\min}. A figura representa a variação da conversão de equilíbrio com a temperatura.
+    A reacção reversível \ch{A<>B} é conduzida, na fase gasosa, num reactor tubular adiabático. O reagente A (30\%) e um inerte são alimentados, à temperatura de 773\,\unit{\kelvin}, a um caudal volumétrico de 100\,\unit{\litre/\min}. A figura representa a variação da conversão de equilíbrio com a temperatura.
     \begin{figure}\centering
         \includegraphics[width=.6\textwidth]{test1-cutout.png}
         % Curva X\times T
@@ -29,14 +29,14 @@
     \begin{itemize}
         \vspace{-3ex}
         \begin{multicols}{2}
-            \item \(C_{p\,A}=C_{p\,B}=10\,\si{\calorie/\mole.\kelvin}\)
-            \item \(C_{p\,I}=12\,\si{\calorie/\mole.\kelvin}\)
-            \item \(K_{e\,(773\,\si{\kelvin})}=30\)
-            \item \(Ea=25\,\si{\kilo\calorie/\mole}\)
-            \item \(R=\SI{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
-            \item \(\adif{H_R}=20\,\si{\kilo\calorie/\mole}\)
+            \item \(C_{p\,A}=C_{p\,B}=10\,\unit{\calorie/\mole.\kelvin}\)
+            \item \(C_{p\,I}=12\,\unit{\calorie/\mole.\kelvin}\)
+            \item \(K_{e\,(773\,\unit{\kelvin})}=30\)
+            \item \(Ea=25\,\unit{\kilo\calorie/\mole}\)
+            \item \(R=\qty{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(\adif{H_R}=20\,\unit{\kilo\calorie/\mole}\)
         \end{multicols}
-        \item Constante cinética da reação direta \(k_{(773\,\si{\kelvin})}=8.57\,\si{\min^{-1}}\)
+        \item Constante cinética da reação direta \(k_{(773\,\unit{\kelvin})}=8.57\,\unit{\min^{-1}}\)
     \end{itemize}
     \begin{questionBox}2{ % Q1.1
         Determine, usando o gráfico, o valor do calor de reação
@@ -70,7 +70,7 @@
                 \implies
                 X=0.5
                 \begin{cases}
-                    K_e=1\\T\cong 610\,\si{\kelvin}
+                    K_e=1\\T\cong 610\,\unit{\kelvin}
                 \end{cases}
                 % Pega o valor de da temperatura que X=0.5=>k_e=1=>t=(grafico)
                 % Com os dois valordes de ke e t aplica a lei de vant hoff e retira o Delta H_r
@@ -78,12 +78,12 @@
                 \implies
                 \adif{H}
                 = -\frac{R}{(610^{-1}-773^{-1})}
-                \,\ln\frac{k_{e\,(610\,\si{\kelvin})}}{k_{e\,(773\,\si{\kelvin})}}
+                \,\ln\frac{k_{e\,(610\,\unit{\kelvin})}}{k_{e\,(773\,\unit{\kelvin})}}
                 \cong &\\&
                 \cong -\frac{\num{1.987204258640832}}{(610^{-1}-773^{-1})}
                 \,\ln\frac{1}{30}
                 \cong
-                \SI{19.552219755329109539}{\kilo\calorie/\mole}
+                \qty{19.552219755329109539}{\kilo\calorie/\mole}
                 % Caso n seja dado ke faz esse processo duas vezes
             &
         \end{flalign*}
@@ -98,7 +98,7 @@
                 % T0=773k=>X=0
                 % Escolhe outra temperatura qualquer
                 % T1=520k=>X=?
-                X_{1\,(520\,\si{\kelvin})}
+                X_{1\,(520\,\unit{\kelvin})}
                 =\frac{C_{p\,A}+\theta_{I}\,C_{p\,I}(T-T_0)}{-\adif{H_R}}
                 =\frac{C_{p\,A}+\frac{Y_{I\,0}}{Y_{A\,0}}\,C_{p\,I}(T-T_0)}{-\adif{H_R}}
                 \cong &\\&
@@ -106,9 +106,9 @@
                 \cong\num{0.491708876041025}
                 &\\[3ex]&
                 \begin{cases}
-                    T_0=773\,\si{\kelvin};& X_0=0
+                    T_0=773\,\unit{\kelvin};& X_0=0
                     \\
-                    T_1=520\,\si{\kelvin};& X_1=\num{0.491708876041025}
+                    T_1=520\,\unit{\kelvin};& X_1=\num{0.491708876041025}
                 \end{cases}
                 % Junta os dados com o theta e a eq acima e acha o segundo ponto, traça no gráfico interecptando a reta e esse ponto é o Xeq e o Teq
             &
@@ -119,7 +119,7 @@
         \begin{BM}
             X_{eq}\cong 0.29
             \land
-            T_{eq}\cong 580\,\si{\kelvin}
+            T_{eq}\cong 580\,\unit{\kelvin}
         \end{BM}
 
     \end{questionBox}
@@ -324,7 +324,7 @@
 \end{questionBox}
 
 \begin{questionBox}1{ % Q2
-    A reacção elementar em fase líquida, \ch{A -> B}, é conduzida num reactor CSTR adiabático, de 1\,\si{\metre^3}, a funcionar em estado estacionário. A alimentação ao reactor, a um caudal volumétrico de 20\,\si{\litre/\min} é constituída por A (10\,\si{\mole\percent}) e um inerte I. A figura mostra a curva de geração de calor.
+    A reacção elementar em fase líquida, \ch{A -> B}, é conduzida num reactor CSTR adiabático, de 1\,\unit{\metre^3}, a funcionar em estado estacionário. A alimentação ao reactor, a um caudal volumétrico de 20\,\unit{\litre/\min} é constituída por A (10\,\unit{\mole\percent}) e um inerte I. A figura mostra a curva de geração de calor.
     \begin{figure}\centering
         \includegraphics[width=.6\textwidth]{test2.png}
         % Grafico G_{(T)}\times t
@@ -334,10 +334,10 @@
     \begin{itemize}
         \begin{multicols}{2}
             \vspace{-2ex}
-            \item \(\adif{H_R}=-25\,\si{\kilo\calorie/\mole}\)
-            \item \(C_{p\,A}=C_{p\,B}=8\,\si{\calorie/\mole.\kelvin}\)
-            \item \(C_{p\,I}=18\,\si{\calorie/\,mole.\kelvin}\)
-            \item \(R=\SI{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(\adif{H_R}=-25\,\unit{\kilo\calorie/\mole}\)
+            \item \(C_{p\,A}=C_{p\,B}=8\,\unit{\calorie/\mole.\kelvin}\)
+            \item \(C_{p\,I}=18\,\unit{\calorie/\,mole.\kelvin}\)
+            \item \(R=\qty{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
         \end{multicols}
     \end{itemize}
     Determine:
@@ -355,11 +355,11 @@
                 =-\adif{H_{R\,T}}\,X
                 =25\E{3}*.90
                 \cong
-                \SI{22.5e3}{\calorie/\mole}
+                \qty{22.5e3}{\calorie/\mole}
                 % Busca o t no gráfico a partir do G_{(T)}
                 \implies &\\&
                 \implies
-                T_{(22.5\E{3})}\cong 370\,\si{\kelvin}
+                T_{(22.5\E{3})}\cong 370\,\unit{\kelvin}
             &
         \end{flalign*}
     \end{questionBox}
@@ -383,7 +383,7 @@
                 370
                 -\frac{22.5\E{3}}{8+\frac{0.9}{0.1}\,18}
                 \cong
-                \SI{237.647058823529412}{\kelvin}
+                \qty{237.647058823529412}{\kelvin}
                 % Estado estácionário: G_{(T)}=R_{(T)} 
             &
         \end{flalign*}
@@ -395,10 +395,10 @@
         \begin{flalign*}
             &
                 \begin{cases}
-                    T_0\cong\SI{237.647058823529412}{\kelvin}
+                    T_0\cong\qty{237.647058823529412}{\kelvin}
                     ;& G_{(T_0)}=0
                     \\
-                    T_1\cong370\,\si{\kelvin}
+                    T_1\cong370\,\unit{\kelvin}
                     ;& G_{(T_1)}=22.5\E{3}
                 \end{cases}
                 &\\&
@@ -423,13 +423,13 @@
             % a tangente inferior vai ser a t de ignição e a superior a de extinção
         \end{figure}
         \begin{BM}
-            T_{\text{ignição}}\cong 319\,\si{\kelvin}
+            T_{\text{ignição}}\cong 319\,\unit{\kelvin}
             \quad\land\quad
-            T_{\text{extinção}}\cong 370\,\si{\kelvin}
+            T_{\text{extinção}}\cong 370\,\unit{\kelvin}
         \end{BM}
     \end{questionBox}
     \begin{questionBox}2{ % Q2.4
-        A composição da alimentação, nas condições da alínea a), para uma temperatura da alimentação de 298\,\si{\kelvin}.
+        A composição da alimentação, nas condições da alínea a), para uma temperatura da alimentação de 298\,\unit{\kelvin}.
     } % Q2.4
         \begin{flalign*}
             &

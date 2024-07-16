@@ -1,0 +1,512 @@
+% !TEX root = ./FT_II-Slides_Annotations.1.tex
+\providecommand\mainfilename{"./FT_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Slides_Annotations.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Slides_Annotations.1}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Slides_Annotations.1/}
+
+\mymakesubfile{1}
+[FT II]
+{Fundamentos: Transferencia de massa} % Subfile Title
+{Fundamentos: Transferencia de massa} % Part Title
+
+\begin{sectionBox}1{Operações de transferencia de massa} % S1
+    
+
+
+    % \begin{itemize}
+    %     \begin{multicols}{2}
+    %         \item Destilação
+    %         \item Adsorção Gasosa
+    %         \item Sacagem
+    %         \item Extração Liquido--Líquido
+    %     \end{multicols}
+    % \end{itemize}
+
+    \begin{multicols}{2}
+            \begin{sectionBox}2{Destilação} % S
+                \begin{itemize}
+                    \item Líquido--Vapor
+                    \item Todos os componentes tem duas fases
+                    \item Composição diferente em cada fase
+                \end{itemize}
+            \end{sectionBox}
+        
+            \begin{sectionBox}2{Absorção Gasosa} % S
+                \begin{itemize}
+                    \item Gás--Liquido
+                    \item Apenas uma componente se distribui
+                \end{itemize}
+            \end{sectionBox}
+        
+            \begin{sectionBox}2{Secagem} % S
+                \begin{itemize}
+                    \item Gás--Sólido
+                    \item Difusão do líquido presente no sólido para o gás
+                \end{itemize}
+            \end{sectionBox}
+
+            \begin{sectionBox}2{Extração Líquido--Líquido} % S
+                \begin{itemize}
+                    \item Solução heterogenea
+                    \item Solvente + Solução \rightarrow\\Extrato + Resíduo
+                \end{itemize}
+            \end{sectionBox}
+    \end{multicols}
+    
+\end{sectionBox}
+
+% MARK: Comp
+%   ,ad8888ba,
+%  d8"'    `"8b
+% d8'
+% 88              ,adPPYba,   88,dPYba,,adPYba,   8b,dPPYba,    ,adPPYba,   ,adPPYba,
+% 88             a8"     "8a  88P'   "88"    "8a  88P'    "8a  a8"     "8a  I8[    ""
+% Y8,            8b       d8  88      88      88  88       d8  8b       d8   `"Y8ba,
+%  Y8a.    .a8P  "8a,   ,a8"  88      88      88  88b,   ,a8"  "8a,   ,a8"  aa    ]8I
+%   `"Y8888Y"'    `"YbbdP"'   88      88      88  88`YbbdP"'    `"YbbdP"'   `"YbbdP"'
+%                                                 88
+%                                                 88
+
+\begin{sectionBox}1{Composições} % S
+    
+    \subsection*{Concentração mássica}
+    \begin{BM}
+        \rho_A=\frac{m_A}{V}
+        \qquad
+        \rho=\sum_i{\rho_i}
+    \end{BM}
+
+    \subsection*{Concentração molar}
+    \begin{BM}
+        c_A
+        =\frac{\rho_A}{M_A}
+        =\frac{N_A}{v}
+        =\frac{p_A}{R\,T}
+    \end{BM}
+
+    \subsection*{Fração molar}
+    \begin{BM}
+        y_A
+        =\frac{c_A}{c}
+        =\frac{p_A/(R\,T)}{P/(R\,T)}
+        =\frac{p_A}{P}
+        % \qquad
+        % y_A=\frac{}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E1
+    A composição molar de uma mistura gasosa a \qty*{273}{\kelvin} e \qty*{1.5e5}{\pascal} é
+} % E1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+            
+                \ch{O2}
+                & \ch{CO}
+                & \ch{CO2}
+                & \ch{N2}
+            
+            \\\midrule
+            
+                7\%
+                & 10\%
+                & 15\%
+                & 68\%
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{-4ex}
+    \end{center}
+
+    \section*{Determine}
+
+    \begin{exampleBox}2{ % E1.1
+        A composição em percentagem mássica
+    } % E1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                % 
+                % rho_X
+                % 
+                \rho_{X}
+                = \frac{
+                    m_X
+                    \,\unit{\frac
+                        {\gram\of{X}}
+                        {\mole}
+                    }
+                }{
+                    M
+                    \,\unit{\frac
+                        {\gram}
+                        {\mole}
+                    }
+                }
+                = \frac{100\,m_X}{M}\,\unit{\frac{\percent\gram_{X}}{\gram}}
+                % 
+                % m_X
+                % 
+                ; &\\[3ex]&
+                m_X\,\unit{\frac{\gram_{X}}{\mole}}
+                = \frac{M_X\,\unit{\gram\of{X}}}{\unit{\mole\of{X}}}
+                \,\frac{c_X\,\unit{\mole\of{X}}}{\unit{\mole}}
+                = M_X\,c_X
+                \,\unit{\frac{\gram_{X}}{\mole}}
+                % 
+                % M
+                % 
+                ; &\\[3ex]&
+                M\,\unit{\frac{\gram}{\mole}}
+                = \sum{
+                    m_X
+                    \,\unit{\frac
+                        {\gram\of{X}}
+                        {\mole}
+                    }
+                }
+                % 
+                % rho_X
+                % 
+                \implies &\\[3ex]&
+                \implies
+                \rho_X
+                = \frac
+                {100\,M_X\,c_X}
+                {\sum{m_X}}
+                \,\unit{\frac
+                    {\percent\gram_{X}}
+                    {\gram}
+                }
+            &
+        \end{flalign*}
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{L *{4}{C}}
+                \toprule
+                
+                    & \ch{O2}
+                    & \ch{CO}
+                    & \ch{CO2}
+                    & \ch{N2}
+                
+                \\\midrule
+                
+                    m_x
+                    &  2.24
+                    &  2.80
+                    &  6.60
+                    & 19.04
+                    \\
+                    \rho_X
+                    & \num{7.301173402868318}
+                    & \num{09.126466753585398}
+                    & \num{21.51238591916558}
+                    & \num{62.05997392438071}
+                    
+                \\\bottomrule
+                \multicolumn{5}{R}{M=30.68}
+            \end{tabular}
+            \vspace{1ex}
+        \end{center}
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E
+        A massa específica da mistura gasosa
+    } % E
+        \answer{}
+        Assumindo gás ideal.
+        \begin{flalign*}
+            &
+                \rho
+                =\frac{M\,n}{V}
+                =\frac{M\,n}{
+                    \frac{n\,R\,T}{P}
+                }
+                =\frac{M\,P}{R\,T}
+                \cong\frac{
+                    30.68\E-3
+                    *1.5\E5
+                }{
+                    \num{8.314462618}
+                    * 273.15
+                }
+                \cong
+                \qty{2.026334899933467}{\kilo\gram.\metre^{-3}}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+\end{exampleBox}
+
+% MARK: Velo
+% 8b           d8              88
+% `8b         d8'              88
+%  `8b       d8'               88
+%   `8b     d8'     ,adPPYba,  88   ,adPPYba,
+%    `8b   d8'     a8P_____88  88  a8"     "8a
+%     `8b d8'      8PP"""""""  88  8b       d8
+%      `888'       "8b,   ,aa  88  "8a,   ,a8"
+%       `8'         `"Ybbd8"'  88   `"YbbdP"'
+
+\begin{sectionBox}1{Velocidades} % S
+    
+    \subsection*{Velocidade mássica}
+    \begin{BM}
+        v
+        = \frac{
+            \sum_{i=1}^{n}{
+                \rho_i\,v_i
+            }
+        }{
+            \sum_{i=1}^{n}{\rho_i}
+        }
+        = \frac{
+            \sum_{i=1}^{n}{
+                \rho_i\,v_i
+            }
+        }{\rho}
+    \end{BM}
+
+    \subsection*{Velocidade média molar}
+    \begin{BM}
+        V=\frac{\sum_{i=1}^{n}{c_i\,v_i}}{c}
+    \end{BM}
+
+    \subsection*{Velocidade relativa}
+    Velocidade do componente \textit{i} relativamente à velocidade média mássica/molar
+    \begin{BM}
+        \adif{v_i}=v_i-v
+        \\
+        \adif{V_i}=v_i-V
+    \end{BM}
+    
+\end{sectionBox}
+
+% MARK: Coeff
+%   ,ad8888ba,                               ad88     ad88
+%  d8"'    `"8b                             d8"      d8"
+% d8'                                       88       88
+% 88              ,adPPYba,    ,adPPYba,  MM88MMM  MM88MMM
+% 88             a8"     "8a  a8P_____88    88       88
+% Y8,            8b       d8  8PP"""""""    88       88
+%  Y8a.    .a8P  "8a,   ,a8"  "8b,   ,aa    88       88
+%   `"Y8888Y"'    `"YbbdP"'    `"Ybbd8"'    88       88
+% MARK: Difus
+% 88888888ba,    88     ad88
+% 88      `"8b   ""    d8"
+% 88        `8b        88
+% 88         88  88  MM88MMM  88       88  ,adPPYba,
+% 88         88  88    88     88       88  I8[    ""
+% 88         8P  88    88     88       88   `"Y8ba,
+% 88      .a8P   88    88     "8a,   ,a88  aa    ]8I
+% 88888888Y"'    88    88      `"YbbdP'Y8  `"YbbdP"'
+
+\begin{sectionBox}1{Coeficiente de Difusão} % S
+    
+    \begin{BM}
+        D=f(P,T,\text{natureza do componente})
+        \\
+        J_A = - D_{A,B}\,\gdif{c_A}
+    \end{BM}
+
+    \subsection*{Valores típicos}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{Líquidos} % Longest item
+    ]
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = input,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            % fixed-exponent          = 0,
+            round-mode              = none,        % figures/places/unsertanty/none
+            round-precision         = 1,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+        \item[Gases]    \numrange{1e-5}{1e-4}
+        \item[Líquidos] \numrange{.5e-9}{2e-9}
+        \item[Sólidos]  \numrange{1e-24}{1e-12}
+    \end{description}
+    
+\end{sectionBox}
+
+% MARK: Lei
+% 88                       88
+% 88                       ""
+% 88
+% 88            ,adPPYba,  88
+% 88           a8P_____88  88
+% 88           8PP"""""""  88
+% 88           "8b,   ,aa  88
+% 88888888888   `"Ybbd8"'  88
+% MARK: Fick
+% 88888888888  88              88
+% 88           ""              88
+% 88                           88
+% 88aaaaa      88   ,adPPYba,  88   ,d8
+% 88"""""      88  a8"     ""  88 ,a8"
+% 88           88  8b          8888[
+% 88           88  "8a,   ,aa  88`"Yba,
+% 88           88   `"Ybbd8"'  88   `Y8a
+
+
+
+\begin{sectionBox}1{Lei da difusão} % S
+    
+    \subsection*{1ª Lei de Fick}
+    \begin{BM}
+        J_A=-D_{A,B}\nabla{c_A}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+       \item[\(D_{A,B}\)] Coeficiente de difusão
+    \end{description}
+
+    \subsection*{Sistemas}\vspace{-3ex}
+    \begin{multicols}{2}
+        \begin{sectionBox}*2{Unidirecional} % S
+            \begin{BM}
+                J_{A,z}=-D_{A,B}\odv{c_A}{z}
+            \end{BM}
+        \end{sectionBox}
+        \begin{sectionBox}*2{Isobárico e isotérmico} % S
+            \begin{BM}
+                J_{A,z}=-c\,D_{A,B}\odv{y_A}{z}
+            \end{BM}
+        \end{sectionBox}
+    \end{multicols}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Fluxo máximo (molar) de i} % S
+    
+    \begin{BM}
+        N_{A}
+        =c_A\,v_A
+        =y_{A}(N_A+N_B)
+        -c\,D_{A,B}\,\nabla{y_A}
+        \\
+        N_{A,z}
+        =y_{A}(N_{A,z}+N_{B,z})
+        -c\,D_{A,B}\,\odv{y_A}{z}
+    \end{BM}
+    \begin{flalign*}
+        &
+            % \frac{N_{A}}{v_A}
+            % =c_A
+            % =\frac{N_{A,z}}{v_{A,z}}
+            % =\frac{N_{A,z}}{v_{A,z}}
+            % 
+            % J_{A,z}
+            % 
+            J_{A,z}
+            =c_A(v_{A,z}-V_z)
+            =-c\,D_{A,B}\,\odv{y_A}{z}
+            \implies &\\[3ex]&
+            \implies
+            c_A\,v_{A,z}
+            = &\\&
+            =c_A\,v_z-c\,D_{A,B}\,\odv{y_A}{z}
+            = &\\&
+            =c_A\,\left(
+                \frac{c_A\,v_{A,z}+c_B\,v_{B,z}}{c}
+            \right)-c\,D_{A,B}\,\odv{y_A}{z}
+            = &\\&
+            =y_{A}\,\left(
+                c_A\,v_{A,z}+c_B\,v_{B,z}
+            \right)-c\,D_{A,B}\,\odv{y_A}{z}
+            ;&\\&
+            N_A=c_A\,v_A
+            \implies &\\[3ex]&
+            \implies
+            c_A\,v_{A,z}
+            =N_{A,z}
+            =y_{A}\,\left(
+                N_{A,z}+N_{B,z}
+            \right)-c\,D_{A,B}\,\odv{y_A}{z}
+            \implies &\\[3ex]&
+            \implies
+            N_{A}
+            =y_{A}\,\left(
+                N_{A}+N_{B}
+            \right)-c\,D_{A,B}\,\nabla{y_A}
+        &
+    \end{flalign*}
+
+    \begin{sectionBox}2{Formas equivalentes para fluxo de massa em sistemas binarios (\textit{A},\textit{B})} % S
+        \begin{center}
+            \setlength\tabcolsep{3mm}        % width
+            % \renewcommand\arraystretch{1.25} % height
+            \vspace{1ex}
+            \begin{tabular}{*{2}{C} L l}
+                \toprule
+                
+                    \multicolumn{1}{c}{Flux}
+                    & \multicolumn{1}{c}{Gradient}
+                    & \multicolumn{1}{c}{Fick rate eq}
+                    & \multicolumn{1}{c}{Restrictions}
+                
+                \\\midrule
+
+                    % ================ n_A =============== %
+                    \multirow[t]{2}{*}{\(n_A\)} 
+                    & \gdif{\omega_A}
+                    & n_A=-\rho\,D_{A,B}\,\gdif{\omega_A}+\omega_A(n_A+n_B)
+                    & \multirow{4}{*}{Constant \(\rho\)}
+                    \\
+                    & \gdif{\rho_A}
+                    & n_A=-D_{A,B}\gdif{\rho_A}+\omega_A(n_A+n_B)
+                    &
+                    % ================ j_A =============== %
+                    \\[1ex] \multirow[t]{2}{*}{\(j_A\)} 
+                    & \gdif{\omega_A}
+                    & j_A=-\rho\,D_{A,B}\,\gdif{\omega_A}
+                    % & \multirow{2}{*}{Constant \(\rho\)}
+                    \\
+                    & \gdif{\rho_A}
+                    & j_A=-D_{A,B}\gdif{\rho_A}
+                    &
+
+                    \\\midrule
+                    % ================ N_A =============== %
+                    \multirow[t]{2}{*}{\(N_A\)} 
+                    & \gdif{y_A}
+                    & N_A=-c\,D_{A,B}\,\gdif{y_A}+y_A(N_A+N_B)
+                    & \multirow{4}{*}{Constant \textit{c}}
+                    \\
+                    & \gdif{c_A}
+                    & N_A=-D_{A,B}\gdif{c_A}+y_A(N_A+N_B)
+                    &
+                    % ================ J_A =============== %
+                    \\[1ex] \multirow[t]{2}{*}{\(J_A\)} 
+                    & \gdif{y_A}
+                    & J_A=-c\,D_{A,B}\,\gdif{y_A}
+                    % & \multirow{2}{*}{Constant \textit{c}}
+                    \\
+                    & \gdif{c_A}
+                    & J_A=-D_{A,B}\gdif{c_A}
+                    &
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\end{document}

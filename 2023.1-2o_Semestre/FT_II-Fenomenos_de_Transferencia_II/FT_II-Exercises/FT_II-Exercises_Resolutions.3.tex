@@ -1,0 +1,251 @@
+% !TEX root = ./FT_II-Exercises_Resolutions.3.tex
+\providecommand\mainfilename{"./FT_II-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Exercises_Resolutions.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Exercises_Resolutions.3}}}
+% \tikzsetexternalprefix{./figures/FT_II-Exercises_Resolutions.3/graphics/}
+
+\mymakesubfile{3}
+[FT II]
+{Exercicios 3: Difusão em estado transiente (?)} % Subfile Title
+{Exercicios 3: Difusão em estado transiente (?)} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Experiências de transferência de calor permitiram obter uma correlação para o coeficiente de transferência de calor, \textit{h}, para um cilindro colocado numa corrente de água.
+    \begin{BM}
+        Nu
+        = \left(
+            0.506
+            \,Re^{0.5}
+            + 0.00141
+            \,Re
+        \right)
+        \,Pr^{1/3}
+    \end{BM}
+} % Q1
+
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Solubilidade \ch{NaCl}: \qty*{6}{\mole/\L}
+            \item \(\rho_{agua}=\qty*{1e3}{\kg/\m^3}\)
+            \item \(\mu_{agua}=\qty*{1e-3}{\N.\s/\m^3}\)
+            \item \(\mathscr{D}=\qty*{1.6e-9}{\m^2/\s}\)
+        \end{multicols}
+        \item Analogia de Chilton--Colburn \(j_H=j_D\)
+        \begin{BM}
+            \frac{h}{\rho\,u\,C\,p}
+            \,Pr^{2/3}
+            = \frac{k_C}{u}
+            \,Sc^{2/3}
+        \end{BM}
+    \end{itemize}
+    \begin{BM}
+        Nu=\frac{h\,d}{k}
+        ; \quad
+        Pr=\frac{\mu\,C\,p}{j}
+        ; \quad
+        Sc=\frac{\mu}{\rho\,\mathscr{D}}
+        ; \quad
+        Re=\frac{\rho\,u\,d}{\mu}
+    \end{BM}
+
+    \begin{questionBox}2{ % MARK: Q1.1
+        Utilizando a analogia de Chilton--Colburn calcule o coeficiente de transferência de massa para um cilindro de \ch{NaCl} com \qty*{1.5}{\cm} de diâmetro e \qty*{10}{\cm} de comprimento. A água a \qty*{300}{\kelvin} tem uma velocidade de \qty*{10}{\m/\s}.
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \frac{h}{\rho\,v\,c_P}
+                \,Pr^{2/3}
+                = \frac{k_C}{v}
+                \,Sc^{2/3}
+                \implies &\\&
+                \implies
+                k_C
+                = \frac{h}{\rho\,c_P}
+                \,\left(
+                    \frac{Pr}{Sc}
+                \right)^{2/3}
+                = &\\&
+                = \frac{h}{\rho\,c_P}
+                \,\left(
+                    \frac
+                    {\frac{\mu\,c_P}{K}}
+                    {\frac{\mu}{\rho\,\mathscr{D}}}
+                \right)^{2/3}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                h: &\\&
+                Nu
+                = \frac{K}{h}
+                \,0.015
+                = &\\&
+                = \left(
+                    0.506
+                    \,Re^{0.5}
+                    + 0.00141
+                    \,Re
+                \right)
+                \,Pr^{1/3}
+                = &\\&
+                = \left(
+                    0.506
+                    \,Re^{0.5}
+                    + 0.00141
+                    \,Re
+                \right)
+                \,(C_p/K)^{1/3}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                Re:&\\&
+                Re
+                = \frac{\rho\,v\,d}{\mu}
+                = \frac{1\E{3}*10*1.5\E{-2}}{1\E{-3}}
+                = 1.5\E{5}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % MARK: Q1.2
+        A velocidade de dissolução do cilindro.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                W
+                = N_A\,A
+                = k_C(c_{A,s}-C_{A,0})
+                \,(\pi\,d\,L+2\,\pi\,d^2/4)
+                = k_C\,c_{A,s}
+            &
+        \end{flalign*}
+        \begin{flalign*}
+            &
+                w=k_c\,A\,c^*
+                ; &\\[3ex]&
+                A
+                = \pi\,d\,L
+                + 2\,\pi\,r^2
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % MARK: Q1.3
+        Seria possível usar a analogia de Reynolds neste caso? Justifique a sua resposta.
+    } % Q1.3
+        \answer{}
+        Condições não conferem: \(Sc\neq1\)
+    \end{questionBox}
+
+    \begin{questionBox}2{ % MARK: Q1.4
+        A velocidade de dissolução se usar um prisma com uma secção quadrada com \qty*{1.5}{\cm} de lado e \qty*{10}{\cm} de comprimento.
+    } % Q1.4
+        \answer{}
+        \begin{flalign*}
+            &
+                w
+                = k_c\,A\,c^*
+                ; &\\[3ex]&
+                A
+                = 2\,A_b+4\,A_L
+                = 2\,(1.5)^2\E{-4}
+                + 4\,(1.5*10)^2\E{-4}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Foram obtidas as seguintes correlações para o coeficiente de transferência de calor em condutas cilíndricas:
+    \begin{BM}
+        Nu
+        = 0.023
+        \,Re^{0.8}
+        \,Pr^{0.33},
+        \quad
+        Re > 1\E4
+        \quad
+        Re\,Pr\,\frac{d}{L} < 17
+        : Nu=4.1
+    \end{BM}
+    Faz-se passar ar a \qty*{20}{\celsius} a uma velocidade média igual a \qty*{30}{\m/\s} por uma conduta com \qty*{2.5}{\cm} de diâmetro (\textit{d}) e \qty*{2}{\m} de comprimento (\textit{L}), cuja superfície interna está revestida com um componente \textit{A}. Utilizando a analogia de Chilton-Colburn, determine:
+} % Q2
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(P^*_{A,\qty*{20}{\celsius}}=\qty*{4.0}{\mmHg}\)
+            \item \(\mu_{Ar}(\qty*{20}{\celsius}) = \qty*{1.74e-5}{\newton.\second/\metre^2}\)
+            \item \(\rho_{Ar}(\qty*{20}{\celsius}) = \qty*{1.164e-5}{\kilo\gram/\metre^3}\)
+            \item \(\mathscr{D}_{A,Ar}=\qty*{6.2e-6}{\m^2/\second}\)
+            \item \(k^T_{Ar,\qty*{20}{\celsius}}=\qty*{0.0251}{\joule/\second.\metre.\kelvin}\)
+        \end{multicols}
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Coeficiente de transferencia de massa
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \frac{h}{\rho\,v\,c_P}
+            \,Pr^{2/3}
+            = \frac{k_c}{v}
+            \,Sc^{2/3}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            Nu
+            = \frac{h\,d}{k}
+            = 0.023
+            \,Re^{0.8}
+            \,Pr^{0.33}
+            = 0.023
+            \,\left(
+                \frac{\rho\,d\,v}{\mu}
+            \right)^{0.8}
+            \,\left(
+                \frac{\mu\,c_P}{k^T}
+            \right)^{0.33}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    A velocidade de sublimação e a concentração de A à saída da conduta.
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            c_A\,v\,\frac{\pi\,d^2}{4}
+            + k_C(c_{A,s}-c_A)
+            \,\pi\,d\,
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.3
+    Seria possível usar a analogia de Reynolds neste caso? Justifique a sua resposta.
+} % Q2.3
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    A velocidade de sublimação se a conduta tiver uma secção quadrada com \qty*{2.5}{cm} de lado. Indique todos os passos necessários.
+} % Q2.4
+    body
+\end{questionBox}
+
+\end{document}

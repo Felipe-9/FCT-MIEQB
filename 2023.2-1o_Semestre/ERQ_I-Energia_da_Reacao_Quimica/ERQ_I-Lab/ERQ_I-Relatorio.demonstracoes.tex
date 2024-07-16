@@ -1,7 +1,6 @@
-% !TEX root = ./main_file.tex
-% \documentclass{article}
+b% \documentclass{article}
 \documentclass[
-    class=article,
+    % class=article,
     multi={minipage},
     border={3mm},
 ]{standalone}
@@ -10,8 +9,8 @@
 % -------------------------------------------------------- %
 \usepackage[hyperref]{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
-\colorlet{foreground}{light}
-\colorlet{background}{dark}
+\colorlet{foreground}{black}
+\colorlet{background}{white}
 % \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
@@ -19,7 +18,8 @@
 \colorlet{Comment}   {foreground!60!background}
 \colorlet{Background}{foreground!27!background}
 % ======================= setcolor ======================= %
-\pagecolor{background}
+% \pagecolor{background}
+\nopagecolor
 \color    {foreground}
 % -------------------------------------------------------- %
 %                        Essentials                        %
@@ -30,7 +30,7 @@
 % % -------------------------------------------------------- %
 % %                         Geometry                         %
 % % -------------------------------------------------------- %
-\setlength\textwidth{160mm}
+% \setlength\textwidth{160mm}
 % \usepackage{geometry}
 % \geometry{
 %     % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
@@ -58,7 +58,7 @@
 % \usepackage[sfdefault, ultralight]{FiraSans}
 % \renewcommand{\familydefault}{\sfdefault} % set sans serif as defalt
 % Redeclare emph
-\let\emph\relax
+\NewCommandCopy\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries\color{Emph}}
 % % ==================== Set font family =================== %
 \setmainfont[
@@ -267,7 +267,7 @@
 % %                          Vectors                         %
 % % -------------------------------------------------------- %
 % \usepackage{esvect}      % Vector over-arrow
-% \let\vec\vv
+% \NewCommandCopy\vec\vv
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
@@ -284,7 +284,7 @@
 %     prefix={./.build/figures/graphics/}
 % ] % turn externalization on/off
 % % Fix background
-% \let\oldtikzpicture\tikzpicture
+% \NewCommandCopy\oldtikzpicture\tikzpicture
 % \RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
 % % ==================== Other packages ==================== %
 % \usepackage{myTikzGraphs} % For graphs
@@ -348,7 +348,7 @@
 % % ====================== chemmacros ====================== %
 % \usepackage{chemmacros}
 % \chemsetup[phases]{pos=sub}
-% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
 % % -------------------------------------------------------- %
 % %                          Biology                         %
 % % -------------------------------------------------------- %
@@ -380,6 +380,10 @@
     breakable,                % allow page break
     % minted, xparse, listings, % code minted
 }
+\tcbset{ every box/.style = {
+    opacityfill=0,             % background opacity
+    opacityframe=0,               % frame      opacity
+}}
 % % -------------------------------------------------------- %
 % %                         Metadata                         %
 % % -------------------------------------------------------- %
@@ -478,6 +482,29 @@
             -X_{i-1}^2/k_e
         \right)
         \adif{t}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}*1b{} % S
+    \nopagecolor
+    \begin{flalign*}
+        &
+            -r_A=k_d\,\left(
+                C_{A\,0}^{\alpha+\beta}
+                (1-X)^{\alpha}
+                (\theta_B-X)^\beta
+                -\frac{C^2_{A\,0}\,X^2}{K_e}
+            \right)
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}*1b{} % S 
+    
+    \begin{BM}
+        \odv{X}{V}=\frac{-r_A}{F_{A\,0}}
     \end{BM}
     
 \end{sectionBox}

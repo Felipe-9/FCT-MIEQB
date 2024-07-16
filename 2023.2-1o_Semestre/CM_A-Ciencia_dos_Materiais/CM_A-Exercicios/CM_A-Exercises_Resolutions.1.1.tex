@@ -1,15 +1,15 @@
-% !TEX root = ./CM_A-Exercicios_Resolucoes.1.tex
-\providecommand\mainfilename{"./CM_A-Exercicios_Resolucoes.tex"}
+% !TEX root = ./CM_A-Exercises_Resolutions.1.1.tex
+\providecommand\mainfilename{"./CM_A-Exercises_Resolutions.tex"}
 \providecommand \subfilename{}
-\renewcommand   \subfilename{"./CM_A-Exercicios_Resolucoes.1.tex"}
+\renewcommand   \subfilename{"./CM_A-Exercises_Resolutions.1.1.tex"}
 \documentclass[\mainfilename]{subfiles}
 
-% \tikzset{external/force remake=true} % - remake all
+\tikzset{external/force remake=true} % - remake all
 
 \begin{document}
 
-\graphicspath{{\subfix{./.build/figures/CM_A-Exercicios_Resolucoes.1}}}
-\tikzsetexternalprefix{./.build/figures/CM_A-Exercicios_Resolucoes.1/graphics/}
+\graphicspath{{\subfix{./figures/CM_A-Exercises_Resolutions.1.1/}}}
+\tikzsetexternalprefix{./figures/CM_A-Exercises_Resolutions.1.1/graphics/}
 
 \mymakesubfile{1}
 [CM A]
@@ -503,7 +503,7 @@
                     = &\\&
                     = \frac{\pi}{6}
                     \cong
-                    \SI{52.3598775598299}{\percent}
+                    \qty{52.3598775598299}{\percent}
                 &
             \end{flalign*}
 
@@ -516,7 +516,7 @@
                     = &\\&
                     = \frac{\pi\,\sqrt{3}}{16}
                     \cong
-                    \SI{34.0087380793916}{\percent}
+                    \qty{34.0087380793916}{\percent}
                 &
             \end{flalign*}
 
@@ -530,7 +530,7 @@
                     = \frac{\pi}{3*2^{3/2}}
                     \cong &\\&
                     \cong
-                    \SI{18.51201224232655}{\percent}
+                    \qty{18.51201224232655}{\percent}
                 &
             \end{flalign*}
 
@@ -552,7 +552,7 @@
                     fea_{CS}
                     = 1\,\frac{\pi\,r^3\,4/3}{a^3}
                     \cong &\\&
-                    \cong\SI{52.3598775598299}{\percent}
+                    \cong\qty{52.3598775598299}{\percent}
                 &
             \end{flalign*}
         \end{questionBox}
@@ -565,9 +565,9 @@
                     = 2\,\frac{\pi\,r^3\,4/3}{a^3}
                     \cong &\\&
                     \cong
-                    2*\SI{34.0087380793916}{\percent}
+                    2*\qty{34.0087380793916}{\percent}
                     \cong
-                    \SI{68.0174761587832}{\percent}
+                    \qty{68.0174761587832}{\percent}
                 &
             \end{flalign*}
         \end{questionBox}
@@ -579,8 +579,8 @@
                     fea_{CFC}
                     = 4\,\frac{\pi\,r^3\,4/3}{a^3}
                     \cong &\\&
-                    \cong 4*\SI{18.51201224232655}{\percent}
-                    \cong \SI{74.0480489693062}{\percent}
+                    \cong 4*\qty{18.51201224232655}{\percent}
+                    \cong \qty{74.0480489693062}{\percent}
                 &
             \end{flalign*}
         \end{questionBox}
@@ -590,7 +590,7 @@
 \question{}
 
 \begin{questionBox}2{ % Q3.1
-    A densidade do \emph{\ch{Al}} é \emph{2.70\,\si{\gram/\centi\metre^3}}. O peso atómico é \emph{26.98\,\si{\gram/\mole}}. Calcular os parâmetros da rede \emph{CFC} do \emph{\ch{Al}}
+    A densidade do \emph{\ch{Al}} é \emph{2.70\,\unit{\gram/\centi\metre^3}}. O peso atómico é \emph{26.98\,\unit{\gram/\mole}}. Calcular os parâmetros da rede \emph{CFC} do \emph{\ch{Al}}
 } % Q3.1
     \answer{}
     \begin{flalign*}
@@ -602,10 +602,10 @@
             }
             = \sqrt[3]{
                 \frac{
-                    \frac{Pa_{\ch{Al}}\,\si{\gram}}
-                    {\si{\mole}}
-                    \,\frac{\si{\mole}}{N_A\,\si{Atomos}}
-                    \,n_{\text{atomos por celula uni}}\,\si{Atomos}
+                    \frac{Pa_{\ch{Al}}\,\unit{\gram}}
+                    {\unit{\mole}}
+                    \,\frac{\unit{\mole}}{N_A\,\unit{Atomos}}
+                    \,n_{\text{atomos por celula uni}}\,\unit{Atomos}
                 }{
                     \rho
                 }
@@ -626,16 +626,16 @@
                     2.70\,(1\E-8)^3
                     *\num{6.02214076e23}
                 }
-            }\,\si{\angstrom}
+            }\,\unit{\angstrom}
             \cong &\\&
             \cong
-            \SI{4.048825784256836}{\angstrom}
+            \qty{4.048825784256836}{\angstrom}
         &
     \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}2{ % Q3.2
-    A densidade do \emph{\ch{Fe-\chemalpha}} é \emph{7.87\,\si{\gram/\centi\metre^3}}. O peso atómico é \emph{55.85\,\si{\gram/\mole}}. Calcular os parâmetros da rede \emph{CCC} do \emph{\ch{Fe-\chemalpha}}
+    A densidade do \emph{\ch{Fe-\chemalpha}} é \emph{7.87\,\unit{\gram/\centi\metre^3}}. O peso atómico é \emph{55.85\,\unit{\gram/\mole}}. Calcular os parâmetros da rede \emph{CCC} do \emph{\ch{Fe-\chemalpha}}
 } % Q3.2
     \answer{}
     \begin{flalign*}
@@ -651,13 +651,13 @@
                 }
             }
             \cong
-            \SI{2.867097835039221}{\angstrom}
+            \qty{2.867097835039221}{\angstrom}
         &
     \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}2{ % Q3.3
-    A densidade do \emph{\ch{Mg}} é \emph{1.741\,\si{\gram/\centi\metre^3}}. O peso atómico é \emph{24.31\,\si{\gram/\mole}}. Calcular os parâmetros da rede \emph{HC} do \emph{\ch{Mg}}
+    A densidade do \emph{\ch{Mg}} é \emph{1.741\,\unit{\gram/\centi\metre^3}}. O peso atómico é \emph{24.31\,\unit{\gram/\mole}}. Calcular os parâmetros da rede \emph{HC} do \emph{\ch{Mg}}
 } % Q3.3
     \answer{}
     \begin{flalign*}
@@ -703,20 +703,20 @@
                 \frac
                 {
                     \frac{24.31}{1.741\E-24*\num{6.02214076e23}}
-                    *\SI{74.0477388950487}{\percent}
+                    *\qty{74.0477388950487}{\percent}
                     *3
                 }
                 {4\,\pi}
                 % 4.098816516679287
-            }\,\si{\angstrom}
+            }\,\unit{\angstrom}
             \cong &\\&
             \cong
-            \SI{3.200733299832194}{\angstrom}
+            \qty{3.200733299832194}{\angstrom}
             ; &\\[3ex]&
             c
             = 1.633\,a
-            \cong 1.633*\SI{3.200733299832194}{\angstrom}
-            \cong \SI{5.226797478625973}{\angstrom}
+            \cong 1.633*\qty{3.200733299832194}{\angstrom}
+            \cong \qty{5.226797478625973}{\angstrom}
         &
     \end{flalign*}
 \end{questionBox}
@@ -939,7 +939,7 @@
 \end{questionBox}
 
 \begin{questionBox}1{ % Q5
-    O \ch{Pb} possui estrutura Cúbica de Faces Centradas (CFC) e o seu parâmetro de rede é \(a_{\ch{Pb}}=4.95\,\si{\angstrom}\). Quantos átomos por \si{\milli\metre^2} existem nos planos (1\,0\,0) e (1\,1\,1) do chumbo?
+    O \ch{Pb} possui estrutura Cúbica de Faces Centradas (CFC) e o seu parâmetro de rede é \(a_{\ch{Pb}}=4.95\,\unit{\angstrom}\). Quantos átomos por \unit{\milli\metre^2} existem nos planos (1\,0\,0) e (1\,1\,1) do chumbo?
 } % Q5
     \answer{}
     \begin{flalign*}
@@ -949,32 +949,32 @@
             = \frac{2}{a^2}
             = \frac{2}{(4.95\E-7)^2}
             \cong 
-            \SI{8.1624324048566e12}{Atomos/\milli\metre^2}
+            \qty{8.1624324048566e12}{Atomos/\milli\metre^2}
             ;&\\[3ex]&
             \text{(111)}:&\\&
             \frac{N_{atomos}}{\text{Area}}
             = \frac{3*1/2+3*1/6}{a\,\sqrt{2}*a\,\sqrt{2}\,\sin(\pi/3)/2}
             = \frac{4}{(4.95\E-7)^2\,\sqrt{3}}
             \cong &\\&
-            \cong\SI{9.42516509237222e12}{Atomo/\milli\metre^2}
+            \cong\qty{9.42516509237222e12}{Atomo/\milli\metre^2}
         &
     \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}1{ % Q6
-    O cobre tem uma estrutura CFC e um raio atómico de 1.278\,\si{\angstrom}. Quantas camadas de planos \{1\,0\,0\} existem ao longo da espessura de uma película de 1\,\si{\micro\metre} de espessura. Suponha que os planos (0\,0\,1) são paralelos às superfícies superior e inferior da película.
+    O cobre tem uma estrutura CFC e um raio atómico de 1.278\,\unit{\angstrom}. Quantas camadas de planos \{1\,0\,0\} existem ao longo da espessura de uma película de 1\,\unit{\micro\metre} de espessura. Suponha que os planos (0\,0\,1) são paralelos às superfícies superior e inferior da película.
 } % Q6
     \answer{}
     \begin{flalign*}
         &
             \left\lfloor
-                \frac{1\,\si{\micro\metre}}{a}
+                \frac{1\,\unit{\micro\metre}}{a}
             \right\rfloor
             = \left\lfloor
-                \frac{1\,\si{\micro\metre}}{r\,2^{3/2}}
+                \frac{1\,\unit{\micro\metre}}{r\,2^{3/2}}
             \right\rfloor
             = \left\lfloor
-                \frac{1\,\si{\micro\metre}}{
+                \frac{1\,\unit{\micro\metre}}{
                     (1.278\E-4)
                     \,2^{3/2}
                 }

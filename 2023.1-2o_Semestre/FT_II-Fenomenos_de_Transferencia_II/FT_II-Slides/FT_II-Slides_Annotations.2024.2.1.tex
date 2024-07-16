@@ -1,0 +1,236 @@
+% !TEX root = ./FT_II-Slides_Annotations.2024.2.1.tex
+\providecommand\mainfilename{"./FT_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Slides_Annotations.2024.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Slides_Annotations.2024.2.1}}}
+% \tikzsetexternalprefix{./figures/FT_II-Slides_Annotations.2024.2.1/graphics/}
+
+\mymakesubfile{8}
+[FT II]
+{Convecção -- Análise Dimensional e Correlações} % Subfile Title
+{Convecção -- Análise Dimensional e Correlações} % Part Title
+
+\begin{sectionBox}1{Coeficiente de Transferencia de Massa} % MARK: S
+    
+    \begin{BM}
+        N_A = \mathemph{k_C}\,(C_{A,S}-C_{A})
+    \end{BM}
+    Avaliação de \(k_C\)
+    \begin{itemize}
+        \item \hyperref{}{2.1}{1.AnaliseDimensional}{Análise Dimensional}
+        \item Correlações Experimentais
+        \item Analogias entre transferencia de massa, calor e quantidade de movimento
+        \item Modelos
+        \item Camada Limite
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Análise Dimensional} % MARK: S
+    \hyperdef{2.1}{1.AnaliseDimensional}{}
+    
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l CC}
+            \toprule
+            
+                \multicolumn{1}{c}{Variável}
+                & \multicolumn{1}{c}{Símbolo}
+                & \multicolumn{1}{c}{Dimensão}
+            
+            \\\midrule
+            
+                Diametro
+                & D & \unit{L}
+                \\ Massa Esp. Flu.
+                & \rho & \unit{M.L^{-3}}
+                \\ Viscosidade Flu.
+                & \mu & \unit{M.L^{-1}.T^{-1}}
+                \\ Velocidade Flu.
+                & v & \unit{L.T^{-1}}
+                \\ Coef. Difusão
+                & \mathscr{D}_{A,B} & \unit{L^2.T^{-1}}
+                \\ Coef. Transf. Massa
+                & k_C & \unit{L.T^{-1}}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \paragraph*{Teorema \chempi{} de Bulkiman:}
+    \begin{BM}
+        i = n-K
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(K\)} % Longest item
+    ]
+        \item[\(i\)] Nº de Grupos Adimensionais
+        \item[\(n\)] Nº de Variáveis
+        \item[\(K\)] Nº de Grandezas fundamentais
+    \end{description}
+
+\end{sectionBox}
+
+
+\begin{sectionBox}2{Numero de Sheerwood} % MARK: S
+    
+    \begin{BM}
+        \pi_1
+        = \mathscr{D}_{A,B}^{a_1}
+        \,\rho^{a_2}
+        \,D^{a_3}
+        \,k_C
+        \implies \\
+        \implies
+        \pi_1
+        = \frac{k_C\,D}{\mathscr{D}_{A,B}}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \dim{\pi_1}
+            = 1
+            = \dim{\left(
+                \mathscr{D}_{A,B}^{a_1}
+                \,\rho^{a_2}
+                \,D^{a_3}
+                \,k_C
+            \right)}
+            = &\\&
+            = \left(
+                \frac{L^2}{T}
+            \right)^{a_1}
+            \, \left(
+                \frac{M}{L^3}
+            \right)^{a_2}
+            \, \left(
+                L
+            \right)^{a_3}
+            \,\frac{L}{T}
+            = L^{2\,a_1-3\,a_2+a_3+1}
+            \,T^{-a_1-1}
+            \,M^{a_2}
+            \implies &\\&
+            \implies
+            \begin{cases}
+                a_2=0
+                \\
+                a_1=-1
+                \\
+                a_3=-1+2=1
+            \end{cases}
+            % 
+            % 
+            % 
+            \qquad
+            \therefore
+            \pi_1=\frac{k_C\,D}{\mathscr{D}_{A,B}}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Numero de Reynalds} % MARK: S
+    
+    \begin{BM}
+        Re
+        =\frac{\pi_2}{Sc}
+        =\frac{\pi_2}{\pi_3}
+        =\frac{D\,v\,\rho}{\mu}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \mathemph{\pi_2:}
+            \quad
+            \pi_2
+            = \mathscr{D}_{A,B}^{a_1}
+            \,\rho^{a_2}
+            \,\D^{a_3}
+            \,v
+            = \dots
+            = \frac{D\,v}{\mathscr{D}_{A,B}}
+            % 
+            % 
+            % 
+            ; &\\&
+            \mathemph{\pi_3:}
+            \quad
+            \pi_3
+            = \mathscr{D}_{A,B}^{a_1}
+            \,\rho^{a_2}
+            \,\D^{a_3}
+            \,\mu
+            = \dots
+            = \frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+            % 
+            % 
+            % 
+            \implies &\\&
+            \implies
+            Re
+            = \frac{\pi_2}{\pi_3}
+            = \frac{
+                \frac{D\,v}{\mathscr{D}_{A,B}}
+            }{
+                \frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+            }
+            =\frac{D\,v\,\rho}{\mu}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Numero de Schmidt} % MARK: S
+    
+    \begin{BM}
+        Sc
+        = \pi_3
+        = \frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+    \end{BM}
+
+    Razão entre a difusão molecular de quantidade de movimento e de massa
+
+    \begin{flalign*}
+        &
+            Sc
+            = \pi_3
+            = \mathscr{D}_{A,B}^{a_1}
+            \,\rho^{a_2}
+            \,D^{a_3}
+            \,k_C
+            = \dots
+            = \frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\part*{Correlações}
+
+\begin{sectionBox}1{Correlações} % MARK: S
+    
+    \subsection*{Experimentais}
+    \begin{multicols}{2}
+        Transferencia de Massa
+        \begin{BM}
+            Sh=\Psi(Re,Sc)
+        \end{BM}
+
+        Transferencia de Calor
+        \begin{BM}
+            Nu=\Psi(Re,Pr)
+        \end{BM}
+    \end{multicols}
+    
+\end{sectionBox}
+
+\end{document}

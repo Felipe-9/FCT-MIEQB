@@ -1,0 +1,399 @@
+% !TEX root = ./FT_II-Tests_Resolutions.4.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Tests_Resolutions.4}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Tests_Resolutions.4/graphics/}
+
+\mymakesubfile{4}
+[FT II]
+{Exame época especial} % Subfile Title
+{Exame época especial} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A reação de isomeriszaç!ão de \ch{A} (\ch{n A -> A_n}) ocorre na superfici de part de um cat.
+} % Q1
+    \begin{itemize}
+        \item Sobre o cat existe uma camada estagnada de gás de espessura \(\delta\)
+        \item Através de qual \(A\text{ e }A_n\) se difundem 
+        \item e no exterior dessa camada a fração molar de \ch{A} é \(y_{A,0}\)
+        \item Se a reação cinética for instantanea
+        
+    \end{itemize}
+    Desenvolva expressões para a velocidade de isomerização de A em função das prop da fase gasosa envolvente.
+
+    \begin{questionBox}2{ % Q1.1
+        Para um cat com geometria plana com comprimento \textit{L} e largura \textit{W}
+    } % Q1.1
+        \begin{flalign*}
+            &
+                N_{A,z} = -n\,N_{A_n,z}
+                &\\[3ex]&
+                \begin{cases}
+                    z_0 = \delta & y_{A,0}
+                    \\
+                    z_1 = L & y_{A,1} = 0
+                \end{cases}
+                &\\[3ex]&
+                N_{A,z}\,A
+                = \frac{c\,D_{A,B}}{\Theta\,\adif{z}}
+                \,\ln\frac
+                {1-\Theta\,y_{A,1}}
+                {1-\Theta\,y_{A,0}}
+                \,\left(
+                    \pi\,(W/2)^2
+                \right)
+                = &\\&
+                = \frac{c\,D_{A,B}}{(1+N_{A_n}/N_A)\,(L-\delta)}
+                \,\ln\frac
+                {1-(1+N_{A_n}/N_A)\,y_{A,1}}
+                {1-(1+N_{A_n}/N_A)\,y_{A,0}}
+                \,\pi\,W^2/4
+                = &\\&
+                = \frac{
+                    \left(
+                        \frac{p}{R\,T}
+                    \right)\,D_{A,B}
+                }{
+                    (1-1/n)\,(L-\delta)
+                }
+                \,\ln\frac
+                {1-(1-1/n)\,y_{A,1}}
+                {1-(1-1/n)\,y_{A,0}}
+                \,\pi\,W^2/4
+                % ======================================== %
+                % ======================================== %
+                % ======================================== %
+                % N_{A,z} = n\,N_{A_n,z}
+                % &\\[3ex]&
+                % N_{A,z}
+                % = y_{A,z}(
+                %     N_{A,z}+N_{B,z}
+                % )
+                % - \frac{D_{A,B}}
+                % &\\[6ex]&
+                % N_{A} = n\,N_{A_n}
+                % ; &\\[3ex]&
+                % N_{A,z}
+                % =\frac{c\,D_{A,B}}{\Theta\,\adif{z}}
+                % \,\ln\frac
+                % {1-\Theta\,y_{A,1}}
+                % {1-\Theta\,y_{A,0}}
+                % = &\\&
+                % = \frac{c\,D_{A,B}}{
+                %     \left(
+                %         1+N_{A_n}/N_{A}
+                %     \right)
+                %     (L-\delta)
+                % }
+                % \,\ln\frac
+                % {1-\left(1+N_{A_n}/N_{A}\right)\,y_{A,1}}
+                % {1-\left(1+N_{A_n}/N_{A}\right)\,y_{A,0}}
+                % = &\\&
+                % = \frac{c\,D_{A,B}}{
+                %     \left(1+1/n\right)
+                %     (L-\delta)
+                % }
+                % \,\ln\frac
+                % {1-\left(1+1/n\right)\,y_{A,1}}
+                % {1-\left(1+1/n\right)\,y_{A,0}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Para um cat com geometria esférica, com raio \(R\)
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    r_0=\delta & y_{A,0}
+                    \\ 
+                    r_1=R & y_{A,1}
+                \end{cases}
+                &\\[3ex]&
+                N_{A,r}\,A
+                = -\frac{c\,D_{A,B}}{\Theta\,r_0(1-r_0/r_1)}
+                \,\ln\frac
+                {1-\Theta\,y_{A,1}}
+                {1-\Theta\,y_{A,0}}
+                \,4\,\pi\,R^2
+                = &\\&
+                = -\frac{c\,D_{A,B}}{(1+N_{A_n}/N_{A})\,\delta(1-\delta/R)}
+                \,\ln\frac
+                {1-(1+N_{A_n}/N_{A})\,y_{A,1}}
+                {1-(1+N_{A_n}/N_{A})\,y_{A,0}}
+                = &\\&
+                = -\frac{c\,D_{A,B}}{(1-1/n)\,\delta(1-\delta/R)}
+                \,\ln\frac
+                {1-(1-1/n)\,y_{A,1}}
+                {1-(1-1/n)\,y_{A,0}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+%   ,ad8888ba,     ad888888b,
+%  d8"'    `"8b   d8"     "88
+% d8'        `8b          a8P
+% 88          88       ,d8P"
+% 88          88     a8P"
+% Y8,    "88,,8P   a8P'
+%  Y8a.    Y88P   d8"
+%   `"Y8888Y"Y8a  88888888888
+
+\begin{questionBox}1{ % Q2
+    A permeabilidade de uma membrana de PDMS foi det exp a 30\,\unit{\celsius}.
+} % Q2
+    \begin{itemize}
+        \item Sabendo que a representação de P em função do tempo, para tempos elevados é uma reta com declive igual a 20.
+    \end{itemize}
+
+    Determine a perm da membrana
+
+    \begin{BM}
+        p=\left(
+            \frac{A\,R\,T\,p_0}{V\,L}
+        \right)
+        \left(
+            S\,D_{A,B}\,t
+            -S\,L^2/6
+        \right)
+    \end{BM}
+
+    \begin{itemize}
+        \item \(A=6*10^{-4}\,\unit{\metre^2}\)
+        \item \(p_0=1*10^5\,\unit{\pascal}\)
+        \item \(V=50\,\unit{\centi\metre^3}\)
+        \item \(R=\qty{8.20573660809596e-5}{\metre^3.\atm.\mole^{-1}.\kelvin^{-1}}\)
+        \item Espessura da membrana \(L=2\,\unit{\centi\metre}\)
+    \end{itemize}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            p
+            =\left(
+                \frac{
+                    A
+                    \,R
+                    \,T
+                    \,p_0
+                }{
+                    V\,L
+                }
+            \right)
+            \left(
+                S
+                \,D_{A,B}
+                \,t
+                -S\,L^2/6
+            \right)
+            = &\\&
+            =\left(
+                \frac{
+                    6*10^{-4}
+                    *\num{8.20573660809596e-5}
+                    *(30+273.15)
+                    *p_0
+                }{
+                    (50\E-6)
+                    *2\E-2
+                }
+            \right)
+            \left(
+                S
+                \,D_{A,B}
+                \,t
+                -S\,L^2/6
+            \right)
+            ; &\\&
+            \lim_{t>>}{p}
+            \cong 20\,t
+            \cong \frac{A\,R\,T\,S\,D_{A,B}}{V\,L}t
+            \implies &\\[3ex]&
+            \implies
+            D_{A,B}
+            \cong 
+            \frac{20\,V\,L}{A\,R\,T\,S}
+            = &\\&
+            = \frac{
+                20
+                *(50\E-6)
+                *(2\E-2)
+            }{
+                (6\E-4)
+                *\num{8.20573660809596e-5}
+                *(30+273.15)
+                *(4\,\pi\,R^2)
+            }
+            = &\\&
+            = \frac{
+                20
+                *(50\E-6)
+                *(2\E-2)
+            % 2000e-8
+            }{
+                (6\E-4)
+                *\num{8.20573660809596e-5}
+                *(30+273.15)
+                *(4\,\pi\,R^2)
+            }
+            % \,\frac
+            % {\Omega_{\mathscr{D},T_1}}
+            % {\Omega_{\mathscr{D},T_2}}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+%   ,ad8888ba,     ad888888b,
+%  d8"'    `"8b   d8"     "88
+% d8'        `8b          a8P
+% 88          88       aad8"
+% 88          88       ""Y8,
+% Y8,    "88,,8P          "8b
+%  Y8a.    Y88P   Y8,     a88
+%   `"Y8888Y"Y8a   "Y888888P'
+
+\begin{questionBox}1{ % Q3
+    Efet transf de massa de ac benz a 20\,\unit{\celsius}
+} % Q3
+    \begin{itemize}
+        \item Fazendo passar agua a velocidade média de 2.5\,\unit{\metre/\second} 
+        \item através de um tubo de ac benz com 2\,\unit{\centi\metre} de diâmetro e 1\,\unit{\metre} de comprimento, 
+        \item tendo-se obtido uma velocidade de dissolução de ácido benz de \(2.1\E-5\)\unit{\kilo\gram/\second}
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q3.1
+        Calcule a cencentração de ácdio benz à saída de um tubo de igual diâmetro, mas com 10\,\unit{\metre} de comprimento dse fizer passar água a uma vel quatro vezes superiror
+    } % Q3.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    z_0=0 & y_{0}=0
+                    \\
+                    z_1=10 & y_{1}
+                \end{cases}
+                &\\&
+                21\E-2=
+                N_{A,z}\,A
+                = \frac{c\,D_{A,B}}{\Theta\,\adif{z}}
+                \,\ln\frac
+                {1-\Theta\,y_{A,1}}
+                {1-\Theta\,y_{A,0}}
+                \,\pi\,(d/2)^2
+                = &\\&
+                = \frac{c\,D_{A,B}}{10}
+                \,\ln{(1-y_{A,1})}
+                \,\pi\,(d/2)^2
+                = &\\&
+                = \frac{
+                    (2.65\E3)
+                    *8.8\E{-10}
+                }{10}
+                \,\ln{(1-y_{A,1})}
+                \,\pi\,(2\E-2/2)^2
+                \implies &\\&
+                \implies
+                y_{A,1}
+                = 1-\exp\left(
+                    \frac{
+                        21\E-2
+                    }{
+                        \frac{
+                            (2.65\E3)
+                            *8.8\E{-10}
+                        }{10}
+                        \,\pi\,(2\E-2/2)^2
+                        % 0.000000000073262
+                    }
+                    % 2866426933.902060384139201
+                \right)
+                \cong
+                % ======================================== %
+                % ======================================== %
+                % ======================================== %
+                &\\[6ex]&
+                \ln\frac
+                {c_{A,s}-c_{A,0}}
+                {c_{A,s}-c_{A,l}}
+                = \frac{4\,k_c\,L}{d\,v}
+                = &\\[3ex]&
+                =
+                \ln\frac
+                {c_{A,s}-0}
+                {c_{A,s}-\left(
+                    2.1\E-2
+                    \,\frac{\unit{\kilo\gram\of{Ac}}}{\unit{\second}}
+                    \,\frac{\unit{\second}}{2.5\,\unit{\metre\of{z}}}
+                    \,\pi\,(d/2)^2
+                \right)}
+                = \frac{4\,k_c\,L}{d\,v}
+                ; &\\[3ex]&
+                W
+                =k_c\,\pi\,d\,l\,c_{*}
+                \implies
+                k_c
+                =\frac{w}{\pi\,d\,l\,c_{*}}
+                =\frac{w}{\pi\,d\,l\,y_{*}/A}
+                =\frac
+                {w\,4\,\pi\,r^2}
+                {\pi\,d\,l\,y_{*}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        Que métodos poderá usar para calcular coeficientes de transferência de massa? quais os mais utilizados?
+    } % Q3.2
+        \answer{}
+        Encontrar o coeficiente usando os dados experimentais e usar a proporcionalidade dentre coeficientes para transferir a uma nova situação variando pressão e temperatura
+        \begin{BM}
+            \frac
+            {D_{A,B,T_2\,\unit{\kelvin},P_2\,\unit{\atm}}}
+            {D_{A,B,T_1\,\unit{\kelvin},P_1\,\unit{\atm}}}
+            = 
+            \,\frac{P_1}{P_2}
+            \,\left(
+                \frac{T_2}{T_1}
+            \right)^{3/2}
+            % \,\frac
+            % {\Omega_{\mathscr{D},T_1}}
+            % {\Omega_{\mathscr{D},T_2}}
+        \end{BM}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Agua com cloro para branqueamento da pasta de papel é obtida por absorção de cloro gasoso em água numa coluna de enchimento a 293\,\unit{\kelvin} e 1\,\unit{\atm}.
+} % Q4
+    Num dado ponto da coluna a pressão de cloro no gás é de 75\,\unit{\mmHg} e a concentração de cloro é no liq é 0.75\,\unit{\gram/\litre}.
+
+    Se 80\,\unit{\percent} da resistencia à transferencia de massa estiver na fase líquida, calcule:
+
+    \begin{questionBox}2{ % Q4.1
+        As composições interfaciais
+    } % Q4.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    z_0 & y_{0,z}=0\,\unit{\gram/\litre}
+                    \\
+                    z_1=z & y_{1,z} = 75\,\unit{\mmHg}
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

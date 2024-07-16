@@ -17,18 +17,18 @@
 {Teste 1 2020 Resolução} % Part Title
 
 \begin{questionBox}1{ % Q1
-    The figure shows the kinetic curve obtained in a batch reactor, corresponding to the elemental liquid phase reaction \ch{2 A -> B}. The reaction is carried out in batch reactors of 5\,\si{\metre^3}, which are loaded with pure A.
+    The figure shows the kinetic curve obtained in a batch reactor, corresponding to the elemental liquid phase reaction \ch{2 A -> B}. The reaction is carried out in batch reactors of 5\,\unit{\metre^3}, which are loaded with pure A.
 } % Q1
     \begin{center}
         \includegraphics[width=.6\textwidth]{Screenshot 2023-11-08 at 18.33.05}
     \end{center}
     \paragraph*{Data:}
     \begin{itemize}
-        \item \(t_d=120\,\si{\min}\). 
-        \item Molecular weight of A: 58\,\si{\gram/\mole}.
-        \item Molecular weight of B: 116\,\si{\gram/\mole}.
-        \item Density of A: 0.791\,\si{\gram/\litre}. 
-        \item If you were not able to solve b) use \(k=0.074\,\si{\deci\metre^3.\mole^{-1}.\hour^{-1}}\).
+        \item \(t_d=120\,\unit{\min}\). 
+        \item Molecular weight of A: 58\,\unit{\gram/\mole}.
+        \item Molecular weight of B: 116\,\unit{\gram/\mole}.
+        \item Density of A: 0.791\,\unit{\gram/\litre}. 
+        \item If you were not able to solve b) use \(k=0.074\,\unit{\deci\metre^3.\mole^{-1}.\hour^{-1}}\).
     \end{itemize}
     \begin{questionBox}2{ % Q1.1
         Write the expression of the rate law.
@@ -131,10 +131,10 @@
                     \,(791/58)
                     \,1.9
                 \right)^{-1}
-                \,\si{\litre/\mole.\hour}
+                \,\unit{\litre/\mole.\hour}
                 \cong &\\&
                 \cong
-                \SI{57.888083039457}{\milli\litre/\mole.\hour}
+                \qty{57.888083039457}{\milli\litre/\mole.\hour}
             &
         \end{flalign*}
     \end{questionBox}
@@ -146,25 +146,25 @@
         \begin{BM}
             X_{opt}\cong 0.68
             \qquad
-            t_{opt}\cong 2.3\,\si{\hour}
+            t_{opt}\cong 2.3\,\unit{\hour}
         \end{BM}
     \end{questionBox}
     \begin{questionBox}2{ % Q1.5
-        If the plant works 24\,\si{\hour} day and 330\,\si{\day/\year}, determine the number of reactors needed for an annual production of B of 1500\,\si{\tonne}. Use the conversion calculated in d) but if you were not able to, use any value at your choice.
+        If the plant works 24\,\unit{\hour} day and 330\,\unit{\day/\year}, determine the number of reactors needed for an annual production of B of 1500\,\unit{\tonne}. Use the conversion calculated in d) but if you were not able to, use any value at your choice.
     } % Q1.5
         \answer{}
         \center{\ch{A-> 1/2 B}}
         \begin{flalign*}
             &
                 N_R
-                =\ceil{V_R/5\,\si{\metre^2}}
+                =\ceil{V_R/5\,\unit{\metre^2}}
                 % 1.15 é margem de erro
-                =\ceil{1.15\,V/5\,\si{\metre^2}}
+                =\ceil{1.15\,V/5\,\unit{\metre^2}}
                 =\left\lceil
                     \frac{
                         1.15
                         \,(N_{A\,0}/C_{A\,0})
-                    }{5\,\si{\metre^2}}
+                    }{5\,\unit{\metre^2}}
                 \right\rceil
                 ; &\\[3ex]&
                 N_{A\,0}\,X/2
@@ -198,7 +198,7 @@
                     }
                 }
                 \cong
-                \SI{7.020637408568443e3}{\mole}
+                \qty{7.020637408568443e3}{\mole}
                 \implies &\\[3ex]&
                 \implies
                 N_{A\,0}
@@ -234,14 +234,14 @@
 \end{questionBox}
 
 \begin{questionBox}1{ % Q2
-    A reacção de 1ª ordem \ch{A -> 2 B}, em fase líquida, é conduzida num sistema de reactores contínuos, sendo uma solução de A com a concentração de 0.1\,\si{\mole/\deci\metre^3} alimentada a um caudal volumétrico de 10\,\si{\deci\metre^3/\min}. Sabendo-se que a constante cinética à temperatura da reacção é \(k = 0.02\,\si{\min^{-1}}\), e que se pretende obter uma conversão final de 70\%, determine mostrando todos os cálculos:
+    A reacção de 1ª ordem \ch{A -> 2 B}, em fase líquida, é conduzida num sistema de reactores contínuos, sendo uma solução de A com a concentração de 0.1\,\unit{\mole/\deci\metre^3} alimentada a um caudal volumétrico de 10\,\unit{\deci\metre^3/\min}. Sabendo-se que a constante cinética à temperatura da reacção é \(k = 0.02\,\unit{\min^{-1}}\), e que se pretende obter uma conversão final de 70\%, determine mostrando todos os cálculos:
 } % Q2
     \begin{questionBox}2{ % Q2.1
         O volume de um único reactor CSTR.
     } % Q2.1
     \end{questionBox}
     \begin{questionBox}2{ % Q2.2
-        O número de reactores CSTR de 1\,\si{\metre^3} de volume, associados em série.
+        O número de reactores CSTR de 1\,\unit{\metre^3} de volume, associados em série.
     } % Q2.2
     \end{questionBox}
 \end{questionBox}

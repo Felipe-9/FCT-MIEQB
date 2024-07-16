@@ -1,0 +1,137 @@
+% !TEX root = ./FT_II-Tests_Resolutions.1.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Tests_Resolutions.1}}}
+
+\mymakesubfile{1}
+[FT II]
+{Teste 1 Resolução} % Subfile Title
+{} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Carvão, Atm gasosa enriquecida (40\% percent molar de \ch{O2}) a 1400\,\unit{\kelvin}, à P atm (\(1.013*10^5\,\unit{\pascal}\)). Limit pela dif de \ch{O2} sentido oposto a \ch{CO} q se forma instant com carvão. Carvão = Esfera com \(d = 0.6\,\unit{\milli\metre}\) de carbono puro \(\rho=1280\,\unit{\kilo\gram\,\metre^{-3}}\).
+} % Q1
+    \begin{center}\Large
+        \ch{2 C_{(s)} + O2\gas{} -> 2 CO\gas{}}
+    \end{center}
+    \begin{itemize}
+        % \begin{multicols}{2}
+            \item \(\chemalpha = \ch{O2}\)
+            \item \(\chembeta = \ch{CO}\)
+        % \end{multicols}
+    \end{itemize}
+
+    \paragraph{considere}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\mathscr{D}_{\ch{O2}-\text{mist gas}} = 10^{-4}\,\unit{\metre^2/\second}\)
+            \item \(R = \qty{8.314462618}{\joule\,\mole^{-1}\,\kelvin^{-1}}\)
+            \item para a) e d) estado estacionario
+        \end{multicols}
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q1.1
+        Esquema, eq conserv de massa, condições fronteira
+    } % Q1.1
+        \begin{center}\large
+            \ch{\text{Sup\ da\ Esfera\ de\ Carvão} <>[CO][O2] ATM}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                Q_{\chembeta}
+                = N_{\chembeta,r}*S_r
+                = N_{\chembeta,r}*4\,\pi\,r^2
+                = N_{\chembeta,r_1}*4\,\pi\,r_1^2
+                \implies &\\&
+                \implies
+                N_{\chembeta,r}
+                = N_{\chembeta,r_1}\,(r_1/r)^2
+            &
+        \end{flalign*}
+
+        \begin{BM}[align*]
+            \text{C. Fronteira Dif } \ch{CO}
+            & \begin{cases}
+                r=r_0 &\quad y_{\chembeta} = y_{\chembeta,*}
+                \\
+                r=\infty &\quad y_{\chembeta,0} = 0
+            \end{cases}
+            \\
+            \text{C. Fronteira Dif } \ch{O2}
+            & \begin{cases}
+                r=\infty &\quad y_{\chemalpha} = y_{\chemalpha}
+                \\
+                r=r_0 &\quad y_{\chemalpha,0} = y_{\chemalpha,*}
+            \end{cases}
+            \\
+            \text{C. Fronteira Reação}
+            & \begin{cases}
+                r=r_0 &\quad t=t_0
+                \\
+                r=r &\quad t=t
+            \end{cases}
+        \end{BM}
+        Considero não haver CO na atmosfera indo de sua concentrção máxima na superficie para 0 em infinito e \ch{O2} tem sua máxima de 40\% no infinito e alguma mínima na superficie para que a reação ocorra
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Eq da vel de dif do \ch{O2} e valor da vel
+    } % Q1.2
+        \begin{flalign*}
+            &
+                N_{\chemalpha,r}
+                = y_{\chemalpha}(
+                    N_{\chemalpha,r}
+                    + N_{\chembeta,r}
+                ) - \frac{P\,\mathscr{D}_{\chemalpha,\chembeta}}{R\,T}
+                \,\odv{y_a{\chemalpha}}{r}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.3
+        Tempo até arder tudo
+    } % Q1.3
+        \begin{flalign*}
+            &
+                Q_{\chembeta}
+                = -C_{\chembeta,L}\odv{V}{t}
+                = -C_{\chembeta,L}\odv{(\pi\,r^3\,4/3)}{t}
+                = -C_{\chembeta,L}\pi\,r^2\,4\,\odv{r}{t}
+                = &\\[1.5ex]&
+                = N_{\chembeta,r}\,S_r
+                = N_{\chembeta,r}\,\pi\,r^2\,4
+                \implies &\\&
+                \implies
+                N_{\chembeta,r} = -C_{\chembeta,L}\,\odv{r}{t}
+                ; &\\[3ex]&
+                % ------------------------------ N_{\chembeta,r} ----------------------------- %
+                N_{\chembeta,r}
+                = y_{\chembeta}(N_{\chembeta,r} + N_{\chemalpha,r})
+                - \frac{P\,\mathscr{D}_{\chembeta,\chemalpha}}{R\,T}
+                \,\odv{y_{\chembeta}}{r}
+                \implies &\\&
+                \implies
+                N_{\chembeta,r}\odif{r}
+                = \frac{
+                    y_{\chembeta}\,N_{\chemalpha,r}
+                    - \frac{P\,\mathscr{D}_{\chembeta,\chemalpha}}{R\,T}
+                }{
+                    1-y_{\chembeta}
+                }\,\odif{y_{\chembeta}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+\end{document}

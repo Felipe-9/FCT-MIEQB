@@ -59,7 +59,7 @@
 % \usepackage[sfdefault, ultralight]{FiraSans}
 % \renewcommand{\familydefault}{\sfdefault} % set sans serif as defalt
 % Redeclare emph
-\let\emph\relax
+\NewCommandCopy\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries\color{Emph}}
 % % ==================== Set font family =================== %
 \setmainfont[
@@ -281,7 +281,7 @@
 % %                          Vectors                         %
 % % -------------------------------------------------------- %
 % \usepackage{esvect}      % Vector over-arrow
-% \let\vec\vv
+% \NewCommandCopy\vec\vv
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
@@ -299,7 +299,7 @@
 %     prefix={./.build/figures/graphics/}
 % ] % turn externalization on/off
 % % Fix background
-% \let\oldtikzpicture\tikzpicture
+% \NewCommandCopy\oldtikzpicture\tikzpicture
 % \RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
 % % ==================== Other packages ==================== %
 % \usepackage{myTikzGraphs} % For graphs
@@ -364,7 +364,7 @@
 % % ====================== chemmacros ====================== %
 \usepackage{chemmacros}
 \chemsetup[phases]{pos=sub}
-% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
 % % -------------------------------------------------------- %
 % %                          Biology                         %
 % % -------------------------------------------------------- %

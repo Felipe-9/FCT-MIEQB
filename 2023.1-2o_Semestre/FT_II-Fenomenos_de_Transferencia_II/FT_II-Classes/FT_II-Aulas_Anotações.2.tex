@@ -1,0 +1,178 @@
+% !TEX root = ./FT_II-Aulas_Anotações.2.tex
+\providecommand\mainfilename{"./FT_II-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Aulas_Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+
+\mymakesubfile{1}
+[FT II]
+{Anotações} % Subfile Title
+{Anotações} % Part Title
+
+\begin{exampleBox}1{ % E1
+} % E1
+    
+    Ao absorver \ch{NH3} (de uma mistura com ar) em água numa coluna de encgimento a 60\,\unit{\celsius} e 3\,\unit{\atm}, os coeficientes individuais observados foram:
+
+    \begin{BM}
+        k_l = 1.1\,\unit{\metre/\hour}
+        ; \quad
+        k_g = 0.25
+        \,\unit{\frac{\mole}{\hour\,\metre^2\,\atm}}
+    \end{BM}
+
+    A pressão parcial de \ch{NH3} no equilibrio em soluções diluidas é dada por \(p_{\ch{NH3}}=0.25\,c_{\ch{NH3}}\). Determine os valores dos coeficientes:
+
+    \begin{exampleBox}2{ % E1.1
+        \(k_y\)
+    } % E1.1
+        \begin{flalign*}
+            &
+                k_y\,(y_a-y_{a,i})
+                = k_g\,(p_{a}-p_{a,i})
+                = k_g\,(p\,y_{a}-p\,y_{a,i})
+                = k_g\,p\,(y_{a}-y_{a,i})
+                \implies &\\&
+                \implies
+                k_y 
+                = k_g\,p
+                = 0.25*3=0.75\,\unit{\mole/\hour\,\metre^2}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.2
+        \(k_c\) (gás-conc.molares)
+    } % E1.2
+        \begin{flalign*}
+            &
+                k_c\,(c_a-c_{a,i})
+                = k_g\,(p_{a}-p_{a,i})
+                = k_g\,(c_{a}\,R\,T-c_{a,i}\,R\,T)
+                = k_g\,R\,T(c_{a}-c_{a,i})
+                \implies &\\&
+                \implies
+                k_c
+                = k_g\,R\,T
+                = 0.25 
+                * \num{8.20573660809596e-5}
+                (60+273.15)
+                \cong 
+                \qty{683.435287746792269e-5}{\metre/\hour}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.3
+        \(K_g\)
+    } % E1.3
+        \begin{flalign*}
+            &
+                K_{g}
+                = (p_a-p_{a,*})^{-1}
+                = \left(
+                    (p_a-p_{a,i})
+                    + (p_{a,i}-p_{a,*})
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (k_g^{-1})
+                    + (H(c_{a,i}-c_{a,l}))
+                \right)^{-1}
+                % = &\\&
+                = \left(
+                    k_g^{-1}
+                    + H/k_l
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    0.25^{-1}
+                    + 0.25/1.1
+                \right)^{-1}
+                \cong
+                \qty{0.236559139784946}{
+                    \frac{\mole}{\hour\,\metre^2\,\atm}
+                }
+            &
+        \end{flalign*}
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.4
+        \(K_y\)
+    } % E1.4
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.5
+        \(K_l\)
+    } % E1.5
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.6
+        Se um ponto da coluna \(p_{\ch{NH3}} = 0.03 \,\unit{\atm},\ C_{\ch{NH3}}=0.05\,\unit{\mole/\metre}\), qual o fluxo de absorção do \ch{NH3}?
+    } % E1.6
+        \begin{flalign*}
+            &
+                N_a
+                = K_g\,(p_{a,g}-p_{a,*})
+                = K_g\,(p_{a,g}-m\,c_{a,L})
+                = &\\&
+                = \num{0.236559139784946}
+                \,(0.03-0.25*0.05)
+                \cong \qty{4.139784946236555e-3} {\mole/\hour\,\metre^2}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.7
+        Quais os valores das composições interfaciais?
+    } % E1.7
+        \begin{flalign*}
+            &
+                N_a
+                = k_g(p_{a,g}-p_{a,i})
+                % \implies &\\&
+                \implies
+                p_{a,i}
+                = p_{a,g}-N_a/k_g
+                \cong &\\&
+                \cong 0.03
+                -\num{4.139784946236555e-3}
+                /0.25
+                \cong
+                \num{1.344086021505378e-2}
+            &\\[3ex]&
+                c_{a,i}
+                = p_{a,i}/H
+                \cong \num{1.344086021505378e-2}/0.25
+                \cong \num{5.376344086021512e-2}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+
+    \begin{exampleBox}2{ % E1.8
+        Qual a resistência exercida em cada fase?
+    } % E1.8
+        \begin{flalign*}
+            &
+                r_l
+                = K_g/k_g
+                \cong \num{0.236559139784946}/0.25
+                \cong \qty{94.6236559139784}{\percent}
+            &\\&
+                r_g
+                = 1-r_l
+                \cong
+                \qty{5.3763440860216}{\percent}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+    
+\end{exampleBox}
+
+\end{document}

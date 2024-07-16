@@ -1,0 +1,85 @@
+% !TEX root = ./FT_II-Lists_Resolutions.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Lists_Resolutions.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Lists_Resolutions}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Lists_Resolutions/graphics/}
+
+\mymakesubfile{1}
+[FT II]
+{Resolução da Lista} % Subfile Title
+{Resolução da Lista} % Part Title
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % MARK: Q2
+    \ch{C2H5OH} sol aq a \qty*{10}{\celsius}
+} % Q2
+    \begin{questionBox}2{ % MARK: Q1
+        Estim coef de dif
+    } % Q1
+        \answer{}
+        \begin{flalign*}
+            &
+                \text{{\emph{Coef de Difusão:}}}
+                &\\&
+                \begin{cases}
+                    A:& \text{Etanol}
+                    \\
+                    B:& \text{Agua}
+                \end{cases}
+                &\\&
+                \frac{D_{a,b}\,\mu_b}{T}
+                = \frac{7.4\E{-8}\,\sqrt{\Phi_B\,M_B}}{V_{A}^{0.6}}
+                \implies &\\&
+                \implies
+                \frac{D_{a,b}\,\mu_b}{T}
+                = \frac{7.4\E{-8}\,\sqrt{\Phi_B\,M_B}}{V_{A}^{0.6}}
+                \,\frac{T}{\mu_b}
+                = &\\&
+                = \frac{
+                    7.4\E{-8}
+                    \,\sqrt{2.26*(2+16)}
+                }{
+                    58^{0.6}
+                }
+                \,\frac{10+273.15}{1.45}
+                \cong
+                \qty{8.06332118720373671429e-6}{\centi\metre^2/\sec}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2
+        Erro exp
+    } % Q2
+        \answer{}
+        \begin{flalign*}
+            &
+                E
+                \cong
+                \myvert{
+                    1
+                    -\frac
+                    {\num{8.06332118720373671429e-6}}
+                    {8.3\E{-6}}
+                }
+                \cong
+                \qty{2.8515519614008}{\percent}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q3
+    question
+} % Q3
+    body
+\end{questionBox}
+
+\end{document}

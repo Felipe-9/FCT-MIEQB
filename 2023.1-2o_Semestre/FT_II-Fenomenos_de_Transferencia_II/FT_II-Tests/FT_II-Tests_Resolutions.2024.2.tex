@@ -1,0 +1,103 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2024.2.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2024.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2024.2}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2024.2/graphics/}
+
+\mymakesubfile{2}
+[FT II]
+{Teste 2024.2 Resolução} % Subfile Title
+{Teste 2024.2 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \begin{multicols}{3}
+            \item \(\qty*{0.5}{\mole/\litre}\)
+            \item \(T=\qty*{298.15}{\kelvin}\)
+            \item \(P=\qty*{3}{\atm}\)
+            \item \(y_A=20\%\)
+            \item \(x_A=1\%\)
+            \item \(K_c=\qty*{8e-5}{\frac{\mole}{\second.\centi\metre.\atm}}\)
+            \item \(k_{c,x}*10=k_{c,y}\)
+            \item \(\dim{k_{c,x}}=\unit{\mole/\hour.\metre^2}\)
+            \item \(y^*_A=400\,x_A\)
+        \end{multicols}
+    \end{itemize}
+} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    \(k_G\text{ e }k_L\)
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            K_G
+            \,\left(
+                P_{A,G}-P_{A}^*
+            \right)
+            = K_G
+            \,\left(
+                y_{A}\,P-P_{A}^*
+            \right)
+            = &\\&
+            = N_A
+            = &\\&
+            = K_y
+            \,\left(
+                y_{A}-y_{A}^*
+            \right)
+            = K_y
+            \,\left(
+                y_{A}-400\,x_A
+            \right)
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            K_G
+            \,\left(
+                y_{A}\,P-P_{A}^*
+            \right)
+            = 
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Fluxo de A no topo da coluna
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{N_A}
+            &\\&
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Remover A da fase gasosa
+            \item \(T=\qty*{288.15}{\kelvin}\)
+            \item \(P=\qty*{1}{\atm}\)
+            \item \(P_{A,x}=\qty*{70}{\mmHg}\)
+            \item \(x_A=0.5\%\)
+            \item \(k_G=\qty*{2e-5}{\frac{\mole}{\second.\metre^2.\atm}}\)
+            \item 40\% da resistencia da fase gasosa
+            \item \(H=\qty*{0.15}{\atm.\metre^3/\mole}\)
+        \end{multicols}
+    \end{itemize}
+} % Q2
+\end{questionBox}
+
+\end{document}

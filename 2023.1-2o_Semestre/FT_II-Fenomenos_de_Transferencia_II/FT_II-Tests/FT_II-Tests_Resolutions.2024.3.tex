@@ -1,0 +1,448 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2024.3.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2024.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2024.3}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2024.3/graphics/}
+
+\mymakesubfile{3}
+[FT II]
+{Exame 2024.3 Resolução} % Subfile Title
+{Exame 2024.3 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \item \ch{{n} A -> A_n}
+        \item Espessura difusão: \(\delta\)
+        \item \(y_{A,0}\) concentração externa de A
+        \item Reação instantanea: \(y_{A,1}=0\)
+    \end{itemize}
+} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Geometria plana, comprimento: \textit{L}, largura \textit{W}
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{Velocidade de isomerização}
+            = &\\&
+            = Q_A
+            = - N_{A,z}\,{S,z}
+            = -\frac
+            {C\,\mathscr{D}_{A,B}}
+            {1-\Theta\,y_A}
+            \,\odv{y_A}{z}
+            \,S_z
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int{Q_A\,\frac{\odif{z}}{S_z}}
+            = Q_A
+            \,\int_{z_0}^{z_1}{
+                \frac{\odif{z}}{S_z}
+            }
+            =  &\\[3ex]&
+            = \int{
+                -\frac
+                {C\,\mathscr{D}_{A,B}}
+                {1-\Theta\,y_A}
+                \,\odif{y_A}
+            }
+            = 
+            \frac
+            {C\,\mathscr{D}_{A,B}}
+            {\Theta}
+            \,\int_{y_{A,z_0}}^{y_{A,z_1}}{
+                \frac{\odif{(1-\Theta\,y_A)}}{1-\Theta\,y_A}
+            }
+            = &\\&
+            = 
+            \frac
+            {C\,\mathscr{D}_{A,B}}
+            {\Theta}
+            \ln{\frac
+                {1-\Theta\,y_{A,z_1}}
+                {1-\Theta\,y_{A,z_0}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \int_{z_0}^{z_1}{
+                \frac{\odif{z}}{S_z}
+            }
+            = \int_{z_0}^{z_1}{
+                \frac{\odif{z}}{L\,W}
+            }
+            = \frac{\adif{z}}{L\,W}
+            = \frac{\delta}{L\,W}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+\frac{N_{A_n}}{N_{A}}
+            = 1+\frac{-N_{A}/n}{N_{A}}
+            = 1-1/n
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            Q_A
+            =
+            \frac
+            {C\,\mathscr{D}_{A,B}\,L\,W}
+            {(1-1/n)\,\delta}
+            \ln{\frac
+                {1-(1-1/n)\,y_{A,z_1}}
+                {1-(1-1/n)\,y_{A,z_0}}
+            }
+            = &\\&
+            =
+            \frac
+            {C\,\mathscr{D}_{A,B}\,L\,W}
+            {(1-1/n)\,\delta}
+            \ln{(1-(1-1/n)\,y_{A,0})}
+            % = &\\&
+            % =
+            % \frac
+            % {C\,\mathscr{D}_{A,B}\,L\,W}
+            % {(1-1/n)\,\delta}
+            % \ln{(1-(1-1/n)\,y_{A,0})}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Geometria esférica, raio \textit{R}
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            Q_A
+            = 
+            \left(
+                \int_{r_0}^{r_1}{
+                    \frac{\odif{r}}{S_r}
+                }
+            \right)^{-1}
+            \frac
+            {C\,\mathscr{D}_{A,B}}
+            {\Theta}
+            \ln{\frac
+                {1-\Theta\,y_{A,r_1}}
+                {1-\Theta\,y_{A,r_0}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \int_{r_0}^{r_1}{
+                \frac{\odif{r}}{S_r}
+            }
+            = \int_{r_0}^{r_1}{
+                \frac{\odif{r}}{4\,\pi\,r^2}
+            }
+            = \frac{r_0^{-1}-r_1^{-1}}{4\,\pi}
+            = \frac{(R)^{-1}-(R+\delta)^{-1}}{4\,\pi}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+\frac{N_{A_n}}{N_{A}}
+            = 1+\frac{-N_{A}/n}{N_{A}}
+            = 1-1/n
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            Q_A
+            = 
+            \frac
+            {
+                C\,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {
+                (1-1/n)
+                \left(
+                    R^{-1}-(R+\delta)^{-1}
+                \right)
+            }
+            \ln{(1-(1-1/n)\,y_{A,0})}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    \begin{itemize}
+        \item Espessura liquido: \qty*{1}{\mm}
+        \item Espessura ar: \qty*{4}{\mm}
+        \item Ar estagnado: \(N_{ar}=0\)
+        \item \(P=1\,\unit{\atm}\)
+        \item \(T=25\,\unit{\celsius}\)
+    \end{itemize}
+} % Q2
+    \paragraph*{Dados}
+    \begin{align*}
+        \mathscr{D}_{et}
+        =&\qty*{0.132}{\cm^2/\s}
+        ;&\rho_{et}
+        =&\qty*{0.789}{\g/\cm^3}
+        ;&M_{et}
+        =&\qty*{46.1}{\g/\mole}
+        \\P^*_{et}(25\unit{\celsius})
+        =&\qty*{7.87}{\kilo\Pa}
+    \end{align*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Tempo para et evap completamente
+} % Q2.1
+    \answer{}
+    % MARK: Third
+    \begin{flalign*}
+        &
+            -C_{A,L}
+            \,\odv{V}{t}
+            = -C_{A,L}
+            \,\odv{(z\,S)}{t}
+            = -C_{A,L}
+            \,S
+            \,\odv{z}{t}
+            % 
+            % 
+            % 
+            = &\\&
+            = Q
+            = &\\&
+            =\left(
+                \int_{z}^{5\E{-3}}{
+                    \frac{\odif{z}}{S_z}
+                }
+            \right)^{-1}
+            \frac
+            {C\,\mathscr{D}_{A,B}}
+            {\Theta}
+            \ln{\frac
+                {1-\Theta\,y_{A,z_1}}
+                {1-\Theta\,y_{A,z}}
+            }
+            = &\\&
+            =\left(
+                \frac{\adif{z}\big\vert_{z}^{5\E{-3}}}{S}
+            \right)^{-1}
+            \frac
+            {C\,\mathscr{D}_{A,B}}
+            {\Theta}
+            \ln{\frac
+                {1-0}
+                {1-\Theta\,y_{A,z_0}}
+            }
+            = &\\&
+            =\frac
+            {C\,\mathscr{D}_{A,B}\,S}
+            {\Theta\,(5\E{-3}-z)}
+            \ln{\frac
+                {1}
+                {1-\Theta\,y_{A,z_0}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+\frac{N_{B}}{N_{A}}
+            = 1+\frac{0}{N_{A}}
+            = 1
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{z}^{0}{
+                -C_{A,L}
+                (5\E{-3}-z)
+                \,\odif{z}
+            }
+            = C_{A,L}
+            \int_{1\E{-3}}^{0}{(5\E{-3}-z)\odif{(5-z)}}
+            = C_{A,L}\,((5\E{-3})^2-(5\E{-3}-1\E{-3})^2)/2
+            = C_{A,L}\,4.5\E{-6}
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            =\int_{0}^{t}{
+                C\,\mathscr{D}_{A,B}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,z_0}}
+                }
+                \odif{t}
+            }
+            % = &\\&
+            =
+            C\,\mathscr{D}_{A,B}
+            \ln{\frac
+                {1}
+                {1-y_{A,z}}
+            }
+            \int_{0}^{t}{
+                \odif{t}
+            }
+            = &\\&
+            =C\,\mathscr{D}_{A,B}
+            \ln{\frac
+                {1}
+                {1-y_{A,z}}
+            }\,t
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            t
+            =
+            \frac
+            {C_{A,L}\,4.5\E{-6}}
+            {C\,\mathscr{D}_{A,B}}
+            \left(
+                \ln{\frac
+                    {1}
+                    {1-y_{A,z}}
+                }
+            \right)^{-1}
+            = &\\&
+            =
+            \frac
+            {
+                \left(
+                    \rho_{et}/M_{et}
+                \right)
+                \,4.5\E{-6}
+            }
+            {
+                \left(
+                    \frac{P}{R\,T}
+                \right)
+                \,\mathscr{D}_{A,B}
+            }
+            \left(
+                \ln{\frac
+                    {1}
+                    {1-P^*_{et}/P}
+                }
+            \right)^{-1}
+            = &\\&
+            =
+            \frac
+            {
+                \rho_{Et}
+                \,4.5\E{-6}
+                \,R\,T
+            }
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,M_{Et}
+            }
+            \left(
+                \ln{\frac
+                    {1}
+                    {1-P^*_{et}/P}
+                }
+            \right)^{-1}
+            \cong &\\&
+            \cong
+            \frac
+            {
+                (0.789\E{6})
+                * 4.5\E{-6}
+                * \num{8.314462618}
+                * 298.15
+            }
+            {
+                1\E{5}
+                * 0.132\E{-4}
+                * 46.1
+            }
+            % 144.6384167067814262
+            \left(
+                \ln{\frac
+                    {1}
+                    {1-7.87\E3/1\E{5}}
+                }
+            \right)^{-1}
+            % 12.199650272864029
+            \cong&\\&
+            \cong\qty
+            {1764.538099843507187}
+            {\second}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Fronteiras para fluxo}
+            &\\&
+            \begin{cases}
+                z_0=\qty*{1e-3}{\m}
+                &\quad y_{A,z_0}\quad\text{(Concentração de et na superfície)}
+                \\ z_1=z_0+\qty*{4e-3}{\m}
+                &\quad y_{A,z}=0
+                \quad\text{(C fora do ar estagnado)}
+            \end{cases}
+            ; &\\[3ex]&
+            \text{Fronteiras para evaporação}
+            &\\&
+            \begin{cases}
+                z_0=\qty*{1e-3}{\m}
+                &\quad y_{A,z_0}\quad\text{(Fronteira da evap)}
+                \\ z_1=0
+                &\quad y_{A,z_1}=0
+                \quad\text{(Evaporação completa)}
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    Efeitos de almentar a temperatura no tempo de evap
+} % Q2.2
+    \answer{}
+    Principal efeito do almento da temperatura se percebe em \(\mathscr{D}_{et}\) onde
+    \begin{BM}
+        \mathscr{D}\propto T^{3/2}
+    \end{BM}
+    Tambem será possível ver o efeito na pressão de vapor do liquido contribuindo ainda mais para o fluxo
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q3
+    \begin{itemize}
+        \item Remover composto A
+        \item \(T=15\,\unit{\celsius}\)
+        \item \(P=2\,\unit{\atm}\)
+        \item Contracorrente
+        \item Faze gazosa entra na base
+        \item \(y_{A,0}=20\%\)
+        \item \(y_{A,1}=2\%\)
+        \item \(10\)
+    \end{itemize}
+} % Q3
+    body
+\end{questionBox}
+
+\end{document}

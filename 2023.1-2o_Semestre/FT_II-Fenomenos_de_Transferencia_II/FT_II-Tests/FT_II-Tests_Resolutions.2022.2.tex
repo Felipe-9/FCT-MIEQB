@@ -1,0 +1,179 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2022.2.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2022.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2022.2}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2022.2/graphics/}
+
+\mymakesubfile{2}
+[FT II]
+{Test 2022.2 Resoltion} % Subfile Title
+{Test 2022.2 Resoltion} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Obtiveram-se os seguintes dados de coeficiente de atrito (Cf) para o escoamento de ar ao longo de uma conduta cilíndrica revestida com naftaleno:
+} % Q1
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{C *{5}{C}}
+            \toprule
+            
+                Re
+                & 1\E{-4}
+                & 5\E{-4}
+                & 1\E{-5}
+                & 5\E{-5}
+                & 1\E{-6}
+            
+            \\\midrule
+            
+                C_f
+                & 8.0\E{-3}
+                & 6.1\E{-3}
+                & 5.0\E{-3}
+                & 4.4\E{-3}
+                & 4.1\E{-3}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Faz-se passar ar à temperatura de \qty*{15}{\celsius} e à pressão de \qty*{1}{\atm} através dessa conduta (\qty*{5}{\cm} de diâmetro e \qty*{4.5}{\m} de comprimento) a uma velocidade de \qty*{15}{\m/\s}.
+
+
+    \paragraph*{Dados:}
+    \begin{align*}
+        D_{Naf,ar}(15\,\unit{\celsius},1\,\unit{\atm})
+        =& \qty*{7.7e-6}{\m/\s}
+        ;& \rho_{ar}(15\unit{\celsius}) 
+        =& \qty*{1}{\kg/\m^3}
+        \\ \mu_{ar}(15\unit{\celsius}) 
+        =& \qty*{2.0e-5}{\m^2/\s}
+        ;& P^*(15\unit{\celsius})
+        =& \qty*{3.5}{\mmHg}
+    \end{align*}
+    \begin{multicols}{2}
+        Analogia de Reynolds
+        \begin{align*}
+            \frac{k_c}{V}=\frac{C_f}{2}
+        \end{align*}
+
+        Analogia de Chilton-Coulburn
+        \begin{align*}
+            \frac{k_C}{V}\,Sc^{2/3}=\frac{C_f}{2}
+        \end{align*}
+    \end{multicols}
+    \begin{align*}
+        \ln{\frac
+            {C_{A,s}-C_{A,0}}
+            {C_{A,s}-C_{A,L}}
+        } 
+        = \frac{4\,L}{d}
+        \,\frac{k_C}{V}
+    \end{align*}
+    \begin{align*}
+        Sc&=\frac{\mu}{\rho\,\mathscr{D}}
+        ;&
+        Sh&=\frac{k_c\,d}{\mathscr{D}}
+        ;&
+        Re&=\frac{\rho\,u\,d}{\mu}
+    \end{align*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    O coeficiente de transferência de massa usando a analogia de Chilton-Colburn.
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            k_C
+            =\frac{C_f\,v}{Sc^{3/2}\,2}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            Re
+            = \frac{\rho\,d\,v}{\mu}
+            = \frac{1*5\E{-2}*15}{2\E{-5}}
+            \implies &\\&
+            \implies
+            C_f(Re)\cong\dots
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            k_C
+            =\frac{C_f\,v}{Sc^{3/2}\,2}
+            =\dots
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Pode usar a analogia de Reynolds? Justifique.
+} % Q1.2
+    \answer{}
+    Não
+    \begin{flalign*}
+        &
+            Sc\neq1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    A concentração de naftaleno no ar para o comprimento de 1.5 m.
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            k_C
+            =\ln{(1-C_{A,L}/C^*)^{-1}}
+            \,\frac{d\,v}{4\,l}
+            \implies &\\&
+            \implies
+            C_{A,1.5}
+            = 
+            C^*\left(
+                1
+                -\exp{\left(
+                    -\frac
+                    {4\,k_C\,l}{d\,v}
+                \right)}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    A percentagem de saturação do ar na corrente de saída.
+} % Q1.4
+    \answer{}
+    \begin{flalign*}
+        &
+            \%_{sat}
+            =\frac{C_{A,L}}{C^*}
+            \cong\frac{1.92}{0.0917}
+            \cong
+            47.76\%
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.5
+    Para além de analogias quais os outros métodos que poderá usar para calcular coeficientes de transferência de massa? Quais são os mais utilizados?
+} % Q1.5
+    \answer{}
+    Correlações experimentaias e queda de pressão, é mais fácil nedir no lab. temp do q pressão.
+\end{questionBox}
+
+\end{document}

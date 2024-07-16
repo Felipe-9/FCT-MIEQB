@@ -1,0 +1,65 @@
+\begin{flalign*}
+    &
+        X_{i+1}
+        =X_i
+        +K_d\,C_{A\,0}\adif{t}(
+            (1-X_i)^2-\frac{X_i^2}{K_e}
+        )
+        \implies &\\&
+        \implies
+        0
+        = X_i^2 \left(
+            K_d\,C_{A\,0}\adif{t}\,(1-K_e^{-1})
+        \right)
+        + X_i \left(
+            1 - 2\,K_d\,C_{A\,0}\adif{t}
+        \right)
+        + \left(
+            K_d\,C_{A\,0}\adif{t}
+            - X_{i+1}
+        \right)
+        \implies &\\&
+        \implies
+        X_i
+        = \frac{
+            - \left(
+                1 - 2\,K_d\,C_{A\,0}\adif{t}
+            \right)
+            \pm \sqrt{
+                \left(
+                    1 - 2\,K_d\,C_{A\,0}\adif{t}
+                \right)^2
+                -4\,\left(
+                    K_d\,C_{A\,0}\adif{t}\,(1-K_e^{-1})
+                \right)\,\left(
+                    K_d\,C_{A\,0}\adif{t}
+                    - X_{i+1}
+                \right)
+            }
+            {2\,\left(
+                K_d\,C_{A\,0}\adif{t}\,(1-K_e^{-1})
+            \right)}
+        }
+    &
+\end{flalign*}
+
+=LAMBDA(Co,Kd,Ke,t,
+    LAMBDA(x,a,b,cc,
+        (b-sqrt(b^2+4*a*cc))/(2*a)
+    )(
+        R[1]C,
+        Kd*Co*t*(1-Ke^(-1)),
+        1 - 2*Kd*Co*t,
+        Kd*Co*t-R[1]C
+    )
+)(
+    R26C17,R27C17,R28C17,(R[+1]C[-1]-RC[-1])
+)
+
+% =R[-1]C+R27C17*R26C17*((1-R[-1]C)^2-(R[-1]C^2/R28C17))*(RC[-1]-R[-1]C[-1])
+
+% =INDEX(R26C8:R77C8,MATCH(MIN(ABS(R26C1:R77C1-RC10)),ABS(R26C1:R77C1-RC10),0))
+
+C_{A\,0}: R26C17
+k_d: R27C17
+k_e: R28C17

@@ -1,0 +1,152 @@
+% !TEX root = ./EB-Exercises_Resolutions.6.tex
+\providecommand\mainfilename{"./EB-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Exercises_Resolutions.6.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Exercises_Resolutions.6}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Exercises_Resolutions.6/graphics/}
+
+\mymakesubfile{6}
+[EB]
+{Exercises} % Subfile Title
+{Exercises} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A \emph{150\,\unit{\metre^3}} reactor is operated at \emph{35\,\unit{\celsius}} to produce biomass from glucose. The \emph{\ch{O2} consumption rate is 1.5\,\unit{\kilo\gram.\metre^{-3}.\hour^{-1}}}. The stirrer \emph{dissipates heat at the speed of 1\,\unit{\kilo\watt.\metre^{-3}}}. The \emph{cooling water flows at a temperature of 10\,\unit{\celsius}} and at a \emph{flow rate of 60\,\unit{\metre^3/\hour}}, it passes inside a coil placed inside the reactor. If the system operates in steady state, \emph{determine the temperature of the cooling water leaving the reactor}.
+} % Q1
+    \paragraph*{Data:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(Q=460\,\unit{\kilo\joule.\mole\of{O2}^{-1}}\)
+            \item \(Cp_{\ch{H2O}}=75.4\,\unit{\joule.\mole^{-1}.\celsius^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+    \answer{}
+    \begin{flalign*}
+        &
+            T_1
+            = T_0+\adif{T}
+            ; &\\[3ex]&
+            \adif{H}
+            =\adif{H}_{rxn}+W_s
+            ; &\\[3ex]&
+            \adif{H}_{rxn}
+            = Q*C_{\ch{O2}}*V
+            = \left(
+                \begin{aligned}
+                    &
+                        460\,\unit{\kilo\joule.\mole^{-1}}
+                    &*\\*&
+                        1.5\,\unit{\kilo\gram.\metre^{-3}.\hour^{-1}}
+                    &*\\*&
+                        3600^{-1}\,\unit{\hour.\second^{-1}}
+                    &*\\*&
+                        32^{-1}\,\unit{\mole.\gram^{-1}}
+                    &*\\*&
+                        150\,\unit{\metre^3}
+                    &
+                \end{aligned}
+            \right)
+            \cong\qty{898.4375}{\kilo\joule.\second^{-1}}
+            ; &\\[3ex]&
+            W_s
+            = 1\,\unit{\kilo\watt.\metre^{-3}}
+            \,150\,\unit{\metre^3}
+            = 150\,\unit{\kilo\watt}
+            ; &\\[3ex]&
+            \adif{H}
+            \cong
+            \qty{898.4375}{\kilo\joule.\second^{-1}}
+            +150\,\unit{\kilo\joule.\second^{-1}}
+            \cong
+            \qty{1048.4375}{\kilo\joule.\second^{-1}}
+            = &\\[3ex]&
+            = M\,Cp\,\adif{T}
+            = &\\&
+            = (v*\rho_{\ch{H2O}})
+            \,\left(
+                75.4\,\unit{\joule.\mole^{-1}.\celsius^{-1}}
+                \,\frac
+                    {\unit{\mole}}
+                    {M_{w\,\ch{H2O}}\,\unit{\gram}}
+            \right)
+            \,\adif{T}
+            = &\\&
+            = (60*1000\,\unit{\kilo\gram/\hour})
+            \,\left(
+                \frac{75.4}{18}
+                \,\unit{\kilo\joule.\kilo\gram^{-1}.\celsius^{-1}}
+            \right)
+            \,\adif{T}
+            \implies &\\[3ex]&
+            \implies
+            T_1/\unit{\celsius}
+            = T_0+\adif{T}
+            \cong 
+            10+
+            \left(
+                \frac{
+                    \num{1048.4375}
+                    \,\unit{\kilo\joule.\second^{-1}}
+                }{
+                    \frac{75.4*60000}{18}
+                    \,\unit{\kilo\joule.\celsius^{-1}.\hour^{-1}}
+                    \,\frac
+                        {\unit{\hour}}
+                        {3600\,\unit{\second}}
+                }
+            \right)
+            \cong
+            \num{25.017407161803716}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A fermenter used to produce an antibiotic should have a temperature of \emph{27\,\unit{\celsius}}. After considering the oxygen requirements of the microorganisms and the heat dissipated by the stirrer, the maximum amount of \emph{heat to be transferred was estimated at 550\,\unit{\kilo\watt}}. The \emph{cooling water enters at a temperature of 10\,\unit{\celsius} and leaves at 25\,\unit{\celsius}}. The heat transfer coefficient in the fermentation fluid was estimated at 2150\,\unit{\watt.\metre^{-2}.\celsius{-1}} and the heat transfer coefficient of the cooling water has the value of 14000\,\unit{\watt.\metre^{-2}.\celsius^{-1}}. The steel cooling coil has an outer diameter of 8\,\unit{\centi\meter} and a thickness of 5\,\unit{\milli\metre}, the thermal conductivity of steel is 60\,\unit{\watt.\metre^{-1}.\celsius^{-1}}. Calculate the length of coil needed under these conditions.
+} % Q2
+    \answer{}
+    \begin{flalign*}
+        &
+            \adif{T}
+            = \frac{2\,T_{fluido}-(T_1+T_2)}{2}
+            = \frac{2*28-(T_1+T_2)}{2}
+            = 9.5\,\unit{\celsius}
+            ; &\\[3ex]&
+            Q=h\,A\,\adif{T}
+            ; &\\[3ex]&
+            h^{-1}
+            = h_i^{-1}
+            + h_e^{-1}
+            + h_w^{-1}\,B
+            = 2150^{-1}
+            + 14000^{-1}
+            + 60^{-1}
+            * 5\E{-3}
+            \cong
+            1614\,\unit{\metre^{-2}.\celsius^{1}.\watt}
+            &\\[3ex]&
+            A
+            =\frac{Q}{h\,\adif{T}}
+            \cong\frac{550}{1614*9.5}
+            \cong\num{35.870345007500165}
+            \implies &\\[3ex]&
+            \implies
+            A=2\,\pi\,r\,l
+            \implies
+            l
+            =\frac{A}{2\,\pi\,r}
+            \cong
+            \frac{\num{35.870345007500165}}{2\,\pi\,(8/2)}
+            \cong
+            142.8\,\unit{\metre}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

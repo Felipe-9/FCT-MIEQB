@@ -42,13 +42,13 @@
     \begin{BM}*
         C_{\ch{O2}}^*
         =1.16
-        \,\frac{\si{\milli\mole\of{\text{Ar}}}}{\si{\litre}}
-        \,\frac{\num{20.946}\,\si{\milli\mole\of{\ch{O2}}}}{100\,\si{\milli\mole\of{\text{Ar}}}}
-        \,\frac{32\,\si{\milli\gram}}{\si{\milli\mole}}
+        \,\frac{\unit{\milli\mole\of{\text{Ar}}}}{\unit{\litre}}
+        \,\frac{\num{20.946}\,\unit{\milli\mole\of{\ch{O2}}}}{100\,\unit{\milli\mole\of{\text{Ar}}}}
+        \,\frac{32\,\unit{\milli\gram}}{\unit{\milli\mole}}
         \cong
-        \SI{7.7751552}{\milli\gram/\litre}
+        \qty{7.7751552}{\milli\gram/\litre}
     \end{BM}
-    Obtendo um valor de \SI{7.7751552}{\milli\gram/\litre}.
+    Obtendo um valor de \qty{7.7751552}{\milli\gram/\litre}.
 
     \begin{center}
         % \tikzset{external/remake next=true}
@@ -60,7 +60,7 @@
                 % xmajorgrids = true,
                 % legend pos  = north west
                 % domain=0:4,
-                xlabel={\((t-19.30)/\si{\min}\)},
+                xlabel={\((t-19.30)/\unit{\min}\)},
                 ylabel={\(\ln(C^*_{\ch{O2}}-C_{\ch{O2}\,L})\)},
                 xtick={0,0.05,...,0.3},
                 x tick label style={
@@ -76,9 +76,9 @@
             \addlegendimage{empty legend}
             \addlegendentry[GraphC]{\(R^2=\num{0.98862191567481}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(k'_{L\,a}\cong\SI{2.00513034376008}{\min^{-1}}\)}
+            \addlegendentry[foreground]{\(k'_{L\,a}\cong\qty{2.00513034376008}{\min^{-1}}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(C_{\ch{O2}}^*\cong\SI{6.294565261056239}{\milli\gram\of{\ch{O2}}/\litre}\)}
+            \addlegendentry[foreground]{\(C_{\ch{O2}}^*\cong\qty{6.294565261056239}{\milli\gram\of{\ch{O2}}/\litre}\)}
             
             % Plot from csv file
             \addplot[
@@ -102,7 +102,7 @@
         \captionof{figure}{Grafico de \(\ln(C^*-C_L)\times t-19.30\), o tempo foi defasado para alinhar com o começo do arejamento, da regressão podemos derivar \(k'_{L\,a}\text{ e }C^*\)}
     \end{center}
 
-    Do gráfico obtivemos que o valor de \(k'_{L\,a}\) é \SI{2.00513034376008}{\min^{-1}} e que o valor de \(C^*\) é de \SI{6.294565261056239}{\milli\gram\of{\ch{O2}}/\litre}.\par
+    Do gráfico obtivemos que o valor de \(k'_{L\,a}\) é \qty{2.00513034376008}{\min^{-1}} e que o valor de \(C^*\) é de \qty{6.294565261056239}{\milli\gram\of{\ch{O2}}/\litre}.\par
 
 
     Podemos com estes valores traçar um gráfico para o \(Q_{\ch{O2}}\) em função do \(C_L\) e iremos usar o valor teórico de \(C^*\) para o cálculo de \(Q_{\ch{O2}}\). O valor de \(C^*\) teórico também será considerado o padrão para \(C^*\) para o resto do relatório.
@@ -117,8 +117,8 @@
                 % xmajorgrids = true,
                 % legend pos  = north west
                 % domain=0:4,
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(Q_{\ch{O2}/(\si{\milli\gram/\litre.\min})}\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(Q_{\ch{O2}/(\unit{\milli\gram/\litre.\min})}\)},
                 xtick={19.30,19.35,...,19.60},
                 x tick label style={
                     /pgf/number format/.cd,
@@ -151,9 +151,9 @@
     
     
     \section*{Discussão}
-    Através da reta que relaciona \(\ln(C^*-C_L)\) com o tempo, retirámos um valor de \(C^* = \exp(\num{1.840549633397487}) = 6.30\,\si{\milli\gram\of{\ch{O2}}/\litre}\) e um valor de \(K'_{L\,a} = 2.01\,\si{\min^{-1}}\). Tendo um desvio percentual em relação ao valor teórico (\(\SI{7.7766}{\milli\gram\of{\ch{O2}}/\litre}\)) de 19.2\%. 
+    Através da reta que relaciona \(\ln(C^*-C_L)\) com o tempo, retirámos um valor de \(C^* = \exp(\num{1.840549633397487}) = 6.30\,\unit{\milli\gram\of{\ch{O2}}/\litre}\) e um valor de \(K'_{L\,a} = 2.01\,\unit{\min^{-1}}\). Tendo um desvio percentual em relação ao valor teórico (\(\qty{7.7766}{\milli\gram\of{\ch{O2}}/\litre}\)) de 19.2\%. 
 
-    A velocidade de difusão máxima ocorre quando o \(C_L\) é nulo, e nesta atividade acontece no tempo inicial do arejamento. Assim pode ser calculado de \(Q_{\ch{O2}\,\max} = K'_{L\,a}*C^*\), obtendo o valor de \(Q_{\ch{O2}\,\max}\) igual a 12.64\,\si{\min^{-1}} experimentalmente e com o uso de \(C^*\) teórico obtém-se o valor de 15.63\,\si{\min^{-1}}.
+    A velocidade de difusão máxima ocorre quando o \(C_L\) é nulo, e nesta atividade acontece no tempo inicial do arejamento. Assim pode ser calculado de \(Q_{\ch{O2}\,\max} = K'_{L\,a}*C^*\), obtendo o valor de \(Q_{\ch{O2}\,\max}\) igual a 12.64\,\unit{\min^{-1}} experimentalmente e com o uso de \(C^*\) teórico obtém-se o valor de 15.63\,\unit{\min^{-1}}.
 
 \end{sectionBox} 
 
@@ -179,8 +179,8 @@
                 % xmajorgrids = true,
                 legend pos=south east,
                 % domain=0:4,
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(x/(\si{\milli\gram/\litre})\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(x/(\unit{\milli\gram/\litre})\)},
                 % legend cell align={left},
             ]
             % % Legends
@@ -189,9 +189,9 @@
             % \addlegendimage{empty legend}
             % \addlegendentry[Graph]{\(R^2=\num{0.98402378277518}\)}
             % \addlegendimage{empty legend}
-            % \addlegendentry[foreground]{\(\mu_{\max}=\SI{5.75777459936e-3}{\min^{-1}}\)}
+            % \addlegendentry[foreground]{\(\mu_{\max}=\qty{5.75777459936e-3}{\min^{-1}}\)}
             % \addlegendimage{empty legend}
-            % \addlegendentry[foreground]{\(x_{\max}=\SI{754.73304}{\milli\gram/\litre}\)}
+            % \addlegendentry[foreground]{\(x_{\max}=\qty{754.73304}{\milli\gram/\litre}\)}
         
             % Plot from file
             \addplot[
@@ -270,8 +270,8 @@
                 % xmajorgrids = true,
                 legend pos=south east,
                 % domain=0:4,
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(\ln{x}/(\si{\milli\gram/\litre})\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(\ln{x}/(\unit{\milli\gram/\litre})\)},
                 % legend cell align={left},
             ]
             % Legends
@@ -280,9 +280,9 @@
             \addlegendimage{empty legend}
             \addlegendentry[Graph]{\(R^2=\num{0.98402378277518}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(\mu_{\max}=\SI{5.75777459936e-3}{\min^{-1}}\)}
+            \addlegendentry[foreground]{\(\mu_{\max}=\qty{5.75777459936e-3}{\min^{-1}}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(x_{\max}=\SI{754.73304}{\milli\gram/\litre}\)}
+            \addlegendentry[foreground]{\(x_{\max}=\qty{754.73304}{\milli\gram/\litre}\)}
         
             % Plot from file
             \addplot[
@@ -330,8 +330,8 @@
                 % xmajorgrids = true,
                 legend pos=south east,
                 % domain=0:4,
-                xlabel={\(x/(\si{\milli\gram/\litre})\)},
-                ylabel={\(\mu/\si{\min^{-1}}\)},
+                xlabel={\(x/(\unit{\milli\gram/\litre})\)},
+                ylabel={\(\mu/\unit{\min^{-1}}\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -339,9 +339,9 @@
             \addlegendimage{empty legend}
             \addlegendentry[Graph]{\(R^2=\num{0.975992882956512}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(\mu_{\max}\cong\SI{3.24982538479515e-2}{\min^{-1}}\)}
+            \addlegendentry[foreground]{\(\mu_{\max}\cong\qty{3.24982538479515e-2}{\min^{-1}}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(x_{\max}\cong\SI{869.23326308339637}{\milli\gram/\litre}\)}
+            \addlegendentry[foreground]{\(x_{\max}\cong\qty{869.23326308339637}{\milli\gram/\litre}\)}
         
             % Plot from file
             \addplot[
@@ -392,8 +392,8 @@
                 % xmajorgrids = true,
                 legend pos=north east,
                 % domain=0:4,
-                xlabel={\(X/(\si{\milli\gram/\litre})\)},
-                ylabel={\(\mu/\si{\min^{-1}}\)},
+                xlabel={\(X/(\unit{\milli\gram/\litre})\)},
+                ylabel={\(\mu/\unit{\min^{-1}}\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -401,9 +401,9 @@
             \addlegendimage{empty legend}
             \addlegendentry[Graph]{\(R^2=\num{0.664896458191631}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(\mu_{\max}\cong\SI{2.15405950243889E-02}{\min^{-1}}\)}
+            \addlegendentry[foreground]{\(\mu_{\max}\cong\qty{2.15405950243889E-02}{\min^{-1}}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(x_{\max}\cong\SI{863.015205640127524}{\milli\gram/\litre}\)}
+            \addlegendentry[foreground]{\(x_{\max}\cong\qty{863.015205640127524}{\milli\gram/\litre}\)}
         
             % Plot from file
             \addplot[
@@ -451,8 +451,8 @@
                 % xmajorgrids = true,
                 legend pos=south east,
                 % domain=0:4,
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(x/(\si{\milli\gram/\litre})\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(x/(\unit{\milli\gram/\litre})\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -488,7 +488,7 @@
         \end{axis}
         \end{tikzpicture}
         \captionof{figure}{
-            Grafico \(X/(\si{\milli\gram/\litre})\times t/\si{\min}\) apresentando o método polinomial com um polinômio de 3º grau, pelo método polinomial \(\odif{x}/\odif{t}=y\).
+            Grafico \(X/(\unit{\milli\gram/\litre})\times t/\unit{\min}\) apresentando o método polinomial com um polinômio de 3º grau, pelo método polinomial \(\odif{x}/\odif{t}=y\).
         }
         \end{center}
 
@@ -513,8 +513,8 @@
                 % xmajorgrids = true,
                 legend pos=north east,
                 % domain=0:4,
-                xlabel={\(x/(\si{\milli\gram/\litre})\)},
-                ylabel={\(\mu/\si{\min^{-1}}\)},
+                xlabel={\(x/(\unit{\milli\gram/\litre})\)},
+                ylabel={\(\mu/\unit{\min^{-1}}\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -522,9 +522,9 @@
             \addlegendimage{empty legend}
             \addlegendentry[Graph]{\(R^2=\num{0.990187642540917}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(\mu_{\max}\cong\SI{1.72895716874992E-02}{\min^{-1}}\)}
+            \addlegendentry[foreground]{\(\mu_{\max}\cong\qty{1.72895716874992E-02}{\min^{-1}}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(x_{\max}\cong\SI{933.979115306908807}{\milli\gram/\litre}\)}
+            \addlegendentry[foreground]{\(x_{\max}\cong\qty{933.979115306908807}{\milli\gram/\litre}\)}
         
             % Plot from file
             \addplot[
@@ -571,8 +571,8 @@
                 legend pos=north west,
                 ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\((t-10.5)/\si{\min}\)},
-                ylabel={\(x/(\si{\milli\gram/\litre})\)},
+                xlabel={\((t-10.5)/\unit{\min}\)},
+                ylabel={\(x/(\unit{\milli\gram/\litre})\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -647,7 +647,7 @@
 
     \section*{Discussão}
     Depois de processar os dados usando quatro métodos diferentes, ficou evidente que o método dos três pontos é o mais apropriado. Embora matematicamente esse método se tenha mostrado o mais representativo, ao observar o gráfico que compara as curvas do experimento com o método escolhido, percebe-se que ele não reflete completamente o crescimento celular de maneira precisa.\par
-    Sendo assim, a velocidade de crescimento celular máxima observada é \(0.0215\,\si{\min^{-1}}\) e a concentração máxima observada é \(863\,\si{\milli\gram\of{X}/\litre}\).
+    Sendo assim, a velocidade de crescimento celular máxima observada é \(0.0215\,\unit{\min^{-1}}\) e a concentração máxima observada é \(863\,\unit{\milli\gram\of{X}/\litre}\).
 
 \end{sectionBox}
 
@@ -676,8 +676,8 @@
                 legend pos=south east,
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min})\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(V_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min})\)},
                 xmin={45}, xmax={215},
                 ymin={2}, ymax={7.5},
             ]
@@ -1037,14 +1037,14 @@
                 legend style={at={(0.5,0.03)},anchor=south},
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(r_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\litre.\min})\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(r_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\litre.\min})\)},
             ]
             % Legends
             \addlegendimage{empty legend}
-            \addlegendentry[Graph]{\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\litre})\)}
+            \addlegendentry[Graph]{\(V_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\litre})\)}
             \addlegendimage{empty legend}
-            \addlegendentry[GraphC]{\(r_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\litre.\min})\)}
+            \addlegendentry[GraphC]{\(r_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\litre.\min})\)}
         
             % r o2 X t
             \addplot[
@@ -1066,7 +1066,7 @@
                 legend pos=north west,
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                ylabel={\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\litre})\)},
+                ylabel={\(V_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\litre})\)},
                 axis y line*={right},
                 axis x line={none},
                 % xmin=0,xmax=160,
@@ -1102,8 +1102,8 @@
                 legend pos=south east,
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\(\mu/\si{\min^{-1}}\)},
-                ylabel={\(V_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min})\)},
+                xlabel={\(\mu/\unit{\min^{-1}}\)},
+                ylabel={\(V_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min})\)},
                 xmin={.6e-3}
             ]
             % Legends
@@ -1157,7 +1157,7 @@
     \section*{Discussão}
     No gráfico da figura 14 deveríamos observar uma velocidade específica de consumo de oxigénio constante ao longo do tempo, mas tal não acontece. Deveria acontecer, pois esta velocidade retrata a quantidade de oxigénio necessária às células. Por isso, como estamos na fase exponencial, as células necessitam da máxima quantidade de \ch{O2} para crescimento celular. No entanto, quando atingimos a fase estacionária, há uma descida ligeira da velocidade especifica. Deveria haver uma grande diminuição porque como se esgotou o substrato, não há crescimento, apenas manutenção celular.\par
     Nesse mesmo gráfico verificamos um aumento do consumo de oxigénio, durante a fase exponencial. Durante a fase estacionária, há uma diminuição pois não existe grande quantidade de oxigénio a ser consumida.\par
-    Através do gráfico da figura 15, retirámos um valor baixo de coeficiente de rendimento de crescimento (\(m= 0.022\,\si{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min}\)). Logo concluímos que a maioria do oxigénio foi utilizado no crescimento celular. Para obtermos a melhor linearização possível selecionámos alguns pontos pois havia uma variedade de valores. Apesar de tudo, sabemos que estes valores ficam aquém do esperado.
+    Através do gráfico da figura 15, retirámos um valor baixo de coeficiente de rendimento de crescimento (\(m= 0.022\,\unit{\milli\gram\of{\ch{O2}}/\milli\gram\of{X}.\min}\)). Logo concluímos que a maioria do oxigénio foi utilizado no crescimento celular. Para obtermos a melhor linearização possível selecionámos alguns pontos pois havia uma variedade de valores. Apesar de tudo, sabemos que estes valores ficam aquém do esperado.
 
 \end{sectionBox}
 
@@ -1182,8 +1182,8 @@
                 legend pos=south east,
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\((C^*-C_L)/\si{\milli\gram\of{\ch{O2}}/\litre}\)},
-                ylabel={\(r_{\ch{O2}}/(\si{\milli\gram\of{\ch{O2}}/\litre.\min})\)},
+                xlabel={\((C^*-C_L)/\unit{\milli\gram\of{\ch{O2}}/\litre}\)},
+                ylabel={\(r_{\ch{O2}}/(\unit{\milli\gram\of{\ch{O2}}/\litre.\min})\)},
             ]
             % % Legends
             \addlegendimage{empty legend}
@@ -1191,7 +1191,7 @@
             \addlegendimage{empty legend}
             \addlegendentry[Graph]{\(R^2 = \num{.822671881415277}\)}
             \addlegendimage{empty legend}
-            \addlegendentry[foreground]{\(k'_{L\,a} = \SI{3.51769652354435E-01}{\min^{-1}}\)}
+            \addlegendentry[foreground]{\(k'_{L\,a} = \qty{3.51769652354435E-01}{\min^{-1}}\)}
         
             % v o2 X mu todos
             \addplot[
@@ -1218,7 +1218,7 @@
     \end{center}
     
     \section*{Discussão}
-    O valor de \(K'_{L\,a}\) obtido antes da inoculação é de \(2.01\,\si{\min^{-1}}\), o que significa que o valor durante a fase exponencial é cerca de 6 vezes menor (\(K'_{L\,a}= 0.352\,\si{\min^{-1}}\)). Esta diferença pode ser explicada pela dificuldade na transferência de oxigénio da fase gasosa para a líquida, devido à existência de microrganismos no sistema e também devido ao aumento de viscosidade do reator.
+    O valor de \(K'_{L\,a}\) obtido antes da inoculação é de \(2.01\,\unit{\min^{-1}}\), o que significa que o valor durante a fase exponencial é cerca de 6 vezes menor (\(K'_{L\,a}= 0.352\,\unit{\min^{-1}}\)). Esta diferença pode ser explicada pela dificuldade na transferência de oxigénio da fase gasosa para a líquida, devido à existência de microrganismos no sistema e também devido ao aumento de viscosidade do reator.
 \end{sectionBox}
 
 % Parte E
@@ -1231,7 +1231,7 @@
         Q_{\ch{O2}}
         =K'_{L\,a}\,C^*
         \cong\num{3.51769652354435E-01}*\num{7.7766}
-        \cong\SI{2.735571878499499}{\milli\gram/\litre.\min}
+        \cong\qty{2.735571878499499}{\milli\gram/\litre.\min}
         \\
         -r_{\ch{O2}}
         =Y_{\ch{O2}/X}
@@ -1241,12 +1241,12 @@
         \num{0.0483}
         *\num{2.154059502438890E-02}
         *\num{863.0152056401270}
-        \cong\SI{0.897890288453392}{\milli\gram/\litre.\min
+        \cong\qty{0.897890288453392}{\milli\gram/\litre.\min
         }
     \end{BM}
 
     \section*{Discussão}
-    Os valores que obtivemos para a velocidade de transferência de massa máxima e para a velocidade de consumo de oxigénio máxima foram respetivamente, \(Q_{\ch{O2}\,\max} = 2.74\,\si{\milli\gram/\litre.\min}\) e \(-r_{\ch{O2}\,\max}=0.90\,\si{\milli\gram\of{\ch{O2}}/\litre.\min}\). Verificamos que \(Q_{\ch{O2}\,\max}\) é aproximadamente o triplo de          \(-r_{\ch{O2}\,\max}\), ou seja, a cultura não está a consumir o oxigénio transferido. Verificamos assim que esta situação se trata de uma limitação cinética por metabolismo celular.\par
+    Os valores que obtivemos para a velocidade de transferência de massa máxima e para a velocidade de consumo de oxigénio máxima foram respetivamente, \(Q_{\ch{O2}\,\max} = 2.74\,\unit{\milli\gram/\litre.\min}\) e \(-r_{\ch{O2}\,\max}=0.90\,\unit{\milli\gram\of{\ch{O2}}/\litre.\min}\). Verificamos que \(Q_{\ch{O2}\,\max}\) é aproximadamente o triplo de          \(-r_{\ch{O2}\,\max}\), ou seja, a cultura não está a consumir o oxigénio transferido. Verificamos assim que esta situação se trata de uma limitação cinética por metabolismo celular.\par
     De forma a otimizar o sistema deve-se tentar aproximar o valor de \(Q_{\ch{O2}\,\max}\) ao valor de \(-r_{\ch{O2}\,\max}\).
 \end{sectionBox}
 
@@ -1269,7 +1269,7 @@
         = \frac{-r_{\ch{O2}}}{2}
         \,\frac{M_{w\,\ch{CH3COOH}}}{M_{w\,\ch{O2}}}
     \end{BM}
-    A massa molecular (\(M_w\)) \(M_{w\,\ch{CH3COOH}}\) tem o valor de \SI{60e3}{\milli\gram/\mole} e o valor de \(M_{w\,\ch{O2}}\) é \SI{32e3}{\milli\gram/\mole}\par
+    A massa molecular (\(M_w\)) \(M_{w\,\ch{CH3COOH}}\) tem o valor de \qty{60e3}{\milli\gram/\mole} e o valor de \(M_{w\,\ch{O2}}\) é \qty{32e3}{\milli\gram/\mole}\par
 
 
     Podemos com isso realizar o gráfico de racetato em função do tempo (Figura 17) (Tabela 6 do Anexo).
@@ -1286,8 +1286,8 @@
                 % legend style={at={(1-0.03,0.5)}},
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\(t/\si{\min}\)},
-                ylabel={\(r/(\si{\milli\gram/\litre.\min})\)},
+                xlabel={\(t/\unit{\min}\)},
+                ylabel={\(r/(\unit{\milli\gram/\litre.\min})\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -1356,7 +1356,7 @@
         \implies\\
         Y_{X/S}
         \cong\frac{\num{846.9537}-\num{531.38796}}{1.9\E6}
-        \cong\SI{1.66087231578947368e-4}{\milli\gram\of{X}/\milli\gram\of{S}}
+        \cong\qty{1.66087231578947368e-4}{\milli\gram\of{X}/\milli\gram\of{S}}
     \end{BM}
 
     Podemos então realizar um gráfico dessa equação (Figura 18) e obtemos do inverso do declive o \textit{Y'} e o coeficiente de manutenção da ordenada na origem
@@ -1373,8 +1373,8 @@
                 legend pos=south east,
                 % ymax={1e3},
                 % ytick={50/0,600,...,1100},
-                xlabel={\(\mu/\si{\min^{-1}}\)},
-                ylabel={\(V_{\text{acetato}}/(\si{\milli\gram/\litre.\min})\)},
+                xlabel={\(\mu/\unit{\min^{-1}}\)},
+                ylabel={\(V_{\text{acetato}}/(\unit{\milli\gram/\litre.\min})\)},
             ]
             % Legends
             \addlegendimage{empty legend}
@@ -1417,7 +1417,7 @@
         \captionof{figure}{Gráfico da velocidade específica de consumo de acetato (\(V_{\ch{CH3COOH}}\)) em função da velocidade específica de crescimento (\chemmu)}
     \end{center}
     \section*{Discussão}
-    De acordo com os cálculos realizados, o coeficiente de rendimento verdadeiro\\\(Y'_{X/S}=\SI{26.287548927882874}{\milli\gram\of{X}/\milli\gram\of{Ac}}\), o coeficiente de manutenção (\textit{m}) é de \(\SI{2.05465076422611E-03}{\milli\gram\of{Ac}/\milli\gram\of{X}}\) e o coeficiente de rendimento aparente (\(Y_{X/S}\)) é \(\SI{1.66087231578947368e-4}{\milli\gram\of{X}/\milli\gram\of{Ac}}\).\par
+    De acordo com os cálculos realizados, o coeficiente de rendimento verdadeiro\\\(Y'_{X/S}=\qty{26.287548927882874}{\milli\gram\of{X}/\milli\gram\of{Ac}}\), o coeficiente de manutenção (\textit{m}) é de \(\qty{2.05465076422611E-03}{\milli\gram\of{Ac}/\milli\gram\of{X}}\) e o coeficiente de rendimento aparente (\(Y_{X/S}\)) é \(\qty{1.66087231578947368e-4}{\milli\gram\of{X}/\milli\gram\of{Ac}}\).\par
     Ao analisar ambos os valores, observa-se que o coeficiente de rendimento verdadeiro é maior do que o aparente, o que é esperado. Isso ocorre porque o coeficiente de rendimento verdadeiro leva em consideração o acetato consumido para o crescimento celular, manutenção e formação de produtos, enquanto o coeficiente de rendimento aparente considera apenas o crescimento celular.
 \end{sectionBox}
 

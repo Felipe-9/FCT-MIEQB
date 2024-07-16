@@ -1,0 +1,64 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2023.2.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2023.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2023.2}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2023.2/graphics/}
+
+\mymakesubfile{2}
+[FT II]
+{Test 2023.2 Resolution} % Subfile Title
+{Test 2023.2 Resolution} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Pretende-se limpar um tubo cilíndrico com \qty*{5}{\cm} de diâmetro e \qty*{120}{\m} de comprimento cuja superfície interior se encontra revestida de ácido benzóico. Para isso faz-se circular água a \qty*{25}{\celsius} no interior do tubo a uma velocidade \qty*{5}{\m/\s}.
+} % Q1
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item \(M(ac. benzoico) = \qty*{122}{\g/\mole}\)
+        \item \(\mathscr{D}_{ac.ben,agua}=\qty*{1.0e-5}{\cm^2/\s}\)
+        \item Solubilidade Ac Benzoico: \qty*{3e-3}{\g/\cm^3}
+        \item \(C_f=7.9\E{-2}\,Re^{-.25}\)
+        \item \(Sc=\mu/\rho\,\mathscr{D}_{A,B}=1000\)
+        \item \(Re=\rho\,d\,V/\mu\)
+        \item Analogia de Reynolds: \(k_C/V=C_f/2\)
+        \item Analogia de Chilton-Coulburn: \(Sc^{2/3}\,k_C/V=C_f/2\)
+        \item \(
+            \ln{\frac
+                {C_{A,S}-C_{A,0}}
+                {C_{A,S}-C_{A,L}}
+            }
+            = \frac{4\,L}{d}
+            \,\frac{k_C}{V}
+        \)
+        \item \(W=v\,(\pi\,d^2/4)(C_{A,L}-C_{A,0}); C_{A,S}=C^2\land v:\text{Velocidade}\)
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Calcule o coeficiente de transferência de massa, escolhendo a analogia mais adequada. Justifique.
+} % Q1.1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Calcule a percentagem de saturação da água à saída do tubo.
+} % Q1.2
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    Calcule a quantidade em kg de ácido benzóico removida durante a primeira hora do processo.
+} % Q1.3
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Discuta as vantagens do uso de analogia no cálculo dos coeficientes de transferência de massa.
+} % Q1.4
+\end{questionBox}
+
+\end{document}

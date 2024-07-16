@@ -1,0 +1,247 @@
+% !TEX root = ./FT_II-Exercises_Resolutions.1.tex
+\providecommand\mainfilename{"./FT_II-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Exercises_Resolutions.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+pela
+% \graphicspath{{\subfix{./.build/figures/FT_II-Exercises_Resolutions.1}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Exercises_Resolutions.1/}
+
+\mymakesubfile{1}
+[FT II]
+{Exercicios -- Difusão em estado estacionário} % Subfile Title
+{Difusão em estado estacionário} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Um componente A difunde-se através de uma camada em repouso de um componente B de espessura Z. A pressão parcial de A num dos lados da camada é \(p_{A,1}\) e no outro lado \(p_{A,2} < p_{A,1}\).
+} % Q1
+    Mostre que o fluxo máximo possível de A através dessa camada é dado por:
+    \begin{BM}
+        N_{A,\max}
+        = \frac{\mathcal{D}\,P}{R\,T\,Z}
+        \,\ln\frac{P}{P-p_{A,1}}
+        ;\qquad
+        P:\text{Pressão total}
+    \end{BM}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            N_{A,z}
+            = y_A(N_{A,z}+N_{B,z})
+            -\frac{P\,\mathcal{D}_{A,B}}{R\,T}
+            \,\odv{y_A}{z}
+            = y_A\,N_{A,z}
+            -\frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \,\odv{y_A}{z}
+            \implies &\\[3ex]&
+            \implies
+            y_A\,N_{A,z}-N_{A,z}
+            = N_{A,z}(y_A-1)
+            % = &\\[3ex]&
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \,\odv{y_A}{z}
+            \implies &\\[3ex]&
+            \implies
+            \int_{0}^{z}{N_{A,z}\,\odif{z}}
+            = N_{A,z}\,\int_{0}^{z}{\odif{z}}
+            = N_{A,z}\,\adif{z}\big\vert_{0}^{z}
+            = N_{A,z}\,z
+            = &\\[1.5ex]&
+            =\int_{y_{A,1}}^{y_{A,2}}{
+                \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+                \,\frac{\odif{y_A}}{y_A-1}
+            }
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \int_{y_{A,1}}^{y_{A,2}}{
+                \frac{\odif{y_A}}{y_A-1}
+            }
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \int_{y_{A,1}}^{y_{A,2}}{
+                \frac{\odif{(y_A-1)}}{y_A-1}
+            }
+            = &\\&
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \adif{\left(
+                \ln(y_{A}-1)
+            \right)}\big\vert_{y_{A,1}}^{y_{A,2}}
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \ln\frac{y_{A,2}-1}{y_{A,1}-1}
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \ln\frac{p_{A,2}/P-1}{p_{A,1}/P-1}
+            = &\\&
+            =
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \ln\frac{p_{A,2}-P}{p_{A,1}-P}
+            \implies &\\[3ex]&
+            \implies
+            N_{a,z}
+            = \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T\,z}
+            \ln\frac{p_{A,2}-P}{p_{A,1}-P}
+            \underset{p_{A,2}=0}{=}
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T\,z}
+            \ln\frac{-P}{p_{A,1}-P}
+            =\frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T\,z}
+            \ln\frac{P}{P-p_{A,1}}
+        &
+    \end{flalign*}
+    O fluxo é maximo quando \(p_{A,2}=0\)
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Moldou-se naftaleno sob a forma de um cilindro de raio \(r_1\) que se deixou sublimar no ar em repouso. Mostre que a velocidade de sublimação é dada por:
+} % Q2
+    \begin{BM}
+        Q
+        =\frac{2\,\pi\,L\,\mathcal{D}\,P}{R\,T}
+        \,\frac{
+            \ln\left(
+                \frac
+                {1-y_{A,2}}
+                {1-y_{A,*}}
+            \right)
+        }{
+            \ln(r_2/r_1)
+        }
+    \end{BM}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[\(y_{A,*}\)] Fração molar correspondente a pressão de vapor do naftaleno
+        \item[\(y_{A,2}\)] Fração molar correspondente a \(r_2\)
+    \end{description}
+
+    \subsubquestion{Explique o que sucede à  velocidade de sublimação quando \(r_2\) se torna muito grande}
+
+    \answer{}
+    ar em repouso\(\iff \bar{N}_{B,r}=0\)
+    \begin{flalign*}
+        &
+            N_{A,r}
+            = y_{A}(N_{A,r}+N_{B,r})
+            - \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \,\odv{y_{A,r}}{r}
+            = y_{A}N_{A,r}
+            - \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \,\odv{y_A}{r}
+            \implies &\\&
+            \implies
+            N_{A,r}(y_{A,r}-1)
+            = \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \,\odv{y_{A,r}}{r}
+            \implies
+            \frac{N_{A,1}\,r_1}{r}
+            = \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \,\frac{1}{y_{A,r}-1}
+            \,\odv{y_{A,r}}{r}
+            \implies &\\[3ex]&
+            \implies
+            \int_{r_1}^{r_2}{
+                N_{A,1}\,r_1
+                \frac{\odif{r}}{r}
+            }
+            = N_{A,1}\,r_1
+            \int_{r_1}^{r_2}{
+                \frac{\odif{r}}{r}
+            }
+            = N_{A,1}\,r_1
+            \adif{\ln(r)}\big\vert_{r_1}^{r_2}
+            = N_{A,1}\,r_1
+            \ln\frac{r_2}{r_1}
+            % ============================================ %
+            = &\\[3ex]&
+            = \int_{y_{A,1}}^{y_{A,2}}{
+                \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+                \,\frac{\odif{y_{A,r}}}{y_{A,r}-1}
+            }
+            = 
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \int_{y_{A,1}}^{y_{A,2}}{
+                \frac{\odif{y_{A,r}}}{y_{A,r}-1}
+            }
+            = 
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \int_{y_{A,1}}^{y_{A,2}}{
+                \frac{\odif{(y_{A,r}-1)}}{y_{A,r}-1}
+            }
+            = &\\&
+            = 
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \adif{\ln(y_{A,r}-1)}
+            \big\vert_{y_{A,1}}^{y_{A,2}}
+            = 
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \ln\frac{y_{A,2}-1}{y_{A,1}-1}
+            ;&\\[3ex]&
+            Q
+            =N_{A,S}\,S
+            =N_{A,1}\,2\,\pi\,r_1\,L
+            \implies
+            N_{A,1}\,r_1
+            =\frac{Q}{2\,\pi\,L}
+            \implies &\\[3ex]&
+            \implies 
+            \frac{Q}{2\,\pi\,L}
+            \ln\frac{r_2}{r_1}
+            = 
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}}{R\,T}
+            \ln\frac{y_{A,2}-1}{y_{A,1}-1}
+            \implies &\\&
+            \implies
+            Q
+            = 
+            \frac{P\,\mathcal{\mathscr{D}_{A,B}}\,2\,\pi\,L}{R\,T}
+            \,\frac
+            {\ln\left(
+                \frac{y_{A,2}-1}{y_{A,1}-1}
+            \right)}
+            {\ln(r_2/r_1)}
+            = 
+            \frac{2\,\pi\,L\,\mathcal{\mathscr{D}_{A,B}}\,P}{R\,T}
+            \,\frac
+            {\ln\left(
+                \frac{1-y_{A,2}}{1-y_{A,1}}
+            \right)}
+            {\ln(r_2/r_1)}
+        &
+    \end{flalign*}
+
+    \answer{(i)}
+    A velocidade de sublimação é constante por se tratar de um cilindro.
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Um tubo com 1\,\unit{\centi\metre} de diâmetro e 20\,\unit{\centi\metre} de comprimento está cheio com uma mistura de \ch{CO2} e \ch{H2} a uma pressão total de 2\,\unit{\atm} e a uma temperatura de 0\,\unit{\celsius}. O coeficiente de difusão do \ch{CO2-H2} nestas condições é 0.275\,\unit{\centi\metre^2.\second^{-1}}. Se a pressão parcial do \ch{CO2} for 1.5\,\unit{\atm} num dos lados do tubo e 0.5\,\unit{\atm} no outro extremo
+} % Q3
+
+    \begin{questionBox}2{ % Q3.1
+        calcule a velocidade de difusão para Contradifusão equimolar
+    } % Q3.1
+        \begin{BM}
+            N_{\ch{CO2}}=-N_{\ch{H2}}
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        calcule a velocidade de difusão para A seguinte relação entre os fluxos 
+    } % Q3.1
+        \begin{BM}
+            N_{\ch{H2}} = -0.75\,N_{\ch{CO2}}
+        \end{BM}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

@@ -24,7 +24,7 @@ Com o reator recebendo O2, paramos o respirometro cortando o acesso ao O2, e o d
 #### Figura 6
 Na tabela foi posta a unidade do X ao invés do lnX
 #### Figura 11
-- Para acomodar o outliner tanto foi defazado do t os 10.5 como houve uma adaptação
+- Para acomodar o outliner tanto foi defazado do t os 10.5 como houve uma adaptação nas formulas o x0 é o x quando t=10.5
 ### 3
 #### Figura 14
 Unidade V(O2) falta dividir por minuto

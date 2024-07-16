@@ -5,6 +5,7 @@
     multi={minipage},
     border={3mm},
 ]{standalone}
+% MARK: Colors
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
@@ -21,12 +22,14 @@
 % ======================= setcolor ======================= %
 \pagecolor{background}
 \color    {foreground}
+% MARK: Essentials
 % -------------------------------------------------------- %
 %                        Essentials                        %
 % -------------------------------------------------------- %
 \usepackage{luacode}
 \usepackage{xparse} % xparse - multiple optional arguments
 \usepackage{calc}
+% MARK: Geometry
 % % -------------------------------------------------------- %
 % %                         Geometry                         %
 % % -------------------------------------------------------- %
@@ -49,6 +52,7 @@
 %     right     = .06\paperwidth,
 %     portrait  = true,
 % }
+% MARK: Fonts
 % -------------------------------------------------------- %
 %                           Fonts                          %
 % -------------------------------------------------------- %
@@ -87,18 +91,21 @@
 % \makeatletter
 % \def\verbatim@nolig@list{}
 % \makeatother
+% MARK: Linguagem
 % -------------------------------------------------------- %
 %                         Linguagem                        %
 % -------------------------------------------------------- %
 \usepackage[portuguese]{babel} % Babel
 %\usepackage{polyglossia}      % Polyglossia
 %\setdefaultlanguage[variant=brazilian]{portuguese}
+% MARK: Graphics
 % % -------------------------------------------------------- %
 % %                         Graphics                         %
 % % -------------------------------------------------------- %
 % \usepackage[draft, final]{graphics, graphicx}
 % \usepackage{graphicx}
 % \graphicspath{{./.build/figures}}
+% MARK: tocloft
 % -------------------------------------------------------- %
 %                tocloft - Table of contents               %
 % -------------------------------------------------------- %
@@ -120,11 +127,13 @@
 %\setlength{\cftsubsecnumwidth}{15mm}
 % ====================== tab (table) ===================== %
 \setlength\cfttabindent{0mm}
+% MARK: filecontents
 % % -------------------------------------------------------- %
 % %                       filecontents                       %
 % % -------------------------------------------------------- %
 %\usepackage{scontents}     % the better filecontents
 %\usepackage{filecontents}  % Create files
+% MARK: multicols
 % % -------------------------------------------------------- %
 % %                         Multicols                        %
 % % -------------------------------------------------------- %
@@ -132,6 +141,7 @@
 \setlength{\columnsep}{.05\textwidth}
 \multicoltolerance = 200
 % \renewenvironment{multicols}[1]{}{\relax} % toggle multicols  on/off
+% MARK: enumitem
 % -------------------------------------------------------- %
 %                         enumitem                         %
 % -------------------------------------------------------- %
@@ -139,6 +149,7 @@
 \setlist[description]{
     format={\color{Emph}}
 }
+% MARK: titlesec
 % -------------------------------------------------------- %
 %                         titlesec                         %
 % -------------------------------------------------------- %
@@ -175,6 +186,7 @@
 %    {5mm}                           % sep
 %    {\huge\bfseries}                % before-code
 %    [\vspace{0.5mm}]                % after-code
+% MARK: Appendix
 % % -------------------------------------------------------- %
 % %                         Appendix                         %
 % % -------------------------------------------------------- %
@@ -182,7 +194,7 @@
 % -------------------------------------------------------- %
 %                     siunix: SI units                     %
 % -------------------------------------------------------- %
-\usepackage{siunitx}
+\usepackage{siunitx,mysiunitx}
 \sisetup{
     % input / scientific / engineering / false / fixed
     exponent-mode={input},
@@ -190,18 +202,14 @@
     % exponent-product={*}, % x * 10^y
     round-mode={places}, % figures/places/none
     round-precision={3},
-    exponent-product={},
-    exponent-base={athrm{E}},
+    exponent-product={\,},
+    exponent-base={\mathrm{E}},
+    % Ranges
+    range-phrase={\,\to\,},
+    range-units={bracket},
+    range-exponents={combine-bracket},
 }
-% ==================== Declaring units =================== %
-\DeclareSIUnit\atm{atm}
-\DeclareSIUnit\calorie{cal}
-\DeclareSIUnit\Torr{Torr}
-\DeclareSIUnit\bar{bar}
-\DeclareSIUnit\mmHg{mmHg}
-\DeclareSIUnit\molar{M}
-\DeclareSIUnit\M{M}
-\DeclareSIUnit\angstrom{\textup{\AA}}
+% MARK: Math
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
@@ -216,6 +224,7 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+% \DeclareDocumentCommand\mathemph{m}{{\color{Emph}\boldmath{#1}}}
 % % ======================================================== %
 % % ============== MathOperators Declarations ============== %
 \newcommand\E[1]{\,\mathrm{E}^{#1}}
@@ -229,6 +238,8 @@
 % \DeclareMathOperator\arccosh{arccosh}
 % \DeclareMathOperator\arcsinh{arcsinh}
 % % ================== Calculus operators ================== %
+% \DeclareMathOperator\LagrangeTransform{\mathcal{L}}
+% \DeclareMathOperator\Primitive{\mathcal{P}}
 % \DeclareMathOperator\fronteira {fr}
 % \DeclareMathOperator\interior  {int}
 % \DeclareMathOperator\exterior  {ext}
@@ -266,11 +277,13 @@
 % \myvert[*scale]{<content>}
 % \myVert[*scale]{<content>}
 % \myrange[<*>invert all][<l>invert left][<r>invert right]{<content>}
+% MARK: vectors
 % % -------------------------------------------------------- %
 % %                          Vectors                         %
 % % -------------------------------------------------------- %
 % \usepackage{esvect}      % Vector over-arrow
-% \let\vec\vv
+% \NewCommandCopy\vec\vv
+% MARK: tikz
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
@@ -297,7 +310,7 @@
     prefix={./.build/figures/graphics/}
 ] % turn externalization on/off
 % Fix background
-\let\oldtikzpicture\tikzpicture
+\NewCommandCopy\oldtikzpicture\tikzpicture
 \RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
 % % ==================== Other packages ==================== %
 % \usepackage{myTikzGraphs} % For graphs
@@ -348,10 +361,11 @@
 %     \ifblank{#2}{}{\label{table:#1}}
 %     \addcontentsline{lot}{table}{Tabela \thetable{}: #2}
 % }
-% % -------------------------------------------------------- %
-% %                           Chem                           %
-% % -------------------------------------------------------- %
-\usepackage{chemformula} % formulas quimicas
+% MARK: Chem
+% -------------------------------------------------------- %
+%                           Chem                           %
+% -------------------------------------------------------- %
+\usepackage{chemformula} % chem formulas
 \usepackage{chemfig}     % Estruturas quimicas
 % \usepackage{modiagram}   % Molecular orbital diagram
 % % ======================= modiagram ====================== %
@@ -362,14 +376,16 @@
 % }
 % \newlength\AtomVScale    \setlength\AtomVScale{1cm}
 % \newlength\MoleculeVScale\setlength\MoleculeVScale{1cm}
-% % ====================== chemmacros ====================== %
+% ====================== chemmacros ====================== %
 \usepackage{chemmacros}
 \chemsetup[phases]{pos=sub}
-% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+% MARK: Biology
 % % -------------------------------------------------------- %
 % %                          Biology                         %
 % % -------------------------------------------------------- %
 % \usepackage{mydnaseq}
+% MARK: Code
 % % -------------------------------------------------------- %
 % %                           Code                           %
 % % -------------------------------------------------------- %
@@ -389,6 +405,7 @@
 % % \usemintedstyle{rainbow_dash}
 % % \usemintedstyle{solarized-dark}
 % % \usemintedstyle{native}
+% MARK: tcolorbox
 % % -------------------------------------------------------- %
 % %                         tcolorbox                        %
 % % -------------------------------------------------------- %
@@ -397,6 +414,7 @@
     breakable,                % allow page break
     % minted, xparse, listings, % code minted
 }
+% MARK: Metadata
 % % -------------------------------------------------------- %
 % %                         Metadata                         %
 % % -------------------------------------------------------- %
@@ -409,6 +427,7 @@
 \title{\huge\bfseries\color{Emph}\mytitle}
 \author{\Large\myauthor}
 \date{\Large\today}
+% MARK: Fancyhdr
 % % -------------------------------------------------------- %
 % %                         fancyhdr                         %
 % % -------------------------------------------------------- %
@@ -421,10 +440,12 @@
 % \renewcommand\footrulewidth{.5pt}
 % % Marks 
 % % \renewcommand{\partmark}[1]{\markboth{}{\thepart#1}}
+% MARK: Subfiles
 % % -------------------------------------------------------- %
 % %                         Subfiles                         %
 % % -------------------------------------------------------- %
 \usepackage{subfiles}
+% MARK: My Packages
 % % -------------------------------------------------------- %
 % %                        My packages                       %
 % % -------------------------------------------------------- %
@@ -444,6 +465,7 @@
 % % -------------------------------------------------------- %
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
 % \renewcommand\thepart{Part \arabic{part}}
+% MARK: begin
 % 88                                    88
 % 88                                    ""
 % 88

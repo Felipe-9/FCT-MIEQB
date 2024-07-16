@@ -1,0 +1,122 @@
+% !TEX root = ./FT_II-Notes.1.tex
+\providecommand\mainfilename{"./FT_II-Notes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Notes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Notes.1}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Notes.1/}
+
+\mymakesubfile{1}
+[FT II]
+{Anotações: Transferencia de massa entre fases} % Subfile Title
+{Transferencia de massa entre fases} % Part Title
+
+\begin{sectionBox}1{Adsorsão gasosa \ch{F\gas{} -> F\lqd{}}} % S
+    
+    \begin{BM}[align*]
+        \omega_A &= N_A\,A_{\text{transf}};
+        \\ N_{A,z} &= k_g (\rho_{A,g} - \rho_{A,i});
+        \\ N_{A,z} &= k_l (c_{A,i}    - c_{A,l});
+        \quad&& c_{l} = \rho_l/M;
+        \\ N_{A,z} &= k_x ( x_{A,i}    - x_{A,l});
+        \quad&& \begin{cases}
+            k_x=k_l\,c_l
+            \\
+            x_A\cong c_A/c_l \text{ (A muito pequeno no l)}
+        \end{cases}
+        \\ N_{A,z} &= k_c ( c_{A,g}    - c_{A,i,g});
+        \quad&& k_{c}=k_g\,R\,T
+        \\ N_{A,z} &= k_y ( y_{A,g}    - y_{A,i});
+        \quad&& k_y = k_g\,P
+    \end{BM}
+
+    \subsection*{Coeficientes globais}
+    \begin{BM}[align*]
+        N_{A,z}&=k_g\,(\rho_{A,g}-\rho_{A,*})
+        \\
+        N_{A,z}&=k_l\,(c_{A,*}-\rho_{A,l})
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+       \item[\(c_{A,*}\)] Concentração em equilíbrio
+       \item[\(\rho_{A,*}\)] Pressão equilíbrio
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Linha de equilíbrio} % S
+    
+    \begin{BM}
+        p_A=n\,c_A
+        \begin{cases}
+            p_{A,i}=n\,c_{A,i}
+            \\ p_{A,g}=n\,c_{A,*}
+            \\ p_{A,*}=n\,c_{A,l}
+        \end{cases}
+    \end{BM}
+    \begin{BM}
+        K_g^{-1}
+        =\frac{p_{A,g}-p_{A,i}}{N_{A,z}}
+        +\frac{n(c_{A,i}-c_{A,l})}{N_{A,z}}
+    \end{BM}
+
+    \paragraph*{Nota:} Um gás mais solúvel tem maior \(k_g\) <=> Transfere-se mais facilmente
+
+    \begin{BM}
+        K_g^{-1}=k_g^{-1}+k_l^{-1}\,n
+        \\ 
+        K_l^{-1}=k_l^{-1}+k_g^{-1}\,n
+    \end{BM}
+
+    \subsection*{Metodo gráfico}
+    Permite determinar composições interfaciais e de equilíbrio
+
+    \begin{sectionBox}2{Resistencia a fase gasosa} % S
+        \begin{BM}
+            R
+            =\frac{k_g^{-1}}{K_g^{-1}}
+            =\frac{p_{A,g}-p_{A,i}}{p_{A,g}-p_{A,*}}
+            \qquad
+            R\in\myrange*{0,2}
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}2{Resistencia Fase líquida} % S
+        \begin{BM}
+            R
+            = \frac{k_l^{-1}}{K_l^{-1}}
+            = \frac{n\,k_l^{-1}}{K_g^{-1}}
+            = \frac{c_{A,i}-c_{A,l}}{c_{A,*}-c_{A,l}}
+        \end{BM}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Difusão com reação química} % S
+    
+    Gases pouco solúveis (resistencia fase liquida alta)
+
+    \subsection*{1ª Ordem}
+    \begin{BM}
+        N_{A,z}=-\mathscr{D}_{A,B}\odv{c_A}{z}
+        \qquad
+        \text{Cond. Fronteira}
+        \begin{cases}
+            z=0, & c_A=c_{A,0}
+            \\
+            z=\delta, & c_A=0
+        \end{cases}
+        \\[2ex]
+        N_A = k_{l,0}\,\frac{H_a}{\tanh{H_a}}\,(c_{A,i}-0)
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

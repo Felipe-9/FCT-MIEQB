@@ -6,6 +6,8 @@
 
 % \tikzset{external/force remake=true} % - remake all
 
+\date{09 de Dezembro de 2023}
+
 \begin{document}
 
 \graphicspath{{\subfix{./.build/figures/ERQ_I-Testes_Resolucoes.2023.2}}}
@@ -23,22 +25,25 @@
             \item fase gásosa
             \item Reator tubular adiabático
             \item A\,(10\%)
-            \item \(T_0=200\,\si{\celsius}=473.15\,\si{\kelvin}\)
-            \item \(v_0=10\,\si{\deci\metre^3/\second}=600\,\si{\litre/\min}\)
+            \item \(T_0=200\,\unit{\celsius}=473.15\,\unit{\kelvin}\)
+            \item \(v_0=10\,\unit{\deci\metre^3/\second}=600\,\unit{\litre/\min}\)
             \item gráfico \(X\times T\)
-            \item \(C_{p\,A}=C_{p\,B}=5\,\si{\calorie/\mole.\kelvin}\)
-            \item \(C_{p\,I}=12\,\si{\calorie/\mole.\kelvin}\)
-            \item \(k_{d\,(473\,\si{\kelvin})}=1.17\,\si{\min^{-1}}\)
-            \item \(K_{e\,(473\,\si{\kelvin})}=40\)
-            \item \(Ea=20\,\si{\kilo\calorie/\mole}\)
-            \item \(R=\SI{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(C_{p\,A}=C_{p\,B}=5\,\unit{\calorie/\mole.\kelvin}\)
+            \item \(C_{p\,I}=12\,\unit{\calorie/\mole.\kelvin}\)
+            \item \(k_{d\,(473\,\unit{\kelvin})}=1.17\,\unit{\min^{-1}}\)
+            \item \(K_{e\,(473\,\unit{\kelvin})}=40\)
+            \item \(Ea=20\,\unit{\kilo\calorie/\mole}\)
+            \item \(R=\qty{1.987204258640832}{\calorie.\mole^{-1}.\kelvin^{-1}}\)
         \end{multicols}
     \end{itemize}
 } % Q1
-    \begin{figure}\centering
-        \includegraphics[width=.8\textwidth]{IMG_5691-dark.png}
-        % \includegraphics[width=.8\textwidth]{IMG_5691-bright.png}
-    \end{figure}
+    % \begin{center}
+    %     \begin{figure}\centering
+    %         \includegraphics[width=.8\textwidth]{IMG_5691-dark.png}
+    %         % \includegraphics[width=.8\textwidth]{IMG_5691-bright.png}
+    %     \end{figure}
+    % \end{center}
+    
     \begin{questionBox}2{ % Q1.1
         Endotermica/exotermica
     } % Q1.1
@@ -84,7 +89,7 @@
                 \begin{cases}
                     K_e=1
                     \\
-                    T\cong 619\,\si{\kelvin}
+                    T\cong 619\,\unit{\kelvin}
                 \end{cases}
                 &\\[3ex]&
                 \therefore
@@ -102,18 +107,21 @@
                 \cong &\\&
                 \cong
                 {\color{Emph}
-                    \SI{-14.700628636232281423}{\kilo\calorie/\mole}
+                    \qty{-14.700628636232281423}{\kilo\calorie/\mole}
                 }
             &
         \end{flalign*}
     \end{questionBox}
+% Break
+\end{questionBox}\begin{questionBox}{}
+% Break
     \begin{questionBox}2{ % Q1.3
         \(X_{eq}\land T_{eq}\)
     } % Q1.3
         \answer{}
         \begin{flalign*}
             &
-                % X_{(770\,\si{\kelvin})}
+                % X_{(770\,\unit{\kelvin})}
                 % =\frac{(C_{p\,A}+\theta_I\,C_{p\,I})(T-T_0)}{-\adif{H_R}}
                 % =\frac{(C_{p\,A}+\frac{Y_{I\,0}}{Y_{A\,0}}\,C_{p\,I})(T-T_0)}{-\adif{H_R}}
                 % \cong &\\&
@@ -125,7 +133,7 @@
                 % }{\num{14.700628636232281423e3}}
                 % \cong\dots
                 {\color{Emph}
-                    X_{(520\,\si{\kelvin})}
+                    X_{(520\,\unit{\kelvin})}
                 }
                 =\frac{(C_{p\,A}+\theta_I\,C_{p\,I})(T-T_0)}{-\adif{H_R}}
                 =\frac{(C_{p\,A}+\frac{Y_{I\,0}}{Y_{A\,0}}\,C_{p\,I})(T-T_0)}{-\adif{H_R}}
@@ -152,9 +160,9 @@
         \begin{BM}\color{Emph}
             X_{eq}\cong 0.79
             \quad\land\quad
-            T_{eq}\cong 546\,\si{\kelvin}
+            T_{eq}\cong 546\,\unit{\kelvin}
         \end{BM}
-        % Houve algum erro ao calcular o \(X_{(770\,\si{\kelvin})}\) portanto para poder prosseguir assumo o valor de 0.6
+        % Houve algum erro ao calcular o \(X_{(770\,\unit{\kelvin})}\) portanto para poder prosseguir assumo o valor de 0.6
     \end{questionBox}
     \begin{questionBox}2{ % Q1.4
         Volume do reator para \(X_1=95\%\,X_e\)
@@ -204,7 +212,15 @@
                 = &\\&
                 = k\,C_{A\,0}(1-X(1-K_e))
                 \,\frac{T_0}{T}
-                \implies &\\[3ex]&
+                \implies
+                &
+            \end{flalign*}
+% Break
+\end{questionBox}\end{questionBox}
+\begin{questionBox}{}\begin{questionBox}{}
+% break
+            \begin{flalign*}
+                &
                 \implies
                 V
                 =\int_{0}^{X}{
@@ -322,7 +338,14 @@
                         \,(T^{-1}-473^{-1})
                     \right)}
                 }
-                &\\[3ex]&
+                &
+            \end{flalign*}
+% break
+\end{questionBox}\end{questionBox}
+\begin{questionBox}{}\begin{questionBox}{}
+% break
+            \begin{flalign*}
+                &
                 h=\frac{0.7505}{2}=0.37525
                 \begin{cases}
                     X_0=0\\X_1=0.37525\\X_2=0.7505
@@ -389,21 +412,24 @@
         \begin{multicols}{2}
             \item \ch{A->B}
             \item CSTR não adiabático
-            \item \(V=6\,\si{\metre^3}\)
+            \item \(V=6\,\unit{\metre^3}\)
             \item Em estado estacionário
-            \item \(v_0=6\,\si{\litre/\min}=360\,\si{\litre/\hour}\)
+            \item \(v_0=6\,\unit{\litre/\min}=360\,\unit{\litre/\hour}\)
             \item \(Y_{A\,0}=0.1\)
-            \item \(\adif{H_R}=-100.7\,\si{\kilo\joule/\mole}\)
-            \item \(C_{p\,A}=C_{p\,B}=34.6\,\si{\joule/\mole.\kelvin}\)
-            \item \(C_{p\,I}=75.4\,\si{\joule/\mole.\kelvin}\)
-            \item \(R=\SI{8.314462618}{\joule.\mole^{-1}.\kelvin^{-1}}\)
-            \item \(C_{A\,0}=1\,\si{\M}\)
-            \item \(T_0=298\,\si{\kelvin}\)
-            \item \(k_{(298\,\si{\kelvin})}=0.0227\,\si{\hour^{-1}}\)
+            \item \(\adif{H_R}=-100.7\,\unit{\kilo\joule/\mole}\)
+            \item \(C_{p\,A}=C_{p\,B}=34.6\,\unit{\joule/\mole.\kelvin}\)
+            \item \(C_{p\,I}=75.4\,\unit{\joule/\mole.\kelvin}\)
+            \item \(R=\qty{8.314462618}{\joule.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(C_{A\,0}=1\,\unit{\M}\)
+            \item \(T_0=298\,\unit{\kelvin}\)
+            \item \(k_{(298\,\unit{\kelvin})}=0.0227\,\unit{\hour^{-1}}\)
         \end{multicols}
-        \item com parede envolvida até 85\% com agua a \(100\,\si{\celsius}=373\,\si{\kelvin}\)
+        \item com parede envolvida até 85\% com agua a \(100\,\unit{\celsius}=373\,\unit{\kelvin}\)
     \end{itemize}
 } % Q2
+% Break
+\end{questionBox}\begin{questionBox}{}
+% Break
     \begin{questionBox}2{ % Q2.1
         Equações das curvas
     } % Q2.1

@@ -1,0 +1,619 @@
+% !TEX root = ./FT_II-Exercises_Resolutions.extras.tex
+\providecommand\mainfilename{"./FT_II-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Exercises_Resolutions.extras.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Exercises_Resolutions.extras}}}
+% \tikzsetexternalprefix{./figures/FT_II-Exercises_Resolutions.extras/graphics/}
+
+\mymakesubfile{5}
+[FT II]
+{Exerices extras} % Subfile Title
+{Exerices extras} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    A composição molar de uma mistura gasosa a \qty*{273}{\kelvin} e \qty*{1.5e5}{\Pa} é:
+} % Q1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+
+                    \ch{O2}
+                &   \ch{CO}
+                &   \ch{CO2}
+                &   \ch{N2}
+                \\  7\%
+                &   10\%
+                &   15\%
+                &   68\%
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Determine:
+
+    \begin{questionBox}2{ % MARK: Q1.1
+        A composição em percentagem mássica
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                X_{m,i}
+                =\frac{m_i}{m_{total}}
+                =\frac{m_i}{\sum{m_{i}}}
+                =\frac
+                {X_{N,i}\,M_i\,N_{total}}
+                {\sum{X_{N,i}\,M_i\,N_{total}}}
+                =\frac
+                {X_{N,i}\,M_i}
+                {\sum{X_{N,i}\,M_i}}
+                ; &\\&
+                \frac{m_{total}}{N_{total}}
+                \cong .07*32+.10*30+.15*44+.68*28
+                = 30.88
+                ; &\\&
+                \begin{cases}
+                    X_{m,\ch{O2}}
+                    & = .07*32/30.88
+                    \cong\qty{7.25388601}{\percent}
+                    \\
+                    X_{m,\ch{CO}}
+                    & = .10*30/30.88
+                    \cong\qty{9.715025907}{\percent}
+                    \\
+                    X_{m,\ch{CO2}}
+                    & = .15*44/30.88
+                    \cong\qty{21.37305699}{\percent}
+                    \\
+                    X_{m,\ch{N2}}
+                    & = .68*28/30.88
+                    \cong \qty{61.65803109}{\percent}
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.2
+        A massa específica da mistura gasosa
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \rho
+                = \frac{m}{V}
+                = \frac{m}{\frac{N\,R\,T}{P}}
+                \cong \frac{
+                    30.88
+                    * N
+                    * 1.5\E{5}
+                }{
+                    N
+                    * \num{8.31446261815324}
+                    * 273
+                }
+                \cong
+                \qty{2.040665013032626461}{\kilo\gram/\m^3}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Determine o coeficiente de difusão do \ch{CO} numa mistura gasosa cuja composição é:
+    \begin{BM}
+                y_{\ch{O2}}=0.20
+        ;\quad  y_{\ch{N2}}=0.70
+        ;\quad  y_{\ch{CO}}=0.10
+    \end{BM}
+    A mistura está à temperatura de \qty*{298}{\K} e à pressão de \qty*{2}{\atm}. Os coeficientes de difusão do \ch{CO} em oxigénio e azoto são:
+    \begin{BM}
+        \mathscr{D}_{\ch{CO,O2}}
+        (\qty*{273}{\K},\qty*{1}{\atm})
+        = \qty*{1.85e-5}{\m^2/\s}
+        \\
+        \mathscr{D}_{\ch{CO,N2}}
+        (\qty*{288}{\K},\qty*{1}{\atm})
+        = \qty*{1.92e-5}{\m^2/\s}
+    \end{BM}
+} % Q2
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathscr{D}_{\ch{CO},M}
+            = \frac{
+                \sum_{j=2}^{n}{y_{j}}
+            }{
+                \sum_{i=2}^{n}{y_i/\mathscr{D}_{\ch{CO},i}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathscr{D}_{(
+                \ch{CO,N2}
+                ,\qty*{298}{\K}
+                ,\qty*{2}{\atm}
+            )}
+            =
+            \mathscr{D}_{(
+                \ch{CO,N2}
+                ,\qty*{288}{\K}
+                ,\qty*{1}{\atm}
+            )}
+            \,\frac{1}{2}
+            \,\left(
+                \frac{298}{288}
+            \right)^{3/2}
+            % 0.52626643134963
+            % \cong &\\&
+            \cong
+            \qty{1.01043154819129e-5}{\m^2/\s}
+            % 
+            % 
+            % 
+            ; &\\[1ex]&
+            \mathscr{D}_{(
+                \ch{CO,O2}
+                ,\qty*{298}{\K}
+                ,\qty*{2}{\atm}
+            )}
+            =
+            \mathscr{D}_{(
+                \ch{CO,O2}
+                ,\qty*{273}{\K}
+                ,\qty*{1}{\atm}
+            )}
+            \,\frac{1}{2}
+            \,\left(
+                \frac{298}{273}
+            \right)^{3/2}
+            % 0.570230483093418
+            % \cong &\\&
+            \cong
+            \qty{1.054926393722823e-5}{\m^2/\s}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathscr{D}_{\ch{CO},mist}
+            \cong
+            \frac{
+                0.2+0.7
+            }{
+                0.2/\num{1.054926393722823e-5}
+                +0.7/\num{1.01043154819129e-5}
+            }
+            \cong
+            \qty{1.01999185289502e-5}{\m^2/\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q3
+    Um componente A difunde-se através de uma camada em repouso de um componente B de espessura Z. A pressão parcial de A num dos lados da camada é \(P_{A,1}\) e no outro lado \(P_{A,2}<P_{A,1}\) Mostre que o fluxo máximo possível de Aatravés dessa camada é dado por:
+    \begin{BM}
+        N_{A,\max}
+        = \frac{\mathscr{D}\,P}{R\,T\,z}
+        \,\ln{\frac{P}{P-P_{A,1}}}
+    \end{BM}
+} % Q3
+    \answer{}
+    \begin{flalign*}
+        &
+            N_{A,\max,z}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,\eta_d\,z}
+            \ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            = \frac
+            {
+                \frac{P}{R\,t}
+                \,\mathscr{D}_{A,B}
+            }
+            {\Theta\,\eta_d\,z}
+            \ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            N_{A,\max,z}\implies y_{A,2}=0
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B,z}/N_{A,z}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            N_{A,\max,z}
+            = \frac
+            {P\,\mathscr{D}_{A,B}}
+            {R\,T\,(1)\,z}
+            \ln{\frac
+                {1}
+                {1-y_{A,1}}
+            }
+            = &\\&
+            = \frac
+            {P\,\mathscr{D}_{A,B}}
+            {R\,T\,z}
+            \ln{\frac
+                {1}
+                {1-P_{A,1}/P}
+            }
+            = \mathemph{
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {z\,R\,T}
+                \ln{\frac
+                    {P}
+                    {P-P_{A,1}}
+                }
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q4
+    Moldou-se naftaleno sob aforma de um cilindro de raio \(R_1\), que se deixou sublimar no ar em repouso. Mostre que a velocidade de sublimação é dada por:
+    \begin{BM}
+        Q
+        = \frac
+        {2\,\pi\,L\,\mathscr{D}\,P}
+        {
+            R\,T
+            \,\ln{\frac{R_2}{R_1}}
+        }
+        \,\ln{\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+        }
+    \end{BM}
+    Sendo \(y^*_A\) a fração molar corresponedene à pressão de vapor do naftaleno e \(y_{A,2}\) a fração molar correspondente ao \(R_2\).
+} % Q4
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = N_{A,R_1}\,S_{R_1}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,R_1\,\ln{(R_2/R_1)}}
+            \,\ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            \,(2\,\pi\,R_1\,L)
+            = &\\&
+            = \frac{
+                \left(\frac{P}{R\,T}\right)
+                \,\mathscr{D}_{A,B}
+                \,2\,\pi\,L
+            }
+            {\Theta\,\ln{(R_2/R_1)}}
+            \,\ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B}/N_{A}
+            = 1+0/N_{A}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            Q
+            % = &\\&
+            = \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,2\,\pi\,L
+            }
+            {R\,T\,\ln{(R_2/R_1)}}
+            \,\ln{\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q4.1
+    Explique o que sucede à velocidade de sublimação quando \(R_2\) se torna muito grande.
+} % Q4.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \lim_{R_2\to\infty}{Q}
+            = \lim_{R_2\to\infty}{
+                \frac
+                {
+                    P\,\mathscr{D}_{A,B}\,2\,\pi\,L
+                }
+                {R\,T\,\ln{(R_2/R_1)}}
+                \,\ln\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+            = &\\&
+            = 
+            \frac
+            {
+                P\,\mathscr{D}_{A,B}\,2\,\pi\,L
+            }
+            {
+                R\,T
+                \,\lim_{R_2\to\infty}{
+                    \ln{(R_2/R_1)}
+                }
+            }
+            \,\ln\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+            = &\\&
+            = 
+            \frac
+            {
+                P\,\mathscr{D}_{A,B}\,2\,\pi\,L
+            }
+            {
+                R\,T
+                \infty
+            }
+            \,\ln\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+            =0
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q4.2
+    E se a geometria for esférica
+} % Q4.2
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = N_{A,R_1}\,S_{R_1}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,R_1(1-R_1/R_2)}
+            \,\ln{\frac
+                {1-\Theta\,y_{A,2}}
+                {1-\Theta\,y_{A,1}}
+            }
+            \,(4\,\pi\,R_1^2)
+            = &\\&
+            = \frac
+            {
+                \left(
+                    \frac{P}{R\,T}
+                \right)
+                \,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {R_1^{-1}-R_2^{-1}}
+            \,\ln{\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \lim_{R_2\to\infty}{Q}
+            = \lim_{R_2\to\infty}{
+                \frac
+                {
+                    P\,\mathscr{D}_{A,B}
+                    \,4\,\pi
+                }
+                {R\,T\,(R_1^{-1}-R_2^{-1})}
+                \,\ln\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
+            = &\\&
+            = 
+            \frac
+            {
+                P\,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {
+                R\,T
+                \,\lim_{R_2\to\infty}{
+                    {(R_1^{-1}-R_2^{-1})}
+                }
+            }
+            \,\ln\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+            = &\\&
+            = 
+            \frac
+            {
+                P\,\mathscr{D}_{A,B}
+                \,4\,\pi
+            }
+            {
+                R\,T
+                (R_1^{-1})
+            }
+            \,\ln\frac
+            {1-y_{A,2}}
+            {1-y^*_{A}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q5
+    Um tubo com \qty*{1}{\cm} de diâmetro e \qty*{20}{\cm} de comprimento está cheio com uma mistura de \ch{CO2} e \ch{H2} a uma pressão total de \qty*{2}{\atm} e a uma temperatura de \qty*{0}{\celsius}. O coeficiente de difusão do \ch{CO2-H2} nestas condições é \qty*{0.275}{\cm^2/\s}. Se a pressão parcial do \ch{CO2} for \qty*{1.5}{\atm} num dos lados do tubo e \qty*{0.5}{\atm} no outro extremo, calcule a velocidade de difusão para:
+} % Q5
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.1
+    Contradifusão equimolar (\(N_{\ch{CO2}}=-N_{\ch{H2}}\))
+} % Q5.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                A: \ch{CO2}
+                \\ B: \ch{H2}
+            \end{cases}
+            &\\[3ex]&
+            Q
+            = N_{A,z_1}\,S_{z_1}
+            = -\frac
+            {c\,\mathscr{D}_{A,B}}
+            {\adif{z}}
+            \,(y_{A,1}-y_{A,0})
+            (\pi\,d^2/4)
+            = &\\&
+            = -\frac
+            {
+                \frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+                \,\pi\,d^2/4
+            }
+            {\adif{z}}
+            \,\frac{P_{A,1}-P_{A,0}}{P}
+            = &\\&
+            = -\frac
+            {
+                \mathscr{D}_{A,B}
+                \,\pi\,d^2/4
+            }{R\,T\,\adif{z}}
+            \,(P_{A,1}-P_{A,0})
+            = &\\&
+            \cong -\frac
+            {
+                0.275
+                \,\pi\,1^2/4
+            }{
+                \num{8.20573660809596e1}
+                *273.15
+                *20
+            }
+            \,(0.5-1.5)
+            \cong\qty
+            {2.409038864139341e-7}
+            {\mol/\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.2
+    A seguinte relação entre os fluxos \(N{\ch{H2}} = -0.75\,N_{\ch{CO2}}\)
+} % Q5.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                A: \ch{CO2}
+                \\ B: \ch{H2}
+            \end{cases}
+            &\\[3ex]&
+            Q
+            = N_{A,z_1}\,S_{z_1}
+            = \frac
+            {c\,\mathscr{D}_{A,B}}
+            {\Theta\,\adif{z}}
+            \,\ln\frac
+            {1-\Theta\,y_{A,1}}
+            {1-\Theta\,y_{A,0}}
+            \,S_{z_1}
+            = &\\&
+            = \frac
+            {
+                \left(
+                    \frac{P}{R\,T}
+                \right)
+                \,\mathscr{D}_{A,B}
+            }
+            {\Theta\,\adif{z}}
+            \,\ln\frac
+            {1-\Theta\,P_{A,1}/P}
+            {1-\Theta\,P_{A,0}/P}
+            \,(\pi\,d^2/4)
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B}/N_A
+            = 1-0.75\,N_{A}/N_A
+            = 0.25
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            Q
+            = \frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,\pi\,d^2/4
+            }
+            {
+                R\,T\,0.25\,\adif{z}
+            }
+            \,\ln{
+                \frac
+                {P-0.25\,P_{A,1}}
+                {P-0.25\,P_{A,0}}
+            }
+            \cong &\\&
+            = \frac
+            {
+                2
+                * .275
+                * \pi
+                * 1^2/4
+            }
+            {
+                \num{8.20573660809596e1}
+                * 273.15
+                * 0.25
+                * 20
+            }
+            % 3.854462182622945e-6
+            \,\ln{
+                \frac
+                {2-0.25*0.5}
+                {2-0.25*1.5}
+            }
+            % 0.143100843640673
+            \cong\qty
+            {5.51576790114414e-7}
+            {\mol/\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

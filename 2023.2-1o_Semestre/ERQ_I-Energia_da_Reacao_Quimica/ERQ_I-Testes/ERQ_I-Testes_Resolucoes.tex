@@ -1,17 +1,16 @@
-% !TEX root = ./main_file.tex
-% \documentclass{article}
-\documentclass[
-    class=article,
-    multi={minipage},
-    border={3mm},
-]{standalone}
+\documentclass{article}
+% \documentclass[
+%     class=article,
+%     multi={minipage},
+%     border={3mm},
+% ]{standalone}
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
 \usepackage[hyperref]{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
-\colorlet{foreground}{light}
-\colorlet{background}{dark}
+\colorlet{foreground}{black}
+\colorlet{background}{white}
 % \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
@@ -30,25 +29,25 @@
 % % -------------------------------------------------------- %
 % %                         Geometry                         %
 % % -------------------------------------------------------- %
-\setlength\textwidth{160mm}
-% \usepackage{geometry}
-% \geometry{
-%     % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
-%     % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
-%     % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
-%     % papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
-%     % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
-%     % papersize = {320mm, 512mm}, % (16:10)
-%     % papersize = {280mm, 448mm}, % (16:10)
-%     % papersize = {240mm, 384mm}, % (16:10)
-%     % a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
-%     papersize = {180mm, 1m}, % LONG ( 4:3 ) SVGA x 0.3
-%     top       = 21mm,
-%     bottom    = 21mm,
-%     left      = .06\paperwidth,
-%     right     = .06\paperwidth,
-%     portrait  = true,
-% }
+% \setlength\textwidth{160mm}
+\usepackage{geometry}
+\geometry{
+    % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
+    % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
+    % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
+    % papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
+    % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
+    % papersize = {320mm, 512mm}, % (16:10)
+    % papersize = {280mm, 448mm}, % (16:10)
+    % papersize = {240mm, 384mm}, % (16:10)
+    a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
+    % papersize = {180mm, 1m}, % LONG ( 4:3 ) SVGA x 0.3
+    top       = 21mm,
+    bottom    = 21mm,
+    left      = .06\paperwidth,
+    right     = .06\paperwidth,
+    portrait  = true,
+}
 % -------------------------------------------------------- %
 %                           Fonts                          %
 % -------------------------------------------------------- %
@@ -58,7 +57,7 @@
 % \usepackage[sfdefault, ultralight]{FiraSans}
 % \renewcommand{\familydefault}{\sfdefault} % set sans serif as defalt
 % Redeclare emph
-\let\emph\relax
+\NewCommandCopy\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries\color{Emph}}
 % % ==================== Set font family =================== %
 \setmainfont[
@@ -103,7 +102,7 @@
 %                tocloft - Table of contents               %
 % -------------------------------------------------------- %
 \usepackage{tocloft}
-\setcounter{tocdepth}{1}    % remove subsubsection from toc
+\setcounter{tocdepth}{2}    % remove subsubsection from toc
 % ========================= part ========================= %
 \renewcommand\cftpartfont{\bfseries}
 %\renewcommand\cftpartafterpnum{\vspace{0mm}}
@@ -271,7 +270,7 @@
 % %                          Vectors                         %
 % % -------------------------------------------------------- %
 % \usepackage{esvect}      % Vector over-arrow
-% \let\vec\vv
+% \NewCommandCopy\vec\vv
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
@@ -288,7 +287,7 @@
 %     prefix = ./.build/figures/graphics/
 % ] % turn externalization on/off
 % % Fix background
-% \let\oldtikzpicture\tikzpicture
+% \NewCommandCopy\oldtikzpicture\tikzpicture
 % \RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
 % % ==================== Other packages ==================== %
 % \usepackage{myTikzGraphs} % For graphs
@@ -352,7 +351,7 @@
 % ====================== chemmacros ====================== %
 \usepackage{chemmacros}
 \chemsetup[phases]{pos=sub}
-% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
 % % -------------------------------------------------------- %
 % %                          Biology                         %
 % % -------------------------------------------------------- %

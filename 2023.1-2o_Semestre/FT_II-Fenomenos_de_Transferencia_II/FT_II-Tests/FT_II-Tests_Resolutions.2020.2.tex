@@ -1,0 +1,364 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2020.2.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2020.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2020.2}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2020.2/graphics/}
+
+\mymakesubfile{1}
+[FT II]
+{Test 2020.2 Resolution} % Subfile Title
+{Test 2020.2 Resolution} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Experiências de transferência de calor permitiram obter uma correlação para o coeficiente de transferência de calor, \textit{h}, para um cilindro de um composto A colocado numa corrente de ar:
+    \begin{BM}
+        Nu=0.43+0.532\,Re^{0.5}\,Pr^{0.33}
+    \end{BM}
+} % Q1
+    \vspace{-6ex}
+    \paragraph*{Dados:}
+    \begin{align*}
+        \qty*{1}{\atm}
+        = \qty*{760}{\mmHg}
+        = \qty*{1e5}{\Pa}
+    \end{align*}\vspace{-5ex}
+    \begin{align*}
+        P*_A&=\qty*{400}{\mmHg}
+        ;& R&=\qty{8.314462618}{\joule/\mole.\kelvin}
+        ;& \mathscr{D}_{A-ar}&=\qty*{9e-6}{\m^2/\s}
+        \\
+        \rho&=\qty*{0.114}{\kg/\m^3}
+        ;& \mu&=\qty*{2.1e-5}{\Pa.\s}
+        ;& k& =\qty*{2.73e-2}{\W/\m.\K}
+        \\
+        &&C_p&=\qty*{1002}{\J/\kg.\K}
+    \end{align*}\vspace{-3ex}
+    \begin{align*}
+        Nu&=\frac{h\,d}{k}
+        ;&
+        Pr&=\frac{\mu\,C_p}{k}
+        ;&
+        Sc&=\frac{\mu}{\rho\,\mathscr{D}}
+        ;&
+        Re&=\frac{\rho\,u\,d}{\mu}
+    \end{align*}
+    Analogia de Cholton--Colburn \(j_H=j_{\mathscr{D}}\)
+    \begin{align*}
+        \frac{h\,Pr^{2/3}}{\rho\,u\,C_p}
+        = \frac{k_c\,Sc^{2/3}}{u}
+    \end{align*}
+    \paragraph*{Dados da b:}
+    \begin{align*}
+        u&=\qty*{3}{\m/\s}
+        ;& d&=\qty*{1.5}{\cm}
+        % \\
+        ;& L&=\qty*{10}{\cm}
+        ;& T&=\qty*{310}{\K}
+    \end{align*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Utilizando a analogia de Chilton-Colburn calcule o coeficiente de transferência de massa.
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{Pela analogia:}
+            &\\&
+            k_c
+            = \frac{h}{\rho\,C_p}
+            \,\left(
+                \frac{Pr}{Sc}
+            \right)^{2/3}
+            % = &\\&
+            = \frac{
+                \left(
+                    \frac{Nu\,k}{d}
+                \right)
+            }{
+                \rho\,C_p
+            }
+            \,\left(
+                \frac{
+                    \left(
+                        \frac{\mu\,C_p}{k}
+                    \right)
+                }{
+                    \left(
+                        \frac{\mu}{\rho\,\mathscr{D}}
+                    \right)
+                }
+            \right)^{2/3}
+            % = &\\&
+            = \frac{
+                Nu
+            }{
+                d
+            }
+            \sqrt[3]{
+                \frac
+                {k\,\mathscr{D}^2}
+                {\rho\,C_p}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            Nu
+            = 0.43+0.532\,Re^{0.5}\,Pr^{0.33}
+            = 0.43
+            +0.532
+            \,\left(
+                \frac{\rho\,u\,d}{\mu}
+            \right)^{0.5}
+            \,\left(
+                \frac{\mu\,C_p}{k}
+            \right)^{0.33}
+            = &\\&
+            = 0.43
+            +0.532
+            \,\mu^{0.33-0.5}
+            \,\left(
+                \rho\,u\,d
+            \right)^{0.5}
+            \,\left(
+                \frac{C_p}{k}
+            \right)^{0.33}
+            = &\\&
+            = 0.43
+            +0.532
+            \,(2.3\E{-5})^{-0.17}
+            \,\left(
+                0.114
+                * 3
+                * 1.5\E{-2}
+            \right)^{0.5}
+            \,\left(
+                \frac{1002}{2.73\E{-2}}
+            \right)^{0.33}
+            \cong &\\&
+            \cong\num
+            {8.058081159215327}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \therefore
+            k_c
+            = \frac{
+                Nu
+            }{
+                d
+            }
+            \sqrt[3]{
+                \frac
+                {k\,\mathscr{D}^2}
+                {\rho\,C_p}
+            }
+            \cong &\\&
+            \cong \frac{
+                \num{8.058081159215327}
+            }{
+                1.5\E{-2}
+            }
+            \sqrt[3]{
+                \frac
+                {2.73\E{-2}*(9\E{-6})^2}
+                {0.114*1002}
+            }
+            \cong\qty
+            {1.44244327244535906e-2}
+            {\m/s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Calcule a velocidade de sublimação de um cilindro de A com \qty*{1.5}{\cm} de diâmetro e \qty*{10}{\cm} de comprimento. O ar a \qty*{310}{\K} tem uma velocidade de \qty*{3}{\m/\s}.
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            w
+            =k_c\,A\,C^*
+            =k_c
+            \,\left(
+                2*\pi\,d^2/4
+                +L\,2\,\pi\,d/2
+            \right)
+            \left(
+                \frac{P^*}{R\,T}
+            \right)
+            \cong &\\&
+            \cong
+            \num{1.44244327244535906e-2}
+            *2\,\pi\,\E{-4}(1.5^2/4+10*1.5/2)
+            % 73.071553155441563e-6
+            \,\frac{400\E{5}/760}{\num{8.314462618}*310}
+            % 0.155190135541862
+            \cong &\\&
+            \cong\qty
+            {1.492103189269384132e-3}
+            {\mole/\s}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    Será válido, neste caso usar a analogia de Reynolds? Justifique. Discuta a importância da utilização de analogias no cálculo de coeficientes de transferência de massa.
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            Sc
+            =\frac{u}{\rho\,\mathscr{D}}
+            =\frac{3}{0.114*9\E{-6}}
+            \cong\num
+            {2.923976608187135e6}
+            \neq 1
+            \implies
+        &
+    \end{flalign*}
+    Condições não conferem para a analogia de Reynolds.\\
+
+    As analogias permitem que a partir de medidas fáceis de adquirir no laboratório, calcular o coef de transferencia de massa e/ou calor
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Como poderia aumentar a velocidade de sublimação?
+} % Q1.4
+    \answer{}
+    \begin{flalign*}
+        &
+            w\propto
+            k_c\,A\,C^*
+        &
+    \end{flalign*}
+    Almentando qualquer dessas variáveis temos um almento da velocidade de sublimação
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Pretende-se remover \ch{SO2} de uma mistura gasosa constituída por \ch{SO2} e ar por absorção utilizando água. A coluna usada opera em contracorrente a \qty*{15}{\celsius} e \qty*{1}{\atm}. A linha de equilíbrio é \(y^*=10\,x\). A \% molar de \ch{SO2} no ar à entrada é 10\,\% e à saída é de 1\,\%. Os coeficientes individuais de transferência de massa são:
+    \begin{BM}[align*]
+        k_y&=\qty*{2}{\mole/\hour.\m^2}
+        &
+        k_x&=\qty*{20}{\mole/\hour.\m^2}
+    \end{BM}
+    Determine para o \emph{topo} da coluna
+} % Q2
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    As composições interfaciais
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{x_{A,i},y_{A,i}:}
+            &\\&
+            N_A
+            =k_x(x_{A,i}-x_{A})
+            =k_y(y_{A}-y_{A,i})
+            =k_y(y_{A}-10*x_{A,i})
+            \implies &\\&
+            \implies
+            x_{A,i}
+            =\frac{
+                k_y\,y_{A,2}
+                +x_{A,2}\,k_x
+            }{
+                10\,k_y+k_x
+            }
+            =\frac{
+                2*1\E{-2}
+                +(0)\,20
+            }{
+                10*2+20
+            }
+            =0.05\,\%
+            \implies &\\&
+            \implies
+            y_{A,i}
+            =10*x_{A,i}
+            =0.5\,\%
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    A \% da resistência total respitante a cada ma das fases.
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\% Rest fase gas e liq}
+            &\\&
+            \frac
+            {y_{A}-y_{A,i}}
+            {y_{A}-y^*_{A}}
+            = \frac
+            {0.01-0.5\,\%}
+            {0.01-10*0}
+            =0.5
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.3
+    Os coeficientes globais de trasnferência de massa \(K_y\text{ e }K_x\)
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            K_y
+            =\text{(Resist gas)}*k_y
+            =0.5*2
+            =1
+            ; &\\&
+            K_x
+            =\text{(Resist liq)}*k_x
+            =0.5*20
+            =10
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    O fluxo de \ch{SO2}
+} % Q2.4
+    \answer{}
+    \begin{flalign*}
+        &
+            N_A
+            =k_y(y_{A,2}-y_{A,1})
+            =2(1\E{-2}-0.5\E{-2})
+            = \qty*{1e-2}{\mole/\hour.\m^2}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.5
+    O valor do fluxo quanto usar soluções de \ch{NaOH} com a concentração crítica de \ch{NaOH}. (Comente)
+} % Q2.5
+    \answer{}
+    \begin{flalign*}
+        &
+            N_{A}
+            = k_y(y_{A,2}-y_{A,1})
+            = 2(1\E{-2}-0)
+            = \qty*{2e-2}{\mole/\hour.\m^2}
+            &\\[3ex]&
+            y_{A,1}=0
+            \quad\text{(Reação imediata na interfáce)}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

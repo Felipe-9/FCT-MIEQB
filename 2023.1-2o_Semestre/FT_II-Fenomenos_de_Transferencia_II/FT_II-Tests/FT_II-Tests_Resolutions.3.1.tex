@@ -1,0 +1,168 @@
+% !TEX root = ./FT_II-Tests_Resolutions.3.1.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.3.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Tests_Resolutions.3.1}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Tests_Resolutions.3.1/}
+
+\mymakesubfile{2}
+[FT II]
+{Exame de recurso resolução} % Subfile Title
+{Exame de recurso resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Tubo de ensaio
+} % Q1
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item 5\,\unit{\centi\metre} de altura
+            \item Contem metanol
+            \item \(z_0=2\,\unit{\centi\metre}\) nivel inicial
+            \item Corrente de ar
+            \item \(25\,\unit{\celsius},1\,\unit{\atm}\)
+            \item \(D_{met,ar}=0.196\,\unit{\centi\metre^2.\second^{-1}}\) Coef de dif
+            \item \(p=126\,\unit{\mmHg}\) respectivamente
+            \item \(M_{met}=32\,\unit{\gram.\mole^{-1}}\)
+            \item \(\rho_{met}=0.792\,\unit{\gram.\centi\metre^{-3}}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q1.1
+        Calc nivel de met no fim de 24h
+    } % Q1.1
+        
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Explique oq acontece se a temp dobrar
+    } % Q1.2
+        body
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Gas a
+} % Q2
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(T_A=600\,\unit{\kelvin}\)
+            \item \(p_A=101.3\,\unit{\kilo\pascal}=1\,\unit{\atm}\)
+            \item \(z_1=1\,\unit{\milli\metre}\)
+            \item \ch{A -> B}
+            \item \(N_A\propto -N_B\)
+            \item \(D_A=0.15\,\unit{\centi\metre^3.\second^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q2.1
+        Fração de a se a reac for inst, just
+    } % Q2.1
+        \answer{}
+        \begin{flalign*}
+            &
+                f\begin{cases}
+                    r_0=0 & y_{A,z}=y_{A,*}
+                    \\
+                    r_1=1*10^{-3} & y_{A,z}=y_{A,z_2}
+                \end{cases}
+                &\\&
+                N_{A,z}
+                =y_{A,z}(N_{A,z}+N_{B,z})
+                - \frac{P\,D_{A,B}}{R\,T}\odv{y_{A,z}}{z}
+                \cong
+                y_{A,z}\,N_{A,z}
+                - \frac{P\,D_{A,B}}{R\,T}\odv{y_{A,z}}{z}
+                \implies &\\[5ex]&
+                \implies
+                \int_{z_0}^{z_1}{N_{A,z}\,\odif{z}}
+                = N_{A,z}\int_{z_0}^{z_1}{\odif{z}}
+                = N_{A,z}\,z_1
+                = &\\[3ex]&
+                = \int_{y_{A,z_0}}^{y_{A,z_1}}{
+                    -\frac{P\,D_{A,B}}{R\,T}
+                    \frac{\odif{y_{A,z}}}{1-y_{A,z}}
+                }
+                = 
+                -\frac{P\,D_{A,B}}{R\,T}
+                \int_{y_{A,z_0}}^{y_{A,z_1}}{
+                    \frac{\odif{y_{A,z}}}{1-y_{A,z}}
+                }
+                = &\\& 
+                =  
+                \frac{P\,D_{A,B}}{R\,T}
+                \int_{y_{A,z_0}}^{y_{A,z_1}}{
+                    \frac{\odif{(1-y_{A,z})}}{1-y_{A,z}}
+                }
+                = 
+                \frac{P\,D_{A,B}}{R\,T}
+                \ln\frac
+                {1-y_{A,z_0}}
+                {1-y_{A,z_1}}
+                = &\\&
+                = 
+                \frac{P\,D_{A,B}}{R\,T}
+                \ln\frac
+                {1-p_{A,z_0}/P}
+                {1-p_{A,z_1}/P}
+                = 
+                \frac{P\,D_{A,B}}{R\,T}
+                \ln\frac
+                {P-p_{A,z_0}}
+                {P-p_{A,z_1}}
+                \implies &\\[5ex]&
+                \implies
+                N_{A,z}
+                = \frac{z_1\,P\,D_{A,B}}{R\,T}
+                \ln\frac
+                {P-p_{A,z_0}}
+                {P-p_{A,z_1}}
+                = &\\&
+                = \frac{
+                    10^{-3}
+                    *1
+                    *0.15*10^{-6}
+                }{
+                    \num{8.314462618}
+                    *600
+                }
+                \ln\frac
+                {0.15*10^{-6}-0.15*10^{-6}}
+                {0.15*10^{-6}-p_{A,z_1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+% Q3 M = 352 g/mole
+
+\begin{questionBox}1{ % Q3
+    Considere
+} % Q3
+    \begin{itemize}
+        \item Solvente não volátil
+        \item \(c_{\ch{CO2},t_0}=1.8\,\unit{\mole.\litre^{-1}}\) Concentração de \ch{CO2} inicial no solvente
+        \item exposto a atm de \ch{CO2}
+        \item \(t_1=40'\)
+        \item \(c_{\ch{CO2},4\,\unit{\centi\metre}}=5*10^{-3}\,\unit{\mole.\centi\metre^{-3}}\)
+        \item \(D_{\ch{CO2},S}=5*10^{-5}\)
+    \end{itemize}
+
+    \begin{BM}
+        \frac{C_{A,s}-C_A}{C_{A,s}-C_{A,0}}
+        =erf\left(
+            z/\sqrt{4\,D\,t}
+        \right)
+    \end{BM}
+
+    
+
+    Determine a concentração interface
+\end{questionBox}
+
+\end{document}

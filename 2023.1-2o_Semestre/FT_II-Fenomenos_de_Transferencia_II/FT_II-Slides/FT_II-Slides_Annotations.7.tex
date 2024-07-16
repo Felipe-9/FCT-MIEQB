@@ -1,0 +1,268 @@
+% !TEX root = ./FT_II-Slides_Annotations.7.tex
+\providecommand\mainfilename{"./FT_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Slides_Annotations.7.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Slides_Annotations.7}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Slides_Annotations.7/graphics/}
+
+\mymakesubfile{7}
+[FT II]
+{Difusão em estado pseudo estacionário} % Subfile Title
+{Difusão em estado pseudo estacionário} % Part Title
+
+\begin{sectionBox}1{} % S
+    
+    \begin{BM}
+        z = f(t)
+        \begin{cases}
+            t=0 & z=z_{0}
+            \\ 
+            t=t & z=z_{t}
+        \end{cases}
+        \\
+        N_A=f(z)\iff N_A=f(t)
+        \\
+        Q_A = -C_{A,l}\odv{V}{t}
+        \qquad
+        N_A = C_{A,l}\odv{z}{t}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{} % 
+    
+    \begin{BM}
+        t = \frac{
+            C_{A,l}\,\adif{(z^2)}
+        }{
+            2\,D_{A,B}\,C
+            \,\ln\frac{1-y_{A,1}}{1-y_{A,0}}
+        }
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            N_A
+            = \frac{D_{A,B}\,C}{z}
+            \,\ln\frac{1-y_{A,1}}{1-y_{A,0}}
+            % = &\\[3ex]&
+            = C_{A,l}\odv{z}{t}
+            \implies &\\&
+            \implies
+            \int\odif{t}
+            = t
+            = &\\&
+            = \int{
+                    \frac{
+                    C_{A,l}
+                }{
+                    D_{A,B}\,C
+                    \,\ln\frac{1-y_{A,1}}{1-y_{A,0}}
+                }
+                \,z\,\odif{z}
+            }
+            = 
+            \frac{
+                C_{A,l}
+            }{
+                D_{A,B}\,C
+                \,\ln\frac{1-y_{A,1}}{1-y_{A,0}}
+            }
+            \int{
+                z\,\odif{z}
+            }
+            = 
+            \frac{
+                C_{A,l}
+            }{
+                D_{A,B}\,C
+                \,\ln\frac{1-y_{A,1}}{1-y_{A,0}}
+            }
+            \frac{\adif{(z^2)}}{2}
+            = &\\&
+            = 
+            \frac{
+                C_{A,l}\,\adif{(z^2)}
+            }{
+                2\,D_{A,B}\,C
+                \,\ln\frac{1-y_{A,1}}{1-y_{A,0}}
+            }
+        &
+    \end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Geometria esférica}
+    
+    \begin{BM}
+        t
+        = \frac{C_{A,l}}{
+            2\,D\,C\,ln{(1-y_{A,0})^{-1}}
+        }\adif{(-r^2)}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \lim_{
+                \substack{
+                    r_2 \to\infty
+                    \\ y_{A,1} \to0
+                }
+            }
+            -C_{A,l}\,4\,\pi\,r^2\,\odv{r}{t}
+            = \frac{4\,\pi\,D\,C}{r_0^{-1}}
+            \,\ln{(1-y_{A,0})^{-1}}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{
+    Calcule o tempo necessário para que a água evapore completamente.
+} % E
+    
+    \begin{itemize}
+        \item Uma camada de água com 1\,\unit{\milli\metre} de espessura
+        \item É mantida a 20\,\unit{\celsius}
+        \item em contato com o ar seco a 1\,\unit{\atm}
+        \item Admitindo que a evaporação  se dá por difusão molecular através de uma camada de ar estagnado com 5\,\unit{\milli\metre} de espessura
+        \item O coeficiente de difusão de água no ar é 0.26\,\unit{\centi\metre^2/\second}
+        \item A pressão de vapor da água a 20\,\unit{\celsius} é 0.0234\,\unit{\atm}
+    \end{itemize}
+
+    \answer{}
+    \begin{flalign*}
+        &
+            N_{A}
+            = y_A(N_{A}+N_{B})
+            - \frac{P\,D_{A,B}}{R\,T}
+            \,\odv{y_A}{z}
+            = y_A\,N_{A}
+            - \frac{P\,D_{A,B}}{R\,T}
+            \,\odv{y_A}{z}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int{N_{A}\odif{z}}
+            = N_{A}\int{\odif{z}}
+            = N_{A}\adif{z}
+            % 
+            % 
+            % 
+            = &\\&
+            \int{
+                -\frac{P\,D_{A,B}}{R\,T}
+                \frac{\odif{y_A}}{1-y_A}
+            }
+            = 
+            -\frac{P\,D_{A,B}}{R\,T}
+            \int{
+                \frac{\odif{y_A}}{1-y_A}
+            }
+            = 
+            \frac{P\,D_{A,B}}{R\,T}
+            \ln\frac{1-y_{A,1}}{1-y_{A,0}}
+            % 
+            % 
+            % 
+            \xRightarrow[y_{A,1}=0]{} &\\[3ex]&
+            \xRightarrow[y_{A,1}=0]{}
+            N_A
+            = &\\&
+            = \frac{P\,D_{A,B}}{R\,T\,\adif{z}}
+            \,\ln\frac{1}{1-y_{A,0}}
+            = \frac{P\,D_{A,B}}{R\,T\,\delta}
+            \,\ln\frac{1}{1-y_{A,0}}
+            = &\\&
+            = Q_A/S
+            = -C_{A,l}\,\odv{V}{t}
+            \,\frac{1}{S}
+            = -C_{A,l}\,\left(-S\,\odv{\delta}{t}\right)
+            \,\frac{1}{S}
+            = C_{A,l}\,\odv{\delta}{t}
+            \implies &\\&
+            \implies
+            \int{C_{A,l}\,\delta\,\odif{\delta}}
+            = 
+            C_{A,l}
+            \int{
+                \delta\,\odif{\delta}
+            }
+            = C_{A,l}
+            \adif{(\delta^2)}/2
+            = &\\&
+            = \int{
+                \frac{P\,D_{A,B}}{R\,T}
+                \ln\frac{1}{1-y_{A,0}}
+                \,\odif{t}
+            }
+            = 
+            \frac{P\,D_{A,B}}{R\,T}
+            \ln\frac{1}{1-y_{A,0}}
+            \int{
+                \odif{t}
+            }
+            = 
+            \frac{P\,D_{A,B}}{R\,T}
+            \ln\frac{1}{1-y_{A,0}}
+            \adif{t}
+            \implies &\\&
+            \implies
+            \adif{t}
+            = \frac{
+                C_{A,l}
+                \adif{(\delta^2)}/2
+            }{
+                \frac{P\,D_{A,B}}{R\,T}
+                \ln\frac{1}{1-y_{A,0}}
+            }
+            = \frac{
+                C_{A,l}
+                \,\adif{(\delta^2)}
+                \,R\,T
+            }{
+                2\,P\,D_{A,B}
+                \ln\frac{1}{1-p_{A,0}/P}
+            }
+            = &\\&
+            = \frac{
+                \left(
+                    \frac{1000\,\unit{\kilo\gram\of{Agua}}}{\unit{\metre^3\of{Agua}}}
+                    \frac{\unit{\mole\of{Agua}}}{18\,\unit{\gram\of{Agua}}}
+                \right)
+                % 55.555555555555556e3
+                *((6\E-3)^2-(5\E-3)^2)
+                % 0.000011
+                *\num{8.20573660809596e-5}
+                *(20+273.15)
+            % 1470.034919627591061-5
+            }{
+                2
+                * 1
+                * (0.26\E-4)
+                \ln\frac{1}{1-0.0234}
+                % 0.023678127354577
+            % 0.1231262622438004e-5
+            }
+            \cong &\\&
+            \cong
+            \qty{11939.247507707150908}{\second}
+            \frac
+            {\unit{\hour}}
+            {3600\,\unit{\second}}
+            \cong
+            \qty{3.316457641029764}{\hour}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\end{document}

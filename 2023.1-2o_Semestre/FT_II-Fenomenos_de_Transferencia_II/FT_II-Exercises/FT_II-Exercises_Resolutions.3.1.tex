@@ -1,0 +1,76 @@
+% !TEX root = ./FT_II-Exercises_Resolutions.3.tex
+\providecommand\mainfilename{"./FT_II-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Exercises_Resolutions.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Exercises_Resolutions.3}}}
+
+\mymakesubfile{1}
+[FT II]
+{Exercicios: Transferencia de massa entre fases} % Subfile Title
+{Transferencia de massa entre fases} % Part Title
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % Q2
+    Água com cloro usada no branqueamento da pasta de papel é obtida por adsorção de cloro gasoso em água numa coluna de enchimento a 293\,\unit{\kelvin} e 1\,\unit{\atm}. Num dado ponto da coluna a pressão de cloro no gás é 100\,\unit{\mmHg} e a concentração de cloro no liquido é de 1\,\unit{\kilo\gram/\metre^3}
+} % Q2
+    Se 80\% da resistência à transferencia de massa estiver na fase líquida, calcule:
+
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{4mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{L *{6}{C}}
+            \toprule
+            
+                P_{\text{cloro}} (\unit{\mmHg})
+                & 5 & 10 & 30 & 50 & 100 & 150
+                \\
+                C_{\text{cloro}} (\unit{\gram/\litre})
+                & 0.438 & 0.575 & 0.937 & 1.21 & 1.773 & 2.27
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q2.1
+        As composições interfaciais.
+    } % Q2.1
+            \begin{flalign*}
+                &
+                    0.8 
+                    = \frac{
+                        C_{a,i}-C_{a,l}
+                    }{
+                        C_{a,*}-C_{a,l}
+                    }
+                    % \implies &\\&
+                    \implies
+                    C_{a,i}
+                    = 0.8\left(
+                        C_{a,*}-C_{a,l}
+                    \right)
+                    + c_{a,l}
+                    = 0.8(1.773-1) + 1
+                    = 1.62
+                &
+            \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        As composições de equilíbrio.
+    } % Q2.2
+        body
+    \end{questionBox}
+
+
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,238 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2024.1.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2024.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/FT_II-Tests_Resolutions.2024.1}}}
+% \tikzsetexternalprefix{./.build/figures/FT_II-Tests_Resolutions.2024.1/graphics/}
+
+\mymakesubfile{1}
+[FT II]
+{Teste 2024.1 Resolução} % Subfile Title
+{Teste 2024.1 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Altura: \(h=\qty*{30}{\centi\metre}\)
+            \item Diametro: \(d=\qty*{1}{\centi\metre}\)
+            \item Altura liquido A: \(h_0=\qty*{10}{\centi\metre}\)
+            \item \(y_{A,h}=0\)
+        \end{multicols}
+    \end{itemize}
+} % Q1
+    \paragraph*{Dados a \qty*{25}{\celsius}}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(D_{A,ar}=\qty*{2e-5}{\metre^2/\second}\)
+            \item \(R=\qty*{8.314462618}{\joule.\mole^{-1}.\kelvin^{-1}}\)
+            \item \(P_A^*=\qty*{80}{\mmHg}\)
+            \item \(P=\qty*{1}{\atm}=\qty*{80}{\mmHg}=\qty*{10E5}{\pascal}\)
+            \item \(M_A=\qty*{30}{\gram/\mole}\)
+            \item \(\rho_A=\qty*{0.9E3}{\kilo\gram/\metre^3}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{questionBox}2{ % MARK: Q1.1
+        Expressão para evaporação completa em função do tempo
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \text{Evaporação em geometria linear:}
+                &\\&
+                N_{A,z}
+                = Q_A
+                = &\\&
+                = -C_{A,ar}\,\odv{V}{t}
+                = -C_{A,ar}\,\odv{\pi\,(d/2)^2\,z}{t}
+                = -C_{A,ar}\,\pi\,(d/2)^2\,\odv{z}{t}
+                % 
+                % 
+                % 
+                \implies &\\[3ex]&
+                \implies
+                \int_{0}^{t}{N_{A,z}\,\odif{t}}
+                = N_{A,z}\,\int_{0}^{t}{\odif{t}}
+                = N_{A,z}\,t
+                % 
+                % 
+                % 
+                = &\\&
+                = \int_{h/3}^{0}{- C_{A,ar}\,\pi\,d^2\,\odif{z}/4}
+                = - \frac{C_{A,ar}\,\pi\,d^2}{4}
+                \,(-h/3)
+                % 
+                % 
+                % 
+                \implies &\\[3ex]&
+                \implies
+                N_{A,z}
+                = \frac{C_{A,ar}\,\pi\,d^2}{12}\,h/t
+                % 
+                % 
+                % 
+                &\\[3ex]&
+                \text{Condições de fronteira para fluxo:}
+                &\\&
+                \begin{cases}
+                    z=h_0 & y_{A}=y_A^*
+                    \\
+                    z=h & y_{A}=0
+                \end{cases}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \text{Fluxo molar:}
+                &\\&
+                N_A
+                = y_{A,z}\,N_{A}
+                - C\,\mathscr{D}_{A,ar}
+                \,\odv{y_{A,z}}{z}
+                \implies &\\[3ex]&
+                \implies
+                % 
+                % 
+                % 
+                \int{N_A\,\odif{z}}
+                = N_A\,(h-h_0)
+                % 
+                % 
+                % 
+                = &\\&
+                = \int_{y_{A}^*}^{0}{
+                    -C\,\mathscr{D}_{A,ar}
+                    \,\frac{\odif{y_{A,z}}}{1-y_{A,z}}
+                }
+                = &\\&
+                = C\,\mathscr{D}_{A,ar}
+                \,\int_{y_{A}^*}^{0}{
+                    \frac{\odif{(1-y_{A,z})}}{1-y_{A,z}}
+                }
+                = &\\&
+                = C\,\mathscr{D}_{A,ar}
+                \,\ln(1-y_{A,z}^*)
+                \implies &\\&
+                \implies
+                N_A
+                = \frac{C\,\mathscr{D}_{A,ar}}{h-h_0}
+                \,\ln(1-y_{A,z}^*)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.2
+        Calcule esse tempo
+    } % Q1.2
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.3
+        Novo tempo para metade da altura e dobro do diametro, comente
+    } % Q1.3
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(d=\qty*{1}{\centi\metre}\)
+            \item \(T=\qty*{1500}{\kelvin}\)
+            \item \(P=\qty*{1}{\atm}\)
+            \item Velocidade limit pela dif do \ch{O2}
+            \item \(M=\qty*{1280}{\kilo\gram/\metre^3}\)
+            \item \(\mathscr{D}_{\ch{O2},ar}=\qty*{1e-4}{\metre^2/\second}\)
+        \end{multicols}
+        \begin{center}\Large
+            \ch{3 C + 2 O2 -> 2 CO + CO2}
+        \end{center}
+    \end{itemize}
+} % Q2
+    \begin{questionBox}2{ % MARK: Q2.1
+        Expr: vel de consumo de \ch{O2} e cond fronteira
+    } % Q2.1
+        \answer{}
+        \begin{flalign*}
+            &
+                N_{O2,r}
+                = &\\&
+                = y_{O2,r}(N_C+N_O2 + N_{CO} + N_{CO2})
+                - C\,\mathscr{D}_{O2,ar}
+                \,\odv{y_{O2,r}}{r}
+                = &\\&
+                = y_{O2,r}(N_{O2}/3+N_{O2}/2 - N_{O2}/2 - N_{O2})
+                - C\,\mathscr{D}_{O2,ar}
+                \,\odv{y_{O2,r}}{r}
+                = &\\&
+                = y_{O2,r}\,N_{O2}
+                \,(-2/3)
+                - C\,\mathscr{D}_{O2,ar}
+                \,\odv{y_{O2,r}}{r}
+                % 
+                % 
+                % 
+                \implies &\\[3ex]&
+                \text{Condições de fronteira}
+                &\\&
+                \begin{cases}
+                    r=R & y_{O2}=0
+                    \\
+                    r=\infty & y_{O2}=y_{O2}^*
+                \end{cases}
+                &\\&
+                \implies
+                \int_{R}^{\infty}{
+                    N_{O2}\,\odif{r}
+                }
+                = \int_{R}^{\infty}{
+                    \frac{Q_{O2}}{4\,\pi\,r^2}
+                    \,\odif{r}
+                }
+                = \frac{Q_{O2}}{4\,\pi}
+                \,\int_{R}^{\infty}{
+                    \frac{\odif{r}}{r^2}
+                }
+                = &\\&
+                = \frac{Q_{O2}}{4\,\pi}
+                \,(R^{-1}-0)
+                = \frac{Q_{O2}}{4\,\pi\,R}
+                % 
+                % 
+                % 
+                = &\\[3ex]&
+                = - C\,\mathscr{D}_{O2,ar}
+                \,\frac{\odif{y_{O2,r}}}{1+y_{O2,r}2/3}
+                = - \frac{C\,\mathscr{D}_{O2,ar}}{2/3}
+                \,\frac{\odif{(1+y_{O2,r}2/3)}}{1+y_{O2,r}2/3}
+                = &\\&
+                = - \frac{C\,\mathscr{D}_{O2,ar}}{2/3}
+                \ln(1+y_{O2,r}^*2/3)
+                % 
+                % 
+                % 
+                \implies &\\[3ex]&
+                \implies
+                Q_{O2}
+                = - \frac{4\,\pi\,R\,C\,\mathscr{D}_{O2,ar}}{2/3}
+                \ln(1+y_{O2,r}^*2/3)
+                = &\\&
+                = - \frac{
+                    4\,\pi\,R\,P
+                    \,\mathscr{D}_{O2,ar}
+                }{
+                    R\,T\,2/3
+                }
+                \ln(1+y_{O2,r}^*2/3)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.2
+        Vel de consumo de C
+    } % Q2.2
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

@@ -58,7 +58,7 @@
 % \usepackage[sfdefault, ultralight]{FiraSans}
 % \renewcommand{\familydefault}{\sfdefault} % set sans serif as defalt
 % Redeclare emph
-\let\emph\relax
+\NewCommandCopy\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries\color{Emph}}
 % % ==================== Set font family =================== %
 \setmainfont[
@@ -190,7 +190,8 @@
     % exponent-product={*}, % x * 10^y
     round-mode={places}, % figures/places/none
     round-precision={3},
-    output-exponent-marker={\,\mathrm{E}},
+    exponent-product={\,},
+    exponent-base={\mathrm{E}},
 }
 % % ==================== Declaring units =================== %
 % \DeclareSIUnit\atm{atm}
@@ -199,7 +200,7 @@
 % \DeclareSIUnit\bar{bar}
 % \DeclareSIUnit\mmHg{mmHg}
 % \DeclareSIUnit\molar{M}
-% \DeclareSIUnit\M{M}
+\DeclareSIUnit\M{M}
 % \DeclareSIUnit\angstrom{\textup{\AA}}
 % % -------------------------------------------------------- %
 % %                           Maths                          %
@@ -214,9 +215,11 @@
 % % ======================================================== %
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 % ======================================================== %
 % ============== MathOperators Declarations ============== %
-\DeclareMathOperator\E{\,E}
+\newcommand\E[1]{\,\mathrm{E}^{#1}}
+% \newcommand\e[1]{\,\mathrm{e}^{#1}}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
 % \DeclareMathOperator\csch   {csch}
@@ -267,7 +270,7 @@
 % %                          Vectors                         %
 % % -------------------------------------------------------- %
 % \usepackage{esvect}      % Vector over-arrow
-% \let\vec\vv
+% \NewCommandCopy\vec\vv
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
@@ -279,12 +282,12 @@
 % % ===================== External lib ===================== %
 % \usepackage{tikz-external-setup}
 % \tikzexternalize[
-%     up to date check = {simple}, % faster check
-%     figure list = true, % generate list of figures file
-%     prefix = ./.build/figures/graphics/
+%     up to date check={simple}, % faster check
+%     figure list={true}, % generate list of figures file
+%     prefix={./.build/figures/graphics/}
 % ] % turn externalization on/off
 % % Fix background
-% \let\oldtikzpicture\tikzpicture
+% \NewCommandCopy\oldtikzpicture\tikzpicture
 % \RenewDocumentCommand\tikzpicture{O{}}{\oldtikzpicture[#1]\nopagecolor}
 % % ==================== Other packages ==================== %
 % \usepackage{myTikzGraphs} % For graphs
@@ -310,6 +313,10 @@
 \setlength\tabcolsep{6mm}        % width
 \renewcommand\arraystretch{1.25} % height
 % \usepackage{colortbl} % Colored Cells
+% % ==================== Color commands ==================== %
+% \newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
+% \newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
+% \newcommand\cellemph[1]{\cellcolor{Emph!20!background}{#1}}
 % \usepackage{multirow}
 % \usepackage{longtable}
 % \usepackage{float}\restylefloat{table}  % table position H(ere)
@@ -348,7 +355,7 @@
 % ====================== chemmacros ====================== %
 \usepackage{chemmacros}
 \chemsetup[phases]{pos=sub}
-% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
 % % -------------------------------------------------------- %
 % %                          Biology                         %
 % % -------------------------------------------------------- %
