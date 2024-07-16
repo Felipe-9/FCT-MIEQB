@@ -211,6 +211,7 @@
 \usepackage{mathtools}
 % \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 % \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclareDocumentCommand\mathemph{m}{{\color{Emph}\boldmath{#1}}}
 % % ======================================================== %
 % % ============== MathOperators Declarations ============== %
 % \newcommand\E[1]{\,\mathrm{E}^{#1}}
@@ -302,28 +303,28 @@
 % \newcommand\mysampledensitySimple{1e1}
 % \newcommand\mysampledensityFancy{1e2}
 % \usepackage{myPGFSetup}
-% % -------------------------------------------------------- %
-% %                          Tables                          %
-% % -------------------------------------------------------- %
-% \setlength\tabcolsep{6mm}        % width
-% \renewcommand\arraystretch{1.25} % height
+% -------------------------------------------------------- %
+%                          Tables                          %
+% -------------------------------------------------------- %
+\setlength\tabcolsep{6mm}        % width
+\renewcommand\arraystretch{1.25} % height
 % \usepackage{colortbl} % Colored Cells
-% % ==================== Color commands ==================== %
+% ==================== Color commands ==================== %
 % \newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
 % \newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
 % \newcommand\cellemph[1]{\cellcolor{Emph!20!background}{#1}}
 % \usepackage{multirow}
 % \usepackage{longtable}
 % \usepackage{float}\restylefloat{table}  % table position H(ere)
-% % ======================= booktabs ======================= %
-% \usepackage{booktabs}
-% \setlength\heavyrulewidth{.75pt} % Top and bottom rule
-% \setlength\lightrulewidth{.30pt} % Middle rule
-% % ======================= Mathtable ====================== %
-% \usepackage{array} % for \newcolumntype macro
-% \newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
-% \newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
-% \newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
+% ======================= booktabs ======================= %
+\usepackage{booktabs}
+\setlength\heavyrulewidth{.75pt} % Top and bottom rule
+\setlength\lightrulewidth{.30pt} % Middle rule
+% ======================= Mathtable ====================== %
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
 % % ===================== Table Caption ==================== %
 % \newcounter{tablecounter}
 % % \newcommand\thetable{Tabela \arabic{tablecounter}:}
@@ -417,9 +418,9 @@
 \usepackage{myhyperref}
 % ========================= Boxes ======================== %
 \usepackage{sections}
-% \usepackage{questions}
-% \usepackage{answers}
-% \usepackage{examples}
+\usepackage{questions}
+\usepackage{answers}
+\usepackage{examples}
 % \usepackage{definitions}
 % ================= My title and subfile ================= %
 \usepackage{mytitle}    % \mymaketitle

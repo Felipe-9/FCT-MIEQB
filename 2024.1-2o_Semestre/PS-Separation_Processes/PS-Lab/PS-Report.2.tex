@@ -1,0 +1,112 @@
+% !TEX root = ./PS-Report.2.tex
+\providecommand\mainfilename{"./PS-Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Report.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/PS-Report.2}}}
+% \tikzsetexternalprefix{./figures/PS-Report.2/graphics/}
+
+% \mymakesubfile{2}
+% [PS]
+% {Colunas} % Subfile Title
+% {Colunas} % Part Title
+
+\begin{sectionBox}1{Planejamento das colunas} % MARK: S
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l C}
+            \toprule
+            
+                \multicolumn{1}{c}{Composto}
+                & \multicolumn{1}{c}{Temperatura (\unit{\celsius})}
+            
+            \\\midrule
+            
+                    Benzeno & 80.1
+                \\  Tolueno & 110.6
+                \\  Cumeno & 152
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Temperatura de ebuliçao dos compostos}
+        \vspace{2ex}
+    \end{center}
+    
+    \subsection*{Coluna B1}
+    Nessa coluna pretende-se separar o Cumeno da mistura, por ser o composto menos volátil pela maior temperatura de ebulição, ele ira sair pelo reculperado (R) da primeira coluna (B1), dessa forma o caldal molar desse stream \emph{(R) deve ser 30\% do caldal de entrada (F)}, implicando que o caldal molar do \emph{destilado (D) seja 70\% do de entrada (F)}.
+
+    \subsection*{Coluna B2}
+    Pretendendo separar o Benzeno do tolueno, pelo benzendo ser mais volátil este sairá pelo destilado (D2) e o tolueno pelo resíduo (R2), dessa forma, comparando com o caldal de entrada, deve sair \emph{40\% no destilado (D2) e 30\% no resíduo (R2)}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l *{4}{c}}
+            \toprule
+            
+                Stream
+                & D & R & D2 & R2
+                \\ Fração de Fluxo molar
+                & 70\%
+                & 30\%
+                & 40\%
+                & 30\%
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Fração de fluxo molar de cada stream de saída das colunas \\comparado com o de entrada (F)}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Planejamento das Simulações} % MARK: S
+    
+    Decidimos iniciar as simulações com algumas \emph{condições iniciais}:
+    \begin{itemize}
+        \item Caldal feed (F): \qty*{100}{\kilo\mole/\hour}
+        \item Feed de entrada B1 e B2: ao meio da coluna
+        \item Numero de refluxo B1 e B2: 2
+        \item Pressão da coluna: \qty*{1}{\bar}
+        \item Pressão do Feed: \qty*{1.1}{\bar}
+    \end{itemize}
+
+    \paragraph*{Procedimento}
+    Tomamos a seguinte \emph{sequencia de simulações}.
+    \begin{enumerate}
+        \item NSTAGE: onde se processará a coluna B1 variando o numero de pratos, selecionando um range dos melhores.
+        \item FSTAGE: Variando o prato de entrada da coluna B1 e selecionando o melhor.
+        \item NREFLUX: se varia o numero de refluxo selecionando o melhor.
+        \item FSTAGE-2: Onde se varia novamente o prato de entrada para se confirmar com o numero de refluxo, selecionando o melhor.
+        \item NSTAGE-B2: Mesmo que NSTAGE para o B2
+        \item FSTAGE-B2: Mesmo que FSTAGE para o B2
+        \item NREFLUX-B2: Mesmo que NREFLUX para o B2
+        \item FFLOW: Onde se varia o caldal de entrada para estudar os gastos energéticos
+    \end{enumerate}
+
+    Cada ponto \emph{mantem os melhores parametros do ponto anterior}\vspace{-3ex}
+    \paragraph*{Exemplo:} em FSTAGE se simula para diferentes entradas as colunas com o numero de pratos encontrados em NSTAGE que é o ponto anterior
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Erro} % MARK: S
+    
+    Ao decorrer das simulações \emph{será avaliado os dados medindo o erro deles}, essa função é util para poder avaliar modelos com multiplos parametros como para a coluna B1 precisamos optimizar a reculperação do tolueno e do cumeno para 95\% no destilado (D) e resíduo (R) respectivamente, somando esses erros temos \emph{um valor que mede o quanto bom é o modelo} englobando ambos os parâmetros.
+
+
+    \paragraph*{Error} mede em porcentagem a distancia do parametro do objetivo
+    \begin{BM}
+        \text{Error}(\text{Objetivo,Valor})
+        = \myvert{1-\frac{\text{Valor}}{\text{Objetivo}}}
+        \\
+        \text{Error}(0.95,0.958)\cong\num{8.421052631579e-3}
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

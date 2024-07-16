@@ -1,0 +1,948 @@
+% !TEX root = ./ERQ_II-Exercises_Resolutions.2.tex
+\providecommand\mainfilename{"./ERQ_II-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Exercises_Resolutions.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\renewcommand\thequestion{Questão \Alph{question}}
+\renewcommand\thesubquestion{Q\Alph{question}.\alph{subquestion}}
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/ERQ_II-Exercises_Resolutions.2}}}
+% \tikzsetexternalprefix{./figures/ERQ_II-Exercises_Resolutions.2/graphics/}
+
+\mymakesubfile{2}
+[ERQ II]
+{Exercises 2024.2 Resolutions} % Subfile Title
+{Exercises 2024.2 Resolutions} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    A reacção de 1ª ordem, na fase líquida, \ch{A -> B}, é conduzida sobre um catalisador na forma de pellets esféricas. Fizeram-se duas experiências no laboratório, em que a reacção foi conduzida em reactor batch (balão de ensaio) carregado com \qty*{150}{\ml} de uma solução \qty*{0.1}{\M\of{A}} e \qty*{0.1}{\g\of{cat}}. Em cada uma das experiências usaram-se ``pellets'' de diferentes diâmetros. Ambas as experiências foram interrompidas ao fim de 1 hora, sendo as misturas analisadas e as respectivas conversões finais as mostradas na tabela. Assuma ausência de limitações difusionais externas.
+} % Q1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l C C}
+            \toprule
+            
+                Experiencia
+                & 1 & 2
+                \\ Diâmetro das pellets (\unit{\mm})
+                & 0.22 & 1.85
+                \\ \(X (\%)\)
+                & 93.2 & 29.8
+            
+            \\\bottomrule
+        \end{tabular}
+    \end{center}
+
+    \paragraph*{Use:}
+    \begin{BM}
+        \mathemph{\phi}
+        = r_p\sqrt{
+            \frac
+            {k'\,\rho_c}
+            {D\,e}
+        }
+        ; \qquad
+        \mathemph{\eta}
+        = \frac{3}{\phi^2}
+        \,(\phi\,\coth{\phi}-1)
+        ;\qquad
+        \mathemph{\rho_c} 
+        = \qty*{1.2}{\g.\cm^{-3}}
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Determine, para cada uma das experiências, o valor da constante cinética aparente
+} % Q1.1
+    \answer{}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Calcule, para cada uma das experiências, o módulo de Thiele e o factor de efectividade.
+} % Q1.2
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    Usando os dados calculados na alínea anterior, determine os valores da constante cinética intrínseca e da difusividade efectiva.
+} % Q1.3
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Determine o valor da constante cinética aparente para o caso de pellets de \qty*{2}{\mm} de diâmetro.
+} % Q1.4
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.5
+    Sabendo que a um reactor de leito fixo constituído por um único tubo de \qty*{20}{\cm} de diâmetro de secção recta e \qty*{2}{\m} de comprimento, carregado com o mesmo catalisador na forma de pellets esféricas de \qty*{5}{\mm} de diâmetro, é alimentada a mesma solução de A, a um caudal volumétrico de \qty*{30}{\L/\min}, determine a conversão à saída.
+} % Q1.5
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    A reacção elementar \ch{A -> B} é conduzida, na fase gasosa, num reactor multitubular de leito fixo, consistindo em 50 tubos de \qty*{1}{\m} de comprimento e \qty*{2.5}{\cm} de diâmetro da secção recta, cheios com um catalisador sólido, poroso, na forma de pellets esféricas de \qty*{6}{\mm} de diâmetro. O reagente A é alimentado puro a um caudal de \qty*{100}{\dm^3/\min}. à temperatura de \qty*{673}{\K} e à pressão de \qty*{1}{\atm}, sendo obtida a conversão de \emph{35\% à saída do reator.}
+} % Q2
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item Massa volúmetrica do catalizador: \(\mathemph{\rho_c}=\qty*{1.3}{\g/\cm^3}\)
+        \item Viscosidade cinemática: \(\mathemph{v}=\qty*{4e-6}{\m^2/\s}\)
+        \item \(\mathemph{\varepsilon_b}=0.46\)
+        \item Difusividade efetiva intraparticular: \(\mathemph{\mathscr{D}_e}=\qty*{1.3e-8}{\m^2/\s}\)
+        \item Constante cinética intrínseca: \(\mathemph{k'}=\qty*{1.8e-2}{\dm^3/\g\of{cat}.\min}\)
+        \item Constante dos gáses perfeitos:
+        \\\(\mathemph{R}=\qty{8.2057366080960e-2}{\dm^3.\atm.\mole^{-1}.\kelvin^{-1}}\)
+    \end{itemize}
+    \begin{BM}
+        \mathemph{Sh}
+        = 1.0\,Re^{1/2}\,Sc^{1/3}
+        = \frac{k_c\,d_p}{\mathscr{D}_A}
+        \,\frac{\varepsilon_b}{1-\varepsilon_b}
+        ; \quad
+        \mathemph{Re}
+        = \frac{u\,d_p}{v\,(1-\varepsilon_b)}
+        ; \\
+        \mathemph{Sc}=v/\mathscr{D}_A
+        ; \quad
+        \mathemph{\phi}
+        = r_p\,\sqrt{
+            \frac
+            {k'\,\rho_p}
+            {\mathscr{D}_e}
+        }
+        ; \quad
+        \mathemph{\eta}
+        = (\phi\,\coth{\phi}-1)\,3/\phi^2
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Determine o valor da massa de catalisador
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            V_R
+            = \frac{W_{cat}}{\rho_{cat}}
+            + \varepsilon_b\,V_R
+            \implies &\\&
+            \implies
+            W_{cat}
+            = V_R\,\rho_{cat}\,(1-\varepsilon_b)
+            = (N_{tubos}\,V_{tubo})
+            \,\rho_{cat}\,(1-\varepsilon_b)
+            = &\\&
+            = 50
+            * 1\E{2}
+            * \frac{\pi\,2.5^2}{4}
+            * 1.3
+            * (1-0.46)
+            \cong 
+            \qty{1.72296722095315223e4}
+            {\g\of{cat}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    Calcule o valor da constante cinética observada
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Lei cinética:}} 
+            &\\&
+            -r'_{A,obs}
+            = k'_{obs}\,C_A
+            = k'_{obs}\,C_{A,0}\,(1-X)
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Balanço molar ao reator:}}
+            &\\&
+            \odif{w}
+            = F_{A,0}
+            \,\frac{\odif{X}}{-r'_{A,obs}}
+            \implies &\\&
+            \implies
+            \int_0^{W}{\odif{w}}
+            = W
+            = &\\&
+            = \int_0^{X}{
+                F_{A,0}
+                \,\frac{\odif{X}}{-r'_{A,obs}}
+            }
+            = 
+            F_{A,0}
+            \,\int_0^{X}{
+                \frac{\odif{X}}{k'_{obs}\,C_{A,0}\,(1-X)}
+            }
+            = &\\&
+            = 
+            \frac{F_{A,0}}{k'_{obs}\,C_{A,0}}
+            \,\int_0^{X}{
+                -\frac{\odif{(1-X)}}{1-X}
+            }
+            = \frac{v_{0}}{k'_{obs}}
+            \,\ln\frac{1-0}{1-X}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            k'_{obs}
+            = \frac{v_{0}}{W}
+            \,\ln\frac{1}{1-X}
+            \cong \frac
+            {100}
+            {\num{1.72296722095315223e4}}
+            \,\ln\frac{1}{1-0.35}
+            \,\unit{\dm^3/\min.\g\of{cat}}
+            \cong &\\&
+            \cong
+            \qty{2.50023860497e-3}
+            {\dm^3/\min.\g\of{cat}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.3
+    Calcule o valor da constante cinética que se observaria, no caso de ausência de limitações difusionais externas
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            k'_{ap}
+            = \eta\,k'
+            = \left(
+                (\phi\,\coth{\phi}-1)
+                \,3/\phi^2
+            \right)
+            \,k'
+            ; &\\[3ex]&
+            \mathemph{\phi:}
+            &\\&
+            \phi
+            = r_p\,\sqrt{
+                \frac
+                {k'\,\rho_{cat}}
+                {\mathscr{D}_e}
+            }
+            \cong 
+            3\E{-2}
+            \,\sqrt{
+                \frac
+                {k'\,1.3\E{3}}
+                {(60*1.3\E{-6})}
+            }
+            \cong 
+            \num{122.474487139158905}
+            \,\sqrt{k'}
+            \cong &\\&
+            \cong 
+            \num{122.474487139158905}
+            \,\sqrt{1.8\E{-2}}
+            \cong 
+            \num{9.128709291752769}
+            \land
+            \phi^2\cong
+            \num{1.4999999999999998797e4}\,k'
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            k'_{ap}
+            = (\phi\,\coth{\phi}-1)
+            \,\frac{3\,k'}{\phi^2}
+            \cong &\\&
+            \cong (
+                \num{9.128709291752769}
+                \,\coth{\num{9.128709291752769}}
+                -1
+                % 4.802437875598051
+            )
+            \,\frac
+            {3\,k'}
+            {\num{1.4999999999999998797e4}\,k'}
+            \cong
+            \qty{1.625741901341126e-3}
+            {\dm^3/\min.\g\of{cat}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    Determine o valor do coeficiente de difusão externo
+} % Q2.4
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Difusividade externa}}
+            \,\mathemph{\mathscr{D}_A:}
+            &\\&
+            Sh
+            = \frac{k_c\,d_p}{\mathscr{D}_A}
+            = 1.0\,Re^{1/2}\,Sc^{1/3}
+            = Re^{1/2}
+            \,\left(
+                \frac{v}{\mathscr{D}_A}
+            \right)^{1/3}
+            \implies &\\&
+            \implies
+            \mathscr{D}_A
+            = \frac
+            {(k_c\,d_p)^{3/2}}
+            {Re^{3/4}\,v^{1/2}}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Numero de Reynald}}
+            \,\mathemph{Re:}
+            &\\&
+            Re
+            = \frac{u\,d_p}{v\,(1-\varepsilon_b)}
+            % 
+            % 
+            % 
+            \cong &\\[3ex]&
+            \cong \frac
+            {\num{88.573185720706969}\,3\E{-2}}
+            {v\,(1-0.46)}
+            \cong
+            \frac{\num{4.920732540039276}}{v}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Velocidade linear}}
+            \,\mathemph{u:}
+            &\\&
+            u
+            = \frac{v_{tubo}}{\varepsilon_b*A_c}
+            = \frac
+            {v/N_{tubos}}
+            {\varepsilon_b\,\pi\,D_{tubo}^2/4}
+            = \frac
+            {100/50}
+            {0.46\,\pi\,(2.5\E{-1})^2/4}
+            \cong &\\&
+            \cong
+            \qty{88.573185720706969}{\dm/\min}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{k_c:}
+            &\\&
+            k_c
+            = k'_c\,a
+            = k'_c
+            \,\left(
+                \frac
+                % {\pi\,(d_p/2)^3\,\rho_c\,4/3}
+                {\pi\,d_p^3\,\rho_c/6}
+                {\pi\,d_p^2}
+            \right)
+            = k'_c
+            \,\frac
+            {d_p\,\rho_c}
+            {6}
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \left(
+                \frac
+                {k'_{ap}\,k'_{obs}}
+                {k'_{ap}- k'_{obs}}
+            \right)
+            \,\frac
+            {d_p\,\rho_c}
+            {6}
+            % \cong &\\&
+            \cong
+            \frac
+            {
+                \num{1.625741901341126e-3}
+                *\num{2.50023860497e-3}
+            }
+            {
+                \num{1.625741901341126e-3}
+                - \num{2.50023860497e-3}
+            }
+            \,\frac
+            {6\E{-2}\,1.3\E{3}}
+            {6}
+            \cong &\\&
+            \cong
+            \qty{7.698258058949917298e3}
+            {\dm/\min}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{k'_c:}
+            &\\&
+            k'_c
+            \,(C_{A,b}-C_{A,out})
+            = -r'_A
+            = k'_{ap}\,C_{A,out}
+            = k'_{obs}\,C_{A,b}
+            \implies &\\&
+            \implies
+            k'_{ap}\,C_{A,out}
+            = \frac{k'_{ap}\,k'_c}{k'_{ap}+k'_c}
+            \,C_{A,b}
+            = k'_{obs}\,C_{A,b}
+            \implies &\\&
+            \implies
+            \frac{k'_{ap}\,k'_c}{k'_{ap}+k'_c}
+            = k'_{obs}
+            % \implies &\\&
+            \implies
+            k'_c
+            = \frac
+            {k'_{ap}\,k'_{obs}}
+            {k'_{ap}- k'_{obs}}
+            % 
+            % 
+            % 
+            ; &\\[6ex]&
+            \therefore
+            \mathscr{D}_A
+            = \frac
+            {(k_c\,d_p)^{3/2}}
+            {Re^{3/4}\,v^{1/2}}
+            % = &\\&
+            \cong \frac
+            {
+                (
+                    \num{7.698258058949917298e3}
+                    *6\E{-2}
+                )^{3/2}
+            }
+            {
+                (\frac{\num{4.920732540039276}}{v})^{3/4}
+                \,v^{1/2}
+            }
+            \cong \frac
+            {
+                \num{9.926944036474929667e3}
+            }
+            {
+                \num{4.920732540039276}^{3/4}
+                \,v^{-1/4}
+            }
+            \cong &\\&
+            \cong \num{3.004645595705063742e3}
+            \,(4\E{-4}*60)^{1/4}
+            \cong
+            \qty{1.18262229963214645e3}
+            {\dm^2/\min}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.5
+    Diga, justificando a resposta, se o reactor se encontra a funcionar em regime cinético, difusional interno, difusional externo ou misto.
+} % Q2.5
+    \answer{}
+    Regime de funcionamento corresponde ao paço mais lento.
+    \begin{itemize}
+        \item Cinético: reação química é mais lenta
+        \item Difusional interno: Transf de massa interna é mais lenta
+        \item Difusional externo: Transf de massa externa é mais lenta
+        \item Difusional misto: Transf de massa interna \(\approx\) externa
+    \end{itemize}
+
+    \(\phi\gg{3}\land\eta\ll{1}\implies\) fortes limitações internas, paço mais lento é transferencia de massa interna ou externa.
+
+    \begin{flalign*}
+        &
+            \frac{k'_c}{k'_{ap}}
+            = \frac
+            {
+                \frac
+                {k'_{ap}\,k'_{obs}}
+                {k'_{ap}- k'_{obs}}
+            }{k'_{ap}}
+            = \left(
+                \frac{k'_{ap}}{k'_{obs}}
+                - 1
+            \right)^{-1}
+            \cong
+            \left(
+                \frac
+                {\num{7.70283093202181e-3}}
+                {\num{2.50023860497e-3}}
+                -1
+            \right)^{-1}
+            \cong
+            \num{0.480575537692923}<1
+        &
+    \end{flalign*}
+
+    \(\therefore\) Paço mais lento é transferencia de massa atravez do filme externo
+    \(\implies\) \emph{Regime difusional externo}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q3
+    A reacção elementar \ch{A -> B} é conduzida, na fase gasosa, num reactor multitubular de leito fixo, consistindo em 100 tubos de \qty*{2}{\m} de comprimento e \qty*{2}{\cm} de diâmetro da seção recta, cheios com um catalisador sólido, poroso, na forma de pellets esféricas de \qty*{5}{\mm} de diâmetro. O reagente A é alimentado puro a um caudal de \qty*{100}{\dm^3/\min}, à temperatura de \qty*{373}{\K} e à pressão de \qty*{6}{\atm}
+} % Q3
+    \paragraph*{dados}
+    \begin{itemize}
+        \item Massa volúmetrica dos pellets: \(\mathemph{\rho_p}=\qty*{1.3}{\g/\cm^3}\)
+        \item Coeficiente de difusão externo: \(\mathemph{\mathscr{D}_A}=\qty*{2.7e-7}{\m^2/\s}\)
+        \item Viscosidade cinemática: \(\mathemph{v}=\qty*{4e-6}{\m^2/\s}\)
+        \item \(\mathemph{\varepsilon_b}=0.45\)
+        \item Difusividade efetiva intraparticular: \(\mathemph{\mathscr{D}_e}=\qty*{1.3e-8}{\m^2/\s}\)
+        \item Constante cinética intríseca: \(\mathemph{k'}=\qty*{2.3e-2}{\dm^3/\g\of{cat}.\min}\)
+        \item Constante dos gáses perfeitos:
+        \\\(\mathemph{R}=\qty{8.2057366080960e-2}{\dm^3.\atm.\mole^{-1}.\kelvin^{-1}}\)
+    \end{itemize}
+    \begin{BM}
+        \mathemph{Sh}
+        = 1.0\,Re^{1/2}\,Sc^{1/3}
+        = \frac{k_c\,d_p}{\mathscr{D}_A}
+        \,\frac{\varepsilon_b}{1-\varepsilon_b}
+        ; \quad
+        \mathemph{Re}
+        = \frac{u\,d_p}{v\,(1-\varepsilon_b)}
+        ; \\
+        \mathemph{Sc}=v/\mathscr{D}_A
+        ; \quad
+        \mathemph{\phi}
+        = r_p\,\sqrt{
+            \frac
+            {k'\,\rho_p}
+            {\mathscr{D}_e}
+        }
+        ; \quad
+        \mathemph{\eta}
+        = (\phi\,\coth{\phi}-1)\,3/\phi^2
+    \end{BM}
+    \paragraph*{Perfil de concentração dos pellets:}
+    \begin{BM}
+        \mathemph{\varphi} 
+        = \frac
+        {\sinh{\phi\,\lambda}}
+        {\lambda\,\sinh{\phi}}
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.1
+    Calcule o valor da constante cinética aparente, que observaria no caso da ausência de limitações difusionais externas.
+} % Q3.1
+    \answer{}
+    \begin{flalign*}
+        &
+            k'_{ap}
+            = \eta\,k'
+            = ((\phi\,\coth{\phi}-1)\,3/\phi^2)
+            \,k'
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{\phi}
+            &\\&
+            \phi
+            = r_p\,\sqrt{
+                \frac
+                {k'\,\rho_p}
+                {\mathscr{D}_e}
+            }
+            \cong
+            2.5\E{-2}
+            \,\sqrt{
+                \frac
+                {k'\,1.3\E{3}}
+                {60*1.3\E{-6}}
+            }
+            \cong
+            \num{1.02062072615965754e2}
+            \,\sqrt{k'}
+            \cong &\\&
+            \cong
+            \num{1.02062072615965754e2}
+            \,\sqrt{2.3\E{-2}}
+            % \cong &\\&
+            \cong
+            \num{1.5478479684172265e1}
+            \land
+            \phi^2
+            \cong
+            \num{1.0416666666666676038e4}\,k'
+            % 
+            % 
+            % 
+            ; &\\[6ex]&
+            \therefore
+            k'_{ap}
+            = (\phi\,\coth{\phi}-1)
+            \,\frac{3\,k'}{\phi^2}
+            \cong &\\&
+            \cong 
+            (
+                \num{1.5478479684172265e1}
+                \,\coth{\num{1.5478479684172265e1}}
+                -1
+            )
+            \,\frac
+            {3\,k'}
+            {\num{1.0416666666666676038e4}\,k'}
+            \cong &\\&
+            \cong
+            \qty{4.169802149041926e-3}{\dm^3/\min.\g\of{cat}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.2
+    Calcule o valor do coeficiente de transferência de massa
+} % Q3.2
+    \answer{}
+    \begin{flalign*}
+        &
+            % \text{\emph{Coeficiente de transferencia de massa}}
+            % \,\mathemph{k'_c:}
+            % &\\&
+            k'_c
+            = k_c\,a^{-1}
+            = k_c
+            \,\left(
+                \frac
+                {\pi\,d_c^3\,\rho_c/6}
+                {\pi\,d_c^2}
+            \right)^{-1}
+            = \frac{k_c\,6}{d_c\,\rho_c}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{k_c:}
+            &\\&
+            Sh
+            = \frac{k_c\,d_p}{\mathscr{D}_A}
+            = 1.0\,Re^{1/2}\,Sc^{1/3}
+            \implies &\\&
+            \implies
+            k_c
+            = Re^{1/2}\,Sc^{1/3}
+            \,\frac{\mathscr{D}_A}{d_p}
+            = \left(
+                \frac
+                {u\,d_p}
+                {v\,(1-\varepsilon_b)}
+            \right)^{1/2}
+            \,\left(
+                \frac{v}{\mathscr{D}_a}
+            \right)^{1/3}
+            \,\frac{\mathscr{D}_A}{d_p}
+            = &\\&
+            = \frac
+            {\mathscr{D}_A^{2/3}}
+            {v^{1/6}}
+            \sqrt{
+                \frac{u}
+                {d_p\,(1-\varepsilon_b)}
+            }
+            \cong &\\[3ex]&
+            \cong \frac
+            {(2.3\E{-5}*60)^{2/3}}
+            % 0.012395176757509
+            {(4\E{-4}*60)^{1/6}}
+            % 0.537075333693032
+            \sqrt{
+                \frac{\num{1131.768484209033526}}
+                {5\E{-2}\,(1-0.45)}
+            }
+            % 202.867487803248642
+            \cong
+            \qty{4.681984466466463}
+            {\dm^3/\g\of{cat}.\min}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Velocidade Linear}}
+            \,\mathemph{u:}
+            &\\&
+            u
+            = \frac{v_{tubos}}{\varepsilon_b\,A_c}
+            = \frac
+            {v/N_{tubos}}
+            {\varepsilon_b\,\pi\,d_{tubo}^2/4}
+            = \frac
+            {100/100}
+            {0.45*\pi*(5\E{-2})^2/4}
+            \cong
+            \qty{1131.768484209033526}{\dm/\min}
+            % 
+            % 
+            % 
+            ; &\\[6ex]&
+            \therefore
+            k'_c
+            \cong \frac{
+                \num{4.681984466466463}*6
+            }{
+                5\E{-2}
+                *1.3\E{3}
+            }
+            \cong
+            \qty{0.432183181519981}
+            {\dm^3/\min.\g\of{cat}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.3
+    Calcule o valor da constante cinética realmente observada.
+} % Q3.3
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{k'_{obs}:}
+            &\\&
+            k'_c
+            \,(C_{A,b}-C_{A,out})
+            = -r'_A
+            = k'_{ap}\,C_{A,out}
+            = k'_{obs}\,C_{A,b}
+            \implies &\\&
+            \implies
+            k'_{ap}\,C_{A,out}
+            = \frac{k'_{ap}\,k'_c}{k'_{ap}+k'_c}
+            \,C_{A,b}
+            = k'_{obs}\,C_{A,b}
+            \implies &\\&
+            \implies
+            k'_{obs}
+            = \frac{k'_{ap}\,k'_c}{k'_{ap}+k'_c}
+            = \frac{
+                \num{4.169802149041926e-3}
+                \,\num{0.432183181519981}
+            }{
+                \num{4.169802149041926e-3}
+                +\num{0.432183181519981}
+            }
+            \cong
+            \qty{4.05e-3}
+            {\dm^3/\min.\g\of{cat}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.4
+    Diga, justificando a sua resposta, se o reactor se encontra em regime cinético, difusional interno, difusional externo ou misto.
+} % Q3.4
+    \answer{}
+    \begin{BM}
+        \eta
+        = \frac{k'_{ap}}{k'}
+        \cong \frac
+        {\num{4.169802149041926e-3}}
+        {2.3\E{-2}}
+        \cong\num{0.181295745610519}
+        \ll1
+        \land
+        \phi\cong
+        \num{15.478479684172265}
+        \gg3
+    \end{BM}
+    \(\therefore\) Fortes limitações difusionais internas
+    \begin{BM}
+        \frac{k_c}{k'_{ap}}
+        \cong \frac
+        {\num{4.681984466466463}}
+        {\num{4.169802149041926e-3}}
+        \cong 
+        \num{1122.831323673765674}
+        \gg1
+    \end{BM}
+    \(\therefore\) Efeitos de transferencia de massa externa despresível
+    \(\implies\) Regime difusional interno
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.5
+    Calcule a conversão à saída do reator
+} % Q3.5
+    \answer{}
+    \begin{flalign*}
+        &
+            \int_0^W{\odif{w}}
+            = W
+            = \int_0^X{
+                F_{A,0}
+                \,\frac{\odif{X}}{-r'_{A,obs}}
+            }
+            = \int_0^X{
+                F_{A,0}
+                \,\frac{\odif{X}}{k'_{obs}\,C_A}
+            }
+            = &\\&
+            = \int_0^X{
+                F_{A,0}
+                \,\frac{\odif{X}}{k'_{obs}\,C_{A,0}(1-X)}
+            }
+            = \int_0^X{
+                \frac{v_{0}}{k'_{obs}}
+                \,\frac{\odif{X}}{(1-X)}
+            }
+            = &\\&
+            = 
+            \frac{v_{0}}{k'_{obs}}
+            \int_0^X{
+                -\frac{\odif{(1-X)}}{(1-X)}
+            }
+            = \frac{v_{0}}{k'_{obs}}
+            \ln\frac{1-0}{1-X}
+            \implies &\\&
+            \implies
+            X
+            = 1
+            -\exp{\left(
+                \frac{W\,k'_{obs}}
+                {v_{0}}
+            \right)}^{-1}
+            = 1
+            -\exp{\left(
+                \frac{W\,k'_{obs}}
+                {v_{0}}
+            \right)}^{-1}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{W:}
+            &\\&
+            V_R
+            =\frac{W}{\rho_p}
+            +\varepsilon_b\,V_R
+            \implies
+            W
+            = V_R\,\rho_p\,(1-\varepsilon_b)
+            = &\\&
+            = N_{tubos}
+            \,\frac{\pi\,d_{tubos}^2}{4}
+            \,L_{tubos}
+            \,\rho_p
+            \,(1-\varepsilon_b)
+            = &\\&
+            = 100
+            * \frac{\pi\,(2\E{-1})^2}{4}
+            * 2\E{1}
+            * 1.3\E{3}
+            * (1-0.45)
+            \cong
+            \qty{44924.77494633404331}{\g}
+            % 
+            % 
+            % 
+            ; &\\[6ex]&
+            \therefore
+            X
+            = 1
+            -\exp{\left(
+                \frac{W\,k'_{obs}}
+                {v_{0}}
+            \right)}^{-1}
+            \cong
+            1
+            -\exp{\left(
+                \frac{
+                    \num{44924.77494633404331}
+                    *\num{4.05e-3}
+                }
+                {100}
+            \right)}^{-1}
+            \cong &\\&
+            \cong
+            \num{83.7885659203125}\%
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.6
+    Determine o valor da contreção de A no centro das \textit{pellets}, à saída do reator
+} % Q3.6
+    \answer{}
+    \begin{flalign*}
+        &
+            C_A
+            =\frac
+            {C_{A,out}\,\sinh{\phi\,\lambda}}
+            {\lambda\,\sinh{\phi}}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{C_{A,out}:}
+            &\\&
+            k'_c(C_{A,b}-C_{A,out})
+            = k'_{ap}\,C_{A,out}
+            \implies
+            C_{A,out}
+            = \frac{1}{1+k'_{ap}/k'_c}
+            \,C_{A,b}
+            = &\\&
+            = \frac{1}{1+k'_{ap}/k'_c}
+            \,C_{A,b,0}(1-X)
+            = \frac{1}{1+k'_{ap}/k'_c}
+            \,\frac{P_0}{R\,T}
+            \,(1-X)
+            \cong &\\&
+            \cong 
+            \frac{1}{
+                1
+                +\num{4.169802149041926e-3}
+                /\num{4.681984466466463}
+            }
+            \,\frac{6}{
+                \num{8.2057366080960e-2}
+                *373
+            }
+            \,(1-\num{0.837885659203125})
+            \cong &\\&
+            \cong
+            \qty{3.175116519862209e-2}{\M}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \lambda=1\E{-5}
+            % 
+            % 
+            % 
+            ; &\\[6ex]&
+            \therefore
+            C_A
+            = \frac
+            {C_{A,out}\,\sinh{\phi\,\lambda}}
+            {\lambda\,\sinh{\phi}}
+            \cong 
+            \frac
+            {
+                \num{3.1751165198622092e-2}
+                \,\sinh{
+                    \num{15.478479684172265}
+                    \,1\E{-5}
+                }
+            }
+            {
+                1\E{-5}
+                \,\sinh{\num{15.478479684172265}}
+            }
+            \cong
+            \qty{1.863372369484183e-7}{\M}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

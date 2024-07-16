@@ -1,0 +1,202 @@
+% !TEX root = ./PS-Tests_Resolutions.2024.2.tex
+\providecommand\mainfilename{"./PS-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Tests_Resolutions.2024.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/PS-Tests_Resolutions.2024.2}}}
+\tikzsetexternalprefix{./figures/PS-Tests_Resolutions.2024.2/graphics/}
+
+\mymakesubfile{2}
+[PS]
+{Teste 2024.2 Resolução} % Subfile Title
+{Teste 2024.2 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item B: Solvente
+            \item C: Soluto
+            \item A: Diluente
+            \item Feed: \qty*{40}{\percent.p/p\of{C}}
+        \end{multicols}
+    \end{itemize}
+} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(F=\qty*{2500}{\kilo\gram/\hour}\)
+            \item \(S=\qty*{500}{\kilo\gram/\hour}\)
+        \end{multicols}
+        \item \(x_{R}=?\)
+        \item Composições dos caudais de saída e entrada
+    \end{itemize}
+} % Q1.1
+    \answer{}
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}[xscale=3.5]
+            \PSAndarScheme{1}
+        \end{tikzpicture}
+    \end{center}
+    \begin{flalign*}
+        &
+            S:
+            \begin{cases}
+                y_S=0
+                \\ \qty{0}{\percent\of{A}}
+                \\ \qty{100}{\percent\of{B}}
+                \\ \qty{0}{\percent\of{C}}
+            \end{cases}
+            ; \qquad
+            F:
+            \begin{cases}
+                x_F=0.40
+                \\ \qty{40}{\percent\of{A}}
+                \\ \qty{0}{\percent\of{B}}
+                \\ \qty{60}{\percent\of{C}}
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            x_M: &\\&
+            M\,x_M
+            = (F+S)\,x_M
+            = &\\&
+            = F\,x_F+S\,y_S
+            \implies &\\&
+            \implies
+            x_M
+            = \frac{F\,x_F+S\,y_S}{F+S}
+            = \frac{2500*0.40+500*0}{2500+500}
+            \,\unit{\percent\of{C}}
+            \cong \qty{33.333333333333333}{\percent\of{C}}
+            &\\&
+            M:\begin{cases}
+                x_M=\num{.33333333333333333}
+                \\ \qty[2]{49.166666666667}{\percent\of{A}}
+                \\ \qty[2]{17.5}{\percent\of{B}}
+                \\ \qty[2]{33.333333333333333}{\percent\of{C}}
+            \end{cases}
+            ;
+            E:\begin{cases}
+                y_E=\num{.415}
+                \\ \qty[1]{2.5}{\percent\of{A}}
+                \\ \qty[1]{56}{\percent\of{B}}
+                \\ \qty[1]{41.5}{\percent\of{C}}
+            \end{cases}
+            ;
+            R:\begin{cases}
+                x_R=\num{.295}
+                \\ \qty[1]{69.5}{\percent\of{A}}
+                \\ \qty[1]{1}{\percent\of{B}}
+                \\ \qty[1]{29.5}{\percent\of{C}}
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            E: &\\&
+            E\,y_E
+            + R\,x_R
+            = E\,y_E
+            + (M-E)\,x_R
+            = M\,x_M
+            \implies &\\&
+            \implies
+            E
+            = M\,\frac{x_M-x_R}{y_E-x_R}
+            \cong (2500+500)\,\frac{\num{.33333333333333333}-0.295}{0.415-0.295}
+            \cong \qty{958.333333333333333}{\kilo\gram/\hour}
+            ; &\\[3ex]&
+            R 
+            = M-E
+            \cong 3000-\num{958.333333333333333}
+            \cong \qty{2041.666666666666667}{\kilo\gram/\hour}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    \begin{itemize}
+        % \begin{multicols}{2}
+            \item \(x_{R,2}=x_{R,1}/2\)
+            \item \(S_2=?\)
+        % \end{multicols}
+    \end{itemize}
+} % Q1.2
+    \answer{}
+    \begin{center}
+        \tikzset{external/remake next=true}
+        \begin{tikzpicture}[xscale=3.5]
+            \PSAndarScheme{2}
+        \end{tikzpicture}
+    \end{center}
+    \begin{flalign*}
+        &
+            x_{R,2}
+            = 0.5\,x_{R,1}
+            \cong
+            \qty{14.75}{\percent\of{C}}
+            &\\&
+            R_2:\begin{cases}
+                x_{R,2}=\num{0.1475}
+                \\ \qty{84.35}{\percent\of{A}}
+                \\ \qty{.9}{\percent\of{B}}
+                \\ \qty{14.75}{\percent\of{C}}
+            \end{cases}
+            ; E_2:\begin{cases}
+                y_{E,2}=\num{.230}
+                \\ \qty{1.0}{\percent\of{A}}
+                \\ \qty{76.0}{\percent\of{B}}
+                \\ \qty{23.0}{\percent\of{C}}
+            \end{cases}
+            ; M_2:\begin{cases}
+                x_{M,2}=\num{.185}
+                \\ \qty{45.0}{\percent\of{A}}
+                \\ \qty{36.5}{\percent\of{B}}
+                \\ \qty{18.5}{\percent\of{C}}
+            \end{cases}
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            S_2: &\\&
+            S_2\,y_{S,2}+R_1\,x_{R,1}
+            = &\\&
+            = M_2\,x_{M,2}
+            = (S_2+R_1)\,x_{M,2}
+            \implies &\\&
+            \implies
+            S_2
+            = R_1
+            \,\frac
+            {x_{M,2}-x_{R,1}}
+            {y_{S,2}-x_{M,2}}
+            \cong \num{2041.666666666666667}
+            \,\frac
+            {.23-0.295}
+            {0-0.23}
+            \cong
+            \qty{576.9927536231885}{\kilo\gram/\hour}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    comparar diagramas de eq dos solventes D e E para escolher o melhor
+} % Q1.3
+    \answer{}
+    Os solventes D e E possuem pontos fortes diferentes, o solvente D é capaz de fazer extrações de diversas composições de misturas diferenetes entre A e C, enquanto o E so seria capaz de extrair concentrações ja mais concentradas em A, porem faria essa extração com menos andares.\\
+
+    Tendo em consideração a composição 40\%p/p, o solvente ``E'' parece não ser capaz de separar a mistura, dessa forma fica a escolha o solvente D como o mais adequado.
+\end{questionBox}
+
+\end{document}

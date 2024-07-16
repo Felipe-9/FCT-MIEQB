@@ -1,0 +1,575 @@
+% !TEX root = ./PS-Tests_Resolutions.2021.1.tex
+\providecommand\mainfilename{"./PS-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Tests_Resolutions.2021.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/PS-Tests_Resolutions.2021.1}}}
+% \tikzsetexternalprefix{./.build/figures/PS-Tests_Resolutions.2021.1/graphics/}
+
+\mymakesubfile{1}
+[PS]
+{Test 2021.1 Resolution} % Subfile Title
+{Test 2021.1 Resolution} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Pretende-se absorver acetona presente numa mistura gasosa constituída por ar e acetona numa coluna de enchimento com \lemph{área de secção \qty*{0.186}{\metre^2}} e usando água em \lemph{contracorrente}. A composição da acetona na corrente gasosa à entrada é \lemph{\qty*{2.6}{\percent}} e pretende-se obter \lemph{\qty*{0.5}{\percent}} de acetona na corrente de saída. O caudal da mistura gasosa à entrada da coluna é \lemph{\qty*{13.7}{\kilo\mole/\hour}} e o caudal de água é \lemph{\qty*{43.6}{\kilo\mole/\hour}}. A relação de equilíbrio é \lemph{\(y^*= 1.2\,x\)} sendo \textit{y} e \textit{x} as fracções molares de acetona. Determine:
+} % Q1
+    \begin{BM}
+        Z=H_{OG}\,N_{OG}
+        ;\quad
+        H_{OG} = \frac{G}{A\,K_y\,a}
+        ;\quad
+        N_{OG} = \int_{y_2}^{y_1}{\frac{\odif{y}}{y-y^*}}
+    \end{BM}
+    % Absorção
+    % Coluna 2 pontos: A e B
+    % Anotar dados p cada ponto
+    % Entrada do gás é por baixo => Ponto B
+    % Caldal da mistura Gasosa => G_b
+    % Caldal de Agua => Ponto a quando o Liq entra
+    % Fazer equação de eq (lei de Henry)
+    % y^*=1.2\,x
+
+    \begin{questionBox}2{ % MARK: Q1.1
+        O caudal mínimo de água.
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                L_{B,\min}: &\\&
+                G_B\,y_B + L_A\,x_a
+                = G_B\,y_B
+                = &\\[1.5ex]&
+                = G_A\,y_A + L_B\,x_B
+                = G_A\,y_A + L_{B,\min}\,x_B^*
+                = &\\&
+                = G_A\,y_A + L_{B,\min}\,\frac{y_B}{1.2}
+                ; &\\[3ex]&
+                % Verificar se o caldal é constante
+                E=\myvert{1-G_s/G_B}:&\\&
+                G_B\,y_B
+                = G_s\,\frac{y_B}{1-y_B}
+                \implies &\\&
+                \implies
+                E
+                = \myvert{1-\frac{G_s}{G_B}}
+                = \myvert{1-1+y_B}
+                = &\\&
+                = 2.6\,\%
+                < 10\,\%
+                &\\&
+                \therefore
+                \begin{cases}
+                    G_A=G_B=G&=\qty*{13.7}{\kilo\mole/\hour}
+                    \\
+                    L_A=L_B=L&=\qty*{43.6}{\kilo\mole/\hour}
+                \end{cases}
+                ; &\\[6ex]&
+                \implies
+                L_{B\,\min}
+                = L_{\min}
+                % 
+                = (G_B\,y_B-G_A\,y_A)\frac{1.2}{y_B}
+                = (G\,y_B-G\,y_A)\frac{1.2}{y_B}
+                % 
+                = &\\&
+                = G\,(1-y_A/y_B)\,1.2
+                \cong 13.7\,(1-0.5/2.6)\,1.2
+                \cong &\\&
+                \cong \qty[1]{13.278461538461538}{\kilo\mole/\hour}
+            &
+        \end{flalign*}
+        % Verificar se o caldal é constante:
+        % (Assim podemos usar o G_B dado)
+            % G_s * \frac{y_B}{1-y_B} = G_B * y_B
+            % G_A * y_A = (1-%) G_B * y_B
+                % Quando dizem porcentagem de remoção ao invés da composição de saída
+            % G_b Ar mais merdas
+            % G_s Ar sem  merdas
+            % Encontramos G_s a partir de G_b (\qty*{13.34}{\kilo\mole/\hour})
+            % Calculamos o Erro ("Maior menos o menor pelo menor")
+                % E = (G_B-G_s)/G_B = 2.6 % < 10% => Constante
+                % => G_B = G_A = G \land L_A = L_B = L
+                % Por ser constante usamos o G_B a partir de agora
+                % L (caldal liquido) tambem é constante
+        % Caldal minimo da agua (questão começa aqui)
+        % Equilibrio constante ou não a equação é verdade:
+        % G_B\,y_B + L_A\,x_a
+        % = G_A\,y_A + L_B\,x_B
+        % x_a = 0 (inicia limpo)
+        % Como pedem L min: L\,x_B => L_{min}\,x_B^*
+        % y_B^* = 0.022
+        % L_min = \qty*{13.08}{\kilo\mole/\hour}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.2
+        A \% molar de acetona na corrente líquida à saída da coluna.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                x_B: &\\&
+                G_B\,y_B 
+                = G\,y_B 
+                = &\\&
+                = G_A\,y_A + L_B\,x_B
+                = G\,y_A + L\,x_B
+                \implies &\\&
+                \implies
+                x_B
+                = G\,(y_B - y_A)/L
+                \cong 13.7\,(2.6 - 0.5)/43.6
+                \cong \qty[2]{.659862385321101}{\percent}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.3
+        O nº de unidades de transferência.
+        % Quermos o numero de unidades de transferencia
+        % Dois tipos de colunas: Pratos, Enchimentos
+            % Pratos:
+                % Calculamos log o numero de pratos
+            % Enchimentos:
+                % Calculamos numero de pratos teoricos q usamos para achar a altura de enchimento
+                % N_{OG} = \int_{y_A}^{y_B}{\odif{y}/(y-y^*)}
+                % Pode ser aproximado por:
+                % N_{OG} = \frac{y_B-Y_A}{\adif{\bar{y_L}}}
+                % \adif{\bar{y_L}} 
+                % = \frac
+                %     {\adif{y_B}-\adif{y_A}}
+                %     {\ln{\adif{y_B}/\adif{y_A}}}
+                % \adif{y}_i = y_i-y_i^*
+                % Da lei de henry pegamos y^* para cada
+    } % Q1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                N_{OG}: &\\&
+                N_{OG}
+                = \int_{y_A}^{y_B}{\odif{y}/(y-y^*)}
+                \cong 
+                \frac{y_B-y_A}{\adif{\bar{y_L}}}
+                = &\\&
+                = \frac{
+                    y_B - y_A
+                }{
+                    \left(
+                        \frac
+                        {\adif{y_B}-\adif{y_A}}
+                        {\ln{\adif{y_B}/\adif{y_A}}}
+                    \right)
+                }
+                = &\\&
+                = \frac{
+                    y_B - y_A
+                }{
+                    \left(
+                        \frac
+                        {
+                            (y_B-y_B^*)
+                            -(y_A-y_A^*)
+                        }
+                        {\ln{
+                            \frac
+                            {y_B-y_B^*}
+                            {y_A-y_A^*}
+                        }}
+                    \right)
+                }
+                = &\\&
+                = \frac{
+                    y_B - y_A
+                }{
+                    \left(
+                        \frac
+                        {
+                             (y_B-1.2\,x_B)
+                            -(y_A-1.2\,x_A)
+                        }
+                        {\ln{
+                            \frac
+                            {y_B-1.2\,x_B}
+                            {y_A-1.2\,x_A}
+                        }}
+                    \right)
+                }
+                = &\\&
+                = 
+                \left(
+                    \frac
+                    {
+                        1-\frac{1.2\,x_B}{y_B-y_A}
+                    }
+                    {\ln{
+                        \frac
+                        {y_B-1.2\,x_B}
+                        {y_A}
+                    }}
+                \right)^{-1}
+                \cong
+                \left(
+                    \frac
+                    {
+                        1-\frac{
+                            1.2
+                            *\qty[2]{.659862385321101}{\percent}
+                        }{2.6-0.5}
+                    }
+                    {\ln{
+                        \frac
+                        {
+                            2.6
+                            -1.2
+                            *\qty[2]{.659862385321101}{\percent}
+                        }
+                        {0.5}
+                    }}
+                \right)^{-1}
+                \cong
+                \num{2.063551038782582}
+                \cong 2
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.4
+        A altura de enchimento necessária, sabendo que os coeficientes volumétricos individuais de transferência de massa são:
+        \begin{BM}
+            k_{y}\,a=\qty*{3.8E-2}{\kilo\mole/\second.\metre^3}
+            ; \qquad
+            k_{x}\,a=\qty*{6.2E-2}{\kilo\mole/\second.\metre^3}
+        \end{BM}
+        % Altura do enchimento
+        % H_{OG} = \frac{G}{A\,K_{y}\,a}
+        % G Segue a mesma unidade (massica/molar) com o coeficiente K_{Y}
+        % "a" é uma area
+        % para achar o K_y com base nos k_y:
+            % \frac{1}{K_y\,a}
+            % = \frac{1}{k_y\,a}
+            % + \frac{m}{k_x\,a}
+            % "m" é o declive da lei re henry
+        % Se perguntassem a altura da coluna é o numero de pratos vezes o numero de pratos (unidade de transferencia)
+        % Se perguntassem: caso usassemos uma coluna de prátos
+            % N 
+            % = \frac{\ln{\adif{y_B}/\adif{y_A}}}{\ln{L/m\,g}}
+            % = \frac{\ln{\adif{y_B}/\adif{y_A}}}{\ln{A}}
+            % "A" fator de absorção
+    } % Q1.4
+        \answer{}
+        \begin{flalign*}
+            &
+                H_{OG}: &\\&
+                H_{OG}
+                = \frac{G}{A\,K_y\,a}
+                = \frac{G}{A}
+                \,\frac{1}{K_y\,a}
+                = \frac{G}{L/m\,G}
+                \,\left(
+                    \frac{1}{k_y\,a}
+                    + \frac{m}{k_x\,a}
+                \right)
+                = &\\&
+                = \frac{m\,G^2}{L}
+                \,\left(
+                    \frac{1}{k_y\,a}
+                    + \frac{m}{k_x\,a}
+                \right)
+                = &\\&
+                = \frac{1.2*13.7^2}{43.6}
+                \,\left(
+                    \frac{1}{3.8\E{-2}*3600}
+                    + \frac{1.2}{6.2\E{-2}*3600}
+                \right)
+                \cong
+                \qty{655.345581325316924}{\metre^3}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.5
+        Discuta como variaria a altura se diminuísse o declive da linha de equilíbrio. Isso implicaria operar a uma temperatura superior ou inferior?
+    } % Q1.5
+    \end{questionBox}
+\end{questionBox}
+
+% Destilação
+\begin{questionBox}1{ % MARK: Q2
+    Pretende-se dimensionar uma coluna de destilação para fraccionar \lemph{\qty*{100}{\kilo\mole/\hour}} de uma mistura de \lemph{\qty*{55}{\percent.\mole\of{A}} e \qty*{45}{\percent.\mole\of{C}}}. A alimentação encontra-se à temperatura de \lemph{\qty*{110}{\celsius}}. Pretende-se obter um destilado e um resíduo com \lemph{\qty*{95}{\percent.\mole} e \qty*{15}{\percent.\mole}} no composto mais volátil, respectivamente. Os dados de equilíbrio liquido-vapor encontram-se representados na figura junta. Calcule:
+} % Q2
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item Temperaturas de vaporização a \qty*{1}{\bar}
+        \begin{itemize}\vspace{-2ex}
+            \begin{multicols}{2}
+                \item A Puro:      \qty*{80.1}{\celsius}
+                \item C Puro:      \qty*{110.6}{\celsius}
+                \item Alimentação: \qty*{94}{\celsius}
+                \item Destilado:   \qty*{82}{\celsius}
+                \item Resíduo:     \qty*{108}{\celsius}
+            \end{multicols}
+        \end{itemize}
+        \item \(C_p\) misturas líquidas \ch{A + C}: \qty*{67}{\joule/\mole.\celsius}
+        \item \(\adif{\hat{H}}_{vap}\) Misturas \ch{A + C}: \qty*{40.2}{\kilo\joule/\mole}
+        \item Despreze eventuais efeitos da temperatura nos calores sensíveis e latente e eventuais perdas de calor e de pressão na coluna.
+    \end{itemize}
+    \paragraph*{Curva de equilíbrio:}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{6}{C}}
+            \toprule
+            
+                x & 0 & 0.20 & 0.40 & 0.60 & 0.80 & 1
+                \\
+                y & 0 & 0.38 & 0.62 & 0.79 & 0.91 & 1
+            
+            \\\bottomrule
+        \end{tabular}\
+        \vspace{2ex}
+        \\{\textit{x, y} referem-se às composições do composto mais volátil nas fases líquida e vapor, respectivamente}
+    \end{center}
+    \begin{BM}[flalign*]
+        &
+            & y_{n+1}
+            & = \frac{L}{V}\,x_n
+            + \frac{D\,x_D}{V}
+            = \frac{R}{R+1}\,x_n
+            + \frac{x_D}{R+1}
+        &\\&
+            & y_{m+1}
+            & = \frac{\bar{L}}{\bar{V}}\,x_m
+            - \frac{B\,x_B}{\bar{V}}
+        &\\&
+            & y_i
+            & = \frac{i}{i-1}\,x_i
+            - \frac{x_F}{i-1}
+        &
+    \end{BM}
+    % Ateção: Feed (F), Destilado (D) e residuo (B)
+        % F = \qty*{100}{\kilo\mole/\hour}
+        % Destilação => Dois compostos => O mais volátil é usado no gráfico (volátil = Ponto de eb baixo ou algo do tipo)
+        % x_F = 0.55
+        % x_D = 0.95
+        % x_B = 0.15
+        % Rasão de refluxo (caso for pedido)
+        %   R=L/D
+        % sobre o Feed:
+        %   5 diferentes tipos: devo aprender a usar 3
+        %   Cada um usamos p achar o "i" que é o declive de uma reta
+        % Toda destilação tem 3 retas (diagram de eq {y}\times{x}):
+        % Usamos as retas para calcular o numero de pratos p fazer a destilação
+            % Reta de Enriching
+            % Reta de Stripping
+            % Reta de Feed
+        % Sabemos q fiz corretamente a reta se todas se encontram no centro
+    \begin{questionBox}2{ % MARK: Q2.1
+        A razão mínima de refluxo.
+        % Refluxo minimo
+        % Traçamos x_D até encontrar a reta y=x, 
+        % desse ponto traçamos uma reta até encontrar c o ponto q interceta a reta do feed comm a curva de equilíbrio e continuamos até encontrar a ordenada na origem q é:
+        %  y_D = x_D/(R_{\min}+1)
+        % R_{\min} é o refluxo minimo ou seja a razão entre o L e o D min para q ocorra a destilação
+        % para isso precisamos da reta do feed calculada a partir do "i"
+        % Para o i precisamos do estado físico da alimentação
+        % Sabemos q é vapor super aquecido pela temperatura de feed ser muito maior da temperatura de ebulição (vapor sobreaquecida)
+        % i = (\bar{L}-L)/F
+        % \bar{L} = L - \miu
+        % por ser vapor sobre aquecido sabemos q sai \miu
+        % \miu é a quantidade de caldal perdida no feed
+        % obtemos \miu a partir de um balanço de energia
+        % Balanço energético:
+            % F * C_{P,mis,L} * \adif{T} = \miu * \adif{H}_{vap}
+            % F costuma cortar por isso pode deixar \miu em função de F
+            % \adif{T} = T_F-T_{eb}
+        % Aqui temos o i e a reta de Feed de onde usamos p os dois pontos da reta
+        % y_i = ...
+        % usamos a eq p traçar a reta no gráfico e pegamos dois pontos
+        % O primeiro fazemos x_i = x_F que implica q y_i = x_F
+        % O segundo ponto experimentamos valores até encontrar
+        % Daqui seguimos as direções do começo
+    } % Q2.1
+        \answer{}
+        \begin{itemize}
+            \begin{multicols}{2}
+                \item A é mais volátil
+                \item \(x_F = \qty*{55}{\percent\of{A}}\)
+                \item \(x_D = \qty*{95}{\percent\of{A}}\)
+                \item \(x_B = \qty*{15}{\percent\of{A}}\)
+            \end{multicols}
+        \end{itemize}
+        \begin{flalign*}
+            &
+                R_{\min}: &\\&
+                y_{n+1}
+                = \frac{R_{\min}}{R_{\min}+1}\,x_n
+                + \frac{x_{D}}{R_{\min}+1}
+                ;&\\[3ex]&
+                y_{n+1} \text{ (Reta a partir de dois pontos)}:
+                &\\[1.5ex]&
+                % 
+                % 
+                % 
+                \text{1º Ponto: Interseção \(y_i\) com a curva de equilibrio} &\\&
+                y_i 
+                = \frac{i}{i-1}\,x_i
+                - \frac{x_F}{i-1}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                % Tipos de feed:]
+                % Liq saturado (no ponto de eb): i=1
+                % vapor saturado (no ponto de cond): i=0
+                % vapor sobre aquecido (i<0):
+                i \text{ (Vapor Sobreaquecido)} &\\&
+                i 
+                = \frac{\bar{L}-L}{F}
+                = \frac{(L-\nu)-L}{F}
+                = \frac{-\nu}{F}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \nu\text{ (Balanço energético)} &\\&
+                \nu\,\adif{\hat{H}}_{vap}
+                = F\,C_{p,mist}\,\adif{T}
+                \implies &\\&
+                \implies
+                \nu
+                = \frac
+                {F\,C_{p,mist}\,\adif{T}}
+                {\adif{\hat{H}}_{vap}}
+                = \frac
+                {F\,67(110-94)}
+                {40.2\E{3}}
+                \cong
+                F\,\num{26.666666666666667e-3}
+                \implies &\\&
+                \implies
+                i
+                = \frac{-\nu}{F}
+                \cong -\num{26.666666666666667e-3}
+                \implies &\\&
+                \implies
+                y_i
+                = \frac{i}{i-1}\,x_i
+                - \frac{x_F}{i-1}
+                \cong 
+                -\num{0.025974025974026}\,x_i
+                +\num{0.535714285714286}
+                &\\&
+                \begin{cases}
+                    x_i = x_F 
+                    &\implies y_i = 0.55
+                    \\
+                    x_i = 0   
+                    &\implies y_i = \num{0.535714285714286}
+                \end{cases}
+                &\\[3ex]&
+                \text{2º Ponto:} &\\&
+                y_D=x_D = 0.95
+            &
+        \end{flalign*}
+        \begin{center}
+            \includegraphics[width=.8\textwidth]{Graph.1.pdf}
+        \end{center}
+        \begin{flalign*}
+            &
+                \implies
+                \frac{x_D}{R_{\min}+1}
+                \cong 0.3139
+                \implies
+                R_{\min}
+                \cong \frac{0.95}{0.3139}-1
+                \cong \num{2.026441541892322}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.2
+        Se a coluna operar a uma razão de refluxo \lemph{25\%} superior ao valor mínimo e com uma caldeira total
+        e um condensador total, determine o número de andares de equilíbrio necessários. Indique o andar óptimo
+        de entrada da alimentação e o número de andares em cada secção da coluna. Quais as aproximações que
+        tomou?
+    } % Q2.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \text{Razão de refluxo:} 
+                % &\\&
+                R 
+                = R_{\min}*1.25
+                \cong \num{2.026441541892322}*1.25
+                \cong \num{2.533051927365403}
+                % 
+                % 
+                % 
+                &\\[3ex]&
+                \text{Reta de Enriching:}
+                &\\&
+                y_{n+1}
+                = \frac{R\,x_n+x_D}{R+1}
+                \cong
+                = \num{0.71695858975226}\,x_n
+                + \num{0.268889339735353}
+                &\\[3ex]&
+                \text{Interseção com o Feed}
+                &\\&
+                % -\num{0.025974025974026}\,x_i
+                % +\num{0.535714285714286}
+                - \num{0.025974025974026}\,x_n
+                + \num{0.535714285714286}
+                = \num{0.71695858975226}\,x_n
+                + \num{0.268889339735353}
+                \implies &\\&
+                \implies
+                x_n
+                = \frac
+                {\num{0.535714285714286}-\num{0.268889339735353}}
+                {\num{0.71695858975226}+\num{0.025974025974026}}
+                \cong
+                \num{0.359150938228882}
+                \implies &\\&
+                \implies
+                y_m 
+                \cong 
+                -\num{0.025974025974026}
+                *\num{0.359150938228882}
+                +\num{0.535714285714286}
+                \cong \num{0.526385689916133}
+                % 
+                % 
+                % 
+                &\\[3ex]&
+                \text{Reta de Stripping:}
+                &\\&
+                y_{m+1}
+                = \frac{\bar{L}}{\bar{V}}\,x_m
+                - \frac{B\,x_b}{\bar{V}}
+                = \frac{\bar{V}+B}{\bar{V}}\,x_m
+                - \frac{B\,x_b}{\bar{V}}
+                &\\&
+                \begin{cases}
+                    x_m=x_B
+                    &\implies
+                    y_{m+1}=x_B\,\frac{\bar{V}+B-B}{\bar{V}}=x_B=0.15
+                    \\
+                    x_m\cong\num{0.359150938228882}
+                    &\implies
+                    y_{m+1}\cong \num{0.526385689916133}
+                \end{cases}
+            &
+        \end{flalign*}
+        \paragraph*{Grafico:} Traçar os pratos começando de \(x_D\) até o ponto de interseção onde vai ser o numero de pratos ótimo antes da entrada, então continuamos traçando até intersectar \(x=y\)
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.3
+        \emph{NÃO} efectuando cálculos diga qual a relação entre o calor fornecido pela caldeira e o calor retirado pelo condensador. Justifique devidamente.
+    } % Q2.3
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.4
+        Comente a seguinte frase, justificando plenamente a sua resposta:\\\textit{``Quanto mais afastada estiver a linha de equilíbrio da linha diagonal \(x = y\) (gráfico McCabe-Thiele) mais fácil é a separação por destilação e menor o número de andares de equilíbrio necessários''}
+    } % Q2.4
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

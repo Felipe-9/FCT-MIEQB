@@ -1,0 +1,123 @@
+% !TEX root = ./PS-Report.3.tex
+\providecommand\mainfilename{"./PS-Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Report.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/PS-Report.3}}}
+\tikzsetexternalprefix{./figures/PS-Report.3/graphics/}
+
+\mymakesubfile{2}
+[PS]
+{Simulações} % Subfile Title
+{Simulações} % Part Title
+
+\part*{Coluna B1}
+
+\begin{sectionBox}1{NSTAGE} % MARK: S
+    
+    \emph{Se variou manualmente no Aspen a coluna B1 com diferentes numeros de pratos}, a sequencia de uma forma lógica, começamos com 32, e fomos dividindo por 2 até encontrar valores mnores que o pedido, nesse caso foi em 8 pratos, então subiu de 2 em 2 até 16, isso foi feito para poder construir a curva onde se pode ver o vale com menores erros.
+
+    \begin{center}
+        \vspace{1ex}
+        % \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{*2{C} *{3}{R}}
+            \toprule
+            
+                   \multicolumn{1}{c}{\multirow{2}{*}{Simulação}}
+                &  \multicolumn{1}{c}{\multirow{2}{*}{NSTAGE}}
+                &  \multicolumn{2}{l}{Reculperação}
+                &  \multicolumn{1}{c}{\multirow{2}{*}{Error(.95)}}
+            \\\cline{3-4} &&
+                \multicolumn{1}{c}{Tolueno}
+                & \multicolumn{1}{c}{Cumeno}
+            
+            \\\midrule
+            
+                    1 & 32 & 100.00\,\% & 100.00\,\% & \num{1.19242808740467E-01}
+                \\  2 & 16 &  99.26\,\% &  99.26\,\% & \num{1.55365394982667E-02}
+                \\  3 &  8 &  89.39\,\% &  89.29\,\% & \num{1.69839224114106E-02}
+                \\  4 & 10 &  94.27\,\% &  94.25\,\% & \num{7.36159871240984E-02}
+                \\  5 & 12 &  95.82\,\% &  95.79\,\% & \num{8.97848545538178E-02}
+                \\  6 & 14 &  98.50\,\% &  98.50\,\% & \num{1.05224852166814E-01}
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Variação do numero de pratos da coluna B1}
+        \vspace{2ex}
+    \end{center}
+
+    % \tikzset{external/remake next=true}
+    % {\Large\bfseries{Solução 1}}\par\medskip
+    \begin{figure}\centering
+        
+        \begin{tikzpicture}
+        \begin{axis}
+        [
+            xmajorgrids=true,
+            xtick=data,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % xmin={7.5},xmax={32.5},
+            % scaled ticks=true,
+            scaled y ticks={base 10:2},
+            % legend pos={north west},
+            % axis on top,
+            ylabel={Error (.95)},
+            xlabel={NSTAGE},
+        ]
+            
+            % % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Graph]{}
+            % ================= Interpolation ================ %
+            % \addplot[
+            %     no marks,
+            %     dashed,
+            %     samples=2,
+            % ] expression [
+            %     domain=0:4000
+            % ] {
+            %     -3.5953e-4*x+0.0013
+            % };
+            % ==================== Points ==================== %
+            \addplot+[
+                mark=*,
+                draw={Graph},
+                mark options={
+                    fill={Graph},
+                    fill opacity=1,
+                    draw={Graph},
+                },
+                smooth, 
+                tension=0.3,
+                % curved line,
+            ] coordinates {
+                ( 8,1.19242808740467E-01)
+                (10,1.55365394982667E-02)
+                (12,1.69839224114106E-02)
+                (14,7.36159871240984E-02)
+                (16,8.97848545538178E-02)
+                (32,1.05224852166814E-01)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Variação do numero de pratos da coluna B1}
+    \end{figure}
+    
+
+    Foram \emph{selecionados de \numrange*{8}{12} (incluindo valores impares)} como o numero de pratos para continuar o estudo, valores menores foram selecionados para considerar quantidades menores de pratos.\\
+
+    Algo a se notar é que os valores escolhidos são altamente dependentes do \emph{numero de refluxo} inicial ultilizado, perchance teriamos usado 1 ou 5 como numero de refluxo, teriamos visto o vale orbitando ao redor de \numrange*{14}{16} ou \numrange*{4}{5} respectivamente, como decidimos \emph{2 como um valor proximo do esperado}, continuamos as simulações de acordo.
+    
+\end{sectionBox}
+
+\end{document}

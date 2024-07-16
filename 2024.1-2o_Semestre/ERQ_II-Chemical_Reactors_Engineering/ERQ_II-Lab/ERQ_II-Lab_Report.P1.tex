@@ -1,0 +1,233 @@
+% !TEX root = ./ERQ_II-Lab_Report.P1.tex
+\providecommand\mainfilename{"./ERQ_II-Lab_Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Lab_Report.P1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\nopagecolor
+\colorlet{foreground}{black}
+\colorlet{background}{white}
+\color{foreground}
+
+\setlength\textwidth{160mm}
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/ERQ_II-Lab_Report.P1}}}
+% \tikzsetexternalprefix{./figures/ERQ_II-Lab_Report.P1/graphics/}
+
+\mymakesubfile{1}
+[ERQ II]
+{Prática 1} % Subfile Title
+{Prática 1} % Part Title
+
+% Asb(int)
+\begin{minipage}{120mm}
+    \section*{Absorvancia Experimental}
+    \begin{BM}
+        \int\text{Abs}_{i}=(t_i-t_{i-1})\,\frac{\text{Abs}_i+\text{Abs}_{i-1}}{2}
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{120mm}
+    \section*{Distribuição de tempos de residência}
+    \begin{BM}
+        E(t)
+        =\frac{C(t)}{\int_0^{\infty}{C(t)\,\odif{t}}}
+        =\frac{\varepsilon\,A(t)}{\int_0^{\infty}{\varepsilon\,A(t)\,\odif{t}}}
+        =\frac{A(t)}{\int_0^{\infty}{A(t)\,\odif{t}}}
+        \\
+        \int_{0}^{\infty}{E(t)\,\odif{t}}=1
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{120mm}
+    \section*{Função culmulativa de tempos de residência}
+    \begin{BM}
+        F(t)
+        = \int_{0}^{t}{E(t)\,\odif{t}}
+        = F_{i-1}+(t_{i}-t_{i-1})\,\frac{E_{i}+E_{i+1}}{2}
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{120mm}
+    \section*{Tempo espacial}
+    \begin{BM}
+        \tau
+        =\int_{0}^{\infty}{t\,E(t)\,\odif{t}}
+        =\sum{(t_i-t_{i-1})\,\frac{t_{m,i}-t_{m,i-1}}{2}}
+        \\
+        t_m=t\,E(t)
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{120mm}
+    \section*{Funções em tempo adimensional}
+    \begin{BM}
+        \theta(t)=t/t_m
+        ;\quad
+        E(\theta)=t_m\,E(t)
+        ;\\
+        F(\theta)
+        =\int_0^{\theta}{E(\theta)\odif{\theta}}
+        =F_{i-1}+(\theta_{i}-\theta_{i-1})\,\frac{E_i+E_{i-1}}{2}
+    \end{BM}
+\end{minipage}
+
+\part{Prática 2}
+
+\begin{minipage}{170mm}
+    \begin{BM}
+        X_{exp}=1-\frac{\text{Abs}_{est}}{\text{Abs}_0}
+        % \\[2ex]
+        ;\quad
+        v_0=\frac{V_{m}}{t}
+        % \\[2ex]
+        ;\quad
+        \tau=\frac{V_{ativo}}{v_0}
+        % \\[2ex]
+        ;\quad
+        k
+        % =\frac{X_{exp}}{(1-X_{exp})\,\tau}
+        =\left(
+            (X_{exp}^{-1}-1)\,\tau
+        \right)^{-1}
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{140mm}
+    \section*{Modelo de Segregação}
+    \begin{BM}
+        X=1-\exp{(-k\,t)}
+        \\[1ex]
+        \bar{X}
+        =\int_0^{\infty}{
+            X\,E(t)\,\odif{t}
+        }
+        =\adif{t}\frac{(X\,E(t))_{i}+(X\,E(t))_{i-1}}{2}
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{140mm}
+    \section*{Modelo de Máxima Mistura}
+    \begin{BM}
+        X_i
+        = X_{i-1}
+        + \left(
+            -k\,(1-X_{i-1})
+            +\frac{E_{i-1}(\lambda)\,X_{i-1}}{1-F_{i-1}(\lambda)}
+        \right)
+        \adif{\lambda}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \odv{x}{\lambda}
+            = \frac{r_A}{C_{A,0}}
+            + \frac{E\,X}{1-F}
+            \implies &\\&
+            \implies
+            \adv{X}{\lambda}
+            = \frac{X_i-X_{i-1}}{\adif{\lambda}}
+            = \frac{-k\,C_{A,0}\,(1-X_{i-1})}{C_{A,0}}
+            + \frac{E_{i-1}(\lambda)\,X_{i-1}}{1-F_{i-1}(\lambda)}
+            \implies &\\&
+            \implies
+            X_i
+            = X_{i-1}
+            + \left(
+                -k\,(1-X_{i-1})
+                + \frac{E_{i-1}(\lambda)\,X_{i-1}}{1-F_{i-1}(\lambda)}
+            \right)
+            \,\adif{\lambda}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Segregação}
+
+\begin{minipage}{100mm}
+    \begin{BM}
+        k= \frac{\text{Abs}_0/\text{Abs}_{est}-1}{\tau}
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{100mm}
+    \begin{BM}
+        X_i
+        =\adif{t}
+        \,\frac{(X*E_{calc})_i+(X*E_{calc})_{i-1}}{2}
+    \end{BM}
+\end{minipage}
+
+\part{Prática 3}
+
+\begin{minipage}{100mm}
+    \begin{BM}
+        \frac{N_{Ac}}{N_{C9}}
+        = Fr\,\frac{A_{Ac}}{A_{C9}}
+        \implies
+        N_{Ac}
+        = Fr\,N_{C9}\,\frac{A_{Ac}}{A_{C9}}
+    \end{BM}
+\end{minipage}
+
+\begin{minipage}{160mm}
+    \begin{center}
+        \Large\bfseries
+        \ch{CH3OOCC2H5 + CH3OH -> CH3OOCH3 + CH3CH2OH}
+    \end{center}
+    \begin{BM}
+        \ln{\frac{1}{1-X}}
+        = \frac{W}{V}\,k'_{ap}\,t
+    \end{BM}
+    \begin{flalign*}
+        &
+            -r_A
+            =k'_{ap}\,C_A
+            =k'_{ap}\,C_{A,0}(1-X)
+            ;\quad
+            \odv{N_A}{t}
+            = W\,r_A
+            \implies &\\&
+            \implies
+            -r_A
+            =\frac{N_{A,0}}{W}
+            \,\odv{X}{t}
+            =k'_{ap}\,C_{A,0}(1-X)
+            \implies &\\&
+            \implies
+            \int{\frac{\odif{X}}{1-X}}
+            = \ln{\frac{1}{1-X}}
+            = \int{
+                \frac{W}{N_{A,0}}
+                k'_{ap}\,C_{A,0}
+                \,\odif{t}
+            }
+            = 
+            \frac{W}{N_{A,0}/C_{A,0}}
+            k'_{ap}
+            \int{\odif{t}}
+            = 
+            \frac{W}{V_{A}}
+            k'_{ap}\,t
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Pellet P}
+
+\begin{minipage}{60mm}
+    \begin{BM}
+        k'_{Ap}
+        = \text{Declive}\frac{V_A}{W}
+    \end{BM}
+\end{minipage}
+\begin{minipage}{60mm}
+    \begin{BM}
+        X=1-\frac{N_{Ac,t}}{N_{Ac,0}}
+    \end{BM}
+\end{minipage}
+
+\end{document}

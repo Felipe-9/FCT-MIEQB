@@ -1,0 +1,44 @@
+% !TEX root = ./ERQ_II-Slides_Annotations.2.tex
+\providecommand\mainfilename{"./ERQ_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Slides_Annotations.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/ERQ_II-Slides_Annotations.2}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_II-Slides_Annotations.2/graphics/}
+
+\mymakesubfile{2}
+[ERQ II]
+{Curvas DNS} % Subfile Title
+{Curvas DNS} % Part Title
+
+\begin{exampleBox}1{ % E1
+    Uma amostra de tracer foi injectada por impulso num reactor e a sua concentração medida em função do tempo:
+} % E1
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{L *{14}{C}}
+            \toprule
+            
+                t(\si{\min})
+                & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 12 & 14
+                
+            \\\midrule
+
+                C (\si{\gram/\metre^3})
+                & 0 & 1  & 5 & 8 & 10 & 8 & 6 & 4 & 3.0 & 2.2 & 1.5 & 0.6 & 0
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+\end{exampleBox}
+
+\end{document}

@@ -1,0 +1,656 @@
+% !TEX root = ./PS-Report.5.tex
+\providecommand\mainfilename{"./PS-Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Report.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/PS-Report.5}}}
+\tikzsetexternalprefix{./figures/PS-Report.5/graphics/}
+
+% \mymakesubfile{5}
+% [PS]
+% {NREFLUX} % Subfile Title
+% {NREFLUX} % Part Title
+
+\begin{sectionBox}1{NREFLUX} % MARK: S
+    
+    Aqui realizamos a análise de sensibilidade \emph{S2-NREFLUX variando o numero de refluxo de \numrange*{0.5}{5.0} em intervalos de 0.1} para cada configuração encontrada até agora.
+    
+    
+    Em seguida realizamos a anaíse do \emph{\textit{design specks} DS-1} tentando optimizar porem percebemos alguma \emph{inconsistencia nos valores} e decidimos realizar uma segunda análise de sensibilidade com uma precisão maior para encontrar os melhores valores.
+
+
+    A \emph{segunda análise} de sensibilidade, continua usando o S2-NREFLUX porem variando com a \emph{precisão de 0.001 indo do menor valor econtrado na análise de sensibilidade anteriror \(\pm\,\)0.05} caso o melhor resultado esteja em alguma dessas extremidades realizar para os numeros de refluxo até o próximo valor ja simulado.
+    \vspace{-3ex}\paragraph*{Exemplo:}
+    Melhor valor encontrado foi 2.000, varia \numrange*{1.95}{2.05} variando 0.001 se melhor valor for em 2.05, simular \numrange*{2.051}{2.099}
+    
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{5}{C}}
+            \toprule
+            
+                  \multicolumn{1}{c}{\multirow{2}{*}{NSTAGES}}
+                & \multicolumn{1}{c}{\multirow{2}{*}{RR}}
+                & \multicolumn{2}{l}{Reculperação}
+                & \multicolumn{1}{c}{\multirow{2}{*}{Error}}
+
+                \\ &
+                & \multicolumn{1}{l}{Tolueno}
+                & \multicolumn{1}{l}{Cumeno}
+            
+            \\\toprule
+
+                \multicolumn{5}{l}{Design Specs DS-1}
+
+            \\\midrule
+            
+                8  & \num{3.22200000} & \qty{95.0508030000000}{\percent} & \qty{94.93573000}{\percent} & \num{1.21129473684201E-03}
+            \\  9  & \num{2.01000000} & \qty{95.0257636666667}{\percent} & \qty{94.84680100}{\percent} & \num{1.88381754385969E-03}
+            \\  10 & \num{1.62910219} & \qty{95.0666460000000}{\percent} & \qty{94.97154867}{\percent} & \num{1.00102456140361E-03}
+            \\  11 & \num{1.42600794} & \qty{95.0698480000000}{\percent} & \qty{94.95163900}{\percent} & \num{1.24430526315800E-03}
+            \\  12 & \num{1.31448216} & \qty{95.0280086666667}{\percent} & \qty{94.96696667}{\percent} & \num{6.42547368421176E-04}
+            \\\toprule
+
+                \multicolumn{5}{l}{Best values}
+
+            \\\midrule
+
+                8  & 3.299 & \qty{95.1090860}{\percent} & \qty{94.9973149}{\percent} & \num{1.17653789473682E-03}
+            \\  9  & 2.069 & \qty{95.1675916}{\percent} & \qty{94.9979414}{\percent} & \num{1.78579157894732E-03}
+            \\  10 & 1.634 & \qty{95.0906364}{\percent} & \qty{94.9963477}{\percent} & \num{9.92512631578846E-04}
+            \\  11 & 1.432 & \qty{95.1119413}{\percent} & \qty{94.9953270}{\percent} & \num{1.22751894736839E-03}
+            \\  12 & 1.317 & \qty{95.0539618}{\percent} & \qty{94.9933606}{\percent} & \num{6.37907368421065E-04}
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Melhores numeros de refluxo seguindo DS-1 e S2-NREFLUX para coluna B1}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{figure}\centering
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}
+            \begin{axis}
+            [
+                ymode=log,
+                xmajorgrids=true,
+                % xtick=data,
+                ymajorgrids=true,
+                % xtick distance={0.5},
+                minor tick num={3},
+                % minor x tick num={0},
+                xminorgrids=false,
+                yminorgrids=true,
+                % xmin={7.5},xmax={32.5},
+                % scaled ticks=true,
+                scaled y ticks={base 10:2},
+                % legend pos={north west},
+                % axis on top,
+                ylabel={Error (.95)},
+                xlabel={NREFLUX},
+                legend columns=3,
+                mark size=1pt,
+            ]
+                % -------------------------------------------- %
+                %                       8                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA11},
+                    mark options={
+                        fill={GraphA11},
+                        fill opacity=1,
+                        draw={GraphA11},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] table [
+                    x index=0,
+                    y index=1,
+                    col sep=comma,
+                ]{../data/NREFLUX.1.dat};
+                \addlegendentry{8}
+                % -------------------------------------------- %
+                %                       9                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA13},
+                    mark options={
+                        fill={GraphA13},
+                        fill opacity=1,
+                        draw={GraphA13},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] table [
+                    x index=2,
+                    y index=3,
+                    col sep=comma,
+                ]{../data/NREFLUX.1.dat};
+                \addlegendentry{9}
+                % ---------------------------------------- %
+                %                    10                    %
+                % ---------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA15},
+                    mark options={
+                        fill={GraphA15},
+                        fill opacity=1,
+                        draw={GraphA15},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] table [
+                    x index=4,
+                    y index=5,
+                    col sep=comma,
+                ]{../data/NREFLUX.1.dat};
+                \addlegendentry{10}
+                % ---------------------------------------- %
+                %                    11                    %
+                % ---------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA17},
+                    mark options={
+                        fill={GraphA17},
+                        fill opacity=1,
+                        draw={GraphA17},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] table [
+                    x index=6,
+                    y index=7,
+                    col sep=comma,
+                ]{../data/NREFLUX.1.dat};
+                \addlegendentry{11}
+                % ---------------------------------------- %
+                %                    12                    %
+                % ---------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA19},
+                    mark options={
+                        fill={GraphA19},
+                        fill opacity=1,
+                        draw={GraphA19},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] table [
+                    x index=8,
+                    y index=9,
+                    col sep=comma,
+                ]{../data/NREFLUX.1.dat};
+                \addlegendentry{12}
+                % ---------------------------------------- %
+                %                   DS-1                   %
+                % ---------------------------------------- %
+                \addplot+[
+                    solid,
+                    mark={o},
+                    mark size=3pt,
+                    draw={GraphSplitC1},
+                    mark options={
+                        fill={GraphSplitC1},
+                        fill opacity=1,
+                        draw={GraphSplitC1},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    (1.31448216,6.42547368421176E-04)
+                    (1.42600794,1.24430526315800E-03)
+                    (1.62910219,1.00102456140361E-03)
+                    (2.01000000,1.88381754385969E-03)
+                    (3.22200000,1.21129473684201E-03)
+                };
+                \addlegendentry{DS-1}
+                
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Melhores numeros de refluxo seguindo DS-1 e S2-NREFLUX para coluna B1}
+    \end{figure}
+
+    \begin{figure}\centering
+        \begin{subfigure}{0.49\textwidth}
+            % \tikzset{external/remake next=true}
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % ymode=log,
+                    xmajorgrids=true,
+                    % xtick=data,
+                    ymajorgrids=true,
+                    % xtick distance={0.5},
+                    minor tick num={3},
+                    % minor x tick num={0},
+                    xminorgrids=false,
+                    yminorgrids=true,
+                    % xmin={3.1}, xmax={3.4},
+                    % scaled ticks=true,
+                    scaled y ticks={base 10:5},
+                    % legend pos={north west},
+                    % axis on top,
+                    ylabel={Error (.95)},
+                    xlabel={NREFLUX},
+                    legend columns=3,
+                    mark size=0.5pt,
+                ]
+                    % -------------------------------------------- %
+                    %                       8                      %
+                    % -------------------------------------------- %
+                    \addplot+[
+                        mark=*,
+                        draw={GraphA11},
+                        mark options={
+                            fill={GraphA11},
+                            fill opacity=1,
+                            draw={GraphA11},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] table [
+                        x index=0,
+                        y index=1,
+                        col sep=comma,
+                    ]{../data/NREFLUX.1.1.dat};
+                    \addlegendentry{8}
+                    % ---------------------------------------- %
+                    %                   DS-1                   %
+                    % ---------------------------------------- %
+                    \addplot+[
+                        solid,
+                        mark={o},
+                        mark size=3pt,
+                        draw={GraphSplitC1},
+                        mark options={
+                            fill={GraphSplitC1},
+                            fill opacity=1,
+                            draw={GraphSplitC1},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] coordinates {
+                        % (1.31448216,6.42547368421176E-04)
+                        % (1.42600794,1.24430526315800E-03)
+                        % (1.62910219,1.00102456140361E-03)
+                        % (2.01000000,1.88381754385969E-03)
+                        (3.22200000,1.21129473684201E-03)
+                    };
+                    \addlegendentry{DS-1}
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+            % \tikzset{external/remake next=true}
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % ymode=log,
+                    xmajorgrids=true,
+                    % xtick=data,
+                    ymajorgrids=true,
+                    % xtick distance={0.5},
+                    minor tick num={3},
+                    % minor x tick num={0},
+                    xminorgrids=false,
+                    yminorgrids=true,
+                    % xmin={3.1}, xmax={3.4},
+                    % scaled ticks=true,
+                    scaled y ticks={base 10:5},
+                    % legend pos={north west},
+                    % axis on top,
+                    ylabel={Error (.95)},
+                    xlabel={NREFLUX},
+                    legend columns=3,
+                    mark size=0.5pt,
+                ]
+                    % -------------------------------------------- %
+                    %                       9                      %
+                    % -------------------------------------------- %
+                    \addplot+[
+                        mark=*,
+                        draw={GraphA13},
+                        mark options={
+                            fill={GraphA13},
+                            fill opacity=1,
+                            draw={GraphA13},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] table [
+                        x index=2,
+                        y index=3,
+                        col sep=comma,
+                    ]{../data/NREFLUX.1.1.dat};
+                    \addlegendentry{9}
+                    % ---------------------------------------- %
+                    %                   DS-1                   %
+                    % ---------------------------------------- %
+                    \addplot+[
+                        solid,
+                        mark={o},
+                        mark size=3pt,
+                        draw={GraphSplitC1},
+                        mark options={
+                            fill={GraphSplitC1},
+                            fill opacity=1,
+                            draw={GraphSplitC1},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] coordinates {
+                        % (1.31448216,6.42547368421176E-04)
+                        % (1.42600794,1.24430526315800E-03)
+                        % (1.62910219,1.00102456140361E-03)
+                        (2.01000000,1.88381754385969E-03)
+                        % (3.22200000,1.21129473684201E-03)
+                    };
+                    \addlegendentry{DS-1}
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+            % \tikzset{external/remake next=true}
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % ymode=log,
+                    xmajorgrids=true,
+                    % xtick=data,
+                    ymajorgrids=true,
+                    % xtick distance={0.5},
+                    minor tick num={3},
+                    % minor x tick num={0},
+                    xminorgrids=false,
+                    yminorgrids=true,
+                    % xmin={3.1}, xmax={3.4},
+                    % scaled ticks=true,
+                    scaled y ticks={base 10:5},
+                    % legend pos={north west},
+                    % axis on top,
+                    ylabel={Error (.95)},
+                    xlabel={NREFLUX},
+                    legend columns=3,
+                    mark size=0.5pt,
+                ]
+                    % -------------------------------------------- %
+                    %                      10                      %
+                    % -------------------------------------------- %
+                    \addplot+[
+                        mark=*,
+                        draw={GraphA15},
+                        mark options={
+                            fill={GraphA15},
+                            fill opacity=1,
+                            draw={GraphA15},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] table [
+                        x index=4,
+                        y index=5,
+                        col sep=comma,
+                    ]{../data/NREFLUX.1.1.dat};
+                    \addlegendentry{10}
+                    % ---------------------------------------- %
+                    %                   DS-1                   %
+                    % ---------------------------------------- %
+                    \addplot+[
+                        solid,
+                        mark={o},
+                        mark size=3pt,
+                        draw={GraphSplitC1},
+                        mark options={
+                            fill={GraphSplitC1},
+                            fill opacity=1,
+                            draw={GraphSplitC1},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] coordinates {
+                        % (1.31448216,6.42547368421176E-04)
+                        % (1.42600794,1.24430526315800E-03)
+                        (1.62910219,1.00102456140361E-03)
+                        % (2.01000000,1.88381754385969E-03)
+                        % (3.22200000,1.21129473684201E-03)
+                    };
+                    \addlegendentry{DS-1}
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+            % \tikzset{external/remake next=true}
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % ymode=log,
+                    xmajorgrids=true,
+                    % xtick=data,
+                    ymajorgrids=true,
+                    % xtick distance={0.5},
+                    minor tick num={3},
+                    % minor x tick num={0},
+                    xminorgrids=false,
+                    yminorgrids=true,
+                    % xmin={3.1}, xmax={3.4},
+                    % scaled ticks=true,
+                    scaled y ticks={base 10:5},
+                    % legend pos={north west},
+                    % axis on top,
+                    ylabel={Error (.95)},
+                    xlabel={NREFLUX},
+                    legend columns=3,
+                    mark size=0.5pt,
+                ]
+                    % -------------------------------------------- %
+                    %                      11                      %
+                    % -------------------------------------------- %
+                    \addplot+[
+                        mark=*,
+                        draw={GraphA17},
+                        mark options={
+                            fill={GraphA17},
+                            fill opacity=1,
+                            draw={GraphA17},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] table [
+                        x index=6,
+                        y index=7,
+                        col sep=comma,
+                    ]{../data/NREFLUX.1.1.dat};
+                    \addlegendentry{11}
+                    % ---------------------------------------- %
+                    %                   DS-1                   %
+                    % ---------------------------------------- %
+                    \addplot+[
+                        solid,
+                        mark={o},
+                        mark size=3pt,
+                        draw={GraphSplitC1},
+                        mark options={
+                            fill={GraphSplitC1},
+                            fill opacity=1,
+                            draw={GraphSplitC1},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] coordinates {
+                        % (1.31448216,6.42547368421176E-04)
+                        (1.42600794,1.24430526315800E-03)
+                        % (1.62910219,1.00102456140361E-03)
+                        % (2.01000000,1.88381754385969E-03)
+                        % (3.22200000,1.21129473684201E-03)
+                    };
+                    \addlegendentry{DS-1}
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{subfigure}
+        \begin{subfigure}{0.49\textwidth}
+            % \tikzset{external/remake next=true}
+            \begin{tikzpicture}
+                \begin{axis}
+                [
+                    % ymode=log,
+                    xmajorgrids=true,
+                    % xtick=data,
+                    ymajorgrids=true,
+                    % xtick distance={0.5},
+                    minor tick num={3},
+                    % minor x tick num={0},
+                    xminorgrids=false,
+                    yminorgrids=true,
+                    % xmin={3.1}, xmax={3.4},
+                    % scaled ticks=true,
+                    scaled y ticks={base 10:5},
+                    % legend pos={north west},
+                    % axis on top,
+                    ylabel={Error (.95)},
+                    xlabel={NREFLUX},
+                    legend columns=3,
+                    mark size=0.5pt,
+                ]
+                    % -------------------------------------------- %
+                    %                      12                      %
+                    % -------------------------------------------- %
+                    \addplot+[
+                        mark=*,
+                        draw={GraphA19},
+                        mark options={
+                            fill={GraphA19},
+                            fill opacity=1,
+                            draw={GraphA19},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] table [
+                        x index=8,
+                        y index=9,
+                        col sep=comma,
+                    ]{../data/NREFLUX.1.1.dat};
+                    \addlegendentry{12}
+                    % ---------------------------------------- %
+                    %                   DS-1                   %
+                    % ---------------------------------------- %
+                    \addplot+[
+                        solid,
+                        mark={o},
+                        mark size=3pt,
+                        draw={GraphSplitC1},
+                        mark options={
+                            fill={GraphSplitC1},
+                            fill opacity=1,
+                            draw={GraphSplitC1},
+                        },
+                        % smooth,
+                        % tension=0.3,
+                        % curved line,
+                    ] coordinates {
+                        (1.31448216,6.42547368421176E-04)
+                        % (1.42600794,1.24430526315800E-03)
+                        % (1.62910219,1.00102456140361E-03)
+                        % (2.01000000,1.88381754385969E-03)
+                        % (3.22200000,1.21129473684201E-03)
+                    };
+                    \addlegendentry{DS-1}
+                    
+                \end{axis}
+            \end{tikzpicture}
+        \end{subfigure}
+        \caption{(Ampliado) Melhores numeros de refluxo seguindo DS-1 e S2-NREFLUX para coluna B1}
+    \end{figure}
+
+    Uma relação interessante que podemos perceber é como o numero de refluxo está indiretamente proporcional a altura da coluna, o que faz sentido uma vez que para que todos tenham o mesmo desempenho as maiores precisarão de menos refluxo para separar e vice-versa.
+
+    \begin{figure}\centering
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}
+            \begin{axis}
+            [
+                % ymode=log,
+                xmajorgrids=true,
+                xtick=data,
+                % ytick=data,
+                ymajorgrids=true,
+                % xtick distance={0.5},
+                % minor tick num={3},
+                % minor x tick num={0},
+                xminorgrids=false,
+                yminorgrids=true,
+                % xmin={7.5},xmax={32.5},
+                % scaled ticks=true,
+                % scaled y ticks={base 10:2},
+                % legend pos={north west},
+                % axis on top,
+                ylabel={NREFLUX},
+                xlabel={NSTEPS},
+                % legend columns=3,
+                % mark size=1pt,
+            ]
+                \addplot+[
+                    mark=*,
+                    draw={GraphA11},
+                    mark options={
+                        fill={GraphA11},
+                        fill opacity=1,
+                        draw={GraphA11},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    (8,3.299)
+                    (9,2.069)
+                    (10,1.634)
+                    (11,1.432)
+                    (12,1.317)
+                };
+                
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Relação inversa entre numero de pratos e refluxo}
+    \end{figure}
+
+    Se pode tirar uma sequencia mais optimizada para análise de dados que infelizmente não foi ultilizada nesse estudo:
+    \begin{enumerate}
+        \item Simular \numrange*{0.5}{5.0} em variação de 0.1
+        \item Simular intervalo melhor valor \(\pm\,\) 0.1 em variação de 0.01
+        \item Simular próximo intervalo de melhor valor anterior \(\pm\,\)0.01 em variação de 0.001
+    \end{enumerate}
+    Esse processo gera o menor numero de dados para atingir mesmo objetivo e pode ser repetido para atingir maiores precisões.
+    Comparando com o processo anterior, esse gera 10 dados cada etapa a partir da segunda, enquanto o processo anterior gera de 100 a 200, porem exige uma etapa a mais de simulação.
+
+    Pela inconsistencia do DS-1 decidimos abandonar esses dados para fulturas simulações, usando a análise de sensibilidade como o métodod mais confiável.
+
+\end{sectionBox}
+
+\end{document}

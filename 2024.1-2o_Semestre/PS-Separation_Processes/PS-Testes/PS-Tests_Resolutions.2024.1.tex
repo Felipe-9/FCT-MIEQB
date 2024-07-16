@@ -1,0 +1,378 @@
+% !TEX root = ./PS-Tests_Resolutions.2024.1.tex
+\providecommand\mainfilename{"./PS-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Tests_Resolutions.2024.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/PS-Tests_Resolutions.2024.1}}}
+% \tikzsetexternalprefix{./.build/figures/PS-Tests_Resolutions.2024.1/graphics/}
+
+\mymakesubfile{1}
+[PS]
+{Teste 2024.1} % Subfile Title
+{Teste 2024.1} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Prentende abs \(\qty*{90}{\percent\of{\ch{CO2}}}\)
+            \item Conc inicial \(\qty*{1}{\percent\of{\ch{CO2}}}\)
+            \item \(P=\qty*{10}{\atm}\)
+            \item \(G=1.5\,G_{\min}\)
+            \item \(H=\qty*{900}{\atm}\)
+        \end{multicols}
+    \end{itemize}
+} % Q1
+    \begin{questionBox}2{ % MARK: Q1.1
+        Caldal mínimo da agua
+    } % Q1.1
+        \answer{}
+        \begin{itemize}
+            \item \(y_B = 1\%\)
+            \item \(y_A = 1\%*(1-90\%) = 0.1\%\)
+        \end{itemize}
+        \begin{flalign*}
+            &
+                L_{\min}: &\\&
+                G_B\,y_B + L_A\,x_a
+                = G_B\,y_B
+                = &\\&
+                = G_{A}\,y_{A} + L_{B\,\min}\,x_B^*
+                ; &\\[3ex]&
+                \text{Verificar se o caldal é constante:}
+                &\\&
+                E = \myvert{1-G_s/G_B};
+                &\\&
+                G_B\,y_B
+                = G_s\,\frac{y_B}{1-y_B}
+                \implies &\\&
+                \implies
+                E
+                = \myvert{1-\frac{G_s}{G_B}}
+                = \myvert{1-\frac{y_B(1-y_B)}{y_B}}
+                = y_B
+                = 1\% < 10\%
+                &\\&
+                \therefore
+                \begin{cases}
+                    G_A=G_B=G=&
+                    \\
+                    L_A=L_B=L=& 1.5\,L_{\min}
+                \end{cases}
+                &\\[3ex]&
+                % y_B^*
+                % = \frac{p_{B,\ch{CO2}}}{p_T}
+                % = \frac{H}{p_T}\,x_B
+                % = \frac{900}{10}\,1\%
+                % \cong 
+                % 0.9
+                &\\[3ex]&
+                L_{\min}
+                = \frac{G\,(y_B-y_A)}{1.5\,x_B}
+                = \frac{G\,(y_B-y_A)}{1.5\,y_B/H}
+                = \frac{G\,(1-y_A/y_B)\,H}{1.5}
+                % Assumimos
+                &\\[3ex]&
+                \text{Assumimos caldal mínimo: } \qty*{40}{\kilo\mole/\hour}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.2
+        A \% molar de \ch{CO2} na corrente líquida à saída da coluna
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                x_B: &\\&
+                G_B\,y_B 
+                = G\,y_B 
+                = &\\&
+                = G_A\,y_A + L_B\,x_B
+                = G\,y_A + L\,x_B
+                = G\,y_A + L_{\min}*1.5\,x_B
+                \implies &\\&
+                \implies
+                x_B
+                = G\,(y_B - y_A)/L
+                \cong G\,(1\% - 0.1\%)/40*1.5
+                \cong &\\&
+                \cong G\,1.5\E{-4}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.3
+        A força motriz na base e no topo da coluna. Comente
+    } % Q1.3
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.4
+        Numero de unidades de transf
+    } % Q1.4
+        \answer{}
+        \begin{flalign*}
+            &
+                N_{OG}: &\\&
+                N_{OG}
+                = \int_{y_A}^{y_B}{\odif{y}/(y-y^*)}
+                \cong 
+                \frac{y_B-y_A}{\adif{\bar{y_L}}}
+                = &\\&
+                = \frac{
+                    y_B - y_A
+                }{
+                    \left(
+                        \frac
+                        {\adif{y_B}-\adif{y_A}}
+                        {\ln{\adif{y_B}/\adif{y_A}}}
+                    \right)
+                }
+                = &\\&
+                = \frac{
+                    y_B - y_A
+                }{
+                    \left(
+                        \frac
+                        {
+                            (y_B-y_B^*)
+                            -(y_A-y_A^*)
+                        }
+                        {\ln{
+                            \frac
+                            {y_B-y_B^*}
+                            {y_A-y_A^*}
+                        }}
+                    \right)
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q1.5
+        Discuta o efeito de usar uma pressão inferior, na altura de enchiemnto necessáia para esta separação
+    } % Q1.5
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\qty*{45}{\percent.\mole\of{A}}\)
+            \item \(\qty*{93}{\percent.\mole}\)
+        \end{multicols}
+    \end{itemize}
+} % Q2
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Temp de corrente de alimentação: \qty*{110}{\celsius}
+            \item \(C_{p,mist}=\qty*{67}{\joule/\mole.\celsius}\)
+            \item \(\adif{\hat{H}}_{vap,mist}=\qty*{40.2}{\kilo\joule/\mole}\)
+        \end{multicols}
+        \item Temp de vap \qty*{1}{\bar}:
+        \begin{itemize}
+            \begin{multicols}{2}
+                \item A puro:      \qty*{ 82}{\celsius}
+                \item C puro:      \qty*{115}{\celsius}
+                \item Alimentação: \qty*{100}{\celsius}
+                \item Destilado:   \qty*{ 84}{\celsius}
+                \item Residuo:     \qty*{110}{\celsius}
+            \end{multicols}
+        \end{itemize}
+    \end{itemize}
+    \begin{questionBox}2{ % MARK: Q2.1
+        Razão mínima de refluxo
+    } % Q2.1
+        \answer{}
+        \begin{itemize}
+            \item A é mais volátil
+            \begin{multicols}{3}
+                \item \(x_F=\qty*{45}{\percent.\mole\of{A}}\)
+                \item \(x_D=\qty*{93}{\percent.\mole\of{A}}\)
+                \item \(x_B=\qty*{15}{\percent.\mole\of{A}}\)
+            \end{multicols}
+        \end{itemize}
+        \begin{flalign*}
+            &
+                R_{\min}: &\\&
+                y_{n+1}
+                = \frac{R_{\min}}{R_{\min}+1}\,x_n
+                + \frac{x_{D}}{R_{\min}+1}
+                ;&\\[3ex]&
+                y_{n+1} \text{ (Reta a partir de dois pontos)}:
+                &\\[1.5ex]&
+                % 
+                % 
+                % 
+                \text{1º Ponto: Interseção \(y_i\) com a curva de equilibrio} &\\&
+                y_i 
+                = \frac{i}{i-1}\,x_i
+                - \frac{x_F}{i-1}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                i \text{ (Vapor Sobreaquecido)} &\\&
+                i 
+                = \frac{\bar{L}-L}{F}
+                = \frac{(L-\nu)-L}{F}
+                = \frac{-\nu}{F}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \text{Balanço Mássico}
+                &\\&
+                \nu\,\adif{\hat{H}}_{vap}
+                = F\,C_{p,mist}\,\adif{T}
+                \implies &\\&
+                \implies
+                \nu
+                = \frac
+                {F\,C_{p,mist}\,\adif{T}}
+                {\adif{\hat{H}}_{vap}}
+                = \frac
+                {F\,67\,(110-100)}
+                {40.2\E{3}}
+                \cong
+                F\,\num{16.666666666666667e-3}
+                \implies &\\&
+                \implies
+                i
+                = \frac{-\nu}{F}
+                = -\num{16.666666666666667e-3}
+                \implies &\\&
+                \implies
+                y_i
+                = \frac{i}{i-1}\,x_i
+                - \frac{x_F}{i-1}
+                \cong 
+                = \num{-0.016393442622951}\,x_i
+                + \num{0.442622950819672}
+                &\\&
+                \begin{cases}
+                    x_i = x_F 
+                    &\implies y_i = x_F\frac{i-1}{i-1} = x_F 
+                    = 0.45
+                    \\
+                    x_i = 0   
+                    &\implies y_i = \num{0.442622950819672}
+                    4.25
+                \end{cases}
+                &\\[3ex]&
+                \text{2º Ponto:} &\\&
+                y_D=x_D = 0.93
+                &\\[6ex]&
+                \implies
+                \frac{x_D}{R_{\min}+1}
+                \cong 0.280
+                \implies
+                R_{\min}
+                \cong \frac{0.93}{0.280}-1
+                \cong \num{2.321428571428571}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.2
+        \begin{itemize}
+            \begin{multicols}{2}
+                \item \(R=1.2\,R_{\min}\)
+            \end{multicols}
+            \item Det numero de andares e o andar otimo de entrada
+        \end{itemize}
+    } % Q2.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \text{Razão de refluxo:} 
+                % &\\&
+                R 
+                = R_{\min}*1.25
+                \cong \num{2.321428571428571}*1.2
+                \cong \num{2.785714285714285}
+                % 
+                % 
+                % 
+                &\\[3ex]&
+                \text{Reta de Enriching:}
+                &\\&
+                y_{n+1}
+                = \frac{x_n}{1+1/R}
+                + \frac{x_D}{R+1}
+                \cong
+                \num{0.735849056603774}\,x_n
+                + \num{0.245660377358491}
+                &\\[3ex]&
+                \text{Interseção com o Feed}
+                &\\&
+                \num{-0.016393442622951}\,x_n
+                + \num{0.442622950819672}
+                = \num{0.735849056603774}\,x_n
+                + \num{0.245660377358491}
+                \implies &\\&
+                \implies
+                x_n
+                \cong \frac{
+                    \num{0.442622950819672}
+                    -\num{0.245660377358491}
+                }{
+                    \num{0.735849056603774}
+                    +\num{0.016393442622951}
+                }
+                \cong
+                \num{0.261833881578946}
+                \implies &\\&
+                \implies
+                y_n
+                \cong
+                  \num{0.735849056603774}
+                * \num{0.261833881578946}
+                + \num{0.245660377358491}
+                \cong
+                \num{0.438330592105263}
+                % 
+                % 
+                % 
+                &\\[3ex]&
+                \text{Reta de Stripping:}
+                &\\&
+                y_{m+1}
+                = \frac{\bar{L}}{\bar{V}}\,x_m
+                - \frac{B\,x_b}{\bar{V}}
+                = \frac{\bar{V}+B}{\bar{V}}\,x_m
+                - \frac{B\,x_b}{\bar{V}}
+                &\\&
+                \begin{cases}
+                    x_m=x_B
+                    &\implies
+                    y_{m+1}=x_B\,\frac{\bar{V}+B-B}{\bar{V}}=x_B=0.15
+                    \\
+                    x_m\cong\num{0.261833881578946}
+                    &\implies
+                    y_{m+1}\cong \num{0.438330592105263}
+                \end{cases}
+                &\\[6ex]&
+                \begin{cases}
+                    \text{Pratos Totais: } 10
+                    \\
+                    \text{Posição ótima de entrada: } 7
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.3
+        Seria possivel cumprir o objetivo apenas com 4 andares?
+    } % Q2.3
+        \answer{}
+        Com um aumento significativo da razão de refluxo, é possivel traçar pratos maiores e consequentemente menos pratos, porem por maior que seja, pela consentração de saída ser tão alta, um numero mínimo de pratos deveria se limitar por baixo a 5 para a curva de equilibrio atual. no caso de mudarmos a curva abre possibilidade de reduzir ainda mais o numero de pratos, inclusive para menos de 4.
+    \end{questionBox}
+    \begin{questionBox}2{ % MARK: Q2.4
+        Comentar a frase
+    } % Q2.4
+        \answer{}
+        Com uma curva de equilíbrio mais larga temos mais espaço por prato, que seria a tal facilidade da separação e consequentemente necessitariamos de menos pratos
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}  

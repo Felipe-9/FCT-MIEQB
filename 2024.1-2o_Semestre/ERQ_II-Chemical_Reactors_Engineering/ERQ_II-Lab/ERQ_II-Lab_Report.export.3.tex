@@ -1,0 +1,198 @@
+% !TEX root = ./ERQ_II-Lab_Report.export.3.tex
+\providecommand\mainfilename{"./ERQ_II-Lab_Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Lab_Report.export.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/ERQ_II-Lab_Report.export.3}}}
+\tikzsetexternalprefix{./figures/ERQ_II-Lab_Report.export.3/graphics/}
+
+\def\eqsep{\vspace{-3ex}}
+
+\nopagecolor
+\colorlet{foreground}{black}
+\colorlet{background}{white}
+\color{foreground}
+
+\mymakesubfile{3}
+[ERQ II]
+{Export} % Subfile Title
+{Export} % Part Title
+
+\part*{Fator de Efetividade} % #MARK: Fator de Efetividade
+\begin{minipage}{100mm}
+    \paragraph*{Fator de Efetividade \(\eta\)}
+    \begin{BM}
+        \eta_{i}
+        = (\phi_{i}\,\coth{\phi_{i}}-1)
+        \,\frac{3}{\phi_{i}^2}
+        = \eta_{j}
+        \,\frac{k'_{i}}{k'_{j}}
+        ;\\
+        i,j\in\{PP,PG\}
+    \end{BM}
+\end{minipage}
+
+\part*{Módulo de Thiele} % #MARK: phi
+\begin{minipage}{100mm}
+    \paragraph*{Módulo de Thiele \(\phi\)}
+    \begin{BM}
+        \phi_{i}
+        = \frac{d_{i}}{2}
+        \,\sqrt{\frac
+            {k'\,\rho_c}{De}
+        }
+        = \phi_{j}
+        \,\frac{d_{i}}{d_{j}}
+        ;\\
+        i,j\in\{PP,PG\}
+    \end{BM}
+\end{minipage}
+
+\part*{F(phiPG)} % #MARK: f
+\begin{minipage}{220mm}
+    \begin{BM}
+        f(\phi_{PG})
+        = \dfrac{
+            \phi_{PG}
+            \,\frac{d_{p,PP}}{d_{p,PG}}
+            \,\coth{\left(
+                \phi_{PG}
+                \,\frac
+                {d_{p,PP}}
+                {d_{p,PG}}
+            \right)}
+            - 1
+        }{
+            \left(
+                \frac
+                {d_{p,PP}}
+                {d_{p,PG}}
+            \right)^2
+            \,\left(
+                \phi_{PP}
+                \,\coth{\phi_{PG}}
+                - 1
+            \right)
+        }
+        - \frac
+        {k'_{ap,PP}}
+        {k'_{ap,PG}}
+        = 0
+    \end{BM}
+    \begin{flalign*}
+        &
+            \frac
+            {k'_{ap,PP}}
+            {k'_{ap,PG}}
+            = \frac
+            {\eta_{PP}}
+            {\eta_{PG}}
+            % \implies &\\&
+            \implies
+            f(\phi_{PP})
+            = \frac
+            {\eta_{PP}}
+            {\eta_{PG}}
+            - \frac
+            {k'_{ap,PP}}
+            {k'_{ap,PG}}
+            = &\\&
+            = \frac{
+                (\phi_{PP}\,\coth{\phi_{PP}}-1)
+                \,\frac{3}{\phi_{PP}^2}
+            }
+            {
+                (\phi_{PG}\,\coth{\phi_{PG}}-1)
+                \,\frac{3}{\phi_{PG}^2}
+            }
+            - \frac
+            {k'_{ap,PP}}
+            {k'_{ap,PG}}
+            = \dfrac{
+                \phi_{PG}
+                \,\frac{d_{p,PP}}{d_{p,PG}}
+                \,\coth{\left(
+                    \phi_{PG}
+                    \,\frac
+                    {d_{p,PP}}
+                    {d_{p,PG}}
+                \right)}
+                - 1
+            }{
+                \left(
+                    \frac
+                    {d_{p,PP}}
+                    {d_{p,PG}}
+                \right)^2
+                \,\left(
+                    \phi_{PP}
+                    \,\coth{\phi_{PG}}
+                    - 1
+                \right)
+            }
+            - \frac
+            {k'_{ap,PP}}
+            {k'_{ap,PG}}
+            = 0
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Constante intrínseca} % #MARK: k'
+\begin{minipage}{120mm}
+    \paragraph*{Constante intrínseca \(k'\)}
+    \begin{BM}
+        k'
+        = \frac
+        {k'_{ap,PP}-k'_{ap,PG}}
+        {\eta_PP-\eta_PG}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \eta_{PP}
+            - \eta_{PG}
+            = \frac
+            {k'_{ap,PP}-k'_{ap,PG}}
+            {k'}
+            \implies
+            k'
+            = \frac
+            {k'_{ap,PP}-k'_{ap,PG}}
+            {\eta_{PP}-\eta_{PG}}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Difusividade Efetiva} % #MARK: De
+\begin{minipage}{120mm}
+    \paragraph*{Difusividade Efetiva \(De\)}
+    \begin{BM}
+        De
+        = \frac
+        {k'\,\rho_C\,(d_{PP}-d_{PG})^2}
+        {4(\phi_{PP}-\phi_{PG})^2}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \phi_{PG}
+            - \phi_{PP}
+            = \frac{d_{PP}-d_{PG}}{2}
+            \,\sqrt{\frac
+                {k'\,\rho_c}{De}
+            }
+            % \implies &\\&
+            \implies
+            De
+            = \frac
+            {k'\,\rho_C\,(d_{PP}-d_{PG})^2}
+            {4(\phi_{PP}-\phi_{PG})^2}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\end{document}

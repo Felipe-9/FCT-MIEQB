@@ -1,0 +1,102 @@
+% !TEX root = ./PS-Report.7.tex
+\providecommand\mainfilename{"./PS-Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Report.7.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/PS-Report.7}}}
+\tikzsetexternalprefix{./figures/PS-Report.7/graphics/}
+
+% \mymakesubfile{7}
+% [PS]
+% {FSTAGE-2} % Subfile Title
+% {FSTAGE-2} % Part Title
+
+\part*{Coluna B2}
+
+\begin{sectionBox}1{NSTAGE-B2} % MARK: S
+    
+    Da mesma forma que a primeira coluna se variou manualmente o numero de pratos da coluna B2 com o numero de refluxo fixo em 2.
+
+    \begin{center}
+        \vspace{1ex}
+        % \setlength\tabcolsep{3mm} % width
+        \begin{tabular}{*{5}{C}}
+            \toprule
+            
+            \multicolumn{1}{c}{\multirow{2}{*}{Simulação}}
+                &  \multicolumn{1}{c}{\multirow{2}{*}{NSTAGE}}
+                &  \multicolumn{2}{l}{Reculperação}
+                &  \multicolumn{1}{c}{\multirow{2}{*}{Error(.99)}}
+            \\\cline{3-4} &&
+                \multicolumn{1}{c}{Tolueno}
+                & \multicolumn{1}{c}{Cumeno}
+            
+            \\\midrule
+            
+                1 & 32 & \qty{99.8121004901713}{\percent} & \qty{99.9931165760466}{\percent} & \num{1.82345158203827E-02}
+            \\  2 & 16 & \qty{97.9500619516825}{\percent} & \qty{98.6623209697227}{\percent} & \num{1.40163341272198E-02}
+            \\  3 & 20 & \qty{99.2006215148576}{\percent} & \qty{99.5561100541375}{\percent} & \num{7.64375322217292E-03}
+            \\  4 & 18 & \qty{98.7194998868427}{\percent} & \qty{99.2122579545395}{\percent} & \num{4.97735421915879E-03}
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Variação do numero de pratos da coluna B2}
+        \vspace{2ex}
+    \end{center}
+
+    % \tikzset{external/remake next=true}
+    % {\Large\bfseries{Solução 1}}\par\medskip
+    \begin{figure}\centering
+        
+        \begin{tikzpicture}
+        \begin{axis}
+        [
+            xmajorgrids=true,
+            xtick=data,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % xmin={7.5},xmax={32.5},
+            % scaled ticks=true,
+            scaled y ticks={base 10:3},
+            % legend pos={north west},
+            % axis on top,
+            ylabel={Error (.99)},
+            xlabel={NSTAGE},
+        ]
+            % ==================== Points ==================== %
+            \addplot+[
+                mark=*,
+                draw={Graph},
+                mark options={
+                    fill={Graph},
+                    fill opacity=1,
+                    draw={Graph},
+                },
+                smooth, 
+                tension=0.25,
+                % curved line,
+            ] coordinates {
+                (16,1.40163341272198E-02)
+                (18,4.97735421915879E-03)
+                (20,7.64375322217292E-03)
+                (32,1.82345158203827E-02)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Variação do numero de pratos da coluna B2}
+    \end{figure}
+
+    Foram \emph{selecionados de \numrange*{17}{20}} como o numero de pratos a serem estudados para a coluna B2
+    
+\end{sectionBox}
+
+
+\end{document}

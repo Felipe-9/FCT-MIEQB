@@ -1,0 +1,186 @@
+% !TEX root = ./ERQ_II-Lab_Report.P1.M4.tex
+\providecommand\mainfilename{"./ERQ_II-Lab_Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Lab_Report.P1.M4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./figures/ERQ_II-Lab_Report.P1.M4}}}
+\tikzsetexternalprefix{./figures/ERQ_II-Lab_Report.P1.M4/graphics/}
+
+\mymakesubfile{1}
+[ERQ II]
+{P1 Modelo 1} % Subfile Title
+{P1 Modelo 1} % Part Title
+
+\begin{sectionBox}1{Modelo} % MARK: Modelo
+    
+    \begin{center}
+        \tikzset{external/remake next=true}
+        \begin{tikzpicture}[xscale=3.5,yscale=2]
+    
+            \pic (r1) at (1,0) {packed bed reactor};
+            \pic (r2) at (2.5, 1) {stirred reactor};
+            \pic (r3) at (2.5,-1) {stirred reactor};
+
+            \node[above] at (r1-top) {\(R_1\)(PFR)};
+            \node[below] at (r1-bottom) {\(\alpha\,V\)};
+            
+            \node[above] at (r2-top) {\(R_2\)(CSTR)};
+            \node[below] at (r2-bottom) {\((1-\alpha)\,V/2\)};
+
+            \node[above] at (r3-top) {\(R_3\)(CSTR)};
+            \node[below] at (r3-bottom) {\((1-\alpha)\,V/2\)};
+    
+            \draw[main stream] (r1-left) ++(-0.5,0) 
+            --
+            node[above] {\(C_{in}\)}
+            node[below] {\(\nu\)}
+            (r1-left);
+            % ============================================ %
+            \draw[main stream] (r1-right) --
+            node[above] {\(C_{1}\)}
+            node[below] {\(\nu\)}
+            ++(.4,0) --
+            ++(0,1) --
+            node[above] {\(C_{1}\)}
+            node[below] {\(\beta\,\nu\)}
+            (r2-left);
+            % ============================================ %
+            \draw[main stream] (r1-right) 
+            ++(.4,0) --
+            ++(0,-1) --
+            node[above] {\(C_{1}\)}
+            node[below] {\((1-\beta)\,\nu\)}
+            (r3-left);
+            % ============================================ %
+            \draw[main stream] (r2-right) --
+            node[above] {\(C_{2}\)}
+            node[below] {\(\beta\,\nu\)}
+            ++(0.6,0) --
+            ++(0,-1) --
+            node[above] {\(C_{out}\)}
+            node[below] {\(\nu\)}
+            ++(.5,0);
+            % ============================================ %
+            \draw[main stream,arrows={}] (r3-right) --
+            node[above] {\(C_{3}\)}
+            node[below] {\((1-\beta)\,\nu\)}
+            ++(0.6,0) --
+            ++(0,1);
+            % node[above] {\(C_{out}\)}
+            % node[below] {\(\nu\)}
+    
+        \end{tikzpicture}
+    \end{center}
+    
+\end{sectionBox}
+
+\section{Calculos}
+
+\begin{sectionBox}2{C2} % MARK: Calculos
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{\tau/2}
+        \,\frac{\beta}{1-\alpha}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,\beta\,C_{1}
+            = \nu\,\beta\,C_{2}
+            + (1-\alpha)\,(V/2)\,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \beta\,C_{1}
+            = \beta\,C_{2}
+            + (1-\alpha)\,(\tau/2)\,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_{1}-C_{2}}{\tau/2}
+            \,\frac{\beta}{1-\alpha}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{(1-\alpha)\,\tau/2}
+            \,\beta
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{\tau/2}
+            \,\frac{\beta}{1-\alpha}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{C3} % MARK: S
+    \begin{BM}
+        C_{3,i+1}
+        = C_{3,i}
+        + \frac{C_{1,i}-C_{3,i}}{\tau/2}
+        \,\frac{1-\beta}{1-\alpha}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            (1-\beta)\,\nu\,C_1
+            = (1-\beta)\,\nu\,C_3
+            + (1-\alpha)\,(V/2)
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            (1-\beta)\,C_1
+            = (1-\beta)\,C_3
+            + (1-\alpha)\,(\tau/2)
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{3}}{t}
+            = \frac{C_1-C_3}{\tau/2}
+            \,\frac{1-\beta}{1-\alpha}
+            \implies &\\&
+            \implies
+            \adv{C_{3}}{t}
+            = \frac{C_{3,i+1}-C_{3,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{3,i}}{\tau/2}
+            \,\frac{1-\beta}{1-\alpha}
+            \implies &\\&
+            \implies
+            C_{3,i+1}
+            = C_{3,i}
+            + \frac{C_{1,i}-C_{3,i}}{\tau/2}
+            \,\frac{1-\beta}{1-\alpha}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{C out} % MARK: S
+    \begin{BM}
+        C_{out}
+        = \beta\,C_{2}
+        + (1-\beta)\,C_{3}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,C_{out}
+            = \beta\,\nu\,C_{2}
+            + (1-\beta)\,\nu\,C_{3}
+            \implies &\\&
+            \implies
+            C_{out}
+            = \beta\,C_{2}
+            + (1-\beta)\,C_{3}
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+\end{document}

@@ -1,0 +1,144 @@
+% !TEX root = ./ERQ_II-Lab_Report.P1.M2.tex
+\providecommand\mainfilename{"./ERQ_II-Lab_Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Lab_Report.P1.M2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./figures/ERQ_II-Lab_Report.P1.M2}}}
+\tikzsetexternalprefix{./figures/ERQ_II-Lab_Report.P1.M2/graphics/}
+
+\mymakesubfile{1}
+[ERQ II]
+{P1 Modelo 1} % Subfile Title
+{P1 Modelo 1} % Part Title
+
+\begin{sectionBox}1{Modelo} % MARK: Modelo
+    
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}[xscale=3.5]
+    
+            \pic (r1) at (1,0) {packed bed reactor};
+            \pic (r2) at (2,0) {stirred reactor};
+            \pic (r3) at (3,0) {stirred reactor};
+
+            \node[above] at (r1-top) {\(R_1\)(PFR)};
+            \node[below] at (r1-bottom) {\(\alpha_1\,V\)};
+            
+            \node[above] at (r2-top) {\(R_2\)(CSTR)};
+            \node[below] at (r2-bottom) {\((1-\alpha_1)\,\alpha_2\,V\)};
+
+            \node[above] at (r3-top) {\(R_3\)(CSTR)};
+            \node[below] at (r3-bottom) {\((1-\alpha_1)\,(1-\alpha_2)\,V\)};
+    
+            \draw[main stream] (r1-left) ++(-0.5,0) 
+            --
+            node[above] {\(C_{in}\)}
+            node[below] {\(\nu\)}
+            (r1-left);
+            \draw[main stream] (r1-right) 
+            --
+            node[above] {\(C_{1}\)}
+            node[below] {\(\nu\)}
+            (r2-left);
+            \draw[main stream] (r2-right) 
+            --
+            node[above] {\(C_{2}\)}
+            node[below] {\(\nu\)}
+            (r3-left);
+            \draw[main stream] (r3-right) 
+            --
+            node[above] {\(C_{out}\)}
+            node[below] {\(\nu\)}
+            ++(.5,0);
+    
+        \end{tikzpicture}
+    \end{center}
+    
+\end{sectionBox}
+
+\section*{Calculos}
+
+\begin{sectionBox}2{C2} % MARK: Calculos
+
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,C_1
+            = \nu\,C_2
+            + (1-\alpha_1)\,\alpha_2\,V
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            C_1
+            = C_2
+            + (1-\alpha_1)\,\alpha_2\,\tau
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_1-C_2}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{C out} % MARK: S
+    
+    \begin{BM}
+        C_{out,i+1}
+        = C_{out,i}
+        + \frac{C_{2,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,C_2
+            = \nu\,C_{out}
+            + (1-\alpha_1)(1-\alpha_2)\,V\,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            C_2
+            = C_{out}
+            + (1-\alpha_1)(1-\alpha_2)\,\tau\,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{out}}{t}
+            = \frac{C_2-C_{out}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_{out}}{t}
+            = \frac{C_{out,i+1}-C_{out,i}}{\adif{t}}
+            = \frac{C_{2,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            C_{out,i+1}
+            = C_{out,i}
+            + \frac{C_{2,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\end{document}

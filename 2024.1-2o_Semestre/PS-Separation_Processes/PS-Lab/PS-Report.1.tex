@@ -1,0 +1,129 @@
+% !TEX root = ./PS-Report.1.tex
+\providecommand\mainfilename{"./PS-Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Report.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./figures/PS-Report.1}}}
+% \tikzsetexternalprefix{./figures/PS-Report.1/graphics/}
+
+% \mymakesubfile{1}
+% [PS]
+% {Introdução} % Subfile Title
+% {Introdução} % Part Title
+
+\begin{sectionBox}1{Introdução} % MARK: S
+    
+    Pretende-se planejar um processo de destilação adaptado ao fluxo de uma mistura de Benzeno (\ch{C6H6}), Tolueno (\ch{C7H8}) e Cumeno (\ch{C9H12}) em duas etapas.
+
+    % \paragraph*{Flowsheet}
+    \begin{figure}\centering
+        \includegraphics[width=.8\textwidth]{flowsheet.png}
+        \caption{Flowsheet}
+    \end{figure}
+
+    \paragraph*{Composição do Feed (F)}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l C}
+            \toprule
+            
+                \multicolumn{1}{c}{Composto}
+                & \multicolumn{1}{c}{Fração molar}
+            
+            \\\midrule
+            
+                Benzeno & 0.4
+                \\ Tolueno & 0.3
+                \\ Cumeno & 0.3
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Composição do Feed (F) \\em fração molar de cada composto}
+        \vspace{2ex}
+    \end{center}
+
+    \paragraph*{Objetivos}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l c C}
+            \toprule
+            
+                \multicolumn{1}{c}{Composto}
+                & \multicolumn{1}{c}{Stream}
+                & \multicolumn{1}{c}{Reculperação}
+            
+            \\\midrule
+            
+                    Cumeno  & R & 95\%
+                \\  Tolueno & D & 95\%
+                \\  Tolueno & R2 & 99\%
+                \\  Benzeno & D2 & 99\%
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Objetivos de reculperação\\ de cada composto nos streams}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[Reculperação] Mede a fração de fluxo molar de saída comparado com entrada da coluna, para D e R é F, para D2 e R2 é D
+    \end{description} 
+
+    Os modelos devem \emph{minimizar os gastos de construção e manutenção}, onde o primeiro esta relacionado com o \emph{numero de colunas} e o segundo a energia gasta para manter a coluna funcionando, que por si se relaciona com o \emph{numero de refluxo} da coluna.
+
+    \paragraph*{Modelos encontrados}
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{1.5mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{*{4}{C} | *{4}{C}}
+            \toprule
+            
+                    \multicolumn{4}{l|}{B1}
+                &   \multicolumn{4}{l}{B2}
+                
+                \\  \multicolumn{1}{c}{Modelo}
+                &   \multicolumn{1}{c}{NSTAGES}
+                &   \multicolumn{1}{c}{FSTAGE}
+                &   \multicolumn{1}{c|}{RR}
+                &   \multicolumn{1}{c}{Modelo}
+                &   \multicolumn{1}{c}{NSTAGES}
+                &   \multicolumn{1}{c}{FSTAGE}
+                &   \multicolumn{1}{c}{RR}
+            
+            \\\midrule
+            
+                    1 &  8 & 6 & 3.299 & 1 & 17 &  8 & 2.623
+                \\  2 &  9 & 7 & 2.069 & 2 & 18 &  9 & 2.251
+                \\  3 & 10 & 7 & 1.634 & 3 & 19 &  9 & 2.019
+                \\  4 & 11 & 8 & 1.432 & 4 & 20 & 10 & 1.833
+                \\  5 & 12 & 8 & 1.317 &  
+                
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Melhores modelos para resolução do problema}
+        \vspace{2ex}
+    \end{center}
+
+    \emph{Qualquer combinação dos modelos B1 e B2 é uma resposta ao problema}, mais a frente será estudado as combinações (1,1),(1,4),(5,1) e (5,4) para prever as caracteristicas energéticas de todas as combinações possíveis.
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{NSTAGES} % Longest item
+    ]
+        \item[NSTAGES] Numero de Pratos
+        \item[FSTAGE] Prato de entrada
+        \item[RR] Numero de Refluxo
+    \end{description}
+    
+\end{sectionBox}
+
+\end{document}

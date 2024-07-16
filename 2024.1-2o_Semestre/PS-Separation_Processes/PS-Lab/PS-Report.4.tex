@@ -1,0 +1,244 @@
+% !TEX root = ./PS-Report.4.tex
+\providecommand\mainfilename{"./PS-Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Report.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/PS-Report.4}}}
+\tikzsetexternalprefix{./figures/PS-Report.4/graphics/}
+
+\begin{sectionBox}1{FSTAGE} % MARK: S
+    
+    Usando a análise de sensibilidade S1-FSTAGE, se variou a entrada do feed do meio da coluna até o práto anterior ao ultimo.
+    
+    Aqui o erro medimos em referencia a 1 por querermos a melhor configuração possível, o  ajuste para 95\% será feito no passo seguinte.
+
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{2mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{c *{5}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{\multirow{2}{*}{FSTAGE}}
+                & \multicolumn{5}{l}{Error(1)}
+                \\ 
+                & \multicolumn{1}{L}{ 8}
+                & \multicolumn{1}{L}{ 9}
+                & \multicolumn{1}{L}{10}
+                & \multicolumn{1}{L}{11}
+                & \multicolumn{1}{L}{12}
+            
+            \\\midrule
+            
+                4 
+                & \num{2.13242472E-01} 
+                & \num{1.98173584E-01} 
+                & \num{1.89886012E-01} 
+                & \num{1.85510924E-01} 
+                & \num{1.83439972E-01}
+            \\  5 
+                & \num{1.55587501E-01}
+                & \num{1.30810491E-01}
+                & \num{1.14761632E-01}
+                & \num{1.04938448E-01}
+                & \num{9.92880970E-02}
+            \\  6 
+                & \cellemph{\num{1.37707446E-01}}
+                & \num{1.05599373E-01}
+                & \num{8.38652740E-02}
+                & \num{6.92861590E-02}
+                & \num{5.97879650E-02}
+            \\  7 
+                & \num{1.44540034E-01}
+                & \cellemph{\num{1.01801254E-01}}
+                & \cellemph{\num{7.42115890E-02}}
+                & \num{5.58876820E-02}
+                & \num{4.35930620E-02}
+            \\  8 &
+                & \num{1.17670733E-01}
+                & \num{7.83103150E-02}
+                & \cellemph{\num{5.41534930E-02}}
+                & \cellemph{\num{3.87198880E-02}}
+            \\   9 &&
+                & \num{1.00916306E-01} 
+                & \num{6.32270400E-02} 
+                & \num{4.13001640E-02}
+            \\  10 &&&
+                & \num{9.11109740E-02} 
+                & \num{5.39137350E-02}
+            \\  11 &&&&
+                & \num{8.57846400E-02}
+                
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Variação do prato de entrada da coluna B1 para diferentes numeros de pratos}
+        \vspace{2ex}
+
+        \begin{figure}\centering
+            % \tikzset{external/remake next=true}
+            % {\Large\bfseries{Solução 1}}\par\medskip
+            \begin{tikzpicture}
+            \begin{axis}
+            [
+                xmajorgrids=true,
+                % xtick=data,
+                ymajorgrids=true,
+                xtick distance={1},
+                minor tick num={3},
+                minor x tick num={0},
+                xminorgrids=false,
+                yminorgrids=true,
+                % xmin={7.5},xmax={32.5},
+                % scaled ticks=true,
+                scaled y ticks={base 10:2},
+                % legend pos={north west},
+                % axis on top,
+                ylabel={Error (1)},
+                xlabel={FSTAGE},
+                legend columns=2,
+            ]
+                
+                % % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Graph]{}
+                % ================= Interpolation ================ %
+                % \addplot[
+                %     no marks,
+                %     dashed,
+                %     samples=2,
+                % ] expression [
+                %     domain=0:4000
+                % ] {
+                %     -3.5953e-4*x+0.0013
+                % };
+                % -------------------------------------------- %
+                %                       8                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA11},
+                    mark options={
+                        fill={GraphA11},
+                        fill opacity=1,
+                        draw={GraphA11},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    (4,2.13242472E-01)
+                    (5,1.55587501E-01)
+                    (6,1.37707446E-01)
+                    (7,1.44540034E-01)
+                };
+                \addlegendentry{8}
+                % -------------------------------------------- %
+                %                       9                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA13},
+                    mark options={
+                        fill={GraphA13},
+                        fill opacity=1,
+                        draw={GraphA13},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    (4,1.98173584E-01)
+                    (5,1.30810491E-01)
+                    (6,1.05599373E-01)
+                    (7,1.01801254E-01)
+                    (8,1.17670733E-01)
+                };
+                \addlegendentry{9}
+                % -------------------------------------------- %
+                %                      10                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA15},
+                    mark options={
+                        fill={GraphA15},
+                        fill opacity=1,
+                        draw={GraphA15},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    (4,1.89886012E-01)
+                    (5,1.14761632E-01)
+                    (6,8.38652740E-02)
+                    (7,7.42115890E-02)
+                    (8,7.83103150E-02)
+                    (9,1.00916306E-01)
+                };
+                \addlegendentry{10}
+                % -------------------------------------------- %
+                %                      11                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA17},
+                    mark options={
+                        fill={GraphA17},
+                        fill opacity=1,
+                        draw={GraphA17},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    ( 4,1.85510924E-01)
+                    ( 5,1.04938448E-01)
+                    ( 6,6.92861590E-02)
+                    ( 7,5.58876820E-02)
+                    ( 8,5.41534930E-02)
+                    ( 9,6.32270400E-02)
+                    (10,9.11109740E-02)
+                };
+                \addlegendentry{11}
+                % -------------------------------------------- %
+                %                      12                      %
+                % -------------------------------------------- %
+                \addplot+[
+                    mark=*,
+                    draw={GraphA19},
+                    mark options={
+                        fill={GraphA19},
+                        fill opacity=1,
+                        draw={GraphA19},
+                    },
+                    % smooth,
+                    % tension=0.3,
+                    % curved line,
+                ] coordinates {
+                    ( 4,1.83439972E-01)
+                    ( 5,9.92880970E-02)
+                    ( 6,5.97879650E-02)
+                    ( 7,4.35930620E-02)
+                    ( 8,3.87198880E-02)
+                    ( 9,4.13001640E-02)
+                    (10,5.39137350E-02)
+                    (11,8.57846400E-02)
+                };
+                \addlegendentry{12}
+                
+            \end{axis}
+            \end{tikzpicture}
+            \caption{Variação do prato de entrada da coluna B1 para diferentes numeros de pratos}
+        \end{figure}
+    \end{center}
+    
+\end{sectionBox}
+
+
+\end{document}

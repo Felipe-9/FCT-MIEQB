@@ -1,0 +1,526 @@
+% !TEX root = ./ERQ_II-Tests_Resolutions.2024.1.tex
+\providecommand\mainfilename{"./ERQ_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Tests_Resolutions.2024.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/ERQ_II-Tests_Resolutions.2024.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_II-Tests_Resolutions.2024.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ\,II]
+{Teste 2024.1 Resolução} % Subfile Title
+{Teste 2024.1 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \item Reator CSTR com escoamento modelado em 2 CSTR iguais em serie
+        \item Tempo de residencia max: \qty*{10}{\min}
+    \end{itemize}
+} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    \begin{itemize}
+        \item Esquema de associação de reatores
+        \item Equações
+        \item Caldais, volumes, concentrações
+    \end{itemize}
+} % Q1.1
+    \answer{}
+    \begin{center}\Large\bfseries
+        \ch{-> R1 -> R2 ->}
+    \end{center}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+            
+                & \multicolumn{1}{c}{Volume}
+                & \multicolumn{1}{c}{Caldal in}
+                & \multicolumn{1}{c}{Caldal out}
+                % & \multicolumn{1}{c}{C}
+            
+            \\\midrule
+            
+                1
+                & V/2
+                & \nu
+                & \nu
+                \\ 
+                2
+                & V/2
+                & \nu
+                & \nu
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+        \begin{flalign*}
+            &
+                % 
+                % R_1
+                % 
+                \mathemph{R_1:}
+                &\\&
+                \nu\,C_{in,1}
+                = \nu\,C_{in}
+                = \nu\,C_{out,1}
+                + \frac{V}{2}
+                \,\odv{C_{out,1}}{t}
+                % 
+                % R_2
+                % 
+                ; &\\[3ex]&
+                \mathemph{R_2:}
+                &\\&
+                \nu\,C_{in,2}
+                = \nu\,C_{out,1}
+                = \nu\,C_{out,2}
+                + \frac{V}{2}
+                \,\odv{C_{out,2}}{t}
+                = \nu\,C_{out}
+                + \frac{V}{2}
+                \,\odv{C_{out}}{t}
+            &
+        \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Tempo de residencia
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            E(t) = \LagrangeTransform{g}(s)
+            % 
+            % g(s)
+            % 
+            ; &\\[3ex]&
+            \mathemph{g(s):}
+            g(s)
+            =\bar{C}_{out}/\bar{C}_{in}
+            % 
+            % c out
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out}/\bar{C}_{in}}
+            &\\&
+            \nu\,C_{out,1}
+            = \nu\,C_{out}
+            + \frac{V}{2}
+            \,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            C_{out,1}
+            = C_{out}
+            + \frac{\tau}{2}
+            \,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{C}_{out,1}
+            = \bar{C}_{out,1}
+            = &\\&
+            = \LagrangeTransform{C}_{out}
+            + \LagrangeTransform\left(
+                \frac{\tau}{2}
+                \,\odv{C_{out}}{t}
+            \right)
+            = \bar{C}_{out}
+            + \frac{\tau}{2}\,s\,\bar{C}_{out}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out}}{\bar{C}_{in}}
+            = \frac{1}{1+\frac{\tau}{2}\,s}
+            \,\frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            % 
+            % C out 1
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out,1}/\bar{C}_{in}}
+            &\\&
+            \nu\,C_{in}
+            = \nu\,C_{out,1}
+            + \frac{V}{2}
+            \,\odv{C_{out,1}}{t}
+            \implies &\\&
+            \implies
+            C_{in}
+            = C_{out,1}
+            + \frac{\tau}{2}
+            \,\odv{C_{out,1}}{t}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{C}_{in}
+            = \bar{C}_{in}
+            = \LagrangeTransform{C}_{out,1}
+            + \LagrangeTransform{\left(
+                \frac{\tau}{2}
+                \,\odv{C_{out,1}}{t}
+            \right)}
+            = &\\&
+            = \bar{C}_{out,1}
+            + \frac{\tau}{2}\,s\,\bar{C}_{out,1}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            = \frac{1}{1+\frac{\tau}{2}\,s}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \implies
+            g(s)
+            = \frac{1}{1+\frac{\tau}{2}\,s}
+            \,\frac{1}{1+\frac{\tau}{2}\,s}
+            = \frac{1}{(1+\frac{\tau}{2}\,s)^2}
+            = \frac{1}{(2/\tau)^2}
+            \,\frac{1}{(
+                \frac{2}{\tau}
+                + s
+            )^2}
+            = &\\&
+            = \frac{\tau^2}{4}
+            \,\frac{1}{(
+                \frac{2}{\tau} + s
+            )^2}
+            \implies &\\[3ex]&
+            \implies
+            E(t)
+            = \LagrangeTransform{g}(s)
+            = \frac{\tau^2}{4}
+            \,t\,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    Função Culmulativa
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            F(t)
+            = \int_0^t{E(t)\,\odif{t}}
+            = \int_0^t{
+                \left(
+                    \frac{\tau^2}{4}
+                    \,t\,\exp{\left(
+                        -\frac{2}{\tau}\,t
+                    \right)}
+                \right)
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            \frac{\tau^2}{4}
+            \int_0^t{
+                \left(
+                    t\,\exp{\left(
+                        -\frac{2}{\tau}\,t
+                    \right)}
+                \right)
+                \,\odif{t}
+            }
+            % 
+            % Primitiva
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Primitiva:}}
+            &\\&
+            \odv{}{t}{\left(
+                t\,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            = &\\&
+            = \exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            +
+            t
+            \,\left(
+                -\frac{\tau}{2}
+            \right)
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            \implies &\\&
+            \implies
+            \Primitive\left(
+                \odv{}{t}{\left(
+                    t\,\exp{\left(
+                        -\frac{2}{\tau}\,t
+                    \right)}
+                \right)}
+            \right)
+            = t\,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            = &\\&
+            = \Primitive{\left(
+                \exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            + \Primitive{\left(
+                t
+                \,\left(
+                    -\frac{\tau}{2}
+                \right)
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            = &\\&
+            = -\frac{\tau}{2}
+            \exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            - \frac{\tau}{2}
+            \Primitive{\left(
+                t
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            \implies &\\&
+            \implies
+            - \left(
+                t\,\frac{2}{\tau}+1
+            \right)
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            = \Primitive{\left(
+                t
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            \implies &\\[3ex]&
+            \implies
+            F(t)
+            = \frac{\tau^2}{4}
+            \adif{\left(
+                - \left(
+                    t\,\frac{2}{\tau}+1
+                \right)
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            \Big\vert_0^t
+            = &\\&
+            = \frac{\tau^2}{4}
+            \left(
+                - \left(
+                    t\,\frac{2}{\tau}+1
+                \right)
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+                + \left(
+                    0*\frac{2}{\tau}+1
+                \right)
+                \,\exp{\left(
+                    -\frac{2}{\tau}*0
+                \right)}
+            \right)
+            = &\\&
+            = \frac{\tau^2}{4}
+            \left(
+                - \left(
+                    t\,\frac{2}{\tau}+1
+                \right)
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+                + 1
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\setcounter{subquestion}{4}
+
+\begin{questionBox}2{ % MARK: Q1.5
+    Concentração do tracador de saída
+    \begin{itemize}
+        \item Traçador Impulso
+        \item \(t=\qty*{17}{\min}\)
+        \item \(N=\qty*{8}{\min}\)
+        \item \(\nu\)
+    \end{itemize}
+} % Q1.5
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Traçador Impulso:}}
+            &\\&
+            C
+            =\frac{N}{\nu}\,E(t)
+            =\frac{8}{\nu}\,E(17)
+            = &\\&
+            =\frac{8}{\nu}
+            \frac{(1000/\nu)^2}{4}
+            \,17*\exp{\left(
+                -\frac{2}{1000/\nu}*17
+            \right)}
+            % 
+            % Nu
+            % 
+            ; &\\[3ex]&
+            \mathemph{\nu:}
+            &\\&
+            \odv[order=2]{E(t)}{t}
+            = 0
+            = \odv{}{t}{\left(
+                \frac{\tau^2}{4}
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+                - \frac{\tau^2}{4}
+                \,t
+                \,\frac{\tau}{2}
+                \,\exp{\left(
+                    -\frac{2}{\tau}\,t
+                \right)}
+            \right)}
+            = &\\&
+            = -\frac{\tau^2}{4}
+            \,\frac{\tau}{2}
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            - \frac{\tau^2}{4}
+            \,\frac{\tau}{2}
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            + \frac{\tau^2}{4}
+            \,t
+            \,\frac{\tau}{2}
+            \,\frac{\tau}{2}
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            = &\\&
+            = -\frac{\tau^3}{8}
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            - \frac{\tau^3}{8}
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            + \frac{\tau^4}{16}
+            \,t
+            \,\exp{\left(
+                -\frac{2}{\tau}\,t
+            \right)}
+            \implies &\\&
+            \implies
+            \odv[order=2]{E}{t}(10)
+            = -\frac{(1000/\nu)^3}{8}
+            \,\exp{\left(
+                -\frac{2}{(1000/\nu)}\,10
+            \right)}
+            + &\\&
+            - \frac{(1000/\nu)^3}{8}
+            \,\exp{\left(
+                -\frac{2}{(1000/\nu)}\,10
+            \right)}
+            + &\\&
+            + \frac{(1000/\nu)^4}{16}
+            \,10
+            \,\exp{\left(
+                -\frac{2}{(1000/\nu)}\,01
+            \right)}
+            = &\\&
+            = \frac{1\E9}{8\,\nu^3}
+            \,\left(
+                - 2
+                + \frac{1\E{4}}{2\,\nu}
+            \right)
+            \,\exp{\left(
+                -\frac{\nu}{50}
+            \right)}
+            ; &\\&
+            \text{Assumindo: }\nu=\qty*{10}{\deci\metre^3/\min}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \implies
+            C
+            =\frac{8}{10}
+            \frac{(1000/10)^2}{4}
+            \,17*\exp{\left(
+                -\frac{2}{1000/10}*17
+            \right)}
+            = &\\&
+            =\frac{34\E3}{1}
+            \,\exp{\left(
+                -\frac{1}{85}
+            \right)}
+            \cong &\\&
+            \cong
+            \qty{3.36023437410313227463e5}{\M}
+        &
+    \end{flalign*}
+    Concentração absurdamente alta, não faz sentido, um erro a apontar poderia ser ter assumido o caldal porem um caldal de \qty*{10}{\deci\metre^3/\min} é bastante normal.
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.6
+    Traçador por degrau, Concentração de saída
+} % Q1.6
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Traçador degral:}}
+            &\\&
+            F(t)
+            = \frac{C(t)}{C_0}
+            \implies &\\&
+            \implies
+            C(t)=F(t)\,C_0
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \begin{cases}
+                C_0=\qty*{0.2}{\M}
+                \\
+                t=\qty*{16}{\min}
+            \end{cases}
+            &\\&
+            C(16)
+            = &\\&
+            = \frac{(1000/10)^2}{4}
+            \left(
+                - \left(
+                    16\,\frac{2}{(1000/10)}+1
+                \right)
+                \,\exp{\left(
+                    -\frac{2}{(1000/10)}\,16
+                \right)}
+                + 1
+            \right)
+            \,0.2
+            \cong &\\&
+            \cong 
+            \qty{9.79258364468636e2}{}
+        &
+    \end{flalign*}
+    Pelas contas \(F(t)\) tem dado superior a 1 o que é impossível, falho em perceber a origem do erro
+\end{questionBox}
+
+\end{document}

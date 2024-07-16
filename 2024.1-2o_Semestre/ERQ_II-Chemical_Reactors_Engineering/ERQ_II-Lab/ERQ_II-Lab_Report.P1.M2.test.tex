@@ -1,0 +1,72 @@
+% !TEX root = ./ERQ_II-Lab_Report.P1.M2.test.tex
+\providecommand\mainfilename{"./ERQ_II-Lab_Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Lab_Report.P1.M2.test.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./figures/ERQ_II-Lab_Report.P1.M2.test}}}
+\tikzsetexternalprefix{./figures/ERQ_II-Lab_Report.P1.M2.test/graphics/}
+
+\nopagecolor
+
+\mymakesubfile{1}
+[ERQ II]
+{P1 Modelo 1} % Subfile Title
+{P1 Modelo 1} % Part Title
+
+\begin{sectionBox}1{Modelo} % MARK: Modelo
+    
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}[xscale=3.5]
+    
+            \pic (r1) at (1,0) {packed bed reactor};
+            \pic (r2) at (2,0) {stirred reactor};
+            \pic (r3) at (3,0) {stirred reactor};
+
+            \node[above] at (r1-top) {\(R_1\)(PFR)};
+            \node[below] at (r1-bottom) {\(\alpha\,V\)};
+            
+            \node[above] at (r2-top) {\(R_2\)(CSTR)};
+            \node[below] at (r2-bottom) {\(\beta\,V\)};
+
+            \node[above] at (r3-top) {\(R_3\)(CSTR)};
+            \node[below] at (r3-bottom) {\((1-\alpha-\beta)\,V\)};
+    
+            \draw[main stream] (r1-left) ++(-0.5,0) 
+            --
+            node[above] {\(C_{in}\)}
+            node[below] {\(\nu\)}
+            (r1-left);
+            \draw[main stream] (r1-right) 
+            --
+            node[above] {\(C_{1}\)}
+            node[below] {\(\nu\)}
+            (r2-left);
+            \draw[main stream] (r2-right) 
+            --
+            node[above] {\(C_{2}\)}
+            node[below] {\(\nu\)}
+            (r3-left);
+            \draw[main stream] (r3-right) 
+            --
+            node[above] {\(C_{out}\)}
+            node[below] {\(\nu\)}
+            ++(.5,0);
+    
+        \end{tikzpicture}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Calculos} % MARK: Calculos
+
+    
+    
+\end{sectionBox}
+
+\end{document}

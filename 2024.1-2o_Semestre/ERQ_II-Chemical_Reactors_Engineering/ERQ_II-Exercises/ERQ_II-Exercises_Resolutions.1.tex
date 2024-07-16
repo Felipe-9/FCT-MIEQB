@@ -1,0 +1,1361 @@
+% !TEX root = ./ERQ_II-Exercises_Resolutions.1.tex
+\providecommand\mainfilename{"./ERQ_II-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Exercises_Resolutions.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/ERQ_II-Exercises_Resolutions.1}}}
+% \tikzsetexternalprefix{./.build/figures/ERQ_II-Exercises_Resolutions.1/graphics/}
+
+\mymakesubfile{1}
+[ERQ II]
+{Exercises} % Subfile Title
+{Exercises} % Part Title
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % MARK: Q2
+    Considere um reactor CSTR cujo comportamento não ideal pode ser modelado pela associação de reactores ideais em ``by-pass'', esquematizada na figura.
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2024-04-05 at 14.52.37-cutout.png}
+    \end{center}
+} % Q2
+    \paragraph*{Transformadas de Laplace:}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{CC}
+            \toprule
+            f(s) & F(t)
+            \\\midrule
+            \frac{1}{s-a}
+            & e^{a\,t}
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Escreva as equações do modelo que representa o escoamento no reactor.
+} % Q2.1
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{Reator}
+                & \multicolumn{1}{c}{Volume}
+                & \multicolumn{1}{c}{Caldal In}
+                & \multicolumn{1}{c}{Caldal Out}
+            
+            \\\midrule
+            
+                1
+                & (1-\alpha)\,V 
+                & (1-\beta)\,\nu
+                & (1-\beta)\,\nu
+                \\
+                2
+                & \alpha\,V
+                & \beta\,\nu
+                & \beta\,\nu
+            
+            \\\bottomrule
+        \end{tabular}
+        % \vspace{0ex}
+    \end{center}
+    \begin{flalign*}
+        &
+            % 
+            % R1
+            % 
+            \mathemph{R_1:}
+            &\\&
+            (1-\beta)\,\nu\,C_{in,1}
+            = (1-\beta)\,\nu\,C_{in}
+            = &\\[1.5ex]&
+            = (1-\beta)\,\nu\,C_{out,1}
+            + (1-\alpha)\,V\,\odv{C_{out,1}}{t}
+            % 
+            % R2
+            % 
+            ; &\\[3ex]&
+            \mathemph{R_2:}
+                &\\&
+            \beta\,\nu\,C_{in,2}
+            = \beta\,\nu\,C_{in}
+            = \beta\,\nu\,C_{out,2}
+            + \alpha\,V\,\odv{C_{out,2}}{t}
+            % 
+            % Nó
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Nó:}}
+            &\\&
+            \nu\,C_{out}
+            = \beta\,\nu\,C_{out,2}
+            + (1-\beta)\,\nu\,C_{out,1}
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q2.2
+    Deduza a expressão da distribuição de tempos de residência.
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            E(t) = \LagrangeTransform{g}(s)
+            % 
+            % Nó
+            % 
+            ; &\\[3ex]&
+            \mathemph{g(s):}
+            &\\&
+            g(s)
+            =\bar{C}_{out}/\bar{C}_{in}
+            =\LagrangeTransform{C}_{out}
+            /\LagrangeTransform{C}_{in}
+            ; &\\&
+            \nu\,C_{out}
+            = \beta\,\nu\,C_{out,2}
+            + (1-\beta)\,\nu\,C_{out,1}
+            \implies &\\&
+            \implies
+            C_{out}
+            = \beta\,C_{out,2}
+            + (1-\beta)\,C_{out,1}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{C}_{out}
+            = \bar{C}_{out}
+            = \beta\,\bar{C}_{out,2}
+            + (1-\beta)\,\bar{C}_{out,1}
+            \implies &\\&
+            \implies
+            g(s)
+            = \frac{\bar{C}_{out}}{\bar{C}_{in}}
+            = \beta
+            \,\frac{\bar{C}_{out,2}}{\bar{C}_{in}}
+            + (1-\beta)
+            \,\frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            % 
+            % C_out,1
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out,1}:}
+            &\\&
+            (1-\beta)\,\nu\,C_{in}
+            = (1-\beta)\,\nu\,C_{out,1}
+            + (1-\alpha)\,V\,\odv{C_{out,1}}{t}
+            \implies &\\&
+            \implies
+            (1-\beta)\,C_{in}
+            = (1-\beta)\,C_{out,1}
+            + (1-\alpha)\tau\,\odv{C_{out,1}}{t}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{((1-\beta)\,C_{in})}
+            = (1-\beta)\,\bar{C}_{in}
+            = &\\&
+            = \LagrangeTransform{
+                ((1-\beta)\,C_{out,1})
+            }
+            + \LagrangeTransform{\left(
+                    (1-\alpha)\tau\,\odv{C_{out,1}}{t}
+            \right)}
+            = &\\&
+            = (1-\beta)\,\bar{C}_{out,1}
+            + (1-\alpha)\tau\,s\,\bar{C}_{out,1}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            = \frac
+            {1-\beta}
+            {1-\beta+(1-\alpha)\tau\,s}
+            % 
+            % C out 2
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out,2}:}
+            &\\&
+            \beta\,\nu\,C_{in}
+            = \beta\,\nu\,C_{out,2}
+            + \alpha\,V\,\odv{C_{out,2}}{t}
+            \implies &\\&
+            \implies
+            \beta\,C_{in}
+            = \beta\,C_{out,2}
+            + \alpha\,\tau\,\odv{C_{out,2}}{t}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{(\beta\,C_{in})}
+            = \beta\,\bar{C}_{in}
+            = &\\&
+            = \LagrangeTransform{
+                (\beta\,C_{out,2})
+            }
+            + \LagrangeTransform{\left(
+                \alpha\,\tau\,\odv{C_{out,2}}{t}
+            \right)}
+            = &\\&
+            = \beta\,\bar{C}_{out,2}
+            + \alpha\,\tau\,s\,\bar{C}_{out,2}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out,2}}{\bar{C}_{in}}
+            = \frac
+            {\beta}
+            {\beta + \alpha\,\tau\,s}
+            % 
+            % g(s)
+            % 
+            ; &\\[3ex]&
+            \implies
+            g(s)
+            = \beta
+            \,\frac{\beta}{\beta + \alpha\,\tau\,s}
+            + (1-\beta)
+            \,\frac{1-\beta}
+            {1-\beta+(1-\alpha)\tau\,s}
+            = &\\&
+            = \frac{\beta^2}{\alpha\,\tau}
+            \,\left(
+                \frac{1}{\frac{\beta}{\alpha\,\tau} + s}
+            \right)
+            + \frac{(1-\beta)^2}
+            {(1-\alpha)\tau}
+            \left(
+                \frac{1}{
+                    \frac{1-\beta}{(1-\alpha)\tau}
+                    +s
+                }
+            \right)
+            \implies &\\[3ex]&
+            \implies
+            \LagrangeTransform{g}(s)
+            = \frac{\beta^2}{\alpha\,\tau}
+            \,\exp{\left(
+                -\frac{\beta}{\alpha\,\tau}\,t
+            \right)}
+            + \frac{(1-\beta)^2}
+            {(1-\alpha)\tau}
+            \exp{\left(
+                -\frac{1-\beta}{(1-\alpha)\tau}\,t
+            \right)}
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q2.3
+    Deduza a expressão da função cumulativa.
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Função culmulativa:}}
+            &\\&
+            F(t)
+            = \int_0^t{E(t)\,\odif{t}}
+            = &\\&
+            = \int_0^t{
+                \left(
+                    \frac{\beta^2}{\alpha\,\tau}
+                    \,\exp{\left(
+                        -\frac{\beta}{\alpha\,\tau}\,t
+                    \right)}
+                    + \frac{(1-\beta)^2}
+                    {(1-\alpha)\tau}
+                    \exp{\left(
+                        -\frac{1-\beta}{(1-\alpha)\tau}\,t
+                    \right)}
+                \right)
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            \frac{\beta^2}{\alpha\,\tau}
+            \int_0^t{
+                \exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                \,\odif{t}
+            }
+            + &\\&
+            + \frac{(1-\beta)^2}
+            {(1-\alpha)\tau}
+            \,\int_0^t{
+                \exp{\left(
+                    -\frac{1-\beta}{(1-\alpha)\tau}\,t
+                \right)}
+                \odif{t}
+            }
+            = &\\&
+            = 
+            \frac{\beta^2}{\alpha\,\tau}
+            \,\frac{\alpha\,\tau}{\beta}
+            \adif{
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+            }\,\Big\vert_0^t
+            + &\\&
+            + \frac{(1-\beta)^2}{(1-\alpha)\tau}
+            \,\frac{(1-\alpha)\tau}{1-\beta}
+            \adif{
+                -\exp{\left(
+                    -\frac{1-\beta}{(1-\alpha)\tau}\,t
+                \right)}
+            }\,\Big\vert_0^t
+            = &\\&
+            = 
+            (\beta)
+            \left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                + \exp{0}
+            \right)
+            + &\\&
+            + (1-\beta)
+            \left(
+                -\exp{\left(
+                    -\frac{1-\beta}{(1-\alpha)\tau}\,t
+                \right)}
+                +\exp{0}
+            \right)
+            = &\\&
+            = 
+            \beta
+            \left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                + 1
+            \right)
+            + &\\&
+            + (1-\beta)
+            \left(
+                -\exp{\left(
+                    -\frac{1-\beta}{(1-\alpha)\tau}\,t
+                \right)}
+                +1
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q2.4
+    Sabendo que no reactor é introduzido um traçador, por degrau, com uma concentração à entrada do reactor \(C_0= \qty*{0.1}{\molar}\), a um caudal volumétrico \qty*{10}{\deci\metre^3/\min}, calcule o tempo ao fim do qual a concentração de traçador à saída é 95\% da concentração à entrada. 
+    \begin{itemize}
+        \item Volume do reactor: \qty*{1}{\metre^3}; 
+        \item caudal de by-pass: 10\% do caudal volumétrico à entrada; 
+        \item volume do by-pass: 20\% do volume do reactor.
+    \end{itemize}
+} % Q2.4
+\answer{}
+\begin{flalign*}
+    &
+        t:C(t)=0.95\,C_0
+        ; &\\[3ex]&
+        % 
+        % 
+        % 
+        \text{\emph{Tracador em Degrau:} }
+        F(t) = \frac{C(t)}{C_0}
+        ; &\\&
+        \text{\emph{Normalização da curva \(C\):}}
+        &\\&
+        \begin{cases}
+            \alpha=20\%
+            \\ \beta=10\%
+        \end{cases}
+        &\\&
+        F(t)
+        = \frac{C(t)}{C_0}
+        = \frac{0.95\,C_0}{C_0}
+        = 0.95
+        = &\\[3ex]&
+        = \beta
+        \left(
+            -\exp{\left(
+                -\frac{\beta}{\alpha\,\tau}\,t
+            \right)}
+            + 1
+        \right)
+        + &\\&
+        + (1-\beta)
+        \left(
+            -\exp{\left(
+                -\frac{1-\beta}{(1-\alpha)\tau}\,t
+            \right)}
+            +1
+        \right)
+        &\\&
+        = 0.1
+        \left(
+            -\exp{\left(
+                -\frac{0.1}{
+                    0.2
+                    \,\frac{1000}{10}
+                }
+                \,t
+            \right)}
+            + 1
+        \right)
+        + &\\&
+        + (1-0.1)
+        \left(
+            -\exp{\left(
+                -\frac{1-0.1}{
+                    (1-0.2)\frac{1000}{10}
+                }
+                \,t
+            \right)}
+            +1
+        \right)
+        \cong &\\&
+        \cong
+        - \exp{\left(
+            -\frac{t}{200}
+        \right)}
+        - \exp{\left(
+            -\frac{9\,t}{800}
+        \right)}
+        + 1
+        \implies &\\[3ex]&
+        \implies
+        f(t)
+        = - \exp{\left(
+            -\frac{t}{200}
+        \right)}
+        - \exp{\left(
+            -\frac{9\,t}{800}
+        \right)}
+        + 0.05
+    &
+\end{flalign*}
+\begin{center}
+    \includegraphics[width=.8\textwidth]{Q1d.pdf}
+\end{center}
+\begin{flalign*}
+    &
+        t\cong\qty{307.0224}{\min}
+    &
+\end{flalign*}
+% \begin{center}
+%     \includegraphics[width=.8\textwidth]{IMG_6605}
+%     \includegraphics[width=.8\textwidth]{IMG_6606}
+%     \includegraphics[width=.8\textwidth]{IMG_6607}
+%     \includegraphics[width=.8\textwidth]{IMG_6608}
+% \end{center}
+\end{questionBox}
+
+\setcounter{question}{3}
+
+\begin{questionBox}1{ % MARK: Q4
+    Considere um reactor contínuo cujo comportamento não ideal pode ser modelado pela associação de reactores ideais esquematizada na figura.
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Screenshot 2024-04-05 at 15.35.55-cutout.png}
+    \end{center}
+} % Q4
+    \paragraph*{Transformadas de Laplace:}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{2}{C}}
+            \toprule
+            
+                f(s)
+                & F(t)
+                \\\midrule
+                \frac{1}{s-a}
+                & e^{a\,t}
+                \\
+                \frac{1}{(s-a)^2}
+                & t\,e^{a\,t}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q4.1
+    Escreva as equações do modelo que representa o escoamento no reactor, tendo em conta que os tanques 1 e 2 são iguais.
+} % Q4.1
+    \answer{}
+    \begin{center}
+        \includegraphics[width=1\textwidth]{1712328642588.jpg}
+    \end{center}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{Reator}
+                & \multicolumn{1}{c}{Volume}
+                & \multicolumn{1}{c}{Caldal In}
+                & \multicolumn{1}{c}{Caldal Out}
+            
+            \\\midrule
+            
+                1 
+                & \alpha\,V
+                & \beta\,\nu
+                & \beta\,\nu
+                \\ 
+                2 
+                & (1-\alpha)\,V/2
+                & (1-\beta)\,\nu
+                & (1-\beta)\,\nu
+                \\ 
+                3 
+                & (1-\alpha)\,V/2
+                & (1-\beta)\,\nu
+                & (1-\beta)\,\nu
+            
+            \\\bottomrule
+        \end{tabular}
+        % \vspace{2ex}
+    \end{center}
+    \begin{flalign*}
+        &
+            % 
+            % R1
+            % 
+            \mathemph{R_1:}
+            &\\&
+            (1-\beta)\,\nu\,C_{in,1}
+            = (1-\beta)\,\nu\,C_{in}
+            = &\\&
+            = (1-\beta)\,\nu\,C_{out,1}
+            + (1-\alpha)\,\frac{V}{2}
+            \,\odv{C_{out,1}}{t}
+            % 
+            % R2
+            % 
+            ; &\\[3ex]&
+            \mathemph{R_2:\,}
+            &\\&
+            (1-\beta)\,\nu\,C_{in,2}
+            = (1-\beta)\,\nu\,C_{out,1}
+            = &\\&
+            = (1-\beta)\,\nu\,C_{out,2}
+            + (1-\alpha)\,\frac{V}{2}
+            \,\odv{C_{out,2}}{t}
+            % 
+            % R_3
+            % 
+            ; &\\[3ex]&
+            \mathemph{R_3:}
+            &\\&
+            \beta\,\nu\,C_{in,3}
+            = \beta\,\nu\,C_{in}
+            = \beta\,\nu\,C_{out,3}
+            + \alpha\,V\,\odv{C_{out,3}}{t}
+            % 
+            % Addition Knot
+            % 
+            ; &\\[3ex]&
+            \mathemph{\text{Nó}:}
+            &\\&
+            \nu\,C_{out}
+            = (1-\beta)\,\nu\,C_{out,2}
+            + \beta\,\nu\,C_{out,3}
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q4.2
+    Deduza a expressão da distribuição de tempos de residência.
+} % Q4.2
+    \answer{}
+    \begin{flalign*}
+        &
+            E(t) = \LagrangeTransform{g}(s)
+            ; &\\[3ex]&
+            \mathemph{g(s):}
+            &\\&
+            g(s)
+            =\bar{C}_{out}/\bar{C}_{in}
+            =\LagrangeTransform{C}_{out}
+            /\LagrangeTransform{C}_{in}
+            % 
+            % 
+            % 
+            ; &\\&
+            \nu\,C_{out}
+            = (1-\beta)\,\nu\,C_{out,2}
+            + \beta\,\nu\,C_{out,3}
+            \implies &\\&
+            \implies
+            C_{out}
+            = (1-\beta)\,C_{out,2}
+            + \beta\,C_{out,3}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{C}_{out}
+            =\bar{C}_{out}
+            = &\\&
+            = \LagrangeTransform{((1-\beta)\,C_{out,2})}
+            + \LagrangeTransform{(\beta\,C_{out,3})}
+            = &\\&
+            = (1-\beta)\,\bar{C}_{out,2}
+            + \beta\,\bar{C}_{out,3}
+            \implies &\\&
+            \implies
+            g(s)
+            = (1-\beta)\,\frac{\bar{C}_{out,2}}{\bar{C}_{in}}
+            + \beta\,\frac{\bar{C}_{out,3}}{\bar{C}_{in}}
+            % 
+            % C out 3
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out,3}/\bar{C}_{in}:}
+            &\\&
+            \beta\,\nu\,C_{in}
+            = \beta\,\nu\,C_{out,3}
+            + \alpha\,V\,\odv{C_{out,3}}{t}
+            \implies &\\&
+            \implies
+            \beta\,C_{in}
+            = \beta\,C_{out,3}
+            + \alpha\,\tau\,\odv{C_{out,3}}{t}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{(\beta\,C_{in})}
+            = \beta\,\bar{C}_{in}
+            = &\\&
+            = \LagrangeTransform{(\beta\,C_{out,3})}
+            + \LagrangeTransform{\left(
+                \alpha\,\tau\,\odv{C_{out,3}}{t}
+            \right)}
+            = \beta\,\bar{C}_{out,3}
+            + \alpha\,\tau\,s\,\bar{C}_{out,3}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out,3}}{\bar{C}_{in}}
+            = \frac{\beta}{\beta+\alpha\,\tau\,s}
+            % 
+            % C out 2
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out,2}/\bar{C}_{in}:}
+            &\\&
+            (1-\beta)\,\nu\,C_{out,1}
+            = (1-\beta)\,\nu\,C_{out,2}
+            + (1-\alpha)\,\frac{V}{2}
+            \,\odv{C_{out,2}}{t}
+            \implies &\\&
+            \implies
+            (1-\beta)\,C_{out,1}
+            = (1-\beta)\,C_{out,2}
+            + \frac{1-\alpha}{2}
+            \,\tau\,\odv{C_{out,2}}{t}
+            \implies &\\&
+            \implies
+            \LagrangeTransform{((1-\beta)\,C_{out,1})}
+            = (1-\beta)\,\bar{C}_{out,1}
+            = &\\&
+            = \LagrangeTransform{((1-\beta)\,C_{out,2})}
+            + \LagrangeTransform{\left(
+                \frac{1-\alpha}{2}
+                \,\tau\,\odv{C_{out,2}}{t}
+            \right)}
+            = &\\&
+            = (1-\beta)\,\bar{C}_{out,2}
+            + \frac{1-\alpha}{2}
+            \,\tau\,s\,\bar{C}_{out,2}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out,2}}{\bar{C}_{in}}
+            = \frac{(1-\beta)}{
+                (1-\beta)
+                +\frac{(1-\alpha)\tau}{2}
+                \,s
+            }
+            \,\frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            % 
+            % C out 1
+            % 
+            ; &\\[3ex]&
+            \mathemph{\bar{C}_{out,1}/\bar{C}_{in}:}
+            &\\&
+            (1-\beta)\,\nu\,C_{in}
+            = (1-\beta)\,\nu\,C_{out,1}
+            + (1-\alpha)\,\frac{V}{2}
+            \,\odv{C_{out,1}}{t}
+            \implies &\\&
+            \implies 
+            (1-\beta)\,C_{in}
+            = (1-\beta)\,C_{out,1}
+            + \frac{1-\alpha}{2}
+            \,\tau\,\odv{C_{out,1}}{t}
+            \implies &\\&
+            \implies 
+            \LagrangeTransform{((1-\beta)\,C_{in})}
+            = (1-\beta)\,\bar{C}_{in}
+            = &\\&
+            = \LagrangeTransform{(1-\beta)\,C_{out,1}}
+            + \LagrangeTransform{\left(
+                \frac{1-\alpha}{2}
+                \,\tau\,\odv{C_{out,1}}{t}
+            \right)}
+            = &\\&
+            = (1-\beta)\,\bar{C}_{out,1}
+            + \frac{1-\alpha}{2}
+            \,\tau\,s\,\bar{C}_{out,1}
+            \implies &\\&
+            \implies
+            \frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            = \frac{(1-\beta)}{
+                (1-\beta)
+                + \frac{(1-\alpha)\,\tau}{2}\,s
+            }
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \frac{\bar{C}_{out,2}}{\bar{C}_{in}}
+            = \frac{(1-\beta)}{
+                (1-\beta)
+                +\frac{(1-\alpha)\tau}{2}
+                \,s
+            }
+            \,\frac{\bar{C}_{out,1}}{\bar{C}_{in}}
+            = &\\&
+            =\left(
+                \frac{(1-\beta)}{
+                    (1-\beta)
+                    + \frac{(1-\alpha)\,\tau}{2}\,s
+                }
+            \right)^2
+            % 
+            % Preparando g(s)
+            % 
+            ; &\\[3ex]&
+            \implies
+            g(s)
+            = &\\&
+            = (1-\beta)
+            \,\left(
+                \frac{(1-\beta)}{
+                    (1-\beta)
+                    + \frac{(1-\alpha)\,\tau}{2}\,s
+                }
+            \right)^2
+            + \beta
+            \,\left(
+                \frac{\beta}{\beta+\alpha\,\tau\,s}
+            \right)
+            = &\\&
+            = \frac
+            {(1-\beta)^3}
+            {\left(\frac{(1-\alpha)\,\tau}{2}\right)^2}
+            \,\frac{1}{
+                \left(
+                    \frac{(1-\beta)\,2}{(1-\alpha)\,\tau}
+                    + s
+                \right)^2
+            }
+            + \frac{\beta^2}{\alpha\,\tau}
+            \,\frac{1}
+            {\frac{\beta}{\alpha\,\tau}+s}
+            \implies &\\[3ex]&
+            \implies
+            E(t)
+            = \LagrangeTransform{g}(s)
+            = &\\&
+            = \frac
+            {(1-\beta)^3\,4}
+            {(1-\alpha)^2\,\tau^2}
+            \,t\,\exp{\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+            \right)}
+            + \frac{\beta^2}{\alpha\,\tau}
+            \,\exp{\left(
+                -\frac{\beta}{\alpha\,\tau}\,t
+            \right)}
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q4.3
+    Deduza e expressão da função cumulativa.
+} % Q4.3
+    \answer{}
+    \begin{flalign*}
+        &
+            F(t)
+            = \int_0^t{
+                E(t)\,\odif{t}
+            }
+            = &\\&
+            = \int_0^t{
+                \frac
+                {(1-\beta)^3\,4}
+                {(1-\alpha)^2\,\tau^2}
+                \,t\,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+                \,\odif{t}
+            }
+            + &\\&
+            + \int_0^t{
+                \frac{\beta^2}{\alpha\,\tau}
+                \,\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            \frac
+            {(1-\beta)^3\,4}
+            {(1-\alpha)^2\,\tau^2}
+            \int_0^t{
+                t\,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+                \,\odif{t}
+            }
+            + &\\&
+            + \frac{\beta^2}{\alpha\,\tau}
+            \,\frac{\alpha\,\tau}{\beta}
+            \adif{\left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+            \right)}\Big\vert_0^t
+            = &\\&
+            = 
+            \frac
+            {(1-\beta)^3\,4}
+            {(1-\alpha)^2\,\tau^2}
+            \int_0^t{
+                t\,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+                \,\odif{t}
+            }
+            + &\\&
+            + \beta
+            \,\left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                +\exp{0}
+            \right)
+            % 
+            % primitiva
+            % 
+            ; &\\[3ex]&
+            \text{\emph{Primitiva:}}
+            &\\&
+            \odif{\left(
+                t\,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right)}
+            = &\\&
+            = \exp{\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+            \right)}
+            + &\\&
+            + t
+            \,\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}
+            \right)
+            \,\exp{\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+            \right)}
+            \implies &\\&
+            \implies
+            \Primitive{\left(
+                \odif{\left(
+                    t\,\exp{\left(
+                        -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                    \right)}
+                \right)}
+            \right)}
+            = t\,\exp{\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+            \right)}
+            = &\\&
+            = \Primitive{\left(
+                \exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right)}
+            + &\\&
+            + \Primitive\left(
+                t
+                \,\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}
+                \right)
+                \,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right)
+            = &\\&
+            = -\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+            \exp{\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+            \right)}
+            + &\\&
+            - \frac{(1-\beta)\,2}{(1-\alpha)\,\tau}
+            \,\Primitive\left(
+                t
+                \,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right)
+            % 
+            % 
+            \implies &\\&
+            \implies
+            \Primitive\left(
+                t
+                \,\exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right)
+            = &\\&
+            = -\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+            \,\left(
+                t+\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+            \right)
+            \exp{\left(
+                -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+            \right)}
+            % 
+            % F(t) conc
+            % 
+            \implies &\\[3ex]&
+            \implies
+            F(t)
+            =
+            \frac
+            {(1-\beta)^3\,4}
+            {(1-\alpha)^2\,\tau^2}
+            * &\\&
+            * \adif{\left(
+                -\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+                \,\left(
+                    t+\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+                \right)
+                \exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right)}
+            \,\Big\vert_{0}^{t}
+            + &\\&
+            + \beta
+            \,\left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                + 1
+            \right)
+            = &\\&
+            =
+            \frac
+            {(1-\beta)^3\,4}
+            {(1-\alpha)^2\,\tau^2}
+            * &\\&
+            *
+            \,\left(
+                -\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+                \,\left(
+                    t+\frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+                \right)
+                \exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+                %
+            \right.
+            + &\\&
+            \left.
+                + \left(
+                    \frac{(1-\alpha)\,\tau}{(1-\beta)\,2}
+                \right)^2
+                \,\exp{0}
+            \right)
+            + &\\&
+            + \beta
+            \,\left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                + 1
+            \right)
+            = &\\&
+            = (1-\beta)
+            % * &\\&
+            % *
+            \,\Biggr{(}
+            % &\\&
+                -\left(
+                    t
+                    \,\frac
+                    {(1-\beta)\,2}
+                    {(1-\alpha)\,\tau}
+                    + 1
+                \right)
+                \exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+                %
+                % + &\\&
+                + 1
+            % &\\&
+            \Biggr{)}
+            + &\\&
+            + \beta
+            \,\left(
+                -\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+                + 1
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q4.4
+    Sabendo que o reactor real tem um volume de \qty*{1}{\metre^3} e que são introduzidos, por impulso, \qty*{6}{\mole} de um tracador, determine o valor da concentração máxima de tracador. à saída do reactor. 
+    \begin{itemize}
+        \item Caudal volumétrico da alimentação: \qty*{20}{\deci\metre^3/\min}; 
+        \item caudal de by-pass: 5\% do caudal volumétrico à entrada; 
+        \item volume do reciclo: 8\% do volume activo; 
+        \item volumes mortos: 12\% do volume do reactor.
+    \end{itemize}
+} % Q4.4
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Traçador por impulso:}}
+            &\\&
+            \odv{C}{t}
+            = \frac{N}{\nu}\,\odv{E(t)}{t}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \begin{cases}
+                \beta = 0.05 
+                ;\quad (1-\beta)=0.95
+                \\
+                \alpha = 0.08 
+                ;\quad (1-\alpha) = 0.92
+                \\
+                V_m
+                = 0.12*1000\,\unit{\deci\metre^3}
+                = \qty*{120}{\deci\metre^3}
+                \\
+                V
+                = (1000-120)\,\unit{\deci\metre^3}
+                = \qty*{880}{\deci\metre^3}
+                \\
+                \nu = \qty*{20}{\deci\metre^3/\min}
+                \\
+                \tau
+                =\frac{880}{20}\unit{\min}
+                =\qty*{44}{\min}
+                \\
+                N = \qty*{6}{\mole}
+                \\
+                t = \qty*{21}{\min}
+            \end{cases}
+            % 
+            % 
+            % 
+            &\\&
+            \implies
+            \odv{C}{t}
+            = 0
+            = &\\&
+            = \frac{N}{\nu}
+            \left(
+                \frac
+                {(1-\beta)^3\,4}
+                {(1-\alpha)^2\,\tau^2}
+                \left(
+                    1-\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)
+                \exp{\left(
+                    -\frac{(1-\beta)\,2}{(1-\alpha)\,\tau}\,t
+                \right)}
+            \right.
+            &\\&
+            \left.
+                - \frac{\beta^3}{\alpha^2\,\tau^2}
+                \,\exp{\left(
+                    -\frac{\beta}{\alpha\,\tau}\,t
+                \right)}
+            \right)
+            = &\\&
+            = \frac{6}{20}
+            \left(
+                \frac
+                {0.95^3*4}
+                {0.92^2*44^2}
+                \left(
+                    1-\frac{0.95*2}{0.92*44}\,t
+                \right)
+                \exp{\left(
+                    -\frac{0.95*2}{0.92*44}\,t
+                \right)}
+            \right.
+            &\\&
+            \left.
+                - \frac{0.05^3}{0.08^2*44^2}
+                \,\exp{\left(
+                    -\frac{0.05}{0.08*44}\,t
+                \right)}
+            \right)
+            = &\\&
+            = 
+            \left(
+                \num{6.27871910590698e-4}
+                -\num{2.9470272483259045e-5}\,t
+            \right)
+            \exp{\left(
+                -\num{4.693675889328063e-2}\,t
+            \right)}
+            &\\&
+            - \num{3.02653667355372e-6}
+            \,\exp{\left(
+                -\num{1.420454545454545e-2}\,t
+            \right)}
+        &
+    \end{flalign*}
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{Q2.d.pdf}
+    \end{center}
+    \begin{flalign*}
+        &
+            t=\qty{21.1004}{\min}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            C
+            \cong \frac{N}{\nu}E(\num{21.1004})
+            \cong &\\&
+            \cong 
+            \frac{6}{20}
+            \,\Biggr{(}
+                \frac
+                {0.95^3*4}
+                {0.92^2*44^2}
+                \,\num{21.1004}
+                % 0.013248348462228
+                \,\exp{\left(
+                    -\frac{0.95*2}{0.92*44}\,\num{21.1004}
+                    % -0.470432583992095
+                \right)}
+                % 0.624731960775984
+                % = 0.008276666711851
+                + &\\&
+                + \frac{0.05^2}{0.08*44}
+                % 2.130681818181818e-4
+                \,\exp{\left(
+                    -\frac{0.05}{0.08*44}\,\num{21.1004}
+                    % -0.299721590909091
+                \right)}
+                % 0.741024499922742
+                % = 1.578887428812663e-4
+            \Biggr{)}
+            \cong &\\&
+            \cong
+            \qty{8.4345554547322663e-3}{\M}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{12}
+
+\begin{questionBox}1{ % MARK: Q13
+    A reacção elementar \ch{A -> B} é conduzida, na fase gasosa, num reactor multitubular de leito fixo, consistindo em 100 tubos de \qty*{2}{\metre} de comprimento e \qty*{2}{\centi\metre} de diâmetro da secção recta, cheios com um catalisador sólido, poroso, na forma de pellets esféricas de \qty*{5}{\milli\metre} de diâmetro. O reagente A é alimentado puro a um caudal de \qty*{100}{\deci\metre/\min}, à temperatura de \qty*{373}{\kelvin} e à pressão de \qty*{6}{\atm}
+} % Q13
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item \(\rho_P=\qty*{1.3}{\gram/\centi\metre^3}\)
+        \item Coeficiente de Difusão externo: \(D_A=\qty*{2.7e-7}{\metre^2/\second}\)
+        \item Viscosidade Cinemática: \(\nu=\qty*{4e-6}{\metre^2/\second}\)
+        \item \(\varepsilon_B=0.45\)
+        \item Difusidade efetiva intraparticular: \(D_e=\qty*{1.3e-8}{\metre^2/\second}\)
+        \item Constante cinética: \(k'=\qty*{0.023}{\deci\metre^3.\gram^{-1}\of{cat}.\min^{-1}}\)
+        \item \(R\cong\qty{8.20573660809596e-2}{\deci\metre^3.\atm.\mole^{-1}.\kelvin^{-1}}\)
+    \end{itemize}
+    \paragraph*{Formulas:}
+    \begin{BM}
+        Sh
+        = 1.0\,Re^{1/2}\,Sc^{1/3}
+        = \frac{k_c\,d_P}{D_A}
+        \,\frac{1}{(1/\varepsilon_b)-1}
+        % 
+        ;\\
+        Re = \frac{u\,d_P}{\nu\,(1-\varepsilon_b)}
+        % 
+        ; 
+        Sc = \frac{\nu}{D_A}
+        % 
+        ;\\
+        \phi
+        =R\,\sqrt{\frac
+            {k'\,\rho_P}{D_e}
+        }
+        % 
+        ;
+        \eta
+        = \frac{3}{\phi^2}(\phi\,\coth{\phi}-1)
+    \end{BM}
+    Perfil de concentração de pellet: \(
+        \rho
+        = \frac{\sinh{(\phi\,\lambda)}}{\lambda\,\cosh{\phi}}
+    \)
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q13.1
+    Calcule o valor da constante cinética aparente, que observaria no caso da ausência de limitações difusionais externas.
+} % Q13.1
+    \answer{}
+    \begin{flalign*}
+        &
+            k'_{ap}
+            = \eta\,k'
+            = \left(
+                \frac{3}{\phi^2}(\phi\,\coth{\phi}-1)
+            \right)
+            \,k'
+            ; &\\[3ex]&
+            % 
+            % 
+            % 
+            \phi
+            = R\,\sqrt{\frac
+                {k'\,\rho_P}{D_e}
+            }
+            \cong &\\&
+            \cong 
+            \qty{8.20573660809596e-2}{\deci\metre^3.\atm.\mole^{-1}.\kelvin^{-1}}\,\sqrt{\frac
+                {
+                    \qty{0.023e-3}{\frac{\metre^3}{\min}}
+                    \,\unit{\frac{\min}{60\,\second}}
+                    *\qty{1.3e3}{\metre^2/\second}
+                }{
+                    \qty{1.3e-8}{\metre^2/\second}
+                }
+            }
+            \cong &\\&
+            \cong
+            \num{16.065929817854}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            k'_{ap}
+            = 
+            \frac{3}{\phi^2}(\phi\,\coth{\phi}-1)
+            \,k'
+            \cong &\\&
+            \cong
+            \frac{3}{(\num{16.065929817854})^2}
+            \,(\num{16.065929817854}\,\coth{\num{16.065929817854}}-1)
+            % 0.175107788740824
+            \,\frac{0.023}{60}
+            \cong
+            \qty{6.712465235064924e-5}{\litre/\sec.\gram}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q13.2
+    Calcule o valor do coeficiente de transferência de massa.
+} % Q13.2
+    \answer{}
+    \begin{flalign*}
+        &
+            Sh
+            = Re^{1/2}\,Sc^{1/3}
+            = \left(
+                \frac{u\,d_P}{\nu\,(1-\varepsilon_b)}
+            \right)^{1/2}
+            \,\left(
+                \frac{\nu}{D_a}
+            \right)^{1/3}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            u
+            = \frac{V_{tubos}}{A_c}
+            = \frac{
+                \left(
+                    V/N_{tubos}
+                \right)
+            }{
+                \left(
+                    \varepsilon_b
+                    \,\pi\,D^2/4
+                \right)
+            }
+            = \frac{
+                \left(
+                    V/60*100
+                \right)
+            }{
+                \left(
+                    0.45
+                    \,\pi\,0.02^2/4
+                \right)
+            }
+            \cong &\\&
+            \cong 
+            \nu\,\num{1.17892550438441}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            Sh
+            = \left(
+                \frac{
+                    \nu
+                    *\num{1.17892550438441}
+                    *0.005
+                }{
+                    \nu
+                    \,(1-0.45)
+                }
+            \right)^{1/2}
+            \,\left(
+                \frac{4\E{-6}}{2.7\E{-7}}
+            \right)^{1/3}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q13.3
+    Calcule o valor da constante cinética realmente observada.
+} % Q13.3
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q13.4
+    Diga, justificando a sua resposta, se o reactor se encontra em regime cinético, difusional interno, difusional externo ou misto.
+} % Q13.4
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q13.5
+    Calcule a conversão à saída do reactor.
+} % Q13.5
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q13.6
+    Determine o valor da concentração de A no centro das pellets, à saída do reactor.
+} % Q13.6
+\end{questionBox}
+
+\end{document}

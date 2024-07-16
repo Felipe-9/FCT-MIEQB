@@ -1,0 +1,136 @@
+% !TEX root = ./PS-Slides_Annotations.1.tex
+\providecommand\mainfilename{"./PS-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./PS-Slides_Annotations.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/PS-Slides_Annotations.1}}}
+% \tikzsetexternalprefix{./.build/figures/PS-Slides_Annotations.1/graphics/}
+
+\mymakesubfile{1}
+[PS]
+{Gas Absorptium} % Subfile Title
+{Gas Absorptium} % Part Title
+
+\begin{sectionBox}1{Absorptium} % S
+    
+    \begin{center}\Large
+        \chemsetup[phases]{pos=side}
+        \ch{\gas <>[Absorptium][Desabsorptium] \lqd}
+    \end{center}
+
+    \begin{itemize}
+        \item Mass transference between the gas phase and the liquid phase
+        \item \emph{\(\vv{N_A}\):} Vector that points in the direction of the absorptium
+        \item \emph{\textit{Stripping}:} Reverse of absorptium
+    \end{itemize}
+
+    \paragraph*{Tipos de absorção:}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[Absorção Física:] 
+        Gases muito solúveis;
+        \ch{NH3 + Water}
+        \item[Absorção Química:] 
+        Gases pouco solúveis;
+        \ch{SO2 + Water}
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{\emph{\textit{r}:} Rate of absorptium} % MARK: S1
+    
+    \begin{center}
+        \begin{multicols}{2}
+            \includegraphics[width=.3\textwidth]{Screenshot 2024-04-11 at 16.32.00-cutout.png}
+            \\
+            \begin{BM}
+                \begin{cases}
+                       r = k_y&\hspace{-1ex} a\,(y-y_i)
+                    \\ r = k_x&\hspace{-1ex} a\,(x_i-x)
+                    \\ r = K_y&\hspace{-1ex} a\,(y-y^*)
+                    \\ r = K_x&\hspace{-1ex} a\,(x^*-y)
+                \end{cases}
+            \end{BM}
+        \end{multicols}
+    \end{center}
+
+    \paragraph*{\(x,y\):} Mole fraction of component being absorbed
+    
+\end{sectionBox}
+\begin{sectionBox}2{\emph{\(N_A\):} Flux of absorptium} % MARK: S
+    
+    \begin{center}
+        \begin{multicols}{2}
+            \includegraphics[width=.45\textwidth]{Screenshot 2024-04-11 at 17.12.41-cutout.png}
+            \\
+            \begin{BM}[align*]
+                &
+                \begin{cases}
+                       N_A = k_g&\hspace{-1ex} a\,(p_{A,g}-p_{A,i})
+                    \\ N_A = k_l&\hspace{-1ex} a\,(c_{A,i}-c_{A,l})
+                    \\ N_A = K_g&\hspace{-1ex} a\,(p_{A,g}-p_{A}^*)
+                    \\ N_A = K_l&\hspace{-1ex} a\,(c_{A}^*-c_{A,l})
+                \end{cases}
+                \\&
+                \begin{aligned}
+                    & k: & \text{Solo}
+                    \\ 
+                    & K: & \text{Global}
+                \end{aligned}
+            \end{BM}
+        \end{multicols}
+    \end{center}
+
+    \begin{BM}
+        \frac{1}{K_{y}\,a}
+        = 
+        \frac{1}{k_{y}\,a}
+        + \frac{m}{k_{x}\,a}
+        ; \qquad
+        \frac{1}{K_{x}\,a}
+        = 
+        \frac{1}{k_{x}\,a}
+        + \frac{1}{m\,k_{y}\,a};
+        \\
+        m: \text{Local equilibrium slope}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(1/m\,k_x\,a\):} % Longest item
+    ]
+        \item[\(1/k_y\,a\):] Resistance of mass transfer in the \emph{gas} film 
+        \item[\(1/m\,k_x\,a\):] Resistance of mass transfer in the \emph{liquid} film 
+    \end{description}
+\end{sectionBox}
+
+\begin{sectionBox}2{Henry's Law} % MARK: S
+    
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{image-026.png}
+    \end{center}
+    \begin{BM}
+           y_A=m\,x_{A}
+           ; \quad
+           m = p_{A}^*/p_t
+           \\
+           y_a = m\,x_a
+           \begin{cases}
+                y_A^*=m\,x_{A}
+                \\ y_A=m\,x_{A}^*
+                \\ p_A = H\,x_A
+           \end{cases}
+    \end{BM}
+    \begin{itemize}
+        \item From the given equation \(y_a = m\,x_a\) we derive the equations with \(y_A^*\)
+    \end{itemize}
+    
+\end{sectionBox}
+
+\end{document}

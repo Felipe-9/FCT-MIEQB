@@ -1,0 +1,1138 @@
+% !TEX root = ./ERQ_II-Lab_Report.export.tex
+\providecommand\mainfilename{"./ERQ_II-Lab_Report.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ERQ_II-Lab_Report.export.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\nopagecolor
+\colorlet{foreground}{black}
+\colorlet{background}{white}
+\color{foreground}
+
+\setlength\textwidth{160mm}
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/ERQ_II-Lab_Report.export}}}
+\tikzsetexternalprefix{./figures/ERQ_II-Lab_Report.export/graphics/}
+
+\def\eqsep{\vspace{-3ex}}
+
+\part*{Modelo 1} % MARK: 1
+\begin{minipage}{90mm}\centering
+    % \tikzset{external/remake next=true}
+        \begin{tikzpicture}[xscale=3.5]
+    
+            \pic (r1) at (1,0) {packed bed reactor};
+            \pic (r2) at (2,0) {stirred reactor};
+
+            \node[above] at (r1-top) {\(R_1\)(PFR)};
+            \node[below] at (r1-bottom) {\((\alpha)\,V\)};
+            
+            \node[above] at (r2-top) {\(R_2\)(CSTR)};
+            \node[below] at (r2-bottom) {\((1-\alpha)\,V\)};
+    
+            \draw[main stream] (r1-left) ++(-0.5,0) 
+            --
+            node[above] {\(C_{in}\)}
+            node[below] {\(\nu\)}
+            (r1-left);
+            \draw[main stream] (r1-right) 
+            --
+            node[above] {\(C_{1}\)}
+            node[below] {\(\nu\)}
+            (r2-left);
+            \draw[main stream] (r2-right) 
+            --
+            node[above] {\(C_{out}\)}
+            node[below] {\(\nu\)}
+            ++(.5,0);
+    
+        \end{tikzpicture}
+\end{minipage}
+
+\part*{C1}
+\begin{minipage}{140mm}
+    \begin{BM}
+        C_1
+        =E(t)
+        = \frac{\sqrt{Pe}}{
+            2\,\sqrt{
+                \pi\,(t/\alpha\,\tau)^3
+            }
+        }\,\exp{\left(
+            -\frac{Pe\,\alpha\,\tau}{4\,t}
+            \left(
+                \frac{t}{\alpha\,\tau}-1
+            \right)^2
+        \right)}
+    \end{BM}
+\end{minipage}
+
+\part*{C out}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{out,i+1}
+        = C_{out,i}
+        + \frac{C_{1,i}-C_{out,i}}{(1-\alpha)\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,C_1
+            =\nu\,C_{out}+(1-\alpha)\,V\,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            C_1
+            =C_{out}+(1-\alpha)\,\tau\,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            \adv{C_{out}}{t}
+            = \frac{C_{out,i+1}-C_{out,i}}{\adif{t}}
+            = \frac{C_1-C_{out}}{(1-\alpha)\,\tau}
+            \implies &\\&
+            \implies
+            C_{out,i+1}
+            = C_{out,i}
+            + \frac{C_1-C_{out}}{(1-\alpha)\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Modelo 2} % MARK: 2
+\begin{minipage}{130mm}\centering
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=3.5]
+    
+        \pic (r1) at (1,0) {packed bed reactor};
+        \pic (r2) at (2,0) {stirred reactor};
+        \pic (r3) at (3,0) {stirred reactor};
+
+        \node[above] at (r1-top) {\(R_1\)(PFR)};
+        \node[below] at (r1-bottom) {\(\alpha_1\,V\)};
+        
+        \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        \node[below] at (r2-bottom) {\((1-\alpha_1)\,\alpha_2\,V\)};
+
+        \node[above] at (r3-top) {\(R_3\)(CSTR)};
+        \node[below] at (r3-bottom) {\((1-\alpha_1)\,(1-\alpha_2)\,V\)};
+
+        \draw[main stream] (r1-left) ++(-0.5,0) 
+        --
+        node[above] {\(C_{in}\)}
+        node[below] {\(\nu\)}
+        (r1-left);
+        \draw[main stream] (r1-right) 
+        --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\nu\)}
+        (r2-left);
+        \draw[main stream] (r2-right) 
+        --
+        node[above] {\(C_{2}\)}
+        node[below] {\(\nu\)}
+        (r3-left);
+        \draw[main stream] (r3-right) 
+        --
+        node[above] {\(C_{out}\)}
+        node[below] {\(\nu\)}
+        ++(.5,0);
+
+    \end{tikzpicture}
+\end{minipage}
+
+\part*{C2}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,C_1
+            = \nu\,C_2
+            + (1-\alpha_1)\,\alpha_2\,V
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            C_1
+            = C_2
+            + (1-\alpha_1)\,\alpha_2\,\tau
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_1-C_2}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C out}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{out,i+1}
+        = C_{out,i}
+        + \frac{C_{2,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,C_2
+            = \nu\,C_{out}
+            + (1-\alpha_1)(1-\alpha_2)\,V\,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            C_2
+            = C_{out}
+            + (1-\alpha_1)(1-\alpha_2)\,\tau\,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{out}}{t}
+            = \frac{C_2-C_{out}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_{out}}{t}
+            = \frac{C_{out,i+1}-C_{out,i}}{\adif{t}}
+            = \frac{C_{2,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            C_{out,i+1}
+            = C_{out,i}
+            + \frac{C_{2,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Modelo 2.1} % MARK: 2.1
+\begin{minipage}{130mm}\centering
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=3.5]
+    
+        \pic (r1) at (1,0) {packed bed reactor};
+        \pic (r2) at (2,0) {stirred reactor};
+        \pic (r3) at (3,0) {stirred reactor};
+
+        \node[above] at (r1-top) {\(R_1\)(PFR)};
+        \node[below] at (r1-bottom) {\(\alpha_1\,V\)};
+        
+        \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        \node[below] at (r2-bottom) {\((1-\alpha_1)\alpha_2\,V\)};
+
+        \node[above] at (r3-top) {\(R_3\)(CSTR)};
+        \node[below] at (r3-bottom) {\((1-\alpha_1)(1-\alpha_2)\,V\)};
+
+        \draw[main stream] (r1-left) ++(-0.5,0) 
+        --
+        node[above] {\(C_{in}\)}
+        node[below] {\(\nu\)}
+        (r1-left);
+        \draw[main stream] (r1-right) 
+        --
+        node[above,pos=0.3] {\(C_{1}\)}
+        node[below,pos=0.3] {\(\nu\)}
+        node[above,pos=0.7] {\(C_{1}\)}
+        node[below,pos=0.7] {\(\beta\,\nu\)}
+        (r2-left);
+        \draw[main stream] (r2-right) 
+        --
+        node[above, pos=0.3] {\(C_{2}\)}
+        node[below, pos=0.3] {\(\beta\,\nu\)}
+        node[above, pos=0.7] {\(C_{3}\)}
+        node[below, pos=0.7] {\(\nu\)}
+        (r3-left);
+        \draw[main stream] (r3-right) 
+        --
+        node[above] {\(C_{out}\)}
+        node[below] {\(\nu\)}
+        ++(.5,0);
+
+        \draw[main stream] 
+        (1.5, 0) --
+        (1.5,-2.5) --
+        node[above,pos=0.5]{\(C_{1}\)}
+        node[below,pos=0.5]{\((1-\beta)\,\nu\)}
+        (2.5,-2.5) --
+        (2.5, 0);
+    \end{tikzpicture}
+\end{minipage}
+
+\part*{C2}
+\begin{minipage}{130mm}
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{\tau}
+        \,\frac{\beta}{(1-\alpha_1)\,(1-\alpha_1)\,\alpha_2}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \beta\,\nu\,C_{1}
+            = \beta\,\nu\,C_{2}
+            + (1-\alpha_1)\,\alpha_2\,V\,\odv{C_{2}}{t}
+            \implies &\\&
+            \implies
+            \beta\,C_{1}
+            = \beta\,C_{2}
+            + (1-\alpha_1)\,\alpha_2\,\tau\,\odv{C_{2}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{2}}{t}
+            = \frac{C_{1}-C_{2}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \,\beta
+            \implies &\\&
+            \implies
+            \adv{C_{2}}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \,\beta
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \,\beta\,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C3}
+\begin{minipage}{60mm}
+    \begin{BM}
+        C_3 = \beta\,C_2 + (1-\beta)\,C_1
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,C_3
+            = \beta\,\nu\,C_2
+            + (1-\beta)\,\nu\,C_1
+            \implies &\\&
+            \implies
+            C_3 = \beta\,C_2 + (1-\beta)\,C_1
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C out}
+\begin{minipage}{100mm}
+    \begin{BM}
+        C_{out,i+1}
+        = C_{out,i}
+        + \frac{C_{out,i}-C_{3,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,C_{out}
+            = \nu\,C_{3}
+            + (1-\alpha_1)(1-\alpha_2)\,V
+            \,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            C_{out}
+            = C_{3}
+            + (1-\alpha_1)(1-\alpha_2)\,\tau
+            \,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{out}}{t}
+            = \frac{C_{out}-C_{3}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_{out}}{t}
+            = \frac{C_{out,i+1}-C_{out,i}}{\adif{t}}
+            = \frac{C_{out,i}-C_{3,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            C_{out,i+1}
+            = C_{out,i}
+            + \frac{C_{out,i}-C_{3,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Modelo 3} % MARK: 3
+\begin{minipage}{160mm}\centering
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=3.5]
+
+        \pic (r1) at (1,0) {packed bed reactor};
+        \pic (r2) at (2,0) {stirred reactor};
+        \pic (r3) at (3,0) {stirred reactor};
+        \pic (r4) at (4,0) {stirred reactor};
+
+        \node[above] at (r1-top) {\(R_1\)(PFR)};
+        \node[below] at (r1-bottom) {\(V\,\alpha_1\)};
+        
+        \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        \node[below] at (r2-bottom) {\(V\,\alpha_2\,(1-\alpha_1)\)};
+
+        \node[above] at (r3-top) {\(R_3\)(CSTR)};
+        \node[below] at (r3-bottom) {\(V\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}\)};
+
+        \node[above] at (r4-top) {\(R_4\)(CSTR)};
+        \node[below] at (r4-bottom) {\(V\,\prod_{i=1}^{3}{(1-\alpha_i)}\)};
+
+        \draw[main stream] (r1-left) ++(-0.5,0) 
+        --
+        node[above] {\(C_{in}\)}
+        node[below] {\(\nu\)}
+        (r1-left);
+        \draw[main stream] (r1-right) 
+        --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\nu\)}
+        (r2-left);
+        \draw[main stream] (r2-right) 
+        --
+        node[above] {\(C_{2}\)}
+        node[below] {\(\nu\)}
+        (r3-left);
+        \draw[main stream] (r3-right) 
+        --
+        node[above] {\(C_{3}\)}
+        node[below] {\(\nu\)}
+        (r4-left);
+        \draw[main stream] (r4-right) 
+        --
+        node[above] {\(C_{out}\)}
+        node[below] {\(\nu\)}
+        ++(.5,0);
+
+    \end{tikzpicture}
+\end{minipage}
+
+\part*{C2}
+\begin{minipage}{100mm}\centering
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,C_1
+            = \nu\,C_2
+            + (1-\alpha_1)\,\alpha_2\,V
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            C_1
+            = C_2
+            + (1-\alpha_1)\,\alpha_2\,\tau
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_1-C_2}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{(1-\alpha_1)\,\alpha_2\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C3}
+\begin{minipage}{100mm}
+    \begin{BM}
+        C_{3,i+1}
+        = C_{3,i}
+        + \frac{C_{2,i}-C_{3,i}}{\tau\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,C_2
+            = \nu\,C_3
+            + \odv{C_2}{t}
+            \,V\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}
+            \implies &\\&
+            \implies
+            C_2
+            = C_3
+            + \odv{C_3}{t}
+            \,\tau\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}
+            \implies &\\&
+            \implies
+            \odv{C_3}{t}
+            = \frac{C_2-C_3}{\tau\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}}
+            \implies &\\&
+            \implies
+            \adv{C_3}{t}
+            = \frac{C_{3,i+1}-C_{3,i}}{\adif{t}}
+            = \frac{C_{2,i}-C_{3,i}}{\tau\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}}
+            \implies &\\&
+            \implies
+            C_{3,i+1}
+            = C_{3,i}
+            + \frac{C_{2,i}-C_{3,i}}{\tau\,\alpha_3\,\prod_{i=1}^{2}{(1-\alpha_i)}}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Cout}
+\begin{minipage}{110mm}
+    \begin{BM}
+        C_{out,i+1}
+        = C_{out,i}
+        + \frac{C_{3,i}-C_{out,i}}{\tau\,\prod_{i=1}^{3}{(1-\alpha_i)}}
+        \,\adif{t}
+    \end{BM}
+    \begin{flalign*}
+        &
+            \nu\,C_3
+            = \nu\,C_{out}
+            + \odv{C_{out}}{t}
+            \,V\,\prod_{i=1}^{3}{(1-\alpha_i)}
+            \implies &\\&
+            \implies
+            C_3
+            = C_{out}
+            + \odv{C_{out}}{t}
+            \,\tau\,\prod_{i=1}^{3}{(1-\alpha_i)}
+            \implies &\\&
+            \implies
+            \odv{C_{out}}{t}
+            = \frac{C_3-C_{out}}{\tau\,\prod_{i=1}^{3}{(1-\alpha_i)}}
+            \implies &\\&
+            \implies
+            \adv{C_{out}}{t}
+            = \frac{C_{out,i+1}-C_{out,i}}{\adif{t}}
+            = \frac{C_{3,i}-C_{out,i}}{\tau\,\prod_{i=1}^{3}{(1-\alpha_i)}}
+            \implies &\\&
+            \implies
+            C_{out,i+1}
+            = C_{out,i}
+            + \frac{C_{3,i}-C_{out,i}}{\tau\,\prod_{i=1}^{3}{(1-\alpha_i)}}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Modelo 4} % MARK: 4
+\begin{minipage}{130mm}\centering
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=3.5,yscale=2]
+
+        \pic (r1) at (1,0) {packed bed reactor};
+        \pic (r2) at (2.5, 1) {stirred reactor};
+        \pic (r3) at (2.5,-1) {stirred reactor};
+
+        \node[above] at (r1-top) {\(R_1\)(PFR)};
+        \node[below] at (r1-bottom) {\(\alpha\,V\)};
+        
+        \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        \node[below] at (r2-bottom) {\((1-\alpha)\,0.5\,V\)};
+
+        \node[above] at (r3-top) {\(R_3\)(CSTR)};
+        \node[below] at (r3-bottom) {\((1-\alpha)\,0.5\,V\)};
+
+        \draw[main stream] (r1-left) ++(-0.5,0) 
+        --
+        node[above] {\(C_{in}\)}
+        node[below] {\(\nu\)}
+        (r1-left);
+        % ============================================ %
+        \draw[main stream] (r1-right) --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\nu\)}
+        ++(.4,0) --
+        ++(0,1) --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\beta\,\nu\)}
+        (r2-left);
+        % ============================================ %
+        \draw[main stream] (r1-right) 
+        ++(.4,0) --
+        ++(0,-1) --
+        node[above] {\(C_{1}\)}
+        node[below] {\((1-\beta)\,\nu\)}
+        (r3-left);
+        % ============================================ %
+        \draw[main stream] (r2-right) --
+        node[above] {\(C_{2}\)}
+        node[below] {\(\beta\,\nu\)}
+        ++(0.6,0) --
+        ++(0,-1) --
+        node[above] {\(C_{out}\)}
+        node[below] {\(\nu\)}
+        ++(.5,0);
+        % ============================================ %
+        \draw[main stream,arrows={}] (r3-right) --
+        node[above] {\(C_{3}\)}
+        node[below] {\((1-\beta)\,\nu\)}
+        ++(0.6,0) --
+        ++(0,1);
+        % node[above] {\(C_{out}\)}
+        % node[below] {\(\nu\)}
+
+    \end{tikzpicture}
+\end{minipage}
+
+\part*{C2}
+\begin{minipage}{100mm}
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{\tau}
+        \,\frac{\beta}{(1-\alpha)\,0.5}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,\beta\,C_{1}
+            = \nu\,\beta\,C_{2}
+            + (1-\alpha)\,0.5\,V\,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \beta\,C_{1}
+            = \beta\,C_{2}
+            + (1-\alpha)\,0.5\,\tau\,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_{1}-C_{2}}{\tau}
+            \,\frac{\beta}{(1-\alpha)\,0.5}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{(1-\alpha)\,0.5\,\tau}
+            \,\beta
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{\tau}
+            \,\frac{\beta}{(1-\alpha)\,0.5}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C3}
+\begin{minipage}{100mm}
+    \begin{BM}
+        C_{3,i+1}
+        = C_{3,i}
+        + \frac{C_{1,i}-C_{3,i}}{\tau}
+        \,\frac{1-\beta}{(1-\alpha)\,0.5}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            (1-\beta)\,\nu\,C_1
+            = (1-\beta)\,\nu\,C_3
+            + (1-\alpha)\,0.5\,V
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            (1-\beta)\,C_1
+            = (1-\beta)\,C_3
+            + (1-\alpha)\,0.5\,\tau
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{3}}{t}
+            = \frac{C_1-C_3}{\tau}
+            \,\frac{1-\beta}{(1-\alpha)\,0.5}
+            \implies &\\&
+            \implies
+            \adv{C_{3}}{t}
+            = \frac{C_{3,i+1}-C_{3,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{3,i}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha)\,0.5}
+            \implies &\\&
+            \implies
+            C_{3,i+1}
+            = C_{3,i}
+            + \frac{C_{1,i}-C_{3,i}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha)\,0.5}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C out}
+\begin{minipage}{60mm}
+    \begin{BM}
+        C_{out}
+        = \beta\,C_{2}
+        + (1-\beta)\,C_{3}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            \nu\,C_{out}
+            = \beta\,\nu\,C_{2}
+            + (1-\beta)\,\nu\,C_{3}
+            \implies &\\&
+            \implies
+            C_{out}
+            = \beta\,C_{2}
+            + (1-\beta)\,C_{3}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Modelo 4.1} % MARK: 4.1
+\begin{minipage}{130mm}\centering
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=3.5,yscale=2]
+
+        \pic (r1) at (1,0) {packed bed reactor};
+        \pic (r2) at (2.5, 1) {stirred reactor};
+        \pic (r3) at (2.5,-1) {stirred reactor};
+
+        \node[above] at (r1-top) {\(R_1\)(PFR)};
+        \node[below] at (r1-bottom) {\(\alpha_1\,V\)};
+        
+        \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        \node[below] at (r2-bottom) {\((1-\alpha_1)(\alpha_2)\,V\)};
+
+        \node[above] at (r3-top) {\(R_3\)(CSTR)};
+        \node[below] at (r3-bottom) {\((1-\alpha_1)(1-\alpha_2)\,V\)};
+
+        \draw[main stream] (r1-left) ++(-0.5,0) 
+        --
+        node[above] {\(C_{in}\)}
+        node[below] {\(\nu\)}
+        (r1-left);
+        % ============================================ %
+        \draw[main stream] (r1-right) --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\nu\)}
+        ++(.4,0) --
+        ++(0,1) --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\beta\,\nu\)}
+        (r2-left);
+        % ============================================ %
+        \draw[main stream] (r1-right) 
+        ++(.4,0) --
+        ++(0,-1) --
+        node[above] {\(C_{1}\)}
+        node[below] {\((1-\beta)\,\nu\)}
+        (r3-left);
+        % ============================================ %
+        \draw[main stream] (r2-right) --
+        node[above] {\(C_{2}\)}
+        node[below] {\(\beta\,\nu\)}
+        ++(0.6,0) --
+        ++(0,-1) --
+        node[above] {\(C_{out}\)}
+        node[below] {\(\nu\)}
+        ++(.5,0);
+        % ============================================ %
+        \draw[main stream,arrows={}] (r3-right) --
+        node[above] {\(C_{3}\)}
+        node[below] {\((1-\beta)\,\nu\)}
+        ++(0.6,0) --
+        ++(0,1);
+        % node[above] {\(C_{out}\)}
+        % node[below] {\(\nu\)}
+
+    \end{tikzpicture}
+\end{minipage}
+
+\part*{C2}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{\tau}
+        \frac{\beta}{(1-\alpha_1)(\alpha_2)}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_1\,\beta\,\nu
+            = C_2\,\beta\,\nu
+            + (1-\alpha_1)(\alpha_2)\,V
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            C_1\,\beta
+            = C_2\,\beta
+            + (1-\alpha_1)(\alpha_2)\,\tau
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_1-C_2}{\tau}
+            \frac{\beta}{(1-\alpha_1)(\alpha_2)}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{\tau}
+            \frac{\beta}{(1-\alpha_1)(\alpha_2)}
+            \implies &\\&
+            \implies
+            = C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{\tau}
+            \frac{\beta}{(1-\alpha_1)(\alpha_2)}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C3}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{3,i+1}
+        = C_{3,i}
+        + \frac{C_{1}-C_{3}}{\tau}
+        \,\frac{1-\beta}{(1-\alpha_1)(1-\alpha_2)}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_{1}\,(1-\beta)\,\nu
+            = C_{3}\,(1-\beta)\,\nu
+            + (1-\alpha_1)(1-\alpha_2)\,V
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            C_{1}\,(1-\beta)
+            = C_{3}\,(1-\beta)
+            + (1-\alpha_1)(1-\alpha_2)\,\tau
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{3}}{t}
+            = \frac{C_{1}-C_{3}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha_1)(1-\alpha_2)}
+            \implies &\\&
+            \implies
+            \adv{C_{3}}{t}
+            = \frac{C_{3,i+1}-C_{3,i}}{\adif{t}}
+            = \frac{C_{1}-C_{3}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha_1)(1-\alpha_2)}
+            \implies &\\&
+            \implies
+            C_{3,i+1}
+            = C_{3,i}
+            + \frac{C_{1}-C_{3}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha_1)(1-\alpha_2)}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C out}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{out}
+        = C_{2}\,(\beta)
+        + C_{3}\,(1-\beta)
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_{out}\,\nu
+            = C_{2}\,(\beta)\,\nu
+            + C_{3}\,(1-\beta)\,\nu
+            \implies &\\&
+            \implies
+            C_{out}
+            = C_{2}\,(\beta)
+            + C_{3}\,(1-\beta)
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Modelo 5} % MARK: 5
+\begin{minipage}{160mm}\centering
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=3.5,yscale=2]
+
+        \pic (r1) at (1,0) {packed bed reactor};
+        \pic (r2) at (2.5, 1) {stirred reactor};
+        \pic (r3) at (2.5,-1) {stirred reactor};
+        \pic (r4) at (4,0) {stirred reactor};
+
+        \node[above] at (r1-top) {\(R_1\)(PFR)};
+        \node[below] at (r1-bottom) {\(\alpha_1\,V\)};
+        
+        \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        \node[below] at (r2-bottom) {\((1-\alpha_1)\,\alpha_2\,(\alpha_3)\,V\)};
+
+        \node[above] at (r3-top) {\(R_3\)(CSTR)};
+        \node[below] at (r3-bottom) {\((1-\alpha_1)\,\alpha_2\,(1-\alpha_3)\,V\)};
+
+        \node[above] at (r4-top) {\(R_4\)(CSTR)};
+        \node[below] at (r4-bottom) {\((1-\alpha_1)(1-\alpha_2)\,V\)};
+
+        \draw[main stream] (r1-left) ++(-0.5,0) 
+        --
+        node[above] {\(C_{in}\)}
+        node[below] {\(\nu\)}
+        (r1-left);
+        % ============================================ %
+        \draw[main stream] (r1-right) --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\nu\)}
+        ++(.4,0) --
+        ++(0,1) --
+        node[above] {\(C_{1}\)}
+        node[below] {\(\beta\,\nu\)}
+        (r2-left);
+        % ============================================ %
+        \draw[main stream] (r1-right) 
+        ++(.4,0) --
+        ++(0,-1) --
+        node[above] {\(C_{1}\)}
+        node[below] {\((1-\beta)\,\nu\)}
+        (r3-left);
+        % ============================================ %
+        \draw[main stream] (r2-right) --
+        node[above] {\(C_{2}\)}
+        node[below] {\(\beta\,\nu\)}
+        ++(0.6,0) --
+        ++(0,-1) --
+        node[above] {\(C_{4}\)}
+        node[below] {\(\nu\)}
+        (r4-left);
+        % ============================================ %
+        \draw[main stream,arrows={}] (r3-right) --
+        node[above] {\(C_{3}\)}
+        node[below] {\((1-\beta)\,\nu\)}
+        ++(0.6,0) --
+        ++(0,1);
+        % node[above] {\(C_{out}\)}
+        % node[below] {\(\nu\)}
+        % ============================================ %
+        \draw[main stream] (r4-right) --
+        node[above] {\(C_{out}\)}
+        node[below] {\(\nu\)}
+        ++(0.5,0);
+    \end{tikzpicture}
+\end{minipage}
+
+\part*{C2}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{2,i+1}
+        = C_{2,i}
+        + \frac{C_{1,i}-C_{2,i}}{\tau}
+        \frac{\beta}{(1-\alpha_1)\,\alpha_2\,(\alpha_3)}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_1\,\beta\,\nu
+            = C_2\,\beta\,\nu
+            + (1-\alpha_1)\,\alpha_2\,(\alpha_3)\,V
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            C_1\,\beta
+            = C_2\,\beta
+            + (1-\alpha_1)\,\alpha_2\,(\alpha_3)\,\tau
+            \,\odv{C_2}{t}
+            \implies &\\&
+            \implies
+            \odv{C_2}{t}
+            = \frac{C_1-C_2}{\tau}
+            \frac{\beta}{(1-\alpha_1)\,\alpha_2\,(\alpha_3)}
+            \implies &\\&
+            \implies
+            \adv{C_2}{t}
+            = \frac{C_{2,i+1}-C_{2,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{2,i}}{\tau}
+            \frac{\beta}{(1-\alpha_1)\,\alpha_2\,(\alpha_3)}
+            \implies &\\&
+            \implies
+            C_{2,i+1}
+            = C_{2,i}
+            + \frac{C_{1,i}-C_{2,i}}{\tau}
+            \frac{\beta}{(1-\alpha_1)\,\alpha_2\,(\alpha_3)}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C3}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{3,i+1}
+        = C_{3,i}
+        + \frac{C_{1}-C_{3}}{\tau}
+        \,\frac{1-\beta}{(1-\alpha_1)\,\alpha_2\,(1-\alpha_3)}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_{1}\,(1-\beta)\,\nu
+            = C_{3}\,(1-\beta)\,\nu
+            + (1-\alpha_1)\,\alpha_2\,(1-\alpha_3)\,V
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            C_{1}\,(1-\beta)
+            = C_{3}\,(1-\beta)
+            + (1-\alpha_1)\,\alpha_2\,(1-\alpha_3)\,\tau
+            \,\odv{C_{3}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{3}}{t}
+            = \frac{C_{1}-C_{3}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha_1)\,\alpha_2\,(1-\alpha_3)}
+            \implies &\\&
+            \implies
+            \adv{C_{3}}{t}
+            = \frac{C_{3,i+1}-C_{3,i}}{\adif{t}}
+            = \frac{C_{1,i}-C_{3,i}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha_1)\,\alpha_2\,(1-\alpha_3)}
+            \implies &\\&
+            \implies
+            C_{3,i+1}
+            = C_{3,i}
+            + \frac{C_{1,i}-C_{3,i}}{\tau}
+            \,\frac{1-\beta}{(1-\alpha_1)\,\alpha_2\,(1-\alpha_3)}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C4}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{4}
+        = C_{2}\,(\beta)
+        + C_{3}\,(1-\beta)
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_{4}\,\nu
+            = C_{2}\,(\beta)\,\nu
+            + C_{3}\,(1-\beta)\,\nu
+            \implies &\\&
+            \implies
+            C_{4}
+            = C_{2}\,(\beta)
+            + C_{3}\,(1-\beta)
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{C out}
+\begin{minipage}{1mm}
+    \begin{BM}
+        C_{out,i+1}
+        = C_{out,i}
+        + \frac{C_{4,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+        \,\adif{t}
+    \end{BM}
+    \eqsep
+    \begin{flalign*}
+        &
+            C_{4}\,\nu
+            = C_{out}\,\nu
+            + (1-\alpha_1)(1-\alpha_2)\,V
+            \,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            C_{4}
+            = C_{out}
+            + (1-\alpha_1)(1-\alpha_2)\,\tau
+            \,\odv{C_{out}}{t}
+            \implies &\\&
+            \implies
+            \odv{C_{out}}{t}
+            = \frac{C_{4}-C_{out}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            \adv{C_{out}}{t}
+            = \frac{C_{out,i+1}-C_{out,i}}{\adif{t}}
+            = \frac{C_{4,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \implies &\\&
+            \implies
+            C_{out,i+1}
+            = C_{out,i}
+            + \frac{C_{4,i}-C_{out,i}}{(1-\alpha_1)(1-\alpha_2)\,\tau}
+            \,\adif{t}
+        &
+    \end{flalign*}
+\end{minipage}
+
+\part*{Art}
+
+\begin{minipage}{60mm}
+    \tikzset{external/remake next=true}
+    \begin{tikzpicture}[xscale=2]
+    
+        % \pic (r1) at (1,0) {packed bed reactor};
+        \pic at (0,0) {stirred reactor};
+        \pic at (1,0) {stirred reactor};
+        \pic at (2,0) {stirred reactor};
+
+        % \node[above] at (r1-top) {\(R_1\)(PFR)};
+        % \node[below] at (r1-bottom) {\((\alpha)\,V\)};
+        
+        % \node[above] at (r2-top) {\(R_2\)(CSTR)};
+        % \node[below] at (r2-bottom) {\((1-\alpha)\,V\)};
+
+        % \draw[main stream] (r1-left) ++(-0.5,0) 
+        % --
+        % node[above] {\(C_{in}\)}
+        % node[below] {\(\nu\)}
+        % (r1-left);
+        % \draw[main stream] (r1-right) 
+        % --
+        % node[above] {\(C_{1}\)}
+        % node[below] {\(\nu\)}
+        % (r2-left);
+        % \draw[main stream] (r2-right) 
+        % --
+        % node[above] {\(C_{out}\)}
+        % node[below] {\(\nu\)}
+        % ++(.5,0);
+
+    \end{tikzpicture}
+\end{minipage}
+
+\end{document}
