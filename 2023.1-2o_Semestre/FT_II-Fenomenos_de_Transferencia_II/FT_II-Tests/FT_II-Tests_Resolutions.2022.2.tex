@@ -17,21 +17,21 @@
 {Test 2022.2 Resoltion} % Part Title
 
 \begin{questionBox}1{ % MARK: Q1
-    Obtiveram-se os seguintes dados de coeficiente de atrito (Cf) para o escoamento de ar ao longo de uma conduta cilíndrica revestida com naftaleno:
+    Obtiveram-se os seguintes dados de coeficiente de atrito (\(C_f\)) para o escoamento de ar ao longo de uma conduta cilíndrica revestida com naftaleno:
 } % Q1
     \begin{center}
         \vspace{1ex}
-        \setlength\tabcolsep{3mm}        % width
+        \setlength\tabcolsep{6mm}        % width
         % \renewcommand\arraystretch{1.25} % height
         \begin{tabular}{C *{5}{C}}
             \toprule
             
                 Re
-                & 1\E{-4}
-                & 5\E{-4}
-                & 1\E{-5}
-                & 5\E{-5}
-                & 1\E{-6}
+                & 1\E{4}
+                & 5\E{4}
+                & 1\E{5}
+                & 5\E{5}
+                & 1\E{6}
             
             \\\midrule
             
@@ -48,7 +48,6 @@
     \end{center}
     Faz-se passar ar à temperatura de \qty*{15}{\celsius} e à pressão de \qty*{1}{\atm} através dessa conduta (\qty*{5}{\cm} de diâmetro e \qty*{4.5}{\m} de comprimento) a uma velocidade de \qty*{15}{\m/\s}.
 
-
     \paragraph*{Dados:}
     \begin{align*}
         D_{Naf,ar}(15\,\unit{\celsius},1\,\unit{\atm})
@@ -60,26 +59,23 @@
         ;& P^*(15\unit{\celsius})
         =& \qty*{3.5}{\mmHg}
     \end{align*}
-    \begin{multicols}{2}
-        Analogia de Reynolds
-        \begin{align*}
-            \frac{k_c}{V}=\frac{C_f}{2}
-        \end{align*}
-
-        Analogia de Chilton-Coulburn
-        \begin{align*}
-            \frac{k_C}{V}\,Sc^{2/3}=\frac{C_f}{2}
-        \end{align*}
-    \end{multicols}
+    \begin{align*}
+        \text{Analogia de Reynolds}
+        &\qquad
+        \text{Analogia de Chilton-Coulburn}
+        \\
+        \frac{k_C}{v}=\frac{C_f}{2}
+        &\qquad
+        \frac{k_C}{v}\,Sc^{2/3}=\frac{C_f}{2}
+    \end{align*}
     \begin{align*}
         \ln{\frac
             {C_{A,s}-C_{A,0}}
             {C_{A,s}-C_{A,L}}
         } 
-        = \frac{4\,L}{d}
-        \,\frac{k_C}{V}
-    \end{align*}
-    \begin{align*}
+        =& \frac{4\,L}{d}
+        \,\frac{k_C}{v}
+        ;&
         Sc&=\frac{\mu}{\rho\,\mathscr{D}}
         ;&
         Sh&=\frac{k_c\,d}{\mathscr{D}}
@@ -95,25 +91,105 @@
     \begin{flalign*}
         &
             k_C
-            =\frac{C_f\,v}{Sc^{3/2}\,2}
+            = \frac{C_f\,v}{2\,Sc^{2/3}}
+            = \frac{C_f\,v}{
+                2
+                \,\left(
+                    \mu
+                    /\rho\,\mathscr{D}_{Naf,Ar}
+                \right)^{2/3}
+            }
+            % \cong &\\&
+            \cong \frac{
+                \num{6.69375e-3}
+                *15
+            }{
+                2
+                \,\left(
+                    2.0\E{-5}
+                    /1*7.7\E{-6}
+                    % 2.597402597402597
+                \right)^{2/3}
+                % 4.186093319612365
+            }
+            \unit{\m/\s}
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {2.6568757071760533e-2}
+                {\m/\s}
+            }
             % 
             % 
             % 
             ; &\\[3ex]&
-            Re
-            = \frac{\rho\,d\,v}{\mu}
-            = \frac{1*5\E{-2}*15}{2\E{-5}}
+            \mathemph{C_f}&\\&
+            C_f\left(
+                Re
+            \right)
+            = C_f\left(
+                \frac{\rho\,d\,v}{\mu}
+            \right)
+            = C_f\left(
+                \frac{1*5\E{-2}*15}{\num*{2.0e-5}}
+            \right)
+            = C_f\left(
+                \num{3.7500e4}
+            \right)
+            = C_f\left(
+                \num{3.7500e4}
+            \right)
             \implies &\\&
             \implies
-            C_f(Re)\cong\dots
-            % 
-            % 
-            % 
-            ; &\\[3ex]&
-            \therefore
-            k_C
-            =\frac{C_f\,v}{Sc^{3/2}\,2}
-            =\dots
+            \frac{
+                C_f\left(
+                    \num{3.7500e4}
+                \right)
+                -C_f(1\E{4})
+            }{
+                \num{3.7500e4}
+                -1\E{4}
+            }
+            = \frac{
+                C_f(5\E{4})
+                -C_f(1\E{4})
+            }{
+                5\E{4}
+                -1\E{4}
+            }
+            \implies &\\&
+            \implies
+            C_f\left(
+                \num{3.7500e4}
+            \right)
+            = \frac{
+                C_f(5\E{4})
+                -C_f(1\E{4})
+            }{
+                5\E{4}
+                -1\E{4}
+            }
+            \,\left(
+                \num{3.7500e4}
+                -1\E{4}
+            \right)
+            + C_f(1\E{4})
+            = &\\&
+            = \frac{
+                6.1\E{-3}
+                -8.0\E{-3}
+            }{
+                5\E{4}
+                -1\E{4}
+            }
+            \,\left(
+                \num{3.7500e4}
+                -1\E{4}
+            \right)
+            + 8\E{-3}
+            \cong &\\&
+            \cong\num
+            {6.69375e-3}
         &
     \end{flalign*}
 \end{questionBox}
@@ -122,12 +198,17 @@
     Pode usar a analogia de Reynolds? Justifique.
 } % Q1.2
     \answer{}
-    Não
     \begin{flalign*}
         &
-            Sc\neq1
+            Sc
+            = \frac{\mu}{\rho\,\mathscr{D}}
+            = \frac{2.0\E{-5}}{1*7.7\E{-6}}
+            \cong
+            \num{2.597402597402597}
+            \neq1
         &
     \end{flalign*}
+    \(\therefore\) não se pode usar a analogia de Reynalds
 \end{questionBox}
 
 \begin{questionBox}2{ % MARK: Q1.3
@@ -136,20 +217,72 @@
     \answer{}
     \begin{flalign*}
         &
-            k_C
-            =\ln{(1-C_{A,L}/C^*)^{-1}}
-            \,\frac{d\,v}{4\,l}
+            \mathemph{C_{A,15}}:&\\&
+            \ln\frac
+            {C_{A,s}-C_{A,0}}
+            {C_{A,s}-C_{A,L}}
+            = \ln\frac
+            {C_{A}^*-0}
+            {C_{A}^*-C_{A,L}}
+            = -\ln(1-C_{A,L}/C_{A}^*)
+            = \frac{4\,L}{d}
+            \,\frac{K_C}{v}
+            \implies &\\&
+            \implies
+            C_{A,L}
+            = C_{A}^*
+            \,\left(
+                1
+                -\exp{\left(
+                    -\frac{4\,L}{d}
+                    \,\frac{K_C}{v}
+                \right)}
+            \right)
+            % = &\\&
+            = \frac{P^*}{R\,T}
+            \,\left(
+                1
+                -\exp{\left(
+                    -\frac{4\,L}{d}
+                    \,\frac{K_C}{v}
+                \right)}
+            \right)
+            = &\\&
+            = \frac
+            {3.5/\num{760.00209995982457}}
+            {
+                \num{8.20573660809596e-5}
+                \,(15+273.15)
+            }
+            % 0.194767753713938
+            \,\left(
+                1
+                -\exp{\left(
+                    -\frac{4\,L}{5\E{-2}}
+                    \,\frac
+                    {\num{2.6568757071760533e-2}}
+                    {15}
+                    % 0.063961784785245
+                \right)}
+            \right)
+            \cong &\\&
+            \cong \num{1.94767753713938e-1}
+            \,\left(
+                1
+                -\exp{\left(
+                    -\num{1.41700037716056e-1}
+                    \,L
+                \right)}
+            \right)
+            % 0.191480156424951
             \implies &\\&
             \implies
             C_{A,1.5}
-            = 
-            C^*\left(
-                1
-                -\exp{\left(
-                    -\frac
-                    {4\,k_C\,l}{d\,v}
-                \right)}
-            \right)
+            \cong\mathemph{
+                \qty
+                {3.7294159947681e-2}
+                {\mole/\m^3}
+            }
         &
     \end{flalign*}
 \end{questionBox}
@@ -160,11 +293,26 @@
     \answer{}
     \begin{flalign*}
         &
-            \%_{sat}
-            =\frac{C_{A,L}}{C^*}
-            \cong\frac{1.92}{0.0917}
-            \cong
-            47.76\%
+            \%\sat
+            = \frac{C_{A,L}}{C^*}
+            = \frac{C_{A,4.5}}{C^*}
+            \cong 
+            \frac{
+                C^*
+                \,\left(
+                    1
+                    -\exp{\left(
+                        -\num{1.41700037716056e-1}
+                        *4.5
+                    \right)}
+                \right)
+            }{
+                C^*
+            }
+            % \cong &\\&
+            \cong\qty
+            {47.146707133685801}
+            {\percent}
         &
     \end{flalign*}
 \end{questionBox}
@@ -173,7 +321,214 @@
     Para além de analogias quais os outros métodos que poderá usar para calcular coeficientes de transferência de massa? Quais são os mais utilizados?
 } % Q1.5
     \answer{}
-    Correlações experimentaias e queda de pressão, é mais fácil nedir no lab. temp do q pressão.
+    Usamos correlações e medições de queda de pressão, a primeira toma prioridade por temperatura ser mais fáceis de medir no laboratório do que pressões.
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    É obtida água com cloro, para utilização no branqueamento de pasta de papel, por absorção de cloro gasoso em água numa coluna de enchimento à temperatura de \qty*{293}{\K} e à pressão de \qty*{1}{\atm}. Num dado ponto da coluna a pressão parcial de cloro no gás é \qty*{125}{\mmHg} e a concentração de cloro no líquido é de \qty*{14}{\milli\M}. Se 80\% da resistência à transferência de massa estiver na fase líquida, calcule:
+} % Q2
+    \paragraph*{Dados de equilíbrio:}
+    \begin{center}
+        \vspace{1ex}
+        \rowcolors*{2}{background!95!foreground}{}
+        \begin{tabular}{L *{6}{C}}
+            \toprule
+            
+                p_{cloro}/\unit{\mmHg}
+                & 5 & 10 & 30 & 50 & 100 & 150
+                \\
+                C_{cloro}/\unit{\milli\M}
+                & 6.2 & 8.1 & 13.2 & 17.1 & 25.0 & 32.0
+
+                % 6.2 , 5
+                % 8.1 , 10
+                % 13.2 , 30
+                % 17.1 , 50
+                % 25.0 , 100
+                % 32.0, 150
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    As composições de equilíbrio.
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{cloro}^*
+            =f(p_{cloro}^*)
+            =f(125)
+            \implies
+            \frac
+            {f(125)-f(100)}
+            {125-100}
+            = \frac
+            {f(150)-f(100)}
+            {150-100}
+            \implies &\\&
+            \implies
+            C_{cloro}^*
+            = f(125)
+            = \frac
+            {f(150)-f(100)}
+            {150-100}
+            (125-100)
+            +f(100)
+            = &\\&
+            = \frac
+            {32.0-25.0}
+            {150-100}
+            (125-100)
+            +25.0
+            % = &\\&
+            = \mathemph{
+                \qty*
+                {28.5}
+                {\milli\M}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            P^*_{cloro}
+            = f(c_{cloro})
+            = f(14)
+            \implies &\\&
+            \implies
+            \frac
+            {f(14)-f(13.2)}
+            {14-13.2}
+            = \frac
+            {f(17.1)-f(13.2)}
+            {17.1-13.2}
+            \implies &\\&
+            \implies
+            p^*_{cloro}
+            = f(14)
+            = \frac
+            {f(17.1)-f(13.2)}
+            {17.1-13.2}
+            \,(14-13.2)
+            + f(13.2)
+            = &\\&
+            = \frac
+            {50-30}
+            {17.1-13.2}
+            \,(14-13.2)
+            + 30
+            \cong\mathemph{
+                \qty
+                {34.102564102564103}
+                {\mmHg}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    As composições interfaciais.
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{C_{A,i}}&\\&
+            \frac
+            {C_{A,i}-C_{A,L}}
+            {C_{A}^*-C_{A,L}}
+            =0.8
+            \implies &\\&
+            \implies
+            C_{A,i}
+            = 0.8(C_{A}^*-C_{A,L})+C_{A,L}
+            = 0.8(28.5-14)+14
+            \cong\mathemph{
+                \qty*{25.6}
+                {\milli\M}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{P_{A,i}}&\\&
+            \frac
+            {P_{A}-P_{A,i}}
+            {P_{A}-P_{A}^*}
+            =0.2
+            \implies &\\&
+            \implies
+            P_{A,i}
+            =P_A-0.2(P_{A}-P_{A}^*)
+            =125-0.2(125-\num{34.102564102564103})
+            \cong\mathemph{
+                \qty
+                {106.82051282051282}
+                {\mmHg}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.3
+    O coeficiente global de transferência de massa \(K_G\) sabendo que o coeficiente individual de transferência de massa \(k_G\) é \qty*{3.3e-4}{\mole/\hour\,\m^2\,\mmHg}.
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            K_G
+            =0.2\,k_G
+            =0.2*3.3\E{-4}
+            =\mathemph{
+                \qty*
+                {6.6e-5}
+                {\mole/\hour\,\m^2\,\mmHg}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    O fluxo de cloro nesse ponto da coluna.
+} % Q2.4
+    \answer{}
+    \begin{flalign*}
+        &
+            N_A
+            =K_G\,(P_{A,i}-P_A^*)
+            \cong
+            6.6\E{-5}
+            \,(125-\num{34.102564102564103})
+            \cong\mathemph{
+                \qty
+                {5.9992307692307694e-3}
+                {\mole/\hour\,\m^2}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.5
+    Se o processo se realizar a uma temperatura mais elevada, qual espera ser o efeito no fluxo? Justifique a sua resposta.
+} % Q2.5
+    \answer{}
+    \begin{flalign*}
+        &
+            N_A\propto-P_A^*
+            \land
+            P_A^*\propto T
+            \therefore
+            N_A\propto-T
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.6
+    Será importante usar uma reação química na fase líquida neste caso? Justifique a sua resposta.
+} % Q2.6
+    \answer{}
+    É importante a reação química porque a resistencia na fase líquida é elevada, usar a reação química contribuia para diminuir essa resistencia
 \end{questionBox}
 
 \end{document}

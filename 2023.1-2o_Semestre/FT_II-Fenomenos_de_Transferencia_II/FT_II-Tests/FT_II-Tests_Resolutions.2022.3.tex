@@ -1,0 +1,849 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2022.3.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2022.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2022.3}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2022.3/graphics/}
+
+\mymakesubfile{3}
+[FT II]
+{Exame 2022.3 Resolução} % Subfile Title
+{Exame 2022.3 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Um tanque com o topo aberto para a atmosfera contém metanol líquido (\ch{CH3OH}, peso molecular \qty*{32}{\g/\mole}) no fundo do tanque. O tanque é mantido a \qty*{30}{\celsius}. O diâmetro do tanque cilíndrico é de \qty*{1.0}{\m}, a altura total do tanque é de \qty*{3.0}{\m} e o nível do líquido no fundo do tanque é mantido em \qty*{0.5}{\m}. O espaço de gás dentro do tanque está estagnado e os vapores de \ch{CH3OH} são imediatamente dispersos assim que saem do tanque.\\[2ex]A \qty*{30}{\celsius}, a pressão de vapor exercida pelo \ch{CH3OH} líquido é de \qty*{163}{\mmHg} e a \qty*{40}{\celsius} a pressão de vapor do \ch{CH3OH} é de \qty*{265}{\mmHg}. O coeficiente de difusão do metanol no ar é \qty*{1.66}{\cm^2/\s} e varia com a temperatura \(T^{3/2}\) .
+} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Qual é a taxa de emissão de vapor de \ch{CH3OH} do tanque em \unit{\kg/\day} quando o tanque está a uma temperatura de \qty*{30}{\celsius}? Deduza a equação necessária e as condições fronteira para este problema.
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            Taxa
+            =M_{A}\,W
+            =M_{A}\,S\,N_A
+            =M_{A}
+            \,\left(
+                \pi\,d^2/4
+            \right)\,\left(
+                \frac
+                {c\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,l}
+                \ln{\frac
+                    {1-\Theta\,y_{A,2}}
+                    {1-\Theta\,y_{A,1}}
+                }
+            \right)
+            = &\\&
+            =\frac
+            {
+                M_{A}\,
+                \pi\,d^2
+                \frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+            }
+            {
+                4*1*1*(3.0-0.5)
+            }
+            \ln{\frac
+                {1-1*0}
+                {1-1\,y_{A,1}}
+            }
+            \cong  &\\&
+            \cong \frac
+            {
+                32
+                \,\pi\,1.0^2
+                \frac{1}{
+                    \num{8.20573660809596e-5}
+                    *(30+273.15)
+                }
+                *1.66\E{-4}
+            }
+            {
+                4*(3.0-0.5)
+            }
+            \ln{\frac
+                {1}
+                {1-\num{0.214473091598848}}
+            }
+            \cong &\\&
+            \cong
+            \qty
+            {161.946317459157888e-4}
+            {\gram/\s}
+            \cong\mathemph{
+                \qty
+                {1.39921618284712415232}
+                {\kg/\day}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira fluxo:}&\\&
+            \begin{cases}
+                z_0=0.5 ;&\quad
+                y_{A,0}=P_A^*/P
+                \cong\frac{163}{\num{760.00209995982457}}
+                \cong\num{0.214473091598848}
+                \\
+                z_1=3.0 ;&\quad
+                y_{A,1}=0
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \eta_{d,\text{plano}}
+            =1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_B/N_A
+            = 1+0/N_A
+            = 1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Se a temperatura do tanque for aumentada para \qty*{40}{\celsius}, qual é a \% de aumento na taxa de emissão para um aumento de \qty*{10}{\celsius} na temperatura?
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \frac
+            {\text{Taxa}_{\qty*{40}{\celsius}}}
+            {\text{Taxa}_{\qty*{30}{\celsius}}}
+            -1
+            =\frac
+            {
+                \frac
+                {
+                    M_A
+                    \,\pi\,d^2
+                    \,\frac{P}{R\,T}
+                    \,\mathscr{D}_{A,B,40\unit{\celsius}}
+                }
+                {4\,(3.0-0.5)}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0,40\unit{\celsius}}}
+                }
+            }
+            {
+                \frac
+                {
+                    M_A
+                    \,\pi\,d^2
+                    \,\frac{P}{R\,T}
+                    \,\mathscr{D}_{A,B,30\unit{\celsius}}
+                }
+                {4\,(3.0-0.5)}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0,30\unit{\celsius}}}
+                }
+            }
+            -1
+            = &\\&
+            =\frac
+            {
+                \frac
+                {\mathscr{D}_{A,B,40\unit{\celsius}}}
+                {40+273.15}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0,40\unit{\celsius}}}
+                }
+            }
+            {
+                \frac
+                {\mathscr{D}_{A,B,30\unit{\celsius}}}
+                {30+273.15}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0,30\unit{\celsius}}}
+                }
+            }
+            -1
+            \cong &\\&
+            \cong\frac
+            {
+                \frac
+                {
+                    \mathscr{D}_{A,B,30\unit{\celsius}}
+                    \,\left(
+                        \frac{40+273.15}{30+273.15}
+                    \right)^{3/2}
+                }
+                {40+273.15}
+                \ln{\frac
+                    {1}
+                    {1-\num{0.348683247077881}}
+                }
+            }
+            {
+                \frac
+                {\mathscr{D}_{A,B,30\unit{\celsius}}}
+                {30+273.15}
+                \ln{\frac
+                    {1}
+                    {1-\num{0.214473091598848}}
+                }
+            }
+            -1
+            \cong &\\&
+            \cong\frac
+            {
+                \left(
+                    \frac{40+273.15}{30+273.15}
+                \right)^{1/2}
+                \ln{\frac
+                    {1}
+                    {1-\num{0.348683247077881}}
+                }
+            }
+            {
+                \ln{\frac
+                    {1}
+                    {1-\num{0.214473091598848}}
+                }
+            }
+            -1
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {80.5188598786085}
+                {\percent}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathscr{D}_{A,B,40\unit{\celsius}}
+            = \mathscr{D}_{A,B,30\unit{\celsius}}
+            \,\left(
+                \frac{40+273.15}{30+273.15}
+            \right)^{3/2}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            y_{A,0,40\unit{\celsius}}
+            =P^*_{A,40\unit{\celsius}}/P
+            \cong\frac{265}{\num{760.00209995982457}}
+            \cong\num{0.348683247077881}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Um reator de leito fluidizado de carvão foi proposto para uma nova fábrica. Se operado a \qty*{1145}{\K}, o processo de combustão em ar (\qty*{21}{\percent\of{\ch{O2}}} e \qty*{79}{\percent\of{\ch{N2}}}) será limitado pela difusão do \ch{O2} em contracorrente ao \ch{CO2}, formado na superfície da partícula. Suponha que o carvão seja carbono sólido puro com densidade de \qty*{1.28e3}{\kg/\m^3} e que a partícula seja esférica com um diâmetro inicial de \qty*{1.5e-4}{\m} (\qty*{150}{\micro\m}). Sob as condições do processo de combustão, a difusividade do \ch{O2} na mistura gasosa a \qty*{1145}{\K} é \qty*{1.3e-4}{\cm^2/\s}. A reação na superfície é: \ch{C\sld{} + O2\gas{} -> CO2\gas} Na superfície da partícula de carvão, a reação é muito rápida.\\[2ex]
+    Se for assumido um processo de estado quase estacionário, calcule:
+} % Q2
+    % \paragraph*{Dados:}
+    % \begin{itemize}
+    %     \item \(\mathscr{D}_{\ch{CO2},agua}=\qty*{1e-5}{\cm^2/\s}\)
+    % \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    O tempo necessário para reduzir o diâmetro da partícula de carbono para \qty*{5e-5}{\m} (\qty*{50}{\micro\m}). Deduza as equações necessárias e as condições fronteira para este problema.
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{A,S}
+            \,\odv{\vol}{t}
+            = \left(
+                \frac{\rho_A}{M_A}
+            \right)
+            \,\odv{\pi\,r^3\,4/3}{t}
+            = \frac{\rho_A}{M_A}
+            \,4\,\pi\,r^2
+            \,\odv{r}{t}
+            = &\\&
+            =-Q_{A,r}
+            =-\frac{P}{R\,T}
+            \,\mathscr{D}_{A,B}
+            \,4\,\pi\,r
+            \,y_{A,0}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{R_0}^{R_1}{
+                r\,\odif{r}
+            }
+            = (R_1^2-R_0^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            =\int_{0}^{t}{
+                \left(
+                    -\frac{P}{R\,T}
+                    \,\frac{M_A}{\rho_A}
+                    \,\mathscr{D}_{A,B}
+                    \,y_{A,0}
+                \right)
+                \,\odif{t}
+            }
+            =
+            \left(
+                -\frac{P}{R\,T}
+                \,\frac{M_A}{\rho_A}
+                \,\mathscr{D}_{A,B}
+                \,y_{A,0}
+            \right)
+            \int_{0}^{t}{
+                \,\odif{t}
+            }
+            = &\\&
+            =
+            \left(
+                -\frac{P}{R\,T}
+                \,\frac{M_A}{\rho_A}
+                \,\mathscr{D}_{A,B}
+                \,y_{A,0}
+            \right)
+            t
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            t
+            =-\frac{R\,T}{P}
+            \,\frac{\rho_A}{M_A}
+            \frac{
+                (R_1^2-R_0^2)/2
+            }{
+                \mathscr{D}_{A,B}
+                \,y_{A,0}
+            }
+            \cong  &\\&
+            \cong -\frac{
+                \num{8.20573660809596e-5}
+                *1145
+            }{
+                1
+            }
+            % 9395.5684162698742e-5
+            \,\frac{1.28\E{6}}{12}
+            \frac{
+                ((0.5\E{-4}/2)^2-(1.5\E{-4}/2)^2)/2
+                % 0.25
+            }{
+                1.3\E{-8}
+                *0.21
+            }
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {9177.60040661281973}
+                {\second}
+            }
+            \cong\mathemph{
+                \qty*{2}{\hour}
+                \,\qty
+                {32.960006776880329}
+                {\minute}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Velocidade do fluxo}&\\&
+            Q_{A,r}
+            = S\,N_{A,z}
+            = -S\,\frac
+            {c\,\mathscr{D}_{A,B}}
+            {1-\Theta\,y_A}
+            \,\odv{y_A}{z}
+            = -\frac
+            {
+                S
+                \,\frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+            }
+            {1-0*y_A}
+            \,\odv{y_A}{z}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{\infty}^{r}{
+                \frac{Q_{A,r}}{S}\,\odif{r}
+            }
+            = Q_{A,r}
+            \,\int_{\infty}^{r}{
+                \frac{\odif{r}}{
+                    4\,\pi\,r^2
+                }
+            }
+            = -\frac{Q_{A,r}}{4\,\pi}
+            \,(r^{-1}-0)
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{y_{A,0}}^{0}{
+                -\frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+                \,\odif{y_{A}}
+            }
+            = 
+            -\frac{P}{R\,T}
+            \,\mathscr{D}_{A,B}
+            \int_{y_{A,0}}^{0}{
+                \odif{y_{A}}
+            }
+            = 
+            -\frac{P}{R\,T}
+            \,\mathscr{D}_{A,B}
+            y_{A,0}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            Q_{A,r}
+            = 
+            \frac{P}{R\,T}
+            \,\mathscr{D}_{A,B}
+            \,4\,\pi\,r
+            \,y_{A,0}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{\ch{CO2}}/N_{\ch{O2}}
+            = 1+(-N_{\ch{O2}})/N_{\ch{O2}}
+            = 0
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira fluxo:}&\\&
+            \begin{cases}
+                r_0\to\infty ;&\quad 
+                y_{A,0}=0.21
+                \\
+                r_1=r ;&\quad 
+                y_{A,1}\cong 0
+                \quad\text{(Reação instantanea)}
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[1ex]&
+            \text{Condições de fronteira combustão:}&\\&
+            \begin{cases}
+                t_0=0 ;&\quad
+                r_0=R_0=1.5\E{-4}
+                \\
+                t_1=t ;&\quad
+                r_1=R_1=0.5\E{-4}
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    Explique por que razão temos neste caso difusão com reacção química heterogénea.
+} % Q2.2
+    \answer{}
+    Temos uma reação heterogenia pois ela se da apenas na interfaçe entre o carvão e o gás ao seu redor, a existencia de multiplas fazes e localização da reação caracteriza como reação heterogenia.
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q3
+    Um tanque de água profundo tem \ch{O2} dissolvido com uma concentração uniforme \qty*{1}{\g/\L}. Se a concentração de \ch{O2} for subitamente elevada à superfície para \qty*{10}{\g/\L}, calcule:
+} % Q3
+    \paragraph*{Dados:}
+    \begin{align*}
+        \frac
+        {C_{A,s}-C_A}
+        {C_{A,s}-C_{A,0}}
+        &=\erf{\xi}
+        ;&
+        \xi&=\frac{z}{\sqrt{4\,D\,t}}
+        ;&
+        J_A^*
+        =-\mathscr{D}
+        \,\pdv{C_A}{z}
+        =\sqrt{\mathscr{D}/\pi\,t}
+        \,\exp{\left(
+            -z^2/4\,\mathscr{D}\,t
+        \right)}
+        \,(C_{A,s}-C_{A,0})
+    \end{align*}
+    Em que
+    \begin{itemize}
+        \begin{multicols}{2}
+        \item \(C_A\) é a concentração de \ch{O2} a uma distância (\(z\)) da superfície num determinado instante (\(t\))
+        \item \(C_{A,0}\) é a concentração inicial
+        \item \(C_{A,s}\) é a concentração na superfície
+        \item \(\mathscr{D}\) o coeficiente de difusão.
+        \end{multicols}
+    \end{itemize}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{LL *{2}{ | LL}}
+            \toprule
+            
+                \multicolumn{1}{C}{a}
+                & \multicolumn{1}{C}{\erf(a)}
+                & \multicolumn{1}{C}{a}
+                & \multicolumn{1}{C}{\erf(a)}
+                & \multicolumn{1}{C}{a}
+                & \multicolumn{1}{C}{\erf(a)}
+            
+            \\\midrule
+            
+                   0.0  & 0.0     & 0.48 & 0.50275 & 0.96 & 0.82542
+                \\ 0.04 & 0.04511 & 0.52 & 0.53790 & 1.00 & 0.84270
+                \\ 0.08 & 0.09008 & 0.56 & 0.57162 & 1.10 & 0.88021
+                \\ 0.12 & 0.13476 & 0.60 & 0.60386 & 1.20 & 0.91031
+                \\ 0.16 & 0.17901 & 0.64 & 0.63459 & 1.30 & 0.93401
+                \\ 0.20 & 0.22270 & 0.68 & 0.66378 & 1.40 & 0.95229
+                \\ 0.24 & 0.26570 & 0.72 & 0.69143 & 1.50 & 0.96611
+                \\ 0.28 & 6.30788 & 0.76 & 0.71754 & 1.60 & 0.97635
+                \\ 0.32 & 0.34913 & 0.80 & 0.7421  & 1.70 & 0.98379
+                \\ 0.36 & 0.38933 & 0.84 & 0.76514 & 1.80 & 0.98909
+                \\ 0.40 & 0.42839 & 0.88 & 0.78669 & 2.00 & 0.99532
+                \\ 0.44 & 0.46622 & 0.92 & 0.80677 & 3.24 & 0.99999
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Error function values. For negative \textit{a}, erf(\textit{a}) is negative}
+        \vspace{2ex}
+    \end{center}
+    \begin{BM}
+        \erf(\myvert{a})
+        = 1-\left(
+            1
+            +0.2784\,\myvert{a}
+            +0.2314\,\myvert{a}^2
+            +0.0781\,\myvert{a}^4
+        \right)^{-4}
+    \end{BM}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.1
+    A concentração de \ch{O2} a \qty*{1}{\mm} de profundidade ao fim de 2 horas?
+} % Q3.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \frac
+            {C_{A,s}-C_A}
+            {C_{A,s}-C_{A,0}}
+            =\erf\xi
+            \implies &\\&
+            \implies
+            C_{A}
+            = C_{A,s}
+            -(C_{A,s}-C_{A,0})
+            \,\erf{\xi}
+            \cong 10
+            -(10-1)
+            \,\num{0.207923252115868}
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {8.128690730957188}
+                {\mole/\m^3}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \erf{\xi}
+            = \erf{\left(
+                \frac{z}{\sqrt{4\,\mathscr{D}\,t}}
+            \right)}
+            = \erf{\left(
+                \frac{1\E{-3}}{\sqrt{4*1\E{-9}*(2*3600)}}
+            \right)}
+            \cong &\\&
+            \cong \erf{\left(
+                \num{0.186338998124982483}
+            \right)}
+            \cong
+            1-\left(
+                1
+                +0.2784*(\num{0.186338998124982483})
+                +0.2314*(\num{0.186338998124982483})^2
+                +0.0781*(\num{0.186338998124982483})^4
+                % 1.060005659215341
+            \right)^{-4}
+            \cong\num{
+                0.207923252115868
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q3.2
+    O fluxo de \ch{O2} na superfície do tanque para esse tempo?
+} % Q3.2
+    \answer{}
+    \begin{flalign*}
+        &
+            J_A
+            =\sqrt{\frac{\mathscr{D}}{\pi\,t}}
+            \,(C_{A,s}-C_{A,0})
+            =\sqrt{\frac{1\E{-9}}{\pi\,(2*3600)}}
+            \,(10-1)
+            \cong\mathemph{
+                \num{1.89234939151512e-6}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q4
+    Ar seco (\qty*{300}{\K} e \qty*{1.013e5}{\Pa}) circula a uma velocidade de \qty*{1.5}{\m/\s}, num tubo com \qty*{6}{\m} de comprimento e \qty*{0.15}{\m} de diâmetro. A superfície interior do tubo está revestida com um material absorvente (com razão diâmetro/rugosidade, \(d/\varepsilon\), de \num*{10.000}) que está saturado com água.
+} % Q4
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item Difusividade da água em ar (\qty*{300}{\K}): \qty*{2.6e-5}{\m^2/\s}
+        \item Viscosidade cinemática do ar (\qty*{300}{\K}): \qty*{1.569e-5}{\m^2\,s}
+        \item Pressão de vapor da água a (\qty*{300}{\K}) = \qty*{17.5}{\mmHg}
+        \item Constante do gases: \(R=\qty{8.2057366080960e-2}{\litre.\atm/\mole.\kelvin}\)
+        \item Factor de atrito \(f = 7.91\E{-3}\,Re^{0.12}\)
+    \end{itemize}
+    \begin{align*}
+        Re&=\frac{\rho\,d\,v}{\mu}
+        ;& 
+        Sc&=\frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+        ;&
+        Sh&=\frac{k_c\,d}{\mathscr{D}_{A,B}}
+        ;&
+        \ln{\frac
+            {C_{A,s}-C_{A,0}}
+            {C_{A,s}-C_{A,L}}
+        } =\frac{4\,L}{d}
+        \,\frac{k_C}{v}
+    \end{align*}
+    Analogia de Chilton-Colburn:
+    \begin{align*}
+        \frac{k_c}{v}
+        \,Sc^{2/3}
+        &=\frac{f}{2}
+        ;&
+        C_{A,s}=C^*
+        \land
+        v\text{: Velocidade}
+    \end{align*}
+    Determine:
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q4.1
+    A concentração de agua à saída do tubo
+} % Q4.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \ln{\frac
+                {C_{A,s}-C_{A,0}}
+                {C_{A,s}-C_{A,L}}
+            }
+            =\frac{4\,k_C\,L}{d\,v}
+            \implies &\\&
+            \implies
+            C_{A,L}
+            = C_{A,s}
+            \left(
+                1
+                -\frac
+                {
+                    1-\frac
+                    {C_{A,0}}
+                    {C_{A,S}}
+                }
+                {
+                    \exp{\left(
+                        \frac{4\,k_C\,L}{d\,v}
+                    \right)}
+                }
+            \right)
+            = \frac{P_A^*}{R\,T}
+            \left(
+                1
+                -\frac
+                {
+                    1-\frac{0}{C_{A,S}}
+                }
+                {
+                    \exp{\left(
+                        \frac{4\,k_C\,L}{d\,v}
+                    \right)}
+                }
+            \right)
+            = &\\&
+            = \frac{P_A^*}{R\,T}
+            \left(
+                1
+                -\exp{\left(
+                    \frac{-4\,k_C\,L}{d\,v}
+                \right)}
+            \right)
+            \cong &\\&
+            \cong \frac{
+                (17.5/\num{760.00209995982457})
+            }{
+                \num{8.20573660809596e-5}
+                * 300
+            }
+            % 0.93537213721119
+            \left(
+                1
+                -\exp{\left(
+                    \frac{
+                        -4
+                        * \num{26.197418548907646e-3}
+                        * 6
+                    }{
+                        0.15
+                        *1.5
+                    }
+                \right)}
+                % 0.938847914445797
+            \right)
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {0.878172180251434}
+                {\mole/\m^3}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            k_C
+            = \frac{f\,v}{2\,Sc^{2/3}}
+            = \frac{
+                (7.91\E{-3}\,Re^{0.12})\,v
+            }{
+                2
+                \,\left(
+                    \frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+                \right)^{2/3}
+            }
+            = \frac{
+                7.91\E{-3}
+                \,\left(
+                    \frac{\rho\,d\,v}{\mu}
+                \right)^{0.12}
+                \,v
+            }{
+                2
+                \,\left(
+                    \frac{\mu}{\rho\,\mathscr{D}_{A,B}}
+                \right)^{2/3}
+            }
+            = &\\&
+            = \frac{
+                7.91\E{-3}
+                \,\left(
+                    \frac{1*0.15*1.5}{1.569\E{-5}}
+                \right)^{0.12}
+                % 3.153458710269441
+                \,1.5
+                % 37.415787597346915
+            }{
+                2
+                \,\left(
+                    \frac{
+                        1.569\E{-5}
+                    }{
+                        1
+                        *2.6\E{-5}
+                    }
+                \right)^{2/3}
+                % 0.714112108555578
+            }
+            \cong &\\[3ex]&
+            \cong
+            \num{26.197418548907646e-3}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q4.2
+    A velocidade de transferencia de agua em \unit{\kg/\hour}
+} % Q4.2
+    \answer{}
+    \begin{flalign*}
+        &
+            W
+            =C_{A,L}\,v\,S
+            \cong
+            \num{0.878172180251434}
+            *1.5
+            *\pi\,(0.15)^2/4
+            \cong\mathemph{
+                \qty{2.327787509117206e-2}
+                {\mole/\second}
+            }
+            \cong\mathemph{
+                \qty{1.50840630590794945176}
+                {\kg/\hour}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q5
+    Pretende-se remover \ch{SO2} de uma mistura gasosa constituída por \ch{SO2} e ar por absorção utilizando água. A constante de Henry é \qty*{1.5}{\atm}. A coluna usada opera a \qty*{15}{\celsius} e \qty*{3}{\atm}. Num dado ponto da coluna a \% molar de \ch{SO2} na fase gasosa é 20\% e na fase líquida é 1\%. Sabendo que os coeficiente individuais de transferência de massa são \(
+        k_y=\qty*{5.6e-4}{\mole/\s\,m^2}
+        \text{ e }
+        k_x= \qty*{5.6e-3}{\mole/\s\,m^2}
+    \).\\
+    Determine
+} % Q5
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.1
+    As composições interfaciais
+} % Q5.1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.2
+    A \% da resistencia total respeitante a cada uma das fases
+} % Q5.2
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.3
+    O coeficiente global de trasnferencia de massa \(K_x\)
+} % Q5.3
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.4
+    O fluxo de \ch{SO2}
+} % Q5.4
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q5.5
+    O valor do fluxo quando usar soluções de \ch{NaOH} com a concentração crítica de \ch{NaOH}. Comente
+} % Q5.5
+\end{questionBox}
+
+\end{document}

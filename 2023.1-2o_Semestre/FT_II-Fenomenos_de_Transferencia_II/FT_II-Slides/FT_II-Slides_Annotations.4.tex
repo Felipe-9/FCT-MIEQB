@@ -18,22 +18,47 @@
 
 \begin{sectionBox}1{Difusão em estado estacionário para todas as geometrias} % S
 
+    \subsection*{Forma derivada:}
+    \begin{BM}
+        N_{A,z}
+        = y_{A}\sum{N_i}
+        -C_{A,L}
+        \,\mathscr{D}_{A,B}
+        \,\odv{y_{A}}{z}
+        = -\frac
+        {C_{A,L}\,\mathscr{D}_{A,B}}
+        {1-\Theta\,y_A}
+        \,\odv{y_A}{z}
+    \end{BM}
+    \subsection*{Forma integrada:}
     \begin{BM}
         N_{A,z_1}
-        = \frac{c\,D_{A,B}}{\Theta\,\eta_d\,z_1}
+        = \frac{C_{A,L}\,D_{A,B}}{\Theta\,\eta_d\,z_1}
         \,\ln\frac
         {1-\Theta\,y_{A,1}}
         {1-\Theta\,y_{A,0}}
+        % 
+        % 
+        % 
         % \\[2ex]
-        ; \qquad
-        \Theta = 1+\frac{N_{B,z}}{N_{A,z}}
+        ;\qquad
+        \begin{cases}
+            \Theta = \sum\frac{N_{i,z}}{N_{A,z}}
+            \\\Theta\neq0 \impliedby N_{A}\neq -N_{B}
+        \end{cases}
     \end{BM}
+    \subsection*{Em termos de pressão}
+    \begin{align*}
+        C_{A,L}&=\frac{n}{V}=\frac{P}{R\,T}
+        ;&
+        y_{A,L}&=P_{A,L}/P
+    \end{align*}
 
     \begin{multicols}{2}
         \paragraph*{\(z\):} Dimensão caracteristica
         \begin{itemize}
-            \item \textit{z} para película plana
-            \item \(r_1\) para cilindros e esferas
+            \item \textit{z}: espessura da película plana
+            \item \(r\) para cilindros e esferas
         \end{itemize}
 
         \begin{minipage}{1\textwidth}
@@ -45,21 +70,25 @@
             \end{itemize}
         \end{minipage}
     \end{multicols}
-    
-\end{sectionBox}
 
-\begin{sectionBox}2{Geometria cilíndrica} % S
-    
-    \section*{Equação de concervação}
+    \paragraph*{Forma integrada (reduzida) considera:}
+    \begin{itemize}
+        \item \(N_{A}\neq-N_B\) (Difusão não equimolar)
+        \item \(N_{A,r}=\text{constante}\) em R (Estado estacionário)
+    \end{itemize}
+
+    \paragraph*{Caracterização de um estado estacionário}
+    Transferencia de massa em estado estacionário através de um sistema simples no qual a concentração e o fluxo molar são funções de uma unica coordenada no espaço.
+
+    \subsection*{Equação de conservação}
     \begin{BM}
-        2\,\pi\,r\,L\,N_{A,r}\big\vert_{r}
-        = 2\,\pi\,r\,L\,N_{A,r}\big\vert_{r+\adif{r}}
-        \implies
-        \begin{cases}
-            r\,N_{A,r} \text{ é constante}
-            \\ 
-            r\,N_{B,r} \text{ é constante}
-        \end{cases}
+        N_{A}\,S=\text{constante}
+        \\
+        S_{\text{cilindro}}
+        = 2\,\pi\,r\,L
+        ;\quad
+        S_{\text{esfera}}
+        = 4\,\pi\,r^2
     \end{BM}
     
 \end{sectionBox}
@@ -103,7 +132,7 @@
         &
             N_{A,\max,z}
             = \frac
-            {c\,\mathscr{D}_{A,B}}
+            {C_{A,L}\,\mathscr{D}_{A,B}}
             {\Theta\,\eta_d\,z}
             \ln{\frac
                 {1-\Theta\,y_{A,2}}
@@ -111,56 +140,55 @@
             }
             = \frac
             {
-                \frac{P}{R\,t}
+                \frac{P}{R\,T}
                 \,\mathscr{D}_{A,B}
             }
             {\Theta\,\eta_d\,z}
             \ln{\frac
-                {1-\Theta\,y_{A,2}}
-                {1-\Theta\,y_{A,1}}
+                {1-\Theta\,P_{A,2}/P}
+                {1-\Theta\,P_{A,1}/P}
+            }
+            = &\\&
+            = \frac
+            {
+                \frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+            }
+            {1*1\,z}
+            \ln{\frac
+                {1-0}
+                {1-1*P_{A,1}/P}
+            }
+            = \mathemph{
+                \frac
+                {
+                    P\,\mathscr{D}_{A,B}
+                }
+                {R\,T\,z}
+                \ln{\frac
+                    {P}
+                    {P-P_{A,1}}
+                }
             }
             % 
             % 
             % 
             ; &\\[3ex]&
-            N_{A,\max,z}\implies y_{A,2}=0
+            N_{A,\max,z}\implies y_{A,2}=P_{A,2}=0
             % 
             % 
             % 
             ; &\\[3ex]&
             \Theta
             = 1+N_{B,z}/N_{A,z}
+            = 1+0/N_{A,z}
             = 1
             % 
             % 
             % 
             ; &\\[3ex]&
-            \therefore
-            N_{A,\max,z}
-            = \frac
-            {P\,\mathscr{D}_{A,B}}
-            {R\,T\,(1)\,z}
-            \ln{\frac
-                {1}
-                {1-y_{A,1}}
-            }
-            = &\\&
-            = \frac
-            {P\,\mathscr{D}_{A,B}}
-            {R\,T\,z}
-            \ln{\frac
-                {1}
-                {1-P_{A,1}/P}
-            }
-            = \mathemph{
-                \frac
-                {P\,\mathscr{D}_{A,B}}
-                {z\,R\,T}
-                \ln{\frac
-                    {P}
-                    {P-P_{A,1}}
-                }
-            }
+            \eta_{d,\text{plano}}
+            = 1
         &
     \end{flalign*}
 
@@ -186,7 +214,7 @@
             {1-y^*_{A}}
         }
     \end{BM}
-    Sendo a fracção molar correspondente à pressão de vapor do naftaleno e \(y_{A,2}\) a fracção molar correspondente a \(R_2\).\\
+    Sendo \(y_{A}^*\) a fracção molar correspondente à pressão de vapor do naftaleno e \(y_{A,2}\) a fracção molar correspondente a \(R_2\).\\
     Explique o que sucede à velocidade de sublimação quando \(R_2\) se torna muito grande.
 } % E2
     \answer{}
@@ -194,24 +222,45 @@
         &
             Q
             = N_{A,R_1}\,S_{R_1}
-            = \frac
-            {c\,\mathscr{D}_{A,B}}
-            {\Theta\,R_1\,\ln{(R_2/R_1)}}
-            \,\ln{\frac
-                {1-\Theta\,y_{A,2}}
-                {1-\Theta\,y_{A,1}}
-            }
-            \,(2\,\pi\,R_1\,L)
+            = \left(
+                \frac
+                {C_{A,L}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,R_1}
+                \ln{\frac
+                    {1-\Theta\,y_{A,2}}
+                    {1-\Theta\,y_{A,1}}
+                }
+            \right)
+            \,\left(
+                2\,\pi\,R_1\,L
+            \right)
             = &\\&
-            = \frac{
-                \left(\frac{P}{R\,T}\right)
-                \,\mathscr{D}_{A,B}
-                \,2\,\pi\,L
+            = \frac
+            {
+                \frac{P}{R\,T}\,\mathscr{D}_{A,B}
+                \,2\,\pi\,R_1\,L
             }
-            {\Theta\,\ln{(R_2/R_1)}}
-            \,\ln{\frac
-                {1-\Theta\,y_{A,2}}
-                {1-\Theta\,y_{A,1}}
+            {1*\ln(R_2/R_1)\,R_1}
+            \ln{\frac
+                {1-1*y_{A,2}}
+                {1-1*y_{A}^*}
+            }
+            = &\\&
+            = \mathemph{
+                \frac
+                {
+                    2\,\pi\,L
+                    \,\mathscr{D}_{A,B}
+                    \,P
+                }
+                {
+                    R\,T
+                    \,\ln(R_2/R_1)
+                }
+                \ln{\frac
+                    {1-y_{A,2}}
+                    {1-y_{A}^*}
+                }
             }
             % 
             % 
@@ -225,28 +274,16 @@
             % 
             % 
             ; &\\[3ex]&
-            \therefore
-            Q
-            % = &\\&
-            = \frac
-            {
-                P
-                \,\mathscr{D}_{A,B}
-                \,2\,\pi\,L
-            }
-            {R\,T\,\ln{(R_2/R_1)}}
-            \,\ln{\frac
-                {1-y_{A,2}}
-                {1-y^*_{A}}
-            }
+            \eta_{d,\text{cilindro}}
+            = \ln(R_2/R_1)
         &
     \end{flalign*}
 
-    \answer{}
-    \begin{center}
-        \includegraphics[width=.8\textwidth]{IMG_6432}
-    \end{center}
-    \paragraph*{Maximizar Q} removemos \(y_{A,2}\)
+    % \answer{}
+    % \begin{center}
+    %     \includegraphics[width=.8\textwidth]{IMG_6432}
+    % \end{center}
+    % \paragraph*{Maximizar Q} removemos \(y_{A,2}\)
     
 \end{exampleBox}
 
@@ -258,32 +295,53 @@
         &
             Q
             = N_{A,R_1}\,S_{R_1}
-            = \frac
-            {c\,\mathscr{D}_{A,B}}
-            {\Theta\,R_1(1-R_1/R_2)}
-            \,\ln{\frac
-                {1-\Theta\,y_{A,2}}
-                {1-\Theta\,y_{A,1}}
-            }
-            \,(4\,\pi\,R_1^2)
+            = \left(
+                \frac
+                {C_{A,L}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,R_1}
+                \ln{\frac
+                    {1-\Theta\,y_{A,2}}
+                    {1-\Theta\,y_{A,1}}
+                }
+            \right)
+            \,\left(
+                4\,\pi\,R_1^2
+            \right)
             = &\\&
             = \frac
             {
-                \left(
-                    \frac{P}{R\,T}
-                \right)
-                \,\mathscr{D}_{A,B}
-                \,4\,\pi
+                \frac{P}{R\,T}\,\mathscr{D}_{A,B}
+                \,4\,\pi\,R_1^2
             }
-            {R_1^{-1}-R_2^{-1}}
-            \,\ln{\frac
-                {1-y_{A,2}}
-                {1-y^*_{A}}
+            {1*(1-R_1/R_2)\,R_1}
+            \ln{\frac
+                {1-1*y_{A,2}}
+                {1-1*y_{A}^*}
+            }
+            = &\\&
+            = \mathemph{
+                \frac
+                {
+                    P\,\mathscr{D}_{A,B}
+                    \,4\,\pi
+                }
+                {R\,T\,(R_1^{-1}-R_2^{-1})}
+                \ln{\frac
+                    {1-y_{A,2}}
+                    {1-y_{A}^*}
+                }
             }
             % 
             % 
             % 
             ; &\\[3ex]&
+            \eta_{d,\text{esfera}}
+            = 1-R_1/R_2
+            % 
+            % 
+            % 
+            ; &\\[6ex]&
+            \text{Quando \(R_2\) for muito grande}&\\&
             \lim_{R_2\to\infty}{Q}
             = \lim_{R_2\to\infty}{
                 \frac
@@ -326,6 +384,20 @@
             \,\ln\frac
             {1-y_{A,2}}
             {1-y^*_{A}}
+            = \mathemph{
+                \frac
+                {
+                    P\,\mathscr{D}_{A,B}
+                    \,4\,\pi
+                    \,R_1
+                }
+                {
+                    R\,T
+                }
+                \,\ln\frac
+                {1-y_{A,2}}
+                {1-y^*_{A}}
+            }
         &
     \end{flalign*}
 

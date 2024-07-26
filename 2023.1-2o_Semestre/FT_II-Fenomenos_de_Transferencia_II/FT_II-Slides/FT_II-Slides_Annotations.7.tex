@@ -13,30 +13,741 @@
 
 \mymakesubfile{7}
 [FT II]
-{Difusão em estado pseudo estacionário} % Subfile Title
-{Difusão em estado pseudo estacionário} % Part Title
+{Difusão em estado Pseudo-Estacionário} % Subfile Title
+{Difusão em estado Pseudo-Estacionário} % Part Title
 
-\begin{sectionBox}1{} % S
-    
+
+\begin{sectionBox}1{Difusão em estado pseudo estacionário} % S
+
+    \begin{flalign*}
+        &
+            \text{From an unsteady-state material balance:}&\\&
+            \text{In}-\text{Out}
+            = 0-Q_{A}
+            = -N_{A}\,S
+            = -\left(
+                \frac
+                {C_{A}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,l}
+                \ln{\frac
+                    {1-\Theta\,y_{A,2}}
+                    {1-\Theta\,y_{A,1}}
+                }
+            \right)
+            \,S
+            = &\\&
+            =\text{Accumulation}
+            = C_{A,L}\odv{\vol}{t}
+            %
+            %
+            %
+            ; &\\[3ex]&
+            N_{A,z}\,\adif{z}
+            = -\frac
+            {C_{A}\,\mathscr{D}_{A,B}}
+            {1-y_A}
+            \,\odv{y_A}{z}
+        &
+    \end{flalign*}
+
     \begin{BM}
         z = f(t)
         \begin{cases}
-            t=0 & z=z_{0}
-            \\ 
-            t=t & z=z_{t}
+            t_0=0 & z_{0}
+            \\
+            t & z_{t}
         \end{cases}
         \\
         N_A=f(z)\iff N_A=f(t)
         \\
-        Q_A = -C_{A,l}\odv{V}{t}
+        Q_A = -C_{A,L}\odv{V}{t}
         \qquad
-        N_A = C_{A,l}\odv{z}{t}
+        N_A = C_{A,L}\odv{z}{t}
     \end{BM}
-    
+
+    \paragraph*{Caracterização:}
+    Se a distancia do caminho da difusão variar pequenas quantidade por um longo periodo de tempo, pode-se usar o modelo de difusão em estado pseudo-estacionário.
+
 \end{sectionBox}
 
-\begin{sectionBox}2{} % 
-    
+\begin{exampleBox}1{ % MARK: E1
+    Encontre a equação para encontrar o tempo que um liquido em um tubo evaporando em função da altura do liquido
+} % E1
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item Difusão por um filme estagnado (\(N_{B}=0\))
+        % \item Altura do cilindro: L
+    \end{itemize}
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{A,L}\,\odv{\vol}{t}
+            = C_{A,L}\,\odv{(S*z)}{t}
+            = C_{A,L}\,S\,\odv{z}{t}
+            = -S\,N_{A}
+            = &\\&
+            = -S\,\left(
+                \frac
+                {C_{A}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,(L-z)}
+                \ln{\frac
+                    {1-\Theta\,y_{A,1}}
+                    {1-\Theta\,y_{A,0}}
+                }
+            \right)
+            = &\\&
+            = -S\,\frac
+            {
+                \frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+            }
+            {
+                1*1\,(L-z)
+            }
+            \ln{\frac
+                {1-1*y_{A,1}}
+                {1-1*y_{A,0}}
+            }
+            = &\\&
+            = -S\,\frac
+            {
+                P
+                \,\mathscr{D}_{A,B}
+            }
+            {
+                R\,T\,(L-z)
+            }
+            \ln{\frac
+                {1-y_{A,1}}
+                {1-y_{A,0}}
+            }
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{Z}^{z}{
+                (L-z)\odif{z}
+            }
+            = -\int_{Z}^{z}{
+                (L-z)\odif{(L-z)}
+            }
+            = -(
+                \adif{(L-z)^2/2}
+            )
+            = &\\&
+            = -\frac{1}{2}(
+                (L-z)^2
+                -(L-Z)^2
+            )
+            % = &\\&
+            = L\,(z-Z)
+            +(Z^2-z^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{0}^{t}{
+                \frac
+                {-P\,\mathscr{D}_{A,B}}
+                {R\,T\,C_{A,L}}
+                \ln{\left(
+                    \frac
+                    {1-y_{A,1}}
+                    {1-y_{A,0}}
+                \right)
+                }
+                \,\odif{t}
+            }
+            = 
+            \frac
+            {-P\,\mathscr{D}_{A,B}}
+            {R\,T\,C_{A,L}}
+            \ln{\left(
+                \frac
+                {1-y_{A,1}}
+                {1-y_{A,0}}
+            \right)
+            }
+            \int_{0}^{t}{
+                \odif{t}
+            }
+            = &\\&
+            = 
+            \frac
+            {-P\,\mathscr{D}_{A,B}}
+            {R\,T\,C_{A,L}}
+            \ln{\left(
+                \frac
+                {1-y_{A,1}}
+                {1-y_{A,0}}
+            \right)}
+                = \frac{
+                    L\,(z-Z)
+                    +(Z^2-z^2)/2
+                }{
+                    \frac
+                    {-P\,\mathscr{D}_{A,B}}
+                    {R\,T\,C_{A,L}}
+                    \ln{\left(
+                        \frac
+                        {1-y_{A,1}}
+                        {1-y_{A,0}}
+                    \right)
+                    }
+                }
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira do fluxo}&\\&
+            \begin{cases}
+                    z_0=z;&\quad y_{A,0}
+                \\  z_1=L;&\quad y_{A,1}
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1-N_B/N_A
+            = 1-0/N_A
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \eta_{d,\text{plano}}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira da evaporação}&\\&
+            \begin{cases}
+                    t_0=0 ;&\quad z_0=Z
+                \\  t_1=t ;&\quad z_1=z
+            \end{cases}
+        &
+    \end{flalign*}
+\end{exampleBox}
+
+\begin{exampleBox}1{ % MARK: E2
+    Encontre a equação para o tempo em que uma esfera arde em função do raio da esfera, considere difusão por filme estagnado
+} % E2
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{A,L}
+            \,\odv{\vol}{t}
+            = C_{A,L}
+            \,\odv{(\pi\,r^3\,4/3)}{t}
+            = C_{A,L}
+            \,\pi\,r^2\,4\odv{r}{t}
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = -S\,N_{A}
+            = -\left(
+                4\,\pi\,r^2
+            \right)\,\left(
+                \frac
+                {C_A\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,r}
+                \ln{\frac
+                    {1-\Theta\,y_{A,1}}
+                    {1-\Theta\,y_{A,0}}
+                }
+            \right)
+            = &\\&
+            = -\left(
+                4\,\pi\,r^2
+            \right)\,\left(
+                \frac
+                {\frac{P}{R\,T}\,\mathscr{D}_{A,B}}
+                {1*1*r}
+                \ln{\frac
+                    {1-1*y_{A,1}}
+                    {1-1*y_{A,0}}
+                }
+            \right)
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{R}^{r}{
+                r\,\odif{r}
+            }
+            = (r^2-R^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{0}^{t}{
+                -\frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T\,C_{A,L}}
+                \ln{\left(\frac
+                    {1-y_{A,1}}
+                    {1-y_{A,0}}
+                \right)
+                }
+                \,\odif{t}
+            }
+            % = &\\&
+            = 
+            -\frac
+            {P\,\mathscr{D}_{A,B}}
+            {R\,T\,C_{A,L}}
+            \ln{\frac
+                {1-y_{A,1}}
+                {1-y_{A,0}}
+            }
+            \int_{0}^{t}{
+                \odif{t}
+            }
+            = &\\&
+            = 
+            -t
+            \,\frac
+            {P\,\mathscr{D}_{A,B}}
+            {R\,T\,C_{A,L}}
+            \ln{\frac
+                {1-y_{A,1}}
+                {1-y_{A,0}}
+            }
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \mathemph{
+                t
+                = \frac{R^2-r^2}{
+                    2\,\frac
+                    {P\,\mathscr{D}_{A,B}}
+                    {R\,T\,C_{A,L}}
+                    \ln{\frac
+                        {1-y_{A,1}}
+                        {1-y_{A,0}}
+                    }
+                }
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira fluxo:}&\\&
+            \begin{cases}
+                    r_0=r;&\quad            y_{A,0}
+                \\  r_1\to\infty ;&\quad    y_{A,1}
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \eta_{d,\text{Esfera}}
+            = 1-r_1/r_0
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{B}/N_{A}
+            = 1+0/N_{A}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira arder:}&\\&
+            \begin{cases}
+                    t_0=0 ;&\quad r_0=R
+                \\  t_1=t ;&\quad r_1=r
+            \end{cases}
+        &
+    \end{flalign*}
+\end{exampleBox}
+
+\begin{exampleBox}1{ % MARK: E3
+    Uma camada de água com \qty*{1}{\mm} de espessura é mantida a \qty*{20}{\celsius} em contacto com o ar seco a \qty*{1}{\atm}. Admitindo que a evaporação se dá por difusão molecular através de uma camada de ar estagnado com \qty*{5}{\mm} de espessura, calcule o tempo necessário para que a água evapore completamente. O coeficiente de difusão de água no ar é \qty*{0.26}{\cm^2/\s} e a pressão de vapor da água a \qty*{20}{\celsius} é \qty*{2.34e-2}{\atm}.
+} % E3
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{A,L}\,\odv{\vol}{t}
+            = \frac{\rho_{A}}{M_A}\,\odv{(S*z)}{t}
+            = \frac{\rho_{A}}{M_A}\,S\,\odv{z}{t}
+            = &\\&
+            = -S\,N_{A}
+            = -S\,\left(
+                \frac
+                {C_A\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,l}
+                \ln{\frac
+                    {1-\Theta\,y_{A,1}}
+                    {1-\Theta\,y_{A,0}}
+                }
+            \right)
+            = &\\&
+            = -S\,\left(
+                \frac
+                {\frac{P}{R\,T}\,\mathscr{D}_{A,B}}
+                {1*1*(6\E{-3}-z)}
+                \ln{\frac
+                    {1-1*y_{A,1}}
+                    {1-1*y_{A,0}}
+                }
+            \right)
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{1\E{-3}}^{0}{
+                (6\E{-3}-z)\,\odif{z}
+            }
+            = -\int_{1\E{-3}}^{0}{
+                (6\E{-3}-z)\,\odif{(6\E{-3}-z)}
+            }
+            = &\\&
+            = -\frac{1}{2}\left(
+                (6\E{-3}-0)^2
+                -(6\E{-3}-1\E{-3})^2
+            \right)
+            = -((6\E{-3})^2-(5\E{-3})^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{0}^{t}{
+                -\left(
+                    \frac
+                    {P\,\mathscr{D}_{A,B}}
+                    {R\,T}
+                    \,\frac{M_A}{\rho_A}
+                    \ln{\frac
+                        {1-y_{A,1}}
+                        {1-y_{A,0}}
+                    }
+                \right)
+                \,\odif{t}
+            }
+            = 
+            -\left(
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T}
+                \,\frac{M_A}{\rho_A}
+                \ln{\frac
+                    {1-y_{A,1}}
+                    {1-y_{A,0}}
+                }
+            \right)
+            \int_{0}^{t}{
+                \,\odif{t}
+            }
+            = &\\& 
+            =
+            -\left(
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T}
+                \,\frac{M_A}{\rho_A}
+                \ln{\frac
+                    {1-y_{A,1}}
+                    {1-y_{A,0}}
+                }
+            \right)
+            t
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            t
+            =\frac
+            {
+                (6\E{-3})^2
+                -(5\E{-3})^2
+            }
+            {
+                2\,\frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T}
+                \,\frac{M_A}{\rho_A}
+                \ln{\frac
+                    {1-y_{A,1}}
+                    {1-y_{A,0}}
+                }
+            }
+            % = &\\&
+            =\frac
+            {(6\E{-3})^2-(5\E{-3})^2}
+            % 11
+            {
+                2\,\frac
+                {1*0.26\E{-4}}
+                {
+                    \num{8.20573660809596e-5}
+                    * (20+273.15)
+                }
+                \,\frac{18}{1\E{6}}
+                \ln{\frac
+                    {1-0}
+                    {1-2.34\E{-2}}
+                }
+                % 4.606655483479692e-10
+            }
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {1.193924750770707e4}
+                {\second}
+            }
+            \cong\mathemph{
+                \qty*{3}{\hour}
+                \qty
+                {18.987458461784427}
+                {\minute}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira fluxo:}&\\&
+            \begin{cases}
+                    z_0=z ;&\quad 
+                    y_{A,0}=P_{A}/P=2.34\E{-2}/1
+                \\  z_1=Z+5\E{-3}=6\E{-3} ;&\quad
+                    y_{A,1}=0
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \eta_{d,\text{Plano}}
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_B/N_A
+            = 1+0/N_A
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira evaporação:}&\\&
+            \begin{cases}
+                    t_0=0 ;&\quad
+                    z_0=Z=1\E{-3}
+                \\  t_1=t ;&\quad
+                    z_1=0
+            \end{cases}
+        &
+    \end{flalign*}
+\end{exampleBox}
+
+\begin{exampleBox}1{ % MARK: E4
+    Calcule o tempo necessário para sublimar completamente uma esfera de naftleno (\ch{C10H8}) cujo diâmetro inicial é \qty*{1}{\cm}. A esfera está colocada numa quantidade ``infinita'' de ar a \qty*{318}{\K}.
+} % E4
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{3}
+            \item \(P^*_{\ch{C10H8}}=\qty*{0.106}{\atm}\)
+            \item \(\rho_{\ch{C10H8}}=\qty*{1140}{\kg/\m^3}\)
+            \item \(\mathscr{D}_{naft-ar}=\qty*{6.9e-7}{\m^2/\s}\)
+        \end{multicols}
+    \end{itemize}
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{A,L}\,\odv{\vol}{t}
+            = \frac{\rho_{A}}{M_A}
+            \,\odv{(\pi\,r^3\,4/3)}{t}
+            = \frac{\rho_{A}}{M_A}
+            \,4\,\pi\,r^2
+            \,\odv{r}{t}
+            = \frac{\rho_{A}}{M_A}
+            \,S
+            \,\odv{r}{t}
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = -S\,N_{A,r}
+            = -S\,\left(
+                \frac
+                {C_{A}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,r}
+                \ln{\frac
+                    {1-\Theta\,y_{A,1}}
+                    {1-\Theta\,y_{A,0}}
+                }
+            \right)
+            = &\\&
+            = -S\,\left(
+                \frac
+                {\frac{P}{R\,T}\,\mathscr{D}_{A,B}}
+                {1*1*r}
+                \ln{\frac
+                    {1-1*(0)}
+                    {1-1*y_{A,0}}
+                }
+            \right)
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{R_0}^{0}{
+                r\,\odif{r}
+            }
+            = (0^2-R_0^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{0}^{t}{
+                -\left(
+                    \frac
+                    {P\,\mathscr{D}_{A,B}}
+                    {R\,T}
+                    \,\frac{M_A}{\rho_{A}}
+                    \ln{\frac
+                        {1}
+                        {1-y_{A,0}}
+                    }
+                \right)
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            -\left(
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T}
+                \,\frac{M_A}{\rho_{A}}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0}}
+                }
+            \right)
+            \int_{0}^{t}{
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            -\left(
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T}
+                \,\frac{M_A}{\rho_{A}}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0}}
+                }
+            \right)
+            t
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            t
+            =
+            \frac{
+                R\,T
+                \,\rho_A
+                \,R_0^2/2
+            }
+            {
+                P
+                \,\mathscr{D}_{A,B}
+                \,M_{A}
+                \ln{\frac
+                    {1}
+                    {1-y_{A,0}}
+                }
+            }
+            \cong &\\&
+            \cong
+            \frac{
+                \num{8.20573660809596e-5}
+                * 318
+                * 1140\E{3}
+                * (0.5\E{-2})^2/2
+            }
+            {
+                1
+                * 6.9\E{-7}
+                * (10*12+8)
+                \ln{\frac
+                    {1}
+                    {1-0.106}
+                }
+            }
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {3.757427061673796775e4}
+                {\second}
+            }
+            \cong\mathemph{
+                \qty*
+                {10}
+                {\hour}
+                \,\qty
+                {26.237843612299463}
+                {\minute}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira fluxo:}&\\&
+            \begin{cases}
+                    r_0=r ;&\quad
+                    y_{A,0} = P^*_{A}/P = 0.106
+                \\  r_1\to\infty ;&\quad
+                    y_{A,1} = 0
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \eta_{d,\text{Esfera}}
+            = 1-r_0/r_1
+            \to 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \Theta
+            = 1-N_B/N_A
+            = 1-0/N_A
+            = 1
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira sublimação:}&\\&
+            \begin{cases}
+                    t_0=0 ;&\quad r_0=R_0
+                \\  t_1=t ;&\quad r_1=0
+            \end{cases}
+        &
+    \end{flalign*}
+\end{exampleBox}
+
+\begin{sectionBox}2{} %
+
     \begin{BM}
         t = \frac{
             C_{A,l}\,\adif{(z^2)}
@@ -67,7 +778,7 @@
                 }
                 \,z\,\odif{z}
             }
-            = 
+            =
             \frac{
                 C_{A,l}
             }{
@@ -77,7 +788,7 @@
             \int{
                 z\,\odif{z}
             }
-            = 
+            =
             \frac{
                 C_{A,l}
             }{
@@ -86,7 +797,7 @@
             }
             \frac{\adif{(z^2)}}{2}
             = &\\&
-            = 
+            =
             \frac{
                 C_{A,l}\,\adif{(z^2)}
             }{
@@ -99,7 +810,7 @@
 \end{sectionBox}
 
 \begin{sectionBox}2{Geometria esférica}
-    
+
     \begin{BM}
         t
         = \frac{C_{A,l}}{
@@ -120,13 +831,13 @@
             \,\ln{(1-y_{A,0})^{-1}}
         &
     \end{flalign*}
-    
+
 \end{sectionBox}
 
 \begin{exampleBox}1{
     Calcule o tempo necessário para que a água evapore completamente.
 } % E
-    
+
     \begin{itemize}
         \item Uma camada de água com 1\,\unit{\milli\metre} de espessura
         \item É mantida a 20\,\unit{\celsius}
@@ -146,33 +857,33 @@
             = y_A\,N_{A}
             - \frac{P\,D_{A,B}}{R\,T}
             \,\odv{y_A}{z}
-            % 
-            % 
-            % 
+            %
+            %
+            %
             \implies &\\[3ex]&
             \implies
             \int{N_{A}\odif{z}}
             = N_{A}\int{\odif{z}}
             = N_{A}\adif{z}
-            % 
-            % 
-            % 
+            %
+            %
+            %
             = &\\&
             \int{
                 -\frac{P\,D_{A,B}}{R\,T}
                 \frac{\odif{y_A}}{1-y_A}
             }
-            = 
+            =
             -\frac{P\,D_{A,B}}{R\,T}
             \int{
                 \frac{\odif{y_A}}{1-y_A}
             }
-            = 
+            =
             \frac{P\,D_{A,B}}{R\,T}
             \ln\frac{1-y_{A,1}}{1-y_{A,0}}
-            % 
-            % 
-            % 
+            %
+            %
+            %
             \xRightarrow[y_{A,1}=0]{} &\\[3ex]&
             \xRightarrow[y_{A,1}=0]{}
             N_A
@@ -191,7 +902,7 @@
             \implies &\\&
             \implies
             \int{C_{A,l}\,\delta\,\odif{\delta}}
-            = 
+            =
             C_{A,l}
             \int{
                 \delta\,\odif{\delta}
@@ -204,13 +915,13 @@
                 \ln\frac{1}{1-y_{A,0}}
                 \,\odif{t}
             }
-            = 
+            =
             \frac{P\,D_{A,B}}{R\,T}
             \ln\frac{1}{1-y_{A,0}}
             \int{
                 \odif{t}
             }
-            = 
+            =
             \frac{P\,D_{A,B}}{R\,T}
             \ln\frac{1}{1-y_{A,0}}
             \adif{t}
@@ -262,7 +973,7 @@
             \qty{3.316457641029764}{\hour}
         &
     \end{flalign*}
-    
+
 \end{exampleBox}
 
 \end{document}

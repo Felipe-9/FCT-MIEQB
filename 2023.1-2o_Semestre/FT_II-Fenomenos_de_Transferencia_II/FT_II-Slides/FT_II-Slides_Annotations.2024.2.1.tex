@@ -233,4 +233,53 @@
     
 \end{sectionBox}
 
+\begin{sectionBox}1{Condutas por regime:} % MARK: S
+    
+    \paragraph*{Regime turbulento: Gilliland and Sherwood}
+    \begin{BM}
+        Sh\,\frac{p_{B,l\,m}}{P}
+        =0.023\,Re^{0.83}\,Sc^{0.44}
+        \qquad\begin{cases}
+            2\E{3}<Re<35\E{3}
+            \\ 0.6<Sc<2.5
+        \end{cases}
+    \end{BM}
+    \paragraph*{Regime turbulento: Linton and Sherwood}
+    \begin{BM}
+        Sh=0.023\,Re^{0.83}\,Sc^{1/3}
+        \qquad\begin{cases}
+            2\E{3}<Re<70\E{3}
+            \\
+            1000<Sc<2260
+        \end{cases}
+    \end{BM}
+    \paragraph*{Regime laminar}
+    \begin{BM}
+        Sh=1.86\,\sqrt[3]{Re\,Sc\,d/L}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % MARK: E1
+    Faz-se escoar ar a \qty*{10}{\celsius} e à pressão de \qty*{1}{\atm} ao longo de uma conduta feita em naftaleno com diâmetro interno igual a \qty*{2.5}{\cm} e \qty*{183}{\cm} de comprimento. Supondo que a variação de pressão ao longo do tubo é desprezável e que a superfície do naftaleno está a \qty*{10}{\celsius}, determine o teor de naftaleno do ar que sai da conduta e a velocidade de sublimação, se a velocidade média do ar for:
+} % E1
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \item Propriedades do ar: \(v=\qty*{1.5e-5}{\m^2/\s}\)
+        \item Propriedades do naftaleno:
+        \begin{itemize}
+            \item Pressão de vapor: \qty*{2.09e-2}{\mmHg}
+            \item Coeficiente de difusão no ar: \qty*{5.16e-2}{\cm^2/\s}
+            \item Massa molecular: \qty*{128.2}{\g/\mole}
+        \end{itemize}
+    \end{itemize}
+    \begin{align*}
+        Sh&= 1.86\,\sqrt[3]{Re\,Sc\,d/L}
+        &\text{(Regime laminar)}
+        \\
+        Sh&= 0.023\,Re^{0.83}\,Sc^{0.44}
+        &\text{(Regime turbulento)}
+    \end{align*}
+\end{exampleBox}
+
 \end{document}

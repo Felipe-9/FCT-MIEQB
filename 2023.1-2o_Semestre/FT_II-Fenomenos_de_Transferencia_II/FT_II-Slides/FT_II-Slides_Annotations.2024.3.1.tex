@@ -1,0 +1,181 @@
+% !TEX root = ./FT_II-Slides_Annotations.2024.3.1.tex
+\providecommand\mainfilename{"./FT_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Slides_Annotations.2024.3.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Slides_Annotations.2024.3.1}}}
+% \tikzsetexternalprefix{./figures/FT_II-Slides_Annotations.2024.3.1/graphics/}
+
+\mymakesubfile{1}
+[FT II]
+{Difusão com reação química Homogénea} % Subfile Title
+{Difusão com reação química Homogénea} % Part Title
+
+\begin{exampleBox}1{ % MARK: E1
+    Usa-se uma coluna de absorção gasosa para absorver um composto A de uma corrente de ar à pressão atmosférica usando água. Para soluções diluídas os dados de equilíbrio podem ser obtidos por uma recta: \(P_A = 0.5\,C_A\), sendo \(P_A\) em \unit{\atm} e \(CA\) em \unit{\mol/\m^3}. Num determinado ponto da coluna a percentagem molar de A no ar é 7\% e a sua fracção molar no líquido é nula. Os coeficientes individuais de transferência de massa para cada uma das fases são: \(
+        k_G = \qty*{0.3}{\mole/\m^2\,\hour\,\atm}
+        \text{ e }
+        k_L = \qty*{0.25}{\m/\hour}
+    \).
+} % E1
+    
+    \begin{exampleBox}2{ % MARK: E1.1
+        Determine o coeficiente global de transferência de massa \(K_L\).
+    } % E1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                K_L
+                = \left(
+                    \frac
+                    {C_{A}^*-C_A}
+                    {N_A}
+                \right)^{-1}
+                = \left(
+                    \frac
+                    {C_{A}^*-C_{A,i}}
+                    {N_A}
+                    + \frac
+                    {C_{A,i}-C_A}
+                    {N_A}
+                \right)^{-1}
+                = &\\&
+                = \left(
+                    (k_G\,H)^{-1}
+                    + k_L^{-1}
+                \right)^{-1}
+                = \left(
+                    (0.3*0.5)^{-1}
+                    + 0.25^{-1}
+                \right)^{-1}
+                \cong\mathemph{
+                    \qty*
+                    {9.375e-2}
+                    {\m/\hour}
+                }
+            &
+        \end{flalign*}
+    \end{exampleBox}
+    \begin{exampleBox}2{ % MARK: E1.2
+        Determine o fluxo molar e as composições interfaciais no referido ponto da coluna.
+    } % E1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \text{Fluxo molar:}&\\&
+                N_{A}
+                =K_L(C_{A}^*-C_A)
+                =K_L((P_{A}/0.5)-C_A)
+                =K_L((y_A\,P/0.5)-C_A)
+                \cong &\\&
+                \cong
+                \num{9.375e-2}
+                ((0.07*1/0.5)-0)
+                \cong\mathemph{
+                    \qty
+                    {1.3125e-2}
+                    {\mole/\m^2\,\hour}
+                }
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \text{Composições interfaciais: }C_{A,i}&\\&
+                N_A=0.25(C_{A,i}-0)
+                \implies
+                C_{A,i}
+                \cong
+                \frac{\num{1.3125e-2}}{0.25}
+                \cong\mathemph{
+                    \qty
+                    {5.25e-1}
+                    {\mole/\metre^3}
+                }
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \text{Composições interfaciais: }P_{A,i}&\\&
+                N_A=0.3(0.07-P_{A,i})
+                \implies
+                P_{A,i}
+                \cong
+                0.07
+                -\frac{\num{1.3125e-2}}{0.3}
+                \cong\mathemph{
+                    \qty
+                    {2.625e-2}
+                    {\atm}
+                }
+            &
+        \end{flalign*}
+    \end{exampleBox}
+    \begin{exampleBox}2{ % MARK: E1.3
+        Calcule a percentagem de resistência exercida por cada uma das fases.
+    } % E1.3
+        \answer{}
+        \begin{flalign*}
+            &
+                \text{\% Fase liquida}
+                = \frac{k_L^{-1}}{K_L^{-1}}
+                = \frac
+                {K_L}
+                {k_L}
+                \cong \frac
+                {\num{9.375e-2}}
+                {0.25}
+                \cong\mathemph{
+                    \qty*
+                    {37.5}
+                    {\percent}
+                }
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \text{\% Fase gasosa}
+                = \frac{(H\,k_g)^{-1}}{K_L^{-1}}
+                = \frac
+                {K_L}
+                {H\,k_g}
+                \cong \frac
+                {\num{9.375e-2}}
+                {0.5*0.3}
+                \cong\mathemph{
+                    \qty*
+                    {62.5}
+                    {\percent}
+                }
+            &
+        \end{flalign*}
+    \end{exampleBox}
+    \begin{exampleBox}2{ % MARK: E1.4
+        Determine o coeficiente de transferência de massa na fase líquida no caso de ocorrer uma reacção química irreversível de 1ª ordem com uma constante de velocidade igual a \qty*{30}{\s^{-1}}. Será válido considerar que a reacção é rápida? (\(\mathscr{D}_{A-\ch{H2O}} = \qty*{2.1e-5}{\cm^2/\s}\)).
+    } % E1.4
+        \answer{}
+        \begin{flalign*}
+            &
+                \frac{K}{K^\circ}
+                =Ha
+                =\sqrt{\frac{k_L}{\mathscr{D}}}
+                \,\delta
+                =\sqrt{\frac{k_L}{\mathscr{D}}}
+                \,\frac{\mathscr{D}}{k^\circ}
+                \implies &\\&
+                \implies
+                K_L
+                =\sqrt{k_L\,\mathscr{D}}
+                =\sqrt{30*2.1\E{-9}}
+                \cong
+                ????
+            &
+        \end{flalign*}
+    \end{exampleBox}
+\end{exampleBox}
+
+\end{document}

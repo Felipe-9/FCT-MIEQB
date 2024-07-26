@@ -337,7 +337,7 @@
         }
         \item[Gases]    \numrange{1e-5}{1e-4}
         \item[Líquidos] \numrange{.5e-9}{2e-9}
-        \item[Sólidos]  \numrange{1e-24}{1e-12}
+        \item[Sólidos]  \num*{1e-24}\to\num*{1e-12}
     \end{description}
     
 \end{sectionBox}
@@ -419,9 +419,9 @@
             \implies &\\[3ex]&
             \implies
             c_A\,v_{A,z}
-            = &\\&
+            % = &\\&
             =c_A\,v_z-c\,D_{A,B}\,\odv{y_A}{z}
-            = &\\&
+            % = &\\&
             =c_A\,\left(
                 \frac{c_A\,v_{A,z}+c_B\,v_{B,z}}{c}
             \right)-c\,D_{A,B}\,\odv{y_A}{z}
@@ -465,40 +465,68 @@
                     % ================ n_A =============== %
                     \multirow[t]{2}{*}{\(n_A\)} 
                     & \gdif{\omega_A}
-                    & n_A=-\rho\,D_{A,B}\,\gdif{\omega_A}+\omega_A(n_A+n_B)
+                    & n_A =
+                        -\rho
+                        \,D_{A,B}
+                        \,\gdif{\mathemph{\omega_A}}
+                        +\omega_A(n_A+n_B)
                     & \multirow{4}{*}{Constant \(\rho\)}
                     \\
                     & \gdif{\rho_A}
-                    & n_A=-D_{A,B}\gdif{\rho_A}+\omega_A(n_A+n_B)
+                    & n_A=
+                        -\phantom{\rho\,}
+                        D_{A,B}
+                        \,\gdif{\mathemph{\rho_A}}
+                        +\omega_A(n_A+n_B)
                     &
                     % ================ j_A =============== %
                     \\[1ex] \multirow[t]{2}{*}{\(j_A\)} 
                     & \gdif{\omega_A}
-                    & j_A=-\rho\,D_{A,B}\,\gdif{\omega_A}
+                    & j_A=
+                        -\rho\,
+                        D_{A,B}
+                        \,\gdif{\mathemph{\omega_A}}
                     % & \multirow{2}{*}{Constant \(\rho\)}
                     \\
                     & \gdif{\rho_A}
-                    & j_A=-D_{A,B}\gdif{\rho_A}
+                    & j_A=
+                        -\phantom{\rho\,}
+                        D_{A,B}
+                        \,\gdif{\mathemph{\rho_A}}
                     &
 
                     \\\midrule
                     % ================ N_A =============== %
                     \multirow[t]{2}{*}{\(N_A\)} 
                     & \gdif{y_A}
-                    & N_A=-c\,D_{A,B}\,\gdif{y_A}+y_A(N_A+N_B)
+                    & N_A=
+                        -c\,
+                        D_{A,B}
+                        \,\gdif{\mathemph{y_A}}
+                        + y_A(N_A+N_B)
                     & \multirow{4}{*}{Constant \textit{c}}
                     \\
                     & \gdif{c_A}
-                    & N_A=-D_{A,B}\gdif{c_A}+y_A(N_A+N_B)
+                    & N_A=
+                        -\phantom{c\,}
+                        D_{A,B}
+                        \,\gdif{\mathemph{c_A}}
+                        + y_A(N_A+N_B)
                     &
                     % ================ J_A =============== %
                     \\[1ex] \multirow[t]{2}{*}{\(J_A\)} 
                     & \gdif{y_A}
-                    & J_A=-c\,D_{A,B}\,\gdif{y_A}
+                    & J_A=
+                        -c\,
+                        D_{A,B}
+                        \,\gdif{\mathemph{y_A}}
                     % & \multirow{2}{*}{Constant \textit{c}}
                     \\
                     & \gdif{c_A}
-                    & J_A=-D_{A,B}\gdif{c_A}
+                    & J_A=
+                        -\phantom{c\,}
+                        D_{A,B}
+                        \,\gdif{\mathemph{c_A}}
                     &
                 
                 \\\bottomrule

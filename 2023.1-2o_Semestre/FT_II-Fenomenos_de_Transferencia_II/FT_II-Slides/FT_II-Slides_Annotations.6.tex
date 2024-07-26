@@ -13,13 +13,47 @@
 
 \mymakesubfile{6}
 [FT II]
-{Reação Química Heterogénea} % Subfile Title
-{Reação Química Heterogénea} % Part Title
+{Difusão com reações químicas} % Subfile Title
+{Difusão com reações químicas} % Part Title
+
+\begin{sectionBox}1{Sistemas unidimensionais associados com reação química} % MARK: S
+    
+    \begin{multicols}{2}
+        \begin{sectionBox}*2bm{Sistema homogênio} % MARK: S
+            Quando a reação ocorre uniformemente em uma unica fase
+        \end{sectionBox}
+        \begin{sectionBox}*2bm{Sistema Heterogenio} % MARK: S
+            Quando a reação ocorre na fronteira entre duas fases
+        \end{sectionBox}
+    \end{multicols}
+
+    \paragraph*{Reações Homogênias}
+    A frequencia de aparecimento da especie A por uma reação homogenia se da pela equação geral diferencial:
+    \begin{BM}
+        \gdif{N_A}
+        + \pdv{C_{A}}{t}
+        - R_A
+        = 0
+    \end{BM}
+    \paragraph*{\(R_A\)} é a frequencia em que A varia pela reação química, ex. em uma reação de ordem 1: \(R_A=-k_1\,C_{A}\)
+
+    \paragraph*{Reações Heterogénias}
+    Geralmente envolvem uma camada de fluido onde A está disolvido e uma camada sólida onde ocorre a reação, como a frequencia de aparecimento fica dependente da area de contato temos que os fluxos dos componentes são dependentes um dos outros de acordo com a reação
+    \paragraph*{Exemplo}
+    \begin{center}
+        \ch{O2\gas{} + C\sld{} -> CO2\gas{}}
+    \end{center}
+    De onde tiramos que \(N_{\ch{O2}}=-N_{\ch{CO2}}\)
+    
+\end{sectionBox}
 
 % W_{O2} = Q_{O2}
 
 \begin{exampleBox}1{ % #MARK: E1
-    \ch{2 C + O2 -> 2 CO}
+    A seguinte reação queima uma esfera de carbono de raio \textit{r} com \ch{O2\gas{}} puro, encontre o a equação para a velocidade de difusão molar do oxigenio
+    \begin{center}\Large
+        \ch{2 C\sld{} + O2\gas{} -> 2 CO\gas{}}
+    \end{center}
 } % E1
     \begin{flalign*}
         &
@@ -39,86 +73,60 @@
     \begin{flalign*}
         &
             Q_{\ch{O2}}
-            = 4\,\pi\,r^2
+            = S
             \,N_{\ch{O2}}
+            = \left(
+                4\,\pi\,r^2
+            \right)
+            \,\left(
+                \frac
+                {C_{A,L}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,r}
+                \ln{\frac
+                    {1-\Theta\,y_{A,2}}
+                    {1-\Theta\,y_{A,1}}
+                }
+            \right)
+            = &\\&
+            = \frac
+            {
+                4\,\pi\,r^2
+                \,C_{A,L}\,\mathscr{D}_{A,B}
+            }
+            {(-1)*1\,r}
+            \ln{\frac
+                {1-(-1)\,(1)}
+                {1-(-1)\,(0)}
+            }
+            = &\\&
+            = \mathemph{
+                -4\,\pi\,r
+                \,C_{A,L}\,\mathscr{D}_{A,B}
+                \,\ln{2}
+            }
             % 
             % 
             % 
             ; &\\[3ex]&
-            \text{\emph{Fluxo Molar \ch{O2}:}}
-            &\\&
-            N_{\ch{O2}}
-            = y_{\ch{O2}}
-            \,(N_{\ch{O2}}+N_{\ch{CO}})
-            - C\,\mathscr{D}
-            \,\odv{y_{\ch{O2}}}{r}
+            \begin{cases}
+                R_1=r;&\quad y_{1}=0
+                \\ R_2\to\infty;&\quad y_{2}=1
+            \end{cases}
             % 
             % 
             % 
             ; &\\[3ex]&
-            \text{\emph{Fluxo Molar \ch{CO}:}}
-            &\\&
-            \frac{N_{\ch{CO}}}{2}
-            = \frac{N_{\ch{O2}}}{-1}
-            \implies
-            N_{\ch{CO}}
-            = -2\,N_{\ch{O2}}
+            \eta_{d,\text{esfera}}
+            = 1-R_1/R_2
+            \to 1
             % 
             % 
             % 
-            \implies &\\[3ex]&
-            \implies
-            \int_{R}^{\infty}{
-                N_{\ch{O2}}
-                \,\odif{r}
-            }
-            = \int_{R}^{\infty}{
-                \frac{Q_{\ch{O2}}}{4\,\pi\,r^2}
-                \,\odif{r}
-            }
-            = \frac{Q_{\ch{O2}}}{4\,\pi}
-            \,\int_{R}^{\infty}{
-                \frac{\odif{r}}{r^2}
-            }
-            = &\\&
-            = -\frac{Q_{\ch{O2}}}{4\,\pi}
-            \,\adif{(1/r)}
-            \,\big\vert_{R}^{\infty}
-            = \frac{Q_{\ch{O2}}}{4\,\pi\,R}
-            % 
-            % 
-            % 
-            = &\\[3ex]&
-            = \int_{y_{\ch{O2}\vert{R}}}^{y_{\ch{O2}\vert{\infty}}}
-            - C\,\mathscr{D}
-            \,\frac
-            {\odif{y_{\ch{O2}}}}
-            {y_{\ch{O2}}+1}
-            = 
-            - C\,\mathscr{D}
-            \,\int_{0}^{1}
-            \,\frac
-            {\odif{y_{\ch{O2}}+1}}
-            {y_{\ch{O2}}+1}
-            = 
-            - C\,\mathscr{D}
-            \adif{\left(
-                \ln{(y_{\ch{O2}}+1)}
-            \right)}
-            \Big\vert_{0}^{1}
-            = &\\&
-            = 
-            - C\,\mathscr{D}
-            \ln\frac{1+1}{0+1}
-            = - C\,\mathscr{D}\ln{2}
-            % 
-            % 
-            % 
-            \implies &\\[3ex]&
-            \implies
-            Q_{\ch{O2}}
-            = - 4\,\pi\,R
-            \, C\,\mathscr{D}\ln{2}
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{\ch{CO}}/N_{\ch{O2}}
+            = 1+(-2\,N_{\ch{O2}})/N_{\ch{O2}}
+            = -1
         &
     \end{flalign*}
 
@@ -134,61 +142,53 @@
     \answer{}
     \begin{flalign*}
         &
-            \text{Fluxo em geometria plana:}
-            &\\&
-            Q_{A,z}=N_{A,z}
+            N_{A,z}
+            = \frac
+            {C_{A}\,\mathscr{D}_{A,B}}
+            {\Theta\,\eta_d\,l}
+            \ln{\frac
+                {1-\Theta\,y_{A,1}}
+                {1-\Theta\,y_{A,0}}
+            }
+            = &\\&
+            = \frac
+            {\frac{P}{R\,T}\,\mathscr{D}_{A,B}}
+            {(1-1/n)\,1\,l}
+            \ln{\frac
+                {1-(1-1/n)\,(0)}
+                {1-(1-1/n)\,y_{A,0}}
+            }
+            = &\\&
+            = \mathemph{
+                \frac
+                {P\,\mathscr{D}_{A,B}}
+                {R\,T\,(1-1/n)\,l}
+                \ln{\frac
+                    {1}
+                    {1-(1-1/n)\,y_{A,0}}
+                }
+            }
             % 
             % 
             % 
             ; &\\[3ex]&
-            \text{Fluxo Molar:}
-            &\\&
-            N_A
-            = -C\,\mathscr{D}\,\odv{y_A}{z}
-            + y_A\,(N_A+N_{A_n})
-            = -C\,\mathscr{D}\,\odv{y_A}{z}
-            + y_A\,(N_A+N_A/n)
-            = &\\&
-            = -C\,\mathscr{D}\,\odv{y_A}{z}
-            + y_A\,N_A\,(1-1/n)
-            \implies &\\[2ex]&
-            \implies
+            \begin{cases}
+                    z_0=0;&\quad y_{A,0}
+                \\  z_1=l;&\quad y_{A,1}=0
+            \end{cases}
             % 
             % 
             % 
-            \int_{0}^{l}{N_A\,\odif{z}}
-            = N_A\,\int_{0}^{l}{\odif{z}}
-            = N_A\,l
+            ; &\\[3ex]&
+            \eta_{d,\text{plano}}=1
             % 
             % 
             % 
-            = &\\[3ex]&
-            = \int_{0}^{y_{A,0}}{
-                -C\,\mathscr{D}
-                \,\frac{\odif{y_A}}
-                {1-y_A\,(1-1/n)}
-            }
-            = -C\,\mathscr{D}
-            \,\int_{0}^{y_{A,0}}{
-                \frac{\odif{y_A}}
-                {1-y_A\,(1-1/n)}
-            }
-            = &\\&
-            = \frac{-C\,\mathscr{D}}{(1-1/n)}
-            \,\int_{0}^{y_{A,0}}{
-                \frac{\odif{(1-y_A\,(1-1/n))}}
-                {1-y_A\,(1-1/n)}
-            }
-            = \frac{-C\,\mathscr{D}}{(1-1/n)}
-            \ln{(1-y_{A,0}(1-1/n))}
-            \implies &\\[3ex]&
-            \implies
-            % 
-            % 
-            % 
-            N_A
-            = \frac{-C\,\mathscr{D}}{l\,(1-1/n)}
-            \ln{(1-y_{A,0}(1-1/n))}
+            ; &\\[3ex]&
+            \Theta
+            = 1+N_{A_n}/N_{A}
+            = 1+(-N_{A}/n)/N_{A}
+            = 1-1/n
         &
     \end{flalign*}
     
@@ -212,80 +212,86 @@
         \answer{}
         \begin{flalign*}
             &
-                \text{Fluxo em geometria cilindrica:}
-                &\\&
-                Q_A = N_{A,R}\,2\,\pi\,r\,L
-                % 
-                % 
-                % 
-                ;&\\[3ex]&
-                \text{Fluxo molar:}
-                &\\&
-                N_{A,R}
-                = -C\,\mathscr{D}\,\odv{y_A}{r}
-                + y_A\,(N_{A,R}+N_{A_2,R})
-                = &\\&
-                = -C\,\mathscr{D}\,\odv{y_A}{r}
-                + y_A\,(N_{A,R}-(1/2)\,N_{A,R})
-                = &\\&
-                = -C\,\mathscr{D}\,\odv{y_A}{r}
-                + y_A\,N_{A,R}/2
-                % 
-                % 
-                % 
-                \implies &\\[3ex]&
-                \implies
-                \int_{R}^{R+\delta}{
-                    N_{A,R}\,\odif{r}
-                }
-                = \int_{R}^{R+\delta}{
-                    \frac{Q_{A,R}}{2\,\pi\,r\,L}
-                    \,\odif{r}
-                }
-                = \frac{Q_{A,R}}{2\,\pi\,L}
-                \,\int_{R}^{R+\delta}{\frac{\odif{r}}{r}}
-                = \frac{Q_{A,R}}{2\,\pi\,L}
-                \ln\frac{R+\delta}{R}
-                % 
-                % 
-                % 
-                = &\\[3ex]&
-                = \int_0^{y_{A,0}}{
-                    -C\,\mathscr{D}
-                    \,\frac{\odif{y_A}}{1-y_A/2}
-                }
-                = \frac{C\,\mathscr{D}}{1/2}
-                \,\int_0^{y_{A,0}}{
-                    \frac{\odif{(1-y_A/2)}}{1-y_A/2}
-                }
-                = \frac{C\,\mathscr{D}}{1/2}
-                \,\ln\frac{1-y_{A,0}/2}{1-0}
-                = &\\&
-                = \frac{C\,\mathscr{D}}{1/2}
-                \,\ln\frac{1-p_{A,0}/2\,P}{1-0}
-                % 
-                % 
-                % 
-                \implies &\\[6ex]&
-                \implies
                 Q_{A,R}
-                = \frac{
-                    \frac{P}{R\,T}\,\mathscr{D}
-                    \,2\,\pi\,L
-                }{(1/2)\ln\frac{R+\delta}{R}}
-                \,\ln(1-p_{A,0}/2\,P)
+                = S\,N_{A,R}
+                = \left(
+                    2\,\pi\,r_0\,L
+                \right)\,\left(
+                    \frac
+                    {C_{A}\,\mathscr{D}_{A,B}}
+                    {\Theta\,\eta_d\,r_0}
+                    \ln{\frac
+                        {1-\Theta\,y_{A,1}}
+                        {1-\Theta\,y_{A,0}}
+                    }
+                \right)
                 = &\\&
-                = \frac{
-                    \frac{1}{\num{82.0573660809596}*323.15}
-                    * 2.5\E{-1}
-                    * 2*\pi*10
-                }{(1/2)\ln\frac{2.5+0.6}{2.5}}
-                % 0.005507629965672
-                \,\ln(1-0.39/2*1)
-                % -0.216913001563574
-                \cong
-                \qty[2]{-1.194676547355e-3}{\mole/\second}
-                % -0.001194676547355
+                = \frac
+                {
+                    2\,\pi\,L
+                    \,\frac{P}{R\,T}
+                    \,\mathscr{D}_{A,B}
+                }
+                {(1/2)\,\left(\ln{\frac{r_1}{r_0}}\right)}
+                \ln{\frac
+                    {1-(1/2)\,y_{A,1}}
+                    {1-(1/2)\,(0)}
+                }
+                = &\\&
+                = \frac
+                {
+                    4\,\pi\,L
+                    \,P
+                    \,\mathscr{D}_{A,B}
+                }
+                {R\,T\,\ln{\frac{r_1}{r_0}}}
+                \ln{(1-y_{A,1}/2)}
+                \cong &\\&
+                \cong \frac
+                {
+                    4\,\pi\,10\E{-2}
+                    * 1
+                    * 2.5\E{-5}
+                }
+                {
+                    \num{8.20573660809596e-5}
+                    * (50+273.15)
+                    * \ln{\frac
+                        {2.5\E{-2}+6\E{-3}}
+                        {2.5\E{-2}}
+                    }
+                }
+                \ln{(1-0.39/2)}
+                \cong &\\&
+                \cong\mathemph{
+                    \qty
+                    {-1.19467654735535e-3}
+                    {\mole/\m^2\,\s}
+                }
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \text{Condições de fronteira do fluxo}:&\\&
+                \begin{cases}
+                        r_0=2.5\E{-2};&\quad y_{A,0}=0
+                    \\  r_1=2.5\E{-2}+6\E{-3}
+                    ;&\quad y_{A,1}=P_{A}/P=0.39/1
+                \end{cases}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \Theta
+                = 1+N_{A_2}/N_{A}
+                = 1+(-N_{A}/2)/N_{A}
+                = 1/2
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \eta_{d,\text{Cilindro}}
+                = \ln{\frac{r_1}{r_0}}
             &
         \end{flalign*}
         
@@ -297,34 +303,83 @@
         \answer{}
         \begin{flalign*}
             &
-                \text{Fluxo em geometria plana:}
-                &\\&
-                Q_{A,z}=N_{A,z}
+                Q_{A,z}
+                = S\,N_{A,z}
+                = \left(
+                    \pi\,r_0^2
+                \right)\,\left(
+                    \frac
+                    {C_A\,\mathscr{D}_{A,B}}
+                    {\Theta\,\eta_d\,l}
+                    \ln{\frac
+                        {1-\Theta\,y_{A,1}}
+                        {1-\Theta\,y_{A,0}}
+                    }
+                \right)
+                = &\\&
+                = \frac
+                {
+                    \pi\,r_0^2
+                    \,\frac{P}{R\,T}\,\mathscr{D}_{A,B}
+                }
+                {
+                    (1/2)\,1\,l
+                }
+                \ln{\frac
+                    {1-(1/2)\,y_{A,1}}
+                    {1-(1/2)\,(0)}
+                }
+                = &\\&
+                = \frac
+                {
+                    2\,\pi\,r_0^2
+                    \,P
+                    \,\mathscr{D}_{A,B}
+                }
+                {
+                    R\,T\,l
+                }
+                \ln{(1-y_{A,1}/2)}
+                \cong &\\&
+                \cong \frac
+                {
+                    2\,\pi
+                    *  (2.5\E{-2})^2
+                    *  1
+                    *  2.5\E{-5}
+                }
+                {
+                    \num{8.20573660809596e-5}
+                    * (50+273.15)
+                    * 6\E{-3}
+                }
+                \ln{(1-0.39/2)}
+                \cong &\\&
+                \cong\mathemph{
+                    \qty
+                    {-1.338481876550095e-4}
+                    {\mole/\m^2\,\s}
+                }
                 % 
                 % 
                 % 
                 ; &\\[3ex]&
-                \text{Fluxo molar:}
-                &\\&
-                N_{A,z}
-                = \frac{C\,\mathscr{D}}{\delta/2}
-                \,\ln(1-y_{A,0}/2)
-                = \frac{C\,\mathscr{D}}{\delta/2}
-                \,\ln(1-p_{A,0}/2*P)
+                \text{Condições de fronteira}&\\&
+                \begin{cases}
+                        z_0=0;\quad& y_{A,0}=0
+                    \\  z_1=6\E{-3};\quad& y_{A,1}=0.39
+                \end{cases}
                 % 
                 % 
                 % 
-                = &\\&
-                = \frac{
-                    \frac{1}{
-                        \num{82.0573660809596}
-                        *323.15
-                    }
-                    *0.25
-                }{0.6/2}
-                \,\ln(1-0.39/2*1)
-                \cong
-                \SI{-6.816832220539635e-6}{\mole/\second}
+                ; &\\[3ex]&
+                \eta_{d,\text{plano}}
+                = 1
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \Theta = 1/2
             &
         \end{flalign*}
         

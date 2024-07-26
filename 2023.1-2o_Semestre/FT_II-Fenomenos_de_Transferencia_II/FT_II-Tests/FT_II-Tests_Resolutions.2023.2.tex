@@ -11,6 +11,8 @@
 % \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2023.2}}}
 % \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2023.2/graphics/}
 
+\Large
+
 \mymakesubfile{2}
 [FT II]
 {Test 2023.2 Resolution} % Subfile Title
@@ -28,37 +30,410 @@
         \item \(Sc=\mu/\rho\,\mathscr{D}_{A,B}=1000\)
         \item \(Re=\rho\,d\,V/\mu\)
         \item Analogia de Reynolds: \(k_C/V=C_f/2\)
-        \item Analogia de Chilton-Coulburn: \(Sc^{2/3}\,k_C/V=C_f/2\)
+        \item Analogia de Chilton-Coulburn: \(Sc^{2/3}\,k_C/v=C_f/2\)
         \item \(
             \ln{\frac
                 {C_{A,S}-C_{A,0}}
                 {C_{A,S}-C_{A,L}}
             }
             = \frac{4\,L}{d}
-            \,\frac{k_C}{V}
+            \,\frac{k_C}{v}
         \)
-        \item \(W=v\,(\pi\,d^2/4)(C_{A,L}-C_{A,0}); C_{A,S}=C^2\land v:\text{Velocidade}\)
+        \item \(W=v\,(\pi\,d^2/4)(C_{A,L}-C_{A,0}); C_{A,S}=C^*\land v:\text{Velocidade}\)
     \end{itemize}
 \end{questionBox}
 
 \begin{questionBox}2{ % MARK: Q1.1
     Calcule o coeficiente de transferência de massa, escolhendo a analogia mais adequada. Justifique.
 } % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            Sc=1000\neq1
+            \implies
+            \text{Chilton-Colburn é a mais adequada}
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            \implies
+            k_C
+            = \frac{C_f\,v}{2\,Sc^{2/3}}
+            = 
+            \frac{
+                \left(
+                    7.9\E{-2}
+                    \,Re^{-.25}
+                \right)
+                \,v
+            }{
+                2*Sc^{2/3}
+            }
+            % = &\\&
+            = 
+            \frac{
+                \, 7.9\E{-2}
+                \left(
+                    \frac{\rho\,d\,v}{\mu}
+                \right)^{-.25}
+                \, v
+            }{
+                2\,Sc^{2/3}
+            }
+            = &\\&
+            = 
+            \frac{
+                \, 7.9\E{-2}
+                \left(
+                    \frac{
+                        \left(
+                            \frac{\mu}{D_A\,Sc}
+                        \right)
+                        \,d
+                        \,v
+                    }{
+                        \mu
+                    }
+                \right)^{-.25}
+                \, v
+            }{
+                2\,Sc^{2/3}
+            }
+            % = &\\&
+            = 
+            \frac{
+                \, 7.9\E{-2}
+                \left(
+                    \frac{
+                        d\,v
+                    }{
+                        D_A\,Sc
+                    }
+                \right)^{-.25}
+                \, v
+            }{
+                2\,Sc^{2/3}
+            }
+            = &\\&
+            = 
+            \frac{
+                \, 7.9\E{-2}
+                \left(
+                    \frac{
+                        5
+                        *5\E{2}
+                    }{
+                        1.0\E{-5}
+                        *1\E{3}
+                    }
+                    % 4.472135954999579e-2
+                \right)^{-.25}
+                \, 5
+            }{
+                2\,(1\E{3})^{2/3}
+            }
+            \cong &\\&
+            \cong\qty
+            {8.832468511124169e-5}
+            {\m/\s}
+        &
+    \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}2{ % MARK: Q1.2
     Calcule a percentagem de saturação da água à saída do tubo.
 } % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{\%\sat}:&\\&
+            \%\sat
+            =\frac{C_{A,L}}{C^*}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \ln{\frac
+                {C_{A,S}-C_{A,0}}
+                {C_{A,S}-C_{A,L}}
+            }
+            =\ln{\frac
+                {C^*-0}
+                {C^*-\%\sat*C^*}
+            }
+            =-\ln{(
+                1-\%\sat
+            )}
+            = &\\&
+            = \frac{4\,L}{d}
+            \,\frac{k_C}{v}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \%\sat
+            = 1-\exp{\left(
+                -\frac{4\,L}{d}
+                \,\frac{k_C}{v}
+            \right)}
+            \cong &\\&
+            \cong 
+            1-\exp{\left(
+                -\frac{4*120\E{2}}{5}
+                \,\frac{
+                    \num{8.832468511124169e-5}
+                }{5}
+                % 0.844016364451515
+            \right)}
+            \cong &\\&
+            \cong\qty
+            {15.5983635548485}
+            {\percent}
+        &
+    \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}2{ % MARK: Q1.3
-    Calcule a quantidade em kg de ácido benzóico removida durante a primeira hora do processo.
+    Calcule a quantidade em \unit{\kg} de ácido benzóico removida durante a primeira hora do processo.
 } % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            m
+            = t\,W
+            = t
+            \,v\,(\pi\,d^2/4)(C_{A,L}-C_{A,0})
+            = t
+            \,v\,(\pi\,d^2/4)(\%\sat*C^*-0)
+            \cong &\\&
+            \cong
+             3600
+            *5\E{2}\,(\pi\,5^2/4)
+            \,(
+                \num{15.5983635548485e-2}
+                *3\E{-2}
+            ) 
+            \cong &\\&
+            \cong\qty
+            {165.387502187780015758}
+            {\kg}
+        &
+    \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}2{ % MARK: Q1.4
     Discuta as vantagens do uso de analogia no cálculo dos coeficientes de transferência de massa.
 } % Q1.4
+    \answer{}
+    Permitem que com dados mais simples de se obter labortorialmente determinar o coeficiente de massa e/ou o calor.
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Num estudo de absorção de um composto A em água, realizado numa coluna de enchimento, obteve-se um coeficiente individual de transferência de massa para a fase líquida, \(k_L=\qty*{2e-5}{\m/\s}\) e verificou-se que, 10\% da resistência global é exercida pela fase líquida. Num determinado ponto da coluna a percentagem molar de A no ar é 15\% e a sua concentração molar no líquido é \qty*{0.01}{\mole/\dm^3}. A pressão total é \qty*{3}{\atm} e a constante de Henry é \qty*{0.5}{\atm} (\(P_A= H \,x_A\)). A concentração molar da água é \(C_L=18^{-1}\E{3}\,\unit{\mole/\dm^3}\).
+} % Q2
+    
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Determine o coeficiente global de transferência de massa baseado na fase líquida, \(K_L\) e o coeficiente individual de transferência de massa para a fase gasosa, \(k_G\).
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{\emph{Coeff de trasnf de massa da fase líquida}}
+            \,\mathemph{K_L}:&\\&
+            \frac{K_L}{k_L}=0.1
+            \implies
+            K_L
+            =0.1\,k_L
+            =0.1*2\E{-5}
+            =\qty*{2e-6}{\m/\s}
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            \text{\emph{Coeff de trasnf de massa da fase gasosa }}
+            \,\mathemph{K_G}:&\\&
+            K_G=0.9*k_g
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            K_L^{-1}
+            =k_L^{-1}
+            +(H'\,k_G)^{-1}
+            =k_L^{-1}
+            +\left(
+                \frac{H}{C_L}
+                \,k_G
+            \right)^{-1}
+            % 
+            % 
+            % 
+            \implies &\\&
+            \implies
+            k_G
+            =\left(
+                K_L^{-1}
+                -k_L^{-1}
+            \right)^{-1}
+            \frac{C_L}{H}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            K_G
+            % = &\\&
+            = 0.9
+            \,\left(
+                K_L^{-1}
+                -k_L^{-1}
+            \right)^{-1}
+            \frac{C_L}{H}
+            = &\\&
+            = 0.9\,\left(
+                (2\E{-6})^{-1}
+                -(2\E{-5})^{-1}
+            \right)^{-1}
+            \frac{18^{-1}\E{3}*10^{6}}{0.5}
+            % 
+            \,\unit{\frac{\mole}{\s\,\m^2\,\atm}}
+            \cong&\\&
+            \cong\qty
+            {222.22222222222224}
+            {\frac{\mole}{\s\,\m^2\,\atm}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    Determine o fluxo molar.
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            N_A
+            =K_L
+            \left(
+                C_A^*-C_{A,L}
+            \right)
+            =K_L
+            \left(
+                \frac{P_A}{H'}
+                -C_{A,L}
+            \right)
+            =K_L
+            \left(
+                \frac{P\,y_A}{H/C_L}
+                -C_{A,L}
+            \right)
+            = &\\&
+            =2\E{-6}
+            \left(
+                \frac{3*0.15}{0.5/18^{-1}\E{3}}
+                -0.01
+            \right)
+            \,\unit{\frac{\m\,\mole}{\s\,\dm^3}}
+            \cong &\\&
+            \cong\qty
+            {99.98}
+            {\frac{\mole}{\s\,\m^2}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.3
+    Calcule as composições interfaciais no referido ponto da coluna.
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{C_{A,i}}&\\&
+            N_A
+            = K_L\,(C_{A,i}-C_{A,L})
+            \implies &\\&
+            \implies
+            C_{A,i}
+            = C_{A,L}
+            + N_A/k_L
+            \cong &\\&
+            \cong
+            \num{0.01}
+            + \frac{\num{99.98}}{2\E{-5}}
+            \cong &\\&
+            \cong\qty
+            {4.99900001e6}
+            {\mole/\m^3}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{P_{A,i}}&\\&
+            N_A
+            =k_G\,(P_A-P_{A,i})
+            =k_G\,(P\,y_A-P_{A,i})
+            \implies &\\&
+            \implies
+            P_{A,i}
+            = P\,y_A
+            - \frac{N_A}{k_G}
+            \cong &\\&
+            \cong
+            3*0.15
+            - \frac{\num{99.98}}{\num{222.22222222222224}}
+            \cong &\\&
+            \cong \qty
+            {8.999999999995501e-5}
+            {\atm}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    No caso de ocorrer uma reação química irreversível de 2ª ordem explique em que condições o processo de transferência de massa é controlado pelo filme gasoso. Nessas condições qual seria o valor do fluxo nesse mesmo ponto da coluna? Comente.
+} % Q2.4
+    \answer{}
+    \begin{flalign*}
+        &
+            N_{A}
+            =k_G(P_{A,G}-P_{A,i})
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Reação de 2ª ordem\({}\land{}\)Reação rápida}
+            % \implies &\\&
+            \therefore
+            P_{A,i}=0
+            \implies &\\[3ex]&
+            \implies
+            N_{A}
+            =k_G(P_{A,G}-0)
+            =k_G(P_{G}\,y_A)
+            \cong
+            \num{222.22222222222224}
+            (3*0.15)
+            \,
+            \unit{\frac{\mole}{\s\,\m^2}}
+            \cong &\\&
+            \cong\qty
+            {100}
+            {\frac{\mole}{\s\,\m^2}}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \frac
+            {N_{A,\cancel{r}}}
+            {N_{A,r}}
+            = \frac
+            {99.98}
+            {100}
+            = 99.98\,\%
+        &
+    \end{flalign*}
 \end{questionBox}
 
 \end{document}

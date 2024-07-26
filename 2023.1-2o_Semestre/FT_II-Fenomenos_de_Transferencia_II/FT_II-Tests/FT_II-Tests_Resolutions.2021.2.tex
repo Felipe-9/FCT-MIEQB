@@ -23,11 +23,9 @@
     \def\ar{\text{ar}}
     \paragraph*{Dados:}
     \begin{itemize}
-        \item \(Sh_x=0.3320\,Re_x^{0.5}\,Sc^{0.33}\) Regime \emph{laminar}
-        \item \(Sh_x=0.0292\,Re_x^{0.8}\,Sc^{0.33}\) Regime \emph{turbulento}
         \begin{multicols}{2}
-            \item \(Re_{x,c}=x_c\,u/v=32\E{5}\)
-            \item \(\mathscr{D}_{\naft,\ar}=\qty*{0.051}{\centi\metre^{2}/\second}\)
+            \item \(Re_{x,c}=x_c\,u/v=32\E{4}\)
+            \item \(\mathscr{D}_{\naft,\ar}=\qty*{51e-3}{\centi\metre^{2}/\second}\)
             \item \(\rho_{\naft}=\qty{1.2}{\gram/\centi\metre^3}\)
             \item \(M_{\naft}=\qty*{128}{\gram/\mole}\)
             \item \(P^*_{\naft}=\qty{1e-3}{\atm}\)
@@ -40,6 +38,11 @@
             \item \(Sc=v/\mathscr{D}=2.57\)
         \end{multicols}
     \end{itemize}
+    \begin{align*}
+        Sh_x&=0.3320\,Re_x^{0.5}\,Sc^{0.33};& \text{(Regime laminar)}
+        \\
+        Sh_x&=2.92\E{-2}\,Re_x^{0.8}\,Sc^{0.33};& \text{(Regime turbulento)}
+    \end{align*}
 \end{questionBox}
 
 \begin{questionBox}2{ % MARK: Q1.1
@@ -52,13 +55,13 @@
             t 
             = \frac{n}{W}
             = \frac{
-                Vol_{\naft}\,\frac{\rho_{\naft}}{M_{\naft}}
+                \vol_{\naft}\,\rho_{\naft}/M_{\naft}
             }{
                 \bar{k_C}\,(C_{A,S}-C_{A,\infty})\,A
             }
             = \frac{
                 L^2\,D
-                \,\frac{\rho_{\naft}}{M_{\naft}}
+                \,\rho_{\naft}/M_{\naft}
             }{
                 \bar{k_C}
                 \,\left(
@@ -69,7 +72,7 @@
                 \right)\,L^2
             }
             = \frac{
-                D\,\frac{\rho_{\naft}}{M_{\naft}}
+                D\,\rho_{\naft}/M_{\naft}
             }{
                 \bar{k_C}\,
                 \left(\frac{P}{R\,T}\right)
@@ -152,7 +155,7 @@
                     }
                     &+\\+&
                     \mathscr{D}
-                    \,0.0292
+                    \,2.92\E{-2}
                     \,Sc^{0.33}
                     \int_{x_c}^{L}{
                         \left(
@@ -173,34 +176,44 @@
                         x^{-0.5}\,\odif{x}
                     }
                     &+\\+&
-                    0.0292
+                    2.92\E{-2}
                     \,\frac{u^{0.8}}{v^{0.8}}
                     \int_{x_c}^{L}{
                         x^{-0.2}\,\odif{x}
                     }
                 \end{aligned}
             \right)
-            = &\\&
-            = \frac{
-                0.051\E{-4}
+            \cong &\\&
+            \cong \frac{
+                51\E{-7}
                 * 2.57^{0.33}
             }{  0.4 }
+            % 174.095728415531427
             \left(
                 \begin{aligned}
                     &
                     0.332
-                    \,\frac{(3.2\E{5})^{0.5}}{(0.14)^{0.5}}
-                    \,x_c^{0.5}
+                    \,\frac{(32\E{4})^{0.5}}{(0.14)^{0.5}}
+                    \,(\num{1.39808e-1})^{0.5}
+                    % 187.678734571303294
                     &+\\+&
-                    0.0292
-                    \,\frac{u^{0.8}}{v^{0.8}}
+                    2.92\E{-2}
+                    \,\frac{(32\E{4})^{0.8}}{(0.14)^{0.8}}
                     \left(
-                        L^{0.8}
-                        - x_c^{0.8}
+                        (40\E{-2})^{0.8}
+                        - (\num{1.39808e-1})^{0.8}
                     \right)
+                    % 61.536531954692335
                     &
                 \end{aligned}
             \right)
+            \cong &\\&
+            \cong
+            \num
+            {4.3387313358114015302e-3}
+            % 
+            % 
+            % 
             ; &\\[3ex]&
             \mathemph{x_c}
             &\\&
@@ -210,7 +223,11 @@
             \implies &\\&
             \implies
             x_c
-            = \frac{Re\,Sc\,\mathscr{D}}{u}
+            = \frac{Re_{x_c}\,Sc\,\mathscr{D}}{u}
+            = \frac{32\E{4}*2.57*51\E{-7}}{30}
+            \cong
+            \num
+            {1.39808e-1}
         &
     \end{flalign*}
 \end{questionBox}
@@ -239,9 +256,20 @@
             = \frac{\mathscr{D}}{x}
             \,0.332
             \,\left(
-                \frac{x\,u}{v}
+                \frac{x\,u}{Sc\,\mathscr{D}}
             \right)^{0.5}
             \,Sc^{0.33}
+            = &\\&
+            = \frac{51\E{-7}}{5\E{-2}}
+            * 0.332
+            * \left(
+                \frac{5\E{-2}*30}{2.57*51\E{-7}}
+            \right)^{0.5}
+            \,2.57^{0.33}
+            \cong &\\&
+            \cong\mathemph{
+                \qty{1.564264415729798428e-2}{\m/\s}
+            }
         &
     \end{flalign*}
 \end{questionBox}
@@ -251,12 +279,22 @@
     \answer{}
     \begin{flalign*}
         &
-            k_C
-            = \frac{\mathscr{D}_{A,B}}{\delta}
-            \implies
             \delta
             \cong
-            \frac{\mathscr{D}_{A,B}}{k_C}
+            \frac{\mathscr{D}}{k_C}
+            \cong
+            \frac{51\E{-7}}{\num{1.564264415729798428e-2}}
+            \cong
+            \qty{3.2603183635169673e-4}{\metre}
+            % 
+            % 
+            % 
+            % k_C
+            % = \frac{\mathscr{D}_{A,B}}{\delta}
+            % \implies
+            % \delta
+            % \cong
+            % \frac{\mathscr{D}_{A,B}}{k_C}
         &
     \end{flalign*}
 \end{questionBox}
@@ -265,7 +303,7 @@
     Se pretender comprar ambientadores sólidos perfumados tendo para escolha com a forma de esferas ou de cubos, com as mesmas dimensões e custo, quais escolheria? Justifique a sua resposta. (3v)
 } % Q1.4
     \answer{}
-    A minha escolha dependeria do meu objetivo as utilizar o am- bientador. Para esferas e cubos com as mesmas dimensões, a áRea exposta de um cubo é maior que a da esfera e o volume do cubo tambem é maior. Isto quere dizeR que, se pretencer um cheiro mais intenso, escolho: o cuba (por ter uma velocida- de de sublimação mais alta) e se pretender que o cheiro dure mais itempo, escolho a esfera.
+    A minha escolha dependeria do meu objetivo as utilizar o ambientador. Para esferas e cubos com as mesmas dimensões, a área exposta de um cubo é maior que a da esfera e o volume do cubo tambem é maior. Isto quere dizer que, se pretencer um cheiro mais intenso, escolho: o cubo (por ter uma velocidade de sublimação mais alta) e se pretender que o cheiro dure mais tempo, escolho a esfera.
 \end{questionBox}
 
 \begin{questionBox}1{ % MARK: Q2

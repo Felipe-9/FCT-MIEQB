@@ -1,0 +1,416 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2024.4.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2024.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2024.4}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2024.4/graphics/}
+
+\mymakesubfile{4}
+[FT II]
+{Exame Época Especial 2024.4 Resolução} % Subfile Title
+{Exame Época Especial 2024.4 Resolução} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \qty*{1200}{\kelvin}
+            \item \qty*{1}{\atm}
+            \item Esta estacionario
+            \item Superficie plana
+            \item \(S=\qty*{1}{\m^2}\)
+            \item Camada de carbono, espessura: \qty*{0.4}{\mm}
+            \item Reação instantanea
+            \item \ch{2 C\sld{} + O2\gas{} -> 2 CO\gas{}}
+            \item Vel de queima lim pela difusão do \ch{O2}
+            \item dif atravez de filme gasoso: \qty*{5}{\mm}
+            \item \(y_{A,ar}=0.21\)
+            \item \(\mathscr{D}_{A,ar}=\qty*{1e-4}{{\m^2/\s}}\)
+            \item \(\rho_C=\qty*{1280}{\kilo\gram/\metre^3}\)
+            \item \(M_{C}=\qty*{12}{\g/\mole}\)
+            \item Assuma estado estacionário
+        \end{multicols}
+    \end{itemize}
+} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Velo de diff
+} % Q1.1
+    \answer{}
+    \begin{flalign*}
+        &
+            Q_{O2}
+            =S\,N_{O2,z}
+            =S\,\left(
+                \frac
+                {C_{O2}\,\mathscr{D}_{A,B}}
+                {\Theta\,\eta_d\,l}
+                \ln{\frac
+                    {1-\Theta\,y_{A,1}}
+                    {1-\Theta\,y_{A,0}}
+                }
+            \right)
+            = &\\&
+            =S\,\left(
+                \frac
+                {\frac{P}{R\,T}\,\mathscr{D}_{A,B}}
+                {(-1)\,1\,(L-Z_0)}
+                \ln{\frac
+                    {1-(-1)*(0)}
+                    {1-(-1)\,y_{A,ar}}
+                }
+            \right)
+            = &\\&
+            =\mathemph{
+                S\,\frac{P}{R\,T}
+                \frac
+                {\mathscr{D}_{A,B}}
+                {L-Z_0}
+                \ln{\frac
+                    {1+y_{A,ar}}
+                    {1}
+                }
+            }
+            % 
+            % 
+            % 
+            ;&\\[3ex]&
+            \text{Condições de fronteira Fluxo:}&\\&
+            \begin{cases}
+                z_0= L ;&\quad y_{0}=y_{O2,ar}=0.21
+                \\
+                z_1= Z_0 ;&\quad y_{1}=0
+                \quad\text{(Reação instantanea)}
+            \end{cases}
+            % 
+            % 
+            % 
+            ;&\\[3ex]&
+            \Theta
+            =1+N_{CO}/N_{O2}
+            =1+(-2\,N_{O2})/N_{O2}
+            =-1
+            % 
+            % 
+            % 
+            ; &\\[1ex]&
+            \eta_{d,\text{plano}}
+            =1
+        &
+    \end{flalign*}
+    \paragraph*{Nota:}
+    \begin{itemize}
+        \item \(Z_0\) Diametro inicial
+        \item \(Z_1\) Diametro após a queima
+        \item \(L\) Posição camada de filme gasoso
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Calcule a velocidade da difusão
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            Q_{O2}
+            = S
+            \,\frac{P}{R\,T}
+            \frac
+            {\mathscr{D}_{A,B}}
+            {L-Z_0}
+            \ln{\frac
+                {1+y_{A,ar}}
+                {1}
+            }
+            =1
+            \,\frac{1}{
+                \num{8.20573660809596e-5}
+                * 1200
+            }
+            \frac
+            {1\E{-4}}
+            {5\E{-3}}
+            \ln{\frac
+                {1+0.21}
+                {1}
+            }
+            \cong\mathemph{
+                \qty
+                {3.871688972252645e-2}
+                {\mole/\second}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    O que acontece com o dif do O2 se queimar a 1500\,\unit{K}
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            Q_{O2,z}
+            \propto \mathscr{D}_{O2,ar}\,T^{-1}
+            \propto T^{3/2-1}
+            \implies
+            Q_{O2,z,1500K}
+            =Q_{O2,z,1200K}
+            \,\left(
+                \frac{1500}{1200}
+            \right)^{1/2}
+            \cong &\\&
+            \cong
+            \num{3.871688972252645e-2}
+            \,\left(
+                \frac{1500}{1200}
+            \right)^{1/2}
+            \cong\mathemph{
+                \qty
+                {4.328679864846606e-2}
+                {\mole/\s}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Considerando dif pseudo estacionário, quanto tempo demora para arder a placa
+} % Q1.4
+    \answer{}
+    \begin{flalign*}
+        &
+            C_{C}\,\odv{\vol}{t}
+            = \frac{\rho_C}{M_C}\,\odv{(S*z)}{t}
+            = \frac{\rho_C}{M_C}\,S\,\odv{z}{t}
+            = &\\[3ex]&
+            = -Q_{O2}
+            = -S\,\frac{P}{R\,T}
+            \frac
+            {\mathscr{D}_{A,B}}
+            {L-z}
+            \ln{(1+y_{A,ar})}
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            \int_{Z_0}^{Z_1}{
+                (L-z)\odif{z}
+            }
+            = -\int_{Z_0}^{Z_1}{
+                (L-z)\odif{(L-z)}
+            }
+            = -((L-Z_1)^2-(L-Z_0)^2)/2
+            % 
+            % 
+            % 
+            = &\\[3ex]&
+            = \int_{0}^{t}{
+                \left(
+                    -
+                    \frac{M_C}{\rho_C}
+                    \,\frac{P}{R\,T}
+                    \,\mathscr{D}_{A,B}
+                    \,\ln{(1+y_{A,ar})}
+                \right)
+                \,\odif{t}
+            }
+            = 
+            \left(
+                -
+                \frac{M_C}{\rho_C}
+                \,\frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+                \,\ln{(1+y_{A,ar})}
+            \right)
+            \int_{0}^{t}{
+                \,\odif{t}
+            }
+            = &\\&
+            = 
+            \left(
+                -
+                \frac{M_C}{\rho_C}
+                \,\frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+                \,\ln{(1+y_{A,ar})}
+            \right)
+            t
+            % 
+            % 
+            % 
+            \implies &\\[3ex]&
+            \implies
+            t
+            =\frac{(L-Z_1)^2-(L-Z_0)^2}{
+                2
+                \,\frac{M_C}{\rho_C}
+                \,\frac{P}{R\,T}
+                \,\mathscr{D}_{A,B}
+                \,\ln{(1+y_{A,ar})}
+            }
+            % \cong  &\\&
+            \cong \frac{(5\E{-3}+0.4\E{-3})^2-(5\E{-3})^2}{
+                2
+                \,\frac{12}{1280\E3}
+                \,\frac{1}{
+                    \num{8.20573660809596e-5}
+                    * 1200
+                }
+                * 1\E{-4}
+                \,\ln{(1+0.21)}
+            }
+            \cong &\\&
+            \cong\mathemph{
+                \qty
+                {1146.0975726961823223984}
+                {\second}
+            }
+            \cong\mathemph{
+                \qty*{19}{\minute}
+                \,\qty
+                {6.097572696182322}
+                {\second}
+            }
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Condições de fronteira Fluxo:}&\\&
+            \begin{cases}
+                z_0= L ;&\quad y_{0}=y_{O2,ar}=0.21
+                \\
+                z_1= z ;&\quad y_{1}=0
+                \quad\text{(Reação instantanea)}
+            \end{cases}
+            % 
+            % 
+            % 
+            ; &\\[1ex]&
+            \text{Condições de fronteira Reação:}&\\&
+            \begin{cases}
+                t_0=0 ;&\quad z_0=Z_0
+                \\
+                t_1=t ;&\quad z_1=Z_1=Z_0-0.4\E{-3}
+                \quad\text{(Camada de carbono)}
+            \end{cases}
+            % 
+            % 
+            % 
+            ;&\\[3ex]&
+            \Theta
+            =1+N_{CO}/N_{O2}
+            =1+(-2\,N_{O2})/N_{O2}
+            =-1
+            % 
+            % 
+            % 
+            ; &\\[1ex]&
+            \eta_{d,\text{plano}}
+            =1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    \begin{itemize}
+        % \begin{multicols}{2}
+            \item Reação de eq: \(y_A=0.75\,x_A\)
+            \item Em um poonto da coluna
+            \begin{itemize}
+                \item Fase liq contem 90\% de A (base molar)
+                \item Fase gas contem 45\% de A (base molar)
+                \item Coeff indiv de transf de massa na fase gasosa \(k_y=\qty*{2}{\mole/\hour\,\m^2}\)
+                \item Resistencia de 70\% devido ao filme gasoso
+            \end{itemize}
+        % \end{multicols}
+    \end{itemize}
+} % Q2
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Coeff glob de trasnferencia de massa \(K_y\)
+} % Q2.1
+    \answer{}
+    \begin{flalign*}
+        &
+            K_y
+            =\text{(Resist gas)}*k_y
+            =0.7*2
+            =\mathemph{
+                \qty*{1.4}{\mole/\hour\,\m^2}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    Fluxo molar de A nesse ponto (comentar)
+} % Q2.2
+    \answer{}
+    \begin{flalign*}
+        &
+            N_A
+            =K_L
+            \left(
+                C_A^*-C_{A,L}
+            \right)
+            =K_L
+            \left(
+                \frac{P_A}{H'}
+                -C_{A,L}
+            \right)
+            =K_L
+            \left(
+                \frac{P\,y_A}{H/C_L}
+                -C_{A,L}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.3
+    Composição interfacial nas duas fases
+} % Q2.3
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathemph{C_{A,i}}&\\&
+            N_A
+            = K_L\,(C_{A,i}-C_{A,L})
+            \implies &\\&
+            \implies
+            C_{A,i}
+            = C_{A,L}
+            + N_A/k_L
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \mathemph{P_{A,i}}&\\&
+            N_A
+            =k_G\,(P_A-P_{A,i})
+            =k_G\,(P\,y_A-P_{A,i})
+            \implies &\\&
+            \implies
+            P_{A,i}
+            = P\,y_A
+            - \frac{N_A}{k_G}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.4
+    Será o composto muito solúvel? Justifique
+} % Q2.4
+    \answer{}
+    Um composto é considerado muito solúvel quando tem consideravelmente grande \(k_G\) dessa forma facilitando a trasnferencia
+\end{questionBox}
+
+\end{document}

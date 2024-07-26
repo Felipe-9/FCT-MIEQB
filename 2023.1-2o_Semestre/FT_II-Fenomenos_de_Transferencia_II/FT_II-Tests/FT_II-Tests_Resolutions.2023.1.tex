@@ -1,0 +1,169 @@
+% !TEX root = ./FT_II-Tests_Resolutions.2023.1.tex
+\providecommand\mainfilename{"./FT_II-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Tests_Resolutions.2023.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Tests_Resolutions.2023.1}}}
+% \tikzsetexternalprefix{./figures/FT_II-Tests_Resolutions.2023.1/graphics/}
+
+\mymakesubfile{1}
+[FT II]
+{Test 2023.1 Resolutions} % Subfile Title
+{Test 2023.1 Resolutions} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+    Uma partícula de carvão queima numa atmosfera gasosa enriquecida (40\% de percentagem molar em oxigénio) a \qty*{1400}{\K}, à pressão atmosférica (\qty*{1.013e5}{\Pa}). O processo é limitado pela difusão de \ch{O2} em sentido oposto ao do \ch{CO} que se forma, através de uma reacção instantânea com o carvão à sua superfície. O carvão, constituído por esferas com diâmetro de \qty*{0.6}{\mm}, consiste em carbono puro com uma massa específica de \qty*{1280}{\kg\,\m^{-3}}.
+} % Q1
+    {\large\bfseries
+        \ch{2 C\sld{} + O2\gas{} -> 2 CO\gas{}}
+    }
+    \paragraph*{Considere:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\mathscr{D}_{\ch{O2},mist.gas} = \qty*{1e-4}{\m^2\,\s^{-1}}\)
+            \item \(R=\qty*{8.314462618}{\Pa\,\m^2\,\mole^{-1}\,\K^{-1}}\)
+        \end{multicols}
+        \item Nas alíneas seguintes, de a) a d) assuma que o processo de difusão ocorre em estado estacionário.
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+    Faça um esquema do processo queestá a ocorrer,apresente a respectiva equação de conservação de massa e explicite as condições fronteira que considerou.
+} % Q1.1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.2
+    Com base na sua resposta à alínea a) deduza uma expressão para a velocidade de difusão do oxigénio e calcule o valor da velocidade de difusão do oxigénio. 
+} % Q1.2
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = -\frac{P}{R\,T}
+            \,\mathscr{D}\,4\,\pi\,R_1
+            \,\ln{(1.4)}
+            \cong\qty
+            {1.1e-6}
+            {\mole/\second}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.3
+    Quanto tempo demora uma partícula de carvão a arder completamente?
+} % Q1.3
+    \answer{}
+    \begin{flalign*}
+        &
+            \qty{1}{\hour}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.4
+    Se o processo se realizar à temperatura de \qty*{1000}{\K} qual é a velocidade de queima da partícula de carvão? Justifique a sua resposta (analise com cuidado o impacto da temperatura nos vários parâmetros relevantes.)
+} % Q1.4
+    \answer{}
+    \qty*{-1.55e-6}{\mole/\hour}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.5
+    Assuma agora que o processo de difusão ocorre em estado pseudo-estacionário. Nestas circunstâncias, deduza uma expressão para a velocidade de difusão do oxigénio.
+} % Q1.5
+    \answer{}
+    \begin{flalign*}
+        &
+            Q
+            = \frac{P}{M}
+            \,4\,\pi\,x^2
+            \,\odv{x}{t}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+    Pretende-se transferir oxigénio para o meio aquoso de um reactor biológico, através da utilização de um "manto" de gás contendo oxigénio, o qual cobre toda a superfície do meio aquoso. A concentração inicial de oxigénio no meio aquoso é de \qty*{1}{\kg/\m^2}.Se a concentração do oxigénio no meio aquoso for subitamente elevada à superfície para \qty*{9}{\kg/\m^3}, calcule:
+} % Q2
+    \paragraph*{Dados:}
+    \begin{align*}
+        J_A^*
+        = -\mathscr{D}
+        \,\pdv{C_A}{z}
+        = \sqrt{\frac{\mathscr{D}}{\pi\,t}}
+        \,\exp{(-z^2/4\,\mathscr{D}\,t)}
+        \,(C_{A,s}-C_{A,0})
+        ;&&
+        J_A^*
+        \Big\vert_{z=0}
+        = \sqrt{\frac{\mathscr{D}}{\pi\,t}}
+        \,(C_{A,s}-C_{A,0})
+    \end{align*}
+    \begin{align*}
+        \frac
+        {C_{A,s}-C_{A}}
+        {C_{A,s}-C_{A,0}}
+        &= \erf{\left(
+            \frac{z}{\sqrt{4\,\mathscr{D}\,t}}
+        \right)}
+        ;&
+        \mathscr{D}_{\ch{O2},Agua}=\qty*{1e-9}{\m^2/\s}
+    \end{align*}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{LL *{2}{ | LL}}
+            \toprule
+            
+                \multicolumn{1}{C}{a}
+                & \multicolumn{1}{C}{\text{erf}(a)}
+                & \multicolumn{1}{C}{a}
+                & \multicolumn{1}{C}{\text{erf}(a)}
+                & \multicolumn{1}{C}{a}
+                & \multicolumn{1}{C}{\text{erf}(a)}
+            
+            \\\midrule
+            
+                   0.0  & 0.0     & 0.48 & 0.50275 & 0.96 & 0.82542
+                \\ 0.04 & 0.04511 & 0.52 & 0.53790 & 1.00 & 0.84270
+                \\ 0.08 & 0.09008 & 0.56 & 0.57162 & 1.10 & 0.88021
+                \\ 0.12 & 0.13476 & 0.60 & 0.60386 & 1.20 & 0.91031
+                \\ 0.16 & 0.17901 & 0.64 & 0.63459 & 1.30 & 0.93401
+                \\ 0.20 & 0.22270 & 0.68 & 0.66378 & 1.40 & 0.95229
+                \\ 0.24 & 0.26570 & 0.72 & 0.69143 & 1.50 & 0.96611
+                \\ 0.28 & 6.30788 & 0.76 & 0.71754 & 1.60 & 0.97635
+                \\ 0.32 & 0.34913 & 0.80 & 0.74210 & 1.70 & 0.98379
+                \\ 0.36 & 0.38933 & 0.84 & 0.76514 & 1.80 & 0.98909
+                \\ 0.40 & 0.42839 & 0.88 & 0.78669 & 2.00 & 0.99532
+                \\ 0.44 & 0.46622 & 0.92 & 0.80677 & 3.24 & 0.99999
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{Error function values. For negative \textit{a}, erf(\textit{a}) is negative}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.1
+    Aconcentração de oxigénio, 1 hora depois da elevação de concentração à superfície, a \qty*{1}{\cm} de profundidade.
+} % Q2.1
+    \answer{}
+    \qty{1.018}{\kg/\m^3}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q2.2
+    O fluxo de oxigénio a essa profundidade (\qty*{1}{\cm}), após \qty*{03}{\min} e após 1 hora. Compare os valores obtidos e comente.
+} % Q2.2
+    \answer{}
+    \begin{itemize}
+        \item 30 min: \qty{3.13e-12}{\kg/\s\,\m^2}
+        \item 60 min: \qty{2.29e-9}{\kg/\s\,\m^2}
+        \item Em estado transiente, o reator é descontínuo e por isso altera-se ao longo do tempo e o fluxo difusional não é constante.
+        \item Observa-se que quando \(t\uparrow\implies J_A\uparrow\), logo são diretamente proporcionais
+    \end{itemize}
+\end{questionBox}
+
+\end{document}

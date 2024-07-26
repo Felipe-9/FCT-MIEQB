@@ -1,0 +1,377 @@
+% !TEX root = ./FT_II-Slides_Annotations.3.tex
+\providecommand\mainfilename{"./FT_II-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_II-Slides_Annotations.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./figures/FT_II-Slides_Annotations.3}}}
+% \tikzsetexternalprefix{./figures/FT_II-Slides_Annotations.3/graphics/}
+
+\mymakesubfile{3}
+[FT II]
+{Difusão de Eletrolitos} % Subfile Title
+{Difusão de Eletrolitos} % Part Title
+
+\begin{sectionBox}1{Velocidade do ion} % MARK: S
+    
+    \begin{BM}
+        v_i
+        = u_i\left(
+            \gdif{\mu_i}
+            + z_i\,F\,\gdif{\Psi}
+        \right)
+    \end{BM}
+    \begin{align*}
+        \mu_i&=\mu_i^0+R\,T\,\ln{a_i}
+        ;&
+        \gdif{\mu_i}&=\frac{R\,T}{c_i}\,\gdif{c_i}
+        ;&
+        \mathscr{D}_i&=u_i\,R\,T
+        \quad(\text{Relação Einstein})
+    \end{align*}
+    \begin{align*}
+        -J_i
+        =c_i\,v_i
+        =\mathscr{D}
+    \end{align*}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(\gdif{mu_i}\)} % Longest item
+    ]
+        \item[\(\mu_i\):] Mobilidade do ion
+        \item[\(\gdif{\mu_i}\):] Potencial químico
+        \item[\(z_i\):] Carga ionica 
+        \item[\(F\):] \qty{9.64853321233100184e4}{\C/\mole} (Constante de Faraday)
+        \item[\(\Psi\):] Potencial eletrostático
+        \item[\(u_i\):] Propriedade física do ion: \(u_i\sim(6\,\pi\,\eta\,R_0)^{-1}\) (Stokes-Einstein)
+        \item[\(R_0\)] Raio efetivo (Efeitos solvatação) 
+    \end{description}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Equação Nerst-Plank} % MARK: S
+    
+    \begin{BM}
+        -J_i
+        = \mathscr{D}\left(
+            \gdif{c_i}
+            +c_i\,z_i
+            \,\frac
+            {F\,\gdif{\Psi}}
+            {R\,T}
+        \right)
+    \end{BM}
+    \begin{itemize}
+        \item Soluções Diluidas
+    \end{itemize}
+    \begin{sectionBox}3{Demonstration} % MARK: S
+        \begin{flalign*}
+            &
+                -J_i
+                = -c_i\,v_i
+                = -c_i
+                \,\left(
+                    -u_i\,(
+                        \gdif{\mu_i}
+                        +z_i\,F\,\gdif{\Psi}
+                    )
+                \right)
+                = c_i
+                \,u_i\,\left(
+                    \left(
+                        \frac{R\,T}{c_i}
+                        \,\gdif{c_i}
+                    \right)
+                    +z_i\,F\,\gdif{\Psi}
+                \right)
+                = &\\&
+                = \mathscr{D}
+                \,\left(
+                    \gdif{c_i}
+                    + z_i\,c_i
+                    \,\frac
+                    {F\,\gdif{\Psi}}
+                    {R\,T}
+                \right)
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \mu_i=\mu_i^0+R\,T\,\ln{a_i}
+                \land
+                a_i
+                \xrightarrow{\text{Sol diluidas}}
+                c_i
+                % \implies &\\&
+                \implies
+                \gdif{\mu_i}
+                =\frac{R\,T}{c_i}\,\gdif{c_i}
+                % Não ha explicação
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \mathscr{D}_i=u_i\,R\,T
+                \quad\text{(Relação Einsntein)}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Tabela dos coeficientes de difusão de ions em agua a 25\unit{\celsius}} % MARK: S
+    
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{9mm} % width
+        % \renewcommand\arraystretch{1.25} % height
+        \rowcolors*{2}{background!95!foreground}{}
+        \begin{tabular}{l C | l C}
+            \toprule
+            
+                   Cation
+                &  \mathscr{D}_i
+                &  Anion
+                &  \mathscr{D}_i
+            
+            \\\midrule
+            
+                    \ch{H^{+}}        & 9.31 & \ch{OH^-}         & 5.28
+                \\  \ch{Li^{+}}       & 1.03 & \ch{F^-}          & 1.47
+                \\  \ch{Na^{+}}       & 1.33 & \ch{Cl^-}         & 2.03
+                \\  \ch{K^{+}}        & 1.96 & \ch{Br^-}         & 2.08
+                \\  \ch{Rb^{+}}       & 2.07 & \ch{I^-}          & 2.05
+                \\  \ch{Cs^{+}}       & 2.06 & \ch{NO3^-}        & 1.90
+                \\  \ch{Ag^{+}}       & 1.65 & \ch{CH3COO^-}     & 1.09
+                \\  \ch{NH4^{+}}      & 1.96 & \ch{CH3CH2COO^-}  & 0.95
+                \\  \ch{N(C4H9)4^{+}} & 0.52 & \ch{B(C6H5)4^-}   & 0.53
+                \\  \ch{Ca^{2+}}      & 0.79 & \ch{SO4^-}        & 1.06
+                \\  \ch{Mg^{2+}}      & 0.71 & \ch{CO3^{2-}}     & 0.92
+                \\  \ch{La^{3+}}      & 0.62 & \ch{Fe(CN)6^{3-}} & 0.98
+
+            \\\bottomrule
+        \end{tabular}
+        \paragraph*{Note:} Values at infinite dilution in \qty*{1e-5}{\cm^2/\second}. Calculated from data of Robinson and Stokes (1960)
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Eletrolitos Fortes (1:1)} % MARK: S
+    
+    \begin{BM}
+        J_{+}-J_{-}
+        = i/\myvert{z}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{z} % Longest item
+    ]
+        \begin{multicols}{2}
+            \item[\(i\)] Densidade de corrente
+            \item[\(z\)] Carga ionica
+            \item[\(+\)] Cation
+            \item[\(-\)] Anion
+        \end{multicols}
+    \end{description}
+
+    \subsection{Fluxo dos ioes}
+    \begin{BM}
+        J_1
+        = -\frac{
+            2
+            \,\mathscr{D}_2
+            \,\gdif{c_1}
+            +i/\myvert{z}
+        }{
+            1+
+            \mathscr{D}_2
+            /\mathscr{D}_1
+        }
+    \end{BM}
+    \begin{align*}
+        J_+=J_-
+        &\impliedby i=0
+        \quad\text{(Sem corrente)} 
+        \\
+        J_1
+        = \frac{i/\myvert{z}}{
+            1
+            +\mathscr{D}_2
+            /\mathscr{D}_1
+        }
+        &\impliedby \gdif{c}=0
+        \quad\text{(muito agitado)}
+    \end{align*}
+    \begin{align*}
+        \mathscr{D}
+        &=\frac{n}
+        {\sum_{i=1}^{n}{\mathscr{D}_i^{-1}}}
+        = H(\mathscr{D}_i)
+        ;&
+        t_i
+        =\frac
+        {\mathscr{D}_i}
+        {\sum{\mathscr{D}_j}}
+    \end{align*}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[\(t_i\)] Numero de transferencia (fração da corrente transportada pelo ion \textit{i})
+        \item[\(H\)] Média harmonica
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % MARK: E1
+    Difusão Qual o valor do coeficiente de difusão a \qty*{25}{\celsius} de \ch{HCl} em água? Calcule o nº de transferência para o protão nestas condições.
+} % E1
+    
+    \answer{}
+    \begin{center}\Large
+        \ch{
+            HCl + H2O -> H3O^+ + Cl^-
+        }
+    \end{center}
+    \begin{flalign*}
+        &
+            \text{Coeficiente de difusão}&\\&
+            \mathscr{D}
+            = \frac{2}{
+                \mathscr{D}_{\ch{H3O^+}}^{-1}
+                +\mathscr{D}_{\ch{Cl^-}}^{-1}
+            }
+            \cong \frac{2}{
+                9.31^{-1}
+                +2.03^{-1}
+            }
+            \cong\qty
+            {3.33320987654321}
+            {\cm^2/\s}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Numero de transferencia para }\ch{H3O^+}&\\&
+            t_{\ch{H3O^+}}
+            = \frac
+            {\mathscr{D}_{\ch{H3O^+}}}
+            {
+                \mathscr{D}_{\ch{H3O^+}}
+                +\mathscr{D}_{\ch{Cl^-}}
+            }
+            = \left(
+                1
+                +\mathscr{D}_{\ch{Cl^-}}
+                /\mathscr{D}_{\ch{H3O^+}}
+            \right)^{-1}
+            = \left(
+                1
+                +2.03
+                /9.31
+            \right)^{-1}
+            \cong &\\&
+            \cong\qty
+            {82.0987654320988}
+            {\percent}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{sectionBox}1{Ionic conductivity and diffusion at infinite dilution} % MARK: S
+    
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{6mm} % width
+        \rowcolors*{2}{background!95!foreground}{}
+        \begin{tabular}{
+            l
+            S[table-format=2.1,round-precision=2]
+            S[table-format=1.3,round-precision=3]
+        }
+            \toprule
+            
+                Inorganic Cations
+                & \multicolumn{1}{C}{
+                    \cfrac{
+                        \varLambda_{\pm}
+                    }{
+                        \qty{e-4}{\m^2\,S/\mole}
+                    }
+                }
+                & \multicolumn{1}{C}{
+                    \cfrac{
+                        \mathscr{D}
+                    }{
+                        \qty{e-5}{\cm^2/\s}
+                    }
+                }
+
+            \\\midrule
+
+                \ch{Ag^+}                   & 61.9  & 1.648
+            \\  \ch{1/3 Al^{3+}}            & 19    & 0.541
+            \\  \ch{1/2 Ba^{2+}}            & 63.6  & 0.847
+            \\  \ch{1/2 Be^{2+}}            & 45    & 0.599
+            \\  \ch{1/2 Ca^{2+}}            & 59.47 & 0.792
+            \\  \ch{1/2 Cd^{2+}}            & 54    & 0.719
+            \\  \ch{1/3 Ce^{3+}}            & 69.8  & 0.620
+            \\  \ch{1/2 Co^{2+}}            & 55    & 0.732
+            \\  \ch{1/3 [Co(NH3)6]^{3+}}    & 101.9 & 0.904
+            \\  \ch{1/3 [Co(en)3]^{6+}}     & 74.7  & 0.663
+            \\  \ch{1/6 [Co2(trien)3]^{6+}} & 69    & 0.306
+            \\  \ch{1/3 Cr^{3+}}            & 67    & 0.595
+            \\  \ch{Cs^{+}}                 & 77.2  & 2.056
+
+            \\\toprule
+
+                % \rowcolor{}
+
+                Inorganic Anions
+                & \multicolumn{1}{C}{
+                    \cfrac{
+                        \varLambda_{\pm}
+                    }{
+                        \qty{e-4}{\m^2\,S/\mole}
+                    }
+                }
+                & \multicolumn{1}{C}{
+                    \cfrac{
+                        \mathscr{D}
+                    }{
+                        \qty{e-5}{\cm^2/\s}
+                    }
+                }
+
+            \\\midrule
+            
+                \ch{Au(CN)2^-}          & 50    & 1.331
+            \\  \ch{Au(CN)4^-}          & 36    & 0.959
+            \\  \ch{B(C6H5)4^-}         & 21    & 0.559
+            \\  \ch{Br^-}               & 78.1  & 2.080
+            \\  \ch{Br3^-}              & 43    & 1.145
+            \\  \ch{BrO3^-}             & 55.7  & 1.483
+            \\  \ch{CN^-}               & 78    & 2.077
+            \\  \ch{CNO^-}              & 64.6  & 1.720
+            \\  \ch{1/2 CO3^{2-}}       & 69.3  & 0.923
+            \\  \ch{Cl^-}               & 76.31 & 2.032
+            \\  \ch{ClO2^-}             & 52    & 1.385
+            \\  \ch{ClO3^-}             & 64.6  & 1.720
+            \\  \ch{ClO4^-}             & 67.3  & 1.792
+            \\  \ch{1/3 [Co(CN)6]^{3-}} & 98.9  & 0.878
+            \\  \ch{1/2 CrO4^{2-}}      & 85    & 1.132
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\end{document}

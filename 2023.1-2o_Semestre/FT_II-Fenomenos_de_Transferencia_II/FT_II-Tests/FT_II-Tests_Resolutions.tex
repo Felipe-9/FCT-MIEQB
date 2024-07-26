@@ -33,18 +33,20 @@
 % % -------------------------------------------------------- %
 % %                         Geometry                         %
 % % -------------------------------------------------------- %
-\setlength\textwidth{160mm}
+\setlength\textwidth{180mm}
 % \usepackage{geometry}
 % \geometry{
 %     % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
 %     % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
 %     % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
 %     % papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
+%     % papersize = {120mm, 160mm}, % ( 4:3 ) SVGA x 0.2
 %     % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
 %     % papersize = {320mm, 512mm}, % (16:10)
 %     % papersize = {280mm, 448mm}, % (16:10)
 %     % papersize = {240mm, 384mm}, % (16:10)
 %     % a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
+%     % a5paper,  % {148mm, 210mm}, % (√2:1 ) A5
 %     papersize = {180mm, 1m}, % LONG ( 4:3 ) SVGA x 0.3
 %     top       = 21mm,
 %     bottom    = 21mm,
@@ -209,6 +211,8 @@
     range-phrase={\,\to\,},
     range-units={bracket},
     range-exponents={combine-bracket},
+    % Units
+    inter-unit-product=\ensuremath{{}\cdot{}}
 }
 % MARK: Math
 % % -------------------------------------------------------- %
@@ -230,6 +234,10 @@
 % ============== MathOperators Declarations ============== %
 \newcommand\E[1]{\,\mathrm{E}^{#1}}
 \newcommand\e[1]{\,\mathrm{e}^{#1}}
+% =================== Physics variables ================== %
+\DeclareMathOperator\vol{Vol}
+\DeclareMathOperator\sat{Sat}
+% \DeclareMathOperator\vel{vel}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
 % \DeclareMathOperator\csch   {csch}
@@ -259,6 +267,7 @@
 % \DeclareMathOperator\binomial{Bin}
 % \DeclareMathOperator\poisson{P}
 % \DeclareMathOperator\normal{N}
+\DeclareMathOperator\erf{erf}
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
@@ -305,28 +314,28 @@
 % \usepackage{myTikzGraphs} % For graphs
 % \usepackage{varwidth}   % List inside TikzPicture
 % MARK: pgf
-% % -------------------------------------------------------- %
-% %                            pgf                           %
-% % -------------------------------------------------------- %
-% \usepackage{pgf,pgfmath,pgfplots}
+% -------------------------------------------------------- %
+%                            pgf                           %
+% -------------------------------------------------------- %
+\usepackage{pgf,pgfmath,pgfplots}
 % \usepackage{pgfplotstable}
 % \usepgfplotslibrary{fillbetween}
-% % ========================= Setup ======================== %
-% % 1e4 too much
-% % 1e3 fancy
-% % 1e2 simple
-% % 1e1 draft
-% \newcommand\mysampledensityDouble{2}
-% \newcommand\mysampledensitySimple{1e1}
-% \newcommand\mysampledensityFancy{1e2}
-% \usepackage{myPGFSetup}
+% ========================= Setup ======================== %
+% 1e4 too much
+% 1e3 fancy
+% 1e2 simple
+% 1e1 draft
+\newcommand\mysampledensityDouble{2}
+\newcommand\mysampledensitySimple{1e1}
+\newcommand\mysampledensityFancy{1e2}
+\usepackage{myPGFSetup}
 % MARK: Tables
 % -------------------------------------------------------- %
 %                          Tables                          %
 % -------------------------------------------------------- %
 \setlength\tabcolsep{6mm}        % width
 \renewcommand\arraystretch{1.25} % height
-% \usepackage{colortbl} % Colored Cells
+\usepackage{colortbl} % Colored Cells
 % % ==================== Color commands ==================== %
 % \newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
 % \newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
@@ -436,6 +445,11 @@
 % %                         Subfiles                         %
 % % -------------------------------------------------------- %
 \usepackage{subfiles}
+% % -------------------------------------------------------- %
+% %                         cancel                           %
+% % -------------------------------------------------------- %
+\usepackage{cancel}
+% MARK: My Packages
 % MARK: My Packages
 % % -------------------------------------------------------- %
 % %                        My packages                       %

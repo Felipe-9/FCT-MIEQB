@@ -94,6 +94,7 @@
             ; &\\[3ex]&
             \Theta
             = 1+N_{B}/N_A
+            = 1-N_{A}/N_A
             = 0
             % 
             % 
@@ -107,11 +108,11 @@
             \quad
             \begin{cases}
                 r_0=R
-                \\ y_{A,0}=0
-                &\quad\text{(Reação instantanea)}
                 \\
                 r_1=\infty
                 &\quad\text{(Atmosfera)}
+                \\ y_{A,0}=0
+                &\quad\text{(Reação instantanea)}
                 \\
                 y_{A,1}=0.21
                 &\quad\text{(\unit{\percent\of{\ch{O2}}} na atmosfera)}
@@ -172,7 +173,7 @@
                 \,\mathscr{D}_{A,B}
                 \,4\,\pi
                 \,0.21
-                \,r_1
+                \,r_0
             }
             {R\,T}
         &
@@ -229,7 +230,7 @@
             =-C_{A,L}
             \,4\,\pi\,r^2
             \,\odv{r}{t}
-            = &\\&
+            % = &\\&
             = Q
             = \frac
             {
@@ -256,7 +257,7 @@
             \int_{r}^{0}{
                 r\,\odif{r}
             }
-            = &\\&
+            % = &\\&
             = 
             -C_{A,L}
             \,4\,\pi
@@ -288,7 +289,7 @@
             \int_0^{t}{
                 \,\odif{t}
             }
-            = &\\&
+            % = &\\&
             = 
             \frac
             {
@@ -315,6 +316,7 @@
                 \,2
                 *0.21
             }
+            % = &\\&
             = \frac{
                 (1280\E{3}/12)
                 * (0.1\E{-3})^2
@@ -326,6 +328,10 @@
                 * 2
                 * 0.21
             }
+            \cong &\\&
+            \cong\qty
+            {2.501413094307338}
+            {\second}
         &
     \end{flalign*}
 \end{questionBox}

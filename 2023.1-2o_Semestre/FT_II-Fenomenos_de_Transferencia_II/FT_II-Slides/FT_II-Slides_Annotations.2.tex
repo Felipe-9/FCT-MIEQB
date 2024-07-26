@@ -39,9 +39,9 @@
 \begin{sectionBox}1{Coeficiente de Difusão} % S
     
     \begin{BM}
-        D=f(P,T,\text{natureza do componente})
+        \mathscr{D}=f(P,T,\text{natureza do componente})
         \\
-        J_A = - D_{A,B}\,\gdif{c_A}
+        J_A = - \mathscr{D}_{A,B}\,\gdif{c_A}
     \end{BM}
 
     \subsection*{Valores típicos}\vspace{1ex}
@@ -62,12 +62,12 @@
         }
         \item[Gases]    \numrange*{1e-5}{1e-4}
         \item[Líquidos] \numrange*{.5e-9}{2e-9}
-        \item[Sólidos]  \numrange*{1e-24}{1e-12}
+        \item[Sólidos]  \num*{1e-24}\to\num*{1e-12}
     \end{description}
 
     \subsubsection*{Constante de proporcionalidade entre fluxo e força motriz}
     \begin{BM}
-        \dim{D_{A,B}}
+        \dim{\mathscr{D}_{A,B}}
         = \dim\frac{-J_{A,z}}{\odv{c_A}{z}}
         = \frac{M}{L^2\,T}
         \,\frac{1}{(M/L^3)/L}
@@ -76,26 +76,116 @@
     
 \end{sectionBox}
 
-\begin{sectionBox}2{\(D\) em gases} % S
+\part*{\(\mathscr{D}\) em Gases}
+
+\begin{sectionBox}2{Teoria cinética de Chapman--Enskog} % MARK: S
+    
+    Misturas gasosas a baixa pressão: coeficientes de transporte são função da energia potencial de interação entre um par de moléculas no gás
+
+    \begin{BM}
+        U(r)
+        = 4\,\varepsilon
+        \left(
+            \left(
+                \frac{\sigma}{r}
+            \right)^{12}
+            - \left(
+                \frac{\sigma}{r}
+            \right)^{6}
+        \right)
+    \end{BM}
+
+    \begin{itemize}
+        \item \(U(r)\) Potencial de energina intramolecular de Lennard--Jones
+        \item \(\varepsilon\) Energia de interação, diretamente relacinada com a força de interação entre as particulas ou sua ligação
+        \item \(\sigma\) Diâmetro de colisão
+    \end{itemize}
+    
+    \begin{figure}\centering
+        % \tikzset{external/remake next=true}
+        % {\Large\bfseries{Solução 1}}\par\medskip
+        \begin{tikzpicture}
+        \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            % xtick=data,
+            % xtick distance={1},
+            % minor tick num={3},
+            % minor x tick num={0},
+            xminorgrids=false,
+            yminorgrids=true,
+            xmin={0},
+            % ymin={-1.5},
+            % xmax={3},
+            % ymax={2},
+            % scaled ticks=true,
+            % scaled y ticks={base 10:2},
+            % legend pos={north west},
+            % axis on top,
+            ylabel={\(U(r)/\varepsilon\)},
+            xlabel={\(r/\sigma\)},
+            % legend columns=2,
+        ]
+            \addplot+[
+                no marks,
+                draw={Graph},
+                mark options={
+                    fill={Graph},
+                    fill opacity=1,
+                    draw={Graph},
+                },
+                smooth,
+                % tension=0.3,
+                % curved line,
+            ] expression [
+                domain=0.97:3,
+                restrict y to domain=-10:1,
+                samples=50,
+            ] {
+                4*(x^(-12)-x^(-6))
+            };
+            % \addlegendentry{8}
+
+            \draw[<->] 
+            (0,0) 
+            -> node[above,pos={.5}] {\(\sigma\)}
+            (1,0);
+            \draw[<->] 
+            (1.12,0) 
+            -> node[right] {\(\varepsilon\)}
+            (1.12,-1);
+            
+        \end{axis}
+        
+        \end{tikzpicture}
+        % \caption{Variação do prato de entrada da coluna B1 para diferentes numeros de pratos}
+    \end{figure}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{\(\mathscr{D}\) em gases} % #MARK: Dgas
     
     \begin{BM}
-        D_{A,B}
+        \mathscr{D}_{A,B}
         = 1.858*10^{-3}
-        \,\frac{T^{3/2}}{
+        \,\frac{
+            T^{3/2}
+            \,\sqrt{
+                M_A^{-1}
+                +M_{B}^{-1}
+            }
+        }{
             P
             \,\sigma_{A,B}^2
             \,\Omega_{D}
-        }
-        \sqrt{
-            M_A^{-1}
-            +M_{B}^{-1}
         }
     \end{BM}
     \begin{description}[
         leftmargin=!,
         labelwidth=\widthof{\(\dim{M_X}=\unit{\gram_{X}.\mole_X^{-1}}\)} % Longest item
     ]
-       \item[\(\dim{D}=\unit{\centi\metre^2.\second^{-1}}\)] Coeficiente de difusão da espécie A na espécie B
+       \item[\(\dim{\mathscr{D}}=\unit{\centi\metre^2.\second^{-1}}\)] Coeficiente de difusão da espécie A na espécie B
        \item[\(\dim{M_X}=\unit{\gram_{X}.\mole_X^{-1}}\)] Massa molecular da substância gasosa \textit{X}
        \item[\(\dim{P}=\unit{\atm}\)] Pressão total
        \item[\(\dim\sigma_X=\unit{\angstrom}\)] Diâmetro de colizão de \textit{X}
@@ -106,34 +196,287 @@
 
     \section*{Valores seguintes se encontram tabelados}
 
-    \begin{sectionBox}*2{Diametro de colizão} % S
-        \begin{BM}
-            \sigma_{A,B}
-            =\frac{\sigma_A+\sigma_B}{2}
-        \end{BM}
-    \end{sectionBox}
+    \begin{multicols}{3}
+        \begin{sectionBox}*2m{Diametro de colizão} % S
+            \begin{BM}
+                \sigma_{A,B}
+                =\frac{\sigma_A+\sigma_B}{2}
+            \end{BM}
+        \end{sectionBox}
+    
+        \begin{sectionBox}*2m{Energia de interação} % S
+            \begin{BM}
+                \varepsilon_{A,B}
+                =\sqrt{\varepsilon_A\,\varepsilon_B}
+            \end{BM}
+        \end{sectionBox}
+    
+        \begin{sectionBox}*2m{Integral de colisão} % S
+            \begin{BM}
+                \Omega_{D}
+                = f(k_B\,T\,\varepsilon_{A,B}^{-1})
+            \end{BM}
+        \end{sectionBox}
+    \end{multicols}
+    \paragraph*{Nota:} \(k_B=\qty*{1.380649e-23}{\joule.\kelvin^{-1}}\) Constante de boltzman
+\end{sectionBox}
 
-    \begin{sectionBox}*2{Energia de interação} % S
-        \begin{BM}
-            \varepsilon_{A,B}
-            =\sqrt{\varepsilon_A\,\varepsilon_B}
-        \end{BM}
-    \end{sectionBox}
-
-    \begin{sectionBox}*2{Integral de colisão} % S
-        \begin{BM}
-            \Omega_{D}
-            = f(k\,T\,\varepsilon_{A,B}^{-1})
-        \end{BM}
-    \end{sectionBox}
+\begin{sectionBox}2{Tabela Lennard--Jones Parametros de potencial} % MARK: S
+    
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l l CC}
+            \toprule
+            
+                \multicolumn{2}{l}{Substance}
+                & \sigma (\unit{\angstrom})
+                & \varepsilon/k (^\circ\unit{\K})
+            
+            \\\midrule
+            
+               \ch{Ar} & Argon & 3.542 & 93.3
+            \\ \ch{He} & Helium & 2.551 & 10.22
+            \\ \ch{Kr} & Krypton & 3.655 & 178.9
+            \\ \ch{Ne} & Neon & 2.820 & 32.8
+            \\ \ch{Xe} & Xenon & 4.047 & 231.0
+            \\ \ch{Air} & Air & 3.711 & 78.6
+            \\ \ch{Br2} & Bromine & 4.296 & 507.9
+            \\ \ch{CCl4} & Carbon tetrachloride & 5.947 & 322.7
+            \\ \ch{CF4} & Carbon tetrafluoride & 4.662 & 134.0
+            \\ \ch{CHCl3} & Chloroform & 5.389 & 340.2
+            \\ \ch{CH2Cl2} & Methylene chloride & 4.898 & 356.3
+            \\ \ch{CH3Br} & Methyl bromide & 4.118 & 449.2
+            \\ \ch{CH3Cl} & Methyl chloride & 4.182 & 350.0
+            \\ \ch{CH3OH} & Methanol & 3.626 & 481.8
+            \\ \ch{CH4} & Methane & 3.758 & 148.6
+            \\ \ch{CO} & Carbon monoxide & 3.690 & 91.7
+            \\ \ch{CO2} & Carbon dioxide & 3.941 & 195.2
+            \\ \ch{CS2} & Carbon disulfide & 4.483 & 467.0
+            \\ \ch{C2H2} & Acetylene & 4.033 & 231.8
+            \\ \ch{C2H4} & Ethylene & 4.163 & 224.7
+            \\ \ch{C2H6} & Ethane & 4.443 & 215.7
+            \\ \ch{C2H5Cl} & Ethyl chloride & 4.898 & 300.0
+            \\ \ch{C2H5OH} & Ethanol & 4.530 & 362.6
+            \\ \ch{CH3OCH3} & Methyl ether & 4.307 & 395.0
+            \\ \ch{CH2CHCH3} & Propylene & 4.678 & 298.9
+            \\ \ch{CH3CCH} & Methylacetylene & 4.761 & 251.8
+            \\ \ch{C3H6} & Cyclopropane & 4.807 & 248.9
+            \\ \ch{C3H8} & Propane & 5.118 & 237.1
+            \\ \ch{n-C3H7OH} & n-Propyl alcohol & 4.549 & 576.7
+            \\ \ch{CH3COCH3} & Acetone & 4.600 & 560.2
+            \\ \ch{CH3COOCH3} & Methyl acetate & 4.936 & 469.8
+            \\ \ch{n-C4H10} & n-Butane & 4.687 & 531.4
+            \\ \ch{iso-C4H10} & Isobutanc & 5.278 & 330.1
+            \\ \ch{C2H5OC2H5} & Ethyl ether & 5.678 & 313.8
+            \\ \ch{CH3COOC2H5} & Ethyl acetate & 5.205 & 521.3
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{\textit{Lennard--jones potential parameters found from viscosities}}
+        \vspace{2ex}
+    \end{center}
     
 \end{sectionBox}
 
-\begin{sectionBox}1{Variação \(D\) com a temperatura} % S
+\begin{sectionBox}2{The collision integral} % MARK: S
+    
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{CC *{2}{ |CC }}
+            \toprule
+            
+                  k_B\,T/\varepsilon & \Omega
+                & k_B\,T/\varepsilon & \Omega
+                & k_B\,T/\varepsilon & \Omega
+            
+            \\\midrule
+            
+               0.30 & 2.6620 & 1.65 & 1.1530 & 4.0 & 0.8836
+            \\ 0.35 & 2.4760 & 1.70 & 1.1400 & 4.1 & 0.8788
+            \\ 0.40 & 2.3180 & 1.75 & 1.1280 & 4.2 & 0.8740
+            \\ 0.45 & 2.1840 & 1.80 & 1.1160 & 4.3 & 0.8694
+            \\ 0.50 & 2.0660 & 1.85 & 1.1050 & 4.4 & 0.8652
+            \\ 0.55 & 1.9660 & 1.90 & 1.0940 & 4.5 & 0.8610
+            \\ 0.60 & 1.8770 & 1.95 & 1.0840 & 4.6 & 0.8568
+            \\ 0.65 & 1.7980 & 2.00 & 1.0750 & 4.7 & 0.8530
+            \\ 0.70 & 1.7290 & 2.10 & 1.0570 & 4.8 & 0.8492
+            \\ 0.75 & 1.6670 & 2.20 & 1.0410 & 4.9 & 0.8456
+            \\ 0.80 & 1.6120 & 2.30 & 1.0260 & 5.0 & 0.8422
+            \\ 0.85 & 1.5620 & 2.40 & 1.0120 & 6   & 0.8124
+            \\ 0.90 & 1.5170 & 2.50 & 0.9996 & 7   & 0.7896
+            \\ 0.95 & 1.4760 & 2.60 & 0.9878 & 8   & 0.7712
+            \\ 1.00 & 1.4390 & 2.70 & 0.9770 & 9   & 0.7556
+            \\ 1.05 & 1.4060 & 2.80 & 0.9672 & 10  & 0.7424
+            \\ 1.10 & 1.3750 & 2.90 & 0.9576 & 20  & 0.6640
+            \\ 1.15 & 1.3460 & 3.00 & 0.9490 & 30  & 0.6232
+            \\ 1.20 & 1.3200 & 3.10 & 0.9406 & 40  & 0.5960
+            \\ 1.25 & 1.2960 & 3.20 & 0.9328 & 50  & 0.5756
+            \\ 1.30 & 1.2730 & 3.30 & 0.9256 & 60  & 0.5596
+            \\ 1.35 & 1.2530 & 3.40 & 0.9186 & 70  & 0.5464
+            \\ 1.40 & 1.2330 & 3.50 & 0.9120 & 80  & 0.5352
+            \\ 1.45 & 1.2150 & 3.60 & 0.9058 & 90  & 0.5256
+            \\ 1.50 & 1.1980 & 3.70 & 0.8998 & 100 & 0.5130
+            \\ 1.55 & 1.1820 & 3.80 & 0.8942 & 200 & 0.4644
+            \\ 1.60 & 1.1670 & 3.90 & 0.8888 & 300 & 0.4360
+            
+            \\\bottomrule
+        \end{tabular}
+        \\[1ex]\tablecaption{The collision integral, Data from Hirschfelder et al. (1954)}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % MARK: E1
+    Faça uma estimativa do coeficiente de difusão do dióxido de carbono em ar a \qty*{20}{\celsius} e à pressão atmosférica, utilizando a equação de Hirschfelder
+} % E1
+    \paragraph*{Dados}:
+    \begin{itemize}
+        \item \(M_{ar}=\qty{28.9647}{\gram/\mole}\)
+    \end{itemize}
+    \answer{}
+    \begin{flalign*}
+        &
+            \mathscr{D}_{\ch{CO2},ar}
+            = 1.858\E{-3}
+            \,\frac{
+                T^{3/2}
+                \,\sqrt{
+                    M_{\ch{CO2}}^{-1}
+                    +M_{ar}^{-1}
+                }
+            }{
+                P
+                \,\sigma_{\ch{CO2},ar}^2
+                \,\Omega_{D}
+            }
+            = &\\&
+            = 1.858\E{-3}
+            \,\frac{
+                T^{3/2}
+                \,\sqrt{
+                    M_{\ch{CO2}}^{-1}
+                    +M_{ar}^{-1}
+                }
+            }{
+                P
+                \,(0.5*(\sigma_{\ch{CO2}}+\sigma_{ar}))^2
+                \,f(k\,T/\varepsilon_{\ch{CO2},ar})
+            }
+            = &\\&
+            = 1.858\E{-3}
+            \,\frac{
+                (20+273.15)^{3/2}
+                \,\sqrt{
+                    (44)^{-1}
+                    +(\num{28.9647})^{-1}
+                }
+                % 0.239274019365228
+            }{
+                1
+                *(0.5*(3.941+3.711))^2
+                *\num{1.0078677646226}
+            }
+            % 81.402343185651226
+            \cong&\\&
+            \cong\qty
+            {151.245553638939978e-3}
+            {\cm^2/\s}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            f\left(
+                k\,T/\varepsilon_{\ch{CO2},ar}
+            \right)
+            = f\left(
+                k\,T
+                \left(
+                    \varepsilon_{\ch{CO2}}
+                    \,\varepsilon_{ar}
+                \right)^{-1/2}
+            \right)
+            = f\left(
+                T
+                \,\left(
+                    \frac{\varepsilon_{\ch{CO2}}}{k}
+                    \,\frac{\varepsilon_{ar}}{k}
+                \right)^{-1/2}
+            \right)
+            \cong&\\&
+            \cong f\left(
+                (20+273.15)
+                \,\left(
+                    195.2
+                    *78.6
+                \right)^{-1/2}
+            \right)
+            \cong
+            f(\num{2.366675521150001})
+            \implies &\\&
+            \implies
+            \frac
+            {f(\num{2.366675521150001})-f(2.30)}
+            {\num{2.366675521150001}-2.30}
+            = \frac
+            {f(2.40)-f(2.30)}
+            {2.40-2.30}
+            \implies &\\&
+            \implies
+            f(\num{2.366675521150001})
+            = \frac
+            {f(2.40)-f(2.30)}
+            {2.40-2.30}
+            \left(
+                \num{2.366675521150001}-2.30
+            \right)
+            +f(2.30)
+            \cong&\\&
+            \cong \frac
+            {1.0120-0.9996}
+            {2.40-2.30}
+            \left(
+                \num{2.366675521150001}-2.30
+            \right)
+            +0.9996
+            \cong&\\&
+            \cong\num
+            {1.0078677646226}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\begin{sectionBox}2{Equação de Fuller} % MARK: S
     
     \begin{BM}
-        D_{A,B,T_2,P_2}
-        = D_{A,B,T_1,P_1}
+        \mathscr{D}_{A,B}
+        = \frac{
+            1\E{-3}\,T^{1.75}
+            \,\sqrt{M_{A}^{-1}+M_{B}^{-1}}
+        }{
+            P\,\left(
+                \left(
+                    \sum{v}
+                \right)^{1/3}_A
+                + \left(
+                    \sum{v}
+                \right)^{1/3}_B
+            \right)^{2}
+        }
+    \end{BM}
+
+    \begin{itemize}
+        \item \(v\) volumes de difusão, tabelados
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Variação \(\mathscr{D}\) com a temperatura} % S
+    
+    \begin{BM}
+        \mathscr{D}_{A,B,T_2,P_2}
+        = \mathscr{D}_{A,B,T_1,P_1}
         \,\frac{P_1}{P_2}
         \,\left(
             \frac{T_2}{T_1}
@@ -149,8 +492,8 @@
     \begin{flalign*}
         &
             \frac
-            {D_{A,B,T_2,P_2}}
-            {D_{A,B,T_1,P_1}}
+            {\mathscr{D}_{A,B,T_2,P_2}}
+            {\mathscr{D}_{A,B,T_1,P_1}}
             = \frac{
                 1.858*10^{-3}
                 \,\frac{T_2^{3/2}}{
@@ -206,10 +549,10 @@
 \begin{sectionBox}1{Difusão em mistura de gases} % S
     
     \begin{BM}
-        D_{1,m}
+        \mathscr{D}_{1,m}
         =\left(
             \sum_{i=2}^{n}{
-                \frac{y'_{1,i}}{D_{1,i}}
+                \frac{y'_{1,i}}{\mathscr{D}_{1,i}}
             }
         \right)^{-1}
         =\left(
@@ -217,11 +560,11 @@
                \frac{
                     \frac{y_i}{\sum_{j=2}^{n}{y_j}}
                 }{
-                    D_{1,i}
+                    \mathscr{D}_{1,i}
                 }
             }
         \right)^{-1}
-        = \frac{\sum_{j=2}^n{y_j}}{\sum_{i=2}^n{y_i/D_{1,i}}}
+        = \frac{\sum_{j=2}^n{y_j}}{\sum_{i=2}^n{y_i/\mathscr{D}_{1,i}}}
         % \\
         % y'_{i}=\frac{y_i}{\sum_{j=2}^{n}{y_j}}
     \end{BM}
@@ -255,14 +598,14 @@
         \item Os coeficientes de difusão do \ch{CO} em oxigênio e azoto são:
         \begin{itemize}
             \item \(
-                D_{\ch{CO,O2}} 
+                \mathscr{D}_{\ch{CO,O2}} 
                 =\qty*{0.185e-4}{\metre^2.\second^{-1}}
                 \quad 
                 \qty*{273}{\kelvin},
                 \qty*{1}{\atm}
             \)
             \item \(
-                D_{\ch{CO,N2}} 
+                \mathscr{D}_{\ch{CO,N2}} 
                 =\qty*{0.192e-4}{\metre^2.\second^{-1}}
                 \quad 
                 \qty*{288}{\kelvin},
@@ -275,15 +618,15 @@
     \begin{flalign*}
         &
             % 
-            % D_{CO,M}
+            % \mathscr{D}_{CO,M}
             % 
             \text{Coeff de Dif de \ch{CO} na mistura}:
             &\\&
-            D_{\ch{CO},M}
+            \mathscr{D}_{\ch{CO},M}
             = \frac{
                 \sum_{j=2}^{n}{y_{j}}
             }{
-                \sum_{i=2}^{n}{y_i/D_{\ch{CO},i}}
+                \sum_{i=2}^{n}{y_i/\mathscr{D}_{\ch{CO},i}}
             }
             % = &\\&
             = \frac{
@@ -292,12 +635,12 @@
                 \left(
                     \begin{aligned}
                         &
-                        0.20/D_{\ch{CO},\ch{O2},
+                        0.20/\mathscr{D}_{\ch{CO},\ch{O2},
                             \qty*{298}{\kelvin},
                             \qty*{2}{\atm}
                         }
                         &+\\+&
-                        0.70/D_{\ch{CO},\ch{N2},
+                        0.70/\mathscr{D}_{\ch{CO},\ch{N2},
                             \qty*{298}{\kelvin},
                             \qty*{2}{\atm}
                         }
@@ -305,66 +648,7 @@
                     \end{aligned}
                 \right)
             }
-            % 
-            % D O2
-            % 
-            ; &\\[3ex]&
-            \text{Coeff de Difuão do \ch{CO}:}
-            &\\&
-            D_{\ch{CO},\ch{O2},
-                \qty*{298}{\kelvin},
-                \qty*{1}{\atm}
-            }
-            = 
-            D_{\ch{CO},\ch{O2},
-                \qty*{273}{\kelvin},
-                \qty*{2}{\atm}
-            }
-            \,\frac{1}{2}
-            \,\left(
-                \frac{298}{273}
-            \right)^{3/2}
-            = &\\&
-            = 
-            0.185\,\E{-4}
-            \,\frac{1}{2}
-            \,\left(
-                \frac{298}{273}
-            \right)^{3/2}
-            \cong
-            \qty{1.05492639372282e-3}{\metre^2.\second^{-1}}
-            % =================== D N2 =================== %
-            % 
-            % D N2
-            % 
-            ; &\\[3ex]&
-            \text{Coeff de Difs do \ch{NO}}
-            &\\&
-            D_{\ch{CO},\ch{N2},
-                \qty*{298}{\kelvin},
-                \qty*{2}{\atm}
-            }
-            =
-            D_{\ch{CO},\ch{N2},
-                \qty*{288}{\kelvin},
-                \qty*{1}{\atm}
-            }
-            \,\frac{1}{2}
-            \,\left(
-                \frac{298}{288}
-            \right)^{3/2}
-            = &\\&
-            =
-            0.192*10^{-4}
-            \,\frac{1}{2}
-            \,\left(
-                \frac{298}{288}
-            \right)^{3/2}
-            \cong
-            \qty{1.01043154819129e-3}{\metre^2.\second^{-1}}
-            \implies &\\[3ex]&
-            \implies
-            D_{\ch{CO},M}
+            \cong &\\&
             \cong
             \frac{0.9}{
                 \left(
@@ -379,6 +663,68 @@
             }
             \cong
             \qty{1.01999185289502e-3}{\metre^2.\second^{-1}}
+            % 
+            % D O2
+            % 
+            ; &\\[3ex]&
+            \text{Coeff de Difuão do \ch{CO}:}
+            &\\&
+            \mathscr{D}_{\ch{CO},\ch{O2},
+                \qty*{298}{\kelvin},
+                \qty*{2}{\atm}
+            }
+            % \,\frac
+            % {\Omega_{\mathscr{D},T_1}}
+            % {\Omega_{\mathscr{D},T_2}}
+            = 
+            \mathscr{D}_{\ch{CO},\ch{O2},
+                \qty*{273}{\kelvin},
+                \qty*{1}{\atm}
+            }
+            \,\frac{1}{2}
+            \,\left(
+                \frac{298}{273}
+            \right)^{3/2}
+            = &\\&
+            = 
+            0.185\,\E{-4}
+            \,\frac{1}{2}
+            \,\left(
+                \frac{298}{273}
+            \right)^{3/2}
+            \cong\qty
+            {1.05492639372282e-3}
+            {\m^2/\second}
+            % =================== D N2 =================== %
+            % 
+            % D N2
+            % 
+            ; &\\[3ex]&
+            \text{Coeff de Difs do \ch{NO}}
+            &\\&
+            \mathscr{D}_{\ch{CO},\ch{N2},
+                \qty*{298}{\kelvin},
+                \qty*{2}{\atm}
+            }
+            =
+            \mathscr{D}_{\ch{CO},\ch{N2},
+                \qty*{288}{\kelvin},
+                \qty*{1}{\atm}
+            }
+            \,\frac{1}{2}
+            \,\left(
+                \frac{298}{288}
+            \right)^{3/2}
+            = &\\&
+            =
+            0.192*10^{-4}
+            \,\frac{1}{2}
+            \,\left(
+                \frac{298}{288}
+            \right)^{3/2}
+            \cong\qty
+            {1.01043154819129e-3}
+            {\m^2/\second}
         &
     \end{flalign*}
     
@@ -405,18 +751,18 @@
 % 88888888888  88  88       88  `"YbbdP"'    "Y888   `"Ybbd8"'  88  88       88
 
 
-\begin{sectionBox}1{\(D\) em líquidos} % S
+\begin{sectionBox}1{\(\mathscr{D}\) em líquidos} % S
 
     \section*{Stokes--Einstein}
     \begin{BM}
-        D_A
+        \mathscr{D}_A
         =\frac{k_B\,T}{6\,\pi\,\mu\,R_A}
     \end{BM}
     \begin{flalign*}
         &
             \left.
                 \begin{aligned}
-                    D_A & =u_A\,R\,T
+                    \mathscr{D}_A & =u_A\,R\,T
                     \quad& \text{(Nernst--Einstein)}
                     \\
                     u_A & \sim (6\,\pi\,\mu\,R_A)^{-1}
@@ -424,7 +770,7 @@
                 \end{aligned}
             \right\}
             \implies
-            D_A
+            \mathscr{D}_A
             =\frac{R\,T}{6\,\pi\,\mu\,R_A}
         &
     \end{flalign*}
@@ -459,7 +805,7 @@
 
     \begin{sectionBox}*2{Prolate ellipsoid} % S
         \begin{BM}
-            D
+            \mathscr{D}
             = \frac{k_B\,T}{
                 6\,\pi\,\mu
                 \left(
@@ -477,7 +823,7 @@
 
     \begin{sectionBox}*2{Oblate ellipsoid} % S
         \begin{BM}
-            D
+            \mathscr{D}
             = \frac{k_B\,T}{
                 6\,\pi\,\mu
                 \left(
@@ -516,7 +862,7 @@
 \begin{sectionBox}2{Correlação de Wilke-Chang} % S
     
     \begin{BM}
-        \frac{D_{A,B}\,\mu_{B}}{T}
+        \frac{\mathscr{D}_{A,B}\,\mu_{B}}{T}
         = \frac{
             7.4*10^{-8}
             \,\sqrt{\Phi_B\,M_B}
@@ -532,7 +878,7 @@
         leftmargin=!,
         labelwidth=\widthof{\(\dim\mu_B=\unit{\centi\poise}=\qty*{0.1}{\centi\pascal.\second}\)} % Longest item
     ]
-       \item[\(\dim{D}=\unit{\centi\metre^3/\second}\)] Coeficiente de difusão
+       \item[\(\dim{\mathscr{D}}=\unit{\centi\metre^3/\second}\)] Coeficiente de difusão
        \item[\(\dim{M_B}=\unit{\gram\of{B}/\mole}\)] Peso molecular do solvente \textit{B}
        \item[\(\dim\mu_B=\unit{\centi\poise}=\qty*{0.1}{\centi\pascal.\second}\)] Viscosidade do solvente \textit{B}
        \item[\(\dim{V_{A}}=\unit{\centi\metre^3.\mole^{-1}}\)] Volume molar do soluto \textit{A} no seu ponto de vaporização normal
@@ -553,7 +899,7 @@
 \begin{sectionBox}2{Diluição Infinita (Hayduk--Ludie)} % S
     
     \begin{BM}
-        D_{A,B}
+        \mathscr{D}_{A,B}
         = 13.26*10^{-5}\,\mu_B^{-1.14}\,V_A^{-0.589}
     \end{BM}
 
@@ -570,7 +916,7 @@
 \begin{sectionBox}2{Equação de Sheibel} % S
     
     \begin{BM}
-        \frac{D_{A,B}\,\mu_B}{T}
+        \frac{\mathscr{D}_{A,B}\,\mu_B}{T}
         =\frac{K}{V_A^{1/3}}
         =\frac{
             8.2*10^{-8}
@@ -582,6 +928,8 @@
         }
     \end{BM}
     
+    Scheibel elimina o parametro de associação \(\Phi_B\)
+
 \end{sectionBox}
 
 \begin{sectionBox}2{Tabela de volumes moleculares} % S
@@ -589,13 +937,20 @@
     \begin{center}
         \vspace{1ex}
         \rowcolors*{2}{background!95!foreground}{}
-        \begin{tabular}{l l c}
+        \begin{tabular}{
+            *{2}{l}
+            S[table-format=2.1,round-precision=1]
+        }
             \toprule
             
-                \multicolumn{2}{c}{Compound}
-                & \begin{tabular}{c}
-                    Molecular\\volume,\\\unit{\centi\metre^3.\gram^{-1}.\mole^{-1}}
-                \end{tabular}
+                \multicolumn{2}{l}{Compound}
+                & \multicolumn{1}{c}{
+                    \begin{tabular}{c}
+                        Molecular\\volume,
+                        \\\hline{}
+                        \unit{\cm^3/\g\,\mole}
+                    \end{tabular}
+                }
             
                 \\\midrule
                 
@@ -624,16 +979,89 @@
     
 \end{sectionBox}
 
+\begin{exampleBox}1{ % MARK: E
+    Determine o valor do coeficiente de difusão do oxigénio em água à temperatura de \qty*{25}{\celsius} utilizando as correlações de Wilke-Chang e Scheibel e compare com o valor experimental
+} % E
+    \paragraph*{Dados:} 
+    \begin{itemize}
+        % \item \(\mathscr{D}_{oxigenio,agua}=\qty*{2.1e-8}{\m^2/\s}\)
+        \item \(\mu_{agua}=\qty*{1}{\centi\poise}\)
+    \end{itemize}
+    \answer{}
+    \begin{flalign*}
+        &
+            \text{Wilke-Chang}&\\&
+            \frac{\mathscr{D}_{oxigenio,agua}\,\mu_B}{T}
+            = \frac
+            {7.4\E{-8}(\Phi_B\,M_B)^{1/2}}
+            {V_A^{0.6}}
+            \implies &\\&
+            \implies
+            \mathscr{D}_{oxigenio,agua}
+            = \frac{T}{\mu_B}
+            \frac
+            {7.4\E{-8}(\Phi_B\,M_B)^{1/2}}
+            {V_A^{0.6}}
+            = \frac{273.15+25}{1}
+            \frac
+            {7.4\E{-8}(2.26*18)^{1/2}}
+            {25.6^{0.6}}
+            \cong &\\&
+            \cong\qty
+            {2.011004425623542674e-5}
+            {\cm^2/\s}
+            % 
+            % 
+            % 
+            ; &\\[3ex]&
+            \text{Scheibel}&\\&
+            \frac{\mathscr{D}_{A,B}\,\mu_B}{T}
+            = \frac{
+                8.2\E{-8}\left(
+                    1+(3\,V_B/V_A)^{2/3}
+                \right)
+            }
+            {V_A^{1/3}}
+            \implies &\\&
+            \implies
+            \mathscr{D}_{A,B}
+            = \frac{T}{\mu_B}
+            \,\frac{
+                8.2\E{-8}\left(
+                    1+(3\,V_B/V_A)^{2/3}
+                \right)
+            }
+            {V_A^{1/3}}
+            = &\\&
+            = \frac{273.15+25}{1}
+            \,\frac{
+                8.2\E{-8}\left(
+                    1+(3*18.9/25.6)^{2/3}
+                    % 2.699138298806952
+                \right)
+            }
+            {25.6^{1/3}}
+            \cong &\\&
+            \cong\qty
+            {2.239032934947616576e-5}
+            {\cm^2/\s}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
 % \begin{exampleBox}1{ % E
 %     Determine o valor do coeficiente de difusão do oxigénio em água à temperatura de 25\,\unit{\celsius} utilizando as correlações de Wilke--Chang e Scheibel e compare com o valor experimental 
-%     \(D_{\text{oxigénio-água}} = 2.1*10^{-9}\,\unit{\metre^2.\second^{-1}}\).
+%     \(\mathscr{D}_{\text{oxigénio-água}} = 2.1*10^{-9}\,\unit{\metre^2.\second^{-1}}\).
 % } % E
     
 %     body
     
 % \end{exampleBox}
 
-\begin{sectionBox}1{\(D\) em sólidos} % S
+\part*{\(\mathscr{D}\) em Sólidos}
+
+\begin{sectionBox}1{\(\mathscr{D}\) em sólidos} % S
     
     Difusão através de
     \begin{itemize}
@@ -685,7 +1113,7 @@
 % 88      .a8P   88    88       88
 % 88888888Y"'    88    88       88
 
-% MARK: Knudse
+% MARK: Kn
 % 88      a8P                                      88
 % 88    ,88'                                       88
 % 88  ,88"                                         88
@@ -700,14 +1128,14 @@
     Considere uma difusão de baixa densidade por poros capilares bem pequenos onde o diametro dos póros são menores que a distancia média de colisão entre moléculas, estas vao colidir mais com os poros do que consigo próprias.
 
     \begin{BM}
-        K_n=\lambda/d_{LJ}
+        K_n=\lambda/d_{poro}
     \end{BM}
     \begin{description}[
         leftmargin=!,
         labelwidth=\widthof{\(d_{\text{poro}}\)} % Longest item
     ]
         \item[\(\lambda\)] Distancia média percorrida livremente pelas partículas (sem colisão)
-        \item[\(d_{LJ}\)] diametro de Lennard--Jones do poro
+        \item[\(d_{poro}\)] diametro do poro
     \end{description}
 
     \begin{sectionBox}*2{Mede a influencia desse tipo de difusão no evento} % S
@@ -726,26 +1154,51 @@
         \lambda
         = \frac{k_B\,T}{
             \sqrt{2}
-            \,\pi\,d^2\,p
+            \,\pi\,d_{LJ}^2\,P
         }
     \end{BM}
     \begin{description}[
         leftmargin=!,
         labelwidth=\widthof{\(d_{LJ}\)} % Longest item
     ]
-        \item[\textit{p}] Pressão do lado da alimentação
-        \item[\(d_{LJ}\)] Diametro de Lennard--Jones, colisão entre gases que se difundem
+        \item[\(\dim P=\unit{\pascal}\)] Pressão do lado da alimentação
+        \item[\(\dim{d_{LJ}}=\unit{\metre}\)] Diametro de Lennard--Jones, colisão entre gases que se difundem
         \\(tabelado)
         \item[\(k_B=\qty*{1.380649e-23}{\joule/\kelvin}\)] Constante de Boltzmann
     \end{description}
 
-    \subsection{Condições para considerarmos difusão de Knudsen}
+    \section*{\(\mathscr{D}\) de Knudsen}
+
+    \begin{BM}
+        \mathscr{D}_{kn,eff,i}
+        = \frac{\varepsilon\,\mathscr{D}_{kn,i}}{\tau}
+        = \frac{\varepsilon\,d_{LJ}}{\tau\,3}
+        \,\sqrt{\frac{8\,R\,T}{\pi\,M\,W_i}}
+        \\[2ex]
+        \mathscr{D}_{kn,i}\propto (M\,W_i)^{-1/2}
+        ;\quad
+        \mathscr{D}_{kn,i}\propto T^{1/2}
+        \\
+        \mathscr{D}_{kn,i}\cancel{\propto} P
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(\dim{\mathscr{D}}_{kn,eff,i}=\unit{\metre^2.\second^{-1}}\)} % Longest item
+    ]
+        \item[\(\dim{\mathscr{D}_{kn,i}}=\unit{\metre^2.\second^{-1}}\)] Coeficiente de difusão de Kn do gás \textit{i}
+        \item[\(\dim{\mathscr{D}_{kn,eff,i}}=\unit{\metre^2.\second^{-1}}\)] Coeff de diff de Kn efetivo do gás \textit{i}
+        \item[\(\dim\varepsilon=0\)] Porosidade do meio poroso
+        \item[\(\dim\tau=0\)] tortuosidade do meio poroso
+        \item[\(\dim{d_{LJ}}=\unit{\metre}\)] diametro de Lennard--Jones (tabelado)
+    \end{description}
+
+    \subsection*{Condições para considerarmos difusão de Knudsen}
     \begin{center}
         \vspace{1ex}
         \begin{tabular}{L *{4}{C}}
             \toprule
             
-                d_{LJ}/\unit{\nano\metre}
+                d_{poro}/\unit{\nano\metre}
                 & <10^3 & <10^2 & <10 & <2
                 \\
                 p/\unit{\bar}
@@ -755,19 +1208,35 @@
                 \multicolumn{5}{R}{
                     K_n>1
                     \land
-                    \lambda>d_{LD}
+                    \lambda>d_{poro}
                 }
         \end{tabular}
         \vspace{2ex}
     \end{center}
+
+    \subsection*{Seletividade de sep da \(\mathscr{D}_{kn}\)} % S
+    
+    \begin{BM}
+        \alpha
+        =\sqrt{\frac
+            {M\,W_j}
+            {M\,W_i}
+        }
+    \end{BM}
     
 \end{sectionBox}
 
+% #MARK: L-J
 \begin{sectionBox}*2{Diametros de Lennard-Jones} % S
     
     \begin{center}
         \vspace{1ex}
-        \begin{tabular}{*{3}{C}}
+        \rowcolors*{2}{background!95!foreground}{}
+        \begin{tabular}{
+            l
+            S[table-format=1.2,round-precision=2]
+            S[table-format=1.3,round-precision=3]
+        }
             \toprule
             
                 \multicolumn{1}{c}{Gás}
@@ -794,7 +1263,7 @@
             \\\ch{CO}     & 3.76  & 3.69
             \\\ch{CO2}    & 3.3   & 3.941
             \\\ch{CH4}    & 3.8   & 3.758
-            \\\ch{C2H6}   & -     & 4.443
+            \\\ch{C2H6}   & \multicolumn{1}{c}{--} & 4.443
             \\\ch{C2H4}   & 3.9   & 4.163
             \\\ch{C3H8}   & 4.3   & 5.118
             \\\ch{C3H6}   & 4.5   & 4.678
@@ -810,42 +1279,132 @@
     
 \end{sectionBox}
 
-\begin{sectionBox}2{\(D\) de Knudsen} % S
-    
-    \begin{BM}
-        D_{Kn,eff,i}
-        = \frac{\varepsilon\,D_{Kn,i}}{\tau}
-        = \frac{\varepsilon\,d_{LJ}}{\tau\,3}
-        \,\sqrt{8\,R\,T}{\pi\,M\,W_i}
-        \\[2ex]
-        D_{Kn,i}\propto (M\,W_i)^{-1/2}
-        \quad
-        D_{Kn,i}\propto T^{1/2}
-    \end{BM}
-    \begin{description}[
-        leftmargin=!,
-        labelwidth=\widthof{\(\dim{D}_{Kn,eff,i}=\unit{\metre^2.\second^{-1}}\)} % Longest item
-    ]
-        \item[\(\dim{D_{Kn,i}}=\unit{\metre^2.\second^{-1}}\)] Coeficiente de difusão de Kn do gás \textit{i}
-        \item[\(\dim{D}_{Kn,eff,i}=\unit{\metre^2.\second^{-1}}\)] Coeff de diff de Kn efetivo do gás \textit{i}
-        \item[\(\dim\varepsilon=0\)] Porosidade do meio poroso
-        \item[\(\dim\tau=0\)] tortuosidade do meio poroso
-    \end{description}
-    
-\end{sectionBox}
+\begin{exampleBox}1{ % MARK: E1
+    Considerando o transporte de \ch{O2} e de \ch{CO2} através de uma rolha de cortiça natural numa garrafa de vinho a \qty*{23}{\celsius} e a \qty*{1}{\bar}:
+} % E1
+    \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{3}
+            \item \(d_{\ch{O2}}=\qty*{3.467}{\angstrom}\)
+            \item \(d_{\ch{CO2}}=\qty*{3.941}{\angstrom}\)
+            \item \(k_B=\qty*{1.380649e-23}{\J/\K}\)
+            \item \(\qty*{1}{\bar}=\qty*{e5}{\Pa}\)
+            \item \(d_{poro}=\qty*{40}{\nm}\)
+        \end{multicols}
+    \end{itemize}
+    \begin{align*}
+        \lambda
+        =\frac{k_B\,T}{\sqrt{2}\,\pi\,d_{soluto}^2\,P}
+    \end{align*}
 
-\begin{sectionBox}2{Seletividade de sep da \textit{D} de \(Kn\)} % S
-    
-    \begin{BM}
-        \alpha
-        =\sqrt{\frac
-            {M\,W_j}
-            {M\,W_i}
-        }
-    \end{BM}
-    
-\end{sectionBox}
+    \begin{exampleBox}2{ % MARK: E.1
+        calcule o livre percurso médio para os gases \ch{O2} e de \ch{CO2}.
+    } % E1
+        \answer{}
+        \begin{flalign*}
+            &
+                \lambda_{\ch{O2}}
+                =\frac{k_B\,T}{\sqrt{2}\,\pi\,\d_{\ch{O2}}^2\,P}
+                \cong\frac{
+                    \num{1.380649e-23}
+                    *(23+273.15)
+                }{
+                    \sqrt{2}\,\pi
+                    *(3.467\E{-10})^2
+                    *10^5
+                }
+                \cong\qty
+                {76.56362118298201}
+                {\nm}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                \lambda_{\ch{CO2}}
+                =\frac{k_B\,T}{\sqrt{2}\,\pi\,\d_{\ch{O2}}^2\,P}
+                \cong\frac{
+                    \num{1.380649e-23}
+                    *(23+273.15)
+                }{
+                    \sqrt{2}\,\pi
+                    *(3.941\E{-10})^2
+                    *10^5
+                }
+                \cong\qty
+                {59.253946277353015}
+                {\nm}
+            &
+        \end{flalign*}
+    \end{exampleBox}
 
+    \begin{exampleBox}2{ % MARK: E.2
+        Calcule o numero de Knudsen.
+    } % E.2
+        \answer{}
+        \begin{flalign*}
+            &
+                Kn_{\ch{O2}}
+                =\frac{\lambda_{\ch{O2}}}{d_{LJ,\ch{O2}}}
+                \cong
+                \frac
+                {\num{76.56362118298201}}
+                {40}
+                \cong
+                \num{1.91409052957455}
+                % 
+                % 
+                % 
+                ; &\\[3ex]&
+                Kn_{\ch{CO2}}
+                =\frac{\lambda_{\ch{CO2}}}{d_{LJ,\ch{CO2}}}
+                \cong
+                \frac
+                {\num{59.253946277353015}}
+                {40}
+                \cong
+                \num{1.481348656933826}
+            &
+        \end{flalign*}
+    \end{exampleBox}
+    \begin{exampleBox}2{ % MARK: E.3
+        Será que este transporte segue um comportamento difusivo de Knudsen?
+    } % E.3
+        \answer{}
+        \begin{flalign*}
+            &
+                \left\{
+                    \begin{aligned}
+                        Kn_{\ch{O2}}>Kn_{\ch{CO2}}>1
+                        \\ \lambda_{\ch{O2}}>\lambda_{\ch{CO2}}>d_{poro}
+                        \\ d_{poro}<10^2\land P=\qty*{1}{\bar}
+                    \end{aligned}
+                \right\}
+            &
+        \end{flalign*}
+        \(\therefore\) Ambos seguem o comportamento difusivo de knudsen
+    \end{exampleBox}
+    
+\end{exampleBox}
+
+%   ,ad8888ba,
+%  d8"'    `"8b                  ,d
+% d8'        `8b                 88
+% 88          88  88       88  MM88MMM  8b,dPPYba,  ,adPPYYba,  ,adPPYba,
+% 88          88  88       88    88     88P'   "Y8  ""     `Y8  I8[    ""
+% Y8,        ,8P  88       88    88     88          ,adPPPPP88   `"Y8ba,
+%  Y8a.    .a8P   "8a,   ,a88    88,    88          88,    ,88  aa    ]8I
+%   `"Y8888Y"'     `"YbbdP'Y8    "Y888  88          `"8bbdP"Y8  `"YbbdP"'
+
+% 88888888ba,    88     ad88
+% 88      `"8b   ""    d8"
+% 88        `8b        88
+% 88         88  88  MM88MMM  88       88  ,adPPYba,   ,adPPYba,  ,adPPYba,
+% 88         88  88    88     88       88  I8[    ""  a8P_____88  I8[    ""
+% 88         8P  88    88     88       88   `"Y8ba,   8PP"""""""   `"Y8ba,
+% 88      .a8P   88    88     "8a,   ,a88  aa    ]8I  "8b,   ,aa  aa    ]8I
+% 88888888Y"'    88    88      `"YbbdP'Y8  `"YbbdP"'   `"Ybbd8"'  `"YbbdP"'
+
+% #MARK: part*
 \part*{Outras difusões}
 
 \begin{sectionBox}1{Difusão superficial} % S
@@ -897,11 +1456,12 @@
     \end{itemize}
 \end{sectionBox}
 
+% #MARK: Diff poros
 \begin{sectionBox}1{Dif por meios não poros e sem partição de soluto} % S
 
     \section*{1ª lei de fick}
     \begin{BM}
-        J_i=-D_i\odv{c_i}{z}
+        J_i=-\mathscr{D}_i\odv{c_i}{z}
     \end{BM}
 
     \begin{itemize}
@@ -911,15 +1471,15 @@
     \begin{sectionBox}2{Transporte de massa através do filme} % S
         
         \begin{BM}
-            J_i=\frac{D_i}{\delta}\,\adif{c_i}
-            \\
-            J_i=\frac{D_i}{\delta}\,\adif{p_i}
+            J_i=\frac{\mathscr{D}_i}{\delta}\,\adif{c_i}
+            ;\qquad
+            J_i=\frac{\mathscr{D}_i}{\delta}\,\adif{p_i}
         \end{BM}
         
     \end{sectionBox}
 \end{sectionBox}
 
-\begin{sectionBox}1{Solubilização} % S
+\begin{sectionBox}1{Solubilização} % #MARK: Solubilização
     
     \subsection*{Difusão depende de}
     \begin{itemize}
@@ -928,30 +1488,72 @@
         \item pode ser necessário considerar resistencias externas ao transporte do soluto (transf de massa externa)
     \end{itemize}
     
+    \subsection*{Difusão em meios compósitos para esferas}
     \begin{BM}
-        \frac{D_{eff}-D}{D_{eff}+2\,D}
+        \frac{\mathscr{D}_{eff}-\mathscr{D}}{\mathscr{D}_{eff}+2\,\mathscr{D}}
         = \phi_s
-        \,\frac{D_s-D}{D_s+2\,D}
+        \,\frac{\mathscr{D}_s-\mathscr{D}}{\mathscr{D}_s+2\,\mathscr{D}}
+        \iff
+        \frac{\mathscr{D}_{eff}}{\mathscr{D}}
+        = \frac{
+            \frac{2}{\mathscr{D}_s}
+            +\frac{1}{\mathscr{D}}
+            -2\,\phi_s\left(
+                \frac{1}{\mathscr{D}_s}
+                -\frac{1}{\mathscr{D}}
+            \right)
+        }{
+            \frac{2}{\mathscr{D}_s}
+            +\frac{1}{\mathscr{D}}
+            +\,\phi_s\left(
+                \frac{1}{\mathscr{D}_s}
+                -\frac{1}{\mathscr{D}}
+            \right)
+        }
+        =\\
+        = \frac{
+            2\,\mathscr{D}
+            +\mathscr{D}_s
+            -2\,\phi_s\left(
+                \mathscr{D}
+                -\mathscr{D}_s
+            \right)
+        }{
+            2\,\mathscr{D}
+            +\mathscr{D}_s
+            +\,\phi_s\left(
+                \mathscr{D}
+                -\mathscr{D}_s
+            \right)
+        }
     \end{BM}
     \begin{description}[
         leftmargin=!,
         labelwidth=\widthof{} % Longest item
     ]
         \item[\(\phi_S\)] fração de volume das esferas do material compósito
-        \item[\(D\)] Coef de dif na fase continua
-        \item[\(D_S\)] Coef de dif da através das esferas (fase dispersa)
+        \item[\(\mathscr{D}\)] Coef de dif na fase continua
+        \item[\(\mathscr{D}_S\)] Coef de dif da através das esferas (fase dispersa)
     \end{description}
 
     \begin{itemize}
         \item Depende apenas da fração de volume das esferas (não do tamanho)
+        \item A forma da equação depende da geometria
     \end{itemize}
 
-    \subsection*{Se as esferas fossem impermeaveis}
+    \subsection*{Casos permeabilidade das esferas}
     \begin{BM}
-        \frac{D_{eff}}{D}
-        =   \frac{2(1-\phi_S)}{2+\phi_S}
+        \mathscr{D}_S=0
+        \quad\text{(Esferas impermeáveis)}
+        \implies
+        \frac{\mathscr{D}_{eff}}{\mathscr{D}}
+        = \frac{2(1-\phi_S)}{2+\phi_S}
         \\
-        \lim_{D_S\to\infty}{\frac{D_{eff}}{D}}=1.33
+        \mathscr{D}_s\to\infty
+        \quad\text{(Esferas muito permeáveis)}
+        \implies
+        \frac{\mathscr{D}_{eff}}{\mathscr{D}}
+        =\frac{1+2\,\phi_s}{1-\phi_s}
     \end{BM}
 
 \end{sectionBox}
