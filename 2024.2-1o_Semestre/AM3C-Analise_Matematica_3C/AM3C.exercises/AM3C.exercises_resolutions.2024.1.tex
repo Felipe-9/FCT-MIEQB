@@ -1,0 +1,772 @@
+% !TEX root = ./AM3C.exercises_resolutions.2024.1.tex
+\documentclass["./AM3C.exercises_resolutions.2024.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{.build/figures/AM3C.exercises_resolutions.2024.1}}}
+% \tikzsetexternalprefix{./figures/AM3C.exercises_resolutions.2024.1/graphics/}
+
+\mymakesubfile{1}
+[AM 3C]
+{Equações Diferenciais Ordinárias} % Subfile Title
+{Equações Diferenciais Ordinárias} % Part Title
+
+\begin{questionBox}1{ % MARK: Q1
+	Verifique que cada uma das funções indicadas é solução da equação diferencial considerada.
+	} % Q1
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK: Q1.1
+	\begin{BM}
+		y(x) = e^{2\,x}\,\cos(3\,x), y"-4\,y'+13\,y=0
+	\end{BM}
+	} % Q1.1
+	\answer{}
+	\begin{flalign*}
+		 &
+		0
+		= y" - 4\,y' + 13\,y
+		= (
+		e^{2\,x}\,\cos{ (3\,x) }
+		)" - 4\,(
+		e^{2\,x}\,\cos{ (3\,x) }
+		)'
+		+ 13\,y
+		= (
+		e^{2\,x}(-\sin{ (3\,x) }\,3)
+		+ 2\,e^{2\,x}\,\cos{ (3\,x) }
+		)'
+		- 4\,(
+		e^{2\,x}(-\sin{ (3\,x) }\,3)
+		+ 2\,e^{2\,x}\,\cos{ (3\,x) }
+		)
+		+ 13\,y
+		= \dots
+		 &
+	\end{flalign*}
+\end{questionBox}
+\begin{questionBox}2{ % MARK: Q1.2
+	\begin{BM}
+		y(x)
+		= e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
+		+ c_1\,e^{-x^2}
+		,\quad \odv{y}{x}+2\,x\,y=1
+	\end{BM}
+	} % Q1.2
+	\begin{BM}
+		\odv{}{x}
+		\int_{a(x)}^{b(x)}{
+		f(t)\,\odif{t}
+		}
+		= b'(x)\,f(b(x))
+		- a'(x)\,f(a(x))
+	\end{BM}
+	\begin{flalign*}
+		  &
+		1
+		= \odv{y}{x} + 2\,x\,y
+		= \odv{\left(
+			e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
+			+ c_1\,e^{-x^2}
+			\right)}{x}
+		+ 2\,x\,\left(
+		e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
+		+ c_1\,e^{-x^2}
+		\right)
+		= \left(
+		(
+		e^{-x^2}\,(-2\,x)
+		\,\int_0^x{e^{t^2}\,\odif{t}}
+		)
+		+ (
+		e^{-x^2}
+		(
+		1*e^{x^2}
+		-0*(e^{0^2}\,\odif{0})
+		)
+		)
+		+ c_1\,(
+		e^{-x^2}
+		\,(-2\,x)
+		)
+		\right)
+		+ 2\,x\,(
+		e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
+		+ c_1\,e^{-x^2}
+		)
+		= & \\&
+		= \dots
+		  &
+	\end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q2
+	Mostre que a equação \(2\,x^2\,y - y^2 + 1 = 0\) define implicitamente uma solução da equação diferencial
+	\begin{BM}
+		(x^2-y)\,\odv{y}{x}+2\,x\,y = 0
+	\end{BM}
+	Determine explicitamente a solução que verifica a condição \(y(0)=1\).
+	} % Q2
+	\answer{}
+	% \begin{flalign*}
+	%   &
+	%     0
+	%     = (x^2-y)\,\odiv{y}{x}+2\,x\,y
+	%     ; &\\[3ex]&
+	%     \odv{}{x}\left(2\,x^2\,y - y^2 + 1\right)
+	%     = \left(
+	%       2*2\,x\,y
+	%       + 2\,x^2\,y'
+	%     \right)
+	%     - \left(
+	%       2\,y\,\odiv{y}{x}
+	%     \right)
+	%     = 4\,x\,y
+	%     + 2\,\odiv{y}{x}(
+	%       x^2-y
+	%     )
+	%     = 0
+	%     \implies &\\&
+	%     \implies
+	%     2\,x\,y
+	%     + odiv{y}{x}(
+	%       x^2-y
+	%     )
+	%     = 0
+	%     % \odiv{y}{x} = \frac{-4\,x\,y}{2\,(x^2-y)}
+	%     % 
+	%     % 
+	%     % 
+	%     ; &\\[3ex]&
+	%     \text{Equação de 2º grau em }y:
+	%     &\\&
+	%     \dots
+	%   &
+	% \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK: Q3
+	Determine o valores de \(k\) para os quais:
+	} % Q3
+	\begin{questionBox}2{ % MARK: Q3.1
+		\(y(x)=\exp{(k\,x)}\) é solução da equação
+		\begin{BM}
+			y"-y'+6\,y=0
+		\end{BM}
+		} % Q3.1
+	\end{questionBox}
+	\begin{questionBox}2{ % MARK: Q3.2
+		\(y(x)=x^k\) é solução da equação
+		\begin{BM}
+			x\,y"+2\,y'=0.
+		\end{BM}
+		} % Q3.2
+		\answer{}
+		\begin{flalign*}
+			         &
+			0
+			= x\,y"+2\,y'
+			= x\,(
+			x^k
+			)"+2\,(
+			x^k
+			)'
+			= x\,(
+			k\,\,(k-1)\,x^(k-2)
+			)+2\,(
+			k\,x^(k-1)
+			)
+			= x^{k-1}\,k\,(
+			k+1
+			)
+			\implies & \\&
+			\implies
+			k = - 1 \lor k = 0
+			         &
+		\end{flalign*}
+	\end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+	% Em cada uma das seguintes equaçoes aut´onomas determine os pontos de equil´ıbrio e represente o respetivo retrato de fase. Classiﬁque os pontos cr´ıticos e represente graﬁcamente os diferentes tipos de solu¸c˜oes em cada uma das regi˜oes determinadas pelas solu¸c˜oes de equil´ıbrio.
+	} % Q4
+\end{questionBox}
+
+\begin{questionBox}2{ % Q4.1
+	\begin{BM}
+		\odv{y}{x}
+		= y^2-3\,y
+	\end{BM}
+	} % Q4.1
+	\answer{}
+	\begin{flalign*}
+		 &
+		\odv{y}{x}
+		= y^2-3\,y
+		= y(y-3)
+		= 0
+		 &
+	\end{flalign*}
+	\begin{center}
+		\vspace{1ex}
+		\begin{tabular}{L *5{C}}
+			\toprule
+
+			 & \dots & 0 & \dots & 3 & \dots
+			\\\midrule
+
+			y
+			 & -     & 0 & +     & + & +
+			\\ y-3
+			 & -     & - & -     & 0 & +
+			\\\midrule
+			y(y-3)
+			 & +     & 0 & -     & 0 & +
+
+			\\\bottomrule
+		\end{tabular}
+		\vspace{2ex}
+	\end{center}
+\end{questionBox}
+
+\part*{Equações Diferenciais lienares de primeira ordem e Equações Redutíveis a Lineares de Primeira ordem}
+
+\setcounter{question}{5}
+
+\begin{questionBox}2{ % Q5.1
+	Determine a solução geral da equação diferencial linear homogénea de primeira ordem
+	\begin{BM}
+		\odv{y}{x}+2\,x\,y=0
+	\end{BM}
+	} % Q5.1
+	\answer{}
+	\begin{flalign*}
+		         &
+		\odv{y}{x}+2\,x\,y=0
+		\implies & \\&
+		\implies
+		y
+		= \gamma{(x)}^{-1}
+		\,C
+		+ \gamma{(x)}^{-1}
+		\,\int{\exp{a(x)}*b(x)\,\odif{x}}
+		= \left(
+		\int{\exp{(2\,x)}}
+		\right)^{-1}
+		\,C
+		+ \gamma{(x)}^{-1}
+		\,\int{\exp{a(x)}*0\,\odif{x}}
+		= \exp{(-x^2)}
+		\,C
+		         &
+	\end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+	Determine a solu¸c˜ao geral das seguintes equa¸c˜oes diferenciais lineares de primeira
+	ordem:
+	} % Q6
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.1
+	\begin{BM}
+		\odv{y}{x}-y\,\tan{x}=\cos{x}
+		, \quad
+		x\in\myrange*{-\pi/2,\pi/2}
+	\end{BM}
+	} % Q6.1
+\end{questionBox}
+
+\begin{questionBox}2{ % Q6.2
+	\begin{BM}
+		y^2\,\odif{x}
+		- (2\,x\,y+3)\,\odif{y}=0
+	\end{BM}
+	considere x como fun¸c˜ao inc´ognita e y vari´avel independente
+	} % Q6.2
+	\answer{}
+	\begin{flalign*}
+		         &
+		y^2\,\odif{x}
+		- (2\,x\,y+3)\,\odif{y}=0
+		\implies & \\&
+		x \text{ como função de } y
+		         & \\&
+		\implies
+		y^2\,\odv{x}{y}
+		- (2\,x\,y+3)=0
+		\implies
+		\odv{x}{y}
+		=
+		2\,x\,y^{-1}
+		+ 3\,y^{-2}
+		\implies & \\&
+		\implies
+		         &
+	\end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+	Determine a solução geral da equação
+	\begin{BM}
+		\odv{z}{x}
+		+ (x-x^{-1})\,z
+		=0
+		,\quad
+		x>0
+	\end{BM}
+	e utilizando o m´etodo da varia¸c˜ao das constantes arbitr´arias determine a solu¸c˜ao
+	geral de
+	\begin{BM}
+		\odv{z}{x}
+		+ (x-x^{-1})\,z
+		= - x^2
+	\end{BM}
+	} % Q7
+	\answer{}
+	\begin{flalign*}
+		         &
+		\odv{z}{x}
+		+ (x-x^{-1})\,z
+		=0
+		,\quad
+		x>0
+		\implies & \\&
+		\implies
+		z
+		=c\,\gamma^{-1}(x)
+		=c\,\exp{-\int{(x-x^{-1})\,\odif{x}}}
+		= \dots
+		=c\,\exp{-x^2/2}
+		         &
+	\end{flalign*}
+	\begin{flalign*}
+		  &
+		\text{Variação das constantes arbitrárias}
+		  & \\&
+		\odv{z}{x}
+		+ (x-x^{-1})\,z
+		= - x^2
+		\implies
+		z(x)
+		= c(x)\,x\,\exp{-x^2/2}
+		; & \\&
+		z'(x)
+		= c'(x)\,x\,exp{-x^2/2}
+		+c(x)\left(
+		\exp{(-x^2/2)}
+		-x^2\exp{(-x^2/2)}
+		\right)
+		  &
+	\end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{8}
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{ % Q8.2
+	Utilizando a substituição definida por \(y=e^{4\,x}\), determine a solução geral da equação:
+	\begin{BM}
+		x\,\odv[order=2]{y}{x}
+		-(4\,x+1)\,\odv{y}{x}
+		+4\,y
+		= 0
+	\end{BM}
+	} % Q8.2
+	\begin{flalign*}
+		         &
+		( x\,D-(4\,x+1)\,D^2+4 )\,y
+		=Py=0
+		\implies & \\&
+		\implies
+		y=e^{4\,x}\,\int{z}
+		\implies & \\&
+		\implies
+		% 
+		% 
+		% 
+		;        & \\[3ex]&
+		\odv{y}{x}
+		=\odv{}{x}\left(
+		e^{4\,x}
+		\right)
+		\int{z}
+		+ \odv{}{x}\left(
+		\int{z}
+		\right)
+		=4\,x\,e^{4\,x}
+		\,\int{z}
+		+ z\,e^{4\,x}
+		% 
+		% 
+		% 
+		;        & \\[3ex]&
+		\odv[order=2]{y}{x}
+		= \odv{}{x}\left(
+		4\,x\,e^{4\,x}
+		\,\int{z}
+		+ z\,e^{4\,x}
+		\right)
+		=\dots
+		% 
+		% 
+		% 
+		         & \\[3ex]&
+		\implies
+		x\,e^{4\,x}
+		\,\left(
+		16\,\int{z}
+		+8\,z
+		\odv{z}{x}
+		\right)
+		-(4\,x+1)
+		\,e^{4\,x}
+		\left(
+		4\,\int{z} +z
+		\right)
+		+4\,e^{4\,x}\,\int{z}
+		=0
+		\implies & \\&
+		\implies
+		\dots
+		\implies & \\&
+		\implies
+		\odv{z}{x}+(4-1/x)\,z=0
+		\implies & \\&
+		\implies
+		\dots
+		z
+		=\frac{C}{
+			\exp{(\int{(4-1/x)})}
+		}
+		= \dots
+		= C\,x\,e^{-4\,x}
+		\implies & \\&
+		\implies
+		y
+		=e^{4\,x}\,\int{C\,x\,e^{-4\,x}}
+		= C\,e^{4\,x}\,\left(
+		-\frac{x\,e^{-4\,x}}{4}
+		-\frac{e^{-4\,x}}{16}
+		+k
+		\right)
+		= \dots
+		=        & \\&
+		= -\frac{c}{4}\left(
+		x+1/4
+		\right)
+		+c\,k\,e^{4\,x}
+		= c_1\left(
+		x+1/4
+		\right)
+		+c_2\,e^{4\,x}
+		\quad\forall\,c_1,c_2\in\mathbb{R}
+		         &
+	\end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{9}
+\setcounter{subquestion}{2}
+
+\begin{questionBox}2{
+	}
+	\answer{}
+	\begin{flalign*}
+		 &
+		\odv{z}{x}
+		+\frac{z}{2\,\sqrt{x}}
+		=-\frac{z^3}{2}
+		\implies
+		z^{-3}\,\odv{z}{x}
+		+\frac{z^{-1}}{2\,\sqrt{x}}
+		=-\frac{1}{2}
+		 &
+	\end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{10}
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{ % Q10.2
+	\begin{BM}
+		y'+x\,y^2-(2\,x^2+1)\,y+x^3+x-1=0
+	\end{BM}
+	} % Q10.2
+	\answer{}
+	\begin{flalign*}
+		         &
+		y'+x\,y^2-(2\,x^2+1)\,y+x^3+x-1=0
+		\implies & \\&
+		\implies
+		y'
+		+y\,\left(
+		-(2\,x^2+1)
+		\right)
+		=\left(
+		-x^3-x+1
+		\right)
+		+y^2\,\left(
+		-x
+		\right)
+		         &
+	\end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{13}
+
+\begin{questionBox}1{ % MARK:Q14
+	Determine o integral geral de cada uma das seguintes equações diferenciaia lienares de coeficientes constantes:
+	} % Q14
+\end{questionBox}
+\begin{questionBox}2{ % MARK:Q14.1
+	\begin{BM}
+		D^3\,(D+1)^2((D-5)^2+16)\,y=0
+		,\quad\left(
+		\text{em que} D=\odv{}{x}
+		\right)
+	\end{BM}
+	} % Q14.1
+	\answer{}
+	\begin{flalign*}
+		         &
+		D^3\,(D+1)^2((D-5)^2+16)\,y=0
+		\implies & \\&
+		\implies
+		\text{Raizes:}
+		\begin{pmatrix}
+			0 & 3
+			\\ -1 & 2
+			\\ 5\pm4\,i & 1
+		\end{pmatrix}
+		\implies & \\&
+		\implies
+		y
+		= c_0
+		+ c_1\,x
+		+ c_2\,x^2
+		+ c_3\,e^{-x}
+		+ c_4\,x\,e^{-x}
+		+ c_5\,e^{-5\,x}\,\cos{4\,x}
+		+ c_6\,e^{-5\,x}\,\sin{4\,x}
+		         &
+	\end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK:Q14.2
+	\begin{BM}
+		(D^4-1)\,y=x^3-x+2
+		,\quad\left(
+		\text{em que }
+		D=\odv{}{x}
+		\right)
+	\end{BM}
+	} % Q14.2
+	\answer{}
+	\begin{flalign*}
+		         &
+		y=y_0+y_1
+		=        & \\&
+		= \left(
+		c_1\,e^{x}
+		+c_2\,e^{-x}
+		+c_3\,\cos{x}
+		+c_4\,\sin{x}
+		\right)
+		+ \left(
+		x^3-x+2
+		\right)
+		%
+		%
+		%
+		;        & \\[3ex]&
+		y_0\text{ é solução de }
+		(D^4-1)\,y=0
+		\implies & \\&
+		\implies
+		(\alpha^4-1)
+		= (\alpha^2+1)(\alpha^2-1)
+		\implies & \\&
+		\implies
+		\text{Raizes:}
+		\left\{
+		\begin{tabular}{cc}
+			\text{Raizes} & \text{Multiplicidade}
+			\\1 & 1
+			\\ -1 & 1
+			\\ \pm i & 1
+		\end{tabular}
+		\right.
+		         & \\&
+		\implies
+		y_0
+		=c_1\,e^{x}
+		+c_2\,e^{-x}
+		+c_3\,\cos{x}
+		+c_4\,\sin{x}
+		%
+		%
+		%
+		;        & \\[4ex]&
+		y_1\text{ é \(x^p\) vezes um polinomio de mesmo grau que }
+		x^3-x+2
+		         & \\&
+		p\text{ é a multiplicidade da raiz}\alpha=0
+		\implies
+		\implies & \\&
+		y_1
+		=x^p\left(
+		a_0
+		+ a_1\,x
+		+ a_2\,x^2
+		+ a_3\,x^3
+		\right)
+		\implies & \\&
+		\implies
+		(D^4+1)\,y_1
+		= 0+y_1
+		= y_1
+		= x^3-x+2
+		         &
+	\end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK:Q14.3
+	\begin{BM}
+		y"+y=\cos{x}
+	\end{BM}
+	} % Q14.3
+	\answer{}
+	\begin{flalign*}
+		         &
+		y"+y
+		= (D^2+1)\,y
+		=\cos{x}
+		\implies & \\&
+		\implies
+		y=y_0+y_1
+		= \left(
+		c_1\,\cos{x}
+		+c_2\,\sin{x}
+		\right)
+		+ \left(
+		\frac{x}{2}\,\sin{x}
+		\right)
+		%  
+		%  
+		%  
+		;        & \\[3ex]&
+		\alpha^2+1=0
+		\implies & \\&
+		\implies
+		\begin{tabular}{lc}
+			\text{Raizes}
+			 & \pm 1
+			\\ \text{Multiplicidade}
+			 & 1
+		\end{tabular}
+		         & \\&
+		\implies
+		y_0
+		=c_1\,\cos{x}
+		+c_2\,\sin{x}
+		%
+		%
+		%
+		         & \\[3ex]&
+		y_1
+		= x^p\,\left(
+		r\,e^{a\,x}\,\cos{(b\,x)}
+		+ s\,e^{a\,x}\,\sin{(b\,x)}
+		\right)
+		= x\,\left(
+		r\,\cos{x}
+		+ s\,\sin{x}
+		\right)
+		\implies & \\&
+		\implies
+		\odv{y_1}{x}
+		= r\,\cos{x}
+		+ s\,\sin{x}
+		= x\,\left(
+		- r\,\sin{x}
+		+ s\,\cos{x}
+		\right)
+		\implies & \\&
+		\implies
+		\odv[order=2]{y_1}{x}
+		= \dots
+		\implies & \\&
+		\implies
+		(D^2+1)y_1
+		= -2\,r\,\sin{x}
+		+ 2\,s\,\cos{x}
+		= \cos{x}
+		\implies
+		s=1/2\land r=0
+		\implies & \\&
+		\implies
+		y_1=\frac{x}{2}\,\sin{x}
+		         &
+	\end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{14}
+\begin{questionBox}1{ % MARK:Q15
+	Determine a sol geral da equação diferencial linear homogénea de coeficientes consntantes
+	\begin{BM}
+		\mdif*[order=2]{y}
+		-4\,\mdif*{y}
+		+5\,y
+		=0
+	\end{BM}
+	Utilizando uma das substituições \(x=e^t\) ou \(y=x^{-1}\,\int{z\,\odif{x}}\) determine a solução geral da equação
+	\begin{BM}
+		\mdif*[order=2]{y}
+		-4\,\mdif*{y}
+		+5\,y
+		= \frac
+		{e^{2\,x}}
+		{\sin{x}}
+	\end{BM}
+	} % Q15
+
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK:Q16
+	Ultilizando uma das substituições \(x=e^t\) ou \(y=x^{-1}\,\int{z\,\odif{x}}\) determine a solução da equação geral
+	\begin{BM}
+		2\,x^2
+		\,\odv[order=2]{y}{x}
+		+7\,x
+		\,\odv{y}{x}
+		+3\,x
+		=0
+	\end{BM}
+	com \(x>0\). Determine anda a solução geral da equação
+	\begin{BM}
+		\odv[order=2]{y}{x}
+		+\frac{7}{2\,x}
+		\,\odv{y}{x}
+		+\frac{3}{2\,x^2}
+		\,y
+		= 0.5\,x^{-3/2}
+	\end{BM}
+	} % Q16
+	\answer{}
+	% \begin{flalign*}
+	% 	 &
+	% 	ee
+	% 	 &
+	% \end{flalign*}
+	\begin{center}
+		\includegraphics[width=.4\textwidth]{16.1.jpeg}
+		\includegraphics[width=.4\textwidth]{16.2.jpeg}
+		\includegraphics[width=.4\textwidth]{16.3.jpeg}
+		\includegraphics[width=.4\textwidth]{16.4.jpeg}
+	\end{center}
+\end{questionBox}
+
+\end{document}
