@@ -1,0 +1,46 @@
+
+\documentclass[12pt]{report}
+
+\usepackage{color}
+\pagecolor{black}
+\color{white}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\renewcommand{\[}{ \begin{flalign*} } 
+\renewcommand{\]}{ \end{flalign*} }
+
+\begin{document}
+
+\title{AM 1 - Análise Matemática 1}
+\date{22/03/21}
+
+
+\maketitle
+
+\section*{Método de Indução}
+
+\subsection*{ $$ \forall\, n \in \mathbb{N};\ n\geq 4 \implies n^2\leq 2^n $$ }
+\begin{flalign*}
+& n=4\implies 4^2\leq 2^4\implies 16\leq 16 & \\
+& n=m+1\implies (m+1)^2\leq 2^{(m+1)}\implies (m+1)^2\leq 2^m\,2\implies & \\
+& \implies m^2+2\, m + 1\leq 2^m\, 2\implies m(m+2) + 1\leq 2^m\, 2 &
+\end{flalign*}
+
+\subsection*{ $$ \forall\, n \in \mathbb{N};\ n\geq 4 \implies n^2\leq 2^n $$ }
+\begin{flalign*}
+& n^2\leq 2^n\implies 2\log{n}\leq n\log{2}\implies \log{n^{n^-}}\leq \log{2^{2^-}}\implies n^{1/n}\leq 2^{1/2} \implies &\\
+& \implies  n\leq2^{n/2}\implies \log_2{n}\leq n/2 \implies \log_2{n^2}\leq n\implies n^2\leq 2^n &
+\end{flalign*}
+
+\subsection*{$$ \sum_{k=1}^n \frac{1}{k}>\ln{(n+1)};\ \forall\, n\in\mathbb{N} $$}
+\begin{flalign*}
+& n=1\implies 1> \ln{2} \cong 0.7 & \\
+& n=m+1\implies \sum_{k=1}^{m}\left(\frac{1}{k}\right) + \frac{1}{m+1}>\ln{(m+2)}\implies & \\
+& \implies \sum_{k=1}^{m}\left(\frac{1}{k}\right) + \frac{1}{m+1} > \ln{(m+1)}+\frac{1}{m+1} \geq \ln{(m+2)} &
+\end{flalign*}
+
+
+\end{document}

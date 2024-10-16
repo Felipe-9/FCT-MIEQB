@@ -1,0 +1,122 @@
+\part{23/04 - Continuidade: Teoremas}
+
+\begin{multicols}{2}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\BMold{
+	f \text{ é continua em } [a,b]
+}\relax
+
+\begin{flalign*}
+&
+\impliedby
+	f \text{ é continua em } x\in (a,b)\,
+\land &\\&
+\land
+	\lim_{x\to a^-} f(x) = f(a)
+\land
+	\lim_{x\to b^+} f(x) = f(b)
+&
+\end{flalign*}
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Teorema de Bolzano}
+\label{bolzano}
+
+\BMold{
+	f: [a,b] \to \mathbb{R}
+\land
+	f \text{ é continua em } [a,b]
+\\	: f(a) < f(b)\quad\forall\,k: f(a) < k < f(b)
+\\	\implies\exists\,c\in(a,b): f(c) = k
+}\relax
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Teorema de Weierstrass}
+\label{weirestrass}
+
+\BMold{
+	f: [a,b]\to\mathbb{R}
+\land
+	f \text{ é continua em } [a,b]
+\\
+	\therefore\,\exists\,\{x_{\max}, x_{\min}\}\subset [a,b]
+:	\\
+:	f(x_{\min}) \leq f(x) \leq f(x_{\max})
+}\relax
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Corolário de Bolzano e Weirestrass}
+
+\BMold{
+	f: [a,b]\to\mathbb{R}\land f\text{ é continua em } [a,b]
+\\	\therefore
+	f([a,b]) = [x_{\max}, x_{\min}]
+}\relax
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo Aplicação}
+
+\BMold{e^{-x}=x}\relax
+
+\begin{flalign*}
+&
+	f:[0,1]\to\mathbb{R};\quad f(x) = e^{-x}-x
+\implies &\\&
+\implies
+	f(0) = 1
+;\	f(1) = 1/e-1 < 0
+&\\&
+	\therefore\exists\,c\in[0,1]:e^{-c} = c
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo Aplicação}
+
+\BMold{g:[0,\pi]\to\mathbb{R};\quad g(x)=x\,\sin(x)}\relax
+\begin{flalign*}
+&
+	g(0)=g(\pi)=0\therefore\exists\,x_{\max}\geq0
+&
+\end{flalign*}
+
+\end{minipage}
+
+\end{multicols}

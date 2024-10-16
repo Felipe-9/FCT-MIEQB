@@ -1,0 +1,136 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage[hidelinks]{hyperref}
+
+% Multicols
+%\usepackage{multicol}
+
+% Maths
+%\usepackage{amssymb} 		
+%\usepackage{amsmath} 
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\usepackage{tikz}		% Vector diagrams
+\usetikzlibrary{calc}% Vector calculations
+\usepackage{varwidth}% List inside TikzPicture
+
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+% Resolução de listas
+\renewcommand\thesection{P10 - a)}
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\section{Tabela 2x2}
+
+\begin{tikzpicture}[scale = 1.5, font=\small, line width = 1]
+	
+	\clip (-4.5,-9.3) rectangle (9,2.5);
+	
+	\draw[DarkBlue!90!] (-10,0) -- (10,0);
+	\draw[DarkBlue!90!] (0,-10) -- (0, 10);
+	
+	\coordinate (0) at (0,0);
+	
+	\node at (-2.5, 1) [label=above:\bf{Factos/Dados}] 
+	{ 
+		\begin{varwidth}{\linewidth}\begin{itemize}
+      \item $\vec a_{J}$: aceleração de Joanna
+      \item $\vec a_{S}$: aceleração de Sofia
+      \item $t_1=5\,s$: momento especifico
+  		\end{itemize}\end{varwidth}
+	};
+	\node at ( 2, 1.8) [label=above:\bf{Diagrama}] {};
+	
+	\begin{scope}
+	[
+		scale=2, shift={(0.8,0.4)},
+		every node/.append style={minimum size=1, inner sep=1}
+	]
+			
+			\def\maxX { 0.5};
+			\def\maxY { 0.5};
+			\def\minX {-0.15};
+			\def\minY {-0.25}
+						
+			\clip (\minX,\minY) rectangle (\maxX,\maxY);
+			
+			\coordinate (MinXY) at (\minX,\minY);
+			
+			\draw[ultra thin, DarkBlue!85! , step=0.1 ] 
+			(MinXY) grid (\maxX+1,\maxY+1);
+			
+			\draw[->, thin] (0,\minY) -- (0,\maxY)
+			node[below left]{$y$};
+			\draw[->, thin] (\minX,0) -- (\maxX,0)
+			node[above left]{$x$};
+			
+			\coordinate (0) at (0,0);
+
+			\draw[->, green!60!] 
+			(0) to (0.3,-0.2) node[above right]{$\vec a_J$};
+			
+			\draw[->, cyan!60!] 
+			(0) to (0.1,+0.3) node[above      ]{$\vec a_S$};
+			
+		\end{scope};
+	
+	\node at (-2.5,-1.5) [label=above:\bf{Questões}] 
+	{
+		\begin{varwidth}{\linewidth}\begin{itemize}
+      	\item $ \vec v_J-\vec v_S =? $
+      	\item $ \| \vec P_{J(t_1)} - \vec P_{S(t_1)} \| = ?$
+      	\item $ \vec a_J - \vec a_S = ? $
+	  		\end{itemize}\end{varwidth}
+	};
+	\node at ( 3,-3.5) [label=above:\bf{Passos}] 
+	{
+		\begin{varwidth}{\linewidth}\begin{itemize}
+			\item a)
+		
+			\begin{itemize}
+ 			\item Encontre a equação de velocidade\\de cada carro e subtraia vetorialmente
+			\end{itemize}
+      	
+			\item b)
+	
+			\begin{itemize}
+ 			\item Encontre a posição de cada\\carro no momento pedido
+			\item Encontre o modulo da diferença\\dos vetores de posição
+			\end{itemize}
+			
+			\item c)
+ 			\begin{itemize}
+ 			\item Subtraia os vetores de\\ aceleração de cada carro
+			\end{itemize}
+			
+	  	\end{itemize}\end{varwidth}
+	};
+	
+\end{tikzpicture}
+
+
+\end{document}

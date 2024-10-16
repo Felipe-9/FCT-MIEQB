@@ -1,0 +1,63 @@
+% !TEX root = ./F_IIQ-Exercicios_e_Exemplos_Resoluções.1.tex
+\providecommand\mainfilename{"./F_IIQ-Exercicios_e_Exemplos_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ-Exercicios_e_Exemplos_Resoluções.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F_IIQ-Exercicios_e_Exemplos_Resoluções.1}}}
+
+\mymakesubfile{1}
+[F IIQ]
+{The Electric Field I: Discrete Charge Distributions} % Subfile Title
+{The Electric Field I: Discrete Charge Distributions} % Part Title
+
+\part*{Exemplos}
+\begin{exampleBox}1{ % E1
+    } % E1
+    The electrons have a total charge given by the number of electrons in the penny, Ne , multiplied by the charge of an electron, -e. The number of electrons in a copper atom is 29 (the atomic number of copper). So, the total charge of the electrons is 29 electrons multiplied by the number of copper atoms \(N_{at}\) in a penny. To find \(N_{at}\) , we use the fact that one mole of any substance has Avogadro's number (\(N_{A} = 6.02 * 10^{23}\)) of particles (molecules, atoms, or ions), and the number of grams in one mole of copper is the molar mass M, which is 63.5\,\unit{\gram/\mole} for copper.
+    
+    \begin{flalign*}
+        &
+            Q 
+            = (Z\,N_{at})(-e)
+            = 29
+            *\left(
+                \frac{3.10*6.02*10^{23}}{63.5}
+            \right)
+            *(\num{1.602176634e-19})
+            \cong 
+            -1.37*10^5
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\setcounter{example}{10}
+
+\begin{exampleBox}1{ % E11
+    } % E11
+    An electron is projected into a uniform electric field \(\vec{E} = (1000\,\unit{\newton/\coulomb})\hat{i}\) with an initial velocity \(\vec{v} = (2.00*10^{6}\,\unit{\metre/\second})\hat{i}\) in the direction of the field (Figure 21-26). How far does the electron travel before it is brought momentarily to rest?
+    
+    \begin{flalign*}
+        &
+            v_x^2 
+            = v_{x,0}^2 + 2\,a_x\,\adif{x}
+            = v_{x,0}^2 + 2\,\frac{F_x}{m}\,\adif{x}
+            = v_{x,0}^2 + 2\,\frac{-e\,E_x}{m}\,\adif{x}
+            \implies
+            \adif{x}
+            = \frac{
+                (v_x^2 - v_{x,0}^2)\,m
+            }{
+                -e\,E_x\,2
+            }
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+\end{document}

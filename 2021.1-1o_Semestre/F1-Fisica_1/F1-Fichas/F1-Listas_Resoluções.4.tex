@@ -1,0 +1,306 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	Física 1 - Ficha S4\\Força e Movimento I%
+}
+\author{Felipe Pinto - 61387}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+{
+\bfseries\color{DarkGreen!75!}
+\part{Questões}
+}
+
+\renewcommand{\thesection}{Questão \arabic{section} }
+\renewcommand{\thesubsection}{%
+	Q\arabic{section} - \alph{subsection})%
+}
+
+\setcounter{section}{1}
+
+% Q2
+\section{}
+
+\begin{multicols}{2}
+
+% Q2 - a)
+\subsection{}
+\begin{itemize}
+\begin{multicols}{2}
+
+	\item $ F_{\text{Peso}} $
+	\item $ F_{\text{tenção corda}} $
+	\item $ F_{\text{Passageiros}} $
+
+\end{multicols}
+\end{itemize}
+
+
+% Q2 - b)
+\subsection{}
+\begin{itemize}
+\begin{multicols}{2}
+
+	\item $ F_{\text{Peso}} $
+	\item $ F_{\text{Normal}} $
+	\item $ F_{\text{Atrito}} $
+	\item $ F_{\text{Elastica}} $
+	
+\end{multicols}
+\end{itemize}
+
+%\vfill\null
+%\columnbreak
+
+% Q2 - c
+\subsection{}
+\begin{itemize}
+
+	\item $ F_{\text{Peso}} $
+
+\end{itemize}
+
+% Q2 - d)
+\subsection{}
+\begin{itemize}
+\begin{multicols}{2}
+
+	\item $ F_{\text{Peso}} $
+	\item $ F_{\text{Visc Ar}} $
+	\item $ F_{\text{Turbina}} $
+
+\end{multicols}		
+\end{itemize}
+
+\end{multicols}
+
+\setcounter{section}{3}
+
+% Q4
+\section{}
+
+\begin{multicols}{2}
+
+% Q4 - a)
+\subsection{}
+\begin{flalign*}
+&
+	F=m\,a \implies 2\,F = m\,2\,a
+&
+\end{flalign*}
+
+% Q4 - b)
+\subsection{}
+\begin{flalign*}
+&
+	F=m\,a \implies F = 2\,m\,(a/2)
+&
+\end{flalign*}
+
+% Q4 - c)
+\subsection{}
+\begin{flalign*}
+&
+	F=m\,a \implies 2\,F=2\,m\,a
+&
+\end{flalign*}
+
+% Q4 - d)
+\subsection{}
+\begin{flalign*}
+&
+	F=m\,a \implies 2\,F=(m/2)\,4\,a
+&
+\end{flalign*}
+
+\end{multicols}
+
+% Problemas
+{
+\bfseries\color{DarkGreen!75!}
+\part{Problemas}
+}
+
+\renewcommand{\thesection}{Problema \arabic{section} }
+\renewcommand{\thesubsection}{P\arabic{section} - \alph{subsection}) }
+
+% P1
+\section{}
+
+% P1 - a)
+\subsection{}
+\begin{flalign*}
+&
+	a\,dt = dv;\ m\,a=F_{(t)}
+\implies
+	\int (8.00\,\hat\imath + 4.00\,t\,\hat\jmath)\,dt/m
+= 
+	\frac{8.00}{m}\Delta t\,\hat\imath
+	+ \frac{4.00}{2\,m}\,\Delta t^2\,\hat\jmath
+= &\\& =
+	\int dv\,\hat v = \Delta \vec v
+\implies
+	\left(
+	\frac{8.00\, t}{m}
+	\right)^2
+	+ 
+	\left(
+	\frac{4.00\, t^2}{m}
+	\right)^2
+=	
+	t^4
+	+ 4\,t^2
+	+ 4
+=
+	(t^2+2)^2
+= &\\& =
+	m^2\,v^2/16.0+4
+\implies
+	t 
+=
+	\sqrt{ \sqrt{ m^2\,v^2/16.0+4 } - 2 }
+=
+	\sqrt{ \sqrt{ \frac{(2.00)^2\,15.0^2}{16.0}+4 } - 2 }
+\cong &\\& \cong
+	2.4\,s
+&
+\end{flalign*}
+
+\setcounter{section}{3}
+
+% P4
+\section{}
+
+% P4 - a)
+\subsection{}
+\begin{flalign*}
+&
+	|\vec a| = \sqrt{a_i^2+a_j^2}
+	;\ a_j = g
+	;\ a_i = N\,\sin(\theta)/m
+	;\ N\,\cos(\theta) = m\,g
+	\implies &\\& \implies
+		|\vec a| 
+	= 
+		\sqrt{
+			\left(
+			\frac{\sin(\theta)}{m}
+			\frac{m\,g}{\cos(\theta)}
+			\right)^2
+			+ g^2
+		}
+	=
+		g\,\sqrt{ \tan(\theta)^2+1 }
+	\cong
+		10 m/s^2
+&
+\end{flalign*}
+
+% P4 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta \vec v = \vec a\,\Delta t
+	;\ \vec v_i = \vec 0
+	;\
+		\vec v_i \Delta t 
+		+ \vec a\,\Delta t^2/2 
+		= \Delta \vec S
+	\implies &\\& \implies
+		\vec v_f 
+	= 
+		\vec a \sqrt{\frac{2\,\Delta S}{a}}
+	=
+		\hat a \sqrt{2\,a\,\Delta S}
+	\cong
+		6.4\,\hat a\,m/s
+&
+\end{flalign*}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+\documentclass[12pt]{report}
+
+\usepackage{xcolor}
+\pagecolor{black}
+\color{white}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\begin{document}
+
+\title{Ficha 2 - Método de indução.}
+\author{}
+\date{}
+
+\maketitle
+
+\paragraph{Exercício Extra: Prove: }
+$$ 1+r+\dots + r^{n-1}=\frac{1-r^n}{1-r} $$
+\begin{itemize}
+\item $ n=1\implies 1=\frac{1-r}{1-r} \implies 1=1 $
+\item $ n=m+1 \implies 1+r+\dots +r^{m-1}+r^m =\frac{1-r^{m+1}}{1-r}=\frac{1-r^{m-1}*r^2}{1-r}=\frac{}{} $ 
+\end{itemize}
+
+\paragraph{Questão 1}
+\subparagraph{(a)} $ \sum_{k=1}^{n}{\frac{1}{2^k}} = 1 - \frac{1}{2^n}  $
+\begin{itemize}
+
+	\item $ n=1 \implies $	
+	$$ \sum_{k=1}^{1}{\frac{1}{2^k}} = 1- \frac{1}{2^n} \implies \frac{1}{2}= 1-\frac{1}{2} $$
+
+	\item $ n=m+1\implies $
+	$$ \sum_{k=1}^{m+1}{\frac{1}{2^k}}= \sum_{k=1}^{m}{\frac{1}{2^k}}+\frac{1}{2^{m+1}} = 1-\frac{1}{2^{m}}+\frac{1}{2^m+1}=\cdots $$
+
+\end{itemize}
+
+\subparagraph{(b)} $ \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{n}{n+1} $
+\begin{itemize}
+\item $ n=1 \implies $
+$$ \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{n}{n+1} $$ 
+\end{itemize}
+
+
+
+
+\end{document}

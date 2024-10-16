@@ -1,0 +1,422 @@
+% !TEX root = ./IPEIO-Testes_Resolução.2021.1.tex
+\providecommand\mainfilename{"./IPEIO-Testes_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Testes_Resolução.2021.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{1}[IPEIO]
+{Teste 2021}
+{Teste 2021}
+
+\begin{questionBox}1{ % Q1
+    Durante a travessia do Canal da Mancha, a probabilidade de um velejador apanhar mau tempo  é de 2/3. Sabe-se ainda que, se estiver mau tempo, tem 1/4 de probabilidade de ter uma colisão com um petroleiro mas, não estando mau tempo, a probabilidade de atravessar o Canal da Mancha sem colidir é de 5/6. Face a uma viagem de um velejador:
+} % Q1
+    
+    \begin{itemize}
+        \item Mau tempo: \(P(\overline{T}) = 2/3\)
+        \item colidir em mau tempo: \(P(C\vert{}\overline{T}) = 1/4\)
+        \item Não colidir em bom tempo: \(P(\overline{C}\vert{}T) = 5/6\)
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q1.1
+        etermine a probabilidade, \textit{p}, de um velejador atravessar o Canal da Mancha sem colidir com um petroleiro?
+    } % Q1.1
+        \begin{flalign*}
+            &
+                p
+                = P(\overline{C})
+                = 1-P(C)
+                = 1
+                - P(C\vert{T})\,P(T)
+                - P(C\vert{\overline{T}})\,P(\overline{T})
+                = &\\&
+                = 1
+                - 1/6*1/3
+                - 1/4*2/3
+                = 7/9
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        sabe-se que um velejador colidiu com um petroleiro, indique qual é a probabilidade de não ter estado mau tempo? (Note que p é a probabilidade de um velejador atravessar o Canal da Mancha \underline{sem colidir} com um petroleiro)
+    } % Q1.2
+        \begin{flalign*}
+            &
+                P(T\vert{C})
+                = \frac{P(C\vert{T})\,P(T)}{P(C)}
+                = \frac{P(C\vert{T})\,P(T)}{1-P(\overline{C})}
+                = \frac{1/6*1/3}{1-p}
+                = \frac{1/18}{1-p}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Seja \textit{X} uma variável aleatória discreta com função distribuição dada por:
+} % Q2
+    \begin{BM}
+        F(x)
+        = \begin{cases}
+            0      & x<1
+            \\ 1/4 & 1\leq x<2
+            \\ 1/2 & 2\leq x<3
+            \\ 3/4 & 3\leq x<4
+            \\ 1   & x\geq 4
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q2.1
+        Indique o valor de \(P(X>3)\):
+    } % Q2.1
+        \begin{flalign*}
+            &
+                P(X>3)
+                = 1-P(x\leq3)
+                = 1-3/4
+                = 1/4
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Considere agora que a variável aleatória \textit{X} tem função de probabilidade dada por:
+    } % Q2.2
+        \begin{BM}
+            \left\{
+            \begin{matrix}
+                1 & 2 & 3 & 4
+             \\ 
+                \frac{1}{4}
+               &\frac{1}{8}
+               &\frac{3}{8}
+               &\frac{1}{4}
+            \end{matrix}
+            \right.
+        \end{BM}
+
+        \subsubquestion{Sabendo que \(E(X) = 21/8\), indique o valor de \(V(2\,X+1)\):}
+        \begin{flalign*}
+            &
+                \variancia{(2\,X+1)}
+                =2^2\,\variancia{(X)}
+                =4\,(\esperanca{(X^2)}-\esperanca^2{(X)})
+                % = &\\&
+                =4\,\left(
+                    65/8
+                    -(21/8)^2
+                \right)
+                = &\\&
+                =4\,\left(
+                    520/64
+                    -441/64
+                \right)
+                = 79/16
+            &
+        \end{flalign*}
+
+        \subsubquestion{Indique o valor de \(P(X<3\vert{X>1})\)}
+        \begin{flalign*}
+            &
+                P(X<3\vert{}X>1)
+                = \frac{P(X<3\cap{}X>1)}{P(X>1)}
+                % = &\\&
+                = \frac{P(1<X<3)}{P(X>1)}
+                % = &\\&
+                = \frac{P(X=2)}{1-P(X\leq{}1)}
+                = &\\&
+                = \frac{1/8}{1-1/4}
+                % = &\\&
+                = 1/6
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Numa loja é atribuído um prémio aos clientes que fazem uma despesa superior a 50 euros, sendo 0.1 a probabilidade disto acontecer, independentemente do cliente. Numa amostra casual de 20 clientes indique:
+} % Q3
+    
+    \begin{itemize}
+        \item Premio: \(P(P)=0.1\)
+        \item Amostra: 20
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q3.1
+        a probabilidade de 2 clientes \underline{não terem recebido} o prémio:
+    } % Q3.1
+        \begin{flalign*}
+            &
+                X\sim\binomial{(20,0.9)}\implies
+                P(X=2) 
+                = \binom{20}{2}\,0.9^{2}*0.1^{18}
+                = 190*0.1^{18}*0.9^{2}
+                &\\&
+                X\sim\binomial{(20,0.1)}\implies
+                P(X=18) 
+                = \binom{20}{18}\,0.1^{18}*0.9^{2}
+                = 190*0.1^{18}*0.9^{2}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        o número de clientes a quem a loja espera ter que pagar o prémio nesta amostra de 20 clientes:
+    } % Q3.2
+        \begin{flalign*}
+            &
+                \esperanca(X)
+                = 20*0.1=2
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Suponha que o número de ambulâncias, \textit{X}, que chegam a um serviço de urgências, numa hora, segue uma distribuicão Poisson de pâmetro \(\lambda = 3\), ou seja \(X \sim \poisson(3)\). Indique a probabilidade de chegarem 4 ambulâncias ao serviço de urências em duas horas:
+} % Q4
+
+    \begin{flalign*}
+        &
+            X\sim\poisson(6)\implies
+            P(X=4) = e^{-6}\,6^4/4!
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Seja \textit{X} uma variável aleatória com distribuição Normal com valor médio igual a 255 e variância igual a \(7^2\), ou seja \(X \sim N(255,7^2)\).
+} % Q5
+    
+    \begin{BM}
+        X\sim\normal(255,7^2)
+    \end{BM}
+
+    \begin{questionBox}2{ % Q5.1
+        Indique o valor de \(P(X>260)\)
+    } % Q5.1
+        \begin{flalign*}
+            &
+                P(X>260) 
+                =P(Z>(260-255)/7)
+                =P(Z>0.7142857143)
+                \cong
+                1-(0.7611+0.7642)/2
+                = 0.23735
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q5.2
+        Determine o valor de \textit{c} tal que \(P(X>c)=0.025\)
+    } % Q5.2
+        \begin{flalign*}
+            &
+                c:
+                P(X>c)
+                = P((X-255)/7>(c-255)/7) 
+                = P(Z>(c-255)/7) 
+                = &\\&
+                = 1-P(Z<(c-255)/7) 
+                = 0.025
+                \implies &\\&
+                \implies
+                P(Z<(c-255)/7) 
+                = 1-0.025 
+                = 0.975
+                \implies &\\&
+                \implies
+                c 
+                = 1.960*7+255 
+                = 268.72
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+    \begin{questionBox}2{ % Q5.3
+        Considere agora as variáveis aleatórias \(X_1,X_2,\dots,X_{10}\), independentes e todas com distribuição Normal com valor médio igual a 255 e variância igual a \(7^2\), ou seja \(X_i \sim \normal(255, 7^2)\) com \(i = 1,\dots,10\).
+        Seja \(S_{10} = \sum_{i=1}^{10}{X_i}\). Indique o valor de \(P(S_{10} < 2600)\).
+    } % Q5.3
+        \begin{flalign*}
+            &
+                S_{10}\sim\normal\left(
+                    \sum_{i=1}^{10}{255},
+                    \sum_{i=1}^{10}{7^2},
+                \right)
+                \sim\normal(255*10,7^2*10)
+                \sim\normal(2550,\num{22.135943621178655}^2)
+                \implies &\\&
+                \implies
+                P(S_{10}<2600)
+                \cong P(Z<(2600-2550)/\num{22.135943621178655})
+                \cong P(Z<\num{2.258769757263128})
+                \cong 0.9881
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6  
+    Considere a amostra aleatória (\(X_1,X_2,\dots,X_n\)) de uma populaçã \textit{X} de valor médio \(\theta/2\) e variância \(\theta^2/12\) onde \(\theta > 0\) é desconhecido. Seja \(\hat{\theta} = \overline{X}/2\) um estimador para \(\theta\). Indique a opção \underline{VERDADEIRA}.
+} % Q6  
+
+    \subquestion{\(\hat{\theta}\) é um estimador centrado para \(\theta\)}
+    \begin{flalign*}
+        &
+            \esperanca(\hat{\theta})
+            =\esperanca(\overline{X}/2)
+            =\sum_{i=1}^{n}{\esperanca(X_i)}/2n
+            =\sum_{i=1}^{n}{(\theta/2)}/2n
+            % = &\\&
+            =(n\,\theta/2)/2n
+            =\theta/4
+            \neq \theta
+        &
+    \end{flalign*}
+
+    \subquestion{\(\variancia(\hat{\theta})=\theta^2/48\,n\)}
+    \begin{flalign*}
+        &
+            \variancia(\hat{\theta})
+            = \variancia(\overline{X}/2)
+            = \variancia(\overline{X})/4
+            = \variancia\left(
+                n^{-1}\sum_{i=1}^{n}{X_i}
+            \right)/4
+            % = &\\&
+            = (n\,2)^{-2}
+            \,\variancia\left(
+                \sum_{i=1}^{n}{X_i}
+            \right)
+            = &\\&
+            = (n\,2)^{-2}
+            \,\sum_{i=1}^{n}{\variancia(X_i)}
+            % = &\\&
+            = (n\,2)^{-2}
+            \,\sum_{i=1}^{n}{\theta^2/12}
+            % = &\\&
+            = \frac{n\,\theta^2/12}{n^2\,4}
+            = \frac{\theta^2}{n\,48}
+        &
+    \end{flalign*}
+
+    \subquestion{\(EQM(\hat{\theta})=\theta^2/12\)}
+    \begin{flalign*}
+        &
+            EQM(\hat{\theta})
+            = \variancia(\hat{\theta})
+            + b^2(\hat{\theta})
+            = \frac{\theta^2}{n\,48}
+            + (\esperanca(\hat{\theta})-\theta)^2
+            = \frac{\theta^2}{n\,48}
+            + (\theta/4-\theta)^2
+            = &\\&
+            = \theta^2\left(
+                \frac{9}{16}+\frac{1}{n\,48}
+            \right)
+            >\theta^2/12
+            % = \esperanca(\hat{\theta}-\theta)^2
+            % = \esperanca(\overline{X}/2-\theta)^2
+            % = \esperanca(
+            %     \overline{X}^2/4
+            %     - \overline{X}\theta
+            %     + \theta^2
+            % )
+            % = &\\&
+            % = 4^{-1}\esperanca(\overline{X}^2)
+            % - \theta\esperanca(\overline{X})
+            % + \theta^2
+        &
+    \end{flalign*}
+
+    \subquestion{\(bias(\hat{\theta})=\theta/4\)}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Um Engenheiro necessita que um certo catalisador, que vai usar numa reação química, tenha pH médio de 6.5. Assim, foram analisadas 31 amostras (\(n = 31\)) distintas (de um catalisador) onde se observou \(\overline{x} = 6.570,\ s^2 = 0.995/30\). Assuma que o pH do catalisador tem distribuição Normal de valor médio \(\mu\) e variância \(\sigma^2\).
+} % Q7
+
+    \begin{questionBox}2{ % Q7.1
+        Com base na amostra, indique uma estimativa pontual para o valor médio populacional, \(\mu\) (valores arredondados com 3 casas decimais):
+    } % Q7.1
+        \begin{flalign*}
+            &
+                = 6.570
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.2
+        O intervalo de confiança 95\% para o valor médio, \(\mu\), do pH do catalisador é (valores arredondados com 3 casas decimais):
+    } % Q7.2
+        \begin{flalign*}
+            &
+                =\myrange*{6.503, 6.637}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.3
+        O intervalo de confiança 99\% para a variância, \(\sigma^2\), do pH do catalisador é (valores arredondados com 4 casas decimais):
+    } % Q7.3
+        \begin{flalign*}
+            &
+                =\myrange*{0.0185,0.0721}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.4
+        Para o teste das hipóteses
+    } % Q7.4
+        \begin{BM}
+            H_0:\mu\leq6.5
+            \quad\text{vs}\quad
+            H_1:\mu>6.5
+        \end{BM}
+
+        a região de critica (ou de rejeião) para um nível de 5\% de significãncia é:
+
+        \begin{flalign*}
+            &
+                \frac{\overline{x}-\mu}{\sigma/\sqrt{n}}
+                = \frac{6.570-6.570}{\sigma/\sqrt{n}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.5
+        O valor observado da estatística de teste utilizada para testar as hipóteses
+    } % Q7.5
+        \begin{BM}
+            H_0:\mu=6.6
+            \quad\text{vs}\quad
+            H_0:\mu\neq6.6
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q7.6
+        Considere nesta aínea que o \underline{desvio padrão populacional é conhecido} e igual a 0.2, ou seja \(σ = 0.2\), e que no seguinte teste de hipóteses
+    } % Q7.6
+        \begin{BM}
+            H_0:\mu\geq6.6
+            \quad\text{vs}\quad
+            H_0:\mu<6.6
+        \end{BM}
+        com base numa nova dada amostra observada, o valor observado da estatística de teste foi igual a -0.84, então o valor-p do teste é:
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}

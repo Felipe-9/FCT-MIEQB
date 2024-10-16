@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{titlesec}
+\usepackage{multicol}
+
+\renewcommand\theHpart{\theHsobpart.\arabic{part}}
+
+% sobpart
+\newcounter{sobpart}
+\renewcommand\thesobpart{\Roman{sobpart}}
+\newcommand\sobpart[1]{
+    % reset inner counter
+    \setcounter{part}{0}
+    \setcounter{section}{0}
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    % add sobpart line
+    \refstepcounter{sobpart}
+    \part*{\thesobpart\hspace{1em}--\hspace{1em}#1}
+    % add to toc
+    \addtocontents{toc}{\end{multicols}}
+    \addcontentsline{toc}{part}{\thesobpart\hspace{1em}--\hspace{1em}#1}
+    \addtocontents{toc}{\begin{multicols}{2}}
+}
+
+\begin{document}
+
+
+% Table of Contents
+\renewcommand{\contentsname}{} % remove title
+
+\begin{multicols}{2}[\section*{Content}]
+    \tableofcontents
+\end{multicols}
+
+\part{part0.1}
+
+\sobpart{sobpart1}
+
+\part{part1.1}
+
+\end{document}

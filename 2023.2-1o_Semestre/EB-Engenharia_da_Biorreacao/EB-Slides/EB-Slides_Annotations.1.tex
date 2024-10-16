@@ -1,0 +1,88 @@
+% !TEX root = ./EB-Slides_Annotations.1.tex
+\providecommand\mainfilename{"./EB-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Slides_Annotations.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Slides_Annotations.1}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Slides_Annotations.1/graphics/}
+
+\mymakesubfile{2}
+[EB]
+{Cinética da Biorreação: Batch Reactors} % Subfile Title
+{Cinética da Biorreação: Batch Reactors} % Part Title
+
+\begin{sectionBox}1{Definitions} % S
+
+
+
+\end{sectionBox}
+
+\setcounter{section}{5}
+\begin{sectionBox}1{Relationship between cell grownth and substrate consumption} % S
+
+  \paragraph*{As rule of thumb}
+  \begin{BM}
+    S \approx  3\,K_S
+  \end{BM}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Cell grownth phases} % S
+    
+  Elaborar cada fase de crescimento
+  \begin{enumerate}
+    \item Lag
+    \item Exponential
+    \item Stationary
+    \item Death
+  \end{enumerate}  
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Biomassa} % S
+    
+    Elaboração da biomassa
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Modelos para aproximar o crescimento celular} % S
+    
+  \begin{enumerate}
+    \item Malthus model
+    \item Verhulst Model
+  \end{enumerate}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Verhulst Model} % S
+    
+    \begin{BM}
+      \odv{X}{t} = k\,X(1-\beta\,X)
+      \iff \\
+      \iff
+      X
+      =\frac
+      {X_0\,\exp{(k\,t)}}
+      {1-\beta\,X_0\,(1-\exp{(k\,t)})}
+      \iff
+      t = \frac
+      {\ln{\left(
+        \frac
+        {-x(x_{\max{}}-x_0)}
+        {x_0(x-x_{\max{}})}
+      \right)}}
+      {\mu_{\max}}
+      \\
+      \begin{cases}
+        k=\mu;\\\beta=X_{\max{}}^{-1}
+      \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

@@ -1,0 +1,63 @@
+% !TEX root = ./F_IIQ_-_Aulas_Anotações.tex
+% !TEX root = ./F_IIQ_-_Aula_2_Anotações.tex
+\providecommand\mainfilename{"./F_IIQ_-_Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ_-_Aula_2_Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+% DATA:03.16
+
+\begin{document}
+
+\mymakesubfile{2}{}{}
+
+\setcounter{question}{1}
+\begin{questionBox}1{}
+    
+    \begin{flalign*}
+        &
+            E
+            = k\,Q_1/r^2
+            = \num{8.9875517923e9}*4.0\,\unit{\nano}/(2.0)^2
+            \cong \num{8.9875517923}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{flalign*}
+        &
+            E
+            = k\,Q/r^2
+            = \num{8.9875517923e9}*(-8.0\,\unit{\nano})/(2.0)^2
+            = \num{17.9751035846}
+            \implies
+            \vec{E}
+            = \num{17.9751035846}\,(-1.2/2.0)\,\hat{\imath}
+            + \num{17.9751035846}\,(+1.6/2.0)\,\hat{\jmath}
+            = \num{-10.78506215076}\,\hat{\imath}
+            + \num{ 14.38008286768}\,\hat{\jmath}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{flalign*}
+        &
+            \vec{E}
+            = \frac{k}{r^2}\,\int \cos(\psi)\delta q\,\hat{\imath}
+            = \frac{k}{x^2+r^2}\,\int \frac{x}{\sqrt{x^2+r^2}}\,r\,\frac{Q}{2\,\pi\,r}\,\delta\theta\,\hat{\imath}
+            = \frac{k\,Q\,x}{2\,\pi\,(x^2+r^2)^(3/2)}\,\int \delta\theta\,\hat{\imath}
+            = \frac{k\,Q\,x}{(x^2+r^2)^(3/2)}\,\hat{\imath}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\end{document}

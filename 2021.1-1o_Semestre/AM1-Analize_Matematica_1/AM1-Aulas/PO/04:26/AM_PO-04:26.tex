@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{5em}
+\setlength{\cftsubsecnumwidth}{4em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} % useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{%
+	{\boldmath{\large{\begin{align*} #1 \end{align*}}}}%
+}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{siunitx} % Column S: align on decimal
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	AM 1 - Ficha 6 Resolução\\
+	Teoremas da Continuidade e Função Inversa%
+}
+\author{Felipe Pinto - 61387}
+\date{26/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+{\color{DarkGreen!75}\part{Questões}}
+
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	Q\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\,\roman{subsubsection}\,)}
+
+% Q1
+\section{}
+
+\setcounter{subsection}{2}
+
+% Q1 - c)
+\subsection{$ 
+	\cos(1/x)\,x/(x+1)
+	= \sin(x)/x
+	\quad x\in(0,\infty) 
+$ Refazer}
+\begin{flalign*}
+&
+\iff
+	f_{(x)} = \frac{x}{x+1}\,\cos(1/x)-\frac{\sin(x)}{x}
+\implies &\\& \implies
+	\lim_{x\to0^+} f_{(x)} = 0-1 = -1<0
+; &\\&
+	\lim_{x\to\infty} f_{(x)}
+	= 1-0 = 1>0
+&\\& \cdots
+&
+\end{flalign*}
+
+\setcounter{section}{2}
+
+% Q3
+\section{}
+
+% Q3 - a)
+\subsection{}
+Não, como o ontradomionio é $\mathbb{R}\backslash\{0\}$ para quaisquer $a<0<b$ existem $\{a', b\}\in\mathbb{R}:$
+\begin{align*}
+	f_{(a')} = a 
+	\quad
+	\text{e}
+	\quad 
+	f_{(b')} = b
+\end{align*}
+Portanto $f_{(a')} < 0 < f_{(b')}$
+\\
+Não existe pois ela possui termos maiores e menores que zero, e como é continua zero deve ser incluso.
+
+% Q3 - b)
+\subsection{}%{$\exists f_{(x)}\in\mathbb{R}: f_{(x)}\in[0,1]$}
+
+% Q3 - c)
+\subsection{$ \exists\,f_{(x)}\in\mathbb{R}: f_{(x)} \in\mathbb{I}\quad\forall\,x\in\mathbb{Q} $}
+sim:
+\begin{flalign*}
+&
+	c_{(x)} = x + \sqrt{2}
+&\\& \cdots
+&
+\end{flalign*}
+
+% Q3 - d)
+\subsection{$ f_{(x)}\in\mathbb{R}: \cdots $}
+sim,
+\begin{flalign*}
+&
+	d_{(x)} = 
+	\left\{
+	\begin{array}{l l}
+ 	%
+		1 \quad& x\in\mathbb{Q}\\
+		0 \quad& x\in\mathbb{R}\backslash\mathbb{Q}
+	%
+	\end{array}
+	\right.
+&
+\end{flalign*}
+
+\setcounter{section}{6}
+
+% Q7
+\section{}
+
+% Q7 - a)
+\subsection{$ 
+	h_{(x)} = \ln(\sqrt{x-1} + 1)\quad
+	: [1,\infty)\mapsto\mathbb{R}
+$}
+
+\subsubsection{$ h_{(x)} \text{ é injetiva} $}
+\begin{flalign*}
+&
+\iff
+	x_1 = x_2
+	\quad\forall\,\{x_1,x_2\}\in[1,\infty)
+	: h_{(x_1)} = h_{(x_2)}
+\implies &\\& \implies
+	\ln(\sqrt{x_1-1}+1)
+=
+	\ln(\sqrt{x_2-1}+1)
+\implies
+	|x_1-1| = |x_2-1|
+; &\\&
+	\{ x_1,x_2 \} \in[1,\infty)
+\implies
+	x_1 = x_2
+&
+\end{flalign*}
+
+\subsubsection{$I = \text{CD}_{h_{(x)}}$}
+
+\subsubsection{$ h^{-1} $}
+\begin{flalign*}
+&
+\iff
+	x = \ln\left(\sqrt{h^{-1}_{(x)} - 1} + 1\right)
+\implies
+	h^{-1}_{(x)} = (e^{x}-1)^2-1
+&\\& \therefore
+	h^{-1}_{(x)} = (e^{x}-1)^2-1
+	: [0,\infty) \mapsto [1,\infty)
+&
+\end{flalign*}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

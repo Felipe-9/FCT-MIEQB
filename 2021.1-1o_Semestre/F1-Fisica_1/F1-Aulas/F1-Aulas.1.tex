@@ -1,0 +1,53 @@
+% !TEX root = ./F1-Aulas.1.tex
+\providecommand\mainfilename{"./F1-Aulas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F1-Aulas.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F1-Aulas.1}}}
+% \tikzsetexternalprefix{./.build/figures/F1-Aulas.1/}
+
+\mymakesubfile{1}
+[Fisica 1]
+{Aula Teórica 03/18: Vetores} % Subfile Title
+{Aula Teórica 03/18: Vetores} % Part Title
+
+\begin{sectionBox}1{Introdução} % S1
+    
+    \begin{BM}
+        \Big\{\vv{A};\vv{B}\Big\}\in R^n
+    \end{BM}
+
+    \begin{multicols}{2}
+        \paragraph{Produto Escalar (Interno):}
+        \begin{BM}
+            \vv{A} \cdot \vv{B}
+            = \\
+            = \myvert{\vv{A}}\myvert{\vv{B}}\cos{(\theta)} 
+            = \\
+            = \sum_{k=1}^{n}{a_k\,b_k}
+        \end{BM}
+
+        \paragraph{Produto Vetorial (Externo):}
+        \begin{BM}
+            \vv{A}*\vv{B}
+            = \\
+            = \myvert{\vv{A}}\myvert{\vv{B}}\sin{(\theta)}(\hat{A}*\hat{B})
+            = \\
+            = (\hat{A}*\hat{B})
+            \,\sum_{k=1}^{n-1}{
+                \left(\sum_{j=k+1}^{n}{(a_k\, b_j)}\right)
+            }
+        \end{BM}
+    \end{multicols}
+    
+    \subsection{Regra da mão direita}
+    Ao se fazer produto vetorial, com a mão apontada para o vetor inicial, direcione a palma da mão em direção e sentido ao segundo vetor, e assim o polegar estará apontado para a direção e sentido do vetor resultante
+    
+\end{sectionBox}
+
+\end{document}

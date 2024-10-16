@@ -1,0 +1,115 @@
+% !TEX root = ./QF_A-Aulas_Exercicios.2.tex
+\providecommand\mainfilename{"./QF_A-Aulas_Exercicios.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Aulas_Exercicios.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QF_A-Aulas_Exercicios.2}}}
+% \tikzsetexternalprefix{./.build/figures/QF_A-Aulas_Exercicios.2/graphics/}
+
+\mymakesubfile{2}
+[QF A]
+{Exercicios} % Subfile Title
+{Exercicios} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Prove que a reação é de primeira ordem em relação a \ch{N2O2} sabendo que no instante inicial \(t=0\) já existem 0.25\,\unit{\bar\of{\ch{NO}}} no reator. A pressão total varia da seguinte maneira em função do tempo:
+} % Q1
+    \begin{center}\large\bfseries
+        \ch{N2O2\gas{} -> 2 NO\gas{}}
+    \end{center}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{6}{C}}
+            \toprule
+            
+                t/\unit{\min}
+                & 1 & 2 & 3 & 5 & 20 & 100
+                \\ 
+                p_t/\unit{\bar}
+                & 2.30 & 2.62 & 2.85 & 3.14 & 3.45 & 3.45
+
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C C C | C}
+            \toprule
+            
+                t/\unit{\minute}
+                & p_{\ch{N2O2\gas{}}}/\unit{\bar}
+                & p_{\ch{2 NO2\gas{}}}/\unit{\bar}
+                & p_t
+            
+            \\\midrule
+            
+                   0 & p_0 & 0.25 & p_0+0.25
+                \\ t & p_0-x & 0.25+2\,x & p_0+0.25+x
+                \\ \infty & 0 & 0.25+2\,p_0 & 0.25+2\,p_0
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{flalign*}
+        &
+            3.45=0.25+2\,p_0
+            \implies 
+            p_0
+            \cong (3.45-0.25)/2
+            = 1.6
+            ; &\\[3ex]&
+            x 
+            = p_t-p_0-0.25
+            = p_t-1.85
+            = p_t-1.85
+            ; &\\[3ex]&
+            p_{\ch{N2O2\gas{}}}
+            = p_0-x = 1.6-x
+            ; &\\[3ex]&
+            \adif{\ln\ch{[A]}}=-k\,\adif{t}
+            \implies
+            k=-\adv{\ln{p_{\ch{A}}}}{t}
+        &
+    \end{flalign*}
+    \begin{center}
+        \vspace{1ex}
+        % \setlength\tabcolsep{2mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{R *{3}{C}}
+            \toprule
+            
+                t/\unit{\min}
+                & x/\unit{\bar}
+                & \adif{\ln p_{\ch{N2O2\gas}}}
+                & k/\unit{\minute^{-1}}
+
+                \\ 0   &      & 0 
+                \\ 1   & 0.45 & \num{-0.33024168687057653} & \num{0.33024168687057653}
+                \\ 2   & 0.77 & \num{-0.6563332074372289}  & \num{0.32816660371861445}
+                \\ 3   & 1    & \num{-0.9808292530117261}  & \num{0.326943084337242}
+                \\ 5   & 1.29 & \num{-1.6411866107486806}  & \num{0.3282373221497361}
+                \\ 20  & 1.6  &
+                \\ 100 & 1.6  &
+
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{flalign*}
+        &
+            \therefore k \cong\num{0.3283971742690423}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\end{document}

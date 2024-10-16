@@ -1,0 +1,1001 @@
+% !TEX root = ./IQF - Minitestes.tex
+% IQF 2021.2 Miniteste 3
+\setcounter{part}{2}
+\part{}
+
+\begin{questionBox}1{}
+    
+    Titulou-se 12\,\unit{\milli\liter} de uma solução de 0.09\,\unit{\molar} de ibuprofeno (\ch{(CH3)2CHC6H5CH(CH3)COOH}, \(K_a= 3.72\,\mathrm{E}-5\)) (princípio activo anti-inflamatório) com uma solução 0.15\,\unit{\molar} de \ch{NaOH}, a 25\,\unit{\celsius}.
+
+    % \ch{
+    %         (CH3)2CHC6H5CH(CH3)COOH
+    %     +   H2O
+    %     <>[\num{3.72E-5}]
+    %         (CH3)2CHC6H5CH(CH3)COO-
+    %     +   H3O^+
+    %     % +   H2O
+    % }
+
+    \begin{enumerate}
+        \begin{multicols}{3}
+            \item Titulado
+            \item Titulante
+            \item Solução final
+        \end{multicols}
+    \end{enumerate}
+
+    \begin{questionBox}3m{O pH da solução de ibuprofeno antes de se iniciar a titulação é \line(1,0){2em}}
+
+        % \begin{table}[H]\centering
+        %     \begin{tabular}{c r r r r}
+                
+        %         \toprule
+
+        %         &   \multicolumn{1}{          c}{\ch{HA\aq{1}}}
+        %         &   \multicolumn{1}{@{\,+\,}  c}{\ch{H2O\lqd{1}}}
+        %         &   \multicolumn{1}{@{\ch{<>}}c}{\ch{A^{-}\aq{1}}}
+        %         &   \multicolumn{1}{@{\,+\,}  c}{\ch{H3O^{+}\aq{1}}}
+
+        %         \\\midrule
+
+        %             ini
+        %         &   \ch{[HA\aq{1}]_i}
+        %         &   --
+        %         &   0
+        %         &   0
+
+        %         \\  
+                    
+        %             eq
+        %         &   \ch{[HA\aq{1}]_i}-x
+        %         &   --
+        %         &   x
+        %         &   x
+
+        %         \\\bottomrule
+
+        %     \end{tabular}
+        % \end{table}
+
+        \begin{flalign*}
+            &
+                \begin{aligned}
+                    &
+                    \ch{[H3O^+\aq{1}]} = x
+                \,\land \\
+                \land\, &
+                    \frac{x^2}{\ch{[HA\aq{1}]_i}-x}
+                =   K_a
+                % % 
+                %     x^2+K_a\,x-K_a\,\ch{[C13H18O2\aq{1}]_i}
+                % =   0
+                \end{aligned}
+            \implies &\\&
+            \implies
+                \begin{aligned}
+                    &
+                        p\ch{H} = -\log(x)
+                    \,\land \\
+                    \land\, &
+                        x^2+K_a\,x-K_a\,\ch{[HA\aq{1}]}_i = 0
+                \end{aligned}
+            \implies &\\&
+            \implies
+                p\mathrm{H}
+            =   -\log
+                \left(
+                    \frac
+                        {
+                            -K_a\pm
+                            \sqrt{
+                                K_a^2
+                            -   4
+                            \,  (-K_a\,\ch{[HA\aq{1}]}_i)
+                            }
+                        }
+                        {2}
+                \right)
+            = &\\& 
+            =   -\log
+                \left(
+                    \frac
+                        {
+                            -3.72\E-5\pm
+                            \sqrt{
+                                (3.72\E-5)^2
+                            -   4
+                            \,  (-3.72\E-5*0.09)
+                            }
+                        }
+                        {2}
+                \right)
+            \cong &\\&
+            \cong
+                \num{2.74202193320574}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+\end{questionBox}
+\begin{questionBox}{}
+
+    \begin{questionBox}3{Para que o p\ch{H} da solução seja igual a 4.43 temos que adicionar \line(1,0){2em}\,\unit{\milli\liter} de solução de \ch{NaOH\aq{}}.}
+
+        % \begin{table}[H]\centering
+        %     \begin{tabular}{c *{4}{l}}
+                
+        %         \toprule
+                
+        %         % &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+        %         % &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{H2O}}
+        %         % &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+        %         % &   \multicolumn{1}{c             }{\ch{H3O^+}}
+
+        %         % \\\midrule
+                
+        %         %     t0
+        %         % &   \(\ch{[HA]}_{t0}\)
+        %         % &   --
+        %         % &   0
+        %         % &   0
+
+        %         % \\\midrule
+                
+        %         %     t1
+        %         % &   \(\ch{[HA]}_{t0}-x\)
+        %         % &   --
+        %         % &   0
+        %         % &   0
+
+        %         % \\\bottomrule
+
+        %         % \multicolumn{5}{r}{
+        %         %     Concentrações(\unit{\molar}) para Titulado
+        %         % }
+
+        %         % \\\toprule
+
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+        %         &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{OH^-}}
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+        %         &   \multicolumn{1}{c             }{\ch{H2O}}
+                
+        %         \\\midrule
+                
+        %             \(t0\)
+        %         &   \(\ch{[HA]}_{t0}\)
+        %         &   \(\ch{[OH^-]}_{t0}\)
+        %         &   \(0\)
+        %         &   --
+                
+        %         \\  
+                
+        %             \(t1\)
+        %         &   \(\ch{[HA]}_{t1}\)
+        %         &   \(0\)
+        %         &   \(\ch{[OH^-]}_{t0}\)
+        %         &   --
+                
+        %         \\\toprule
+                
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+        %         &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{H2O}}
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+        %         &   \multicolumn{1}{c             }{\ch{H3O^+}}
+                
+        %         \\\midrule
+
+        %             t1
+        %         &   \(\ch{[HA]}_{t1}\)
+        %         &   --
+        %         &   \(\ch{[A^-]}_{t1}\)
+        %         &   \(0\)
+
+        %         \\
+
+        %             t2
+        %         &   \(\ch{[HA]}_{t1}-y\)
+        %         &   --
+        %         &   \(\ch{[A^-]}_{t1}+y\)
+        %         &   \(y\)
+
+        %         \\\bottomrule
+
+        %         \multicolumn{5}{r}{
+        %             Concentrações(\unit{\molar}) para solução final
+        %         }
+
+        %     \end{tabular}
+        % \end{table}
+
+        \begin{flalign*}
+            &
+                \begin{aligned}
+                &
+                    pKa
+                =   -\log(K_a)
+                =   \num{4.429457060118102}
+                =   pH
+                \,\land \\
+                \land\, &
+                    K_a\,\ch{[HA]}
+                =   \ch{[A^-][H3O^+]}
+                \end{aligned}
+            \implies &\\&
+            \implies
+                Vol_2
+            =   N_{\ch{NaOH\aq{2}}}
+            /   2\,\ch{[NaOH\aq{2}]}
+            =   \ch{[HA]}_{t0}\,Vol_1
+            /   2\,\ch{[NaOH\aq{2}]}
+            = &\\&
+            =   \frac
+                    {0.09*0.120}
+                    {2*0.15}
+            =   \qty{36}{\milli\liter\of{\ch{NaOH\aq{2}}}}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+    
+\end{questionBox}
+\begin{questionBox}{}
+
+    \begin{questionBox}3{O pH da solução após a adição de 4.0\,\unit{\milli\liter} da solução de \ch{NaOH} é \line(1,0){2em}}
+
+        \begin{table}[H]\centering
+            \begin{tabular}{c *{4}{l}}
+                
+                \toprule
+                
+                &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+                &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{OH^-}}
+                &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+                &   \multicolumn{1}{c             }{\ch{H2O}}
+                
+                \\\midrule
+                
+                    \(t0\)
+                &   \(\ch{[HA]}_{t0}\)
+                &   \(\ch{[OH^-]}_{t0}\)
+                &   \(0\)
+                &   --
+                
+                \\
+                
+                    \(t1\)
+                &   \(\ch{[HA]}_{t1}\)
+                &   \(0\)
+                &   \(\ch{[OH^-]}_{t0}\)
+                &   --
+                
+                \\\toprule
+                
+                &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+                &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{H2O}}
+                &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+                &   \multicolumn{1}{c             }{\ch{H3O^+}}
+                
+                \\\midrule
+                
+                    \(t2\)
+                &   \(\ch{[HA]}_{t1}\)
+                &   --
+                &   \(\ch{[OH^-]}_{t0}\)
+                &   \(\ch{[H3O^+]}_{t2}\)
+                
+                
+                \\\bottomrule
+                
+                \multicolumn{5}{r}{
+                    Concentrações(\unit{\molar}) para solução final
+                }
+                
+            \end{tabular}
+        \end{table}
+
+        \begin{flalign*}
+            &
+                pH
+            =   -\log
+                \left(
+                    K_a
+                \,  \frac
+                        {\ch{[HA]}_{t0}-\ch{[OH^-]}_{t0}}
+                        {\ch{[OH^-]}_{t0}}
+                \right)
+            \land &\\&
+            \land
+                \ch{[HA]}_{t0}
+            =   \ch{[HA]}_1*Vol_1/Vol_3
+            \land
+                \ch{[OH^-]}_{t0}
+            =   \ch{[OH^-]}_2*Vol_2/Vol_3
+            \implies &\\&
+            \implies
+                pH
+            =   -log
+                \left(
+                    K_a
+                    \left(
+                        \frac
+                            {\ch{[HA]}_1*Vol_1/Vol3}
+                            {\ch{[OH^-]}_2*Vol_2/Vol_3}
+                    -   1
+                    \right)
+                \right)
+            = &\\&
+            =   -log
+                \left(
+                    3.72\E-5
+                    \left(
+                        \frac
+                            {0.09*0.012}
+                            {0.15*0.004}
+                    -   1
+                    \right)
+                \right)
+            \cong
+                \num{4.526367073126159}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+\end{questionBox}
+\begin{questionBox}{}
+
+    \begin{questionBox}3{O pH da solução após a adição de 9.0\,\unit{\milli\liter} da solução de \ch{NaOH} é \line(1,0){2em}}
+
+        \begin{table}[H]\centering
+            \begin{tabular}{c *{4}{l}}
+                
+                \toprule
+                
+                &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+                &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{OH^-}}
+                &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+                &   \multicolumn{1}{c             }{\ch{H2O}}
+                
+                \\\midrule
+                
+                    \(t0\)
+                &   \(\ch{[HA]}_{t0}\)
+                &   \(\ch{[OH^-]}_{t0}\)
+                &   \(0\)
+                &   --
+                
+                \\
+                
+                    \(t1\)
+                &   \(0\)
+                &   \(\ch{[OH^-]}_{t1}\)
+                &   \(\ch{[HA]}_{t0}\)
+                &   --
+                
+                % \\\toprule
+                
+                % &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+                % &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{H2O}}
+                % &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+                % &   \multicolumn{1}{c             }{\ch{H3O^+}}
+                
+                % \\\midrule
+                
+                %     \(t1\)
+                % &   \(\ch{[HA]}_{t1}\)
+                % &   --
+                % &   \(\ch{[A^-]}_{t1}\)
+                % &   \(0\)
+                
+                % \\
+                
+                %     \(t2\)
+                % &   0
+                % &   --
+                % &   \(\ch{[HA]}_{t0}\)
+                % &   \(y\)
+                
+                \\\bottomrule
+                
+                \multicolumn{5}{r}{
+                    Concentrações(\unit{\molar}) para solução final
+                }
+                
+            \end{tabular}
+        \end{table}
+
+        \begin{flalign*}
+            &
+                pH
+            =   14+\log
+                \left( 
+                    \ch{[OH^-]}_{t1}
+                \right)
+            = &\\&
+            =   14+\log
+                \left( 
+                    \ch{[OH^-]}_{t0}-\ch{[HA]}_{t0}
+                \right)
+            = &\\&
+            =   14+\log
+                \left( 
+                    \left(
+                        \ch{[OH^-]}_2
+                    \,  Vol_2/Vol_3
+                    \right)
+                -   \left(
+                        \ch{[HA]}_1
+                    \,  Vol_1/Vol_3
+                    \right)
+                \right)
+            = &\\&
+            =   14+\log
+                \left( 
+                    \frac
+                        {
+                            \ch{[OH^-]}_2
+                        \,  Vol_2
+                        -   \ch{[HA]}_1
+                        \,  Vol_1
+                        }
+                        {Vol_1+Vol_2}
+                \right)
+            = &\\&
+            =   14+\log
+                \left(
+                    \frac
+                        {
+                            0.15
+                        *   0.0090
+                        -   0.009
+                        *   0.012
+                        }
+                        {0.012+0.0090}
+                \right)
+            \cong &\\&
+            \cong
+                \num{12.771902301106642}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+\end{questionBox}
+\begin{questionBox}{}
+
+    \begin{questionBox}3{No ponto de equivalência o pH da solução é \line(1,0){2em}}
+        
+        % \begin{table}[H]\centering
+        %     \begin{tabular}{c *{4}{l}}
+                
+        %         \toprule
+                
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+        %         &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{OH^-}}
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+        %         &   \multicolumn{1}{c             }{\ch{H2O}}
+                
+        %         \\\midrule
+                
+        %             \(t0\)
+        %         &   \(\ch{[HA]}_{t0}\)
+        %         &   \(\ch{[OH^-]}_{t0}\)
+        %         &   \(0\)
+        %         &   --
+                
+        %         \\
+                
+        %             \(t1\)
+        %         &   \(0\)
+        %         &   \(0\)
+        %         &   \(\ch{[A^-]}_{t1}\)
+        %         &   --
+                
+        %         \\\toprule
+                
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+        %         &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{H2O}}
+        %         &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+        %         &   \multicolumn{1}{c             }{\ch{H3O^+}}
+                
+        %         \\\midrule
+                
+        %             \(t1\)
+        %         &   \(0\)
+        %         &   --
+        %         &   \(\ch{[A^-]}_{t1}\)
+        %         &   \(\ch{[H3O^+]}_{t1}\)
+                
+        %         \\
+                
+        %             \(t2\)
+        %         &   \(\ch{[HA]}_{t2}\)
+        %         &   --
+        %         &   \(\ch{[A^-]}_{t2}\)
+        %         &   \(\ch{[H3O^+]}_{t2}\)
+                
+        %         \\\bottomrule
+                
+        %         \multicolumn{5}{r}{
+        %             Concentrações(\unit{\molar}) para solução final
+        %         }
+                
+        %     \end{tabular}
+        % \end{table}
+
+        \begin{table}[H]\centering
+            \begin{tabular}{c *{4}{l}}
+                
+                \toprule
+                
+                &   \multicolumn{1}{c @{\,+}      }{\ch{HA}}
+                &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{OH^-}}
+                &   \multicolumn{1}{c @{\,+}      }{\ch{A^-}}
+                &   \multicolumn{1}{c             }{\ch{H2O}}
+                
+                \\\midrule
+                
+                    \(t0\)
+                &   \(\ch{[HA]}_{t0}\)
+                &   \(\ch{[HA]}_{t0}\)
+                &   \(0\)
+                &   --
+                
+                \\
+                
+                    \(t1\)
+                &   \(0\)
+                &   \(0\)
+                &   \(\ch{[HA]}_{t0}\)
+                &   --
+                
+                \\
+                
+                    \(t2\)
+                &   \(\ch{[HA]}_{t2}\)
+                &   \(\ch{[HA]}_{t2}\)
+                &   \(\ch{[A^-]}_{t2}\)
+                &   --
+                
+                \\\bottomrule
+                
+                \multicolumn{5}{r}{
+                    Concentrações(\unit{\molar}) para solução final
+                }
+                
+            \end{tabular}\relax
+        \end{table}\relax
+
+        \vspace{-8ex}
+        
+        \begin{flalign*}
+            &
+                pH
+            =   14+\log
+                \left(
+                    \ch{[HA]}_{t2}
+                \right)
+            \land &\\&
+            \land
+                \ch{[HA]}_{t2}
+            =   \ch{[HA]}_{t0}
+            -   \ch{[A^-]}_{t2}
+            \land &\\&
+            \land
+                \frac
+                    {\ch{[A^-]}_{t2}}
+                    {\ch{[HA]}_{t2}^2}
+            =   K_a
+            \implies &\\&
+            \implies
+                pH
+            =   14+\log
+                \left(
+                    \ch{[HA]}_{t2}
+                \right)
+            \land &\\&
+            \land
+                \frac
+                    {\ch{[HA]}_{t0}-\ch{[HA]}_{t2}}
+                    {\ch{[HA]}_{t2}^2}
+            =   K_a
+            \implies &\\&
+            \implies
+                \ch{[HA]}_{t2}
+            =   \frac
+                    {
+                        -2\pm\sqrt{1-4*K_a*(-\ch{[HA]}_{t0})}
+                    }
+                    {2\,K_a}
+            \land &\\&
+            \land
+                pH
+            =   14+\log
+                \left(
+                    \frac
+                    {
+                        -1\pm\sqrt{1-4*K_a*(-\ch{[HA]}_{t0})}
+                    }
+                    {2\,K_a}
+                \right)
+            = &\\&
+            =   14+\log
+                \left(
+                    \frac
+                    {
+                        -1\pm\sqrt{1-4*3.72\E-5*(-0.09)} % -1 \pm 1.000006695977582
+                    }
+                    {2*3.72\E-5}
+                \right)
+            \cong &\\&
+            \cong
+                \num{12.954241055432456}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+\end{questionBox}
+
+% Q5
+\setcounter{question}{4}
+\begin{questionBox}1m{}
+    
+    Responda às seguintes questões com base nas constantes do produto de solubilidade e nos dados de potencial de redução padrão fornecidos
+
+    \begin{itemize}
+        \item \(K_{ps}(\ch{CuCl})=1.0\E-6\)
+        \item \(E^\circ (\ch{Cu^+\aq{}/Cu\sld{}}) = 0.36\,\unit{\volt}\)
+        \item \(E^\circ (\ch{Fe^{3+}/Fe^{2+}}) = 0.77\,\unit{\volt}\)
+    \end{itemize}
+
+    Considere a pilha constituída pelo acoplamento da semi-célula
+
+    \begin{center}
+        \ch{Fe^{3+}}(\(1.0\E-5\))\,\unit{\molar},
+        \ch{Fe^{2+}}(\(1.0\E-3\))\,\unit{\molar} \big|\ch{Pt\sld{}} com
+        \ch{Cu\sld{}/CuCl_{sat}}
+    \end{center}
+
+    \begin{center}
+        \ch{
+            Fe^{3+} + e^- <> Fe^{2+}
+        \\  Cu\sld{} <> Cu^{+}\aq{} + e^-
+        \\[2ex]
+            Fe^{3+} + Cu\sld{} <> Fe^{2+} + Cu^{+}\aq{}
+        }
+    \end{center}
+
+    \begin{questionBox}3{%
+        A 25\,\unit{\celsius} o valor do potencial padrão de redução da pilha assim formada será \(E^\circ = \)\,\line(1,0){2em}\,\unit{\volt}%
+    }
+        
+        \begin{flalign*}
+            &
+                E^\circ
+            =   E^\circ_{\text{catodo}}
+            -   E^\circ_{\text{anodo}}
+            =   (0.77-0.36)\,\unit{\volt}
+            =   0.41\,\unit{\volt}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{%
+        Calcule o quociente da reação que ocorre na pilha, \(Q =\)\,\line(1,0){2em}%
+    }
+        
+        \begin{flalign*}
+            &
+                Q
+            =   \frac
+                    {\ch{[Fe^{2+}]}\,\ch{[Cu^+]}}
+                    {\ch{[Fe^{3+}]}}
+            \land &\\&
+            \land
+                \ch{[Cu^+]\,[Cl^-]}
+            =   \ch{[Cu^+]}^2
+            =   K_{ps}
+            \implies &\\&
+            \implies
+                Q
+            =   \frac
+                    {\ch{[Fe^{2+}]}\,\sqrt{K_{ps}}}
+                    {\ch{[Fe^{3+}]}}
+            = &\\&
+            =   \frac
+                    {1.0\E-3\,\sqrt{1.0\E-6}}
+                    {1.0\E-5}
+            = &\\&
+            =   0.1
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+    \begin{questionBox}3{%
+        A pilha apresenta uma diferença de potencial \(E=\)\,\line(1,0){2em}%
+    }
+        
+        \begin{flalign*}
+            &
+                E
+            =   E^\circ
+            -   0.0257
+            \,  \ln(Q)
+            /   n
+            = &\\&
+            =   0.41
+            -   0.0257
+            \,  \ln(0.1)
+            \,  \unit{\volt}
+            /   1
+            \cong &\\&
+            \cong
+                \qty{0.469176436889947}{\volt}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{%
+        A constante de equilíbrio da reação que ocorre na pilha é \(K =\)\,\line(1,0){2em}%
+    }
+        
+        \begin{flalign*}
+            &
+                0.0257\,\ln{K}/n
+            =   E^\circ
+            \implies &\\&
+            \implies
+                K
+            =   \exp
+                \left(
+                    \frac
+                        {n\,E^\circ}
+                        {0.0257}
+                \right)
+            =   &\\&
+            =   \exp
+                \left(
+                    \frac
+                        {1*0.41}
+                        {0.0257}
+                \right)
+            =   &\\&
+            =   \num{2.718281828459045}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    Considere agora uma nova pilha onde se utilizou uma solução com \ch{[Cu^+]}\,\( = 0.01\)\,\unit{\molar} ao invés da solução saturada de \ch{CuCl} no elétrodo de cobre, mantendo todas as outras condições constantes.
+
+    \begin{questionBox}3{%
+        A nova pilha assim formada tem uma força eletromotriz de \(E = \)\,\line(1,0){2em}\,\unit{\volt}%
+    }
+
+        \begin{flalign*}
+            &
+                E
+            =   E^\circ
+            -   0.0257
+            \,  \ln(Q_2)
+            /   n
+            \land &\\&
+            \land
+                Q_2
+            =   \frac
+                    {\ch{[Fe^{2+}]\,[Cu^{+}]}}
+                    {\ch{[Fe^{3+}]}}
+            \implies &\\&
+            \implies
+                E
+            =   E^\circ
+            -   0.0257
+            \,  \ln
+                \left(
+                    \frac
+                        {\ch{[Fe^{2+}]\,[Cu^{+}]}}
+                        {\ch{[Fe^{3+}]}}
+                \right)
+            /   n
+            = &\\&
+            =   0.41\,\unit{\volt}
+            -   0.0257
+            \,  \ln
+                \left(
+                    \frac
+                        {1.0\E-2*0.01}
+                        {1.0\E-5}
+                \right)
+            /   1
+            \cong &\\&
+            \cong 
+                \qty{0.350823563110053}{\volt}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+\end{questionBox}
+
+% Q6
+\begin{questionBox}1{}
+    
+    Para preparar 250\,\unit{\milli\liter} de uma solução de ácido nítrico 0.39\,\unit{\molar}, partindo de uma solução concentrada do ácido nítrico (70\,\unit{\percent(\gram/\gram)} e densidade = 1.420\,\unit{\kilo\gram\per\liter}) que volume de solução de \ch{HNO3} concentrada necessito?
+
+    \sisetup{
+        % scientific-notation = engineering,  % scientific/engineering/fixed/false
+        % output-exponent-marker = {\,\mathrm{E}},
+        round-precision     = 3,
+        round-mode          = places,       % figures/places/none
+        exponent-to-prefix  = false,        % 1000 g -> 1 kg
+        % round-minimum       = 0.01,
+        % fixed-exponent      = 0,
+    }
+
+    \begin{flalign*}
+        &
+            Vol_{\ch{HNO3}}
+        =   \frac
+                {\unit{\liter\of{\ch{HNO3\aq{1}}}}}
+                {1.420\,\unit{\kilo\gram\of{\ch{HNO3\aq{1}}}}}
+        \,  \frac
+                {\unit{\gram\of{\ch{HNO3\aq{1}}}}}
+                {0.7\,\unit{\gram\of{\ch{HNO3}}}}
+        \,  \frac
+                {63.01\,\unit{\gram\of{\ch{HNO3}}}}
+                {\unit{\mole\of{HNO3}}}
+        \,  \frac
+                {0.39\,\unit{\mole\of{HNO3}}}
+                {\unit{\liter\of{\ch{HNO3\aq{2}}}}}
+        \,* &\\&
+        *   250\,\unit{\milli\liter\of{\ch{HNO3\aq{2}}}}
+        \cong
+            \qty{6.180558350100604}{\milli\liter\of{\ch{HNO3\aq{1}}}}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+% Q7
+\begin{questionBox}1{}
+    
+    Qual a diferença de potencial de uma pilha constituida por um elétrodo de prata e um elétrodo de estanho mergulhados respectivamente numa solução \(9.09\E-2\)\,\unit{\molar} em \ch{Ag^+} e numa solução \(3.87\E-2\)\,\unit{\molar} em \ch{Sn^{2+}}, a 25\,\unit{\celsius}?
+
+    \begin{itemize}
+        \item \(E^\circ (\ch{Ag^+/Ag}) = 0.800\,\unit{\volt}\)
+        \item \(E^\circ (\ch{Sn^{2+}/Sn}) = -0.136\,\unit{\volt}\)
+    \end{itemize}
+
+    
+    \begin{center}
+        \ch{
+            2 Ag^+\aq{} + 2 e^- <> 2 Ag\sld{}
+        \\  Sn\sld{} <> Sn^{2+}\aq{} + 2 e^-
+        }
+    \end{center}
+
+    \begin{flalign*}
+        &
+            E
+        =   E^\circ - 0.0257\,\ln(Q)/n
+        = &\\&
+        =   (0.800-(-0.0136))\,\unit{\volt}
+        -   0.0257
+        \,  \ln
+            \left(
+                \frac
+                    {3.87\E-2}
+                    {(9.09\E-2)^2}
+            \right)
+        \,  \unit{\volt}
+        /   2
+        \cong &\\&
+        \cong
+            \qty{0.824572877154748}{\volt}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+% Q10
+\setcounter{question}{9}
+\begin{questionBox}1{}
+    
+    Qual a concentração de amónia aquosa (\ch{NH3}) em \unit{\mole\per\cubic\deci\meter} (\unit{\molar}) necessária para iniciar a precipitação de \ch{Fe(OH)2} de uma solução 0.0025\,\unit{\molar} em \ch{FeCl2}?
+    
+    \begin{itemize}
+        \item \(K_{b}  (\ch{NH3}) = 1.8\E-5\)
+        \item \(K_{ps} (\ch{Fe(OH)2}) = 1.6\E-14\)
+    \end{itemize}
+
+    \begin{table}[H]\centering
+        \begin{tabular}{c *{4}{c}}
+            
+            \toprule
+            
+            &   \multicolumn{1}{c @{\,+}      }{\ch{NH3\aq{}}}
+            &   \multicolumn{1}{c @{\,\ch{<>}}}{\ch{H2O\lqd{}}}
+            &   \multicolumn{1}{c @{\,+}      }{\ch{NH4^+\aq{}}}
+            &   \multicolumn{1}{c             }{\ch{OH^-\aq{}}}
+            
+            \\\midrule
+            
+                \(t0\)
+            &   \(\ch{[NH3]}_{t0}\)
+            &   --
+            &   0
+            &   0
+            
+            \\
+            
+                \(t1\)
+            &   \(\ch{[NH3]}_{t1}\)
+            &   --
+            &   \(\ch{[NH4^+]}_{t1}\)
+            &   \(\ch{[OH^-]}_{t1}\)
+            
+            \\\bottomrule
+            
+            &   \multicolumn{2}{c @{\,\ch{<>}}}{\ch{Fe(OH)2\sld{}}}
+            &   \multicolumn{1}{c @{\,+}      }{\ch{Fe^{2+}\aq{}}}
+            &   \multicolumn{1}{c             }{\ch{2 OH^-\aq{}}}
+            
+            \\\midrule
+            
+                \(t1\)
+            &   \multicolumn{2}{c}{--}
+            &   \(\ch{[Fe^{2+}]}_{t1}\)
+            &   \(\ch{[OH^-]}_{t1}\)
+            
+            \\\bottomrule
+            
+            % \multicolumn{5}{r}{
+            %     Concentrações(\unit{\molar}) para solução final
+            % }
+            
+        \end{tabular}
+    \end{table}
+
+    \begin{flalign*}
+        &
+            \ch{[NH3]}_{t0}
+        =   \ch{[NH3]}_{t1}
+        +   \ch{[OH^-]}_{t1}
+        \land &\\&
+        \land
+            \frac
+                {\ch{[OH^-]}_{t1}^2}
+                {\ch{[NH3]}_{t1}}
+        =   K_b
+        \land &\\&
+        \land
+            \ch{[Fe^{2+}]}_{t1}
+        \,  \ch{[OH^-]}_{t1}^2
+        =   K_{ps}
+        \implies &\\&
+        \implies
+            \ch{[NH3]}_{t0}
+        =   
+            \frac
+                { |K_{ps}/\ch{[Fe^{2+}]}_{t1}| }
+                {K_b}
+        +   \sqrt{K_{ps}/\ch{[Fe^{2+}]}_{t1}}
+        = &\\&
+        =
+            \frac
+                { |1.6\E-14/0.0025| }
+                {1.8\E-5}
+        +   \sqrt{1.6\E-14/0.0025}
+        \cong &\\&
+        \cong
+            \qty{2.885377683690259E-6}{\molar}
+        &
+    \end{flalign*}
+    
+\end{questionBox}

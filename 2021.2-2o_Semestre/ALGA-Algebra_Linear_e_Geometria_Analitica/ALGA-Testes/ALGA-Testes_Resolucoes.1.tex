@@ -1,0 +1,614 @@
+% !TEX root = ./ALGA-Testes_Resoluções.1.tex
+\providecommand\mainfilename{"./ALGA-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Testes_Resoluções.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+\renewcommand\thepart{Teste \arabic{part}}
+
+\begin{document}
+
+\mymakesubfile{1}
+[ALGA]
+{\thepart}
+{\thepart}
+
+
+% Q1
+\begin{questionBox}1{}
+
+    \begin{BM}
+        \begin{array}{c}
+            \begin{bmatrix}
+                 0 &  1 & 0 & 3
+            \\  -1 &  2 & 0 & 0
+            \\   1 & -1 & 0 & 3
+            \end{bmatrix}
+            \in\mathcal{M}_{3\times4}(\mathbb{R})
+        \\
+            B:B^T_{(2)}=(4,2,3,-1)\land\exists BA
+        \end{array}
+    \end{BM}
+
+    % (i)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                BA\in\mathcal{M}_{4\times 4}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % (ii)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                (AB)^T_{(2,3)}
+            =   B^T_{2}\,A^{T\,(3)}
+            =   1*4 + (-1)*2 + 0*3 + 3*(-1)
+            =   -1
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % (iii)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                r(A)=3
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+
+% Q2
+\begin{questionBox}1m{}
+
+    \begin{BM}
+        \begin{bmatrix}
+            1 & -2 &  1
+        \\ -1 &  3 & -1
+        \end{bmatrix}
+    \end{BM}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    1 & 0 & 1
+                \\  0 & 1 & 0
+                \end{bmatrix}
+                \xrightarrow[
+                    \begin{array}{c}
+                        l_1 += -2l_2
+                    \\  l_2 += -l1
+                    \end{array}
+                ]{}
+                \begin{bmatrix}
+                     1 & -2 &  1
+                \\  -1 &  3 & -1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    -1 &  3 & -1
+                \\   2 & -4 &  2
+                \end{bmatrix}
+                \xrightarrow[
+                    \begin{array}{c}
+                        l_2 < l_2/2
+                        l_2 <-> l_1
+                    \end{array}
+                ]{}
+                \begin{bmatrix}
+                     1 & -2 &  1
+                \\  -1 &  3 & -1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    -2 &  0 &  0
+                \\   1 &  1 &  1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                     1 &  1 & 1
+                \\  -1 & -1 & 0
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                     1 & -2 & 1
+                \\   0 &  1 & 0
+                \end{bmatrix}
+                \xrightarrow[
+                    \begin{array}{c}
+                        l_2 += -l_1
+                    \end{array}
+                ]{}
+                \begin{bmatrix}
+                     1 & -2 &  1
+                \\  -1 &  3 & -1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+
+% Q3
+\begin{questionBox}1{}
+
+    \begin{BM}
+        \begin{vmatrix}
+             0 & 1 &  2 & -1
+        \\  -1 & 1 &  0 &  0
+        \\   0 & 1 & -2 &  0
+        \\   1 & 4 &  0 &  0
+        \end{vmatrix}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+        =   (-1)(-1)^{1+4}
+            \begin{vmatrix}
+                -1 & 1 &  0
+            \\   0 & 1 & -2
+            \\   1 & 4 &  0
+            \end{vmatrix}
+        =   (-2)(-1)^{2+3}
+            \begin{vmatrix}
+                -1 & 1
+            \\   1 & 4
+            \end{vmatrix}
+        =   2((-1)*4-1*1)
+        =   -10
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+
+% Q4
+\begin{questionBox}1{}
+
+    \begin{BM}
+        B =
+        \begin{bmatrix}
+             1 & 0 & -1
+        \\   1 & 2 &  0
+        \\  -1 & 1 &  1
+        \end{bmatrix}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            B^{-1}
+        =   \frac{\adj B}{\det B}
+        =   (\det B)^{-1}
+            \begin{bmatrix}
+                2 & -1 &  3
+            \\  1 &  0 & -1
+            \\  2 & -1 &  2
+            \end{bmatrix}^T
+        =   -1\,
+            \begin{bmatrix}
+                 2 &  1 &  2
+            \\  -1 &  0 & -1
+            \\   3 & -1 &  2
+            \end{bmatrix}
+        =   \begin{bmatrix}
+                 -2 & -1 &  -2
+            \\    1 &  0 &   1
+            \\   -3 &  1 &  -2
+            \end{bmatrix}
+        &
+    \end{flalign*}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \left(
+                    \begin{bmatrix}
+                         1 & 0 & -1
+                    \\   1 & 2 &  0
+                    \\  -1 & 1 &  1
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        -2 & 1 & -2
+                    \\   1 & 0 &  1
+                    \\  -3 & 1 & -2
+                    \end{bmatrix}
+                \right)_{(2,2)}
+            =   1*1 + 2*0 + 1*1 = 2 \neq 1
+            &\\&
+                \begin{bmatrix}
+                    -2 & 1 & -2
+                \\   1 & 0 &  1
+                \\  -3 & 1 & -2
+                \end{bmatrix}
+                \begin{bmatrix}
+                     1 & 0 & -1
+                \\   1 & 2 &  0
+                \\  -1 & 1 &  1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+\end{questionBox}
+
+
+
+% Q5
+\begin{questionBox}1{}
+
+    \begin{BM}
+        \{A,B,C\}\in\mathcal{M}_{n\times n}(\mathbb{R})
+    \end{BM}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                A\,B = A\,C \land \det A\neq0
+            \implies
+                \exists A^{-1}
+                \land A^{-1}\,A\,B = A^{-1}\,A\,C
+            \implies
+                B=C
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                A^2 = A\,A = I
+            \implies
+                \det(A)\det(A) = \det(I)
+            \implies
+                \det(A)^2 = 1
+            \implies
+                \lvert\det(A)\rvert = 1
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+            \implies
+                \det B
+            =   \det(C^{-1}\,A\,C)
+            =   \det(C^{-1})\,\det(A)\,\det(C)
+            =   \det(A)
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+
+% Q6
+\begin{questionBox}1{}
+
+    \begin{BM}
+            A
+        =   \begin{bmatrix}
+                a & b & c
+            \\  d & e & f
+            \\  g & h & i
+            \end{bmatrix}
+            \in\mathcal{M}_{3\time3}(\mathbb{R})
+        \land \det A = k\neq0
+    \end{BM}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \det(A/2)= (1/2)^3\,\det A = k/6
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{vmatrix}
+                    -a  2\,b -c
+                \\   d -2\,e  f
+                \\  -g  2\,h -i
+                \end{vmatrix}
+            =   (-1)(-1)
+                \begin{vmatrix}
+                    a  -2\,b c
+                \\  d  -2\,e f
+                \\  g  -2\,h i
+                \end{vmatrix}
+            =
+                \begin{vmatrix}
+                     a    &  d    &  g
+                \\  -2\,b & -2\,e & -2\,h
+                \\   c    &  f    &  i
+                \end{vmatrix}
+            =   (-2)
+                \begin{vmatrix}
+                     a    &  d    &  g
+                \\   b    &  e    &  h
+                \\   c    &  f    &  i
+                \end{vmatrix}
+            = &\\&
+            =   (-2)
+                \begin{vmatrix}
+                        a & b & c
+                    \\  d & e & f
+                    \\  g & h & i
+                \end{vmatrix}
+            =   -2\,k
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+
+% Q8
+\begin{questionBox}1m{}
+
+    \begin{BM}
+        \begin{bmatrix}
+            1 &  2 & -1        & 0         &|&  -1
+        \\  0 &  1 &  0        & 2         &|&   1
+        \\ -1 & -2 &  \alpha+1 & 1         &|&   1
+        \\  2 &  3 & -1        & \alpha-1  &|&   \beta-3
+        \end{bmatrix}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \begin{bmatrix}
+                1 &  2 & -1        & 0         &|&  -1
+            \\  0 &  1 &  0        & 2         &|&   1
+            \\ -1 & -2 &  \alpha+1 & 1         &|&   1
+            \\  2 &  3 & -1        & \alpha-1  &|&   \beta-3
+            \end{bmatrix}
+            \xrightarrow[
+                \begin{array}{l}
+                    l_3 += l_1
+                    \\ l_4 += -l_1
+                    \\ l_4 += -l_2
+                \end{array}
+            ]{}
+            \begin{bmatrix}
+                1 &  2 & -1        & 0         &|&  -1
+            \\  0 &  1 &  0        & 2         &|&   1
+            \\  0 &  0 &  \alpha   & 1         &|&   0
+            \\  1 &  0 &  0        & \alpha-3  &|&   \beta-3
+            \end{bmatrix}
+        &
+    \end{flalign*}
+
+    % a)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    1 &  2 & -1 & 0   &|&  -1
+                \\  0 &  1 &  0 & 2   &|&   1
+                \\  0 &  0 &  0 & 1   &|&   0
+                \\  1 &  0 &  0 & 0-3 &|&   0-3
+                \end{bmatrix}
+                \xrightarrow[
+                    \begin{array}{l}
+                        l_4 += 3\,l_3
+                        \\ l_2 += -2\,l_3
+                        \\ l_1 += -l_4
+                        \\ l_1 += -2\,l_2
+                        \\ l_1 <- -l_1
+                        \\ l_1 <-> l_3
+                        \\ l_1 <-> l_4
+                    \end{array}
+                ]{}
+                \begin{bmatrix}
+                    1 & 0 & 0 & 0  &|&  -3
+                \\  0 & 1 & 0 & 0  &|&   1
+                \\  0 & 0 & 1 & 0  &|&   0
+                \\  0 & 0 & 0 & 1  &|&   0
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % b)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    1 &  2 & -1  & 0   &|&  -1
+                \\  0 &  1 &  0  & 2   &|&   1
+                \\  0 &  0 & -1  & 1   &|&   0
+                \\  1 &  0 &  0  & -4  &|&  -3
+                \end{bmatrix}
+                \xrightarrow[
+                    \begin{array}{l}
+                        l_2 += -2\,l_3
+                    \\  l_4 += 4\,l_3
+                    \\  l_1 += -2\,l_2
+                    \\  l_4 += -l_1
+                    \\  l_3 += l_4
+                    \\  l_2 += -2\,l_4
+                    \\  l_1 += 5\,l_4
+                    \\  l_4 <-> l_3
+                    \end{array}
+                ]{}
+                \begin{bmatrix}
+                    1 & 0 & 0 & 0   &|&  -3
+                \\  0 & 1 & 0 & 0   &|&   1
+                \\  0 & 0 & 1 & 0   &|&   0
+                \\  0 & 0 & 0 & 1   &|&   0
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}1{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    1 &  2 & -1 &  0  &|& -1
+                \\  0 &  1 &  0 &  2  &|&  1
+                \\  0 &  0 &  0 &  1  &|&  0
+                \\  1 &  0 &  0 & -3  &|&  \beta-3
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % d)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \begin{bmatrix}
+                    1 &  2 & -1   &  0  &|&  -1
+                \\  0 &  1 &  0   &  2  &|&   1
+                \\  0 &  0 &  1   &  1  &|&   0
+                \\  1 &  0 &  0   & -2  &|&  -3
+                \end{bmatrix}
+                \xrightarrow[
+                    \begin{array}{l}
+                            l_2 += l_4
+                        \\  l_3 += l_4/2
+                        \\  l_1 += l_3
+                        \\  l_1 += -2\,l_2
+                        \\  l_1 <- -l_1*2
+                        \\  l_2 += -l_1
+                        \\  l_3 += -l_1/2
+                        \\  l_4 += -l_1
+                        \\  l_4 <- -l_4/2
+                    \end{array}
+                ]{}
+                \begin{bmatrix}
+                    1 & 0 & 0 &  0  &|&  -3
+                \\  0 & 1 & 0 &  0  &|&   1
+                \\  0 & 0 & 1 &  0  &|&   0
+                \\  0 & 0 & 0 &  1  &|&   0
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+
+\end{questionBox}
+
+
+
+% Q10
+\setcounter{question}{9}
+\begin{questionBox}1{}
+
+    \begin{BM}
+        \begin{array}{c}
+            A
+            \xrightarrow[
+                    l_2 <-> l_3
+            ]{}
+            A_1
+            \xrightarrow[
+                    l_1 += -2\,l_3
+            ]{}
+            A_2
+            \xrightarrow[
+                2\,l_2
+            ]{}
+            B
+        \\
+            C
+            \xrightarrow[
+                2\,l_2
+            ]{}
+            C_1
+            \xrightarrow[
+                l_2 += -2\,l_3
+            ]{}
+            B
+        \end{array}
+    \end{BM}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                E_3\,E_2\,E_1\,A
+            =   E_3\,E_2\,E_1
+            =   B
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                E_3\,E_2\,E_1\,A
+            =   B = I
+            \therefore
+                A^{-1} = E_3\,E_2\,E_1
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                A^T
+            =   \left(
+                    E_1^{-1}\,E_2^{-1}\,E_3^{-1}\,B
+                \right)^T
+            =   (E_3^{-1})^T\,(E_2^{-1})^T\,(E_1^{-1})^T
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+
+    \end{questionBox}
+
+
+
+
+
+\end{questionBox}
+
+
+
+\end{document}

@@ -1,0 +1,258 @@
+% ALGA - Exame 1 Res
+
+% Q1
+\begin{BM}
+    \begin{bmatrix}
+        -2 & 1 & -4
+    \\   1 & 0 & 2
+    \\  -3 & 1 & -5
+    \end{bmatrix}^{-1}
+\end{BM}
+
+\begin{flalign*}
+    &
+        A^{-1} 
+    =   \frac{\adj{A}^T}{\det{A}}
+    =   \frac{1}{-1}
+        \begin{bmatrix}
+            -2 & -1 & 1
+        \\   1 & -2 & -1
+        \\   2 &  0 & -1
+        \end{bmatrix}^T
+    =   -
+        \begin{bmatrix}
+            -2 &  1 &  2
+        \\  -1 & -2 &  0
+        \\   1 & -1 & -1
+        \end{bmatrix}
+    =   \begin{bmatrix}
+             2 & -1 & -2
+        \\   1 &  2 &  0
+        \\  -1 &  1 &  1
+        \end{bmatrix}
+    &
+\end{flalign*}
+
+% Q5,6,7
+\begin{BM}
+        F = \{(a,b,c,d)\in\mathbb{R}^4:2\,a+b=0\land c-d=0\}
+    \\  G = \langle{(1,0,0,2),(0,1,0,1)}\rangle
+    \\  S...
+\end{BM}
+
+% Q5
+\begin{BM}
+    \text{base }F\cap G
+\end{BM}
+
+\begin{flalign*}
+    &
+    =   \text{base } H:
+        H 
+    =   \{(a,b,c,d)\in\mathbb{R}^4:2\,a+b=0\land c-d=0\land a+2\,d=0\land b+d=0\}
+    =   \{(a,b,c,d)\in\mathbb{R}^4:2\,0=b\land c=0\land a=0\land d=0\}
+    &
+\end{flalign*}
+
+% Q7
+\begin{BM}
+    \dim(F)
+\end{BM}
+
+\begin{flalign*}
+    &
+    =   \dim(\langle{(2,1,0,0),(0,0,1,-1)}\rangle)
+    =   2
+    &
+\end{flalign*}
+
+% Q8
+\begin{BM}
+    \langle{e_1+e_2,e_1+e_2+e_3}\rangle^{\bot}:(e_1,e_2,e_3)\text{ base orton. dir de }\mathbb{R}^3
+\end{BM}
+
+\begin{flalign*}
+    &
+        
+    &
+\end{flalign*}
+
+% Q9
+\begin{BM}
+    \cos\measuredangle(e_1+e_2,e_1+e_2+e_3)
+\end{BM}
+
+\begin{flalign*}
+    &
+    =   
+        \frac
+            {(e_1+e_2)|(e_1+e_2+e_3)}
+            {||e_1+e_2||\,||e_1+e_2+e_3||}
+    =   
+        \frac
+            {||e_1+e_2||}
+            {||e_1+e_2+e_3||}
+    =   
+        \frac
+            {\sqrt{||e_1||^2+||e_2||^2}}
+            {\sqrt{||e_1+e_2||^2+||e_3||^2}}
+    =   
+        \frac
+            {\sqrt{2}}
+            {\sqrt{\sqrt{||e_1||^2+||e_2||^2}^2+1}}
+    =   
+        \frac
+            {\sqrt{2}}
+            {\sqrt{\sqrt{2}^2+1}}
+    =   
+        \frac
+            {\sqrt{2}}
+            {\sqrt{3}}
+    =   \frac{2}{\sqrt{6}}
+    &
+\end{flalign*}
+
+% Notes
+\begin{flalign*}
+    &
+        A^{\bot} = \{ u:u|u'=0\quad\forall\,u'\in A \}
+    &
+\end{flalign*}
+
+% Q10,11 e 12
+\begin{BM}
+        r = \{(x,y,z)\in\mathbb{R}^3:(x,y,z)=(2,0,1)+\lambda\,(1,1,0)\quad\lambda\in\mathbb{R}\}
+    \\  s = \{(x,y,z)\in\mathbb{R}^3:(x,y,z)=(2,0,1)+\mi(1,1,1)\quad\mi\in\mathbb{R}\}
+    \\  \pi = \{(x,y,z)\in\mathbb{R}^3:x-y+z-1=0\}
+\end{BM}
+
+% Q10
+\begin{BM}
+    \{\alpha,\beta,d\}:
+    \left\{
+        \begin{aligned}
+        &
+                \pi' = \{(x,y,z)\in\mathbb{R}^3:\alpha\,x+\beta\,y+z+d=0\}
+        \ldiv{} (2,1,3)\in\pi'
+        \ldiv{} \pi'\Vert\pi
+        &
+        \end{aligned}
+    \right\}
+\end{BM}
+
+\begin{flalign*}
+    &
+        \{\alpha,\beta\} = \{1,-1\};
+        d=-(1*2-(-1)*1+3)=2
+    &
+\end{flalign*}
+
+% Q11
+\begin{BM}
+    \distancia(r,\pi)
+\end{BM}
+
+\begin{flalign*}
+    &
+        r\Vert\pi\impliedby
+        (1,1,1)|(1,-1,1) = 1-1+1 = 1 \neq 0
+    \implies
+        \distancia(r,\pi) = 0
+    &\\&
+        2+\lambda+1-1=0\implies \lambda=-2
+    &
+\end{flalign*}
+
+% Q12
+\begin{BM}
+    \pi'':
+    \left\{
+        \begin{aligned}
+        &
+            \pi''=\{(x,y,z)\in\mathbb{R}^3:x+\alpha\,y+\beta\,z+d=0\}
+        \\  r\subset\pi''
+        \\  s\subset\pi''
+        &
+        \end{aligned}
+    \right\}
+    \land 
+\end{BM}
+
+\begin{flalign*}
+    &
+    \implies
+        (1,\alpha,\beta)\in(1,1,0)^\bot
+        \land (1,\alpha,\beta)\in(1,1,1)^\bot
+    \implies
+        (1,\alpha,\beta)|(1,1,0)=1+\alpha = 0
+    \land 
+        (1,\alpha,\beta)|(1,1,1)=1-1+\beta = 0;
+    2-0+0+d = 0 \implies d=-2
+    &
+\end{flalign*}
+
+% Q16
+\begin{BM}
+    A
+    \xrightarrow[(-1)l_1]{} A_1
+    \xrightarrow[l_1+(-2)l_2]{} A_2
+    \xrightarrow[l_2<->l_3]{} B
+\end{BM}
+
+% Q17
+\begin{BM}
+    A=
+    \begin{bmatrix}
+        4 & 2 & -2
+    \\  0 & 3 & 0
+    \\  -2 & -1 & 1
+    \end{bmatrix}
+    \in\mathcal{M}_{3\times 3}(\mathbb{R})
+\end{BM}
+
+% i
+\begin{flalign*}
+    &
+        \lvert{A-3\,I_3}\rvert 
+    =   \begin{vmatrix}
+            1 & 2 & -2
+        \\  0 & 0 & 0
+        \\  -2 & -1 & -2
+        \end{vmatrix}
+    =   0
+    &
+\end{flalign*}
+
+% Q19
+\begin{BM}
+    \begin{bmatrix}
+        1 & 1 & 0 & \beta &|& 1
+    \\  0 & 1 & 0 & 0     &|& 2
+    \\  0 & 1 & \beta-1 & 0 &|& \alpha+2
+    \\  -1 & 0 & 0 & \alpha-\beta &|& \beta
+    \end{bmatrix}
+\end{BM}
+
+\begin{flalign*}
+    &
+    =   \begin{bmatrix}
+            1 & 1 & 0 & \beta &|& 1
+        \\  0 & 1 & 0 & 0     &|& 2
+        \\  0 & 1 & \beta-1 & 0 &|& \alpha+2
+        \\  -1 & 0 & 0 & \alpha-\beta &|& \beta
+        \end{bmatrix}
+        \xrightarrow[
+            \begin{algined}
+                l_1 += -l_2
+            \\  l_3 += -l_2
+            \\  l_4 += l_1
+            \end{aligned}
+        ]{}
+        \begin{bmatrix}
+            1 & 0 & 0 & \beta &|& -1
+        \\  0 & 1 & 0 & 0     &|& 2
+        \\  0 & 0 & \beta-1 & 0 &|& \alpha
+        \\  0 & 0 & 0 & \alpha &|& \beta-1
+        \end{bmatrix}
+    &
+\end{flalign*}

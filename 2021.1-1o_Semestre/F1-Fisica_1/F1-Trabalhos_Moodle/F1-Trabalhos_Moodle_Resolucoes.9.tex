@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+%\setlength{\cftsubsecnumwidth}{15mm}
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = places,
+	round-precision = 2,
+%	round-minimum = 0.01
+}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{positioning} % Advanced positioning
+\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+%\renewcommand\thesection{Questão \arabic{section}}
+%\renewcommand\thesubsection{%
+%	\arabic{section} - \alph{subsection})%
+%}
+%\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	Física 1 - T9
+\\	Diagrama de fluxo - Corpo num loop sem atrito%
+}
+\author{Felipe Pinto - 61387}
+
+
+\begin{maketitle}
+ 
+\end{maketitle}
+
+\begin{center}
+\begin{tikzpicture}%
+[
+	scale = 1, font=\small, line width = 1,
+	cell/.style = {
+		rectangle, draw, fill=DarkGreen!15!Black,
+		inner sep=3mm
+	}
+]
+	
+	\node (1) [cell] 
+	{$v_a = \sqrt{2\,\Delta E_{k}/m} - v_0$};
+	
+	\node (2) [cell, right=of 1]
+	{$v_0 = 0$};
+	
+	\node (3) [cell, right=of 2] 
+	{$\Delta E_{k} = \Delta E_{g} = m\,g\,\Delta h$};
+	
+	\node (4) [cell, below=of 1] {$\implies$};
+	
+	\draw (1) -- (4);
+	\draw (2) -- (4);
+	\draw (3) -- (4);
+	
+	\node (5) [cell, below=of 4]
+	{$
+		v_{a}
+	=	\sqrt{2\,m\,g\,\Delta h/m}
+	$};
+	
+	\draw[->] (4) -- (5);
+	
+	\node (6) [cell, right=of 5]
+	{$ \Delta h = (3.5-2)\,R $};
+	
+	\node (7) [cell, below=of 5]{$\implies$};
+	\draw (6) -- (7);
+	\draw (5) -- (7);
+	
+	\node (8) [cell, below=of 7]
+	{$ v_{a} = \sqrt{3\,g\,R} $};
+	
+	\draw[->] (7)--(8);
+	
+	\node (9) [cell, right=of 8]
+	{$ \vv{F}_{N} = \vv{a}\,m - \vv{F_{g}} $};
+	
+	\node (10) [cell, right=of 9]
+	{$ a = v^2/R $};
+	
+	\node (11) [cell, below=of 8]{$\implies$};
+	
+	\draw (8) -- (11) -- (9) (10) -- (11);
+	
+	\node (12) [cell, below=of 11]
+	{$ 
+		\vv{F_{N}} 
+	= 	(m\,(\sqrt{3\,g\,R})^2/R-m\,g)\,(-\hat\jmath )
+	=	-2\,m\,g\,\hat\jmath
+	$};
+	
+	\draw[->] (11) -- (12);
+	
+	\node (13) [cell, right=of 12]
+	{$ m = 5.00\unit{\,\gram} $};
+	
+	\node (14) [cell, right=of 13]
+	{$ g = \num{9.80665} $};
+	
+	\node (15) [cell, below=of 12]{$\implies$};
+	
+	\draw (12) -- (15) (13) -- (15) (14) -- (15);
+	
+	\node (16) [cell, below=of 15]
+	{$ \vv{F_{N}} = \qty{-0.0980665}{\newton}\,\hat\jmath $};
+	
+	\draw[->] (15) -- (16);
+	
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

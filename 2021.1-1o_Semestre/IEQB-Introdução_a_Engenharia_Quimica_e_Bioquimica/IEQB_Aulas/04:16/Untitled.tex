@@ -1,0 +1,326 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} }
+
+% Tabular
+\usepackage{multirow}
+\usepackage{siunitx} % Column S: align on decimal
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+%\renewcommand\thesection{Questão \arabic{section} }
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB - Processos com reação química%
+}
+\author{Felipe Pinto - 61387}
+\date{16/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+\section{Sistema reativo}
+\begin{align*}
+&
+	[\text{entrada} + \text{produção}] 
+	= [\text{saida} + \text{consumo}]
+&
+\end{align*}
+
+\subsection{Porcentagem em excesso}
+\begin{align*}
+&
+	\%\text{Excesso} = 100\,(N/N_s - 1)
+	&\\&
+	N = \text{Quantidade de mols do reagente}
+	&\\&
+	N_s = \text{Quantidade necessária de mols de reagente}
+&
+\end{align*}
+
+\subsection{Exemplo }
+
+\center{
+	\ch{C2H6 + NH3 + 3/2 O2 <=>[30\%] C3H3N + 3 H2O}
+}
+
+\begin{itemize}
+\begin{multicols}{2}
+
+	\item 1 = in
+	\item 2 = out
+	
+\end{multicols}
+\end{itemize}
+\center{
+\begin{tabular}{r *{2}{| S @{ } l } | }
+	
+	\multicolumn{1}{c}{}
+	& \multicolumn{2}{c}{in}
+	& \multicolumn{2}{c}{out}
+	
+	\\ \cline{2-5}
+	
+	\ch{C2H6}
+	& 0.10	& p/p
+	& 0.07	& p/p
+	
+	\\ 
+	
+	\ch{NH3}
+	& 0.12	& p/p
+	& 0.09	& p/p
+	
+	\\
+	
+	\ch{O2}
+	& 0.78	& p/p
+	& 0.74	& p/p
+	
+	\\
+	
+	\ch{C3H3N}
+	& \multicolumn{2}{c|}{-}
+	& 0.03	& p/p
+	
+	\\
+	
+	\ch{H2O}
+	& \multicolumn{2}{c|}{-}
+	& 0.09	& p/p
+	
+	\\ \cline{2-5}
+	
+	\ch{Total}
+	& \multicolumn{1}{c}{100} & mol/h
+	& \multicolumn{1}{c}{100} & mol/h
+	
+	\\ \cline{2-5}
+	
+\end{tabular}
+}
+\vspace{5mm}
+
+% mol C3H3N
+\begin{flalign*}
+& 
+	\frac{ 1\,\mol{out\, C3H3N} }
+		{ 1\,\mol{C2H6}}
+	*
+	\frac{30	\,\mol{C2H6}}
+		{100	\,\mol{C2H6}}
+	*
+	\frac{ 0.1*100\,\mol{C2H6} }
+		{h}
+	=
+		3.0\, \mol{out\,C3H3N}/h
+&
+\end{flalign*}
+
+% mol H2O
+\begin{flalign*}
+& 
+	\frac{ 3\,\mol{H2O}		}
+		{ 1\,\mol{C3H3N}	}
+	*
+	\frac{ 3\,\mol{C3H3N}	}
+		{ h				}
+	=
+		9.0\,\mol{H2O}/h
+&
+\end{flalign*}
+
+% mol NH3
+\begin{flalign*}
+& 
+	0.12*100\,\mol{NH3}/h
+	-
+	\frac{ 1\,\mol{NH3}		}
+		{ 1\,\mol{C2H6}	}
+	*
+	\frac{ 30 \,\mol{C2H6}	}
+		{ 100\,\mol{C2H6}	}
+	*
+	\frac{ 0.10*100\,\mol{C2H4} }
+		{ h }
+	=
+		9.0\,\mol{NH3}/h
+&
+\end{flalign*}
+
+% mol O2
+\begin{flalign*}
+&
+	0.78*100\,\mol{O2}/h
+	-
+	\frac{ 3\,\mol{O2}		}
+		{ 2\,\mol{C2H4}	}
+	*
+	\frac{ 30 \,\mol{C2H4}	}
+		{ 100\,\mol{C2H4}	}
+	*
+	\frac{ 0.10*100\,\mol{C2H4} }
+		{ h }
+	\cong
+		74\,\mol{O2}/h
+&
+\end{flalign*}
+
+% mol C2H6
+\begin{flalign*}
+&
+	0.10*100\,\mol{C2H6}/h
+	*
+	\frac{ 70 \,\mol{C2H6}	}
+		{ 100\,\mol{C2H6}	}
+	=
+		7.0\,\mol{C2H6}/h
+&
+\end{flalign*}
+
+%
+%\begin{tabular}{r *{6}{| r @{$\ $} l } | }
+%
+%	\multicolumn{1}{c}{} 
+%	& \multicolumn{2}{c}{1i1}
+%	& \multicolumn{2}{c}{1i2}
+%	& \multicolumn{2}{c}{1o1}
+%	& \multicolumn{2}{c}{1o2 / 2i} 
+%	& \multicolumn{2}{c}{2o1} 
+%	& \multicolumn{2}{c}{2o2}
+%	
+%	\\ \cline{2-13}
+%	
+%	m
+%	& 1000 & kg/h 
+%	& 1000 & Kg/h
+%	& &
+%	& &
+%	& &
+%	& &
+%	
+%	\\
+%	
+%	Agua
+%	& 0.20 & p/p
+%	& 0.87 & p/p
+%	&  &
+%	&  &
+%	& 0.75 & p/p
+%	& 0.05 & p/p
+%	
+%	\\
+%	
+%	Alc
+%	& 0.98 & p/p
+%	& \multicolumn{2}{c|}{-}
+%	& 0.01 & p/p
+%	&  &
+%	& \multicolumn{2}{c|}{-}
+%	& 0.95 & p/p
+%	
+%	\\
+%	
+%	NaCl
+%	& \multicolumn{2}{c|}{-}
+%	& 0.03 & p/p
+%	&  &
+%	& \multicolumn{2}{c|}{-}
+%	& \multicolumn{2}{c|}{-}
+%	& \multicolumn{2}{c|}{-}
+%	
+%	\\
+%	
+%	Glic
+%	& \multicolumn{2}{c|}{-}
+%	& 0.10 & p/p
+%	& 0.01 & p/p
+%	&  &
+%	& 0.25 & p/p
+%	& \multicolumn{2}{c|}{-}
+%	
+%	\\ \cline{2-13}
+%
+%\end{tabular}
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

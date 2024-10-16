@@ -1,0 +1,61 @@
+\part{27/04 - Derivadas}
+
+\section{Definição}
+\begin{BM}
+	f:\mathbf{I} \to \mathbb{R}
+\land
+	a\in\text{\hyperref[interior]{int}}(\mathbf{I})
+\end{BM}\relax
+
+\begin{BM}
+	D\in\mathbb{R}:
+	D = f'(a) = \odv{f(a)}{x}
+=	\lim_{x\to a}\frac{f(x)-f(a)}{x-a}
+=	\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+\end{BM}
+\label{derivadas}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Definição Alternativa}
+
+\begin{BM}
+	\exists\,f'(a)
+\impliedby
+	\exists\,\mathrm{D} \in\mathbb{R},
+\\
+\quad Z:\vizinhanca{0}\to\mathbb{R}:
+\\
+	f(x) = f(a) + D\,(x-a)
++	\\
++	(x-a)\,Z(x-a)
+\end{BM}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Definição derivada para funções de imagens abertas}
+
+\begin{BM}
+	f:\mathbf{I}\to\mathbb{R}
+\land
+	\mathbf{I}\neq\hyperref[feixe]{\overline{\mathbf{I}}}
+\end{BM}\relax
+
+\begin{BM}
+	f':\mathbf{I}\to\mathbb{R}
+	\quad f'(x)=\lim_{h\to0}\frac{f(x+h)\,f(h)}{h}
+\end{BM}
+
+\end{minipage}
+
+\end{multicols}

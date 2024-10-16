@@ -1,0 +1,1841 @@
+\documentclass{article}
+
+
+
+% lua
+\label{pkg: luacode}
+\usepackage{luacode}
+
+
+
+% xparse - multiple optional arguments
+\label{pkg: xparse}
+\usepackage{xparse}
+
+
+
+% Geometry
+\label{pkg: geometry}
+\usepackage{geometry}
+\geometry{
+	papersize=	{300mm, 400mm},	% ( 4:3 )	SVGA x 0.5
+	top=		.12\paperheight,
+	bottom=		.12\paperheight,
+	left=		.06\paperwidth,
+	right=		.06\paperwidth,
+	portrait=	true,
+}
+%	papersize=	{300mm, 400mm},	% ( 4:3 )	SVGA x 0.5
+%	papersize=	{240mm, 320mm},	% ( 4:3 )	SVGA x 0.4
+%	papersize=	{180mm, 240mm},	% ( 4:3 )	SVGA x 0.3
+%	papersize=	{229mm, 305mm},	% ( 4:3 )	ArchA/Arch1
+%	papersize=	{320mm, 512mm},	% (16:10)
+%	papersize=	{280mm, 448mm},	% (16:10)
+%	papersize=	{240mm, 384mm},	% (16:10)
+%	a4paper, %	{210mm, 297mm},	% (√2:1)	A4
+
+
+
+% Font size
+\label{pkg: fontsize}
+\usepackage[fontsize=12pt]{fontsize}
+
+
+
+% Linguagem
+\label{pkg: babel}
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+% Graphics
+\label{pkg: graphics}
+%\usepackage
+%	[
+%		draft,
+%%		final,
+%	]
+%	{
+%		graphics	% simple
+%%		graphicx	% extended
+%	}
+%\graphicspath{{./imagens}}
+
+
+
+% calc
+\label{pkg: calc}
+\usepackage{calc}
+
+
+
+% Table of contents
+\label{pkg: tocloft}
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}	% remove subsubsection from toc
+
+% part
+\renewcommand\cftpartfont{\bfseries}
+%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+\setlength\cftbeforepartskip{6mm}
+
+% sec
+\renewcommand\cftsecfont{\bfseries}	% Font
+\renewcommand\cftsecpagefont{}	% page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}	% Dots
+\setlength\cftbeforesecskip{3mm}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm}	% Fix section width
+
+% subsec
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+
+% tab (table)
+\setlength\cfttabindent{0mm}
+
+
+
+% filecontents
+\label{pkg: filecontents}
+%\usepackage{filecontents}	% Create files
+
+
+
+% Multicols
+\label{pkg: multicol}
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+
+
+
+% enumitem
+\label{pkg: enumitem}
+%\usepackage{enumitem}	% modify enumerate index
+
+
+
+% titlesec
+\label{pkg: titlesec}
+\usepackage{titlesec}
+
+% Part customization
+\titleclass{\part}{straight}
+\titleformat{\part}
+	[block]							% shape
+	{\huge\bfseries\color{Emph}}	% format
+	{\thepart\hspace{5mm}{$|$}}		% label
+	{5mm}							% sep
+	{\huge\bfseries}				% before-code
+	[\vspace{0.5mm}]				% after-code
+\counterwithin*{section}{part}		% Reset section on part
+%\@addtoreset{section}{part}
+%
+%% Chapter customization
+%\titleclass{\chapter}{straight}
+%\titleformat{\chapter}
+%	[block]
+%	{\Huge\bfseries\color{Emph}}
+%	{\thechapter\hspace{5mm}{$|$}}
+%	{5mm}
+%	{\Huge\bfseries}
+%	[\vspace{0.5mm}]
+
+
+
+% Appendix
+\label{pkg: appendix}
+%\usepackage{appendix}
+
+
+
+% siunix: SI units
+\label{pkg: siunitx}
+\usepackage{siunitx}
+	\sisetup{
+		% scientific / engineering / false / fixed
+		scientific-notation =	engineering,
+		exponent-to-prefix =	true,			% 1000 g -> 1 kg
+		exponent-product =		*,				% x * 10^y
+		round-mode =			places,			% figures/places/off
+		round-precision =		2,
+	%	round-minimum =			0.01,
+	%	fixed-exponent =		0,
+	}
+	\DeclareSIUnit\atm{atm}
+	\DeclareSIUnit\calorie{cal}
+
+
+
+
+% Maths
+\label{pkg: amsmath, amssymb, bm}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{derivative}		% Derivatives
+%% Missing trigonometric math operators
+%\DeclareMathOperator{\arcsec}{arcsec}
+%\DeclareMathOperator{\arccot}{arccot}
+%\DeclareMathOperator{\arccsc}{arccsc}
+%
+% BM
+\NewDocumentEnvironment{BM}{ O{\large} O{align*} +b }
+{
+	#1\boldmath\bfseries
+	\begin{#2}
+		#3
+	\end{#2}\relax
+} {\relax}
+%
+%% BM old
+%%\newcommand{\BM}[1]{{\large\boldmath\bfseries%
+%%	\begin{align*}
+%%		#1
+%%	\end{align*}%
+%%}}
+%
+%\newcommand\vizinhanca[2][\delta]{%
+%	\hyperref[vizinhanca]{V_{#1}(#2)}%
+%}
+%
+%\newcommand\converge{{\,\xrightarrow{\text{converge}}\,}}
+
+
+
+% Vectors
+\label{pkg: esvect}
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+
+% Tikz
+\label{pkg: tikz}
+%\usepackage{tikz}
+%\usepackage{pgfmath}	% calculations
+%\usepackage{varwidth}	% List inside TikzPicture
+
+
+% pgf
+% pgfmath
+\label{pkg: pgfmath}
+%\usepackage{pgfmath}	% calculations
+%
+% pgfplots
+\label{pkg: pgfplots}
+%\usepackage{pgfplots}
+%	\pgfplotsset
+%	{
+%		compat= newest,
+%		width=	.90\linewidth,	% width
+%		height=	.22\textheight,	% height
+%		legend style=
+%		{
+%			draw=	none,
+%			fill=	White\Dark,
+%			fill opacity=	0.3,
+%			text opacity=	1,
+%		},
+%		major grid style=
+%		{
+%			very thin, 
+%			color= White!60!Black
+%		},
+%		ticklabel style=
+%		{
+%			/pgf/number format/.cd,
+%			set thousands separator={\,},
+%			tick style= {color= White!60!Black},
+%		},
+%		every extra x tick/.style=
+%		{
+%			tick style= {draw=none},
+%			major grid style=
+%				{ draw, thin, color= White!90!Black },
+%			ticklabel pos= top,
+%		},
+%		every extra y tick/.style=
+%		{
+%			tick style= {draw=none},
+%			major grid style=
+%				{ draw, thin, color= White!90!Black },
+%			ticklabel pos= right,
+%		},
+%	}
+%
+% pgfplotstable
+\label{pkg: pgfplotstable}
+%\usepackage{pgfplotstable}
+
+
+
+% Tabular
+\label{pkg: multirow, float, longtable}
+%\usepackage{multirow}
+\usepackage{float}	% table position H(ere)
+	\restylefloat{table}
+%\usepackage{longtable}
+%
+\setlength\tabcolsep{6mm}			% width
+\renewcommand\arraystretch{1.25}	% height
+%
+% booktabs
+\label{pkg: booktabs}
+\usepackage{booktabs}
+\setlength\heavyrulewidth{.75pt}	% Top and bottom rule
+\setlength\lightrulewidth{.50pt}	% Middle rule
+%\usepackage{colortbl}				% Colored Cells
+
+
+
+% Chem
+\label{pkg: chemformula, chemfig, modiagram}
+\usepackage{chemformula}	% formulas quimicas
+%\usepackage{chemfig}		% Estruturas quimicas
+%\usepackage{modiagram}		% Molecular orbital diagram
+%	\setmodiagram
+%	{
+%		names,
+%		labels,
+%		labels-fs=\tiny,	% label font
+%		AO-width=6mm,
+%	}
+%
+\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+% Constants
+\label{pkg: physconst, physunits}
+\usepackage{physconst, physunits}
+
+
+% Code
+\label{pkg: shellesc, minted}
+%% Run on terminal: lualatex --shell-escape [file[.tex]]
+%\usepackage{shellesc, minted}
+%	\usemintedstyle{stata-dark}
+%%	\usemintedstyle{fruity}
+%%	\usemintedstyle{paraiso}
+%%	\usemintedstyle{rainbow_dash}
+%%	\usemintedstyle{solarized-dark}
+%%	\usemintedstyle{native}
+
+%% minted environment
+%\NewDocumentEnvironment{myminted}
+%	{ o O{2.5em} O{linenos} M{python} +b }
+%	{
+%		\begin{listing}[H]
+%		\begin{tcolorbox}[left= #2]
+%			\begin{minted}[#3]{#4} #5 \end{minted}
+%		\end{tcolorbox}
+%		\IfNoValueTF{#1}
+%			{}
+%			{\caption{#1}}
+%		\end{listing}\relax
+%	}
+%	{\relax}
+
+
+% Colors
+\label{pkg: xcolor}
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}  {HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen} {HTML}{008675}
+
+\colorlet{White}{DarkGreen!20}
+\colorlet{Black}{DarkBlue!110}
+%\colorlet{Black}{DarkBlue!70!black}
+\colorlet{Emph}{ DarkGreen!70!White}
+\colorlet{Background}{White!40!Black}
+
+\pagecolor{Black}
+\color{White}
+
+%% mycolors
+%% Pallete
+%\definecolor{red}   {HTML}{FF0000}
+%\definecolor{orange}{HTML}{FF7300}
+%\definecolor{yellow}{HTML}{FFEA00}
+%\definecolor{green} {HTML}{2AFF00}
+%\definecolor{cyan}  {HTML}{00FFBF}
+%\definecolor{blue}  {HTML}{0055FF}
+%\definecolor{purple}{HTML}{9500FF}
+%\definecolor{pink}  {HTML}{FF0080}
+%% Light
+%\newcommand\Light{!63!White}
+%\colorlet{Red}   {red\Light}
+%\colorlet{Orange}{orange\Light}
+%\colorlet{Yellow}{yellow\Light}
+%\colorlet{Green} {green\Light}
+%\colorlet{Cyan}  {cyan\Light}
+%\colorlet{Blue}  {blue\Light}
+%\colorlet{Purple}{purple\Light}
+%\colorlet{Pink}  {pink\Light}
+%% Dark
+%\newcommand\Dark{!45!Black}
+%\colorlet{DRed}   {Red\Dark}
+%\colorlet{DOrange}{Orange\Dark}
+%\colorlet{DYellow}{Yellow\Dark}
+%\colorlet{DGreen} {Green\Dark}
+%\colorlet{DCyan}  {Cyan\Dark}
+%\colorlet{DBlue}  {Blue\Dark}
+%\colorlet{DPurple}{Purple\Dark}
+%\colorlet{DPink}  {Pink\Dark}
+
+
+
+% tcolorbox
+\label{pkg: tcolorbox}
+\usepackage{tcolorbox}
+	\tcbuselibrary
+	{
+%		breakable,	% allow page break
+%		minted,		% code minted
+	}
+	\tcbset%
+	{	every box/.style= {
+		coltext=		White,		% text  color
+		coltitle=		White,		% title color
+		fonttitle=		\bfseries,	% title font
+		opacityfill=	0.1,		% background opacity
+		opacityframe=	0,			% frame      opacity
+		colback=		Background, % background color
+		colframe=		Background,	% border     color
+		arc=			3mm,		% Curvature
+		width=			\linewidth,	% Width
+%		breakable=		false,		% Allow page break
+	}}
+%% Mybox - Incomplete
+%\newtcbox{\mybox}{on line,
+%  colframe=mycolor,colback=mycolor!10!white,
+%  boxrule=0.5pt,arc=4pt,boxsep=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
+
+
+
+% mytitle and myauthor
+\label{set: title, author}
+\newcommand\mytitle{{IEQB - Aulas by slides}}
+\newcommand\myauthor{{Felipe B. Pinto 61387 - MIEQB}}
+
+
+
+% title, author and date
+\title{\huge\bfseries\color{Emph}\mytitle}
+\author{\Large\myauthor}
+\date{\Large\today}
+
+
+
+% fancyhdr - Header and Footer customization
+\label{pkg: fancyhdr}
+%\usepackage{fancyhdr}
+%	\pagestyle{fancy}
+%	\lhead{\normalsize\myauthor}
+%	\rhead{\normalsize\today}
+
+
+
+% hyperref
+\label{pkg: hyperref}
+\usepackage{hyperref}
+	\hypersetup
+	{
+		% Links customization
+		hidelinks=true,
+		colorlinks=true,
+		linkcolor=LightGreen!25!White,
+		% PDF customization
+		pdfpagelayout=OneColumn,
+		pdftitle=\mytitle,
+		pdfauthor=\myauthor
+	}
+% Fix links when reseting section on part
+\renewcommand\theHsection{\thepart.\thesection}
+
+
+
+%% questions, subquestions and subsubquestions
+\label{sec: question, subq, subsubq}
+
+% question
+\newcounter{question}
+\renewcommand{\thequestion}{Questão \arabic{question}}
+\newcommand{\question}[1]{
+	% reset inner counters
+	\setcounter{subquestion}{0}
+	\setcounter{subsubquestion}{0}
+	% add section*
+	\refstepcounter{question}
+	\section*{\thequestion\quad#1}
+	% add to toc
+	\addcontentsline{toc}{section}{%
+		\thequestion\quad#1%
+	}
+}
+\renewcommand\thequestion{Questão 5.\arabic{question}}
+
+% subquestion
+\newcounter{subquestion}
+\renewcommand\thesubquestion{%
+	Q\arabic{question} - \alph{subquestion})%
+}
+\newcommand{\subquestion}[1]{
+	% reset inner counters
+	\setcounter{subsubquestion}{0}
+	% add subsection*
+	\refstepcounter{subquestion}
+	\subsection*{\thesubquestion\quad#1}
+	% add to toc
+	\addcontentsline{toc}{subsection}{%
+		\thesubquestion\quad#1%
+	}
+}
+
+% subsubquestion
+\newcounter{subsubquestion}
+\renewcommand{\thesubsubquestion}{(\roman{subsubquestion})}
+\newcommand{\subsubquestion}[1]{
+	% add subsubsection*
+	\refstepcounter{subsubquestion}
+	\subsubsection*{\thesubsubquestion\quad#1}
+	% add to toc
+	\addcontentsline{toc}{subsubsection}{%
+		\thesubsubquestion\quad#1%
+	}
+}
+
+% Questions environment
+\label{env: question, subq and susubq}
+% question
+\NewDocumentEnvironment{questionBox}
+	{ s O{5mm} m +b }
+	{
+		\vspace{#2}\relax
+		\noindent\begin{minipage}{\linewidth}
+			\IfBooleanF{#1}{\question{#3}\relax}
+			\begin{tcolorbox} #4 \end{tcolorbox}\relax
+		\end{minipage}\relax
+	} {\relax}
+% subquestion
+\NewDocumentEnvironment{subquestionBox}
+	{ O{5mm} m +b }
+	{
+		\vspace{#1}\relax
+		\noindent\begin{minipage}{\linewidth}
+			\subquestion{#2}\relax
+			\begin{tcolorbox} #3 \end{tcolorbox}\relax
+		\end{minipage}\relax
+	
+	} {\relax}
+% subsubquestion
+\NewDocumentEnvironment{subsubquestionBox}
+	{ O{5mm} m +b }
+	{
+		\vspace{#1}\relax
+		\noindent\begin{minipage}{\linewidth}
+			\subsubquestion{#2}\relax
+			\begin{tcolorbox} #3 \end{tcolorbox}\relax
+		\end{minipage}\relax
+	
+	} {\relax}
+
+
+%% Incompleto
+%
+%% Listoftemas: tema e subtema
+%\newlistof{temas}{prog}{}
+%%% Add to document
+%%\section*{Programa}
+%%\begin{multicols}{2} \listoftemas \end{multicols}
+%% tema
+%\newcounter{tema}[section]
+%\newcommand\tema[1]{%
+%	\refstepcounter{tema}%
+%	\addcontentsline{prog}{temas}{%
+%		\thetema\textsuperscript{o} Tema: #1%
+%	}%
+%}
+%% subtema
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%	\refstepcounter{subtema}%
+%	\addcontentsline{prog}{temas}{%
+%		\textbullet\quad#1%
+%	}
+%}
+
+
+
+%% subsubsection customization
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+
+\begin{document}
+
+
+\newgeometry{
+	top=	.12\paperheight,
+	bottom=	.12\paperheight,
+	left=	.12\paperwidth, 
+	right=	.12\paperwidth,
+}
+
+
+\maketitle
+\label{Title}
+
+
+% Table of Contents
+
+\renewcommand{\contentsname}{} % remove title
+
+\section*{Conteúdo}
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+
+\restoregeometry
+
+\part{Slide 2.01}
+\label{2.01 Slide}
+
+\section{Conservação de energia}
+\label{ - Conservação de energia}
+\begin{multicols}{3}
+
+\noindent%
+\begin{minipage}{\linewidth}
+	
+	\subsubsection{Energia Cinética}
+	
+	\begin{tcolorbox}
+	\begin{BM}
+		\mathrm{E_c}=0.5\,m\,\Delta u^2
+	\end{BM}
+	\end{tcolorbox}
+	
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+	
+	\subsubsection{Energia Potencial}
+	
+	\begin{tcolorbox}
+	\begin{BM}
+		\mathrm{E_p}=m\,g\,\Delta h
+	\end{BM}
+	\end{tcolorbox}
+	
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+	
+	\subsubsection{Energia Interna}
+	
+	\begin{tcolorbox}
+	\begin{BM}
+		\mathrm{U}
+	\end{BM}
+	\end{tcolorbox}
+	
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+	\subsubsection{Calor}
+	
+	\begin{tcolorbox}
+	\begin{BM}
+		\mathrm{Q}
+	\end{BM}
+	\end{tcolorbox}
+	
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+	
+	\subsubsection{Trabalho}
+	
+	\begin{tcolorbox}
+	\begin{BM}
+		\mathrm{W}
+	\end{BM}
+	\end{tcolorbox}
+	
+\end{minipage}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+\begin{questionBox}{$\mathrm{E}_c\cong\qty{0.868665840555022}{\joule\per\second}$}
+\label{ - Q5.1}
+\sisetup%
+{
+	round-precision= 0,
+	scientific-notation= fixed,
+	fixed-exponent= -3,
+}
+
+\begin{flalign*}
+&
+=	0.5\,m\,u^2
+=	0.5\,Q\,\rho_{\text{Agua}}\,\left(\frac{Q}{\pi\,r^2}\right)^2
+=	&\\&
+=	0.5
+*	2\,\unit{\cubic\metre\per\hour}
+\,	1000\,\unit{\kilo\gram\per\cubic\metre}
+\,	\left(
+		\frac
+			{ 2\,\unit{\cubic\metre\per\hour} }
+			{ \pi\,(2\,\unit{\centi\metre})^2 }
+	\right)^2
+=	&\\&
+=	0.5 * 2 * 1000
+\,	\left(
+		\frac
+			{ 2 }
+			{ \pi\,(1\,\unit{\centi})^2 }
+	\right)^2
+*	&\\& *
+\,	\left(
+		\frac{\unit{\metre^2\kilo\gram}}{\unit{\hour^3}}
+	\,	\left(\frac{\unit{\hour}}{3600\unit{\second}}\right)^3
+	\,	\frac{\unit{\joule}}{\unit{\metre^2\,\kg\per\second^2}}
+	\right)
+=	\qty{0.868665840555022}{\joule\per\second}
+&
+\end{flalign*}
+
+\end{questionBox}
+
+\question{}
+\label{ - Q5.2}
+
+\begin{subsubquestionBox}{$\Delta\mathrm{E_g}\cong\qty{35303.94}{\joule\per\second}$}
+
+\begin{flalign*}
+&
+=	m\,g\,\Delta h
+=	&\\&
+=	
+	15\,\unit{\kilo\gram\per\second}
+*	\qty{9.80665}{\metre\per\second^2}
+*	\left(
+		20\,\unit{\metre}-(-220\,\unit{\metre})
+	\right)
+=	&\\&
+=	
+	15
+*	\num{9.80665}
+*	\left(
+		20-(-220)
+	\right)
+	\left(
+		\frac{\unit{\kilo\gram\,\metre^2}}{\unit{\second^3}}
+	\,	\frac{\unit{\joule}}{\unit{\kilo\gram\,\metre^2\per\second^2}}
+	\right)
+\cong	&\\&
+\cong	\qty{35303.94}{\joule\per\second}
+&
+\end{flalign*}
+
+\end{subsubquestionBox}
+
+\begin{subsubquestionBox}{$\mathrm{P}_{\min}\cong\qty{35303.94}{\watt}$}
+\begin{flalign*}
+&
+=	\mathrm{E_g}
+=	\qty{35303.94}{\joule\per\second}
+\,	\frac{\unit{\watt}}{\unit{\joule\per\second}}
+=	\qty{35303.94}{\watt}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+\end{multicols}
+
+\section{Balanço de energia a um \textcolor{Emph}{sistema fechado}}
+\label{ - Balanço de energia a um sistema fechado}
+
+\begin{BM}[\huge]
+&
+	\Delta\mathrm{E} = \mathrm{E}_o - \mathrm{E}_i
+&	\Delta\mathrm{U} + \Delta\mathrm{E_c} + \Delta\mathrm{E_p}
+=	\mathrm{Q} - \mathrm{W}
+&
+\end{BM}
+
+\begin{multicols}{2}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Trabalho de fluxo (Flow work)}
+\label{ - Trabalho de fluxo (Flow work)}
+\begin{BM}
+	\mathrm{W_{fl}}
+=	
+	\mathrm{W}_{\text{out}}
+-	\mathrm{W}_{\text{in }}
+=	
+	\mathrm{P}_{\text{out}}\,\mathrm{V}_{\text{out}}
+-	\mathrm{P}_{\text{in }}\,\mathrm{V}_{\text{in }}
+\end{BM}\relax
+
+\end{minipage}\relax
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Trabalho de máquina (Shaft work)}
+\label{ - Trabalho de máquina (Shaft work)}
+
+\begin{BM}
+	\mathrm{W_s}
+=
+	-\int\mathrm{P}\,\mathrm{dV}
+\end{BM}
+
+\end{minipage}
+
+\end{multicols}
+
+\section{Propriedades de um processo}
+\label{ - Propriedades de um processo}
+
+\begin{multicols}{2}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsubsection*{Extensivas}
+%
+Proporcionais à quantidade de matéria
+%
+
+\vspace{5mm}
+
+\begin{tcolorbox}
+\begin{itemize}
+\begin{multicols}{2}
+\item $m$
+\item \unit{\mole}
+\item $\Delta\mathrm{V}$
+\item $\Delta\mathrm{E}$
+\end{multicols}
+\end{itemize}
+\end{tcolorbox}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsubsection*{Intencivas}
+%
+Independe da quantidade de matéria
+%
+
+\vspace{5mm}
+
+\begin{tcolorbox}
+\begin{itemize}
+\begin{multicols}{2}
+\item $\Delta\mathrm{T}$
+\item $\Delta\mathrm{P}$
+\end{multicols}
+\end{itemize}
+\end{tcolorbox}\relax
+
+\end{minipage}
+
+\subsection{Propriedades Específicas $\widehat{\mathrm{X}}$}
+\label{ - Propriedades Específicas}
+%
+Propriedade extensiva dividida pela massa total da matéria
+%
+
+{
+\sisetup%
+{
+	round-precision= 2,
+	scientific-notation= fixed,
+	fixed-exponent= 0,
+}
+\begin{questionBox}{$
+	\widehat{\mathrm{H}}\cong
+	\qty[round-precision=0]
+		{6295.415793321959542}{\joule\per\mole}
+$}
+\label{ - Q5.3}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{U}} + \mathrm{P}\,\widehat{\mathrm{V}}
+=	
+	3800\,\unit{\joule\per\mole}
++	1\,\unit{\atm}
+\,	24.63\,\unit{\liter\per\mole}\,
+*	&\\&
+*	\frac{\qty{8.314}{\joule}}{\qty{0.08206}{\liter\atm}}
+\cong
+	\qty[round-precision=0]{6295.415793321959542}{\joule\per\mole}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+\end{multicols}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Balanço de energia a um \textcolor{Emph}{sistema aberto}}
+\label{ - Balanço de energia a um sistema aberto}
+
+\begin{BM}[\huge]
+	\Delta\dot{H}+\Delta\dot{E}_c+\Delta\dot{E}_p
+=	\dot{Q}-\dot{W}_s
+\end{BM}
+
+\begin{questionBox}*{}
+\begin{flalign*}
+&
+	\sum\Delta\dot{E}=\dot{Q}-\dot{W}
+=	\sum\Delta\left(\dot{U}+\dot{E}_{c}+\dot{E}_{p}\right)
+=	\sum\Delta
+	\left(
+	\dot{m}
+	\left(
+		\widehat{U}
+	+	0.5\,\phi^2
+	+	g\,h
+	\right)
+	\right)
+=	\dot{Q}-\dot{W}
+=	&\\&
+=	\dot{Q}-\dot{W}_s-\sum\Delta\left(P\,\dot{V}\right)
+=	\dot{Q}-\dot{W}_s-\sum\Delta\left(\dot{m}\,P\,\widehat{V}\right)
+\implies
+	\sum\Delta
+	\left(\dot{m}
+	\left(
+		\widehat{U}
+	+	0.5\,\phi^2
+	+	g\,h
+	+	P\,\widehat{V}
+	\right)
+	\right)
+=	&\\&
+=	\sum\Delta
+	\left(\dot{m}
+	\left(
+		\widehat{H}+0.5\,\phi^2+g\,h
+	\right)
+	\right)
+=	
+	\Delta\dot{H}
++	\Delta\dot{E}_c
++	\Delta\dot{E}_p
+=	\dot{Q}-\dot{W}_s
+&
+\end{flalign*}
+\end{questionBox}
+
+\end{minipage}
+
+\begin{multicols}{2}
+
+\begin{questionBox}{$Pot_{\max}\cong\qty{-6815621.75}{\watt}$}
+\label{ - Q5.4}
+\begin{flalign*}
+&
+=	-\dot{E}_c
+=	
+-	417\,\unit{\metre^3\minute^{-1}}
+\,	\frac{\unit{1000\,\kilo\gram}}{\unit{\metre^3}}
+\,	\frac{60\,\unit{\second}}{\unit{\minute}}
+\,	\qty{9.80665}{\metre\,\second^{-2}}\,
+*	&\\&
+*	100\,\unit{\metre}
+\cong
+	\qty{-6815621.75}{\watt}
+&
+\end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}{$\Delta\dot{H}$}
+\label{ - Q5.5}
+\begin{flalign*}
+&
+=	\dot{Q}-\dot{W}-\Delta\dot{E}_c-\Delta\dot{E}_p
+=	
+-	41.8\,\unit{\mega\joule\per\hour}
+\,	\frac{\unit{\hour}}{3600\,\unit{\second}}\,
+-	&\\&
+-	700\,\unit{\kilo\watt}
+-	0.5*500\,\unit{\kilo\gram\per\hour}
+\,	\frac{\unit{\hour}}{3600\,\unit{\second}}\,
+*	&\\&
+*	\left(360^2-60^2\right)\unit{\metre\per\second}
+-	500\,\unit{\kilo\gram\per\hour}
+\,	\frac{\unit{\hour}}{3600\,\unit{\second}}\,
+*	&\\&
+*	\qty{9.80665}{\metre\,\second^{-2}}
+\,	(0-5)\,\unit{\metre}
+\cong
+	\qty{-720354.3009375}{\watt}
+&
+\end{flalign*}
+\end{questionBox}
+
+\end{multicols}
+
+\newpage
+
+\part{Slide 2.02 - Fundamentos de balanços energéticos}
+\label{2.02 Slide}
+
+\begin{multicols}{2}
+
+\section{Balanço energético a um sistema não reativo}
+\label{ - Balanço energético a um sistema não reativo}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\begin{questionBox}*{}
+\begin{flalign*}
+&
+	Q = \sum\Delta \dot{H}
+=	
+-	125.7\,\unit{\joule\per\gram}
+\,	120\,\unit{\kilo\gram\per\minute}
+-	271.9\,\unit{\joule\per\gram}\,
+*	&\\&
+*	175\,\unit{\kilo\gram\per\minute}
++	2703 \,\unit{\joule\per\gram}
+\,	295\,\unit{\kilo\gram\per\minute}
+\cong
+	\qty{734718.5}{\kilo\joule\per\minute}
+&
+\end{flalign*}
+\end{questionBox}
+
+\end{minipage}
+
+{
+\sisetup%
+{
+	round-precision=		4,
+	round-mode=				figures,
+	scientific-notation=	fixed,
+	fixed-exponent=			0,
+}
+\begin{questionBox}{$
+	W(\unit{\kilo\watt})\cong
+	\qty{292.222222222222222}{\kilo\watt}
+$}
+\label{ - Q5.6}
+
+\begin{flalign*}
+&
+=	-\Delta\dot{\mathrm{H}}
+=	
+	2000\,\unit{\kilo\gram\per\hour}
+\,	\frac{\unit{\hour}}{3600\,\unit{\second}}
+	\left( 3201 - 2675 \right)\,\unit{\joule\per\gram}
+\cong
+	\qty{292.222222222222222}{\kilo\watt}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+{
+\sisetup%
+{
+	round-precision=		4,
+	round-mode=				figures,
+	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$
+	\Delta\dot{H}_{o}\,(\unit{\kilo\joule\per\hour})\cong
+	\qty{9067100}{\kilo\joule\per\hour}
+$}
+\label{ - Q5.7}
+\begin{flalign*}
+&
+=	
+	\Delta\dot{\mathrm{H}}_{i1}
++	\Delta\dot{\mathrm{H}}_{i2}
+=	
+	1000\,\unit{\kilo\gram\per\hour}
+\,	2675\,\unit{\joule\per\gram}
++	1950\,\unit{\kilo\gram\per\hour}
+\,	3278\,\unit{\joule\per\gram}
+\cong &\\&
+\cong
+	\qty{9067100}{\kilo\joule\per\hour}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+{
+\sisetup%
+{
+	round-precision=		4,
+	round-mode=				figures,
+%	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$
+	\mathrm{Q}\cong
+	\qty{37.676}{\kilo\calorie\per T}
+$}
+\label{ - Q5.8}
+\begin{flalign*}
+&
+=	
+	\Delta\dot{\mathrm{H}}
+=	
+	\left(
+	\left(
+		132.0
+	-	93.67
+	\right)\,0.4
+	+	
+	\left(
+		117.41
+	-	80.17
+	\right)\,0.6
+	\right)\,\unit{\calorie\per\gram}\,
+*	&\\&
+*	1\,\unit{\kilo\gram\per T}
+\cong
+	\qty{37.676}{\kilo\calorie\per T}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+\end{multicols}
+
+\newpage
+
+\part{Slide 2.03 - Balanços energéticos a processos sem mudança de fase}
+\label{2.03 Slide}
+
+\begin{multicols}{2}
+
+\section{Calcular a variação de entalpia associada ao
+processo em que fenol sólido a 25\,\unit{\celsius} e
+1\,\unit{\atm} é convertido em fenol vapor a 300\,\unit{\celsius}
+e 3\,\unit{\atm}}
+
+\begin{questionBox}*{}
+\begin{flalign*}
+&
+	\Delta\widehat{\mathrm{H}}
+=
+	\Delta\widehat{\mathrm{H}}_{(v, 300\,\unit{\celsius}, 3\,\unit{\atm})}
+-	\Delta\widehat{\mathrm{H}}_{(s, 25 \,\unit{\celsius}, 1\,\unit{\atm})}
+=	&\\&
+=
+	\Delta\widehat{\mathrm{H}}_{(v, 300\,\unit{\celsius}, 3\,\unit{\atm})}\,
+-	\Delta\widehat{\mathrm{H}}_{(v, 300\,\unit{\celsius}, 1\,\unit{\atm})}
++	\Delta\widehat{\mathrm{H}}_{(v, 300\,\unit{\celsius}, 1\,\unit{\atm})}
+-	&\\&
+-	\Delta\widehat{\mathrm{H}}_{(v, 181.4\,\unit{\celsius}, 1\,\unit{\atm})}\,
++	\Delta\widehat{\mathrm{H}}_{(v, 181.4\,\unit{\celsius}, 1\,\unit{\atm})}
+-	\Delta\widehat{\mathrm{H}}_{(l, 181.4\,\unit{\celsius}, 1\,\unit{\atm})}
++	&\\&
++	\Delta\widehat{\mathrm{H}}_{(l, 181.4\,\unit{\celsius}, 1\,\unit{\atm})}\,
+-	\Delta\widehat{\mathrm{H}}_{(l, 42.5\,\unit{\celsius}, 1\,\unit{\atm})}
++	\Delta\widehat{\mathrm{H}}_{(l, 42.5\,\unit{\celsius}, 1\,\unit{\atm})}
+-	&\\&
+-	\Delta\widehat{\mathrm{H}}_{(s, 42.5\,\unit{\celsius}, 1\,\unit{\atm})}\,
++	\Delta\widehat{\mathrm{H}}_{(s, 42.5\,\unit{\celsius}, 1\,\unit{\atm})}
+-	\Delta\widehat{\mathrm{H}}_{(s, 25 \,\unit{\celsius}, 1\,\unit{\atm})}
+=	&\\&
+=	\Delta\widehat{\mathrm{H}}_{(1\to3)\unit{\atm}}
++	\Delta\widehat{\mathrm{H}}_{(300\to191.4)\unit{\celsius}}
++	\Delta\widehat{\mathrm{H}}_{(l\to v)}
++	\Delta\widehat{\mathrm{H}}_{(42.5\to181.4)\unit{\celsius}}\,
++	&\\&
++	\Delta\widehat{\mathrm{H}}_{(s\to l)}
++	\Delta\widehat{\mathrm{H}}_{(25\to42.5)\unit{\celsius}}
+&
+\end{flalign*}
+\end{questionBox}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{$\Delta\widehat{\mathrm{H}}_{(t_1\to t_2)}$}
+\begin{questionBox}*{}
+\begin{BM}
+	\Delta\widehat{\mathrm{H}}_{(t_1\to t_2)}
+=	\int_{t_1}^{t^2}C_p(t)\mathrm{d}t
+;
+	\quad C_p= \left(\odv{\widehat{\mathrm{H}}}{t}\right)_p
+\end{BM}
+\end{questionBox}
+
+\end{minipage}
+
+{
+\sisetup%
+{
+	round-precision=		4,
+	round-mode=				figures,
+%	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$
+	\dot{\mathrm{Q}}\cong
+	\qty{4302.01086}{\calorie\per\mole}
+$}
+\label{ - Q5.9}
+\begin{flalign*}
+&
+	\Delta\dot{\mathrm{H}}
+=	
+	\left. 6.713\,\unit{\calorie\per\mole\per\kelvin}
+\,	\Delta t\,\unit{\kelvin} \right|_{673}^{1273}
++	
+	0.04697*10^{-2}\,\unit{\calorie\per\mole\per\kelvin}\,
+*	&\\&
+*	\int_{673}^{1273}
+	t\,\mathrm{d}t\,\unit{\kelvin}
+=	
+	\qty{4027.8}{\calorie\per\mole}
++	0.5*0.04697*10^{-2}\,
+*	\left.\Delta t^2\right|_{673}^{1273}
+\cong &\\&
+\cong
+	\qty{4302.01086}{\calorie\per\mole}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+{
+\sisetup%
+{
+	round-precision=		4,
+	round-mode=				figures,
+%	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$
+	\mathrm{t}_o\cong
+	\qty{512.257569071078387}{\kelvin}
+$}
+\label{ - Q5.10}
+\begin{flalign*}
+&
+	\Delta\dot{\mathrm{H}}
+=
+	\dot{m}\int_{\mathrm{t}_i}^{\mathrm{t}_o}
+	\mathrm{C}_p(\mathrm{t})\,\mathrm{d t}
+=	% 88.063053146052574
+	2\,\unit{\kilo\liter(STP)\per\minute}
+\,	\frac{\unit{\mole}}{22.711\,\unit{\liter}}\,
+*	&\\&
+*	\left(
+	19.87\,\unit{\joule\per\mole\per\kelvin}
+*	\left.\Delta t\,\unit{\kelvin}\right|_{293}^{t_o}
++	
+	0.5*5.021*10^{-2}\,\unit{\joule\per\mole\kelvin}
+	\right.
+*	&\\&
+	\left.
+*	\int_{293}^{t_o}
+	t\,\mathrm{d} t\,\unit{\kelvin}
+	\right)
+\cong
+	\left(
+	t_o^2\,	\num{2.21082294923165}
++	t_o\,	\num{1749.812866012064645}
+-			\num{702492.109110122850809}
+	\right)\,\unit{\joule\per\minute}
+\cong &\\&
+\cong
+	\dot{\mathrm{W}}_s
+=	12.9\,\unit{\kilo\watt}
+\,	\frac{\unit{\minute}}{60\,\unit{\second}}
+\implies
+	\mathrm{t}_o
+\cong &\\&
+\cong
+	\frac
+		{
+			-\num{1749.812866012064645}
+		\pm	\sqrt
+			{
+				(\num{1749.812866012064645})^2
+			-	4*\num{2.21082294923165}
+			*	(\num{1476492.109110122850809})
+			} % 4014.834445251978202
+		}
+		{	2*\num{2.21082294923165} }
+	\,\unit{\kelvin}
+\cong &\\&
+\cong
+	\left(
+-	\num{395.737900816570381}
+\pm	\num{907.995469887648588}
+	\right)\unit{\kelvin}
+\implies
+	\mathrm{t}_o \cong \qty{512.257569071078387}{\kelvin}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+\end{multicols}
+
+\newpage
+
+\part{Slide 2.04 - Balanços energéticos
+	a processos com mudança de fase}
+\label{2.04 Slide}
+
+\begin{multicols}{2}
+
+\section{Operações com mudança de fase}
+
+{
+\sisetup%
+{
+	round-precision=		2,
+	round-mode=				figures,
+%	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$
+	\dot{\mathrm{Q}}\cong
+	\qty{7426.465200651891061}{\calorie}
+$}
+\label{ - Q5.11}
+\begin{flalign*}
+&
+=	\Delta\dot{\mathrm{H}}_{\left(s\to v, (0\to150)\unit{\celsius}\right)}
+=	\dot{m}\left(
+		\Delta\widehat{\mathrm{H}}_{(s\to l)}
+	+	\Delta\widehat{\mathrm{H}}_{(0\to 100)\unit{\celsius}}
+	+	\Delta\widehat{\mathrm{H}}_{(l\to v)}\,
+	\right.
+	+	&\\&
+	\left.
+	+	\Delta\widehat{\mathrm{H}}_{(100\to150)\unit{\celsius}}
+	\right)
+=	
+	% O: 15.9994;	H: 1.00794;	H2O: 18.01528
+	10\,\unit{\gram}
+\,	\frac{\unit{\mole}}{\qty{18.01528}{\gram}}
+	\left(
+	-	1436\,\unit{\calorie\per\mole}
+	\right.
+	+	&\\&
+	\left.
+	+	\left.\left(
+			18\,\unit{\calorie\per\mole\per\kelvin}
+		\,	\Delta t\,\unit{\kelvin}
+		\right)\right|_{273}^{373}
+	+	9729\,\unit{\calorie\per\mole}
+	\right.
+	+	&\\&
+	\left.
+	+	\left.\left(
+			8.22\,\unit{\calorie\per\mole\per\kelvin}
+		\,	\Delta t\,\unit{\kelvin}
+		+	0.5*0.15*10^{-3}\,\unit{\calorie\per\mole\per\kelvin}
+		\right.\right.
+	\right.
+	*	&\\&
+	\left.
+		\left.\left.
+		*	\Delta\left(t^2\right)\,\unit{\kelvin}
+		\right)\right|_{373}^{423}
+	\right)
+\cong
+	\qty{7426.465200651891061}{\calorie}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+{
+\sisetup%
+{
+	round-precision=		3,
+	round-mode=				figures,
+%	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$\dot{\mathrm{Q}}$}
+\label{ - Q5.12}
+\begin{flalign*}
+&
+=	\Delta\dot{\mathrm{H}}_{\left(l\to g, \left(25\to300\right)\unit{\celsius}, 1\unit{\atm}\right)}
+=	\dot{\mathrm{m}}
+	\left(
+		\Delta\widehat{\mathrm{H}}_{(l, (25\to68.7)\unit{\celsius}, 1\unit{\atm})}
+	\right.
+	+	&\\&
+	\left.
+	+	\Delta\widehat{\mathrm{H}}_{(l\to g, 68.7\unit{\celsius}, 1\unit{\atm})}
+	+	\Delta\widehat{\mathrm{H}}_{(g, (68.7\to300)\unit{\celsius}, 1\unit{\atm})}
+	\right)
+=	100\,\unit{\mole\per\hour}\,
+*	&\\&
+*	\left(
+		\left.\left(
+			51.6
+			\Delta t
+		\right)\right|_{298}^{341.7}
+	%	2254.92
+	+	6921
+	\right.
+	+	&\\&
+	\left.
+	+	\left.\left(
+			1.657
+		\,	\Delta t
+		%	383.2641
+		+	0.5*13.19*10^{-2}
+		\,	\Delta(t^2)
+		\right)\right|_{341.7}^{573}
+	%	14336.3128545
+	\right)\,\unit{\calorie\per\mole}
+\cong &\\&
+\cong
+	\qty{2351223.28545}{\calorie\per\hour}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+{
+\sisetup%
+{
+	round-precision=		3,
+	round-mode=				figures,
+%	exponent-to-prefix =	false,
+%	scientific-notation=	fixed,
+%	fixed-exponent=			-3,
+}
+\begin{questionBox}{$
+	\dot{\mathrm{Q}}\cong
+	\qty{69682}{\kilo\joule\per\hour}
+$}
+\label{ - Q5.13}
+\begin{flalign*}
+&
+=	\Delta\dot{\mathrm{H}}
+=	
+-	\sum\Delta\dot{\mathrm{H}}_{o\,\ch{H2O}}
++	\sum\Delta\dot{\mathrm{H}}_{i\,\ch{H2O}}
++	\Delta\dot{\mathrm{H}}_{(Ac, (90\to6)\unit{\celsius})}
+=	&\\&
+=	\left(
+-	2700*209.3 - 1600* 25.2
++	2700*  8.4 + 1600*376.9
+	\right.
++	&\\&
+	\left.
++	400*1.47\,\left.\Delta t\right|_{279}^{363}
+	\right)\unit{\kilo\joule\per\hour}
+\cong
+	\qty{69682}{\kilo\joule\per\hour}
+&
+\end{flalign*}
+\end{questionBox}
+}
+
+\end{multicols}
+
+
+\newpage
+
+\part{Slide 2.05 -
+	Balanços energéticos a processos com mudança de fase}
+\label{2.05 Slide}
+
+\begin{questionBox}{$
+	\widehat{\mathrm{Q}}\cong
+	\qty{20761.077721244293266}{\kilo\joule\per\mole}
+$}
+\label{ - Q5.14}
+
+\begin{itemize}
+\begin{multicols}{10}
+\item 1: i
+\item 2: o1
+\item 3: o2
+\end{multicols}\relax
+\end{itemize}\relax
+
+\begin{flalign*}
+&
+=
+	\Delta\widehat{\mathrm{H}}_{(\ch{B_l},(10\to50)\unit{\celsius})}
++	\Delta\widehat{\mathrm{H}}_{(\ch{T_l},(10\to50)\unit{\celsius})}
++	\widehat{\mathrm{M}}_{o1}
+*	\left(
+	\Delta\widehat{\mathrm{H}}_{(\ch{B_l},(50\to80.1)\unit{\celsius})}
++	\Delta\widehat{\mathrm{H}}_{(\ch{B_l}\to\ch{B_g},80.1\unit{\celsius})}
++	\Delta\widehat{\mathrm{H}}_{(\ch{B_g},(80.1\to50)\unit{\celsius})}
++	\Delta\widehat{\mathrm{H}}_{(\ch{T_l},(50\to110.6)\unit{\celsius})}
++	\Delta\widehat{\mathrm{H}}_{(\ch{T_l}\to\ch{T_g},110.6\unit{\celsius})}
+	\right.
++	&\\&
+	\left.
++	\Delta\widehat{\mathrm{H}}_{(\ch{T_g},(110.6\to50)\unit{\celsius})}
+	\right)
+=	\left(
+	0.5\left.\left(
+		62.55\,\Delta t
+	+	0.5*23.4*10^{-2}\,\Delta\left(t^2\right)
+	\right)\right|_{283}^{323}\,
+%	2700.315
++\,	0.5\left.\left(
+		148.8\,\Delta t
+	+	0.5*32.4*10^{-2}\,\Delta\left(t^2\right)
+	\right)\right|_{283}^{323}
+%	4939.44
++	\qty{35.2112676056338}{\percent}
+	\right.
+*	&\\&
+	\left.
+*	\left(
+	0.684
+		\left(
+		\left.\left(
+			62.55\,\Delta t
+		+	0.5*23.4*10^{-2}\,\Delta\left(t^2\right)
+		\right)\right|_{323}^{353.1}
+	%	4263.77637
+	+	30.765\,\unit{\kilo}
+	-	\left.\left(
+			74.06\,\Delta t
+		+	(1/2)*32.95*10^{-2}\,\Delta\left(t^2\right)
+		-	(1/3)*25.2 *10^{-5}\,\Delta\left(t^3\right)
+		\right.\right.
+		\right.\right.
+		\right.
+		+	&\\&
+		\left.
+		\left.\left.
+		\left.\left.
+		+	(1/4)*77.57*10^{-9}\,\Delta\left(t^4\right)
+		\right)\right|_{323}^{353.1}
+	%	-4804.954386798975099
+		\right)
+	%		20673.094236509501116
++	0.4
+		\left(
+		\left.\left(
+			148.8\,\Delta t
+		+	0.5*32.4*10^{-2}\,\Delta\left(t^2\right)
+		\right)\right|_{323}^{383.6}
+		%	15954.11352
+	+	37.47\,\unit{\kilo}
+	-	\left.\left(
+			94.18\,\Delta t
+		+	(1/2)*38.0 *10^{-2}\,\Delta\left(t^2\right)
+		\right.\right.
+		\right.\right.
+		\right.
+		+	&\\&
+		\left.
+		\left.\left.
+		\left.\left.
+		-	(1/3)*27.86*10^{-5}\,\Delta\left(t^3\right)
+		+	(1/4)*80.33*10^{-9}\,\Delta\left(t^4\right)
+		\right)\right|_{323}^{383.6}
+	%	11945.457790439263148
+		\right)
+	%		16591.462291824294741
+	\right)
+%	13121.322721244293266
+	\right)\unit{\kilo\joule\per\mole}
+\cong
+	\qty{20761.077721244293266}{\kilo\joule\per\mole}
+&
+\end{flalign*}
+
+\begin{multicols}{2}
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{o1}\cong
+	\qty{35.2112676056338}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_i-\widehat{\mathrm{M}}_{o2}
+=	
+	\frac{1}{\ch{[B]}_{o1}}
+	\left(
+		\ch{[B]}_{i }\,\widehat{\mathrm{M}}_{i }
+	-	\ch{[B]}_{o2}\,\widehat{\mathrm{M}}_{o2}
+	\right)
+\implies &\\&
+\implies
+	\widehat{\mathrm{M}}_{o1}
+=	1
+-	\frac
+		{\ch{[B]}_{o1}-\ch{[B]}_{i}}
+		{\ch{[B]}_{o1}-\ch{[B]}_{o2}}
+=	\left(
+		1-\frac{0.684-0.5}{0.684-0.4}
+	\right)\unit{\frac{\mole}{\mole}}
+\cong &\\&
+\cong
+	\qty{35.2112676056338}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+\end{multicols}
+
+\end{questionBox}
+
+\begin{questionBox}{$
+	\widehat{Q} (\unit{\joule\per100\mole})
+$}
+\label{ - Q5.15}
+
+\begin{flalign*}
+&
+=
+	\widehat{\mathrm{H}}_{(\ch{Ace_g},(65\to56)\unit{\celsius})}
++	\widehat{\mathrm{H}}_{(\ch{Azo_g},(65\to20)\unit{\celsius})}
++	\widehat{\mathrm{M}}_{o2}
+	\left(
+		\widehat{\mathrm{H}}_{(\ch{Ace_g}\to\ch{Ace_l},56\unit{\celsius})}
+	+	\widehat{\mathrm{H}}_{(\ch{Ace_l},(56\to20)\unit{\celsius})}
+	\right)
++	\widehat{\mathrm{M}}_{o1}
+\,	\widehat{\mathrm{H}}_{(\ch{Ace_g},(56\to20)\unit{\celsius})}
+=
+	\left(
+	66.9\,\unit{\percent}
+	\left(
+		0.07196\,\Delta t
+	\right.
+	\right.
+	+	&\\&
+	\left.
+	\left.
+	+	(1/2)\,20.1*10^{-5}\,\Delta\left(t^2\right)
+	\right)\big|_{329}^{338}
+%	0.8368798635
++	33.1\,\unit{\percent}
+	\left(
+		0.029\,\Delta t
+	+	(1/2)\,0.22*10^{-5}\,\Delta\left(t^2\right)
+	\right)\big|_{293}^{338}
+%	0.4422936195
++	\qty{42.816}{\percent}
+*	\qty{42.116675993284835}{\percent}
+	\left(
+	-	30.2
+	+	\left(
+			0.123\,\Delta t
+		\right.
+	\right.
+	\right.
+		+	&\\&
+	\left.
+	\left.
+		\left.
+		+	(1/2)\,18.6*10^{-5}\,\Delta\left(t^2\right)
+		\right)\big|_{293}^{329}
+	\right)
+%	-4.271858713806648
++	\qty{57.184}{\percent}
+*	\qty{42.116675993284835}{\percent}
+	\left(
+		0.07196\,\Delta t
+	+	(1/2)\,20.1*10^{-5}\,\Delta\left(t^2\right)
+	\right)\big|_{293}^{338}
+	\right)\unit{\kilo\joule\per\mole}
+%	1.4671725939
+\cong
+	\qty{-152.5512636906648}{\kilo\joule\per{100\,\mole}}
+&
+\end{flalign*}
+
+
+
+
+
+
+\begin{multicols}{2}
+
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{o2}\cong
+	\qty{42.816}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_{i }
+\,	\ch{[Ace]}_{i}
+\,	64\,\unit{\percent}
+=	(66.9*64)\unit{\percent\mole/\mole}
+\cong
+	\qty{42.816}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{o1}\cong
+	\qty{57.184}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	
+	\widehat{\mathrm{M}}_{i }
+-	\widehat{\mathrm{M}}_{o2}
+=	(100-\num{42.816})\unit{\percent\mole/\mole}
+\cong
+	\qty{57.184}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+\begin{subsubquestionBox}{$
+	\ch{[Ace]}_{o1}\cong
+	\qty{42.116675993284835}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_{o1}^{-1}
+	\left(
+		\ch{[Ace]}_{ i}\,\widehat{\mathrm{M}}_{i }
+	-	\ch{[Ace]}_{o2}\,\widehat{\mathrm{M}}_{o2}
+	\right)
+=	\qty{57.184}{\percent}
+	\left(
+		 66.9\,\unit{\percent}*100\,\unit{\percent}
+	\right.
+	+	&\\&
+	\left.
+	-	100  \,\unit{\percent}*\qty{42.816}{\percent}
+	\right)
+\cong
+	\qty{42.116675993284835}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+\begin{subsubquestionBox}{$
+	\ch{[Azo]}_{o1}\cong
+	\qty{57.883324006715165}{\percent}
+$}
+\begin{flalign*}
+&
+=	1-\ch{[Ace]}_{o1}
+=	1-\qty{42.116675993284835}{\percent}
+\cong
+	\qty{57.883324006715165}{\percent}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+\begin{subsubquestionBox}{$
+	\ch{[Azo]}_i=
+	33.1\,\unit{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	100\,\unit{\percent}-\ch{[Ace]}_i
+=	(100-66.9)\,\unit{\percent\mole/\mole}
+=	33.1\,\unit{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+\end{multicols}
+
+\end{questionBox}
+
+\begin{multicols}{2}
+\begin{questionBox}{$
+	\widehat{\mathrm{H}}\cong
+$}
+%\begin{center}
+%\ch{CO_{(g)} + H2O_{(v)} -> CO2_{(g)} + H2_{(g)}}\\
+%\ch{
+%	CO_{(g)} + H2O_{(v)} -> CO2_{(g)} + H2O_{(l)} ->\\
+%	
+%	CO2_(g) + H2_{(g)}
+%}
+%\end{center}
+\begin{flalign*}
+&
+=	
+&
+\end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{20}
+\begin{questionBox}{}
+\label{ - Q5.20}
+\end{questionBox}
+
+
+
+
+\end{multicols}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

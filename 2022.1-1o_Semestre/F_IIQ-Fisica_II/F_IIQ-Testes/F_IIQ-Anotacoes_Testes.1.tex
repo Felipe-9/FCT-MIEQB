@@ -1,0 +1,224 @@
+% !TEX root = ./F_IIQ-Anotações_Testes.1.tex
+\providecommand\mainfilename{"./F_IIQ-Anotações_Testes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ-Anotações_Testes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F_IIQ-Anotações_Testes.1}}}
+
+\mymakesubfile{1}
+[F IIQ]
+{Anotações: Campo Elétrico \& Potencial} % Subfile Title
+{Campo Elétrico \& Potencial} % Part Title
+
+
+\begin{sectionBox}1{The Electric Field I: Discrete Charge Distributions} % S1
+    
+    \subsection{Coulomb's Constant}
+    \begin{BM}
+        k = \qty{8.987551792314}{\newton\,\metre^2/\coulomb^2}
+    \end{BM}
+
+    \subsection{Coulomb's Law}
+    \begin{BM}
+        \vv{F}=\frac{
+            k\,q_1\,q_2
+        }{
+            r_{1,2}^2}\hat{r_{1,2}
+        }
+    \end{BM}
+
+    \subsection{Electric Field}
+    \begin{BM}
+        \vv{E} 
+        = \frac{\vv{F}}{q_0}
+        = \frac{k\,q}{r^2}\hat{r}
+    \end{BM}
+
+    \subsection{Dipole}
+    \begin{BM}
+        \vv{p} = q\,\vv{L}_{(-\to+)}
+        \qquad
+        \vv{\tau}=\vv{p}\times\vv{E}
+        \\
+        U = -\vv{p}\cdot\vv{E} + U_0
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{The Electric Field II: Continuous Charge Distributions} % S2
+    
+    \subsection{Fluxo Elétrico}
+    \begin{BM}
+        \phi
+        = \lim_{\adif{A}_i\to0}{
+            \sum_i{\vv{E_i}\cdot\hat{n}\adif{A}_i}
+        }
+        = \int_S{\vv{E}\cdot\hat{n}\,\odif{A}}
+    \end{BM}
+
+    \subsection{Electric Constant (Permissivity of Free Space)}
+    \begin{BM}
+        \varepsilon_0
+        = (4\,\pi\,k)^{-1}
+        = \qty{8.854187812747955e-12}{\coulomb^2/\newton\,\metre^2}
+    \end{BM}
+
+    \subsection{Gauss's Law}
+    \begin{BM}
+        \phi_{net} 
+        = \oint_S{\vv{E}\cdot\hat{n}\,\odif{A}}
+        = Q_{inside}/\varepsilon_0
+    \end{BM}
+
+    \subsection{Discontinuity of \(E_n\)}
+    \begin{BM}
+        E_{n+} - E_{n-}
+        = \sigma/\varepsilon_0
+    \end{BM}
+
+    \subsection{\(\vec{E}\) just outside a Conductor}
+    \begin{BM}
+        E = \sigma/\varepsilon_0
+    \end{BM}
+    \paragraph*{Acts like an infinite place surface}
+
+    \section*{Electric Fields for Selected Uniform Charge Distributions}
+    
+    \subsection{Of a \emph{line} charge of infinite lenght}
+    \begin{BM}
+        \vv{E}
+        = 2\,k\,\lambda\,\hat{r}/R
+    \end{BM}
+
+    \subsection{On the axis of a charged \emph{ring}}
+    \begin{BM}
+        \vv{E}
+        = k\,Q\,z
+        \,\left(
+            z^2+a^2
+        \right)^{-3/2}
+        \,\hat{z}
+    \end{BM}
+
+    \subsection{On the axis of a charged \emph{disk}}
+    \begin{BM}
+        \vv{E}
+        = \frac{
+            \sign{(z)}
+            \,\sigma
+            \,\hat{z}
+        }{
+            2\,\varepsilon_0
+        }\,\left(
+            1-\left(
+                1+R^2/z^2
+            \right)^{-1}
+        \right)
+    \end{BM}
+
+    \subsection{Of a charged \emph{infinite plane}}
+    \begin{BM}
+        \vv{E} = \sign{(z)}\sigma\,\hat{z}/2\,\varepsilon_0
+    \end{BM}
+
+    \subsection{Of a charged thin \emph{spherical shell}}
+    \begin{BM}
+        \vv{E} = 
+        \begin{cases}
+            k\,Q\,\hat{r}/r &\quad r>0
+            \\
+            0 &\quad r<0
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Electric Potential} % S3
+    
+    \subsection{Units and Constants}
+    \begin{center}
+        \begin{tabular}{l c}
+            
+            \\\toprule
+            
+                \(V\text{ and }\adif{V}\) 
+                & \(1\,\unit{\volt} = 1\,\unit{\joule/\coulomb}\)
+                \\  Electric Field 
+                & \(1\,\unit{\newton/\coulomb}=1\,\unit{\volt/\metre}\)
+                \\  Electron volt
+                & \(1\,\unit{\electronvolt} = \qty{1.602176634e-19}{\coulomb\,\volt} = \qty{1.602176634e-19}{\joule}\)
+                \\  Dielectric Strength
+                & \(\max{E} \approx\qty{3e6}{\mega\volt/\metre}\)
+
+
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+    
+    \subsection{Potential Energy of Two Point Charges}
+    \begin{BM}
+        U = q_0\,V = k\,q_0\,q/r
+    \end{BM}
+
+    \section*{Potential Functions}
+
+    \subsection{On the axis of a uniformly charged \emph{ring}}
+    \begin{BM}
+        V = \frac{k\,Q}{\sqrt{z^2+a^2}}
+    \end{BM}
+
+    \subsection{On the axis of a uniformly charged \emph{disk}}
+    \begin{BM}
+        V = 2\,\pi\,k\,\sigma\,\myvert{z}\left(
+            \sqrt{1+R^2/z^2}-1
+        \right)
+    \end{BM}
+
+    \subsection{For an infinite \emph{plane} of charge}
+    \begin{BM}
+        V = V_0-2\,\pi\,k\,\sigma\,\myvert{x}
+    \end{BM}
+
+    \subsection{For a \emph{spherical shell} of charge}
+    \begin{BM}
+        V 
+        % = k\,Q/\max(R,r)
+        = \begin{cases}
+            k\,Q/r &\quad r\geq R
+            \\
+            k\,Q/R &\quad r\geq R
+        \end{cases}
+    \end{BM}
+
+    \subsection{For an infinite \emph{line} of charge}
+    \begin{BM}
+        V = 2\,k\,\lambda\,\ln\frac{R_{ref}}{R}
+    \end{BM}
+
+    \section*{Electrostatic Potential Energy}
+    
+    \subsection{Of \emph{point} charges}
+    \begin{BM}
+        U = \frac{1}{2}\sum_{i=1}^n{q_i\,V_i}
+    \end{BM}
+
+    \subsection{Of a \emph{conductor} with charge \textit{Q} at potential \textit{V}}
+    \begin{BM}
+        U = Q\,V/2
+    \end{BM}
+
+    \subsection{Of a \emph{system of conductors}}
+    \begin{BM}
+        U = \frac{1}{2}\sum_{i=1}^n{Q_i\,V_i}
+    \end{BM}
+
+\end{sectionBox}
+
+
+\end{document}

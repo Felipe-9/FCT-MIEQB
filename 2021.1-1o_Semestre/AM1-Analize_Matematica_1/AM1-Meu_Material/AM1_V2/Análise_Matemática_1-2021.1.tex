@@ -1,0 +1,1630 @@
+\documentclass{article}
+
+
+
+% lua
+\usepackage{luacode}
+
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	papersize=	{240mm, 320mm},	% ( 4:3 )	SVGA x 0.4
+	top=	.12\paperheight,
+	bottom=	.12\paperheight,
+	left=	.06\paperwidth,
+	right=	.06\paperwidth,
+	portrait= true,
+}
+%	papersize=	{300mm, 400mm},	% ( 4:3 )	SVGA x 0.5
+%	papersize=	{240mm, 320mm},	% ( 4:3 )	SVGA x 0.4
+%	papersize=	{180mm, 240mm},	% ( 4:3 )	SVGA x 0.3
+%	papersize=	{229mm, 305mm},	% ( 4:3 )	ArchA/Arch1
+%	papersize=	{320mm, 512mm},	% (16:10)
+%	papersize=	{280mm, 448mm},	% (16:10)
+%	papersize=	{240mm, 384mm},	% (16:10)
+%	a4paper, %	{210mm, 297mm},	% (√2:1)	A4
+
+
+
+% Font size
+\usepackage[fontsize=12pt]{fontsize}
+
+
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+%% Graphics
+%\usepackage{graphics}
+%\graphicspath{ {./resources/images} }
+
+
+
+% calc
+\usepackage{calc}
+
+
+
+% Table of contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}	% remove subsubsection from toc
+
+%% part
+%\renewcommand\cftpartfont{\bfseries}
+%%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+%\setlength\cftbeforepartskip{6mm}
+%
+%% sec
+%\renewcommand\cftsecfont{\bfseries} % Font
+%\renewcommand\cftsecpagefont{}	 % page number font
+%\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+%\setlength\cftbeforesecskip{3mm}
+%\setlength\cftsecindent{0mm}
+%%\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+%
+%% subsec
+%\setlength\cftsubsecindent{0mm}
+%%\setlength{\cftsubsecnumwidth}{15mm}
+%
+%% tab (table)
+%\setlength\cfttabindent{0mm}
+
+% part
+\renewcommand\cftpartfont{\bfseries}
+\renewcommand\cftpartafterpnum{\vspace{1mm}}
+\setlength\cftbeforepartskip{4mm}
+
+% sec
+\renewcommand\cftsecfont{} % Font
+\renewcommand\cftsecpagefont{}	 % page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+\setlength\cftbeforesecskip{0mm}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+
+% subsec
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+
+% tab (table)
+\setlength\cfttabindent{0mm}
+
+
+
+% filecontents
+%\usepackage{filecontents}	% Create files
+
+
+
+% Multicols
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+
+
+
+% enumitem
+\usepackage{enumitem} % modify enumerate index
+%\setlist[itemize]{left = -9mm}
+%\setlist[enumerate]{left= -5.4mm}
+
+
+
+% titlesec
+\usepackage{titlesec}
+
+% Part customization
+\titleclass{\part}{straight}
+\titleformat{\part}
+	[block]							% shape
+	{\huge\bfseries\color{Emph}}			% format
+	{\thepart\hspace{5mm}{$|$}}			% label
+	{5mm}							% sep
+	{\huge\bfseries}					% before-code
+	[\vspace{0.5mm}]					% after-code
+\counterwithin*{section}{part} % Reset section on part
+%\@addtoreset{section}{part}
+%
+%% Chapter customization
+%\titleclass{\chapter}{straight}
+%\titleformat{\chapter}
+%	[block]
+%	{\Huge\bfseries\color{Emph}}
+%	{\thechapter\hspace{5mm}{$|$}}
+%	{5mm}
+%	{\Huge\bfseries}
+%	[\vspace{0.5mm}]
+
+
+
+%% Appendix
+%\usepackage{appendix}
+
+
+
+% siunix: SI units
+%\usepackage{siunitx}
+%\sisetup{
+%	scientific-notation = false,	% scientific / engineering / false
+%	exponent-to-prefix = true,
+%	exponent-product = *,
+%	round-mode = places,		% figures/places
+%	round-precision = 2,
+%	round-minimum = 0.01
+%}
+
+
+
+% Maths
+\usepackage{amsmath, amssymb}
+\usepackage{bm} % Boldmath
+
+\newcommand\BM[2][align*]{{\large\boldmath\bfseries%
+	\begin{#1}
+		#2
+	\end{#1}%
+}}
+
+\newcommand\vizinhanca[2][\delta]{%
+	\hyperref[vizinhanca]{V_{#1}(#2)}%
+}
+
+\newcommand\converge{{\,\xrightarrow{\text{converge}}\,}}
+
+
+
+%% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+
+%% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+
+%%% pgf
+%% pgfmath
+%\usepackage{pgfmath}  	% calculations
+%
+%% pgfplots
+%\usepackage{pgfplots}
+%	\pgfplotsset{
+%		compat=newest,
+%		width=.90\textwidth,	% width
+%		height= .22\textheigth,	% height
+%		major grid style= {
+%			very thin, 
+%			color= White!60!Black
+%		},
+%		ticklabel style={
+%			/pgf/number format/.cd,
+%				set thousands separator={\,},
+%		tick style= {color= White!60!Black},
+%		% Extra ticks
+%		},
+%		every extra x tick/.style={
+%			tick style= {draw=none},
+%			major grid style= 
+%				{draw, thin, color= White!90!Black},
+%			ticklabel pos= top,
+%		},
+%		every extra y tick/.style={
+%			tick style= {draw=none},
+%			major grid style= 
+%				{draw, thin, color= White!90!Black},
+%			ticklabel pos= right,
+%		},
+%	}
+%
+% pgfplotstable
+%\usepackage{pgfplotstable}
+
+
+
+%% Tabular
+%\usepackage{multirow}
+%\usepackage{float}	% table position H(ere)
+%\restylefloat{table}
+%\usepackage{longtable}
+% 
+%\setlength\tabcolsep{6mm}		% Width
+%\renewcommand\arraystretch{1.25}	% Height
+%
+%% booktabs
+%\usepackage{booktabs}
+%\setlength\heavyrulewidth{.75pt} 	% Top and bottom rule
+%\setlength\lightrulewidth{.50pt} 	% Middle rule
+%\usepackage{colortbl} 			% Color Cells
+
+
+
+%% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+%\usepackage{modiagram}		% Molecular orbital diagram
+%\setmodiagram{
+%	names, 
+%	labels, 
+%	labels-fs=\tiny, 
+%	AO-width=6mm,
+%}
+%
+%\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+%% Code
+%% Run on terminal: lualatex --shell-escape [file[.tex]]
+%\usepackage{shellesc}
+%\usepackage{minted}
+%%\usemintedstyle{fruity}
+%%\usemintedstyle{paraiso}
+%%\usemintedstyle{rainbow_dash}
+%%\usemintedstyle{solarized-dark}
+%\usemintedstyle{stata-dark}
+%%\usemintedstyle{native}
+
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}  {HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen} {HTML}{008675}
+
+\colorlet{White}{DarkGreen!20}
+\colorlet{Black}{DarkBlue!110}
+%\colorlet{Black}{DarkBlue!70!black}
+\colorlet{Emph}{ DarkGreen!70!White}
+\colorlet{Background}{White!5!Black}
+
+\pagecolor{Black}
+\color{White}
+
+% mycolors
+% Pallete
+\definecolor{red}   {HTML}{FF0000}
+\definecolor{orange}{HTML}{FF7300}
+\definecolor{yellow}{HTML}{FFEA00}
+\definecolor{green} {HTML}{2AFF00}
+\definecolor{cyan}  {HTML}{00FFBF}
+\definecolor{blue}  {HTML}{0055FF}
+\definecolor{purple}{HTML}{9500FF}
+\definecolor{pink}  {HTML}{FF0080}
+% Light
+\newcommand\Light{!63!White}
+\colorlet{Red}   {red\Light}
+\colorlet{Orange}{orange\Light}
+\colorlet{Yellow}{yellow\Light}
+\colorlet{Green} {green\Light}
+\colorlet{Cyan}  {cyan\Light}
+\colorlet{Blue}  {blue\Light}
+\colorlet{Purple}{purple\Light}
+\colorlet{Pink}  {pink\Light}
+% Dark
+\newcommand\Dark{!45!Black}
+\colorlet{DRed}   {Red\Dark}
+\colorlet{DOrange}{Orange\Dark}
+\colorlet{DYellow}{Yellow\Dark}
+\colorlet{DGreen} {Green\Dark}
+\colorlet{DCyan}  {Cyan\Dark}
+\colorlet{DBlue}  {Blue\Dark}
+\colorlet{DPurple}{Purple\Dark}
+\colorlet{DPink}  {Pink\Dark}
+
+
+
+% tcolorbox
+\usepackage{tcolorbox}
+\tcbset{
+	coltext=	White,		% text  color
+	coltitle=	White,		% title color
+	fonttitle=	\bfseries,	% title font
+	colback=	Background,	% background color
+	colframe=	Background,	% border     color
+	arc=		3mm,		% Curvature
+	}
+%% Mybox - Incomplete
+%\newtcbox{\mybox}{on line,
+%  colframe=mycolor,colback=mycolor!10!white,
+%  boxrule=0.5pt,arc=4pt,boxsep=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle{{Análise Matemática I - 2021.1}}
+\newcommand\myauthor{{Felipe B. Pinto 61387 - MIEQB}}
+
+
+
+% title, author and date
+\title{\huge\bfseries\color{Emph}\mytitle}
+\author{\Large\myauthor}
+\date{\Large\today}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+	% Links customization
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=LightGreen!25!White,
+	% PDF customization
+	pdfpagelayout=OneColumn,
+	pdftitle=\mytitle,
+	pdfauthor=\myauthor,
+}
+% Fix links when reseting section on part
+\renewcommand\theHsection{\thepart.\thesection}
+
+
+%% questions, subquestions and subsubquestions
+%
+%% question
+%\newcounter{question}[section]
+%\renewcommand{\thequestion}{Questão \arabic{question}}
+%\newcommand{\question}[1]{
+%     % reset inner counters
+%     \setcounter{subquestion}{0}
+%     \setcounter{subsubquestion}{0}
+%     % add section*
+%     \refstepcounter{question}
+%     \section*{\thequestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{section}{%
+%     	\thequestion\quad#1%
+%	}
+%}
+%
+%% subquestion
+%\newcounter{subquestion}[subsection]
+%\renewcommand\thesubquestion{%
+%	Q\arabic{question} - \alph{subquestion})%
+%}
+%\newcommand{\subquestion}[1]{
+%	% reset inner counters
+%	\setcounter{subsubquestion}{0}
+%	% add subsection*
+%     \refstepcounter{subquestion}
+%     \subsection*{\thesubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsection}{%
+%     	\thesubquestion\quad#1%
+%	}
+%}
+%
+%% subsubquestion
+%\newcounter{subsubquestion}[subsubsection]
+%\renewcommand{\thesubsubquestion}{(\roman{subsubquestion})}
+%\newcommand{\subsubquestion}[1]{
+%	% add subsubsection*
+%     \refstepcounter{subsubquestion}
+%     \subsubsection*{\thesubsubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsubsection}{%
+%     	\thesubsubquestion\quad#1%
+%	}
+%}
+
+
+
+%% Incompleto
+%
+%% Listoftemas: tema e subtema
+%\newlistof{temas}{prog}{}
+%%% Add to document
+%%\section*{Programa}
+%%\begin{multicols}{2} \listoftemas \end{multicols}
+%% tema
+%\newcounter{tema}[section]
+%\newcommand\tema[1]{%
+%	\refstepcounter{tema}%
+%	\addcontentsline{prog}{temas}{%
+%		\thetema\textsuperscript{o} Tema: #1%
+%	}%
+%}
+%% subtema
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%	\refstepcounter{subtema}%
+%	\addcontentsline{prog}{temas}{%
+%		\textbullet\quad#1%
+%	}
+%}
+
+
+
+% subsubsection customization
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+
+\begin{document}
+
+
+\newgeometry{
+	top=	.12\paperheight,
+	bottom=	.12\paperheight,
+	left=	.15\paperwidth, 
+	right=	.15\paperwidth,
+}
+
+
+\maketitle
+\label{title}
+
+
+% Table of Contents
+
+\renewcommand{\contentsname}{} % remove title
+
+\section*{Conteúdo}
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+
+%% Temas
+%\newlistof{temas}{prog}{}
+%
+%\section*{Programa}
+%\begin{multicols}{2} \listoftemas \end{multicols}
+%
+%\newcounter{tema}[section]
+%
+%\newcommand\tema[1]{%
+%	\refstepcounter{tema}%
+%	\addcontentsline{prog}{temas}{%
+%		\thetema.\quad#1%
+%	}%
+%}
+%
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%	\refstepcounter{subtema}%
+%	\addcontentsline{prog}{temas}{%
+%		\textbullet\quad#1%
+%	}
+%}
+%
+%\tema{test}
+%\subtema{test}
+
+\newpage
+
+\section*{Programa}
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\arabic*.]
+	
+	\item {\bfseries 
+		\hyperref[topologia elementar na reta r]
+		{Topologia elementar da recta real}
+	}
+	\begin{enumerate}
+	[label=\theenumi\arabic*., left = -5.4mm]
+		
+		\item \hyperref[pontos]{Pontos}:
+		\begin{itemize}[left = -9mm]
+		
+			\item \hyperref[vizinhanca]
+				{Vizinhança de um ponto}
+				
+			\item \hyperref[interior]
+				{Ponto Interior e Exterior}
+				
+			\item Ponto Isolado
+			\item Ponto Aderente
+			\item \hyperref[ponto de acumulacao]
+				{Ponto de Acumulação}
+			
+		\end{itemize}
+		
+		\item \hyperref[conjuntos]{Conjuntos}:
+		\begin{itemize}[left = -9mm]
+		
+			\item \hyperref[conjunto aberto]
+				 {Aberto e Fechado}
+				 
+			\item \hyperref[conjunto limitado]
+				 {Limitado}
+				 
+			\item Compacto
+		
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	\vspace{3mm}
+	
+	\item {\bfseries 
+		\hyperref[inducao matematica]{Indução Matemática}
+		e \hyperref[sucessoes]{Sucessões}
+	}
+	\begin{enumerate}
+	[label=\theenumi\arabic*., left = -5.4mm]
+	
+		\item \hyperref[inducao matematica]
+			 {Princípio de Indução Matemática}
+		
+		\item \
+		\begin{itemize}[left = -9mm]
+			
+			\item Noção de Convergencia
+			
+			\item \hyperref[sucessao limitada]
+				 {Limite de uma Sucessão}
+				 
+			\item \hyperref[algebra de limites]
+				 {Algebra de Limites}
+				 
+			\item \hyperref[subsucessoes]{Subsuscessões}
+			\item Sublimites
+			\item Teoremas Fundamentais
+			\item \hyperref[sucessao de cauchy]
+				 {Sucessões de Cauchy}
+			
+		\end{itemize}
+	
+	\end{enumerate}
+	
+	\vspace{3mm}
+	
+	\item {\bfseries
+		Limites e Continuidade em R
+	}
+	\begin{enumerate}
+	[label=\theenumi\arabic*., left = -5.4mm]
+		
+		\item Limite de uma Função:
+		\begin{itemize}[left = -9mm]
+		
+			\item Segundo Cauchy
+			\item Segundo Heine
+			\item Álgebra de Limites
+		
+		\end{itemize}
+		
+		\item \
+		\begin{itemize}[left = -9mm]
+		
+			\item Continuidade de uma função num ponto
+			\item Prolongamento por Continuidade
+			\item Teorema de Bolzano
+			\item Teorema de Weierstrass
+			\item Continuidade da função composta
+			\item Continuidade da função inversa
+				 para a composição de funções
+			\item Funções Inversas Clássicas
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	\vspace{3mm}
+	
+	\item {\bfseries
+		Calculo Diferencial em R
+	}
+	\begin{enumerate}
+	[label=\theenumi\arabic*., left = -5.4mm]
+		
+		\item \
+		\begin{itemize}[left = -9mm]
+		
+			\item Definição de diferenciabilidade
+				 num ponto
+			\item Interpretação geométrica
+			\item Derivada de uma função
+			\item Composta da Função inversa
+			\item Derivada da Função inversa
+			\item Teorema de Rolle
+			\item Teorema de Lagrange
+			\item Derivada e Monotonia
+			\item Teorema de Darboux
+			\item Teorema de Cauchy
+			\item Regra de L'Hospital-Cauchy
+		
+		\end{itemize}
+		
+		\item Teorema de Taylor e Aplicações
+		
+	\end{enumerate}
+	
+	\vspace{3mm}
+	
+	\item {\bfseries
+		Cálculo Integral em R
+	}
+	\begin{enumerate}
+	[label=\theenumi\arabic*., left = -5.4mm]
+	
+		\item Primitivas:
+		\begin{itemize}[left = -9mm]
+			
+			\item por Partes
+			\item por Substituição
+			\item de Funções Racionais
+			\item de Funções Irracionais
+			\item de Funções Transcendentes
+			
+		\end{itemize}
+		
+		\item \
+		\begin{itemize}[left = -9mm]
+		
+			\item Integral de Riemann
+			\item Teorema do valor médio
+			\item Teorema Fundamental do Cálculo Integral
+			\item Regra de Barrow
+			\item Integração por partes
+			\item Integração por substituição
+			\item Aplicação ao cálculo de áreas
+			
+		\end{itemize}
+		
+		\item Integrais Impróprios
+		
+	\end{enumerate}	
+	
+\end{enumerate}
+\end{multicols}
+
+%1. Topologia elementar da recta real.
+%
+%1.1 Vizinhança de um ponto. Ponto interior, exterior, fronteiro, isolado, aderente e de acumulação.
+%
+%1.2 Conjunto aberto, fechado, limitado e compacto.
+%
+% 
+%
+%2. Indução Matemática e Sucessões
+%
+%2.1 Princípio de Indução Matemática.
+%
+%2.2 Noção de convergência e limite de uma sucessão. Álgebra de limites. Subsucessões. Sublimites. Teoremas Fundamentais. Sucessões de Cauchy. 
+%
+%3. Limites e Continuidade em R
+%
+%3.1 Limite de uma função segundo Cauchy e segundo Heine. Álgebra de limites.
+%
+%3.2 Continuidade de uma função num ponto. Prolongamento por continuidade. Teorema de Bolzano e Teorema de Weierstrass. Continuidade da função composta. Continuidade da função inversa para a composição de funções. Funções inversas clássicas.
+%
+%4. Cálculo Diferencial em R
+%
+%4.1 Definição de diferenciabilidade num ponto. Interpretação geométrica. Derivada de uma função. Derivada da função composta e derivada da função inversa. Teorema de Rolle, Teorema de Lagrange. Derivada e monotonia. Teorema de Darboux e Teorema de Cauchy. Regra de L''Hospital-Cauchy.
+%
+%4.2 Teorema de Taylor e aplicações.
+%
+%5. Cálculo Integral em R
+%
+%5.1 Primitivas. Primitivação por partes. Primitivação por substituição. Primitivação de funções racionais. Primitivação de funções irracionais e de funções transcendentes.
+%
+%5.2 Integral de Riemann. Teorema do valor médio. Teorema Fundamental do Cálculo Integral. Regra de Barrow. Integração por partes e integração por substituição. Aplicação ao cálculo de áreas. 
+%
+%5.3 Integrais impróprios.
+
+\restoregeometry
+
+
+\newpage
+
+
+
+\part{Background}
+
+
+
+\newpage
+
+
+
+\part{Topologia Elementar na Reta $\mathbb{R}$}
+\label{topologia elementar na reta r}
+
+
+
+\section{Vizinhança $V_{\delta}$}
+\label{vizinhanca}
+
+\begin{flalign*}
+&
+	\vizinhanca{x} = (x-\delta, x+\delta)
+	\quad \delta\in\mathbb{R}
+&
+\end{flalign*}
+
+
+
+\section*{Pontos:}
+\label{pontos}
+
+
+
+% Majorante e Minorante
+\begin{multicols}{2}
+	
+	
+\section{Minorante}
+\label{minorante}
+
+\begin{flalign*}
+&
+	m \in \text{Minorante}(X)
+\iff &\\&
+\iff
+	m\in\mathbb{R}
+\land
+	x \geq m
+	\ \forall\,x\in X
+&
+\end{flalign*}
+
+
+%\vfill
+
+
+\section{Majorante}
+\label{majorante}
+
+\begin{flalign*}
+&
+	m \in \text{Majorante}(X)
+\iff &\\&
+\iff
+	m\in\mathbb{R}
+\land
+	x \leq m\ \forall\,x\in X
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Infimo e Supremo
+\begin{multicols}{2}
+
+\section{Infimo Inf}
+\label{Infimo}
+
+\subsubsection{Standalone}
+
+\begin{flalign*}
+&
+	\text{Inf}(X) = i
+\iff &\\&
+\iff	
+	i\in\mathbb{R}
+\land
+	x \geq m
+	\ \forall\,x\in X	
+\land &\\&
+\land
+	\nexists\,y\in\mathbb{R}\backslash X
+	: i<y<x
+	\ \forall\,x\in X
+&
+\end{flalign*}
+
+
+\subsubsection{Usando \hyperref[vizinhanca]{Vizinhança}}
+
+\begin{flalign*}
+&
+	\text{Inf}(X) = i
+\iff &\\&
+\iff	
+	i\in\mathbb{R}
+\land
+	x\geq i\ \forall\,x\in X
+\land
+	\vizinhanca{i}\cap X\neq\emptyset
+&
+\end{flalign*}
+
+
+% \vfill
+
+
+\section{Supremo Sup}
+\label{Supremo}
+
+\subsubsection{Standalone}
+
+\begin{flalign*}
+&
+	\text{Sup}(X) = s
+\iff &\\&
+\iff
+	s\in\mathbb{R}
+\land
+	x\leq s\ \forall\,x\in X
+\land &\\&
+\land
+	\nexists\,y\in\mathbb{R}\backslash X
+	: x<y<s
+&
+\end{flalign*}
+
+
+\subsubsection{Usando \hyperref[vizinhanca]{Vizinhança}}
+
+\begin{flalign*}
+&
+	\text{Sup}(X) = s
+\iff &\\&
+\iff
+	s\in\mathbb{R}
+\land
+	x\leq s\ \forall\,x\in X
+\land
+	\vizinhanca{s}\cap X\neq\emptyset
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Minimo e Maximo
+\begin{multicols}{2}
+	
+	
+\section{Minimo Min}
+\label{minimo}
+
+\subsubsection{Standalone}
+\begin{flalign*}
+&
+	\text{Min}(X) = m
+\iff &\\&
+\iff
+	m\in X
+\land
+	m \leq y\ \forall\,y\in m
+&
+\end{flalign*}
+
+
+\subsubsection{Usando \hyperref[majorante]{Minorante}}
+\begin{flalign*}
+&
+	\text{Min}(X) = m
+\iff &\\&
+\iff
+	m\in X
+\land
+	m\in \hyperref[majorante]{\text{Minorante}(X)}
+&
+\end{flalign*}
+
+
+% \vfill
+
+
+\section{Maximo Max}
+\label{maximo}
+
+\subsubsection{Standalone}
+\begin{flalign*}
+&
+	\text{Max}(X) = m
+\iff &\\&
+\iff
+	m\in X
+\land
+	m \geq y\ \forall\,y\in m
+&
+\end{flalign*}
+
+
+\subsubsection{Usando \hyperref[majorante]{Majorante}}
+\begin{flalign*}
+&
+=	\text{Max}(X) = m
+\iff &\\&
+\iff
+	m\in X
+\land
+	m\in \hyperref[majorante]{\text{Majorante}(X)}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Interior e Exterior
+\begin{multicols}{2}
+
+
+\section{Interior Int}
+\label{interior}
+
+\subsubsection{Standalone}
+
+\begin{flalign*}
+&
+	x\in\text{Int}(X)
+\iff &\\&
+\iff
+	\exists\,\delta>0:(x-\delta,x+\delta)\subseteq X
+&
+\end{flalign*}
+
+
+\subsubsection{Usando \hyperref[vizinhanca]{Vizinhança}}
+
+\begin{flalign*}
+&
+	x\in\text{Int}(X)
+\iff &\\&
+\iff
+	\vizinhanca{x}\subseteq X
+&
+\end{flalign*}
+
+
+% vfill
+
+
+\section{Exterior Ext}
+\label{exterior}
+
+\subsubsection{Standalone}
+
+\begin{flalign*}
+&
+	x\in\text{Ext}(X)
+\iff &\\&
+\iff
+	\exists\,\delta\in\mathbb{R}\backslash\{0\}
+	:(x-\delta,x+\delta)\cap X =\emptyset
+&
+\end{flalign*}
+
+
+\subsubsection{Usando \hyperref[vizinhanca]{Vizinhança}}
+
+\begin{flalign*}
+&
+	x\in\text{Ext}(X)
+\iff &\\&
+\iff
+	\vizinhanca{x}\cap X =\emptyset
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\section{Ponto de Acumulação}
+\label{ponto de acumulacao}
+
+\begin{flalign*}
+&
+	x \text{ é um ponto de acumulação de } X
+\iff	&\\&
+\iff
+	\vizinhanca{x}\cap\left( X\backslash\{x\} \right)
+\neq \emptyset
+&
+\end{flalign*}
+
+
+
+\section{Fronteira Fr}
+\label{fronteira}
+
+\begin{flalign*}
+&
+	f\in\text{Fr}(X)
+\iff &\\&
+\iff
+	\vizinhanca{f}\cap X\neq\emptyset
+\land
+	\vizinhanca{f}\cap\mathbb{R}\backslash X\neq\emptyset
+&
+\end{flalign*}
+
+
+	
+\section*{Conjuntos:}
+\label{conjuntos}
+
+
+
+\section{Limitado}
+\label{conjunto limitado}
+
+\begin{flalign*}
+&
+	X \text{ é um conjunto limitado}
+\iff &\\&
+\iff
+	\{
+	m_1 \leq x \leq m_2
+	\quad\forall\,x\in X 
+	: m_1 \in \hyperref[majorante]{\text{Minorante}(X)}
+,\	  m_2 \in \hyperref[majorante]{\text{Majorante}(X)}
+	\}
+&
+\end{flalign*}
+
+
+\begin{multicols}{2}
+
+\section{Aberto}
+\label{conjunto aberto}
+
+\begin{flalign*}
+&
+	X \text{ é um conjunto aberto}
+\iff &\\&
+\iff
+	X=\hyperref[interior]{\text{Int}}(X)
+&
+\end{flalign*}
+
+
+% vfill
+
+
+\section{Fechado}
+\label{conjunto fechado}
+
+\begin{flalign*}
+&
+	X \text{ é um conjunto fechado}
+\iff &\\&
+\iff
+	X
+=	\hyperref[interior]{\text{Int}(X)}
+\cup	\hyperref[fronteira]{\text{Fr}(X)}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Feixe e Ponto de Acumulação
+\begin{multicols}{2}
+
+\section{Feixe $\overline X$}
+\label{feixe}
+
+\begin{flalign*}
+&
+	\bar X
+= 	\hyperref[interior]{\text{Int}(X)}
+\cup	\hyperref[fronteira]{\text{Fr}(X)}
+&
+\end{flalign*}
+
+\end{multicols}
+
+
+
+\newpage
+
+
+
+\part{Indução Matemática}
+\label{inducao matematica}
+
+
+\section{Indução por Igualdade}
+\label{inducao por igualdade}
+
+
+\begin{center}
+\begin{itemize}
+
+	\item Prove que é valido para algum $n$
+	\item Prove que é valido para $n+1\quad\forall\,n:$ seja valido para n
+
+\end{itemize}
+\end{center}
+
+\begin{flalign*}
+&
+	\text{Seja } V
+=	\left\{
+	P_{(n)}\quad\forall\,n \in \text{Dominio}
+	\right\}
+&\\&
+	P_{(x)} \in V;
+\	P_{(x+1)}\in V
+&
+\end{flalign*}
+
+
+
+\subsection{Exemplo}
+\BM{
+	\sum\limits_{i=0}^{n} \frac{1}{2^i} 
+= 	2-\frac{1}{2^n}
+\quad
+	\forall\,n\in\mathbb{N}_0
+}
+
+
+\begin{multicols}{2}
+
+
+\subsubsection{$n=0$}
+\begin{flalign*}
+&
+	\sum\limits_{i=0}^{0} \frac{1}{2^i}
+=	1
+= 	2-\frac{1}{2^0}
+=	2-1=1
+&
+\end{flalign*}
+
+
+\subsubsection{$n=m+1$}
+\begin{flalign*}
+&
+	\sum\limits_{i=0}^{m+1} \frac{1}{2^i}
+=	\sum\limits_{i=0}^{m} \frac{1}{2^i} + \frac{1}{2^{m+1}}
+=	&\\&
+=	2-\frac{1}{2^{m}}+\frac{1}{2^{m+1}}
+=	2-\frac{1}{2^{m+1}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+\newpage
+
+
+\section{Indução por Desigualdade}
+\label{inducao por desigualdade}
+
+\begin{center}
+\begin{itemize}
+	
+	\item Prove que é valido para algum $n$
+	\item Prove que é valido para $n+1\quad\forall\,n:$ seja valido para n
+	
+\end{itemize}
+\end{center}
+
+
+\begin{multicols}{2}
+
+\subsection{Exemplo 1}
+\BM{ n\leq 2^{n-1}\quad\forall\,n\in\mathbb{N} }
+
+
+\subsubsection{$ n=1 $}
+\begin{flalign*}
+&
+	1\leq 2^{1-1}= 1
+&
+\end{flalign*}
+
+\subsubsection{$ n=m+1 $}
+\begin{flalign*}
+&
+	m+1
+\leq 2^{m-1}+1
+= 	\frac{2^{m}+2}{2}
+\leq 2^{m+1-1} = 2^{m}
+\implies &\\&
+\implies
+	2 
+\leq 2^{m+1}-2^m
+=	2^m(2-1)
+=	2^m
+&
+\end{flalign*}
+
+
+\vfill
+
+
+\subsection{Exemplo 2}
+\BM{ n^2\leq 2^n\quad\forall\,n\in\mathbb{N}\land n\geq4 }
+
+\subsubsection{$n=4$}
+
+\begin{flalign*}
+&
+	4^2\leq 2^4 = 4^2
+&
+\end{flalign*}
+
+\subsubsection{$n=m+1$}
+
+\begin{flalign*}
+&
+	(m+1)^2
+=	m^2+2\,m+1
+\leq	&\\&
+\leq
+	2^m+2\,m+1
+\leq 
+	2 * 2^{m}
+=	2^{m+1}
+\implies &\\&
+\implies
+	2\,m+1 \leq 2^m
+;\	&\\&
+	\begin{cases}
+	%
+		m=4
+	\implies 
+		2*4+1 = 9 
+	\leq 2^4 = 16
+	\\	
+		m=n+1
+	\implies 
+		2*(n+1)+1=2\,n+1+2
+	\leq \\
+	\leq 2^n+2
+	\leq 2*2^{n} = 2^{n+1}
+	\implies
+		2\leq 2^n
+	%
+	\end{cases}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\newpage
+
+
+
+\part{Sucessões}
+\label{sucessoes}
+
+
+\BM{ u_{(n)}: \mathbb{N}\to\mathbb{R} }
+
+
+\section{Sucessão Monótona}
+\label{sucessao monotona}
+
+
+\begin{multicols}{2}
+
+
+\subsection{Decresente}
+\label{sucessao monotona decrescente}
+
+\begin{flalign*}
+&
+	u_{(n)}\geq u_{(n+1)}
+	\quad\forall\,n\in\mathbb{N}
+&
+\end{flalign*}
+
+
+% \vfill
+
+
+\subsection{Crescente}
+\label{sucessao monotona crescente}
+
+\begin{flalign*}
+&
+	u_{(n)}\leq u_{(n+1)}
+	\quad\forall\,n\in \mathbb{N}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\section{Sucessão Limitada}
+\label{sucessao limitada}
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ é limitada}
+\iff &\\&
+\iff
+	m_1 \leq u_{(n)} \leq m_2
+\quad\forall\,n\in\mathbb{N}
+&
+\end{flalign*}
+
+
+\begin{multicols}{2}
+
+
+\section{Sucessão Convergente}
+\label{sucessao convergente}
+
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ converge para } l\in\mathbb{R}
+\iff &\\&
+\iff
+	\exists\,p\in\mathbb{N}: u_{(n)}\in\vizinhanca{l}
+	\quad\forall\,n>p
+&
+\end{flalign*}
+
+
+\vfill
+
+
+\paragraph{Nota:}
+
+\begin{flalign*}
+&
+	u_{(n)}\in\vizinhanca{l}
+\iff	|u_{(n)}-l| < \delta
+\iff &\\&
+\iff	l-\delta < u_{(n)} < l+\delta
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\subsection{Exemplo}
+\BM[flalign*]{
+&
+\quad
+	u_{(n)} = 1/\sqrt{2\,n-1}
+;\ &\\& \quad
+	u_{(n)} > 0
+;\ 	\delta = 1/10
+&
+}
+
+
+\begin{flalign*}
+&
+\iff	0 < \frac{1}{\sqrt{2\,n-1}} < \frac{1}{10}
+\iff	&\\&
+\iff	0 < \frac{1}{2\,n-1} < \frac{1}{100}
+;\
+	2\,n-1>100
+\implies	&\\&
+\implies
+	\lfloor101/2\rfloor<n
+&
+\end{flalign*}
+
+
+
+\newpage
+
+
+
+\section{Algebra de Limites}
+\label{algebra de limites}
+
+
+\begin{multicols}{2}
+
+\subsection{}
+
+\begin{flalign*}
+&
+	\bm{u_{(n)}} \textbf{ é \hyperref[sucessao convergente]{convergente}}
+\iff	&\\&
+\iff
+	u_{(n)} \in \vizinhanca[\epsilon]{l}
+	\quad\forall\,\epsilon>0
+\iff	&\\&
+\iff
+	l-\epsilon<u_{(n)}<l+\epsilon
+\iff	&\\&
+\iff
+	\exists\,\{m_1, m_2\}\subset\mathbb{R}:
+	m_1<u_{(n)}<m_2
+	&\\&
+	\quad\forall\,n\in\mathbb{N}
+\iff	&\\&
+\iff
+	\bm{u_{(n)}}\textbf{ é \hyperref[sucessao limitada]{limitada}}
+&
+\end{flalign*}
+
+
+
+\subsection{}
+
+
+\begin{flalign*}
+&
+	\bm{u_{(n)}} \textbf{ é \hyperref[sucessao monotona]{monotona} e \hyperref[sucessao limitada]{limitada}}
+\iff	&\\&
+\iff
+	(u_{(n)} < u_{(n+1)} \lor u_{(n)} > u_{(n+1)})
+\land &\\&
+\land
+	\exists\,\{m_1,m_2\}\subset\mathbb{R}
+	: m_1<u_{(n)}<m_2\quad\forall\,n\in\mathbb{N}
+\implies	&\\&
+\implies
+	\exists\,\hyperref[supremo]{\text{Sup}(u_{(n)})}
+	\in\mathbb{R}\backslash u_{(n)}
+\iff	&\\&
+\iff
+	\bm{u_{(n)}}\textbf{ é \hyperref[sucessao convergente]{convergente}}
+&
+\end{flalign*}
+
+
+
+\subsection{}
+
+\boldmath\begin{flalign*}
+&	
+	u_{(n)} \textbf{ e } v_{(n)} \textbf{ são \hyperref[sucessao convergente]{convergentes}}\,
+\land	&\\&
+\land
+	u_{(n)} \leq v_{(n)}\quad\forall\,n\in\mathbb{N}
+\implies	&\\&
+\implies
+	\lim\limits_{n\to\infty}u_{(n)}
+\leq	\lim\limits_{n\to\infty}v_{(n)}
+&
+\end{flalign*}
+
+
+
+\subsection{}
+
+\begin{flalign*}
+&
+	\bm{u_{(n)}} \textbf{ é \hyperref[sucessao limitada]{limitada}}
+\bm{\land}
+	\bm{v_{(n)} \to 0}
+\implies	&\\&
+\implies
+	0
+\leq	|u_{(n)}*v_{(n)}|=|u_{(n)}|*|v_{(n)}|
+\leq	&\\&
+\leq	M
+	*0=0
+	\quad\forall\,M\in\hyperref[majorante]{\text{Majorante}(u_{n})}
+\implies	&\\&
+\implies
+	\bm{u_{(n)}*v_{(n)}\to 0}
+&
+\end{flalign*}
+
+
+
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+
+
+
+\section{Lema geral das sucessões enquadradas}
+
+\begin{flalign*}
+&
+	\{u_{(n)}, v_{(n)}, w_{(n)}\}:\mathbb{N}\to\mathbb{R}
+\,\land	&\\&
+\land
+	v_{(n)}\leq u_{(n)}\leq w_{(n)}
+	\quad\forall\,n\in\mathbb{N}
+\,\land	&\\&
+\land
+	\exists\,l\in\mathbb{R}
+	:\{v_{(n)},w_{(n)}\} \converge l
+\implies	&\\&
+\implies
+	u_{(n)} \converge l
+&
+\end{flalign*}
+
+
+
+\subsection{Exemplo: $ u_{(n)}=\sin(n)/n $}
+
+\begin{flalign*}
+&
+	\frac{-1}{n}
+\leq	\frac{\sin(n)}{n}
+\leq	\frac{1}{n}
+;\
+	\left\{\frac{-1}{n}, \frac{1}{n}\right\}\to 0
+\implies	&\\&
+\implies
+	\frac{\sin(n)}{n}\to0
+&
+\end{flalign*}
+
+
+
+\end{multicols}
+
+
+
+\section{Subsucessões}
+\label{subsucessoes}
+
+
+
+\subsection{Subsucessão Convergente}
+\label{subsucessao convergente}
+
+
+
+\section{Sucessão de Cauchy}
+\label{sucessao de cauchy}
+
+
+
+
+\newpage
+
+
+
+\part{Limites}
+
+\section{Lema geral das funções enquadradas}
+
+
+\subsection{Exemplo: $ u_{(n)}=\sin(n)/n $}
+
+\begin{flalign*}
+&
+	\frac{-1}{n}
+\leq	\frac{\sin(n)}{n}
+\leq	\frac{1}{n}
+;\
+	\left\{\frac{-1}{n}, \frac{1}{n}\right\}\to 0
+\implies	&\\&
+\implies
+	\frac{\sin(n)}{n}\to0
+&
+\end{flalign*}
+
+
+
+
+
+
+\newpage
+
+
+
+\part{Continuidade em $\mathbb{R}$}
+
+
+
+
+\end{document}
+
+

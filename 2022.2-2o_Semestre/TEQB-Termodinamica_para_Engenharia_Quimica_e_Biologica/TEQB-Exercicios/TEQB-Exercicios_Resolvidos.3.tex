@@ -1,0 +1,676 @@
+% !TEX root = ./TEQB-Exercicios_Resolvidos.3.tex
+\providecommand\mainfilename{"./TEQB-Exercicios_Resolvidos.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Exercicios_Resolvidos.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+
+% \tikzset{external/force remake=true} % - remake all
+
+% \renewcommand\thequestion{Questão \arabic{part}\,--\,\arabic{question}}
+% \renewcommand\thesubquestion{\thequestion\ \alph{subquestion})}
+
+\begin{document}
+
+\graphicspath{{./.build/figures/TEQB-Exercicios_Resolvidos.3}}
+
+\mymakesubfile{3}
+[TEQB]
+{Exercicios}
+{Exercicios}
+
+\setcounter{question}{19}
+
+\setcounter{question}{20}
+\begin{questionBox}1{ % Q20
+    Calcule a variação de energia de Gibbs associada à:
+} % Q20
+
+    \begin{itemize}
+        \begin{multicols}{3}
+            \item \(\rho_{l} = 1\,\unit{\gram\,\centi\metre^{-3}}\)
+            \item \(\rho_{s} = 0.92\,\unit{\gram\,\centi\metre^{-3}}\)
+            \item \(C_{p,s} = 35\,\unit{\joule\,\kelvin}\)
+            \item \(C_{p,l} = 75\,\unit{\joule\,\kelvin}\)
+            \item \(\adif{H}_{fus} = 6.01\,\unit{\kilo\joule\,\mole^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q20.1
+    solidificação de água líquida sobrearrefecida a -5\,\unit{\celsius} e 1\,\unit{\atm}
+} % Q20.1
+
+    \begin{flalign*}
+        &
+            \adif{G}_{(-5\unit{\celsius},1\unit{\atm})}
+            % &\\&
+            = 
+            \left(
+                \begin{aligned}
+                    &
+                    \adif{G}_{0\unit{\celsius},1\unit{\atm},(l\to s)}
+                    & + \\ + &
+                    \adif{G}_{(0\to-5)\unit{\celsius},1\unit{\atm},s}
+                    &
+                \end{aligned}
+            \right)
+            &\\&
+            = 
+            \left(
+                \begin{aligned}
+                    &
+                    0\ (\text{sobre a curva de fusão})
+                    & + \\ + &
+                    \int_{273.15}^{268.15}{
+                        \pdv{\adif{G}}{T}_P
+                        \odif{T}
+                    }
+                    &
+                \end{aligned}
+            \right)
+            &\\&
+            = 
+            \int_{273.15}^{268.15}{
+                \pdv{\adif{G}}{T}_P
+                \odif{T}
+            }
+            ; &\\[2ex]&
+            % 
+            % \pdv{\adif{G}}{T}_P
+            % 
+            \odif{G}=-S\odif{T}+V\odif{P}
+            \implies
+            \left(
+                \frac{\odif{G}}{\odif{T}}
+            \right)_P
+            =-S
+            \implies
+            \pdv{\adif{G}}{T}_P
+            = -\adif{S}
+            ; &\\[2ex]&
+            \therefore
+            \adif{G}_{(-5\unit{\celsius},1\unit{\atm})}
+            = \int_{273.15}^{268.15}{
+                -\adif{S}
+                \odif{T}
+            }
+            \cong
+            -\adif{S}
+            \int_{273.15}^{268.15}{\odif{T}}
+            = &\\&
+            =
+            -\frac{\adif{H}_{fus}}{T_{fus}}(273.15-268.15)
+            =
+            -\frac{6.01*10^3}{273.15}(273.15-268.15)
+            \cong
+            \num{110.012813472451041}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q20.2
+    solidificação de água líquida a 0\,\unit{\celsius} e 10\,\unit{\atm}.
+} % Q20.2
+
+    \begin{flalign*}
+        &
+            \adif{G}_{(0\unit{\celsius},10\unit{\atm})}
+            =\left(
+                \begin{aligned}
+                    &
+                    \adif{G}_{(0\unit{\celsius},1\unit{\atm},l\to s)}
+                    & + \\ + &
+                    \adif{G}_{(0\unit{\celsius},(1\to10)\unit{\atm},s)}
+                    &
+                \end{aligned}
+            \right)
+            =\adif{G}_{(0\unit{\celsius},(1\to10)\unit{\atm},s)}
+            = &\\&
+            =\int_{1}^{10}{
+                \pdv{\adif{G}}{P}_T
+                \odif{P}
+            }
+            ; &\\[2ex]&
+            \odif{G}
+            = V\,\odif{P}
+            -S\,\odif{T}
+            \implies
+            \left(
+                \frac{\odif{G}}{\odif{P}}
+            \right)_T
+            = V
+            \implies
+            \left(
+                \frac{\adif{G}}{\odif{P}}
+            \right)_T
+            = \adif{V}
+            ; &\\[2ex]&
+            \therefore
+            \adif{G}_{(0\unit{\celsius},10\unit{\atm})}
+            =\int_{1}^{10}{
+                \adif{V}
+                \odif{P}
+            }
+            \cong
+            \adif{V}
+            \int_{1}^{10}{
+                \odif{P}
+            }
+            = &\\&
+            =
+            M_{\ch{H2O}}*\left(
+                \rho_{s}^{-1}
+                -\rho_{l}^{-1}
+            \right)
+            (10-1)*1.01*10^5
+            = &\\&
+            =
+            18*\left(
+                (0.92*10^{-6})^{-1}
+                -(10^6)^{-1}
+            \right)
+            (10-1)*1.01*10^5
+            = &\\&
+            =
+            18*\left(
+                (0.92)^{-1}
+                -1
+            \right)
+            (10-1)*1.01
+            *10^{-1}
+            \cong
+            \num{1.422782608695652}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{21}
+\begin{questionBox}1{ % Q22
+    Representam-se na figura os volumes parciais molares da água e do etanol em função da composição das soluções que formam, a 20\,\unit{\celsius} e 1\,\unit{\bar}.
+} % Q22
+
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{Screenshot 2022-11-17 at 14.29.21-cutout.png}
+    \end{center}
+    
+\end{questionBox}
+
+\begin{questionBox}2{ % Q22.1
+    É verdade que para preparar 2\,\unit{\deci\metre^3} de solução equimolar de água e etanol precisa de misturar 1\,\unit{\deci\metre^3} de cada espécie? E se não, que quantidades de cada componente são necessárias?
+} % Q22.1
+    
+    \paragraph*{Equimolar:} \(x_{agua}=x_{etanol}=0.5\land n_{agua}=n_{etanol}\)
+    
+    \begin{flalign*}
+        &
+            V_{agua,*}
+            = V_{agua,m,*}\,n_{agua}
+            = V_{agua,m,*}\,(n_{t}/2)
+            = \frac{V_{agua,m,*}}{2}
+            \,\left(
+                \frac{V_{sol}}{V_{sol,m}}
+            \right)
+            = &\\&
+            = \frac{V_{agua,m,*}}{2}
+            \,\left(
+                \frac{V_{sol}}{0.5(V_{agua,m}+V_{etanol,m})}
+            \right)
+            % = &\\&
+            = \frac{
+                V_{agua,m,*}\,V_{sol}
+            }{
+                V_{agua,m}+V_{etanol,m}
+            }
+            \cong &\\&
+            \cong 
+            \frac{
+                18.0*2*10^{3} 
+            }{
+                17.0+57.5
+            }
+            \cong
+            \qty{483.221476510067114}{\centi\metre^3}
+            ; &\\[2ex]&
+            % 
+            % V etanol
+            % 
+            V_{entaol,*}
+            \cong
+            \num{483.221476510067114}
+            \frac{V_{entanol,m,*}}{V_{agua,m,*}}
+            \cong \num{483.221476510067114}
+            \frac{58.1}{18}
+            \cong
+            \qty[scientific-notation=fixed]{1559.731543624161074}{\centi\metre^3}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{ % Q22.2
+    Calcule \(\adif{V}_{mist}\) para a solução equimolar.
+} % Q22.2
+    
+    \begin{flalign*}
+        &
+            \adif{V}
+            =
+            V_{sol}
+            - (
+                V_{entaol,*}
+                + V_{agua,*}
+            )
+            \cong 
+            2*10^3
+            - (
+                \num{1559.731543624161074}
+                + \num{483.221476510067114}
+            )
+            \cong
+            \num{42.9530201342281}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q22.3
+    Calcule o volume de água que teria que adicionar para, a partir da solução equimolar, preparar uma solução com composição \(x_{agua} = 0.90\), bem como o volume da solução obtida.
+} % Q22.3
+    
+    \begin{flalign*}
+        &
+            \adif{V}_{agua,*}
+            = V_{t,2} - V_{t,1}
+            = V_{t,m,2}\,n_{t,2} - V_{t,1}
+            = &\\&
+            = \left(
+                x_{agua}\,V_{agua,m}
+                + (1-x_{agua})\,V_{etanol,m}
+            \right)\left(
+                n_{etanol,1}
+                \frac{1}{1-x_{agua}}
+            \right)
+            - V_{t,1}
+            = &\\&
+            = 
+            \frac{
+                x_{agua}\,V_{agua,m}
+                + (1-x_{agua})\,V_{etanol,m}
+            }{1-x_{agua}}
+            \left(
+                \frac{n_{t,1}}{2}
+            \right)
+             - V_{t,1}
+            = &\\&
+            = 
+            \frac{
+                x_{agua}\,V_{agua,m}
+                + (1-x_{agua})\,V_{etanol,m}
+            }{2\,(1-x_{agua})}
+            \,\left(
+                \frac{V_{sol,1}}{
+                    0.5(V_{agua,m,1}+V_{etanol,m,1})
+                }
+            \right)
+            - V_{t,1}
+            \cong &\\&
+            \cong
+            \frac{
+                0.9*18.0
+                + 0.1*53.0
+            }{2*0.1}
+            \,\left(
+                \frac{2*10^3}{0.5(17.0+57.5)}
+            \right)
+            - 2*10^3
+            \cong
+            \qty{3771.812080536912752}{\centi\metre^3}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{
+    Considere a seguinte experiência laboratorial. Precisaram-se 1600\,\unit{\gram} de um composto \textit{A} de massa molar 160\,\unit{\gram\,\mole^{-1}} que se adicionaram a 400\,\unit{\gram} de um composto \textit{B} de massa molar 40\,\unit{\gram\,\mole^{-1}}. Posteriormente, adicionaram-se 1.6\,\unit{\gram} de \textit{A} puro à totalidade da mistura obtida anteriormente, tendo-se detectado um aumento de volume de 1.2\,\unit{\centi\metre^{-3}} a 25\,\unit{\celsius}. Fez-se uma experiência semelhante, mas em que posteriormente se adicionou 4\,\unit{\gram} de \textit{B} à totalidade da mistura original, tendo-se detectado um aumento de volume de 13\,\unit{\centi\metre^{3}} a 20\,\unit{\celsius}.
+} % Q23
+    
+    \begin{questionBox}3{ % Q23.1
+        Calcule os volumes parciais molares de \textit{A} e de \textit{B} para a composição \(x= 0.5\).
+    } % Q23.1
+        \begin{flalign*}
+            &
+                V_{i,m}
+                = \pdv{V}{n_i}_{T,P,n_j}
+                % \land &\\&
+                \land
+                \frac{1600}{160}
+                = \frac{400}{40}
+                = 10
+                \land
+                \frac{1.6}{160}
+                = 0.01 
+                < \frac{4}{40}
+                = 0.1
+                \implies &\\[2ex]&
+                \implies
+                \begin{cases}
+                    V_{A,m}
+                    \cong \frac{1.2}{1.6/160}
+                    &= 120\,\unit{\centi\metre^3/\mole}
+                    \\
+                    V_{B,m}
+                    \cong \frac{13}{4/40}
+                    &= 130\,\unit{\centi\metre^3/\mole}
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q23.2
+        Calcule a massa volúmica da solução de 1600\,\unit{\gram} de \textit{A} e 400\,\unit{\gram} de \textit{B} a 25\,\unit{\celsius}.
+    } % Q23.2
+        \begin{flalign*}
+            &
+                \rho_{sol,m}
+                = \frac{m_{sol}}{V_{sol}}
+                = \frac{m_{A}+m_{B}}{
+                    n_A\,V_{A,m}
+                    + n_B\,V_{B,m}
+                }
+                \cong \frac{1600+400}{
+                    10*120 + 10*130
+                }
+                = 0.8\,\unit{\gram/\centi\metre^3}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1m{ % Q24
+    A figura representa o diagrama de equilíbrio líquido-vapor do sistema n-hexano (HEX) + etanol (ETA), a 55\,\unit{\celsius}. Esboce o diagrama que obteria se a solução de HEX e ETA fosse ideal.
+} % Q24
+
+    \begin{center}
+        \includegraphics[width=.5\textwidth]{0.1.png}
+    \end{center}
+
+    \vspace{-5ex}
+
+    \begin{flalign*}
+        &
+            P_{HEX,*} \cong 65 > P_{ETA,*} \cong 35
+            \therefore \text{ HEX mais volátil}
+            &\\[2ex]&
+            P_{x=0.5}
+            = 0.5(65+35) = 50
+            \land y_{HEX} 
+            = \frac{0.5*65}{50}
+            = 0.65
+            &\\[2ex]&
+            x_{HEX,P=40}
+            =\frac{P-P_{ETA,*}}{P_{HEX,*}-P_{ETA,*}}
+            =\frac{40-35}{65-35}
+            =1/6
+            \land
+            y_{HEX}
+            = \frac{(1/6)*65}{40}
+            \cong 
+            \num[scientific-notation=fixed]
+            {0.270833333333333}
+        &
+    \end{flalign*}
+
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{0.2.png}
+    \end{center}
+
+\end{questionBox}
+
+\begin{definitionBox}1{Log da prop molar de A} % DEF
+    
+    \begin{BM}
+        \adif\ln{x_A} = \frac{\adif{H}}{R}\adif{(-T^{-1})}
+        \\
+        \ln{x_{A}}
+        = \frac{-\adif{H}_{vap}}{R}
+        \left(
+            T_{vap,A}^{-1}
+            - T_{vap,sol}^{-1}
+        \right)
+    \end{BM}
+    
+\end{definitionBox}
+
+\begin{questionBox}1{ % Q25
+    A pressão de vapor de uma dada substância A líquida obedece à equação \(\ln{P} = 20.221 - 5067.6/T\), com \([P]=\unit{\mmHg}\) e \([T]=\unit{\kelvin}\). Suponha que tem uma solução de um soluto não volátil no solvente A, e que a fracção molar do soluto é de 0.08. Calcule a temperatura de ebulição da solução à pressão de 1\,\unit{\atm}.
+} % Q25
+    
+    \begin{itemize}
+        \item \(1\,\unit{\atm} = 760\,\unit{\mmHg}\)
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            t_{vap,sol}
+            = \left(
+                t_{vap,A}^{-1}
+                -\ln{x_{A}}
+                \,\frac{R}{\adif{H}_{vap,A}}
+            \right)^{-1}
+            = &\\&
+            = \left(
+                \left(
+                    \frac{5067.6}{20.221-\ln{P}}
+                \right)^{-1}
+                -(1-0.08)
+                \,\frac{R}{\adif{H}_{vap,A}}
+            \right)^{-1}
+            = &\\&
+            = \left(
+                \frac{20.221-\ln{P}}{5067.6}
+                -\frac{(1-0.08)\,R}{\adif{H}_{vap,A}}
+            \right)^{-1}
+            ; &\\[3ex]&
+            % 
+            % H vap A
+            % 
+            % \pdv{P}{T}_{vap,A}
+            % = \frac{
+            %     \adif{H}_{m}
+            % }{
+            %     T\,\adif{V}
+            % }
+            \odv{P}{T}_{vap}
+            = \frac{\adif{H}_{vap}}{T\,\adif{V}_{vap}}
+            = \frac{\adif{H_{vap}}}{T\,(V_{vap,g}-V_{vap\,l})}
+            \cong \frac{\adif{H_{vap}}}{T\,V_{vap,g}}
+            \cong \frac{\adif{H_{vap}}}{T\,\left(
+                R\,T/P
+            \right)}
+            =
+            \frac{P\,\adif{H_{vap}}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \frac{\odif{P}/P}{\odif{T}}
+            = \frac{\odif{\ln{P}}}{\odif{T}}
+            = \odv{}{T}\left(
+                20.221-5067.6\,T^{-1}
+            \right)
+            = 5067.6\,T^{-2}
+            = \frac{\adif{H_{vap}}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \adif{H}_{vap} = 5067.6\,R
+            &\\[3ex]&
+            % 
+            % Final
+            % 
+            t_{vap,sol}
+            = \left(
+                \frac{20.221-\ln{P}}{5067.6}
+                -\frac{\ln(1-0.08)\,R}{5067.6\,R}
+            \right)^{-1}
+            = &\\&
+            = 
+            \frac{5067.6}
+            {20.221-\ln{(760*0.92)}}
+            \cong
+            \num{370.680753565886591}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q26
+    Dissolvem-se 82.7\,\unit{\milli\gram} de um soluto pouco volátil em 100.0\,\unit{\centi\metre^3} de água. A 25\,\unit{\celsius}, a pressão osmótica desta solução é de 0.111\,\unit{\bar}. Calcule a massa molar do soluto. Calcule também \(\adif{T}_{fus}\) para esta solução, fazendo \(K_{fus,agua} = 1.86\,\unit{\kelvin\,\kilo\gram\,\mole^{-1}}\) e \(\rho_{agua} = 1\,\unit{\gram\,\centi\metre^{-3}}\). Comente o resultado.
+} % Q26
+
+    \begin{questionBox}3{ % Q26.1
+    } % Q26.1
+        \begin{flalign*}
+            &
+                M_i
+                = \frac{m_{i}}{[i]}
+                \cong m_{i}
+                \left(
+                    \frac{\Pi\,V_{agua}}{R\,T}
+                \right)^{-1}
+                =\frac{m_{i}\,R\,T}{\Pi\,V_{agua}}
+                = &\\&
+                =\frac{
+                    82.7*10^{-6}
+                    *\num{8.314462618}
+                    *(273.15+25)
+                }{0.111*10^5*100*10^{-6}}
+                % = &\\&
+                =\frac{
+                    82.7
+                    *\num{8.314462618}
+                    *(273.15+25)
+                }{0.111}*10^{-7}
+                \cong &\\&
+                \cong
+                \num{1.846934651750802612613e-1}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q26.2
+    } % Q26.2
+        \begin{flalign*}
+            &
+                \adif{T}_{fus}
+                = k_{fus}\,m_i
+                = k_{fus}\,[i]/\rho_{agua}
+                = \frac{k_{fus}}{\rho_{agua}}
+                \,\frac{\Pi\,V_{agua}}{R\,T}
+                = &\\&
+                = \frac{
+                    1.86*0.111*10^{5}*100*10^{-6}
+                }{
+                    \num{8.314462618}*(273.15+25)*1*10^{-3+6}
+                }
+                = \frac{
+                    1.86*0.111
+                }{
+                    \num{8.314462618}*(273.15+25)
+                }*10^{-2}
+                \cong &\\&
+                \cong
+                \num{8.328502573395564e-7}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+\end{questionBox}
+
+\setcounter{question}{28}
+\begin{questionBox}1{ % Q29
+    Com base na informação disponível para o sistema n-butanol + ciclohexano:
+} % Q29
+    
+    \begin{center}
+        % \includegraphics[width=.8\textwidth]{image.jpeg}
+        \includegraphics[
+            % width=.4\textwidth, 
+            height=5cm,
+        ]{Screenshot 2022-11-18 at 10.48.33.2-cutout2.png}
+        \includegraphics[
+            % width=.4\textwidth, 
+            height=5cm,
+        ]{Screenshot 2022-11-18 at 10.39.38.2-cutout.png}
+    \end{center}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q29 a)
+    Calcule \(\gamma_{I,n-butanol}\) quando \(x_{n-butanol} = 0.9\), a 50\,\unit{\celsius}. Comente o resultado
+} % Q29 a)
+
+
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q29 b)
+    Calcule a pressão de vapor do ciclohexano a 50\,\unit{\celsius}.
+} % Q29 b)
+
+    \begin{flalign*}
+        &
+            \gamma_{He,II}
+            = \frac{\gamma_{He,I}}{\gamma_{He,I,\infty}}
+            ; &\\[2ex]&
+        &
+    \end{flalign*}
+
+    \begin{table}[H]\centering
+        \begin{tabular}{cc}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{\(x_{He}\)}
+                & \multicolumn{1}{c}{\(\gamma_{He,I}\)}
+            
+            \\\midrule
+            
+                0.10  & 5.3
+            \\  0.05  & 6.1
+            \\  0.025 & 7.7
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{table}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q29 c)
+    Calcule \(\adif{G}_{mist,m}\) para a solução com \(x_{n-butano} = 0.90\), a 50\,\unit{\celsius}, e compare com o valor obtido para a solução ideal. Comente o resultado.
+} % Q29 c)
+
+
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q29 d)
+    Calcule a pressão de vapor da solução no ponto azeotrópico a 50\,\unit{\celsius}, atingido quando \(x_{ciclohexano}=0.90\).
+} % Q29 d)
+    
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q29 e)
+    Calcule a entalpia de dissolução do ciclohexano líquido numa grande quantidade de \textit{n}-butanol.
+} % Q29 e)
+
+\end{questionBox}
+
+
+
+\end{document}

@@ -1,0 +1,512 @@
+% !TEX root = ./EB-Slides_Annotations.Resumo.tex
+\providecommand\mainfilename{"./EB-Slides_Annotations.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./EB-Slides_Annotations.Resumo.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Slides_Annotations.Resumo}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Slides_Annotations.Resumo/graphics/}
+
+\mymakesubfile{1}
+[EB]
+{Summary} % Subfile Title
+{Summary} % Part Title
+
+\part*{Batch Reactor}
+
+\begin{sectionBox}1{Cell growth} % S
+    
+    \paragraph*{Volumetric growth rate}
+    \begin{BM}
+        r_x=\mu\,x
+        \qquad
+        \begin{cases}
+            (r_x)=\unit{\gram\of{X}/\litre.\hour}
+            \\
+            (\mu)=\unit{\hour^{-1}}
+        \end{cases}
+    \end{BM}
+
+    \paragraph*{Specific cell growth rate}
+    \begin{BM}
+        \mu
+        =\frac{\mu_{\max}\,S}{K_s+S}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Substrate consumption} % S
+    
+    \paragraph*{Volumetric rate of consumption}
+    \begin{BM}
+        r_s
+        = Y_{x/s}^{-1}\,\mu\,x
+        = \frac{V_{\max}\,S}{K_m+S}
+        % = \\
+        = Y_{x/s}^{'-1}\,\mu\,x 
+        + m\,x
+        \\
+        \begin{cases}
+            (r_s)=\unit{\gram\of{S}/\litre.\hour}
+            \\(V_{s\,\max})=\unit{\gram\of{S}/\gram\of{X}.\hour}
+            \\(m)=\unit{\gram\of{S}/\gram\of{X}.\hour}\ (\text{maintenance coefficient})
+        \end{cases}
+    \end{BM}
+
+    \paragraph*{Specific rate of substrate consumption}
+    \begin{BM}
+        V_s 
+        = \frac{r_s}{x}
+        = Y_{x/s}\,\mu
+        = Y'_{x/s}\,\mu+m
+        \\
+        \begin{cases}
+            (V_s)=\unit{\gram\of{S}/\gram\of{X}.\hour}
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Product formation} % S
+    
+    \paragraph*{Product associated with growth}
+    \begin{BM}
+        r_P
+        = \odv{P}{t} 
+        = Y_{p/x}\,\mu\,x
+        ;\quad
+        V_P 
+        = x^{-1}\odv{P}{t}
+        = Y_{p/x}\,\mu
+        \\
+        \begin{cases}
+            (r_P)=\unit{\gram\of{P}/\litre.\hour}\,\text{(volumetric product production rate)}
+            \\ (v_P)=\unit{\gram\of{P}/\gram\of{X}.\hour}\,\text{(specific product production rate)}
+        \end{cases}
+    \end{BM}
+
+    \paragraph*{Product partially associated with growth}
+    \begin{BM}
+        r_p
+        = \odv{P}{t} 
+        = \alpha\,\mu\,x + \beta\,x
+        ;\quad
+        V_P
+        = x^{-1}\,\odv{P}{t}
+        = \alpha\,\mu+\beta
+        ; \\
+        \alpha = Y_{P/s}^{'}
+        \\
+        \begin{cases}
+            (\alpha)=\unit{\gram\of{P}/\gram\of{X}}\,\text{(true yeld coefficient of product formation)}
+            \\
+            (\beta)=\unit{\gram\of{P}/\gram\of{X}.h}\,\text{(specific product formation rate due to maintenace)}
+        \end{cases}
+    \end{BM}
+
+    \paragraph*{Non-growth Associated Product}
+    \begin{BM}
+        r_P=A\,x
+    \end{BM}
+    
+\end{sectionBox}
+
+\part*{Continuous Reactor}
+
+\begin{sectionBox}1{Mass balance to cell concentration} % S
+    
+    \begin{BM}
+        \odv{x}{t}
+        = \frac{F_0}{V}\,x_0
+        - \frac{F}{V}\,x
+        + \mu\,x
+        - k_d\,x
+        \\
+        \lim_{x=0,\,\mu\gg k_d}{\odv{x}{t}}
+        = -\frac{F}{V}\,x+\mu\,x
+        = -D\,x+\mu\,x
+        \\
+        \odv{x}{t}=0\land\,D=\mu\quad\text{(Steady state)}
+        \\
+        \begin{cases}
+            \begin{aligned}
+                \frac{F_0}{V}\,x_0:&\ \text{Cells entering the reactor}
+                \\\frac{F}{V}\,x:&\ \text{Cells exiting the reactor}
+                \\\mu\,x:&\ \text{Cell growth}
+                \\k_d\,x:&\ \text{Cell death}
+            \end{aligned}
+            \\ (D)=\unit{\hour^{-1}}\ \text{(Dilution rate)}
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Mass balance to the substrate} % S
+    
+    \begin{BM}
+        \odv{S}{t}
+        = \frac{F\,S_0}{V}
+        - \frac{F\,S}{V}
+        - \frac{\mu\,x}{Y_{x/s}}
+        - m\,x
+        = \\ 
+        = D\,S_0
+        - D\,S
+        - \frac{\mu\,x}{Y_{x/s}}
+        - m\,x
+        ;\quad
+        \left(
+            \frac{F}{V}=D
+        \right)
+        \\
+        \lim_{m\ll\mu}{\odv{S}{t}}
+        = D\,(S_0-S)
+        - \frac{\mu\,x}{Y_{x/s}}
+        \\
+        \odv{S}{t}=0
+        \land
+        Y_{x/s}\,(S_0-S)=x
+        \quad
+        \text{(Steady state)}
+        \\
+        \begin{cases}
+            \begin{aligned}
+                \frac{F\,S_0}{V}:      &\,\text{Substrate entering the reactor}
+                \\\frac{F\,S}{V}:        &\,\text{Substrate exitting the reactor}
+                \\\frac{\mu\,x}{Y_{x/s}}:&\,\text{Substrate used for cell growth}
+                \\m\,x:                  &\,\text{Substrate used for maintenance}
+            \end{aligned}
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{relationship between substrate concentration and cell concentration with dilution rate} % S
+    
+    \begin{BM}
+        \mu=
+        \frac{\mu_{\max}\,S}{K_S+S}
+    \end{BM}
+
+    \paragraph*{Continuous reactor on steady state}
+    \begin{BM}
+        \mu=D=\frac{\mu_{\max}\,S}{K_S+S}
+        \implies
+        S=\frac{K_s\,D}{\mu_{\max}-D}
+        \\
+        x = Y_{x/s}
+        \left(
+            S_0
+            - \frac{K_s\,D}{\mu_{\max}-D}
+        \right)
+        \\
+        D_c = \frac{\mu_{\max}\,S_0}{K_s+S_0}
+        \quad\text{(Critical washout rate)}
+    \end{BM}
+
+    \begin{description}
+        \item[\(D_c\)] Critical washout rate, when \(x=0\land D\sim\mu_{\max}\)
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Cell Productivity} % S
+    
+    \begin{BM}
+        D_X
+        \\
+        D_{x\,\max}
+        = \mu_{\max}\left(
+            1-\sqrt{
+                \frac{k_s}{k_s+S_0}
+            }
+        \right)
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Effect of the maintenance coefficient} % S
+    
+    \paragraph*{Negligible cell maintenance}
+    \begin{BM}
+        x 
+        = Y_{x/s}\left(
+            S_0
+            -\frac{k_s\,D}{\mu_{\max}-D}
+        \right)
+    \end{BM}
+
+    \paragraph*{Considering cell maintenance}
+    \begin{BM}
+        x
+        =\frac{D\,(S_0-S)}{
+            Y_{x/s}^{'}\,D
+            +m
+        }
+    \end{BM}
+
+    \paragraph*{Graph}
+    Plotting \(X\times D\) whe can see the black curve of negligible cell maintenance in full, at the start of the curve (\(D\to0\)) whe can see above the black line, a gree line of production of intracelular reserves and below a blue curve which considers cell maintenance, both merge at the same point with the black curve.
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Product Production} % S
+    
+    \begin{BM}
+        \odv{P}{t}= -D\,P+Y_{p/x}\,\mu\,x
+    \end{BM}
+
+    \paragraph*{Product associated with growth}
+    \begin{BM}
+        D\,P=Y_{p/x}\,\mu\,x
+        \quad\text{(At steady-state)}
+        \\
+        V_P=Y_{P/x}\,\mu
+        \\
+        \begin{cases}
+            (D\,P)
+            =\unit{\gram\of{P}/\litre.\hour}
+            \,\text{(Volumetric Productivity)}
+            \\
+            (V_P)
+            = \unit{\gram\of{P}/\gram\of{X}.\hour}
+            \,\text{(Specific productivity)}
+        \end{cases}
+    \end{BM}
+
+    \paragraph*{Production partially associated to growth}
+    Mass balance to the substrate:
+    \begin{BM}
+        \odv{S}{t}
+        = D\,S_0
+        - D\,S
+        - \frac{\mu\,x}{Y_{x/s}^{'}}
+        - \frac{r_p}{Y_{p/x}^{'}}
+        - m\,x
+        \\
+        D\,P = (Y_{p/x}^{'}\,\mu+m_p)\,X
+    \end{BM}
+    \begin{description}
+        \item[\(r_p\)] volumetric rate of production formation (\unit{\gram\of{P}/\litre.\hour})
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Cell recirculation reactors} % S
+    
+    \paragraph*{With a decanter} Reactor with spinning rotor, output connects to the decantor that outputs to the reactor.
+    \begin{BM}
+        \odv{X}{t}
+        = \frac{F_r}{V}\,x_r
+        - \frac{F_0+F_r}{V}\,x_1
+        + \mu\,x_1
+        \\
+        \odv{X}{t}
+        = 0
+        = F_r\,x_r
+        - (F_0+F_r)\,x_1
+        + \mu\,x_1\,V
+        \quad\text{(At steady state)}
+        \\
+        \odv{S}{t}
+        = D\,(S_0-S)-\frac{\mu\,x_1}{Y_{x/s}} 
+        = 0
+        \quad\text{(Balance to the substrate)}
+    \end{BM}
+    \begin{description}
+        \item[\(\frac{F_r}{V}\,x_r\)] 
+        Biomass entrering the reactor
+        \item[\(\frac{F_0+F_r}{V}\,x_1\)] 
+        Biomass exitting the reactor
+        \item[\(\mu\,x_1\)] 
+        Cell growth
+    \end{description}
+
+    \paragraph*{Membrane bioreactors}
+    \begin{description}
+        \item[Submerged] Feed input to reactor with the membrane submerged, the output comes from the membrane
+        \item[With cell recirculation] Feed inputs to reactor which outputs to membrane that has two outputs, one back to reactor other to permeate
+    \end{description}
+    
+\end{sectionBox}
+
+\part*{Plug flow reactor}
+
+\begin{sectionBox}1{Definition} % S
+    
+    \begin{description}
+        \item[Geometry] Cylindrical
+        \item[Operation] Continuous
+    \end{description}
+
+    \paragraph*{Image}
+    Continuous reaction column, \textit{F} enters at the bottom and leaves at the top, \(z\) goes from zero to the top where \(z=L\), on the cross section we see a derivative with many arrows pointing to the same direction as \textit{F}
+    \begin{itemize}
+        \item \textit{F} enters at the bottom and leaves at the top
+        \item \textit{z} at bottom \(z=0\) at top \(z=L\)
+        \item \((C_i(z))=\unit{\kilo\gram/\metre^3}\) Concentration of a generic i component at heigh \textit{z} of the column
+        \item \((u)=\unit{\metre/\second}\) axial velocity of the fluid inside the column
+    \end{itemize}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\((F)=\unit{\metre^3/\hour}\)} % Longest item
+    ]
+        \item[\((z)=\unit{\metre}\)] 
+        Position on a vertical axis 
+        \item[\((L)=\unit{\metre}\)]
+        Column height
+        \item[\((F)=\unit{\metre^3/\hour}\)] 
+        fluid flow rate in ascending flow
+        \item[\((A)=\unit{\metre^2}\)] 
+        Cross section area
+        \item[\((d)=\unit{\metre}\)] 
+        Diameter of the cylindrical column
+        \item[\(V=A\,L\)] Column volume
+    \end{description}
+
+    \paragraph*{Velocity of plug flow}
+    \begin{BM}
+        u = F/A = \text{constant}
+    \end{BM}
+    All fluid move at the same velocity \textit{u}
+
+    \paragraph*{Reynald at plug flow}
+    \begin{BM}
+        Re = \frac{\rho\,u\,d}{\mu}>2000
+    \end{BM}
+    \begin{description}
+        \item[\(\rho\)] Specific mass of fluid (\unit{\kilo\gram/\metre^3})
+        \item[\textit{u}] axial velocity of the fluid (\unit{\metre/\second})
+        \item[\textit{d}] column diameter (\unit{\metre})
+        \item[\(\mu\)] Viscosity of the fluid (\unit{\pascal.\second})
+    \end{description}
+
+    \paragraph*{Note}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{CSTR} % Longest item
+    ]
+        \item[PFR] Total segregation
+        \item[CSTR] Perfect mix
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Material Balances} % S
+    
+    Material balance to the infinitesimal section of the column with height \(\odif{z}\) a generic `i' component
+    \begin{BM}
+        F\,C_{i}(z) 
+        + r_i(z)\,A\,\odif{z} 
+        = F\,C_i(z+\odif{z})
+        \\
+        r_i = u\,\odv{C_i}{z}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \item[\(F\,C_{i}(z)\)] Mass of `i' that enters \textit{z} per unit of time
+        \item[\(r_i(z)\,A\,\odif{z}\)] Mass of `i' produced by reaction in \(A\,\odif{z}\) volume per unit of time, it's only tryue if \(\odif{z}\) is infinitely small
+        \item[\(F\,C_i(z+\odif{z})\)] Mass of unit `i' leaving \(z+\odif{z}\) per unit of time
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Kinetics} % S
+    
+    \paragraph*{title}{Example:} Product formation associated with growth (type I)
+
+    \paragraph*{Reaction}
+    \begin{center}
+        S -> X + P
+    \end{center}
+    % Has arrow in reflux (circle)
+
+    \paragraph*{Kinetics (assuming monod kinetics)}
+    \begin{BM}
+        \mu = \frac{\mu_{\max}\,S}{k_m+S}
+    \end{BM}
+
+    \paragraph*{Material balances}
+    \begin{BM}[align*]
+        u\,\odv{x}{z} 
+        &= \mu\,x-k_d\,x-k_e\,x
+        % ; \quad
+        \\
+        u\,\odv{S}{z}
+        &= -\frac{\mu\,x}{Y_{x/s}^{'}}-m_s\,x
+        \\
+        % ; \quad
+        u\,\odv{P}{z}
+        &= \frac{\mu\,x}{Y_{x/p}^{'}}
+    \end{BM}
+
+    \paragraph*{Note} analytical integration just for the case \(\mu\cong\mu_{\max}\) (or high excess of \textit{S})
+\end{sectionBox}
+
+\begin{sectionBox}1{Productivity} % S
+    
+    \begin{BM}
+        \text{Prod} 
+        = \frac{F\,P(z=L)}{V}
+        = D\,P(z=L)
+        \\
+        (\text{Prod})=\unit{\gram\of{P}/\litre.\hour}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Comparisson of PFR with CSTR} % S
+    
+    \paragraph*{graph 1: \(S\times D^{-1}\)} CSTR is constant while PFR starts at S0 and decrases to CSTR, \(S_{PFR}\geq S_{CSTR}\)
+    \paragraph*{graph 2: \(X\times D^{-1}\)} CSTR is a constant, PFR starts below at X0 and grows to meet CSTR at X*, \(X_{PFR}\leq X_{CSTR}\)
+    \paragraph*{Graph 3: \(P\times D^{-1}\)} CSTR is a constant, PFR starts below at P0 and grows to meet CSTR at P* \(P_{PFR}\leq P_{CSTR}\)
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Comparisson of PFR with CSTR} % S
+    
+    \paragraph*{Case 1: negligible gorwth X is equal}
+    \begin{itemize}
+        \item Order 0 \(r_s=k_0\) independent of S
+        \item Order n \(r_s=k\,S^n\) CSTR<PFR
+        \item michaelis-menten \(r_s=\frac{r_{s\,\max}\,S}{k_m\,S}\) CSTR<PFR
+        \item Inihibition by S, S greater, Rs lower, CSTR>PFR
+        \item Inihibition by product P greater rs lower, CSTR<PFR
+    \end{itemize}
+
+    \paragraph*{Autocalytic}
+    \begin{BM}
+        r_S=V_S\,X
+        \\
+        X_{CSTR}>X_{PFR}
+        \\
+        V_{CSTR} = \frac{F(S_0-S^*)}{r(S^*)}
+        \\
+        V_{PFR} = \frac{F(S_0-S^*)}{\bar{r}_S}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Discussion about PFR} % S
+    
+    Exception: Tubular bioreactor with immobilized cells (or enzymes)
+    \begin{itemize}
+        \item Very stable cultures that remain viable for long periods of time (months, years)
+        \item Cells ate rest (low maintenance)
+        \item High cell density (much higher than cells in suspension). Cells grow adherent and form biofilms
+        \item After a growth phase, cell density remains constant over time (new cells simply replace the dying cells)
+        \item Higher dilution rates because washout cannot occour
+        \item \(\mu\) negligible \(\implies\) Kinectically favorable to the PFR regarding the CSTR state
+        \item Solid support cells grow adherent to solid support or incarcerated in a polymer matrix
+    \end{itemize}
+    
+\end{sectionBox}
+
+\end{document}

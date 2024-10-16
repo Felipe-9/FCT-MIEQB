@@ -1,0 +1,831 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+\usepackage{tikz}
+\usetikzlibrary{calc}	% Coordinate calc
+%\usepackage{varwidth}	% List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{siunitx} % Column S: align on decimal
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen} {HTML}{7CCC6C}
+\definecolor{DarkGreen}  {HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+\definecolor{Red}  {HTML}{FF7E79}
+\definecolor{Blue} {HTML}{6666FF}
+\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	Física 1 - Ficha 3\\
+	Movimento bi e tri dimensional%
+}
+\author{Felipe Pinto - 61387}
+\date{}
+
+\maketitle
+\tableofcontents
+\break
+
+\part{Questões}
+
+% Questões
+\renewcommand\thesection{Questão \arabic{section} }
+\renewcommand\thesubsection%
+{%
+	Q\arabic{section} - \alph{subsection}) %
+}
+
+\begin{multicols}{2}
+
+% Q1
+\section{}
+
+\begin{tikzpicture}[
+	scale=1.4, font=\small, align=center, line width=1,
+	every node/.append style={minimum size=1, inner sep=2}
+]
+	
+	\clip (-1.5,-0.9) rectangle (2.5,2.7);
+	\draw[ultra thin, Black!85!] (-2,-1) grid (3,3);
+	
+	\node (0) at (0  ,1.732)
+	[circle, fill, label=above:$ 0 $]{};
+	
+	\node (1) at (-1 ,0    )
+	[circle, fill, label=below:$ 1 $]{};
+	
+	\node (2) at (0.8,0.3  )
+	[circle, fill, label=below:$ 2 $]{};
+
+	\draw[->, Green]
+	(0) to node[above left]{$\vec v_0$} (1);
+	
+	\draw[->, Blue ]
+	(1) to node[below]{$\vec v_1$} (2);
+	
+	\draw[->, Red  ] 
+	(1) -- node[below right]{$\vec v_1-\vec v_0$}
+	($ (1) + (2)-(1) + (0)-(1) $);
+	
+\end{tikzpicture}
+
+% Q2
+\section{}
+\begin{tikzpicture}[
+	scale=8.0, font=\small, align=center, line width=1
+]
+	
+	\def\maxX { 0.35};
+	\def\maxY { 0.35};
+	\def\minX {-0.35};
+	\def\minY {-0.35};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\coordinate (MinXY) at (\minX,\minY);
+	
+	\draw[ultra thin, Black!85! , step=0.1]
+	(\minX,\minY) grid (\maxX,\maxY);
+	
+	\draw[-,thick]
+	(\minX,0.05) -- (-0.05,0.05) -- (-0.05,\maxY);
+	
+	\draw[-,thick]
+	(\minX,-0.05) -- (-0.05,-0.05) -- (-0.05,\minY);
+	
+	\draw[-,thick]
+	(\maxX,0.05) -- (0.05,0.05) -- (0.05,\maxY);
+	
+	\draw[-,thick]
+	(\maxX,-0.05) -- (0.05,-0.05) -- (0.05,\minY);
+	
+	\node at (0,\maxY-0.05){N};
+	\node at (\maxY-0.05,0){E};
+	
+	% v0
+	\draw[->, Blue]
+	(0,-0.1) node[circle,fill=White]{}
+	-- 
+	+(0,0.16) node[above]{$\vec v_0$};
+	
+	% v1
+	\draw[->, Red]
+	(-0.1,0) node[circle,fill=White]{}
+	--
+	+(-0.12,0) node[left]{$\vec v_1$};
+ 	
+	% delta v
+	\coordinate (ref) at (0.3,0.1);
+	
+	\draw[->, Blue, shift={(ref)}]
+	(0,0.16) -- (0,0) node[above left]{$-\vec v_0$};
+	
+	\draw[->, Red, shift={(ref)}]
+	(0,0) -- +(-0.12,0) node[left]{$\vec v_1$};
+	
+	\draw[->, Green,shift={(ref)}]
+	(0,0.16) 
+	-- node[sloped,above]{$\vec v_1 - \vec v_0$}
+	(-0.12,0);
+	
+\end{tikzpicture}
+
+
+\end{multicols}
+
+% Q3
+\section{}
+
+\begin{tikzpicture}[
+	scale=8.0, font=\small, align=center, line width=1,
+	every node/.append style={minimum size=1, inner sep=2}
+]
+	
+	\def\maxX { 0.85};
+	\def\maxY { 0.35};
+	\def\minX {-0.85};
+	\def\minY {-0.35};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\coordinate (MinXY) at (\minX,\minY);
+	
+	\draw[ultra thin, Black!85! , step=0.1]
+	(\minX,\minY) grid (\maxX,\maxY);
+
+	
+	\draw
+	(-0.8,0.3) 
+	.. 
+	controls (-0.1,-0.6)
+	and (0.25,0)
+	..
+	(0.4,0)
+	--
+	(0.8,0);
+	
+	\node at (-0.7,0.25)
+	[circle, fill, inner sep=6.5]{};
+	
+	\node (A) at (-0.35,-0.05)
+	[circle, fill, label=above:$A$]{};
+	
+	\node (B) at (-0.1,-0.15)
+	[circle, fill, label=left:$B$]{};
+	
+	\node (C) at (0.1,-0.1)
+	[circle, fill, label=above:$C$]{};
+	
+	\node (D) at (0.4,0.05)
+	[circle, fill, label=above:$D$]{};
+	
+	\node (E) at (0.6,0.05)
+	[circle, fill, label=above:$E$]{};
+	
+	\draw[->, Blue]
+	(A) -- +(0.1,-0.06);
+	
+	\draw[->, Blue]
+	(B) -- +(0,0.1);
+	
+	\draw[->, Blue]
+	(C) -- +(-0.08,-0.04);
+	
+	\node[left=5, color=Blue] at (D){$\vec a = \vec 0$};
+	
+	\node[right=5, color=Blue] at (E){$\vec a = \vec 0$};
+
+
+\end{tikzpicture}
+
+% Q4
+\section{}
+\begin{tikzpicture}[
+	scale=1.0, font=\small, align=center, line width=1,
+%	rotate = -90
+]
+
+	\def\maxX { 3.5};
+	\def\maxY { 4.5};
+	\def\minX {-3.5};
+	\def\minY {-4.5};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\coordinate (MinXY) at (\minX,\minY);
+	
+	\draw[ultra thin, Black!85! , step=1]
+	(\minX,\minY) grid (\maxX,\maxY);
+
+	
+
+	\node (A) at (-2,3)
+	[circle, fill]{};
+	
+	\node (B) at (0,2.3)
+	[circle, fill]{};
+	
+	\node (C) at (1.5,1)
+	[circle, fill]{};
+	
+	\node (D) at (2,0)
+	[circle, fill]{};
+	
+	\node (E) at (1.5,-1)
+	[circle, fill]{};
+	
+	\node (F) at (0,-2.3)
+	[circle, fill]{};
+	
+	\node (G) at (-2,-3)
+	[circle, fill]{};
+	
+	\draw[->, Blue] (A) -- +(-15 :1.0);
+	\draw[->, Blue] (B) -- +(-30 :0.8);
+	\draw[->, Blue] (C) -- +(-50 :0.6);
+	\draw[->, Blue] (D) -- +(-90 :0.5);
+	\draw[->, Blue] (E) -- +(-130:0.6);
+	\draw[->, Blue] (F) -- +(-150:0.8);
+	\draw[->, Blue] (G) -- +(-165:1.0);
+	
+\end{tikzpicture}
+
+\setcounter{section}{6}
+
+% Q7
+\section{}
+Sim pois ambos possuem a mesma velocidade no plano xy.
+
+% Q8
+\section{}
+
+\begin{multicols}{2}
+
+% Q8 - a)
+\subsection{}
+O lançado na lua, pois seu campo gravitacional é mais fraco assim o projetil lançado sobre ela possui uma menor aceleração.
+
+% Q8 - b)
+\subsection{}
+O lançado na lua, pelos mesmos motivos.
+
+\end{multicols}
+
+% Q9
+\section{}
+
+\begin{multicols}{2}
+
+% Q9 - a)
+\subsection{}
+Não, a aceleração sempre é vertical para baixo enquanto a sua velocidade possui uma componente horizontal.
+
+% Q9 - c)
+\subsection{}
+$v_x, a_x, a_y$
+
+% Q9 - b)
+\subsection{}
+Sim, no ponto mais alto de sua trajetória a componente vertical da velocidade é zero lhe garantindo direção horizontal que é perpendicular a aceleração.
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+% Q10
+\section{}
+\begin{flalign*}
+&
+	3000\,rpm=3000\,\frac{r}{m}\,\frac{1\,m}{60\,s}=50\,rps
+&
+\end{flalign*}
+
+\setcounter{section}{11}
+
+% Q12
+\section{}
+
+\setcounter{subsection}{1}
+
+% Q12 - b)
+\subsection{}
+\begin{flalign*}
+&
+	v_3>v_2=v_1
+&
+\end{flalign*}
+
+\end{multicols}
+
+% Q13
+\section{}
+
+\begin{multicols}{2}
+
+% Q13 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\vec v_{p\,a} = \vec v_{p\,b} + \vec v_{b\,a} 
+&
+\end{flalign*}
+
+% Q13 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\vec v_{p\,a}=(5+2)\,\hat v = 7\,\hat v
+&
+\end{flalign*}
+
+\end{multicols}
+
+\setcounter{section}{14}
+
+% Q15
+\section{}
+
+\begin{multicols}{2}
+
+% Q15 - a)
+\subsection{}
+\begin{flalign*}
+&
+	v_{a\,R} > v_{a\,S} > v_{a\,T}
+&
+\end{flalign*}
+
+% Q15 - b)
+\subsection{}
+\begin{flalign*}
+&
+	a_{a\,R} = a_{a\,S} = a_{a\,T}
+&
+\end{flalign*}
+
+\end{multicols}
+
+% Q16
+\section{}
+
+\begin{multicols}{2}
+
+% Q16 - a)
+\subsection{}
+\begin{flalign*}
+&
+	a_{c} = m\,g
+&
+\end{flalign*}
+
+% Q16 - b)
+\subsection{}
+\begin{flalign*}
+&
+	a_{s} = m\,g
+&
+\end{flalign*}
+
+\end{multicols}
+
+% Problemas
+\part{Problemas}
+\renewcommand{\thesection}{Problema \arabic{section} }
+\renewcommand\thesubsection%
+{%
+	P\arabic{section} - \alph{subsection}) %
+}
+
+% P1
+\section{}
+
+% P1 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta S_i\,\hat = v_c\,\Delta t
+	;\
+		a_g\,(\Delta t)^2/2=\Delta S_j
+	\implies
+		\Delta S_i 
+	= 
+		v_c\,\sqrt{\frac{2\,\Delta S_j}{a_g}}
+	=
+		10.0\,\sqrt{\frac{2*3.00}{9.80665}}
+	\cong
+		7.82\,m
+&
+\end{flalign*}
+
+% P1 - b)
+\subsection{}
+\begin{flalign*}
+&
+	v_c\,\Delta t = \Delta S_i\,\hat
+	\implies
+		\Delta t 
+	= 
+		\Delta S_i/v_c
+	=
+		7.82/10.0
+	\cong 0.782\,s
+&
+\end{flalign*}
+
+% P2
+\section{}
+
+% P2 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\vec a\,\Delta t = \Delta \vec v
+	\implies
+		\vec a 
+	= 
+		(\vec v - \vec v_0)/\Delta t
+	=
+		(
+		20.0\,\hat\imath 
+		- 5.0\,\hat\jmath
+		- 4.0\,\hat\imath 
+		- 1.0\,\hat\jmath
+		)/20.0
+	\cong &\\& \cong
+		(0.8\,\hat\imath - 0.3\,\hat\jmath)\,m/s^2
+&
+\end{flalign*}
+
+% P2 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\sqrt{a_i^2+a_j^2}\,\cos(\theta) = a_i
+	\implies
+		\theta 
+	= 
+		\arccos\left( \frac{a_i}{\sqrt{a_i^2+a_j^2}} \right)
+	=
+		\arccos\left( \frac{0.8}{\sqrt{0.8^2+0.3^2}} \right)
+	\cong &\\& \cong
+		21^o
+&
+\end{flalign*}
+
+% P2 - c)
+\subsection{}
+\begin{flalign*}
+&
+	\vec r_{(25)} 
+	= 
+		\vec r_{(0)} 
+		+ \vec v_0\,\Delta t_1 
+		+ \vec a_0\,(\Delta t_1)^2/2
+		+ \vec v_1\,\Delta t_2
+	;\
+		\Delta t_2 = \Delta t_{Total} - \Delta t_1
+	\implies &\\& \implies
+		\vec r_{(25)}
+	=
+		1.0\,\hat\imath - 4.0\,\hat\jmath
+		+ (4.0\,\hat\imath + 1.0\,\hat\jmath)\,20.0
+		+ (0.8\,\hat\imath - 0.3\,\hat\jmath)\,(20.0)^2/2
+		+ &\\& + 
+		(20.0\,\hat\imath - 5.0\,\hat\jmath)\,5.0
+	\cong (341\,\hat\imath - 69\,\hat\jmath)\,m
+&
+\end{flalign*}
+
+% P3
+\section{}
+\bm{ 
+	r_{(t)} = (
+		- 5.0\,\sin(t)			\,\hat\imath
+		+ (4.0 - 5.0 \,\cos(t))	\,\hat\jmath
+	)\,m
+}
+
+% P3 - a)
+\subsection{}
+\begin{flalign*}
+&
+	v_0 = d\,r_{(0)}/d\,t 
+	=
+		(
+		- 5.0\,\cos(0)	\,\hat\imath
+		+ 5.0\,\sin(0)	\,\hat\jmath
+		)
+	=
+		(
+		- 5.0	\,\hat\imath
+		+ 0.0	\,\hat\jmath
+		)
+&\\\\&
+	a_0 = d^2\,r_{(0)}/(d\,t)^2
+	=
+		(
+		+ 5.0\,\sin(0)	\,\hat\imath
+		+ 5.0\,\cos(0)	\,\hat\jmath
+		)
+	=
+		(
+		+ 0.0	\,\hat\imath
+		+ 5.0	\,\hat\jmath
+		)
+&
+\end{flalign*}
+
+% P3 - b)
+\subsection{}
+\begin{flalign*}
+&
+	r_{(t)} = (
+		- 5.0\,\sin(t)			\,\hat\imath
+		+ (4.0 - 5.0 \,\cos(t))	\,\hat\jmath
+	)\,m
+&\\\\&
+	v_{(t)} = d\,r_{(t)}/d\,t
+	=
+		(
+		- 5.0\,\cos(t)	\,\hat\imath
+		+ 5.0\,\sin(t)	\,\hat\jmath
+		)
+&\\\\&
+	a_{(t)} = d^2\,r_{(t)}/(d\,t)^2
+	=
+		(
+		+ 5.0\,\sin(t)	\,\hat\imath
+		+ 5.0\,\cos(t)	\,\hat\jmath
+		)
+&
+\end{flalign*}
+
+% P4
+\section{}
+\begin{flalign*}
+&
+	v = v_j/\sin(50^o) = v_i/\cos(50^0)
+	;\
+		\sqrt{(0.4\,S_i)^2 + S_i^2} = 30
+	;\ &\\&
+		\Delta \vec S
+	=
+		(
+			v_i\,\Delta t 
+		)\,\hat\imath
+		+ (
+			v_j\,\Delta t
+			- a_g\,(\Delta t)^2/2
+		)\,\hat\jmath
+	\implies &\\& \implies 
+		0.4*30/\sqrt{1.16}	
+	=	
+		v\,\sin(50^o)\frac{30/\sqrt{1.16}}{v\,\cos(50^o)}
+		- \frac{a_g}{2} 
+		\left( 
+			\frac{30}{v\,\cos(50^o)} 
+		\right)^2
+	\implies &\\& \implies
+		v 
+	=	
+		\frac{(30/\sqrt{1.16})/\cos(50)}
+		{
+      		\sqrt{
+      		\frac{2}{9.80665}\left(
+      			\frac{30}	     {\sqrt{1.16}}
+				\frac{\sin(50^o)}{\cos(50^o)}
+      			- \frac{0.4*30}{\sqrt{1.16}}
+      		\right)
+      		}
+		}
+	\cong 20.4\,m/s
+&
+\end{flalign*}
+
+% P5
+\section{}
+\begin{flalign*}
+&
+	a_g\,(\Delta t)^2/2 = 240
+\implies
+	\Delta t = \sqrt{2*240/9.80665} 
+\cong 
+	7.00\,s
+&\\\\&
+	v_{med} = 1.00\,K\,m /\Delta t
+=
+	\frac{1000}{\sqrt{2*240/9.80665}}
+\cong
+	143\,m/s
+&
+\end{flalign*}
+
+% P6
+\section{}
+\begin{flalign*}
+&
+	v_0\,\Delta t_0 = \Delta S_i
+;\	
+	\Delta S = v_{som}\,\Delta t_1
+;\
+	\Delta t_1 + \Delta t_0 = 3.0\,s
+;\
+	a_g\,(\Delta t_0)^2/2 = \Delta S_j
+\implies &\\& \implies
+	v_0 
+= 
+	\frac {\sqrt{
+		(v_{som}\, (3.0-\sqrt{2*\Delta S_j/a_g}))^2 
+		- (\Delta S_j)^2 
+	} }
+	{ \sqrt{2*\Delta S_j/a_g} }
+= &\\& =
+	\frac {\sqrt{
+		(343\, (3.0-\sqrt{2*40.0/9.80665}))^2 
+		- (40.0)^2 
+	} }
+	{ \sqrt{2*40.0/9.80665} }
+\cong
+	10.11\,m/s
+&\\\\& =
+	\frac {\sqrt{
+		(343\, (3.0-\sqrt{2*40.0/10}))^2 
+		- (40.0)^2 
+	} }
+	{ \sqrt{2*40.0/10} }	
+\cong 15.3\,m/s
+&
+\end{flalign*}
+
+% P7
+\section{}
+
+% P7 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta S_{(\max\,i)} = v_{(\max\,i)}\,\Delta t_0
+;\
+	v_{(\max\,i)}\,\cos(45^o)
+	= v_{(\max\,j)}\,\sin(45^o)
+	= v_{\max}
+;\ &\\&
+	v_{\max}\,\Delta t_1 - a_g\,(\Delta t_1)^2/2 = h
+;\ 
+	v_{\max} = a_g\,\Delta t_1
+;\
+	v_{(\max\,j)} = a_g\,\Delta t_0
+\implies &\\& \implies
+	v_{max} = \sqrt{2\,a_g\,h}
+;\
+	\Delta s_{(\max\,i)}
+=
+	\frac{\sqrt{2\,a_g\,h}}{\cos(45^o)}\,
+	\frac{\sqrt{2\,a_g\,h}/\sin(45^o)}{a_g}
+= &\\& =
+	\frac{2\,h}{\cos(45^o)\,\sin(45^o)}
+&
+\end{flalign*}
+
+% P7 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta t_0 = v_{(\max\,j)}/a_g
+	= \frac{\sqrt{2\,a_g\,h}/\sin(45^o)}{a_g}
+	= 2\,\sqrt{h/a_g}
+&\\&
+	\Delta t_1 = 2\,v_{\max}/a_g
+&
+\end{flalign*}
+
+
+\setcounter{section}{9}
+
+% P10
+\section{}
+\bm{
+	\vec a_J &= (3.0\,\hat\imath-2.0\,\hat\jmath)m/s^2\\
+	\vec a_S &= (1.0\,\hat\imath+3.0\,\hat\jmath)m/s^2\\
+	t_1	   &= 5\,s
+}
+
+% P10 - a)
+\subsection{}
+\begin{flalign*}
+&	\vec v_{J(t_1)} - \vec v_{S(t_1)}
+	= \vec a_j\,t_1 - \vec a_s\,t_1 
+	= ( 
+		 ( 3.0-1.0)\,\hat\imath
+		+(-2.0-3.0)\,\hat\jmath 
+	)\,(m/s^2)\,(5s) = &\\
+&	= (
+		10\,\hat\imath-25\,\hat\jmath
+	)m/s &
+\end{flalign*}
+
+% P10 - b)
+\subsection{}
+\begin{flalign*}
+&	  \| \vec P_{J(t_1)}-\vec P_{S(t_1)} \|
+	= \left\| \vec a_J\,t_1^2/2-\vec a_S\,t_1^2/2 \right\| = &\\
+&	= \left\| 
+	(
+		 ( 3.0-1.0)\,\hat\imath
+		+(-2.0-3.0)\,\hat\jmath
+	)(m/s^2)(5s)^2/2 \right\|
+	= |
+		 25 \,\hat\imath
+		-62.5\,\hat\jmath
+	|m
+	\cong 67\,m &
+\end{flalign*}
+
+% P10 - c)
+\subsection{}
+\begin{flalign*}
+&	\vec a_J-\vec a_S = ( 2.0\,\hat\imath-5.0\,\hat\jmath )m/s^2 &
+\end{flalign*}
+
+% Folha de Cálculo
+\part{Folha de Cálculo}
+\renewcommand\thesection{S\arabic{section}}
+\renewcommand\thesubsection%
+{%
+	S\arabic{section} - \alph{subsection})%
+}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

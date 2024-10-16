@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage[hidelinks]{hyperref}
+
+% Multicols
+%\usepackage{multicol}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\usepackage{tikz}		% Vector diagrams
+\usetikzlibrary{calc}  % Vector calculations
+\usepackage{varwidth}  % List inside TikzPicture
+
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+% Resolução de listas
+%\renewcommand\thesection{Questão \arabic{section} }
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\title{Diagrama de fluxo\\(visualização) da construção da tabela 2x2}
+\author{Felipe Pinto - 61387}
+
+\maketitle
+\break
+
+\begin{tikzpicture}
+[
+	scale = 1, font=\small, line width = 1
+]
+		
+	\node[rectangle, draw=DarkGreen!30!              ] (1) 
+	{Ler questão};
+	
+	\node[rectangle, draw=DarkGreen!30!, below of = 1] (2) 
+	{Anotar Factos/Dados};
+	
+	\node[rectangle, draw=DarkGreen!30!, below of = 2] (3) 
+	{Anotar Pedido};
+	
+	\node[rectangle, draw=DarkGreen!30!, below of = 3] (4) 
+	{Desenhar diagrama da situação};
+	
+	\node[rectangle, draw=DarkGreen!30!, below of = 4] (5) 
+	{Equacionar situação em função do pedido};
+	
+	\node[rectangle, draw=DarkGreen!30!, below of = 5] (6) 
+	{Encontrar formulas/relações matemáticas 
+	 que relacionem Pedido e dado 
+	 e anotar em paços};
+	
+	\foreach \i [evaluate=\i as \j using int(\i+1)] in {1,...,5}{
+		
+		\draw[->] (\i) to (\j);
+			
+	}
+	
+	
+\end{tikzpicture}
+
+
+\end{document}

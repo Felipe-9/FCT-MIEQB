@@ -1,0 +1,921 @@
+% !TEX root = ./AM_2C-Tests_Resolutions.2023.2.3.tex.tex
+\providecommand\mainfilename{"./AM_2C-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Tests_Resolutions.2023.2.3.tex.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Tests_Resolutions.2023.2.3.tex}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Tests_Resolutions.2023.2.3.tex/graphics/}
+
+\mymakesubfile{3}
+[AM 2C]
+{Exame 2023.2 Resolução} % Subfile Title
+{Exame 2023.2 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Plano tangente a sup
+    \begin{BM}
+        \ln(y^3)+(x^2+1)\,e^z=1-x^3
+        \\
+        (-1,1,0)
+    \end{BM}
+} % Q1
+    \answer{}
+    \begin{flalign*}
+        &
+            f(x,y,z)
+            = \ln(y^3)+(x^2+1)\,e^z-(1-x^3)
+            = &\\&
+            = \ln(y^3)+(x^2+1)\,e^z-1+x^3
+            = 0
+            ;&\\[3ex]&
+            \left(
+                \begin{aligned}
+                    &
+                           \pdv{f}{x}(p_0)\,(x-x_0)
+                    &+\\+& \pdv{f}{y}(p_0)\,(y-y_0)
+                    &+\\+& \pdv{f}{z}(p_0)\,(z-z_0)
+                    &
+                \end{aligned}
+            \right)
+            = \left(
+                \begin{aligned}
+                    &
+                           (e^z\,2\,x+3\,x^2)(p_0)\,(x+1)
+                    &+\\+& (y^{-3}\,3\,y^2)(p_0)\,(y-1)
+                    &+\\+& ((x^2+1)\,e^z)(p_0)\,(z-0)
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                           e^0\,2*(-1)+3\,(-1)^2\,(x+1)
+                    &+\\+& ((1)^{-3}\,3\,(1)^2)\,(y-1)
+                    &+\\+& (((-1)^2+1)\,e^(0))(p_0)\,(z-0)
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = 
+            x + 1
+            + 3\,(y-1)
+            + 2\,z
+            = 
+            x
+            + 3\,y
+            + 2\,z
+            - 2
+            = 0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    \begin{BM}
+        \mathcal{D}
+        = \left\{
+            (x,y)\in\mathbb{R}^2
+            : \left(
+                \begin{aligned}
+                       & x^2+y^2 \leq 4
+                    \\ & x^2+y^2/4 \geq 1
+                    \\ & 0\leq y\leq x\,\sqrt{3}/3
+                \end{aligned}
+            \right)
+        \right\}
+    \end{BM}
+    Escreva em coordenadas polares
+} % Q2
+    \answer{}
+    \begin{flalign*}
+        &
+            \left(
+                \begin{aligned}
+                    x^2+y^2 \leq 4
+                \\  x^2+y^2/4 \geq 1
+                \\  0\leq y\leq x\,\sqrt{3}/3
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                &
+                    (r\,cos\theta)^2
+                    + (r\,\sin\theta)^2 
+                    = r^2
+                    \leq 4
+                    \implies \myvert{r}\leq 2
+                &\\& 
+                    (r\,\cos\theta)^2
+                    + (r\,\sin\theta)^2/4 
+                    = r^2\,\cos^2{\theta}
+                    + r^2\,\sin^2{\theta}/4
+                    \geq 1
+                &\\&
+                    0\leq r\,\sin\theta\leq (r\,\cos\theta)\,\sqrt{3}/3
+                \implies
+                    0\leq \tan\theta\leq \sqrt{3}/3
+                &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                &
+                    \myvert{r}\leq 2
+                &\\& 
+                    r\geq \sqrt{\frac{2}{\cos^2{\theta}3+1}}
+                &\\&
+                    0\leq \theta\leq \pi/6
+                &
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    \begin{BM}
+        f(x,y)
+        =\ln(x^2+y^2)
+        , \mathbb{R}^2\backslash\{(0,0)\}
+    \end{BM}
+    Tem-se:
+} % Q3
+    \answer{}
+    \begin{flalign*}
+        &
+            \gdif{f}(1,1)
+            = \left(
+                (x^2+y^2)^{-1}
+                \,2\,x
+                , (x^2+y^2)^{-1}
+                \,2\,y
+            \right)(1,1)
+            = (1, 1)
+            &\\[3ex]&
+            D_{\vec{u}}f(1,1)
+            = \lim_{t\to0}{
+                \frac{
+                    f(1+t/\sqrt{2},1+t/\sqrt{2})
+                    + f(1,1)
+                }{
+                    t
+                }
+            }
+            = &\\&
+            = \lim_{t\to0}{
+                \frac{
+                    \ln\left(
+                        (1+t/\sqrt{2})^2
+                        + (1+t/\sqrt{2})^2
+                    \right)
+                    + \ln(1^2+1^2)
+                }{
+                    t
+                }
+            }
+            = &\\&
+            = \lim_{t\to0}{
+                2\frac{
+                    \ln2
+                    + \ln\left(
+                        1+t/\sqrt{2}
+                    \right)
+                }{
+                    t
+                }
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Seja a curva C
+    \begin{BM}
+        \begin{cases}
+            C_1: & z^2=7-x^2+2\,x-4\,y^2
+            \\
+            C_2: & z=2
+        \end{cases}
+    \end{BM}
+    Parametrização regular
+} % Q4
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                z^2
+                =7-x^2+2\,x-4\,y^2
+                \\
+                z=2
+            \end{cases}
+            &\\&
+            \begin{cases}
+                2
+                =7-(r\,\cos{\theta})^2
+                + 2\,(r\,\cos(\theta))
+                - 4\,(r\,\sin(\theta))^2
+                \\
+                z=2
+            \end{cases}
+            &\\[3ex]&
+            -5
+            =
+            - r^2\,3\,\sin^2\theta
+            + 2\,r\,\cos\theta
+            &\\[3ex]&
+            \frac{((1+2\,\cos(t))-1)^2}{2^2}
+            +\frac{(\sin(t))^2}{1^2}
+            = \cos^2(t)
+            + \sin^2(t)
+            = 1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Considere a função  \(f:\mathbb{R}^2\to\mathbb{R}\) definida por
+    \begin{BM}
+        f(x,y)=\begin{cases}
+            \frac{y(x^2-y^2)}{\sqrt{x^2+y^2}}
+            , \quad& (x,y)\neq(0,0)
+            \\
+            0
+            , \quad& (x,y)=(0,0)
+        \end{cases}
+        \\
+        \vec{u}=(2/\sqrt{5},1/\sqrt{5})
+    \end{BM}
+    Tem-se:
+} % Q5
+    \answer{}
+    \begin{flalign*}
+        &
+            \pdv{f}{x}(0,0)
+            = \lim_{h\to0}{
+                \frac{f(h,0)-f(0,0)}{h}
+            }
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{0(h^2-0^2)}{\sqrt{h^2+0^2}}
+                    -0
+                }{h}
+            }
+            = 0
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            \pdv{f}{y}(0,0)
+            = \lim_{h\to0}{
+                \frac{f(0,h)-f(0,0)}{h}
+            }
+            = &\\&
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{h(0^2-h^2)}{\sqrt{0^2+h^2}}
+                    -0
+                }{h}
+            }
+            = &\\&
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{-h^3}{\myvert{h}}
+                }{h}
+            }
+            = &\\&
+            = \lim_{h\to0}{
+                \frac{-h^1}{\sgn{h}}
+            }
+            = 0
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            D_{\vec{u}}(0,0)
+            = \lim_{t\to0}{
+                \frac{
+                    f(0+t\,2/\sqrt{5},0+t/\sqrt{5})
+                    - f(0,0)
+                }{t}
+            }
+            = &\\&
+            = \lim_{t\to0}{
+                \frac{
+                    \frac{
+                        (t/\sqrt{5})
+                        (
+                            (t\,2/\sqrt{5})^2
+                            -(t/\sqrt{5})^2
+                        )
+                    }{
+                        \sqrt{
+                            (t\,2/\sqrt{5})^2+(t/\sqrt{5})^2
+                        }
+                    }
+                    - 0
+                }{t}
+            }
+            = &\\&
+            = \lim_{t\to0}{
+                \frac{
+                    3\,t/5\,\sqrt{5}
+                }{
+                    \sgn{t}
+                }
+            }
+            = 0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Considere
+    \begin{BM}
+        \lim_{(x,y)\to(1,-1)}{
+            \frac{
+                2(y+1)
+                \,\cos(x-1)
+            }{
+                \sqrt{
+                    (x-1)^2
+                    +(y+1)^2
+                }
+            }
+        }
+    \end{BM}
+} % Q6
+    \answer{}
+    \begin{flalign*}
+        &
+            \lim_{(x,y)\to(1,-1)}{
+                \frac{
+                    2(y+1)
+                    \,\cos(x-1)
+                }{
+                    \sqrt{
+                        (x-1)^2
+                        +(y+1)^2
+                    }
+                }
+            }
+            = \lim_{x\to1,y=-x}{
+                \frac{
+                    2(y+1)
+                    \,\cos(x-1)
+                }{
+                    \sqrt{
+                        (x-1)^2
+                        +(y+1)^2
+                    }
+                }
+            }
+            = &\\&
+            = \lim_{x\to1}{
+                \frac{
+                    2(-x+1)
+                    \,\cos(x-1)
+                }{
+                    \sqrt{
+                        (x-1)^2
+                        +(-x+1)^2
+                    }
+                }
+            }
+            = &\\&
+            = \lim_{x\to1}{
+                \frac{
+                    -2\,\cos(x-1)
+                }{
+                    \sqrt{2}
+                }
+            }
+            = -\sqrt{2}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Designe por \(\sigma\) a sup em \(\mathbb{R}^3\) def por:
+    \begin{BM}
+        \sigma = \left\{
+            (x,y,z)\in\mathbb{R}^3
+            : \left(
+                \begin{aligned}
+                    & (x,y)\in\myrange{0,1}\times\myrange{0,2}
+                    \\ & z=x^2+y
+                \end{aligned}
+            \right)
+        \right\}
+    \end{BM}
+    Suponha \(\sigma\) orientada pela norma \(\vec{n}\)\\
+    O valor do fluxo do campo vetorial \(\vec{F}(x,y,z)=-6\,x^2\,\hat{\jmath}\) através da superfície \(\sigma\)
+} % Q7
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Seja \(f:\mathbb{R}^2\mapsto\mathbb{R}\) uma função de classe \(C^1\) em \(\mathbb{R}^2\) tal que \(\gdif{f}(2,1)=(-2,1)\).
+    \\Considere a função
+    \begin{BM}
+        g(x,y)
+        = f\left(
+            2\,x,
+            \frac{2\,x}{y^2+1}
+        \right)
+    \end{BM}
+    Tem-se
+} % Q8
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                \phi(x,y) = 2\,x
+                \\
+                \rho(x,y)
+                = \frac{2\,x}{y^2+1}
+            \end{cases}
+            &\\[3ex]&
+            \pdv{g}{x}
+            = \pdv{f}{\phi}(2,1)
+            \,\pdv{\phi}{x}
+            = -2*2
+            = -4
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    Seja \(\varphi:\mathbb{R}^3\to\mathbb{R}\) uma função de classe \(
+        C^1
+        \text{ em }
+        \mathbb{R}
+        \text{ e }
+        c\in\mathbb{R}
+    \).
+    \\ Considere a função \(
+        u(x,t)
+        = x\,\varphi(x-c\,t)
+        \text{. Para todo o }
+        (x,t)\in\mathbb{R}^2
+    \), Tem-se:
+} % Q9
+    \answer{}
+    \begin{flalign*}
+        &
+            c\,\pdv{u}{x}(x,t)
+            + \pdv{u}{t}(x,t)
+            = c\,\left(
+                \varphi(x-c\,t)
+                + x\,\varphi'(x-c\,t)
+            \right)(x,t)
+            + \left(
+                x\,\varphi'(x-c\,t)
+                (-c)
+            \right)(x,t)
+            = c\,\varphi(x-c\,t)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    Seja \(f:\mathbb{R}^3\mapsto\mathbb{R}\) uma função da classe \(C^1\) em \(\mathbb{R}^3\) tal que \(\gdif{f}(0,1,\ln{2})=(1,1,1)\).
+    \\ Considere a função:
+    \begin{BM}
+        g:\mathbb{R}^2\to\mathbb{R}^3
+        \\
+        g(x,y)
+        = \left(
+            \sin(x\,y),
+            x-2\,y,
+            \ln(x^2+1)
+        \right)
+    \end{BM}
+} % Q10
+    \answer{}
+    \begin{flalign*}
+        &
+            h =
+            f\circ h
+            = f\begin{bmatrix}
+                \sin(1*0)
+                \\ 1-2*0,
+                \\ \ln(1^2+1)
+            \end{bmatrix}
+            = f(0,1,\ln2)
+            &\\[3ex]&
+            J(h)
+            = \begin{bmatrix}
+                \pdv{x}{u} & \pdv{x}{v}
+            \end{bmatrix}_{(0,1)}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q11
+    \begin{BM}
+        F(x,y,z)
+        = x\,\cos(y\,z)
+        - z\,\exp(x-y-z)
+        +x^2
+        +3\,y
+        -1
+        \\
+        P=(1,0,1)
+    \end{BM}
+    \(F(x,y,z)=0\) def x como func de y e z
+} % Q11
+    \answer{}
+    \begin{flalign*}
+        &
+            \pdv{x}{y}
+            = -\frac
+            {\pdv{F}{y}(1,0,1)}
+            {\pdv{F}{x}(1,0,1)}
+            = -\frac
+            {
+                -(1)\,\sin(0*1)*1
+                -1\,\exp(1-0-1)(-1)
+                +3
+            }
+            {
+                \cos(0*1)
+                -1\,\exp(1-0-1)
+                +2\,1
+            }
+            = -2
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q12
+    Considere a função
+    \begin{BM}
+        (y-2)\,x^2-y^2
+    \end{BM}
+    Tem-se:
+} % Q12
+    \answer{}
+    \begin{flalign*}
+        &
+            \det H_f
+            =\begin{vmatrix}
+                  \pdv{f}{x,x}
+                & \pdv{f}{x,y}
+                \\\pdv{f}{y,x}
+                & \pdv{f}{y,y}
+            \end{vmatrix}
+            =\begin{vmatrix}
+                   2\,y-4
+                &  2\,x
+                \\ 2\,x
+                &  -2
+            \end{vmatrix}
+            = -4\,y+8-4\,x^2
+            &\\[3ex]&
+            \begin{cases}
+                \det H_f(0,0)
+                =8
+                , \pdv[order=2]{f}{x}
+                = -4
+                \therefore
+                \text{Máximo local}
+                \\
+                \det H_f(2,2)
+                = \det H_f(-2,2)
+                = -16
+                \quad\therefore
+                \text{Sela}
+                hessi
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q13
+    Seja \textit{D} a região do plano definida pelas condições: \(y\leq \leq 2-y^2,y\leq0\).
+    \\O valor do integral
+    \begin{BM}
+        \iint_{D}{y\,\odif{x,y}}
+    \end{BM}
+} % Q13
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                y+y^2-2
+                = (y-1)(2+y)
+                = 0
+                \\
+                y=0\implies x=2
+                \\
+                x=0\implies\myvert{y}=\sqrt{2}
+            \end{cases}
+            &\\&
+            \iint_{D}{y\,\odif{x,y}}
+            = \int_0^2{
+                \int_y^{2-y^2}{
+                    y\,\odif{x,y}
+                }
+            }
+            = \int_0^2{
+                    ((2-y^2)-y)
+                    y\,\odif{y}
+            }
+            = \int_0^2{
+                    (2\,y-y^3-y^2)
+                    \odif{y}
+            }
+            = 2\,(2^2-0^2)/2
+            -(2^4-0^4)/4
+            -(2^3-0^3)/3
+            = -8/3
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q14
+    Considere o seguinte integral triplo
+    \begin{BM}
+        I
+        =\int_0^1{
+            \int_{x^2}^{3-2\,x}{
+                x\,y\,\odif{y,x}
+            }
+        }
+    \end{BM}
+    Inverta a integração
+} % Q14
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x^2=3-2\,x
+                \implies
+                x^2-3+2\,x
+                =(x-3)(x-1)
+                =0
+            \end{cases}
+            &\\[3ex]&
+            I 
+            =\int_0^1{
+                \int_{x^2}^{3-2\,x}{
+                    x\,y\,\odif{y,x}
+                }
+            }
+            =\int_1^3{
+                \int_0^{(3-y)/2}{
+                    x\,y\,\odif{x,y}
+                }
+            }
+            +\int_0^1{
+                \int_0^{\sqrt{x}}{
+                    x\,y\,\odif{x,y}
+                }
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q15
+    Volume do sólido
+    \begin{BM}
+        S=\left\{
+            (x,y,z)\in\mathbb{R}^3
+            : \left(
+                \begin{aligned}
+                    0\leq z\leq 2-x^2-y^2
+                    \\ \land
+                    0\leq y\leq -x
+                \end{aligned}
+            \right)
+        \right\}
+    \end{BM}
+} % Q15
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x=r\cos\theta
+                \\
+                y=r\sin\theta
+                \\
+                z=z
+                \\
+                x^2+y^2=r^2
+                \\
+                \tan{\theta}=y/x
+                \\
+                \myvert{det J}=r
+            \end{cases}
+            &\\&
+            \begin{cases}
+                0\leq z\leq 
+                2
+                -(r\,\cos\theta)^2
+                -(r\,\sin\theta)^2
+                = 2-r^2
+                \\ 
+                0
+                \leq  r\,\sin\theta
+                \leq -r\,\cos\theta
+                \implies
+                0
+                \leq  \tan\theta
+                \leq -1
+                \implies
+                \pi
+                \geq  \theta
+                \geq 3\pi/4
+            \end{cases}
+            &\\[3ex]&
+            \int_0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q16
+    Considere a função \(f:\mathbb{R}^2\to\mathbb{R}\)
+    \begin{BM}
+        f(x,y)
+        = \begin{cases}
+            \frac{x^2\,e^x+y^2}{x^2+y^2}
+            , \quad& (x,y)\neq(0,0)
+            \\
+            1
+            , \quad& (x,y)=(0,0)
+        \end{cases}
+    \end{BM}
+    Tem-se:
+} % Q16
+    \answer{}
+    \begin{flalign*}
+        &
+            \pdv{f}{x}(0,0)
+            = \lim_{h\to0}{
+                \frac{f(h,0)-f(0,0)}{h}
+            }
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{h^2\,e^h+0^2}{h^2+0^2}
+                    -1
+                }{h}
+            }
+            = \lim_{h\to0}{
+                \frac{e^h-1}{h}
+            }
+            % 
+            % 
+            % 
+            &\\[3ex]&
+            \pdv{f}{y}(0,0)
+            = \lim_{h\to0}{
+                \frac{f(0,h)-f(0,0)}{h}
+            }
+            = \lim_{h\to0}{
+                \frac{
+                    \frac{0^2\,e^0+h^2}{0^2+h^2}
+                    -1
+                }{h}
+            }
+            = 0
+            &\\[3ex]&
+            \lim_{(x,y)\to(0,0)}{f(x,y)}
+            = \lim_{x\to0,y=m\,x}{
+                \frac{x^2\,e^x+y^2}{x^2+y^2}
+            }
+            = \lim_{x\to0}{
+                \frac{x^2\,e^x+(m\,x)^2}{x^2+(m\,x)^2}
+            }
+            = &\\&
+            = \lim_{x\to0}{
+                \frac{e^x+m^2}{(m^2+1)}
+            }
+            = 1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q17
+    Considere o sólido
+    \begin{BM}
+        \mathcal{E}
+        =\left\{
+            (x,y,z)\in\mathbb{R}^3
+            : \left(
+                \begin{aligned}
+                    &
+                        x^2+y^2+z^2\leq9
+                    &\\&
+                        z\geq\sqrt{x^2+y^2}
+                    &\\&
+                        y\geq0
+                    &
+                \end{aligned}
+            \right)
+        \right\}
+    \end{BM}
+} % Q17
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x=r\sin\phi\,\cos\theta
+                \\
+                y=r\sin\phi\,\sin\theta
+                \\
+                z=\cos\phi
+                \\
+                \myvert{et J}=r^2\sin\phi
+            \end{cases}
+            &\\[3ex]&
+            \begin{cases}
+                     (r\,\sin\phi\,\cos\theta)^2
+                    +(r\,\sin\phi\,\sin\theta)^2
+                    +(r\,\cos\phi)^2
+                    =r^2
+                    \leq9
+                \\
+                    r\,\cos{\phi}
+                    \geq
+                    \sqrt{
+                        (r\,\sin\phi\,\cos\theta)^2
+                        +(r\,\sin\phi\,\sin\theta)^2
+                    }
+                    = \myvert{r\,\sin\phi}
+                    \implies
+                \\  \implies
+                    1
+                    \geq
+                    \tan\phi
+                \\
+                    r\,\sin\phi\,\sin\theta\geq0
+                    \implies
+                    \sin\phi\,\sin\theta
+                    \geq0
+                    \implies
+                    \theta
+                    \in\myrange{0,\pi}
+            \end{cases}
+            &\\[3ex]&
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q18
+    Teorema de green
+    \begin{BM}
+        \Sigma
+        = \left\{
+            (x,y)\in\mathbb{R}^2
+            : x^2+y^2\leq1
+            , 0\leq y\leq x
+        \right\}
+    \end{BM}
+} % Q18
+    \answer{}
+\end{questionBox}
+
+\setcounter{question}{19}
+\begin{questionBox}1{ % Q20
+    Integral seg de reta entre 2 pontos
+    \begin{BM}
+        p_0=(0,1)
+        ,p_1=(2,0)
+        \\
+        I=\int_C{
+            y\,\odif{x}
+            2\,x\,\odif{y}
+        }
+    \end{BM}
+} % Q20
+    \answer{}
+    \begin{flalign*}
+        &
+            \phi(t)
+            =A+(B-A)
+            =(0,1)+((2,0)-(0,1))\,t
+            =(0,1)+(2,-1)\,t
+            =(2\,t,1-t)
+            &\\[3ex]&
+            I
+            =\int_0^1{
+                (1-t)\,2\,\odif{t}
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q21
+    question
+} % Q21
+    body
+\end{questionBox}
+
+\end{document}

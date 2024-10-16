@@ -1,0 +1,707 @@
+% !TEX root = ./FT_I-Exercicios_Resolucoes.4.tex
+\providecommand\mainfilename{"./FT_I-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Exercicios_Resolucoes.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/FT_I-Exercicios_Resolucoes.4}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{4}
+[FT\,I]
+{Exercicios}
+{Exercicios}
+
+\begin{questionBox}1{ % Q1
+    Bombeia-se um produto petrolífero a um certo caudal por um tubo horizontal com um comprimento de 100\,\unit{\metre} e um diametro (\textit{D}) de 0.15\,\unit{\metre}. A queda de pressão por atrito no tubo é 70\,\unit{\kilo\newton\,\metre^{-2}} Durante uma reparação no tubo usou-se tubagem alternativa (70\,\unit{\metre} de 0.2\,\unit{\metre} de diâmetro, seguidos de 50\,\unit{\metre} de 0.1\,\unit{\metre} de diâmetro). A bomba existente tem uma pressão de descarga de 350\,\unit{\kilo\newton\,\metre^{-2}}. Trabalhando com o mesmo caudal pode-se continuar a usar a mesma bomba durante as reparações? Despreze a variação de energia cinética. 
+} % Q1
+    
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(L_1=100\,\unit{\metre}\)
+            \item \(D_1=0.15\,\unit{\metre}\)
+            \item \(-\adif{P}_{at}=70\,\unit{\kilo\newton\,\metre^{-2}}\)
+            \item \(-\adif{P}_{desc}=350\,\unit{\kilo\newton\,\metre^{-2}}\)
+            \item \(\varepsilon = 0.005\,\unit{\milli\metre}\)
+            \item \(\mu=0.5*10^{-3}\)\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}}
+            \item \(\rho=700\,\unit{\kilo\gram\,\metre^{-3}}\)
+        \end{multicols}
+        \item tubagem alternativa: 
+        \begin{itemize}
+            \begin{multicols}{2}
+                \item \(L_{2.1}=70\,\unit{\metre}\)
+                \item \(D_{2.1}=0.2\,\unit{\metre}\)
+                \item \(L_{2.2}=50\,\unit{\metre}\)
+                \item \(D_{2.2}=0.1\,\unit{\metre}\)
+            \end{multicols}
+        \end{itemize}
+    \end{itemize}
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                W_{b.1}\geq W_{b.2}
+                \lor W_{b.1}\leq W_{b.2}
+                &\\&
+                w_{b.2}
+                = -\adif{P}_{b.2}\,G_v
+                = h_{b.2}\,\rho\,g\,G_v
+                = 
+                \left(
+                    h_{at.2.1}
+                    +h_{at.2.2}
+                \right)
+                \,\rho\,g\,G_v
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        \frac{-\adif{P}_{at.2.1}}{\rho\,g}
+                        + \\ + & 
+                        \frac{-\adif{P}_{at.2.2}}{\rho\,g}
+                        &
+                    \end{aligned}
+                \right)
+                \,\rho\,g\,G_v
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        4\,\phi_{2.1}\,\rho\,L_{eq.2.1}\,v_{2.1}^2/D_{2.1}
+                        + \\ + & 
+                        4\,\phi_{2.2}\,\rho\,L_{eq.2.2}\,v_{2.2}^2/D_{2.2}
+                        &
+                    \end{aligned}
+                \right)
+                \,G_v
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        \frac{\phi_{2.1}\,L_{eq.2.1}}{D_{2.1}}
+                        \,\left(
+                            \frac{G_v}{\pi\,(D_{2.1}/2)^2}
+                        \right)^2
+                        + \\ + & 
+                        \frac{\phi_{2.2}\,L_{eq.2.2}}{D_{2.2}}
+                        \,\left(
+                            \frac{G_v}{\pi\,(D_{2.2}/2)^2}
+                        \right)^2
+                        &
+                    \end{aligned}
+                \right)
+                \,\rho\,G_v\,4
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        \frac{\phi_{2.1}\,L_{eq.2.1}}{D_{2.1}^{5}}
+                        + \\ + & 
+                        \frac{\phi_{2.2}\,L_{eq.2.2}}{D_{2.2}^{5}}
+                        &
+                    \end{aligned}
+                \right)
+                \,\frac{\rho\,G_v^3\,4^3}{\pi^2}
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        \frac{\phi_{2.1}\,L_{eq.2.1}}{D_{2.1}^{5}}
+                        + \\ + & 
+                        \frac{\phi_{2.2}\,L_{eq.2.2}}{D_{2.2}^{5}}
+                        &
+                    \end{aligned}
+                \right)
+                \left(
+                    \bar{v}\,\pi\,(D_{1}/2)^2
+                \right)^3
+                \,\frac{\rho\,4^3}{\pi^2}
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        \frac{\phi_{2.1}\,L_{eq.2.1}}{D_{2.1}^{5}}
+                        + \\ + & 
+                        \frac{\phi_{2.2}\,L_{eq.2.2}}{D_{2.2}^{5}}
+                        &
+                    \end{aligned}
+                \right)
+                \left(
+                    \frac{Re_{1}\,\mu}{\rho\,D_{1}}\,4\,(D_{1}/2)^2
+                \right)^3
+                \,\rho\,\pi
+                = &\\&
+                = 
+                \left(
+                    \begin{aligned}
+                        &
+                        \frac{\phi_{2.1}\,L_{eq.2.1}}{D_{2.1}^{5}}
+                        + \\ + & 
+                        \frac{\phi_{2.2}\,L_{eq.2.2}}{D_{2.2}^{5}}
+                        &
+                    \end{aligned}
+                \right)
+                \left(
+                    Re_{1}\,\mu\,D_{1}
+                \right)^3
+                \,\frac{\pi}{\rho^2}
+            &
+        \end{flalign*}
+    \end{answerBox}
+    \begin{answerBox}*{} % RS 
+        \begin{flalign*}
+            &
+                Re_{1}\left(
+                    \phi_1\,Re_1^2
+                    , \varepsilon/D_1
+                \right)
+                =Re_{1}\left(
+                    \left(
+                        \frac{-\adif{P}_{at}\,D_1}{4\,\rho\,v^2\,L_1}
+                    \right)
+                    \left(
+                        \frac{\bar{v}\,D_1\,\rho}{\mu}
+                    \right)^2
+                    , \frac{\varepsilon}{D_1}
+                \right)
+                = &\\&
+                = Re_{1}\left(
+                    \frac{-\adif{P}_{at}\,D_1^3\,\rho}{4\,\mu^2\,L_1}
+                    , \frac{\varepsilon}{D_1}
+                \right)
+                % = &\\&
+                = Re_{1}\left(
+                    \frac{-\adif{P}_{at}\,D_1^3\,\rho}{4\,\mu^2\,L_1}
+                    , \frac{\varepsilon}{D_1}
+                \right)
+                = &\\&
+                = Re_{1}\left(
+                    \frac{70*10^{3}*0.15^3*700}{4*(0.5*10^{-3})^2*100}
+                    , \frac{0.005*10^{-3}}{0.15}
+                \right)
+                \cong &\\&
+                \cong Re_{1}\left(
+                    \frac{70^2*1.5^3}{4*(0.5)^2}*10^{5}
+                    , \num{33.333333333333333e-6}
+                \right)
+                \cong &\\&
+                \cong Re_{1}\left(
+                    \num{1.65375000000e9}
+                    , \num{3.3333333333333333e-5}
+                \right)
+                \cong 1.00*10^6
+                &\\[1.5em]&
+                % 
+                % Phi 2.1
+                % 
+                \phi_{2.1}\left(
+                    Re_{2.1},\varepsilon/D_{2.1}
+                \right)
+                =\phi_{2.1}\left(
+                    \frac{\rho\,v_{2.1}\,D_{2.1}}{\mu}
+                    ,\frac{\varepsilon}{D_{2.1}}
+                \right)
+                = &\\&
+                =\phi_{2.1}\left(
+                    \frac{\rho\,D_{2.1}}{\mu}
+                    \left(
+                        \frac{G_v}{\pi\,(D_{2.1}/2)^2}
+                    \right)
+                    ,\frac{\varepsilon}{D_{2.1}}
+                \right)
+                = &\\&
+                =\phi_{2.1}\left(
+                    \frac{\rho\,4}{\mu\,\pi\,D_{2.1}}
+                    \left(
+                        \bar{v}\,\pi(D_1/2)^2
+                    \right)
+                    ,\frac{\varepsilon}{D_{2.1}}
+                \right)
+                = &\\&
+                =\phi_{2.1}\left(
+                    \frac{\rho\,4}{\mu\,\pi\,D_{2.1}}
+                    \left(
+                        \left(
+                            \frac{Re_1\,\mu}{\rho\,D_1}
+                        \right)
+                        \,\frac{\pi\,D_1^2}{4}
+                    \right)
+                    ,\frac{\varepsilon}{D_{2.1}}
+                \right)
+                = &\\&
+                =\phi_{2.1}\left(
+                    \frac{Re_1\,D_1}{D_{2.1}}
+                    ,\frac{\varepsilon}{D_{2.1}}
+                \right)
+                \cong \phi_{2.1}\left(
+                    \frac{10^6*0.15}{0.2}
+                    ,\frac{0.005*10^{-3}}{0.2}
+                \right)
+                \cong &\\&
+                \cong \phi_{2.1}\left(
+                    7.5\E5
+                    ,2.5\E-5
+                \right)
+                \cong 0.00149
+                &\\[1.5ex]&
+                % 
+                % Phi 2.2
+                % 
+                \phi_{2.2}\left(
+                    \frac{Re_1\,D_1}{D_{2.2}}
+                    ,\frac{\varepsilon}{D_{2.2}}
+                \right)
+                \cong\phi_{2.2}\left(
+                    \frac{10^6*0.15}{0.1}
+                    ,\frac{0.005*10^{-3}}{0.1}
+                \right)
+                = &\\&
+                =\phi_{2.2}\left(
+                    1.5*10^5
+                    ,5*10^{-5}
+                \right)
+                \cong 0.0020
+            &
+        \end{flalign*}
+    \end{answerBox}
+    \begin{answerBox}*{} % RS 
+        \begin{flalign*}
+            &
+                \therefore
+                W_{b.2}
+                \cong &\\&
+                \cong \left(
+                    \frac{0.00149*70}{0.2^{5}}
+                    +\frac{0.0020*50}{0.1^{5}}
+                \right)
+                \left(
+                    10^6*0.5*10^{-3}*0.15
+                \right)^3
+                \,\frac{\pi}{700^2}
+                = &\\&
+                = \left(
+                    \frac{1.49*70}{2^{5}}
+                    *10^{2}
+                    +
+                    10^{4}
+                \right)
+                \left(
+                    5*15
+                \right)^3
+                \,\frac{\pi}{700^2}
+                \cong
+                \num{2.7929751708180440105e4}
+                > &\\&
+                >
+                W_{b.1}
+                = -\adif{P}_{b.1}\,G_v
+                = -\adif{P}_{b.1}
+                \frac{Re_1\,\mu\,\pi\,D_1}{\rho\,4}
+                \cong &\\&
+                \cong 350*10^3
+                \frac{10^6*0.005*10^{-3}*\pi*0.15}{700*4}
+                \cong
+                \num{294.524311274043116}
+                &\\[1.5ex]&
+                \therefore\ 
+                \text{É necessário uma bomba mais forte}
+            &
+        \end{flalign*}
+    \end{answerBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Uma bomba desenvolve uma pressão de 800\,\unit{\kilo\newton\,\metre^{-2}} e bombeia água por um tubo de 300\,\unit{\metre} (diâmetro \(= 1.5\,\unit{\deci\metre}\)) de um reservatório à pressão atmosférica para um reservatório 60\,\unit{\metre} acima, também à pressão atmosférica. Com as válvulas completamente abertas o caudal é 0.05\,\unit{\metre^3\,\second^{-1}}. Devido à corrosão e às incrustações, a rugosidade efectiva do tubo aumenta 10 vezes. De que percentagem diminui o caudal? Despreze a variação de energia cinética.
+} % Q2
+    
+    % \paragraph*{Dados:}
+    \begin{itemize}
+        \begin{multicols}{3}
+            \item \(\adif{P}_b = 800\,\unit{\kilo\newton\,\metre^{-2}}\)
+            \item \(L = 300\,\unit{\metre}\)
+            \item \(D = 1.5\,\unit{\deci\metre}\)
+            \item \(Z_2 = 60\,\unit{\metre}\)
+            \item \(G_{v.0} = 0.05\,\unit{\metre^3\,\second^{-1}}\)
+            \item \(\varepsilon=10\,\varepsilon_0\)
+            \item \(\mu = 1\E-3\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}}\)
+            \item \(\rho = 1000\,\unit{\kilo\gram\,\metre^{-3}}\) 
+        \end{multicols}
+    \end{itemize}
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                \frac{G_{v.1}}{G_{v.0}}
+                = G_{v.0}^{-1}
+                \,\bar{v}_{1}\,\pi\,(D/2)^2
+                = \frac{\pi\,D^2}{G_{v.0}\,4}
+                \left(
+                    \frac{Re_1\,\mu}{D\,\rho}
+                \right);
+                &\\[1.5ex]&
+                % 
+                % 
+                % 
+                \varepsilon_0\left(
+                    \phi,
+                    Re
+                \right)
+                = \varepsilon_0\left(
+                    \frac{-\adif{P}_{at}\,D}{4\,L\,v^2\,\rho},
+                    \frac{\bar{v}\,D\,\rho}{\mu}
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \frac{
+                        h_{at}\,\rho\,g\,D
+                    }{
+                        4\,L\,\rho
+                    }\left(
+                        \frac{G_v}{\pi\,(D/2)^2}
+                    \right)^{-2},
+                    \frac{D\,\rho}{\mu}
+                    \frac{G_v}{\pi\,(D/2)^2}
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \frac{
+                        (h_b-Z_2)\,g\,\pi^2\,D^5
+                    }{
+                        L\,G_v^2\,64
+                    }
+                    , \frac{
+                        \rho\,G_v\,4
+                    }{
+                        \mu\,\pi\,D
+                    }
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \frac{
+                        \left(
+                            \frac{-\adif{P}_b}{\rho\,g}
+                            -Z_2
+                        \right)
+                        \,g\,\pi^2\,D^5
+                    }{
+                        L\,G_v^2\,64
+                    }
+                    , \frac{
+                        \rho\,G_v\,4
+                    }{
+                        \mu\,\pi\,D
+                    }
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \frac{
+                        \left(
+                            -\adif{P}_b
+                            -Z_2\,\rho\,g
+                        \right)
+                        \pi^2\,D^5
+                    }{
+                        L\,G_v^2\,64\,\rho
+                    }
+                    , \frac{
+                        \rho\,G_v\,4
+                    }{
+                        \mu\,\pi\,D
+                    }
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \frac{
+                        \left(
+                            800*10^3+60*10^3*\num{9.780327}
+                        \right)
+                        \,\pi^2*0.15^5
+                    }{
+                        300*10^3*0.005^2*64*10^3
+                    }
+                    , \frac{
+                        10^3*0.05*4
+                    }{
+                        10^{-3}*\pi*0.15
+                    }
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \frac{
+                        \left(
+                            80+6*\num{9.780327}
+                        \right)
+                        \,\pi^2*0.15^5
+                    }{
+                        3*5^2*64
+                    }\,*10^2
+                    , \frac{
+                        10^6*4
+                    }{
+                        \pi*3
+                    }
+                \right)
+                = &\\&
+                = \varepsilon_0\left(
+                    \num{2.16538328716913e-3}
+                    , \num{4.2441318157838756205e5}
+                \right)
+                \cong 0.00059*0.15 = 8.85*10^{-5}
+            &
+        \end{flalign*}
+    \end{answerBox}
+    \begin{answerBox}*{} % RS 
+        \begin{flalign*}
+            &
+                % 
+                % 
+                % 
+                Re_1\left(
+                    \phi_1\,Re_1^2
+                    ,\varepsilon_1/D
+                \right)
+                = Re_1\left(
+                    \left(
+                        \frac{
+                            -\adif{P}_{at}\,D
+                        }{
+                            4\,L_{eq}\,v_1^2\,\rho
+                        }
+                    \right)
+                    \left(
+                        \frac{\bar{v}_1\,D\,\rho}{\mu}
+                    \right)^2
+                    ,\frac{10\,\varepsilon_0}{D}
+                \right)
+                = &\\&
+                =
+                Re\left(
+                    \frac{
+                        -\adif{P}_{at}\,D^3\,\rho
+                    }{
+                        4\,L_{eq}\,\mu^2
+                    }
+                    ,\frac{10\,\varepsilon_0}{D}
+                \right)
+                % = &\\&
+                =
+                Re\left(
+                    h_{at}\,\rho\,g
+                    \frac{
+                        \,D^3\,\rho
+                    }{
+                        4\,L_{eq}\,\mu^2
+                    }
+                    ,\frac{\varepsilon}{D}
+                \right)
+                = &\\&
+                =
+                Re\left(
+                    (h_b-Z_2)
+                    \frac{
+                        \,D^3\,\rho^2\,g
+                    }{
+                        4\,L_{eq}\,\mu^2
+                    }
+                    ,\frac{\varepsilon}{D}
+                \right)
+                % = &\\&
+                =
+                Re\left(
+                    \left(
+                        \frac{-\adif{P}_{b}}{\rho\,g}
+                        - Z_2
+                    \right)
+                    \frac{
+                        \,D^3\,\rho^2\,g
+                    }{
+                        4\,L_{eq}\,\mu^2
+                    }
+                    ,\frac{\varepsilon}{D}
+                \right)
+                = &\\&
+                =
+                Re\left(
+                    \left(
+                        -\adif{P}_{b}
+                        - Z_2\,\rho\,g
+                    \right)
+                    \frac{
+                        D^3\,\rho
+                    }{
+                        4\,L_{eq}\,\mu^2
+                    }
+                    ,\frac{\varepsilon}{D}
+                \right)
+                = &\\&
+                =
+                Re\left(
+                    \left(
+                        800*10^3
+                        - 60*10^3*\num{9.780327}
+                    \right)
+                    \frac{
+                        (0.15)^3\,10^3
+                    }{
+                        4*300*(10^{-3})^2
+                    }
+                    ,\frac{10\varepsilon_0}{0.15}
+                \right)
+                = &\\&
+                =
+                Re\left(
+                    \left(
+                        800
+                        - 60*\num{9.780327}
+                    \right)
+                    \frac{
+                        (0.15)^3
+                    }{
+                        4*300
+                    }*10^{12}
+                    ,\frac{10\varepsilon_0}{0.15}
+                \right)
+            &
+        \end{flalign*}
+    \end{answerBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q3
+    
+    Pretende-se construir um permutador de calor com um certo número de tubos, todos com 25\,\unit{\milli\metre} de diâmetro e 5\,\unit{\metre} de comprimento, dispostos em paralelo. O permutador será utilizado como arrefecedor, com uma capacidade de 5\,\unit{\mega\watt} e o aumento de temperatura na água de alimentação deve ser de 20\,\unit{\kelvin}. Sabendo que a queda de pressão nos tubos não deve exceder 2\,\unit{\kilo\newton\,\metre^{-2}}, calcular o número mínimo de tubos a instalar. Supor que os tubos são lisos. 
+    
+    \paragraph*{Dados}
+    \begin{description}
+        \begin{multicols}{2}
+            \item[\chemmu] \(=1\,\unit{\milli\newton\,\second\,\metre^{-2}}\) 
+            \item[\chemrho] \(=1000\,\unit{\kilo\gram\,\metre^{-1}}\)
+        \end{multicols}
+        \item[\(C_{p}(\ch{H2O})\)] \(=4.18\E3\,\unit{\joule\,\kilo\gram^{-1}\,\kelvin^{-1}}\)
+    \end{description}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q4
+    
+    Calcular o diâmetro hidráulico médio (\(d_{hm}\)) do espaço anelar entre um tubo de 4\,\unit{\centi\metre} e outro de 5\,\unit{\centi\metre}.
+
+    \begin{BM}
+        d_{hm}
+        = 4\,\frac{\text{sessão reta}}{\text{perímetro molhado}}
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q5
+    
+    Um permutador de calor de caixa e tubos tem uma secção recta conforme se representa na figura seguinte. O permutador consiste em 9 tubos com diâmetro de 2.5\,\unit{\centi\metre} inseridos dentro de uma conduta circular com um diâmetro de 12.5\,\unit{\centi\metre}. O permutador tem um comprimento de 1.5\,\unit{\metre}. No lado da caixa circula água, e no interior dos tubos circula um termofluído.
+
+    \paragraph*{água}
+    \begin{minipage}{.5\textwidth}
+        \begin{description}
+            \begin{multicols}{2}
+                \item[\chemrho] \(= 1000\,\unit{\kilo\gram\,\metre^{-3}}\) 
+                \item[\chemmu] \(= 1\E-3\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}}\) 
+            \end{multicols}
+        \end{description}
+    \end{minipage}
+
+    \paragraph*{termofluído}
+    \begin{minipage}{.5\textwidth}
+        \begin{description}
+            \begin{multicols}{2}
+                \item[\chemrho] \(=8000\,\unit{\kilo\gram\,\metre^{-3}}\) 
+                \item[\chemmu] \(=5\E-3\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}}\) 
+            \end{multicols}
+        \end{description}
+    \end{minipage}
+
+    % \begin{center}
+    %     \includegraphics[width=.7\textwidth]{Screenshot 2022-10-27 at 12.26.15.png}
+    % \end{center}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q5.1
+    
+    Calcule a queda de pressão (\(-\adif{P}_{at}\)) no lado da caixa quando o caudal de água em circulação nessa zona é \(G_v = 0.825\,\unit{\metre^3\minute^{-1}}\). Suponha que tanto a parede exterior dos tubos como a parede interna da caixa têm superfícies lisas. Para efeitos de cálculo use o diâmetro hidráulico médio \(d_{hm}\):
+
+    \begin{BM}
+        d_{hm}
+        = 4\,\frac{\text{sessão reta}}{\text{perímetro molhado}}
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q5.2
+    
+    Calcule o caudal de termofluído em circulação no interior dos tubos quando a queda de pressão no interior dos tubos é (\(-\adif{P}_{at}= 6\,\unit{\kilo\pascal}\)) . A rugosidade da superfície interior dos tubos é 0.2\,\unit{\milli\metre}.
+    
+\end{questionBox}
+
+% \setcounter{question}{2}
+
+% \begin{questionBox}1{} % Q3
+    
+    
+    
+% \end{questionBox}
+
+% \setcounter{subquestion}{2}
+% \begin{questionBox}2{} % Q3.3
+    
+%     \begin{flalign*}
+%         &
+%             -\adif{P}_{at}
+%             = \frac{4\,\Phi\,L\,\rho\,v_2^2}{D}
+%             &\\&
+%             \Phi = f\left(
+%                 Re,\frac{e}{D}
+%             \right)
+%             &\\&
+%             v_{tb} 
+%             = \frac{G_v}{400\,\pi\,(D/2)^2}
+%             = \frac{0.004}{400\,\pi\,(1\E-2/2)^2}
+%             \cong
+%             \num{1.273239544735163}
+%             &\\&
+%             Re
+%             = \frac{D\,\rho\,\bar{v}}{\mu}
+%             = \frac{
+%                 (1\E-2)\,1\E3\,(\num{1.273239544735163})
+%             }{
+%                 1\E-3
+%             }
+%             = \num{1.273239544735163e4}
+%             &\\&
+%             \frac{e}{D} = \num{0.0046}
+%             &\\&
+%             \Phi = \num{0.0046}
+%             &\\&
+%             -\adif{P}_{at}
+%             = \frac{
+%                 4\,\Phi\,\rho\,v^2
+%             }{
+%                 D
+%             }
+%             = \frac{
+%                 (4)\,(\num{0.0043})\,(1\E4)\,(1.27)^2
+%             }{1\E-2}
+%             \cong
+%             \num{27741.88}
+%         &
+%     \end{flalign*}
+    
+% \end{questionBox}
+
+\end{document}

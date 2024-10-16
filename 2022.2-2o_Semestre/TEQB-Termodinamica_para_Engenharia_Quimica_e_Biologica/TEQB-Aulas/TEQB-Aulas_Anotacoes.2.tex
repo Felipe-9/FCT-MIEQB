@@ -1,0 +1,278 @@
+% !TEX root = ./TEQB-Aulas_Anotações.2.tex
+\providecommand\mainfilename{"./TEQB-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Aulas_Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[TEQB]
+{Anotações}
+{Anotações}
+
+\renewcommand\thequestion{Questão 1\,--\,\arabic{question}}
+\renewcommand\thesubquestion{Q1\,--\,\arabic{question} \alph{subquestion})}
+
+\begin{sectionBox}1{Gás Perfeito}
+    
+    \begin{BM}
+        P\,V = n\,R\,T
+        \\
+        U = U_{(T)}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    1\,\unit{\mole} de um gás perfeito, inicialmente a 25\,\unit{\celsius} e 1\,\unit{\bar}, sofre uma expansão. No estado final, \(T = 25\,\unit{\celsius}\) e \(P = 0.5\,\unit{\bar}\).
+
+\end{questionBox}
+
+\begin{questionBox}2m{}
+    
+    Calcule o trabalho de expansão posto em jogo quando o processo se dá seguindo dois percursos diferentes:
+
+    \begin{questionBox}3{}
+
+        Processo reversível a T constante
+        
+        \begin{flalign*}
+            &
+                \lvert w \rvert
+                = 1718\,\unit{\joule}
+            &\\\\&
+                Q - W  
+                = Q - 1718\,\unit{\joule}
+                = \Delta U = 0
+                \implies
+                Q = 1718\,\unit{\joule}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        
+        processo irreversível, mediante alívio súbito da pressão exterior para 0.5\,\unit{\bar}, seguida de expansão do gás contra essa pressão.
+
+        \begin{flalign*}
+            &
+                \lvert w \rvert
+                = 1240\,\unit{\joule}
+            &\\\\&
+                Q - W  
+                = Q - 1240\,\unit{\joule}
+                = \Delta U = 0
+                \implies
+                Q = 1240\,\unit{\joule}
+            &
+        \end{flalign*}
+
+        % \begin{flalign*}
+        %     &
+        %         Q - W  
+        %         = Q - 1240\,\unit{\joule}
+        %         = \Delta U = 0
+        %         \implies
+        %         Q = 1240\,\unit{\joule}
+        %     &
+        % \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\setcounter{subquestion}{2}
+\begin{questionBox}2{}
+
+    Calcule \(\Delta U\) e \(Q\) para as alineas a.I e a.II.
+    
+    \begin{flalign*}
+        &
+            \Delta U 
+            = Q + W 
+            = Q_v - \int P_{ext}\,\odif{v}
+            = Q_v
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    Deduza as expressões para \(\Delta U\) e \(\Delta H\) associados a cada um dos passos do percurso a.II
+
+    \begin{flalign*}
+        &
+            \Delta U
+            = Q + W
+            = Q_p - \int P_{ext} \odif{v}
+            = Q_p - P \adif{v}
+        &\\[1.5ex]&
+            H 
+            \equiv U + P\,V
+            \implies &\\&
+            \implies
+            \Delta H
+            = \Delta U + \Delta (P\,V)
+            % = &\\&
+            % = \Delta U + P\,\Delta V + \Delta P\,V
+            % = \Delta U + P_2\,(V_2-V_1) + (P_2-P_1)\,V_2
+            % = \Delta U + P_2\,V_2-P_2\,V_1 + P_2\,V_2-P_1\,V_2
+            % = &\\&
+            = \Delta U + (
+                P_2\,V_2
+                - P_1\,V_1
+            )
+            = \Delta U + P\,\Delta V
+            = Q_p
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \Delta U_{1\to 3} 
+            = Q_V 
+            = \int_{1}^{3} n\,C_V\,\odif{T}
+            = n\,C_V\int_{1}^{3}\odif{T}
+            = n\,C_V\,(T_3-T_1)
+        &\\[1.5ex]&
+            \Delta U_{3\to 2}
+            = Q_p
+            = \int_{3}^{2} n\,C_p\,\odif{T}
+            = n\,C_p\,\int_{3}^{2} \odif{T}
+            = n\,C_p\,(T_2-T_3)
+        &\\[1.5ex]&
+            \implies
+            \Delta U_{1\to 2}
+            = \Delta U_{1\to 3}
+            + \Delta U_{3\to 2}
+            = n\,C_V\,(T_3-T_1)
+            + n\,C_p\,(T_2-T_3)
+        &
+    \end{flalign*}
+
+    \paragraph{Nota:} Apenas para gases perfeitos (\(C_V \text{ e } C_p\) constantes)
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Entalpia nos gáses perfeitos}
+
+    \begin{BM}
+        H
+        \equiv U + P\,V
+        = U + n\,R\,T
+        = H_{(T)}
+    \end{BM}
+
+    \begin{sectionBox}3{}
+        
+        \begin{BM}
+            C_p = C_V + R
+        \end{BM}
+    
+        \begin{flalign*}
+            &
+                \odif{H}
+                = n\,C_p\,\odif{T}
+                = \odif{U} + \odif{n\,R\,T}
+                = n\,C_V\,\odif{T}
+                + n\,R\,\odif{T}
+                \implies &\\&
+                \implies
+                C_p = C_V + R
+            &
+        \end{flalign*}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}3{}
+        
+        \begin{BM}
+            p\,V^\gamma = cte
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{}
+    
+    \begin{BM}
+        Q_V = \Delta U = \int n\,C_V\,\odif{T}
+        \\
+        Q_p = \Delta H = \int n\,C_p\,\odif{T}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Um \unit{\mole} de um gás perfeito, inicialmente à pressão de 8\,\unit{\bar} e à temperatura de 140\,\unit{\celsius}, é expandido adiabaticamente contra a atmosfera, até se estabelecer o equilíbrio de pressões. Tome \(C_v = 5/2\,R\) para o gás e calcule \(\Delta U\) e \(\Delta H\) para a tranformação.
+
+    \begin{questionBox}3{\(\Delta U\)}
+        
+        \begin{flalign*}
+            &
+                \Delta U_{
+                    (8\to 1)\,\unit{\bar}
+                }
+                = Q+W
+                = W
+                = \int n\,C_V\,\odif{T}
+                = \int n\,(C_p + R)\,\odif{T}
+                = &\\&
+                = n\,\frac{5\,R}{2}\,\adif{T}
+                = 1*2.5*8.314\,(T_f - (140 + 274.15))
+            &\\[1.5ex]&
+                \Delta H_{
+                    (8\to 1)\,\unit{\bar}
+                }
+                = \int n\,C_p\,\odif{T}
+                = n\,\int (C_v-R)\,\odif{T}
+                = &\\&
+                = n\,(C_v+R)\,\adif{T}
+                = 1*3.5*8.314\,(T_f - (140 + 274.15))
+            &\\[1.5ex]&
+                w 
+                = -\int P_{ext}\,\odif{V}
+                = -P_{ext}\int \odif{V}
+                = -P_{ext}\adif{V}
+                = -P_{ext}\left(
+                    V_f-V_i
+                \right)
+                = &\\&
+                = -P_{ext}\left(
+                    \frac{n\,R\,T_f}{P_f}
+                    - \frac{n\,R\,T_i}{P_i}
+                \right)
+                = &\\&
+                = -1.01\E5
+                \,\left(
+                    (1*0.08314)\left(
+                        \frac{T_f}{1.01}
+                        - \frac{140 + 274.15}{8}
+                    \right)
+                \right)
+                \,10^{-3}
+                = &\\&
+                = -1.01\E2 \left(
+                    (1*0.08314)\left(
+                        \frac{T_f}{1.01}
+                        - \frac{140 + 274.15}{8}
+                    \right)
+                \right)
+                = \Delta U
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\end{document}

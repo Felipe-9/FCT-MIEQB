@@ -1,0 +1,90 @@
+% !TEX root = ./QF_A-Testes_Resolucoes.2022.3.tex
+\providecommand\mainfilename{"./QF_A-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Testes_Resolucoes.2022.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QF_A-Testes_Resolucoes.2022.3}}}
+% \tikzsetexternalprefix{./.build/figures/QF_A-Testes_Resolucoes.2022.3/graphics/}
+
+\mymakesubfile{3}
+[QF A]
+{Teste Cinética Química} % Subfile Title
+{Teste Cinética Química} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A seguinte reação pode ser feita sobre vários catalisadores sólidos
+} % Q1
+    \begin{center}\bfseries\large
+        \ch{CO\gas{} + 1/2 O2\gas{} -> CO2\gas{}}
+    \end{center}
+
+    Explique detalhadamente a razão destas observações seguintes, deduzindo as expressões, definindo \(k_1, k_2,k_3,k_4\) e avançando um mecanismo para cada caso.
+    \vspace{3ex}
+    \answer{}
+    \begin{questionBox}{} % Q
+        Seguindo a reação, esperamos a equação de velocidade:
+        \begin{BM}
+            v=k\,\frac{
+                p_{\ch{O2}}^{1/2}\,p_{\ch{CO}}
+            }{
+                p_{\ch{CO2}}
+            }
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.1
+        Quando a reação se processa sobre \emph{platina}, a velocidade é dada por:
+    } % Q1.1
+        \begin{BM}
+            v=k_1\frac{p_{\ch{O2}}^{1/2}}{p_{\ch{CO}}}
+        \end{BM}
+        \answer{}
+        \begin{itemize}
+            \item Por não encontrarmos a influencia da concentração de \ch{CO2} podemos supor que a platina esteja o adsorvendo fortemente
+        \end{itemize}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Quando a reação se passa por \emph{níquel}, a velocidade é dada por:
+    } % Q1.2
+        \begin{BM}
+            v=k_2
+            \,\frac{
+                  p_{\ch{CO}}
+                \,p_{\ch{O2}}^{1/2}
+            }{
+                p_{\ch{CO2}}^2
+            }
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.3
+        Quando a reação se passa por \emph{ródio}, a velocidade é dada por:
+    } % Q1.3
+        \begin{BM}
+            v=k_3
+            \,\frac{
+                p_{\ch{CO}}
+                \,p_{\ch{O2}}
+            }{
+                p_{\ch{CO2}}
+            }
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.4
+        Quando a reação se passa por \emph{tungsténio}, a velocidade é dada por:
+    } % Q1.4
+        \begin{BM}
+            v=k_4
+            \,p_{\ch{O2}}
+        \end{BM}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,139 @@
+% !TEX root = ./QOG-Tests_Resolutions.2021.2.1.tex
+\providecommand\mainfilename{"./QOG-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Tests_Resolutions.2021.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QOG-Tests_Resolutions.2021.2.1}}}
+% \tikzsetexternalprefix{./.build/figures/QOG-Tests_Resolutions.2021.2.1/graphics/}
+
+\mymakesubfile{1}
+[QOG]
+{Teste 2021.1 Resolução} % Subfile Title
+{Teste 2021.1 Resolução} % Part Title
+
+\renewcommand\thesubquestion{Q\arabic{question} \alph{subquestion})}
+
+\begin{questionBox}1{ % Q1
+    Use os símbolos \chemdelta+ e \chemdelta- para indicar a polaridade na ligação assinalada em cada um dos compostos e indique, justificando, qual das ligações é mais polar.
+} % Q1
+    \begin{multicols}{3}
+
+        \begin{questionBox}2{ % Q1.1
+            \ch{HO-H}
+        } % Q1.1
+            \paragraph*{RS:}
+            \ch{HO^{\chemdelta-}-H^{\chemdelta+}}
+        \end{questionBox}
+
+        \begin{questionBox}2{ % Q1.2
+            \ch{H3C-NH2}
+        } % Q1.2
+            \paragraph*{RS:}
+            \ch{H3C^{\chemdelta^+}-N^{\chemdelta-}H}
+        \end{questionBox}
+
+        \setcounter{subquestion}{3}
+
+        \begin{questionBox}2{ % Q1.4
+            \ch{H2N-OH}
+        } % Q1.4
+            \paragraph*{RS:}
+            \ch{H2N^{\chemdelta-}-O^{\chemdelta+}H}
+        \end{questionBox}
+
+    \end{multicols}
+
+    \setcounter{subquestion}{2}
+
+    \begin{questionBox}2{ % Q1.3
+        \ch{F-Br}
+    } % Q1.3
+
+        \begin{answerBox}{
+            \ch{F^{\chemdelta-}-Br^{\chemdelta+}}
+        } % RS 
+            É a ligação mais polar, não só pela diferença de EN mas tambem pelo tamanho atomico do Bromo, que terá muito menos influência nos eletrons da camada de valência
+        \end{answerBox}
+    \end{questionBox}
+\end{questionBox}
+
+
+\begin{questionBox}1{ % Q2
+    Desenhe as estruturas dos seguintes compostos:
+} % Q2
+    \begin{multicols}{2}
+        \setchemfig{angle increment=10}
+        
+        \begin{questionBox}2{ % Q2.1
+            \iupac{Alcool-Iso|prop|ílico}
+        } % Q2.1
+
+            \begin{description}
+                \item[Alcool] deve conter pelo menos um grupo \ch{OH}
+                \item[Iso] O grupo está localizado no meio criando uma simetria
+                \item[Prop] Cadeia de 3 Carbonos
+            \end{description}
+            \begin{center}
+                \chemfig[angle increment=30]{
+                    C
+                    (-[-3]OH)
+                    (
+                        -[(+1+0)]C(-[(+3+0)]H)
+                        -[(-1+0)]H
+                    )
+                    (
+                        -[(-1-6)]C(-[(-3+6)]H)
+                        -[(+1-6)]H
+                    )
+                }
+            \end{center}
+        \end{questionBox}
+
+        \begin{questionBox}2{ % Q2.2
+            \iupac{Iod|eto de \textit{sec}-but|ilo}
+        } % Q2.2
+            \begin{description}
+            \item[Iod] Radical de Iodo
+            \item[\textit{sec}] segundo carbono da cadeia
+            \item[but] Cadeia de 4 carbonos
+            \end{description}
+
+            \chemfig[angle increment=30]{
+                C(-[5]H)(-[-3]H)
+                -[ 1]C(-[ 3]I)
+                -[-1]C(-[-3]H)
+                -[ 1]C(-[ 3]H)(-[-1]H)
+            }
+
+        \end{questionBox}
+
+        \begin{questionBox}2{ % Q2.3
+            \iupac{tert-but|il|amina}
+        } % Q2.3
+            \begin{description}
+            \item[\textit{Tert}] Tetraedro
+            \item[but] Cadeia de 3 Carbonos
+            \item[Amina] Grupo amina (\ch{NH2})
+            \end{description}
+
+            \begin{center}
+                \chemfig[angle increment=15]{
+                    C
+                    (-[  6]NH2)
+                    (-[- 1]CH)
+                    (-[- 3]CH)
+                    (-[-10]CH)
+                }
+            \end{center}
+
+        \end{questionBox}
+
+    \end{multicols}
+\end{questionBox}
+
+\end{document}

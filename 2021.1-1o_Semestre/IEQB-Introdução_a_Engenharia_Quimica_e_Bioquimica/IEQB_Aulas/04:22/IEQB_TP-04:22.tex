@@ -1,0 +1,293 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Tabular
+\usepackage{multirow}
+
+% Unidades SI
+\usepackage{siunitx}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+\newcommand{\mol}[2][]{ \text{mol}_{\ch{ #2 }\,\text{#1}} } % mol
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+%\renewcommand\thesection{Questão \arabic{section} }
+\renewcommand\thesubsubsection{\alph{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB TP - Exercícios reatores com reação%
+}
+\author{Felipe Pinto - 61387}
+\date{22/04 - 2021.1}
+
+\maketitle
+
+\begin{multicols}{2}
+\tableofcontents
+\end{multicols}
+
+\break
+
+\setcounter{section}{4}
+\setcounter{subsection}{5}
+
+\subsection{}
+\bm{ \ch{ C4H10 + 13/2 O2 -> 4 CO2 + 5 H2O} }
+
+\begin{center}
+\begin{tabular}{ r *{2}{| S @{ } l } | }
+
+	\multicolumn{1}{c}{}
+	& \multicolumn{2}{c}{in}
+	& \multicolumn{2}{c}{out}
+	
+	\\ \cline{2-5}
+	
+	\ch{C4H10}
+	&  &
+	&  &
+	
+	\\
+	
+	\ch{O2}
+	&  &
+	& 5.12 & \% mol
+	
+	\\
+	
+	\ch{N2}
+	& 84.25 & \% mol
+	& 84.25 & \% mol
+	
+	\\
+	
+	\ch{CO2}
+	& \multicolumn{2}{c|}{-}
+	& 10.63 & \% mol
+	
+	\\
+	
+	\ch{H2O}
+	& \multicolumn{2}{c|}{-}
+	&  &
+	
+	\\ \cline{2-5}
+	
+	Total
+	&  &
+	&  &
+	
+	\\ \cline{2-5}
+	
+\end{tabular}
+\end{center}
+
+$\cdots$
+
+\subsection{}
+\begin{center}
+
+{\bfseries\ch{ C3H8 + 3 H2O -> 3 CO + 7 H2}}
+
+\vspace{2em}
+
+\begin{tabular}{ 
+	r 
+	*{2}{| S[
+		table-figures-integer = 1, 
+		table-figures-decimal = 1,
+	]} 
+	| S | }
+	
+	\multicolumn{1}{c}{}
+	& \multicolumn{1}{c}{in (mol/min)}
+	& \multicolumn{1}{c}{out (mol/min)}
+	& \multicolumn{1}{c}{\%out}
+	
+	\\ \cline{2-4}
+	
+	\ch{C3H8}
+	& 200  
+	&  70  
+	& 3.7 
+	
+		
+	\\
+	
+	\ch{H2O}
+	& 900  
+	& 510 
+	& 27
+	
+	\\
+	
+	\ch{CO}
+	& \multicolumn{1}{c|}{-}
+	& 390 
+	& 21
+	
+	\\
+	
+	\ch{H2}
+	&  \multicolumn{1}{c|}{-}
+	& 910 
+	& 48
+	
+	\\ \cline{2-4}
+	
+	Total
+	& 1100 
+	& 1880 
+	& 100
+	
+	\\ \cline{2-4}
+	
+\end{tabular}
+
+\end{center}
+
+\begin{flalign*}
+&
+	\mol[in]{H2O}/min 
+= 
+	\mol[in]{C3H8}
+	\,\frac{3\,\mol[in]{H2O}}{1\,\mol[in]{C3H8}}
+	*1.5
+=
+	200
+	\,\frac{3}{1}
+	*1.5
+\cong 
+	900\,\mol[in]{H2O}
+&
+\end{flalign*}
+
+\begin{flalign*}
+&
+	\mol[out]{C3H8} = 200\,\mol[out]{C3H8}
+	\,\frac{35\,\mol[out]{C3H8}}{100\,\mol[in]{C3H8}}
+\cong
+	70\,\mol[out]{C3H8}
+&
+\end{flalign*}
+
+\begin{flalign*}
+&
+	\mol[out]{H2O}
+=
+	900\,\mol[in]{H2O} 
+	- 200\,\mol[in]{C3H8}
+	\,\frac{3\,\mol[in]{H2O}}{1\,\mol[in]{C3H8}}
+	\,\frac{65\,\mol[in]{H2O}}{100\,\mol[in]{H2O}}
+\cong
+	510\,\mol[out]{H2O}
+&
+\end{flalign*}
+
+\begin{flalign*}
+&
+	\mol[out]{CO}
+=
+	\frac{ 3\,\mol[out]{CO} }{ 1\,\mol[in]{C3H8} }
+	\,\frac{ 65\,\mol[in]{C3H8} }{ 100\,\mol[in]{C3H8} }
+	\,200\,\mol[in]{C3H8}
+\cong 
+	390\,\mol[out]{CO}
+&
+\end{flalign*}
+
+\begin{flalign*}
+&
+	\mol[out]{H2}
+=
+	\frac{ 7\,\mol[out]{H2} }{ 3\,\mol[out]{CO} }
+	\,390\,\mol[out]{CO}
+\cong
+	910\,\mol[out]{H2}
+&
+\end{flalign*}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+% !TEX root = ./FT_I-Exercicios_Resolucoes.6.tex
+\providecommand\mainfilename{"./FT_I-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Exercicios_Resolucoes.6.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/FT_I-Exercicios_Resolução.6}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{6}
+[FT\,I]
+{Exercicios}
+{Exercicios}
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % Q2
+    Circula água a 2\,\unit{\metre/\second} por um tubo de 2.5\,\unit{\metre} de comprimento e 25\,\unit{\milli\metre} de diâmetro. Sabendo que o tubo está a 320\,\unit{\kelvin} e que a água entra a 293\,\unit{\kelvin} e sai a 295\,\unit{\kelvin}, qual é o valor do coeficiente de transferência de calor.
+} % Q2
+    \paragraph*{Agua:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(C_P=4181\,\unit{\joule\,\gram^{-1}\,\kelvin^{-1}}\)
+            \item \(\rho=1000\,\unit{\kilo\gram\,\metre^{-3}}\)
+        \end{multicols}
+    \end{itemize}
+
+
+    \begin{flalign*}
+        &
+            \bar{h}
+            = h_{int}
+            = \frac{Q}{A_{cont,int}\,\adif{T}_{\ln}}
+            =
+            \frac{
+                G_{Agua}
+                \,C_{P,agua}
+                \,\adif{T}_{agua}
+            } {
+                A_{cont,int}
+                \,\left(
+                    \frac{\adif{\adif{T}}}{\adif{\ln{\adif{T}}}}
+                \right)
+            }
+            = &\\&
+            =
+            \frac{
+                \left(
+                    \rho\,v\,A_{int}
+                \right)
+                \,C_{P,agua}
+                \,\adif{T}_{agua}
+            } {
+                A_{cont,int}
+                \,\left(
+                    \adif{T_2}-\adif{T}_1
+                \right)
+            }
+            \ln\frac{\adif{T}_2}{\adif{T}_1}
+            = &\\&
+            =
+            \frac{
+                \left(
+                    1000*2*\pi*(25*10^{-3})^2
+                \right)
+                *4181
+                *(295-293)
+            } {
+                \pi*(25*10^{-3}/2)\,2.5
+                \,\left(
+                    (320-295)-(320-293)
+                \right)
+            }
+            \ln\frac{320-295}{320-293}
+            = &\\&
+            =
+            -2*2*4181*10
+            \ln\frac{320-295}{320-293}
+            \cong
+            \num{1287.096451960610103e1}
+            % 1608.7
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+\end{document}

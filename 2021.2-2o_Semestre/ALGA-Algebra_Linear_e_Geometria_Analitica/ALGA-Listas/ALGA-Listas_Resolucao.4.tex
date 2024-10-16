@@ -1,0 +1,152 @@
+% !TEX root = ./ALGA-Listas_Resolução.4.tex
+\providecommand\mainfilename{"./ALGA-Listas_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Listas_Resolução.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{4}
+[ALGA]
+{Lista}
+{Lista}
+
+% Q26
+\setcounter{question}{25}
+\begin{questionBox}1{}
+    
+    \begin{questionBox}2{}
+        
+        \begin{BM}
+                f
+            :   \begin{array}{l}
+                    \mathbb{R}^{4}\to\mathbb{R}^{4}
+                \\  \Img f 
+                =   \langle 
+                        (1,0,0,1)
+                        (0,1,1,0)
+                        (0,1,2,0)
+                    \rangle
+                \\  \Dim\Nuc f = 2
+                \end{array}
+        \end{BM}
+        
+        \begin{flalign*}
+            &
+                \text{Caracteristica}
+                \begin{bmatrix}
+                    1 & 0 & 0 & 1
+                \\  0 & 1 & 1 & 0
+                \\  0 & 1 & 2 & 0
+                \end{bmatrix}
+            =   3
+            &\\&
+                \Dim\mathbb{R}^4
+            =   4
+            \neq
+                \Dim\Nuc g
+            +   \Dim\Img g
+            =   2 + 3 = 5
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+    \begin{questionBox}{2}
+        \begin{BM}
+                g
+            :   \begin{array}{l}
+                    \mathbb{R}^4\to\mathbb{R}^3
+                \\  \Nuc g
+                =   \langle
+                        (0,1,1,0)
+                        (1,1,1,1)
+                    \rangle
+                \\  (1,1,1)\in\Img g
+                \end{array}
+        \end{BM}
+        % \begin{flalign*}
+        %     &
+        %         \Dim
+        %     &
+        % \end{flalign*}
+    \end{questionBox}
+    
+    \begin{questionBox}2{}
+        \begin{BM}
+                h
+            :   \begin{array}{l}
+                    \mathbb{R}^3\to\mathbb{R}^4
+                \\  \Img h
+                =   \langle
+                        (1,2, 0,-4)
+                        (2,0,-1,-3)
+                    \rangle
+                \end{array}
+        \end{BM}
+        \begin{flalign*}
+            &
+                \Base_{\mathbb{R}^3}
+            =   \left(
+                    (1,0,0)
+                    (0,1,0)
+                    (0,0,1)
+                \right)
+            &\\&
+                \begin{cases}
+                    h(e_1)=(1,2,0,-4)
+                \\  h(e_2)=(2,0,-1,-3)
+                \\  h(e_3)=(0,0,0,0)
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+% Q5.42
+\setcounter{question}{41}
+\begin{questionBox}1{}
+    
+    \begin{BM}
+            f
+        :   \begin{array}{l}
+                \mathbb{R}^3\to\mathbb{R}^2
+            \\  (a,b,c)\mapsto(a+b,b_c)
+            \\  \Base_2
+            =   \left(
+                    (0,1,0), 
+                    (1,0,1), 
+                    (1,0,0)
+                \right)
+            \\  \Base_2'
+            =   \left(
+                    (1,1,0),
+                    (0,1,0)
+                \right)
+            \end{array}
+    \end{BM}
+    
+    % e
+    \setcounter{subquestion}{4}
+    \begin{questionBox}2{}
+        \begin{BM}
+            \mathcal{M}(f,B_2,B_2')
+        \end{BM}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    f(0,1,0)
+                    f(1,0,1)
+                    f(1,0,0)
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\end{document}

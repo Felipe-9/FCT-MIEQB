@@ -1,0 +1,721 @@
+% IQF - Miniteste 2 Moodle
+\setcounter{part}{1}
+\part{}
+% \section{}
+%
+% \begin{questionBox}1{}
+%     \begin{table}[H]\centering
+%         \begin{tabular}{l r r r}
+%             \toprule
+%
+%                 Temp (\unit{\celsius}) & 138 & 140 & 144
+%
+%             \\\midrule
+%
+%                 Metanol (\unit{\bar}) & 10.43 & 10.97 & 12.12
+%             \\  Etanol (\unit{\bar})  &  7.36 &  7.78 &  8.68
+%
+%             \\\bottomrule
+%         \end{tabular}
+%     \end{table}
+%
+%     \begin{questionBox}3{}
+%         \begin{flalign*}
+%             &
+%                 x\,\unit{\percent\of{\ch{CH3OH\gas{}},138\,\unit{\celsius}}}
+%             =   P_{\ch{CH3OH\gas{}}}/P^*_{\ch{CH3OH\gas{}}}
+%             \land &\\&
+%             \land
+%                 P_{\ch{CH3OH\gas{}}}
+%             =   P_{tot} - P_{\ch{C2H5OH\gas{}}}
+%             =   P_{tot} - (1-X_{\ch{CH3OH}})\,P^*_{\ch{C2H5OH\gas{}}}
+%             \implies &\\&
+%             \implies
+%                 x\,\unit{\percent\of{\ch{CH3OH\gas{}},138\,\unit{\celsius}}}
+%             =   \frac
+%                     {P_{tot} - P^*_{\ch{C2H5OH\gas{}}}}
+%                     {P^*_{\ch{CH3OH\gas{}}} - P^*_{\ch{C2H5OH\gas{}}}}
+%             = &\\&
+%             =   \frac{10 - 7.36}{10.43 - 7.36}
+%             \,  \unit{\percent\of{\ch{CH3OH\gas{}},138\,\unit{\celsius}}}
+%             \cong
+%                 \qty{85.9934853420195}{\percent\of{\ch{CH3OH\gas{}},138\,\unit{\celsius}}}
+%             &
+%         \end{flalign*}
+%     \end{questionBox}
+%
+%     \begin{questionBox}3{}
+%         \begin{flalign*}
+%             &
+%                 y\,\unit{\percent\of{\ch{CH3OH\lqd{}},138\,\unit{\celsius}}}
+%             =   X_{\ch{CH3OH\lqd{}}}\,P^*_{\ch{CH3OH\lqd{}}}/P_{tot}
+%             \cong &\\&
+%             \cong
+%                 (\num{85.9934853420195}*10.43/10)
+%             \,  \unit{\percent\of{\ch{CH3OH\lqd{}},138\,\unit{\celsius}}}
+%             \cong
+%                 \qty{89.6912052117264}{\percent\of{\ch{CH3OH\lqd{}},138\,\unit{\celsius}}}
+%             &
+%         \end{flalign*}
+%     \end{questionBox}
+%
+% \end{questionBox}
+%
+% \begin{questionBox}1{}
+%     % \begin{flalign*}
+%     % &
+%     %     x\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH\gas{}}}}
+%     % =   P_{\ch{C2H5OH\gas{}}}/P^*_{\ch{C2H5OH\gas{}}}
+%     % \land &\\&
+%     % \land
+%     %     P_{\ch{C2H5OH\gas{}}}
+%     % =   P_{tot} - P_{\ch{H2O\gas{}}}
+%     % =   P_{tot} - (1-X_{\ch{C2H5OH\lqd{}}})\,P^*_{\ch{H2O\gas{}}}
+%     % \land &\\&
+%     % \land
+%     %     P_{tot} = X_{\ch{C2H5OH\lqd{}}}\,P^*_{\ch{C2H5OH\gas{}}}/Y_{\ch{C2H5OH\lqd{}}}
+%     % \implies &\\&
+%     % \implies
+%     %     x\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH\gas{}}}}
+%     % =   \frac
+%     %         {P^*_{\ch{H2O\gas{}}}}
+%     %         {
+%     %             P^*_{\ch{H2O\gas{}}}
+%     %         -   P^*_{\ch{C2H5OH\gas{}}}(1-1/Y_{\ch{C2H5OH\lqd{}}})
+%     %         }
+%     %     =   \frac
+%     %             {289}
+%     %             {
+%     %                 289
+%     %             -   665(1-1/15.2\%)
+%     %             }
+%     % &
+%     % \end{flalign*}
+%
+%     % \begin{flalign*}
+%     %     &
+%     %         x\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH}}}
+%     %     =   m_{\ch{C2H5OH}}/m_{sol}
+%     %     \land &\\&
+%     %     \land
+%     %         m_{sol} = m_{\ch{C2H5OH}} + m_{\ch{H2O}}
+%     %     \land &\\&
+%     %     \land
+%     %         m_{i}
+%     %     =   n_{i}\,M_{i}
+%     %     \land &\\&
+%     %     \land
+%     %         n_{i}
+%     %     =   Y_{i}\,n_{tot}
+%     %     \land &\\&
+%     %     \land
+%     %         Y_{\ch{C2H5OH\gas{}}}
+%     %     =   P_{\ch{C2H5OH\gas{}}}/P_{tot}
+%     %     \land &\\&
+%     %     \land
+%     %         P_{\ch{C2H5OH\gas{}}}
+%     %     =   X_{\ch{C2H5OH\lqd{}}}\,P^*_{\ch{C2H5OH\gas{}}}
+%     %     \land &\\&
+%     %     \land
+%     %         X_{\ch{C2H5OH\lqd{}}}
+%     %     =   \frac{\unit{\mole\of{\ch{C2H5OH}}}}{46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+%     %     \,  [\ch{C2H5OH\lqd{}}]
+%     %     =   \frac{[\ch{C2H5OH\lqd{}}]}{46.0}\unit{(\mole/\gram)\of{C2H5OH}}
+%     %     % \land &\\&
+%     %     % \land
+%     %     %     P_{tot}
+%     %     % =   P_{\ch{C2H5OH\gas{}}} + P_{\ch{H2O\gas{}}}
+%     %     \land &\\&
+%     %     \land
+%     %         P_i
+%     %     =   X_i\,P^*_i
+%     %     % \land &\\&
+%     %     % \land
+%     %     %     n_{tot}/\unit{\gram\of{Sol}}
+%     %     % =   \frac
+%     %     %         {\unit{\mole\of{C2H5OH}}}
+%     %     %         {46.0\,\unit{\gram\of{C2H5OH}}}
+%     %     % \,  \frac
+%     %     %         {15\unit{\percent\gram\of{C2H5OH}}}
+%     %     %         {\unit{\gram\of{Sol}}}
+%     %     % +       \frac
+%     %     %         {\unit{\mole\of{H2O}}}
+%     %     %         {18.0\,\unit{\gram\of{H2O}}}
+%     %     % \,  \frac
+%     %     %         {(100-15)\unit{\percent\gram\of{H2O}}}
+%     %     %         {\unit{\gram\of{Sol}}}
+%     %     \implies &\\&
+%     %     \implies
+%     %         x\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH}}}
+%     %     = &\\&
+%     %     =   \left(
+%     %             \left(
+%     %                 1
+%     %             -   \frac{[\ch{C2H5OH\lqd{}}]}{46.0}
+%     %             \right)
+%     %             \frac
+%     %                 {P^*_{\ch{H2O\gas{}}}*18.0*46.0}
+%     %                 {[\ch{C2H5OH\lqd{}}]*P^*_{\ch{C2H5OH}}*46.0}
+%     %         +   1
+%     %         \right)^{-1}
+%     %     = &\\&
+%     %     =   \left(
+%     %             \left(
+%     %                 1
+%     %             -   \frac{15.2}{46.0}
+%     %             \right)
+%     %             \frac
+%     %                 {289*18.0}
+%     %                 {15.2*665}
+%     %         +   1
+%     %         \right)^{-1}
+%     %     \cong
+%     %         \qty [round-precision=1]
+%     %             {74.3723184134861}
+%     %             {\percent(\gram/\gram)\of{\ch{C2H5OH}}}
+%     %     &
+%     % \end{flalign*}
+%
+%     \begin{flalign*}
+%         &
+%             x\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH}}}
+%         =   \left(
+%             \frac
+%                 {18^2}
+%                 {
+%                     \left(
+%                         1
+%                     +   \frac{(1-(15.2/46.0))289}{(15.2/46.0)\,665}
+%                     \right)^{-1}
+%                 *   46.0^2
+%                 }
+%             +   1
+%             \right)^{-1}
+%         \cong
+%             \qty [round-precision=3]
+%                 {77.6423311279603}
+%                 {\percent(\gram/\gram)\of{\ch{C2H5OH}}}
+%         &
+%     \end{flalign*}
+% \end{questionBox}
+%
+%
+% \setcounter{question}{6}
+% \begin{questionBox}1{}
+%     \begin{flalign*}
+%         &
+%             \frac
+%                 {2\unit{\mole\of{\ch{NO}}}}
+%                 {\unit{\mole\of{\ch{N2}}}}
+%         \,  \frac
+%                 {12.2\,\unit{\mole\of{\ch{N2}}}}
+%                 {\unit{\mole\of{N2}}}
+%         \,  0.028
+%         &
+%     \end{flalign*}
+% \end{questionBox}
+
+\section{}
+
+\begin{questionBox}1{}
+    \begin{table}[H]\centering
+        \begin{tabular}{l r r r}
+            \toprule
+
+                Temp (\unit{\celsius}) & 138 & 140 & 144
+
+            \\\midrule
+
+                Metanol (\unit{\bar}) & 10.43 & 10.97 & 12.12
+            \\  Etanol (\unit{\bar})  &  7.36 &  7.78 &  8.68
+
+            \\\bottomrule
+        \end{tabular}
+    \end{table}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+        &
+            x\,\unit{\percent\of{\ch{C2H5OH\lqd{}}}}
+        =   P_{\ch{C2H5OH\gas{}}}/P^*_{\ch{C2H5OH\gas{}}}
+        \land &\\&
+        \land
+            P_{\ch{C2H5OH\gas{}}}
+        =   P_{tot} - (1-X_{\ch{C2H5OH\lqd{}}})\,P^*_{\ch{CH3OH\gas{}}}
+        \implies
+        \implies &\\&
+            x\,\unit{\percent\of{\ch{C2H5OH\lqd{}}}}
+        =   \frac
+                {
+                    P_{tot}
+                -   P^*_{\ch{CH3OH\gas{}}}
+                }
+                {
+                    P^*_{\ch{C2H5OH\gas{}}}
+                -   P^*_{\ch{CH3OH\gas{}}}
+                }
+        =   \frac
+                {10 - 10.43}
+                {7.36 - 10.43}
+        \cong
+            \qty{14.0065146579805}{\percent\of{\ch{C2H5OH\lqd{}}}}
+        &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                y\,\unit{\percent\of{\ch{CH3OH\gas{}}}}
+            =   P_{\ch{CH3OH\gas{}}}/P_{tot}
+            \land &\\&
+            \land
+                P_{\ch{CH3OH\gas{}}}
+            =   (1-X_{\ch{C2H5OH\lqd{}}})\,P^*_{\ch{CH3OH\gas{}}}
+            \implies &\\&
+            \implies
+                y\,\unit{\percent\of{\ch{CH3OH\gas{}}}}
+            =   (1-X_{\ch{C2H5OH\lqd{}}})\,P^*_{\ch{CH3OH\gas{}}}
+            /   P_{tot}
+            \cong &\\&
+            \cong
+                (1-\num{0.140065146579805})\,10.47
+                /   10
+            \cong
+                \qty{90.0351791530945}{\percent\of{\ch{CH3OH\gas{}}}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+% Q2
+\begin{questionBox}1m{}
+    \begin{flalign*}
+        &
+            y\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH\gas{}}}}
+        =   m_{\ch{C2H5OH\gas{}}}/m_{tot\,\ch{\gas{}}}
+        \land &\\&
+        \land
+            m_{tot\,\ch{\gas{}}}
+        =   m_{\ch{C2H5OH\gas{}}}
+        +   m_{\ch{H2O\gas{}}}
+        \land &\\&
+        \land
+            m_{\ch{H2O}}
+        =   \frac
+                {18.0\,\unit{\gram\of{H2O}}}
+                {\unit{\mole\of{\ch{H2O}}}}
+        \,  n_{\ch{H2O}}\,\unit{\mole\of{\ch{H2O}}}
+        \land &\\&
+        \land
+            m_{\ch{C2H5OH}}
+        =   \frac
+                {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+                {\unit{\mole\of{\ch{C2H5OH}}}}
+        \,  n_{\ch{C2H5OH}}\,\unit{\mole\of{\ch{C2H5OH}}}
+        \land &\\&
+        \land
+            N_{\ch{C2H5OH}}
+        =   Y_{\ch{C2H5OH}}
+        \,  N_{tot}
+        \land &\\&
+        \land
+            N_{\ch{H2O}}
+        =   (1-Y_{\ch{C2H5OH}})
+        \,  N_{tot}
+        \land &\\&
+        \land
+            Y_{\ch{C2H5OH}}
+        =   \frac
+                {X_{\ch{C2H5OH}}\,P^*_{\ch{C2H5OH\gas{}}}}
+                {P_{tot}}
+        \land &\\&
+        \land
+            P_{tot}
+        =   X_{\ch{C2H5OH}}\,P^*_{\ch{C2H5OH\gas{}}} + (1-X_{\ch{C2H5OH}})\,P^*_{\ch{H2O\gas{}}}
+        \land &\\&
+        \land
+            X_{\ch{C2H5OH}}
+        =   N_{\ch{C2H5OH\lqd{}}}/N_{tot\,\ch{\lqd{}}}
+        \land &\\&
+        \land
+            N_{\ch{C2H5OH\lqd{}}}
+        =   [\ch{C2H5OH\lqd{}}]
+        \,  \frac
+                {\unit{\mole\of{\ch{C2H5OH}}}}
+                {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+        \land &\\&
+        \land
+            N_{tot\,\ch{\lqd{}}}
+        =   N_{\ch{C2H5OH\lqd{}}}+N_{\ch{H2O\lqd{}}}
+        \land &\\&
+        \land
+            N_{\ch{H2O\lqd{}}}
+        =   (1-[\ch{C2H5OH\lqd{}}])
+        \,  \frac
+                {\unit{\mole\of{\ch{H2O}}}}
+                {18.0\,\unit{\gram\of{\ch{H2O}}}}
+        \implies &\\&
+        \implies
+            y\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH\gas{}}}}
+        = &\\&
+        =   \Big(
+                1
+            +   \frac
+                    {
+                        18.0\,\unit{\gram\of{H2O}}
+                    % \,  N_{tot}
+                    }
+                    {
+                        46.0\,\unit{\gram\of{\ch{C2H5OH}}}
+                    \,  \Big(
+                            1
+                        +   \frac
+                                {
+                                    P^*_{\ch{H2O\gas{}}}
+                                }
+                                {
+                                    \Big(
+                                        \frac
+                                            {\unit{\mole\of{\ch{H2O}}}}
+                                            {18.0\,\unit{\gram\of{\ch{H2O}}}}
+                                    +   \frac
+                                            {
+                                                \frac
+                                                    {\unit{\mole\of{\ch{H2O}}}}
+                                                    {18.0\,\unit{\gram\of{\ch{H2O}}}}
+                                            }
+                                            {
+                                                [\ch{C2H5OH\lqd{}}]
+                                                \,  \frac
+                                                        {\unit{\mole\of{\ch{C2H5OH}}}}
+                                                        {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+                                            }
+                                    -   \frac
+                                            {
+                                                \frac
+                                                    {\unit{\mole\of{\ch{H2O}}}}
+                                                    {18.0\,\unit{\gram\of{\ch{H2O}}}}
+                                            }
+                                            {
+                                                \frac
+                                                    {\unit{\mole\of{\ch{C2H5OH}}}}
+                                                    {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+                                            }
+                                    \Big)^{-1}
+                                \,  P^*_{\ch{C2H5OH\gas{}}}
+                                }
+                        -   \frac
+                                { P^*_{\ch{H2O\gas{}}} }
+                                { P^*_{\ch{C2H5OH\gas{}}} }
+                            % \,  N_{tot}
+                        \Big)^{-1}
+                    }
+            -   \frac
+                    {
+                        18.0\,\unit{\gram\of{H2O}}
+                    % \,  N_{tot}
+                    }
+                    {
+                        46.0\,\unit{\gram\of{\ch{C2H5OH}}}
+                    % \,  N_{tot}
+                    }
+            \Big)^{-1}
+        = &\\&
+        =   \Big(
+                1
+            +   \frac
+                    {
+                        18.0\,\unit{\gram\of{H2O}}
+                    % \,  N_{tot}
+                    }
+                    {
+                        46.0\,\unit{\gram\of{\ch{C2H5OH}}}
+                    \,  \Big(
+                            1
+                        +   \frac
+                                {
+                                    223.7
+                                }
+                                {
+                                    \Big(
+                                        \frac
+                                            {\unit{\mole\of{\ch{H2O}}}}
+                                            {18.0\,\unit{\gram\of{\ch{H2O}}}}
+                                    +   \frac
+                                            {
+                                                \frac
+                                                    {\unit{\mole\of{\ch{H2O}}}}
+                                                    {18.0\,\unit{\gram\of{\ch{H2O}}}}
+                                            }
+                                            {
+                                                0.117
+                                                \,  \frac
+                                                        {\unit{\mole\of{\ch{C2H5OH}}}}
+                                                        {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+                                            }
+                                    -   \frac
+                                            {
+                                                \frac
+                                                    {\unit{\mole\of{\ch{H2O}}}}
+                                                    {18.0\,\unit{\gram\of{\ch{H2O}}}}
+                                            }
+                                            {
+                                                \frac
+                                                    {\unit{\mole\of{\ch{C2H5OH}}}}
+                                                    {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+                                            }
+                                    \Big)^{-1}
+                                \,  542
+                                }
+                        -   \frac
+                                { 233.7 }
+                                { 542 }
+                            % \,  N_{tot}
+                        \Big)^{-1}
+                    }
+            -   \frac
+                    {
+                        18.0\,\unit{\gram\of{H2O}}
+                    % \,  N_{tot}
+                    }
+                    {
+                        46.0\,\unit{\gram\of{\ch{C2H5OH}}}
+                    % \,  N_{tot}
+                    }
+            \Big)^{-1}
+        \cong &\\&
+        \cong
+            \qty{25.2836122808133}{\percent(\gram/\gram)\of{\ch{C2H5OH\gas{}}}}
+        &
+    \end{flalign*}
+
+    % \begin{flalign*}
+    %     &
+    %         y\,\unit{\percent(\gram/\gram)\of{\ch{C2H5OH\gas{}}}}
+    %     =   \frac
+    %             {
+    %                 \frac
+    %                     {46.0\unit{\gram\of{\ch{C2H5OH}}}}
+    %                     {\unit{\mole\of{\ch{C2H5OH}}}}
+    %             \,  n_{\ch{C2H5OH}}\,\unit{\mole\of{\ch{C2H5OH}}}
+    %             }
+    %             {
+    %                 \frac
+    %                     {46.0\,\unit{\gram\of{\ch{C2H5OH}}}}
+    %                     {\unit{\mole\of{\ch{C2H5OH}}}}
+    %             \,  Y_{\ch{C2H5OH}}
+    %             \,  N_{tot}
+    %             +   \frac
+    %                     {18.0\,\unit{\gram\of{H2O}}}
+    %                     {\unit{\mole\of{\ch{H2O}}}}
+    %             \,  (1-Y_{\ch{C2H5OH}})
+    %             \,  N_{tot}
+    %             }
+    %     &
+    % \end{flalign*}
+\end{questionBox}
+
+
+% Q5
+\setcounter{question}{4}
+\begin{questionBox}1{}
+    \begin{flalign*}
+        &
+            m\,\unit{(\gram\per\mole)\of{X}}
+        =   m_{2}\,\unit{\gram\of{X}}
+        /   n_2\,\unit{\mole\of{X}}
+        \land &\\&
+        \land
+            n_2\,\unit{\mole\of{X}}
+        =   \Delta T_{2\,f}\,m_2\,\unit{\gram\of{\ch{H2O}}}/K_b
+        \land &\\&
+        \land
+            k_b
+        =   \Delta T_{1\,f}
+        \,  m_1\,\unit{\gram\of{\ch{H2O}}}
+        /   n_{1}\,\unit{\mole\of{X}}
+        \implies &\\&
+        \implies
+            m\,\unit{(\gram\per\mole)\of{X}}
+        =   \frac
+                {50.012\,\unit{\gram\of{X}}}
+                {
+                    \frac
+                        {
+                            \Delta T_{2\,f}
+                        \,  m_2\,\unit{\gram\of{\ch{H2O}}}
+                        }
+                        {
+                            \Delta T_{1\,f}
+                            \,  m_1\,\unit{\gram\of{\ch{H2O}}}
+                            /   n_{1}\,\unit{\mole\of{X}}
+                        }
+                }
+        =   \frac
+                {50.012}
+                {
+                    \frac
+                        {
+                            (-5.14)
+                        \,  120
+                        }
+                        {
+                            (-0.46)
+                            \,  500
+                            /   0.1251
+                        }
+                }
+        \,      \unit{(\gram\per\mole)\of{X}}
+        \cong &\\&
+        \cong
+            \qty{149.073477931}{(\gram\per\mole)\of{X}}
+        &
+    \end{flalign*}
+
+    % \begin{flalign*}
+    %     &
+    %         0.46
+    %     =   K_b
+    %     \,  0.1251/0.5
+    %     \implies
+    %         K_b
+    %     =   0.46/(2*0.1251)
+    %     \cong
+    %         \num{1.8385291767}
+    %     &\\&
+    %         5.14
+    %     =   \num{1.8385291767}
+    %     *   n(x)
+    %     /   0.120
+    %     \implies
+    %         n(x)
+    %     =   5.14*0.12/\num{1.8385291767}
+    %     \cong
+    %         \num{0.3354855652}
+    %     &\\&
+    %         M
+    %     =   50.012/\num{0.3354855652}
+    %     \cong
+    %        \num{149.073477931}
+    %     &
+    % \end{flalign*}
+\end{questionBox}
+
+
+% Q6
+\begin{questionBox}1{}
+    \begin{center}
+        \ch{A\sld{} + B\gas{} <> C\sld{} + 2 D\gas{}}
+    \end{center}
+
+    \begin{table}[H]\centering
+        \begin{tabular}{l r r}
+
+            \toprule
+
+            &   \(\frac{\Delta H^{\circ}_{f\,298\,\unit{\kelvin}} }{ \unit{\kilo\joule\per\mole}}\)
+            &   \(\frac{\Delta S^{\circ}_{f\,298\,\unit{\kelvin}} }{ \unit{\kilo\joule\per\mole}}\)
+
+            \\ \midrule
+
+                \ch{A\sld{}}
+            &   0 & 18.3
+            \\  \ch{B\gas{}}
+            &   -380 & 397
+            \\  \ch{C\sld{}}
+            &   0 & 38.3
+            \\  \ch{D\gas{}}
+            &   -192 & 200
+
+            \\ \bottomrule
+
+        \end{tabular}
+    \end{table}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                K_c
+            =   \exp
+                \left(
+                -   \Delta H^{\circ}_{r}/R T
+                +   \Delta S^{\circ}_{r}/R
+                \right)
+            = &\\&
+            =   \exp
+                \left(
+                -   \frac
+                        {(
+                            2\,(-192)
+                        -   (
+                            -   380
+                            )
+                        )}
+                        {\num{8.314472}\,(-20+273)}
+                +   \frac
+                        {(
+                            38.3
+                        +   2\,(200)
+                        -   (
+                                18.3
+                                397
+                            )
+                        )}
+                        {\num{8.314472}}
+                \right)
+            \cong &\\&
+            \cong
+                \num{15.9293382455}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+
+    \begin{questionBox}3{}
+
+        % A + B <=> C + 2D
+        % -  P_B.   -   .0
+        % -  P_B-x. -   2x
+        %
+        % (2\,x)^2/(P_B-x)=K_p
+
+
+        \begin{flalign*}
+            &
+                y_{B}\,\unit{(\mole\per\gram)\of{B}}
+            =   P_{B}/P_{tot}
+            \land &\\&
+            \land
+                P_{tot}
+            =   P_{C}+P_{B}
+            \land &\\&
+            \land
+                P_{B}
+            =   15-x
+            \land &\\&
+            \land
+                P_{C}
+            =   2\,x
+            \land &\\&
+            \land
+                (2\,x)^2/(15-x)
+            =   K_p
+            \implies &\\&
+            \implies
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+% Q12
+\setcounter{question}{11}
+\begin{questionBox}1{}
+    % \begin{flalign*}
+    %     &
+    %
+    %     &
+    % \end{flalign*}
+\end{questionBox}

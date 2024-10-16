@@ -1,0 +1,36 @@
+% !TEX root = ./F_IIQ-Exercicios_e_Exemplos_Resoluções.2.tex
+\providecommand\mainfilename{"./F_IIQ-Exercicios_e_Exemplos_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ-Exercicios_e_Exemplos_Resoluções.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F_IIQ-Exercicios_e_Exemplos_Resoluções.2}}}
+
+\mymakesubfile{1}
+[F IIQ]
+{The Electric Field II: Continuous Charge Distributions} % Subfile Title
+{The Electric Field II: Continuous Charge Distributions} % Part Title
+
+\begin{exampleBox}1{ % E1
+} % E1
+    
+A thin ring (a circle) of radius a is uniformly charged with total charge Q. Find the electric field due to this charge at all points on the axis perpendicular to the plane and through the center of the ring.
+
+\begin{flalign*}
+    &
+        \vec{E}
+        = \int{k\,\odif{q}\hat{r}/r^2}
+        = \frac{k}{r^2}\int{\odif{q}\,\cos(\theta)\,\hat{\imath}}
+        = \frac{k}{r^2}\int{\odif{q}\,\frac{z}{r}\,\hat{\imath}}
+        = \frac{k\,z\,\hat{\imath}}{r^3}\int{\odif{q}}
+        = \frac{k\,z\,Q}{r^3}\,\hat{\imath}
+    &
+\end{flalign*}
+    
+\end{exampleBox}
+
+\end{document}

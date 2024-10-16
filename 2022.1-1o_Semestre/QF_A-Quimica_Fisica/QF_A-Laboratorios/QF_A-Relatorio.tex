@@ -1,0 +1,2687 @@
+% \documentclass{article}
+\documentclass[
+    class=article,
+    multi={minipage},
+    border={6mm},
+]{standalone}
+% -------------------------------------------------------- %
+%                          Colors                          %
+% -------------------------------------------------------- %
+\usepackage[hyperref]{xcolor} % Options: gray - dark and light
+\usepackage{mypallete}
+\colorlet{foreground}{light}
+\colorlet{background}{dark}
+% Palette Secondaries
+\colorlet{Emph}  {DarkGreen!70!foreground}
+\colorlet{Link} {LightGreen!25!foreground}
+\colorlet{Comment}   {foreground!60!background}
+\colorlet{Background}{foreground!27!background}
+% ======================= setcolor ======================= %
+\pagecolor{background}
+\color    {foreground}
+% -------------------------------------------------------- %
+%                        Essentials                        %
+% -------------------------------------------------------- %
+\usepackage{luacode}
+\usepackage{xparse} % xparse - multiple optional arguments
+\usepackage{calc}
+% % -------------------------------------------------------- %
+% %                         Geometry                         %
+% % -------------------------------------------------------- %
+\setlength\textwidth{160mm}
+% \usepackage{geometry}
+% \geometry{
+%     % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
+%     % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
+%     % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
+%     % papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
+%     % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
+%     % papersize = {320mm, 512mm}, % (16:10)
+%     % papersize = {280mm, 448mm}, % (16:10)
+%     % papersize = {240mm, 384mm}, % (16:10)
+%     % a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
+%     papersize = {180mm, 1m}, % LONG ( 4:3 ) SVGA x 0.3
+%     top       = 21mm,
+%     bottom    = 21mm,
+%     left      = .06\paperwidth,
+%     right     = .06\paperwidth,
+%     portrait  = true,
+% }
+% -------------------------------------------------------- %
+%                           Fonts                          %
+% -------------------------------------------------------- %
+\usepackage[fontsize=12pt]{fontsize}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+% \usepackage[sfdefault, ultralight]{FiraSans}
+% \renewcommand{\familydefault}{\sfdefault} % set sans serif as defalt
+% % ==================== Set font family =================== %
+\setmainfont[
+    Ligatures = TeX,
+    UprightFont    = *-Light,
+    ItalicFont     = *-LightIt,
+    SmallCapsFont  = *SmText-Light,
+    BoldFont       = *-Regular,
+    BoldItalicFont = *-It
+]{
+    % ==================== Serif fonts =================== %
+    SourceSerif4
+    % ================= Handwritten fonts ================ %
+    % DancingScript
+    % Apple Chancery
+    % Luminari
+    % PetitFormalScript
+    % Merienda
+    % LaBelleAurore
+    % Handlee
+        % BadScript
+        % Calligraffitti
+}
+% % ======================= Monofont ======================= %
+% \setmonofont[Contextuals = {ligatures}]{FiraCode}
+% \makeatletter
+% \def\verbatim@nolig@list{}
+% \makeatother
+% -------------------------------------------------------- %
+%                         Linguagem                        %
+% -------------------------------------------------------- %
+\usepackage[portuguese]{babel} % Babel
+%\usepackage{polyglossia}      % Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+% % -------------------------------------------------------- %
+% %                         Graphics                         %
+% % -------------------------------------------------------- %
+% \usepackage[draft, final]{graphics, graphicx}
+\usepackage{graphicx}
+\graphicspath{{./.build/figures/QF_A-Relatorio/}}
+% -------------------------------------------------------- %
+%                tocloft - Table of contents               %
+% -------------------------------------------------------- %
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}    % remove subsubsection from toc
+% ========================= part ========================= %
+\renewcommand\cftpartfont{\bfseries}
+%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+\setlength\cftbeforepartskip{1ex}
+% ========================== sec ========================= %
+\renewcommand\cftsecfont{} % Font
+\renewcommand\cftsecpagefont{} % page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+\setlength\cftbeforesecskip{0.5ex}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm} % Fix section width
+% ======================== subsec ======================== %
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+% ====================== tab (table) ===================== %
+\setlength\cfttabindent{0mm}
+% % -------------------------------------------------------- %
+% %                       filecontents                       %
+% % -------------------------------------------------------- %
+%\usepackage{scontents}     % the better filecontents
+%\usepackage{filecontents}  % Create files
+% % -------------------------------------------------------- %
+% %                         Multicols                        %
+% % -------------------------------------------------------- %
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+\multicoltolerance = 200
+% \renewenvironment{multicols}[1]{}{\relax} % toggle multicols  on/off
+% -------------------------------------------------------- %
+%                         enumitem                         %
+% -------------------------------------------------------- %
+\usepackage{enumitem}  % modify enumerate index
+\setlist[description]{
+    format={\color{Emph}}
+}
+% -------------------------------------------------------- %
+%                         titlesec                         %
+% -------------------------------------------------------- %
+\usepackage{titlesec}
+% ================= Reset section on part ================ %
+\counterwithin*{section}{part}
+% ======================== Spacing ======================= %
+% 	itlespacing*{<left>}{<before>}{<after>}[<right>]
+\titlespacing*{\part}      {0pt}{ 0pt}{0pt}
+\titlespacing*{\section}   {0pt}{10mm}{0pt}
+\titlespacing*{\subsection}{0pt}{ 5mm}{0pt}
+
+% Part customization
+\titleclass{\part}{straight}
+\titleformat{\part}
+    [block]                         % shape
+    {\Large\bfseries\color{Emph}}   % format
+    {\thepart\hspace{.5em}{--}}     % label
+    % {\thepart}                      % label without --
+    {.5em}                          % sep
+    {\Large\bfseries}               % before-code
+    [\vspace{1em}]                  % after  code
+
+% % Chapter customization
+% \titleclass{\chapter}{straight}
+% \titleformat{\chapter}
+%    [block]                         % shape
+%    {\huge\bfseries\color{Emph}}    % format
+%    {\thepart\hspace{5mm}{\(|\)}}   % label
+%    {5mm}                           % sep
+%    {\huge\bfseries}                % before-code
+%    [\vspace{0.5mm}]                % after-code
+% % -------------------------------------------------------- %
+% %                         Appendix                         %
+% % -------------------------------------------------------- %
+% \usepackage{appendix}
+% -------------------------------------------------------- %
+%                     siunix: SI units                     %
+% -------------------------------------------------------- %
+\usepackage{siunitx}
+\sisetup{
+    % scientific / engineering / false / fixed
+    scientific-notation    = engineering,
+    exponent-to-prefix     = false, % 1000 g -> 1 kg
+    % exponent-product       = *, % x * 10^y
+    round-mode             = places, % figures/places/none
+    round-precision        = 2,
+    output-exponent-marker = {\,\mathrm{E}},
+}
+% ==================== Declaring units =================== %
+\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\calorie{cal}
+\DeclareSIUnit\Torr{Torr}
+\DeclareSIUnit\bar{bar}
+\DeclareSIUnit\mmHg{mmHg}
+\DeclareSIUnit\molar{M}
+\DeclareSIUnit\M{M}
+% % -------------------------------------------------------- %
+% %                           Maths                          %
+% % -------------------------------------------------------- %
+\usepackage{amsmath, amssymb, bm}
+% \usepackage{derivative} % Derivative
+% \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
+% % ====================== Math fonts ====================== %
+% \usepackage[math-style=ISO]{unicode-math} % change math font
+% \usepackage{firamath-otf}
+% % ======================================================== %
+\usepackage{mathtools}
+% % ======================================================== %
+% ============== MathOperators Declarations ============== %
+\DeclareMathOperator\E{\,E}
+\DeclareMathOperator\e{\,E}
+% % ========= Missing trigonometric math operators ========= %
+% \DeclareMathOperator\sech   {sech}
+% \DeclareMathOperator\csch   {csch}
+% \DeclareMathOperator\arcsec {arcsec}
+% \DeclareMathOperator\arccot {arccot}
+% \DeclareMathOperator\arccsc {arccsc}
+% \DeclareMathOperator\arccosh{arccosh}
+% \DeclareMathOperator\arcsinh{arcsinh}
+% % ================== Calculus operators ================== %
+% \DeclareMathOperator\fronteira {fr}
+% \DeclareMathOperator\interior  {int}
+% \DeclareMathOperator\exterior  {ext}
+% \DeclareMathOperator\grafico   {Graf}
+% \DeclareMathOperator\dominio   {D}
+% \DeclareMathOperator\visinhanca{\mathcal{V}}
+% % =================== Algebra operators ================== %
+% \DeclareMathOperator\adj{adj}
+% \DeclareMathOperator\id{id}
+% \DeclareMathOperator\Img{Im}
+% \DeclareMathOperator\Nuc{Nuc}
+% \DeclareMathOperator\Ker{Ker}
+% % ================== Statistics Operator ================= %
+% \DeclareMathOperator\esperanca{E}
+% \DeclareMathOperator\variancia{V}
+% \DeclareMathOperator\bernoulli{Ber}
+% \DeclareMathOperator\hiperbolica{H}
+% \DeclareMathOperator\binomial{Bin}
+% \DeclareMathOperator\poisson{P}
+% \DeclareMathOperator\normal{N}
+% % ======================================================== %
+% % ======================================================== %
+% =================== My math functions ================== %
+\usepackage{mathBM}
+\usepackage{myLogicOperators}
+% \lxor, \lnand
+% \ldiv
+% [<*>line break]
+% [<l>left column]
+% [<r>right column]
+% [<division>]
+% [<space>]
+% [<before column>]
+\usepackage{mathEnclosings} 
+% \myvert[*scale]{<content>}
+% \myVert[*scale]{<content>}
+% \myrange[<*>invert all][<l>invert left][<r>invert right]{<content>}
+% % -------------------------------------------------------- %
+% %                          Vectors                         %
+% % -------------------------------------------------------- %
+% \usepackage{esvect}      % Vector over-arrow
+% \NewCommandCopy\vec\vv
+
+
+
+% Tikz
+\usepackage{tikz}
+    \usetikzlibrary{
+%         perspective,
+%         3d,
+        external,
+    }
+
+% External remake commands
+% 	ikzset{external/force remake=false} - remake all
+% 	ikzset{external/remake next=true}   - remake next
+
+
+% External lib
+\tikzexternalize[
+    up to date check = {simple}, % faster check
+    figure list = true, % generate list of figures file
+    % optimize  = false,
+    % optimize command away = { % commands to be ignored when optimizing
+    %     \BM, \endBM,
+    %     \ldiv,
+    %     \question, \subquestion, \subsubquestion,
+    %     % \sobpart,
+    %     \questionBox, \endquestionBox,
+    %     \sectionBox,  \endsectionBox,
+    %     % \codeBox,     \endcodeBox
+    %     \mymaketitle
+    % },
+    prefix = ./.build/figures/QF_A-Relatorio/graphics/
+] % turn externalization on/off
+\tikzsetfigurename{figure_\arabic{part}.\arabic{section}.} % set figure names
+
+\tikzset{external/system call={%
+    lualatex \tikzexternalcheckshellescape
+    --halt-on-error
+    --shell-escape
+    --interaction=batchmode
+    --jobname "\image" "\texsource"
+    % --jobname "\image" \subfilename
+}}
+
+\NewCommandCopy\oldtikzpicture\tikzpicture
+\renewcommand\tikzpicture{\oldtikzpicture\nopagecolor}
+
+
+
+% \usepackage{varwidth}   % List inside TikzPicture
+
+% Gradient text color
+% \newcommand\fadingtext[3][]{%
+%     \begin{tikzfadingfrompicture}[name=fading letter]
+%         \node[text=transparent!0,inner xsep=0pt,outer xsep=0pt,#1] {#3};
+%     \end{tikzfadingfrompicture}%
+%     \begin{tikzpicture}[baseline=(textnode.base)]
+%         \node[inner sep=0pt, outer sep=0pt,#1](textnode){\phantom{#3}};
+%         \shade[path fading=fading letter,#2,fit fading=false]%
+%             (textnode.south west) rectangle (textnode.north east);%
+%     \end{tikzpicture}%
+% }
+
+% \newcommand\fadingtext[2][]{%
+%   \setbox0=\hbox{{\special{pdf:literal 7 Tr }#2}}%
+%   \tikz[baseline=0]\path [#1] \pgfextra{\rlap{\copy0}} (0,-\dp0) rectangle (\wd0,\ht0);%
+% }
+%
+% \NewCommandCopy\oldsection\section
+% \renewcommand\section[1]{
+%     \oldsection{\fadingtext{
+%         left  color   = DarkGreen!00!foreground,
+%         right color   = DarkGreen!30!foreground,
+%         shading angle = 150 % 90 + 60
+%     }{ \relax\parbox[b]{\linewidth}{#1} }}
+% }
+%
+% \NewCommandCopy\oldpart\part
+% \renewcommand\part[1]{
+%     \oldpart{\fadingtext{
+%         left  color   = Emph,
+%         right color   = Emph!50!LightGreen,
+%         shading angle = 170 % 90 + 60
+%     }{ #1 }}
+% }
+
+% pgf
+    \usepackage{pgf}
+    % pgfmath
+    % \usepackage{pgfmath}    % calculations
+
+    % pgfplots
+    \usepackage{pgfplots}
+    % \usepgfplotslibrary{fillbetween}
+% ========================= Setup ======================== %
+    % 1e4 too much
+    % 1e3 fancy
+    % 1e2 simple
+    % 1e1 draft
+    \newcommand\mysampledensityDouble{2}
+    \newcommand\mysampledensitySimple{1e1}
+    \newcommand\mysampledensityFancy{1e2}
+    \pgfplotsset{
+        compat       = newest,
+        width        = .95\linewidth,   % width
+        height       = .22\textheight,  % height
+        samples      = \mysampledensityDouble,
+        % Color Map
+        colormap = {cool}{
+            color=(DarkGreen\Light!20!background);
+            % color=(DarkGreen\Light!60!background);
+            color=(DarkGreen\Light!70!background);
+            % color=(DarkGreen\Light!80!background);
+            color=(DarkGreen\Light!90!background)
+        },
+        % Preset plot style
+        every axis plot/.append style = {
+            thick,
+            % mark=*,
+            mark options={
+                fill=Emph,
+                fill opacity=1
+            },
+            color=Emph,
+            % fill=Emph,
+            fill opacity=0.1,
+        },
+        % Legend
+        legend style = {
+            draw         = none,
+            fill         = foreground\Dark,
+            fill opacity = 0.3,
+            text opacity = 1,
+        },
+        % Grid
+        major grid style = {
+            very thin,
+            color= foreground!15!background
+        },
+        % minor Grid
+        minor grid style = {
+            very thin,
+            color= foreground!7!background
+        },
+        % Tick Label
+        ticklabel style = {
+            /pgf/number format/.cd,
+            set thousands separator={},
+            tick style = {
+                color= foreground!60!background
+            },
+        },
+        % Extra ticks
+        every extra x tick/.style = {
+            tick style       = {draw=none},
+            major grid style = {
+                draw, thin,
+                color = foreground!60!background,
+            },
+            ticklabel pos = top,
+        },
+        every extra y tick/.style = {
+            tick style       = {draw=none},
+            major grid style = {
+                draw, thin,
+                color= foreground!90!background
+            },
+            ticklabel pos    = right,
+        },
+    }
+
+    % % pgfplotstable
+    % \usepackage{pgfplotstable}
+
+
+% Tabular
+\usepackage{multirow}
+\usepackage{float}  % table position H(ere)
+    \restylefloat{table}
+% \usepackage{longtable}
+%
+\setlength\tabcolsep{6mm}        % width
+\renewcommand\arraystretch{1.25} % height
+
+% booktabs
+\usepackage{booktabs}
+\setlength\heavyrulewidth{.75pt} % Top and bottom rule
+\setlength\lightrulewidth{.50pt} % Middle rule
+% \usepackage{colortbl}            % Colored Cells
+
+% Mathtable
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
+
+
+\newcounter{tablecounter}
+% \newcommand\thetable{Tabela \arabic{tablecounter}:}
+\NewDocumentCommand\tablecaption{o m}{
+    \stepcounter{table}
+    Tabela \thetable{}: #2
+    \ifblank{#2}{}{\label{table:#1}}
+    \addcontentsline{lot}{table}{Tabela \thetable{}: #2}
+}
+
+% % Chem
+\usepackage{chemformula} % formulas quimicas
+\usepackage{chemfig}     % Estruturas quimicas
+% \usepackage{modiagram}   % Molecular orbital diagram
+% \setmodiagram {
+%     names,           % Display names
+%     labels,          % Display labels
+%     labels-fs=\tiny, % label font
+% }
+% \newlength\AtomVScale    \setlength\AtomVScale{1cm}
+% \newlength\MoleculeVScale\setlength\MoleculeVScale{1cm}
+\usepackage{chemmacros}
+\chemsetup[phases]{pos=sub}
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+% % Biology
+% \usepackage{mydnaseq}
+
+
+
+% Constants
+% \usepackage{physconst, physunits}
+
+
+
+% Code
+% % Run on terminal: lualatex --shell-escape [file[.tex]]
+% \usepackage{shellesc, minted}
+% \setminted {
+%     linenos,     % line number
+%     autogobble,  % line trim
+%     tabsize = 4, % tab size
+%     obeytabs,    % tab alignment
+%     breaklines,  % break lines
+%     % python3,     % Python lexer or idk
+% }
+% \usemintedstyle{stata-dark}
+% % \usemintedstyle{fruity}
+% % \usemintedstyle{paraiso}
+% % \usemintedstyle{rainbow_dash}
+% % \usemintedstyle{solarized-dark}
+% % \usemintedstyle{native}
+
+
+
+% tcolorbox
+\usepackage{tcolorbox}
+\tcbuselibrary{
+    breakable,                % allow page break
+    % minted, xparse, listings, % code minted
+}
+\tcbset{ every box/.style = {
+    coltext      = foreground,           % text  color
+    % coltitle     = foreground,           % title color
+    % fonttitle    = \bfseries,       % title font
+    notitle,                        % Remove title
+    opacityfill  = 0.1,             % background opacity
+    opacityframe = 0,               % frame      opacity
+    colback      = Background,      % background color
+    colframe     = Background,      % border     color
+    arc          = 3mm,             % Curvature
+    width        = \linewidth,      % Width
+    top          = 3mm,             % Space between text and top
+    bottom       = 3mm,             % Space between text and bottom
+    before upper = {\parindent2ex}, % Paragraph indentation
+    before skip  = 0mm,             % Set vspace before box
+}}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle   {{Cinética da redução do corante azul de toluidina pelo ião sulfito}}
+\newcommand\myauthor  {{Felipe B. Pinto 61387 -- MIEQB}}
+\newcommand\mycreator {{Felipe B. Pinto}}
+\newcommand\mysubject {{Relatório Laboratorial}}
+\newcommand\mykeywords{{{QF A}, {Relatório}}}
+
+% title, author and date
+\title{\huge\bfseries\color{Emph}\mytitle}
+\author{\Large\myauthor}
+\date{\Large\today}
+
+
+
+% % fancyhdr - Header and Footer customization
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhf{} % Clear
+% \fancyhead[R]{\normalsize\thepart}
+% \fancyfoot[L]{\normalsize\myauthor}
+% \fancyfoot[R]{\thepage}
+% \renewcommand\footrulewidth{.5pt}
+% % Marks 
+% % \renewcommand{\partmark}[1]{\markboth{}{\thepart#1}}
+
+
+
+% Subfiles
+\usepackage{subfiles}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+    % Links customization
+    % hidelinks   = true,
+    colorlinks  = true,
+    linkcolor   = Link,
+    anchorcolor = Link,
+    urlcolor    = Link,
+    % Metadata
+    pdfinfo = {
+        Title    = \mytitle,
+        Author   = \myauthor,
+        Creator  = \mycreator,
+        Subject  = \mysubject,
+        Keywords = \mykeywords,
+    },
+    % PDF display customization
+    pdfpagelayout      = {OneColumn},
+    pdfstartview       = {FitH},
+    pdfremotestartview = {FitH}
+    pdfdisplaydoctitle = true,
+    % pdfpagetransition  = Glitter, % wtf
+}
+% Fix links when reseting section on part
+% \renewcommand\theHpart{\theHsobpart.\arabic{part}}
+\renewcommand\theHsection{\theHpart.\arabic{section}}
+
+% get parttitle command
+% \NewCommandCopy\oldpart{\part}
+% \newcommand\parttitle{}
+% \renewcommand{part}[1]{\oldpart{#1}\renewcommand{\parttitle}{#1}}
+
+% Color targets
+\NewCommandCopy\oldhypertarget\hypertarget
+\renewcommand\hypertarget[3][Link]{\oldhypertarget{#2}{\textcolor{#1}{#3}}}
+
+
+
+\usepackage{sections}
+% \usepackage{questions}
+% \usepackage{answers}
+% \usepackage{examples}
+% \usepackage{definitions}
+
+
+
+% /* ------------------------- Divisions customization ------------------------ */
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+% \renewcommand\thepart{Part \arabic{part}}
+
+
+\usepackage{mytitle}    % \mymaketitle
+\usepackage{mysubfile}  % \mymakesubfile
+
+\begin{document}
+
+% \mymaketitle
+
+\noindent\begin{minipage}{\linewidth}
+    
+    \vspace{3ex}
+
+    \begin{center}\Large
+        UNIVERSIDADE NOVA DE LISBOA\\
+        NOVA SCHOOL OF SCIENCE AND TECHNOLOGY\\
+        \vspace*{1ex}
+        \includegraphics[width=.4\textwidth]{nova.png}
+        \vspace*{3ex}
+
+        \large
+        Departamento de química\\
+        Química Física A\\
+        \vspace{3ex}
+
+        {\bfseries\huge\color{Emph}
+            \mytitle
+        }
+    \end{center}
+
+    \begin{center}
+        \vspace{-1ex}
+        \begin{tabular}{l c c}
+            \multicolumn{3}{l}{Ano Letivo 2022--2023}
+            
+            \\\toprule
+              Felipe Pinto & 61387 & MIEQB
+            \\Francisco Duarte & 63754 & LEQB
+            \\Lunara Maciel & 54768 & MIEQB
+            \\Sebastião Carvalhal & 60823 & MIEQB
+            
+            \\\bottomrule
+
+        \end{tabular}
+        % \vspace{2ex}
+    \end{center}
+    
+    \vspace{-3ex}
+
+    % Table of Contents
+    % \renewcommand\contentsname{} % remove title
+    
+    % \begin{multicols}{2}[\section*{Conteúdo}]
+        \tableofcontents
+    % \end{multicols}
+
+    \vspace{3ex}
+
+\end{minipage}
+
+\begin{sectionBox}*1{Lista de Figuras} % S
+    
+    \vspace{-6ex}
+    \renewcommand\listfigurename{}
+    \listoffigures
+    
+\end{sectionBox}
+
+\begin{sectionBox}*1{Lista de Tabelas} % S
+    
+    \vspace{-6ex}
+    \renewcommand\listtablename{}
+    \listoftables
+    
+\end{sectionBox}
+
+
+% \tikzset{external/force remake=true}
+
+
+
+% 88888888ba
+% 88      "8b
+% 88      ,8P
+% 88aaaaaa8P'   ,adPPYba,  ,adPPYba,  88       88  88,dPYba,,adPYba,    ,adPPYba,
+% 88""""88'    a8P_____88  I8[    ""  88       88  88P'   "88"    "8a  a8"     "8a
+% 88    `8b    8PP"""""""   `"Y8ba,   88       88  88      88      88  8b       d8
+% 88     `8b   "8b,   ,aa  aa    ]8I  "8a,   ,a88  88      88      88  "8a,   ,a8"
+% 88      `8b   `"Ybbd8"'  `"YbbdP"'   `"YbbdP'Y8  88      88      88   `"YbbdP"'
+
+
+\begin{sectionBox}1{Resumo} % S
+    
+    A realização desta atividade experimental teve como objetivo estudar as propriedades e a cinética do corante azul de toluidina durante o processo de redução pelo ião sulfito.\newline
+
+    Preparamos 5 soluções de concentrações diferentes e com a sua força iónica constante e igual a 0.49\,\unit{\M} medindo-se a absorvância usando um espectrofotómetro. Com os valores obtidos, representamos graficamente o logaritmo neperiano da absorvância em função do tempo e também calculamos a pseudo-constante da velocidade (\textit{k'}) para cada solução.\newline
+    
+    Com os resultados obtidos contruiu-se um gráfico de \textit{k'} em função da concentração de \(\ch{[SO3^{2-}]}_0\), onde constatamos que o valor da constante cinética da reação (\textit{K}) é igual a 0.037\,\unit{\mole^{-1}.\second^{-1}}. Sendo que o valor obtido é semelhante aos valores obtidos pelos demais grupos podemos concluir que os resultados foram os esperados.
+    
+\end{sectionBox}
+
+
+% 88
+% 88                 ,d
+% 88                 88
+% 88  8b,dPPYba,   MM88MMM  8b,dPPYba,   ,adPPYba,
+% 88  88P'   `"8a    88     88P'   "Y8  a8"     "8a
+% 88  88       88    88     88          8b       d8
+% 88  88       88    88,    88          "8a,   ,a8"
+% 88  88       88    "Y888  88           `"YbbdP"'
+
+
+
+\begin{sectionBox}1{Introdução} % S
+    
+    No estudo da reação de redução do azul de toluidina \ch{TB^+} pelo ião sulfito \ch{SO3^{2-}} descrita pela equação:
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \schemestart
+            % \chemfig[angle increment=30]{
+            %     *6(
+            %         (-[7]\ch{H2N})
+            %         -
+            %         =*6( 
+            %             -S^+
+            %             =*6(
+            %                 -
+            %                 =(-[-1]N(-[-3])(-[1]))
+            %                 -=-
+            %             )
+            %             -=N-
+            %         )
+            %         -=
+            %         -(-[5])
+            %         =
+            %     )
+            % }
+            % \+
+            % \chemfig{SO3^{-2}}
+            % \+
+            % \chemfig{H2O}
+            % \arrow(.mid east--.mid west)
+        % \schemestop
+
+
+        \includegraphics[width=.8\textwidth]{reacao.png}
+    \end{center}
+
+    O azul de toluidina \ch{TB^+} é um corante caraterizado por \(\chemlambda_{\max} = 596\,\unit{\nano\metre}\) e por \(\chemepsilon (596\,\unit{\nano\metre}) = 24000\,\unit{\M^{-1}.\centi\metre^{-1}}\) em solução aquosa.\cite{:protocolo} O ião sulfito reduz o azul de toluidina em branco de toluidina \ch{TBH}. Esta reação segue uma cinética de 2ª ordem, dado que velocidade da reação é diretamente proporcional ao produto das concentrações dos reagentes, isto é, a velocidade da reação aumenta exponencialmente à medida que as concentrações dos reagentes aumentam:
+
+    \begin{BM}
+        v=k\,\ch{[SO3^{-2}]_0[TB^+]}
+    \end{BM}
+
+    Como sabemos que o ião sulfito se encontra em excesso em comparação com o azul de toluidina, a sua concentração não irá variar significativamente durante a reação, o que nos permite estudar a reação como sendo de pseudo 1ª ordem. Assim a velocidade da reação depende apenas da concentração do reagente em menor quantidade, podendo ser aproximada a uma cinética de 1ª ordem
+
+    \begin{BM}
+        v=k'\,\ch{[TB^+]}
+        \qquad
+        k'=k\,\ch{[SO3^{2-}]_0}
+    \end{BM}
+    \cite{:protocolo}
+
+    Partindo da nova equação de velocidade, se integrarmos obtemos:
+
+    \begin{BM}
+        \ln\ch{[TB^+]}
+        =\ln\ch{[TB^+]}_0-k'\,t
+        \iff
+        \ln{A}=\ln{A_0}-k'\,t
+    \end{BM}
+    \cite{:protocolo}
+
+    Através da lei de Lambert-Beer, \(A=\chemepsilon\,b\ch{[TB^+]}\), sabemos que a \ch{TB+} é diretamente proporcial à absorvância, (\textit{A}),  medida experimentalmente pelo espectrofotómetro. Assim conseguimos obter o valor de  \(k'\) pelo declive da reta \(\ln{(A)}\) \times{} tempo. Através da ordenada na origem da mesma reta consegue-se obter o valor da absorvância inicial do azul de toluidina, que se deve encontrar entre 310 a 340\,\unit{\nano\metre}.\newline
+
+    Utilizando diferentes concentrações de \ch{[SO3^{2-}]_0} para diferentes soluções, construimos um gráfico dos respetivos \textit{k'} em função da concentração \ch{[SO3^{2-}]_0}  cujo declive da reta formada equivale ao valor do \textit{k}, constante cinética da reação em estudo.
+
+\end{sectionBox}
+
+
+% 88888888ba                           88                       88
+% 88      "8b                          88                       88
+% 88      ,8P                          88                       88
+% 88aaaaaa8P'  8b,dPPYba,   ,adPPYba,  88           ,adPPYYba,  88,dPPYba,
+% 88""""""'    88P'   "Y8  a8P_____88  88           ""     `Y8  88P'    "8a
+% 88           88          8PP"""""""  88           ,adPPPPP88  88       d8
+% 88           88          "8b,   ,aa  88           88,    ,88  88b,   ,a8"
+% 88           88           `"Ybbd8"'  88888888888  `"8bbdP"Y8  8Y"Ybbd8"'
+
+\begin{sectionBox}1{Cálculos e Resultados}
+
+    \subsection{Cálculos Pré-laboratoriais}
+    
+    \subsection*{\ch{TB^+}}
+    \begin{flalign*}
+        &
+            V_{Mae}
+            = \frac{
+                \unit{\milli\litre\of{Mae}}
+            }{
+                2.0*10^{-4}\,\unit{\mole\of{\ch{TB^+}}}
+            }
+            \,\frac{
+                2.0*10^{-5}
+                \,\unit{\mole\of{\ch{TB^+}}}
+            }{
+                \unit{\milli\litre\of{Sol}}
+            }
+            \,20\,\unit{\milli\litre\of{Sol}}
+            = 2.0\,\unit{\milli\litre\of{Mae}}
+        &
+    \end{flalign*}
+
+    \subsection*{\ch{Na2SO3}}
+    \begin{flalign*}
+        &
+            V_{Mae}
+            = \frac{
+                \unit{\milli\litre\of{Mae}}
+            }{
+                0.20\,\unit{\mole\of{\ch{Na2SO3}}}
+            }
+            \,\frac{
+                x\,\unit{\mole\of{\ch{Na2SO3}}}
+            }{
+                \unit{\milli\litre\of{Sol}}
+            }
+            \,20\,\unit{\milli\litre\of{Sol}}
+            = 100\,x\,\unit{\milli\litre\of{Mae}}
+        &
+    \end{flalign*}
+    \begin{center}
+        \vspace{-1ex}
+        \begin{tabular}{l *{5}{C}}
+            \toprule
+            
+                \unit{\molar\of{\ch{Na2SO3}}}
+                & 0.02 & 0.04 & 0.06 & 0.08 & 0.10
+                \\\unit{\milli\litre\of{Mae}}
+                & 2 & 4 & 6 & 8 & 10
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \subsection*{\ch{NaCl}}
+    \begin{BM}
+        V_{Mae}=\frac{0.48999 - 3\,c_{\ch{Na2SO3}}}{0.03}
+        \,\unit{\milli\litre\of{Mae}}
+    \end{BM}
+    \begin{flalign*}
+        &
+            V_{Mae}
+            = \frac{\unit{\milli\liter\of{Mae}}}{
+                0.60\,\unit{\mole\of{\ch{NaCl}}}
+            }
+            \,\frac{
+                \ch{[NaCl]}\unit{\mole\of{\ch{NaCl}}}
+            }{
+                \unit{\milli\litre\of{Sol}}
+            }
+            \,20\,\unit{\milli\litre\of{Sol}}
+            = \frac{\ch{[NaCl]}}{0.03}
+            \,\unit{\milli\litre\of{Mae}}
+        &\\[2ex]&
+            I
+            = 0.49
+            = \frac{1}{2}
+            \sum_{i=1}^{n}{c_n\,z_n^2}
+            = \frac{1}{2}
+            \left(
+                \begin{aligned}
+                    &
+                        2.0*10^{-5} & *\,(+1)^2 
+                    &+\\+&
+                        \ch{[Na2SO3]}*2 & *\,(+1)^2 
+                    &+\\+&
+                        \ch{[Na2SO3]} & *\,(-2)^2 
+                    &+\\+&
+                        \ch{[NaCl]} & *\,(+1)^2 
+                    &+\\+&
+                        \ch{[NaCl]} & *\,(-1)^2 
+                    &
+                \end{aligned}
+            \right)
+            \begin{aligned}
+                (\ch{TB^+})
+                \\ (\ch{Na^{2+}})
+                \\ (\ch{So^{2-}})
+                \\ (\ch{Na^{1+}})
+                \\ (\ch{Cl^{1-}})
+            \end{aligned}
+            \implies &\\[2ex]&
+            \implies
+            \ch{[NaCl]}
+            = 0.48999 - 3\,\ch{[Na2SO3]}
+            % &\\[3ex]&
+            \qquad
+            \therefore
+            \frac{0.48999 - 3\,\ch{[Na2SO3]}}{0.03}
+            \,\unit{\milli\litre\of{Mae}}
+        &
+    \end{flalign*}
+    \begin{center}
+        \vspace{-1ex}
+
+        \begin{tabular}{l *{5}{C}}
+            \toprule
+            
+                \unit{\molar\of{\ch{Na2SO3}}}
+                & 0.02 & 0.04 & 0.06 & 0.08 & 0.10
+                \\\unit{\milli\litre\of{Mae}}
+                & \num{14.333}
+                & \num{12.333}
+                & \num{10.333}
+                & \num{8.333}
+                & \num{6.332999999999998}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+    \subsection*{Volumes usados}
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{*{5}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{Solução}
+                & \ch{TB^+}/\unit{\milli\litre}
+                & \ch{Na2SO3}/\unit{\milli\litre}
+                & \ch{NaCl}/\unit{\milli\litre}
+                & \ch{H2O}/\unit{\milli\litre}
+            
+            \\\midrule
+            
+                   1 & 2 &  2 & 14 & 2
+                \\ 2 & 2 &  4 & 12 & 2
+                \\ 3 & 2 &  6 & 10 & 2
+                \\ 4 & 2 &  8 &  8 & 2
+                \\ 5 & 2 & 10 &  6 & 2
+            
+            \\\bottomrule
+
+            \multicolumn{5}{r}{Volume Total: \(20\)\,\unit{\milli\litre}}
+        \end{tabular}\\
+        \tablecaption{Volumes usados em cada solução}
+        \vspace{2ex}
+    \end{center}
+
+\end{sectionBox}
+
+
+% 88888888ba                                       88                                88
+% 88      "8b                                      88    ,d                          88
+% 88      ,8P                                      88    88                          88
+% 88aaaaaa8P'   ,adPPYba,  ,adPPYba,  88       88  88  MM88MMM  ,adPPYYba,   ,adPPYb,88   ,adPPYba,   ,adPPYba,
+% 88""""88'    a8P_____88  I8[    ""  88       88  88    88     ""     `Y8  a8"    `Y88  a8"     "8a  I8[    ""
+% 88    `8b    8PP"""""""   `"Y8ba,   88       88  88    88     ,adPPPPP88  8b       88  8b       d8   `"Y8ba,
+% 88     `8b   "8b,   ,aa  aa    ]8I  "8a,   ,a88  88    88,    88,    ,88  "8a,   ,d88  "8a,   ,a8"  aa    ]8I
+% 88      `8b   `"Ybbd8"'  `"YbbdP"'   `"YbbdP'Y8  88    "Y888  `"8bbdP"Y8   `"8bbdP"Y8   `"YbbdP"'   `"YbbdP"'
+
+
+    %   ,ad8888ba,                              ad88  88
+    %  d8"'    `"8b                            d8"    ""
+    % d8'                                      88
+    % 88             8b,dPPYba,  ,adPPYYba,  MM88MMM  88   ,adPPYba,   ,adPPYba,   ,adPPYba,
+    % 88      88888  88P'   "Y8  ""     `Y8    88     88  a8"     ""  a8"     "8a  I8[    ""
+    % Y8,        88  88          ,adPPPPP88    88     88  8b          8b       d8   `"Y8ba,
+    %  Y8a.    .a88  88          88,    ,88    88     88  "8a,   ,aa  "8a,   ,a8"  aa    ]8I
+    %   `"Y88888P"   88          `"8bbdP"Y8    88     88   `"Ybbd8"'   `"YbbdP"'   `"YbbdP"'
+
+    %  ad88888ba                88
+    % d8"     "8b               88
+    % Y8,                       88
+    % `Y8aaaaa,     ,adPPYba,   88
+    %   `"""""8b,  a8"     "8a  88
+    %         `8b  8b       d8  88
+    % Y8a     a8P  "8a,   ,a8"  88
+    %  "Y88888P"    `"YbbdP"'   88
+
+\begin{sectionBox}2{Resultados} % S
+    
+    % \tikzset{external/force remake=true}
+
+    \subsection*{Graficos das \textit{k'} das soluções}
+
+    % \begin{multicols}{2}
+    \begin{center}
+
+        % \tikzset{external/force remake=true}
+
+        \pgfplotsset{height=7cm, width=1\textwidth}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 1                                  %
+        % ---------------------------------------------------------------------------- %
+
+        % \tikzset{external/remake next=true}
+        \begin{figure}\centering
+        {\Large\bfseries{Solução 1}}\par\medskip
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                xmajorgrids=true,
+                ymajorgrids=true,
+                minor tick num=3,
+                xminorgrids=true,
+                yminorgrids=true,
+                % legend pos  = north west
+                % axis on top,
+                ylabel={\(\ln{Abs}\)},
+                xlabel={Tempo/\unit{\second}},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( y=-0.0004\,x-1.1773 \)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( R^2=0.9921 \)}
+
+            \addplot[
+                no marks,
+                dashed
+            ] expression[
+                domain=30:1139
+            ] {
+                -0.0004*x-1.1773
+            };
+
+            \addplot[
+                mark=*,
+                only marks,
+            ] coordinates {
+                (  30, -1.184170177)
+                (  64, -1.158362293)
+                (  83, -1.187443502)
+                ( 113, -1.231001477)
+                ( 150, -1.244794799)
+                ( 197, -1.262308381)
+                ( 221, -1.272965676)
+                ( 240, -1.283737773)
+                ( 271, -1.294627173)
+                ( 317, -1.305636458)
+                ( 335, -1.30933332 )
+                ( 367, -1.313043899)
+                ( 393, -1.328025453)
+                ( 419, -1.32425897 )
+                ( 452, -1.339410775)
+                ( 483, -1.350927217)
+                ( 507, -1.370421012)
+                ( 539, -1.37436579 )
+                ( 570, -1.394326533)
+                ( 607, -1.406497068)
+                ( 635, -1.418817553)
+                ( 663, -1.439695138)
+                ( 695, -1.443923474)
+                ( 725, -1.452434164)
+                ( 754, -1.456716825)
+                ( 783, -1.474033275)
+                ( 813, -1.48722028 )
+                ( 841, -1.482805262)
+                ( 872, -1.500583508)
+                ( 901, -1.509592577)
+                ( 932, -1.523260216)
+                ( 962, -1.527857925)
+                ( 989, -1.551169004)
+                (1022, -1.565421027)
+                (1050, -1.57987911 )
+                (1078, -1.570217199)
+                (1111, -1.5945493  )
+                (1139, -1.609437912)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Grafico apresentando o logaritimo neperiano em função do tempo em segundos para a primeira solução}
+        \end{figure}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 2                                  %
+        % ---------------------------------------------------------------------------- %
+
+        % \tikzset{external/remake next=true}
+        \begin{figure}\centering
+        {\Large\bfseries{Solução 2}}\par\medskip
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                xmajorgrids=true,
+                ymajorgrids=true,
+                minor tick num=3,
+                xminorgrids=true,
+                yminorgrids=true,
+                % legend pos  = north west
+                % axis on top,
+                ylabel={\(\ln{Abs}\)},
+                xlabel={Tempo/\unit{\second}},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( y=-0.0005\,x-1.1086 \)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( R^2=0.9922 \)}
+
+            \addplot[
+                no marks,
+                dashed
+            ] expression[
+                domain=32:1123
+            ] {
+                -0.0005*x-1.1086
+            };
+
+            \addplot[
+                mark=*,
+                only marks,
+            ] coordinates {
+                (32,	-1.087672349)
+                (60,	-1.108662625)
+                (91,	-1.127011763)
+                (119,	-1.142564176)
+                (147,	-1.180907531)
+                (181,	-1.190727578)
+                (207,	-1.220779923)
+                (239,	-1.234432012)
+                (270,	-1.255266099)
+                (298,	-1.265848208)
+                (330,	-1.276543497)
+                (357,	-1.287354413)
+                (388,	-1.30933332)
+                (415,	-1.328025453)
+                (445,	-1.335601247)
+                (474,	-1.358679194)
+                (504,	-1.366491734)
+                (544,	-1.386294361)
+                (563,	-1.394326533)
+                (593,	-1.402423743)
+                (622,	-1.427116356)
+                (653,	-1.435484605)
+                (682,	-1.443923474)
+                (715,	-1.452434164)
+                (744,	-1.482805262)
+                (771,	-1.491654877)
+                (801,	-1.505077897)
+                (831,	-1.523260216)
+                (858,	-1.537117251)
+                (888,	-1.537117251)
+                (918,	-1.551169004)
+                (950,	-1.560647748)
+                (978,	-1.570217199)
+                (1006,	-1.5847453)
+                (1034,	-1.599487582)
+                (1061,	-1.619488248)
+                (1092,	-1.62455155)
+                (1123,	-1.64506509)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Grafico apresentando o logaritimo neperiano em função do tempo em segundos para a segunda solução}
+        \end{figure}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 3                                  %
+        % ---------------------------------------------------------------------------- %
+
+        % \tikzset{external/remake next=true}
+        \begin{figure}\centering
+        {\Large\bfseries{Solução 3}}\par\medskip
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                xmajorgrids=true,
+                ymajorgrids=true,
+                minor tick num=3,
+                xminorgrids=true,
+                yminorgrids=true,
+                % legend pos  = north west
+                % axis on top,
+                ylabel={\(\ln{Abs}\)},
+                xlabel={Tempo/\unit{\second}},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( y=-0.0012\,x-1.0484 \)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( R^2=0.9996 \)}
+
+            \addplot[
+                no marks,
+                dashed
+            ] expression[
+                domain=30:1142
+            ] {
+                -0.0012*x-1.0484
+            };
+
+            \addplot[
+                mark=*,
+                only marks,
+            ] coordinates {
+                (30,	-1.090644119)
+                (59,	-1.127011763)
+                (90,	-1.161552088)
+                (121,	-1.200645014)
+                (149,	-1.22758267)
+                (180,	-1.258781041)
+                (212,	-1.301953213)
+                (239,	-1.331806176)
+                (270,	-1.366491734)
+                (298,	-1.398366942)
+                (330,	-1.439695138)
+                (359,	-1.46967597)
+                (389,	-1.514127733)
+                (420,	-1.541779264)
+                (452,	-1.5945493)
+                (479,	-1.619488248)
+                (509,	-1.655481851)
+                (539,	-1.692819521)
+                (568,	-1.737271284)
+                (601,	-1.766091722)
+                (629,	-1.795767491)
+                (660,	-1.838851077)
+                (690,	-1.870802677)
+                (720,	-1.917322692)
+                (750,	-1.944910649)
+                (779,	-1.980501594)
+                (810,	-2.009915479)
+                (840,	-2.063568193)
+                (869,	-2.103734234)
+                (898,	-2.128631786)
+                (929,	-2.162823151)
+                (959,	-2.207274913)
+                (990,	-2.244316185)
+                (1020,	-2.282782466)
+                (1052,	-2.302585093)
+                (1079,	-2.3330443)
+                (1110,	-2.353878387)
+                (1142,	-2.419118909)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Grafico apresentando o logaritimo neperiano em função do tempo em segundos para a terceira solução}
+        \end{figure}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 4                                  %
+        % ---------------------------------------------------------------------------- %
+
+        % \tikzset{external/remake next=true}
+        \begin{figure}\centering
+        {\Large\bfseries{Solução 4}}\par\medskip
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                xmajorgrids=true,
+                ymajorgrids=true,
+                minor tick num=3,
+                xminorgrids=true,
+                yminorgrids=true,
+                % legend pos  = north west
+                % axis on top,
+                ylabel={\(\ln{Abs}\)},
+                xlabel={Tempo/\unit{\second}},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( y=-0.0027\,x-1.0666 \)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( R^2=0.9963 \)}
+
+            \addplot[
+                no marks,
+                dashed
+            ] expression[
+                domain=29:708
+            ] {
+                -0.0027*x-1.0666
+            };
+
+            \addplot[
+                mark=*,
+                only marks,
+            ] coordinates {
+                (29,	-1.148853505)
+                (60,	-1.22758267)
+                (92,	-1.30933332)
+                (120,	-1.378326191)
+                (148,	-1.46967597)
+                (179,	-1.541779264)
+                (206,	-1.63475572)
+                (239,	-1.698269126)
+                (265,	-1.795767491)
+                (297,	-1.870802677)
+                (324,	-1.951928221)
+                (354,	-2.009915479)
+                (382,	-2.095570924)
+                (412,	-2.18036746)
+                (441,	-2.225624052)
+                (471,	-2.3330443)
+                (503,	-2.419118909)
+                (531,	-2.364460497)
+                (562,	-2.63108916)
+                (589,	-2.70306266)
+                (619,	-2.764620553)
+                (649,	-2.830217835)
+                (678,	-2.882403588)
+                (708,	-2.937463365)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Grafico apresentando o logaritimo neperiano em função do tempo em segundos para a quarta solução}
+        \end{figure}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 5                                  %
+        % ---------------------------------------------------------------------------- %
+
+        % \tikzset{external/remake next=true}
+        \begin{figure}\centering
+        {\Large\bfseries{Solução 5}}\par\medskip
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                xmajorgrids=true,
+                ymajorgrids=true,
+                minor tick num=3,
+                xminorgrids=true,
+                yminorgrids=true,
+                % legend pos  = north west
+                % axis on top,
+                ylabel={\(\ln{Abs}\)},
+                xlabel={Tempo/\unit{\second}},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( y=-0.003\,x-1.073 \)}
+            \addlegendimage{empty legend}
+            \addlegendentry[Emph]{\( R^2=0.9949 \)}
+
+            \addplot[
+                no marks,
+                dashed
+            ] expression[
+                domain=32:622
+            ] {
+                -0.003*x-1.073
+            };
+
+            \addplot[
+                mark=*,
+                only marks,
+            ] coordinates {
+                (32,	-1.158362293)
+                (64,	-1.241328591)
+                (91,	-1.335601247)
+                (121,	-1.431291727)
+                (149,	-1.527857925)
+                (181,	-1.63989712)
+                (210,	-1.692819521)
+                (239,	-1.666008264)
+                (269,	-1.910543005)
+                (302,	-1.951928221)
+                (326,	-2.087473713)
+                (361,	-2.171556831)
+                (386,	-2.26336438)
+                (417,	-2.343407088)
+                (446,	-2.465104022)
+                (475,	-2.501036032)
+                (517,	-2.603690186)
+                (534,	-2.645075402)
+                (568,	-2.733368009)
+                (593,	-2.813410717)
+                (622,	-2.882403588)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+        \caption{Grafico apresentando o logaritimo neperiano em função do tempo em segundos para a quinta solução}
+        \end{figure}
+
+        
+    \end{center}
+    % \end{multicols}
+
+\end{sectionBox}
+
+% 88888888ba,    88
+% 88      `"8b   ""
+% 88        `8b
+% 88         88  88  ,adPPYba,   ,adPPYba,  88       88  ,adPPYba,  ,adPPYba,  ,adPPYYba,   ,adPPYba,
+% 88         88  88  I8[    ""  a8"     ""  88       88  I8[    ""  I8[    ""  ""     `Y8  a8"     "8a
+% 88         8P  88   `"Y8ba,   8b          88       88   `"Y8ba,    `"Y8ba,   ,adPPPPP88  8b       d8
+% 88      .a8P   88  aa    ]8I  "8a,   ,aa  "8a,   ,a88  aa    ]8I  aa    ]8I  88,    ,88  "8a,   ,a8"
+% 88888888Y"'    88  `"YbbdP"'   `"Ybbd8"'   `"YbbdP'Y8  `"YbbdP"'  `"YbbdP"'  `"8bbdP"Y8   `"YbbdP"'
+
+\begin{sectionBox}1{Discussão} % S
+    
+    \subsection{Análise da absorvância em função do tempo.}
+
+    Como podemos observar nas tabelas das diferentes cinco soluções, ao longo do tempo os valores da absorvancia vao diminuindo e tonalidade da solução vai aclareando. Isto acontece pois à medida que decorre a reação o azul toluidina está a ser reduzido pelo sulfito, transformando se em branco de toluidina que absorve menos radiação. Com o aumento da concentração de \ch{Na2SO3} a velocidade da reação aumenta proporcionalmente, justificado pela equacação da velocidade da reação. Com este aumento, nota se uma maior descrepância  entre os valores da absorvância no memso intervalo de tempo.\newline
+
+    \subsection{Análise dos gráficos de \textit{k'} e \textit{K}.}
+    
+    Na criação dos gráficos que seguem  a equação  \(\ln{A}=\ln{A}_0-k'\,t\), a linearidade dos pontos é fulcral para a obtenção de um valor preciso de \textit{k'}. Conseguimos observar que nas duas primeiras soluções as medicões das absorvâncias não foram executadas corretamnete o que causa uma perturbação na linearidade dos pontos da reta. Pelo contrário nas três ultimas soluções, as medicões tiveram uma melhor execução o que se reflete na proximidade ao valor 1 do coeficiente de determinação. A razão por de trás da má qualidade das primeiras medições em comparação com as últimas pode dever se ao facto, do número de medições efectuadas ou à contaminação do exterior da célula usada. Como consequência da falta de precisão nos valores de \textit{k'} obtivemos uma reta através da equação \(k'=k\,\ch{[SO3^{-2}]}_0\) cujo coeficente de determinação indica a falta de linearidade dos pontos. Assim concluimos teoricamente que o nosso valor de \textit{k} não seja aceitável.
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Arrhenius (Tabela)} % S
+
+    Através da equação \(k'=k\,\ch{[SO3^{-2}]}_0\), e dos dados disonibilizados para estudo, retiramos para cada concentração inicial de sulfito um valor de \textit{k} a uma temperatura específica. Com estes valores de \textit{k} às suas respetivas temperaturas, criámos gráficos de \(\ln(k)\) \times{} 1/Temperatura.
+
+    \begin{center}
+
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = scientific,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            % fixed-exponent          = 0,
+            round-mode              = places,        % figures/places/unsertanty/none
+            round-precision         = 3,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+
+        \setlength\tabcolsep{9mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            
+            % --------------------------------- Para 0.02 -------------------------------- %
+
+            \multicolumn{4}{l}{Para \ch{[SO3^{-2}]} 0.02}
+            \\\toprule
+            
+                k/\unit{\M^{-1}.\second^{-1}} 
+                & \ln{k}/\unit{\M^{-1}.\second^{-1}} 
+                & T/\unit{\celsius}
+                & T^{-1}/\unit{\celsius^{-1}}
+            
+            \\\midrule
+
+                   2.88E-02 & \num{-3.549117512} & 20.0 & \num{0.05}
+                \\ 3.68E-02 & \num{-3.303617053} & 22.5 & \num{0.044444444}
+                \\ 4.08E-02 & \num{-3.199073198} & 25.0 & \num{0.04}
+                \\ 4.59E-02 & \num{-3.082380080} & 30.0 & \num{0.033333333}
+                \\ 6.00E-02 & \num{-2.813410717} & 31.0 & \num{0.032258065}
+                \\ 2.65E-02 & \num{-3.632499121} & 20.0 & \num{0.05}
+                \\ 2.73E-02 & \num{-3.600868577} & 21.9 & \num{0.0456621}
+                \\ 5.85E-02 & \num{-2.838728525} & 35.0 & \num{0.028571429}
+            
+            \\\bottomrule
+
+            % --------------------------------- Para 0.04 -------------------------------- %
+
+            \multicolumn{4}{l}{Para \ch{[SO3^{-2}]} 0.04}
+            \\\toprule
+            
+                k/\unit{\M^{-1}.\second^{-1}} 
+                & \ln{k}/\unit{\M^{-1}.\second^{-1}} 
+                & T/\unit{\celsius}
+                & T^{-1}/\unit{\celsius^{-1}}
+            
+            \\\midrule
+
+               2.75E-02 & \num{-3.593569274} & 20 & \num{0.05}
+            \\ 4.05E-02 & \num{-3.206453305} & 22.5 & \num{0.044444444}
+            \\ 3.75E-02 & \num{-3.283414346} & 25 & \num{0.04}
+            \\ 5.13E-02 & \num{-2.971039661} & 31 & \num{0.032258065}
+            \\ 2.43E-02 & \num{-3.718308265} & 20 & \num{0.05}
+            \\ 1.83E-02 & \num{-4.002221273} & 21.9 & \num{0.0456621}
+            \\ 6.60E-02 & \num{-2.718100537} & 35 & \num{0.028571429}
+            
+            \\\bottomrule
+
+            % --------------------------------- Para 0.06 -------------------------------- %
+
+            \multicolumn{4}{l}{Para \ch{[SO3^{-2}]} 0.06}
+            \\\toprule
+            
+                k/\unit{\M^{-1}.\second^{-1}} 
+                & \ln{k}/\unit{\M^{-1}.\second^{-1}} 
+                & T/\unit{\celsius}
+                & T^{-1}/\unit{\celsius^{-1}}
+            
+            \\\midrule
+
+               2.55E-02 & \num{-3.669076827} & 20 & \num{0.05}
+            \\ 5.02E-02 & \num{-2.992404483} & 22.5 & \num{0.044444444}
+            \\ 3.07E-02 & \num{-3.484578991} & 25 & \num{0.04}
+            \\ 6.43E-02 & \num{-2.743677379} & 30 & \num{0.033333333}
+            \\ 6.88E-02 & \num{-2.676067155} & 31 & \num{0.032258065}
+            \\ 2.40E-02 & \num{-3.729701449} & 20 & \num{0.05}
+            \\ 1.73E-02 & \num{-4.055123849} & 21.9 & \num{0.0456621}
+            \\ 6.10E-02 & \num{-2.796881415} & 35 & \num{0.028571429}
+            
+            \\\bottomrule
+
+            % --------------------------------- Para 0.08 -------------------------------- %
+
+            \multicolumn{4}{l}{Para \ch{[SO3^{-2}]} 0.08}
+            \\\toprule
+            
+                k/\unit{\M^{-1}.\second^{-1}} 
+                & \ln{k}/\unit{\M^{-1}.\second^{-1}} 
+                & T/\unit{\celsius}
+                & T^{-1}/\unit{\celsius^{-1}}
+            
+            \\\midrule
+
+               2.64E-02 & \num{-3.635338687} & 20 & \num{0.05}
+            \\ 2.86E-02 & \num{-3.553474817} & 22.5 & \num{0.044444444}
+            \\ 3.00E-02 & \num{-3.506557897} & 25 & \num{0.04}
+            \\ 7.16E-02 & \num{-2.636311104} & 30 & \num{0.033333333}
+            \\ 6.04E-02 & \num{-2.807180167} & 31 & \num{0.032258065}
+            \\ 2.19E-02 & \num{-3.822410847} & 20 & \num{0.05}
+            \\ 1.68E-02 & \num{-4.089357021} & 21.9 & \num{0.0456621}
+            \\ 6.35E-02 & \num{-2.756715373} & 35 & \num{0.028571429}
+            
+            \\\bottomrule
+
+            % --------------------------------- Para 0.10 -------------------------------- %
+
+            \multicolumn{4}{l}{Para \ch{[SO3^{-2}]} 0.10}
+            \\\toprule
+            
+                k/\unit{\M^{-1}.\second^{-1}} 
+                & \ln{k}/\unit{\M^{-1}.\second^{-1}} 
+                & T/\unit{\celsius}
+                & T^{-1}/\unit{\celsius^{-1}}
+            
+            \\\midrule
+
+               2.82E-02 & \num{-3.568433301} & 20 & \num{0.05}
+            \\ 3.87E-02 & \num{-3.251915679} & 22.5 & \num{0.044444444}
+            \\ 3.33E-02 & \num{-3.402197882} & 25 & \num{0.04}
+            \\ 2.01E-02 & \num{-3.907035464} & 20 & \num{0.05}
+            \\ 1.69E-02 & \num{-4.080441657} & 21.9 & \num{0.0456621}
+            \\ 6.09E-02 & \num{-2.798522104} & 35 & \num{0.028571429}
+            
+            \\\bottomrule
+        \end{tabular}\\
+        \tablecaption[lnKxt]{Dados para discussão}
+        \vspace{2ex}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Arrenius (Graficos)\cite{toluina}} % S
+
+
+    % \tikzset{external/force remake=true}
+
+    \pgfplotsset{height=7cm, width=.9\textwidth}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Sulfito 0.02                                  %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{\(\ch{[SO3^{-2}]_0}=0.02\,\unit{\M}\)}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % axis on top,
+            ylabel={\(\ln{k}/\unit{\M^{-1}.\second^{-1}}\)},
+            xlabel={\(T^{-1}*10^2/\unit{\second^{-1}}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(y=-37.621\,x-1.7276 \)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(R^2=0.9117\)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.85:5
+        ] {
+            -37.621e-2*x-1.7276
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (5.,        -3.549117512)
+            (4.4444444, -3.303617053)
+            (4.,        -3.199073198)
+            (3.3333333, -3.08238008)
+            (3.2258065, -2.813410717)
+            (5.,        -3.632499121)
+            (4.56621,   -3.600868577)
+            (2.8571429, -2.838728525)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) constante da velocidade \times{} inverso do tempo para a amostra concentração de sulfito de 0.02, valores da tabela na seção: \ref{table:lnKxt}}
+    \end{figure}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Sulfito 0.04                                  %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{\(\ch{[SO3^{-2}]_0}=0.04\,\unit{\M}\)}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % axis on top,
+            ylabel={\(\ln{k}/\unit{\M^{-1}.\second^{-1}}\)},
+            xlabel={\(T^{-1}*10^2/\unit{\second^{-1}}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(y=-45.293\,x-1.4737 \)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(R^2=0.7343\)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.85:5
+        ] {
+            -45.293e-2*x-1.4737
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (5.,        -3.593569274)
+            (4.4444444, -3.206453305)
+            (4.,        -3.283414346)   
+            (3.2258065, -2.971039661)
+            (5.,        -3.718308265)
+            (4.56621,   -4.002221273)
+            (2.8571429, -2.718100537)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) constante da velocidade \times{} inverso do tempo para a amostra concentração de sulfito de 0.04, valores da tabela na seção: \ref{table:lnKxt}}
+    \end{figure}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Sulfito 0.06                                  %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{\(\ch{[SO3^{-2}]_0}=0.06\,\unit{\M}\)}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % axis on top,
+            ylabel={\(\ln{k}/\unit{\M^{-1}.\second^{-1}}\)},
+            xlabel={\(T^{-1}*10^2/\unit{\second^{-1}}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(y=-52.257\,x-1.1503\)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(R^2=0.6738\)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.85:5
+        ] {
+            -52.257e-2*x-1.1503
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (5.00000, -3.669076827)
+            (4.44444, -2.992404483)
+            (4.00000, -3.484578991)
+            (3.33333, -2.743677379)
+            (3.22581, -2.676067155)
+            (5.00000, -3.729701449)
+            (4.56621, -4.055123849)
+            (2.85714, -2.796881415)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) constante da velocidade \times{} inverso do tempo para a amostra concentração de sulfito de 0.06, valores da tabela na seção: \ref{table:lnKxt}}
+    \end{figure}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Sulfito 0.08                                  %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{\(\ch{[SO3^{-2}]_0}=0.08\,\unit{\M}\)}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % axis on top,
+            ylabel={\(\ln{k}/\unit{\M^{-1}.\second^{-1}}\)},
+            xlabel={\(T^{-1}*10^2/\unit{\second}^{-1}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(y=-58.624\,x-0.9747 \)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(R^2=0.8032\)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.85:5
+        ] {
+            -58.624e-2*x-0.9747
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (5.00000, -3.635338687)
+            (4.44444, -3.553474817)
+            (4.00000, -3.506557897)
+            (3.33333, -2.636311104)
+            (3.22581, -2.807180167)
+            (5.00000, -3.822410847)
+            (4.56621, -4.089357021)
+            (2.85714, -2.756715373)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) constante da velocidade \times{} inverso do tempo para a amostra concentração de sulfito de 0.08, valores da tabela na seção: \ref{table:lnKxt}}
+    \end{figure}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Sulfito 0.10                                  %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{\(\ch{[SO3^{-2}]_0}=0.10\,\unit{\M}\)}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % axis on top,
+            ylabel={\(\ln{k}/\unit{\M^{-1}.\second^{-1}}\)},
+            xlabel={\(T^{-1}*10^2/\unit{\second}^{-1}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(y=-48.037\,x-1.5166\)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\(R^2=0.6421\)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.85:5
+        ] {
+            -46.037e-2*x-1.5166
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (5.000, -3.568433301)
+            (4.444, -3.251915679)
+            (4.000, -3.402197882)
+            (5.000, -3.907035464)
+            (4.566, -4.080441657)
+            (2.857, -2.798522104)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) constante da velocidade \times{} inverso do tempo para a amostra concentração de sulfito de 0.10, valores da tabela na seção: \ref{table:lnKxt}}
+    \end{figure}
+    
+    Em cada gráfico obtivemos uma reta que segue a lei de arrhenius, \(\ln{k}=\ln{A}-E_a/(RT)\), cujo declive representa \(-E_a/R\). Assim conseguimos obter a energia de ativação, a energia cinética mínima que os reagentes devem ter para formar produtos, para cada concentração de Sulfito.
+
+    \begin{center}
+        \vspace{1ex}
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = scientific,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            % fixed-exponent          = 0,
+            round-mode              = places,        % figures/places/unsertanty/none
+            round-precision         = 5,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+        \begin{tabular}{*{3}{C}}
+            \toprule
+            
+                \ch{[SO3^{-2}]_0}/\unit{\M}
+                & m & E_a/\unit{\joule.\mole^{-1}}
+            
+            \\\midrule
+            
+               0.02 & -37.621 & \num{312780.994}
+            \\ 0.04 & -45.293 & \num{376566.002}
+            \\ 0.06 & -52.257 & \num{434464.698}
+            \\ 0.08 & -58.624 & \num{487399.936}
+            \\ 0.10 & -46.037 & \num{382751.618}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+\end{sectionBox}
+
+%   ,ad8888ba,                              ad88  88
+%  d8"'    `"8b                            d8"    ""
+% d8'                                      88
+% 88             8b,dPPYba,  ,adPPYYba,  MM88MMM  88   ,adPPYba,   ,adPPYba,
+% 88      88888  88P'   "Y8  ""     `Y8    88     88  a8"     ""  a8"     "8a
+% Y8,        88  88          ,adPPPPP88    88     88  8b          8b       d8
+%  Y8a.    .a88  88          88,    ,88    88     88  "8a,   ,aa  "8a,   ,a8"
+%   `"Y88888P"   88          `"8bbdP"Y8    88     88   `"Ybbd8"'   `"YbbdP"'
+
+%        db
+%       d88b                                                      ,d
+%      d8'`8b                                                     88
+%     d8'  `8b      88,dPYba,,adPYba,    ,adPPYba,   ,adPPYba,  MM88MMM  8b,dPPYba,  ,adPPYYba,
+%    d8YaaaaY8b     88P'   "88"    "8a  a8"     "8a  I8[    ""    88     88P'   "Y8  ""     `Y8
+%   d8""""""""8b    88      88      88  8b       d8   `"Y8ba,     88     88          ,adPPPPP88
+%  d8'        `8b   88      88      88  "8a,   ,a8"  aa    ]8I    88,    88          88,    ,88
+% d8'          `8b  88      88      88   `"YbbdP"'   `"YbbdP"'    "Y888  88          `"8bbdP"Y8
+
+\begin{sectionBox}2{Força iônica variável} % S
+    % \tikzset{external/force remake=true}
+
+    \pgfplotsset{height=7cm, width=.9\textwidth}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Solução 9                                  %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/force remake=true}
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{Amostra 9}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            legend pos=north east,
+            % axis on top,
+            ylabel={\(\ln{k'}\)},
+            xlabel={\(\sqrt{I}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( y=0.0614\,x+4*10^{-5} \)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( R^2=0.9961 \)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.4:4.9
+        ] {
+            -1.4199e-1*x-2.6159
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (2.44948974, -2.974694135)
+            (3.00000000, -3.080921908)
+            (3.46410162, -3.079354999)
+            (3.87298335, -3.106793247)
+            (4.89897949, -3.348721986)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) da pseudo constante da velocidade \times{} \(\sqrt{\text{força iônica}}\) para a amostra 9, valores da tabela na seção: \ref{table:tabKCComp2}}
+    \end{figure}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Solução 10                                 %
+    % ---------------------------------------------------------------------------- %
+
+    % \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{Amostra 10}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            legend pos=north east,
+            % axis on top,
+            ylabel={\(\ln{k'}\)},
+            xlabel={\(\sqrt{I}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( y=-0.6638\,x-2.8165 \)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( R^2=0.9618 \)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.4:4.9
+        ] {
+            -0.6638e-1*x-2.8165
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (2.44948974, -2.978810701)
+            (3.00000000, -3.006123085)
+            (3.46410162, -3.044793462)
+            (3.87298335, -3.094204120)
+            (4.89897949, -3.132532512)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) da pseudo constante da velocidade \times{} \(\sqrt{\text{força iônica}}\) para a amostra 10, valores da tabela na seção: \ref{table:tabKCComp2}}
+    \end{figure}
+
+    % ---------------------------------------------------------------------------- %
+    %                                   Solução 11                                 %
+    % ---------------------------------------------------------------------------- %
+
+    \tikzset{external/remake next=true}
+    \begin{figure}\centering
+    {\Large\bfseries{Amostra 11}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            legend pos=north east,
+            % axis on top,
+            ylabel={\(\ln{k'}\)},
+            xlabel={\(\sqrt{I}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( y=-0.4195\,x-2.7854 \)}
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( R^2=0.6854 \)}
+
+        \addplot[
+            no marks,
+            dashed
+        ] expression[
+            domain=2.4:4.9
+        ] {
+            -0.4195e-1*x-2.7854
+        };
+
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (2.44948974, -2.889410290)
+            (3.00000000, -2.896196279)
+            (3.46410162, -2.970616222)
+            (3.87298335, -2.917214630)
+            (4.89897949, -2.995678626)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \caption{\(\ln\) da pseudo constante da velocidade \times{} \(\sqrt{\text{força iônica}}\) para a amostra 11, valores da tabela na seção: \ref{table:tabKCComp2}}
+    \end{figure}
+
+\end{sectionBox}
+
+% % 888888888888              88                       88
+% %      88                   88                       88
+% %      88                   88                       88
+% %      88       ,adPPYYba,  88,dPPYba,    ,adPPYba,  88  ,adPPYYba,  ,adPPYba,
+% %      88       ""     `Y8  88P'    "8a  a8P_____88  88  ""     `Y8  I8[    ""
+% %      88       ,adPPPPP88  88       d8  8PP"""""""  88  ,adPPPPP88   `"Y8ba,
+% %      88       88,    ,88  88b,   ,a8"  "8b,   ,aa  88  88,    ,88  aa    ]8I
+% %      88       `"8bbdP"Y8  8Y"Ybbd8"'    `"Ybbd8"'  88  `"8bbdP"Y8  `"YbbdP"'
+
+% %  ad88888ba                88
+% % d8"     "8b               88
+% % Y8,                       88
+% % `Y8aaaaa,     ,adPPYba,   88
+% %   `"""""8b,  a8"     "8a  88
+% %         `8b  8b       d8  88
+% % Y8a     a8P  "8a,   ,a8"  88
+% %  "Y88888P"    `"YbbdP"'   88
+
+\begin{sectionBox}*{} % S
+    
+    \subsection*{Calculando a constante cinética}
+
+    \begin{center}
+
+        \setlength\tabcolsep{6mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+
+            
+        % \vspace{1ex}
+        \begin{tabular}{*{4}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{Solução}
+                & k'/\unit{\second^{-1}}
+                & \ch{[SO3^{-2}]}_0/\unit{\M}
+                & I/\unit{\M}
+            
+            \\\midrule
+
+               1 & 0.0004 & 0.02 &
+            \multirow{5}{*}{0.49}
+            \\ 2 & 0.0005 & 0.04 &
+            \\ 3 & 0.0012 & 0.06 &
+            \\ 4 & 0.0027 & 0.08 &
+            \\ 5 & 0.0030 & 0.10 &
+
+            \\\bottomrule
+        \end{tabular}\\
+        \tablecaption{Declive das soluções sobre a concentração de \ch{[SO3^{-2}]}}
+        \vspace*{1ex}
+
+        % \tikzset{external/remake next=true}
+        \begin{figure}\centering
+            % {\Large\bfseries{Solução 3}}\par\medskip
+            
+            \pgfplotsset{height=7cm, width=.9\textwidth}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    xmajorgrids=true,
+                    ymajorgrids=true,
+                    minor tick num=3,
+                    xminorgrids=true,
+                    yminorgrids=true,
+                    legend pos=south east,
+                    % axis on top,
+                    ylabel={\(k'*10^3\)},
+                    xlabel={\(\ch{[SO3^{-2}]_0}*10\)},
+                ]
+                % Legends
+                \addlegendimage{empty legend}
+                \addlegendentry[Emph]{\( y=0.037\,x-0.0007 \)}
+                \addlegendimage{empty legend}
+                \addlegendentry[Emph]{\( R^2=0.9169 \)}
+    
+                \addplot[
+                    no marks,
+                    dashed
+                ] expression[
+                    domain=0.2:1
+                ] {
+                    0.037e2*x-0.0007e3
+                };
+    
+                \addplot[
+                    mark=*,
+                    only marks,
+                ] coordinates {
+                    (0.2, 0.4)
+                    (0.4, 0.5)
+                    (0.6, 1.2)
+                    (0.8, 2.7)
+                    (1.0, 3.0)
+                };
+                
+            \end{axis}
+            \end{tikzpicture}
+            \caption{Grafico cruzando a constante cinética aparente com a concentração de \ch{SO3^{-2}}, seu declive revela a constante cinética real da reação}
+            \end{figure}
+
+
+            \begin{BM}\huge
+                \therefore k_{\text{reação}}=0.037\,\unit{\second^{-1}.\mole^{-1}}
+            \end{BM}
+        % \includegraphics[width=.9\textwidth]{kxc.png}
+
+    \end{center}
+    
+
+\end{sectionBox}
+
+
+% % 88888888ba,                         88
+% % 88      `"8b                        88
+% % 88        `8b                       88
+% % 88         88  ,adPPYYba,   ,adPPYb,88   ,adPPYba,   ,adPPYba,
+% % 88         88  ""     `Y8  a8"    `Y88  a8"     "8a  I8[    ""
+% % 88         8P  ,adPPPPP88  8b       88  8b       d8   `"Y8ba,
+% % 88      .a8P   88,    ,88  "8a,   ,d88  "8a,   ,a8"  aa    ]8I
+% % 88888888Y"'    `"8bbdP"Y8   `"8bbdP"Y8   `"YbbdP"'   `"YbbdP"'
+
+\begin{sectionBox}1{Conclusão} % S
+    
+    Após a realização da atividade experimental, podemos concluir que conseguimos obter os resultados previstos. De uma maneira geral, conseguimos preparar de forma adequada as soluções e os valores obtidos foram de acordo aos valores teóricos que nos foram dados.\newline
+
+    Apesar de alguns erros associados, sendo estes: o mau manuseamento da célula, a má colocação da célula no espetrofotómetro, a abertura constante da tampa para a retirada da célula, e algumas condições alheias a nossa vontade podem ter interferido na obtenção de valores mais exatos e assim feito com que não tenhamos obtido um valor de \textit{K} tão próximo ao valor tabelado.\newline
+
+    Por fim, concluímos que o método usado para calcular a constante cinética das reações de redução do corante azul de toluidina pelo ião sulfito é um processo eficaz.
+    
+\end{sectionBox}
+
+
+%   ,ad8888ba,                                       88
+%  d8"'    `"8b                                      88
+% d8'                                                88
+% 88              ,adPPYba,  8b,dPPYba,  ,adPPYYba,  88
+% 88      88888  a8P_____88  88P'   "Y8  ""     `Y8  88
+% Y8,        88  8PP"""""""  88          ,adPPPPP88  88
+%  Y8a.    .a88  "8b,   ,aa  88          88,    ,88  88
+%   `"Y88888P"    `"Ybbd8"'  88          `"8bbdP"Y8  88
+
+\begin{sectionBox}1{Dados} % S
+    
+    \subsection{Dados Para Estudo}
+    
+    \begin{center}
+    % \vspace{1ex}
+    \sisetup{
+        % scientific / engineering / input / fixed
+        exponent-mode           = scientific,
+        exponent-to-prefix      = false,          % 1000 g -> 1 kg
+        % exponent-product        = *,             % x * 10^y
+        % fixed-exponent          = 0,
+        round-mode              = figures,        % figures/places/unsertanty/none
+        round-precision         = 3,
+        % round-minimum           = 0.01, % <x => 0
+        % output-exponent-marker  = {\,\mathrm{E}},
+    }
+    \setlength\tabcolsep{5mm}        % width
+    % \renewcommand\arraystretch{1.25} % height
+    \begin{tabular}{*{6}{C}}
+        \toprule
+        
+            \text{Amostra}
+            & T/\unit{\celsius}
+            & \multicolumn{1}{c}{Solução}
+            & k'/\unit{\second^{-1}}
+            & \ch{[SO3^{-2}]}_0/\unit{\M}
+            & I/\unit{\M}
+        
+        \\\midrule
+
+            \multirow{5}{*}{1}
+            & \multirow{5}{*}{20}
+                & 1 & \num{5.75E-04} & 0.02
+            & \multirow{5}{*}{0.3}
+            \\ && 2 & \num{1.10E-03} & 0.04 &
+            \\ && 3 & \num{1.53E-03} & 0.06 &
+            \\ && 4 & \num{2.11E-03} & 0.08 &
+            \\ && 5 & \num{2.82E-03} & 0.10 &
+            \\\midrule
+            \multirow{5}{*}{2}
+            & \multirow{5}{*}{22.5}
+                & 1 & \num{7.35E-04} & 0.02
+            & \multirow{5}{*}{0.3}
+            \\ && 2 & \num{1.62E-03} & 0.04 &
+            \\ && 3 & \num{3.01E-03} & 0.06 &
+            \\ && 4 & \num{2.29E-03} & 0.08 &
+            \\ && 5 & \num{3.87E-03} & 0.10 &
+            \\\midrule
+            \multirow{5}{*}{3}
+            & \multirow{5}{*}{25}
+                & 1 & \num{8.16E-04} & 0.02
+            & \multirow{5}{*}{0.3}
+            \\ && 2 & \num{1.50E-03} & 0.04 &
+            \\ && 3 & \num{1.84E-03} & 0.06 &
+            \\ && 4 & \num{2.40E-03} & 0.08 &
+            \\ && 5 & \num{3.33E-03} & 0.10 &
+            \\\midrule
+            \multirow{3}{*}{4}
+            & \multirow{3}{*}{30}
+                & 1 & \num{9.17E-04} & 0.02 
+            & \multirow{3}{*}{0.3}
+            \\ && 2 & \num{3.86E-03} & 0.06 &
+            \\ && 3 & \num{5.73E-03} & 0.08 &
+            \\\midrule
+            \multirow{4}{*}{5}
+            & \multirow{4}{*}{31}
+                & 1 & \num{1.20E-03} & 0.02 
+            & \multirow{4}{*}{0.3}
+            \\ && 2 & \num{2.05E-03} & 0.04 &
+            \\ && 3 & \num{4.13E-03} & 0.06 &
+            \\ && 4 & \num{4.83E-03} & 0.08 &
+            \\\midrule
+            \multirow{5}{*}{6}
+            & \multirow{5}{*}{20}
+                & 1 & \num{5.29E-04} & 0.02
+            & \multirow{5}{*}{0.39}
+            \\ && 2 & \num{9.71E-04} & 0.04 &
+            \\ && 3 & \num{1.44E-03} & 0.06 &
+            \\ && 4 & \num{1.75E-03} & 0.08 &
+            \\ && 5 & \num{2.01E-03} & 0.10 &
+            \\\midrule
+            \multirow{5}{*}{7}
+            & \multirow{5}{*}{21.9}
+                & 1 & \num{5.46E-04} & 0.02
+            & \multirow{5}{*}{0.48}
+            \\ && 2 & \num{7.31E-04} & 0.04 &
+            \\ && 3 & \num{1.04E-03} & 0.06 &
+            \\ && 4 & \num{1.34E-03} & 0.08 &
+            \\ && 5 & \num{1.69E-03} & 0.10 &
+            \\\midrule
+            \multirow{5}{*}{8}
+            & \multirow{5}{*}{35}
+                & 1 & \num{1.17E-03} & 0.02
+            & \multirow{5}{*}{0.48}
+            \\ && 2 & \num{2.64E-03} & 0.04 &
+            \\ && 3 & \num{3.66E-03} & 0.06 &
+            \\ && 4 & \num{5.08E-03} & 0.08 &
+            \\ && 5 & \num{6.09E-03} & 0.10 &
+            \\\bottomrule
+        \end{tabular}\\
+        \tablecaption[tabKCComp1]{Temperatura, solução, \(k'\) concentração de \(\ch{SO3^{-2}}\) e força ionica (\textit{I}) das amostras 1 a 8}
+
+        \vspace*{1ex}
+        \setlength\tabcolsep{2mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{*{8}{C}}
+            \toprule
+            
+                \text{Amostra}
+                & T/\unit{\celsius}
+                & \multicolumn{1}{c}{Solução}
+                & k'/\unit{\second^{-1}}
+                & \ln{k'}/\unit{\second^{-1}}
+                & \ch{[SO3^{-2}]}_0/\unit{\M}
+                & I/\unit{\M}
+                & \sqrt{I}/\unit{\M}
+            
+            \\\midrule
+            \multirow{5}{*}{9}
+            & \multirow{5}{*}{21}
+                & 1 & \num{1.06E-03} & \num{-2.974694135} & 0.02 & 0.06 & \num{0.244948974}
+            \\ && 2 & \num{8.30E-04} & \num{-3.080921908} & 0.02 & 0.09 & \num{0.300000000}
+            \\ && 3 & \num{8.33E-04} & \num{-3.079354999} & 0.02 & 0.12 & \num{0.346410162}
+            \\ && 4 & \num{7.82E-04} & \num{-3.106793247} & 0.02 & 0.15 & \num{0.387298335}
+            \\ && 5 & \num{4.48E-04} & \num{-3.348721986} & 0.02 & 0.24 & \num{0.489897949}
+            \\\midrule
+            \multirow{5}{*}{10}
+            & \multirow{5}{*}{21}
+                & 1 & \num{1.05E-03} & \num{-2.978810701} & 0.02 & 0.06 & \num{0.244948974}
+            \\ && 2 & \num{9.86E-04} & \num{-3.006123085} & 0.02 & 0.09 & \num{0.300000000}
+            \\ && 3 & \num{9.02E-04} & \num{-3.044793462} & 0.02 & 0.12 & \num{0.346410162}
+            \\ && 4 & \num{8.05E-04} & \num{-3.094204120} & 0.02 & 0.15 & \num{0.387298335}
+            \\ && 5 & \num{7.37E-04} & \num{-3.132532512} & 0.02 & 0.24 & \num{0.489897949}
+            \\\midrule
+            \multirow{5}{*}{11}
+            & \multirow{5}{*}{24}
+                & 1 & \num{1.29E-03} & \num{-2.889410290} & 0.02 & 0.06 & \num{0.244948974}
+            \\ && 2 & \num{1.27E-03} & \num{-2.896196279} & 0.02 & 0.09 & \num{0.300000000}
+            \\ && 3 & \num{1.07E-03} & \num{-2.970616222} & 0.02 & 0.12 & \num{0.346410162}
+            \\ && 4 & \num{1.21E-03} & \num{-2.917214630} & 0.02 & 0.15 & \num{0.387298335}
+            \\ && 5 & \num{1.01E-03} & \num{-2.995678626} & 0.02 & 0.24 & \num{0.489897949}
+
+        \\\bottomrule
+    \end{tabular}\\
+    \tablecaption[tabKCComp2]{Temperatura, solução, \(k'\) concentração de \(\ch{SO3^{-2}}\) e força ionica (\textit{I}) das amostras 9 a 11}
+    \vspace*{1ex}
+    \end{center}
+
+\end{sectionBox}
+
+%  ad88888ba                88
+% d8"     "8b               88
+% Y8,                       88
+% `Y8aaaaa,     ,adPPYba,   88
+%   `"""""8b,  a8"     "8a  88
+%         `8b  8b       d8  88
+% Y8a     a8P  "8a,   ,a8"  88
+%  "Y88888P"    `"YbbdP"'   88
+
+%        db         88
+%       d88b        88
+%      d8'`8b       88
+%     d8'  `8b      88,dPPYba,   ,adPPYba,
+%    d8YaaaaY8b     88P'    "8a  I8[    ""
+%   d8""""""""8b    88       d8   `"Y8ba,
+%  d8'        `8b   88b,   ,a8"  aa    ]8I
+% d8'          `8b  8Y"Ybbd8"'   `"YbbdP"'
+
+\begin{sectionBox}*{} % S
+
+    \begin{multicols}{2}
+
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = engineering,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            % fixed-exponent          = 0,
+            round-mode              = places,        % figures/places/unsertanty/none
+            round-precision         = 5,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+
+        \setlength\tabcolsep{3mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 1                                  %
+        % ---------------------------------------------------------------------------- %
+
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{3}{C}}
+
+                \multicolumn{3}{l}{Solução 1}
+                \\\toprule
+                
+                    Abs
+                    &\ln(Abs)
+                    &\multicolumn{1}{c}{Tempo/\unit{\second}}
+                
+                \\\midrule
+                
+                  0.306 & \num{-1.184170177} & 30
+                \\0.314 & \num{-1.158362293} & 64
+                \\0.305 & \num{-1.187443502} & 83
+                \\0.292 & \num{-1.231001477} & 113
+                \\0.288 & \num{-1.244794799} & 150
+                \\0.283 & \num{-1.262308381} & 197
+                \\0.280 & \num{-1.272965676} & 221
+                \\0.277 & \num{-1.283737773} & 240
+                \\0.274 & \num{-1.294627173} & 271
+                \\0.271 & \num{-1.305636458} & 317
+                \\0.270 & \num{-1.30933332}  & 335
+                \\0.269 & \num{-1.313043899} & 367
+                \\0.265 & \num{-1.328025453} & 393
+                \\0.266 & \num{-1.32425897}  & 419
+                \\0.262 & \num{-1.339410775} & 452
+                \\0.259 & \num{-1.350927217} & 483
+                \\0.254 & \num{-1.370421012} & 507
+                \\0.253 & \num{-1.37436579}  & 539
+                \\0.248 & \num{-1.394326533} & 570
+                \\0.245 & \num{-1.406497068} & 607
+                \\0.242 & \num{-1.418817553} & 635
+                \\0.237 & \num{-1.439695138} & 663
+                \\0.236 & \num{-1.443923474} & 695
+                \\0.234 & \num{-1.452434164} & 725
+                \\0.233 & \num{-1.456716825} & 754
+                \\0.229 & \num{-1.474033275} & 783
+                \\0.226 & \num{-1.48722028}  & 813
+                \\0.227 & \num{-1.482805262} & 841
+                \\0.223 & \num{-1.500583508} & 872
+                \\0.221 & \num{-1.509592577} & 901
+                \\0.218 & \num{-1.523260216} & 932
+                \\0.217 & \num{-1.527857925} & 962
+                \\0.212 & \num{-1.551169004} & 989
+                \\0.209 & \num{-1.565421027} & 1022
+                \\0.206 & \num{-1.57987911}  & 1050
+                \\0.208 & \num{-1.570217199} & 1078
+                \\0.203 & \num{-1.5945493}   & 1111
+                \\0.200 & \num{-1.609437912} & 1139
+                
+                \\\bottomrule
+            \end{tabular}\\
+            \tablecaption{Absorvancia e Tempo da solução 1}
+            \vspace{1ex}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 2                                  %
+        % ---------------------------------------------------------------------------- %
+            \vspace{1ex}
+            \begin{tabular}{*{3}{C}}
+
+                \multicolumn{3}{l}{Solução 2}
+                \\\toprule
+                
+                    Abs
+                    &\ln(Abs)
+                    &\multicolumn{1}{c}{Tempo/\unit{\second}}
+                
+                \\\midrule
+                
+                  0.337 & \num{-1.087672349} & 32
+                \\0.330 & \num{-1.108662625} & 60
+                \\0.324 & \num{-1.127011763} & 91
+                \\0.319 & \num{-1.142564176} & 119
+                \\0.307 & \num{-1.180907531} & 147
+                \\0.304 & \num{-1.190727578} & 181
+                \\0.295 & \num{-1.220779923} & 207
+                \\0.291 & \num{-1.234432012} & 239
+                \\0.285 & \num{-1.255266099} & 270
+                \\0.282 & \num{-1.265848208} & 298
+                \\0.279 & \num{-1.276543497} & 330
+                \\0.276 & \num{-1.287354413} & 357
+                \\0.270 & \num{-1.30933332}  & 388
+                \\0.265 & \num{-1.328025453} & 415
+                \\0.263 & \num{-1.335601247} & 445
+                \\0.257 & \num{-1.358679194} & 474
+                \\0.255 & \num{-1.366491734} & 504
+                \\0.250 & \num{-1.386294361} & 544
+                \\0.248 & \num{-1.394326533} & 563
+                \\0.246 & \num{-1.402423743} & 593
+                \\0.240 & \num{-1.427116356} & 622
+                \\0.238 & \num{-1.435484605} & 653
+                \\0.236 & \num{-1.443923474} & 682
+                \\0.234 & \num{-1.452434164} & 715
+                \\0.227 & \num{-1.482805262} & 744
+                \\0.225 & \num{-1.491654877} & 771
+                \\0.222 & \num{-1.505077897} & 801
+                \\0.218 & \num{-1.523260216} & 831
+                \\0.215 & \num{-1.537117251} & 858
+                \\0.215 & \num{-1.537117251} & 888
+                \\0.212 & \num{-1.551169004} & 918
+                \\0.210 & \num{-1.560647748} & 950
+                \\0.208 & \num{-1.570217199} & 978
+                \\0.205 & \num{-1.5847453}   & 1006
+                \\0.202 & \num{-1.599487582} & 1034
+                \\0.198 & \num{-1.619488248} & 1061
+                \\0.197 & \num{-1.62455155}  & 1092
+                \\0.193 & \num{-1.64506509}  & 1123
+                
+                \\\bottomrule
+            \end{tabular}\\
+            \tablecaption{Absorvancia e Tempo da solução 2}
+            \vspace{1ex}
+        \end{center}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 3                                  %
+        % ---------------------------------------------------------------------------- %
+
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{3}{C}}
+
+                \multicolumn{3}{l}{Solução 3}
+                \\\toprule
+                
+                    Abs
+                    &\ln(Abs)
+                    &\multicolumn{1}{c}{Tempo/\unit{\second}}
+                
+                \\\midrule
+                
+                  0.336 & \num{-1.090644119} & 30
+                \\0.324 & \num{-1.127011763} & 59
+                \\0.313 & \num{-1.161552088} & 90
+                \\0.301 & \num{-1.200645014} & 121
+                \\0.293 & \num{-1.22758267}  & 149
+                \\0.284 & \num{-1.258781041} & 180
+                \\0.272 & \num{-1.301953213} & 212
+                \\0.264 & \num{-1.331806176} & 239
+                \\0.255 & \num{-1.366491734} & 270
+                \\0.247 & \num{-1.398366942} & 298
+                \\0.237 & \num{-1.439695138} & 330
+                \\0.230 & \num{-1.46967597}  & 359
+                \\0.22  & \num{-1.514127733} & 389
+                \\0.214 & \num{-1.541779264} & 420
+                \\0.203 & \num{-1.5945493}   & 452
+                \\0.198 & \num{-1.619488248} & 479
+                \\0.191 & \num{-1.655481851} & 509
+                \\0.184 & \num{-1.692819521} & 539
+                \\0.176 & \num{-1.737271284} & 568
+                \\0.171 & \num{-1.766091722} & 601
+                \\0.166 & \num{-1.795767491} & 629
+                \\0.159 & \num{-1.838851077} & 660
+                \\0.154 & \num{-1.870802677} & 690
+                \\0.147 & \num{-1.917322692} & 720
+                \\0.143 & \num{-1.944910649} & 750
+                \\0.138 & \num{-1.980501594} & 779
+                \\0.134 & \num{-2.009915479} & 810
+                \\0.127 & \num{-2.063568193} & 840
+                \\0.122 & \num{-2.103734234} & 869
+                \\0.119 & \num{-2.128631786} & 898
+                \\0.115 & \num{-2.162823151} & 929
+                \\0.110 & \num{-2.207274913} & 959
+                \\0.106 & \num{-2.244316185} & 990
+                \\0.102 & \num{-2.282782466} & 1020
+                \\0.100 & \num{-2.302585093} & 1052
+                \\0.097 & \num{-2.3330443}   & 1079
+                \\0.095 & \num{-2.353878387} & 1110
+                \\0.089 & \num{-2.419118909} & 1142
+                
+                \\\bottomrule
+            \end{tabular}\\
+            \tablecaption{Absorvancia e Tempo da solução 3}
+            \vspace{1ex}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 4                                  %
+        % ---------------------------------------------------------------------------- %
+
+            \vspace{1ex}
+            \begin{tabular}{*{3}{C}}
+
+                \multicolumn{3}{l}{Solução 4}
+                \\\toprule
+                
+                    Abs
+                    &\ln(Abs)
+                    &\multicolumn{1}{c}{Tempo/\unit{\second}}
+                
+                \\\midrule
+                
+                  0.317 & \num{-1.148853505} & 29
+                \\0.293 & \num{-1.22758267}  & 60
+                \\0.270 & \num{-1.30933332}  & 92
+                \\0.252 & \num{-1.378326191} & 120
+                \\0.230 & \num{-1.46967597}  & 148
+                \\0.214 & \num{-1.541779264} & 179
+                \\0.195 & \num{-1.63475572}  & 206
+                \\0.183 & \num{-1.698269126} & 239
+                \\0.166 & \num{-1.795767491} & 265
+                \\0.154 & \num{-1.870802677} & 297
+                \\0.142 & \num{-1.951928221} & 324
+                \\0.134 & \num{-2.009915479} & 354
+                \\0.123 & \num{-2.095570924} & 382
+                \\0.113 & \num{-2.18036746}  & 412
+                \\0.108 & \num{-2.225624052} & 441
+                \\0.097 & \num{-2.3330443}   & 471
+                \\0.089 & \num{-2.419118909} & 503
+                \\0.094 & \num{-2.364460497} & 531
+                \\0.072 & \num{-2.63108916}  & 562
+                \\0.067 & \num{-2.70306266}  & 589
+                \\0.063 & \num{-2.764620553} & 619
+                \\0.059 & \num{-2.830217835} & 649
+                \\0.056 & \num{-2.882403588} & 678
+                \\0.053 & \num{-2.937463365} & 708
+                
+                \\\bottomrule
+            \end{tabular}\\
+            \tablecaption{Absorvancia e Tempo da solução 4}
+            \vspace{1ex}
+
+        % ---------------------------------------------------------------------------- %
+        %                                   Solução 5                                  %
+        % ---------------------------------------------------------------------------- %
+
+            \vspace{1ex}
+            \begin{tabular}{*{3}{C}}
+
+                \multicolumn{3}{l}{Solução 5}
+                \\\toprule
+                
+                    Abs
+                    &\ln(Abs)
+                    &\multicolumn{1}{c}{Tempo/\unit{\second}}
+                
+                \\\midrule
+                
+                  0.314 & \num{-1.158362293} &  32
+                \\0.289 & \num{-1.241328591} &  64
+                \\0.263 & \num{-1.335601247} &  91
+                \\0.239 & \num{-1.431291727} & 121
+                \\0.217 & \num{-1.527857925} & 149
+                \\0.194 & \num{-1.63989712}  & 181
+                \\0.184 & \num{-1.692819521} & 210
+                \\0.189 & \num{-1.666008264} & 239
+                \\0.148 & \num{-1.910543005} & 269
+                \\0.142 & \num{-1.951928221} & 302
+                \\0.124 & \num{-2.087473713} & 326
+                \\0.114 & \num{-2.171556831} & 361
+                \\0.104 & \num{-2.26336438}  & 386
+                \\0.096 & \num{-2.343407088} & 417
+                \\0.085 & \num{-2.465104022} & 446
+                \\0.082 & \num{-2.501036032} & 475
+                \\0.074 & \num{-2.603690186} & 517
+                \\0.071 & \num{-2.645075402} & 534
+                \\0.065 & \num{-2.733368009} & 568
+                \\0.060 & \num{-2.813410717} & 593
+                \\0.056 & \num{-2.882403588} & 622
+                
+                \\\bottomrule
+            \end{tabular}\\
+            \tablecaption{Absorvancia e Tempo da solução 5}
+            \vspace{1ex}
+        \end{center}
+
+    \end{multicols}
+    
+\end{sectionBox}
+
+
+% 88888888ba   88  88
+% 88      "8b  ""  88
+% 88      ,8P      88
+% 88aaaaaa8P'  88  88,dPPYba,
+% 88""""""8b,  88  88P'    "8a
+% 88      `8b  88  88       d8
+% 88      a8P  88  88b,   ,a8"
+% 88888888P"   88  8Y"Ybbd8"'
+
+
+
+\begin{sectionBox}1{Referencias} % S
+    
+    % \printbibliography[heading=none]{}
+    \bibliographystyle{plain}
+    \bibliography{.build/libraries/QF_A-Relatorio.bib}
+    
+\end{sectionBox}
+
+\end{document}

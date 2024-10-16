@@ -1,0 +1,164 @@
+\part*{Formulas de Recorrência}
+\label{Formulas de Recorrência}
+
+\begin{sectionBox}{}
+\begin{itemize}\large
+    \item \(
+        \int \sin^n(a\,u)\,\mathrm{d}u
+    =    - \frac
+            { \sin^{n-1}(a\,u)\,\cos(a\,u)}
+            {a\,n}
+    +    (n-1)/n\,\int \sin^{n-2}(a\,u)\,\mathrm{d}u
+    \)
+    \item \(
+        \int \cos^n(a\,u)\,\mathrm{d}u
+    =    \phantom{-} \frac
+            { \sin(a\,u)\,\cos^{n-1}(a\,u)}
+            {a\,n}
+    +    (n-1)/n\,\int \cos^{n-2}(a\,u)\,\mathrm{d}u
+    \)
+    \item \(
+        \int \tan^n(a\,u)\,\mathrm{d}u
+    =    \phantom{-} \frac
+            { \tan^{n-1}(a\,u) }
+            {a(n-1)}
+    -    \int \tan^{n-2}(a\,u)\,\mathrm{d}u
+    \)
+    \item \(
+        \int \cot^n(a\,u)\,\mathrm{d}u
+    =    - \frac
+            {\cot^{n-1}(a\,u)}
+            {a(n-1)}
+    -    \int \cot^{n-2}(a\,u)\,\mathrm{d}u
+    \)
+    \item \(
+        \int \sec^n(a\,u)\,\mathrm{d}u
+    =    \phantom{-} \frac
+            {\sec^{n-2}(a\,u) \tan(a\,u)}
+            {a\,(n-1)}
+    +    \frac{n-2}{n-1} \int \sec^{n-2} (a\,u)\,\mathrm{d}u
+    \)
+    \item \(
+        \int \csc^n(a\,u)\,\mathrm{d}u
+    =    - \frac
+            {\csc^{n-2}(a\,u) \cot(a\,u)}
+            {a\,(n-1)}
+    +    \frac{n-2}{n-1} \int \csc^{n-2}(a\,u)\,\mathrm{d}u
+    \)
+\end{itemize}
+\end{sectionBox}
+
+\part*{Identidades Trigonométricas}
+\label{Identidades Trigonométricas}
+
+\begin{sectionBox}{}
+\begin{itemize}\large
+\begin{multicols}{2}
+    \item \( \sin^2(x) + \cos^2(x) = 1  \)
+    \item \( 1 + \tan^2(x) = \sec^2(x)  \)
+    \item \( 1 + \cot^2(x) = \csc^2(x)  \)
+    \item \( \sin^2(x) = \frac{1-\cos(2\,x)}{2}  \)
+    \item \( \cos^2(x) = \frac{1+\cos(2\,x)}{2}  \)
+    \item \( \sin(2x) = 2 \sin(x)\,\cos(x)  \)
+    \item \( 2\,\sin(x)\,\cos(y) = \sin(x - y) + \sin(x + y)  \)
+    \item \( 2\,\sin(x)\,\sin(y) = \cos(x - y) - \cos(x + y)  \)
+    \item \( \cos(x)\,\cos(y) = \cos(x - y) + \cos(x + 1)  \)
+    \item \( 1 \pm \sin(x) = 1 \pm \cos(\pi/2 - x)  \)
+\end{multicols}
+\end{itemize}
+\end{sectionBox}
+
+\part*{Trigonometria Hiperbólica}
+\label{Trigonometria Hiperbólica}
+
+\begin{sectionBox}{}
+\begin{itemize}\large
+\begin{multicols}{2}
+\item \( \sinh(x)    = \frac{e^{x}-e^{-x}}{2} \)
+\item \( \cosh(x)    = \frac{e^{x}+e^{-x}}{2} \)
+\item \( \tanh(x)    = \frac{\sinh(x)}{\cosh(x)}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}} \)
+\item \( \coth(x)    = 1/\tanh(x) \)
+\item \( \sech(x)    = 1/\cosh(x) \)
+\item \( \csch(x)    = 1/\sinh(x) \)
+\end{multicols}
+\end{itemize}
+\end{sectionBox}
+
+\newpage
+
+\part*{Tabela de Derivadas}
+\label{Tabela de Derivadas}
+
+\begin{sectionBox}{}
+\begin{itemize}\large
+\begin{multicols}{2}
+    % Basic
+    \item \( \left(u^n\right)'           = n\,u^{n-1}\,u' \)
+    \item \( \left(u\phantom{/}v\right)' = \phantom{(}u'\,v + v'\,u \)
+    \item \( \left(u/          v\right)' = \left(     u'\,v - v'\,u\right)/v^2 \)
+    % exponentials
+    \item \( \left(a^u\right)' = a^u\,\ln(a)\,u'\cftdotfill{\cftdotsep}(a>0, a\neq1) \)
+    \item \( \left(e^u\right)' = e^u\,u' \)
+    \item \( \log'_{a} (u)     = \frac{u'}{u}\,\log_{a}(e) \)
+    \item \( \ln'(u)           = \frac{1}{u}\,u' \)
+    \item \( (u^v)'            = v\,u^{v-1}\,u' + u^v\,\ln(u)\,v' \)
+    % trigonometric
+    \item \( \sin'(u) = \phantom{-}u'\,\cos(u) \)
+    \item \( \cos'(u) =           -u'\,\sin(u) \)
+    \item \( \tan'(u) = \phantom{-}u'\,\sec^2(u) \)
+    \item \( \cot'(u) =           -u'\,\csc^2(u) \)
+    \item \( \sec'(u) = \phantom{-}u'\,\sec(u)\,\tan(u) \)
+    \item \( \csc'(u) =           -u'\,\csc(u)\,\cot(u) \)
+    % hyperbolic
+    \item \( \sinh'(u) = \cosh(u) \)
+    \item \( \cosh'(u) = \sinh(u) \)
+    \item \( \tanh'(u) = 1-\tanh^2(u) \)
+    \item \( \coth'(u) = 1-\coth^2(u) \)
+    \item \( \sech'(u) = -\tanh(u)\,\sech(u) \)
+    \item \( \csch'(u) = -\coth(u)\,\csch(u) \)
+    % arcs
+    \item \( \arcsin'(u) = \phantom{-}u'/\sqrt{1-u^2} \)
+    \item \( \arccos'(u) =           -u'/\sqrt{1-u^2} \)
+    \item \( \arctan'(u) = \phantom{-}u'/      1+u^2  \)
+    \item \( \arccot'(u) =           -u'/      1+u^2  \)
+    \item \( \arcsec'(u) = \phantom{-}u'/(|u|\,\sqrt{u^2-1})\cftdotfill{\cftdotsep}(|u| > 1) \)
+    \item \( \arccsc'(u) =           -u'/(|u|\,\sqrt{u^2-1})\cftdotfill{\cftdotsep}(|u| > 1) \)
+\end{multicols}
+\end{itemize}
+\end{sectionBox}
+
+\newpage
+
+\part*{Tabela de Integrais}
+\label{Tabela de Integrais}
+
+\begin{sectionBox}{}
+\begin{itemize}\large
+\begin{multicols}{2}
+    % Basics
+    \item \( \int       \mathrm{d}u     = u+c \)
+    \item \( \int   u^n \mathrm{d}u     = \frac{u^{n+1}}{n+1} + c\cftdotfill{\cftdotsep} (n \neq -1) \)
+    \item \( \int \frac{\mathrm{d}u}{u} = \ln|u| + c \)
+    \item \( \int   a^u \mathrm{d}u     = \frac{a^u}{\ln{a}} +c, a > 0\cftdotfill{\cftdotsep} (a \neq 1)\)
+    \item \( \int   e^u \mathrm{d}u     = e^u + c \)
+    % trigonometric
+    \item \( \int \sin(u)\,         \mathrm{d}u =          - \cos{u} + c \)
+    \item \( \int \cos(u)\,         \mathrm{d}u = \phantom{-}\sin{u} + c \)
+    \item \( \int \tan(u)\,         \mathrm{d}u = \ln|\sec(u)          | + c \)
+    \item \( \int \cot(u)\,         \mathrm{d}u = \ln|\sin(u)          | + c \)
+    \item \( \int \sec(u)\,         \mathrm{d}u = \ln|\sec(u) + \tan(u)| + c \)
+    \item \( \int \csc(u)\,         \mathrm{d}u = \ln|\csc(u) - \cot(u)| + c \)
+    \item \( \int \sec(u)\,\tan(u)\,\mathrm{d}u = \phantom{-}\sec(u) + c \)
+    \item \( \int \csc(u)\,\cot(u)\,\mathrm{d}u =          - \csc(u) + c \)
+    \item \( \int \sec^2(u)\,       \mathrm{d}u = \phantom{-}\tan(u) + c \)
+    \item \( \int \csc^2(u)\,       \mathrm{d}u =          - \cot(u) + c \)
+    % expressions
+    \item \( \int \mathrm{d}u/              (u^2 + a^2)        = \arctan(u/a)/a + c \)
+    \item \( \int \mathrm{d}u/              (u^2 - a^2)        = \ln\left|\frac{u-a}{u+a}\right|/2\,a + c \cftdotfill{\cftdotsep} (u^2 > a^2) \)
+    \item \( \int \mathrm{d}u/         \sqrt{u^2 + a^2}        = \ln{|u + \sqrt{u^2+a^2}|} + c \)
+    \item \( \int \mathrm{d}u/         \sqrt{u^2 - a^2}        = \arcsin(u/a) + c \cftdotfill{\cftdotsep} (u^2 < a^2) \)
+    \item \( \int \mathrm{d}u/         \sqrt{a^2 - u^2}        = \arcsin(u/a) + c \cftdotfill{\cftdotsep} (u^2 < a^2) \)
+    \item \( \int \mathrm{d}u/\left(u\,\sqrt{a^2 - u^2}\right) = \arcsec|u/a|/a + c  \)
+\end{multicols}
+\end{itemize}
+\end{sectionBox}

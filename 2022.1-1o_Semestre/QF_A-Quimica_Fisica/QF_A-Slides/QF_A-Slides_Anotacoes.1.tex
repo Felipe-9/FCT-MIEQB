@@ -1,0 +1,555 @@
+% !TEX root = ./QF_A-Slides_Anotações.1.tex
+\providecommand\mainfilename{"./QF_A-Slides_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Slides_Anotações.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Slides_Anota-ções.1}}}
+
+\mymakesubfile{1}
+[QF A]
+{Cinética Química} % Subfile Title
+{Cinética Química} % Part Title
+
+\part*{The rates of reactions}
+
+\begin{sectionBox}1{The definition of Rate} % S1
+    
+    \begin{BM}
+        \xi
+        = \frac{n_j-n_{j,0}}{v_j}
+        = V^{-1}\odv{\xi}{t}
+    \end{BM}
+    
+    \vspace{-3ex}
+
+    \begin{exampleBox}*3{} % E1
+        
+        \begin{center}\Large
+            \ch{A + 2 B -> 3 C + D}
+        \end{center}
+
+        \begin{BM}
+            \odv{\ch{[D]}}{t}
+            = 3^{-1}\odv{\ch{[C]}}{t}
+            = -1^{-1}\odv{\ch{[A]}}{t}
+            = -2^{-1}\odv{\ch{[B]}}{t}
+        \end{BM}
+        
+    \end{exampleBox}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E1
+    Predict how the total pressure varies during the gas-phase decomposition
+} % E1
+    
+    \begin{center}\Large
+        \ch{ 2 N2O5\gas{} -> 4 NO2\gas{} + O2\gas{}}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{c c c c c}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{t}
+                & \multicolumn{1}{c @{\rightarrow}}
+                {\ch{2 N2O5}}
+                & \multicolumn{1}{c}{\ch{4 NO2\gas{}}}
+                & \multicolumn{1}{@{\,+\,} c}
+                {\ch{O2\gas{}}}
+                & \multicolumn{1}{c}{Total}
+            
+            \\\midrule
+            
+                0 & n & 0 & 0 & 0
+                \\
+                \chemalpha
+                & \(n(1-\chemalpha)\)
+                & \(2\,n\,\chemalpha\)
+                & \(n\,\chemalpha/2\)
+                & \(n(1+\chemalpha\,3/2)\)
+                \\
+                1 & 0 & 2\,n & n/2 & n\,5/2
+            
+            \\\bottomrule
+            
+        \end{tabular}
+
+        \begin{flalign*}
+            &
+                p_1
+                = \frac{n_1\,R\,T}{V}
+                = n_0(1+3/2)\frac{R\,T}{V}
+                = p_0\,5/2
+            &
+        \end{flalign*}
+    \end{center}
+    
+\end{exampleBox}
+
+\begin{sectionBox}1{Rate laws and rate constants} % S2
+    
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Determination of Rate Law (Isolation Method)} % S3
+    
+    Have a reagenct in large exceess so its concentration acts as a constant characterizing the reaction as psudo first-order rate law.
+
+    \begin{BM}
+        \lim_{\ch{[B]}\gg\ch{[A]}}{v} 
+        = k\,\ch{[A]}\ch{[B]}_0
+        = k'\,\ch{[A]}
+    \end{BM}
+    
+\end{sectionBox}
+
+\part*{Integrated Rate Laws}
+
+\begin{sectionBox}1{First-order reactions} % S4
+    
+    \begin{BM}
+        \odv{\ch{[A]}}{t} = -k\,\ch{[A]};
+        \qquad
+        \ln{\frac{\ch{[A]}}{\ch{[A]}_0}}
+        = -k\,t;
+        \qquad
+        \ch{[A]}=\ch{[A]}_0\,\exp(-k\,t)
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E2
+    The variation in the partial pressure of azomethane with time was followed at 600\,\unit{\kelvin}, with the results given bellow. Confirm that the decomposition
+} % E2
+    
+    \begin{center}\Large
+        \ch{CH3N2CH3\gas{} -> CH3CH3\gas{} + N2\gas{}}
+    \end{center}
+
+    is first-order in azomethane, and find the rate constant at 600\,\unit{\kelvin}
+
+    \begin{center}
+        \begin{tabular}{c *{5}{c}}
+            
+            \\\toprule
+            
+                \(t/\unit{\second}\)
+                & 0 & 1000 & 2000 & 3000 & 4000
+                \\
+                \(p/\unit{\pascal}\)
+                & 10.9 & 7.63 & 5.32 & 3.71 & 2.59
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+    
+    \begin{answerBox}1{} % RS 
+
+        \begin{flalign*}
+            &
+                \ln{\frac{\ch{[A]}}{\ch{[A]}_0}}
+                = \ln{\frac{p_{\ch{A}}/(R\,T)}{p_{\ch{A},0}/(R\,T)}}
+                = \ln{\frac{p_{\ch{A}}}{p_{\ch{A},0}}}
+            &
+        \end{flalign*}
+
+        \begin{center}
+            \setlength\tabcolsep{3mm}        % width
+            \renewcommand\arraystretch{1.25} % height
+            \sisetup{
+                % scientific / engineering / input / fixed
+                exponent-mode           = fixed,
+                exponent-to-prefix      = false,          % 1000 g -> 1 kg
+                % exponent-product        = *,             % x * 10^y
+                % fixed-exponent          = 0,
+                round-mode              = places,        % figures/places/unsertanty/none
+                round-precision         = 4,
+                % round-minimum           = 0.01, % <x => 0
+                % output-exponent-marker  = {\,\mathrm{E}},
+            }
+            \begin{tabular}{c *{5}{c}}
+                
+                \\\toprule
+                
+                    \(t/\unit{\second}\)
+                    & 0 
+                    & 1000 
+                    & 2000 
+                    & 3000 
+                    & 4000
+                    \\
+                    \(\ln{(p/p_0)}\)
+                    & 0
+                    & \num{-0.35667494393873245}
+                    & \num{-0.717289485881545}
+                    & \num{-1.0777309126157544}
+                    & \num{-1.4371049135236518}
+                
+                    % 0, 0 
+                    % -0.35667494393873245, 1000 
+                    % -0.717289485881545, 2000 
+                    % -1.0777309126157544, 3000 
+                    % -1.4371049135236518, 4000
+    
+                \\\bottomrule
+                
+            \end{tabular}
+
+            \begin{figure}\centering
+                \includegraphics[width=\textwidth]{e2}
+                \caption{\(\ln{(p/p_0)}=-3.595*10^{-4}\,t+0.0013\)}
+            \end{figure}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                k = 3.595\e-4
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{exampleBox}
+
+\begin{sectionBox}1{Halflife and time constants} % S5
+    
+    \begin{BM}
+        t_{1/2} = \ln{2}/k
+    \end{BM}
+
+    \vspace{-3ex}
+
+    \begin{flalign*}
+        &
+            \ln{(\ch{[A]}/\ch{[A]}_0)}
+            =-k\,t
+            % \implies &\\&
+            \implies
+            \ln{(2^{-1}\ch{[A]}_0/\ch{[A]}_0)}
+            = \ln{2^{-1}}
+            =-k\,t_{1/2}
+            % \implies &\\&
+            \implies
+            t_{1/2}=\ln{2}/k
+        &
+    \end{flalign*}
+
+    \begin{sectionBox}2{Time constant} % S4.1
+        
+        \begin{BM}
+            \tau = t_{1/e} = k^{-1}
+        \end{BM}
+        
+        \vspace{-3ex}
+
+        \begin{flalign*}
+            &
+                -k\,\tau
+                = -k\,t_{e^{-1}}
+                = \ln{\frac{e^{-1}\ch{[A]}_0}{\ch{[A]}_0}}
+                = \ln{e^{-1}}
+                = -1
+                \implies
+                \tau = k^{-1}
+            &
+        \end{flalign*}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Second-order reactions} % S6
+    
+    \begin{center}\Large
+        \ch{A^2 -> P}
+    \end{center}
+    
+    \vspace{-3ex}
+
+    \begin{BM}
+        \odv{\ch{[A]}}{t}
+        =-k\,\ch{[A]}^{2}
+        ; \qquad
+        k\,t
+        = \ch{[A]}^{-1}
+        - \ch{[A]}_{0}^{-1}
+        ; \qquad
+        \ch{[A]}
+        = \frac{\ch{[A]}_0}{1+k\,t\ch{[A]}_0}
+        \\
+        t_{1/2} = (k\,\ch{[A]}_0)^{-1}
+    \end{BM}
+
+    \begin{sectionBox}2{nth-order reaction half life} % S
+        
+        \begin{center}\Large
+            \ch{A^n -> P}
+        \end{center}
+        
+        \vspace{-3ex}
+
+        \begin{BM}
+            t_{1/2} = (k\,\ch{[A]}_0^{n-1})^{-1}
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Other kind of second-order reactions} % S7
+    
+    \begin{center}
+        {\Large
+            \ch{A + B -> P}
+        }
+
+        \begin{tabular}{c c c c}
+            
+            \\\toprule
+            
+                t
+                & \multicolumn{1}{c@{\,+\,}}{A}
+                & \multicolumn{1}{c@{\rightarrow}}{B}
+                & \multicolumn{1}{c}{P}
+            
+            \\\midrule
+            
+                0 & \(\ch{[A]_0}\) & \(\ch{[B_0]}\) & \(\ch{[P]_0}\)
+                \\
+                t & \(\ch{[A]_0}-x\) & \(\ch{[B_0]}-x\) & \(\ch{[P]_0}+x\)
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            \odv{\ch{[A]}}{t}
+            = - \odv{x}{t}
+            = &\\&
+            = - k\,\ch{[A][B]}
+            = - k\,(\ch{[A]}_0-x)(\ch{[B]}_0-x)
+            \implies &\\&
+            \implies
+            \int_{0}^{x}{
+                \frac{\odif{x}}{
+                    (\ch{[A]}_0-x)(\ch{[B]}_0-x)
+                }
+            }
+            = &\\&
+            = \int_{0}^{x}{
+                \frac{\odif{x}}{
+                    \ch{[B]}_0-\ch{[A]}_0
+                }
+                \left(
+                    (\ch{[A]}_0-x)^{-1}
+                    -(\ch{[B]}_0-x)^{-1}
+                \right)
+            }
+            = &\\&
+            = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+            \left(
+                \int_{0}^{x}{
+                    \frac{\odif{x}}{\ch{[A]}_0-x}
+                }
+                -\int_{0}^{x}{
+                    \frac{\odif{x}}{\ch{[B]}_0-x}
+                }
+            \right)
+            = &\\&
+            = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+            \left(
+                -\int_{0}^{x}{
+                    \frac{\odif{(\ch{[A]}_0-x)}}{\ch{[A]}_0-x}
+                }
+                +\int_{0}^{x}{
+                    \frac{\odif{(\ch{[B]}_0-x)}}{\ch{[B]}_0-x}
+                }
+            \right)
+            = &\\&
+            = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+            \left(
+                -\ln{\frac{\ch{[A]}_0-x}{\ch{[A]}_0}}
+                +\ln{\frac{\ch{[B]}_0-x}{\ch{[B]}_0}}
+            \right)
+            = &\\&
+            = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+            \left(
+                -\ln{\frac{\ch{[A]}}{\ch{[A]}_0}}
+                +\ln{\frac{\ch{[B]}}{\ch{[B]}_0}}
+            \right)
+            = &\\&
+            = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+            \left(
+                \ln\frac{
+                    \ch{[B]}/\ch{[B]}_0
+                }{
+                    \ch{[A]}/\ch{[A]}_0
+                }
+            \right)
+            = &\\&
+            = k\int_{0}^{t}{\odif{t}}
+            = k\,t
+            \implies &\\&
+            \implies
+            \ln\frac{
+                \ch{[B]}/\ch{[B]}_0
+            }{
+                \ch{[A]}/\ch{[A]}_0
+            }
+            = \frac{k\,t}{\ch{[B]}_0-\ch{[A]}_0}
+        &
+    \end{flalign*}
+
+    
+\end{sectionBox}
+
+\part*{Mecanismo de uma reação}
+\begin{sectionBox}*1{} % S
+    
+    Sucessão de paços elementares
+
+    \begin{description}
+       \item[Ordem:] Molecularidade num passo elementar
+       \item[Passo mais lento] Controla a velocidade
+       \item[Estado estacionário] de produtos elementares 
+    \end{description}
+    
+\end{sectionBox}
+
+\part*{Reactions approaching equilibrium}
+
+\begin{sectionBox}1{First-order reactions close to equilibrium} % S8
+    
+    \begin{center}\Large
+        \ch{A <>[k+1][k-1] B}
+
+        \vspace{-3ex}
+
+        \begin{BM} 
+            v_{+1} = k_{+1}\,\ch{[A]};
+            \qquad
+            v_{-1} = k_{-1}\,\ch{[B]}
+            \\
+            \odv{\ch{[A]}}{t}
+            = v_{+1}-v_{-1}
+            = k_{+1}\,\ch{[A]}-k_{-1}\,\ch{[B]}
+        \end{BM}
+    \end{center}
+    
+    \begin{sectionBox}2{ % S8.1
+    } % S8.1
+        
+        \begin{BM}
+            \ch{[A]}+\ch{[B]}=\ch{[A]}_0
+            : \ch{[A]}_0\neq0
+            \land \ch{[B]}_0=0
+            \\
+            \therefore
+            \begin{cases}
+                \ch{[A]}
+                =\cfrac{
+                    k_{-1}+k_{+1}\exp{(-(k_{+1}+k_{-1})t)}
+                }{
+                    k_{+1}+k_{-1}
+                }\\
+                \ch{[A]}_{eq}
+                = \cfrac{k_{-1}\,\ch{[A]}_0}{k_{+1}+k_{-1}}
+                \\
+                \ch{[B]}_{eq}
+                = \cfrac{k_{+1}\,\ch{[A]}_0}{k_{+1}+k_{-1}}
+            \end{cases}
+        \end{BM}
+
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t}
+                = k_{+1}\,\ch{[A]}-k_{-1}\,\ch{[B]}
+                = k_{+1}\,\ch{[A]}-k_{-1}\,(\ch{[A]}_0-\ch{[A]})
+                = &\\&
+                =\ch{[A]}_0\,k_{-1}
+                -\ch{[A]}(k_{+1}+k_{-1})
+            &
+        \end{flalign*}
+        
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{exampleBox}1{ % E2
+} % E2
+    
+    The equilibrium constant for the autoprotolysus of water, \ch{H2O <> H^+\aq{} + OH^{-}\aq{}}, is \(k_w = a_{\ch{H^+}}\,a_{\ch{OH^-}}=1.008*10^{-14}\) at 298\,\unit{\kelvin}. After a temperature-jump, the reaction returns to equilibrium with a relaxation time of 37\unit{\micro\second} at 298\,\unit{\kelvin} and \(pH\approx 7\). Given that the forward reaction is first-order and the reverse is second-order overall, calculate the rate constants for the forward and reerse reactions
+
+    \begin{center}
+        {\Large
+            \ch{H2O <> H^+\aq{} + OH^{-}\aq{}}
+        }
+        
+        \begin{tabular}{*{4}{c}}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{t}
+                & \multicolumn{1}{c@{\hspace{1em}\rightleftharpoons}}
+                {\ch{H2O}}
+                & \multicolumn{1}{c@{\,+\,}}
+                {\ch{H^+\aq{}}}
+                & \multicolumn{1}{c}{\ch{OH^-\aq{}}}
+            
+            \\\midrule
+            
+                0 & \(\ch{[H2O]}_0\) & 0 & 0
+                \\
+                t & \(\ch{[H2O]}_0-x\) & x & x
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{exampleBox}2{ % E.1
+        Forward
+    } % E.1
+        
+        \begin{flalign*}
+            &
+                \odv{\ch{[H2O]}}{t}
+                = k_{-1}\ch{[H^+][OH^{-}]}
+                - k_{+1}\ch{[H2O]}
+                \implies &\\&
+                \implies
+                \odv{x}{t}
+                = \left(
+                    \begin{aligned}
+                        -&
+                        x\,\left(
+                            k_{+1}+k_{-1}(\ch{[H^+]}_{eq}+\ch{[OH^-]}_{eq})
+                        \right)
+                        & +\\- &
+                            k_{+1}\,\ch{[H2O]}_{eq}
+                        & +\\+ &
+                            k_{-1}\,\ch{[H^+][OH^-]}
+                        & +\\+ &
+                            k_{-1}\,x^2
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = 
+            &
+        \end{flalign*}
+        
+    \end{exampleBox}
+    
+\end{exampleBox}
+
+\end{document}

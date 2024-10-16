@@ -1,0 +1,569 @@
+% !TEX root = ./QOG-Slides_Anotações.2.tex
+\providecommand\mainfilename{"./QOG-Slides_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Slides_Anotações.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QOG-Slides_Anotações.2}}}
+% \tikzsetexternalprefix{./.build/figures/QOG-Slides_Anotações.2/graphics/}
+
+\mymakesubfile{2}
+[QOG]
+{Anotações Slide 2} % Subfile Title
+{Slide} % Part Title
+
+\part*{Nomenclatura: Alcanos}
+
+\begin{sectionBox}1{Prefixo} % S1.1
+    
+    Relacionado ao numero de carbonos
+    
+    \begin{enumerate}
+        \begin{multicols}{4}
+            \item met
+            \item et
+            \item prop
+            \item but
+            \item pen
+            \item hex
+            \item hep
+            \item oct
+            \item non
+            \item dec
+            \item undec
+            \item dodec
+            \item tridec
+            \item tetradec
+            \item pentadec
+            \item hexadec
+            \item heptadec
+            \item octadec
+            \item nonadec
+            \item icos
+        \end{multicols}
+        \setcounter{enumi}{29}
+        \item tria
+    \end{enumerate}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Intermediários} % S1.2
+    
+    referencia as ligações
+    (suprime o ``an'', ex: etano\to etino)
+
+    \begin{description}
+        \begin{multicols}{2}
+            \item[an] Somente ligações simples
+            \item[en] 1 ligação dupla
+            \item[dien] 2 ligações duplas
+            \item[in] 1 ligação tripla
+            \item[diin] 2 ligações triplas
+            \item[enin] 1 dupla e 1 tripla
+        \end{multicols}
+    \end{description}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Sufixos 1} % S1.3
+    
+    \setchemfig{
+        angle increment={15},
+        atom sep={2em}
+    }
+
+    \begin{description}
+        \begin{multicols}{2}
+            \item[o:] Hidrocarboneto \chemfig{CH2(-[12])}
+            \item[ol:] Álcool e enol \chemfig{OH(-[12])}
+            \item[al:] Aldeído \chemfig{C(-[12])(=[1]O)(-[-1]H)}
+            \item[ona:] Cetona \chemfig{O=[12]}
+            \item[óico:] Ácido Carboxilo \chemfig{C(-[12])(=[1]O)(-[-1]OH)}
+            \item[amina:] \chemfig{NH2(-[12])}
+            \item[amida:] \chemfig{
+                R
+                -[ 1]C(-[ 2]H)
+                -[-1]N(-[-2]R')
+                -[ 1]R
+            }
+            \item[sulfônico:] Ácido Sulfônico 
+            \chemfig{
+                S
+                (=[  6]O)
+                (=[- 3]O)
+                (-[- 1]OH)
+                (-[-10]R)
+            }
+            \item[óxi:] Éter
+            \chemfig{
+                R_1
+                -[ 1]O
+                -[-1]R_2
+            }
+            \item[ato\ \dots\ ila:] Éster
+            \chemfig{
+                C
+                (-[-11]R_1)
+                (=[  2]O)
+                (-[ -1]O-[1]R_2)
+            }
+            \item[ato de \dots:] Sal Orgânico
+            \chemfig{
+                C
+                (-[-11]R_1)
+                (=[  2]O)
+                (-[ -1]O-[1,.1em]Metal)
+            }
+        \end{multicols}
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{exampleBox}1b{} % E
+    \subsection*{Hidrocarbonetos}
+    \vspace{-4ex}
+    \begin{multicols}{3}
+        \begin{exampleBox}2m{}
+            \centering
+            \ch{CH4}
+            \\\iupac{met|ano}
+        \end{exampleBox}
+        
+        \begin{exampleBox}2m{}\centering
+            \ch{CH3-CH3}
+            \\\iupac{et|ano}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2m{}\centering
+            \ch{CH3-(CH2)10-CH3}
+            \\\iupac{dodec|ano}
+        \end{exampleBox}
+    \end{multicols}
+    
+    \subsection*{Álcools e Enols}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+        
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-OH}
+            \\\iupac{met|an|ol}
+        \end{exampleBox}
+        
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CH2-OH}
+            \\\iupac{et|an|ol}
+        \end{exampleBox}
+        
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CH2-CH=CH-OH}
+            \\\iupac{but|en|ol}
+        \end{exampleBox}
+        
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-(CH2)2-CH=CH-OH}
+            \\\iupac{hex|en|ol}
+        \end{exampleBox}
+        
+    \end{multicols}
+        
+    \subsection*{Aldeídos}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{HCHO}
+            \\\iupac{met|an|al}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CHO}
+            \\\iupac{et|an|al}
+        \end{exampleBox}
+    
+    \end{multicols}
+        
+    \subsection*{Cetona}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CO-CH3}
+            \\\iupac{prop|an|ona}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CH2-CO-CH3}
+            \\\iupac{but|an|ona}
+        \end{exampleBox}
+    
+    \end{multicols}
+    
+    \subsection*{Eter}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-O-CH3}
+            \\\iupac{met|oxi|met|an|o}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CH2-O-CH2-CH3}
+            \\\iupac{et|oxi|et|an|o}
+        \end{exampleBox}
+    
+    \end{multicols}
+    
+    \subsection*{Amina}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-NH-CH3}
+            \\\iupac{di|met|il|amina}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-N(-CH3)-CH3}
+            \\\iupac{tri|met|il|amina}
+        \end{exampleBox}
+    
+    \end{multicols}
+    
+    \subsection*{Amida}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{HCO-NH2}
+            \\\iupac{met|an|amida}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-CO-NH2}
+            \\\iupac{et|an|amida}
+        \end{exampleBox}
+    
+    \end{multicols}
+
+    \subsection*{Ácido Carboxilico}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{HCOOH}
+            \\\iupac{Ácido met|an|oico}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-COOH}
+            \\\iupac{Ácido et|an|oico}
+        \end{exampleBox}
+    
+    \end{multicols}
+        
+    \subsection*{Éster}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{HCOO-CH3}
+            \\\iupac{met|an|oato de met|ila}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-HCOOCH-CH3}
+            \\\iupac{et|an|oato de et|ila}
+        \end{exampleBox}
+    
+    \end{multicols}
+
+    \subsection*{Sal Orgânico}\\
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-COO-Na^{+}}
+            \\\iupac{et|an|oato de sódio}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{HCOO-K^{+}}
+            \\\iupac{met|an|oato de potássio}
+        \end{exampleBox}
+    
+    \end{multicols}
+
+    \subsection*{Anidrido de Ácido}
+    \vspace{-4ex}
+    \begin{multicols}{2}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{CH3-COO-CO-CH3}
+            \\\iupac{et|an|oato de sódio}
+        \end{exampleBox}
+    
+        \begin{exampleBox}2{}\centering
+            \ch{HCOO-K^{+}}
+            \vspace{1ex}
+            \iupac{met|an|oato de potássio}
+        \end{exampleBox}
+    
+    \end{multicols}
+\end{exampleBox}
+
+
+\begin{sectionBox}1{Radicais Substituintes} % S4
+    
+    Quando há ramificações, para poder nomear precisa seguir o passo a passo
+    
+    \begin{sectionBox}2b{Identificar a cadeia mais longa} % S
+        
+        \begin{center}
+            \includegraphics[width=.8\textwidth]{Screenshot 2022-11-06 at 21.36.38}
+        \end{center}
+    
+        em empate escolhe a que tem mais substituintes
+        
+    \end{sectionBox}
+    
+    \begin{sectionBox}2{Nomear os substituintes} % S
+        
+        \begin{description}
+            % \begin{multicols}{2}
+                \item[halogenio] recebe o nome do halogenio \ch{Br, F, Cl, I}
+                \item[Cadeia org simples] recebe prefixo ``il''
+                \item[Canonicos:] Estruturas canonicas que devemos conhecer
+            % \end{multicols}
+        \end{description}
+    
+        \paragraph*{Multiplos substituintes identicos} se juntam recebendo um prefixo numérico
+    
+        \begin{exampleBox}*3{Exemplo}\centering
+            
+            \chemfig[
+                angle increment=30, 
+                atom sep={2em}
+            ]{
+                -[ 1]
+                -[-1](-[-3])
+                -[ 1](-[ 3])
+                -[-1]
+                -[ 1]
+            }
+            \qquad
+            \iupac{\textcolor{Emph}{di}|metil|hex|ano}
+            
+        \end{exampleBox}
+    
+        \paragraph*{Complexidade da cadeia} simples usa o prefixo numérico comum, complexa (multiplas bifurcações) usa os prefixos:
+        \begin{enumerate}
+            \setcounter{enumi}{1}
+            \begin{multicols}{3}
+                \item bis
+                \item tris
+                \item tetrakis
+            \end{multicols}
+        \end{enumerate}
+    
+        \paragraph*{Estruturas Canonicas}
+        \begin{description}
+            \begin{multicols}{3}
+                
+                \setchemfig{
+                    angle increment=15,
+                    atom sep={1.5em}
+                }
+    
+                \item[\iupac{iso|prop|il}]
+                \chemfig{
+                    {}
+                    -[1]
+                    (-[-2]R')
+                    (-[ 4]CH3)
+                }
+                \item[\iupac{iso|but|ano}]
+                \chemfig{
+                    {}
+                    -[1]
+                    (-[-2]-[2]R')
+                    (-[ 4]CH3)
+                }
+                \item[\iupac{sec-but|il}]
+                \chemfig{
+                    {}
+                    -[1]
+                    (
+                        -[-2](-[-7]CH3)
+                        -[2]R'
+                    )
+                }
+                \item[\iupac{tert-but|il}]
+                \chemfig{
+                    {}
+                    -[2]
+                    (-[  4]CH3)
+                    (-[ 10]CH3)
+                    -[-2]R'
+                }
+                \item[\iupac{neopent|il}]
+                \chemfig{
+                    {}
+                    -[2]
+                    (-[  4]CH3)
+                    (-[ 10]CH3)
+                    -[-2]
+                    -[ 2]R'
+                }
+    
+            \end{multicols}
+             
+        \end{description}
+        
+    \end{sectionBox}
+    
+    \begin{sectionBox}2{Numerar a cadeia} % S
+        
+        Se nomeia da extremidade mais próxima aos substituintes
+    
+        \begin{exampleBox}*2{Exemplo}\centering
+            
+            \setchemfig{
+                angle increment=30,
+                atom sep={2em}
+            }
+    
+            \chemfig{
+                {\textcolor{Emph}{1}}
+                -[ 1]{\textcolor{Emph}{2}}(-[ 3])
+                -[-1]{\textcolor{Emph}{3}}
+                -[ 1]{\textcolor{Emph}{4}}
+            }
+            \qquad
+            \chemfig{
+                {\textcolor{Emph}{1}}
+                -[ 1]{\textcolor{Emph}{2}}
+                -[-1]{\textcolor{Emph}{3}}
+                -[ 1]{\textcolor{Emph}{4}}(-[ 3])
+                -[-1]{\textcolor{Emph}{5}}(-[-3])
+                -[ 1]{\textcolor{Emph}{6}}
+                -[-1]{\textcolor{Emph}{7}}
+                -[ 1]{\textcolor{Emph}{8}}
+                -[-1]{\textcolor{Emph}{9}}
+            }
+            
+        \end{exampleBox}
+        
+    \end{sectionBox}
+    
+    \begin{sectionBox}2{Nomear em ordem \textcolor{Emph}{alfabética}} % S4.4
+        
+        Não leva em conta o prefixo numérico de multiplas ramificações exceto quado as ramificações são complexas
+        
+    \end{sectionBox}
+\end{sectionBox}
+
+
+\begin{exampleBox}1b{ % E2
+} % E2
+    
+    \setchemfig{
+        angle increment=30,
+        atom sep={2em}
+    }
+
+    \begin{multicols}{2}
+
+        \begin{exampleBox}2{}\centering
+            \chemfig{
+                -[ 1](-[3])
+                -[-1]
+                -[ 1]
+            }\\
+            \iupac{2-met|il|but|ano}
+        \end{exampleBox}
+
+        \begin{exampleBox}2{}\centering
+            \chemfig{
+                {\textcolor{Emph}{8}}
+                -[ 1]{\textcolor{Emph}{7}}
+                -[-1]{\textcolor{Emph}{6}}
+                -[ 1]{\textcolor{Emph}{5}}(-[3]-[1])
+                -[-1]{\textcolor{Emph}{4}}
+                -[ 1]{\textcolor{Emph}{3}}
+                -[-1]{\textcolor{Emph}{2}}(-[-3])
+                -[ 1]{\textcolor{Emph}{1}}
+            }\\
+            \iupac{5-et|il-2-met|il-oct|ano}
+        \end{exampleBox}
+
+        \begin{exampleBox}2{}\centering
+            \chemfig{
+                {\textcolor{Emph}{8}}
+                -[ 1]{\textcolor{Emph}{7}}
+                -[-1]{\textcolor{Emph}{6}}
+                -[ 1]{\textcolor{Emph}{5}}(-[3]-[1])
+                -[-1]{\textcolor{Emph}{4}}
+                -[ 1]{\textcolor{Emph}{3}}
+                -[-1]{\textcolor{Emph}{2}}(-[-1])(-[-5])
+                -[ 1]{\textcolor{Emph}{1}}
+            }\\
+            \iupac{5-et|il-2-di|met|il-oct|ano}
+        \end{exampleBox}
+
+        \begin{exampleBox}2{}\centering
+            \chemfig{
+                {\textcolor{Emph}{8}}
+                -[ 1]{\textcolor{Emph}{7}}
+                -[-1]{\textcolor{Emph}{6}}
+                -[ 1]{\textcolor{Emph}{5}}(
+                    -[3]
+                    (-[1])
+                    (-[5])
+                    (-[4])
+                )
+                -[-1]{\textcolor{Emph}{4}}
+                -[ 1]{\textcolor{Emph}{3}}(-[3]-[1])
+                -[-1]{\textcolor{Emph}{2}}
+                -[ 1]{\textcolor{Emph}{1}}
+            }
+            \\
+            \iupac{5-(1,1-di|met|il|et|il)-3-et|il|oc|an|o}
+        \end{exampleBox}
+
+    \end{multicols}
+
+    \begin{exampleBox}2{}\centering
+        
+        \chemfig[angle increment=30]{
+                    {\textcolor{Emph}{8}}
+                -[ 1]{\textcolor{Emph}{7}}(-[3]I)
+                -[-1]{\textcolor{Emph}{6}}
+                -[ 1]{\textcolor{Emph}{5}}(
+                    -[3]
+                    (-[1]Cl)
+                    (-[5])
+                )
+                -[-1]{\textcolor{Emph}{4}}
+                -[ 1]{\textcolor{Emph}{3}}
+                -[-1]{\textcolor{Emph}{2}}(-[-1])(-[7])
+                -[ 1]{\textcolor{Emph}{1}}
+                -[-1]Br
+        }\\
+        \iupac{
+            1-bromo
+            -5-(1-cloro|et|il)
+            -7-Iodo
+            -2-di|met|il
+            |oct|an|o
+        }
+        
+    \end{exampleBox}
+\end{exampleBox}
+
+
+\end{document}

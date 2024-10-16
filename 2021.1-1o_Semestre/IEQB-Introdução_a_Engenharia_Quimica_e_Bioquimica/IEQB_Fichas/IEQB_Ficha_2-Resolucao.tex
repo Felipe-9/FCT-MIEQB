@@ -1,0 +1,615 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+%\setlength{\cftsubsecnumwidth}{15mm}
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = figures,
+%	round-precision = 3,
+%	round-minimum = 0.01
+}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+\usepackage{booktabs}
+%\usepackage{multirow}
+%\renewcommand{\arraystretch}{1.2} % line space
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+\setcounter{tocdepth}{2} % Remove subsubsec from toc
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB Ficha 2 - Resolução\\
+	Variáveis de Processo%
+}
+\author{Felipe Pinto - 61387}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents 
+\section*{Conteúdo}
+\renewcommand{\contentsname}{}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+
+
+% Q1
+\section{}
+\begin{flalign*}
+&
+	m_{\unit{vol}}
+=	6.59\,\unit{\g.\s^{-1}}
+\,	\frac{1}{0.659\,\unit{\g.\cm^{-3}}}
+=	10\,\unit{\cubic\cm\per\second}
+&
+\end{flalign*}
+
+
+
+% Q2
+\section{$ m\,\unit{vol}=100\,\unit{\milli\litre\per\minute} $}
+
+
+\begin{multicols}{2}
+
+
+% Q2 - a)
+\subsection{$t = 25\,\unit{\celsius}$}
+\begin{flalign*}
+&
+	m\,\unit{\mole\per\minute}
+=	100\,\unit{\milli\litre\per\minute}
+\,	\frac{\unit{\cubic\metre}}{1000\,\unit{\litre}}
+\,	\left( \frac{\unit{c}}{10^{-2}} \right)^3
+	* &\\& *
+\,	\frac{1.595\,\unit{\gram}}{\unit{\cubic\cm}}
+\,	\frac{\unit{\mole}}{154\,\unit{\gram}}
+\cong	\qty[round-precision=3]
+		{1.035714285714286}{\mole\per\minute}
+&
+\end{flalign*}
+
+
+% Q2 - b)
+\subsection{$t = 300\,\unit{\celsius},\ p = 1\,\unit{atm}$}
+\begin{flalign*}
+&
+	\,\unit{\mole\per\minute}
+=	100\,\unit{\milli\litre\per\minute}
+\,	\frac{\unit{\cubic\metre}}{1000\,\unit{\litre}}
+\,	\left( \frac{\unit{c}}{10^{-2}} \right)^3
+* &\\& *
+\,	\frac{\unit{\mole.\kelvin}}{82.05\,\unit{\cubic\cm.atm}}
+\,	\frac{1\,\unit{atm}}{(300 + 273.15)\,\unit{\kelvin}}
+\cong &\\& \cong	
+	\qty[round-precision=4]
+	{0.002126439925441}{\mole\per\minute}
+&
+\end{flalign*}
+
+\end{multicols}
+
+
+
+% Q3
+\section{}
+\begin{center}
+\begin{tabular}{ r *{4}{r}}
+	
+	\%
+	& \ch{O2}
+	& \ch{CO}
+	& \ch{CO2}
+	& \ch{N2}
+%	& Total
+	
+	\\ \midrule
+	
+	\unit{\gram}
+	& 16\phantom{.0}
+	& 4\phantom{.0}
+	& 17\phantom{.0}
+	& 63\phantom{.0}
+%	& 100
+	
+	\\
+	
+	\unit{\mole}
+	& 15.2
+	& 4.4
+	& 11.8
+	& 68.6
+%	& \num[round-precision=2, exponent-to-prefix = false]%
+%		 {0.03279220779220779}
+
+\end{tabular}
+\end{center}
+
+% Q3 (i)
+\subsubsection{\unit{\gram_{Total}\per\mole_{Total}}}
+\begin{flalign*}
+&
+=	\cfrac{100\,\unit{\g_{Total}}}
+		 {
+		 16\,\unit{\g_{\ch{O2}}}
+		 \cfrac{\unit{\mole_{\ch{O2}}}}
+		 	  {32\,\unit{\g_{\ch{O2}}}}
+		 +
+		 4\,\unit{\g_{\ch{CO}}}
+		 \cfrac{\unit{\mole_{\ch{CO}}}}
+		 	  {28\,\unit{\g_{\ch{CO}}}}
+		 +
+		 17\,\unit{\g_{\ch{CO2}}}
+		 \cfrac{\unit{\mole_{\ch{CO2}}}}
+		 	  {44\,\unit{\g_{\ch{CO2}}}}
+		 +
+		 63\,\unit{\g_{\ch{N2}}}
+		 \cfrac{\unit{\mole_{\ch{N2}}}}
+		 	  {28\,\unit{\g_{\ch{N2}}}}
+		 }
+\cong \qty[round-precision=2]
+	 {30.495049504950495}{\g_{Total}\per\mole_{Total}}
+&
+\end{flalign*}
+
+
+\begin{multicols}{2}
+
+\sisetup{round-mode=places, round-precision=1}
+
+% Q3 (ii)
+\subsubsection{\ch{O2}}
+\begin{flalign*}
+&
+	16 \,\unit{\percent\g_{\ch{O2}}}
+\,	\frac{1 \,\unit{\mole_{\ch{O2}}}}
+		{32\,\unit{\g_{\ch{O2}}}}
+	\frac{
+		\qty{30.495049504950495}{\g_{Total}}
+		}
+		{\unit{\mole_{Total}}}
+\cong	\qty{15.247524752475248}{\percent.\mole_{\ch{O2}}}
+&
+\end{flalign*}
+
+% Q3 (iii)
+\subsubsection{\ch{CO}}
+\begin{flalign*}
+&
+	4 \,\unit{\percent\g_{\ch{CO}}}
+\,	\frac{1 \,\unit{\mole_{\ch{CO}}}}
+		{28\,\unit{\g_{\ch{CO}}}}
+	\frac{
+		\qty{30.495049504950495}{\g_{Total}}
+		}
+		{\unit{\mole_{Total}}}
+\cong	
+		\qty{4.356435643564357}{\percent.\mole_{\ch{CO}}}
+&
+\end{flalign*}
+
+% Q3 (iv)
+\subsubsection{\ch{CO2}}
+\begin{flalign*}
+&
+	17 \,\unit{\percent\g_{\ch{CO2}}}
+\,	\frac{1 \,\unit{\mole_{\ch{CO2}}}}
+		{44\,\unit{\g_{\ch{CO2}}}}
+	\frac{
+		\qty{30.495049504950495}{\g_{Total}}
+		}
+		{\unit{\mole_{Total}}}
+\cong	\qty{11.782178217821783}{\percent.\mole_{\ch{CO2}}}
+&
+\end{flalign*}
+
+% Q3 (v)
+\subsubsection{\ch{N2}}
+\begin{flalign*}
+&
+	63 \,\unit{\percent\g_{\ch{N2}}}
+\,	\frac{1 \,\unit{\mole_{\ch{N2}}}}
+		{28\,\unit{\g_{\ch{N2}}}}
+	\frac{
+		\qty{30.495049504950495}{\g_{Total}}
+		}
+		{\unit{\mole_{Total}}}
+\cong	\qty{68.613861386138618}{\percent.\mole_{\ch{N2}}}
+&
+\end{flalign*}
+
+
+
+\sisetup{round-mode=figures, round-precision=3}
+
+\end{multicols}
+
+
+
+% Q4
+\section{}
+\begin{flalign*}
+&
+	m\,\unit{\frac{\g_{Total}}{\mol_{Total}}}
+=	21\,\unit{\percent\frac{vol_{\ch{O2}}}{vol_{Total}}}
+\,	\unit{\frac{P\,Vol_{Total}}{n_{Total}\,R\,T}}
+\,	\unit{\frac{n_{\ch{O2}\,R\,T}}{P\,Vol_{\ch{O2}}}}
+\,	\frac{32\,\unit{\g_{\ch{O2}}}}{\unit{\mole_{\ch{O2}}}}
++ &\\& +
+	79\,\unit{\percent\frac{vol_{\ch{N2}}}{vol_{Total}}}
+\,	\unit{\frac{P\,Vol_{Total}}{n_{Total}\,R\,T}}
+\,	\unit{\frac{n_{\ch{N2}\,R\,T}}{P\,Vol_{\ch{N2}}}}
+\,	\frac{28\,\unit{\g_{\ch{N2}}}}{\unit{\mole_{\ch{N2}}}}
+\cong 
+	\qty[round-precision=2]
+	{28.84}{\frac{\g_{Total}}{\mol_{Total}}}
+&
+\end{flalign*}
+
+
+
+% Q5
+\section{}
+\begin{itemize}
+\begin{multicols}{3}
+
+	\item $ [a] = 0.5\,\unit{\mole\per\litre} $
+	\item $ m_{\unit{vol}}=1.25\,\unit{\cubic\metre\per\minute} $
+	\item $ d = 1030\,\unit{\kg\per\cubic\metre} $
+	\item $ m_{\unit{\mole}} = 98\,\unit{\g\per\mole} $
+
+\end{multicols}
+\end{itemize}
+
+
+\begin{multicols}{2}
+
+
+% Q5 - a)
+\subsection{}
+\begin{flalign*}
+&
+	[a]\,\unit{\kg\per\cubic\metre} 
+= 	
+	0.5\,\unit{\mole\per\litre}
+\,	\frac{1000\,\unit{\litre}}{\unit{\cubic\metre}}
+\,	\frac{98\,\unit{\gram}}{\unit{\mole}}
+\cong
+	\qty[round-precision=3]
+	{196}{\kg\per\cubic\metre}
+&
+\end{flalign*}
+
+
+% Q5 - b)
+\subsection{}
+\begin{flalign*}
+&
+	m_{\unit{\g}} \unit{\kg\per\second} 
+=	
+	1.25\,\unit{\frac{\cubic\metre}{\minute}}
+\,	\unit{\frac{\minute}{60\,\second}}
+\,	\unit{\frac{1030\,\kg}{\cubic\metre}}
+\cong
+	\qty[round-precision=3]
+	{21.458333333333333}{\kg\per\second}
+&
+\end{flalign*}
+
+
+% Q5 - c)
+\subsection{}
+\begin{flalign*}
+&
+	\alpha\unit{\percent\g_{a}\per\g_{Total}}
+=
+	0.5\,\unit{\frac{\mole}{\litre}}
+\,	\unit{\frac{1000\,\litre}{\cubic\metre}}
+\,	\unit{\frac{\cubic\metre}{1030\,\kg}}
+\,	\unit{\frac{98\,\g}{\mole}}
+\cong &\\& \cong
+	\qty[round-precision=3]
+	{4.757281553398058}{\percent\g_{a}\per\g_{Total}}
+&
+\end{flalign*}
+
+\end{multicols}
+
+
+
+% Q6
+\section{}
+\begin{center}
+\begin{tabular}{l *{5}{r} r}
+
+	\multicolumn{1}{c}{\%}
+	& \multicolumn{1}{c}{\ch{N2}}
+	& \multicolumn{1}{c}{\ch{CO2}}
+	& \multicolumn{1}{c}{\ch{O2}}
+	& \multicolumn{1}{c}{\ch{H2O}}
+	& \multicolumn{1}{c}{Total (\unit{\mole})}
+	
+	\\ \midrule
+	
+	\unit{\mole}
+	& 60.0
+	& 15.0
+	& 10.0
+	& 15.0
+	& 100.0
+	
+	\\
+	
+	\unit{\mole_{seco}}
+	& 70.6
+	& 17.6
+	& 11.8
+	& \multicolumn{1}{c}{-}
+	& 85.0
+	
+\end{tabular}
+\end{center}
+
+% Q6 (i) - mol tot seco
+\subsubsection{\unit{\mole_{Total\,Seco}\per\mole_{Total}}}
+\begin{flalign*}
+&
+	\frac{
+		60.0\unit{.\percent.\mole_{\ch{N2}}} 
+		+ 15.0\unit{.\percent.\mole_{\ch{CO2}}} 
+		+ 10.0\unit{.\percent.\mole_{\ch{O2}}} 
+		}
+		{\unit{\mole_{Total}}}
+\,	100\unit{.\mole_{Total}}
+=
+	85.0\unit{.\mole_{Total\,Seco}}
+&
+\end{flalign*}
+
+
+\begin{multicols}{2}
+
+
+% Q6 (ii) - N2
+\subsubsection{\ch{N2}}
+\begin{flalign*}
+&
+	60.0\unit{.\percent.\frac{\mole_{\ch{N2}}}{\mole_{Total}}}
+\,	\unit{
+		\frac{100.0\,\mole_{Total}}
+			{ 85.0\,\mole_{Total\,Seco}}
+	}
+\cong 
+	\qty[round-precision=3]
+	{70.588235294117647}{\percent.\mole_{\ch{N2}}}
+&
+\end{flalign*}
+
+
+% Q6 (iii) - CO2
+\subsubsection{\ch{CO2}}
+\begin{flalign*}
+&
+	15.0\unit{.\percent.\frac{\mole_{\ch{CO2}}}{\mole_{Total}}}
+\,	\unit{
+		\frac{100.0\,\mole_{Total}}
+			{ 85.0\,\mole_{Total\,Seco}}
+	}
+\cong 
+	\qty[round-precision=3]
+	{17.647058823529412}{\percent.\mole_{\ch{CO2}}}
+&
+\end{flalign*}
+
+
+% Q6 (iii) - O2
+\subsubsection{\ch{O2}}
+\begin{flalign*}
+&
+	10.0\unit{.\percent.\frac{\mole_{\ch{O2}}}{\mole_{Total}}}
+\,	\unit{
+		\frac{100.0\,\mole_{Total}}
+			{ 85.0\,\mole_{Total\,Seco}}
+	}
+\cong 
+	\qty[round-precision=3]
+	{11.764705882352941}{\percent.\mole_{\ch{O2}}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+
+% Q7
+\section{}
+\begin{flalign*}
+&
+	P_{(30\unit{.\metre})}\unit{\m.\ch{H2O}}
+=
+	10.4\unit{.\metre.\ch{H2O}}
+\,	+ &\\& 
++	30\unit{.\metre.\ch{H2O}}
+\cong
+	\qty[round-precision=3]
+	{40.4}{\metre.\ch{H2O}}
+&
+\end{flalign*}
+
+
+
+% Q8
+\section{}
+\begin{flalign*}
+&
+	\Delta P\unit{.dynes\per\cm\squared}
+=
+	(1.05 - 1.00)\unit{.\gram.\cm^{-3}}
+\,	9.807\unit{.\m.\s^{-2}}
+\,	* &\\& *
+\,	(382-374)\unit{\mm}
+\cong
+	\qty[round-precision=3]
+	{39.228}{.dynes\per\cm\squared}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+\sisetup{round-precision=3}
+
+% Q9
+\section{}
+\begin{flalign*}
+&
+	Cp\unit{\frac{\joule}{\gram\,\celsius}}
+=
+	\left(
+		0.487
+	+	2.29*10^{-4}
+	\,	T\unit{.\degree F}
+	\,	\unit{
+			\frac{1.8\,T\,\celsius + 32\,\celsius}
+				{T\,\degree F}
+		   }
+	\right)
+	\unit{\frac{Btu}{lbm\,\degree F}}
+\,	\frac{\qty{1055.05585257348}{\joule}}
+		{\unit{Btu}}
+\,	\frac{\unit{lbm}}
+		{\qty{453.59237}{g}}
+\,	\unit{\frac{1.8\,\degree F}{\celsius}}
+= &\\& =
+	\left(
+%		\num{2.038971599910097}
+		\num{2.345780303896569}
+%	+	\num{0.009587771999577}
+	+	\num{0.017257989599239}
+	\,	T\unit{.\celsius}
+	\right)
+	\unit{\frac{\joule}{\gram\,\celsius}}
+&
+\end{flalign*}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

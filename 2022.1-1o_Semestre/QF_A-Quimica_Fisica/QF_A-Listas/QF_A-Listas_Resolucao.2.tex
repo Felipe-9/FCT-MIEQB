@@ -1,0 +1,141 @@
+% !TEX root = ./QF_A-Listas_Resolução.2.tex
+\providecommand\mainfilename{"./QF_A-Listas_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Listas_Resolução.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Listas_Resolução.2}}}
+
+\mymakesubfile{2}
+[QF A]
+{Reactional Dynamics} % Subfile Title
+{Reactional Dynamics} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Laidler and Chen studied the hydrolysis kinetics of ethyl acetate in aqueous solution at various temperatures and obtained the following values for the rate constant.
+} % Q1
+    \begin{center}
+        \begin{tabular}{c *{4}{c}}
+            
+            \\\toprule
+            
+                T(\unit{\celsius})
+                & 4 & 10 & 18 & 25
+                \\
+                k(\unit{\M^{-1}\,s^{-1}})
+                & 0.028 & 0.0410 & 0.0680 & 0.1080
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    Determine (a 25\,\unit{\celsius}):
+    
+    \begin{center}
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = engineering,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            % fixed-exponent          = 0,
+            round-mode              = places,        % figures/places/unsertanty/none
+            round-precision         = 5,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+        \begin{tabular}{*{2}{r}}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{\(T^{-1}(\unit{\kelvin^{-1}})\)}
+                & \multicolumn{1}{c}{\(\ln{k}(\unit{\M^{-1}\,s^{-1}})\)}
+
+            \\\midrule
+
+                   \num{0.003608154429009562}  & \num{-3.575550768806933}
+                \\ \num{0.003531696980399082}  & \num{-3.1941832122778293}
+                \\ \num{0.0034346556757685045} & \num{-2.6882475738060303}
+                \\ \num{0.0033540164346805303} & \num{-2.2256240518579173}
+            
+            \\\bottomrule
+            
+        \end{tabular}
+
+        \begin{figure}\centering
+            \includegraphics[width=\textwidth]{q1}
+            \caption{\(\ln{k} = -5300.9629\,T^{-1}+15.5377\)}
+        \end{figure}
+    \end{center}
+
+    \subsubquestion{\(E_a\)}
+    \begin{flalign*}
+        &
+            E_a 
+            = -5300.9629\,R
+            = -5300.9629*\num{8.314462618}
+            = \num{-44074.6578714548722;}
+        &
+    \end{flalign*}
+
+    \subsubquestion{\(\adif{H}^{\#}\)}
+    % \begin{flalign*}
+    %     &
+            
+    %     &
+    % \end{flalign*}
+
+     
+    % -3.0604807473813813, -5
+    % -2.4584207560534193, -4.698970004336019
+    % -1.856985199745905, -4.3979400086720375
+    % -1.5044556624535514, -4.221848749616356
+
+    % -2.3615107430453626, -5
+    % -1.7594507517174003, -4.698970004336019
+    % -1.157390760389438, -4.3979400086720375
+    % -0.8041003475907662, -4.221848749616356
+
+    % -2.0609802235513337, -5
+    % -1.4596705252091262, -4.698970004336019
+    % -0.8601209135987634, -4.3979400086720375
+    % -0.5044556624535516, -4.221848749616356
+    
+
+    % -7.047017346315645,-6.907755278982137
+    % -5.437579433881544, -5.298317366548036
+    % -4.7455823397048364,-4.605170185988091
+
+    % -5.660722985195754,-6.907755278982137
+    % -4.051285072761654, -5.298317366548036
+    % -3.3610155920293234,-4.605170185988091
+
+    % -4.275866438845491,-6.907755278982137
+    % -2.6649907116417633, -5.298317366548036
+    % -1.9805015938249322,-4.605170185988091
+
+    % -3.4641371814360293,-6.907755278982137
+    % -1.851509473633829, -5.298317366548036
+    % -1.1615520884419839,-4.605170185988091
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    \subsubquestion{\(\adif{S}^{\#}\)}
+    \subsubquestion{\(\adif{G}^{\#}\)}
+
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,263 @@
+% !TEX root = ./TEQB-Aulas_Anotações.4.tex
+\providecommand\mainfilename{"./TEQB-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Aulas_Anotações.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{4}
+[TEQB]
+{Aula}
+{Aula}
+
+\begin{sectionBox}1{Equação de Gibbs} % S1
+    
+    \begin{BM}
+        \odif{G}
+        = -S\odif{T}
+        + -V\odif{P}
+        \\[1.5ex]
+        \odif{G}
+        = \pdv{G}{T}_P
+        \odif{T}
+        \qquad
+        \odif{G}
+        = \pdv{G}{P}_T
+        \odif{P}
+    \end{BM}
+
+    \paragraph*{Condições}
+    Sistema fechado com apenas trabalho expansivo.
+    \\
+
+    Para dar conta da variação do \# mols em um sistema fechado é necessário ocorrer uma reação química com troca de massa.
+    
+\end{sectionBox}
+
+
+\begin{definitionBox}1{Poténcial Químico}
+    
+    \begin{BM}
+        \mu_i = \pdv{G}{n_i}_{T,P,n_j}
+    \end{BM}
+
+    \begin{itemize}
+        \item \(n\): Numero de mols de todas as espécies
+        \item \(n_i\): Numero de mols de uma espécie
+        \item \(n_j\): Numero de mols de todas as espécies exceto \(n_i\)
+    \end{itemize}
+    
+\end{definitionBox}
+
+\begin{sectionBox}2{Extenção das equações de Gibbs} % S1.1
+    
+    \begin{BM}
+        \odif{G}
+        = \pdv{G}{T}_{P,n}\,\odif{T}
+        + \pdv{G}{P}_{T,n}\,\odif{P}
+        + \sum_{i}{
+            \pdv{G}{n}_{n_j,P,T}\,\odif{n_i}
+        }
+        = \\
+        = \pdv{G}{T}_{P,n}\,\odif{T}
+        + \pdv{G}{P}_{T,n}\,\odif{P}
+        + \sum_{i}{
+            \mu_i\,\odif{n_i}
+        }
+        = \\
+        = \pdv{G}{T}_P\,\odif{T,n}
+        + \pdv{G}{P}_T\,\odif{P,n}
+        + \sum_{\alpha}{
+            \sum_{i}{
+                \mu_{i,\alpha}\,\odif{n_{i,\alpha}}
+            }
+        }
+        \\[1.5ex]
+        : n_j = n \backslash \{n_i\}
+    \end{BM}
+
+    \begin{itemize}
+        \item \(n\): Numero de mols de todas as espécies
+        \item \(n_i\): Numero de mols de uma espécie
+        \item \(n_j\): Numero de mols de todas as espécies exceto \(n_i\)
+        \item \(i\): Elemento
+        \item \(\alpha\): Fase (sólida, liquida...)
+    \end{itemize}
+
+    \begin{itemize}[left = 10em]
+        \item[\textbf{Temperatura}] Regula o estabelecimento do equilíbrio Térimico
+        \item[\textbf{Pressão}] Regula o estabelecimento do equilíbrio Mecânico
+        \item[\textbf{Portêncial Químico}] Regula o estabelecimento do equilíbrio Mássico
+    \end{itemize}
+
+    
+\end{sectionBox}
+
+\begin{exampleBox}1{}
+    
+    Fluido em dois estádos físicos com o primeiro mudando para o segundo
+
+    \begin{flalign*}
+        &
+            0>\odif{G}
+            =\mu_{\alpha}\,\odif{n_{\alpha}}
+            +\mu_{\beta }\,\odif{n_{\beta }}
+            =
+            - \mu_{\alpha}\,\odif{n}
+            + \mu_{\beta }\,\odif{n}
+            = (\mu_{\beta }-\mu_{\alpha})\,\odif{n}
+            \implies
+            \mu_{\beta }<\mu_{\alpha}
+        &
+    \end{flalign*}
+
+    no equilíbrio
+
+    \begin{BM}
+        \odif{G}=0
+        \implies
+        \mu_{\beta }<\mu_{\alpha}
+    \end{BM}
+    
+\end{exampleBox}
+
+\begin{sectionBox}1{Equação de Clapeyrom} % S2
+    
+    \begin{BM}
+        \odv{P}{T}=\adv{S_m}{V_m}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \mu_{1,\alpha}
+            = \mu_{1,\beta}
+            \land
+            \mu_{2,\alpha}
+            = \mu_{2,\beta}
+            % \implies &\\&
+            \implies
+            \odif{\mu_{\alpha}}
+            = \odif{\mu_{\beta}}
+            \implies &\\&
+            \implies
+            \odif{G}_{m,\alpha}
+            = \odif{G}_{m,\beta}
+            \land
+            G=m\,G_m
+            \implies &\\&
+            \implies
+            m\,\odif{G}_{m}
+            + G_m\,\odif{m}
+            = -S\,odif{T}
+            + V\,\odif{P}
+            + \mu\,\odif{m}
+            \implies &\\&
+            \implies
+            \odif{G}_m
+            \land -S_m\,\odif{T}+V_m\,\odif{P}
+            \implies &\\&
+            \implies
+            -S_{m,\alpha}\,\odif{T}
+            +V_{m,\alpha}\,\odif{P}
+            = -S_{m,\beta}\,\odif{T}
+            +  V_{m,\beta}\,\odif{P}
+            \implies &\\&
+            \implies
+            ( S_{m,\alpha}-S_{m,\beta})\,\odif{T}
+            =(V_{m,\alpha}-V_{m,\beta})\,\odif{P}
+            \implies &\\&
+            \implies
+            \odv{P}{T}=\adv{S_m}{V_m}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{} % S2
+    
+    \begin{BM}
+        \ln P_2
+        = \ln P_1
+        + \frac{\adif{H_{vap}}}{R}
+        \,\left(
+            T_2^{-1}
+            - T_1^{-1}
+        \right)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \adif{V_{vap}} 
+            = V_{m,g} - V_{m,l}
+            \approx V_{m,g}
+            \approx \frac{R\,T}{P}
+            \implies &\\&
+            \implies
+            \odv{P}{T}
+            = \frac{\adif}{R\,T/P}
+            \implies &\\&
+            \implies
+            \frac{\odif{P}}{P}
+            = \frac{\adif{H_{vap}}}{R\,T}
+            \,\odif{T}
+            \implies &\\&
+            \implies
+            \int\odif{\ln{P}}
+            = \ln P_2-\ln P_1
+            = &\\&
+            = \int\frac{\adif{H_{vap}}}{R}
+            \,\frac{\odif{T}}{T^2}
+            = \frac{\adif{H_{vap}}}{R}
+            \,\int{
+                \frac{\odif{T}}{T^2}
+            }
+            = \frac{\adif{H_{vap}}}{R}
+            \,\left(
+                T_2^{-1}
+                - T_1^{-1}
+            \right)
+            \implies &\\&
+            \implies
+            \ln P_2
+            = \ln P_1
+            + \frac{\adif{H_{vap}}}{R}
+            \,\left(
+                T_2^{-1}
+                - T_1^{-1}
+            \right)
+        &
+    \end{flalign*}
+    
+    
+\end{sectionBox}
+
+
+\begin{sectionBox}1{} % S3
+    
+    Fusão
+
+    \begin{flalign*}
+        &
+            \odv{P}{T}
+            = \frac{\adif{H_{Vap}}}
+            {T\,\adif{V_m}}
+            \implies
+            \int{\odif{P}}
+            = \adif{P}
+            = \int{
+                \adv{H_{vap}}{V_m}
+                \frac{\odif{T}}{T}
+            }
+            \cong 
+            \adv{H_{vap}}{V_m}
+            \ln\frac{T_2}{T_1}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\end{document}

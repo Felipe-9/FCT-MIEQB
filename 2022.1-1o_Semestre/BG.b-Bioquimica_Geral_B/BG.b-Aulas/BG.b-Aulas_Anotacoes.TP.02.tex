@@ -1,0 +1,349 @@
+% !TEX root = ./BG.b-Aulas_Anotações.tex
+% !TEX root = ./BG.b-Aulas_AnotaçõesP.02_Anotações.tex
+\providecommand\mainfilename{"./BG.b-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./BG.b-Aulas_Anotações.P.02.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+\renewcommand\thequestion{Questão \arabic{list}.\arabic{question}}
+
+\begin{document}
+
+\setcounter{list}{1}
+\mymakesubfile{2}{BG.b 03/22 - Lista \arabic{list}}{BG.b 03/22 - Lista \arabic{list}}
+
+\part*{Lista \arabic{list}}
+
+\setcounter{question}{6}
+
+\question{}
+
+\begin{questionBox}2{}
+    
+    \begin{flalign*}
+        &
+            \left.
+            \begin{aligned}
+                pK_{a\,1}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                2.2
+            \\
+                pK_{a\,2}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                4.1
+            \\
+                pK_{a\,3}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                9.5
+            \end{aligned}
+            \right\}
+        \therefore
+            \text{Glutamic Acid (Glu) (E)}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\setcounter{question}{10}
+
+\begin{questionBox}1{}
+    
+    \begin{flalign*}
+        &
+            \left.
+            \begin{aligned}
+                pK_{a\,1}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                2.2
+            \\
+                pK_{a\,2}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                4.5
+            \\
+                pK_{a\,3}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                5.9
+            \\
+                pK_{a\,4}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                6.3
+            \\
+                pK_{a\,5}
+               =& pH - \log\frac{\ch{[A^-]}}{\ch{[AH]}}
+                \cong
+                9.7
+            \end{aligned}
+            \right\}
+        \therefore
+            \text{Arginina (Arg) (R)}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\setcounter{list}{2}
+\setcounter{question}{0}
+\part*{Lista \arabic{list}}
+
+\begin{sectionBox}1{Electroforese em Papel}
+    
+    Separação de aminoácidos ou peptídeos sobre uma base de papel e dois banhos carregados
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Considere a seguinte mistura de aminoácidos sujeita a electroforese em papel.
+
+    \begin{questionBox}{}
+        \begin{itemize}
+            \begin{multicols}{3}
+                \item Ala
+                \item Ser
+                \item Fen
+                \item Arg
+                \item Asp
+                \item His
+            \end{multicols}
+        \end{itemize}
+    \end{questionBox}
+
+    Indique a direção de migração de cada aminoácido a \(pH = 3.9\).
+    Esboçe a distribuição dos aminoácidos revelados com ninidrina na tira de papel após a experiência
+
+    \vspace{2ex}
+    
+    pH muito próximo do equilíbrio \ch{AH <> AH2^+} dessa forma seram despresadas as quantidades dos outros compostos
+
+    \begin{enumerate}
+        \begin{multicols}{2}
+            \item Alanina
+        \end{multicols}
+    \end{enumerate}
+
+\end{questionBox}
+
+\begin{questionBox}3{Alanina}
+    \begin{flalign*}
+        &
+            pH 
+           = pK_a + \log\frac{\ch{[AH]}}{\ch{[AH2^+]}}
+           \implies
+           10^(3.9 - 2.35)\ch{[AH2^+]}
+          =2\,\ch{[AH]}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}3{Aginina (Arg)}
+
+    \begin{flalign*}
+        &
+            \left.
+            \begin{aligned}
+                &
+                    \ch{[AH]} 
+                   =\frac{\ch{[AH]}}{\ch{[AH]} + \ch{[AH2^+]}}
+                \ldiv{}
+                    \ch{[AH]} = \ch{[AH2^+]}\exp(pH - pK_a)
+                &
+            \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+                \ch{[AH]}
+               =\frac{\exp(3.9 - 1.82)\ch{[AH2^+]}}{\exp(3.9 - 1.82)\ch{[AH2^+]} + \ch{[AH2^+]}}
+               =\frac{\exp(3.9 - 1.82)}{\exp(3.9 - 1.82) + 1}
+               =\num{99.175097469294645}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{sectionBox}1{Eletroforense}
+    
+    Ha dois tipos: 
+    \begin{itemize}
+        \item Nitrato de prata (fica cor preta e branca) e é mais sensivel, melhor para quantidade de proteinas mais pequena.
+        \item Gel de cor azul.
+    \end{itemize}
+
+    separação por tamanho porem puxadas por potencial elétrico
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Na eletroforese em gel de poliacrimlamida (SDS-PAGE), as proteínas são sujeitas a um tratamento com dodoceil sulfato de sódio, tratamento esse que desnatura as proteínas e lhes confere a mesma densidade de carga negamtiva. Por consequencia, na eletroforese todas as protínas se deslocam no sentido do anodo. Os resultados de um ensaio SDS-PAGE são apresnetados na figura senguinte.
+
+    \begin{questionBox}2{}
+        
+        O SDS-PAGE permite separar e ordenar as proteínas em função do seu volume molecular porque\dots
+
+        \paragraph{Resposta:} 1.
+        
+    \end{questionBox}
+
+    \begin{questionBox}2{}
+        
+        A proteína padrão G:
+
+        \paragraph{Resposta:} 1. Dimensão diminui verticalmente em ordem de deslocação e respectivamente de tamanho.
+        
+    \end{questionBox}
+
+    \begin{questionBox}2{}
+        
+        Quanto a composição das amostras:
+        
+        \paragraph{Respostas:} 1. Se pode ver um borrão a baixo do padrão de meno tamanho.
+        
+    \end{questionBox}
+
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    \begin{multicols}{2}
+
+        \begin{enumerate}
+            \item 2.5
+            \item 4.3
+            \item 5
+            \item 7.4
+            \item 8.7
+            \item 9.9
+            \item 10.6
+        \end{enumerate}
+        
+    \end{multicols}
+
+    \begin{itemize}
+        \item 8.0
+    \end{itemize}
+        
+    % \begin{center}
+    %     \pgfplotsset{height=7cm, width= .6\textwidth}
+    %     \begin{tikzpicture}
+    %     \begin{axis}
+    %         [
+    %             % extra x ticks= { 0.5 },
+    %             % extra y ticks= { 0.236798 },
+    %             % Number formating
+    %             x tick label style={
+    %                 /pgf/number format/.cd,
+    %                     fixed,
+    %                     fixed zerofill,
+    %                     precision=3,
+    %                 /tikz/.cd
+    %             },
+    %             y tick label style={
+    %                 /pgf/number format/.cd,
+    %                     fixed,
+    %                     fixed zerofill,
+    %                     precision=3,
+    %                 /tikz/.cd
+    %             },
+    %             % Label titles
+    %             xlabel= {d},
+    %             ylabel= {\(\log m/\unit{\centi\meter}\)},
+    %             % MIN/MAX
+    %             % xmin= 250,    xmax= 1100,
+    %             % ymin= 0,        ymax= ,
+    %             % Ticks
+    %             % minor x tick num= 3,
+    %             minor x tick num= 1,
+    %             % Grids Major
+    %             xmajorgrids= true,
+    %             ymajorgrids= false,
+    %             % Grids Minor
+    %             % xminorgrids= false,
+    %             % yminorgrids= false,
+    %         ]
+            
+    %         % Legends
+    %         % \addlegendimage{empty legend}
+    %         % \addlegendentry[LegendColor\Light]{  }
+            
+    %         % % Plot from csv file
+    %         \addplot[smooth, thick] % mesh for colormap
+    %         table {
+    %             x       y
+    %             2.5     6.301029995663981
+    %             4.3     5.065392961561992
+    %             5       4.988558956878616
+    %             7.4     4.8208579894397
+    %             8.7     4.653212513775344
+    %             9.9     4.491361693834273
+    %             10.6    4.15836249209525
+    %         };
+            
+    %         % % Plot from equation
+    %         % \addplot[
+    %         %     smooth,
+    %         %     thick,
+    %         %     % Red,
+    %         %     domain  = -2:2,
+    %         %     samples = 0.4*\mysampledensity,
+    %         % ]{  x };
+            
+    %     \end{axis}
+    %     \end{tikzpicture}
+    % \end{center}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Solubilidade}
+    
+    A solubilidade da proteína depende da concentração de sais dissolvidos
+
+    Pode se separar proteínas por decandação aplicando sais que movem a solubilidade das proteínas forçãndoas a decantar seletivamente
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Ponto isoelétrico}
+    
+    pH em quem a proteína possui carga nula, aponta quando uma proteína se encontra negatíva ou positíva
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    
+    
+\end{questionBox}
+
+\part*{Tabela dos aminoácidos}
+
+% \begin{table}[H]\centering
+%     \begin{tabular}{l l *{5}{r}}
+        
+%         \\\toprule
+        
+%             \multicolumn{1}{c}{Nome}
+%            &\multicolumn{1}{c}{Molecula}
+%            &\multicolumn{1}{c}{Residula}
+        
+%         \\\midrule
+        
+            
+        
+%         \\\bottomrule
+        
+%     \end{tabular}
+% \end{table}
+
+\end{document}

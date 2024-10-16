@@ -1,0 +1,183 @@
+\part{04/05 - Formula de Taylor}
+
+\begin{multicols}{2}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Aproximação com funções polinomiais}
+
+\begin{BM}
+	f(x)=e^x
+	\begin{cases}
+		f  (0)=1
+	\\	f' (0)=1
+	\\	f''(0)=1
+	\end{cases}
+\end{BM}
+
+\subsection{Polinômio de grau 1}
+\begin{flalign*}
+&
+	f_1(x)=f'(0)(x-0)+f(0)=x+1
+&
+\end{flalign*}
+
+\subsection{Polinômio de grau 2}
+\begin{flalign*}
+&
+	f_2(x)=f''(0)\frac{(x-0)^2}{2}+f'(x-0)+f(0)=x^2/2+x+1
+&
+\end{flalign*}
+
+\subsection{Polinômio de grau 3}
+\begin{flalign*}
+&
+	f_2(x)
+=	f'''(0)\frac{(x-0)^3}{6}
++	f''(0)\frac{(x-0)^2}{2}\,
++	&\\&
++	f'(x-0)
++	f(0)
+=	x^3/6+x^2/2+x+1
+&
+\end{flalign*}
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	xmajorgrids= true,
+	legend pos= north west
+]
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry[Red]{$e^x$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Green]{$x+1$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Blue]{$x^2/2+x+1$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Purple]{$x^3/6+x^2/2+x+1$}
+	
+	\addplot
+	[	smooth,
+		thick,
+		Red,
+		domain = -2:2,
+		samples = 0.4*\mysampledensity,
+	] {exp(x)};
+	
+	\addplot
+	[	smooth,
+		thick,
+		Green,
+		domain = -2:2,
+		samples = 0.4*\mysampledensity,
+	] {x+1};
+	
+	\addplot
+	[	smooth,
+		thick,
+		Blue,
+		domain = -2:2,
+		samples = 0.4*\mysampledensity,
+	] {x^2/2+x+1};
+	
+	\addplot
+	[	smooth,
+		thick,
+		Purple,
+		domain = -2:2,
+		samples = 0.4*\mysampledensity,
+	] {x^3/6+x^2/2+x+1};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Formula de Taylor com grau $n$ e resto de lagrange}
+\label{Taylor}
+
+\begin{BM}[flalign*]
+&	f:\ \exists\,\odv[ord=n+1]{f}{x}
+	\quad\forall\,x\in\mathrm{I}:a\in\mathrm{I}
+\implies &\\&
+\implies
+	f_{(\text{ord}=n,\ \text{em}=a)}\,
+=	&\\&
+=	\sum_{k=0}^{n}\odv[ord=k]{f}{x}\frac{(x-a)^k}{k!}
++	r_n(x-a)
+&\\&
+	\forall\,x\in\mathrm{I}\backslash\{a\}
+&
+\end{BM}
+
+\begin{flalign*}
+&
+	r_n(x-a)=\odv[ord=n+1]{f(c)}{x}\frac{(x-a)^{n+1}}{(n+1)!}
+\qquad c\in [x,a]
+&
+\end{flalign*}
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo: Ordem 3 em 0}
+\begin{questionBox}{}
+\begin{BM}
+	f(x)=\sin(x)
+\end{BM}
+
+\begin{flalign*}
+&
+	f_3(x)
+=	\sin(0)
++	\cos(0)\,x
+-	\sin(0)\,x^2/2\,
++	&\\&
+-	\cos(0)\,x^3/6
++	\sin(c)\,x^4/24\,
+=	&\\&
+=	x-x^3/6+\sin(c)\,x^4/24
+&
+\end{flalign*}
+\end{questionBox}
+
+
+\end{minipage}
+
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

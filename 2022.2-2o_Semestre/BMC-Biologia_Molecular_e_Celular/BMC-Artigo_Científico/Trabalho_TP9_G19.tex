@@ -315,7 +315,7 @@
 
 % Vectors
 % \usepackage{esvect}      % Vector over-arrow
-% \let\vec\vv
+% \NewCommandCopy\vec\vv
 
 
 
@@ -360,7 +360,7 @@
 %     % --jobname "\image" \subfilename
 % }}
 
-% \let\oldtikzpicture\tikzpicture
+% \NewCommandCopy\oldtikzpicture\tikzpicture
 % \renewcommand\tikzpicture{\oldtikzpicture\nopagecolor}
 
 
@@ -384,7 +384,7 @@
 %   \tikz[baseline=0]\path [#1] \pgfextra{\rlap{\copy0}} (0,-\dp0) rectangle (\wd0,\ht0);%
 % }
 %
-% \let\oldsection\section
+% \NewCommandCopy\oldsection\section
 % \renewcommand\section[1]{
 %     \oldsection{\fadingtext{
 %         left  color   = DarkGreen!00!foreground,
@@ -393,7 +393,7 @@
 %     }{ \relax\parbox[b]{\linewidth}{#1} }}
 % }
 %
-% \let\oldpart\part
+% \NewCommandCopy\oldpart\part
 % \renewcommand\part[1]{
 %     \oldpart{\fadingtext{
 %         left  color   = Emph,
@@ -503,7 +503,7 @@
 % \newlength\MoleculeVScale\setlength\MoleculeVScale{1cm}
 % \usepackage{chemmacros}
 % \chemsetup[phases]{pos=sub}
-% \newcommand{\mol}[1]{ \si{\mole\of{\ch{ #1 }}} } % mol
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
 
 
 
@@ -626,12 +626,12 @@
 \renewcommand\theHsection{\theHpart.\arabic{section}}
 
 % get parttitle command
-% \let\oldpart{\part}
+% \NewCommandCopy\oldpart{\part}
 % \newcommand\parttitle{}
 % \renewcommand{part}[1]{\oldpart{#1}\renewcommand{\parttitle}{#1}}
 
 % Color targets
-\let\oldhypertarget\hypertarget
+\NewCommandCopy\oldhypertarget\hypertarget
 \renewcommand\hypertarget[3][Link]{\oldhypertarget{#2}{\textcolor{#1}{#3}}}
 
 
@@ -792,7 +792,7 @@
     \section{Doença de Parkinson's}
     A doença neurodegenerativa de Parkinson's (PD) é caracterizada por tremores quando em repouso, rigidez, postura curvada e distúrbios neurocomportamentais (ex.: depressão) \cite{Sofronova:2016aa}.\par
     % 
-    Segundo um estudo em pacientes com PD, ocorre um aumento de eliminações de mtDNA (detetou-se uma eliminação de 4.997\,\si{\kilo{b}} em mtDNA de plaquetas \cite{Sandy:1993aa}), que causa a disfunção da cadeia respiratória, devido à falha originada no complexo I (primeira etapa da cadeia de transporte de eletrões) \cite{Swerdlow:1996aa}. Esta alteração no funcionamento da respiração celular provoca o decaimento de 20\% dos produtos obtidos em condições normais. A disfunção em questão pode ser acompanhada por estudos em PCR de mitocôndrias isoladas \cite{Diaz:2009aa}. Isto implica que a cadeia respiratória mitocondrial (e consequentemente a vida celular) é sensível a integridade do mtDNA. Para detetar essas alterações recorremos ao PCR e o eletroforese em gel.
+    Segundo um estudo em pacientes com PD, ocorre um aumento de eliminações de mtDNA (detetou-se uma eliminação de 4.997\,\unit{\kilo{b}} em mtDNA de plaquetas \cite{Sandy:1993aa}), que causa a disfunção da cadeia respiratória, devido à falha originada no complexo I (primeira etapa da cadeia de transporte de eletrões) \cite{Swerdlow:1996aa}. Esta alteração no funcionamento da respiração celular provoca o decaimento de 20\% dos produtos obtidos em condições normais. A disfunção em questão pode ser acompanhada por estudos em PCR de mitocôndrias isoladas \cite{Diaz:2009aa}. Isto implica que a cadeia respiratória mitocondrial (e consequentemente a vida celular) é sensível a integridade do mtDNA. Para detetar essas alterações recorremos ao PCR e o eletroforese em gel.
     % 
     \section{metodo de identificação de mutações}
     O PCR copia, ou amplifica uma pequena região da molécula de DNA, através da enzima DNA polimerase (enzimas de restrição). As extremidades da região a ser amplificada devem ser conhecidas e devem ser realizados vários ensaios até chegar a um conjunto de resultados que permite determinar a presença de mutações (por análise detalhada de bases). A eletroforese em gel da amplificação resultante do PCR permite revelar produtos que foram eliminados ou duplicados no mtDNA \cite{Sofronova:2016aa}, facilitando a deteção de mutações responsáveis pela PD, pois já se observou ocorrência dessas mesmas eliminações nas cadeias de mtDNA.\\

@@ -1,0 +1,551 @@
+% !TEX root = ./QF_A-Listas_Resolução.1.1.tex
+\providecommand\mainfilename{"./QF_A-Listas_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Listas_Resolução.1.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Listas_Resolução.1.1/}}}
+
+\mymakesubfile{1}
+[QF A]
+{Exercicios Cinética} % Subfile Title
+{Cinética} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Prove que a reação \ch{N2O2\gas{} -> 2 NO \gas{}} é de 1a ordem em relação a \ch{N2O2} sabendo que no instante inicial \(t=0\) já existem 0.25\,\unit{\bar} de \ch{NO} no reator. A pressão total varia da seguinte maneira em função do tempo:
+} % Q1
+    \begin{center}
+        \begin{tabular}{l *{6}{c}}
+            
+            \\\toprule
+            
+                T/\unit{\min}
+                & 1 & 2 & 3 & 5 & 20 & 100
+                \\
+                \(p_t\) / \unit{\bar}
+                & 2.30 & 2.62 & 2.85 & 3.14 & 3.45 & 3.45
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{answerBox}1{} % RS 1
+        \begin{center}
+            \begin{tabular}{c c c}
+                
+                \\\toprule
+                
+                    & \multicolumn{1}{c @{\hspace{1em}\rightharpoonup}}
+                    {\ch{N2O2\gas{}}}
+                    & \ch{2 NO2\gas{}}
+                
+                \\\midrule
+                
+                       \(t=0\) & \(p_0  \) & 0.25
+                    \\ \(t  \) & \(p_0-x\) & \(0.25+2\,x\)
+                    \\ \(t=\infty\) & 0 & 3.45
+                
+                \\\bottomrule
+                
+            \end{tabular}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                p(t)
+                = p_0-x(t) + 0.25 + 2\,x(t)
+                &\\&
+                \lim_{t\to\infty}{p(t)}
+                = p_0-p_0 + 0.25 + 2\,p_0
+                = 3.45
+                \implies &\\&
+                \implies
+                x(t)
+                = p(t) - p_0 + 0.25
+                = p(t) - (3.45 - 0.25)/2 + 0.25
+                = p(t) - 1.85
+            &
+        \end{flalign*}
+
+        \begin{center}
+            \sisetup{
+                % scientific / engineering / input / fixed
+                exponent-mode           = fixed,
+                exponent-to-prefix      = false,          % 1000 g -> 1 kg
+                % exponent-product        = *,             % x * 10^y
+                % fixed-exponent          = 0,
+                round-mode              = places,        % figures/places/unsertanty/none
+                round-precision         = 4,
+                % round-minimum           = 0.01, % <x => 0
+                % output-exponent-marker  = {\,\mathrm{E}},
+            }
+            \setlength\tabcolsep{2mm}        % width
+            \renewcommand\arraystretch{1.25} % height
+            \begin{tabular}{c *{7}{c}}
+                
+                \\\toprule
+                
+                    T/\unit{\min}
+                    & 0 & 1 & 2 & 3 & 5 & 20 & 100
+                    \\
+                    \(p_t\) / \unit{\bar}
+                    & 2.10 & 2.30 & 2.62 & 2.85 & 3.14 & 3.45 & 3.45
+                    \\
+                    x
+                    & 0.00 & 0.45 & 0.77 & 1.00 & 1.29 & 1.6 & 1.6
+                    \\
+                    \(p_{\ch{N2O2\gas{}}}\)
+                    && 1.15 & 0.83 & 0.6 & 0.31 & 0 & 0
+                    \\
+                    \(p_{\ch{NO\gas{}}}\)
+                    & 0.25 & 1.15 & 1.79 & 2.25 & 2.83 & 3.45 & 3.45
+                    \\
+                    \(\ln{p_{\ch{N2O2\gas{}}}}\)
+                    && \num{0.13976194237515902}
+                    & \num{-0.18632957819149337}
+                    & \num{-0.5108256237659905}
+                    & \num{-1.1711829815029449}
+                
+                \\\bottomrule
+                
+            \end{tabular}
+
+            \begin{figure}\centering
+                \includegraphics[width=.8\textwidth]{q1.1}
+                \caption{\(\ln{p_{\ch{N2O2\gas{}}}} = -0.3277 + 0.4691\,t\)}
+            \end{figure}
+        \end{center}
+
+        Primeira ordem por ser uma reta.
+
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Moelwyn-Hughes et al. estudaram a hidrólise1 do acetato de etilo em solução aquosa, catalisada por ácido clorídrico de concentração 0.05\,\unit{\molar}. Os resultados, à temperatura de 15\,\unit{\celsius}, da evolução da concentração do reagente acetato com o tempo são apresentados na tabela ao lado.
+} % Q2
+    
+    \begin{center}
+        \begin{tabular}{r r}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{t/\unit{\hour}}
+                & 
+                \multicolumn{1}{c}{\unit{\milli\M}}
+            
+            \\\midrule
+            
+                0       & 39.80
+                \\ 4    & 38.88
+                \\ 15.5 & 35.88
+                \\ 27   & 33.18
+                \\ 40   & 30.47
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{questionBox}2{ % Q2.1
+        Comprove que a reação é de pseudo-primeira ordem e calcule a constante de velocidade \(k_1\).
+    } % Q2.1
+        \begin{center}
+            \begin{tabular}{r r r}
+                
+                \\\toprule
+                
+                    \multicolumn{1}{c}{t/\unit{\second}}
+                    & 
+                    \multicolumn{1}{c}{M}
+                    & 
+                    \multicolumn{1}{c}{\(\ln{}\)M}
+                
+                \\\midrule
+                
+                       0      & 3.980\(\E-3\) & \num{-3.223888366691745 }
+                    \\ 14400  & 3.888\(\E-3\) & \num{-3.247275299389899 }
+                    \\ 55800  & 3.588\(\E-3\) & \num{-3.327575241791542 }
+                    \\ 97200  & 3.318\(\E-3\) & \num{-3.4058079942198387}
+                    \\ 144000 & 3.047\(\E-3\) & \num{-3.4910126859845194} 
+
+                \\\bottomrule
+                
+            \end{tabular}
+
+            \begin{figure}\centering
+                \includegraphics[width=\textwidth]{q2}
+                \caption{\(\ln{M}=-1.8702\E-6 + -3.2226\,t\)}
+            \end{figure}
+
+        \end{center}
+
+        A linearidade mostra que é de primeira ordem, \(k_1=-1.8702\E-2\)
+
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Explique porque é que se utiliza o termo “pseudo” neste caso e calcule a constante de velocidade \(k_2\).
+    } % Q2.2
+        \begin{flalign*}
+            &
+                k_1
+                = k'_1/\ch{[HCl]}
+                = \frac{1.8702\E-6}{0.05}
+                = \num{37.404e-6}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    A dimerização de butadieno em 3-vinil-ciclohexeno, \ch{2 C4H6 -> C8H12}, tem uma constante de velocidade \(k_2\) que se pode exprimir em função da temperatura \textit{T} da seguinte forma:
+} % Q3
+    \begin{BM}
+        k_2 = 9.2*10^6\,\exp{(-11965/T)}
+        \,\unit{\deci\metre^3\,\mole^{-1}\,\second^{-1}}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q3.1
+        Calcule a energia de ativação da reação.
+        } % Q3.1
+        \begin{flalign*}
+            &
+                E_a = 11965*R
+                = \qty{99.48254522437}{\kilo\joule\,\mole^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        Admitindo que a reação é de segunda ordem, calcule a concentração de produto obtido ao fim de 2 minutos de dimerização, quando a concentração inicial de reagente for 0.5\,\unit{\molar} e a temperatura 600\,\unit{\kelvin}.
+    } % Q3.2
+        \begin{center}
+            \begin{tabular}{c c c}
+                
+                \\\toprule
+                
+                    \multicolumn{1}{c}{t}
+                    & \multicolumn{1}{c @{\hspace{1em}\rightleftharpoons}}{
+                        \ch{2 C4H8}
+                    }
+                    & \multicolumn{1}{c}{\ch{C8H12}}
+                
+                \\\midrule
+                
+                    0 & \(x_0\) & 0
+                    \\ 
+                    t & \(x_0-2\,x_t\) & \(x_t\)
+                
+                \\\bottomrule
+                
+            \end{tabular}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                v 
+                = -\frac{1}{2}\odv{\ch{[C4H8]}}{t}
+                = k_2\ch{[C4H6]}^2
+                \implies &\\&
+                \implies
+                -0.5\int_{x_0}^{x_0-2\,x_t}{
+                    \ch{[C4H6]}^{-2}
+                    \,\odif{\ch{[C4H6]}}
+                }
+                = 0.5\adif{\ch{[C4H6]}^{-1}}\big\vert_{x_0}^{x_0-2\,x_t}
+                = &\\&
+                = k_2\int_{0}^{t}{\odif{t}}
+                =k_2\,t
+                \implies &\\&
+                \implies
+                x_t
+                = x_0/2-(2\,k_2\,t+(x_0)^{-1})^{-1}/2
+                = &\\&
+                = 0.25
+                -\left(
+                    2\,(9.2*10^6\exp(-11965/600))
+                    \,(2*60)+(0.5)^{-1}
+                \right)^{-1}/2
+                \cong &\\&
+                \cong
+                \num{0.176733481789618}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    O mecanismo proposto para a bromação do dicianometano:
+} % Q4
+    \begin{center}
+        \ch{CH2(CN)2 + Br2 -> BrCH(CN)2 + H^{+} + Br^{-}}
+    \end{center}
+
+    é uma sucessão dum equilíbrio e duma reação com bromo
+
+    \begin{center}
+        \ch{
+            CH2(CN)2 <>[k+1][k-1] CH(CN)2^{-} + H^{+}\\
+            CH(CN)2^{-} + Br2 ->[k2] BrCH(CN)2 + Br^{-}
+        }
+    \end{center}
+
+    \begin{questionBox}2{ % Q4.1
+        Deduza a equação de velocidade de formação do dicianobromometano, \(\odif{\ch{[BrCH(CN)2]}}/\odif{t}\), aplicando a aproximação do estado estacionário ao anião \ch{CH(CN)2-}.
+    } % Q4.1
+        \begin{itemize}
+            \begin{multicols}{3}
+                \item \ch{CH2(CN)2}: \chemalpha
+                \item \ch{CH(CN)2^-}: \chembeta
+                \item \ch{BrCH(CN)2}: \chemgamma
+            \end{multicols}
+        \end{itemize}
+        \begin{flalign*}
+            &
+                \odv{[\chemgamma]}{t}
+                = k_2\,{[\chembeta]}\ch{[Br2^-]};
+                &\\&
+                \odv{{[\chembeta]}}{t}
+                = 0
+                = k_{+1}\,{[\chemalpha]}
+                - k_{-1}\,{[\chembeta]}\ch{[H^+]}
+                - k_{2}\,{[\chembeta]}\ch{[Br2]}
+                = &\\&
+                = k_{+1}\,{[\chemalpha]}
+                -{[\chembeta]}\left(
+                    k_{-1}\,\ch{[H^+]}
+                    + k_{2}\,\ch{[Br2]}
+                \right)
+                \implies
+                {[\chembeta]}
+                = \frac{
+                    k_{+1}\,{[\chemalpha]}
+                }{
+                    k_{-1}\,\ch{[H^+]}
+                    + k_{2}\,\ch{[Br2]}
+                }
+                \land &\\&
+                \land 
+                \odv{[\chemgamma]}{t}
+                = k_2
+                \,\frac{
+                    k_{+1}\,{[\chemalpha]}
+                }{
+                    k_{-1}\,\ch{[H^+]}
+                    + k_{2}\,\ch{[Br2]}
+                }
+                \,\ch{[Br2^-]}
+                = \frac{
+                    k_2\,k_{+1}
+                    \,{[\chemalpha]}
+                    \,\ch{[Br2^-]}
+                }{
+                    k_{-1}\,\ch{[H^+]}
+                    + k_{2}\,\ch{[Br2]}
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q4.2
+        Mostre que, quando a concentração de bromo é muito superior à concentração do ião \ch{H+}, é possível simplificar a equação de velocidade deduzida em a), tornando-se numa cinética de 1a ordem onde o passo determinante da velocidade é a ionização do \ch{CH2(CN)2}.
+    } % Q4.2
+        \begin{flalign*}
+            &
+                \lim_{\ch{[Br2]}\gg\ch{[H^+]}}{
+                    \odv{[\chemgamma]}{t}
+                }
+                = \lim_{\ch{[Br2]}\gg\ch{[H^+]}}{
+                    \frac{
+                        k_2\,k_{+1}
+                        \,{[\chemalpha]}
+                        \,\ch{[Br2^-]}
+                    }{
+                        k_{-1}\,\ch{[H^+]}
+                        + k_{2}\,\ch{[Br2]}
+                    }
+                }
+                % = &\\&
+                = \frac{
+                    k_2\,k_{+1}
+                    \,{[\chemalpha]}
+                    \,\ch{[Br2^-]}
+                }{
+                    k_{2}\,\ch{[Br2]}
+                }
+                % = &\\&
+                = k_{+1}\,{[\chemalpha]}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    No trabalho referido em 2), os autores apresentam resultados da constante de velocidade obtida nas mesmas condições de concentração, mas a outras temperaturas.
+} % Q5
+    \begin{center}
+        \begin{tabular}{r r}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{T/\unit{\celsius}}
+                & \multicolumn{1}{c}{\(k_1*10^6\,\unit{\second^{-1}}\)}
+            
+            \\\midrule
+            
+                   15 &   1.87
+                \\ 20 &   3.16
+                \\ 30 &   8.52
+                \\ 50 &  50.13
+                \\ 60 & 114.10
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{questionBox}2{ % Q5.1
+        Calcule a energia de ativação da reação
+    } % Q5.1
+        \begin{center}
+            \begin{tabular}{r r}
+                
+                \\\toprule
+                
+                    \multicolumn{1}{c}{\(T^{-1}\)\,\unit{\kelvin}}
+                    & \multicolumn{1}{c}{\(\ln{k_1\,\unit{\second^{-1}}}\)}
+                
+                \\\midrule
+                
+                    \num{0.00347041471455839}   & \num{-13.18957212709778}
+                    \\ \num{0.003411222923418046}  & \num{-12.664938530365454}
+                    \\ \num{0.003298697014679202}  & \num{-11.67309421712305}
+                    \\ \num{0.0030945381401825778} & \num{-9.900890926688861}
+                    \\ \num{0.0030016509079994}    & \num{-9.078435301096244}
+
+                \\\bottomrule
+                
+            \end{tabular}
+            \begin{figure}\centering
+                \includegraphics[width=\textwidth]{q5}
+                \caption{\(\ln{k_1}=-8754.3577\,T^{-1} + 17.1967\)}
+            \end{figure}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                E_a
+                =8754.3577*\num{8.314462618}
+                = \num{72787.7798412504586}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q5.2
+        Calcule a entropia de ativação da reação, utilizando a fórmula \(\adif{S} = R [\ln{(A/B)} - 2]\), em que \(B = 1.732\E{9}\,T^2\,\unit{\M^{-1}\,\second^{-1}}\) e \textit{A} é o fator pré exponencial da equação de Arrhenius. Relacione o valor obtido com a estrutura e organização do complexo ativado.
+    } % Q5.2
+        \begin{flalign*}
+            &
+                \adif{S}
+                = R\left(
+                    \ln{\frac{A}{B}}-2
+                \right)
+                = R\left(
+                    \frac{A}{
+                        1.732*10^9*T^2
+                    }
+                    -2
+                \right)
+                ; &\\[1.5ex]&
+                \ln{k_1}
+                = \ln{(0.05\,k_{1}')}
+                = \ln{k_{1}'}+\ln{0.05}
+                = -8754.3577\,T^{-1} + 17.1967
+                \implies &\\&
+                \implies
+                A 
+                = \exp{(17.1967 - \ln{0.05})}
+                = \exp{17.1967}/0.05
+                ; &\\[1.5ex]&
+                \adif{S}
+                = R\left(
+                    \ln\frac{
+                        \exp{17.1967}/0.05
+                    }{
+                        1.732*10^9*T^2
+                    }
+                    -2
+                \right)
+                &\\&
+                = \num{8.314462618}
+                \left(
+                    \ln\frac{
+                        \exp{17.1967}/0.05
+                        % 588114534.555814327543174
+                    }{
+                        1.732*10^9*(298.15)^2
+                        % 1.5396340777e-14
+                    }
+                    -2
+                \right)
+                % -14.475303804670893
+                \cong
+                \num{-120.354372368129317}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    La Mer (JACS 1929, 51, 3341-3347) estudou a reação de 2a ordem entre os iões de bromoacetato e tiossulfato, provenientes de sais de sódio:
+} % Q6
+    \begin{center}
+        \ch{BrCH2COO^{-} + S2O3^{2-} -> S2O3CH2COO^{2-} + Br^{-}}
+    \end{center}
+
+    Em soluções diluídas (concentrações milimolares) dos iões reagentes, obtiveram-se as constantes de velocidade indicadas na tabela
+
+    \begin{center}
+        \begin{tabular}{*{3}{c}}
+            
+            \\\toprule
+            
+                  \multicolumn{1}{c}{\ch{[TioS]}\,\unit{\milli\M}}
+                & \multicolumn{1}{c}{\ch{[BrAc]}\,\unit{\milli\M}}
+                & \multicolumn{1}{c}{\unit{\kelvin/\M^{-1}\,\min^{-1}}}
+            
+            \\\midrule
+            
+                   0.250 & 0.500 & 0.298
+                \\ 0.333 & 0.666 & 0.304
+                \\ 0.500 & 1.000 & 0.317
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{questionBox}2{ % Q6.1
+        Verifique se a lei limite de Debye-Huckel para os coeficientes de atividade de iões se aplica a esta reação no contexto da teoria do complexo ativado.
+    } % Q6.1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q6.2
+        Porque é que a velocidade da reação é favorecida pelo aumento da força iónica?
+    } % Q6.2
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}

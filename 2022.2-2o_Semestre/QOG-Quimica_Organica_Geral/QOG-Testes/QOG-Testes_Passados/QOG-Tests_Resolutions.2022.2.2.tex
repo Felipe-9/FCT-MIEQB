@@ -1,0 +1,63 @@
+% !TEX root = ./QOG-Tests_Resolutions.2022.2.2.tex
+\providecommand\mainfilename{"./QOG-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Tests_Resolutions.2022.2.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QOG-Tests_Resolutions.2022.2.2}}}
+% \tikzsetexternalprefix{./.build/figures/QOG-Tests_Resolutions.2022.2.2/graphics/}
+
+\mymakesubfile{2}
+[QOG]
+{Teste 2022.2 Resolução} % Subfile Title
+{Teste 2022.2 Resolução} % Part Title
+
+% \renewcommand\thesubquestion{Q\arabic{question} \alph{subquestion})}
+
+\begin{questionBox}1{ % Q1
+    Quais dos seguintes compostos formam ligações de hidrogénio entre as suas moléculas:
+} % Q1
+    \begin{enumerate}
+        \begin{multicols}{3}
+            \item \ch{CH3CH2OH}
+            \item \ch{CH3CH2SH}
+            \item \ch{CH3OCH2CH3}
+        \end{multicols}
+    \end{enumerate}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Qual a conformação mais estável do cis-1,2-dibromociclohexano? Justifique desenhando a estrutura.
+} % Q2
+    body
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Que nucleófilos usaria para fazer reagir com o brometo de butilo e preparar os seguintes compostos?
+} % Q3
+    \begin{questionBox}2{ % Q3.1
+        \ch{CH3CH2CH2CH2OH}
+    } % Q3.1
+        \begin{center}
+            \ch{
+                CH3CH2CH2CH2Br + OH^{-} -> CH3CH2CH2CH2OH
+            }
+        \end{center}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        \ch{CH3CH2CH2CH2OCH3}
+    } % Q3.1
+        \begin{center}
+            \ch{
+                CH3CH2CH2CH2Br + OCH3^{-} -> CH3CH2CH2CH2OCH3
+            }
+        \end{center}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

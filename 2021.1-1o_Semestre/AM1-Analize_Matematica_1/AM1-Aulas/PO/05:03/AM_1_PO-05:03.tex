@@ -1,0 +1,414 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+%\setlength{\cftsubsecnumwidth}{15mm}
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+%\usepackage{siunitx}
+%\sisetup{
+%	scientific-notation = engineering,
+%	exponent-to-prefix = true,
+%	exponent-product = *,
+%	round-mode = figures,
+%%	round-precision = 3,
+%%	round-minimum = 0.01
+%}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	AM 1 - Ficha 7\\Diferenciabilidade%
+}
+\author{Felipe Pinto - 61387}
+\date{}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents 
+\section*{Conteúdo}
+\renewcommand{\contentsname}{}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+
+
+% Q1
+\section{}
+
+
+% Q1 - a)
+\subsection{}
+\bm{
+	f_{1\,(x)} = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		0\quad&\text{se } x<0\\
+		x^2\quad&\text{se } x\geq0
+	%
+	\end{array}
+	\right.
+}
+
+\begin{flalign*}
+&
+	f'_{1\,(x)}
+=	\lim_{x\to0^-} \frac{f'_{1\,(x)} - f_{1\,(0)}}{x-0}
+=	\lim_{x\to0^-}\frac{0-0}{x}
+=	0
+=	\lim_{x\to0^+} \frac{f'_{1\,(x)} - f_{1\,(0)}}{x-0}
+=	\lim_{x\to0^+} \frac{x^2-0}{x}
+=	0
+&\\&
+\therefore f'_{1\,(x)} \text{ é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+% Q1 - b)
+\subsection{}
+\bm{
+	f_{2\,(x)} = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		\sin(2\,x)\quad&\text{se } x<0\\
+		e^{2\,x}-1\quad&\text{se } x\geq0
+	%
+	\end{array}
+	\right.
+}
+
+\begin{flalign*}
+&
+	f'_{2\,(x)}
+=	\lim_{x\to0^-}\frac{f'_{2\,(x)} - f_{2\,(0)}}{x-0}
+=	\lim_{x\to0^-}\frac{\sin(2\,x)-0}{x}
+=	2
+=	\lim_{x\to0^+} \frac{f'_{2\,(x)} - f_{2\,(0)}}{x-0}
+=	\lim_{x\to0^+} \frac{e^{2\,x}-1-0}{x}
+=	2
+&\\&
+\therefore f'_{2\,(x)} \text{ é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+% Q1 - c)
+\subsection{}
+\bm{
+	f_{3\,(x)} = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		|x|^{1.5}\sin(1/x)\quad&\text{se } x\neq0\\
+		0\quad&\text{se } x=0
+	%
+	\end{array}
+	\right.
+}
+
+\begin{flalign*}
+&
+	f'_{3\,(x)}
+=	\lim_{x\to0^-}\frac{f'_{3\,(x)} - f_{3\,(0)}}{x-0}
+=	\lim_{x\to0^-}\frac{|x|^{1.5}\,\sin(1/x)-0}{x}
+=	\lim_{x\to0^-}-|x|^{0.5}\,\sin(1/x)
+=	0
+=	&\\&
+=	\lim_{x\to0^+} \frac{f'_{3\,(x)} - f_{3\,(0)}}{x-0}
+=	\lim_{x\to0^+} \frac{|x|^{1.5}\,\sin(1/x)-0}{x}
+=	\lim_{x\to0^+} |x|^{0.5}\,\sin(1/x)
+=	0
+&\\&
+\therefore f'_{3\,(x)} \text{ é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+% Q1 - d)
+\subsection{}
+\bm{
+	f_{4\,(x)} = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		e^{-1/x^2}\quad&\text{se } x\neq0\\
+		0\quad&\text{se } x=0
+	%
+	\end{array}
+	\right.
+}
+
+\begin{flalign*}
+&
+	f'_{4\,(x)}
+=	\lim_{x\to0^-}\frac{f'_{4\,(x)} - f_{4\,(0)}}{x-0}
+=	\lim_{x\to0^-}\frac{e^{-1/x^2}-0}{x}
+=	\lim_{x\to0^-}\frac{1/x}{e^{-(1/x)^2}}
+=	0
+=	&\\&
+=	\lim_{x\to0^+} \frac{f'_{4\,(x)} - f_{4\,(0)}}{x-0}
+=	\lim_{x\to0^+} \frac{e^{-1/x^2}-0}{x}
+=	\lim_{x\to0^-}\frac{1/x}{e^{-(1/x)^2}}
+=	0
+&\\&
+\therefore f'_{4\,(x)} \text{ é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+
+% Q2
+\section{}
+
+
+% Q2 - a)
+\subsection{}
+\bm{
+	g_{1\,(x)} = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		0\quad&\text{se } x<0\\
+		x\quad&\text{se } x\geq0
+	%
+	\end{array}
+	\right.
+}
+
+\begin{flalign*}
+&
+	g'_{1\,(x)}
+=	\lim_{x\to0^-}\frac{g'_{1\,(x)} - g_{1\,(0)}}{x-0}
+=	\lim_{x\to0^-}\frac{0-0}{x}
+=	0
+=	\lim_{x\to0^+} \frac{g'_{1\,(x)} - g_{1\,(0)}}{x-0}
+=	\lim_{x\to0^+} \frac{x-0}{x}
+=	1
+&\\&
+\therefore g'_{1\,(x)} \text{ não é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+% Q2 - b)
+\subsection{}
+\bm{
+	g_{2\,(x)} = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		\sin(x)\quad&\text{se } x<0\\
+		1-\cos(x)\quad&\text{se } x\geq0
+	%
+	\end{array}
+	\right.
+}
+
+\begin{flalign*}
+&
+	g'_{2\,(x)}
+=	\lim_{x\to0^-}\frac{g'_{2\,(x)} - g_{2\,(0)}}{x-0}
+=	\lim_{x\to0^-}\frac{\sin(x)-1-\cos(0)}{x}
+=	\lim_{x\to0^-}\frac{\sin(x)}{x}
+=	1
+=	&\\&
+=	\lim_{x\to0^+} \frac{g'_{2\,(x)} - g_{2\,(0)}}{x-0}
+=	\lim_{x\to0^+} \frac{1-\cos(x)-1-\cos(0)}{x}
+=	\lim_{x\to0^+} \frac{1-\cos^2(x)}{x(1+\cos(x))}
+=	&\\&
+=	\lim_{x\to0^+} \frac{\sin^2(x)}{x^2}
+*	\lim_{x\to0^+} \frac{x}{1+\cos(x)}
+=	0
+&\\&
+\therefore g'_{2\,(x)} \text{ não é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+% Q2 - c)
+\subsection{}
+\bm{
+	g_{3\,(x)} = \sqrt{\sin(x)\,x}\quad x\in[-\pi,\pi]
+}
+
+\begin{flalign*}
+&
+	g'_{3\,(x)}
+=	\lim_{x\to0^-} \frac{g'_{3\,(x)} - g_{3\,(0)}}{x-0}
+=	\lim_{x\to0^-}
+	\frac{\sqrt{\sin(x)\,x}-\sqrt{\sin(0)\,0}}{x}
+=	\lim_{x\to0^-} -\sqrt{\sin(x)\,x/x^2}
+=	-1
+=	&\\&
+=	\lim_{x\to0^+} \frac{g'_{3\,(x)} - g_{3\,(0)}}{x-0}
+=	\lim_{x\to0^+} 
+	\frac{\sqrt{\sin(x)\,x}-\sqrt{\sin(0)\,0}}{x}
+=	
+	\lim_{x\to0^+} \sqrt{\sin(x)\,x/x^2}
+=	1
+&\\&
+\therefore g'_{3\,(x)} \text{ não é diferenciavel em 0}
+&
+\end{flalign*}
+
+
+
+\setcounter{section}{8}
+
+
+
+% Q8
+\section{}
+
+
+\begin{multicols}{2}
+
+
+% Q8 - a)
+\subsection{}
+\bm{
+	f_{(a)} = g_{(a)} = 0 \quad e \quad g'_{(a)}\neq0
+}
+
+\begin{flalign*}
+&
+	\lim_{x\to a} \frac{f_{(x)}}{g_{(x)}}
+=	\lim_{x\to a} 
+	\frac{\cfrac{f_{(x)} - f_{(a)}}{x-a}}
+		{\cfrac{g_{(x)} - g_{(a)}}{x-a}}
+= 	\frac{f'_{(a)}}{g'_{(a)}}
+&
+\end{flalign*}
+
+\subsection{}
+\begin{flalign*}
+&
+	\lim_{x\to0} \frac{x^2+x}{x\,e^x+\sin(x)}
+;\	&\\&
+	f_{(0)} = 0^2+0 = 0
+;\	&\\&
+	g_{(0)} = 0*e^0+\sin(0) = 0
+;\	&\\&
+	g'_{(0)} = 0*e^0 + \cos(0) = 1 \neq 0
+&\\& \therefore
+	\lim_{x\to0} \frac{x^2+x}{x\,e^x+\sin(x)}
+=	&\\&
+=	\lim_{x\to0} \frac{2*x+1}{e^x+x^2\,e^x+\cos(x)}
+=	1/2
+&
+\end{flalign*}
+
+
+
+\end{multicols}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

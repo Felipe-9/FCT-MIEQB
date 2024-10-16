@@ -1,0 +1,399 @@
+% !TEX root = ./ALGA-Slides_Anotacoes.8.tex
+\providecommand\mainfilename{"./ALGA-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Slides_Anotacoes.8.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{8}[ALGA]
+{Reta e Plano}
+{Reta e Plano}
+
+\part*{Elementos}
+\addcontentsline{toc}{section}{\bullet\qquad Elementos}
+
+\begin{sectionBox}1m{Espaço}
+    
+    \subsection*{Equação vetorial}
+    \begin{BM}
+        \mathcal{E}sp_m\subset\mathbb{R}^n:
+        \left\{
+            \begin{aligned}
+            &
+                P = A + \sum_{i=1}^{m}\lambda_i\,U_i
+            \ldiv{} \{P,A\}\subset\mathcal{E}sp_m
+            \ldiv{} \{i,n,m\}\subset\mathbb{N}
+            \ldiv{} m\leq n
+            \ldiv{} \{\lambda,U_i\}\subset\mathbb{R}^n
+            &
+            \end{aligned}
+        \right\}
+    \end{BM}
+    
+    \begin{sectionBox}*2{Equações paramétricas}
+        \begin{BM}
+            P_i = A_i + \sum_{j=1}^{m}\lambda_{j,i}\,U_{j,i}
+        \end{BM}
+    \end{sectionBox}
+
+    \paragraph{Exemplos}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(m=0\implies\) ponto
+            \item \(m=1\implies\) reta
+            \item \(m=2\implies\) plano
+        \end{multicols}
+    \end{itemize}
+
+\end{sectionBox}
+
+\begin{sectionBox}1m{Reta}
+
+    \subsection*{Equação vetorial}
+    \begin{BM}
+        \mathcal{R}eta_m\subset\mathcal{E}sp_m:
+        \left\{
+            \begin{aligned}
+            &
+                P=A+\lambda\,U
+            \ldiv{} \{P,A\}\in\mathcal{R}eta_m
+            &
+            \end{aligned}
+        \right\}
+    \end{BM}
+    
+    \subsubsection*{Definem uma reta:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item 2 Pontos
+            \item 1 Ponto e 1 vetor
+        \end{multicols}
+    \end{itemize}
+
+    \paragraph{Vetor diretor:} Vetor não nulo parapelo a reta
+
+    \subsection*{Equações cartezianas}
+
+    \begin{sectionBox}3{Equações paramétricas}
+        \begin{BM}
+            P_i = A_i + \lambda\,U_i \quad\forall\,i\leq n
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}3{Equações normais}
+        \begin{BM}[flalign*]
+        &
+            \left.
+                \begin{aligned}
+                &
+                      P_i = A_i + \lambda\,U_i
+                \ldiv{} P_j = A_j + \lambda\,U_j
+                &
+                \end{aligned}
+            \right\}
+        \implies &\\&
+        \implies
+            \lambda 
+        =   \frac{P_i - A_i}{U_i}
+        =   \frac{P_j - A_j}{U_j}
+            \left\{
+                \begin{aligned}
+                &
+                    \{i,j\}\leq n
+                \ldiv{} 
+                    \{U_i,U_j\}\neq 0
+                &
+                \end{aligned}
+            \right.
+        &
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}3{Equações reduzidas}
+        \begin{BM}
+            P_i = A'_i + P_j\,U'_i:
+            \left\{
+                \begin{aligned}
+                &
+                      \{i,j\}\subset\mathbb{N}
+                \ldiv{} \{i,j\}\leq n
+                \ldiv{} i\neq j
+                \ldiv{} U'_i = U_i/U_j
+                \ldiv{} A'_i = A_i - A_j\,U'_i
+                \ldiv{} U_j\neq 0
+                &
+                \end{aligned}
+            \right\}
+        \end{BM}
+
+        \begin{flalign*}
+        &
+            \left.
+                \begin{aligned}
+                &
+                    P_i = A_i + \lambda\,U_i
+                \ldiv{}
+                    \lambda = (P_j-A_j)/U_j : U_j\neq 0
+                &
+                \end{aligned}
+            \right\}
+        \implies &\\&
+        \implies
+            P_i 
+        =   A_i + U_i\,(P_j-A_j)/U_j
+        = &\\&
+        =   A'_i + U'_i\,P_j
+        :   \left\{
+                \begin{aligned}
+                &
+                      U'_i = U_i/U_j
+                \ldiv{} A'_i = A_i - A_j\,U'_i
+                \ldiv{} U_j\neq 0
+                &
+                \end{aligned}
+            \right.
+        &
+        \end{flalign*}
+
+        Reduzida pois possui uma equação a menos comparando com as equações cartezianas
+
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}1m{Plano}
+
+    \subsection*{Equação vetorial}
+    \begin{BM}
+        \mathcal{P}lano_m\subset\mathcal{E}sp_m:
+        \left\{
+            \begin{aligned}
+            &
+                  \{P,A\}\subset\mathcal{P}lano_m
+            \ldiv*{} n\geq2
+            &
+            \end{aligned}
+        \right\}
+    \end{BM}
+
+    \begin{sectionBox}*3{Definição 1 ponto e 2 vetores não paralelos}
+        \begin{BM}
+            P = A + \sum_{j=1}^{2}\lambda_j\,U_j
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*3{Definição 1 ponto e 1 vetor perpendicular ao plano}
+        \begin{BM}
+            \vec{AP}|(\lambda_1\times\lambda_2) 
+        =   \left|
+                P-A,\lambda_1,\lambda_2
+            \right| 
+        =   \vec{AP}|\lambda'
+        = \\
+        =   A\,\lambda'+d
+        =   0
+        \\  \left\{
+                \begin{aligned}
+                &
+                    d\in\mathbb{R}
+                \ldiv{}
+                    \lambda'\in\mathbb{R}^n:\lambda'\perp\mathcal{P}lano
+                &
+                \end{aligned}
+            \right\}
+        \end{BM}
+    \end{sectionBox}
+    
+    \paragraph{Definem um plano:}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item 3 Pontos
+            \item 1 Ponto e 2 vetores não paralelos
+            \item 1 Ponto e 1 Vetor
+        \end{multicols}
+    \end{itemize}
+
+    \paragraph{Vetores diretores:} Vetores não nulos e não colineares paralelos ao plano.
+    
+    \subsection*{Equações cartesianas}
+
+    \begin{sectionBox}3{Equações paramétricas}
+        \begin{BM}
+            P_i = A_i + \sum_{j=1}^{2}\lambda_{j,i}\,U_{j,i}
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}3{Equação geral}
+        \begin{BM}
+            A + \sum_{i=1}^{n}\lambda_i\,P_i = 0:
+            \left\{
+            \begin{aligned}
+            &
+                A\in\mathbb{R}
+            \ldiv{}   
+                \lambda\in\mathbb{R}^n
+            &
+            \end{aligned}
+            \right.
+        \end{BM}
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\part*{Distâncias}
+\addcontentsline{toc}{section}{\bullet\qquad Distâncias}
+
+\begin{sectionBox}1{Distancia dentre 2 espaços}
+    \begin{BM}
+        \distancia(\mathcal{E}_1,\mathcal{E}_2) = \min(|| \vec{e_1\,e_2} ||):
+        \left\{
+            \begin{aligned}
+            &
+                    \mathcal{E}_1\in\mathcal{E}sp_m
+            \ldiv{} \mathcal{E}_2\in\mathcal{E}sp_n
+            \ldiv{} e_1\in\mathcal{E}_1
+            \ldiv{} e_2\in\mathcal{E}_2
+            &
+            \end{aligned}
+        \right\}
+    \end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}2{Distancia entre 1 Ponto e 1 Reta}
+    \begin{BM}
+        \distancia(P,\mathcal{R}eta)
+    =   \Bigl\lVert{\vec{A\,P}}\Bigr\rVert\sin(\theta)
+    =   \Bigl\lVert{\vec{A\,P}}\Bigr\rVert\lVert{u}\rVert\sin{\theta}/\lVert{u}\rVert
+    = \\
+    =   \Bigl\lVert{\vec{A\,P}\times u}\Bigr\rVert\big/\lVert{u}\rVert:
+        \theta = \measuredangle\Bigl(u,\vec{A\,P}\Bigr)
+    \end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}2{Distancia dentre 1 ponto e 1 plano}
+    \begin{BM}
+        \distancia(P,\mathcal{P}lano)
+    =   \Bigl\lVert{\vec{A\,P}}\Bigr\rVert\lvert\cos(\theta)\rvert
+    =   \Bigl\lVert{\vec{A\,P}}\Bigr\rVert\lVert{w}\rVert\lvert\cos(\theta)\rvert\big/\lVert{w}\rVert
+    = \\
+    =   \Bigl\lvert{\vec{A\,P}\big| w}\Bigr\rvert\big/\lVert{w}\rVert
+    \end{BM}
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Conclua que \(\mathcal{R}eta\) é extritamente paralela ao \(\mathcal{P}lano\)
+
+    \begin{BM}
+        \mathcal{R}eta=\{(x,y,z)\in\mathbb{R}^3:x=2\land2\,y-6=z\}
+    \\  \{(1,0,-1),(2,2,0),(1,1,1)\}\subset\mathcal{P}lano
+    \end{BM}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                \mathcal{R}eta\Vert\mathcal{P}lano
+            \implies
+                u|v=0:
+                \left\{
+                    \begin{aligned}
+                    &    
+                            u\in\mathcal{R}eta
+                    \ldiv{} v\in\mathcal{P}lano
+                    &
+                    \end{aligned}
+                \right\}
+            \implies &\\&
+            \implies
+                \left.
+                \left(
+                    \begin{bmatrix}
+                        2\\3\\0
+                    \end{bmatrix}
+                -   \begin{bmatrix}
+                        2\\0\\-6
+                    \end{bmatrix}
+                \right)
+                \right\vert
+                \left(
+                    \left(
+                        \begin{bmatrix}
+                            2\\2\\0
+                        \end{bmatrix}
+                    -   \begin{bmatrix}
+                            1\\0\\-1
+                        \end{bmatrix}
+                    \right)
+                \times
+                    \left(
+                        \begin{bmatrix}
+                            1\\1\\1
+                        \end{bmatrix}
+                    -   \begin{bmatrix}
+                            1\\0\\-1
+                        \end{bmatrix}
+                    \right)
+                \right)
+            = &\\&
+            =
+                \left.
+                \left(
+                    \begin{bmatrix}
+                        0\\3\\6
+                    \end{bmatrix}
+                \right)
+                \right\vert
+                \left(
+                    \left(
+                        \begin{bmatrix}
+                            1\\2\\1
+                        \end{bmatrix}
+                    \right)
+                \times
+                    \left(
+                        \begin{bmatrix}
+                            0\\1\\2
+                        \end{bmatrix}
+                    \right)
+                \right)
+            = &\\&
+            =
+                \left.
+                \left(
+                    \begin{bmatrix}
+                        0\\3\\6
+                    \end{bmatrix}
+                \right)
+                \right\vert
+                \left(
+                    \begin{bmatrix}
+                        3\\-2\\1
+                    \end{bmatrix}
+                \right)
+            = &\\&
+            =
+                -6+6 = 0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                % \left\{    
+                    \mathcal{R}eta\nsubseteq\mathcal{P}lano
+                % 
+            \implies
+                \nexists\,p:p\in\mathcal{R}eta\land p\in\mathcal{P}lano
+            \implies
+                % 
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\end{document}

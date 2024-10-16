@@ -1,0 +1,163 @@
+\part{19/04 - Limites}
+
+{
+\large
+
+\BMold{
+	f: \mathbf{D} \subseteq \mathbb{R} \to \mathbb{R}
+\qquad
+	f \text{ está definida em } \vizinhanca{a}\backslash\{a\}
+}\relax
+
+\begin{align*}
+%
+	\lim_{x\to a} f(x) = L \in\mathbb{R}
+\iff
+	\lim f(x(n)) = L
+\quad\forall\,x(n): x(n) \to a
+%
+\end{align*}
+
+}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Limite notável: \boldmath$\sin(x)/x$}
+
+
+\begin{minipage}{\linewidth}\centering
+	graph missing
+\end{minipage}
+
+\begin{flalign*}
+&
+	\text{area triangulo menor} = x/2
+<	&\\&
+<	\text{area triangulo maior} = \tan(x)/2
+\implies &\\&
+\implies
+	x < \frac{\sin(x)}{\cos(x)}
+\implies
+	\cos(x) < \frac{\sin(x)}{x} < 1
+\implies &\\&
+\implies
+	\lim_{x\to0} \cos(x)
+=	1
+<	\lim_{x\to0} \frac{\sin(x)}{x}
+<	\lim_{x\to0}1 = 1
+&\\&
+	\therefore \lim_{x\to0} \frac{\sin(x)}{x} = 1
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\BMold{\lim_{x\to0} \sin(x^2)/x^2}\relax
+
+\begin{flalign*}
+&
+=	1
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\BMold{\lim_{x\to0} \sin(x^2)/x}\relax
+
+\begin{flalign*}
+&
+=	\lim_{x\to0} x\,
+	\left(
+		\frac{\sin(x^2)}{x^2}
+	\right)
+=	0
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\BMold{\lim_{x\to0} \sin(2\,x)/x}\relax
+
+\begin{flalign*}
+&
+=	\lim_{x\to0} 2\,
+	\left(
+		\frac{\sin(2\,x)}{2\,x}
+	\right)
+=	2
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\BMold{\lim_{x\to0} \frac{1-\cos(x)}{x}}\relax
+
+\begin{flalign*}
+&
+=	\lim_{x\to0} \frac{1-\cos^2(x)}{x\,(1+\cos(x))}
+=	\lim_{x\to0}
+	\frac{x}{1+\cos(x)}
+\,	\frac{\sin^2(x)}{x^2}
+=	0
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Limite notável: $(e^x-1)/x$}
+
+\BMold{\lim_{x\to0} \frac{e^x-1}{x}=1}\relax
+
+\begin{flalign*}
+&
+=	\lim_{x\to0} \frac
+		{\left(1 + \sum_{n=1}^{\infty} \frac{x^n}{n!}\right) - 1}
+		{x}
+=	&\\&
+=	\lim_{x\to0} \sum_{n=1}^{\infty} \frac{x^{(n-1)}}{n!}
+=	\lim_{x\to0} 1 + \sum_{n=2}^{\infty} \frac{x^{(n-1)}}{n!}
+=	1
+&
+\end{flalign*}
+
+\end{minipage}
+
+\end{multicols}

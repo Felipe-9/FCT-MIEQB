@@ -1,0 +1,93 @@
+% !TEX root = ./QOG-Tests_Resolutions.2022.2.1.tex
+\providecommand\mainfilename{"./QOG-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Tests_Resolutions.2022.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QOG-Tests_Resolutions.2022.2.1}}}
+% \tikzsetexternalprefix{./.build/figures/QOG-Tests_Resolutions.2022.2.1/graphics/}
+
+\mymakesubfile{1}
+[QOG]
+{Teste 2022.1 Resolução} % Subfile Title
+{Teste 2022.1 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Desenhe espécies químicas com as seguintes características:
+} % Q1
+    \begin{multicols}{2}
+        
+        \begin{questionBox}2{ % Q1.1
+            Uma estrutura contendo carbono com carga negativa
+        } % Q1.1
+            \begin{center}
+                \chemfig[angle increment=30]{
+                    C^{-}
+                    (-[  7]H)
+                    (-[- 1]H)
+                    (-[- 2]H)
+                }
+            \end{center}
+        \end{questionBox}
+
+        \begin{questionBox}2{ % Q1.2
+            Uma estrutura contendo azoto com carga positiva
+        } % Q1.1
+            \begin{center}
+                \chemfig[angle increment=30]{
+                    N^{+}
+                    (-[  7]H)
+                    (-[- 1]H)
+                    (-[- 2]H)
+                    (-[- 9]H)
+                }
+            \end{center}
+        \end{questionBox}
+        
+    \end{multicols}
+
+    % \begin{questionBox}2{ % Q1.3
+    %     Qual a estrutura mais estável? Justfique
+    % } % Q1.3
+    %     \ch{NH^{3+}}
+    % \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Desenhe as estruturas dos seguintes compostos:
+} % Q2
+    \begin{multicols}{2}
+        \begin{questionBox}2{ % Q2.1
+            \iupac{Iod|eto de iso|prop|il|o}
+        } % Q2.1
+            \begin{center}
+                \chemfig[angle increment=30]{
+                    C
+                    (-[3]I)
+                    (-[-1.2]CH3)
+                    (-[(6+1.2)]CH3)
+                }
+            \end{center}
+        \end{questionBox}
+
+        \begin{questionBox}2{ % Q2.2
+            \iupac{Sec-but|il|amina}
+        } % Q2.2
+            \begin{center}
+                \chemfig[angle increment=30]{
+                    -[-1]
+                    -[+1]
+                    (-[-1])
+                    (-[+3]NH3)
+                }
+            \end{center}
+        \end{questionBox}
+    \end{multicols}
+\end{questionBox}
+
+\end{document}

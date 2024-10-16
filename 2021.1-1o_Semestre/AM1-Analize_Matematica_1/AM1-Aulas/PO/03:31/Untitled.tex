@@ -1,0 +1,456 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+%\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage[hidelinks]{hyperref}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}	{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+\renewcommand{\thesection}{Exercício \arabic{section}}
+\renewcommand{\thesubsection}{\arabic{section} - \alph{subsection})}
+
+\begin{document}
+
+\title{AM 1 - Resolução ficha 3}
+\date{03/29}
+
+\maketitle
+\tableofcontents
+\break
+
+% Q1
+\section{}
+
+% Q1 - a)
+\subsection{}
+
+% Q2 - b)
+\subsection{$
+	\left| \frac{\cos{n}}{\sqrt{n+1}} \right| < \frac{1}{10^3}
+$}
+\begin{flalign*}
+&
+	\implies 
+		\left| \frac{\cos{n}}{\sqrt{n+1}} \right| 
+	< 
+		\left| \frac{1}{\sqrt{n+1}} \right|
+	< 
+		\frac{1}{10^3} 
+&
+\end{flalign*}
+
+% Q3 - c)
+\subsection{$
+	\left| e^{-n}+\frac{1}{n} \right| < 10^{-2}
+$}
+\begin{flalign*}
+&
+	\left| e^{-n}+\frac{1}{n} \right| 
+	= \frac{1}{e^n} + \frac{1}{n} 
+	< \frac{1}{n}+\frac{1}{n} 
+	< 10^{-2} 
+&
+\end{flalign*}
+
+% Q2
+\section{}
+
+% Q2 - a)
+\subsection{$
+	\left| u_n \right| < \sqrt{\epsilon};\ u_n=1/n^2
+$}
+\begin{flalign*}
+&
+	\left| u_n \right| < \sqrt{\epsilon} \implies 
+	\cdots
+&
+\end{flalign*}
+
+\paragraph{Nota: } $
+	\left\lfloor X \right\rfloor = \text{Max}({k)\in\mathbb{Z}: k\leq x} 
+$
+
+% Q2 - b)
+\subsection{$
+	\left| v_n-1 \right| < \epsilon;\ v_n=\frac{n}{n+1}
+$}
+\begin{flalign*}
+&
+	\left| v_n-1 \right| < \epsilon \cdots
+&
+\end{flalign*}
+
+% Q2 - c)
+\subsection{$
+	\left| w_n-2 \right| < \epsilon/3;\ w_n = \frac{2n}{n-1/2}
+$}
+\begin{flalign*}
+&
+	\left| w_n-2 \right| 
+	< \epsilon /3 
+	\implies 
+		\left| \frac{2n}{n-1/2}-2 \right| 
+	< \epsilon /3
+	\cdots
+&
+\end{flalign*}
+
+\paragraph{Nota:}
+\begin{flalign*}
+&
+	\exists\ L \in \mathbb{R}
+	: \forall\,\epsilon > 0
+	\quad\exists\ p\in\mathbb{N}
+	: n > p 
+	\implies 
+		\left| u_n-L < \epsilon \right|
+&
+\end{flalign*}
+
+% Q3
+\section{}
+
+% Q3 - a)
+\subsection{$
+	\lim_{n\to\infty}\frac{n^2+n\sqrt{n}}{3n^2+3}
+$}
+\begin{flalign*}
+&
+	  \frac{n^2+n\sqrt{n}}{3n^2+3} 
+	= \frac{1+1/\sqrt{n}}{3+3/n^2} 
+	= f_{a(n)} 
+	\implies 
+		\lim_{n\to\infty}f_{a(n)} = 1/3
+&
+\end{flalign*}
+
+% Q3 - b)
+\subsection{$
+	\lim_{n\to\infty}\frac{n^3+n}{n^2+\ln{n}}
+$}
+\begin{flalign*}
+&
+	\frac{n^3+n}{n^2+\ln{n}} 
+	= \frac{1+1/n^2}{1/n+\ln{n}/n^3} 
+	= f_{b(n)} 
+	\implies 
+		\lim_{n\to\infty}f_{b(n)} = \infty
+&
+\end{flalign*}
+
+% Q3 - c)
+\subsection{$
+	\lim_{n\to\infty}\frac{n\,\sqrt[3]{8n+1}}{(n^{2/3}+1)^2}
+$}
+\begin{flalign*}
+&
+	\frac{n\,\sqrt[3]{8n+1}}
+		  {(n^{2/3}+1)^2    } 
+	= \frac{\sqrt[3]{8n^4+n^3}}
+			 {(n^{2/3}+1)^2     } 
+	* \frac{n^{4/3}} 
+			 {n^{4/3}} 
+	= \cfrac{
+		\sqrt[3]{ 
+			\cfrac{8n^4}
+			 	  {n^4 }
+		 + \cfrac{n^3}
+			 	  {n^4}
+		}
+	}
+	{
+		\left( 
+			\cfrac{n^{2/3}}
+				  {n^{2/3}} 
+			+ \cfrac{1      }
+					 {n^{2/3}} 
+		\right)^2
+	} 
+	= \frac{ \sqrt[3]{ 8+n^{-1} }      }
+			 { \left( 1+n^{-2/3} \right) }
+	= f_{c(n)}
+	\implies &\\& \implies
+		\lim_{n\to\infty} f_{c(n)} 
+	= \frac{\sqrt[3]{8}}
+			 {1          }
+	= 2
+&
+\end{flalign*}
+
+% Q3 - d)
+\subsection{}
+\begin{flalign*}
+& 	 \lim_{n\to\infty}\frac{n\,\cos(n^2)}{n^2+1}
+	=\lim_{n\to\infty}\frac{n^{-1}\cos(n^2)}{1+1/n^2}=0 &
+\end{flalign*}
+
+% Q3 - e)
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty}\cfrac{2\,n\,e^{1/n}}{\sqrt{n^2+5  }}
+	= \lim_{n\to\infty}\cfrac{2\,   e^{1/n}}{\sqrt{1+5/n^2}}
+	= 2 &
+\end{flalign*}
+
+% Q3 - f)
+\subsection{}
+\begin{flalign*}
+&   \lim_{n\to\infty}\frac{5^n+4^n}{2\,5^{n+1}+1}
+	=\lim_{n\to\infty}\frac{1/5+(4/5)^n\,1/5}{2+1/5^{n+1}}=\frac{1}{10} &
+\end{flalign*}
+
+% Q3 - g)
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \frac{3^n+e^n}{3^n+\pi^n}
+	= \lim_{n\to\infty} \cfrac{\cfrac{3^n}{\pi^n}
+										+\left(\cfrac{e}{\pi}\right)^n}
+									  {\cfrac{3^n}{\pi^n}+1}
+	= 0 &
+\end{flalign*}
+
+% Q3 - h
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty}\frac{n^2\,9^n+n^3}{(n+2)^2\,3^{2n+1}}
+	= \lim_{n\to\infty}\frac{n^2\,9^n+n^3}{(n+2)^2\,9^n\,3}
+	= \lim_{n\to\infty}\frac{1+n/9^n}{\left( 1+2/n \right)^2\,3}
+	= 1/3 &
+\end{flalign*}
+
+\section{}
+
+% Q5
+\section{}
+
+% Q5 - a)
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \sqrt{n+5}-\sqrt{2n-1} 
+	= \lim_{n\to\infty} \frac{n+5-2n+1}{\sqrt{n+5}+\sqrt{2n-1}} =&\\
+&	= \lim_{n\to\infty} \frac{-1+6/n}{\sqrt{1/n+5/n^2}+\sqrt{2/n-1/n^2}}
+	= -\infty &
+\end{flalign*}
+
+% Q5 - b)
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \sqrt{n^2+3\,n}-\sqrt{n^2-n+1}
+	= \lim_{n\to\infty} \cfrac{n^2+3\,n-n^2+n-1}
+									  {\sqrt{n^2+3\,n}+\sqrt{n^2-n+1}} =&\\
+&	= \lim_{n\to\infty} \cfrac{4\,n-1}
+									  {\sqrt{n^2+3\,n}+\sqrt{n^2-n+1}} 
+	= \lim_{n\to\infty} \cfrac{4-1/n}
+									  {\sqrt{1+3/n}+\sqrt{1-1/n+1/n^2}}
+	= 2 &
+\end{flalign*}
+
+% Q5 - c
+\subsection{incompleto}
+\begin{flalign*}
+&	  \lim_{n\to\infty} (1.1)^{n+1}-(1.05)^{2n-1}
+	= \lim_{n\to\infty} 
+	  \left(
+	  		 \frac{(1.1)^{n}(1.1)}{1.05^2}
+			-(1.05)^{-1}
+	  \right)(1.05)^{2n}&
+\end{flalign*}
+
+% Q5 - d)
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \sqrt{\ln(e^4\,n+1)}
+							 -\sqrt{\ln(n+2)} 
+	= \lim_{n\to\infty}\frac{\ln(e^4\,n+1)-\ln(n+1)}
+								   {\sqrt{\ln(e^4\,n+1)}+\sqrt{\ln(n+2)}} = &\\
+&	= \lim_{n\to\infty}\cfrac{\ln\left( \cfrac{e^4\,n+1}{n+1} \right)}
+									 {\sqrt{\ln(e^4\,n+1)}+\sqrt{\ln(n+2)}}
+	= \lim_{n\to\infty}\cfrac{\ln\left( \cfrac{e^4+1/n}{1+1/n} \right)}
+									 {\sqrt{\ln(e^4\,n+1)}+\sqrt{\ln(n+2)}}
+	= 0 &
+\end{flalign*}
+
+% Q5 - e)
+
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty} n\ln(n+1)-n\ln(n)
+	= \lim_{n\to\infty} n\ln\left( \frac{n+1}{n} \right)
+	= \lim_{n\to\infty} \ln(1+1/n)^n
+	= \ln(e^1)
+	= 1 &
+\end{flalign*}
+
+
+\subsection{}
+\subsection{}
+\subsection{}
+\subsection{}
+
+% Q5 - j)
+\subsection{}
+\begin{flalign*}
+&	  \lim_{n\to\infty} ( 1+1/n )^{n^2}\,(1-1/n)^{n^2}
+	= \lim_{n\to\infty} \left( 1-1/n^2 \right)^{n^2}
+	= e^{-1} &
+\end{flalign*}
+
+\section{Extras}
+
+% Extra 1
+\subsection{$
+	\lim_{n\to\infty}\frac{n\,3^n+e^n}{(n+\sqrt{n})\,3^{n+1}+n^{100}}
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty}\frac{n\,3^n+e^n}{(n+\sqrt{n})\,3^{n+1}+n^{100}}
+	= \lim_{n\to\infty}\frac{1+\frac{e^n}{n\,3^n}}{3+\frac{3}{\sqrt n}+\frac{n^{99}}{3^n}}
+	= \lim_{n\to\infty}\frac{1+n^{-1}\left(\frac{e}{3}\right)^n}{3+\frac{3}{\sqrt n}+\frac{n^{99}}{3^n}}
+	= 1/3 &
+\end{flalign*}
+
+\paragraph{Nota:} funções exponenciais crescem sempre mais rápido que qualquer outra
+
+% Extra 2
+\subsection{$
+	\lim_{n\to\infty} \frac{2\,n\,e^{1/n}}
+								  {(-1)^n+\sqrt{n^2+5}}
+$}
+\begin{flalign*}
+&	 \lim_{n\to\infty} \frac{2\,n\,e^{1/n}}
+								   {(-1)^n+\sqrt{n^2+5}}
+	=\lim_{n\to\infty} \frac{2\,e^{1/n}}
+									{(-1)^n/n+\sqrt{1+5/n^2}}
+	= 2 &
+\end{flalign*}
+
+% Extra 3
+\subsection{$
+	\lim_{n\to\infty} \frac{2^n+3^{n+1}+(-7)^n}
+								  {3^{n-2}+5^{n+1}}
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \frac{2^n+3^{n+1}+(-7)^n}
+								  	 {3^{n-2}+5^{n+1}}
+	= \lim_{n\to\infty} \frac{2^n+3\,3^n+(-7)^n}
+									 {3^{-2}\,3^n+5\,5^n} &\\
+&	= \lim_{n\to\infty} \frac{(2/7)^n+3\,(3/7)^n+(-7/7)^n}
+									 {(3/7)^n/3^2+5(5/7)^n}
+	= \{ \infty\ \forall\  n\text{ par}
+		;\ -\infty\ \forall\  n \text{impar} \} &
+\end{flalign*}
+
+% Extra 4
+\subsection{$
+	\lim_{n\to\infty} (\sqrt{n+1} - \sqrt{n})
+$}
+\begin{flalign*}
+&	\lim_{n\to\infty} (\sqrt{n+1} - \sqrt{n})
+	= \lim_{n\to\infty} \frac{n+1-n}{\sqrt{n+1} + \sqrt{n}}
+	= \lim_{n\to\infty} \frac{1}{\sqrt{n+1} + \sqrt{n}}
+	= 0 &
+\end{flalign*}
+
+% Extra 5
+\subsection{$
+	\lim_{n\to\infty} \sqrt{\log(n^2+1)} - \sqrt{\log(n^2)}
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \sqrt{\log(n^2+1)} - \sqrt{\log(n^2)}
+	= \lim_{n\to\infty} \frac{\log(n^2+1) - \log(n^2)}
+									 {\sqrt{\log(n^2+1)} - \sqrt{\log(n^2)}}=
+&\\
+&	= \lim_{n\to\infty} \frac{\log(1+1/n^2)}
+									 {\sqrt{\log(n^2+1)} - \sqrt{\log(n^2)}}  
+	= 0 &
+\end{flalign*}
+
+% Extra 6
+\subsection{$
+	\lim_{n\to\infty} \left(\frac{n+3}{n+1}\right)^{2n}
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \left(\frac{n+3}{n+1}\right)^{2n}
+	= \lim_{n\to\infty} \left(\frac{(1+3/n)^n}{(1+1/n)^n}\right)^2
+	= \lim_{n\to\infty} \left(\frac{e^3}{e^1}\right)^2 = e^4 & 
+\end{flalign*}
+
+% Extra 7 Refazer!
+\subsection{$
+	\lim_{n\to\infty} \left( \frac{n+5}{2\,n+1} \right)^n
+$ refazer}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \left( \frac{n+5}{2\,n+1} \right)^n
+	= \lim_{n\to\infty} \frac{(1+5/n)^n}{(1+1/(2\,n))^n}
+	= \lim_{n\to\infty} \frac{(1+5/n)^n}{((1+1/(2\,n))^{2\,n})^{1/2}}
+	= \frac{e^5}{\sqrt{e^1}} &
+\end{flalign*}
+
+% Extra 8
+\subsection{$
+	\lim_{n\to\infty} \left( 1-3/n^2 \right)^n
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \left( 1-3/n^2 \right)^n
+	= \lim_{n\to\infty} \left(\left( 1-3/n^2 \right)^{n^2}\right)^{1/n} 
+	= (e^{-3})^{1/\infty}=0 &
+\end{flalign*}
+
+% Extra 9
+\subsection{$
+	\lim_{n\to\infty} \left( 1+1/\log(n) \right)^n
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \left( 1+1/\log(n) \right)^n
+	= \lim_{n\to\infty} 
+	  \left(\left( 1+1/\log(n) \right)^{\log(n)}\right)^{n/\log(n)}
+	= (e^1)^{\infty} = \infty &
+\end{flalign*}
+
+% Extra 10
+\subsection{$
+	\lim_{n\to\infty} \left( \frac{n^6-2}{n^6} \right)^{n^3+3}
+$}
+\begin{flalign*}
+&	  \lim_{n\to\infty} \left( \frac{n^6-2}{n^6} \right)^{n^3+3}
+	= \lim_{n\to\infty} 
+	  \left( \left( 1-2/n^6 \right)^{n^6} \right)^{\frac{n^3+3}{n^6}}
+	= (e^{-2})^{0}=1 & 
+\end{flalign*}
+
+\end{document}
+
+
+
+
+
+
+
+
+

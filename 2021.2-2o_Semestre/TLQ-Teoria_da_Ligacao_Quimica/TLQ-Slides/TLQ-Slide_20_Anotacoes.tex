@@ -1,0 +1,80 @@
+% !TEX root = ./TLQ - Slides Anotações.tex
+% TLQ - Slide 20 Anotações
+
+\setcounter{part}{19}
+\part{Reatividade Química}
+
+\part*{Reatividade Química segundo a TOM}
+
+\begin{sectionBox}1{Comparação \ch{NH3} e \ch{BH3}}
+    
+    \begin{center}
+        \begin{modiagram}
+            \setlength\AtomVScale{0.5cm}
+    
+            % MOLECULE 1
+
+            % B
+            \AO(1cm){s}{0\AtomVScale;}       % S2  AO1: -19.4
+            \AO(1cm){s}{3\AtomVScale;}       % P2x AO2: -10.6
+            \AO(1cm){s}{3\AtomVScale+1pt;}   % P2y AO3: -10.6
+            \AO(1cm){s}{3\AtomVScale-1pt;}   % P2z AO4: -10.6
+    
+            % H
+            \AO(5cm){s}{1\AtomVScale;}       % P2x AO6: -15.8
+            \AO(5cm){s}{1\AtomVScale+1pt;}   % P2y AO7: -15.8
+            \AO(5cm){s}{1\AtomVScale-1pt;}   % P2z AO8: -15.8
+    
+            % CO
+            % 2s
+            \AO(3cm     ){s}{-3\AtomVScale; pair}   % SG3  AO9 : (-32.3) - ((-32.3)-(-19.4))/4 -1.44528
+            \AO(3cm     ){s}{ 4\AtomVScale;     }   % SG4  AO10: (-19.4) + ((-32.3)-(-19.4))/4 -0.69683
+            % 2p
+            \AO(3cm-10pt){s}{-1\AtomVScale; pair}   % PI5  AO11: (-15.8) - (-15.8-(-10.6))/4 -0.53993
+            \AO(3cm+10pt){s}{-1\AtomVScale; pair}   % PI6  AO12: (-15.8) - (-15.8-(-10.6))/4 -0.53993
+            \AO(3cm     ){s}{ 3\AtomVScale;     }   % SG7  AO13: (-15.8) - (-15.8-(-10.6))/4 -0.44513
+            \AO(3cm-10pt){s}{ 6\AtomVScale;     }   % PI8  AO14: (-10.6) + (-15.8-(-10.6))/4 +0.30615
+            \AO(3cm+10pt){s}{ 6\AtomVScale;     }   % PI9  AO15: (-10.6) + (-15.8-(-10.6))/4 +0.30615
+
+            \node at (1cm,-5\AtomVScale)[below]{B};
+            \node at (5cm,-5\AtomVScale)[below]{H};
+
+            % MOLECULE 2
+
+            % N
+            \AO(6cm+1cm){s}{0\AtomVScale;}       % S2  AO1: -19.4
+            \AO(6cm+1cm){s}{3\AtomVScale;}       % P2x AO2: -10.6
+            \AO(6cm+1cm){s}{3\AtomVScale+1pt;}   % P2y AO3: -10.6
+            \AO(6cm+1cm){s}{3\AtomVScale-1pt;}   % P2z AO4: -10.6
+    
+            % H
+            \AO(6cm+5cm){s}{3\AtomVScale;}       % P2x AO6: -15.8
+            \AO(6cm+5cm){s}{3\AtomVScale+1pt;}   % P2y AO7: -15.8
+            \AO(6cm+5cm){s}{3\AtomVScale-1pt;}   % P2z AO8: -15.8
+    
+            % CO
+            % 2s
+            \AO(6cm+3cm     ){s}{-3\AtomVScale; pair}   % SG3  AO9 
+            \AO(6cm+3cm     ){s}{ 5\AtomVScale;     }   % SG4  AO10
+            % 2p
+            \AO(6cm+3cm-10pt){s}{0.5\AtomVScale; pair}   % PI5  AO11
+            \AO(6cm+3cm+10pt){s}{0.5\AtomVScale; pair}   % PI6  AO12
+            \AO(6cm+3cm     ){s}{2.5\AtomVScale; pair}   % SG7  AO13
+            \AO(6cm+3cm-10pt){s}{6.0\AtomVScale;     }   % PI8  AO14
+            \AO(6cm+3cm+10pt){s}{6.0\AtomVScale;     }   % PI9  AO15
+
+            \node at (6cm+1cm,-5\AtomVScale)[below]{N};
+            \node at (6cm+5cm,-5\AtomVScale)[below]{H};
+            
+            % \connect{
+            %     % MOLECULE 1
+            %     % Left
+            %     A
+            % }
+    
+            \EnergyAxis[title=E, head=stealth]
+    
+        \end{modiagram}
+    \end{center}
+    
+\end{sectionBox}

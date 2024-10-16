@@ -1,0 +1,791 @@
+% !TEX root = ./CN_A-Exercises_Resolutions.2023.2.tex
+\documentclass["CN_A-Exercises_Resolutions.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/CN_A-Exercises_Resolutions.2023.2}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Exercises_Resolutions.2023.2/graphics/}
+
+\mymakesubfile{2}
+[CN A]
+{Interpolação e Aproximação Polinomial} % Subfile Title
+{Interpolação e Aproximação Polinomial} % Part Title
+
+\setcounter{question}{7}
+\begin{questionBox}1{ % MARK:Q8
+  Seja \(f\) uma função da qual se conhece a seguinte tabela de valores:
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{C || *{3}{C}}
+      % \toprule
+      x 
+      & 0.3 & 0.5 & 1.1
+      \\\hline
+      f(x)
+      &  0.5917 & 0.4444 & 0.2268
+      % \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+} % Q8
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK:Q8.1
+  Construa a tabela de diferenças dividadas e, a partir dela, determine, por interpolação polinomial quadrática, um valor aproximado de \(f(0.65)\).
+} % Q8.1
+  \answer{}
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{C *{3}{C}}
+      \toprule
+
+      x 
+      & f[\cdot,\cdot] 
+      & f[\cdot,\cdot,\cdot]
+
+      \\\midrule
+
+        0.3
+        & \multirow{2}{*}{\( -0.7365 \)}
+        \\ 0.5
+        & \multirow{2}{*}{\( \dots \)}
+        \\ 1.1
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % MARK:Q8.2
+    Sabendo que \(
+    \myvert{f^{n}(x)}
+    \leq\frac
+    {(n+1)!}
+    {(1+x)^{n+2}}
+    ,n\in\mathbb{N}
+    ,x\in\myrange{0.3,1.1}
+    \)
+} % Q8.2
+\answer{}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{IMG_8548.png}
+  \end{center}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % MARK:Q9
+  Seja \(f\) uma função não negativa da qual se conhece a seguinte tabela de valores:
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{C || *{3}{C}}
+      % \toprule
+      x
+      & 3 & 6 & 7
+      \\\hline
+      f(x)
+      & A & 21 & B
+      % \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+} % Q9
+  \answer{}
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{C *{3}{C}}
+      \toprule
+
+      x
+      & f(x)
+      & f[\cdot,\cdot]
+      & f[\cdot,\cdot,\cdot]
+
+      \\\midrule
+
+      3 & A
+        & \multirow{2}{*}{ \( A^2-1 \) }
+        & \multirow{3}{*}{ \( 3 \) }
+      \\ 6 & 21
+           & \multirow{2}{*}{ \( \frac{B-21}{1} \) }
+      \\ 7 & B
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+  \begin{flalign*}
+    &
+    f[3,6]
+    = A^2-1
+    = \frac {21-A}{6-3}
+    \implies
+    A=8/3\land A=-3 \land A\in\mathbb{R}^+_0
+    \implies A=8/3
+    %
+    %
+    %
+    ; &\\[3ex]&
+    f[3,6,7]
+    = 3
+    = \frac
+    {(B-21)-(A^2-1)}{4}
+    = \frac
+    {B-21-(8/3)^2+1}{4}
+    \implies
+    B=352/9
+    &
+  \end{flalign*}
+\end{questionBox}
+\begin{questionBox}1{ % Q10
+    Considere-se uma função real de variável real, \textit{g}, cujos valores se conhecem nos nodos \(x_0=-2 \text{, } x_1 =-1 \text{ e } x_2=1\):
+} % Q10
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C || *{3}{C}}
+            % \toprule
+            
+                x & -2 & -1 & 1
+            
+                % \\
+            \\\hline
+            
+                g(x)
+                & \alpha & \beta & \gamma
+                % & 1.409297 
+                % & 0.900117
+                % & 0.474453
+                % & -0.506802
+            
+            % \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+\end{questionBox}
+
+\setcounter{question}{13}
+
+\begin{questionBox}1{ % Q14
+    Considere a função seccionalmente polinomial, \(S(x)\), definida por:
+    \begin{BM}
+        \begin{cases}
+            x^2,\quad& -1\leq x<0
+            \\
+            a\,x^3+b\,x^2+c\,x
+            ,\quad& 0\leq x<1
+            \\
+            2-x
+            ,\quad& 1\leq x\leq 2
+        \end{cases}
+    \end{BM}
+    Onde \(a,\ b\text{ e }c\) são constantes reais.
+    \\
+    Diga, justificando, se \(S(x)\) pode ser um spline cúbico.
+} % Q14
+    \answer{}
+    \begin{flalign*}
+        &
+            \lim_{x\to0^-}{S(x)}
+            = 0^2
+            = 0
+            = \lim_{x\to0^+}{S(x)}
+            = a\,0^3+b\,0^2+c\,0
+            = 0
+            ; &\\[3ex]&
+            \lim_{x\to1^-}{S(x)}
+            = a\,1^3+b\,1^2+c\,1
+            = a+b+c
+            = \lim_{x\to1^+}{S(x)}
+            = 2-1
+            = 1
+            \implies &\\&
+            \implies
+            a+b+c=1
+            ; &\\[3ex]&
+            \odv{S(x)}{x}
+            = \begin{cases}
+                2\,x,\quad& -1\leq x<0
+                \\
+                3\,a\,x^2+2\,b\,x+c
+                ,\quad& 0\leq x<1
+                \\
+                -1
+                ,\quad& 1\leq x\leq 2
+            \end{cases}
+            \implies &\\[3ex]&
+            \implies
+            \lim_{x\to0^-}{\odv{S(x)}{x}}
+            = 2*0
+            = 0
+            = \lim_{x\to0^+}{\odv{S(x)}{x}}
+            = 3\,a\,0^2+2\,b\,0+c
+            = c
+            \implies
+            c=0
+            ; &\\[3ex]&
+            \lim_{x\to1^-}{\odv{S(x)}{x}}
+            = 3\,a\,1^2+2\,b\,1+c
+            = 3\,a+2\,b
+            = \lim_{x\to1^+}{\odv{S(x)}{x}}
+            = -1
+            \implies &\\&
+            \implies
+            3\,a+2\,b
+            =-1
+            ; &\\[3ex]&
+            \odv[order=2]{S(x)}{x}
+            = \begin{cases}
+                2,\quad& -1\leq x<0
+                \\
+                6\,a\,x+2\,b
+                ,\quad& 0\leq x<1
+                \\
+                0
+                ,\quad& 1\leq x\leq 2
+            \end{cases}
+            \implies &\\[3ex]&
+            \implies
+            \lim_{x\to0^-}{\odv[order=2]{S(x)}{x}}
+            = 2
+            = \lim_{x\to0^+}{\odv[order=2]{S(x)}{x}}
+            = 6\,a\,0+2\,b
+            = 2\,b
+            \implies
+            b=1
+            ; &\\[3ex]&
+            \lim_{x\to1^-}{\odv[order=2]{S(x)}{x}}
+            = 6\,a\,1+2\,b
+            = 6\,a+2
+            = \lim_{x\to1^+}{\odv[order=2]{S(x)}{x}}
+            =0
+            \implies
+            a=-1/3
+            &\\[3ex]&
+            \therefore\begin{cases}
+                a+b+c=1
+                \\
+                c=0
+                \\
+                b=1
+                \\
+                6\,a+2\,b=0
+                \implies 2=0
+            \end{cases}
+            % \implies &\\&
+            \implies
+            S(x)\text{ não pode ser spline}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q15
+    Considere a seguinte tabela de valores de uma função \textit{g}
+} % Q15
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C || *{4}{C}}
+            % \toprule
+            
+                x & 1 & 2 & 4 & 8
+            
+            \\\hline
+            % \\\midrule
+            
+                g(x)
+                & -2 & 6 & 2 & 40
+            
+            % \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Determine a expressão do spline cúbico natural, \(S(x)\), interpolador de \(g(x)\) nos pontos tabelados.
+    \answer{}
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    h_0\,m_0
+                    + 2\,(h_0+h_1)\,m_1
+                    + h_1\,m_2
+                    = 6\left(
+                        \frac{y_2-y_1}{h_1}
+                        -\frac{y_1-y_0}{h_0}
+                    \right)
+                    \\
+                    h_1\,m_1
+                    + 2\,(h_1+h_2)\,m_2
+                    + h_2\,m_3
+                    = 6\left(
+                        \frac{y_3-y_2}{h_2}
+                        -\frac{y_2-y_1}{h_1}
+                    \right)
+                    \\
+                    m_0=m_3=0;
+                    \\
+                    h_i=x_{i+1}-x_i,\quad i\in\myrange{0,2}
+                    \\
+                    h_0=1,
+                    h_1=2,
+                    h_2=4
+                    \\
+                    y_0=- 2,
+                    y_1=  6,
+                    y_2=  2,
+                    y_3= 40
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \left\{
+                \begin{aligned}
+                    2*(1+2)\,m_1
+                    + 2\,m_2
+                    = 6\left(
+                        \frac{2-6}{2}
+                        -\frac{6+2}{1}
+                    \right)
+                    \\
+                    2\,m_1
+                    + 2\,(2+4)\,m_2
+                    = 6\left(
+                        \frac{40-2}{4}
+                        -\frac{2-6}{2}
+                    \right)
+                \end{aligned}
+            \right\}
+            = &\\&
+            = \left\{
+                \begin{aligned}
+                    6\,m_1
+                    + 2\,m_2
+                    = -60
+                    \\
+                    2\,m_1
+                    + 12\,m_2
+                    = 69
+                \end{aligned}
+            \right\}
+            \implies &\\&
+            \implies
+            \begin{bmatrix}
+                6 & 2
+                \\ 2 & 12
+            \end{bmatrix}
+            \begin{bmatrix}
+                m_1\\m_2
+            \end{bmatrix}
+            = \begin{bmatrix}
+                -60\\69
+            \end{bmatrix}
+        &
+    \end{flalign*}
+    \begin{flalign*}
+        &
+            S_i(x)
+            = -\frac{(x-x_{i+1})^3}{6\,h_i}
+            \,m_i
+            + \frac{(x-x_i)^3}{6\,h_i}
+            \,m_{i+1}
+            + &\\&
+            + \left(
+                f_i
+                - \frac{h_i^2}{6}m_{i}
+            \right)
+            \,\frac{x_{i+1}-x}{h_i}
+            + \left(
+                f_{i+1}
+                - \frac{h_i^2}{6}m_{i+1}
+            \right)
+            \,\frac{x-x_{i}}{h_i}
+            ;&\\[6ex]&
+            \begin{cases}
+                h_0\,m_0
+                + 2\,(h_0+h_1)\,m_1
+                + h_1\,m_2
+                = 6\left(
+                    \frac{y_2-y_1}{h_1}
+                    -\frac{y_1-y_0}{h_0}
+                \right)
+                \\
+                h_1\,m_1
+                + 2\,(h_1+h_2)\,m_2
+                + h_2\,m_3
+                = 6\left(
+                    \frac{y_3-y_2}{h_2}
+                    -\frac{y_2-y_1}{h_1}
+                \right)
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{18}
+
+\begin{questionBox}1{ % Q19
+    Considere a tabela de valores da função \textit{f}
+} % Q19
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C || *{3}{C}}
+            
+                x_i
+                & -3 & 0 & 2
+            
+            \\\hline
+            
+                f(x_i)
+                & 2 & 4 & 12
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{questionBox}2{ % Q19.1
+        Determine o polinómio de grau menor ou igual a 1 que melhor aproxima a função tabelada no sentido dos mínimos quadrados, no intervalo \(\myrange{-3,2}\)
+    } % Q19.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \begin{cases}
+                    a_0\,\sum_{i=0}^{2}{1}
+                    + a_1\,\sum_{i=0}^{2}{x_i}
+                    = \sum_{i=0}^{2}{y_i}
+                    \\
+                    a_0\,\sum_{i=0}^{2}{x_i}
+                    + a_1\,\sum_{i=0}^{2}{x_i^2}
+                    = \sum_{i=0}^{2}{y_i\,x_i}
+                \end{cases}
+                = \begin{cases}
+                    a_0\,(3)
+                    + a_1\,(-1)
+                    = 18
+                    \\
+                    a_0\,(-1)
+                    + a_1\,(13)
+                    = 18
+                \end{cases}
+                = &\\&
+                = \begin{cases}
+                    a_0 = 126/19
+                    \\
+                    a_1 = 36/19
+                \end{cases}
+                \implies &\\&
+                \implies
+                p_1(x)
+                = 126/19 + x\,36/19
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q19.2
+        Mostre que
+        \begin{BM}
+            \sum_{i=0}^2{
+                (
+                    f(x_i)
+                    -(\gamma_1\,x_i+\gamma_0)
+                )^2
+            }\geq 200/19
+            ,\forall\,\gamma_0,\gamma_1\in\mathbb{R}
+        \end{BM}
+    } % Q19.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \sum_0^2{
+                    \left(
+                        f(x_i)
+                        - p_1(x_i)
+                    \right)^2
+                }
+                = \dots
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q19.3
+        Seja \(p_2(x)\) o polinomio de grau menor ou igual a 2 interpolador de \textit{f} nos pontos tabelados.\\
+        Justifique que a aproximação quadrática que melhor aproxima o conjunto de pontos 
+        \(\left\{
+            (-3,2),
+            (0,4),
+            (2,12),
+        \right\}\)
+        , no sentido dos mínimos quadrados, é o polinómio \(p_2\).
+    } % Q19.3
+        \answer{}
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{4}{C}}
+                \toprule
+                
+                    x & f(x) 
+                      & f[\cdot,\cdot] 
+                      & f[\cdot,\cdot,\cdot] 
+                
+                \\\midrule
+                
+                    -3 & 2 & 
+                    \multirow{2}{*}{
+                        \(\frac{4-2}{0-(-3)}=2/3\)
+                    }
+                    & \multirow{3}{*}{
+                        \(\frac{4-2/3}{2-(-3)}=2/3\)
+                    }
+                    \\
+                    0 & 4 & 
+                    \multirow{2}{*}{
+                        \(\frac{12-4}{2-0}=4\)
+                    }
+                    \\
+                    2 & 12
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                p_2(x)
+                = 2
+                + (x+3)\,2/3
+                + (x+3)\,(x-0)\,2/3
+                \text{ é polinómio de 2 grau}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{17}
+
+\begin{questionBox}1{ % Q18
+    A seguinte tabela represetna a população da China (em milhares de milhões de habitantes) arredondada a 5 dígitos:
+} % Q18
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L || *{4}{C}}
+            % \toprule
+            
+                t & 1990 & 2000 & 2010 & 2020
+            
+            \\\hline
+            
+                P(t) 
+                & 1.1769,
+                & 1.2906,
+                & 1.3688,
+                & 1.4393,
+            
+            % \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Suponha que há uma relação linear entre a data \textit{t} (em anos) e a população \(P(t)\), isto é, que se verifica a relação \(p_1(t) = \alpha\,t + \beta\), onde \(\alpha\) e \(\beta\) são constantes reais (\(\alpha\neq0\)). Com base nestes dados, utilize o método dos mínimos quadrados para obter uma estimativa da população chinesa em 2015.
+    \answer{}
+    \begin{flalign*}
+        &
+            t\begin{cases}
+                   0: 1990,
+                \\ 1: 2000,
+                \\ 2: 2010,
+                \\ 3: 2020,
+            \end{cases}
+            ;&\\[3ex]&
+            N\,C
+            = \begin{bmatrix}
+                \sum_{i=0}^{3}{t_i^0}
+                & \sum_{i=0}^{3}{t_i^1}
+                \\ \sum_{i=0}^{3}{t_i^1}
+                &  \sum_{i=0}^{3}{t_i^2}
+            \end{bmatrix}
+            \,\begin{bmatrix}
+                \beta\\alpha
+            \end{bmatrix}
+            = \begin{bmatrix}
+                4
+                & 8020
+                \\ 8020
+                & 16080600
+            \end{bmatrix}
+            \,\begin{bmatrix}
+                \beta\\\alpha
+            \end{bmatrix}
+            = &\\[2ex]&
+            = B
+            = \begin{bmatrix}
+                \sum_{i=0}^{3}{P(t_i)}
+                \\ \sum_{i=0}^{3}{t_i\,P(t_i)}
+            \end{bmatrix}
+            = \begin{bmatrix}
+                5.2756
+                \\ 10581.905
+            \end{bmatrix}
+            ; &\\[3ex]&
+            \therefore
+            \begin{cases}
+                \alpha\approx  0.00865
+                \\ \beta\approx-16.0324
+            \end{cases}
+            ; &\\[3ex]&
+            p_1(2015) \approx 1.39735
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q19
+    Considere a tabela de valores da função \textit{f}
+} % Q19
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L || *{3}{C}}
+            % \toprule
+            
+                x_i
+                & -3
+                & 0
+                & 2
+            
+            \\\hline
+            
+                f(x_i)
+                & 2
+                & 4
+                & 12
+            
+            % \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{questionBox}2{ % Q19.1
+        Determine o polinómio de grau menor ou igual a 1 que melhor aproxima a função tabelada, no sentido dos mínimos quadrados, no intervalo \(\myrange{-3,2}\).
+    } % Q19.1
+        \answer{}
+        \begin{flalign*}
+            &
+                p_i(x)= c_o+c_1\,x
+                ; &\\[3ex]&
+                N\,C
+                = \begin{bmatrix}
+                       \sum_{i=0}^{2}{x_i^0}
+                    &  \sum_{i=0}^{2}{x_i^1}
+                    \\ \sum_{i=0}^{2}{x_i^1}
+                    &  \sum_{i=0}^{2}{x_i^2}
+                \end{bmatrix}
+                \,\begin{bmatrix}
+                    c_0 & c_1
+                \end{bmatrix}
+                = \begin{bmatrix}
+                       3
+                    &  -1
+                    \\ -1
+                    &  13
+                \end{bmatrix}
+                \,\begin{bmatrix}
+                    c_0 & c_1
+                \end{bmatrix}
+                = &\\[2ex]&
+                = B
+                = \begin{bmatrix}
+                    \sum_{i=0}^{2}{f(x_i)}
+                    \\ \sum_{i=0}^{2}{x_i\,f(x_i)}
+                \end{bmatrix}
+                = \begin{bmatrix}
+                    18 \\ 18
+                \end{bmatrix}
+                % \implies &\\&
+                \implies
+                c\begin{cases}
+                    0: 126/19
+                    \\ 1:36/19
+                \end{cases}
+                &\\[3ex]&
+                \therefore
+                p_1(x)
+                = 126/19 + x\,36/19
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q19.2
+        Mostre que
+        \begin{BM}
+            \sum_{i=0}^{2}{\left(
+                f(x_i)
+                - (\gamma_1\,x_i+\gamma_0)
+            \right)^2}
+            \geq 200/19,
+            \quad\forall\,\gamma_0,\gamma_1\in\mathbb{R}
+        \end{BM}
+    } % Q19.2
+        \answer{}
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = fixed,
+            round-mode              = places,        % figures/places/unsertanty/none
+            round-precision         = 6,
+        }
+        \begin{flalign*}
+            &
+                % \sum_{i=0}^{2}{\left(
+                %     f(x_i)
+                %     - (\gamma_1\,x_i+\gamma_0)
+                % \right)^2}
+                % \geq 200/19
+                p_1(x)\in\left\{
+                    \gamma_1\,x+\gamma_0,\gamma_0\in\mathbb{R}
+                \right\}
+                % ; &\\&
+                ;\quad
+                p_1\text{ Minimiza o erro quadrático } E^2
+                &\\[3ex]&
+                E^2
+                = \sum_{i=0}^{2}{\left(
+                    f(x_i)-p_i(x_i)
+                \right)^2}
+                = \left(
+                    \begin{aligned}
+                        &
+                            (2-\num{0.9473684210526315})^2
+                        &+\\+&
+                            (4-\num{6.631578947368421})^2
+                        &+\\+&
+                            (12-\num{10.421052631578947})^2
+                        &
+                    \end{aligned}
+                \right)
+                \cong \num{10.526315789473689}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q19.3
+        Seja \(p_2(x)\) o polinómio de grau menor ou igual a 2 interpolador de \textit{f} nos pontos tabelados.\\
+        Justifique que a aproximação quadrática que melhor aproxima o conjunto de pontos \(\{(-3,2),(0,4),(2,12)\}\), no sentido dos mínimos quadrados, é o polinomio \(p_2\)
+    } % Q19.3
+        \answer{}
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{C *{3}{C}}
+                \toprule
+                
+                    x_i 
+                    & f(x_i)
+                    & f[.]
+                    & f[..]
+                
+                \\\midrule
+                
+                    -3 & 2
+                    & \multirow{2}{*}{2/3}
+                    & \multirow{3}{*}{2/3}
+                    \\
+                    0 & 4 
+                    & \multirow{2}{*}{4}
+                    \\
+                    2 & 12
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+    \end{questionBox}
+\end{questionBox}
+\end{document}

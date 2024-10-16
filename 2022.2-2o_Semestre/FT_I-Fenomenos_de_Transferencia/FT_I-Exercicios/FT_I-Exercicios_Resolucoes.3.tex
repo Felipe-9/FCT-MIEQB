@@ -1,0 +1,587 @@
+% !TEX root = ./FT_I-Exercicios_Resolucoes.3.tex
+\providecommand\mainfilename{"./FT_I-Exercicios_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Exercicios_Resolucoes.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[FT\,I]
+{Exercicios} % Subfile Title
+{Exercicios} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Calcular a queda de pressão devido ao atrito de um óleo que flui a uma velocidade média de 2.4\,\unit{\metre\,\second^{-1}} através de um tubo liso com 30\,\unit{\metre} de comprimento e 7.6\,\unit{\centi\metre} de diâmetro (comparar com comprimento 20\,\unit{\metre}, 30\,\unit{\metre} e 50\,\unit{\metre}).
+} % Q1
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\mu=5\,\unit{\centi P}\)\\(comparar com 4\,\unit{\centi P} e 8\,\unit{\centi P})
+            \item \(\rho = 960\,\unit{\kilo\gram\,\metre^{-3}}\)
+        \end{multicols}
+    \end{itemize}
+
+    \subsubsection*{
+        E qual a queda de pressão devido ao atrito se rugosidade do tubo = 0.08\,\unit{\milli\metre}? (comparar com 0.2\,\unit{\milli\metre} e 0.8\,\unit{\milli\metre}). E qual a queda de pressão devido ao atrito se tubo liso com 2 joelhos em ângulo recto?
+    }
+
+    \begin{answerBox}3{(i)} % RS 
+        \begin{flalign*}
+            &
+                -\adif{P}_{at}
+                = 4\,\phi\,L\,\rho\,v^2/D;
+                &\\&
+                \phi\left(
+                    Re,0
+                \right)
+                =
+                \phi\left(
+                    \frac{\rho\,v\,D}{\mu}
+                    , 0
+                \right)
+                =
+                \phi\left(
+                    \frac{960*2.4*7.6\E-2}{
+                        5\E-2*10^{-3}/10^{-2}
+                    }
+                    , 0
+                \right)
+                = &\\&
+                =
+                \phi\left(
+                    \frac{9.6*2.4*7.6}{5}
+                    \,10^{2}
+                    , 0
+                \right)
+                \cong
+                \phi\left(
+                    \num{35020.8}
+                    , 0
+                \right)
+                \cong 0.00275
+                &\\&
+                \therefore
+                -\adif{P}_{at}
+                \cong 4*0.00275*30*960*(2.4)^2/7.6\E-2
+                = &\\&
+                = \frac{4*2.75*3.0*9.60*(2.4)^2}{7.6}\E{2}
+                \cong
+                \num{2.40101052631578947e4}
+            &
+        \end{flalign*}
+
+        \vspace{-4ex}
+
+        
+    \end{answerBox}
+
+    \begin{answerBox}3{(ii)} % RS 
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{4}{C}}
+                
+                \\\toprule
+                
+                    L/\unit{\metre}:
+                    & 20
+                    & 30
+                    & 50
+                
+                \\\midrule
+                
+                     -\adif{P}_{at}:
+                    & \num{160.067368421052632e2}
+                    & \num{2.40101052631578947e4}
+                    & \num{400.168421052631579e2}
+                
+                \\\bottomrule
+                
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+    \end{answerBox}
+
+    \begin{answerBox}3{(iii)} % RS 
+        
+        \begin{flalign*}
+            &
+                -\adif{P}_{at}
+                = 4\,\phi\,L\,\rho\,v^2/D;
+                &\\&
+                \phi\left(
+                    Re,\varepsilon/D
+                \right)
+                = \phi\left(
+                    \num{35020.8},
+                    0.08\E-3/7.6\E-2
+                \right)
+                = &\\&
+                = \phi\left(
+                    \num{35020.8},
+                    8\E-3/7.6
+                \right)
+                \cong 
+                \phi\left(
+                    \num{35020.8},
+                    \num{1.052631578947368e-3}
+                \right)
+                \cong
+                0.0052
+                &\\&
+                \therefore
+                -\adif{P}_{at}
+                \cong 
+                \num{2.40101052631578947e4}
+                \,\frac{0.0052}{0.00275}
+                \cong
+                \num{4.5400926315789464727e4}
+            &
+        \end{flalign*}
+
+    \end{answerBox}
+
+    \begin{answerBox}3{(iv)} % RS 
+        \begin{flalign*}
+            &
+                \varepsilon>\varepsilon_0
+                \implies
+                \phi>\phi_0
+                \implies
+                -\adif{P}_{at}
+                > 
+                -\adif{P}_{at, 0}
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+    \begin{answerBox}3{(v)} % RS 
+        \begin{flalign*}
+            &
+                -\adif{P}_{at}
+                = 4\,\phi\,L_{eq}\,\rho\,v^2/D
+                \cong 
+                \num{2.40101052631578947e4}
+                \frac{L_{eq}}{L}
+                = &\\&
+                = \num{2.40101052631578947e4}
+                \frac{(L + 2*40*D)}{L}
+                = \num{2.40101052631578947e4}
+                (1+2*40*7.6\E-2/30)
+                \cong &\\&
+                \cong
+                \num{2.887615326315789e4}
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Corre água a 2.5\,\unit{\deci\metre^3\,\second^{-1}} através dum alargamento súbito de um tubo de 3.6\,\unit{\centi\metre} de diâmetro para um de 4.8\,\unit{\centi\metre}. Qual é a perda de carga em \textit{m}?
+} % Q2
+    
+    \begin{BM}
+        -\adif{P}_{al\ arg}^{at}
+        =\rho\,(v_1-v_2)^2/2
+    \end{BM}
+
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                \frac{-\adif{P}_{at}}{\rho\,g}
+                = \frac{
+                    \rho\,(\adif{v})^2/2
+                }{\rho\,g}
+                = \frac{
+                    \left(
+                        \adif{\frac{G_v}{\pi\,r^2}}
+                    \right)^2
+                }{2\,g}
+                = \left(
+                    \frac{G_v}{\pi\,\adif{r^2}}
+                \right)^2
+                (2\,g)^{-1}
+                \cong &\\&
+                \cong 
+                \left(
+                    \frac{2.5\E-3}{
+                        \pi\,(
+                            (3.6\E-2/2)^2
+                            -(4.8\E-2/2)^2
+                        )
+                    }
+                \right)^2
+                (2*\num{9.780327})
+                = &\\&
+                = 8\,\left(
+                    \frac{2.5}{
+                        \pi\,(
+                            (3.6)^2
+                            -(4.8)^2
+                        )
+                    }
+                \right)^2
+                \num{9.780327}^{-1}
+                *10^{2}
+                \cong
+                \num{5.9028669606249e-2}
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Qual é a queda de pressão, e a potência necessária para bombear 0.04\,\unit{\metre^3\,\second^{-1}} de água, através dum condensador com 400 tubos de 4.5\,\unit{\metre} de comprimento e diâmetro interno de 1\,\unit{\centi\metre} sabendo que o coeficiente de contracção à entrada dos tubos (\(C_c\)) é 0.6 e rugosidade aço comercial = 0.046\,\unit{\milli\metre} \(\mu = 10^{-3}\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}}\).
+} % Q3
+
+    \begin{BM}
+        -\adif{P}_{cont}
+        = \frac{\rho\,v^2}{2}
+        (C_c^{-1}-1)^2
+    \end{BM}
+
+    \begin{answerBox}{(i)} % RS 
+        \begin{flalign*}
+            &
+                -\adif{P}_{tot}
+                = 
+                -\adif{P}_{at\ 1}*n
+                -\adif{P}_{at\ 2}
+                = 
+                n\,\frac{4\,\phi\,\rho\,v^2\,L_1}{D}
+                + \frac{\rho\,v^2}{2}
+                (C_c^{-1}-1)^2
+                = &\\&
+                = 
+                \rho\,v^2
+                \,\left(
+                    \frac{4\,\phi\,L_1\,n}{D}
+                    + \frac{(C_c^{-1}-1)^2}{2}
+                \right)
+                &\\[1.5em]&
+                \phi\left(
+                    Re,\varepsilon/D
+                \right)
+                = \phi\left(
+                    \frac{D\,\rho\,\bar{v}}{\mu},
+                    \varepsilon/D
+                \right)
+                = \phi\left(
+                    \frac{10^{-2}*10^{3}*1.27}{10^{-3}},
+                    \frac{0.046\E{-3}}{10^{-2}}
+                \right)
+                = &\\&
+                = \phi\left(
+                    1.27*10^{4},
+                    0.046\E{-1}
+                \right)
+                \cong
+                0.0052
+                &\\[1.5em]&
+                \therefore
+                -\adif{P}_{tot}
+                \cong 10^3\,(1.27)^2
+                \,\left(
+                    \frac{4*0.0052*4.5*400}{1\E-2}
+                    + \frac{(0.6^{-1}-1)^2}{2}
+                \right)
+                \cong
+                \num{6039.056022222222222e3}
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+    \begin{answerBox}{(ii)} % RS 
+        \begin{flalign*}
+            &
+                W_{bomba}
+                =-\adif{P}_{at\ bomba}
+                *\frac{G_v}{n}
+                \cong
+                \num{6039.056022222222222e3}
+                *\frac{0.04}{400}
+                \cong
+                \num{6.03905602222222e2}
+            &
+        \end{flalign*}
+    \end{answerBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Quer-se bombear água dum tanque para um depósito 12\,\unit{\metre} acima do nível daquele, a um caudal de 1.25\,\unit{\deci\metre^3\,\second^{-1}}, através dum tubo de ferro de 25\,\unit{\milli\metre} de diâmetro e 30\,\unit{\metre} de comprimento. O tanque e o reservatório encontram-se à pressão atmosférica.\\
+    Qual é a potência da bomba necessária?
+} % Q4
+    
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \( \mu  = 1.30*10^{-3}\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}} \)
+            \item \( \rho = 1000\,\unit{\kilo\gram\,\metre^{-3}}\)
+            \item Rugosidade do ferro \(=0.046\,\unit{\milli\metre}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{answerBox}{} % RS 
+        \begin{flalign*}
+            &
+                W_{b}
+                = -\adif{P}_{b}\,G_v
+                = h_{b}\,\rho\,g\,G_v
+                = &\\&
+                = \left(
+                    Z_2+\frac{v^2}{2\,g}
+                    + h_{at}
+                \right)
+                \,\rho\,g\,G_v
+                = &\\&
+                = \left(
+                    Z_2+\frac{v^2}{2\,g}
+                    + \frac{-\adif{P}_{at}}{\rho\,g}
+                \right)
+                \,\rho\,g\,G_v
+                = &\\&
+                = 
+                Z_2\,\rho\,g\,G_v
+                + \left(
+                    \frac{v^2}{2}
+                    + \frac{4\,\phi\,\rho\,v^2\,L/D}{\rho}
+                \right)
+                \,\rho\,G_v
+                = &\\&
+                =
+                Z_2\,\rho\,g\,G_v
+                +\left(
+                    \frac{1}{2}
+                    + \frac{4\,\phi\,L}{D}
+                \right)
+                \,v^2
+                \,\rho\,G_v
+                = &\\&
+                =
+                Z_2\,\rho\,g\,G_v
+                +\left(
+                    \frac{1}{2}
+                    + \frac{4\,\phi\,L}{D}
+                \right)
+                \,\left(
+                    \frac{G_v}{\pi\,(D/2)^2}
+                \right)^2
+                \,\rho\,G_v
+                = &\\&
+                =
+                Z_2\,\rho\,g\,G_v
+                +\left(
+                    2^3
+                    + \frac{4^3\,\phi\,L}{D}
+                \right)
+                \,\frac{G_v^3\rho}{\pi^2\,D^4};
+                % &\\[1.5em]&
+                % W_{b}
+                % = h_{at}\,G_v
+                % = \frac{-\adif{P}_{at}}{\rho\,g}\,G_v
+                % = \frac{4\,\phi\,\rho\,v^2/D}{\rho\,g}\,G_v
+                % = \frac{4\,\phi}{D\,g}
+                % \,\left(
+                %     \frac{G_v}{\pi\,(D/2)^2}
+                % \right)^2
+                % \,G_v
+                % = &\\&
+                % = \frac{4^3\,\phi\,G_v^3}{D^5\,\pi^2\,g};
+                &\\[1.5ex]&
+                \phi\left(
+                    Re,\varepsilon/D
+                \right)
+                = \phi\left(
+                    \frac{\rho\,D\,\bar{v}}{\mu},
+                    \varepsilon/D
+                \right)
+                = \phi\left(
+                    \frac{10^3*25*10^{-3}2.55}{1.30*10^{-3}},
+                    \frac{0.046\E{-3}}{25\E{-3}}
+                \right)
+                = &\\&
+                = \phi\left(
+                    \frac{25*2.55}{1.30}\,10^{3},
+                    0.046/25
+                \right)
+                \cong \phi\left(
+                    \num{49.038461538461538e3},
+                    \num{1.84e-3}
+                \right)
+                \cong 0.00255
+            &
+        \end{flalign*}
+    \end{answerBox}
+    \begin{answerBox}*{} % RS 
+        \begin{flalign*}
+            &
+                \therefore
+                W_b
+                % = &\\&
+                = 12*10^{3}*\num{9.780327}*1.25*10^{-3}
+                + &\\&
+                +\left(
+                    2^3
+                    + \frac{4^3*0.00255*30}{25*10^{-3}}
+                \right)
+                \,\frac{
+                    (1.25*10^{-3})^3*10^3
+                }{
+                    \pi^2\,(25*10^{-3})^4
+                }
+                = &\\&
+                = 12*\num{9.780327}*1.25
+                +\left(
+                    2^3
+                    + \frac{4^3*2.55*30}{25}
+                \right)
+                \,\frac{
+                    (1.25)^3
+                }{
+                    \pi^2\,(25)^4
+                }*10^{6}
+                \cong
+                \num{249.971455368270657}
+            &
+        \end{flalign*}
+    \end{answerBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Pretende-se bombear 4\,\unit{\deci\metre^3\,\second^{-1}} de uma solução de ácido sulfúrico através dum tubo de 2.5\,\unit{\centi\metre} de diâmetro, em chumbo, e a uma altura de 25\,\unit{\metre}. O tubo tem 30\,\unit{\metre} de comprimento e contém dois joelhos em ângulo recto. Calcular a potência da bomba teoricamente necessária.
+} % Q5
+    
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \( \rho_{sol\ ac}=1531\,\unit{\kilo\gram\,\metre^{-3}}\)
+            \item \( \mu_{sol\ ac} = 0.065\,\unit{\kilo\gram\,\metre^{-1}\,\second^{-1}}\)
+            \item rugosidade chumbo \(= 0.05\,\unit{\milli\metre}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{answerBox}{} % RS
+        \begin{flalign*}
+            & 
+                W_b
+                = -\adif{P}_{b}\,G_v
+                = h_b\,\rho\,g\,G_v
+                = &\\&
+                = \left(
+                    Z_2
+                    + h_{at}
+                \right)
+                \,\rho\,g\,G_v
+                = &\\&
+                = 
+                Z_2\,\rho\,g\,G_v
+                + \left(
+                    \frac{-\adif{P}_{at}}{\rho\,g}
+                \right)
+                \,\rho\,g\,G_v
+                = &\\&
+                = 
+                Z_2\,\rho\,g\,G_v
+                + \left(
+                    4\,\phi\,\rho\,v^2\,L_{eq}/D
+                \right)
+                \,G_v
+                = &\\&
+                = 
+                Z_2\,\rho\,g\,G_v
+                + \left(
+                    \frac{G_v}{\pi\,r^2}
+                \right)^2
+                \,\left(
+                    L + 2*40*D
+                \right)
+                \,\frac{4\,\phi\,\rho\,G_v}{D}
+                = &\\&
+                = 
+                Z_2\,\rho\,g\,G_v
+                + \frac{
+                    4^3\,\phi\,\rho\,(L+2*40*D)\,G_v^2
+                }{
+                    \pi^2\,D^5
+                }
+                = &\\&
+                = 
+                Z_2\,\rho\,g\,G_v
+                + \frac{
+                    4^3\,\phi\,\rho\,(L+2*40*D)\,G_v^2
+                }{
+                    \pi^2\,D^5
+                };
+                &\\[1.5ex]&
+                \phi\left(
+                    Re,\varepsilon/D
+                \right)
+                = \phi\left(
+                    \frac{\rho\,D\,\bar{v}}{\mu}
+                    ,\varepsilon/D
+                \right)
+                = \phi\left(
+                    \frac{\rho\,D}{\mu}
+                    \frac{G_v}{\pi\,(D/2)^2}
+                    ,\varepsilon/D
+                \right)
+                = &\\&
+                = \phi\left(
+                    \frac{\rho\,G_v\,4}{\mu\,\pi\,D}
+                    ,\varepsilon/D
+                \right)
+                % = &\\&
+                = \phi\left(
+                    \frac{1531*4*10^{-3}*4}{0.065*\pi*2.5*10^{-2}}
+                    ,\frac{0.05*10^{-3}}{2.5*10^{-3}}
+                \right)
+                = &\\&
+                = \phi\left(
+                    \frac{1.531*4^2}{6.5*\pi*2.5}*10^{4}
+                    ,2*10^{-2}
+                \right)
+                % = &\\&
+                \cong \phi\left(
+                    \num{4.79835013658962e3}
+                    ,2*10^{-2}
+                \right)
+                \cong 0.0069
+    %         &
+    %     \end{flalign*}
+    % \end{answerBox}
+    % \begin{answerBox}*{} % RS 
+    %     \begin{flalign*}
+    %         &
+                &\\[1.5ex]&
+                W_b
+                \cong 25*1531*\num{9.780327}*4*10^{-3}
+                + &\\&
+                + \frac{
+                    4^3*0.0069*1531*(30+2*40*2.5*10^{-2})*(4*10^{-3})^2
+                }{
+                    \pi^2*(2.5*10^{-2})^5
+                }
+                = &\\&
+                =
+                2.5*1.531*\num{9.780327}*40
+                + \frac{
+                    4^5*6.9*1.531*(3+2*4*2.5*10^{-2})
+                }{
+                    \pi^2*2.5^5
+                }10^{5}
+                \cong &\\&
+                \cong
+                \num{3.592985433843477507709e6}
+            &
+        \end{flalign*} 
+    \end{answerBox}
+
+\end{questionBox}
+
+\end{document}

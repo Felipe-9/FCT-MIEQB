@@ -1,0 +1,1003 @@
+% !TEX root = ./AM_2C-Tests_Resolutions.2023.1.4.tex
+\providecommand\mainfilename{"./AM_2C-Tests_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM_2C-Tests_Resolutions.2023.1.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM_2C-Tests_Resolutions.2023.1.4}}}
+% \tikzsetexternalprefix{./.build/figures/AM_2C-Tests_Resolutions.2023.1.4/graphics/}
+
+\mymakesubfile{4}
+[AM 2C]
+{Exame Epoca Especial 2023 Resolução} % Subfile Title
+{Exame Epoca Especial 2023 Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Considere a função vetorial
+    \begin{BM}
+        \vec{r}:\myrange{0,4\,\pi}\to\mathbb{R}^3,
+        \vec{r}(t)
+        = \left(
+            \begin{aligned}
+                &
+                \cos(\pi+t)\,\hat{\imath}
+                &+\\+&
+                \sin(\pi+t)\,\hat{\jmath}
+                &+\\+&
+                \sqrt{3}\,t\,\hat{k}
+                &
+            \end{aligned}
+        \right)
+    \end{BM}
+    e designe por \textit{C} a curva orientada definida por \(\vec{r}\). A equação vetorial da reta tangente à curva \textit{C} no ponto \((1,0,3\,\sqrt{3}\,\pi)\) é:
+} % Q1
+    % Reta tg a linha simples
+    % P0=(f(t0),g(t0),z(t0))
+    \begin{flalign*}
+        &
+            % Encontrar t0 que tangencia a curva
+            \begin{cases}
+                \cos(\pi+t_0)=1
+                \\
+                \sin(\pi+t_0)=0
+                \\
+                \sqrt{3}\,t_0 = 3\,\sqrt{3}\,\pi\implies t_0=3\,\pi
+            \end{cases}
+            &\\[3ex]&
+            % Descobrir o r' derivada de r(t)
+            r'(t_0)
+            = \odv{\cos(\pi+t)}{t}(t_0)\hat{\imath}
+            + \odv{\sin(\pi+t)}{t}(t_0)\hat{\jmath}
+            + \odv{\sqrt{3}\,t}{t}(t_0)\hat{k}
+            = &\\&
+            = -\sin(\pi+3\,\pi)\hat{\imath}
+            + \cos(\pi+3\,\pi)\hat{\jmath}
+            + \sqrt{3}\hat{k}
+            = &\\&
+            = \hat{\jmath}
+            + \sqrt{3}\hat{k}
+            \implies &\\[3ex]&
+            \implies
+            (x,y,z)
+            = (1,0,3\,\sqrt{3}\pi)
+            + t\,(0,1,\sqrt{3})
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A equação do plano tangente à superfície de nível
+    \begin{BM}
+        x^3+y^3+(x+1)\,e^z=2
+    \end{BM}
+    no ponto \((1,-1,0)\) é:
+} % Q2
+    \answer{}
+    \begin{flalign*}
+        &
+            \left(
+                \begin{aligned}
+                    &
+                        \pdv{f}{x}(x_0)\,(x-x_0)
+                    &+\\+&
+                        \pdv{f}{y}(y_0)\,(y-y_0)
+                    &+\\+&
+                        \pdv{f}{z}(z_0)\,(z-z_0)
+                    &
+                \end{aligned}
+            \right)
+            = \left(
+                \begin{aligned}
+                    &
+                        (3\,(1)^2+e^0)\,(x-1)
+                    &+\\+&
+                        (3\,(-1)^2)\,(y+1)
+                    &+\\+&
+                        (1+1)e^(0)\,z
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = 4\,x
+            + 3\,y
+            + 2\,z
+            - 1
+            = 0
+        &
+    \end{flalign*}
+    % Para cada caso de formula de superficie temos diff formas de fazer
+    % Nesse caso usamos f(x,y,z)=0
+    % \answer{}
+    % \begin{flalign*}
+    %     &
+    %         \nabla{F}{(x,y,z)}(x-a,y-b,z-c)
+    %         = \left(
+    %             \begin{aligned}
+    %                 3\,x^2+e^z,
+    %                 \\
+    %                 3\,y^2
+    %                 \\
+    %                 (x+1)\,e^z
+    %             \end{aligned}
+    %         \right)(1,-1,0)
+    %         = (4,3,2)
+    %         \implies &\\&
+    %         \implies
+    %         4\,(x-1)
+    %         +3\,(y+1)
+    %         +2\,z
+    %         = 4\,x
+    %         +3\,y
+    %         +2\,z
+    %         -1
+    %     &
+    % \end{flalign*}
+    Resposta D.
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Considere o subconjunto de \(\mathbb{R}^2\) definido por
+    \begin{BM}
+        C=\left\{
+            (x,y)\in\myrange{-1,1}\times\myrange{-1,1}
+            : x^2+y^2>1
+        \right\}
+        \cup \{(0,0)\}
+    \end{BM}
+    Tem-se (\(C'\) é o conjunto dos pontos de acumulação de \(C\text{ e }\bar{C}\) é a aderência de \textit{C})
+} % Q3
+    % \begin{itemize}
+    %     % \item \(\int(C)\neq C:\exists c\in\fronteira(C)\neq Int(C)\)
+    % \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Seja \textit{C} o segmineto de reta \textit{[AB]} com \(A=(0,0)\text{ e }B=(1,1)\), percorrido de \textit{A} para \textit{B}. O valor do integral curvilíneo
+    \begin{BM}
+        \int_C{
+            x^2\,\odif{x}
+            + y^2\,\odif{y}
+        }
+    \end{BM}
+    % Integrais de curva: Paremtrizar do segimento e multiplicar pela derivada da parametrização
+    % \begin{BM}
+    %     \int_{C,t}f(s)\odif{s}
+    %     = \int_a^b{
+    %         f(\phi(t))\myVert{\phi'(t)}\odif{t}
+    %     }
+    % \end{BM}
+    % Integral de linha/fronteira
+    % \int (f(x,y)\odif{x}+g(x,y)\odif{y})
+    % usar riemman-green
+} % Q4
+    \answer{}
+    \begin{flalign*}
+        &
+            \int_C{
+                x^2\,\odif{x}
+                + y^2\,\odif{y}
+            }
+            = \int_C{
+                x^2\,\odif{x}
+                + y^2\,\odif{y}
+            }
+        &
+    \end{flalign*}
+    \begin{flalign*}
+        &
+            \phi(t)
+            =A+(B-A)
+            =(0,0)+((1,1)-(0,0))\,t
+            =(1,1)\,t
+            =(t,t)
+            :t\in\myrange{0,1}
+            \implies &\\&
+            \implies
+            \int_{C,t}f(s)\odif{s}
+            = \int_a^b{
+                f(\phi(t))\myVert{\phi'(t)}\odif{t}
+            }
+            = \int_0^1{
+                f((t,t))\myVert{(1,1)}\odif{t}
+            }
+            = \int_0^1{
+                (t^2+t^2)\,\sqrt{1^1+1^1}\odif{t}
+            }
+            = \int_0^1{
+                2\,t^2\,\sqrt{2}\odif{t}
+            }
+            = 2\sqrt{2}\int_0^1{
+                t^2\,\odif{t}
+            }
+            = 2\sqrt{2}\,t^3/3\big\vert_0^1
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    \begin{itemize}
+        \item limites direcionais:
+    \end{itemize}
+} % Q5
+    \answer{}
+    \begin{questionBox}2{ % Q1
+        B
+    } % Q1
+        \begin{flalign*}
+            &
+                \myvert{
+                    f(x,y)-0
+                }
+                = \myvert{
+                    \frac{x\,y^2}{x^4+y^2}
+                }
+                = \frac{y^2\,\myvert{
+                    x
+                }}{
+                    x^4+y^2
+                }
+                \leq 
+                \myVert{(x,y)}
+                \sqrt{x^2+y^2}
+                &\\[3ex]&
+                \lim_{(x,y)\to(0,0)}\frac{x\,y^2}{x^4+y^2}
+                = \lim_{r\to0}\frac{
+                    r\,\cos(\theta)\,(r\,\sin(\theta))^2
+                }{(r\,\cos(\theta))^4+(r\,\sin(\theta))^2}
+                = &\\&
+                = \lim_{r\to0}\frac{
+                    r\,\cos(\theta)\,\sin^2(\theta)
+                }{
+                    r^2\,\cos^4(\theta)+\sin^2(\theta)
+                }
+                = \frac{0}{0+\sin^2(\theta)}
+                = 0
+                &\\&
+                \therefore f \text{ é continua em } (0,0)
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    \begin{BM}
+        \lim_{(x,y)\to(1,1)}{
+            \frac
+            {3(y-1)\,\exp(-(x-1)^2)}
+            {\sqrt{x-1}^2+(y-1)^2}
+        }
+    \end{BM}
+} % Q6
+    \answer{}
+    \begin{flalign*}
+        &
+            \lim_{(x,y)\to(1,1)}{
+                \frac
+                {3(y-1)\,\exp(-(x-1)^2)}
+                {\sqrt{(x-1)^2+(y-1)^2}}
+            }
+            = &\\&
+            = \lim_{x\to1,y=m(x-1)+1}{
+                \frac
+                {3(m(x-1)+1-1)\,\exp(-(x-1)^2)}
+                {\sqrt{(x-1)^2+(m(x-1)+1-1)^2}}
+            }
+            = &\\&
+            = \lim_{x\to1,y=m(x-1)+1}{
+                \frac
+                {3(m(x-1))\,\exp(-(x-1)^2)}
+                {\sqrt{(m^2+1)(x-1)^2}}
+            }
+            = &\\&
+            = \lim_{x\to1,y=m(x-1)+1}{
+                \frac
+                {3\,m\,\exp(-(x-1)^2)}
+                {\frac{\myvert{x-1}}{x-1}\sqrt{(m^2+1)}}
+            }
+            = &\\&
+            = \lim_{x\to1,y=m(x-1)+1}{
+                \frac
+                {3\,m\,\exp(-(x-1)^2)}
+                {\frac{\myvert{x-1}}{x-1}\sqrt{(m^2+1)}}
+            }
+            \implies &\\[3ex]&
+            \implies
+            \lim_{x\to1^+,y=m(x-1)+1}{
+                \frac
+                {3\,m\,\exp(-(x-1)^2)}
+                {\frac{\myvert{x-1}}{x-1}\sqrt{(m^2+1)}}
+            }
+            = \frac
+                {3\,m\,\exp(0)}
+                {\sqrt{(m^2+1)}}
+            = \frac
+                {3\,m}
+                {\sqrt{(m^2+1)}}
+            ; &\\[3ex]&
+            \lim_{x\to1^-,y=m(x-1)+1}{
+                \frac
+                {3\,m\,\exp(-(x-1)^2)}
+                {\frac{\myvert{x-1}}{x-1}\sqrt{(m^2+1)}}
+            }
+            = \frac
+                {3\,m\,\exp(0)}
+                {-\sqrt{(m^2+1)}}
+            = \frac
+                {3\,m}
+                {-\sqrt{(m^2+1)}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    \begin{BM}
+        f(x,y)
+        =\begin{cases}
+            \frac{x\,y^2}{x^4+y^2}&:(x,y)\neq(0,0)
+            \\
+            0&:(x,y)=(0,0)
+        \end{cases}
+    \end{BM}
+} % Q7
+    \begin{flalign*}
+        &
+            \pdv{f}{x}(0,0)
+            = \lim_{h\to0}{
+                \frac{
+                f(h,0)
+                - f(0,0)
+                }{
+                    h
+                }
+            }
+            = \lim_{h\to0}{
+                \frac{
+                \frac{h*0^2}{h^4+0^2}
+                }{
+                    h
+                }
+            }
+            = 0
+            ; &\\[3ex]&
+            \pdv{f}{y}(0,0)
+            = \lim_{k\to0}{
+                \frac{
+                f(0,k)
+                - f(0,0)
+                }{
+                    k
+                }
+            }
+            = \lim_{k\to0}{
+                \frac{
+                \frac{0*k^2}{0^4+k^2}
+                }{
+                    k
+                }
+            }
+            = 0
+            ; &\\[3ex]&
+            D_{\vec{u}}f(0,0)
+            = \lim_{t\to0}{
+                \frac{
+                f(0+t/\sqrt{2},0+t/\sqrt{2})
+                - f(0,0)
+                }{
+                    t
+                }
+            }
+            = &\\&
+            = \lim_{t\to0}{
+                \frac{
+                    \frac{(t/\sqrt{2})*(t/\sqrt{2})^2}{(t/\sqrt{2})^4+(t/\sqrt{2})^2}
+                }{
+                    t
+                }
+            }
+            = \lim_{t\to0}{
+                \frac{1/2\sqrt{2}}{t^2/4+1/2}
+            }
+            = \frac{1/2\,\sqrt{2}}{1/2}
+            = 1/\sqrt{2}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    \begin{BM}
+        f:\mathbb{R}^2\to\mathbb{R}; C^1\in\mathbb{R}^2
+        :\nabla{f(1/2,0)}=(-1,1)
+        \\
+        H(x,y)
+        =f\left(
+            \frac{\sin{y}}{1+x^2}
+            ,x+\cos(2\,y)
+        \right)
+    \end{BM}
+    % C^n: deriv parciais de ordem n são contínuas em R2
+} % Q8
+    \answer{}
+    \begin{flalign*}
+        &
+            H(x,y)
+            =f\left(
+                \frac{\sin{y}}{1+x^2}
+                ,x+\cos(2\,y)
+            \right)
+            =f\left(
+                \phi(x,y)
+                ,\rho(x,y)
+            \right)
+            ; &\\[3ex]&
+            \odv{H}{x}(1,\pi/2)
+            = \odv{f}{\phi(x,y)}
+            \left(
+                \frac{\sin{\pi/2}}{1+1^2}
+                ,1+\cos(2\,\pi/2)
+            \right)
+            \,\odv{\phi}{x}(1,\pi/2)
+            = &\\&
+            = -1
+            \,\frac{\sin{\pi/2}}{(1+1^2)^2}
+            \,2(1+1^2)
+            = -1
+            ; &\\[3ex]&
+            \odv{H}{x}(1,\pi/2)
+            = \odv{f}{x}
+            \left(
+                \frac{\sin{\pi/2}}{1+1^2}
+                ,1+\cos(2\,\pi/2)
+            \right)
+            \,\odv{\frac{\sin{y}}{1+x^2}}{x}(1,\pi/2)
+            = &\\&
+            = \odv{f}{x}
+            \left(\frac{1}{2},0\right)
+            \frac{\sin{\pi/2}}{(1+1^2)^2}\,2*1
+            = \odv{f}{x}
+            \left(\frac{1}{2},0\right)
+            \frac{\sin{\pi/2}}{(1+1^2)^2}\,2*1
+            = -2
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    Seja \(\varphi:\mathbb{R}\to\mathbb{R}\) uma função de classe \(
+        C^2
+        \text{ em }
+        \mathbb{R}
+        \text{ tal que }
+        \varphi'(0)=5,
+        \varphi"(0)=-1
+        \text{. Considere }
+        u(x,t) = \varphi(x^2-2\,t)
+    \)
+    . Tem-se:
+} % Q9
+    \answer{}
+    \begin{flalign*}
+        &
+            \pdv[order=2]{u}{x}(2,2)
+            =\pdv[order=2]{(\varphi(x^2-2\,t))}{x}(2,2)
+            =\pdv[order=1]{(\varphi'(x^2-2\,t)\,2\,x)}{x}(2,2)
+            = &\\&
+            = 2\,\left(
+                \varphi"(2^2-2*2)\,2
+                + \varphi'(2^2-2*2)
+            \right)
+            = &\\&
+            = 2\,\left(
+                -1*2
+                + 5
+            \right)
+            = 6
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    Seja
+    \begin{BM}
+        \int_0^2{
+            \int_y^2{
+                \exp(x^2)\,\odif{x,y}
+            }
+        }
+    \end{BM}
+    Tem-se:
+} % Q10
+    \paragraph*{Sugestão:} Troque a ordem de integração
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                y\in\myrange{0,2}
+                \\
+                x\in\myrange{y,2}
+            \end{cases}
+            &\\&
+            \begin{cases}
+                y\in\myrange{0,x}
+                \\
+                x\in\myrange{0,2}
+            \end{cases}
+            ; &\\[3ex]&
+            \int_0^2{
+                \int_y^2{
+                    \exp(x^2)\,\odif{x,y}
+                }
+            }
+            = \int_0^2{
+                \int_0^x{
+                    \exp(x^2)\,\odif{y,x}
+                }
+            }
+            = \int_0^2{
+                \exp(x^2)\,(x-0)\odif{x}
+            }
+            = \int_0^2{
+                \exp(x^2)\,x\odif{x}
+            }
+            = &\\&
+            = \int_0^2{
+                \exp(x^2)\,2\,x\odif{x}/2
+            }
+            = (\exp{2^2}-\exp(0^2))/2
+            = (\exp{4}-1)/2
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q11
+    A equação
+    \begin{BM}
+        \exp(x\,z)
+        +y\,\sin{x}
+        -y^2+z^3+2\,x
+        =2\,\pi
+    \end{BM}
+    define implicitamente \textit{x} como função de \textit{y} e \textit{z} numa vizinhança do ponto \((x_0, y_0, z_0)=(\pi,1,0)\). Para essa função tem-se:
+} % Q11
+    \answer{}
+    \begin{flalign*}
+        &
+            % % Define implicitamente:
+            % \begin{cases}
+            %     f(x,y,z)=0
+            %     \\
+            %     f\in C^1
+            %     \\
+            %     \pdv{f}{x}(x_0,y_0,z_0)\neq0
+            % \end{cases}
+            % &\\[3ex]&
+            % Pelo teorema da função implícita
+            \pdv{x}{y}(1,0)
+            = -\frac
+            {\pdv{f}{y}(\pi,1,0)}
+            {\pdv{f}{x}(\pi,1,0)}
+            = -\frac
+            {\sin(\pi)-2*1}
+            {\exp(\pi*0)\,0+1\,\cos{\pi}+2}
+            = 2
+        &
+    \end{flalign*}
+    \vspace{5ex}
+    \begin{flalign*}
+        &
+            \pdv{x}{y}(\pi,1,0)
+            : 
+            \exp(x\,z)
+            +y\,\sin{x}
+            -y^2+z^3+2\,x
+            =2\,\pi
+            \implies &\\&
+            \implies
+            \pdv{(
+                \exp(x\,z)
+                +y\,\sin{x}
+                -y^2+z^3+2\,x
+            )}{y}(\pi,1,0)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \pdv{
+                            \exp(x\,z)
+                        }{y}(\pi,1,0)
+                    &+\\+&
+                        \pdv{
+                            y\,\sin{x}
+                        }{y}(\pi,1,0)
+                    &+\\-&
+                        \pdv{
+                            y^2
+                        }{y}(\pi,1,0)
+                    &+\\+&
+                        \pdv{
+                            z^3
+                        }{y}(\pi,1,0)
+                    &+\\+&
+                        \pdv{
+                            2\,x
+                        }{y}(\pi,1,0)
+                    &
+                \end{aligned}
+            \right)
+            % = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        0
+                    &+\\+&
+                        \sin{\pi}
+                        1\,\cos{\pi}\,\pdv{x}{y}(1,0)
+                    &+\\-&
+                        2\,(1)
+                    &+\\+&
+                        3\,(0)^2\,\pdv{z}{y}(\pi,1)
+                    &+\\+&
+                        2\,\pdv{x}{y}(1,0)
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = 
+            -2+\pdv{x}{y}(1,0)
+            = &\\[3ex]&
+            =\pdv{(2\,\pi)}{x}
+            = 0
+            \implies &\\[3ex]&
+            \implies
+            \pdv{x}{y}(1,0)=2
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q12
+    Considere a função
+    \begin{BM}
+        f(x,y)
+        = y^4/2-x\,y^2+x^2-4\,x
+    \end{BM}
+    Escolha a affirmativa correta
+} % Q12
+    \answer{}
+    \begin{flalign*}
+        &
+            \det H_f=\begin{vmatrix}
+                  \pdv{f}{x,x}
+                & \pdv{f}{x,y}
+                \\\pdv{f}{y,x}
+                & \pdv{f}{y,y}
+            \end{vmatrix}
+            =\begin{vmatrix}
+                    2    & 2\,y
+                \\ -2\,y & 6\,y^2-x\,2
+            \end{vmatrix}
+            = &\\&
+            = 12\,y^2-4\,x
+            + 4\,y^2
+            = 16\,y^2-4\,x
+            ; &\\[3ex]&
+            \det H_f(4,-2)
+            = 16\,(-2)^2-4*4
+            = 48
+            &\\&
+            \therefore
+            \text{Crítico mínimo Local}
+            ; &\\[3ex]&
+            \det H_f(2,0)
+            = 16\,(0)^2-4*2
+            = -8
+            &\\&
+            \therefore
+            \text{Ponto de sela}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q13
+    Considere a superfície
+    \begin{BM}
+        \rho
+        =\left\{
+            (x,y,z)\in\mathbb{R}^3
+            : z=\sqrt{3}\,x
+            , (x,y)\in\myrange{0,1}\times\myrange{0,2}
+        \right\}
+    \end{BM}
+    orientada com a terceira componente do campo vetorial normal não negativa, e o campo vetorial
+    \begin{BM}
+        \vec{F}(x,y,z)
+        = -3\left(
+            x^2+\sqrt{z^2}{4}\hat{\jmath}
+        \right)
+    \end{BM}
+    Seja \(\mathcal{L}\) o bordo de \(\sigma\) orientado positivamente de acordo com \(\sigma\). O valor do integral curvilíneo
+    \begin{BM}
+        \int_{\mathcal{L}}{
+            - \frac{z^3}{4}\odif{x}
+            + x^3\,\odif{z}
+        }
+    \end{BM}
+} % Q13
+    body
+\end{questionBox}
+
+\begin{questionBox}1{ % Q14
+    Seja \(f(x,y)\) uma função contínua em \(\mathbb{R}^2\). Considere a igualdade
+    \begin{BM}
+        \iint_{\mathcal{R}}{
+            f(x,y)\,\odif{x,y}
+        }
+        = \int_0^1{
+            \int_{y^2}^{\sqrt{2-y^2}}{
+                f(x,y)
+                \,\odif{x,y}
+            }
+        }
+    \end{BM}
+    Tem se:
+} % Q14
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                x=\sqrt{2-y^2}\implies \myvert{y}=\sqrt{2-x^2}
+                \\
+                x=y^2\implies \sqrt{x}=\myvert{y}
+                \\
+                \text{Integra com}
+            \end{cases}
+            &\\[3ex]&
+            \int_0^1{
+                \int_{y^2}^{\sqrt{2-y^2}}{
+                    f(x,y)
+                    \,\odif{x,y}
+                }
+            }
+            = &\\&
+            = \int_0^1{
+                \int_0^{\sqrt{x}}{
+                    f(x,y)\,\odif{y,x}
+                }
+            }
+            + \int_{1}^{\sqrt{2}}{
+                \int_0^{\sqrt{2-x^2}}{
+                    f(x,y)\,\odif{y,x}
+                }
+            }
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q15
+    Seja
+    \begin{BM}
+        I=\iint_{\mathcal{R}}{
+            \exp\left(
+                \frac{y-x}{y+x}
+            \right)
+            \odif{x,y}
+        }
+    \end{BM}
+    Onde \(\mathcal{R}\) é o triangulo definido pelas retas de equações
+    \begin{BM}
+        x=0,y=0\text{ e }x+y=4.
+    \end{BM}
+    Tem se:
+} % Q15
+    \paragraph*{Sugestão:} Considere a mudança de variáveis \(y=x-y,v=x+y\)
+\end{questionBox}
+
+\setcounter{question}{17}
+
+\begin{questionBox}1{ % Q18
+    \begin{BM}
+        \begin{aligned}
+            C_1:\,&
+            y=1, 
+            0\leq x\leq 2
+            \\
+            C_2:& 
+            x^2+y^2=4, 
+            1\leq x\leq 2
+            \land y\geq0
+            \\
+            C_3:& 
+            y=\sqrt{3}\,x, 
+            0\leq x\leq 1
+        \end{aligned}
+    \end{BM}
+} % Q18
+    % Teorema de green
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                \phi_1(t)=(t,0),& 0\leq t\leq 2
+                \\
+                \phi_2(t)=(2\,\cos{t},2\,\sin{t}),& 0\leq t\leq \pi/3
+                \\
+                \phi_3(t)=(t,\sqrt{3}\,t)
+                & 0\leq t\leq 1
+                \\
+                \phi_1'(t)=(1,0)
+                \\
+                \phi'_2(t)=(-2\,\sin{t},2\,\cos{t})
+                \\
+                \phi'_3(t)=(1,\sqrt{3})
+                &
+            \end{cases}
+            &\\[3ex]&
+            \oint_C{
+                0\,\odif{x} 
+                + x\,y\,\odif{y}
+            }
+            % teorema de green
+            = \iint_{C_{int}}{
+                y\,\odif{A}
+            }
+            % Separa
+            = &\\&
+            = 
+            \iint_{C_1}{
+                y\,\odif{A}
+            }
+            + \iint_{C_2}{
+                y\,\odif{A}
+            }
+            + \iint_{C_3}{
+                y\,\odif{A}
+            }
+            % \int{f \odif{s}}
+            % = \int{f(phi(t))||\phi'(t)||\odif{t}}
+            = &\\&
+            = 
+            \left(
+                \begin{aligned}
+                    &
+                    \int_{0}^{2}{
+                        0*\myVert{1,0}\,\odif{t}
+                    }
+                    &+\\+&
+                    \int_{0}^{\pi/3}{
+                        2\,\sin{t}
+                        \,\myVert{(-2\sin{t},2\,\cos{t})}
+                        \,\odif{t}
+                    }
+                    &+\\+&
+                    \int_{0}^{1}{
+                        \sqrt{3}\,t
+                        \,\myVert{(1,\sqrt{3})}
+                        \,\odif{t}
+                    }
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{20}
+
+\begin{questionBox}1{ % Q21
+    \begin{BM}
+        0\leq z\leq 3,
+        1\leq x^2+y^2,
+        x^2+y^2\leq z+1
+    \end{BM}
+} % Q21
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                0\leq z\leq 3
+                \\
+                1\leq r^2
+                \\
+                r^2\leq z+1
+            \end{cases}
+            &\\&
+            \iiint_{\varepsilon}{
+                \odif{V}
+            }
+            = \int_0^3{
+                \int_0^{2\,\pi}{
+                    \int_1^{\sqrt{z+1}}{
+                        r\odif{r,\theta,z}
+                    }
+                }
+            }
+            = \dots
+            = 2\,\pi\,(3^2/2)/2
+            = \pi\,9/2
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q22
+    Considere o sólido \(\mathcal{D}\text{ de }\mathbb{R}^2\) definido por
+    \begin{BM}
+        \mathcal{D}
+        = \left\{
+            (x,y,z)\in\mathbb{R}^3
+            : x^2\leq y\leq 1
+            \land 0\leq z\leq 2
+        \right\}
+    \end{BM}
+    \begin{BM}
+        \vec{F}(x,y,z)
+        = \left(
+            \cos{y}+x^3,
+            y+1,
+            2\,x^3-z
+        \right)
+    \end{BM}
+    O valor do fluxo \(\iint_{\sigma}{\vec{F}\cdot\vec{n}}\odif{S}\)
+} % Q22
+    \answer{}
+    \begin{flalign*}
+        &
+            % \begin{cases}
+            %     (r\cos\theta)^2
+            %     \leq
+            %     r\sin\theta
+            %     \leq
+            %     1 
+            %     \\
+            %     0<z<2
+            %     \\
+            %     \myvert{et J}=r
+            % \end{cases}
+            % &\\&
+            % \begin{cases}
+            %     (r\cos\theta)^2
+            %     \leq
+            %     r\sin\theta
+            %     \leq
+            %     1 
+            %     \\
+            %     0<z<2
+            %     \\
+            %     \myvert{et J}=r
+            % \end{cases}
+            % &\\[3ex]&
+            \iint_{\sigma}{\vec{F}\cdot\vec{n}}\odif{S}
+            = \iiint{div{F}\,\odif{V}}
+            = \iiint{
+                (3\,x^2+1-1)
+                \,\odif{V}
+            }
+            = &\\&
+            = \int_0^2{
+                \int_0^1{
+                    \int_{x^2}^{1}{
+                        3\,x^2
+                        \,\odif{y,x,z}
+                    }
+                }
+            }
+            = &\\&
+            = \int_0^2{
+                \int_0^1{
+                    3\,x^2\,(1-x^2)
+                    \,\odif{x,z}
+                }
+            }
+            = &\\&
+            = \int_0^2{
+                3\,(1^3-0^3)/3-3\,(1^5-0^5)/5
+                \,\odif{z}
+            }
+            = &\\&
+            = 2(1-3/5)
+            = 4/5
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

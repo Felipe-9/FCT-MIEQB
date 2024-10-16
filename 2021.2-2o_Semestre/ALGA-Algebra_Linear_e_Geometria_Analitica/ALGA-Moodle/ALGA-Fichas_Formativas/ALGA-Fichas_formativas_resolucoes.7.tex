@@ -1,0 +1,133 @@
+% !TEX root = ./ALGA-Fichas_formativas_resoluções.7.tex
+\providecommand\mainfilename{"./ALGA-Fichas_formativas_resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Fichas_formativas_resoluções.7.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{7}
+[ALGA]
+{Ficha Formativa: Espaços Vetoriais}
+{Espaços Vetoriais}
+
+
+\begin{questionBox}1m{}
+
+    \begin{BM}[align*]
+        &
+        \left\{F,G\right\}\text{ subespaços }\mathbb{R}^4
+        : \\&
+            F
+        =   \left\{
+                (a,b,c,d)\in\mathbb{R}^4
+            :   a=b+c
+            \land
+                d-2a=0
+            \right\}\land
+        \\&
+            G
+        =   \langle
+                (1,1,1,1)
+            ,   (1,0,2,3)
+            ,   (0,0,0,1)
+            \rangle
+        \\[1em]&
+        \begin{array}{l@{\,=\,}l}
+                    S_{ 1} & ((1, 1, 1, 1))
+        \\[0.6ex]   S_{ 2} & ((0, 1,-1, 0))
+        \\[0.6ex]   S_{ 3} & ((1, 1, 0, 2), (1, 0, 1, 2))
+        \\[0.6ex]   S_{ 4} & ((0,-1, 1, 0), (1, 2,-1, 2)),
+        \\[0.6ex]   S_{ 5} & ((1, 1, 0, 0), (1, 0, 1, 0), (0, 0, 0, 2))
+        \\[0.6ex]   S_{ 6} & ((1, 1, 0, 2), (1, 0, 1, 2), (1, 2,-1, 2))
+        \\[0.6ex]   S_{ 7} & ((1, 0, 2, 3), (1, 1, 1, 1), (0, 0, 0, 1))
+        \\[0.6ex]   S_{ 8} & ((1, 1, 0, 2), (1, 0, 1, 2), (1, 0, 2, 3), (0, 0, 0, 1))
+        \\[0.6ex]   S_{ 9} & ((1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1))
+        \\[0.6ex]   S_{10} & ((1, 1, 0, 2), (1, 0, 1, 2), (1, 0, 2, 3), (1, 1, 1, 1), (0, 0, 0, 1))
+        \end{array}
+    \end{BM}
+
+    % \begin{flalign*}
+    %     &
+    %
+    % \end{flalign*}
+
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                i:S_i \text{ gera } F
+            \land
+                F
+            =   \left\{
+                    (a,b,c,d)\in\mathbb{R}^4
+                :   a=b+c
+                \land
+                    d-2a=0
+                \right\}
+            = \\&
+            =   \left\{
+                    (b+c,b,c,2\,a):\{a,b,c\}\in\mathbb{R}
+                \right\}
+            = \\&
+            =   \langle
+                    (0,0,0,2)
+                ,   (1,1,0,0)
+                ,   (1,0,1,0)
+                ,   (0,0,0,0)
+                \rangle
+            = \\&
+            =   \langle
+                    (1,1,0,0)
+                ,   (1,0,1,0)
+                ,   (0,0,0,2)
+                \rangle
+            =   \langle
+                    S_5
+                \rangle
+            \\&
+                \therefore i=\{5\}
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}1{}
+        \begin{flalign*}
+            &
+                i:S_i\text{ base de } F
+            \land
+                F
+            \leq
+                \left\langle
+                    \begin{aligned}
+                                {(1,0,0,0)}
+                        , \\    {(0,1,0,0)}
+                        , \\    {(0,0,1,0)}
+                        , \\    {(0,0,0,1)}
+                    \end{aligned}
+                \right\rangle
+            \land \\&
+            \land
+                F
+            \leq
+                \langle
+                    (1,1,0,0)
+                ,   (1,0,1,0)
+                ,   (0,0,0,2)
+                \rangle
+            \land \\&
+            \land
+                F
+            \leq
+                \langle
+                    (1,1,0,0)
+                ,   (1,0,1,0)
+                ,   (0,0,0,2)
+                \rangle
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}

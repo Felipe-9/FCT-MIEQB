@@ -1,0 +1,464 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+\setlength{\cftsubsecnumwidth}{15mm}
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-product = *,
+	round-mode = figures,
+%	round-precision = 3,
+%	round-minimum = 0.01
+}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB Ficha 1 - Resolução\\
+	Conversão de unidades e cálculos em engenharia%
+}
+\author{Felipe Pinto - 61387}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+{\noindent\Large\bfseries Conteúdo}
+\renewcommand{\contentsname}{}
+\begin{multicols}{2}
+	\tableofcontents
+\end{multicols}
+
+\restoregeometry
+
+\begin{multicols}{2}
+
+% Q1
+\section{}
+\begin{flalign*}
+&
+	1\,\unit{P}
+	\,\frac{\unit{\g.\cm^{-1}.\s^{-1}}}{\unit{P}}
+	\,\frac{1\,\unit{lbm}}{453.6\,\unit{\g}}
+	\,\frac{30.48\,\unit{\cm}}{1\,\unit{ft}}
+= &\\& \cong
+	\qty[round-precision=4]
+	{0.06719576}{\g.lbm.ft^{-1}.s^{-1}}
+&
+\end{flalign*}
+
+% Q2
+\section{}
+\begin{flalign*}
+&
+	R 
+	= 8.314\,\unit{\kg.\m^2.s^{-2}.\mol^{-1}.\kelvin^{-1}}
+	\,\frac{\unit{\Pa}}{\unit{\kg.\m^{-1}.\s^{-2}}}
+	* &\\& *
+	\,\frac{9.869*10^{-6}\,\unit{atm}}{\unit{\Pa}}
+	\,\frac{c^3}{(10^{-2})^3}
+\cong
+	\qty[round-precision=4, per-mode=fraction]
+	{82.050866}{\frac{\cm^3\,atm}{\mole\,\kelvin}}
+&
+\end{flalign*}
+
+\end{multicols}
+
+% Q3
+\section{$ \frac{g(\rho_L-\rho_G)D_b^3}{\sigma\,D_0} = 6 $}
+\begin{flalign*}
+&
+\implies
+	D_b 
+= 
+	\sqrt[3]{\frac{6\,\sigma\,D_0}{g(\rho_L-\rho_{G})}}
+=
+	\sqrt[3]{
+		\frac{6*70.8\,\unit{dyn.\cm^{-1}}*1\,\unit{\mm}}
+			{32.174\,\unit{ft.\s^{-2}}
+			(
+				1\,\unit{\g.\cm^{-3}}
+				-0.081\,\unit{lbm.ft^{-3}}
+			)}}
+= &\\& = 
+	\sqrt[3]{
+		\frac{
+			6*70.8\,\unit{\g.\cm.\s^{-2}.\cm^{-1}}
+			*0.1\,\unit{\cm}
+			}
+			{32.174*30.48\,\unit{\cm.\s^{-2}}
+			(
+				1\,\unit{\g.\cm^{-3}}
+				-\frac{0.081*453.59237}{28316.846592}
+				\,\unit{\g.\cm^{-3}}
+			)}}
+= &\\& =
+	\sqrt[3]{
+		\frac{6*70.8*0.1}
+			{
+				32.174*30.48
+				(1-\frac{0.081*453.59237}
+					   {28316.846592}
+				)
+			}
+		}\unit{\cm}
+\cong
+	\qty[round-precision=3]{0.351352285561243}{\cm}
+&
+\end{flalign*}
+
+\begin{multicols}{2}
+
+% Q4
+\section{}
+\begin{flalign*}
+&
+	300\,\unit{\joule\per\min}
+	\,\frac{\unit{hp}}
+		  {745.69987158227022\,\unit{\watt}}
+	\,\frac{\unit{\watt}}{\unit{\joule\per\s}}
+	\,\frac{\unit{\min}}{60\,\unit{s}}
+\cong &\\& \cong
+	\qty[round-precision=3]{0.006705110447975}{hp}
+&
+\end{flalign*}
+
+\ \vspace{-1pt}
+
+% Q5
+\section{}
+\begin{flalign*}
+&
+	1\unit{\newton}
+	\,\frac{1\,\unit{lbf}}{4.448222\,\unit{\newton}}
+\cong
+	\qty[round-precision=1, scientific-notation = false]
+	{0.224808923655339}{lbf}
+&
+\end{flalign*}
+
+\ \vspace{-1pt}
+
+% Q6
+\section{}
+
+% Q6 - a)
+\subsection{%
+	\num[scientific-notation=true, round-precision=3]
+	{12200}%
+}
+
+% Q6 - b)
+\subsection{%
+	\num[scientific-notation=true, round-precision=6]
+	{12200.0}%
+}
+
+% Q6 - c)
+\subsection{%
+	\num[scientific-notation=true, round-precision=4]
+	{0.003040}%
+}
+
+\ \vspace{-1pt}
+
+% Q7
+\section{}
+
+% Q7 - a)
+\subsection{%
+	\num[scientific-notation=fixed, 
+		fixed-exponent=0, 
+		round-mode=off]
+	{1.34d5}, 3%
+}
+
+% Q7 - b)
+\subsection{%
+	\num[scientific-notation=fixed, 
+		fixed-exponent=0, 
+		round-mode=off]
+	{1.340d-2}, 4%
+}
+
+\ \vspace{-1pt}
+
+% Q8
+\section{}
+
+% Q8 - a)
+\subsection{3}
+
+% Q8 - b)
+\subsection{2}
+
+\ \vspace{-1pt}
+
+% Q9
+\section{$ D_{(m)} = 3\,t_{(s)}+4 $}
+
+% Q9 - a)
+\subsection{velocidade e espaço}
+
+% Q9 - b)
+\subsection{$ 
+	3 = \unit{\metre\per\second};\quad
+	4 = \unit{\metre}
+$}
+
+\end{multicols}
+
+% Q10
+\section{}
+\begin{flalign*}
+&
+	\unit{N_{pr}}
+=	\unit{\frac{C_p.\mu}{K}}
+=	\frac{
+			583\,\unit{\joule.\kg^{-1}.\celsius^{-1}}
+		\,	0.802\,\unit{\kg.\m^{-1}.s^{-1}}
+		}
+		{
+			0.286\,\unit{\watt.\m^{-1}.\celsius^{-1}}
+		}
+= 	\frac{ 583*0.802 }{ 0.286 }
+\cong
+	1650_{\text{sem calc}}
+\cong 
+	\num[scientific-notation = false, round-precision=3]
+	{1634.846153846153846}_{\text{com calc}}
+&
+\end{flalign*}
+
+% Q11
+\section{$ 
+	K\,(\unit{\mole.\cm^{-3}.\s^{-1}}) 
+=	1.2*10^{5}\,\exp(-2000/1.987\,T)
+$}
+
+\begin{flalign*}
+&
+\iff	1.2*10^{5}
+	\,\exp 
+		\left(
+		\frac{-2000\,\unit{cal.\mole^{-1}}}
+			{1.987\,T\,\unit{\kelvin}}
+		\right)
+	\,\unit{\mole.\cm^{-3}.\s^{-1}}
+= &\\& =
+	1.2*10^{5}\,\unit{\mole.\cm^{-3}.\s^{-1}}
+	\,\exp
+		\left(
+		\frac{-2000\,\unit{cal.\mole^{-1}}}
+			{
+				1.987\,\unit{cal.\mole^{-1}.\kelvin^{-1}}
+			\,	T\,\unit{\kelvin}
+			}
+		\right)
+&
+\end{flalign*}
+
+% Q12
+\section{$ \rho = 80.5\,\exp(8.27*10^{-7}\,P) $}
+
+% Q12 - a)
+\subsection{}
+\begin{flalign*}
+&
+\iff	80.5
+	\,\exp(
+		8.27*10^{-7}
+		\,P\,\unit{lbf\per in\squared}
+		)
+	\,\unit{lbm.ft^{-3}}
+=	80.5\,\unit{lbm.ft^{-3}}
+	\,\exp(
+		8.27*10^{-7}\unit{in\squared lbf^{-1}}
+		\,P\,\unit{lbf.in^{-2}}
+		)	
+&
+\end{flalign*}
+
+% Q12 - b)
+\subsection{}
+\begin{flalign*}
+&
+	80.5\,\unit{lbm.ft^{-3}}
+	\,\exp(
+		8.27*10^{-7}\unit{in\squared lbf^{-1}}
+		\,9.00*10^{6}\,\unit{\newton.\m^{-2}}
+		)
+= &\\& =
+	80.5\,\unit{lbm.ft^{-3}}
+	\,\frac{\unit{\g}}{0.002204622622\,\unit{lbm}}
+	\,\left(
+		\frac{0.03280839895\,\unit{ft}}{\unit{\cm}}
+	  \right)^3
+	* &\\& *
+	\exp
+		\left(
+		8.27*10^{-7}\unit{in\squared lbf^{-1}}
+		\,9.00*10^{6}\,\unit{\newton.\m^{-2}}
+		\,\frac{0.224809\,\unit{lbf}}{\unit{\newton}}
+		\,\left(
+			\frac{\unit{\m}}{39.3700787402\,\unit{in}}
+		  \right)^2
+		\right)
+\cong
+	\qty[round-precision=3]
+	{1.290879074419363}{\gram\per\cubic\cm}
+&
+\end{flalign*}
+
+% Q12 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\rho\,\unit{\gram\per\cubic\cm}
+=	80.5\,\unit{lbm.ft^{-3}}
+	\,\frac{\unit{\g}}{0.002204622622\,\unit{lbm}}
+	\,\left(
+		\frac{0.03280839895\,\unit{ft}}{\unit{\cm}}
+	  \right)^3
+	* &\\& *
+	\exp
+		\left(
+		8.27*10^{-7}\unit{in\squared lbf^{-1}}
+		\,P\,\unit{\newton.\m^{-2}}
+		\,\frac{0.224809\,\unit{lbf}}{\unit{\newton}}
+		\,\left(
+			\frac{\unit{\m}}{39.3700787402\,\unit{in}}
+		  \right)^2
+		\right)
+\cong &\\& \cong
+	\frac{80.5*0.03280839895^3}{0.002204622622}
+	\,\unit{\gram\per\cubic\cm}
+	* \exp
+		\left(
+		\frac{8.27*10^{-7}*0.224809}{39.3700787402^2}
+		\unit{\metre\squared \newton^{-1}}
+		\,P\,\unit{\newton.\m^{-2}}
+		\right)
+\cong &\\& \cong
+	\qty[round-precision=3]{1.289486301499866}{\gram\per\cubic\cm}
+	* \exp
+		\left(
+		\qty[round-precision=3]
+		{0.000000000119946}{\metre\squared \newton^{-1}}
+		\,P\,\unit{\newton.\m^{-2}}
+		\right)
+&
+\end{flalign*}
+
+% Q12 - d)
+\subsection{}
+Liquido, pois sua densidade varia pouco com a pressão
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

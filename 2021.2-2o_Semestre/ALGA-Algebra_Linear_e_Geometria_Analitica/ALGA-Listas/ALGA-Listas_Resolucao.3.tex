@@ -1,0 +1,321 @@
+% !TEX root = ./ALGA-Listas_Resolução.3.tex
+\providecommand\mainfilename{"./ALGA-Listas_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Listas_Resolução.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[ALGA]
+{Lista: Determinantes}
+{Lista: Determinantes}
+
+% Q3.72
+\setcounter{question}{71}
+\begin{questionBox}1{}
+
+    \begin{BM}
+        A\in\mathcal{M}_{n\times n} : A^2=-A
+    \end{BM}
+    \begin{flalign*}
+        &
+            \det(-A) = \det A (-1)^n = \det(A^2)
+        \implies
+            \det A (\det A - (-1)^n) = 0
+        \implies &\\&
+        \implies
+            \det A = 0 \lor \det A = (-1)^n
+        &
+    \end{flalign*}
+
+\end{questionBox}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% Q3.73
+\begin{questionBox}1{}
+
+    \begin{BM}
+        A \in\mathcal{M}_{n\times n} : A\,A^* = I_n
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            |\det A| = 1
+        =   \dots
+        =   \det(A)\,\det\overline{A}^T
+        =   \det(A)\,\overline{\det A^T}
+        =   \det(A\,A^*) = \det (I_n) = 1
+        &
+    \end{flalign*}
+
+\end{questionBox}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% Q3.28 b)
+\setcounter{question}{27}
+\begin{questionBox}1{}
+
+    \setcounter{subquestion}{1}
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                V_\alpha
+            =   \begin{vmatrix} % ||
+                    \cos(x) & -\sin(x)
+                \\  \sin(x) &  \cos(x)
+                \end{vmatrix}
+             =  \cos^2(x)-(-\sin^2(x))
+             =  1 \neq 0
+             &\\&
+             \therefore\exists\,V_\alpha^{-1}
+             &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+% ???
+\begin{questionBox}{}
+
+    \begin{BM}
+        \widehat{a_{i\,j}} 
+        = (-1)^{i+j} \det(A - A_i - A_j) % det da matrix sem a linha e coluna do elemento
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            V_\alpha^{-1}
+            =   \frac{\adj V_\alpha}{\det V_\alpha}
+            =   \begin{bmatrix}
+                     \cos(x) & \sin(x)
+                \\  -\sin(x) & \cos(x)
+                \end{bmatrix}
+            &\\&
+            \adj V_\alpha = \widehat{V_\alpha^T}
+            =   \begin{bmatrix}
+                \cos(x) & -\sin(x)
+            \\  \sin(x) &  \cos(x)
+                \end{bmatrix}^T
+            =   \begin{bmatrix}
+                 \cos(x) &  \sin(x)
+            \\  -\sin(x) &  \cos(x)
+                \end{bmatrix}^T
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+
+% Q3.29
+\setcounter{question}{28}
+\begin{questionBox}1{}
+
+    \begin{BM}
+        \begin{bmatrix}
+            m & 1 & 1
+        \\  1 & m & 1
+        \\  1 & 1 & m
+        \end{bmatrix}
+    \end{BM}
+
+    % a)
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                \adj M
+            =   \begin{bmatrix}
+                    m^2-1 & 1-m   & 1-m
+                \\  1-m   & m^2-1 & 1-m
+                \\  1-m   & 1-m   & m^2-1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % b)
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                \det M
+            =   m(m^2-1)+1(1-m)+1(1-m)
+            = &\\&
+            =   m(m+1)(m-1)-2(m-1)
+            =   (m-1)(m^2+m-2)
+            = &\\&
+            =   (m-1)(m(m-1)+2(m-1))
+            =   (m-1)^2(m+2)
+            &\\&
+            \therefore
+                \exists M^{-1}\forall\,M:m\in\mathbb{R}\backslash\{1,-2\}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+    % c)
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                M^{-1}
+            =   \frac{\adj M}{\det{M}}
+            =   \frac{1}{(m-1)^2(m+2)}
+                \begin{bmatrix}
+                    m^2-1 & 1-m   & 1-m
+                \\  1-m   & m^2-1 & 1-m
+                \\  1-m   & 1-m   & m^2-1
+                \end{bmatrix}
+            = &\\&
+            =   \frac{1}{(m-1)^2(m+2)}
+                \begin{bmatrix}
+                    m+1  & -1   & -1
+                \\  -1   & m+1  & -1
+                \\  -1   & -1   & m+1
+                \end{bmatrix}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+
+% Q3.31
+\setcounter{question}{30}
+\begin{questionBox}1{}
+
+    % a)
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                \exists (\adj A)^{-1}\because
+                (\frac{A}{\det A})\adj A = I_n:\det A\neq 0\land \exists A^{-1}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+    % c)
+    \setcounter{subquestion}{2}
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                \det(\adj A)
+            =   \det(\det A\,A^{-1})
+            =   (\det A)^n\,\det A^{-1}
+            =   (\det A)^n/\det A
+            = &\\&
+            =   (\det A)^{n-1})
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+
+
+
+% Q3.90
+\setcounter{question}{89}
+\begin{questionBox}{}
+
+    \begin{BM}
+        \adj(AB) = (\adj A)(\adj B)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            A\,B\,\adj(A\,B)=\det(A\,B)\,I_n
+        \implies
+            \adj(A\,B)=(A\,B)^{-1}\,\det(A\,B)\,I_n
+        = &\\&
+        =   \det A\,\det B\,B^{-1}\,A^{-1}\,I_n
+        =   (\adj A)(\adj B)
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+
+% Q3.25
+\setcounter{question}{24}
+\begin{questionBox}1{}
+
+    \begin{BM}
+            A
+        =   \begin{bmatrix}
+                1 & -1 &  1 & 1
+            \\  0 &  2 &  4 & 4
+            \\  1 &  3 &  1 & 1
+            \\  0 &  0 & -2 & 0
+            \end{bmatrix}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \det A
+        =   \begin{pmatrix}
+                1 & -1 &  1 & 1
+            \\  0 &  2 &  4 & 4
+            \\  1 &  3 &  1 & 1
+            \\  0 &  0 & -2 & 0
+            \end{pmatrix}
+        =   2
+            \begin{pmatrix}
+                1 & -1 & 1
+            \\  0 &  2 & 4
+            \\  1 &  3 & 1
+            \end{pmatrix}
+        = &\\&
+        =   2*1*(2*1-3*4)
+        +   2*1*(-1*4-2*1)
+        =   -32
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+
+
+% Q3.33
+\setcounter{question}{32}
+\begin{questionBox}1{}
+    \begin{BM}
+            A_k
+        =   \begin{bmatrix}
+                1 & -k &  1
+                0 &  k &  k
+                k &  k & -k
+            \end{bmatrix}
+    \end{BM}
+\end{questionBox}
+
+\end{document}

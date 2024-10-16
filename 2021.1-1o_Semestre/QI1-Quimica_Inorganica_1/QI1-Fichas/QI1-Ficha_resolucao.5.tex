@@ -1,0 +1,260 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+\setlength{\cftsubsecnumwidth}{15mm}
+%% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip5pt}
+\setcounter{tocdepth}{2}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = figures,
+%	round-precision = 3,
+%	round-minimum = 0.01
+}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+\newcommand{\mol}[1]{ \unit{\mole_{\ch{#1}}}} % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{booktabs}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	QI1 - Ficha 5\\
+	Constantes de Complexação - 
+	Equilíbrio em dissolução Espectros Óticos, 
+	Cor, e magnetismo%
+}
+\author{Felipe Pinto - 61387}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents 
+\section*{Conteúdo}
+\renewcommand{\contentsname}{}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+\break
+
+
+
+% Q1
+\section{}
+\sisetup{round-mode=places, round-precision=2}
+
+
+\begin{multicols}{2}
+
+
+% Q1 - a)
+\subsection{$\beta_6$}
+\begin{flalign*}
+&
+=	\prod_{i=1}^{6}K_i
+=	10^{
+	\left(
+		\log\prod_{i=1}^{6}K_i
+	\right)
+	}
+=	&\\&
+=	10^{
+	\left(
+		\sum_{i=1}^{6}\log K_i
+	\right)
+	}
+=	10^{8.76}
+\cong
+	\num{575439937.337156930062038}
+&
+\end{flalign*}
+
+
+% Q1 - b)
+\subsection{$\Delta G\unit{\degree}$}
+\begin{flalign*}
+&
+=	-8.314*303\ln 10^{8.76}
+\cong
+	\qty{-50812.720031096406597}{\joule\per\mole}
+&
+\end{flalign*}
+
+
+% Q1 - c)
+\subsection{$\Delta S_1\unit{\degree}$}
+\begin{flalign*}
+&
+=	\frac{-16.8*10^{3}-\num{50812.720031096406597}}{303}
+\cong
+	\num{-223.144290531671309}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Q2
+\section{}
+
+% Q2 - a)
+\subsection{}
+\ch{ [Al(acac)_x]^{3-x} } $(x=1\to3)$
+
+
+% Q2 - b)
+\subsection{}
+
+\sisetup{round-mode=figures, round-precision=4}
+\begin{multicols}{2}
+
+
+% Q2 - b) (i)
+\subsubsection{$\Delta G_1^\circ$}
+\begin{flalign*}
+&
+=	-8.314*303\,\ln 10^{8.6}
+\cong \num{-49884.6338204827736}
+&
+\end{flalign*}
+
+% Q2 - b) (ii)
+\subsubsection{$\Delta G_2^\circ$}
+\begin{flalign*}
+&
+=	-8.314*303\,\ln 10^{16.5}
+\cong \num{-95708.89046953090305}
+&
+\end{flalign*}
+
+% Q2 - b) (iii)
+\subsubsection{$\Delta G_3^\circ$}
+\begin{flalign*}
+&
+=	-8.314*303\,\ln 10^{22.3}
+\cong \num{-129352.015604275099342}
+&
+\end{flalign*}
+
+\end{multicols}
+
+
+
+% Q3
+\section{}
+
+
+% Q3 - a)
+\subsection{}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

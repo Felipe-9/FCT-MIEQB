@@ -1,0 +1,98 @@
+% !TEX root = ./QF_A-Listas_Notas.5.tex
+\providecommand\mainfilename{"./QF_A-Listas_Notas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Listas_Notas.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QF_A-Listas_Notas.5}}}
+% \tikzsetexternalprefix{./.build/figures/QF_A-Listas_Notas.5/}
+
+\mymakesubfile{5}
+[QF A]
+{Superficies} % Subfile Title
+{Superficies} % Part Title
+
+\part*{Tensão Superficial}
+
+\begin{sectionBox}1{Young-Laplace} % S
+    
+    \begin{BM}
+        \adif{P}=2\,\gamma/r
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(r=a/\cos\theta\)} % Longest item
+    ]
+       \item[\(\gamma\)] Tensão superficial (\unit{\newton/\metre})
+       \item[\(r=a/\cos\theta\)] Raio de curvatura, onde \textit{a} é o raio interno do tubo capilar e \(\theta\) o angulo de contato
+    \end{description}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Isotérmica de Gibbs} % S2
+    
+    \begin{BM}
+        \Gamma
+        =\frac{-1}{R\,T}
+        \,\odv{\gamma}{\ln{C}}
+    \end{BM}
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+       \item[Dominio] Só se aplica ao ramo decrescente
+    \end{description}
+
+    Plotando \(\gamma\times\ln{C}\) seu declive (\(\odv{\gamma}{\ln{C}}\)) pode ser aplicado na equação
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Isotérmica de Langmuir} % S3
+    
+    \begin{BM}
+        \theta
+        =\left(
+            1+(\alpha\,p)^{-1}
+        \right)^{-1}
+        =\frac{\alpha\,p}{1+\alpha\,p}
+        \iff
+        \frac{1}{\theta}
+        =1+\frac{1}{\alpha\,p}
+        \\ (\theta^{-1}\times p^{-1})
+        \\
+        \alpha=\frac{k_a}{k_d}
+    \end{BM}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+       \item[\(\theta\)] Fração da area em que ocorre a absorção
+    \end{description}
+
+    \begin{flalign*}
+        &
+            \odv{\theta}{t}
+            =k_a\,p\,N(1-\theta)
+            =-k_d\,N\,\theta
+            % \implies
+            \underset{equilibrium}{\implies}
+            k_a\,p\,N(1-\theta)
+            +k_d\,N\,\theta
+            =0
+            \implies &\\&
+            \implies
+            \theta
+            = \frac{k_a\,p}{k_a\,p+k_d}
+            = \frac{(k_a/k_d)\,p}{(k_a/k_d)\,p+(k_d/k_d)}
+            = \frac{\alpha\,p}{\alpha\,p+1}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\end{document}

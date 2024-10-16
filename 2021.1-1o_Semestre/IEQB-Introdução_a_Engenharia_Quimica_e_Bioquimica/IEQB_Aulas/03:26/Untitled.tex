@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+% Maths
+%\usepackage{amssymb} 		
+%\usepackage{amsmath} 
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}	{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!15!}
+
+\begin{document}
+
+\title{IEQB}
+\date{03/26}
+
+\maketitle
+\tableofcontents
+\break
+
+\section{Cálculos com balanço materiais}
+
+\subsection{Flowsheet (Diagrama esquemático)}
+Esquematização de dados para rápida leitura
+\begin{itemize}
+\item \textbf{Completar} o diagrama com toda a informação existence
+\item \textbf{Identificar} as variáveis desconhecidas
+\end{itemize}
+
+\subsection{Graus de liberdade}
+É a diferença entre equações conhecidas e numero de variáveis desconhecidas
+
+\subsection{Escalamento de processos}
+Pre-resolver na escala básica de calculo para depois mudar-la
+
+\subsection{Ex: (Completar)}
+\newcommand{\exI}{\ch{MeOH}}
+%\begin{flalign*}
+%&	m_3=m_2+m_1 = 350 Kg_{m_3}/h &\\
+%&	\frac{x\, Kg_{\ch{MeOH}}}{Kg_{m_3}} 
+%	\, \frac{m_3\,Kg_{m_3}}{h};\ 
+%	m_3\, Kg_{m_3}= m_1\, Kg_{m_1}+m_2\, Kg_{m_2}; &\\
+%&	\frac{150\,Kg_{m_2}}{h}
+%	\,\frac{70\,Kg_{\ch{MeOH}}}{100\,Kg_{m_2}}
+%	+ \frac{200\,Kg_{m_1}}{h}
+%	\, \frac{40\,Kg_{\ch{MeOH}}}{100\,Kg_{m_1}}
+%	\implies &\\
+%&	X_{\ch{MeOH}} &
+%\end{flalign*}
+
+\subsection{ex:}
+\begin{flalign*}
+&	 C_1 = C_4-C_5 = 60\,Kg/h;\ C_2=C_1+C_6=90\,Kg/h;\ C_3=C_2-C_7=60\,Kg/h &\\
+&	\frac{A_1\,Kg_A}{Kg}
+	\, \frac{60\, Kg}{h}
+	= \frac{100\,Kg}{h}
+	\, \frac{0.5\, Kg_{A_4}}{Kg}
+	- \frac{40\, Kg}{h}
+	\, \frac{0.9\, Kg_{A_5}}{Kg}
+	= \frac{14\,Kg_{A_1}}{60\,Kg} \cong 23.33\%\, Kg_{A_1}/Kg &
+\end{flalign*}
+
+\section{Random}
+
+
+
+\end{document}

@@ -1,0 +1,122 @@
+% !TEX root = ./IQF - Slides Anotações.tex
+% Slide 2 - Introdução à Química-Física
+
+\setcounter{part}{1}
+\part{Introdução à Química-Física}
+
+% Gases reais
+\begin{sectionBox}1m{Gases Reais}
+
+    \begin{sectionBox}*2{Fator de compressibilidade}
+
+        \begin{BM}
+            Zvê q tem varias temperaturas apontando p cada linha, elas dizem onde tá a fronteira entre as fazes a cada temperatura
+            =   \bar{V}_{\text{real}}/\bar{V}_{\text{ideal}}
+            =   p\,V_m/R\,T
+        \end{BM}
+
+        \begin{BM}
+            p\,\bar{V}=Z\,R\,T
+            \quad
+            \begin{cases}
+                T\uparrow  \implies Z>1
+            \\  T\downarrow\implies Z<1
+            \end{cases}
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Expansão do Virial}
+        \begin{BM}
+            \frac{p\,V}{R\,T}=Z_{(T)}=1+B_{(T)}/\bar{V} + C_{(T)}/\bar{V}^2 + \dots
+        \end{BM}
+
+        \paragraph{Obs:} \(B,C,\dots\) são termos normalmente despresados
+
+        \begin{BM}
+            \lim\limits_{\footnotesize
+                \begin{array}{l@{}l}
+                    p       & \to0
+                \\  \bar{V} & \to\infty
+                \end{array}
+            }
+            Z_{(T)} = 1
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Equação de Estado de van der Walls}
+
+        \begin{BM}
+            \big( p+a\,n^2/\bar{V}^2 \big)(\bar V - n\,b) = n\,R\,T
+        \end{BM}
+
+        \begin{itemize}[leftmargin = 6em]
+            \item[\( a\,n^2/\bar{V}^2 \rightarrow\)] forças atrativas
+            \item[\( \bar V - n\,b    \rightarrow\)] forças repulsivas
+        \end{itemize}
+
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}1m{Equilíbrio das Fases}
+
+    \paragraph{Equilíbrio Dinâmico}%
+        Taxa de evaporação = Taxa de Condensação
+
+    \paragraph{Pressão de vapor de equilíbrio}%
+        Pressão de vapor medida em condições de equilíbrio dinâmico entre a condensação e a evaporação
+
+
+    \begin{sectionBox}*2{Equação de Clausius-Clpaeyron}
+
+        \begin{BM}
+            \ln P = C - \Delta H_{\text{vap}}/R\,T
+        \end{BM}
+
+        \paragraph{Obs:} $P$ = Pressão do vapor no equilíbrio
+
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Pontos Críticos}
+        \paragraph{T\textsubscript{c}} Temperatura a qual acima dela a substancia não possa se liquefazer independentemente da pressão
+        \paragraph{P\textsubscript{c}} Pressão para liquefazer a substancia quando na temperatura crítica
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Diagrama de Fases P\,\times\,T}
+        Informa com base em pressão\,\times\,temperatura o estado que se encontra a substancia
+
+        \subsubsection*{Obs:}
+        \begin{itemize}
+            \item Possivel vilualizar o ponto triplo (trifásico)
+            \item Sobre as fronteiras se pode encontrar multiplos estados da substancia
+        \end{itemize}
+
+        \begin{sectionBox}*3{Graus de liberdade}
+            \begin{BM}
+                V = \#_{\text{Componentes}} - \#_{\text{Fases}} + 2
+            \end{BM}
+
+            \subsubsection*{Obs:}
+            \begin{itemize}
+                \item Diferentes fases de uma substancia não conta como diferentes componentes
+                \item Quantidade de variáveis que posso variar para manter a situação
+                \item pode definir um ponto (\(V=0\)), uma curva (\(V=1\)) ou uma area (\(V=2\))
+            \end{itemize}
+
+        \end{sectionBox}
+
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Diagrama de Fases P\,\times\,V}
+        Informa com base em pressão\,\times\,volume e curvas isotérmicas o estado que se encontra a substancia.
+
+        \subsubsection*{Obs:}
+        \begin{itemize}
+            \item Possível se encontrar T\textsubscript{c} e P\textsubscript{c}
+            \item Descontinuidade das curvas isotérmicas com T\,<\,T\textsubscript{c}
+        \end{itemize}
+
+    \end{sectionBox}
+
+
+\end{sectionBox}

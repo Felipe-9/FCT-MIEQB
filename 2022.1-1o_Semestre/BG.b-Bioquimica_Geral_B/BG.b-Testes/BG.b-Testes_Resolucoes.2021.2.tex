@@ -1,0 +1,168 @@
+% !TEX root = ./BG.b-Testes_Resoluções.2.tex
+% !TEX root = ./BG.b-Testes_Resoluções.tex
+\providecommand\mainfilename{"./BG.b-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./BG.b-Testes_Resoluções.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{2}[BG.b]
+{Teste Prático}
+{Teste Prático}
+
+\setcounter{question}{4}
+\begin{questionBox}1{}
+    
+    Uma solução mãe de proteína BSA de concentração 0.25\,\unit{\milli\gram/\milli\litre} é utilizada para preparar uma serie de standards como indicado a continuação.\\
+
+    Volumes de Solução Mãe. Volume de Água Volume de reagente C Volume de reagente D são dados em \unit{\milli\litre}
+
+    \begin{center}
+
+        \setlength\tabcolsep{2mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+
+        \begin{tabular}{*{5}{c}}
+            
+            \toprule
+            
+                \multicolumn{1}{c}{Vol. Sol. Mae}
+               &\multicolumn{1}{c}{Vol. \ch{H2O}}
+               &\multicolumn{1}{c}{Vol. Reag.C}
+               &\multicolumn{1}{c}{Vol. Reag.D}
+               &\multicolumn{1}{c}{Abs}
+            
+            \\\midrule
+            
+               0   & 120 & 200 & 1400 & 0.020
+            \\ 20  & 100 & 200 & 1400 & 0.102
+            \\ 40  &  80 & 200 & 1400 & 0.214
+            \\ 60  &  60 & 200 & 1400 & 0.320
+            \\ 100 &  20 & 200 & 1400 & 0.433
+            \\ 120 &   0 & 200 & 1400 & 0.539
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+        
+        100\,\unit{\milli\gram} de plasma são liofilizados e depois o sólido formado e redissolvido em 1\,\unit{\milli\litre}  de buffer.\\
+        
+        20\,\unit{\milli\litre} desta solução são levados a 120\,\unit{\milli\litre} com um buffer.\\
+
+        A estos 120\,\unit{\milli\litre} são adicionados o reagente C e o reagente D nos mesmos volumes que as soluções estândar (200\,\unit{\milli\litre} e 1400\,\unit{\milli\litre} respetivamente).\\
+
+
+        As absorbências desta última solução de (\(120+200+1400\)) foram 0.370, 0.375 e 0.360, (branco descontado) calcule a concentração de proteína total nas 100\,\unit{\milli\gram} originais de Plasma em \unit{\milli\gram\of{prot}/\milli\gram} de plasma.\\
+
+    \begin{questionBox}*3{Resolução}
+
+        \begin{itemize}
+            \item 0.519 Abs prot + plasma
+            \item \num{0.368333333333333} Abs plasma processado
+        \end{itemize}
+
+        \begin{flalign*}
+            &
+                \ch{[Prot]}
+                = &\\&
+                = \frac{Abs_{prot}}{Abs_{plas}}
+                = \frac{0.519 - Abs_{plas}}{Abs_{plas}}
+                = \frac{0.519}{Abs_{plas}}
+                - 1
+                = \frac{0.519}{
+                    \num{0.368333333333333}
+                    \frac{
+                        20
+                    }{
+                        120+200+1400
+                    }
+                }
+                - 1
+                \cong &\\&
+                \cong
+                    \num{-0.718190045248869}
+                % = &\\&
+                % = \frac{
+                %     \frac{
+                %         \frac{
+                %             0.25\,\unit{\milli\gram\of{Prot}}
+                %         }{
+                %             \unit{\milli\litre\of{Sol.1}}
+                %         }
+                %         * 20\,\unit{\milli\litre\of{Sol.1}}
+                %     }{
+                %         120\,
+                %     }
+                    % 
+                %     * 120\,\unit{\milli\litre\of{Sol.1}}
+                % }{
+                %     120 + 200 + 1400
+                % }
+                % = &\\&
+                % = 
+                % \frac{
+                %     \frac{100\,\unit{\milli\gram\of{plasma}}}{1\,\unit{\milli\litre\of{1}}}
+                %     * 20\,\unit{\milli\litre\of{2}}
+                %     }{
+                %     (
+                %         120
+                %         + 200
+                %         + 1400
+                %     )\,\unit{\milli\litre\of{3}}
+                % }
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\setcounter{question}{14}
+\begin{questionBox}1{}
+    
+    Uma coluna cromatográfica de separação por tamanho tem um diâmetro de 1\,\unit{\centi\metre} e a altura do leito de resina e de 17\,\unit{\centi\metre}. Sendo que 5\,\unit{\milli\litre} é volume com o qual é extraída a molécula de tamanho superior ao tamanho máximo de separação da resina, calcule qual será o volume de extração para a molécula que marca o tamanho inferior da resina de separação.
+
+    \begin{enumerate}[label=\alph*.]
+        \begin{multicols}{2}
+            \item  8.74\,\unit{\milli\liter}
+            \item 49.98\,\unit{\milli\liter}
+            \item  9.25\,\unit{\milli\liter}
+            \item 54.97\,\unit{\milli\liter}
+        \end{multicols}
+    \end{enumerate}
+
+    Tamanho inferior: \(V = V_i + V_0\)
+
+    \begin{flalign*}
+        &
+            Vol 
+            = Vol_i + Vol_0
+            = Vol_i + 5\,\unit{\milli\liter};
+        &\\&
+            Vol_t
+            = -Vol_{res}
+            + \pi
+            \,((1/2)\,\unit{\centi\metre})^2
+            \,17\,\unit{\centi\metre}
+            = -Vol_{res}
+            + \qty{13.35}{\centi\metre^3}
+            \implies &\\&
+            \implies 
+            Vol_i
+            = \qty{13.35}{\centi\metre^3}
+            - 5\,\unit{\centi\meter^3}
+            - Vol_{res}
+            = \qty{8.35}{\centi\metre^3}
+            - Vol_{res}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+
+\end{document}

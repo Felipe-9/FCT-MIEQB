@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.1 (8/1/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\profilepic{profile_picture.png} % Profile picture
+
+\cvname{Felipe Alexandre de Barros Pinto} % Your name
+\cvjobtitle{Curriculum Vit\ae} % Job title/career
+
+\cvdate{09 Setembro 1998} % Date of birth
+\cvaddress{Portugal} % Short address/location, use \newline if more than 1 line is required
+\cvnumberphone{+351 933\,682\,916} % Phone number
+\cvwhatsapp{+55\,(84)\,9444-1991} % Phone number
+\cvmail{felipealexandrepinto@gmail.com} % Email address
+\cvlinkedin{\href{https://www.linkedin.com/in/felipe-pinto-547513231/}{{linkedin.com/in/felipe-pinto-547513231/}}} % Personal website
+\cvgithub{\href{https://github.com/Felipe-9}{{github.com/Felipe-9}}} % Personal website
+\cvstackexchange{\href{https://tex.stackexchange.com/users/241136/dj9}{{tex.stackexchange.com/users/241136/dj9}}} % Personal website
+
+%----------------------------------------------------------------------------------------
+
+% Tabular
+% \usepackage{multirow}
+\usepackage{float}  % table position H(ere)
+    \restylefloat{table}
+% \usepackage{longtable}
+%
+\setlength\tabcolsep{6mm}        % width
+\renewcommand\arraystretch{1.25} % height
+
+\usepackage{array}
+
+\newcolumntype{L}{>{\raggedleft}p{0.2\textwidth}}
+\newcolumntype{R}{p{0.74\textwidth}}
+\newcommand\VRule{\color{black}\vrule width 0.5pt}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	 ABOUT ME
+%----------------------------------------------------------------------------------------
+
+\aboutme{} % To have no About Me section, just remove all the text and leave \aboutme{}
+
+%----------------------------------------------------------------------------------------
+%	 SKILLS
+%----------------------------------------------------------------------------------------
+
+% Skill bar section, each skill must have a value between 0 and 6 (float)
+\skills{
+    {Lua/1.5},%
+    {SQL/2.5},%
+    {C++/2.5},%
+    {C/2.5},%
+    {Git/4},%
+    {VBA (Excel)/4},%
+    {Java Script/4.5},%
+    {Python/4.5},%
+    {\LaTeX/5.5}%
+}
+
+
+%------------------------------------------------
+
+% Skill text section, each skill must have a value between 0 an 6
+\skillstext{}
+
+%----------------------------------------------------------------------------------------
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 INTERESTS
+%----------------------------------------------------------------------------------------
+
+\section{Sobre mim}
+
+Estou atualmente cursando o curso de mestrado integrado em engenharia química em almada portugal, sou um aluno internacional originalmente brasileiro e este é meu segundo curso avançado, tendo previamente completado parcialmente o curso de engenharia elétrica na UFRN no brasil.\\
+
+Tenho bastante experiencia em meios tecnológicos tanto em capacidade técinica como visão estética de design, previamente trabalhei desenvolvendo um programa em Excel de avaliação gerando dashboard com dados e gráficos apresentando detalhadamente o desempenho de cada aluno.\\
+
+Grande parte de minhas capacidades foram adquiridas através de estudos autodidatas e experiencia de trabalhos, possuo excelente adaptabilidade, sempre aberto para adquirir novos conhecimentos.
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Formação}
+
+\begin{twenty} % Environment for a list with descriptions
+    \twentyitem{Desde 2021}{B.Sc \& M.Sc}{\href{https://www.fct.unl.pt}{FCT}}{\href{https://www.fct.unl.pt/ensino/curso/mestrado-integrado-em-engenharia-quimica-e-bioquimica}{Mestrado Integrado em engenharia química e bioquímica (MIEQB)}, em curso.}
+    \twentyitem{2017-2021}{B.Sc}{\href{https://ufrn.br}{UFRN}}{\href{https://www.ct.ufrn.br/ensino/graduacao/eletrica/}{Engenharia Elétrica}, parcialmente completo}
+    %\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+\subsection{Cursos externos}
+
+\begin{twenty}
+    \twentyitem{2016}{1\textsuperscript{a} Unidade}{\href{https://www.humanocenter.com.br}{Humanocenter}}{\href{https://fia.com.br/blog/neurolinguistica/}{Programação Neuro Linguistica (PNL)}}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 PUBLICATIONS
+%----------------------------------------------------------------------------------------
+
+% \section{Publications}
+
+% \begin{twentyshort} % Environment for a short list with no descriptions
+% 	\twentyitemshort{1865}{Chapter One, Down the Rabbit Hole.}
+% 	\twentyitemshort{1865}{Chapter Two, The Pool of Tears.}
+% 	\twentyitemshort{1865}{Chapter Three,  The Caucus Race and a Long Tale.}
+% 	\twentyitemshort{1865}{Chapter Four,  The Rabbit Sends a Little Bill.}
+% 	\twentyitemshort{1865}{Chapter Five,  Advice from a Caterpillar.}
+% 	%\twentyitemshort{<dates>}{<title/description>}
+% \end{twentyshort}
+
+%----------------------------------------------------------------------------------------
+%	 AWARDS
+%----------------------------------------------------------------------------------------
+
+% \section{Awards}
+
+% \begin{twentyshort} % Environment for a short list with no descriptions
+% 	\twentyitemshort{1987}{All-Time Best Fantasy Novel.}
+% 	\twentyitemshort{1998}{All-Time Best Fantasy Novel before 1990.}
+% 	%\twentyitemshort{<dates>}{<title/description>}
+% \end{twentyshort}
+
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Experiencias Profícionais}
+
+\begin{twenty} % Environment for a list with descriptions
+    \twentyitem{2022}{Desenvolvedor de software}{Ensino Secundário}{Desenvolvedor da aplicação virtual de matriculas de alunos ao colégio. Em curso}
+    \twentyitem{2020}{Voluntariado}{Ensino Secundário}{Desenvolvedor do sistema de avaliações do colégio seguindo modelo \href{http://portal.mec.gov.br/component/tags/tag/34530}{TRI (Teoria de Resposta ao Item)} em Excel}
+    \twentyitem{2019}{Voluntariado}{Ensino primário}{Professor da cadeira auxiliar: resolução de rubics cubes (cubos mágicos)}
+    %\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 OTHER INFORMATION
+%----------------------------------------------------------------------------------------
+
+\section{Outras informações}
+
+\subsection{Esporte: Squash}
+% \begin{twenty}
+%     \twentyitem{Squash}{}{}{}
+%     % \twentyitem{Anualmente}{Snowboard}{}{}
+%     % \twentyitem{Raramente}{Scuba Diving}{}{}
+% \end{twenty}
+
+
+% Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%----------------------------------------------------------------------------------------
+%	 SECOND PAGE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+%\newpage % Start a new page
+
+%\makeprofile % Print the sidebar
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 

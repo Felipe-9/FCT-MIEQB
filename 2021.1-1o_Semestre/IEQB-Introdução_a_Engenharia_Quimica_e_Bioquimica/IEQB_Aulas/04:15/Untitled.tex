@@ -1,0 +1,296 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Tabular
+\usepackage{dcolumn}
+\usepackage{multirow}
+\newcolumntype{d}[1]{D{.}{\cdot}{#1} } % Align on decimal
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}.\arabic{subsection}) }
+
+\begin{document}
+
+\title{IEQB - Resolução de Questões}
+\author{Felipe Pinto - 61387}
+\date{15/04 - 2021.1}
+
+\maketitle
+%\tableofcontents
+\break
+
+\setcounter{section}{3}
+\setcounter{subsection}{9}
+
+% 3.10)
+\subsection{}
+
+\begin{itemize}
+\begin{multicols}{5}
+
+	\item 1 = 1i
+	\item 2 = 1o1
+	\item 3 = 1o2
+	\item 3 = 2i
+	\item 4 = 2o1
+	\item 5 = 2o2
+	\item $x_B$ = B
+	\item $x_T$ = T
+	\item $x_X$ = X
+
+\end{multicols}
+\end{itemize}
+
+\begin{itemize}
+\begin{multicols}{3}
+
+	\item $ m_{1i} = 1000\,mol/h $
+	\item $ B_{1i} = 0.2 $
+	\item $ T_{1i} = 0.3 $
+	\item $ X_{1i} = 0.5 $
+	
+	\item $ X_{1o1} = 0 $
+	
+	\item $ B_{1o2} = 0.025 $
+	\item $ T_{1o2} = 0.35 $
+	\item $ X_{1o2} = 0.625 $
+	
+	\item $ B_{2o1} = 0.08 $
+	\item $ T_{2o1} = 0.72 $
+	\item $ X_{2o1} = 0.2 $
+	
+	\item $ B_{2o2} = 0 $
+
+\end{multicols}
+\end{itemize}
+
+\begin{flalign*}
+&
+	m_{1o2}\,X_{1o2} = m_{1i}\,X_{1i}
+	\implies 
+		m_{1o2} = \frac{1000*0.5}{0.625}
+	\cong
+		800\,mol/h
+&\\\\&
+	m_{1o1} = m_{1i} - m_{1o2} = 200\,mol/h
+&\\\\&
+	m_{2o1}\,B_{2o1} = m_{2i}\,B_{2i} = m_{1o2}\,B_{2o1}
+	\implies
+		m_{2o1} = \frac{800*0.025}{0.08}
+	\cong
+		250\,mol/h
+&\\\\&
+	\cdots
+\end{flalign*}
+
+\break
+
+% 3.11)
+\subsection{}
+
+\begin{itemize}
+\begin{multicols}{5}
+
+	\item 1 = 1i1
+	\item 2 = 1o1
+	\item 3 = 1i2
+	\item 4 = 1o2
+	\item 4 = 2i
+	\item 5 = 2o1
+	\item 6 = 2o2
+	\item $x_A$ = Agua
+	\item $x_B$ = NaCl
+	\item $x_C$ = Glic
+	\item $x_D$ = Alc
+
+\end{multicols}
+\end{itemize}
+
+\begin{tabular}{r *{6}{| r @{$\ $} l } | }
+
+	\multicolumn{1}{c}{} 
+	& \multicolumn{2}{c}{1i1}
+	& \multicolumn{2}{c}{1i2}
+	& \multicolumn{2}{c}{1o1}
+	& \multicolumn{2}{c}{1o2 / 2i} 
+	& \multicolumn{2}{c}{2o1} 
+	& \multicolumn{2}{c}{2o2}
+	
+	\\ \cline{2-13}
+	
+	m
+	& 1000 & kg/h 
+	& 1000 & Kg/h
+	& &
+	& &
+	& &
+	& &
+	
+	\\
+	
+	Agua
+	& 0.20 & p/p
+	& 0.87 & p/p
+	&  &
+	&  &
+	& 0.75 & p/p
+	& 0.05 & p/p
+	
+	\\
+	
+	Alc
+	& 0.98 & p/p
+	& \multicolumn{2}{c|}{-}
+	& 0.01 & p/p
+	&  &
+	& \multicolumn{2}{c|}{-}
+	& 0.95 & p/p
+	
+	\\
+	
+	NaCl
+	& \multicolumn{2}{c|}{-}
+	& 0.03 & p/p
+	&  &
+	& \multicolumn{2}{c|}{-}
+	& \multicolumn{2}{c|}{-}
+	& \multicolumn{2}{c|}{-}
+	
+	\\
+	
+	Glic
+	& \multicolumn{2}{c|}{-}
+	& 0.10 & p/p
+	& 0.01 & p/p
+	&  &
+	& 0.25 & p/p
+	& \multicolumn{2}{c|}{-}
+	
+	\\ \cline{2-13}
+
+\end{tabular}
+
+%\begin{itemize}
+%\begin{multicols}{3}
+%
+%	\item $ m_{1i1} = 1000\,kg/h $
+%	\item $ Agua_{1i1} = 0.2 $
+%	\item $ Alc_{1i1} = 0.98 $
+%
+%	\item $ m_{1i2} = 1000\,kg/h $
+%	\item $ Agua_{1i2} = 0.87 $
+%	\item $ NaCl_{1i2} = 0.03 $
+%	\item $ Glic_{1i2} = 0.10 $
+%
+%	\item $ Glic_{1o1} = 0.01 $
+%	\item $ Alc_{1o1} = 0.01 $
+%	\item $ Agua_{1o1} \neq 0 $
+%	\item $ NaCl_{1o1} \neq 0 $
+%	
+%	\item $ Agua_{2o1} = 0.75 $
+%	\item $ Glic_{2o1} = 0.25 $
+%	
+%	\item $ Alc_{2o2} = 0.95 $
+%	\item $ Agua_{2o2} = 0.05 $
+%	
+%\end{multicols}
+%\end{itemize}
+
+\begin{flalign*}
+&
+	\text{Produção horária de glicerina} 
+	= Glic_{2o1}\,m_{2o1}
+	;\
+		m_{2o1} + m_{2o2} 
+	= 
+		m_{2i} = m_{1o2}
+	;\ &\\&
+		m_{1o2} + m_{1o1} = m_{1i1} + m_{1i2}
+	;\
+		m_{2o2}\,Alc_{2o2} + m_{1o1}\,Alc_{1o1}
+	= &\\& = 
+		m_{1i1}\,Alc_{1i1} + m_{1i2}\,Alc_{1i2}
+	;\
+		m_{1o1} = ?
+&\\\\&
+	m_{2i}
+&
+\end{flalign*}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

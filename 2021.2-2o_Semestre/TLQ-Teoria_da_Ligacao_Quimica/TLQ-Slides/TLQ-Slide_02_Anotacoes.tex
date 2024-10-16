@@ -1,0 +1,238 @@
+\part{Teoria Atômica II}
+
+\begin{sectionBox}1{Teoria orbital de Bohr (cont.)}
+
+    \begin{sectionBox}*2{Energia de Ionização do Hidrogênio}
+        \begin{flalign*}
+            &
+                E_i
+            =   \lim_{n\to\infty}|E_{t\,0} - E_{t\,n}|
+            =   \lim_{n\to\infty}k\,
+                \left|
+                    1^{-2}-n^{-2}
+                \right|
+            =   k
+            \cong
+                \num[round-precision=5, exponent-to-prefix=false]
+                    {2.179872251033439e-18}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Espectro de emissão do Hidrogênio}
+
+        Apesar das derivações da teoria de Bohr, ela permite prever o espectro de emissão do hidrogênio
+
+        ...
+    \end{sectionBox}
+
+\end{sectionBox}
+
+
+
+\section*{Fenômenos Ondulatórios}
+
+\begin{sectionBox}1{Refração}
+
+    Quando uma onda passa a se propagar em um meio diferente.
+
+    Consequencias
+    \begin{itemize}
+        \item Alteração do comprimento de onda e consequentemente a velocidade de propagação (a frequência depende apenas da origem).
+        \item Alteração da direção de propagação.
+    \end{itemize}
+
+    regra geral matéria interfere negativamente com a propagação de onda, diminuindo sua velocidade e comprimento de onda e aumentando o desvio.
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Interferencia}
+
+    Interação dentre ondas de mesmas características. % deve existir melhor nome
+
+
+    \begin{sectionBox}*2{Tipos:}
+        \begin{multicols}{2}
+
+            \begin{sectionBox}*3{Construtiva}
+                Momento de sincronização onde suas amplitudes se somam
+            \end{sectionBox}
+
+            \begin{sectionBox}*3{Destrutiva}
+                Momento de sincronização onde suas amplitudes se subtraem
+            \end{sectionBox}
+
+        \end{multicols}
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Difração}
+
+    Ocorre quando uma onda passa por um obstáculo com ordem de grandeza próxima do comprimento de onda.
+
+\end{sectionBox}
+
+\begin{sectionBox}1m{Efeito fotoelétrico}
+
+    Fenômeno que ocorre quando placas carregadas recebem emissão elétro-magnéticas liberam elétrons
+
+    \begin{itemize}
+        \item Energia cinética dos elétrons depende da frequência da onda elétro-magnética
+        \item A quantidade de elétrons depende da intensidade da onda.
+    \end{itemize}
+
+    \begin{sectionBox}*2{Foton (Quanta)}
+
+        Energia associada a uma dada frequência.
+
+        Explicando o efeito fotoelétrico pela característica dos elétrons de apenas receberem uma quantidade fixa de energia (chamada de ``quanta'' por Einstein e substituida por ``foton'' pela aceitação do conceito da dualidade partícula-onda dos elétrons proposto pelo príncipe Louis de Broglie (1924))
+
+        \begin{BM}
+            E=h\,\nu
+        \end{BM}
+
+        \begin{itemize}
+            \item[\(h\):] Constante de Plank = \qty{6.62607004e-34}{\joule\second}
+            \item[\nu:]   Frequencia da radiação
+        \end{itemize}
+
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Dualidade partícula-onda (Príncipe Louis de Broglie)}
+        \begin{flalign*}
+            &
+                \lambda\,\nu=c
+            \land
+                E = h\,\nu
+            \implies
+                E = \frac{h\,c}{\lambda} = m_e\,c^2
+            \implies
+                E = \frac{h\,v}{\lambda} = m_e\,v^2
+            \implies &\\&
+            \implies
+                \lambda = h/m_e\,v = h/P
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+\end{sectionBox}
+
+
+
+\begin{sectionBox}1{Comprimento de onda do eletron}
+
+    O perímetro de uma determinada orbita de um eletron ao redor do núcleo terá de ser sempre um múltiplo inteiro do comprimento de onda do eletron
+
+    \begin{flalign*}
+        &
+            P
+        =   n\,\lambda
+        =   2\,\pi\,r
+        \implies
+            \lambda
+        =   2\,\pi\,r/n
+        &
+    \end{flalign*}
+
+    \begin{sectionBox}*2{Quantização do momento angular}
+        \begin{flalign*}
+            &
+                |\vec{L}|
+            =   |m_e\,\vec{v}\times\vec{r}|
+            =   m_e\,v\,r
+            \land
+                \frac{m_e\,v}{h}=\frac{n}{2\,\pi\,r}=\lambda^{-1}
+            \implies &\\&
+            \implies
+                |\vec{L}|
+            =   n\frac{h}{2\,\pi}
+            =   n\,k
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+\end{sectionBox}
+
+
+\begin{sectionBox}1{Equação de Rydberg}
+    \begin{BM}
+        \bar{\nu}_H=R_H(n^{-2}-m^{-2})\quad\forall\,\{n,m\}\in\mathbb{K}:m>n
+    \end{BM}
+
+    \begin{itemize}
+        \item[\(R_H\):] Constante de Rydberg 109678.746\,\unit{\centi\meter^{-1}}
+        \item[\(\bar{\nu}\):] Número de onda
+    \end{itemize}
+
+    \begin{sectionBox}*2{Comparação com Variação de energia do elétron}
+        \begin{flalign*}
+            &
+                \bar{\nu}=\lambda^{-1}
+            \land
+                \lambda\,\nu=c
+            \land
+                h\,\nu
+            =   \Delta E
+            =   k|n_1^{-2}-n_2^{-2}|
+            \implies &\\&
+            \implies
+                \bar{\nu}
+            =   \frac{k}{h\,c}|n_1^{-2}-n_2^{-2}|
+            &
+        \end{flalign*}
+
+
+        %     R
+        % =   k/h\,c
+        % =   \frac{m_e\,e^4}{4\,\varepsilon_0^2\,h^3\,c}
+        % \cong
+        %     109737.3\,\unit{\centi\meter^{-1}}
+        % \neq
+        %     109678.764\,\unit{\per\centi\meter}
+        % =   R_H
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Massa reduzida do átomo}
+
+        Levando em consideração a massa do elétron e átomo
+
+        \begin{flalign*}
+            &
+                R_H
+            =   109678.764\,\unit{\per\centi\meter}
+            \cong
+                R\,\mu_H
+            =   (k/h\,c)
+                \left(
+                    \frac{m_e\,m_p}{m_e+m_p}
+                \right)
+            = &\\&
+            =   \left(
+                    \frac{m_e\,e^4}{8\,\varepsilon_0^2\,h^3\,c}
+                \right)
+                \left(
+                    \frac{m_e\,(1836\,m_e)}{m_e+(1836\,m_e)}
+                \right)
+            =   \frac{m_e^2\,e^4}{8\,\varepsilon_0^2\,h^3\,c}
+                \frac{1836}{1837}
+            \cong
+                109677.6\,\unit{\per\centi\meter}
+            &
+        \end{flalign*}
+
+    \end{sectionBox}
+
+
+\end{sectionBox}
+
+
+\begin{sectionBox}1{Generalizando para além do hidrogênio}
+
+    \begin{BM}
+            F_e = \frac{-e^2}{4\,\pi\,\varepsilon_0\,r^2}
+        \to
+            \frac{-Z\,e^2}{4\,\pi\,\varepsilon_0\,r^2}\quad\forall\,\{Z\}\in\mathbb{K}
+    \end{BM}
+
+\end{sectionBox}

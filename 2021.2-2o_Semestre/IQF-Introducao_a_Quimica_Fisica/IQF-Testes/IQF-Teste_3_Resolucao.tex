@@ -1,0 +1,173 @@
+% !TEX root = ./IQF - Testes Resoluções.tex
+% IQF - Teste 3 Resoluções
+
+\setcounter{part}{2}
+\part{}
+
+% Q1
+\begin{questionBox}1{}
+
+    \begin{questionBox}3{}
+        % pt
+        % H
+        % HCl
+        % AgCl
+        % 
+        \begin{Center}
+            \ch{
+                H2\sld{}|H^+||Ag^+|Ag\sld{}
+            }
+        \end{center}
+    \end{questionBox}
+    
+    
+    % (v)
+    \setcounter{subsubquestion}{4}
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                Q
+            =   \frac
+                    {\ch{[H^+]}}
+                    {\ch{[Ag^+]}}
+            =   \frac
+                    {\ch{[H^+]}}
+                    {\sqrt{k_{ps}(\ch{AgCl})}}
+            =   \frac
+                    {0.14}
+                    {\sqrt{1.8\E-10}}
+            \cong
+                \num{10434.983895} % 10.435E3
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+    % (vi)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                E 
+            =   E^\circ - \frac{R\,T}{N\,F}\ln(Q)
+            =   0.80 
+            -   \frac{\num{8.314}\,(25+273.15)}{1*\num{96500}}
+            \,  \ln\left(\frac{0.14}{\sqrt{1.8\E-10}}}\right)
+            \cong
+                \num{5.62317999663e-1}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+    % (vii)
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                k 
+            =   \exp
+                \left(
+                    \frac{N\,F\,E^\circ}{R\,T}
+                \right) 
+            =   \exp
+                \left(
+                    \frac
+                        {1*\num{96500}\,\num{0.80}}
+                        {\num{8.314}*(25+273.15)}
+                \right)
+            \cong
+                \num{2.98121009791e-14}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+% Q2
+\begin{questionBox}1{}
+    
+    \begin{center}
+        \ch{
+            2 N2O3\gas{} <> 4 NO2\gas{} + O2\gas{}
+        }
+    \end{center}
+    
+    \setcounter{subsubquestion}{1}
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                v = 0.0339\ch{[N2O3]}
+                = 0.0339*\exp( 0.0339*(60)-3.3702 )
+                = 
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+    \begin{questionBox}3{}
+        \being{flalign*}
+            &
+                Ea
+            =   \frac{R\,\ln(k_{373}/k_{350})}{(350)^{-1}-(373)^{-1}}
+            =   \frac{8.314\,\ln(8.9)}{(350)^{-1}-(373)^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+% Q4
+\setcounter{question}{3}
+\begin{questionBox}1{}
+    
+    \begin{table}[H]\centering
+        \begin{tabular}{c *{4}{r}}
+            
+            \multicolumn{4}{c}{\ch{HAmox\sld{} <> H^+\aq{} + Amox^-\aq{}}}
+            
+            \\\toprule
+            
+                T
+            &   \multicolumn{1}{c}{\ch{HAmox}}
+            &   \multicolumn{1}{c}{\ch{H^+}}
+            &   \multicolumn{1}{c}{\ch{Amox^-}}
+            
+            \\\midrule
+
+                0 & -- & \ch{[Amox^-]_0} & \ch{[H^+]_0}
+                1 & -- & \ch{[Amox^-]_1} & \ch{[H^+]_1}
+                2 & -- & \ch{[Amox^-]_2} & \ch{[H^+]_2}
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{table}
+    
+    [A]/[HA] = ka/[H]
+    10^{7.35} / ka
+    = 
+    
+    
+    
+\end{questionBox}
+
+% Q5
+\begin{questionBox}1{}
+    \begin{flalign*}
+        &
+            Q_{sp} (HX) = \ch{[H^+][X^-]}
+        \implies
+            \left\{
+                \begin{array}{l}
+                &   x = k_{sp} (Ag2SO4) / 0.1^2 = 1.40\E-5/0.1^2 \cong 0.0014
+                \\&
+                    x = k_{sp} (SrSO4) / 1.00\E-4 = 3.80\E-7 / 1.00\E-4 \cong 0.0038
+                \\&
+                    x = k_{sp} (BaSO4) / 0.01 = 1.10\E-10 / 0.01 \cong 1.1\E-9
+                \end{array}
+            \right\}
+        &
+    \end{flalign*}
+    
+    \begin{flalign*}
+        &
+            \ch{[Ba^{2+}]} = 1.10\E-10 / 0.0014 \cong \num{7.857143e-8}
+        &
+    \end{flalign*}
+\end{questionBox}

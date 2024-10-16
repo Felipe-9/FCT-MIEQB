@@ -1,0 +1,57 @@
+% !TEX root = ./Main_File.tex
+% !TEX root = ./Sub_File.tex
+\providecommand\mainfilename{"././Main_File.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./Sub_File.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{4}{}{}
+
+\begin{sectionBox}1{Cromatografia de Coluna}
+    
+    Permite separação/purificação de compostos em massa.
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Cromatografia de Permuta Ionica}
+    
+    Separação em ordem crescente de interação elétrica das proteinas
+
+    \begin{sectionBox}*3{Tipos de Coluna}
+        
+        \begin{itemize}
+            \item Cationica
+            \item Anionica
+        \end{itemize}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Cromatografia de Filtração em gel}
+    
+    Separação em ordem crescente de tamanho e forma das moleculas.
+
+\end{sectionBox}
+
+\begin{questionBox}3{SDS-PAGE}
+    
+    Sodium Dodecyl Sulfate–PolyacrylAmide Gel Electrophoresis é uma proteina presente no estado gel carregada negativamente, usada como fase estacionaria da separação.
+    
+\end{questionBox}
+
+\begin{sectionBox}*3{Dalton}
+
+    \begin{BM}
+        \unit{\dalton} = \unit{\gram\per\mole}
+    \end{BM}
+
+    Unidade de massa atômica
+    
+\end{sectionBox}
+
+\end{document}

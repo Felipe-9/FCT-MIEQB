@@ -1,0 +1,162 @@
+% !TEX root = ./IPEIO-Testes_Resolução.2021.2.tex
+\providecommand\mainfilename{"./IPEIO-Testes_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Testes_Resolução.2021.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/IPEIO-Testes_Resolução.2021.2}}}
+\tikzsetexternalprefix{./.build/figures/IPEIO-Testes_Resolução.2021.2/}
+
+\mymakesubfile{2}
+[IPEIO]
+{Resolução Teste} % Subfile Title
+{Resolução Teste} % Part Title
+
+\setcounter{group}{1}
+\group{}
+
+\begin{questionBox}1{ % Q1
+    Considere o problema de Programação Linear Q com variáveis \(x_1, x_2\text{ e }x_3\) e uma função objetivo de tipo máximo. O problema tem duas restrições. As variáveis de folga associadas à primeira e segunda restrições são respetivamente \(f_1\text{ e }f_2\). Considere o seguinte quadro do Simplex relativo ao problema Q.
+} % Q1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{5}{C} | CC}
+            \toprule
+            
+                x_1 & x_2 & x_3 & f_1 & f_2 & MDir & sba
+
+            \\\midrule
+
+                0 & A & B & 1 & 0 & 20 & z=20
+                \\
+                1 & 2 & C & 2 & 0 & 12 & x_1=12
+                \\
+                0 & -1 & 1 & 1 & 1 & 10 & f_2=10
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Apresentam-se em seguida algumas afirmações sobre o quadro anterior. Para cada afirmação, indique se se trata de uma afirmação Verdadeira (V) ou Falsa (F) marcando um X no quadrado da coluna respetiva.
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.1
+    No quadro, a variável \(f_1\) é não básica.
+} % Q1.1
+    Verdade, pois não é uma coluna pivot
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    No quadro, a variável \(f_1\) tem valor 1.
+} % Q1.2
+    Falsa
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.3
+    Considere \(A=B=C=2\). Nesta situação o quadro é ótimo.
+} % Q1.3
+    Sim, pois a solução maximizante é não positiva
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.4
+    Quaisquer que sejam os valores de A, B e C, o problema Q tem sempre pelo menos uma solução básica admissível.
+} % Q1.4
+    Verdadeira
+\end{questionBox}
+
+\group{}
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % Q2
+    Considere o seguinte projeto onde as atividades têm duração aleatória. Junto a cada atividade indica-se o valor médio da sua duração (em dias) e sabe-se que o desvio padrão da duração de cada atividade é 10\% do respetivo valor médio.
+} % Q2
+
+    \tikzset{external/remake next=true} % remake next
+    \begin{center}
+    \begin{tikzpicture}[myGraphsStyle]
+    
+        % ===================== Vertices ===================== %
+    
+        % 1,2,3`'
+        \pic (1) at (0, 0) {graphVertice={1/0/0/below/5mm}};
+        \pic (2) at (2, 1) {graphVertice={2/0/0/below/5mm}};
+        \pic (3) at (2,-1) {graphVertice={3/0/0/below/5mm}};
+        \pic (4) at (4, 1) {graphVertice={4/0/0/below/5mm}};
+        \pic (5) at (6, 0) {graphVertice={5/0/0/below/5mm}};
+    
+        % ======================= Edges ====================== %
+    
+        % % 1 -> 2 -> 4 -> 5
+        \draw[->] (1-x) --node[sloped,above]{A 10} (2-x);
+        \draw[->] (2-x) --node[sloped,above]{B 10} (4-x);
+        \draw[->] (4-x) --node[sloped,above]{C 20} (5-x);
+        % 1 -> 3 -> 5
+        \draw[->] (1-x) --node[sloped,below]{D 20} (3-x);
+        \draw[->] (3-x) --node[sloped,below]{E 10} (5-x);
+    
+        % ==================================================== %
+    
+    \end{tikzpicture}
+    \end{center}
+
+    De acordo com a técnica PERT, a probabilidade da duração do projeto ser superior a 42 dias é:
+
+    \begin{answerBox}{} % RS 
+        \tikzset{external/remake next=true} % remake next
+        \begin{center}
+        \begin{tikzpicture}[myGraphsStyle]
+        
+            % ===================== Vertices ===================== %
+        
+            % 1,2,3`'
+            \pic (1) at (0, 0) {graphVertice={1/0/0/below/5mm}};
+            \pic (2) at (2, 1) {graphVertice={2/10/10/below/5mm}};
+            \pic (3) at (2,-1) {graphVertice={3/20/30/below/5mm}};
+            \pic (4) at (4, 1) {graphVertice={4/20/20/below/5mm}};
+            \pic (5) at (6, 0) {graphVertice={5/40/40/below/5mm}};
+        
+            % ======================= Edges ====================== %
+        
+            % % 1 -> 2 -> 4 -> 5
+            \draw[->] (1-x) --node[sloped,above]{A 10} (2-x);
+            \draw[->] (2-x) --node[sloped,above]{B 10} (4-x);
+            \draw[->] (4-x) --node[sloped,above]{C 20} (5-x);
+            % 1 -> 3 -> 5
+            \draw[->] (1-x) --node[sloped,below]{D 20} (3-x);
+            \draw[->] (3-x) --node[sloped,below]{E 10} (5-x);
+        
+            % ==================================================== %
+        
+        \end{tikzpicture}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                \sigma
+                = \sqrt{
+                    (10*0.1)^2
+                    +(10*0.1)^2
+                    +(20*0.1)^2
+                } = \sqrt{6};
+                &\\&
+                P(T>42)
+                = 1-P(T\leq42)
+                = &\\&
+                = 1-P\left(z\leq\frac{42-40}{\sqrt{6}}\right)
+                = 1-P(z\leq\num{0.816496580927726})
+                \cong 1-0.7939
+                = 0.2061
+            &
+        \end{flalign*}
+
+    \end{answerBox}
+\end{questionBox}
+
+
+\end{document}

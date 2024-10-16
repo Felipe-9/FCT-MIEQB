@@ -1,0 +1,6 @@
+Step,Name,Moles,Energy (KJ/Mole),Energy (KJ/cm)
+4,"\( \Delta H_{ion} (25\,\si{\celsius}) \) \ch{F^-_g}",1,-328,-328
+5,\( \Delta H_{red} \) \ch{KF_s},1,-826,-826
+1,"\( \Delta H_{diss} \) \ch{F_{2\,g}}",1/2,+158,+79
+2,"\( \Delta H_{subl} (25\,\si{\celsius}) \) \ch{K_s}",1,+90,+90
+3,"\( \Delta H_{ion} (25\,\si{\celsius}) \) \ch{K^+_g}",1,+418,+418

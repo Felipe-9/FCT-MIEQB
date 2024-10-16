@@ -1,0 +1,462 @@
+% !TEX root = ./IPEIO_-_Aula_TP.02_Anotações.tex
+% !TEX root = ./IPEIO_-_Aulas_Anotações.tex
+\providecommand\mainfilename{"./IPEIO_-_Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO_-_Aula_TP.02_Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% DATA: 03/18
+
+\begin{document}
+
+\mymakesubfile{2}{IPEIO TP}{03/18}
+
+\begin{sectionBox}1{Esperança}
+    
+    \begin{BM}
+        \mu = E(x)
+        =   \begin{cases}
+                \sum_{i=1}^{\infty} x_i\,P(X=x_i) & :X\text{ é va. discreta}
+            \\  \int_{-\infty}^{\infty} x\,f(x)\delta x & :X\text{ é va. continua}
+            \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{Numero de Caras no lançamento de duas moedas}
+    
+    \begin{BM}
+        X:
+        \begin{cases}
+            \begin{matrix}
+                0 & 1 & 2
+            \\  1/4 & 1/2 & 1/4
+            \end{matrix}
+        \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \mu
+            = \sum x_i(P(X=x_i))
+            = 0*P(X=0)
+            + 1*P(X=1)
+            + 2*P(X=2)
+            = 1/2 + 1/2
+            = 1
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{População de ratos infetados}
+    
+    \begin{BM}
+        f_X(x)
+        =   \begin{cases}
+                2(1-x), & 0<x<1
+            \\  0, & c.c
+            \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \mu
+            = \int_{\infty}^{\infty} x\,f(x)\delta x
+            = \int_{0}^{1} x\,2\,(1-x)\delta x
+            = 2\int_{0}^{1} x  \delta x
+            - 2\int_{0}^{1} x^2\delta x
+            = 2\,\Delta(x^2/2)\big\vert_0^1
+            - 2\,\Delta(x^3/2)\big\vert_0^1
+            = 1 - 2/3
+            = 1/3
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Teorema da Linearidade}
+    
+    \begin{BM}
+        E(a\,X+b) = a\,E(X)+b:\exists\,E(X)
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Momento de ordem \textit{k} em torno da origem}
+    
+    \begin{BM}
+        m_k = E[X^k]
+        =   \begin{cases}
+                \sum_{i=1}^{\infty} x_i^k\,P(X=x_i), & X\text{ é uma va. discreta}
+            \\  \int_{-\infty}^{\infty}x^k\,f(x)\delta x, & X\text{ é uma v.a. continua}
+            \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{Numero de Caras no lançamento de duas moedas}
+    
+    \begin{BM}
+        X:
+        \begin{cases}
+            \begin{matrix}
+                0 & 1 & 2
+            \\  1/4 & 1/2 & 1/4
+            \end{matrix}
+        \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            m_2
+            = \sum_{i=1}^{\infty}x_i^2\,P(X=x_i)
+            = 0
+            + 1^2\,(1/2)
+            + 2^2\,(1/4)
+            = 1/2 + 1 
+            = 3/2
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{População de ratos infetados}
+    
+    \begin{BM}
+        f_X(x)
+        =   \begin{cases}
+                2(1-x), & 0<x<1
+            \\  0, & c.c
+            \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            m_2
+            = \int_0^1 x^2\,2(1-x)\,\delta x
+            = 2\int_0^1 (x^2-x^3)\,\delta x
+            = 2\,\Delta(X^3/3 - X^4/4)\big\vert_0^1
+        &\\&
+            = 2\,(1/3-1/4)
+            = 2/12 = 1/6
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Momento Centra de Ordem \textit{k}}
+    
+    \begin{BM}
+        \mu_k = E((1-\mu)^k)
+    \end{BM}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Variancia}
+        
+    \begin{BM}
+        \sigma^2 = V(X) = \mu_2 = E((1-\mu)^2)
+    \end{BM}
+
+    \begin{sectionBox}*3{Propríedades}
+        
+
+        \begin{enumerate} % [mark=(\roman*)]
+            \begin{multicols}{2}
+                \item \(V(a) = 0: a\in\mathbb{R}^2\)
+                \item \(V(a\,X+b) = a^2\,V(X)\)
+            \end{multicols}
+        \end{enumerate}
+
+        % \begin{sectionBox}3{}
+            
+        %     body
+            
+        % \end{sectionBox}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Desvio Padrão}
+    
+    \begin{BM}
+        \sigma = \sqrt{V(X)} = \sqrt{E((1-\mu)^2)}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        \sigma^2 = E(X^2)-E^2(X)
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{questionBox}1{Moeda}
+    
+    \begin{BM}
+        X:
+        \begin{cases}
+            \begin{matrix}
+                0 & 1 & 2
+            \\  1/4 & 1/2 & 1/4
+            \end{matrix}
+        \end{cases}
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{questionBox}1{Ratos}
+    
+    \begin{BM}
+        f_X(x)
+        =   \begin{cases}
+                2(1-x), & 0<x<1
+            \\  0, & c.c
+            \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \sigma^2
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Proposição}
+    
+    \begin{BM}
+        E(X\,Y) = E(X)\,E(Y) : \{X,Y\}\text{ v.a. independentes}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Proposição}
+    
+    \begin{BM}
+        V(X+Y) = V(X) + V(Y) : \{X,Y\}\text{ v.a. independentes}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Mediana}
+    
+    \begin{BM}
+        m_e\in\mathbb{R}:P(X\leq m_e)\geq 0.5 \land P(X\geq m_e)\leq 0.5
+    \end{BM}
+
+    Valor intermediário
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Moda}
+    
+    \begin{BM}
+        m_0
+    \end{BM}
+
+    Valor mais comum
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Coeficiente de Variação}
+    
+    \begin{BM}
+        c.v. = 100*\sigma/\mu
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Coeficiente de Simetria}
+    
+    \begin{BM}
+        \gamma_1 
+        = \mu_3/\sigma^3
+        = \frac{E((1-\mu)^4)}{E((1-\mu)^{4})}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Coeficiente de Achatamento (kurtosis)}
+    
+    \begin{BM}
+        \gamma_2= \mu_4/\sigma^4-3
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Distribuição Hipergeométrica}
+    
+    \begin{BM}
+        X\sim H(N,M,n)
+    \end{BM}
+
+    \paragraph{Note:} Extrações sem reposição
+
+    \begin{sectionBox}*3{Esperança}
+        \begin{BM}
+            E(X) = n\,M/N
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*3{Variancia}
+        
+        \begin{BM}
+            V(X) = \frac{n\,M\,(N-M)(N-n)}{N^2(N-1)}
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{Numero de Peixes saldaveis}
+    
+    \begin{BM}
+        X
+        =   \begin{cases}
+                \text{Numero de peixes saldaveis ao retirar 3}
+            \\
+                P(X=x_i) = \frac{C_{x_i}^5\,C_{3-x_i}^4}{C_3^9}:x_i\in[0,3]
+            \end{cases}
+    \end{BM}
+
+    \begin{BM}
+        X\sim H(0,5,3)
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Prova de Bernoulli}
+    
+    \begin{BM}
+        X\sim\bernoulli(1,p)\implies
+        X=  \begin{cases}
+                \begin{matrix}
+                    1 & 0
+                \\  p & 1-p
+                \end{matrix}
+            \end{cases}
+    \end{BM}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Distribuição Binomial}
+    
+    \begin{BM}
+        X\sim\binomial(n,p)
+    \end{BM}
+
+    \paragraph{Note:} Extrações com reposição
+
+    \begin{sectionBox}*2{Esperança}
+        \begin{BM}
+            E(X) = n\,P
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Variancia}
+        \begin{BM}
+            V(X)  = n\,p(1-p)
+        \end{BM}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Somatório de distribuições binomiais}
+    
+    \begin{BM}
+        \sum_i^{m} X_i \sim\binomial(\sum_i^m n, p):
+        \\
+        X_i\sim\binomial(n_i,p)\land \{X_i,X_j\}\text{ Independentes }\forall\,\{i,j\}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Probabilidade de um aluno acertar 2 perguntas de 5 tendo em conta que o aluno conhece 60\% da matéria
+
+    \begin{BM}
+        X\sim \binomial(5,0.6)
+    \\  P(X=x_i) = C_{x_i}^5\,0.6^{x_i}*(1-0.6)^{5-x_i}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            P(X=2)
+            =   C_2^5\,0.6^2*(1-0.6)^3
+            =   \dots
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Comparação de Distribuições}
+    
+    % \begin{table}[H]\centering
+    %     \begin{tabular}{c}
+            
+    %         \\\toprule
+            
+    %             \multicolumn{1}{c}{}
+            
+    %         \\\midrule
+            
+                
+            
+    %         \\\bottomrule
+            
+    %     \end{tabular}
+    % \end{table}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Distribuição de Poisson}
+    
+    \begin{BM}
+        X\sim\poisson(\lambda)
+        \implies \\
+        \implies
+        P(X=x_i) = e^{-\lambda}\,\lambda^x/x!:
+        \begin{cases}
+            x=[0,\infty)\land\lambda>0
+        \end{cases}
+    \end{BM}
+
+    \paragraph{Notas:}
+    \begin{itemize}
+        \item[\(\lambda\):] Taxa de orcorrencias por unidade de tempo
+    \end{itemize}
+
+    \begin{sectionBox}*3{Esperança}
+        \begin{BM}
+            E(X)=\lambda
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{sectionBox}*3{Variancia}
+        \begin{BM}
+            V(X)=\lambda
+        \end{BM}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{Somatório de Distrib de Poisson}
+    
+    \begin{BM}
+        \sum_i^m X_i \sim\poisson\bigg(\sum_i^m\lambda\bigg):
+        \\
+        X_i\sim\poisson(\lambda_i)
+        \land
+        \{X_i,X_j\}\text{ Independentes }\forall\,i\neq j
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[12pt]{report}
+
+\usepackage{color}
+\pagecolor{black}
+\color{white}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\begin{document}
+
+\title{AM 1 PO1 - Análise Matemática 1 - PO}
+\date{22/03/2021}
+
+\maketitle
+
+%\tableofcontentes
+%\break
+
+\section*{$$ \sum_{k=1}^n k^2 \leq (n+1)^3 $$}
+
+\begin{flalign*}
+ n&=1\implies \sum_{k=1}^1 k^2< (1+1)^3\implies 1^2< 8 &\\
+ n&=m+1\implies \sum_{k=1}^{m+1}k^2< (1+m+1)^3\implies \sum_{k=1}^m (k^2)\, + (m+1)^2< (2+m)^3\implies &\\
+& \implies \sum_{k=1}^m (k^2)\, + (m+1)^2< (1+m)^3 + (m+1)^2 < (2+m)^3\implies &\\
+& \implies (1+m)^2(m+2)< (2+m)^3\implies (1+m)^2<(2+m)^2 & 
+\end{flalign*}
+
+
+\section*{$$ 2^n\leq n!\ \{ \forall\, n\in \mathbb{N};\ n\geq 4 \} $$}
+
+\begin{flalign*}
+n &= 4\implies 2^4\leq 4!\implies 16\leq 24  & \\
+n &= m+1\implies 2^{m+1}\leq (m+1)!\implies 2\ 2^{m}\leq (m+1)\, (m)! \implies & \\
+ & \implies 2\ 2^{m}\leq (m+1)\, 2^m &
+\end{flalign*}
+
+
+\section*{$$ A=(\, ]0,1[\,\cap Q) \cup \{ 2-1/n\ :\ n\in\mathbb{N} \} $$}
+
+\subsection*{$$ a) A'=? $$}
+
+\begin{flalign*}
+A' &= [0,1]\cup \{2\} &
+\end{flalign*}
+
+
+\subsection*{$$ b) \sum_{k=1}^n 1/k^2\leq 2-1/n $$}
+
+\begin{flalign*}
+n &=1 \implies \sum_{k=1}^1 1/k^2\leq 2-1/1\implies 1\leq 1 & \\
+n &=m+1 \implies \sum_{k=1}^{m+1} 1/k^2\leq 2-\frac{1}{(m+1)} \implies \sum_{k=1}^m\left(\frac{1}{k^2}\right)+\frac{1}{(m+1)^2}\leq 2-\frac{1}{(m+1)}\implies &\\ 
+&\implies \sum_{k=1}^m\left(\frac{1}{k^2}\right)+\frac{1}{(m+1)^2}\leq 2-\frac{1}{m}+\frac{1}{(m+1)^2}\leq 2-\frac{1}{(m+1)} \implies &\\
+&\implies \frac{1+m+1}{(m+1)^2} \leq \frac{1}{m} \implies (2+m)\, m\leq (m+1)^2 \implies m^2+2\,m\leq m^2+2\,m+1
+\end{flalign*}
+
+\end{document}

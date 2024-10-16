@@ -1,0 +1,113 @@
+% !TEX root = ./TEQB-Trabalhos.1.tex
+\providecommand\mainfilename{"./TEQB-Trabalhos.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Trabalhos.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[TREQB]
+{Trabalho 1} % Subfile Title
+{Trabalho} % Part Title
+
+\begin{definitionBox}1{Equação de Antoine} % DEF1
+    
+    \begin{BM}
+        \log_10(p) = A-\frac{B}{C+T}
+    \end{BM}
+
+    \begin{itemize}[left=3em]
+        \item[\textit{p}--] pressão de vapor absoluta
+        \item[\textit{T}--] Temperatura em Celsius
+        \item[\textit{A,B,C}--] Coeficientes de Antoine espeçificos a substancia
+    \end{itemize}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1m{} % DEF2
+
+    Curva de Vaporização
+    
+    \begin{BM}
+        \ln\frac{P_2}{P_1}
+        = -\frac{\adif{H}_{vap}}{R}
+        \,\left(
+            T_2^{-1}
+            -T_1^{-1}
+        \right)
+        \\[1.5ex]
+        (t_1,P_1) =\text{ponto triplo}
+    \end{BM}
+    % o ponto de ref da eq da curva de vap é o ponto triplo
+    
+    Curva de Sublimação
+
+    \begin{BM}
+        \ln\frac{P_2}{P_1}
+        = -\frac{\adif{H}_{sub}}{R}
+        \,\left(
+            T_2^{-1}
+            -T_1^{-1}
+        \right)
+    \end{BM}
+
+    \begin{flalign*}
+        &   
+            \ln{P_2}
+            = \left(
+                -\frac{\adif{H}_{sub}}{R}
+                \,\left(
+                    T_2^{-1}
+                    -T_1^{-1}
+                \right)
+                +\ln{P_1}
+            \right)
+        &
+    \end{flalign*}
+
+    \begin{BM}
+        \adif{H}_{sub}
+        = \adif{H}_{vap}
+        + \adif{H}_{fus}
+    \end{BM}
+
+    % \begin{flalign*}
+    %     &
+    %         \odv{p}{T}
+    %         = \adv{H}{V}\frac{1}{T}
+    %         =\frac{
+    %             \adif{H}
+    %         }{
+    %             \adif{\frac{n\,R\,T}{P}}\,T
+    %         }
+    %     &
+    % \end{flalign*}
+    
+    Entalpia de vaporização
+
+    \begin{enumerate}
+        \item Abre o gráfico ``Heat of vaporization''
+        \item Confere que é quase constante
+        \item Fáz média de todos os valores acima de 20 graus do ponto triplo
+    \end{enumerate}
+
+    \begin{BM}
+        \adif{H}_{vap}
+        = 
+    \end{BM}
+    Curva de Fusão
+
+    \begin{BM}
+        P_2-P_1
+        = \frac{\adif{H}_{fus}}{\adif{V}}
+        \,\ln\frac{T_2}{T_1}
+    \end{BM}
+
+\end{definitionBox}
+
+
+\end{document}

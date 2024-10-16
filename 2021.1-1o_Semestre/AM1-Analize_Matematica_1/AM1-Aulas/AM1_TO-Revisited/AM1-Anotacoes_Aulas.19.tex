@@ -1,0 +1,238 @@
+\part{30/04 - Regras de Derivação}
+
+\begin{multicols}{2}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Derivação da Soma}
+\begin{BM}
+	(f+g)'(a) = f'(a) + g'(a)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	(f+g)'(a)
+=	\lim_{x\to0}\frac{f(x)+g(x)-f(a)-g(a)}{x-a}
+=	&\\&
+=	\lim_{x\to0}
+	\left(
+		\frac{f(x)-f(a)}{x-a}
+	+	\frac{g(x)-g(a)}{x-a}
+	\right)
+=	&\\&
+=	f'(a) + g'(a)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Derivação do Produto}
+\begin{BM}
+	(f\,g)'(a) = f'(a)\,g(a) + f(a)\,g'(a)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	(f\,g)'(a)
+=	\lim_{x\to a}\frac{f(x)\,g(x) - f(a)\,g(a)}{x-a}
+=	&\\&
+=	\lim_{x\to a}
+	\frac
+		{\left(f(x)-f(a)\right)\,g(x) + f(a)\left(g(x)-g(a)\right)}
+		{x-a}
+=	&\\&
+=	\lim_{x\to a}
+	\left(
+		g(x)\frac{f(x)-f(a)}{x-a}
+	+	f(x)\frac{g(x)-g(a)}{x-a}
+	\right)
+=	&\\&
+=	g(x)\,f'(x)+f(x)\,g'(x)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Derivada da Divisão}
+
+\subsection{Previa}
+\begin{BM}
+	\left( 1/f(x) \right)' = -f'(a)/f^2(a)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+=	\lim_{x\to a}
+	\frac
+		{1/f(x)-1/f(a)}
+		{x-a}
+=	\lim_{x\to a}
+	\frac
+		{f(a)-f(x)}
+		{(x-a)\,f(x)\,f(a)}
+=	&\\&
+=	-f'(a)/f^{2}(a)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Derivada de Conjugada}
+
+\begin{BM}
+	(f\circ u)'(a)= f'(u(a))\,u'(a)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	(f\circ u)'(a)
+=	\lim_{x\to a}
+	\frac
+		{f(u(x)) - f(u(a))}
+		{x-a}
+=	&\\&
+=	\lim_{x\to a}
+	\frac
+		{f(u(x))-f(u(a))}
+		{u(x)-u(a)}
+	\,\frac
+		{u(x)-u(a)}
+		{x-a}
+=	f'(u(a))\,u'(a)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+\begin{flalign*}
+&
+	\left(e^{u(x)}\right)' = e^{u(x)}\,u'(x)
+\qquad
+	\left(e^{x^3} \right)' = e^{x^3}\,3\,x^2
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\paragraph{Nota:} $(\ln)'(u) = u'/u$
+
+\begin{flalign*}
+&
+	\left(\ln'(1/\cos(x))\right)
+=	\frac
+		{-\sin(x)/x^2}
+		{\cos(x)}
+=	\frac{1}{\tan(x)\,x^2}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Tecnica de encontrar derivações}
+
+\subsection{$\ln'(x) = 1/x$}
+\begin{flalign*}
+&
+	\left( e^{\ln(x)} \right)' = (x)'
+\implies
+	e^{\ln(x)}\,\ln'(x)
+=	x\,\ln'(x)
+=	1
+\implies &\\&
+\implies
+	(\ln)'(x) = 1/x
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{$\arctan'(x) = 1/(1+x^2)$}
+\begin{flalign*}
+&
+	\left( \tan(\arctan(x)) \right)' = (x)'
+\implies &\\&
+\implies
+	\tan'(\arctan(x))\,\arctan'(x)
+=	&\\&
+=	\left(1+\tan^2(\arctan(x))\right)\,\arctan'(x)
+=	&\\&
+=	\left(1+x^2\right)\,\arctan'(x)
+=	1
+\implies &\\&
+\implies
+	\arctan'(x)
+=	\frac
+		{1}
+		{1+x^2}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{$\arcsin'(x) = 1/\sqrt{1-x^2}$}
+\begin{flalign*}
+&
+	\left(\sin(\arcsin(x))\right)' = (x)'
+\implies
+	\cos(\arcsin(x))\,\arcsin'(x)
+=	&\\&
+=	\sqrt{1-\sin^2(\arcsin(x))}\,\arcsin'(x)
+=	&\\&
+=	\sqrt{1-x^2}\,\arcsin'(x)
+=	1
+\implies
+	\arcsin'(x) = 1/\sqrt{1-x^2}
+&
+\end{flalign*}
+
+\end{minipage}
+
+
+
+\end{multicols}

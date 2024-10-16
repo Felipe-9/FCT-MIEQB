@@ -1,0 +1,112 @@
+% !TEX root = ./IPEIO_-_Aula_TP.03_Anotações.tex
+% !TEX root = ./IPEIO_-_Aulas_Anotações.tex
+\providecommand\mainfilename{"./IPEIO_-_Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO_-_Aula_TP.03_Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{3}
+{IPEIO 03/25 -- Distribuições Absolutamente Contínuas}
+{IPEIO 03/25 -- Distribuições Absolutamente Contínuas}
+
+\begin{sectionBox}1{Distribuição Normal}
+    
+    \begin{BM}
+        X\sim \normal(\mu,\sigma^2)\qquad
+        f(x) = \frac{\exp\bigl( -(x-\mu)^2/2\,\sigma^2 \bigr))}{\sigma\sqrt{2\,\pi}}
+    \end{BM}
+
+    \vspace{2ex}
+
+    \begin{itemize}
+        \item[\(\mu\):]      Média
+        \item[\(\sigma^2\):] Desvio padrão
+    \end{itemize}
+    
+    \begin{multicols}{2}
+        \begin{sectionBox}*2{Esperança}
+            \begin{BM}
+                \esperanca(X)=\mu
+            \end{BM}
+        \end{sectionBox}
+        \begin{sectionBox}*2{Variancia}
+            \begin{BM}
+                \variancia(X)=\sigma^2
+            \end{BM}
+        \end{sectionBox}
+
+    \end{multicols}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Distribuição Normal Reduzida}
+    
+    \begin{BM}
+        Z = \frac{X-\mu}{\sigma}\sim\normal(0,1)
+    \end{BM}
+
+    \vspace{2ex}
+
+    Padronização de uma disribuição normal
+
+
+    
+
+    \begin{multicols}{2}
+
+        \begin{sectionBox}*3{Esperança}
+            \begin{BM}
+                \esperanca(Z) = 0
+            \end{BM}
+            \begin{flalign*}
+                &
+                    \esperanca(Z)
+                   =\esperanca\biggl(\frac{X-\mu}{\sigma}\biggr)
+                   =&\\&
+                   =\frac{\esperanca(X)-\mu}{\sigma}
+                   =\frac{\mu-\mu}{\sigma}
+                   =0
+                &
+            \end{flalign*}
+        \end{sectionBox}
+
+        \begin{sectionBox}*3{Variancia}
+            \begin{BM}
+                \variancia(Z) = 1
+            \end{BM}
+            \begin{flalign*}
+                &
+                    \variancia(Z)
+                =\variancia\biggl(\frac{X-\mu}{\sigma}\biggr)
+                =&\\&
+                =\frac{\variancia(X)}{\sigma^2}
+                =\frac{\sigma^2}{\sigma^2}
+                =1
+                &
+            \end{flalign*}
+        \end{sectionBox}
+
+    \end{multicols}
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{Tabela de valores da distribuição Normal Reduzida}
+        
+    \begin{BM}
+        \phi(z) 
+       =P(Z\leq z)
+       =\int_{-\infty}^{z} \frac{\exp(-u^2/2)}{\sqrt{2\,\pi}}\delta u
+    \end{BM}
+
+    \vspace{2ex}
+
+    Tabela para poder encontrar o resultado da integral sem ter que resolver a integral.
+
+\end{sectionBox}
+
+
+\end{document}

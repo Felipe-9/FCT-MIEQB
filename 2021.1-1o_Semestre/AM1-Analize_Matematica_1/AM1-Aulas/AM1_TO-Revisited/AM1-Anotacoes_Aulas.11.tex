@@ -1,0 +1,78 @@
+\part{12/04 - Sucessão de Cauchy}
+
+\BMold{
+&
+	u_{(n)}: | u_{(m)} - u_{(n)} | < \varepsilon
+\quad\forall\,\{m,n,p\}\in\mathbb{N}: m>p\land n>p
+&
+}
+
+\label{cauchy}
+
+\begin{multicols}{2}
+
+
+\section{Criterio suficiente para uma sucessão ser Cauchy}
+
+\begin{flalign*}
+&
+	|u_{(n+2)} - u_{(n+1)}|\leq \alpha |u_{(n+1)} - u_{(n)}|
+	&\\&
+	\forall\,n\in\mathbb{N}: n>p\land \alpha\in(0,1)
+\implies	&\\&
+\implies
+	u_{(n)} \text{ é Cauchy}
+&
+\end{flalign*}
+
+\vfill
+
+\subsection{Exemplo}
+
+\begin{align*}
+&
+	u_{(n)} = 
+	\begin{cases}
+ 	%
+		0\quad& n=1
+	\\	(2/3)\,u_{(n-1)}+1\quad& n > 1
+	%
+	\end{cases}
+&
+\end{align*}
+
+\begin{flalign*}
+&
+	|u_{(n+2)} - u_{(n+1)}|
+=	&\\&
+=	|(2/3)\,u_{(n+1)}+1-(2/3)\,u_{(n)}-1|
+=	&\\&
+=	(2/3)\,|u_{n+1}-u_{(n)}|
+&\\&	\therefore
+	u_{(n)} \text{ é Cauchy}
+&
+\end{flalign*}
+
+
+\section{Convergencia}
+
+\begin{align*}
+	u_n
+	\begin{cases}
+		0					&\quad n=1
+	\\	u_{(n-1)}\,2/3 + 1	&\quad n>1
+	\end{cases}
+\end{align*}
+
+\begin{flalign*}
+&
+	u_{n} \to l
+;\,	u_{n}\,2/3 + 1\to l\,2/3 + 1
+\quad \therefore l=l\,2/3 + 1
+\implies &\\&
+\implies
+	l = 3
+&
+\end{flalign*}
+
+\end{multicols}

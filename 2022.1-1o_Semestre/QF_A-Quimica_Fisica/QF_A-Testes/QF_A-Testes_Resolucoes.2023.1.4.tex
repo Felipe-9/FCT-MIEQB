@@ -1,0 +1,399 @@
+% !TEX root = ./QF_A-Testes_Resolucoes.2023.1.4.tex
+\providecommand\mainfilename{"./QF_A-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Testes_Resolucoes.2023.1.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Testes_Resolucoes.2023.1.4}}}
+\tikzsetexternalprefix{./.build/figures/QF_A-Testes_Resolucoes.2023.1.4/}
+
+\mymakesubfile{4}
+[QF A]
+{Exame Resolução} % Subfile Title
+{Exame Resolução} % Part Title
+
+
+%   ,ad8888ba,        88
+%  d8"'    `"8b     ,d88
+% d8'        `8b  888888
+% 88          88      88
+% 88          88      88
+% Y8,    "88,,8P      88
+%  Y8a.    Y88P       88
+%   `"Y8888Y"Y8a      88
+
+
+
+\begin{questionBox}1{} % Q1
+    {\centering\huge\color{Emph}
+        \ch{CO\gas{} + Cl2\gas{} -> COCl2\gas{}}
+        \begin{BM}
+            25\,\unit{\celsius}
+        \end{BM}
+    }
+
+    \paragraph*{Experiencia 1} \(p(\ch{Cl2})_{1,0}=400\,\unit{\torr}\text{ e }p(\ch{CO})_{1,0}=4\,\unit{\torr}\)
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{4}{C}}
+            \toprule
+            
+                t/\unit{\min}
+                & 34.5 & 69.0 & 138 & \infty
+            
+            \\  p(\ch{COCl2})
+                & 2.0 & 3.0 & 3.75 & 4.0
+                
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \paragraph*{Experiencia 2} \(p(\ch{Cl2})_{2,0}=1600\,\unit{\torr}\text{ e }p(\ch{CO})_{2,0}=4\,\unit{\torr}\)
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{4}{C}}
+            \toprule
+            
+                t/\unit{\min}
+                & 34.5 & 69.0 & 138 & \infty
+            
+            \\  p(\ch{COCl2})
+                & 3.0 & 3.75 & - & 4.0
+                
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Ordem de cada reagente e a constante de velocidade
+
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C | C C | C}
+            \toprule
+            
+                t/\unit{\second}
+                & p(\ch{CO})
+                & p(\ch{Cl2})
+                & p(\ch{COCl2})
+            
+            \\\midrule
+            
+                    0   & 400 & 4    & 0
+                \\ 34.5 & 398 & 2    & 2
+                \\ 69   & 397 & 1    & 3
+                \\ 138  & 396.25 & 0.25 & 3.75
+
+            \\\midrule
+            
+                    0   & 1600    & 4    & 0   
+                \\ 34.5 & 1597    & 1    & 3   
+                \\ 69   & 1596.25 & 0.25 & 3.75
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Pela grande quantidade de \ch{CO} nos experimentos podemos ignorar sua influencia na velocidade quando analizando individualmente o experimento, assim podemos ver que o \ch{Cl2} possui tempo de meia vida para o exp1 de 34.5, caracteristica de reação de primeira ordem.
+    Comparando os dois experimentos podemos notar que ao quadruplicar a quantidade de \ch{CO} o tempo de meia vida do \ch{Cl2} reduz pela metade, o que nos leva a concluir que a influencia de \ch{CO} é de meia ordem (1/2).
+
+    \begin{BM}
+        v = k_r\,p(\ch{CO})^{1/2}p(\ch{Cl2})
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            t_{1/2}
+            = 34.5
+            =\frac{\ln{2}}{k'_r}
+            =\frac{\ln{2}}{k_r*400}
+            \implies &\\&
+            \implies
+            k_r
+            \cong
+            \frac{\ln{2}}{34.5*400}
+            \cong
+            \num{5.0228056562e-5}
+        &
+    \end{flalign*}
+    % \begin{flalign*}
+    %     &
+    %         v
+    %         = \odv{p(\ch{COCl2})}{t}
+    %         = k_r\,p(\ch{CO})p(\ch{Cl2})
+    %         \implies &\\[3ex]&
+    %         \implies
+    %         \frac{1}{p(\ch{CO})_0+p(\ch{Cl2})_0}
+    %         \left(
+    %             \ln\frac{{p(\ch{CO})}-\ln{p(\ch{CO})_0}}{\ln{p(\ch{CO})_0}}
+    %         \right)
+    %         &\\[6ex]&
+    %         \adif{(p(\ch{Cl2})/p(\ch{Cl2})_0)}
+    %         =(2/4-4/4)
+    %         = -1/2
+    %         =-k'_r\,(34.5)
+    %     &
+    % \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{2}
+
+\begin{questionBox}1{ % Q3
+    Calcule a area superficial oc por uma molecula de ácido valérico para \(C=0.035\,\unit{\molar}\)
+} % Q3
+    \begin{itemize}
+        \item Solução mãe \ch{C4H9COOH} 
+        \begin{itemize}
+            \begin{multicols}{3}
+                \item \(M=102.13\,\unit{\gram.mole^{-1}}\)
+                \item \(C=0.15\,\unit{\molar}\)
+                \item \(V=250\,\unit{\centi\metre^3}\)
+            \end{multicols}
+        \end{itemize}
+        \item Temperatura 45\,\unit{\celsius}
+        \item Balões
+        \begin{enumerate}
+            \begin{multicols}{3}
+                \item 25\,\unit{\centi\metre^3}
+                \item 500\,\unit{\centi\metre^3}
+                \item 10\,\unit{\centi\metre^3}
+            \end{multicols}
+        \end{enumerate}
+    \end{itemize}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{3}{C}}
+            \toprule
+            
+                & 1 & 2 & 3
+            
+            \\\midrule
+            
+                V_{\ch{C4H9COOH}}/\unit{\centi\metre^3}
+                & 15 & 125 & 1.5
+                \\ V_{tot}/\unit{\centi\metre^3}
+                & 25 & 500 & 10
+                \\ \gamma/\unit{\milli\newton.\metre^{-1}}
+                & 43.1 & 60.2 & 64.9
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \answer{}
+
+    \begin{flalign*}
+        &
+            C_i
+            = \frac{0.15\,\unit{\mole\of{Ac}}}{\unit{\deci\metre^3\of{Mãe}}}
+            * \frac{V_{i,mae}\,\unit{\centi\metre^3\of{mae}}}{1}
+            * \frac{1}{V_{i,balao}\,\unit{\centi\metre^3\of{balao}}}
+            = 0.15\frac{V_{i,mae}}{V_{i,balao}}\unit{\molar}
+        &
+    \end{flalign*}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{3}{C}}
+            \toprule
+            
+                & 1 & 2 & 3
+            
+            \\\midrule
+
+                \ln{C}/\unit{\molar}
+                & \num{-2.407945608651872}
+                & \num{-3.283414346005772}
+                & \num{-3.794239969771763}
+                \\ 
+                \gamma/\unit{\newton.\metre^{-1}}
+                & 0.0431
+                & 0.0602
+                & 0.0649
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                % domain=0:4,
+                xlabel={\(\ln{C}/\unit{\molar}\)},
+                ylabel={\(\gamma/\unit{\newton.\metre^{-1}}\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry[Graph]{\( -0.0161\,\ln{C}+0.005 \)}
+
+            % Plot from equation
+            \addplot[
+                only marks,
+                mark=*,
+                % smooth,
+                % Graph,
+                % samples = \mysampledensityDouble,
+            ] coordinates {
+                (-2.407945608651872, 0.0431)
+                (-3.283414346005772, 0.0602)
+                (-3.794239969771763, 0.0649)
+            };
+
+            \addplot[
+                Graph,dashed,opacity=0.5,
+                domain={-3.8:-2.4},
+            ]{-0.0161*x+0.005};
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            \Gamma
+            =\frac{-1}{R\,T}
+            \,\frac{\gamma}{\ln{C}}
+            \cong\frac{-1}{
+                \num{8.314462618}
+                (45+273.15)
+            }
+            \,\frac{-0.0161\,\ln{0.035}+0.005}{\ln{0.035}}
+            % -0.017591465587447
+            \cong
+            \qty{6.650218434e-6}{\mole.\metre^{-2}}
+            \implies &\\&
+            \implies
+            A_{0.035}
+            \cong 
+              \frac{\unit{\metre^2}}{\qty{6.650218434e-6}{\mole}}
+            \,\frac{\unit{\mole}}{\num{6.02214076e23}\unit{molec}}
+            \cong
+            \qty{0.024969692103407e-17}{\metre^2.molec^{-1}}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Ads de \ch{N2} sobre 3.8624\unit{\gram} de dioxido de titanio anatase a 77\,\unit{\kelvin}, a essa temp a p de sat do azoto é 1021\,\unit{\milli\bar}
+} % Q4
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{5}{C}}
+            \toprule
+            
+                p/\unit{\milli\bar}
+                & 47 & 117 & 187 & 257 & 319
+                \\
+                n/\unit{\milli\mole}
+                & 160 & 174 & 191 & 212 & 236
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q4.1
+        Area disp p ads do n2 por grama de adsorv prevista por Langmuir. Area da molec \ch{N2} 16.2\unit{\AA^2}
+    } % Q4.1
+        \answer{}
+
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{L *{5}{C}}
+                \toprule
+                
+                    p^{-1}/\unit{\bar^{-1}}
+                    & \num{21.27659574468085}
+                    & \num{8.547008547008547}
+                    & \num{5.347593582887701}
+                    & \num{3.8910505836575875}
+                    & \num{3.134796238244514}
+                    \\
+                    n^{-1}/\unit{\mole^{-1}.\gram}
+                    & \num{24.14}
+                    & \num{22.19770114942529}
+                    & \num{20.221989528795813}
+                    & \num{18.218867924528304}
+                    & \num{16.366101694915255}
+
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+
+        \begin{center}
+            % \tikzset{external/remake next=true}
+            % \pgfplotsset{height=7cm, width= .6\textwidth}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    % domain=0:4,
+                    xlabel={\(n^{-1}/\unit{\mole^{-1}.\gram}\)},
+                    ylabel={\(p^{-1}/\unit{\bar^{-1}}\)},
+                ]
+                Legends
+                \addlegendimage{empty legend}
+                \addlegendentry[Graph]{\(n^{-1}=0.2589\,p^{-1}-2.5043\e-14\)}
+                
+                % Plot from equation
+                \addplot[
+                    only marks, mark=*,
+                    Graph,
+                    % smooth,
+                    % thick,
+                    % domain  = -2:2,
+                    % samples = \mysampledensityDouble,
+                ] coordinates { 
+                    (24.14,  6.25)
+                    (22.19770114942529,  5.747126436781609)
+                    (20.221989528795813,  5.2356020942408374)
+                    (18.218867924528304, 4.716981132075472)
+                    (16.366101694915255,  4.237288135593221)
+                };
+
+                \addplot[
+                    domain={16.36:24.14},
+                    Graph,dashed,opacity=0.5,
+                ]{
+                    0.2589*x-2.5043e-14
+                };
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                A
+                \cong 16.2*10^{-20}
+                \,\frac{\num{6.02214076e23}}{0.2589}
+                \cong
+                \num{376.8199316801854e3}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}

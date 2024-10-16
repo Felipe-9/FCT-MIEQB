@@ -1,0 +1,174 @@
+\part{18/05 - Primitivação III}
+
+\begin{sectionBox}1[0mm]{Primitivação por partes}
+\begin{BM}[align*][\Large]
+	u\,v
+=	\int u\,v'\,\mathrm{d}x
++	\int u'\,v\,\mathrm{d}x
+\iff
+	\int u\,v'\,\mathrm{d}x
+=	u\,v
+-	\int u'\,v\,\mathrm{d}x
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	\int(u\,v)'\,\mathrm{d}x
+=	u\,v
+=	\int u\,v'\,\mathrm{d}x
++	\int u'\,v\,\mathrm{d}x
+&
+\end{flalign*}
+\end{sectionBox}
+
+
+\begin{multicols}{2}
+
+\begin{sectionBox}2{Exemplo: $f(x)=x\,e^x$}
+\begin{flalign*}
+&
+	F(x)
+=	\int x\,e^x\,\mathrm{d}x
+=	x\,e^x
+-	\int e^x\,\mathrm{d}x
+=	&\\&
+=	x\,e^x-e^x+c
+=	e^x(x-1)+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercício: $f(x)=x\,\cos(x)$}
+\begin{flalign*}
+&
+	F(x)
+=	\int x\,\cos(x)\,\mathrm{d}x
+=	x\,\sin(x)
+-	\int\sin(x)\,\mathrm{d}x
+=	&\\&
+=	x\,\sin(x)+\cos(x)+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercício: $f(x)=\ln(x)$}
+\begin{flalign*}
+&
+	F(x)
+=	\int\ln(x)\,\mathrm{d}x
+=	x\,\ln(x)
+-	\int x\,x^{-1}\,\mathrm{d}x
+=	&\\&
+=	x\,\ln(x)-x+c
+=	x(\ln(x)-1)+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercício: $f(x)=\arctan(x)$}
+\begin{flalign*}
+&
+	F(x)
+=	\int\arctan(x)\,\mathrm{d}x
+=	&\\&
+=	x\,\arctan(x)
+-	(1/2)\int 2\,x\,(1+x^2)^{-1}\,\mathrm{d}x
+=	&\\&
+=	x\,\arctan(x)
+-	0.5\,\ln(|1+x^2|)+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercício: $f(x)=e^x\,\sin(x)$}
+
+\paragraph{Rever!}
+
+\begin{flalign*}
+&
+	F(x)
+=	\int e^x\,\sin(x)\,\mathrm{d}x
+=	&\\&
+=	-e^x\,\cos(x)
+-	\int e^x\,\sin(x)\,\mathrm{d}x
+\implies &\\&
+\implies
+	F(x)
+=	-e^x\,\cos(x)/2+c
+&
+\end{flalign*}
+
+\begin{flalign*}
+&
+	F(x)
+=	\int e^x\,\sin(x)\,\mathrm{d}x
+=	&\\&
+=	e^x\,\sin(x)
+-	\int e^x\,\cos(x)\,\mathrm{d}x
+=	&\\&
+=	e^x\,\sin(x)
+-	e^x\,\cos(x)
+-	\int e^x\,\sin(x)\,\mathrm{d}x
+\implies &\\&
+\implies
+	F(x)
+=	\frac{e^x(\sin(x)-\cos(x))}{2}+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercicio: $f(x)=e^x\,\cos(x)$}
+\begin{flalign*}
+&
+	F(x)
+=	\int e^x\,\cos(x)\,\mathrm{d}x
+=	&\\&
+=	e^x\,\cos(x)
++	\int e^x\,\sin(x)\,\mathrm{d}x
+=	&\\&
+=	e^x\,\cos(x)
++	e^x\,\sin(x)
+-	\int e^x\,\cos(x)\,\mathrm{d}x
+\implies &\\&
+\implies
+	F(x)
+=	\frac{e^x(\sin(x)+\cos(x))}{2}+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

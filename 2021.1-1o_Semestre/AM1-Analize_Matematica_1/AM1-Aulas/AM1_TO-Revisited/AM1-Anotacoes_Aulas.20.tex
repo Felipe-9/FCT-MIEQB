@@ -1,0 +1,311 @@
+\part{03/05 - Teoremas da diferenciabilidade}
+
+\begin{multicols}{2}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Teorema de Rolle}
+\label{Rolle}
+
+\begin{BM}
+	f
+	\begin{cases}
+		f:[a,b]\to\mathbb{R}\,\land
+	\\	f \text{ é continua em } [a,b]\,\land
+	\\	\exists\,f'(x)\quad\forall\,x\in(a,b)\,\land
+	\\	f(a) = f(b)
+	\end{cases}
+\\\\
+	\therefore
+	\begin{array}{ll}
+		\exists\,c\in[a,b]: f'(c) = 0\,\land
+	\\	\max(f),\min(f) \subset f(c)
+	\end{array}
+\end{BM}\relax
+
+\begin{BM}
+	\min(f) = x_0 \in (a,b):
+\\	f(x_0) \leq f(x)\quad\forall\,x\in(a,b)
+\end{BM}
+
+\begin{flalign*}
+&
+	\lim_{x\to x_0^+}
+	\frac
+		{f(x)- f(x_0)}
+		{x-x_0}
+\geq 0;
+	\lim_{x\to x_0^-}
+	\frac
+		{f(x)- f(x_0)}
+		{x-x_0}
+\leq 0
+&\\&
+	\therefore
+	f'(x_0) = 0
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+\subsection{Demonstração}
+
+\begin{BM}
+	h
+	\begin{cases}
+		\mathbb{R}	\to \mathbb{R}
+	\\	x			\to x\,\sin(x)
+	\end{cases}
+\end{BM}
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+	
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry[
+		font=\boldmath\footnotesize,
+		Red,
+	]{$x\,\sin(x)$}
+	
+	\addplot
+	[	smooth,
+		Red,
+		domain=-30:30,
+		samples= 3*\mysampledensity,
+	]	{x*sin(deg(x))};
+	
+	\addplot
+	[	smooth,
+		Red,
+		mark=o,
+		domain=-30:30,
+		draw= none,
+	] coordinates {
+		(-29.84513020910300, -29.84513020910300)
+		(-26.70353755551320,  26.70353755551320)
+		(-23.56194490192340, -23.56194490192340)
+		(-20.42035224833360,  20.42035224833360)
+		(-17.27875959474380, -17.27875959474380)
+		(-14.13716694115400,  14.13716694115400)
+		(-10.99557428756420, -10.99557428756420)
+		( -7.85398163397441,   7.85398163397441)
+		( -4.71238898038462,  -4.71238898038462)
+		( -1.57079632679483,   1.57079632679483)
+		(  1.57079632679496,   1.57079632679496)
+		(  4.71238898038475,  -4.71238898038475)
+		(  7.85398163397454,   7.85398163397454)
+		( 10.99557428756430, -10.99557428756430)
+		( 14.13716694115410,  14.13716694115410)
+		( 17.27875959474390, -17.27875959474390)
+		( 20.42035224833370,  20.42035224833370)
+		( 23.56194490192350, -23.56194490192350)
+		( 26.70353755551330,  26.70353755551330)
+		( 29.84513020910310, -29.84513020910310)
+	};
+	
+	\addplot
+	[	smooth,
+		Green,
+		mark=o,
+		domain=-30:30,
+		draw= none,
+	] coordinates {
+		(-28.27433388230810, 0)
+		(-25.13274122871830, 0)
+		(-21.99114857512850, 0)
+		(-18.84955592153870, 0)
+		(-15.70796326794890, 0)
+		(-12.56637061435910, 0)
+		( -9.42477796076931, 0)
+		( -6.28318530717952, 0)
+		( -3.14159265358979, 0)
+		(0, 0)
+		(  3.14159265358979, 0)
+		(  6.28318530717958, 0)
+		(  9.42477796076937, 0)
+		( 12.56637061435920, 0)
+		( 15.70796326794900, 0)
+		( 18.84955592153880, 0)
+		( 21.99114857512860, 0)
+		( 25.13274122871840, 0)
+		( 28.27433388230820, 0)
+	};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Teorema de Lagrange}
+\label{Lagrange}
+
+\begin{BM}
+	f
+	\begin{cases}
+		f:[a,b] \to \mathbb{R}
+	\\	f \text{ é continua em } [a,b]
+	\\	\exists\, f'(x)\ \forall\,x\in(a,b)
+	\end{cases}
+\\\\
+	\therefore
+	\exists\, c\in(a,b):f'(c)
+=	\frac{f(b)-f(a)}{b-a},
+	\\
+	f(b) = f(a) + f'(c)\,(b-a)
+\end{BM}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Corolário}
+
+\begin{BM}
+	f
+	\begin{cases}
+		f:[a,b]\to\mathbb{R}\,\land
+	\\	f \text{ é continua em } [a,b]\,\land
+	\\	\exists\,f'(x)\quad\forall\,x\in(a,b)\,\land
+	\\	f'(x)>0\quad\forall\,x\in(a,b)
+	\end{cases}
+\\	\therefore
+	f \text{ é estritamente crescente em } (a,b)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	\{x,y\} \in (a,b): f(x) < f(y)
+\implies &\\&
+\implies
+	f(y) = f(x) + f'(c)\,(y-x)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Ideia de Demonstração do teorema de Lagrange}
+\paragraph{Nota:} REVER
+
+\begin{BM}
+	h(x) = (b-a)\,f(x) - (f(b)-f(a))(x-a)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	\begin{cases}
+		h(a) = (b-a)\,f(a)
+	\\	h(b) = (b-a)\,f(b)-(f(b)-f(a))(b-a) = (b-a)\,f(a)
+	\end{cases}
+&\\&
+\implies
+	h'(x)= (b-a)f'(x)-(f(b)-f(a))=0
+\implies &\\&
+\implies
+	f(b)=f(a)+f'(x)(b-a)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Regra de L'Hospital-Cauchy}
+\begin{BM}
+	a\in\mathbb{R}\cup\{-\infty\};\quad
+	\varepsilon>0;
+\\	\{f,g\}
+	\begin{cases}
+		\text{continua em } (a,\infty)\,\land
+	\\	\left(
+		\left(
+			\text{diferenciaveis em } (a,a+\varepsilon)\,\land
+			a\in\mathbb{R}
+		\right)\,\lor
+		\right.
+	\\
+		\left.
+			\text{diferenciaveis em } (-\infty,-\varepsilon)\,\land
+			a=-\infty
+		\right)
+	\end{cases}
+\end{BM}
+
+\begin{BM}
+	\lim_{x\to a^+}f(x)
+=	\lim_{x\to a^+}g(x)
+=	\begin{cases}
+		0
+	\\	+\infty
+	\end{cases}
+\end{BM}
+
+\begin{BM}
+	\exists L\in\mathbb{R}\cup\{-\infty,+\infty\}:
+	L=\lim_{x\to a^+}f'(x)/g'(x)
+\implies \\
+\implies
+	\lim_{x\to a^+}f(x)/g(x)=\lim_{x\to a^+}f'(x)/g'(x)=L
+\end{BM}
+
+
+\end{minipage}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

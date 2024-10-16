@@ -1,0 +1,86 @@
+% !TEX root = ./AM1-Anotacoes_Aulas.03.tex
+\providecommand\mainfilename{"./AM1-Anotacoes_Aulas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM1-Anotacoes_Aulas.03.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM1-Anotacoes_Aulas.03}}}
+% \tikzsetexternalprefix{./.build/figures/AM1-Anotacoes_Aulas.03/graphics/}
+
+\mymakesubfile{3}
+[AM1]
+{19/03 -- Indução por igualdade} % Subfile Title
+{19/03 -- Indução por igualdade} % Part Title
+
+\begin{questionBox}1{ % Q1
+} % Q1
+	\begin{multicols}{2}
+        \begin{questionBox}2{ % Q1.1
+            Prove que algum numero pertence ao conjunto
+        } % Q1.1
+            \answer{}
+            \begin{flalign*}
+                &
+                    \text{Seja } V
+                    =\left\{
+                        P_{(n)}\quad\forall\,n\in\dominio
+                    \right\}
+                &
+            \end{flalign*}
+        \end{questionBox}
+        \begin{questionBox}2{ % Q1.2
+            Prove que o proximo pertence ao conjunto
+        } % Q1.2
+            \answer{}
+            \begin{flalign*}
+                &
+                    P_{(x)} \in V;
+                    \,P_{(x+1)}\in V
+                &
+            \end{flalign*}
+        \end{questionBox}
+    \end{multicols}
+\end{questionBox}
+
+\begin{exampleBox}1{ % E
+} % E
+    \begin{BM}
+        \sum\limits_{i=0}^{n} \frac{1}{2^i} 
+        = 2-\frac{1}{2^n}
+        \quad
+        \forall\,n\in\mathbb{N}_0
+    \end{BM}
+\end{exampleBox}
+
+\begin{sectionBox}b{} % S
+    \begin{multicols}{2}
+        \begin{sectionBox}2{\(n=0\)} % S
+            \begin{flalign*}
+                &
+                    \sum\limits_{i=0}^{0} \frac{1}{2^i}
+                    = 2-\frac{1}{2^0}
+                    = 2-1=1
+                &
+            \end{flalign*}
+        \end{sectionBox}
+        \begin{sectionBox}2{\(n=m+1\)} % S
+            \begin{flalign*}
+                &
+                    \sum\limits_{i=0}^{m+1}{\frac{1}{2^i}}
+                    = \sum\limits_{i=0}^{m}{
+                        \frac{1}{2^i} + \frac{1}{2^{m+1}}
+                    }
+                    = &\\&
+                    = 2-\frac{1}{2^{m}}+\frac{1}{2^{m+1}}
+                    = 2-\frac{1}{2^{m+1}}
+                &
+                \end{flalign*}
+        \end{sectionBox}
+    \end{multicols}
+\end{sectionBox}
+
+\end{document}

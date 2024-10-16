@@ -1,0 +1,174 @@
+\part{17/05 - Introdução a Trigonometria Hiperbólica}
+
+\begin{multicols}{2}
+
+\begin{sectionBox}1b{Funções Trigonométricas Hiperbólicas}
+\begin{BM}
+	\cosh(x)=\frac{e^x+e^{-x}}{2}
+\\	\sinh(x)=\frac{e^x-e^{-x}}{2}
+\end{BM}\relax
+
+\vspace{-10mm}
+
+\begin{BM}
+	\cosh'(x)=\sinh(x)
+\\	\sinh'(x)=\cosh(x)
+\end{BM}
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	xmajorgrids= true,
+	legend pos= south east
+]
+	
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry[Blue]{$\cosh(x)$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Red]{$\sinh(x)$}
+	
+	\addplot
+	[	smooth,
+		thick,
+		Blue,
+		domain = -2:2,
+		samples = 0.2*\mysampledensity,
+	] {cosh(\x)};
+	
+	\addplot
+	[	smooth,
+		thick,
+		Red,
+		domain = -2:2,
+		samples = 0.2*\mysampledensity,
+	] {sinh(\x)};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Relação fundamental da trigonometria hiperbólica clássica}
+\begin{BM}
+	\cosh^2(x)-\sinh^2(x)=1
+\end{BM}
+
+\begin{flalign*}
+&
+	\cosh^2(x)-\sinh^2(x)\,
+=	&\\&
+=	\left(\frac{e^x+e^{-x}}{2}\right)^2
+-	\left(\frac{e^x-e^{-x}}{2}\right)^2
+=	&\\&
+=	(1/4)
+	\left(
+		e^{2\,x}+2+e^{-2\,x}-e^{2\,x}+2-e^{-2\,x}
+	\right)
+=	1
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}1{Exemplo: $f(x)=\sqrt{1+x^2}$}
+\begin{flalign*}
+&
+	F(x)
+=	\int\sqrt{1+x^2}\,\mathrm{d}x\,
+=	&\\&
+=	\int\sqrt{1+\sinh^2(t)}\,\odv{\sinh(t)}{t}\,\mathrm{d}t
+=	\int\cosh^2(t)\,\mathrm{d}t\,
+=	&\\&
+=	\int\left(\frac{e^t+e^{-t}}{2}\right)^2\,\mathrm{d}t
+=	\int\frac{e^{2\,t}+2+e^{-2\,t}}{4}\,\mathrm{d}t\,
+=	&\\&
+=	(1/4)
+	\left(
+		e^{2\,t}/2+2\,t-e^{-2\,t}/2
+	\right)+c\,
+=	&\\&
+=	\left(\frac{e^{t}-e^{-t}}{2}\right)^2(1/4)+t/4+c\,
+=	&\\&
+=	\frac{\sinh^2{t}+t}{4}+c
+=	\frac{x^2+\arcsinh(x)}{4}+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}1{Exemplo: $f(x)=\sqrt{1-x^2}$}
+\begin{flalign*}
+&
+	F(x)
+=	\int\sqrt{1-x^2}\,\mathrm{d}x\,
+=	&\\&
+=	\int\sqrt{1-\sin^2(t)}\,\odv{\sin(t)}{t}\,\mathrm{d}t
+=	\int\cos^2(t)\,\mathrm{d}t\,
+=	&\\&
+=	\int(\cos(2\,t)/2+1/2)\,\mathrm{d}t
+=	\sin(2\,t)/2+t/2+c\,
+=	&\\&
+=	\sin(2\,\arcsin(x))/4+\arcsin(x)/2+c\,
+=	&\\&
+=	(2/4)(\sin(\arcsin(x)\,\cos(\arcsin(x))))
++	&\\&
++	\arcsin(x)/2+c
+=	(x\,\sqrt{1-x^2}+\arcsin(x))/2+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}1{Desafio: $f(x)=1/\sqrt{1+x^2}$}
+\begin{flalign*}
+&
+	F(x)
+=	\int\sqrt{1+x^2}^{-1}\,\mathrm{d}x\,
+=	&\\&
+=	\int\sqrt{1+\sinh^2(t)}^{-1}\,\odv{\sinh(x)}{t}\,\mathrm{d}t
+=	\int\frac{\cosh(t)}{\cosh(t)}\,\mathrm{d}t\,
+=	&\\&
+=	t+c
+=	\arcsinh(x)+c
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

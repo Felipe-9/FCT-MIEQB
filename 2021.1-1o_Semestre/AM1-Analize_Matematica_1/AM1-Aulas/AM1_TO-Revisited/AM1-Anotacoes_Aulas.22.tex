@@ -1,0 +1,109 @@
+\part{07/05 - Resto Lagrange}
+
+\begin{multicols}{2}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Resto de Lagrange}
+\begin{BM}
+	f_{(\text{ord}=1,\ \text{em}=0)}=f(0)+f'(0)\,x+M_x\,x^2;
+\end{BM}
+
+\begin{flalign*}
+&
+	h(x)=f(x)-f(0)+f'(0)\,x+M_x\,x^2;
+	& h(0)=0;
+&\\&
+	h'(x)=f'(x)-f'(0)+M_x\,2\,x;
+	& h'(0)=0;
+&\\&
+	h''(x)=f''(x)-M_x\,2;
+	& h'(c)=0\phantom{;}
+&\\&
+\implies
+	M_x=f''(c)/2
+&
+\end{flalign*}
+
+\end{minipage}
+
+\begin{sectionBox}2{Exemplo}
+
+\begin{BM}
+	f(x)=\ln(x);\quad a=1
+\end{BM}
+
+\begin{flalign*}
+&
+	f_{(\text{ord}=1,\,\text{em}=1)}
+=	\ln(1)+c^{-1}\,(x-1)
+=	(x-1)/c
+&\\&
+	\implies
+	\begin{cases}
+		x>1\implies f_{(1,1)}(x)<x-1>0
+	\\	x<1\implies f_{(1,1)}(x)<x-1<0
+	\end{cases}
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Exemplo}
+
+\begin{BM}
+	f(x)=\arctan(x)
+\end{BM}
+
+\begin{flalign*}
+&
+	f_{(\text{ord}=1,\ \text{em}=0)}
+=	\arctan(0)
++	(1+0^2)^{-1}(x-0)\,
++	&\\&
+-	(1+c^2)^{-2}\,2*c\,(x-0)^2/2
+=	x-\frac{c\,x^2}{(1+c^2)^2}
+&
+\end{flalign*}
+
+\begin{flalign*}
+&
+	0<x<n\implies0<c<x\,\therefore x\to0^+\implies c\to0
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}3{$
+	\lim_{x\to0^+}(\arctan(x)-x)/x^2
+$}
+\begin{flalign*}
+&
+=	\lim_{x\to0^+}
+	x^{-2}\,
+	\left(
+		x-\frac{c\,x^2}{(1+c^2)^2}-x
+	\right)\,
+=	&\\&
+=	\lim_{x\to0^+}\frac{c}{(1+c^2)^2}
+=	\frac{0}{(1+0^2)^2} = 0
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+

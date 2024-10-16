@@ -1,0 +1,205 @@
+% !TEX root = ./F_IIQ-Testes_Resoluções.1.tex
+\providecommand\mainfilename{"./F_IIQ-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ-Testes_Resoluções.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F_IIQ-Testes_Resoluções.1}}}
+
+\mymakesubfile{1}
+[F IIQ]
+{Resolução Teste} % Subfile Title
+{Resolução Teste} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Cargas, onde pode por \(q=1\,\unit{\coulomb}\) para ter campo nulo
+} % Q1
+    \answer{A) zona 3}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Esfera condutora neutra e varão negativo
+} % Q2
+    \answer{d) eletrons se afastam do varão}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Carga pontual, superficie gausiana é um cubo, fluxo por uma face
+} % Q3
+    \begin{flalign*}
+        &
+            \phi/6 
+            = (q/\varepsilon_0)/6
+        &
+    \end{flalign*}
+
+    \answer{b)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Tendencia de uma carga negativa
+} % Q4
+    \answer{B) pot baixo\to{}elevado}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    2 Esferas, 2Q, 0, r, 3r, depois de ligadas qual a carga
+} % Q5
+    \begin{flalign*}
+        &
+            Q_1
+            = E_1\,R_1/k
+            = (k\,Q_2/R_2)\,R_1/k
+            = Q_2\,(R_1/R_2)
+            = (2Q-Q_1)\,(R_1/3\,R_1)
+            = &\\&
+            = (2Q-Q_1)/3
+            \implies &\\&
+            \implies
+            Q_1 = 2Q/4 = Q/2
+        &
+    \end{flalign*}
+
+    \answer{E)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Afirm sobre linhas de campo
+} % Q6
+    \answer{B)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Afirm falsa dipolo
+} % Q7
+    \answer{B) deslocase em um campo}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Condutor com carga central
+} % Q8
+    \answer{C)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    grafico
+} % Q9
+    \answer{A) potencial de esfera de raio R}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    Afirm verd
+} % Q10
+    \answer{E) sup condut é equipot}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q11
+    2 Grandes placas paralelas, \(L=12\,\unit{\centi\metre}\), \(Q_1=-Q_2\), \(F_e =6.5*10^{-16}\,\unit{\newton}\) atua sobre o eletron
+} % Q11
+    \begin{questionBox}2{ % Q11.1
+        Campo no eletron
+    } % Q11.1
+        \begin{flalign*}
+            &
+                E 
+                = F/q 
+                \cong \frac{6.5*10^{-16}\,\unit{\newton}}{\num{1.602176634e-19}\,\unit{\coulomb}}
+                \cong
+                \qty{4056.980898399495695}{\newton/\coulomb}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q11.2
+        \(\adif{V}\) entre as placas
+    } % Q11.2
+        \begin{flalign*}
+            &
+                \adif{V}
+                = \adif{V}_2-\adif{V}_1
+                = 2\,\pi\,k\,\sigma_2\,x_2-2\,\pi\,k\,\sigma_1\,x_1
+                = 2\,\pi\,k\,(\sigma_2\,x_2-\sigma_1\,x_1)
+                = &\\&
+                = 2\,\pi\,k\,(\sigma\,x_2-\sigma\,x_1)
+                = 2\,\pi\,k\,\sigma*(12)
+                = 24\,\pi\,k\,\sigma
+            &
+        \end{flalign*}
+        % \begin{flalign*}
+        %     &
+        %         \adif{V}
+        %         = \lvert{\adif{V_2}-\adif{V_1}}\rvert
+        %         = \lvert{
+        %             (V_0-2\,\pi\,k\,\sigma_2\,x_2)
+        %             -(V_0-2\,\pi\,k\,\sigma_1\,x_1)
+        %         }\rvert
+        %         = \lvert{
+        %             2\,\pi\,k\left(
+        %                 \sigma_1-\sigma_2
+        %             \right)
+        %         }\rvert
+        %         = &\\&
+        %         = \lvert{
+        %             2\,\pi\,k\left(
+        %                 2\,\sigma_1
+        %             \right)
+        %         }\rvert
+        %         = 4\,\pi\,k\,\lvert{
+        %             \sigma_1
+        %         }\rvert
+        %         = 4\,\pi\,k\,\lvert{
+        %             2\,\varepsilon_0\,E_1
+        %         }\rvert
+        %         = 2\lvert{
+        %             \num{4056.980898399495695}/2
+        %         }\rvert
+        %         = \num{4056.980898399495695}
+        %     &
+        % \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q11.3
+        Trabalho do campo no eletron largardo na placa negativa
+    } % Q11.3
+        \begin{flalign*}
+            &
+                w 
+                = \int_{0}^{0.12}{
+                    \vv{E}\cdot\hat{i}\odif{x}
+                }
+                = \int_{0}^{0.12}{
+                    -E\odif{x}
+                }
+                = -E*0.12
+                \cong -\num{4056.980898399495695}*0.12
+                \cong -\num{486.83770780793952}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q11.4
+        Velocidade do eletron ao meio
+    } % Q11.4
+        \begin{flalign*}
+            &
+                U 
+                = U_{k} + U_{E}
+                = m\,v^2/2 + \num{486.83770780793952}/2
+                = \num{486.83770780793952}
+                \implies &\\&
+                \implies
+                v 
+                \cong \sqrt{\num{486.83770780793952}/m_e}
+                \cong \sqrt{\num{486.83770780793952}/{9*10^{-31}}}
+                \cong \qty{2.325791879023715e16}{\metre/\second}
+            &
+        \end{flalign*}
+        % jcs
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

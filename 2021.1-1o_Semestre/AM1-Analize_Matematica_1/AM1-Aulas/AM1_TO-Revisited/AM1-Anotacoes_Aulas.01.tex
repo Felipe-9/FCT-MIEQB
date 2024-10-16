@@ -1,0 +1,335 @@
+% !TEX root = ./AM1-Anotacoes_Aulas.01.tex
+\providecommand\mainfilename{"./AM1-Anotacoes_Aulas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM1-Anotacoes_Aulas.01.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM1-Anotacoes_Aulas.01}}}
+% \tikzsetexternalprefix{./.build/figures/AM1-Anotacoes_Aulas.01/graphics/}
+
+\mymakesubfile{1}
+[AM 1]
+{Conceitos Básicos I} % Subfile Title
+{Conceitos Básicos I} % Part Title
+
+% Vizinhanca
+\begin{sectionBox}1{\hypertarget{vizinhanca}{Vizinhança}}
+    % [hypertarget=vizinhanca]
+    \begin{flalign*}
+        &
+            \vizinhanca{x} = (x-\delta, x+\delta)
+            \quad \delta\in\mathbb{R}\backslash\{0\}
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}b{} % S
+    
+    \begin{multicols}{2}
+    
+        \begin{sectionBox}1{\hypertarget{majorante}{Majorante}}
+            % [hypertarget=majorante]
+            \begin{flalign*}
+                &
+                    m \in \text{Majorante}(X)
+                    \iff &\\&
+                    \iff
+                    m\in\mathbb{R}
+                    \land
+                    x \leq m\ \forall\,x\in X
+                &
+            \end{flalign*}
+        \end{sectionBox}
+    
+    
+        % Minorante
+        \begin{sectionBox}1{\hypertarget{minorante}{Minorante}}
+            % [hypertarget=minorante]
+            \begin{flalign*}
+                &
+                    m \in \text{Minorante}(X)
+                    \iff &\\&
+                    \iff
+                    m\in\mathbb{R}
+                    \land
+                    x \geq m
+                    \quad\forall\,x\in X
+                &
+            \end{flalign*}
+        \end{sectionBox}
+    
+    \end{multicols}
+
+\end{sectionBox}
+
+\begin{sectionBox}b{} % S
+
+    \begin{multicols}{2}
+
+        % Infimo
+        \begin{sectionBox}1{\hypertarget{infimo}{Infimo}}
+            % [hypertarget=infimo]
+
+            \begin{sectionBox}3{Standalone}
+                \begin{flalign*}
+                    &
+                        \text{Inf}(X) = i
+                        \iff &\\&
+                        \iff
+                        i\in\mathbb{R}
+                        \land
+                        x \geq m
+                        \ \forall\,x\in X
+                        \land &\\&
+                        \land
+                        \nexists\,y\in\mathbb{R}\backslash X
+                        : i<y<x
+                        \ \forall\,x\in X
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+            \begin{sectionBox}3
+                {Usando Vizinhança}
+                % {Usando \hyperlink{vizinhanca}{Vizinhança}}
+                \begin{flalign*}
+                    &
+                        \text{Inf}(X) = i
+                        \iff &\\&
+                        \iff
+                        i\in\mathbb{R}
+                        \land
+                        x\geq i\quad\forall\,x\in X
+                        \land
+                        \vizinhanca{i}\cap X\neq\emptyset
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+        \end{sectionBox}
+
+
+        % Supremo
+        \begin{sectionBox}1{\hypertarget{supremo}{Supremo}}
+            % [hypertarget=supremo]
+
+            \begin{sectionBox}3{Standalone}
+                \begin{flalign*}
+                    &
+                        \text{Sup}(X) = s
+                        \iff &\\&
+                        \iff
+                        s\in\mathbb{R}
+                        \land
+                        x\leq s\ \forall\,x\in X
+                        \land &\\&
+                        \land
+                        \nexists\,y\in\mathbb{R}\backslash X
+                        : x<y<s
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+            \begin{sectionBox}3{Usando Vizinhança}
+                % {Usando \hyperlink{vizinhanca}{Vizinhança}}
+                \begin{flalign*}
+                    &
+                        \text{Sup}(X) = s
+                        \iff &\\&
+                        \iff
+                        s\in\mathbb{R}
+                        \land
+                        x\leq s\ \forall\,x\in X
+                        \land
+                        \vizinhanca{s}\cap X\neq\emptyset
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+        \end{sectionBox}
+
+    \end{multicols}
+
+\end{sectionBox}
+%\vspace{0mm}
+\begin{sectionBox}b{} % S
+    
+    \begin{multicols}{2}
+
+        % % Minimo
+        \begin{sectionBox}1{\hypertarget{Minimo}{minimo}}
+            % [hypertarget=minimo]
+
+            \begin{sectionBox}3{Standalone}
+                \begin{flalign*}
+                    &
+                        \text{Min}(X) = m
+                        \iff &\\&
+                        \iff
+                        m\in X
+                        \land
+                        m \leq y\ \forall\,y\in m
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+            \begin{sectionBox}3{Usando Minorante}
+                % {Usando \hyperlink[majorante]{Minorante}}
+                \begin{flalign*}
+                    &
+                        \min(X) = m
+                        \iff &\\&
+                        \iff
+                        m\in X
+                        \land
+                        m\in \text{Minorante}(X)
+                        % \hyperlink[majorante]{\text{Minorante}(X)}
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+        \end{sectionBox}
+
+        % Maximo
+        \begin{sectionBox}1{\hypertarget{Maximo}{Maximo}}
+            % [hypertarget=Maximo]
+
+            \begin{sectionBox}3{Standalone}
+                \begin{flalign*}
+                    &
+                        \max{(X)} = m
+                        \iff &\\&
+                        \iff
+                        m\in X
+                        \land
+                        m \geq y\ \forall\,y\in m
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+            \begin{sectionBox}3{Usando Majorante}
+                % {Usando \hyperlink[majorante]{Majorante}}
+                \begin{flalign*}
+                    &
+                        = \max{(X)} = m
+                        \iff &\\&
+                        \iff
+                        m\in X
+                        \land
+                        m\in \text{Majorante}(X)
+                        % \hyperlink[majorante]{\text{Majorante}(X)}
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+        \end{sectionBox}
+
+    \end{multicols}
+
+\end{sectionBox}
+
+% Conjunto Limitado
+\begin{sectionBox}1{\hypertarget{Conjunto Limitado}{conjunto limitado}}
+    % [hypertarget=conjunto limitado]
+    \begin{flalign*}
+        &
+            X \text{ é um conjunto limitado}
+            \iff &\\&
+            \iff
+            \{
+                m_1 \leq x \leq m_2
+                \quad\forall\,x\in X
+                :  m_1 \in \text{Minorante}(X) % \hyperlink[majorante]{\text{Minorante}(X)}
+                ,\ m_2 \in \text{Majorante}(X) % \hyperlink[majorante]{\text{Majorante}(X)}
+            \}
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+
+
+\begin{sectionBox}b{} % S
+
+    % interior e exerior
+    \begin{multicols}{2}
+
+        % Interior
+        \begin{sectionBox}1{\hypertarget{Interior}{interior}}
+            % [hypertarget=interior]
+
+            \begin{sectionBox}3{Standalone}
+                \begin{flalign*}
+                    &
+                        x\in\interior(X)
+                        \iff &\\&
+                        \iff
+                        \exists\,\delta>0
+                        :(x-\delta,x+\delta)\subseteq X
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+            \begin{sectionBox}3{Usando vizinhanca}
+                % {Usando \hyperlink{vizinhanca}{Vizinhança}}
+                \begin{flalign*}
+                    &
+                        x\in\interior(X)
+                        \iff &\\&
+                        \iff
+                        \vizinhanca{x}\subseteq X
+                    &
+                \end{flalign*}
+            \end{sectionBox}
+
+        \end{sectionBox}
+
+
+        % Exterior
+        \begin{sectionBox}1{\hypertarget{Exterior}{exterior}}
+            % [hypertarget=exterior]
+            \begin{flalign*}
+                &
+                    x\in\exterior(X)
+                    \iff &\\&
+                    \iff
+                    \exists\,\delta\in\mathbb{R}\backslash\{0\}
+                    :(x-\delta,x+\delta)\cap X =\emptyset
+                &
+            \end{flalign*}
+        \end{sectionBox}
+
+        \begin{sectionBox}3{Usando vizinhança}
+            % {Usando \hyperlink{vizinhanca}{Vizinhança}}
+            \begin{flalign*}
+                &
+                    x\in\exterior(X)
+                    \iff &\\&
+                    \iff
+                    \vizinhanca{x}\cap X =\emptyset
+                &
+            \end{flalign*}
+        \end{sectionBox}
+
+    \end{multicols}
+
+\end{sectionBox}
+
+% Fronteira
+\begin{sectionBox}1{Fonteira}
+    % [hypertarget=fronteira]
+    \begin{flalign*}
+        &
+            f\in\fronteira(X)
+            \iff &\\&
+            \iff
+            \vizinhanca{f}\cap X\neq\emptyset
+            \land
+            \vizinhanca{f}\cap\mathbb{R}\backslash X\neq\emptyset
+        &
+    \end{flalign*}
+\end{sectionBox}
+
+\end{document}

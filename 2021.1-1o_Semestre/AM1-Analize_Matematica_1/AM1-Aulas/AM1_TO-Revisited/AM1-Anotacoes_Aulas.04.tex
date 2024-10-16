@@ -1,0 +1,117 @@
+% !TEX root = ./AM1-Anotacoes_Aulas.04.tex
+\providecommand\mainfilename{"./AM1-Anotacoes_Aulas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM1-Anotacoes_Aulas.04.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM1-Anotacoes_Aulas.04}}}
+% \tikzsetexternalprefix{./.build/figures/AM1-Anotacoes_Aulas.04/graphics/}
+
+\mymakesubfile{4}
+[AM1]
+{22/03 -- Indução por Desigualdade} % Subfile Title
+{22/03 -- Indução por Desigualdade} % Part Title
+
+\begin{sectionBox}b{} % S
+\begin{multicols}{2}
+    
+    \begin{exampleBox}1{ % E1
+        \begin{BM}
+            n\leq 2^{n-1}\quad\forall\,n\in\mathbb{N}
+        \end{BM}
+    } % E1
+        \begin{exampleBox}2{ % E1.1
+            \begin{BM}
+                n=1
+            \end{BM}
+            \vspace{-5ex}
+        } % E1.1
+            \begin{flalign*}
+                &
+                    1\leq 2^{1-1}= 1
+                &
+            \end{flalign*}
+        \end{exampleBox}
+        \begin{exampleBox}2{ % E1.2
+            \begin{BM}
+                n=m+1
+            \end{BM}
+            \vspace{-5ex}
+        } % E1.2
+            \begin{flalign*}
+                &
+                    m+1
+                    \leq &\\&
+                    \leq 2^{m-1}+1
+                    = \frac{2^{m}+2}{2}
+                    \leq &\\&
+                    \leq 2^{m+1-1} = 2^{m}
+                    \implies &\\&
+                    \implies
+                    2
+                    \leq 2^{m+1}-2^m
+                    = 2^m(2-1)
+                    = 2^m
+                &
+            \end{flalign*}
+        \end{exampleBox}
+    \end{exampleBox}
+    
+    
+    % \vfill
+    
+    % \section{Exemplo 2}
+    % \BMold{ n^2\leq 2^n\quad\forall\,n\in\mathbb{N}\land n\geq4 }
+    
+    % \subsubsection{$n=4$}
+    
+    % \begin{flalign*}
+    % &
+    % 	4^2\leq 2^4 = 4^2
+    % &
+    % \end{flalign*}
+    
+    % \subsubsection{$n=m+1$}
+    
+    % \begin{flalign*}
+    % &
+    % 	(m+1)^2
+    % =	m^2+2\,m+1
+    % \leq	&\\&
+    % \leq
+    % 	2^m+2\,m+1
+    % \leq 
+    % 	2 * 2^{m}
+    % =	2^{m+1}
+    % \implies &\\&
+    % \implies
+    % 	2\,m+1 \leq 2^m
+    % ;\	&\\&
+    % 	\begin{cases}
+    % 	%
+    % 		m=4
+    % 	\implies 
+    % 		2*4+1 = 9 
+    % 	\leq 2^4 = 16
+    % 	\\	
+    % 		m=n+1
+    % 	\implies 
+    % 		2*(n+1)+1=2\,n+1+2
+    % 	\leq \\
+    % 	\leq 2^n+2
+    % 	\leq 2*2^{n} = 2^{n+1}
+    % 	\implies
+    % 		2\leq 2^n
+    % 	%
+    % 	\end{cases}
+    % &
+    % \end{flalign*}
+    
+\end{multicols}
+\end{sectionBox}
+
+\end{document}

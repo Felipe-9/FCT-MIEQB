@@ -1,0 +1,232 @@
+% !TEX root = ./F_IIQ-Testes_Resoluções.2.tex
+\providecommand\mainfilename{"./F_IIQ-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ-Testes_Resoluções.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F_IIQ-Testes_Resoluções.2}}}
+% \tikzsetexternalprefix{./.build/figures/F_IIQ-Testes_Resoluções.2/}
+
+\mymakesubfile{2}
+[Física 2]
+{2 Teste Resolução} % Subfile Title
+{Teste Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Caracteristica Voltimetro e Amperimetro ideais
+} % Q1
+    \answer{D) Amperimetro nula, Volt infinita}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Circuito, Medição amperimetro
+} % Q2
+    \begin{flalign*}
+        &
+            100.0
+            - 25.0\,I 
+            - 75.0\,I
+            - 25.0\,I
+            - 25.0\,I
+            - 15.0\,I
+            = 0
+            \implies &\\&
+            \implies
+            I = \frac{100.0}{
+                75.0+25.0*3+15.0
+            }
+            \cong \qty{0.606060606060606}{\ampere}
+        &
+    \end{flalign*}
+    \answer{B}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Partir imã em dois
+} % Q3
+    \answer{C}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Campo em agua
+} % Q4
+    \answer{C) 19.2\,kC}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    O que acontece quando fecha o circuito
+} % Q5
+    \answer{D) A carga almenta até \(C/\varepsilon\)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q6
+    Esquema campo magnético imã
+} % Q6
+    \answer{C)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q7
+    Particula movendo num campo, quanto vale \(\vec{B}\cdot\vec{F}\)
+} % Q7
+    \begin{flalign*}
+        &
+            \vv{B}\cdot\vv{F}
+            = \vv{B}\cdot\left(
+                q\,\vv{v}\times\vv{B}
+            \right)
+            = \vv{B}\cdot\left(
+                q\,\vv{v}\times\vv{B}
+            \right)
+            = 0: \vv{B}\perp\vv{v}\times\vv{B}
+        &
+    \end{flalign*}
+    \answer{D)}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q8
+    Força de um feixe de protons num campo
+} % Q8
+    \begin{itemize}
+        \item \(v = 2.0*10^{5}\,\unit{\metre/\second}\)
+        \item \(B_z = 5.0\,\unit{\tesla}\)
+        \item \(\vv{v}\angle\vv{B}=30^\circ\)
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            \vv{F}
+            = q\,\vv{v}\times\vv{B}
+            = -1.6*10^{-19}\,2.0*10^{5}\,5.0\,\sin{30^\circ}\,\hat{\jmath}\,\unit{\newton}
+            \cong
+            -8*10^{-14}\,\hat{\jmath}\,\unit{\newton}
+        &
+    \end{flalign*}
+
+    \answer{A}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q9
+    Qualidade diferente de dois condensadores de diff separação
+} % Q9
+    \answer{D) Energia armazenada}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q10
+    Quando força mag altera a velocidade de uma partícula
+} % Q10
+    \answer{E) Não pode}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q11
+    Condensador
+} % Q11
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item Placas circulares de cobre
+            \item Diâmetro: \(D = 3.0\,\unit{\centi\metre}\)
+            \item Distância: \(l = 1.2\,\unit{\milli\metre}\)
+            \item Diff de pot aplicada: \(V_0=85\,\unit{\volt}\)
+            \item Duração da aplicação: \(t=10\,\unit{\second}\)
+        \end{multicols}
+        \item Material dielétrico inserido: 
+        \begin{itemize}
+            % \begin{multicols}{2}
+                \item Constante dielétrica: \(\kappa=3.5\)
+                \item Espessura: \(l_d = 1.2\,\unit{\milli\metre}\)
+                \item Rigiez dielétrica \(\max{V}=10\,\unit{\mega\volt/\metre}\)
+            % \end{multicols}
+        \end{itemize}
+    \end{itemize}
+
+    \begin{questionBox}2{ % Q11.1
+        A capacidade do condensador antes e depois de ser introduzido o dielétrico
+    } % Q11.1
+        \begin{flalign*}
+            &
+                C_0
+                = \varepsilon_0\,A/l
+                = \varepsilon_0\,\pi\,(D/2)^2/l
+                \cong 8.85*10^{-12}\,\pi\,(3.0\E-2/2)^2/1.2\E-3
+                \cong &\\&
+                \cong
+                \num{52.130803095505632e-13}
+            &\\[3ex]&
+                C
+                = \left(
+                    (\varepsilon\,A/l_d)^{-1}
+                    +(\varepsilon_0\,A/(l-l_d))^{-1}
+                \right)^{-1}
+                = \varepsilon\,A/l
+                = \kappa\,\varepsilon_0\,A/l
+                = \kappa\,\varepsilon_0\,\pi\,(D/2)^2/l
+                = &\\&
+                \cong 3.5
+                *8.85*10^{-12}
+                *\pi
+                *(3.0\E-2/2)^2
+                /1.2\E-3
+                \cong
+                \num{182.45781083426971e-13}
+            &
+        \end{flalign*}
+
+        % \begin{BM}
+        %     \varepsilon_0=8.85*10^{-12}
+        % \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q11.2
+        A carga acumulada em cada uma das placads do condensador antes e depois de ser introduzido o dielétrico.
+    } % Q11.2
+        \begin{flalign*}
+            &
+                Q_0=Q=C_0\,V_0
+                \cong \num{52.130803095505632e-13}*85
+                \cong \qty{4431.11826311797855e-13}{\coulomb}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q11.3
+        A densidade superficial de carga introduzida no dielétrico
+    } % Q11.3
+        \begin{flalign*}
+            &
+                \sigma
+                = 2\,E\,\kappa\,\varepsilon_0
+                = 2\,\frac{Q}{2\,\pi\,(D/2)^2\,\varepsilon_0}\,\kappa\,\varepsilon_0
+                = \frac{Q}{\pi\,(D/2)^2}\,\kappa
+                \cong &\\&
+                \cong 
+                \frac{
+                    \num{4431.11826311797855e-13}
+                }{
+                    \pi\,(3.0\E-2/2)^2
+                }\,3.5
+                % \cong &\\&
+                \cong 
+                \qty{2194.062500000000158e-8}{\coulomb/\metre^2}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q11.4
+        A diferença de potencial máxima que pode ser aplicadada às placas do condensador sem que haja ruptura dielétrica
+    } % Q11.4
+        \begin{flalign*}
+            &
+                \max{V}
+                = V:
+                V_i=1.12*10^{-3}*10\,\unit{\mega\volt}
+                =1.12*10^{-2}\,\unit{\mega\volt}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

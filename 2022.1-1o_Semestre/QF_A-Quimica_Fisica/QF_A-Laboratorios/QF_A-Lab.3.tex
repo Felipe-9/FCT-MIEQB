@@ -1,0 +1,51 @@
+% !TEX root = ./QF_A-Lab.3.tex
+\providecommand\mainfilename{"./QF_A-Lab.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Lab.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Lab.3}}}
+
+\mymakesubfile{3}
+[QF A]
+{Lab: Cinética da redução do corante azul de toluidina pelo ião sulfito} % Subfile Title
+{Cinética da redução do corante azul de toluidina pelo ião sulfito} % Part Title
+
+\part*{Introdução}
+
+\begin{sectionBox}1{Reação} % S
+    
+    \subsection*{Azul de toluina (\ch{TB^+})}
+    \begin{itemize}
+        \item \(\lambda_{\max}=596\,\unit{\nano\metre}\)
+        \item \(\varepsilon_{596\,\unit{\nano\metre}} = 24000\,\unit{M^{-1}\,\centi\metre^{-1}}\)
+    \end{itemize}
+
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{reacao.png}
+    \end{center}
+
+    \vspace{-3ex}
+    \begin{BM}
+        v
+        =k\,\ch{[SO3^{2-}]_0[TB^+]}
+        \cong k'\,\ch{[TB^+]}
+        \\
+        A = \varepsilon\,b\,\ch{[TB^+]}
+        \\[2ex]
+        \implies
+        \ln{A}=\ln{A}_0-k'\,t
+    \end{BM}
+
+    \begin{itemize}
+        \item Na equação da velocidade \(\ch{[SO3^{-2}]}=\ch{[SO3^{-2}]}_0,\,\therefore k\,\ch{[SO3]}_0=k'\)
+        \item Relacionando a equação da velocidade com a da absorvancia temos a e.q. final que podemos receber os valores experimentalmente e retirar \textit{k'} do declive do gráfico
+    \end{itemize}
+    
+\end{sectionBox}
+
+\end{document}

@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+%\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{\arabic{section}E}
+\renewcommand\thesubsection{\arabic{section} - \alph{subsection}) }
+
+\begin{document}
+
+\title{F1 - Molas e Mov Harm Simp}
+\author{Felipe Pinto - 61387}
+\date{15/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+\setcounter{section}{13}
+
+% 14E
+\section{Bloco caindo em uma mola}
+
+\subsection{Trabalho pela graviade}
+\begin{flalign*}
+&
+	w_{F_g} = \int \vec F_g\cdot\delta \vec d
+	=
+		m\,g\,d
+	\cong
+		\cdots
+&
+\end{flalign*}
+
+\subsection{Trabalho pela mola}
+\begin{flalign*}
+&
+	w_{F_k} = \int \vec F_{k}\cdot\vec d
+	=
+		-k\,\int d\delta d
+	=
+		-k\,d^2/2
+&
+\end{flalign*}
+
+\subsection{Velocidade do bloco no momento que encosta na mola}
+\begin{flalign*}
+&
+	m\,v^2/2 = k\,d^2/2
+	\implies
+		v = \sqrt{k\,d^2/m}
+&
+\end{flalign*}
+
+\subsection{Altura que partil}
+\begin{flalign*}
+&
+	m\,g\,h = m\,v^2/2
+	\implies
+		h = v^2/(2\,g)
+&
+\end{flalign*}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

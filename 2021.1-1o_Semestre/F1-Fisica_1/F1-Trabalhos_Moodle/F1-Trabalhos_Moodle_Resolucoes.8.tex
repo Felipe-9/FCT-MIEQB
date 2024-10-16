@@ -1,0 +1,205 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+%\setlength{\cftsubsecnumwidth}{15mm}
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+%\usepackage{siunitx}
+%\sisetup{
+%	scientific-notation = engineering,
+%	exponent-to-prefix = true,
+%	exponent-product = *,
+%	round-mode = figures,
+%%	round-precision = 3,
+%%	round-minimum = 0.01
+%}
+
+% Maths
+%\usepackage{amssymb} 		
+%\usepackage{amsmath} 
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{booktabs}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+%\renewcommand\thesection{Questão \arabic{section}}
+%\renewcommand\thesubsection{%
+%	\arabic{section} - \alph{subsection})%
+%}
+%\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	Física 1 - T8
+\\	Comparações significativas
+	(1$^a$ actividade de um conjunto de duas)%
+}
+\author{Felipe Pinto - 61387}
+
+
+\maketitle
+
+
+\begin{center}
+\begin{tabular}{| c | p{7cm} | p{7cm} | c |}
+	
+	\cline{2-3}
+	
+	\multicolumn{1}{c}{}
+& 	\multicolumn{2}{| c |}{\textbf{Diferenças}}
+& 	\multicolumn{1}{c}{}
+	
+	\\ \cline{2-3}
+	
+	\multicolumn{1}{c |}{}
+&	Características únicas da velocidade
+	
+& 	Características únicas do momento linear
+	
+& 	\multicolumn{1}{ c}{}
+
+	\\ \cline{2-3}
+	
+	
+	\multicolumn{1}{c |}{}
+	
+&	\begin{itemize}
+		
+		\item mede a variação de espaço no tempo
+		
+	\end{itemize}
+	
+& 	\begin{itemize}
+		
+		\item mede a variação da energia cinética com a velocidade
+		
+	\end{itemize}
+	
+& 	\multicolumn{1}{ c}{}
+
+	\\ \hline
+	
+	\multicolumn{4}{|c|}{\textbf{Semelhanças}}
+	
+	\\ \hline
+	
+	\multicolumn{4}{| p{14cm} |}%
+	{
+	\begin{itemize}
+		
+		\item Grandezas Vetoriais
+		\item Ambas são informações relacionadas a cinética do objeto
+		\item Ambas podem ser usadas para determinar a variação de energia cinética de um sistema
+		\item são diretamente proporcionais uma com a outra
+		\item Sensíveis a aplicação de força
+		\item possuem modulos iguais a zero na ausencia de movimento
+		\item Ambas variam com referenciais em movimento
+		
+	\end{itemize}
+	}
+	
+	\\ \hline
+	
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

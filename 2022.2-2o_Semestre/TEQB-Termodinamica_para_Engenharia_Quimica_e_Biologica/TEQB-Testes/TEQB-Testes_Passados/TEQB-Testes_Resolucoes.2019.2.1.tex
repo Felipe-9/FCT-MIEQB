@@ -1,0 +1,545 @@
+% !TEX root = ./TEQB-Testes_Resoluções.2019.2.1.tex
+\providecommand\mainfilename{"./TEQB-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Testes_Resoluções.2019.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[TEQB]
+{Teste 2019.2.1}
+{Teste 2019.2.1}
+
+\sisetup{round-precision=3}
+
+\begin{questionBox}1{} % Q1
+    
+    \begin{center}
+        \includegraphics[width = 0.8\textwidth]{./.build/figures/Screenshot 2022-10-17 at 12.17.32.png}
+    \end{center}
+
+    Considere que submete 1\,\unit{\mole} de um gás perfeito (\(C_V = R\,5/2\)) ao processo reversível representado.
+    
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.1
+    Calcule o trabalho posto em jogo no percurso 2\to3.
+} % Q1.1
+
+    \begin{flalign*}
+        &
+            W_{
+                (30.2\to120.6)\unit{\celsius}
+                P_{cnt}
+            }
+            = \int_{Vol_1}^{Vol_2} P_{ext}\odif{Vol}
+            =  P_{ext}\int_{Vol_1}^{Vol_2}\odif{Vol}
+            =  P_{ext}\adif{Vol}\big\rvert_{Vol_1}^{Vol_2}
+            = &\\&
+            =  P_{ext}\left(
+                Vol_2 - Vol_1
+            \right)
+            % = &\\&
+            =  P_{ext}\left(
+                \frac{n\,R\,T_2}{P_2} 
+                - \frac{n\,R\,T_1}{P_1}
+            \right)
+            =  n\,R\,\left(
+                T_2 - T_1
+            \right)
+            = &\\&
+            =  (1)\,(\num{8.314462618})\,\left(
+                (120.6+273.15) - (30.2+273.15)
+            \right)
+            \cong
+            \num{751.6274206672}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.2
+    
+    Calcule o trabalho e o calor postos em jogo no percurso 3\to4.
+
+    \begin{questionBox}3{\textit{W}} % Q1.2 (i)
+        \begin{flalign*}
+            &
+                W_{vol_{cnt}}
+                = 0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{\textit{Q}} % Q1.2 (ii)
+        \begin{flalign*}
+            &
+                Q_{
+                    vol_{cnt},
+                    (120.6\to-52.8)\unit{\celsius}
+                }
+                = \int_{T_3}^{T_4}{
+                    n\,C_v\,\odif{T}
+                }
+                = n\,C_v\,\int_{T_3}^{T_4}{
+                    \odif{T}
+                }
+                = n\,C_v\,\adif{T}\big\rvert_{T_3}^{T_4}
+                = &\\&
+                = (1)
+                \,\left(\num{8.314462618}*5/2\right)
+                \,((-52.8+273.15) - (120.6+273.15))
+                \cong
+                \num{-3604.319544903}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.3
+    
+    Calcule a pressão do gás no estado 1.
+
+    \begin{flalign*}
+        &
+            P_1
+            = \frac{n\,R\,T_1}{vol_1}
+            = \frac{
+                n\,R\,T_1
+            }{
+                vol_1
+            }
+            = \frac{
+                n\,R\,T_1
+            }{
+                vol_2\sqrt[\gamma]{P_2/P_1}
+            }
+            = \cfrac{
+                n\,R\,T_1
+            }{
+                \left(\cfrac{n\,R\,T_2}{P_2}\right)
+                \,(P_3/P_1)^{C_v/C_P}
+            }
+            = &\\&
+            = \cfrac{
+                T_1
+            }{
+                T_2
+                \,P_3^{-1}
+                \,(P_3/P_1)^{5/7}
+            }
+            = \frac{
+                T_1
+                \,P_1^{5/7}
+            }{
+                T_2
+                \,P_3^{5/7-1}
+            }
+            \implies
+            P_1
+            = \left(
+                \frac{
+                    T_1
+                }{
+                    T_2
+                    \,\left(
+                        \frac{n\,R\,T_3}{vol_3}
+                    \right)^{5/7-1}
+                }
+            \right)^{1/(1-5/7)}
+            = &\\&
+            = \left(
+                \frac{T_1}{T_2}
+            \right)^{1/(1-5/7)}
+            \,\frac{n\,R\,T_3}{vol_3}
+            = \left(
+                \frac{94.6+273.15}{30.2+273.15}
+            \right)^{7/2}
+            \,\frac{
+                (1)\,(\num{8.314462618})\,(120.6+273.15)
+            }{
+                5.87\E-6
+            }
+            \cong &\\&
+            \cong
+            \num{1094.074858065844468e6}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.4
+    
+    Calcule \(\adif{S_{viz}}\) para o percurso 4\to5.
+
+    \begin{flalign*}
+        &
+            \adif{S_{viz}}
+            = - \adif{S}
+            = - \left(
+                \int{
+                    n\,C_V\,\frac{\odif{T}}{T}
+                }
+                + n\,R\,\ln\frac{V_5}{V_4}
+            \right)
+            = - \int_{T_4}^{T_5}{
+                n\,C_V\,\frac{\odif{T}}{T}
+            }
+            - n\,R\,\ln\frac{V_f}{V_i}
+            = &\\&
+            = 
+            - n\,C_v\,\ln\frac{T_5}{T_4}
+            - n\,R\,\ln\frac{
+                (n\,R\,T_5/P_5)
+            }{
+                V_4
+            }
+            = &\\&
+            = - n\,C_v\,\ln
+            \left(
+                \frac{
+                    \frac{\adif{U}}{n\,C_v}
+                    +T_4
+                }{
+                    T_4
+                }
+            \right)
+            - n\,R\,\ln\frac{
+                n\,R
+                \,\left(
+                    \frac{\adif{U}}{n\,C_v}
+                    +T_4
+                \right)
+            }{
+                V_4\,P_5
+            }
+            = &\\&
+            = - n\,C_v\,\ln
+            \left(
+                \frac{\adif{U}}{n\,C_v\,T_4}
+                +
+                1
+            \right)
+            - n\,R\,\ln\frac{
+                R
+                \,\left(
+                    \frac{\adif{U}}{C_v}
+                    +T_4
+                \right)
+            }{
+                V_4\,P_5
+            }
+            = &\\&
+            = - (1)\,(\num{8.314462618}*5/2)\,\ln
+            \left(
+                \frac{208}{(1)\,(\num{8.314462618}*5/2)\,(-52.8+273.15)}
+                +
+                1
+            \right)
+            + &\\&
+            - (1)\,(\num{8.314462618})\,\ln\frac{
+                (\num{8.314462618})
+                \,\left(
+                    \frac{208}{\num{8.314462618}*5/2}
+                    +(-52.8+273.15)
+                \right)
+            }{
+                (5.87\E-3)\,(1.26\E5)
+            }
+            \cong
+            -8.8
+        &
+    \end{flalign*}
+
+    \paragraph*{Nota:} N aguento mais esses calculos, fazer com variáveis intermediárias é menos preciso porem mais fácil
+    
+\end{questionBox}
+
+\setcounter{question}{2}
+\setcounter{subquestion}{0}
+
+\begin{questionBox}2{} % Q2.1
+    
+    Calcule a variação de energia interna associada à passagem da água gasosa, a 138.9\,\unit{\celsius} e 1.01\,\unit{\bar}, a água sólida, a 0\,\unit{\celsius} e 1.01\,\unit{\bar}.
+
+    \begin{flalign*}
+        &
+            \adif{U}_{
+                \ch{H2O\gas{}\to\sld{}},
+                (138.9\to0)\unit{\celsius},1.01\unit{\bar}
+            }
+            \underset{P_{cnt}}{=}
+            \adif{H} - P\adif{V}
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    & 
+                    \adif{H}_{
+                        \ch{H2O\sld{}},
+                        (138.9\to100)\unit{\celsius}
+                    }
+                    \\ + &
+                    \adif{H}_{
+                        \ch{H2O(\sld{}\to\lqd{})},
+                        100\unit{\celsius}
+                    }
+                    \\ + &
+                    \adif{H}_{
+                        \ch{H2O\lqd{}},
+                        (100\to0)\unit{\celsius}
+                    }
+                    \\ + &
+                    \adif{H}_{
+                        \ch{H2O(\lqd{}\to\sld{})},
+                        0\unit{\celsius}
+                    }
+                \end{aligned}
+            \right)
+            - P(V_f-V_i)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    & 
+                    n\,C_{p, (g)}((100+273.15)-(138.9+273.15))
+                    \\ + &
+                    n\,(-\adif{H}_{vap})
+                    \\ + &
+                    n\,C_{p,(l)}((0+273.15)-(100+273.15))
+                    \\ + &
+                    n\,(-\adif{H}_{fus})
+                \end{aligned}
+            \right)
+            - P\left(
+                \frac{n}{M}\,\rho_{(s)}
+                -
+                \frac{n\,R\,T_i}{P_i}
+            \right)
+            = &\\&
+            = n\,\left(
+                \begin{aligned}
+                    & 
+                    C_{p, (g)}(100-138.9)
+                    \\ + &
+                    (-\adif{H}_{vap})
+                    \\ + &
+                    C_{p,(l)}(-100)
+                    \\ + &
+                    (-\adif{H}_{fus})
+                \end{aligned}
+            \right)
+            - n\left(
+                \frac{P\,\rho_{(s)}}{M}
+                -
+                R\,T_i
+            \right)
+            \cong &\\&
+            \cong n\,\left(
+                \begin{aligned}
+                    & 
+                    (36)(100-138.9)
+                    \\ + &
+                    (-40.7\E3)
+                    \\ + &
+                    (75)(-100)
+                    \\ + &
+                    (-6.01\E3)
+                \end{aligned}
+            \right)
+            - n\left(
+                \frac{1.01\E5*18}{0.92\E6}
+                -
+                \num{8.314462618}\,(138.9+273.15)
+            \right)
+            \cong &\\&
+            \cong
+            (n)
+            \num{-5.2186401765209621739e4}
+            % \num{-5.56104e4}
+            % \num{-3.423998234790378261e3}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q2.2
+    
+    Calcule o trabalho máximo associado à transformação da alínea anterior.
+
+    \begin{flalign*}
+        &
+            \max W
+            = \adif{A}
+            = \adif{U} - \adif{(T\,S)}
+            = \adif{U} - (
+                T_f\,S_f
+                -T_i\,S_i
+            )
+            = \adif{U}
+            -T_f\,S_f
+            +T_i\,S_i
+            = &\\&
+            = \adif{U}
+            -T_f\,\left(
+                    S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    +\adif{S}_{
+                        ((l),25\unit{\celsius},1\unit{\bar})
+                        \to
+                        f
+                    }
+                \right)
+            + &\\&
+            +T_i\,\left(
+                S_{(l),25\unit{\celsius},1\unit{\bar}}
+                +\adif{S}_{
+                    ((l),25\unit{\celsius},1\unit{\bar})
+                    \to
+                    i
+                }
+            \right)
+            = &\\&
+            = \adif{U}
+            - T_f\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    \adif{S}_{
+                        ((l),25\unit{\celsius},1\unit{\bar})
+                        \to
+                        f
+                    }
+                \end{aligned}
+            \right)
+            + T_i\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    \adif{S}_{
+                        ((l),25\unit{\celsius},1\unit{\bar})
+                        \to
+                        i
+                    }
+                \end{aligned}
+            \right)
+            = &\\&
+            = \adif{U}
+            - T_f\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    \adif{S}_{(l),(25\to0)\unit{\celsius}}
+                    \\ + &
+                    \adif{S}_{(l\to s),0\unit{\celsius}}
+                \end{aligned}
+            \right)
+            + T_i\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    \adif{S}_{(l),(25\to100)\unit{\celsius}}
+                    \\ + &
+                    \adif{S}_{(l\to g),100\unit{\celsius}}
+                    \\ + &
+                    \adif{S}_{(g),(100\to138.9)\unit{\celsius}}
+                \end{aligned}
+            \right)
+            = &\\&
+            \underset{P_{cnt}}{=}
+            \adif{U}
+            - T_f\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    \int{C_{p,(l)}\,\frac{\odif{T}}{T}}
+                    \\ + &
+                    (-\adif{H}_{fus})/T
+                \end{aligned}
+            \right)
+            + T_i\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    \int{C_{p,(l)}\,\frac{\odif{T}}{T}}
+                    \\ + &
+                    \adif{H}_{vap}/T
+                    \\ + &
+                    \int{C_{p,(g)}\,\frac{\odif{T}}{T}}
+                \end{aligned}
+            \right)
+            = &\\&
+            =
+            \adif{U}
+            - T_f\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    C_{p,(l)}\ln\frac{0+273.15}{25+273.15}
+                    \\ + &
+                    (-\adif{H}_{fus})/T
+                \end{aligned}
+            \right)
+            + T_i\,\left(
+                \begin{aligned}
+                    & S_{(l),25\unit{\celsius},1\unit{\bar}}
+                    \\ + &
+                    C_{p,(l)}\ln\frac{100+273.15}{25+273.15}
+                    \\ + &
+                    \adif{H}_{vap}/T
+                    \\ + &
+                    C_{p,(g)}\ln\frac{138.9+273.15}{100+273.15}
+                \end{aligned}
+            \right)
+            \cong
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \cong
+            \num{-5.2186401765209621739e4}
+            - (273.15)\,\left(
+                \begin{aligned}
+                    & 69.95
+                    \\ + &
+                    (75)\ln\frac{0+273.15}{25+273.15}
+                    \\ + &
+                    (-6.01\E3)/(273.15)
+                \end{aligned}
+            \right)
+            + &\\&
+            + (138.9+273.15)\,\left(
+                \begin{aligned}
+                    & 69.95
+                    \\ + &
+                    (75)\ln\frac{100+273.15}{25+273.15}
+                    \\ + &
+                    40.7\E3/(100+273.15)
+                    \\ + &
+                    (36)\ln\frac{138.9+273.15}{100+273.15}
+                \end{aligned}
+            \right)
+            \cong &\\&
+            % \cong
+            % \num{-5.2186401765209621739e4}
+            % - \num{11302.746439873542388}
+            % + \num{82171.057741211071606}
+            \cong
+            \num{18681.909536127907479}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q2.3
+    
+    Em que medida a 3a lei da Termodinâmica complementa o sentido da 2a lei?
+
+    
+    
+\end{questionBox}
+
+\end{document}

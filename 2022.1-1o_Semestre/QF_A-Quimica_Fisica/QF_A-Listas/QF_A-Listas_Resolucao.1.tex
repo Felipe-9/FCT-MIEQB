@@ -1,0 +1,208 @@
+% !TEX root = ./QF_A-Listas_Resolução.1.tex
+\providecommand\mainfilename{"./QF_A-Listas_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Listas_Resolução.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Listas_Resolução.1/}}}
+
+\mymakesubfile{1}
+[QF A]
+{Exercicios Cinética} % Subfile Title
+{Cinética} % Part Title
+
+\setcounter{question}{1}
+
+\begin{questionBox}1{ % Q2
+    The cis-trans isomerization of 1,2-dimethylcyclopropane at 450\,\unit{\celsius} is a reversible 1st order reaction. The composition of the mixture in percent molar is given in the following table:
+} % Q2
+    \begin{center}
+        \setlength\tabcolsep{3mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{c *{8}{r}}
+            
+            \\\toprule
+            
+                t(\unit{\second})
+                & 0
+                & 45
+                & 90
+                & 225
+                & 270
+                & 360
+                & 495
+                & \(\infty\)
+
+            \\
+
+                \% trans
+                & 0
+                & 10.8
+                & 18.9
+                & 37.7
+                & 41.8
+                & 49.3
+                & 56.5
+                & 70.0
+
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    Calculate the equilibrium constant and the kinetic constants of the forward and reverse reaction.
+    
+    \begin{flalign*}
+        &
+            y
+            = -\ln\frac{
+                \ch{[A]}-\ch{[A]}_{eq}
+            }{
+                \ch{[B]}_{eq}
+            }
+            = -\ln\frac{
+                \ch{[A]}-0.3
+            }{
+                0.7
+            }
+            = -(k_{+1}+k_{-1})\,t
+            \cong -(3.3\E{-3})\,t
+            \quad R^2 \cong 0.999
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\setcounter{question}{3}
+
+\begin{questionBox}1{ % Q4
+} % Q4
+\end{questionBox}
+
+\setcounter{question}{6}
+
+\begin{questionBox}1{ % Q7
+    The \ch{2 A -> 3 B} gas phase reaction composition was followed by measuring the total pressure as a function of time, giving the following results:
+} % Q7
+    \begin{center}
+        \begin{tabular}{l *{6}{r}}
+            
+            \\\toprule
+            
+                t/\unit{\minute}
+                & 0
+                & 4
+                & 8
+                & 12
+                & 16
+                & 20
+
+            \\
+
+                p/\unit{\bar}
+                & 1.250
+                & 1.298
+                & 1.342
+                & 1.381
+                & 1.416
+                & 1.448
+
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{center}
+        \begin{tabular}{c c c c}
+            
+            \\\toprule
+            
+                t
+                & 2\,A
+                & \rightarrow
+                & 3\,B
+            
+            \\\midrule
+            
+                0
+                & 1 && 0.25
+                \\
+                t
+                & \(1-2\,x\) && \(0.25 + 3\,x\)
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{flalign*}
+        &
+            P_{A}
+            = 1-2\,x
+            = P_{t}-P_{B}
+            = P_{t} - 0.25 + 3\,x
+            \implies
+            P_{A}
+            = 1-2\,\left(
+                P_t-1.25
+            \right)
+            % = &\\&
+            = 3.5-2\,P_t
+        &
+    \end{flalign*}
+
+    \begin{center}
+        \setlength\tabcolsep{3mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{r r r}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{t}
+                & \multicolumn{1}{c}{\(P_t\)}
+                & \multicolumn{1}{c}{\(P_A\)}
+            
+            \\\midrule
+            
+                    0 & 1.250 & 1.000
+                \\  4 & 1.298 & 0.904
+                \\  8 & 1.342 & 0.816
+                \\ 12 & 1.381 & 0.738
+                \\ 16 & 1.416 & 0.668
+                \\ 20 & 1.448 & 0.604
+            
+            \\\bottomrule
+            
+        \end{tabular}
+
+        \vspace{1ex}
+        \includegraphics[width=.8\textwidth]{Screenshot 2023-03-17 at 15.30.24.png}
+    \end{center}
+
+    \dots
+
+\end{questionBox}
+
+\setcounter{question}{8}
+
+\begin{questionBox}1{ % Q9
+    The reaction
+} % Q9
+    \begin{center}\bfseries
+        \ch{2 NO\gas{} + O2\gas{} -> 2 NO2\gas{}}
+    \end{center}
+
+    is 1st order with respect to \ch{N2O2}. Derive an expression for the variation of the \ch{NO} partial pressure as a function of time.
+
+    \begin{enumerate}
+        \item \ch{2 NO ->[k{ 1}] N2O2}
+        \item \ch{N2O2 ->[k{-1}] 2 NO}
+        \item \ch{N2O2 + O2 ->[k_{2}] 2 NO2} (lento)
+    \end{enumerate}
+\end{questionBox}
+
+\end{document}

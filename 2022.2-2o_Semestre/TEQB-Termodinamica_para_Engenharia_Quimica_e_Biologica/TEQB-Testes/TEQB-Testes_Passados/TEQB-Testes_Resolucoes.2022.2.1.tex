@@ -1,0 +1,602 @@
+% !TEX root = ./TEQB-Testes_Resoluções.2022.2.1.tex
+\providecommand\mainfilename{"./TEQB-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Testes_Resoluções.2022.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/TEQB-Testes_Resoluções.2022.2.1/}}}
+
+\mymakesubfile{1}
+[TEQB]
+{Teste 2022.2.1}
+{Teste 2022.2.1}
+
+\begin{questionBox}1{ % Q1
+    Considere que tem 1\,\unit{\mole} de um gás perfeito (\(C_V = 5/2 R\)). Na figura estão representados estados deste gás (1, 2, 3 e 4) e transições reversíveis entre eles. \(P_1 = 4.0\,\unit{\bar}, T_1 = 293.15\,\unit{\kelvin}, T_4 = 197.27\,\unit{\kelvin}\), as transições 2\,\to\,3 e 4\,\to\,1 são adiabáticas, o calor envolvido na transição 1\,\to\,2 é de 5466\,\unit{\joule}, e o calor envolvido na transição 3\,\to\,4 é de -4100\,\unit{\joule}.
+} % Q1
+    % \begin{multicols}{2}
+        \begin{itemize}
+            \begin{multicols}{3}
+                \item \(n = 1\,\unit{\mole}\)
+                \item \(C_V = 5/2 R\)
+                \item \(P_1 = 4.0\,\unit{\bar}\)
+                \item \(T_1 = 293.15\,\unit{\kelvin}\)
+                \item \(T_4 = 197.27\,\unit{\kelvin}\)
+                \item 2\,\to\,3: Adiabática
+                \item 4\,\to\,1: Adiabática
+                \item \(\adif{H}_{1\to 2} = +5466\,\unit{\joule}\)
+                \item \(\adif{H}_{3\to 4} = -4100\,\unit{\joule}\)
+            \end{multicols}
+        \end{itemize}
+
+        \begin{center}
+            \includegraphics[width=.4\textwidth]{Screenshot 2023-01-05 at 18.15.16.png}
+        \end{center}
+    % \end{multicols}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.1
+    Calcule \(T_2\)
+} % Q1.1
+    \begin{flalign*}
+        &
+            \int_1^2{n\,C_P\,\odif{T}}
+            = n\,(C_V+R)\,\adif{T}
+            = \adif{H}_{1\to2}
+            = Q_{1\to2}
+            \implies &\\&
+            \implies
+            T_2 
+            = T_1 + \frac{Q_{1\to2}}{n\,(C_V+R)}
+            \cong 293.15 + \frac{5466}{1*3.5*\num{8.314462618}}
+            \cong
+            \num{480.981055050187696}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    Calcule \(T_3\) e \(V_3\)
+} % Q1.2
+    \subsubquestion{\(T_3\)}
+    \begin{flalign*}
+        &
+            \int_{3\to4}{n\,C_V\,\odif{T}}
+            = n\,(C_P+R)\,(T_4-T_3)
+            = Q_{3\to4}
+            \implies &\\&
+            \implies
+            T_3
+            = T_4 - \frac{Q_{3\to4}}{n\,(C_V)}
+            \cong 197.27 - \frac{-4100}{1*2.5*\num{8.314462618}}
+            \cong
+            \num{394.51666227370607}
+        &
+    \end{flalign*}
+
+    \subsubquestion{\(V_3\)}
+    \begin{flalign*}
+        &
+            P_3\,V_3^{\gamma}
+            = \left(
+                \frac{n\,R\,T_3}{V_3}
+            \right)\,V_3^{C_P/C_V}
+            = n\,R\,T_3\,V_3^{1.4-1}
+            = n\,R\,T_3\,V_3^{0.4}
+            \overset{2\to3}{\underset{\text{adiab. rev.}}{=}} &\\&
+            = P_2\,V_2^{\gamma}
+            = P_1\,\left(
+                \frac{n\,R\,T_2}{P_2}
+            \right)^{1.4}
+            = \frac{n^{1.4}\,R^{1.4}\,T_2^{1.4}}{P_1^{1.4-1}}
+            \implies &\\&
+            \implies
+            V_3
+            = \left(
+                \frac{
+                    n^{0.4}\,R^{0.4}\,T_2^{1.4}
+                }{
+                    P_1^{0.4}\,T_3
+                }
+            \right)^{1/0.4}
+            = \frac{n\,R\,T_2^{3.5}}{P_1\,T_3^{2.5}}
+            \cong 
+            \frac{
+                1
+                *\num{8.314462618}
+                *(\num{480.981055050187696})^{3.5}
+            }{
+                4.0
+                *10^{5}
+                *(\num{394.51666227370607})^{2.5}
+            }
+            \cong
+            \num{1.640811591757612695e-2}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.3
+    Calcule \(W_{4\to1}\)
+} % Q1.3
+    \begin{flalign*}
+        &
+            W_{4\to1} + Q_{4\to1}
+            = W_{4\to1}
+            = \adif{U}_{4\to1}
+            = \int_4^1{n\,C_V\,\odif{T}}
+            = n\,C_V\,\adif{T}
+            \cong &\\&
+            \cong 
+            1*2.5*\num{8.314462618}(293.15-197.27)
+            \cong
+            \num{1992.9766895346}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.4
+    Calcule \(\adif{S}_{viz}\) no processo 1\to4\to3. (se não resolveu b, considere \(T_3 = 400\,\unit{\kelvin}\))
+} % Q1.4
+    \begin{flalign*}
+        &
+            \adif{S}_{viz,1\to4\to3}
+            = - \adif{S}_{1\to3}
+            = - \left(
+                \int_1^3{n\,C_P\,\odif{T}/T}
+                + n\,R\,\ln(P_1/P_3)
+            \right)
+            = &\\&
+            = 
+            - n\,3.5\,R\,\ln(T_3/T_1)
+            - n\,R\,\ln\frac{P_1}{
+                \left(
+                    \frac{n\,R\,T_3}{V_3}
+                \right)
+            }
+            = - n\,R\left(
+                3.5\,\ln(T_3/T_1)
+                + \ln\frac{P_1}{
+                    \left(
+                        \frac{n\,R\,T_3}{V_3}
+                    \right)
+                }
+            \right)
+            \cong &\\&
+            \cong 
+            \num{8.314462618}
+            \left(
+                - 3.5\,\ln\left(
+                    \frac{
+                        \num{394.51666227370607}
+                    }{
+                        283.15
+                    }
+                \right)
+                % - 1.160896041443011
+                - \ln\frac{4.0*10^5}{
+                    \left(
+                        \frac{
+                            \num{8.314462618}
+                            *\num{394.51666227370607}
+                        }{
+                            \num{1.640811591757612695e-2}
+                        }
+                    \right)
+                }
+                % - 0.69358277418779
+            \right) % 1.854478815630801
+            \cong
+            \num{-15.418994788435206}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.5
+    Imagine uma transição isotérmica reversível (realizada a \(T_4\)) entre o estado 4 e um estado 5, com \(W_{4\to5} = -3986\,\unit{\joule}\). Calcule \(V_5\). (se não resolveu b, considere \(T_3 = 400\,\unit{\kelvin} \text{ e } V_3 = 15.0\,\unit{\deci\metre^3}\))
+} % Q1.5
+    \begin{flalign*}
+        &
+            -n\,R\,T_4\ln(V_5/V_4)
+            = W_{4\to5}
+            \implies
+            V_5 
+            = V_4\,\exp{\left(
+                -\frac{W_{4\to5}}{n\,R\,T_4}
+            \right)}
+            \cong &\\&
+            \cong 
+            \num{1.640811591757612695e-2}
+            * \exp{\left(
+                -\frac{-3986}{
+                    1
+                    *\num{8.314462618}
+                    *197.27
+                }
+            \right)}
+            \cong
+            \num{18.641518344261281e-2}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.6
+
+    \begin{questionBox}3{ % Q1.6.1
+        Imagine uma forma de levar o gás de 1 a 3 de forma irreversível. Represente graficamente essa transição, bem como o trabalho associado.
+    } % Q1.6.1
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q1.6.2
+        O coeficiente de Joule-Thomson do \(H_2\) é negativo. Que consequências, em termos da \nth{1} Lei da Termodinâmica, poderão existir no desenho de um motor de combustão, quando o H2 passa através da válvula de saída do depósito a 200K, num processo a entalpia constante?
+    } % Q1.6.2
+    \end{questionBox}
+\end{questionBox}
+
+% \stepcounter{question}
+% \setcounter{subquestion}{0}
+
+\begin{questionBox}1{} % Q2
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(C_{p,L} = 255.7\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(C_{p,G} = 239.0\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(\adif{H}_{vap,(125.6\,\unit{\celsius}, 1.01\,\unit{\bar})} = 41.53\,\unit{\kilo\joule\,\mole^{-1}}\)
+            \item \(\alpha_{p,liq} \approx 1.4*10^{-3}\,\unit{\kelvin^{-1}}\)
+            \item \(\rho_{liq} = 0.703\,\unit{\gram\,\centi\metre^{-3}} \)
+            \item \(M_{(n-octano)} = 114.23\,\unit{\gram\,\mole^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.1
+    Calcule \(\adif{H} \text{ e } \adif{G}\) associados à passagem de 200\,\unit{\gram} de n-octano do estado (125.6\,\unit{\celsius}, gás, 0.5\,\unit{\bar}) ao estado (125.6\,\unit{\celsius}, líquido, 100\,\unit{\bar})
+} % Q2.1
+
+    % ---------------------------------- adif H ---------------------------------- %
+
+    \begin{questionBox}3{} % Q2.1.1
+        \begin{flalign*}
+            &
+                \adif{H}
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \adif{H}_{gas,(0.5\to1.01)\,\unit{\bar}}
+                        &+\\+&
+                            \adif{H}_{(gas\to liq),1.01\,\unit{\bar}}
+                        &+\\+&
+                            \adif{H}_{liq,(1.01\to100)\,\unit{\bar}}
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            0 \quad\text{(gas perfeito)}
+                        &+\\+&
+                            n\,\adif{H}_{vap}
+                        &+\\+&
+                            \int_{P_0}^{P_1}{
+                                v\,(1-\alpha_{p}\,T)
+                                \,\odif{P}
+                            }
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            (m/M)\,\adif{H}_{vap}
+                        &+\\+&
+                            (m/\rho)
+                            \,(1-\alpha_{p}\,T)
+                            \,(P_1-P_0)
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            (200/114.23)*41.53*10^3
+                            % 72712.947561936444016
+                        &+\\+&
+                            \frac{200*10^{-3}}{0.703*10^{3}}
+                            *(1-(1.4*10^{-3})*(125.6+273.15))
+                            *(100-1.01)
+                            *10^{5}
+                            % 1244.063513513513514
+                        &
+                    \end{aligned}
+                \right)
+                \cong &\\&
+                \cong
+                \num{73957.011075449953514}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % ---------------------------------- adif G ---------------------------------- %
+
+    \begin{questionBox}3{} % Q2.1.2
+        \begin{flalign*}
+            &
+                \adif{G}
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \adif{G}_{gas,(0.5\to1.01)\,\unit{\bar}}
+                        &+\\+&
+                            \adif{G}_{(gas\to liq),1.01\,\unit{\bar}}
+                        &+\\+&
+                            \adif{G}_{liq,(1.01\to100)\,\unit{\bar}}
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \int_{P_0}^{P_1}{V\,\odif{P}}
+                        &+\\+&
+                            0
+                        &+\\+&
+                            \int_{P_1}^{P_2}{V\,\odif{P}}
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \int_{P_0}^{P_1}{
+                                \frac{n\,R\,T}{P}
+                                \,\odif{P}
+                            }
+                        &+\\+&
+                            V\,\int_{P_1}^{P_2}{\odif{p}}
+                            \quad(\text{vol liq constante em} \adif{P})
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            (m/M)\,R\,T\,\ln(P_1/P_0)
+                        &+\\+&
+                            (m/\rho)\,(P_2-P_1)
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            (200/114.23)
+                            * \num{8.314462618}
+                            * (125.6+273.15)
+                            *\ln(1.01/0.5)
+                            % 4081.316366474564322
+                        &+\\+&
+                            \frac{200*10^{-3}}{0.703*10^{3}}
+                            *(100-1.01)
+                            *10^5
+                            % 2816.216216216216216
+                        &
+                    \end{aligned}
+                \right)
+                \cong &\\&
+                \cong
+                \num[
+                    exponent-mode=fixed
+                ]{6897.532582690780216}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.2
+    Calcule \(\adif{S} \text{ e } \adif{U}\) associados à passagem de 200\,\unit{\gram} de n-octano do estado (50\,\unit{\celsius}, líquido, 1.01\,\unit{\bar}) ao estado (200\,\unit{\celsius}, gás, 0.5\,\unit{\bar})
+} % Q2.2
+    
+    % ---------------------------------- adif S ---------------------------------- %
+
+    \begin{questionBox}3{} % Q2.2.1
+        \begin{flalign*}
+            &
+                \adif{S}
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \adif{S}_{liq,1.01\unit{\bar},(50\to125.6)\unit{\celsius}}
+                        &+\\+&
+                            \adif{S}_{(liq\to gas),1.01\unit{\bar},125.6\unit{\celsius}}
+                        &+\\+&
+                            \adif{S}_{gas,1.01\unit{\bar},(125.6\to200)\unit{\celsius}}
+                        &+\\+&
+                            \adif{S}_{gas,(1.01\to0.5)\unit{\bar},200\unit{\celsius}}
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \int_{T_0}^{T_1}{n\,C_{p,liq}\,\odif{T}/T} + 0
+                        &+\\+&
+                            n\,\adif{H}_{vap}/T_1
+                        &+\\+&
+                            \int_{T_1}^{T_2}{n\,C_{p,gas}\,\odif{T}/T} + 0
+                        &+\\+&
+                            0 + n\,R\int_{P_2}^{P_3}{\odif{P}/P}
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            n\,C_{p,liq}\ln(T_1/T_0)
+                        &+\\+&
+                            n\,\adif{H}_{vap}/T_1
+                        &+\\+&
+                            n\,C_{p,gas}\,\ln(T_2/T_1)
+                        &+\\+&
+                            n\,R\,\ln(P_3/P_2)
+                        &
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            255.7*\ln\left(
+                                \frac{125.6+273.15}{50+273.15}
+                            \right)
+                            % 53.75275343916132
+                        &+\\+&
+                            41.53*10^3/(125.6+273.15)
+                            % 104.150470219435737
+                        &+\\+&
+                            239.0*\ln\left(
+                                \frac{200+273.15}{125.6+273.15}
+                            \right)
+                            % 40.887596316389782
+                        &+\\+&
+                            \num{8.314462618}
+                            * \ln(0.5/1.01)
+                            % -5.84587797545316
+                        &
+                    \end{aligned}
+                \right)
+                % 192.944941999533679
+                * (200/114.23)
+                \cong &\\&
+                \cong
+                \num{337.818334937465953}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % ---------------------------------- adif U ---------------------------------- %
+
+    \begin{questionBox}3{} % Q2.2.2
+        \begin{flalign*}
+            &
+                \adif{U}
+                = \adif{H} - \adif{(P\,V)}
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \adif{H}_{liq,1.01\unit{\bar},(50\to125.6)\unit{\celsius}}
+                        &+\\+&
+                            \adif{H}_{(liq\to gas),1.01\unit{\bar},125.6\unit{\celsius}}
+                        &+\\+&
+                            \adif{H}_{gas,1.01\unit{\bar},(125.6\to200)\unit{\celsius}}
+                        &+\\+&
+                            \adif{H}_{gas,(1.01\to0.5)\unit{\bar},200\unit{\celsius}}
+                        &
+                    \end{aligned}
+                \right)
+                - \adif{(P\,V)}
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            \int_{T_0}^{T_1}{n\,C_{P,l}\,\odif{T}}
+                        &+\\+&
+                            n\,\adif{H}_{vap}
+                        &+\\+&
+                            \int_{T_1}^{T_2}{n\,C_{P,g}\,\odif{T}}
+                        &+\\+&
+                            0
+                        &
+                    \end{aligned}
+                \right)
+                - (P_3\,V_3-P_0\,V_0)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            n\,C_{P,l}\,(T_1-T_0)
+                        &+\\+&
+                            n\,\adif{H}_{vap}
+                        &+\\+&
+                            n\,C_{P,g}\,(T_2-T_1)
+                        &
+                    \end{aligned}
+                \right)
+                - P_3\,\left(
+                    \frac{n\,R\,T_3}{P_3}
+                \right)
+                + P_0\,(m/\rho_{liq})
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            C_{P,l}\,(T_1-T_0)
+                        &+\\+&
+                            \adif{H}_{vap}
+                        &+\\+&
+                            C_{P,g}\,(T_2-T_1)
+                        &+\\-&
+                            R\,T_3
+                        &+\\+&
+                            P_0\,M/\rho_{liq}
+                        &
+                    \end{aligned}
+                \right)
+                (m/M)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        &
+                            255.7
+                            *(125.6-50)
+                            % 19330.92
+                        &+\\+&
+                            41.53*10^{3}
+                            % 41530
+                        &+\\+&
+                            239.0
+                            *(200-125.6)
+                            % 17781.6
+                        &+\\-&
+                            \num{8.314462618}
+                            *(200+273.15)
+                            % 3933.9879877067
+                        &+\\+&
+                            1.01
+                            *114.23
+                            /(0.703*10^{6})
+                            % 0.000164114224751
+                        &
+                    \end{aligned}
+                \right)
+                % 74708.532176407524751
+                (200/114.23)
+                \cong &\\&
+                \cong
+                \num[
+                    exponent-mode=fixed
+                ]{130803.698111542545305}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}

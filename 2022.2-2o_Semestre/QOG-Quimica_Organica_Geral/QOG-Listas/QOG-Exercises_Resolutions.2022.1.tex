@@ -1,0 +1,166 @@
+% !TEX root = ./QOG-Exercises_Resolutions.2022.1.tex
+\providecommand\mainfilename{"./QOG-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Exercises_Resolutions.2022.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QOG-Exercises_Resolutions.2022.1}}}
+% \tikzsetexternalprefix{./.build/figures/QOG-Exercises_Resolutions.2022.1/graphics/}
+
+\mymakesubfile{1}
+[QOG]
+{Exercicios 2022 Resoluções: Ligações Químicas} % Subfile Title
+{Exercicios 2022 Resoluções: Ligações Químicas} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Calcule a carga formal de cada um dos átomos nas seguintes estruturas de Lewis:
+}
+    \setchemfig{
+        angle increment = 90
+    }
+    
+    \begin{questionBox}2{ % Q1.1
+        Tribrometo de fósforo
+    }
+        \begin{center}
+            \chemfig[angle increment=120]{
+                P^{+3}
+                (-[0.75]Br^{-1})
+                (-[1.75]Br^{-1})
+                (-[2.75]Br^{-1})
+            }
+        \end{center}
+    \end{questionBox}
+    
+    \begin{questionBox}2{
+        Ácido Sufúrico
+    } % Q1.2
+        \begin{center}
+            \schemestart
+                \chemfig{
+                    S
+                    (-[0]O-[0]H)
+                    (-[2]O-[2]H)
+                    (-[1]O)
+                    (-[3]O)
+                }
+                \arrow{<->}
+                \chemfig{
+                    S
+                    (-[0]O-[0]H)
+                    (-[2]O-[2]H)
+                    (=[1]O)
+                    (=[3]O)
+                }
+            \schemestop
+        \end{center}
+        \begin{multicols}{2}
+           \begin{minipage}{.4\textwidth}
+                \phantom{
+                    Estrutura errada,
+                    não respeita a regra do octeto
+                }
+            \end{minipage}
+    
+           \begin{minipage}{.4\textwidth}
+                Estrutura errada,
+                não respeita a regra do octeto
+           \end{minipage}
+        \end{multicols}
+        
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{2}
+
+\begin{questionBox}1{
+    Expanda as fórmulas condensadas, mostrando as ligações e electrões não partilhados:
+} % Q3
+    
+    
+    \begin{questionBox}2{} % Q3.1
+        
+        \ch{ClCH2CH2Cl}
+
+        \begin{center}
+            \chemfig{
+                C
+                (-[ 1]H)
+                (-[-1]H)
+                (-[ 2]Cl)
+                (
+                    - C
+                    (-[ 1]H)
+                    (-[-1]H)
+                    (-[ 0]Cl)
+                )
+            }
+        \end{center}
+        
+    \end{questionBox}
+
+    \begin{questionBox}2{} % Q3.2
+        
+        \ch{(CH3)3CH}
+
+        \begin{center}
+            \chemfig{
+                C
+                (-H)
+                (
+                    -[1,1.5]C
+                    (-[0]H)
+                    (-[1]H)
+                    (-[2]H)
+                )
+                (
+                    -[2,1.5]C
+                    (-[1]H)
+                    (-[2]H)
+                    (-[3]H)
+                )
+                (
+                    -[3,1.5]C
+                    (-[0]H)
+                    (-[2]H)
+                    (-[3]H)
+                )
+            }
+        \end{center}
+        
+    \end{questionBox}
+
+    \begin{questionBox}2{} % Q3.3
+        
+        \ch{(CH3)2CHCH=O}
+
+        \begin{center}
+            \chemfig{
+                C
+                (-[3]H)
+                (-[1,1.5]C
+                    (-[0]H)
+                    (-[1]H)
+                    (-[2]H)
+                )
+                (-[2,1]C
+                    (-[1]H)
+                    (-[2]H)
+                    (-[3]H)
+                )
+                (-[0]C
+                    (-[1]H)
+                    (=[0]O)
+                )
+            }
+        \end{center}
+        
+    \end{questionBox}
+\end{questionBox}
+
+
+\end{document}

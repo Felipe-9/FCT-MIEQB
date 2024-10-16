@@ -1,0 +1,902 @@
+% !TEX root = ./QF_A-Bib_Notes.17.2.tex
+\providecommand\mainfilename{"./QF_A-Bib_Notes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Bib_Notes.17.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Bib_Notes.17.2}}}
+\tikzsetexternalprefix{./.build/figures/QF_A-Bib_Notes.17.2/}
+
+\mymakesubfile{2}
+[QF A]
+{Integrated Rate Laws} % Subfile Title
+{Integrated Rate Laws} % Part Title
+
+% 888888888888                                                88
+%          ,88                                         ,d     88
+%        ,88"                                          88     88
+%      ,88"      ,adPPYba,  8b,dPPYba,   ,adPPYba,   MM88MMM  88,dPPYba,
+%    ,88"       a8P_____88  88P'   "Y8  a8"     "8a    88     88P'    "8a
+%  ,88"         8PP"""""""  88          8b       d8    88     88       88
+% 88"           "8b,   ,aa  88          "8a,   ,a8"    88,    88       88
+% 888888888888   `"Ybbd8"'  88           `"YbbdP"'     "Y888  88       88
+
+%   ,ad8888ba,                         88
+%  d8"'    `"8b                        88
+% d8'        `8b                       88
+% 88          88  8b,dPPYba,   ,adPPYb,88   ,adPPYba,  8b,dPPYba,
+% 88          88  88P'   "Y8  a8"    `Y88  a8P_____88  88P'   "Y8
+% Y8,        ,8P  88          8b       88  8PP"""""""  88
+%  Y8a.    .a8P   88          "8a,   ,d88  "8b,   ,aa  88
+%   `"Y8888Y"'    88           `"8bbdP"Y8   `"Ybbd8"'  88
+
+\begin{sectionBox}1{Zeroth-Order reaction \ch{A -> P}}
+
+    \begin{BM}
+        v
+        = \odv{\ch{[P]}}{t}
+        =-\odv{\ch{[A]}}{t}
+        = k_r
+        \\
+        \ch{[A]}
+        =\begin{cases}
+            \ch{[A]}_0-k_r\,t
+            \quad& t\leq\ch{[A]}_0/k_r
+            \\
+            0\quad&t>\ch{[A]}_0/k_r
+        \end{cases}
+    \end{BM}
+    \begin{sectionBox}*3{Intregration} % S
+        
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t}=-k_r
+                \implies &\\&
+                \implies
+                \int{\odif{\ch{[A]}}}
+                =\adif{\ch{[A]}}
+                =\ch{[A]}-\ch{[A]}_0
+                % = &\\&
+                =-\int{k_r\odif{t}}
+                =-k_r\adif{t}
+                =-k_r\,t
+                \implies &\\&
+                \implies
+                \ch{[A]}=\ch{[A]}_0-k_r\,t
+            &
+        \end{flalign*}
+        
+    \end{sectionBox}
+    % \tikzset{external/remake next=true}
+    \begin{center}
+        \pgfplotsset{height=6cm, width= .9\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                % domain=0:2,
+                xlabel={Time, \textit{t}},
+                ylabel={\(\ch{[A]}/\ch{[A]}_0\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{\( 
+                {\color{Graph31}k_1}<
+                {\color{Graph32}k_2}<
+                {\color{Graph33}k_3} 
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                % smooth,
+                thick,
+                Graph33,
+                samples = 3,
+            ] coordinates {
+                (0,1)
+                (1,0)
+                (3,0)
+            };
+            \addplot[
+                % smooth,
+                thick,
+                Graph32,
+                samples = 3,
+            ] coordinates {
+                (0,1)
+                (1.5,0)
+                (3,0)
+            };
+            \addplot[
+                % smooth,
+                thick,
+                Graph31,
+                samples = 3,
+            ] coordinates {
+                (0,1)
+                (2,0)
+                (3,0)
+            };
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+    
+\end{sectionBox}
+
+% 88888888888  88
+% 88           ""                           ,d
+% 88                                        88
+% 88aaaaa      88  8b,dPPYba,  ,adPPYba,  MM88MMM
+% 88"""""      88  88P'   "Y8  I8[    ""    88
+% 88           88  88           `"Y8ba,     88
+% 88           88  88          aa    ]8I    88,
+% 88           88  88          `"YbbdP"'    "Y888
+
+%   ,ad8888ba,                         88
+%  d8"'    `"8b                        88
+% d8'        `8b                       88
+% 88          88  8b,dPPYba,   ,adPPYb,88   ,adPPYba,  8b,dPPYba,
+% 88          88  88P'   "Y8  a8"    `Y88  a8P_____88  88P'   "Y8
+% Y8,        ,8P  88          8b       88  8PP"""""""  88
+%  Y8a.    .a8P   88          "8a,   ,d88  "8b,   ,aa  88
+%   `"Y8888Y"'    88           `"8bbdP"Y8   `"Ybbd8"'  88
+
+\begin{sectionBox}1{First-order reaction \ch{A -> P}} % S
+    
+    \begin{BM}
+        v
+        = \odv{\ch{[P]}}{t}
+        =-\odv{\ch{[A]}}{t}
+        = k_r\,\ch{[A]}
+        \\
+        \ln{\frac{\ch{[A]}}{\ch{[A]}_0}}
+        = -k_r\,t
+        \iff
+        \ch{[A]}=\ch{[A]}_0\,e^{-k_r\,t}
+    \end{BM}
+    \begin{sectionBox}*3{Intregration} % S
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t}
+                =-k_r\,\ch{[A]}
+                \implies &\\&
+                \implies
+                \int{\frac{\odif{\ch{[A]}}}{\ch{[A]}}}
+                = \adif{\ln{\ch{[A]}}}
+                = \ln{\frac{\ch{[A]}}{\ch{[A]}_0}}
+                % = &\\&
+                = -\int{k_r\,\odif{t}}
+                = -k_r\,t
+                \implies &\\&
+                \implies
+                \ch{[A]}=\ch{[A]}_0\,e^{-k_r\,t}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    % \tikzset{external/remake next=true}
+    \begin{center}
+        \pgfplotsset{height=6cm, width= .9\textwidth}
+        % ===================== Curve ==================== %
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                domain=0:3,
+                xlabel={Time, \textit{t}},
+                ylabel={\(\ch{[A]}/\ch{[A]}_0\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{\( 
+                {\color{Graph31}k_1}<
+                {\color{Graph32}k_2}<
+                {\color{Graph33}k_3} 
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                smooth,
+                thick,
+                Graph31,
+                samples = \mysampledensitySimple,
+            ] { e^(-x) };
+            \addplot[
+                smooth,
+                thick,
+                Graph32,
+                samples = \mysampledensitySimple,
+            ] { e^(-2*x) };
+            \addplot[
+                smooth,
+                thick,
+                Graph33,
+                samples = \mysampledensitySimple,
+            ] { e^(-4*x) };
+        \end{axis}
+        \end{tikzpicture}
+        % ===================== Line ===================== %
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                domain=0:10,
+                xlabel={Time, \textit{t}},
+                ylabel={\(\ln{\ch{[A]}/\ch{[A]}_0}\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{\( 
+                {\color{Graph31}k_1}<
+                {\color{Graph32}k_2}<
+                {\color{Graph33}k_3} 
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                % smooth,
+                thick,
+                Graph31,
+                samples = \mysampledensityDouble,
+            ] { -x };
+            \addplot[
+                % smooth,
+                thick,
+                Graph32,
+                samples = \mysampledensityDouble,
+            ] { -2*x };
+            \addplot[
+                % smooth,
+                thick,
+                Graph33,
+                samples = \mysampledensityDouble,
+            ] { -4*x };
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{sectionBox}2{Reaction} % S
+        
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*2{C}}
+                \multicolumn{2}{l}{\ch{A -> P}}
+                \\\toprule
+                
+                    \ch{[A]}
+                    & \ch{[P]}
+                
+                \\\midrule
+                
+                    \ch{[A]}_0 & 0
+                \\  \ch{[A]}_0-\ch{[P]} & \ch{[P]}
+                
+                \\\bottomrule
+                \multicolumn{2}{R}{\ch{[A]}=\ch{[A]}_0-\ch{[P]}}
+            \end{tabular}
+            % \vspace{2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                \ln{\frac{\ch{[A]}}{\ch{[A]}_0}}
+                = \ln{\frac{\ch{[A]}_0-\ch{[P]}}{\ch{[A]}_0}}
+                = -k_r\,t
+                \implies
+                \ch{[P]}=\ch{[A]}_0\left(1-e^{-k_r\,t}\right)
+            &
+        \end{flalign*}
+
+        % \tikzset{external/remake next=true}
+        \begin{center}
+            % \pgfplotsset{height=6cm, width= .9\textwidth}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    domain=0:3,
+                    xlabel={Time, \textit{t}},
+                    ylabel={\(\ch{[X]}/\ch{[A]}_0\)},
+                ]
+                % Legends
+                \addlegendimage{empty legend}
+                \addlegendentry{
+                    {\color{Graph21}\ch{[A]}},
+                    {\color{Graph22}\ch{[P]}}
+                }
+                
+                % Plot from equation
+                \addplot[
+                    smooth,
+                    thick,
+                    Graph21,
+                    samples = \mysampledensitySimple,
+                ] { e^(-x) };
+                \addplot[
+                    smooth,
+                    thick,
+                    Graph22,
+                    samples = \mysampledensitySimple,
+                ] { 1-e^(-x) };
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}2{Half Life} % S
+        \begin{BM}
+            t_{1/2}=\frac{\ln{2}}{k_r}
+        \end{BM}
+        \begin{flalign*}
+            &
+                \ln\frac{\ch{[A]}_0/2}{\ch{[A]}_0}
+                =\ln{1/2}
+                =-\ln{2}
+                =-k_r\,t_{1/2}
+                \implies
+                t_{1/2}=\frac{\ln{2}}{k_r}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+
+% 88888888888      88  888888888888  88888888ba            88
+% 88             ,d88          ,8P'  88      "8b         ,d88
+% 88           888888         d8"    88      ,8P       888888
+% 88aaaaa          88       ,8P'     88aaaaaa8P'           88
+% 88"""""          88      d8"       88""""""8b,           88
+% 88               88    ,8P'        88      `8b           88
+% 88               88   d8"          88      a8P  888      88
+% 88888888888      88  8P'           88888888P"   888      88
+
+% \renewcommand\theexample{Example 17B.\arabic{example}}
+\begin{exampleBox}1{ % E17B.1 1
+    The variation in the partial pressure of azomethane with time was followed at 600\,\unit{\kelvin}, with the results given below. Confirm that the decomposition \ch{CH3N2CH3\gas{} -> CH3CH3\gas{} + N2\gas} is first-order in azomethane, and find the rate constant and half-life at 600\,\unit{\kelvin}.
+} % E17B.1
+    
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{5}{C}}
+            \toprule
+            
+                t/\unit{\second}
+                & 0 & 1000 & 2000 & 3000 & 4000
+            \\  p/\unit{\pascal}
+                & 10.9 & 7.63 & 5.32 & 3.71 & 2.59
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \answer{}
+
+    \begin{center}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = fixed,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            fixed-exponent          = 0,
+            round-mode              = figures,        % figures/places/unsertanty/none
+            round-precision         = 3,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+        \vspace{1ex}
+        \begin{tabular}{L *{5}{C}}
+            \toprule
+            
+                t/\unit{\second}
+                & 0 & 1000 & 2000 & 3000 & 4000
+            \\  \ln(p/p_0)
+                & 0
+                & \num{-0.35667494393873245}
+                & \num{-0.717289485881545}
+                & \num{-1.0777309126157544}
+                & \num{-1.437104913523651}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    % \tikzset{external/remake next=true}
+    % {\Large\bfseries{Solução 1}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+        [
+            xmajorgrids=true,
+            ymajorgrids=true,
+            minor tick num=3,
+            xminorgrids=true,
+            yminorgrids=true,
+            % legend pos  = north west
+            % axis on top,
+            ylabel={\(\ln{p/p_0}\)},
+            xlabel={\(t/\unit{\second}\)},
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Emph]{\( \ln{p/p_0}=-3.5953*10^{-4}\,t+0.0013\)}
+
+        % ================= Interpolation ================ %
+        \addplot[
+            no marks,
+            dashed,
+            samples=2,
+        ] expression [
+            domain=0:4000
+        ] {
+            -3.5953e-4*x+0.0013
+        };
+        % ==================== Points ==================== %
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (   0,  0)
+            (1000, -0.35667494393873245)
+            (2000, -0.717289485881545)
+            (3000, -1.0777309126157544)
+            (4000, -1.437104913523651)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+
+    \begin{flalign*}
+        &
+            k_r\cong 3.5953*10^{-4}
+            ; \quad
+            t_{1/2}
+            =\frac{\ln{2}}{k_r}
+            \cong\frac{\ln{2}}{3.5953*10^{-4}}
+            \cong \qty{1927.925849191848551}{\second}
+        &
+    \end{flalign*}
+    
+\end{exampleBox}
+
+%  ad88888ba                                                              88
+% d8"     "8b                                                             88
+% Y8,                                                                     88
+% `Y8aaaaa,     ,adPPYba,   ,adPPYba,   ,adPPYba,   8b,dPPYba,    ,adPPYb,88
+%   `"""""8b,  a8P_____88  a8"     ""  a8"     "8a  88P'   `"8a  a8"    `Y88
+%         `8b  8PP"""""""  8b          8b       d8  88       88  8b       88
+% Y8a     a8P  "8b,   ,aa  "8a,   ,aa  "8a,   ,a8"  88       88  "8a,   ,d88
+%  "Y88888P"    `"Ybbd8"'   `"Ybbd8"'   `"YbbdP"'   88       88   `"8bbdP"Y8
+
+%   ,ad8888ba,                         88
+%  d8"'    `"8b                        88
+% d8'        `8b                       88
+% 88          88  8b,dPPYba,   ,adPPYb,88   ,adPPYba,  8b,dPPYba,
+% 88          88  88P'   "Y8  a8"    `Y88  a8P_____88  88P'   "Y8
+% Y8,        ,8P  88          8b       88  8PP"""""""  88
+%  Y8a.    .a8P   88          "8a,   ,d88  "8b,   ,aa  88
+%   `"Y8888Y"'    88           `"8bbdP"Y8   `"Ybbd8"'  88
+
+%  ad888888b,         db
+% d8"     "88        d88b
+%         a8P       d8'`8b
+%      ,d8P"       d8'  `8b
+%    a8P"         d8YaaaaY8b
+%  a8P'          d8""""""""8b
+% d8"           d8'        `8b
+% 88888888888  d8'          `8b
+
+\begin{sectionBox}1{Second-order reaction \ch{2 A -> P}} % S
+
+    \begin{BM}
+        v
+        = \odv{\ch{[P]}}{t}
+        =-\odv{\ch{[A]}}{t}
+        = k_r\,\ch{[A]}^2
+        \\
+        \frac{1}{\ch{[A]}}-\frac{1}{\ch{[A]_0}}=k_r\,t
+        \iff
+        \ch{[A]} = \frac{\ch{[A]}_0}{1+k_r\,t\,\ch{[A]}_0}
+    \end{BM}
+    \begin{sectionBox}*2{Intregration} % S
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t}
+                =-k_r\,\ch{[A]}^2
+                \implies &\\&
+                \implies
+                \int{\frac{\odif{\ch{[A]}}}{\ch{[A]}^2}}
+                =\adif{\left(-\ch{[A]}^{-1}\right)}
+                =\ch{[A]}_{0}^{-1}
+                -\ch{[A]}^{-1}
+                = &\\&
+                =-\int{k_r\,\odif{t}}
+                =-k_r\,t
+                \implies &\\&
+                \implies
+                \ch{[A]}^{-1}
+                =k_r\,t+\ch{[A]}_{0}^{-1}
+                \iff
+                \ch{[A]}=\frac{\ch{[A]}_0}{1+k_r\,t\,\ch{[A]}_0}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    \begin{center}
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                domain=0:5,
+                xlabel={\(\ch{[A]}_0\,t\)},
+                ylabel={\(\ch{[A]}/\ch{[A]}_0\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{\(
+                {\color{Graph31}k_r}<
+                {\color{Graph32}k_r}<
+                {\color{Graph33}k_r}
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                smooth,
+                thick,
+                Graph31,
+                samples = \mysampledensityFancy,
+            ] { (1+1*x)^(-1) };
+            \addplot[
+                smooth,
+                thick,
+                Graph32,
+                samples = \mysampledensityFancy,
+            ] { (1+2*x)^(-1) };
+            \addplot[
+                smooth,
+                thick,
+                Graph33,
+                samples = \mysampledensityFancy,
+            ] { (1+4*x)^(-1) };
+            
+        \end{axis}
+        \end{tikzpicture}
+
+        % \tikzset{external/remake next=true}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                domain=0:1,
+                xlabel={\(t\)},
+                ylabel={\(\ch{[A]}_0^{-1}-\ch{[A]}^{-1}\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{\(
+                {\color{Graph31}k_r}<
+                {\color{Graph32}k_r}<
+                {\color{Graph33}k_r}
+            \)}
+            
+            % Plot from equation
+            \addplot[
+                thick,
+                Graph31,
+                samples = \mysampledensityDouble,
+            ] { 1*x };
+            \addplot[
+                thick,
+                Graph32,
+                samples = \mysampledensityDouble,
+            ] { 2*x };
+            \addplot[
+                thick,
+                Graph33,
+                samples = \mysampledensityDouble,
+            ] { 4*x };
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{sectionBox}2{Reaction} % S
+        \begin{BM}
+            \ch{[P]}
+            = \frac{
+                k_r\,t\,\ch{[A]}_0^{2}
+            }{
+                1+\ch{[A]}_0\,k_r\,t
+            }
+            \iff
+            \frac{1}{\ch{[P]}}
+            -\frac{1}{\ch{[A]}_0}
+            = 
+            \frac{
+                1
+            }{
+                k_r\,t\,\ch{[A]}_0^{2}
+            }
+        \end{BM}
+        \begin{flalign*}
+            &
+                \ch{[A]}
+                =\ch{[A]}_0-\ch{[P]}
+                =\frac{\ch{[A]}_0}{1+k_r\,t\,\ch{[A]}_0}
+                \implies
+                k_r\,t\,\ch{[A]}_0
+                = \frac{\ch{[P]}}{\ch{[A]}_0-\ch{[P]}}
+                \implies &\\&
+                \implies
+                \ch{[P]}
+                = \frac{
+                    k_r\,t\,\ch{[A]}_0^2
+                }{
+                    1+k_r\,t\,\ch{[A]}_0
+                }
+                \iff
+                \frac{\ch{[A]}_0}{\ch{[P]}}
+                -1
+                = 
+                \frac{
+                    1
+                }{
+                    k_r\,t\,\ch{[A]}_0
+                }
+            &
+        \end{flalign*}
+
+        \begin{center}
+            % \tikzset{external/remake next=true}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    domain=0:3,
+                    xlabel={Time, \textit{t}},
+                    ylabel={\(\ch{[X]}/\ch{[A]}_0\)},
+                ]
+                % Legends
+                \addlegendimage{empty legend}
+                \addlegendentry{
+                    {\color{Graph21}\ch{[A]}},
+                    {\color{Graph22}\ch{[P]}}
+                }
+                
+                % Plot from equation
+                \addplot[
+                    smooth,
+                    thick,
+                    Graph21,
+                    samples = \mysampledensityFancy,
+                ] { (1+2*x*2)^(-1) };
+                \addplot[
+                    smooth,
+                    thick,
+                    Graph22,
+                    samples = \mysampledensityFancy,
+                ] { (1+(2*x*2)^(-1))^(-1) };
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}2{Half life} % S
+        \begin{BM}
+            t_{1/2}
+            = \frac{1}{k_r\,\ch{[A]}_0}
+        \end{BM}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+
+%  ad88888ba                                                              88
+% d8"     "8b                                                             88
+% Y8,                                                                     88
+% `Y8aaaaa,     ,adPPYba,   ,adPPYba,   ,adPPYba,   8b,dPPYba,    ,adPPYb,88
+%   `"""""8b,  a8P_____88  a8"     ""  a8"     "8a  88P'   `"8a  a8"    `Y88
+%         `8b  8PP"""""""  8b          8b       d8  88       88  8b       88
+% Y8a     a8P  "8b,   ,aa  "8a,   ,aa  "8a,   ,a8"  88       88  "8a,   ,d88
+%  "Y88888P"    `"Ybbd8"'   `"Ybbd8"'   `"YbbdP"'   88       88   `"8bbdP"Y8
+
+%   ,ad8888ba,                         88
+%  d8"'    `"8b                        88
+% d8'        `8b                       88
+% 88          88  8b,dPPYba,   ,adPPYb,88   ,adPPYba,  8b,dPPYba,
+% 88          88  88P'   "Y8  a8"    `Y88  a8P_____88  88P'   "Y8
+% Y8,        ,8P  88          8b       88  8PP"""""""  88
+%  Y8a.    .a8P   88          "8a,   ,d88  "8b,   ,aa  88
+%   `"Y8888Y"'    88           `"8bbdP"Y8   `"Ybbd8"'  88
+
+%        db                     88888888ba
+%       d88b            aa      88      "8b
+%      d8'`8b           88      88      ,8P
+%     d8'  `8b      aaaa88aaaa  88aaaaaa8P'
+%    d8YaaaaY8b     """"88""""  88""""""8b,
+%   d8""""""""8b        88      88      `8b
+%  d8'        `8b       ""      88      a8P
+% d8'          `8b              88888888P"
+
+\begin{sectionBox}1{Second-order reaction \ch{A + B -> P}}
+    
+    \begin{BM}
+        v
+        = \odv{\ch{[P]}}{t}
+        =-\odv{\ch{[A]}}{t}
+        =-\odv{\ch{[B]}}{t}
+        = k_r\,\ch{[A][B]}
+        \\
+        \ln{
+            \frac
+            {\ch{[B]/[B]_0}}
+            {\ch{[A]/[A]_0}}
+        }
+        =(\ch{[B]}_0-\ch{[A]}_0)\,k_r\,t
+        \quad :\ch{{A}}_0\neq\ch{[B]}_0
+    \end{BM}
+
+    \paragraph*{Note:} Behaves as \ch{2 A -> P} if \(\ch{[A]}_0=\ch{[B]}_0\)
+
+    \begin{sectionBox}*3{Integration} % S
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{2}{C} | C}
+                \toprule
+                
+                    \ch{[A]}
+                    & \ch{[B]}
+                    & \ch{[P]}
+                
+                \\\midrule
+                
+                      \ch{[A]}_0
+                    & \ch{[B]}_0
+                    & 0
+                
+                    \\\ch{[A]}_0-x
+                    & \ch{[B]}_0-x
+                    & x
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{-2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t}
+                =\odv{\ch{[A]}_0-x}{t}
+                =-\odv{x}{t}
+                = &\\&
+                =-k_r\,\ch{[A][B]}
+                =-k_r\,(\ch{[A]}_0-x)(\ch{[B]}_0-x)
+                \implies &\\&
+                \implies
+                \int_{0}^{x}{
+                    \frac{\odif{x}}{
+                        (\ch{[A]}_0-x)(\ch{[B]}_0-x)
+                    }
+                }
+                = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+                \left(
+                    \ln{\frac{\ch{[A]}_0}{\ch{[A]}_0-x}}
+                    -\ln{\frac{\ch{[B]}_0}{\ch{[B]}_0-x}}
+                \right)
+                = &\\&
+                \underset{\ch{[A]}_0\neq\ch{[B]}_0}{=}
+                \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+                \left(
+                    \ln{\frac{\ch{[A]}_0}{\ch{[A]}}}
+                    -\ln{\frac{\ch{[B]}_0}{\ch{[B]}}}
+                \right)
+                = \frac{1}{\ch{[B]}_0-\ch{[A]}_0}
+                \ln{\frac{
+                    \ch{[B]}/\ch{[B]}_0
+                }{
+                    \ch{[A]}/\ch{[A]}_0
+                }}
+                = &\\&
+                = \int_{0}^{t}{k_r\,\odif{t}}
+                = k_r\,t
+                \implies &\\&
+                \implies
+                \ln{\frac{
+                    \ch{[B]}/\ch{[B]}_0
+                }{
+                    \ch{[A]}/\ch{[A]}_0
+                }}
+                = (\ch{[B]}_0-\ch{[A]}_0)\,k_r\,t
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+%                                 88
+%                          ,d     88
+%                          88     88
+% 8b,dPPYba,             MM88MMM  88,dPPYba,
+% 88P'   `"8a  aaaaaaaa    88     88P'    "8a
+% 88       88  """"""""    88     88       88
+% 88       88              88,    88       88
+% 88       88              "Y888  88       88
+
+%   ,ad8888ba,                         88
+%  d8"'    `"8b                        88
+% d8'        `8b                       88
+% 88          88  8b,dPPYba,   ,adPPYb,88   ,adPPYba,  8b,dPPYba,
+% 88          88  88P'   "Y8  a8"    `Y88  a8P_____88  88P'   "Y8
+% Y8,        ,8P  88          8b       88  8PP"""""""  88
+%  Y8a.    .a8P   88          "8a,   ,d88  "8b,   ,aa  88
+%   `"Y8888Y"'    88           `"8bbdP"Y8   `"Ybbd8"'  88
+
+\begin{sectionBox}1{n-th order reaction \ch{n A -> P}} % S
+    \begin{BM}
+        v
+        = \odv{\ch{[P]}}{t}
+        =-\odv{\ch{[A]}}{t}
+        = k_r\,\ch{[A]}^n
+        \\
+        k_r\,t
+        =\frac{1}{n-1}
+        \left(
+            (\ch{[A]}_0-\ch{[P]})^{1-n}
+            -\ch{[A]}_0^{1-n}
+        \right)
+        ;\quad n\geq2
+    \end{BM}
+    \begin{sectionBox}2{Half life} % S
+        \begin{BM}
+            t_{1/2}
+            = \frac{2^{n-1}-1}{(n-1)\,k_r\,\ch{[A]}_0^{n-1}}
+            \quad:n>1
+        \end{BM}
+    \end{sectionBox}
+\end{sectionBox}
+
+% \begin{sectionBox}1{The radial distribuition function} % S1
+    
+%     \begin{BM}
+%         n = 4\,\pi\,\mathcal{N}\,g(r)\,r^2\,\odif{r}
+%     \end{BM}
+
+%     \begin{description}[
+%         leftmargin=!,
+%         labelwidth=\widthof{\(\mathcal{N}\)} % Longest item
+%     ]
+%        \item[\textit{n}] is the number of molecules in a spherical shell of thickness \(\odif{r}\) at a radious \(r\) of a given molecule
+%        \item[\(\mathcal{N}\)] Overall number density \(\mathcal{N}=N/V\)
+%     \end{description}
+
+%     \subsection{Cases}
+%     \(g(r)\) is also the ratio of molecules in a shell to the number expected on the same shell for an uniform material
+
+%     \begin{description}[
+%         leftmargin=!,
+%         labelwidth=\widthof{\(g(r)=1\)} % Longest item
+%     ]
+%        \item[\(g(r)=1\)] Same as uniform
+%        \item[\(g(r)>1\)] Greater than an uniform
+%        \item[\(g(r)<1\)] Lower than an uniform material
+%     \end{description}
+    
+% \end{sectionBox}
+
+\end{document}

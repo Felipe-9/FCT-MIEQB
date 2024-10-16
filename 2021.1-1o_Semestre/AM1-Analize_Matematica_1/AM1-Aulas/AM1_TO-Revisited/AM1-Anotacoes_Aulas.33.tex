@@ -1,0 +1,175 @@
+\part{01/06 - Teoremas do calculo integral}
+
+\begin{multicols}{2}
+
+\begin{sectionBox}1{Teorema do Valor Médio}
+\label{Teorema do Valor Médio}
+
+\begin{BM}[align*][\normalsize]
+	g
+	\begin{cases}
+		g:[a,b]\to\mathbb{R}
+	\\	\text{continua em }[a,b]
+	\end{cases}
+\end{BM}\relax
+
+\begin{BM}
+	\exists\,g(c)\in[a,b]:c*(b-a)
+=	\\
+=	\int_{a}^{b}g(x)\,\mathrm{d}x
+\end{BM}
+
+\begin{flalign*}
+&
+	\min(g([a,b]))(b-a)
+\leq
+	\int_{a}^{b}g(x)\,\mathrm{d}x
+\leq &\\&
+\leq
+	\max(g([a,b]))(b-a)
+&\\&
+	\therefore
+	\,\exists\,c\in[a,b]:
+	g(c)(b-a)=\int_{a}^{b}g(x)\,\mathrm{d}x
+&
+\end{flalign*}
+
+\end{sectionBox}\relax
+
+
+
+\begin{sectionBox}1{}
+
+\begin{flalign*}
+&
+	\lim_{h\to0}\int_{x}^{x+h}f(x)\,\mathrm{d}x
+=	\lim_{h\to0} h\,f(c)/h
+=	&\\&
+=	f(c): c\in[x,x+h]
+=	f(x)
+&
+\end{flalign*}
+\end{sectionBox}
+
+
+\section*{Integração por substituição}
+
+
+\begin{sectionBox}1{Exemplo}
+\begin{BM}
+	\int_{-1}^{1}\sqrt{1-x^2}\,\mathrm{d}x
+\end{BM}
+
+\begin{flalign*}
+&
+=	\int_{\arcsin(-1)}^{\arcsin(1)}
+		\sqrt{1-\sin^2(t)}\,\odv{\sin(t)}{t}\,\mathrm{d}t
+=	&\\&
+=	\int_{-\pi/2}^{\pi/2}\cos^2(t)\,\mathrm{d}t
+=	(1/2)\int_{-\pi/2}^{\pi/2}(\cos(2\,t)+1)\,\mathrm{d}t
+=	&\\&
+=	0.5\,\Delta
+	\left(
+		\sin(2\,t)/2+t
+	\right)\big|_{-\pi/2}^{\pi/2}
+=	\pi/2
+&
+\end{flalign*}
+\end{sectionBox}
+
+
+\begin{sectionBox}1{Integração por Partes}
+\label{Integração por Partes}
+
+\begin{BM}
+	\int_{a}^{b}f'(x)\,g(x)\,\mathrm{d}x
+=	\\
+=	\Delta(f(x)\,g(x))\big|_{a}^{b}
+-	\int_{a}^{b}f(x)\,g'(x)\,\mathrm{d}x
+\end{BM}
+
+\end{sectionBox}
+
+
+
+\begin{sectionBox}2{Exercicio}
+\begin{BM}
+	\int_{1}^{e}\ln(x)\,\mathrm{d}x
+\end{BM}
+
+\begin{flalign*}
+&
+=	\Delta(x\,\ln(x))\big|_{1}^{e}
+	\int_{1}^{e}x\,x^{-1}\,\mathrm{d}x
+=	\Delta(x\,\ln(x)-x)\big|_{1}^{e}
+=	&\\&
+=	e\,(1-e)-1(0-1)
+=	e-e^2+1
+&
+\end{flalign*}
+\end{sectionBox}
+
+
+\begin{sectionBox}2{Aplicação: Area de uma elipse}
+\begin{BM}
+	\int_{-a}^{a}b\sqrt{a^2-x^2}\,\mathrm{d}x/a
+\end{BM}
+
+\begin{flalign*}
+&
+=	\int_{-a/a}^{a/a}
+	b\sqrt{a^2-(a\,t)^2}\,\odv{a\,t}{t}\,\mathrm{d}t/a
+=	&\\&
+=	\int_{-1}^{1}b\sqrt{1-\,t^2}\,a\,\mathrm{d}t
+=	&\\&
+=	a\,b
+	\int_{\arcsin(-1)}^{\arcsin(1)}
+	\sqrt{1-\sin^2(t_2)}\,\odv{\sin(t_2)}{t_2}\,\mathrm{d}t_2
+=	&\\&
+=	a\,b
+	\int_{-\pi/2}^{\pi/2}
+	\cos^2(t_2)\,\mathrm{d}t_2
+=	&\\&
+=	\frac{a\,b}{2}
+	\int_{-\pi/2}^{\pi/2}
+	(1+\cos(2\,t_2))\,\mathrm{d}t_2
+=	&\\&
+=	\frac{a\,b}{2}
+	\Delta
+	\left(
+		t_2+\sin(2\,t_2)/2
+	\right)\big|_{-\pi/2}^{\pi/2}
+=	\frac{a\,b}{2}
+	\pi/2
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

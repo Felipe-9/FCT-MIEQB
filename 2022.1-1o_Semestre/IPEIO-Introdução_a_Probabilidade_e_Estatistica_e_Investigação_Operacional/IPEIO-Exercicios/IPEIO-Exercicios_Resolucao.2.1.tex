@@ -1,0 +1,1254 @@
+% !TEX root = ./IPEIO-Exercicios_Resolução.2.1.tex
+\providecommand\mainfilename{"./IPEIO-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Exercicios_Resolução.2.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+\pgfplotsset{height=7cm, width= .8\textwidth}
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/IPEIO-Exercicios_Resolução.2.1/}}}
+\tikzsetexternalprefix{./.build/figures/IPEIO-Exercicios_Resolução.2.1/}
+
+\mymakesubfile{1}
+[IO]
+{Exercicios Resolução} % Subfile Title
+{Exercicios Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Numa quinta de criação de animais pretende-se determinar a quantidade diária de milho, trigo e alfafa que cada animal deve receber de modo a serem satisfeitas certas exigências nutricionais.
+} % Q1
+
+    Na tabela seguinte são indicadas as quantidades de nutrientes presentes em cada quilograma de milho, trigo e alfalfa.
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l *{3}{c}}
+            
+            \toprule
+            
+                \multicolumn{1}{c}{Nutrientes:}
+                & \multicolumn{1}{c}{Milho\,\unit{\kilo\gram}}
+                & \multicolumn{1}{c}{Trigo\,\unit{\kilo\gram}}
+                & \multicolumn{1}{c}{Alfafa\,\unit{\kilo\gram}}
+            
+            \\\midrule
+            
+                Hidratos de Carbono (\unit{\gram})
+                & 90 & 20 & 40
+                \\ Proteinas (\unit{\gram})
+                & 30 & 80 & 60
+                \\ Vitaminas (\unit{\milli\gram})
+                & 10 & 20 & 60
+            \\\midrule
+                Custo por \unit{\kilo\gram} (\unit{u.m.})
+                & 42 & 36 & 30
+            
+            \\\bottomrule
+            
+        \end{tabular}
+        \vspace{0ex}
+    \end{center}
+
+    As quantidades diárias que cada animal necessita de hidratos de carbono, proteínas e vitaminas são pelo menos de 200\,\unit{\gram}, 180\,\unit{\gram} e 150\,\unit{\milli\gram}, respetivamente.
+
+    \begin{questionBox}2{ % Q1.1
+        Sabendo que se pretende minimizar os custos da alimentação de cada animal, formule este problema como um modelo de Programação Linear.
+    } % Q1.1
+        \begin{flalign*}
+            &
+                \min{\text{Custo}}
+                = 42\,x_1
+                + 36\,x_2
+                + 30\,x_3
+            &
+                x\in\mathbb{R}^3:
+                \left\{
+                    \begin{aligned}
+                        &
+                            x_i\geq0\,\forall\,x_i
+                        \ldiv {}
+                            90\,x_1
+                            + 20\,x_2
+                            + 40\,x_3
+                        \ldiv {}
+                            30\,x_1 
+                            + 80\,x_2
+                            + 60\,x_3
+                        \ldiv {}
+                            10\,x_1
+                            + 20\,x_2
+                            + 60\,x_3
+                        &
+                    \end{aligned}
+                \right\}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Indique uma solução admissível para o problema e o respetivo custo.
+    } % Q1.2
+        \begin{flalign*}
+            &
+                (100,100,100)
+            &
+        \end{flalign*}
+        qualquer solução que resolve x
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.3
+        Resolva o problema recorrendo ao solver do Microsoft Excel. Com base na solução ótima determinada, indique a quantidade de hidratos de carbono, proteínas e vitaminas que cada animal recebe.
+    } % Q1.3
+        \begin{center}
+            % \includegraphics[width=.8\textwidth]{Q8.1.png}
+        \end{center}
+    \end{questionBox}
+        
+\end{questionBox}
+
+\setcounter{question}{2}
+
+\begin{questionBox}1{ % Q3
+    Uma empresa agrícola possui três terrenos onde pode fazer plantações. A empresa pretende plantar melão, batata-doce e tomate podendo cada um destes produtos ser plantado em mais do que um terreno. Sabendo que a empresa pretende saber que área deve plantar de cada tipo de plantação em cada terreno de modo a maximizar o lucro total, formule este problema como um modelo de Programação Linear.
+} % Q3
+
+    Na tabela seguinte apresenta-se a área de cada terreno disponível para as plantações e a quantidade de água disponível para regar que pode ser utilizada.
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{3}{c}}
+            
+            \toprule
+            
+                \multicolumn{1}{c}{Terreno}
+                &\multicolumn{1}{c}{Área Diponível (ha)}
+                &\multicolumn{1}{c}{Agua Disponível (\unit{\metre^3/\day})}
+            
+            \\\midrule
+            
+                1    & 500 & 1600
+                \\ 2 & 600 & 1800
+                \\ 3 & 300 & 1000
+            
+            \\\bottomrule
+            
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Na tabela seguinte indica-se para cada tipo de plantação: a área total máxima que pode ser plantada, o consumo diário de água por cada hectare de plantação e o correspondente lucro.
+    \begin{center}
+        \vspace{-1ex}
+        \setlength\tabcolsep{3mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{l *{3}{c}}
+            \toprule
+            
+                \multicolumn{1}{c}{
+                    \begin{tabular}{c}
+                        Tipo de\\Plantação
+                    \end{tabular}
+                }
+                & \multicolumn{1}{c}{Area Máxima (ha)}
+                & \multicolumn{1}{c}{
+                    \begin{tabular}{c}
+                        Consumo Diário\\de agua (\unit{\metre^3/ha})
+                    \end{tabular}
+                }
+                & \multicolumn{1}{c}{
+                    \begin{tabular}{c}
+                        Lucro por\\ha (u.m.)
+                    \end{tabular}
+                }
+            
+            \\\midrule
+            
+                   Melão  & 700 & 5 & 7
+                \\ Batata & 500 & 4 & 5
+                \\ Tomate & 350 & 6 & 6
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{1ex}
+    \end{center}
+
+    \begin{description}[
+        leftmargin=!, 
+        labelwidth=\widthof{\(a_{i,j}\)}
+    ]
+        \item[\(i\)] ( 1:Melão, 2:milho, 3:batata )
+        \item[\(x_i\)] Terreno total ocupado pela plantação i
+        \item[\(a_{i,j}\)] Area do terreno j em que está dedicado a plantação i
+    \end{description}
+
+    \vspace{-3ex}
+
+    \begin{flalign*}
+        &
+            \max{\text{Lucro}}
+            = 7*x_1
+            + 5*x_2
+            + 6*x_3
+        &\\&
+            \left\{
+                \begin{aligned}
+                    &
+                        x_i = \sum_{j=1}^{3}{a_{i,j}}
+                    \ldiv*{}
+                        a_{i,j}\geq0\,\forall\,a_{i,j}
+                    % Terreno Max
+                    \ldiv{}
+                        \sum_{i=1}^{3}{a_{i,1}}\leq 500
+                    \ldiv*{}
+                        \sum_{i=1}^{3}{a_{i,2}}\leq 600
+                    \ldiv*{}
+                        \sum_{i=1}^{3}{a_{i,3}}\leq 300
+                    % Plantação Max
+                    \ldiv{}
+                        \sum_{i=1}^{3}{a_{1,i}}\leq 700
+                    \ldiv*{}
+                        \sum_{i=1}^{3}{a_{2,i}}\leq 500
+                    \ldiv*{}
+                        \sum_{i=1}^{3}{a_{3,i}}\leq 300
+                    % Agua
+                    \ldiv{}
+                          a_{1,1}*5 
+                        + a_{2,1}*4 
+                        + a_{3,1}*6
+                        \leq 1600
+                    \ldiv{}
+                          a_{1,2}*5 
+                        + a_{2,2}*4 
+                        + a_{3,2}*6
+                        \leq 1800
+                    \ldiv{}
+                          a_{1,3}*5 
+                        + a_{2,3}*4 
+                        + a_{3,3}*6
+                        \leq 1000
+                    &
+                \end{aligned}
+            \right\}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Uma empresa possui duas fábricas produtoras de dois tipos de farinha. Sabendo que se pretende determinar o plano mais económico de abastecimento dos clientes, formule o problema em Programação Linear.
+} % Q4
+
+    A empresa deve garantir que a cada um dos seus três clientes chegam semanalmente pelo menos as quantidades de farinha (em toneladas) indicadas na tabela seguinte:
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{c *{3}{C}}
+            \toprule
+            
+                & \multicolumn{3}{c}{Clientes}
+                \\
+                Tipo de Farinha:
+                & 1 & 2 & 3
+
+            \\\midrule
+
+                 A & 75 & 70 & 80
+                \\ B & 60 & 85 & 90
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    A tabela seguinte contém a quantidade de farinha (em toneladas) produzida semanalmente em cada fábrica.
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{c *{2}{C}}
+            \toprule
+            
+                Tipo de Farinha
+                & \multicolumn{1}{c}{Fábrica 1}
+                & \multicolumn{1}{c}{Fábrica 2}
+            
+            \\\midrule
+            
+                A & 150 & 120
+                \\ B & 160 & 130
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{itemize}
+        \item A fábrica 1 não dispõe de espaço de armazenamento pelo que toda a farinha que produz deve ser distribuída pelos clientes. 
+        \item A farinha produzida na fábrica 2 e que não é enviada para os clientes fica armazenada no armazém da fábrica. 
+    \end{itemize}
+
+    Os custos de transportar (em unidades monetárias) uma tonelada de farinha entre cada fábrica e cada cliente encontram-se registados na tabela seguinte:
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{c *{3}{C}}
+            \toprule
+            
+                & \multicolumn{3}{c}{Clientes}
+                \\ Fábrica & 1 & 2 & 3
+            
+            \\\midrule
+            
+                1 & 20 & 30 & 60
+                \\ 2 & 30 & 40 & 50
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{} % Longest item
+    ]
+        \begin{multicols}{2}
+            \item[\textit{i}] Numero do Cliente \(i\in\myrange{1,3}\)
+            
+            \item[\textit{j}] Numero da Fábrica \(j\in\myrange{1,2}\)
+            
+            \item[\textit{k}] Tipo de farinha \(k=\{1:A,2:B\}\)
+            
+            \item[\(c_{i,j,k}\)] Quantidade de farinha \(k=\{1:A,2:B\}\) em toneladas entregue semanalmente ao cliente \(j\in\myrange{1,3}\) pela fabrica \textit{i}
+    
+            \item[\(C_{i,j}\)] Custo de farinha em tonelas semanalmente que cada fabrica \(i\in\myrange{1,2}\) tem em entregar para o cliente \(j\in\myrange{1,3}\)
+    
+            \item[\(M_{i,k}\)] A quantidade minima de farinha \(k=\{1:A,2:B\}\) em toneladas entregue semanalmente ao cliente \(i\in\myrange{1,3}\)
+
+            \item[\(l_{j,k}\)] Quantidade de farinha produzida em toneladas semanalmente do tipo \(k=\{1:A,2:B\}\)
+        \end{multicols}
+       
+    \end{description}
+
+    \begin{BM}
+        \min{\text{Custo}}
+        = \sum_{i=1}^{2}{
+            \sum_{j=1}^{3}{
+                (c_{i,j,1}+c_{i,j,2})*C_{i,j}
+            }
+        }
+    \end{BM}
+
+    Sujeito a
+    \begin{flalign*}
+        &
+            \sum_{j=1}^{3}{
+                c_{i,j,k}
+            }\geq M_{i,k}
+            \forall\{i\in\myrange{1,3},k\in\{1,2\}\}
+        &\\&
+            \sum_{i=1}^{3}{
+                c_{i,j,k}
+            } = l_{j,k}
+            \forall\{j\in\myrange{1,3},k\in\{1,2\}\}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{7}
+
+\begin{questionBox}1{ % Q8
+    Uma empresa produz componentes de tipo A, B e C. Sabe-se que a empresa pretende maximizar o lucro resultante da venda das peças. Formule este problema como um modelo de Programação Linear que pode incluir variáveis inteiras e/ou binárias.
+} % Q8
+    A tabela seguinte contém para cada componente: o lucro resultante da sua venda e o número de horas que deve ser processada em cada uma das máquinas.
+    \begin{center}
+        \begin{tabular}{l *{3}{c}}
+            
+            \\\toprule
+            
+                & \multicolumn{3}{c}{Componentes}
+                \\
+                & \multicolumn{1}{c}{A}
+                & \multicolumn{1}{c}{B}
+                & \multicolumn{1}{c}{C}
+            
+            \\\midrule
+            
+                Lucro & 10 & 50 & 100
+                \\ M1 (\unit{\hour}) & 1 & 2 & 3
+                \\ M2 (\unit{\hour}) & 2 & 1 & 1
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{itemize}[left=0em]
+        \item Por exemplo, o fabrico de uma componente B requer 2 horas na máquina 1 e 1 hora na máquina 2 sendo o seu preço de venda de 50.
+        \item Cada componente deve ser obrigatoriamente processada em duas máquinas e sabe-se que cada máquina não trabalha mais do que 40 horas.
+        \item Para fabricar uma componente B é necessário gastar uma componente A enquanto que, para fabricar uma componente C é necessário gastar uma componente B. Deste modo, as componentes A e B gastas no fabrico de outras componentes não podem ser vendidas.
+    \end{itemize}
+
+    \begin{description}[
+        leftmargin=!, 
+        labelwidth=\widthof{\(x_i\)}
+    ]
+        \item[\(i\)] (1:A, 2:B, 3:C)
+        \item[\(x_i\)] numero de Componentes i vendidas
+    \end{description}
+
+    \begin{flalign*}
+        &
+            \text{Lucro} 
+            = 10*x_1 
+            + 50*x_2
+            + 100*x_3
+        &\\&
+            \left\{
+                \begin{aligned}
+                    &
+                        x_i\geq 0\,\forall\,x_i
+                    \ldiv{}
+                        (x_1+x_2+x_3)*1 + (x_2+x_3)*2 +x_3*3
+                        \leq 40
+                    \ldiv{}
+                        (x_1+x_2+x_3)*2 + (x_2+x_3)*1 +x_3*1
+                        \leq 40
+                    &
+                \end{aligned}
+            \right\}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{5}
+
+\begin{questionBox}1{ % Q6
+    Uma fábrica que produz adubo. Sabendo que se pretende determinar o plano de produção de adubo para os meses de janeiro, fevereiro e março que minimiza os custos totais, formule o problema como um modelo de Programação Linear.
+} % Q6
+
+    tem que satisfazer as procuras registadas na tabela seguinte:
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l *{3}{C}}
+            \toprule
+            
+                \multicolumn{1}{c}{Mês}
+                & \multicolumn{1}{c}{Janeiro}
+                & \multicolumn{1}{c}{Fevereiro}
+                & \multicolumn{1}{c}{Março}
+            
+            \\\midrule
+            
+                Procura (\unit{\tonne})
+                & 70 & 80 & 100
+                \\ Custo de prod (\unit{u.m/\tonne})
+                & 10 & 15 & 12
+                \\ Maximo (\unit{\tonne})
+                & 80 & 100 & 90
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{itemize}
+        \item A fábrica pode produzir em janeiro, fevereiro e março até 80, 100 e 90 toneladas de adubo respetivamente.
+        \item No início de janeiro existem 15 toneladas de adubo em stock que podem ser usadas para satisfazer a procura. Se após a satisfação da procura em janeiro e fevereiro sobrar adubo, este será armazenado para poder ser usado nos meses seguintes. No final de março não deve ficar qualquer adubo em stock.
+        \item Os custos de produção por tonelada em janeiro, fevereiro e março são de 10, 15 e 12 unidades monetárias respetivamente. 
+        \item No final de janeiro e fevereiro é necessário pagar o aluguer do armazém que é de 2 unidades monetárias por cada tonelada de adubo que fique em stock para o mês seguinte.
+    \end{itemize}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(x_i\)} % Longest item
+    ] 
+        \item[\textit{i}] \{1:Janeiro,2:Fevereiro,3:Março\}
+        \item[\(x_i\)] Quantidade de adubo produzida no mês
+    \end{description}
+
+    \begin{flalign*}
+        &
+            \min\left(
+                \begin{aligned}
+                    &
+                        10\,x_1
+                        + 15\,x_2
+                        + 12\,x_3
+                    &+\\+&
+                        2\left(
+                            x_1 + 15 - 70
+                        \right)
+                    &+\\+&
+                        2\left(
+                            (x_1 + 15 - 70)
+                            + x_2 - 80
+                        \right)
+                    &
+                \end{aligned}
+            \right);
+            &\\&
+            \begin{aligned}
+                    & x_1 \leq 80
+                    ;x_2 \leq 100
+                    ;x_3 \leq 90
+                    \\&
+                    x_i\geq0\,\forall\,x_i
+            \end{aligned}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{11}
+
+\begin{questionBox}1{ % Q12
+    Num clube de natação, os quatro melhores nadadores são o Manuel, o Pedro, o Miguel e o João. Vai decorrer em breve um campeonato onde cada um dos nadadores referidos vai participar apenas numa prova.
+} % Q12
+
+    Na tabela seguinte encontra-se registado o tempo (em unidades de tempo) que cada um dos nadadores demora a completar cada uma das provas:
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{l *{4}{C}}
+            \toprule
+            
+                & \multicolumn{1}{c}{Bruços}
+                & \multicolumn{1}{c}{Costas}
+                & \multicolumn{1}{c}{Mariposa}
+                & \multicolumn{1}{c}{Craw}
+            
+            \\\midrule
+            
+                Manuel
+                & 62 & 61 & 61 & 56
+                \\ Pedro
+                & 61 & 59 & 63 & 58 
+                \\ Miguel
+                & 58 & 57 & 59 & 56
+                \\ João
+                & 59 & 58 & 61 & 57
+
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(x_{i,j}\)} % Longest item
+    ]
+        \item[\textit{i}] \{1: Manuel, 2:Pedro, 3: Miguel, 4: João\}
+        \item[\textit{j}] \{1: Bruços, 2: Costas, 3: Mariposa, 4: Craw\}
+        \item[\(x_{i,j}\)] \{1: Nadador \textit{i} participa da prova \textit{j}, 0: Caso contrário\}
+        \item[\(t_{i,j}\)] Tempo que o nadador \textit{i} demora na prova \textit{j}
+    \end{description}
+
+    \begin{questionBox}2{ % Q12.1
+        Sabendo que se pretende atribuir uma e uma só prova a cada um dos nadadores e um nadador a cada prova de modo que o tempo total das 4 provas seja minimizado, formule este problema como um modelo de Programação Linear.
+    } % Q12.1
+        \begin{flalign*}
+            &
+                \min\left(
+                    \sum_{j=1}^{4}{
+                        \sum_{i=1}^{4}{
+                            t_{i,j}\,x_{i,j}
+                        }
+                    }
+                \right)
+            % ; \quad
+            % ; &\\&
+                \begin{cases}
+                    \sum_{i=1}^{4}{x_{i,j}}
+                    = 1\quad\forall\,j
+                    \\ \sum_{j=1}^{4}{x_{i,j}}
+                    = 1\quad\forall\,i
+                    \\ x_{i,j}\in\{0,1\}\quad\forall\,i,j
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q12.2
+        Admita que nem o João nem o Miguel podem realizar a prova de mariposa. Que alterações devem ser introduzidas no modelo apresentado em a) de modo a contemplar esta situação?
+    } % Q12.2
+        \begin{flalign*}
+            &
+                x_{i,3}=0:i\in\{3,4\}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q13
+    O João decidiu distribuir por alguns dos seus 10 melhores amigos bilhetes para o EURO2020. Sabendo que se pretende maximizar a satisfação total dos amigos do João, formule o problema em Programação Linear, podendo recorrer à utilização de variáveis inteiras e/ou binárias.
+} % Q13
+    A satisfação de cada amigo depende do bilhete que receber. Na tabela seguinte o João registou essa satisfação.
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{l *{10}{C}}
+            \toprule
+            
+                & \multicolumn{10}{c}{Amigo}
+                \\ \multicolumn{1}{c}{Jogo}
+                & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10
+            
+            \\\midrule
+            
+                Itália--Bélgica
+                & 10 &  12 &  11 &  10 &  12 &  12 &  11 &  13 &  14 &  10
+                \\ Suíça--Espanha
+                &  9 &  11 &  11 &  11 &  12 &  12 &  11 &  10 &  13 &  11
+                \\ Final da EURO 2020
+                & 10 &  11 &  12 &  12 &  13 &  12 &  10 &  12 &  14 &  10
+
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    O João também já decidiu que:
+    \begin{itemize}
+        \item {\color{blue\Light} vai distribuir 3 bilhetes para o jogo Itália-Bélgica, 2 bilhetes para o jogo Suíça-Espanha e um bilhete para a final.}
+        \item {\color{red\Light} cada amigo pode receber, no máximo, um bilhete;}
+        \item {\color{green\Light} após a distribuição dos bilhetes, a satisfação total do amigo 4 não deve ser inferior à satisfação total do amigo 7;}
+        \item {\color{cyan\Light} se o amigo 2 receber um bilhete para o Suíça-Espanha então o amigo 9 deve receber um bilhete para a final}
+    \end{itemize}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(x_{i,j}\)} % Longest item
+    ]
+        \begin{multicols}{2}
+            \item[\textit{i}] Amigo \(\in\myrange{1,10}\)
+            \item[\textit{j}] Jogo, 
+            \(\begin{cases}
+                1: \text{Itália--Belgica};
+                \\ 2: \text{Suiça--Espanha};
+                \\ 3: \text{Final da EURO 2020}
+            \end{cases}\)
+            \item[\(s_{i,j}\)] Satisfação do amigo \textit{i} no jogo \textit{j}, valores na tabela
+            \item[\(x_{i,j}\)] 
+            \(\begin{cases}
+                1: \text{o amigo \textit{i} vai ao jogo \textit{j}}
+                \\ 0: \text{Caso contrário}
+            \end{cases}\)
+        \end{multicols}
+    \end{description}
+
+    \begin{flalign*}
+        &
+            \max\left(
+                \begin{aligned}
+                    \sum_{i=1}^{10}{
+                        \sum_{j=1}^{4}{
+                            s_{i,j}\,x_{i,j}
+                        }
+                    }
+                \end{aligned}
+            \right)
+            \begin{cases}
+                x_{i,j}\in\{0,1\}
+                \\ {\color{blue\Light} 
+                    \sum_{i=1}^{10}{
+                        x_{i,1}
+                    }= 3
+                    \quad \sum_{i=1}^{10}{
+                        x_{i,2}
+                    } = 2
+                    \quad \sum_{i=1}^{10}{
+                        x_{i,3}
+                    } = 1
+                }
+                \\ {\color{red\Light}
+                    \sum_{j=1}^{3}{x_{i,j}} = 1\quad\forall\,i
+                }
+                \\ {\color{green\Light}
+                    \sum_{j=1}^{3}{
+                        s_{4,j}\,x_{4,j}
+                        -s_{7,j}\,x_{7,j}
+                    }\leq 0
+                }
+                \\ {\color{cyan\Light}
+                    x_{2,2}
+                    \leq x_{3,9}
+                }
+            \end{cases}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{16}
+
+\begin{questionBox}1{ % Q17
+    Considere a região admissível \textit{S} de um problema de Programação Linear definida por
+} % Q17
+    \begin{BM}[align*]
+        x+y &\leq 7
+        \\ x+y &\geq 2
+        \\ -x+y &\leq 2
+        \\ 3\,x-2\,y &\leq 6
+        \\ x,y &\geq 0
+    \end{BM}
+
+    
+    \begin{center}
+
+        % \tikzset{external/remake next=true} %   - remake next
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                axis lines = {center}, % 3D center/box/left/right
+                axis on top,
+                xmin=0,
+                ymin=0,
+            ]
+            % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Red]{\( x \)}
+            
+            % % Plot from equation
+            % \addplot[
+            %     smooth,
+            %     thick,
+            %     % Red,
+            %     domain  = -2:2,
+            %     samples = 0.4*\mysampledensity,
+            % ]{  x };
+
+            \addplot[no marks]{7-x};
+            \addplot[no marks]{2-x};
+            \addplot[no marks]{x+2};
+            \addplot[no marks]{(3*x-6)/2};
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+\end{questionBox}
+
+\setcounter{question}{18}
+
+\begin{questionBox}1{ % Q19
+    Considere o seguinte problema (P) de Programação Linear:
+} % Q19
+    \begin{BM}[align*]
+        \max{F} &= 4\,x+2\,y
+        \\
+        s.a.
+        &\begin{cases}
+            2\,x-y &\geq 1
+            \\ 2\,x+y &\leq 10
+            \\ -x+4\,y &\leq 7
+            \\ x,y &\geq 0
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q19.1
+        Recorrendo ao Método Gráfico, resolva o problema (P).
+    } % Q19.1
+        \begin{center}
+
+            % \tikzset{external/remake next=true} %   - remake next
+
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    axis lines = {center}, % 3D center/box/left/right
+                    axis on top,
+                    xmin=0,
+                    ymin=0,
+                    xmax=5,
+                    ymax=6,
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+
+                \addplot[no marks]{2*x-1};
+                \addplot[no marks]{10-2*x};
+                \addplot[no marks]{(7+x)/4};
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q19.2
+        Admita que o termo independente da terceira restrição passou a ser \(\theta\,(\theta\geq0)\). Resolva o problema nesta situação.
+    } % Q19.2
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q19.3
+        Admita que a função objetivo passou a ser \(\max{G}=\theta\,x + 2\,y\), com \(\theta\geq0\). Resolva o problema nesta situação
+    } % Q19.3
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q19.4
+        Admita que ao problema (P) foi adicionada a restrição: ``x e y devem ser inteiros''. Resolva o problema recorrendo ao Método Gráfico.
+    } % Q19.4
+        body
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q19.5
+        Admita que ao problema (P) foi adicionada a restrição: ``y deve se inteiro''. Resolva o problema recorrendo ao Método Gráfico.
+    } % Q19.5
+        body
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{20}
+
+\begin{questionBox}1{ % Q21
+    Resolva os seguintes problemas de Programação Linear recorrendo ao Método do Simplex:
+} % Q21
+
+    \begin{questionBox}2{} % Q21.1
+        \begin{BM}[align*]
+            \max{F}&=3\,x+y
+            \\ s.a.
+            & \begin{cases}
+                x+2\,y&\leq12
+                \\x-y&\leq7
+                \\x,y&\geq0
+            \end{cases}
+        \end{BM}
+
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{4}{C} | C}
+                \toprule
+                
+                    x & y & s_1 & s_2 & MD\mathbb{R}
+                
+                \\\midrule
+
+                \rowcolor{Emph!20!background}
+                    -3 & -1 & 0 & 0 & 0
+                \\   1 &  2 & 1 & 0 & 12
+                \\   1 & -1 & 0 & 1 & 7
+                
+                \\\midrule
+
+                \rowcolor{Emph!20!background}
+                     0 & -4 & 0 &  3 & 21
+                \\   0 &  3 & 1 & -1 & 5
+                \\   1 & -1 & 0 &  1 & 7
+                
+                \\\midrule
+
+                \rowcolor{Emph!20!background}
+                     0 &  0 & 4/3 &  5/3 & 83/3
+                \\   0 &  1 & 1/3 & -1/3 &  5/3
+                \\   1 &  0 & 1/3 &  2/3 & 16/3
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+    \end{questionBox}
+
+    \begin{questionBox}2{} % Q21.2
+        \begin{BM}[align*]
+            \max{F}&=4\,x+y+2\,z
+            \\ s.a.
+            & \begin{cases}
+                2\,x+y-2\,z&\leq20
+                \\3\,x+6\,y&\leq12
+                \\x,y,z&\geq0
+            \end{cases}
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{} % Q21.3
+        \begin{BM}[align*]
+            \min{W} &= -x-y
+            \\ s.a.
+            & \begin{cases}
+                x+y&\leq 4
+                \\-x+y &\leq 1
+                \\x,y&\geq0
+            \end{cases}
+        \end{BM}
+
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{C | *{4}{C} | C C}
+                \toprule
+                
+                    & x & y & f_1 & f_2 & \multicolumn{1}{c}{T.I.}
+                    & \Delta
+                
+                \\\midrule
+
+                \rowcolor{Emph!20!background}
+                    W   &  1 & 1 & 0 & 0 & 0 
+                \\  f_1 &  1 & 1 & 1 & 0 & 4 & 4/1
+                \\  f_2 & -1 & 1 & 0 & 1 & 1 & -
+                
+                \\\midrule
+
+                \rowcolor{Emph!20!background}
+                    W   &  0 & 0 & -1 &  0 & -4
+                \\  x   &  1 & 1 &  1 &  0 &  4 & 4/1
+                \\  f_2 &  0 & 2 &  1 &  1 &  5 & 5/2
+                
+                \\\midrule
+
+                \rowcolor{Emph!20!background}
+                    W   &  0 & 0 & -1   &  0   & -4
+                \\  x   &  1 & 0 &  1/2 & -1/2 &  3/2
+                \\  f_2 &  0 & 0 &  1/2 &  1/2 &  5/2
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+
+        \begin{BM}
+            (x^*,y^*) 
+            = \lambda(4,0)
+            + (1-\lambda)(3/2,5/2)
+            \,\lambda\in\myrange{0,1}
+        \end{BM}
+
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q22
+    Resolva os seguintes problemas de Programação Linear Inteira pelo algoritmo Branch and Bound estudado. Resolva cada subproblema utilizando o Método Gráfico. Apresente as árvores de pesquisa correspondente à sua resolução.
+} % Q22
+
+    \begin{questionBox}2{ % Q22.1
+    } % Q22.1
+        \begin{BM}[align*]
+            \max{G} &= \frac{1}{2}\,x_1+\frac{3}{2}\,x_2
+            \\ s.a. &
+            \begin{cases}
+                x_1 + x_2 &\leq 1
+                \\
+                x_2 &\leq 5/2
+                \\
+                2\,x_1 + x_2 &\leq 7
+                \\
+                \{x_1,x_2\}\subset\mathbb{N}
+            \end{cases}
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q22.2
+    } % Q22.2
+        \begin{BM}[align*]
+            \max{G} &= 4\,x_1+3\,x_2
+            \\ s.a. &
+            \begin{cases}
+                4\,x_1+9\,x_2 & \leq 26
+                \\
+                8\,x_1+5\,x_2 & \leq 20
+                \\
+                \{x_1,x_2\}\subset\mathbb{N}
+            \end{cases}
+        \end{BM}
+
+        \begin{flalign*}
+            &
+                (x_1^*,x_2^*)
+                : \begin{cases}
+                    26/9-4\,x_1^*/9
+                    = 20/5-8\,x_1^*/5
+                    &\implies
+                    x_1^*=0.96
+                    \\
+                    8\,x_1^*+5\,x_2^* = 20
+                    &\implies
+                    x_2^*=2.46
+                \end{cases}
+            &\\[3ex]&
+                % ---------------------------------- PL 0   ---------------------------------- %
+                \text{PL }0
+                &\\&
+                (x_1^*,x_2^*) = (0.96,2.46)
+                \quad F^* = 11.22
+            &\\[3ex]&
+                % ---------------------------------- PL 0.1 ---------------------------------- %
+                \text{PL }0.1\quad x_1 \leq 0
+                &\\&
+                x_1^*=0\land 4*0+9\,x_2^*=26 \implies x_2^*=26/9
+                &\\&
+                \therefore (x_1^*,x_2^*) = (0,26/9)
+                \quad F^* = 8.66
+            &\\[3ex]&
+                % ---------------------------------- PL 0.2 ---------------------------------- %
+                \text{PL }0.2\quad x_1 \geq 1
+                &\\&
+                x_1^*=0\land 4*0+9\,x_2^*=26 \implies x_2^*=26/9
+                &\\&
+                \therefore (x_1^*,x_2^*) = (0,26/9)
+                \quad F^* = 8.66
+            &
+        \end{flalign*}
+
+        \begin{center}
+
+            % \tikzset{external/remake next=true} %   - remake next
+            
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    axis lines = {center}, % 3D center/box/left/right
+                    axis on top,
+                    xmin=0,
+                    ymin=0,
+                    xmax=3,
+                    % ymax=6,
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+
+                \addplot[no marks]{26/9-4*x/9};
+                \addplot[no marks]{20/5-8*x/5};
+                \addplot[no marks, dashed] coordinates {
+                    (0.96,0)
+                    (0.96,4)
+                };
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+    \end{questionBox}
+
+    \begin{questionBox}2{} % Q22.3
+        \begin{BM}[align*]
+            \min{G} &= 2\,x_1+x_2
+            \\ s.a. &
+            \begin{cases}
+                5\,x_1+6\,x_2 &\geq 20
+                \\
+                -5\,x_1+6\,x_2 & \leq 10
+                \\
+                \{x_1,x_2\}\subset\mathbb{N}
+            \end{cases}
+        \end{BM}
+
+        \begin{center}
+
+            % \tikzset{external/remake next=true} %   - remake next
+
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    axis lines = {center}, % 3D center/box/left/right
+                    axis on top,
+                    xmin=0,
+                    ymin=0,
+                    xmax=5,
+                    ymax=6,
+                ]
+                % Legends
+                % \addlegendimage{empty legend}
+                % \addlegendentry[Red]{\( x \)}
+
+                \addplot[no marks]{20/6-5*x/6};
+                \addplot[no marks]{10/6+5*x/6};
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \end{questionBox}
+
+\end{questionBox}
+
+\setcounter{question}{23}
+
+\begin{questionBox}1{ % Q24
+    Considere o seguinte problema de Programação Linear Inteira
+} % Q24
+    \begin{BM}[align*]
+        ??? &= -2\,x_1-3\,x_2
+        \\
+        s.a &
+        \begin{cases}
+            5\,x_1+2\,x_2 &\leq 25
+            \\
+            2\,x_1+5\,x_2 &\leq 25
+            \\
+            x_1+x_2 &\leq 7
+            \\
+            \{x_1,x_2\} \subset\mathbb{N}
+        \end{cases}
+    \end{BM}
+
+    Começou a resolver-se o problema através do algoritmo Branch \& Bound estudado apresentando-se em seguida a árvore de pesquisa já obtida.
+
+    \begin{center}
+        \vspace{1ex}
+        \includegraphics[width=.8\textwidth]{Q24.png}
+    \end{center}
+
+    \begin{questionBox}2{ % Q24.1
+        Indique, justificando, se o problema que se está a resolver é de tipo máximo ou de tipo mínimo.
+    } % Q24.1
+        Minimizar pois avança no sentido de menor valor
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q24.2
+        Com base na informação disponibilizada consegue identificar o valor ótimo para este problema? Em caso afirmativo indique qual é esse valor e a correspondente solução ótima. Em caso negativo, indique o melhor limite inferior e o melhor limite superior para o valor ótimo deste problema. Com vista à determinação do valor ótimo indique como se deveria prosseguir com o Algoritmo Branch \& Bound.
+    } % Q24.2
+        Ainda não temos solução ótima, tiramos o intervalo para \(Z^*\) de L3 e L5 por serem mais promissores
+        \begin{BM}
+            Z^*\in\myrange{-16,-15}
+        \end{BM}
+        A seguinte ramificação seria em L5 pondo \(5\leq x_2\geq 4\)
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q25
+    Trace as redes correspondentes a cada um dos seguintes projetos. Determine o Caminho Crítico e a respetiva duração.
+} % Q25
+
+    \begin{questionBox}2{} % Q25.1
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{c c C}
+                \toprule
+                
+                    \multicolumn{1}{c}{Atividades}
+                    & \multicolumn{1}{c}{Precendencias Imediatas}
+                    & \multicolumn{1}{c}{Duração Meses}
+                
+                \\\midrule
+                
+                       A & -- & 3
+                    \\ B & -- & 6
+                    \\ C & -- & 5
+                    \\ D &  C & 7
+                    \\ E &  B & 4
+                    \\ F &  A & 8
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+
+        % \tikzset{external/remake next=true}
+        % \begin{tikzpicture}
+        %     \graph[
+        %         nodes={circle,draw}
+        %     ] {
+        %         1 -> {2,3,4} -> 5;
+        %     };
+        % \end{tikzpicture}
+
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q26
+    Considere um projeto cujas características se indicam na tabela seguinte:
+} % Q26
+    \begin{center}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \vspace{1ex}
+        \begin{tabular}{*{4}{c}}
+            \toprule
+            
+                Atividades
+                & \begin{tabular}{c}
+                    Pressedores\\Imediatos
+                \end{tabular}
+                & \begin{tabular}{c}
+                    Duração\\Semanas
+                \end{tabular}
+                & \begin{tabular}{c}
+                    Numero de\\funcionarios
+                    \\necessários
+                    \\por semana
+                \end{tabular}
+            
+            \\\midrule
+            
+                   A & --  &  6 & 3
+                \\ B & A   &  4 & 4
+                \\ C & --  &  8 & 4
+                \\ D & C   &  6 & 2
+                \\ E & B,D & 10 & 3
+                \\ F & D   &  8 & 1
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q26.1
+        Construa a rede que representa o projeto.
+    } % Q26.1
+        \tikzset{external/remake next=true} % remake next
+        \begin{center}
+        \begin{tikzpicture}[myGraphsStyle]
+        
+            % ===================== Vertices ===================== %
+        
+            % 1,2,5,6
+            \pic (1) at (0, 0) {graphVertice={1/ 0/ 0/below/4mm}};
+            \pic (2) at (2, 1) {graphVertice={2/ 6/10/above/4mm}};
+            \pic (5) at (4, 1) {graphVertice={5/14/14/above/4mm}};
+            \pic (6) at (6, 0) {graphVertice={6/24/24/below/4mm}};
+            % 3,4
+            \pic (3) at (2,-1) {graphVertice={3/ 8/ 8/below/4mm}};
+            \pic (4) at (4,-1) {graphVertice={4/14/14/below/4mm}};
+        
+            % ======================= Edges ====================== %
+        
+            % 1 ->[A] 2 ->[B] 5 ->[E] 6
+            \draw[->] (1-x) --node[sloped,above]{A  6} (2-x);
+            \draw[->] (2-x) --node[sloped,above]{B  4} (5-x);
+            \draw[->] (5-x) --node[sloped,above]{E 10} (6-x);
+            % 1 ->[C] 3 ->[D] 4 ->[F] 6
+            \draw[->] (1-x) --node[sloped,above]{C  8} (3-x);
+            \draw[->] (3-x) --node[sloped,above]{D  6} (4-x);
+            \draw[->] (4-x) --node[sloped,above]{F  8} (6-x);
+            % 4 -> 5
+            \draw[->,dashed] (4-x) -- (5-x);
+            
+            % ==================================================== %
+        
+        \end{tikzpicture}
+        \end{center}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q26.2
+        Indique o caminho crítico e a sua duração
+    } % Q26.2
+        C,D,E, de duração 24 semanas
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q26.3
+        Se a duração da atividade D passasse a ser de 7 semanas, haveria alteração na duração do projeto?
+    } % Q26.3
+        Sim, pois faz parte do caminho crítico
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q26.4
+        Se a atividade B demorasse o dobro do tempo que alteração sofria a data de conclusão do projeto?
+    } % Q26.4
+        Não pois a nova duração não supassa o tempo de folga (10-6)
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q26.5
+        Mostre que é possível realizar este projeto no tempo previsto sem necessitar de mais do que 7 funcionários.
+    } % Q26.5 
+        Desenho.
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

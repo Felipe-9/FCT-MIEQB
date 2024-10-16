@@ -1,0 +1,446 @@
+% !TEX root = ./IPEIO-Testes_Resolução.2023.2.tex
+\providecommand\mainfilename{"./IPEIO-Testes_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Testes_Resolução.2023.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/IPEIO-Testes_Resolução.2023.2}}}
+\tikzsetexternalprefix{./.build/figures/IPEIO-Testes_Resolução.2023.2/}
+
+\mymakesubfile{2}
+[IPEIO]
+{Teste Resolução} % Subfile Title
+{Teste Resolução} % Part Title
+
+\begin{questionBox}1{ % Q1
+} % Q1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{c c}
+            \toprule
+            
+                Periodo do dia
+                & \begin{tabular}{c}
+                    Numero mínimo
+                    \\de consultores
+                    \\necessários
+                \end{tabular}
+            
+            \\\midrule
+            
+                    8h--12h & 4
+                \\ 12h--16h & 8
+                \\ 16h--20h & 10
+                \\ 20h--24h & 6
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{itemize}
+        \item Consultores tempo inteiro ou parcial
+        \item Tempo inteiro=> 8h consecultivas:
+        \begin{itemize}
+            \item  8h--16h
+            \item 12h--20h
+            \item 16h--24h
+        \end{itemize}
+        \item Tempo inteiro são pagos 40EUR/h
+        \item Tempo parcial, periodos na tabela
+        \item Tempo parcial são pagos 30EUR/h
+        \item min 2 Tempo inteiro a cada 1 parcial
+    \end{itemize}
+
+    % \answer{}
+
+    \begin{description}[
+        leftmargin=!,
+        labelwidth=\widthof{\(C_x\)} % Longest item
+    ]
+        \item[\(C_{i,j}\)] Numero de consultores em tempo inteiro no horario \{
+            1: 8h--16h, 
+            2:12h--20h, 
+            3:16h--24h
+        \}
+        \item[\(C_{p,j}\)] Numero de consultores em tempo parcial no horario \{
+            1:  8h--12h,
+            2: 12h--16h,
+            3: 16h--20h,
+            4: 20h--24h
+        \}
+    \end{description}
+
+    \begin{BM}[align*]
+        \text{Minimizar} \quad& 
+        C
+        =40*8\,\sum_{j=1}^{3}{c_{i,j}}
+        +30*4\,\sum_{j=1}^{4}{c_{p,j}}
+        \\\text{Sujeito a} \quad&
+        \left\{
+            \begin{aligned}
+                   c_{i,1}/2           &\geq c_{p,1}
+                \\ (c_{i,1}+c_{i,2})/2 &\geq c_{p,2}
+                \\ (c_{i,2}+c_{i,3})/2 &\geq c_{p,3}
+                \\ c_{i,3}/2           &\geq c_{p,4}
+                \\c_{p,1}+c_{i,1}         &\geq 4
+                \\c_{p,2}+c_{i,1}+c_{i,2} &\geq 8
+                \\c_{p,3}+c_{i,2}+c_{i,3} &\geq 10
+                \\c_{p,4}+c_{i,3}         &\geq 6
+                \\c_{p,j},c_{i,j}\in\mathbb{N}
+            \end{aligned}
+        \right.
+    \end{BM}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+} % Q2
+    \begin{BM}[align*]
+        \max z &= 5\,x+3\,y
+        \\
+        s.a. 
+        & \begin{cases}
+               x&\leq 4
+            \\ y&\leq6
+            \\ 3\,x+2\,y&\leq18
+            \\ x+y&\leq2
+            \\ x,y&\leq0
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q2.1
+        Região adm
+    } % Q2.1
+        E
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Vertice ótimo e sba
+    } % Q2.2
+
+        \begin{flalign*}
+            &
+                0=5\,x+3\,y
+                \implies
+                y=\frac{5}{3}x
+            &
+        \end{flalign*}
+
+        Percebemos uma reta de declive crescente (5/3) que tende sempre a almentar, podemos ver que o vertice \((x,y)=(0,6)\) é solução por estar mais a cima e a esquerda possível
+        \begin{itemize}
+            \item Vértice: \((0,6)\)
+            \item S.b.a: \((x,y)=(0,6)\)
+        \end{itemize}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.3
+        Variavéis do vertice (2,6)
+    } % Q2.3
+        \begin{BM}
+            (x,y,f_2,f_3)
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.4
+        Nova função
+    } % Q2.4
+        \begin{BM}
+            z'=c\,x+3\,y
+        \end{BM}
+
+        \begin{enumerate}
+            \begin{multicols}{2}
+                \item \(c=2000\): F, solução sempre limitada
+                \item \(c=1\): V, declive positívo
+                \item \(c=9/2\): F, se for positiva vai sempre dar (0,6)
+                \item \(c<0\): F, existe uma margem q resulta em (4,y>0)
+            \end{multicols}
+        \end{enumerate}
+
+        Resposta, b)
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Simplex
+} % Q3
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{5}{C}|C}
+            \toprule
+            
+                x_1 & x_2 & x_3 & f_1 & f_2 & T.I
+            
+            \\\midrule
+            
+                -5+\alpha & 0 & 2-2\,\alpha & 0 & -3-\alpha & 18
+                \\ \alpha-1 & 1 & 1 & 0 & -1 & 10-\alpha
+                \\ 3 & 0 & 1 & 1 & 1 & 6-\alpha
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q3.1
+        \(\alpha=3\) e minimizar, sol otima é \((x_1^*,x_2^*,x_3^*)=(0,7,0)\)
+    } % Q3.1
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{5}{C}|C}
+            \toprule
+            
+                x_1 & x_2 & x_3 & f_1 & f_2 & T.I
+            
+            \\\midrule
+            
+                -5+3 & 0 & 2-2*3 & 0 & -3-3 & 18
+                \\ 3-1 & 1 & 1 & 0 & -1 & 10-3
+                \\ 3 & 0 & 1 & 1 & 1 & 6-3
+            
+            \\\midrule
+            
+                  -2 & 0 & -4 & 0 & -6 & 18
+                \\ 2 & 1 &  1 & 0 & -1 & 7
+                \\ 3 & 0 &  1 & 1 & 1 & 3
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Falsa
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        \(\alpha=1\) e max, sol não ótima, \(x_1\) vira básica e \(f_1\) vira não básica
+    } % Q3.2
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{5}{C}|C}
+            \toprule
+            
+                x_1 & x_2 & x_3 & f_1 & f_2 & T.I
+            
+            \\\midrule
+            
+                -5+-1 & 0 & 2-2*-1 & 0 & -3+1 & 18
+                \\ -1-1 & 1 & 1 & 0 & -1 & 10+1
+                \\ 3 & 0 & 1 & 1 & 1 & 6+1
+            
+            \\\midrule
+            
+                -6 & 0 & 4 & 0 & -2 & 18
+                \\ -2 & 1 & 1 & 0 & -1 & 11
+                \\ 3 & 0 & 1 & 1 & 1 & 7
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Falsa
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.3
+        \(\alpha=3\) e max, é sol ótima
+    } % Q3.3
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{5}{C}|C}
+                \toprule
+                
+                    x_1 & x_2 & x_3 & f_1 & f_2 & T.I
+
+                \\\midrule
+                
+                    -2 & 0 & -4 & 0 & -6 & 18
+                    \\ 2 & 1 &  1 & 0 & -1 & 7
+                    \\ 3 & 0 &  1 & 1 & 1 & 3
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+        Verdadeira
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.4
+        Max e \(\alpha=5\), mais q uma sol otima
+    } % Q3.4
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{*{5}{C}|C}
+                \toprule
+                
+                    x_1 & x_2 & x_3 & f_1 & f_2 & T.I
+                
+                \\\midrule
+                
+                    -5+5 & 0 & 2-2*5 & 0 & -3-5 & 18
+                    \\ 5-1 & 1 & 1 & 0 & -1 & 10-5
+                    \\ 3 & 0 & 1 & 1 & 1 & 6-5
+                
+                \\\midrule
+                
+                       0 & 0 & -8 & 0 & -8 & 18
+                    \\ 4 & 1 & 1 & 0 & -1 & 4
+                    \\ 3 & 0 & 1 & 1 & 1 & 1
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+
+        Verdadeira, anula \(x_1\)
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.5
+        \(x_1=-5+\alpha\)
+    } % Q3.5
+        Falsa, esse é o escalar multiplicando o numero
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+    Projeto
+} % Q4
+    
+    \begin{questionBox}2{ % Q4.1
+        Desenho
+    } % Q4.1
+        % \tikzset{external/remake next=true} % remake next
+        \begin{center}
+        \begin{tikzpicture}[myGraphsStyle]
+
+            % ===================== Vertices ===================== %
+
+            % 1,2,5,6
+            \pic (1) at (0, 0) {graphVertice={1/ 0/ 0/below/4mm}};
+            \pic (3) at (2, 1) {graphVertice={3/24/24/above/4mm}};
+            \pic (4) at (4, 1) {graphVertice={4/42/42/above/4mm}};
+            \pic (6) at (6, 0) {graphVertice={6/60/60/below/4mm}};
+            % 3,4
+            \pic (2) at (2,-1) {graphVertice={2/12/12/below/4mm}};
+            \pic (5) at (4,-1) {graphVertice={5/52/52/below/4mm}};
+
+            % ======================= Edges ====================== %
+
+            % 1 ->[A] 3 ->[D] 4 ->[H] 6
+            \draw[->] (1-x) --node[sloped,above]{\(A_{14}\)} (3-x);
+            \draw[->] (3-x) --node[sloped,above]{\(D_{18}\)} (4-x);
+            \draw[->] (4-x) --node[sloped,above]{\(H_{16}\)} (6-x);
+            % 1 ->[B] 3 ->[E] 5 ->[G] 6
+            \draw[->] (1-x) --node[sloped,above]{\(B_{12}\)} (2-x);
+            \draw[->] (2-x) --node[sloped,above]{\(E_{12}\)} (5-x);
+            \draw[->] (5-x) --node[sloped,above]{\(G_{ 8}\)} (6-x);
+            % 2 ->[C] 3
+            \draw[->] (2-x) --node[sloped,above]{\(C_{12}\)} (3-x);
+            % 4 -> 5
+            \draw[->] (4-x) --node[sloped,above]{\(F_{10}\)} (5-x);
+            % 3 - -> 5
+            \draw[->,dashed] (3-x) -- (5-x);
+            
+            % ==================================================== %
+
+        \end{tikzpicture}
+        \end{center}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q4.2
+        Duração total e caminho crítico médio
+    } % Q4.2
+        \begin{itemize}
+            \item caminho: B\rightarrow C\rightarrow D\rightarrow F\rightarrow G\\
+            \item Tempo: 60 dias
+        \end{itemize}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q4.3
+        Prob de exceder 52 dias
+    } % Q4.3
+        \begin{flalign*}
+            &
+                \sigma
+                = \sqrt{0.8+0.6+1.2+0.8+0.6}
+                = \sqrt{4} = 2
+                &\\&
+                P(x\geq 57)
+                = 1-P(x\leq 57)
+                = 1-P\left(z\leq \frac{60-57}{2}\right)
+                = &\\&
+                = 1-P(z\leq 1.5)
+                \cong 1-0.9332
+                = 0.0668
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+    Prog lin inteira
+} % Q5
+    \begin{BM}[align*]
+        ?? \quad &z=4\,x_1+8\,x_2
+        \\
+        s.a &
+        \begin{cases}
+               8\,x_1+3\,x_2 &\leq 52
+            \\ 2\,x_1+7\,x_2 &\leq 46
+            \\ x_1,x_2&\in\mathbb{N}
+        \end{cases}
+    \end{BM}
+
+    \begin{enumerate}
+        \item F
+        \item F
+        \item V
+        \item F
+        \item V
+    \end{enumerate}
+
+\end{questionBox}
+
+% (52-3*y)/8=x
+% (52-3*6)/8=x
+
+\end{document}
+
+% \tikzset{external/remake next=true} % remake next
+% \begin{center}
+% \begin{tikzpicture}[myGraphsStyle]
+
+%     % ===================== Vertices ===================== %
+
+%     % 1,2,5,6
+%     \pic (1) at (0, 0) {graphVertice={1/ 0/ 0/below/4mm}};
+%     \pic (2) at (2, 1) {graphVertice={2/ 6/10/above/4mm}};
+%     \pic (5) at (4, 1) {graphVertice={5/14/14/above/4mm}};
+%     \pic (6) at (6, 0) {graphVertice={6/24/24/below/4mm}};
+%     % 3,4
+%     \pic (3) at (2,-1) {graphVertice={3/ 8/ 8/below/4mm}};
+%     \pic (4) at (4,-1) {graphVertice={4/14/14/below/4mm}};
+
+%     % ======================= Edges ====================== %
+
+%     % 1 ->[A] 2 ->[B] 5 ->[E] 6
+%     \draw[->] (1-x) --node[sloped,above]{A  6} (2-x);
+%     \draw[->] (2-x) --node[sloped,above]{B  4} (5-x);
+%     \draw[->] (5-x) --node[sloped,above]{E 10} (6-x);
+%     % 1 ->[C] 3 ->[D] 4 ->[F] 6
+%     \draw[->] (1-x) --node[sloped,above]{C  8} (3-x);
+%     \draw[->] (3-x) --node[sloped,above]{D  6} (4-x);
+%     \draw[->] (4-x) --node[sloped,above]{F  8} (6-x);
+%     % 4 -> 5
+%     \draw[->,dashed] (4-x) -- (5-x);
+    
+%     % ==================================================== %
+
+% \end{tikzpicture}
+% \end{center}

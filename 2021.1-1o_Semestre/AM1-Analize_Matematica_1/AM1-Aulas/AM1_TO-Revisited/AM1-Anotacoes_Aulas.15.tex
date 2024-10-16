@@ -1,0 +1,136 @@
+\part{20/04 - Funções continuas}
+
+\begin{multicols}{2}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{}
+
+\BMold{
+	f:\mathbf{I}\to\mathbb{R}
+&	\quad a\in\text{\hyperref[interior]{int}}(\mathbf{I})
+}\relax
+
+\begin{flalign*}
+&
+	f \text{ é continua em } x=a
+\iff
+	\exists\,\lim_{x\to a}f(x) = L
+\land
+	f(a) = L
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Continuidade}
+
+\BMold{ f \text{ é continua em } x=a }\relax
+\begin{flalign*}
+&
+\iff
+	\exists\,\lim_{x\to a^+} = L^+
+\land
+	\exists\,\lim_{x\to a^-} = L^-
+\land
+	L^+ = L^- = f(a)
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\BMold{ \exists\,\lim_{x\to a} f(x)\land \nexists\,f(a)}\relax
+
+\begin{flalign*}
+&
+	\overline f
+=	\begin{cases}
+		f(x)	& \quad x\neq a
+	\\	L		& \quad x=a
+	\end{cases}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\BMold{ h(x) = \sin(x)/x }\relax
+\begin{flalign*}
+&
+	\overline h
+=	\begin{cases}
+		\sin(x)/x	& \quad x\neq0
+	\\	1			& \quad x=0
+	\end{cases}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subsection{Exemplo}
+
+\BMold{ g(x) = e^{-1/|x|} }\relax
+\begin{flalign*}
+&
+	\overline g
+=	\begin{cases}
+		e^{-1/|x|}	& \quad x\neq0
+	\\	0			& \quad x=0
+	\end{cases}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Continuidade segundo \hyperref[cauchy]{Cauchy}}
+
+\BMold{
+	f: \mathbf{I}\to \mathbb{R}
+\land
+	a\in\text{\hyperref[interior]{int}}(\mathbf{I})
+}\relax
+
+\begin{flalign*}
+&
+\therefore
+	f \text{ é continua em } x=a
+	\text{ segundo \hyperref[cauchy]{Cauchy}}
+\iff &\\&
+\iff
+	\exists\,\delta_{(\varepsilon)}>0
+	\quad\forall\,\varepsilon>0
+:	\left| f(a)-f(x) \right| < \varepsilon
+	\quad\forall\,|x-a|<\delta
+&
+\end{flalign*}
+
+\end{minipage}
+
+\end{multicols}

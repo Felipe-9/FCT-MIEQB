@@ -1,0 +1,385 @@
+% !TEX root = ./IPEIO-Exercicios_Resolução.2.tex
+\providecommand\mainfilename{"./IPEIO-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Exercicios_Resolução.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+
+\mymakesubfile{2}
+[IPEIO]
+{Exercicios PE - Variáveis Aleatórias} % Subfile Title
+{Variáveis Aleatórias} % Part Title
+
+% ---------------------------------------------------------------------------- %
+%                             Por na lista anterior                            %
+% ---------------------------------------------------------------------------- %
+% \setcounter{question}{28}
+% \begin{questionBox}1{ % Q1
+%     (Teste de P.E. 2006/07) Uma urna tem oito moedas, seis honestas e duas viciadas. O resultado do lançamento de uma moeda viciada é sempre “cara”.
+% } % Q1
+%     \begin{questionBox}2{ % Q29.1
+%         Escolhendo duas das oito moedas disponíveis, ao acaso e sem reposição, qual a probabilidade de seleccionar as duas moedas viciadas.
+%     } % Q29.1
+%         \begin{flalign*}
+%             &
+%                 \frac{2}{8}
+%                 * \frac{1}{7}
+%             &
+%         \end{flalign*}
+%     \end{questionBox}
+    
+%     \begin{questionBox}2{ % Q29.2
+%         Escolhendo uma moeda ao acaso, qual a probabilidade de obter três caras em três lançamentos sucessivos dessa moeda?
+%     } % Q29.1
+%         \begin{flalign*}
+%             &
+%                 P(T)
+%                 = P(3\cap H)
+%                 + P(3\cap \bar{H})
+%                 = P(3\vert H)\,P(H)
+%                 + P(3\vert \bar{H})\,P(\bar{H})
+%                 = (1/2)^3*6/8
+%                 + 1*1/4
+%                 = 11/32
+%             &
+%         \end{flalign*}
+%     \end{questionBox}
+
+%     \begin{questionBox}2{ % Q29.3
+%         Se em três lançamentos, da mesma moeda, o resultado foi sempre “cara”, qual a probabilidade de ter escolhido a moeda viciada?
+%     } % Q29.1
+%         \begin{flalign*}
+%             &
+%                 P(\bar{H}\vert T)
+%                 = \frac{P(T\cap \bar{H})}{P(T)}
+%                 = \frac{P(T\vert \bar{H})\,P(\bar{H})}{P(T)}
+%             &
+%         \end{flalign*}
+%     \end{questionBox}
+% \end{questionBox}
+
+
+\begin{questionBox}1{ % Q1
+    A variável aleatória (v.a.) X representa o número de doentes com gripe que procuram, por dia, o Dr. Remédios. Em 50\% dos dias, pelo menos 2 pacientes com gripe procuram o Dr. Remédios. A sua função de probabilidade é dada por:
+} % Q1
+    % \begin{center}
+        \begin{BM}
+            x
+            \left\{
+                \begin{aligned}
+                    0 \quad & 1 \quad & 2 \quad & 3
+                    \\
+                    p \quad & 0.2 \quad & q \quad & 0.3
+                \end{aligned}
+            \right\}
+        \end{BM}
+    % \end{center}
+
+    \begin{questionBox}2{ % Q1.1
+        Determine p e q.
+    } % Q1.1
+        \begin{flalign*}
+            &
+                q
+                = P(X=2)
+                = P(X\geq 3) - P(X=3)
+                = 0.5 - 0.3
+                = 0.2
+                &\\&
+                p
+                = P(X=0)
+                = 1-P(\bar{X=0})
+                = 1-P(X>0)
+                = &\\&
+                = 1
+                - P(X=1)
+                - P(X=2)
+                - P(X=3)
+                = 1-0.2-0.2-0.3
+                = 0.3
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Determine a função de probabilidade das v.a.'s \(Y = 40\,X\) e \(W = \max(X, 1)\).
+    } % Q1.2
+        \begin{BM}
+            Y
+            = \left\{
+                \begin{Bmatrix}
+                    0 & 40 & 80 & 120
+                    \\
+                    0.3 & 0.2 & 0.2 & 0.3
+                \end{Bmatrix}
+            \right\}
+            \qquad
+            W
+            = \begin{Bmatrix}
+                1 & 2 & 3
+                \\
+                0.5 & 0.2 & 0.3
+            \end{Bmatrix}
+        \end{BM}
+    \end{questionBox}
+\end{questionBox}
+
+
+\begin{questionBox}1{ % Q2
+    A v.a. \textit{X} representa o número de pontos que saem no lançamento de um determinado dado. A sua função de distribuição segue-se:
+} % Q2
+    \begin{BM}
+        F(x)
+        =
+        \begin{Bmatrix}
+            0 & x<1
+            \\ 1/6 & 1\leq x<2
+            \\ 1/4 & 2\leq x<4
+            \\ 1/2 & 4\leq x<5
+            \\ 7/12 & 5\leq x<6
+            \\ 1 & x\geq6
+        \end{Bmatrix}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q2.1
+        Calcule as seguintes probabilidades, usando a função de distribuição:
+    } % Q2.1
+        \subsubquestion{A probabilidade de o número de pontos saídos ser no máximo 3.}
+        \begin{flalign*}
+            &
+                P(X\leq 3) = F(3)
+            &
+        \end{flalign*}
+
+        \subsubquestion{}
+        \begin{flalign*}
+            &
+                P(1<X\leq 2)
+                = P(X\leq 2)
+                - P(X\leq 1)
+                = F(2)-F(1)
+            &
+        \end{flalign*}
+
+        \subsubquestion{}
+        \begin{flalign*}
+            &
+                P(2\leq X<6)
+                = P(X<6)
+                - P(X<2)
+                = F(6^-)
+                - F(2^-)
+                = 7/12
+                - 1/6
+                = 5/12
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Determine a função de probabilidade de X e confirme os resultados acima obtidos.
+    } % Q2.2
+
+        \begin{flalign*}
+            &
+                P(X=x)
+                = P(X\leq x) - P(X<x)
+                = F(X) - F(X^-)
+                \implies &\\&
+                \implies
+                \left\{
+                    \begin{aligned}
+                        &  P(X=1) = 1/6 - 0 =& 1/6
+                        \\ & P(X=2) = 1/4 - 1/6 =& 1/12
+                        \\ & P(X=3) = 1/4 - 1/4 =& 0
+                        \\ & P(X=4) = 1/2 - 1/4 =& 1/4
+                        \\ & P(X=5) = 7/12 - 1/2 =& 1/12
+                        \\ & P(X=6) = 1 - 7/12 =& 5/12
+                    \end{aligned}
+                \right\}
+            &
+        \end{flalign*}
+
+        \begin{BM}
+            X
+            = \begin{Bmatrix}
+                1 & 2 & 4 & 5 & 6
+                \\
+                1/6 & 1/12 & 1/4 & 1/12 & 5/12
+            \end{Bmatrix}
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.3
+        Pode afirmar que o dado é equilibrado? Justifique.
+    } % Q2.3
+        N, os lados tem diff probs
+    \end{questionBox}
+    
+    \begin{questionBox}2{ % Q2.4
+        Sabendo que o número de pontos saído é pelo menos 4, calcule a probabilidade de saírem 6 pontos.
+    } % Q2.4
+        \begin{flalign*}
+            &
+                P(X=6\vert X\geq 4)
+                = \frac{P(X=6\cap X\geq 4)}{P(X\geq 4)}
+                = \frac{P(X=6)}{P(X\geq 4)}
+                = \frac{F(6)-F(6')}{F(4^-)}
+                = &\\&
+                = \frac{1-7/12}{1/4}
+                = 5/9
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{5}
+
+\begin{questionBox}1{ % Q6
+    Seja X uma v.a. com a seguinte função densidade probabilidade:
+} % Q6
+    \begin{BM}
+        f(x)
+        = \begin{cases}
+            4\,x &\quad 0<x<k
+            \\ 0 &\quad c.c.
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q6.1
+        k
+    } % Q6.1
+        \begin{flalign*}
+            &
+                \int_{-\infty}^{infty}{
+                    f(x)\,\odif{x}
+                }
+                = \int_{0}^{k}{
+                    f(x)\,\odif{x}
+                }
+                = \int_{0}^{k}{
+                    4\,x\,\odif{x}
+                }
+                = 4\left(x^2\right)\big\vert_{0}^{k}
+                = 4\,k^2
+                = 1
+                \implies &\\&
+                \implies
+                k = 1/\sqrt{2}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q6.2
+        Calcule \(P(1/4 \leq X \leq 1/3)\), a mediana e o quantil de ordem 0.95.
+    } % Q6.2
+        \subsubquestion{\(P(1/4\leq X\leq 1/3)\)}
+        \begin{flalign*}
+            &
+                P(1/4\leq X\leq 1/3)
+                = \int_{1/4}^{1/3}{f(x)\odif{x}}
+                = \int_{1/4}^{1/3}{4\,x\odif{x}}
+                = 4\left(x^2\right)\big\vert_{1/4}^{1/3}
+                = &\\&
+                = 4\left(3^{-2}-4^{-2}\right)
+                = 4\left(3^{-2}-4 ^{-2}\right)
+                = \num{0.194444444444444}
+            &
+        \end{flalign*}
+        \subsubquestion{Mediana}
+        \begin{flalign*}
+            &
+                P(X\leq m_e)
+                = \int_{0}^{m_e}{f(x)\odif{x}}
+                = 4(m_e^2)
+                =1/2
+                \implies
+                m_e 
+                = \sqrt{(1/2)/4}
+                = \num{0.353553390593274}
+            &
+        \end{flalign*}
+        \subsubquestion{}
+        \begin{flalign*}
+            &
+                P(X\leq q_{95})
+                = \int_{0}^{q_{95}}{f(x)\odif{x}}
+                = 0.95
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\setcounter{question}{12}
+
+\begin{questionBox}1{ % Q13
+    Seja \textit{X} uma v.a. com a seguinte função de distribuição:
+} % Q13
+    \begin{BM}
+        F(x)=
+        \begin{cases}
+            0, \qquad& x<0
+            \\
+            1-(x+1)\,e^{-x}, \qquad& x\geq0
+        \end{cases}
+    \end{BM}
+
+    \begin{questionBox}2{ % Q1
+        Calcule \(P(X<1)\)
+    } % Q1
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2
+        Calcule \(P(X<2\vert X\geq 1)\)
+    } % Q2
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3
+        Determine a função densidade probabilidade de \textit{X}.
+    } % Q3
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q4
+        Dado que \(\int_{0}^{\infty}{x^2\,e^{-x}\,\odif{x}} = 2\,\int_{0}^{\infty}{x\,e^{-x}\,\odif{x}}\) e \(\int_{0}^{\infty}{x^3\,e^{-x}\,\odif{x}} = 3\,\int_{0}^{\infty}{x^2\,e^{-x}\,\odif{x}}\), determine \textit{E(X)} e \textit{V(X)}.
+    } % Q4
+        \subsubquestion{\textit{E(X)}}
+        \begin{flalign*}
+            &
+                E(X) 
+                = \int_{\mathbb{R}}{x\,f(x)\,\odif{x}}
+                = \int_{0}^{+\infty}{x\,x\,e^{-x}\,\odif{x}}
+                = \int_{0}^{+\infty}{x^{2}\,e^{-x}\,\odif{x}}
+                = &\\&
+                = 2\,\int_{0}^{+\infty}{x\,e^{-x}\,\odif{x}}
+                = 2\,\adif{x\,e^{-x}\,\odif{x}}\big\vert_{0}^{+\infty}
+                = 2\,\left(
+                    -0+\frac{0+1}{e^{0}}
+                \right)
+                = 2
+            &
+        \end{flalign*}
+
+        \subsubquestion{\textit{V(X)}}
+        \begin{flalign*}
+            &
+                V(X)
+                = - E^2(X) + E(X^2)
+                = - 2^2 + \int_{\mathbb{R}}{x^2\,f(x)\,\odif{x}}
+                = - 2^2 + \int_{0}^{\infty}{x^3\,e^{-x}\,\odif{x}}
+                = &\\&
+                = - 2^2 + 3\,\int_{0}^{\infty}{x^2\,e^{-x}\,\odif{x}}
+                = - 2^2 + 3*2
+                = 2
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\end{document}

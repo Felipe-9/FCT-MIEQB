@@ -1,0 +1,292 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+%\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section} }
+\renewcommand\thesubsection{\arabic{section} - \alph{subsection}) }
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	AM 1 - Resolução Ficha 5\\Limites e Continuidade de funções%
+}
+\author{Felipe Pinto - 61387}
+\date{14/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+% Q1
+\section{}
+
+\setcounter{subsection}{5}
+
+% Q1 - f)
+\subsection{$ \lim_{x\to\infty} e^{\cos(x)}/x $}
+\begin{flalign*}
+&
+	=
+		\lim_{x\to\infty} e^{\cos(x)}
+		*\lim_{x\to\infty} 1/x
+	=
+		\lim_{x\to\infty} e^{\cos(x)}*0
+	;\ 
+		e^{\cos(x)} \text{ é uma função limitada}
+	\implies &\\& \implies
+		\lim_{x\to\infty} e^{\cos(x)}/x = 0
+&
+\end{flalign*}
+
+% Q1 - g)
+\subsection{$ \lim_{x\to 0^+} e^{1/x} $}
+\begin{flalign*}
+&
+	= e^{\lim_{x\to 0^+} 1/x}
+	= e^{+\infty}
+	= +\infty
+&
+\end{flalign*}
+
+% Q1 - h)
+\subsection{$ \lim_{x\to 0^-} e^{1/x} $}
+\begin{flalign*}
+&
+	= e^{\lim_{x\to 0^-} 1/x}
+	= e^{-\infty}
+	= 0
+&
+\end{flalign*}
+
+% Q2
+\section{Prove $\nexists\,f(x)$}
+
+% Q2 - a)
+\subsection{$ \nexists\,a(x) = x/|x| : x = 0 $}
+\begin{flalign*}
+&
+	\iff
+		\lim_{x\to0^+} a(x) = 1
+	\neq
+		\lim_{x\to0^-} a(x) = -1
+&
+\end{flalign*}
+
+% Q2 - b)
+\subsection{$ \nexists\,b(x) = \frac{x^2-1}{|x-1|} : x = 1 $}
+\begin{flalign*}
+&
+	\iff
+		\lim_{x\to1^+} b(x)
+	=
+		\lim_{x\to1^+} \frac{(x+1)(x-1)}{x-1}
+	=
+		2
+	\neq
+		\lim_{x\to1^-} b(x)
+	= &\\& =
+		\lim_{x\to1^-} \frac{(x+1)(x-1)}{1-x}
+	=
+		\lim_{x\to1^-} \frac{-(x+1)}{1}
+	=
+		-2
+&
+\end{flalign*}
+
+% Q2 - c)
+\subsection{$ \nexists\,c(x) = \arctan(e^{1/x}) : x = 0 $}
+\begin{flalign*}
+&
+	\iff
+		\lim_{x\to0^+} c(x)
+	=
+		\arctan(e^{\lim_{x\to0^+}1/x})
+	=
+		\arctan(e^{\infty})
+	=
+		\arctan(\infty)
+	=
+		\pi/2
+	\neq &\\& \neq
+		\lim_{x\to0^-} c(x)
+	=
+		\arctan(e^{\lim_{x\to0^-}1/x})
+	=
+		\arctan(e^{-\infty})
+	=
+		\arctan(0)
+	=
+		0
+&
+\end{flalign*}
+
+% Q2 - d)
+\subsection{$
+	\nexists\,d(x) = e^{\cos(x)} : x = +\infty
+$ Incompleta}
+\begin{flalign*}
+&
+	\iff
+		\lim_{x\to\infty} d(x)
+	;\ x_n = 2\,n\,\pi\quad\forall\,n\in\mathbb{N}
+	&\\&
+	\cdots
+&
+\end{flalign*}
+
+% Q3
+\section{}
+
+% Q3 - a)
+\subsection{$ \lim_{x\to0} \tan(x)/x $ Incompleto}
+\begin{flalign*}
+&
+	=
+		\lim_{x\to0} \cos^-1(x)\frac{\sin(x)}{x}
+	=
+		\lim_{x\to0} \cdots
+&
+\end{flalign*}
+
+% Q3 - b)
+\subsection{$ \lim_{x\to0} (1-e^{2\,x})/x $ Incompleto}
+\begin{flalign*}
+&
+	= \cdots
+&
+\end{flalign*}
+
+% Q3 - c)
+\subsection{$ \lim_{x\to0} (1-e^{2x})/\sin(3\,x) $ Incompleto}
+\begin{flalign*}
+&
+	=
+		\lim_{x\to0} 
+		\frac{1-e^{2x}}{2\,x}
+		\frac{3\,x}{\sin(3\,x)}
+		\frac{2\,x}{3\,x}
+	=
+		\cdots
+&
+\end{flalign*}
+
+% Q3 - d)
+\subsection{$ \lim_{x\to0} \ln(x+1)/x $ Incompleto}
+\begin{flalign*}
+&
+	x+1 = e^y
+	\implies
+		\lim_{x\to0} \ln(x+1)/x
+	=
+		\lim_{x\to0} \frac{y}{e^y-1}
+	=
+		\cdots
+&
+\end{flalign*}
+
+% Q3 - e)
+\subsection{$ \lim_{x\to0} (1-\cos(3\,x))/x^2 $}
+\begin{flalign*}
+&
+	=
+		\lim_{x\to0} \frac{1-\cos^2(3\,x)}{x^2(1+\cos(3\,x))}
+	=
+		\lim_{x\to0} \frac{\sin^2(3\,x)}{x^2(1+\cos(3\,x))}
+	=
+		\lim_{x\to0} 
+		\frac{\sin^2(3\,x)}{(3\,x)^2}
+		\frac{9\,x^2}{x^2(1+\cos(3\,x))}
+	= &\\& =
+		\lim_{x\to0} 
+		\left(
+		\frac{\sin(3\,x)}{3\,x}
+		\right)^2
+		\lim_{x\to0}
+		\frac{9}{1+\cos(3\,x)}
+	=
+		9/2
+&
+\end{flalign*}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+

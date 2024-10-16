@@ -1,0 +1,112 @@
+% !TEX root = ./QF_A-Bib_Notes.17.1.tex
+\providecommand\mainfilename{"./QF_A-Bib_Notes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Bib_Notes.17.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Bib_Notes.17.1}}}
+\tikzsetexternalprefix{./.build/figures/QF_A-Bib_Notes.17.1/}
+
+
+\mymakesubfile{1}
+[QF A]
+{Rates of Chemical reactions} % Subfile Title
+{Rates of Chemical reactions} % Part Title
+
+\section{Monitoring the progress of a reaction}
+
+\begin{exampleBox}1{ % E1
+    Self test 17A.1
+} % E1
+    
+    \begin{center}\large
+        \ch{
+            2 NOBr\gas{} -> 2 NO\gas{} + Br2\gas{}
+        }
+    \end{center}
+
+    \answer{}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C | *{2}{C} | C}
+            \toprule
+            
+                p(\ch{NOBr\gas{}})
+                & p(\ch{NO\gas{}})
+                & p(\ch{Br2\gas{}})
+                & p
+            
+            \\\midrule
+            
+                p_0 & 0 & 0 & p_0
+            \\  p_0-2\,\adif{p} 
+                & 2\,\adif{p} 
+                & \adif{p}
+                & p_0+\adif{p}
+            \\  3\,p_0-2\,p
+                & 2(p-p_0)
+                & p-p_0
+                
+            \\\bottomrule
+            \multicolumn{4}{R}{\adif{p}=p-p_0}
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    
+\end{exampleBox}
+
+\begin{sectionBox}1{Definition of Rate} % S1
+    
+    \begin{center}\Large\bfseries
+        \ch{A + 2 B -> 3 C + D}
+    \end{center}
+
+    Rate for each substance
+    \begin{BM}
+        v
+        = \odv{\ch{[D]}}{t}
+        = \frac{1}{3}\odv{\ch{[C]}}{t}
+        = -\odv{\ch{[A]}}{t}
+        = -\frac{1}{2}\odv{\ch{[B]}}{t}
+    \end{BM}
+
+    \subsection{Extend of reaction (\chemxi{})}
+    Define a universal rate of the reaction
+    \begin{BM}
+        \odif{n}_J=v_J\,\odif{\chemxi}
+    \end{BM}
+
+    \begin{description}
+       \item[\(v_J\)] Is the stoichiometric number of the species
+    \end{description}
+
+    \subsection{Rate of reaction}
+    \begin{BM}
+        v
+        = \frac{1}{V}\,\odv{\chemxi}{t}
+        = \frac{1}{V\,v_J}\,\odv{n_J}{t}
+        \underset{\text{const }V}{=}
+        \frac{1}{v_J}\,\odv{\ch{[J]}}{t}
+    \end{BM}
+
+    \begin{description}
+       \item[\textit{V}] Volume of the system
+    \end{description}
+
+    \subsubsection{Heterogeneous reaction}
+    \begin{BM}
+        v=\frac{1}{v_J}\odv{\sigma_J}{t}
+        \qquad \sigma_J=\frac{n_J}{A}
+    \end{BM}
+    \begin{description}
+       \item[\(A\)] Surface area
+    \end{description}
+    
+\end{sectionBox}
+
+\end{document}

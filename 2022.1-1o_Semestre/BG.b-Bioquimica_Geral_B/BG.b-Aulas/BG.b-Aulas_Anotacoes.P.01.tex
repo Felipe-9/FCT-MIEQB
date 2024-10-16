@@ -1,0 +1,150 @@
+% !TEX root = ./Main_File.tex
+% !TEX root = ./Sub_File.tex
+\providecommand\mainfilename{"././Main_File.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./Sub_File.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{1}{Cytoescape}{Cytoescape}
+
+\Part{Aminoácidos}
+
+\begin{sectionBox}{Aminoácidos}
+    
+    \begin{itemize}
+        \item Essenciais
+        \item Não Essenciais
+        \item Limitantes
+    \end{itemize}
+
+    \begin{sectionBox}*2{Representação}
+        
+        \begin{itemize}
+            \item \ch{AH2^+}
+            \item \ch{AH ^0}
+            \item \ch{A  ^-}
+        \end{itemize}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Glicina}
+    
+    % desenhar glicina
+    \ch{NH3CH2COO}
+
+    \begin{sectionBox}2{}
+        
+        Em pH neutro a glicina se encontra em \ch{AH^0} e se encadeiam ligando grupos carboxilos (\ch{COO}) e aminas (\ch{NH3^+})
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\part*{Proteinas}
+
+\begin{sectionBox}1{Formação}
+    
+    Conjunto de Aminoácidos em cadeia
+    Se forma em risossomos dentro de celulas
+    Ao se formar adquire forma terciária (compacta)
+
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Formas}
+    
+    Prim, Sec, Ter
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Desnaturação}
+    
+    Retorna proteina para forma secundaria onde uma enzima pode quebrar em pequenos pedaços, os pedaços são chamados de peptinas
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Distinção}
+    
+    Espectometro de massa, se pesa os pedaços e compara os pesos com uma base de dados de peptideos com massas conhecidas
+    
+\end{sectionBox}
+
+\begin{questionBox}*1{Análize de Urina}
+    
+    Se usa a análize da quantidade de proteinas na urina, para diferenciar passientes com infeccoes caso estes sejam do tipo recorrentes e não recorrentes.
+
+    tudo com base na quantidade de proteinas esperadas de infecções presentes na urina.
+    
+\end{questionBox}
+
+\part*{Inicio da aula Prática}
+
+\begin{sectionBox}1{Proteinas}
+    
+    Pesam serca sempre \(>10\,\unit{\kilo\dalton}\), e os espectrometros de massa não conseguem medir massas tão altas e por isso é necessário esperdaçalas em peptideos.
+
+    Desnaturação lineariza uma proteína facilitando o corte dos peptideos
+
+    Pode se fazer a desnaturação usando temperatura.
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Introdução ao Protocolo prático}
+    
+    Estudo da interação de um metal (Cadmio) com ratos.
+
+    O estudo será feito sobre as proteínas presentes em figados de ratos de dois grupos (controle e experimento)
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{Volcano Plot}
+    
+    Curva usada para apresentar o nível de significancia,
+
+    Diferenciando as proteínas que são afetadas dentre o grupo controle e experimento
+
+    y: \(-log(p)\), onde \textit{p} é a significancia de geralmente (\(<5\E-2\))
+    x: Diff
+
+    Categoriza as proteínas pelas:
+    \begin{itemize}
+        \item Almentadas pela exposição a cadmio
+        \item Diminuidas pela exposição a cadmio
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{ClueGO Plot}
+    
+    Ao se plotar as proteinas que possuem almento e diminuição podemos verificar os processos biologicos em que as proteínas dos dados coletados participam, e apresentar as relações entre os Processos comparando as semelhancas entre as proteínas participadoras.
+
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{ROS}
+    
+    Reactive Oxidation Stress-induced
+
+    Moleculas altamente perigosas apara celulas, ativa auto destrução celular.
+
+    Afeta as enzimas que degradam as moleculas intermediárias do metabolizmo de mitocondrias, processo que transforma O e \ch{H2O2}, acumulando esses compostos que consequentimente induzem morte celular.
+
+    Similarmente não é ideal usar agua oxigeáda(peroxido de hidrogênio), melhor alternativa iodo beta-ativo
+    
+\end{sectionBox}
+
+\begin{sectionBox}*2{Cellular Hormone Metabolic Process}
+    
+    Relacionado com a glandulas que controlam series de orgãos que produzem hormonos,
+
+    Metais pesados são conhecidos por pertubarem os eixos hormonais
+    
+\end{sectionBox}
+
+\end{document}

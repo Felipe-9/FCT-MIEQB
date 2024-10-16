@@ -1,0 +1,350 @@
+\documentclass[12pt]{article}
+
+% Multicols
+\usepackage{multicol}
+
+% Maths
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color	 {DarkGreen!20!}
+
+\renewcommand\thesection{Questão \arabic{section} }
+\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\title{Ficha 1: Noções básicas de topologia na recta real}
+\author{Felipe Pinto}
+
+\maketitle
+\tableofcontents
+\break
+
+% Q1
+\section{} \bm{\{A,B,C,D\} \in \mathbb{R}}
+
+\begin{multicols}{2}
+
+% Q1 - a)
+
+\subsection{$ A=\,]-1,\sqrt{2}\,] $}
+\begin{flalign*} 
+&	\text{int}(A)  = (-1,\sqrt{2});&\\
+&	\text{Ext}(A)  = \mathbb{R}\backslash [\,1,\sqrt 2\,]; &\\
+&	\text{Front}(A)= \{-1,\sqrt{2}\}.&
+\end{flalign*}
+
+
+% Q1 - b)
+\subsection{$ B=\{e^{-n}:n\in \mathbb{N}\} \cup\{ (1+3/n)^n:n\in\mathbb{N} \} $}
+\begin{flalign*}
+&	\text{Int}(B)= \emptyset; & \\
+&	\text{Ext}(B)=\mathbb{R}\backslash B-\{e^3,0\}; & \\
+&	\text{Font}(B)=\{ 0,e^3 \}
+\end{flalign*}
+
+\end{multicols}
+
+\paragraph{Nota:}
+\begin{flalign*}
+&	\lim_{n\to\infty}\left(1 + \frac{\alpha}{n} \right)^n = e^\alpha &
+\end{flalign*}\\
+
+\begin{multicols}{2}
+
+% Q1 - c)
+\subsection{$ C= (0,1)\cap \mathbb{Q} $}
+\begin{flalign*}
+&	\text{Int}(C)	= \emptyset & \\
+&	\text{Ext}(C)	= \mathbb{R}\backslash [0,1]  &\\
+&	\text{Font}(C)	= [0,1]
+\end{flalign*}
+
+% Q1 - d)
+\subsection{$ D=\left\{ 1/(n+\sqrt{n})\ :\ n\in\mathbb{N} \right\}\\\cap \mathbb{Q} $}
+\begin{flalign*}
+&  \frac{1}{n+\sqrt{n}} = \frac{1}{m^2+m}\ \forall \{ \{m,n\}\in\mathbb{N} : n=m^2 \} \implies &\\ 
+&	\text{Int}(D)	= \emptyset &\\
+&	\text{Ext}(D)	=  \mathbb{R}\backslash D - \{0\} &\\
+& 	\text{Font}(D)	=  D + \{ 0 \} &
+\end{flalign*}
+
+\end{multicols}
+
+% Q2
+\section{}
+
+% Q2 - a)
+\subsection{$ f(x) = \ln{(-x^2+2x)} $}
+\begin{flalign*}
+D	&= \{ x\in\mathbb{R}:-x^2+2x>0 \};
+	\ -x^2+2x
+	= x(-x+2)>0 \implies &\\
+\implies & D = \{ x\in\mathbb{R}:0<x<2 \} \implies &\\
+\implies	&\text{Sup}(D)=2;\ \text{Inf}(D)=0;\ \text{Max}(D) = \text{Min}(D)=\emptyset &
+\end{flalign*}
+
+% Q2 - b)
+\subsection{$ g(x)=\sqrt[6]{\pi^2-x^2}\,\tan(x) $}
+\begin{flalign*}
+D			&= \{ x\in\mathbb{R}:\pi^2-x^2\geq0 \};
+				\ \pi^2-x^2\geq0 \implies x^2\leq\pi^2\implies &\\
+\implies	& D=\{ x\in\mathbb{R}:|x|\leq \pi \}\implies &\\
+\implies	&\text{Sup}(D)=\text{Max}(D)=\pi;\ \text{Inf}(D)=\text{Min}(D)=-\pi  &
+\end{flalign*}
+
+
+% Q3
+\section{} \bm{ A=\{ (1/n):n\in\mathbb{N} \} }
+
+% Q3 - a)
+\subsection{}
+\begin{flalign*}
+1\in A & \iff \exists\, n\in\mathbb{N}:1/n=1 \iff n=1 &
+\end{flalign*}
+\begin{flalign*}
+1\not\in \text{Acum}(A) 
+	  & \iff \nexists\,\epsilon\in\mathbb{R}:V_\epsilon(1)\cap A-\{1\}\neq\emptyset\iff &\\
+\iff & V_{\epsilon}(1)\cap A-\{1\}=\emptyset
+		 \ \forall\,\epsilon\in\mathbb{R}:\epsilon<0.5& \\
+0\in\text{Acum}(A) & \iff \nexists\,\epsilon\in\mathbb{N}:V_\epsilon(0)\cap A-\{0\}=\emptyset\iff &\\
+\iff & V_{\epsilon}(0)\cap A-\{0\}=[0,\epsilon]\cap\{1/n:n\in\mathbb{N}\}\neq\emptyset
+		 \ \forall\,\epsilon\in\mathbb{R},\forall\, n\in\mathbb{N}& \iff &\\
+\iff & \nexists\, \epsilon\in\mathbb{R}:\epsilon>0\wedge\epsilon<1/n\ \forall\,n\in\mathbb{N}
+\end{flalign*}
+
+% Q3 - b)
+\subsection{}
+\begin{flalign*}
+A' &= [-1,\sqrt2] & 
+B' &= \{ 0,\epsilon^3 \} & 
+C' &= [0,1] &
+D' &= \{ 0 \} &
+\end{flalign*}
+
+% Q4
+\section{} \bm{ X\subset\mathbb{R} }
+
+% Q4 - a)
+\subsection{}
+\begin{flalign*}
+x\in\text{Fr}(X) 
+	& \iff \{ 
+			 	 V_{\epsilon}(x)\cap X\neq\emptyset
+		\wedge V_{\epsilon}(x)\not\subset X 
+	\}\ \forall\,\epsilon\in\mathbb{R}\implies &\\
+\implies & \exists\, x\in\text{Fr}(X):x=V_{\epsilon}(x)\cap X;
+	\ X'=\{ x\in\mathbb{R}:V_{\epsilon}(x)\cap X-\{x\}\neq\emptyset \} \implies &\\
+\implies & \exists\, x\in\text{Fr}(X):x\not\in X'&
+\end{flalign*}
+
+% Q4 - b)
+\subsection{}
+\begin{flalign*}
+V_{\epsilon}(x)\cap X = \{ x \} & 
+	\implies V_{\epsilon}(x)\cap X\neq\emptyset 
+	\wedge	V_{\epsilon}(x)\not\subset X 
+	\iff x\in\text{Fr}(X) &
+\end{flalign*}
+
+% Q4 - c)
+\subsection{}
+\begin{flalign*}
+\text{Fr}(\text{Ext}(X)) 
+	& = \{ x\in\mathbb{R} : 
+				 V_{\epsilon}(x)\cap\text{Ext}(X)\neq\emptyset 
+		\wedge V_{\epsilon}(x)\not\subset\text{Ext}(X)\}; &\\
+&		\forall\ x\in\mathbb{R} 
+					:V_{\epsilon}(x)\cap X=V_{\epsilon}(x)-\{x\}
+		\implies x\in\text{Fr}(X) 
+					\wedge x\not\in\text{Fr}(\text{Ext}(X)); &\\
+&		\forall\ x\in\mathbb{R}
+					:V_{\epsilon}(x)\cap X=\{x\}
+		\implies x\in\text{Fr}(X)
+					\wedge x\not\in\text{Fr}(\text{Int}(X))
+					\wedge x\in\text{Fr}(\text{Ext}(X)); &\\
+&		\therefore \text{Fr}(\text{Ext}(X)) 
+			  \neq \text{Fr}(\text{Int}(X))
+			  \neq \text{Fr}(X)
+			  \neq \text{Fr}(\text{Ext}(X)) &
+\end{flalign*}
+
+% Q4 - d)
+\subsection{Duvida}
+\begin{flalign*}
+& X \text{ é um conjunto fechado}\implies \text{Fr}(X)\subset X; &\\ 
+& \mathbb{R}\text{ é um conjunto fechado}
+	\implies \text{Fr}(\mathbb{R})
+	=\{ -\infty,\infty \}
+	\not\subset \mathbb{R} &
+\end{flalign*}
+
+% Q4 - e)
+\subsection{}
+\begin{flalign*}
+X'			& = \{ x\in\mathbb{R}:V_{\epsilon}(x)\cap X-\{ x \}\neq\emptyset \}
+	  		\implies (V_{\epsilon}(x)-\{x\})\cap X=\emptyset\ 
+	  		\forall\, x\in\mathbb{R}\backslash X' \implies &\\
+\implies & \mathbb{R}\backslash X'\text{ é um grupo aberto} 
+			\implies  X'\text{ é um grupo fechado} &
+\end{flalign*}
+
+\break
+
+% Q5
+\section{}
+\bm{ 
+	  A =\left\{ x\in\mathbb{R}:\frac{\ln(x^2+1)}{x^2-16}\geq 0 \right\};\  
+	  B =\{ x\in\mathbb{R}:|x^2-18|\leq 18 \}
+}
+
+% Q5 - a)
+\subsection{}
+\begin{flalign*}
+A	& = \left\{ x\in\mathbb{R}:\frac{\ln(x^2+1)}{x^2-16}\geq 0 \right\}= &\\
+& 	= \{ x\in\mathbb{R}
+	  		: 		 x^2+1>0
+			\wedge x^2-16\neq 0
+			\wedge x^2-16\geq 0 
+	  \} 
+	= \{ x\in\mathbb{R} : |x|> 4 \} = &\\
+&  = \{ x\in\mathbb{R}\cap( (-\infty,-4)\cup(4,\infty)) \} &\\
+B	& = \{ x\in\mathbb{R}:|x^2-18|\leq 18 \}
+	= \{ x\in\mathbb{R}
+		:		 x^2\leq 36
+		\wedge x^2\geq 0 \}
+	= \{ x\in\mathbb{R}
+		:		|x|\leq 6 \} &\\
+&	= \{ x\in\mathbb{R}\cap[-6,6] \} &
+\end{flalign*}
+
+% Q5 - b)
+\subsection{}
+\begin{flalign*}
+A\cap B	
+	& = [-6,-4)\cup(4,6];&\\
+&	\text{Inf}(A\cap B) = \{ 4 \} ;\
+	\text{Min}(A\cap B) = \emptyset;\
+	\text{Sup}(A\cap B) = 
+	\text{Max}(A\cap B) = \{ 6 \} &
+\end{flalign*}
+
+% Q6
+\section{}
+
+% Q6 - a)
+\subsection{$ \text{Int}(X)=(0,1)\wedge X'=[0,1]\cup \{ e \} $}
+\begin{flalign*}
+X &= [0,1] \cup\{ (1+1/x)^x:x\in\mathbb{N} \} &
+\end{flalign*}
+
+% Q6 - b)
+\subsection{$ \text{Ext}(X)=(-\infty,0)\wedge \text{Int}(X)=\emptyset $}
+\begin{flalign*}
+X &= \{ x\in\mathbb{Q}:x<0 \} &
+\end{flalign*}
+
+% Q6 - c)
+\subsection{$ X'=\mathbb{Z} $}
+\begin{flalign*}
+X	& = \left\{ x+\frac{1}{y}:x\in\mathbb{Z}\wedge y\in\mathbb{N} \right\} &
+\end{flalign*}
+
+% Q6 - d)
+\subsection{$ X'=(0,1) $}
+\begin{flalign*}
+&\nexists\ X:X'\text{ é um conjunto aberto} &
+\end{flalign*}
+
+% Q6 - e)
+\subsection{$ \text{Fr}(X)=[0,1] $}
+\begin{flalign*}
+X	& = [0,1]\cap \mathbb{Q} &
+\end{flalign*}
+
+% Q7
+\section{} \bm{ f(x)=\frac{\sqrt{2-x^2}\,\ln(x+1)}{\sin(x)} }
+\begin{flalign*}
+&  D = \{ x\in\mathbb{R}
+		 	:		 2-x^2 \geq 0
+		 	\wedge x+1\geq 0
+		 	\wedge \sin(x)\neq 0 
+		 \} = &\\
+	& = \{ x\in\mathbb{R}
+		 	:	  	 |x| \leq \sqrt2
+			\wedge x\geq -1
+			\wedge x\neq \pi\,n\ \forall n\in\mathbb{Z}
+		 \} = &\\
+	& = \{ x\in\mathbb{R}
+		 	:	-1\leq x \leq \sqrt2
+			\wedge x = \pi\, n\ \forall n\in\mathbb{Z}
+		 \} = \left\{ x\in\mathbb{R}\cap [-1,0)\cap\left(0,\sqrt2\right]
+		 \right\}&\\
+\\
+& (A\cup D)' = \left[-1,\sqrt2\right]\cup \{ x\in\mathbb{R}
+					: V_{\epsilon}(x)\cap A-\{x\}\neq\emptyset
+				 \} = &\\
+			  & = 	  \left[-1,\sqrt2\right]
+			  		\cup \left[ -\frac{4}{3},\frac{4}{3} \right] 
+				 = \left[ -\frac{4}{3},\sqrt2 \right] &
+\end{flalign*}
+
+\break
+
+% Q8
+\section{} \bm{ f(x)=\sin(x)/x;\ f:(0,\infty)\to\mathbb{R} }
+\begin{flalign*}
+& f(x) = \{ y\in\mathbb{R}
+				: y=\sin(x)/x\ \forall\, x\in\mathbb{R}\cap(0,\infty) 
+			\};
+			\ 	  x>0
+			\wedge -1\leq\sin(x)\leq 1 \implies &\\
+		 & \implies -1< f(x) < 1  &\\
+\\		 
+& \text{Fr}(f(x))\not\subset f(x) \iff &\\
+&	\iff \exists\ y\in\mathbb{R}
+		: V_\epsilon (y)\cap f(x)-\{y\} \neq \emptyset
+		\wedge V_\epsilon (y)\not\subset f(x)
+		\wedge y\not\in f(x) \iff &\\
+&		\iff 1\in\text{Fr}(f(x)) &\\
+\\
+& \text{Int}(f(x))\neq f(x)
+			\iff \exists\ y\in f(x) : V_{\epsilon}(y)\not\subset f(x) \iff &\\
+&			\iff g(x)=\{ y\in\mathbb{R}: y=\sin(x)/x\ \forall\, x\in[\pi,2\pi]\}
+			\subset f(x); g(x)=[m,0] \implies &\\
+&			\implies	\exists\ m\in f(x)\cap(-1,0]: f(x)=[m,1) &
+\end{flalign*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

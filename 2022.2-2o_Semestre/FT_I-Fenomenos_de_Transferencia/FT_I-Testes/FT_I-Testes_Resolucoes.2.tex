@@ -1,0 +1,418 @@
+% !TEX root = ./FT_I-Testes_Resolucoes.2.tex
+\providecommand\mainfilename{"./FT_I-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./FT_I-Testes_Resolucoes.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[FT\,I]
+{Teste 2} % Subfile Title
+{Teste 2} % Part Title
+
+\group{Prática}
+
+\begin{questionBox}1{ % Q1
+} % Q1
+    
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(-\adif{P}_b = 520*10^{3}\)
+            \item \(L = 190\)
+            \item \(D =16*10^{-2}\)
+            \item 2 Joelhos 90
+            \item 4 v.Guilhotina
+            \begin{itemize}
+                \item 2: 3/4 Abertas
+                \item 2: 1/4 Abertas
+            \end{itemize}
+            \item \(\varepsilon=1.44*10^{-3}\)
+            \item \(G_v = 0.06\)
+            \item \(P_t = P_{atm}\)
+            \item \(\mu = 0.001\)
+            \item \(\rho = 10^3\)
+        \end{multicols}
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    Altura máxima do tanque
+} % Q1.2
+    
+    \begin{flalign*}
+        &
+            \max{Z_2}
+            = h_{b}-h_{at}
+            = \frac{-\adif{P}_{b}}{\rho\,g}
+            -\frac{-\adif{P}_{at}}{\rho\,g}
+            = &\\&
+            = \left(
+                -\adif{P}_{b}
+                -4\,\phi\,\rho\,L_{eq}\,v^2/D
+            \right)
+            (\rho\,g)^{-1}
+            = &\\&
+            = \left(
+                -\adif{P}_{b}
+                -\frac{4\,\phi\,\rho\,(190+D(2*35+2*200+2*40))}{D}
+                \left(
+                    \frac{G_v}{\pi\,(D/2)^2}
+                \right)^2
+            \right)
+            (\rho\,g)^{-1}
+            = &\\&
+            = 
+            \frac{-\adif{P}_{b}}{\rho\,g}
+            -\frac{
+                4^3\,\phi\,(190+D(2*35+2*200+2*40))\,G_v^2
+            }{
+                \pi^2\,D^5\,g
+            };
+            &\\[1.5ex]&
+            % 
+            % 
+            % 
+            \phi\left(
+                Re,\varepsilon/D
+            \right)
+            = \phi\left(
+                \frac{\rho\,v\,D}{\mu},
+                \frac{\varepsilon}{D}
+            \right)
+            = \phi\left(
+                \frac{\rho\,D}{\mu}
+                \frac{G_v}{\pi\,(D/2)^2}
+                ,\frac{\varepsilon}{D}
+            \right)
+            = \phi\left(
+                \frac{4\,\rho\,G_v}{\mu\,\pi\,D}
+                ,\frac{\varepsilon}{D}
+            \right)
+            = &\\&
+            = \phi\left(
+                \frac{4*10^3*0.06}{0.001*\pi*16*10^{-2}}
+                , \frac{1.44*10^{-3}}{16*10^{-2}}
+            \right)
+            = \phi\left(
+                \frac{3}{\pi*2}*10^6
+                , \frac{1.44*10^{-1}}{16}
+            \right)
+            \cong &\\&
+            \cong \phi\left(
+                \num{4.77464829275686e5}
+                , 9*10^{-3}
+            \right)
+            \cong 0.00455
+            &\\[1.5ex]&
+            % 
+            % 
+            % 
+            \therefore
+            \max Z_2
+            \cong &\\&
+            \cong 
+            \frac{520*10^{3}}{10^3*\num{9.780327}}
+            -\frac{
+                4^3*0.00455*(190+16*10^{-2}(2*35+2*200+2*40))\,(0.06)^2
+            }{
+                \pi^2\,(16*10^{-2})^5*\num{9.780327}
+            }
+            = &\\&
+            = 
+            \frac{520}{\num{9.780327}}
+            -\frac{
+                4^3*4.55*(190+16*10^{-2}(2*35+2*200+2*40))\,(0.06)^2
+            }{
+                \pi^2\,(16)^5*\num{9.780327}
+            }*10^{7}
+            \cong &\\&
+            \cong
+            % 28.792914871881125 + 53.167956449717888
+            \qty{81.960871321599012}{\metre}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    Corrosão
+} % Q1.2
+    
+    \begin{itemize}
+        \item \(\varepsilon=4\,\varepsilon_0\)
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            \frac{G_{v.1}}{G_{v.0}}
+            = G_{v.0}^{-1}
+            \,v_1\,\pi\,(D/2)^2
+            =\frac{\pi\,D^2}{G_{v.0}\,4}
+            \left(
+                \frac{Re_1\,\mu}{D\,\rho}
+            \right)
+            =\frac{\pi\,D}{G_{v.0}\,4}
+            \left(
+                \frac{Re_1\,\mu}{\rho}
+            \right)
+            =\frac{\pi\,D\,Re_1\,\mu}{G_{v.0}\,4\,\rho}
+            % &\\[1.5ex]&
+            % % 
+            % % \varepsilon_0
+            % % 
+            % \varepsilon_0\left(
+            %     Re_0,\phi_0
+            % \right)
+            % = \varepsilon_0\left(
+            %     \frac{\rho\,v\,D}{\mu},
+            %     \frac{-\adif{P}\,D}{4\,\rho\,L_{eq}\,v^2}
+            % \right)
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{\rho\,D}{\mu}
+            %     \frac{G_v}{\pi\,(D/2)^2}
+            %     ,
+            %     \frac{
+            %         -\adif{P}\,D
+            %     }{
+            %         4\,\rho\,L_{eq}
+            %     }
+            %     \left(
+            %         \frac{G_v}{\pi\,(D/2)^2}
+            %     \right)^{-2}
+            % \right)
+            % % L_eq = 278
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{4\,\rho\,G_v}{\mu\,\pi\,D}
+            %     ,
+            %     \frac{
+            %         h_{at}\,\rho\,g\,\pi^2\,D^5
+            %     }{
+            %         4^3\,\rho\,L_{eq}\,G_v^2
+            %     }
+            % \right)
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{4\,\rho\,G_v}{\mu\,\pi\,D}
+            %     ,
+            %     \frac{
+            %         (h_b-Z_2)\,\rho\,g\,\pi^2\,D^5
+            %     }{
+            %         4^3\,\rho\,L_{eq}\,G_v^2
+            %     }
+            % \right)
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{4\,\rho\,G_v}{\mu\,\pi\,D}
+            %     ,
+            %     \frac{
+            %         \left(
+            %             \frac{-\adif{P}_b}{\rho\,g}
+            %             -Z_2
+            %         \right)
+            %         \,\rho\,g\,\pi^2\,D^5
+            %     }{
+            %         4^3\,\rho\,L_{eq}\,G_v^2
+            %     }
+            % \right)
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{4\,\rho\,G_v}{\mu\,\pi\,D}
+            %     ,
+            %     \frac{
+            %         \left(
+            %             (-\adif{P}_b/\rho)
+            %             -Z_2\,g
+            %         \right)
+            %         \,\pi^2\,D^5
+            %     }{
+            %         4^3\,L_{eq}\,G_v^2
+            %     }
+            % \right)
+            % \cong &\\&
+            % \cong \varepsilon_0\left(
+            %     \frac{
+            %         4*10^3*1.44*10^{-3}
+            %     }{
+            %         0.001*\pi*16*10^{-2}
+            %     }
+            %     ,
+            %     \frac{
+            %         \left(
+            %             (520*10^{3}/10^3)
+            %             -30*\num{9.780327}
+            %         \right)
+            %         \pi^2\,(16*10^{-2})^5
+            %     }{
+            %         4^3*278*(0.06)^2
+            %     }
+            % \right)
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{4*1.44}{\pi*16}
+            %     \,10^{5}
+            %     ,
+            %     \frac{
+            %         \left(
+            %             520
+            %             -30*\num{9.780327}
+            %         \right)
+            %         \pi^2\,16^5*10^{-6}
+            %     }{
+            %         4^3*278*(6)^2
+            %     }
+            % \right)
+            % = &\\&
+            % = \varepsilon_0\left(
+            %     \frac{4*1.44}{\pi*16}
+            %     \,10^{5}
+            %     ,
+            %     \frac{
+            %         \left(
+            %             520
+            %             -30*\num{9.780327}
+            %         \right)
+            %         \pi^2\,16^5*10^{-6}
+            %     }{
+            %         4^3*278*(6)^2
+            %     }
+            % \right)
+            % \cong &\\&
+            % \cong
+            % \varepsilon_0\left(
+            %     \num{1.145915590261646e4}
+            %     ,
+            %     \num{3.661116018134129739e-3}
+            % \right)
+            % \cong 0
+        &
+    \end{flalign*}
+% \end{questionBox}
+% \begin{questionBox}{} % Q
+    \begin{flalign*}
+        &
+            % 
+            % Re_1
+            % 
+            Re_1\left(
+                \phi\,Re^2,\varepsilon_1/D
+            \right)
+            = Re_1\left(
+                \left(
+                    \frac{-\adif{P}_{at}\,D}{
+                        4\,L_{eq}\,v_1^2\,\rho
+                    }
+                \right)
+                \left(
+                    \frac{\bar{v}_1\,D\,\rho}{\mu}
+                \right)^2
+                ,\frac{4\,\varepsilon_0}{D}
+            \right)
+            = &\\&
+            = Re_1\left(
+                \left(
+                    -\adif{P}_b
+                    -Z_2\,\rho\,g
+                \right)
+                \frac{
+                    D^3\,\rho
+                }{
+                    4\,L_{eq}\,\mu^2
+                }
+                ,\frac{4\,\varepsilon_0}{D}
+            \right)
+            = &\\&
+            = Re_1\left(
+                \left(
+                    520*10^3
+                    -30*10^3*\num{9.780327}
+                \right)
+                \frac{
+                    (16*10^{-2})^3*10^3
+                }{
+                    4*278*(10^{-3})^2
+                }
+                ,4*1.44*10^{-3}
+            \right)
+            = &\\&
+            = Re_1\left(
+                \left(
+                    520
+                    -30*\num{9.780327}
+                \right)
+                \frac{4^5}{278}*10^{6}
+                ,4*1.44*10^{-3}
+            \right)
+            = &\\&
+            = Re_1\left(
+                \num{8.34634368920863309e8}
+                ,0.00576
+            \right)
+            =4.5*10^5
+            &\\[1.5ex]&
+            % 
+            % 
+            % 
+            \frac{G_{v.1}}{G_{v.0}}
+            % = &\\&
+            =
+            \frac{\pi*16*10^{-2}}{0.06*4}
+            \left(
+                \frac{4.5*10^5*10^{-3}}{10^3}
+            \right)
+            =\frac{\pi*16*10^{-2}*4.5*10^5*10^{-3}}{0.06*4*10^3}
+            = &\\&
+            =\frac{\pi*2*4.5}{30}
+            \cong\num{94.2477796076938}\%
+            &\\[1.5ex]&
+            \therefore
+            \text{ Diminuiu } \num{5.7522203923062}\%
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\group{Teórica}
+
+\begin{questionBox}1{ % Q1
+    3 mecanismos
+} % Q1
+    
+    \begin{questionBox}3{ % Q
+    } % Q
+        Atrito entre fluido e placa que aplica uma resistencia ao movimento e caso haja grande fluxo comitar em turbulência
+    \end{questionBox}
+    
+    \begin{questionBox}3{ % Q
+    } % Q
+        Aplicação de uma bomba para transporte de fluido de um tanque a outro onde devemos levar em consideração a variação de pressão e potencial gravitico
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q
+        Diminuição da area de transporte de um fluido em multiplos tubos paralelos que permite maior fluxo linear evitando turbulencias
+    } % Q
+        body
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q
+    Situações do dia a dia
+} % Q
+    
+    Coléta de petróleo de um reservatório subterrâneo pode ser considerada como uma aplicação de bomba de diferentes potenciais gravíticos\\
+    
+    Transporte comercial de vinho-vias subterrâneas para transportadoras permitindo maior rendimento de uma fábrica e organização de distribuição do produto\\
+
+    Balancemanto da distribuição de Caixas d'agua para residencias tendo que levar em conta a perda de energia e quantas residencias essa pode atender
+
+\end{questionBox}
+
+\end{document}

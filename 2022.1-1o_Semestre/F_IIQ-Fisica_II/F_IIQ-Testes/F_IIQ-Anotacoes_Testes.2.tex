@@ -1,0 +1,599 @@
+% !TEX root = ./F_IIQ-Anotações_Testes.2.tex
+\providecommand\mainfilename{"./F_IIQ-Anotações_Testes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ-Anotações_Testes.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F_IIQ-Anotações_Testes.2}}}
+% \tikzsetexternalprefix{./.build/figures/F_IIQ-Anotações_Testes.2/}
+
+\mymakesubfile{2}
+[Física 2]
+{Anotações: Teste} % Subfile Title
+{Magnetismo} % Part Title
+
+\begin{sectionBox}1{Capacitance} % S1
+    
+    \section*{Capacitance}
+
+    \subsection{Definition}
+    \begin{BM}
+        C=Q/V
+    \end{BM}
+
+    \subsection{Capacitance on different capacitors}
+
+    \begin{multicols}{3}
+        \subsubsection{Of an isolated \emph{spherical} conductor}
+        \vspace{-3ex}
+        \begin{BM}
+            C = 4\,\pi\,\varepsilon_0\,R
+        \end{BM}
+    
+        \subsubsection{Of a \emph{parallel-plate} capacitor}
+        \vspace{-3ex}
+        \begin{BM}
+            C = \varepsilon_0\,A/d
+        \end{BM}
+    
+        \subsubsection{Of a \emph{cylindrical} capacitor}
+        \vspace{-3ex}
+        \begin{BM}
+            C = \frac{
+                2\,\pi\,\varepsilon_0\,L
+            }{
+                \ln(R_2/R_1)
+            }
+        \end{BM}
+    \end{multicols}
+
+
+    \subsection{Energy stored in a capacitor}
+    \begin{BM}
+        U
+        =\frac{Q\,V}{2}
+        =\frac{Q^2}{2\,C}
+        =\frac{C\,V^2}{2}
+    \end{BM}
+
+    \subsection{Energy density of an electric field}
+    \begin{BM}
+        u_e = \varepsilon_0\,E^2/2
+    \end{BM}
+
+    \subsection{\emph{Equivalent} Capacitance}
+    \begin{multicols}{2}
+        \subsubsection{Parallel}
+        \vspace{-3ex}
+        \begin{BM}
+            C_{eq} = \sum_{i=1}^{n}{C_i}
+        \end{BM}
+
+        \subsubsection{Serie}
+        \vspace{-3ex}
+        \begin{BM}
+            C_{eq}^{-1} = \sum_{i=1}^{n}{C_i}^{-1}
+        \end{BM}
+    \end{multicols}
+
+    \subsection{Electric field \emph{inside}}
+    \begin{BM}
+        E = E_0/\kappa
+    \end{BM}
+
+    \subsection{Effect on capacitance}
+    \begin{BM}
+        C = \kappa\,C_0
+    \end{BM}
+
+    \subsection{Permittivity \emph{\(\varepsilon\)}}
+    \begin{BM}
+        \varepsilon=\kappa\,\varepsilon_0
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Electric Current and Direct-Current Circuits} % S1
+    
+    \section*{Electric Current}
+
+    \subsection{Definition}
+    \begin{BM}
+        I = \adv{Q}{T}
+    \end{BM}
+
+    \subsection{Drift Velocity}
+    \begin{BM}
+        I = q\,n\,A\,v_d
+    \end{BM}
+
+    \subsection{Current Density}
+    \begin{BM}
+        \vv{J}=q\,n\,\vv{v_d}
+    \end{BM}
+
+    \section*{Resistance}
+
+    \subsection{Definition}
+    \begin{BM}
+        R = V/I
+    \end{BM}
+
+    \subsection{Resistivity \(\rho\)}
+    \begin{BM}
+        R = \rho\,L/A
+    \end{BM}
+
+    \subsection{Temperature coefficient of resitivity (\(\alpha\))}
+    \begin{BM}
+        \alpha
+        = \frac{
+            \rho/\rho_0-1
+        }{
+            T-T_0
+        }
+    \end{BM}
+
+    \subsection{Ohm's Law}
+    \begin{BM}
+        V = I\,R
+    \end{BM}
+
+    \subsection{Power}
+
+    \subsubsection{Suplied by a device or segment}
+    \begin{BM}
+        P = I\,V
+    \end{BM}
+
+    \subsubsection{Delivered to a resistor}
+    \begin{BM}
+        P=I\,V=I^2\,R=V^2/R
+    \end{BM}
+
+    \subsection{Emf}
+    \begin{BM}
+        P = I\,\mathcal{E}
+    \end{BM}
+
+    \section*{Battery}
+
+    \subsection{Terminal Voltage}
+    \begin{BM}
+        V_a-V_b=\mathcal{E}-I\,r
+    \end{BM}
+
+    \subsection{Total energy stored}
+    \begin{BM}
+        E_{stored} = Q\,\mathcal{E}
+    \end{BM}
+
+    \subsubsection{Equivalent Resistance}
+    \begin{multicols}{2}
+        \subsubsection{Series}
+        \vspace{-3ex}
+        \begin{BM}
+            R_{eq}=\sum_{i=1}^{n}{R_i}
+        \end{BM}
+
+        \subsubsection{Parallel}
+        \vspace{-3ex}
+        \begin{BM}
+            R_{eq}^{-1}=\sum_{i=1}^{n}{R_i^{-1}}
+        \end{BM}
+    \end{multicols}
+
+    \subsection{Kirchhoff's Rules}
+    \begin{enumerate}
+        \item When any closed loop is traversed, the algebraic sum of the changes in potential around the loop must equal zero.
+        \item At any junction (branch point) in a circuit where the current can divide, the sum of the currents into the junction must equal the sum of the currents out of the junction.
+    \end{enumerate}
+
+    \section*{Disharging the Capacitor}
+
+    \subsection{Charge the capacitor}
+    \begin{BM}
+        Q(t)
+        = Q_0\,\exp(-t/R\,C)
+        = Q_0\,\exp(-t/\tau)
+    \end{BM}
+
+    \subsection{Current in a circuit}
+    \begin{BM}
+        I
+        = -\odv{Q}{t}
+        = \frac{V_0}{R}\exp(-t/R\,C)
+        = I_0\,\exp(-t/\tau)
+    \end{BM}
+
+    \subsection{Time constant}
+    \begin{BM}
+        \tau=R\,C
+    \end{BM}
+
+    \section*{Charging a Capacitor}
+
+    \subsection{Charge on the capacitor}
+    \begin{BM}
+        Q 
+        = C\,\mathcal{E}
+        \,\left(
+            1-\exp(-t/R\,C)
+        \right)
+        = Q_f
+        \,\left(
+            1-\exp(-t/\tau)
+        \right)
+    \end{BM}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{The Magnetic Field} % S3
+    
+    \subsection{Magnetic Force}
+    \begin{multicols}{2}
+
+        \subsubsection{On a moving \emph{charge}}
+        \vspace{-3ex}
+        \begin{BM}
+            \vv{F}
+            =q\,\vv{v}\times\vv{B}
+        \end{BM}
+
+        \subsubsection{On a \emph{current} element}
+        \vspace{-3ex}
+        \begin{BM}
+            \odif{\vv{F}}
+            = I\,\odif{\vv{l}}\times\vv{B}
+        \end{BM}
+        
+    \end{multicols}
+
+    \subsection{Unit of the magnetic field (\emph{Tesla})}
+    \begin{BM}
+        \unit{\tesla} = 10^4\,\unit{\gauss}
+    \end{BM}
+
+    \section*{Motion of Point Charges}
+
+    \subsection{Newton's Second Law}
+    \begin{BM}
+        q\,v\,B=m\,v^2/r
+    \end{BM}
+
+    \subsection{Cyclotron}
+    \begin{multicols}{2}
+        \subsubsection{Period}
+        \begin{BM}
+            T = \frac{2\,\pi\,m}{q\,B}
+        \end{BM}
+        
+        \subsection{Frequency}
+        \begin{BM}
+            f=T^{-1}=\frac{q\,b}{2\,\pi\,m}
+        \end{BM}
+    \end{multicols}
+
+    \subsection{Velocity Selector}
+    \begin{BM}
+        v=E/B
+    \end{BM}
+    A velocity selector consists of crossed electric and magnetic fields so that the electric and magnetic forces balance for a particle moving with speed \textit{v}.
+
+    \section*{Current Loops}
+
+    \subsection{Magnetic dipole moment}
+    \begin{BM}
+        \vv{\mu}=N\,I\,A\,\hat{n}
+    \end{BM}
+
+    \subsection{Torque}
+    \begin{BM}
+        \vv{\tau}=\vv{\mu}\times\vv{B}
+    \end{BM}
+
+    \subsection{Potential Energy of a magnetic dipole}
+    \begin{BM}
+        U = -\vv{\mu}\cdot\vv{B}
+    \end{BM}
+
+    \subsection{Net force}
+    The net force on a current loop in a uniform magnetic field is zero.
+
+    % \section*{The Hall Effect}
+    % When a conducting strip carrying a current is placed in a magnetic field, the magnetic force on the charge carriers causes a separation of charge called the Hall effect.
+
+    % \subsection{Hall voltage}
+    % \begin{BM}
+    %     V_H=E_H\,w=v_d\,B\,w=\frac{\myvert{I}}{nte}B
+    % \end{BM}
+
+    \subsection{Conventional von Klitzing constant (definition of ohm)}
+    \begin{BM}
+        R_{k-90}=25\,812.807\,6\,\unit{\ohm} \text{ (exact)}
+    \end{BM}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Sources of the magnetic field} % S4
+    
+    \subsubsection{Magnetic Constant (\emph{\(\mu_0\)})}
+    \begin{BM}
+        \mu_0
+        =4\,\pi\,10^{-7\,\unit{\tesla.\metre/\ampere}}
+        =4\,\pi\,10^{-7\,\unit{\newton/\ampere^2}}
+    \end{BM}
+
+    \subsection{Magnetic Field (\(\vec{B}\))}
+    
+    \begin{multicols}{2}
+        \subsubsection{Due to a moving \emph{point} charge}
+        \begin{BM}
+            \vv{B}
+            = \frac{\mu_0}{4\,\pi}
+            \,\frac{q\,\vv{v}\times\hat{r}}{r^2}
+        \end{BM}
+
+        \subsubsection{Due to a \emph{current} element (Biot-Savart law)}
+        \begin{BM}
+            \odif{\vv{B}}
+            = \frac{\mu_0}{4\,\pi}
+            \,\frac{I\,\odif{\vv{l}}\times\hat{r}}{r^2}
+        \end{BM}
+
+        \subsubsection{On the axis of a current \emph{loop}}
+        \begin{BM}
+            B_z
+            = \frac{\mu_0}{4\,\pi}
+            \,\frac{2\,\pi\,R^2\,I}{(z^2+R^2)^{3/2}}
+        \end{BM}
+
+        \subsubsection{Inside a long \emph{solenoid} (far from the edges)}
+        \begin{BM}
+            B_Z = \mu_0\,n\,I
+        \end{BM}
+        Where \textit{n} is the number of turns per unit length
+
+        \subsubsection{Inside the tubs of a tight wound \emph{toroid}}
+        \begin{BM}
+            B
+            = \frac{\mu_0}{2\,\pi}
+            \,\frac{N\,I}{r}
+        \end{BM}
+
+        \subsubsection{Due to a \emph{straight wire} segment}
+        \begin{BM}
+            B
+            = \frac{\mu_0}{4\,\pi}
+            \,\frac{I}{R}\adif{\sin(\theta)}
+        \end{BM}
+        where \textit{R} is the perpendicular distance to the wire and \(\theta_1\) and \(\theta_2\) are the angles subtended at the field point by the ends of the wire.
+
+    \end{multicols}
+
+    \subsubsection{Due to a \emph{long straight wire}}
+    \begin{BM}
+        B
+        = \frac{\mu_0}{4\,\pi}
+        \,\frac{I}{R}\left(
+            \sin\left(\frac{\pi}{2}\right)
+            -\sin\left(-\frac{\pi}{2}\right)
+        \right)
+        = \frac{\mu_0}{4\,pi}
+        \,\frac{I}{R}2
+    \end{BM}
+
+    \subsection{\emph{Gauss's Law} for Magnetism}
+    \begin{BM}
+        \phi_{m,net}
+        = \oint_{S}{
+            \vv{B}\cdot\hat{n}\,\odif{A}
+        }
+        = \oint_{S}{
+            B_n\,\odif{A}
+        }
+        = 0
+    \end{BM}
+
+    % \subsection{Ampère's Law}
+    % \begin{BM}
+    %     \oint_{C}{
+    %         \vv{B}\cdot\odif{\vv{l}}
+    %     }
+    %     = \oint_{C}{
+    %         B_t\,\odif{l}
+    %     }
+    %     = \mu_0\,I_C
+    % \end{BM}
+    % \begin{itemize}
+    %     \item Where \textit{C} is any closed curve
+    %     \item Cant be used where \textit{I} varies
+    % \end{itemize}
+
+    \section*{\(\vec{B}\) in Magnetic Materials}
+    \begin{BM}
+        \vv{B}=\vv{B}_{app}+\mu_0\,\vv{M}
+    \end{BM}
+
+    \subsection{Magnetic susceptibility (\(\chi_m\))}
+    \begin{BM}
+        \vv{M}=\chi_m\,\frac{\vv{B}_{app}}{\mu_0}
+    \end{BM}
+
+    \subsection{Relative Permeability}
+    \begin{BM}
+        \vv{B}=K_m\,\vv{B}_{app}
+        \quad
+        \text{Where }K_m=1+\chi_m
+    \end{BM}
+
+    \section*{Atomic Magnetic Moments}
+    \begin{BM}
+        \vv{\mu}=\frac{q}{2\,m}\,\vv{L}
+    \end{BM}
+    Where \(\vv{L}\) is the angular momentum of the particle
+
+    \subsection{Bohr magneton}
+    \begin{BM}
+        \mu_B
+        = \frac{e\hslash}{2\,m_e}
+        = 9.27*10^{-24}
+        \,\unit{\ampere.\metre^2}
+        = \\
+        = 9.27*10^{-24}
+        \,\unit{\joule/\tesla}
+        = 5.79*10^{-5}
+        \,\unit{e\volt/\tesla}
+    \end{BM}
+
+    \subsection{Due to orbital motion of an eletron}
+    \begin{BM}
+        \vv{\mu}_l=-\mu_B\frac{\vv{L}}{\hslash}
+    \end{BM}
+    \subsection{Due to electron spin}
+    \begin{BM}
+        \vv{\mu}_s=-2\,\mu_B\frac{\vv{S}}{\hslash}
+    \end{BM}
+
+    \section*{Paramagnetism}
+
+    \subsection{Curie's Law (weak fields)}
+    \begin{BM}
+        M=\frac{\mu\,B_{app}}{3\,k\,T}M_s
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Magnetic Induction} % S5
+    
+    \section*{Magnetic Flux \(\phi_m\)}
+    \subsection{Units}
+    \begin{BM}
+        1\,\unit{\weber}=1\,\unit{\tesla.\metre^2}
+    \end{BM}
+
+    \subsection{General Definition}
+    \begin{BM}
+        \phi_m
+        =\int_{S}{\vv{B}\cdot\hat{n}\,\odif{A}}
+    \end{BM}
+
+    \subsubsection{Uniform field, flat surface bounded by \emph{coil} of \textit{N} turns}
+    \begin{BM}
+        \phi_m=N\,B\,A\,\cos{\theta}
+    \end{BM}
+    \begin{itemize}
+        \item \textit{A} Flat surface bounded by a single turn
+    \end{itemize}
+
+    \begin{multicols}{2}
+        
+        \subsection{Due to a current in \emph{a circuit}}
+        \begin{BM}
+            \phi_m=L\,I
+        \end{BM}
+        
+        \subsection{Due to a current in \emph{two circuit}}
+        \begin{BM}
+            \phi_{m,1}=L_1\,I_1+M\,I_2
+            \\
+            \phi_{m,2}=L_2\,I_2+M\,I_1
+        \end{BM}
+
+    \end{multicols}
+
+    \section*{EMF}
+
+    \subsection{Faraday's Law}
+    Includes both induction and motional emf
+    \begin{BM}
+        \mathcal{E}=-\odv{\phi_m}{t}
+    \end{BM}
+
+    \begin{multicols}{2}
+        
+        \subsubsection{Induction}
+        Time-varying magnetic field, \textit{C} stationary
+        \begin{BM}
+            \mathcal{E}
+            =\oint_{C}{\vv{E}\cdot\odif{\vv{l}}}
+        \end{BM}
+    
+        \subsubsection{Rod moving perpendicular to both its length and \(\vec{B}\)}
+        \begin{BM}
+            \myvert{\mathcal{E}}
+            = v\,B\,l
+        \end{BM}
+        
+    \end{multicols}
+
+    \subsubsection{Self inducted (back emf)}
+    \begin{BM}
+        \mathcal{E}
+        = -L\,\odv{I}{t}
+    \end{BM}
+
+    \subsection{Lenz's Law}
+    The induced emf and induced current are in such a direction as to oppose, or tend to oppose, the change that produces them.
+
+    \section*{Inductance}
+
+    \subsection{Units and constants}
+    \begin{BM}
+        1\,\unit{\henry}
+        = 1\,\unit{\weber/\ampere}
+        = 1\,\unit{\tesla.\metre^2/\ampere}
+        \\
+        \mu_0=4\,\pi*10^{-7}\,\unit{\henry/\metre}
+    \end{BM}
+
+    \subsection{Formulas}
+
+    \begin{multicols}{2}
+        
+        \subsubsection{Self Inductance}
+        \begin{BM}
+            L=\phi_m/I
+        \end{BM}
+        
+        \subsubsection{Self Inductance of a solenoid}
+        \begin{BM}
+            L=\mu_0\,n^2\,A\,l
+        \end{BM}
+        
+        \subsubsection{Mutual inductance}
+        \begin{BM}
+            M=\phi_{m,2,1}/I_1=\phi_{m,1,2}/I_2
+        \end{BM}
+
+    \end{multicols}
+
+    \section*{Magnetic Energy}
+    \subsection{Energy stored in an inductor}
+    \begin{BM}
+        U_m = L\,I^2/2
+    \end{BM}
+
+    \subsection{Energy density in a magnetic field}
+    \begin{BM}
+        u_m=\frac{B^2}{2\,\mu_0}
+    \end{BM}
+
+    \section*{RL Circuits}
+
+    \subsection{Potential difference across an inductor}
+    \begin{BM}
+        \adif{V}
+        = \mathcal{E}
+        -I\,r
+        =-L\,\odv{I}{t}
+        -I\,r
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

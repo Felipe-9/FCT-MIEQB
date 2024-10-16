@@ -1,0 +1,48 @@
+% !TEX root = ./EB-Slides_Annotations.4.tex
+\documentclass["./EB-Slides_Annotations.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Slides_Annotations.4}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Slides_Annotations.4/graphics/}
+
+\mymakesubfile{4}
+[EB]
+{Studying CSTR reactors} % Subfile Title
+{Studying CSTR reactors} % Part Title
+
+\setcounter{section}{2}
+\setcounter{subsection}{2}
+\begin{sectionBox}2{}
+  \begin{itemize}
+    \item D baixo => pouco fluxo => Substrato é todo consumido
+    \item D alto => fluxo muito alto => celulas não tem tempo de consumir, saida quase total de substrato
+  \end{itemize}
+\setcounter{section}{2}
+\end{sectionBox}
+
+\setcounter{subsection}{6}
+\begin{sectionBox}2{Cell ressiculation of biomass} % S2.7
+  \begin{flalign*}
+    &
+      \odv{x}{t}
+      = F_{X,in}
+      - F_{X,out}
+      + \mu\,X_1
+      = \left(
+      \frac{F_0}{V}\,X_0
+      + \frac{F_r}{V}\,X_r
+      \right)
+      - \left(
+      \frac{(F_0+F_r)}{V}
+      \,X_1
+      \right)
+      + \mu\,X_1
+    &
+  \end{flalign*}
+\end{sectionBox}
+
+\end{document}
+

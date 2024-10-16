@@ -1,0 +1,387 @@
+% !TEX root = ./TEQB-Testes_Resoluções.2.tex
+\providecommand\mainfilename{"./TEQB-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Testes_Resoluções.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\mymakesubfile{1}
+[TEQB]
+{Teste 2 Resolução}
+{Teste Resolução}
+
+\begin{questionBox}1{ % Q1
+    A temp afastadas do ponto crítico a curva de vap do but obedece à equação
+} % Q1
+    
+    \vspace{-3ex}
+    \begin{BM}
+        \ln{(P*10^{-5})} = 13.440-3418.2/T
+        \\
+        \ln{P} = 5*\ln{10} + 13.440 - 3418.2/T
+    \end{BM}
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(T_{(triplo,s-l-g)} = 134.86\,\unit{\kelvin}\)
+            \item \(P_{sub,122.0\,\unit{\kelvin}} = 3.006*10^{-2}\)
+            \item \(M_{butano}=58.12\,\unit{\gram/\mole}\)
+            \item \(\rho_{(150.0\,\unit{\kelvin},P_{fus},s)} = 0.792\,\unit{\gram/\centi\metre^3}\)
+            \item \(\rho_{(150.0\,\unit{\kelvin},P_{fus},l)} = 0.735\,\unit{\gram/\centi\metre^3}\)
+            \item \(\alpha_{P,l} = 1.2*10^{-3}\,\unit{\kelvin^{-1}}\)
+            \item \(\alpha_{P,s} = 4.3*10^{-3}\,\unit{\kelvin^{-1}}\)
+            \item \(C_{p,s} = 84\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(C_{p,l} = 132\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(C_{p,g} = 95\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.1
+    A pressão de fusão do butano a 150.0\,\unit{\kelvin}
+} % Q1.1
+
+    \begin{flalign*}
+        &
+            \odv{P}{T}_{fus}
+            = \frac{\adif{H}_{fus}}{T_{fus}\,\adif{V}_{fus}}
+            = \frac{
+                \adif{H}_{fus}
+            }{
+                T_{fus}
+                \,(
+                    V_{l} - V_{s}
+                )
+            }
+            = \frac{
+                \adif{H}_{sub}-\adif{H}_{vap}
+            }{
+                T_{fus}
+                \,(
+                    M/\rho_{l} - M/\rho_{s}
+                )
+            }
+            = &\\&
+            = \frac{
+                \adif{H}_{sub}-\adif{H}_{vap}
+            }{
+                T_{fus}\,M
+                \,(\rho_{l}^{-1} - \rho_{s}^{-1})
+            }
+            ; &\\[2ex]&
+            % 
+            % H vap
+            % 
+            \odv{P}{T}_{vap}
+            = \frac{\adif{H}_{vap}}{T\,\adif{V}_{vap}}
+            = \frac{\adif{H_{vap}}}{T\,(V_{vap,g}-V_{vap\,l})}
+            \cong \frac{\adif{H_{vap}}}{T\,V_{vap,g}}
+            \cong \frac{\adif{H_{vap}}}{T\,\left(
+                R\,T/P
+            \right)}
+            =
+            \frac{P\,\adif{H}_{vap}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \frac{\odif{P}/P}{\odif{T}}
+            = \frac{\odif{\ln{P}}}{\odif{T}}
+            = \frac{\adif{H}_{vap}}{R\,T^2}
+            % = &\\&
+            = \odv{}{T}\left(
+                (13.440-3418.2/T)*10^5
+            \right)
+            = &\\&
+            = -3418.2*10^5\,T^{-2}
+            % \implies &\\&
+            \implies
+            \adif{H}_{vap} \cong -3418.2*10^5\,R
+            ; &\\[2ex]&
+            % 
+            % H sub
+            % 
+            \odv{P}{T}_{sub}
+            = \frac{\adif{H}_{sub}}{T\,\adif{V}_{sub}}
+            = \frac{\adif{H_{sub}}}{T\,(V_{sub,g}-V_{sub\,s})}
+            \cong \frac{\adif{H_{sub}}}{T\,V_{sub,g}}
+            \cong \frac{\adif{H_{sub}}}{T\,\left(
+                R\,T/P
+            \right)}
+            \dots
+            ; &\\[3ex]&
+            \therefore
+            P_{fus,150.0\,\unit{\kelvin}}
+            \cong P_{sub,122.0\,\unit{\kelvin}}
+            + \frac{
+                \adif{H}_{sub}-\adif{H}_{vap}
+            }{
+                M(\rho_{l}^{-1} - \rho_{s}^{-1})
+            }
+            \ln\frac{T_l}{T_s}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    \chemDelta{H} associado à passagem do butano no estado (161.0\,\unit{\kelvin}, 0.0002\,\unit{\bar})
+    ao estado (161.0\,\unit{\kelvin}, 1300\,\unit{\bar})
+} % Q1.2
+
+    \begin{flalign*}
+        &
+            \adif{H}_{161.0\,\unit{\kelvin},(0.0002\to1300)\,\unit{\bar}}
+            ; &\\[2ex]&
+            % 
+            % P vap a 161
+            % 
+            P_{vap,161.0\,\unit{\kelvin}}
+            = P_l
+            + \frac{\adif{H}}{\adif{V}}
+            \,\ln\frac{T}{T_0}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    \chemDelta{S} associado à passagem do butano no estado (170.0\,\unit{\kelvin}, 0.0004\,\unit{\bar})
+    ao estado (150.0\,\unit{\kelvin}, 100\,\unit{\bar})
+} % Q1.2
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.3
+    \chemDelta{G} associado à fusão do butano a 150.0\,\unit{\kelvin} e 920\,\unit{\bar}.
+} % Q1.3
+    body
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+} % Q2
+    
+    \begin{itemize}
+        \item \(V_{\ch{MeOH},m,*} =40.45\,\unit{\centi\metre^{3}\,\mole^{-1}}\)
+        \item \(V_{\ch{H2O},m,*}  =18.01\,\unit{\centi\metre^{3}\,\mole^{-1}}\)
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.1
+    Calcule os volumes de metanol e água puros que são necessários para preparar 250\,\unit{\centi\metre^3} de uma solução com \(X_{\ch{MeOH}}=0.40\)
+} % Q2.1
+
+    
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.2
+    Adicionou-se à solução da alínea anterior uma quantidade desconhecida de água, de modo a obter \(V_{\ch{MeOH,m}}=36.45\,\unit{\centi\metre^3\,\mole^{-1}}\). Calcule o volume da nova solução.
+} % Q2.2
+
+    \begin{flalign*}
+        &
+            % 
+            % x MeOH 2
+            % 
+            x_{MeOH,2}(36.45-40.45)
+            =x_{MeOH,2}(-4)
+            \cong 0.2
+            ; &\\[2ex]&
+            % 
+            % V sol 2
+            % 
+            V_{sol.2}
+            = x_{agua,2}\,V_{agua,2}
+            + x_{\ch{MeOH},2}\,V_{\ch{MeOH},2}
+            = &\\&
+            = (1-x_{MeOH,2})
+            \,\left(
+                V_{agua,m,2}\,n_{agua}
+            \right)
+            + x_{MeOH,2}
+            \,V_{\ch{MeOH},2}
+            = &\\&
+            = (1-x_{MeOH,2})
+            \,\left(
+                V_{agua,m,2}
+                \left(
+                    x_{agua}\,n_t
+                \right)
+            \right)
+            + x_{MeOH,2}
+            \,V_{\ch{MeOH},2}
+            = &\\&
+            = (1-x_{MeOH,2})^2
+            \,\left(
+                V_{agua,m,2}
+                \left(
+                    \frac{n_{\ch{MeOH}}}{x_{\ch{MeOH}}}
+                \right)
+            \right)
+            + x_{MeOH,2}
+            \,V_{\ch{MeOH},2}
+            = &\\&
+            = \frac{(1-x_{MeOH,2})^2}{x_{\ch{MeOH}}}
+            \,\left(
+                V_{agua,m,2}
+                \left(
+                    x_{\ch{MeOH},1}*n_{t,1}
+                \right)
+            \right)
+            + x_{MeOH,2}
+            \,V_{\ch{MeOH},2}
+            = &\\&
+            = \frac{(1-x_{MeOH,2})^2\,V_{agua,m,2}\,x_{\ch{MeOH},1}}{x_{\ch{MeOH},2}}
+            \,\left(
+                \frac{V_{sol.1}}{
+                    x_{\ch{MeOH},1}\,V_{\ch{MeOH},m,1}
+                    +(1-x_{\ch{MeOH},1})\,V_{agua,m,1}
+                }
+            \right)
+            + &\\&
+            + x_{MeOH,2}
+            \,V_{\ch{MeOH},2}
+            \cong &\\&
+            \cong \frac{(0.8)^2(18.01-1)*10^{-6}*0.4}{0.2}
+            * &\\&
+            *\left(
+                \frac{250*10^{-6}}{
+                     0.4*(40.45-1.8)*10^{-6}
+                    +0.6*(18.01-1.8)*10^{-6}
+                }
+            \right)
+            % 216.120066703724291
+            + &\\&
+            + 0.2
+            \,(40.45-2)*10^{-6}
+            \cong &\\&
+            \cong
+            \num{223.810066703724291e-6}
+        &
+    \end{flalign*}
+
+    Incongruente: volume total não pode diminuir, algo está mal provavelmente nas relações iniciais de volume molar da água na solução 2
+    ao invés de 
+    \(x_{i,2}\,V_{i,2}\)
+    devia ser
+    \(x_{i,2}\,V_{i,m,2}\)
+    e ao invés de 
+    \(V_{sol,2}\)
+    \(V_{sol,m,2}\),
+    falta multiplicar pelo numero total de mols
+
+    \begin{flalign*}
+        &
+            % 
+            % x MeOH 2
+            % 
+            x_{MeOH,2}(36.45-40.45)
+            =x_{MeOH,2}(-4)
+            \cong 0.2
+            ; &\\[2ex]&
+            % 
+            % V sol 2
+            % 
+            V_{sol.2}
+            = \left(
+                x_{agua,2}\,V_{agua,m,2}
+                + x_{\ch{MeOH},2}\,V_{\ch{MeOH},m,2}
+            \right)\,n_{t,2}
+            = &\\&
+            = \left(
+                x_{agua,2}\,V_{agua,m,2}
+                + x_{\ch{MeOH},2}\,V_{\ch{MeOH},m,2}
+            \right)\,n_{t,2}
+            = &\\&
+            = \left(
+                x_{agua,2}\,V_{agua,m,2}
+                + x_{\ch{MeOH},2}\,V_{\ch{MeOH},m,2}
+            \right)\left(
+                \frac{n_{\ch{MeOH},2}}{x_{\ch{MeOH},2}}
+            \right)
+            = &\\&
+            = \frac{
+                \left(
+                    x_{agua,2}\,V_{agua,m,2}
+                    + x_{\ch{MeOH},2}\,V_{\ch{MeOH},m,2}
+                \right)
+            }{
+                x_{\ch{MeOH},2}
+            }
+            \left(
+                x_{\ch{MeOH},1}*n_{t,1}
+            \right)
+            = &\\&
+            = \frac{
+                \left(
+                    x_{agua,2}\,V_{agua,m,2}
+                    + x_{\ch{MeOH},2}\,V_{\ch{MeOH},m,2}
+                \right)
+                x_{\ch{MeOH},1}
+            }{
+                x_{\ch{MeOH},2}
+            }
+            * &\\&
+            * 
+            \left(
+                \frac{V_{sol.1}}{
+                    x_{\ch{MeOH},1}\,V_{\ch{MeOH},m,1}
+                    +(1-x_{\ch{MeOH},1})\,V_{agua,m,1}
+                }
+            \right)
+            = &\\&
+            = \frac{
+                \left(
+                    x_{agua,2}\,V_{agua,m,2}
+                    + x_{\ch{MeOH},2}\,V_{\ch{MeOH},m,2}
+                \right)
+                x_{\ch{MeOH},1}
+                \,V_{sol.1}
+            }{
+                x_{\ch{MeOH},2}
+                \left(
+                    x_{\ch{MeOH},1}\,V_{\ch{MeOH},m,1}
+                    +(1-x_{\ch{MeOH},1})\,V_{agua,m,1}
+                \right)
+            }
+            \cong &\\&
+            \cong \frac{
+                \left(
+                      0.8*(18.01-1) * 10^{-6}
+                    + 0.2*(40.45-4) * 10^{-6}
+                \right)
+                0.4*250*10^{-6}
+            }{
+                0.2
+                \left(
+                    0.4*(40.45-1.8)  * 10^{-6}
+                    +0.6*(18.01-1.8) * 10^{-6}
+                \right)
+            }
+            \cong &\\&
+            \cong
+            \num{414.873342333042166e-6}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2,3
+    Defina o volume parcial mola de metanol numa mistura (metanol + água)
+} % Q2,3
+    
+    \begin{flalign*}
+        &
+            V_{\ch{MeOH},m}
+            =\frac{V_{sol}-(1-x_{\ch{MeOH}})\,V_{agua,m}}{x_{\ch{MeOH}}}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\end{document}

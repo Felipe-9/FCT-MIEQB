@@ -1,0 +1,762 @@
+\documentclass[12pt]{article}
+
+% Clickable Table of contents
+\usepackage[hidelinks]{hyperref}
+
+% Multicols
+\usepackage{multicol}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+\renewcommand{\cos}[2][ ]{\text{cos}^{#1}\left( {#2} \right)}
+\renewcommand{\sin}[2][ ]{\text{sin}^{#1}\left( {#2} \right)}
+\renewcommand{\tan}[2][ ]{\text{tan}^{#1}\left( {#2} \right)}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+\renewcommand{\thesection}{Exercício \arabic{section} }
+\renewcommand{\thesubsection}{\arabic{section} - \alph{subsection})}
+
+
+\begin{document}
+
+\title{Ficha 2\\Método de indução}
+\author{}
+
+\maketitle
+\tableofcontents
+\break
+
+% Q1
+\section{}
+
+% Q1 - a)
+\subsection{$
+	A = \left\{
+		\sum_{k=1}^n 1/2^k=1-1/2^n\  
+		\forall\ n\in\mathbb{N} 
+	\right\}
+$}
+\begin{flalign*}
+& 1\in A  \iff 	 \sum_{k=1}^1 1/2^k=1-1/2^1
+		 	 \implies 1/2=1/2  &\\
+& m+1\in A\ \forall\ m\in\mathbb{N} 
+			 \iff 	 \sum_{k=1}^{m+1} 1/2^k
+			 			 = 1-1/2^{m+1} \implies &\\
+&		 	 \implies \sum_{k=1}^{m} 1/2^k+1/2^{m+1}
+						 = 1-1/2^{m+1} &
+\end{flalign*}
+
+% Q1 - b)
+\subsection{$ 
+	B = \left\{
+		\sum_{k=1}^n\frac{1}{k(k+1)}=\frac{n}{n+1}\ 
+		\forall\ n\in\mathbb{N}
+	\right\}
+$}
+\begin{flalign*}
+&1\in B
+	\iff 	 	\sum_{k=1}^1\frac{1}{k(k+1)}=\frac{1}{1+1}
+	\implies 1/2=1/2; &\\
+&m+1\in B\ \forall\ m\in\mathbb{N} 
+	\iff		\sum_{k=1}^{m+1}\frac{1}{k(k+1)}
+	=			\frac{m+1}{m+1+1}\implies&\\
+&	\implies \sum_{k=1}^{m}\frac{1}{k(k+1)}
+	+ 			\frac{1}{(m+1)(m+2)}
+	= 			\frac{m+1}{m+2} \implies &\\
+&	\implies \sum_{k=1}^{m}\frac{1}{k(k+1)}
+	=			\frac{(m+1)^2-1}{(m+1)(m+2)}
+	=			\frac{m^2+2\,m+1-1}{(m+1)(m+2)} =&\\
+&	=			\frac{m(m+2)}{(m+1)(m+2)}
+	=			\frac{m}{m+1}&
+\end{flalign*}
+
+% Q1 - c)
+\subsection{$
+	C = \left\{
+		\sum_{k=1}^n k\ k!=(n+1)!-1\ 
+		\forall\ n\in\mathbb{N}
+	\right\}
+$}
+\begin{flalign*}
+&	1\in C
+	\iff 		\sum_{k=1}^1 k\ k!=(1+1)!-1
+	\implies 1\ 1!=2-1
+	\implies 1=1 &\\
+&	m+1\in C\ \forall\ m\in\mathbb{N}
+	\iff		\sum_{k=1}^{m+1} k\ k!=(m+1+1)!-1 \implies &\\
+&	\implies \sum_{k=1}^m k\ k!
+	+			(m+1)((m+1)!)
+	=			(m+2)((m+1)!)-1 \implies &\\
+&	\implies \sum_{k=1}^m k\ k!
+	= 			((m+1)!)(m+2-m-1)-1
+	=			(m+1)!-1 &
+\end{flalign*}
+
+% Q1 - d)
+\subsection{} 
+\bm{ 
+	D = \left\{
+		(\cos{x}+i\,\sin{x})^n=\cos{n\,x}+i\,\sin{n\,x} \right. \\ \left.
+		\forall\ n\in\mathbb{N},\ 
+		\forall\ x\in\mathbb{R},\
+		i = \sqrt{-1}
+	\right\} 
+}
+\begin{flalign*}
+&	1\in D
+		\iff (\cos{x}+i\,\sin{x})^1=\cos{1\,x}+i\,\sin{1\,x} &\\
+&	m+1\in D\ \forall\ m\in\mathbb{N}
+		\iff (\cos{x}+i\,\sin{x})^{m+1} = &\\ 
+&		= \cos{(m+1)x}+i\,\sin{(m+1)x}
+		\implies (\cos{x}+i\,\sin{x})^m = &\\
+&		= \frac{\cos{m\,x}\cos{x}-\sin{m\,x}\sin{x}
+				  +i(\sin{m\,x}\cos{x}+\sin{x}\cos{m\,x})}
+				 {\cos{x}+i\,\sin{x}} = &\\
+&		= \frac{  \cos{m\,x}\cos{x}
+				  + i\,\cos{x}\sin{m\,x}
+				  + i\,\sin{x}\cos{m\,x}
+				  - \sin{x}\sin{m\,x}}
+				 {\cos{x}+i\,\sin{x}}= &\\
+&		= \frac{ \cos{m\,x}\cos{x}
+				  +\cos{x}\,i\,\sin{m\,x}
+				  +i\,\sin{x}\,\cos{m\,x}
+				  +i^2\,\sin{x}\sin{m\,x}}
+				 {\cos{x}+i\,\sin{x}} = &\\
+&		= \frac{(\cos{x}+i\,\sin{x})(\cos{m\,x}+i\,\sin{m\,x})}
+				 {\cos{x}+i\,\sin{x}}
+		= \cos{m\,x}+i\,\sin{m\,x} &
+\end{flalign*}
+
+% Q2
+\section{}
+
+% Q2 - a)
+\subsection{$ 9^n-3 $ é multiplo de $6$}
+\begin{flalign*}
+& 
+	9^n-3 \text{ é multiplo de } 6 
+	\iff 
+		\exists\ k\in\mathbb{N}
+		: 9^n-3=6\,k
+		\ \forall\ n\in\mathbb{N}\backslash\{0\} 
+	\iff &\\& \iff 
+		9^n-3 = 6\,k
+	\iff 
+		(3^{2})^n/3
+		= 3^{2\,n-1} 
+		= 2\,k + 1 
+& \\\\ &
+	9^n-3 \text{ é multiplo de } 6 
+	\iff 
+		\exists\ k\in\mathbb{N}
+		: 9^n-3=6\,k
+		\ \forall\ n\in\mathbb{N}\backslash\{0\} 
+	\iff &\\& \iff 
+		\left\{ \begin{array}{ll}
+			n = 1 \implies 9^1-3 = 6
+			\\
+			n = m + 1
+			\implies
+				9^{m+1}-3
+				= 9\,9^m-3
+				= 9\,(6\,k+3)-3
+				= \\ =
+				6\,(9\,k+4);
+				\ (9\,k+4)\in\mathbb{N}\ \forall\ k\in\mathbb{N}
+		\end{array} \right.
+&
+\end{flalign*}
+
+% Q2 - b)
+\subsection{$ 6^n-1 $ é múltiplo de 5}
+\begin{flalign*}
+%&	
+%	6^n-1 \text{ é múltiplo de 5 } 
+%	\iff 
+%		\exists\ k\in\mathbb{N}
+%		: 6^n-1=5\,k\ 
+%		\forall\ n\in\mathbb{N} 
+%	\iff &\\& \iff  
+%	(5+1)^n-1
+%	= 
+%		\sum_{i=0}^{n  } 
+%		\left( 
+%			\frac{n!\,5^{n-i}1^{i} }{i!(n-i)!}
+%		\right) 
+%		- 1
+%	= 
+%		n!
+%		\sum_{i=0}^{n-1} \left( 
+%			\frac{5^{n-i}}{i!(n-i)!}
+%		\right) 
+%	= &\\&
+%	= 5 \left( \sum_{i=0}^{n-1} 5^{n-i-1} \right)
+%	= 5 \left( \sum_{i=1}^{n  } 5^{n-i} \right) 
+%	= 5 \left( \sum_{i=0}^{n-1} 5^{i} \right);
+%	\ 
+%		\sum_{i=0}^{n-1} 5^{i}
+%		\in\mathbb{N}
+%		\ \forall\ n\in\mathbb{N}
+%&
+%\\\\
+&
+	6^n-1 \text{ é múltiplo de 5 } 
+	\iff 
+		\exists\ k\in\mathbb{N}
+		: 6^n-1=5\,k\ 
+		\forall\ n\in\mathbb{N} 
+	\iff &\\& \iff  
+	\left\{ \begin{array}{ll}
+		n = 1
+		\implies
+			6^1-1
+			= 5
+		\\
+		n = m + 1
+		\implies
+			6^{m+1}-1
+			= 6\,6^m-1
+			= 6\,(5\,k+1)-1
+			= \\
+			= 5\,(6\,k+1);
+			\ (6\,k+1)\in\mathbb{N}
+			\ \forall\, k\in\mathbb{N}
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q2 - c)
+\subsection{$ 3\,n^2 + 3\,n $ é múltiplo de 6}
+\begin{flalign*}
+%&	3\,n^2+3\,n \text{ é múltiplo de 6}
+%	\iff 
+%		\exists\ k\in\mathbb{N}
+%		: 3\,n^2+3\,n=6k
+%		\ \forall\ n\in\mathbb{N} 
+%	\iff 
+%	&\\&
+%	\iff 
+%		3\,n^2+3\,n 
+%		= 3\,n\,(n+1)
+%		= 6\,k
+%	\iff
+%		n\,(n+1)=2\,k
+%	\iff
+%	&\\&
+%	\iff
+%		\left\{
+%		n\,(n+1)\in\mathbb{N}:n\,(n+1)=2\,k\ \forall\ n\in\mathbb{N}:
+%		n=2\, m\vee n=2\,m+1\ \forall\ m\in\mathbb{N}
+%		\right\}
+%	=
+%	&\\&
+%	=
+%		\left\{
+%		n\,(n+1)\in\mathbb{N}:n\,(n+1)=2\,k\ \forall\ n\in\mathbb{N}
+%		\right\} 
+%&
+%\\\\
+&
+	3\,n^2+3\,n \text{ é múltiplo de 6}
+	\iff 
+		\exists\ k\in\mathbb{N}
+		: 3\,n^2+3\,n=6\,k
+		\ \forall\ n\in\mathbb{N} 
+	\iff 
+	&\\&
+	\iff
+	\left\{ \begin{array}{ll}
+		n = 1
+		\implies
+			3*1^2+3*1
+			= 6
+		\\
+		n = m + 1
+		\implies
+			3\,(m+1)^2+3\,(m+1)
+			= 3\,(m+1)\,(m+1+1)
+			= \\
+			= 3\,m^2+3\,m+2\,(3\,m^2+3\,m)/m
+			= 6\,k+2\,(6\,k)/m
+			= 6\,(k+2k/m)
+			= \\
+			= 6\,(k+m+1);
+			\ (k+m+1)\in\mathbb{N}
+				\ \forall\ \{m,k\}\subset\mathbb{N}
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q2 - d) Extra
+\subsection{Extra: $5^n-1$ é multiplo de 4}
+\begin{flalign*}
+%&
+%	5^n-1\text{ é multiplo de 4}
+%	\iff
+%		\exists\ k\in\mathbb{N}: 5^n-1=4\,k\ \forall\ n\in\mathbb{N}
+%	\iff &\\& \iff
+%		5^n-1
+%		= (4+1)^n-1
+%		= \sum_{i=0}^{n  } 4^{n-i}\,1^{i}-1
+%		= \sum_{i=0}^{n-1} 4^{n-i}
+%		= 
+%			4 \left(
+%				\sum_{i=0}^{n-1} 4^{n-i-1}
+%			\right)
+%		= &\\& =
+%			4 \left(
+%				\sum_{i=0}^{n-1} 4^{n-i}
+%			\right)
+%		=
+%			4 \left(
+%				\sum_{i=0}^{n-1} 4^{i}
+%			\right)
+%		= 4\,k
+%		\implies
+%			k\in\mathbb{N}: k=\sum_{i=0}^{n-1}4^i\ \forall\ n\in\mathbb{N}
+%& 
+%\\\\ 
+&
+	5^n-1\text{ é multiplo de 4}
+	\iff
+		\exists\ k\in\mathbb{N}: 5^n-1=4\,k\ \forall\ n\in\mathbb{N}
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+  		n=1
+			\implies 5^1-1=4\,k\implies k=0;\\
+		n=m+1
+		\implies
+			5^{m+1}-1
+			= 5\,5^{m}-1
+			= 5\,(5^m-1) + 4
+		=\\=
+			5\,(4\,k) + 4
+			= 4\,(5\,k+1)
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q3
+\section{} 
+\bm{
+	I_i \text{ é um intervalo aberto}&\ \forall\,i\in\mathbb{N}\cap[1,n]; \\
+	\bigcap_{i=1}^{n}I_i&\neq\emptyset
+}
+\begin{flalign*}
+&
+	A = \bigcup_{i=1}^n I_i \text{ é um intervalo aberto}
+	\iff
+		A = \text{Int}(A)
+	\iff
+		V_{\epsilon}a\subset A\ \forall\,a\in A
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+		\exists B\subset A 
+			: B\subset I_i
+			\ \forall\,i\in\mathbb{N}\cap[1,n]
+		\impliedby \bigcap_{i=1}^n I_i\neq\emptyset
+		\\
+		V_{\epsilon}b\subset I_i
+			\ \forall\,b\in I_i
+			\ \forall\,i\in\mathbb{N}\cap[1,n]
+	\iff 
+		I_i = \text{Int}(I_i)\ \forall\,i\in\mathbb{N}\cap[1,n]
+	\iff \\ \iff 
+		I_i \text{ é um intervalo aberto}\ \forall\,i\in\mathbb{N}\cap[1,n]
+		\end{array} \right.
+&
+\end{flalign*}
+
+% Q4
+\section{}
+
+
+% Q4 - a)
+\subsection{$
+	(1+k)^n\geq 1+n\,k
+	\ \forall\,n\in\mathbb{N}
+	\quad \text{para } k > -1 \text{ fixado}
+$}
+\begin{flalign*}
+%&
+%	(1+k)^n
+%	= \sum_{i=0}^{n  } 1^{n-i}\,k^i
+%	= \sum_{i=0}^{n  } k^i
+%	= \sum_{i=1}^{n  } k^i + 1
+%	=k\sum_{i=0}^{n-1} k^{i} + 1
+%	\geq 1 + n\,k
+%	= &\\&
+%	= 1 +  \sum_{i=1}^{n  } k
+%	= 1 + k\sum_{i=0}^{n-1} 1
+%	\implies &\\& \implies
+%		\sum_{i=1}^{n-1} k^i
+%	\geq 
+%		\sum_{i=1}^{n-1} 1
+%&
+%\\\\
+&
+	(1+k)^n\geq 1+n\,k
+	\ \forall\,n\in\mathbb{N},
+	\ \forall\,k\in\mathbb{R}: k>-1
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+		n = 0
+		\implies 
+			(1+k)^0 = 1
+			\geq 	1 + 0\,k = 1;
+		\\
+		n = m + 1
+		\implies 
+			(1+k)^{m+1}
+			= (1+k)\,(1+k)^m
+			;\ (1+k) > 0
+			\ \forall\, k>-1
+			\implies \\ \implies
+			(1+k)\,(1+k)^m
+			\geq (1+k)\,(1+m\,k)
+			= \\
+			= 1+m\,k+k + m\,k^2
+			\geq 1+(m+1)\,k
+			=	  k+1+m\,k
+			\implies \\ \implies
+				m\,k^2\geq0
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q4 - b)
+\subsection{$
+	\sum_{k=1}^{n}k^2<(n+1)^3\ \forall\,n\in\mathbb{N}
+$}
+\begin{flalign*}
+&
+	\sum_{k=1}^{n}k^2<(n+1)^3\ \forall\,n\in\mathbb{N}
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+		n = 0 
+		\implies \sum_{k=1}^{0}k^2=0<(0+1)^3=1 
+		\\
+		n = m + 1 
+		\implies
+			\sum_{k=1}^{m+1}k^2
+			= \sum_{k=1}^{m}k^2+(m+1)^2;
+			\\ 
+			\sum_{k=1}^{m}k^2>0 : k^2>0\ \forall\,k\in\mathbb{N}
+		\implies
+			\sum_{k=1}^{m}k^2+(m+1)^2
+			< \\
+			< (m+1)^3+(m+1)^2
+			= (m+1+1)(m+1)^2
+			< (m+1+1)^3
+			\implies \\ \implies
+				(m+1)^2<(m+2)^2
+			\implies
+				|m+1|<|m+2|
+			; m\geq 0\ \forall\, m\in\mathbb{N}
+			\implies\\\implies
+				0 < 1
+	\end{array} \right.
+&
+\end{flalign*}
+
+% 4 - c)
+\subsection{$
+	\sum_{k=1}^{n}1/(2^k+1)<1-1/2^n
+	\ \forall\,n\in\mathbb{N}\backslash \{0\}
+$}
+\begin{flalign*}
+&
+	\sum_{k=1}^{n}1/(2^k+1)<1-1/2^n\ \forall\,n\in\mathbb{N}\backslash\{0\}
+	\implies &\\& \implies
+	\left\{ \begin{array}{ll}
+		n = 1 \implies
+			\sum_{k=1}^{1}1/(2^k+1)
+			= 1/3
+			< 1-1/2^1
+			= 1/2 
+		\\
+		n = m + 1 \implies
+			\sum_{k=1}^{m+1}1/(2^k+1) 
+			= \sum_{k=1}^{m}1/(2^k+1) + 1/(2*2^m+1)
+			< \\
+			< 1-1/2^{m} + 1/(2*2^m+1)
+			= 1 - 1/(2*2^{m}) - 1/(2*2^{m}) 
+			+ \\
+			+ 1/(2*2^m+1)
+			< 1-1/2^{m+1}
+			= 1-1/(2*2^m)
+			\implies \\ \implies
+			1/(2*2^m+1)
+			< 1/(2*2^{m})
+			\implies 1>0
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q4 - d)
+\subsection{$
+	\sum_{k=1}^{n}1/k^2\leq 2-1/n
+	\ \forall\,n\in\mathbb{N}
+$}
+\begin{flalign*}
+&
+	\sum_{k=1}^{n}1/k^2\leq 2-1/n
+	\ \forall\,n\in\mathbb{N}\backslash\{0\}
+	\implies &\\& \implies
+	\left\{ \begin{array}{ll}
+		n = 1 \implies
+			\sum_{k=1}^{1}1/k^2
+			= 1
+			\leq 2-1/1
+			= 1
+		\\
+		n = m + 1 \implies
+			\sum_{k=1}^{m+1}1/k^2
+			= \sum_{k=1}^{m}1/k^2 + 1/(m+1)^2
+			\leq \\
+			\leq 2-1/m+1/(m+1)^2
+			\leq 2-1/(m+1)
+			= 2-(m+1)/(m+1)^2
+			\implies \\ \implies
+				(m+1+1)/(m+1)^2
+				\leq 1/m
+			\implies 
+				m^2+2\,m
+				\leq m^2+2\,m+1
+			\implies \\ \implies
+				0 \leq 1
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q6
+\section{}\bm{
+	u_1 = -1, 
+	&& u_{n+1}=\frac{u_n}{1-2\,u_n}, 
+	&& \forall\,n\in\mathbb{N}
+}
+\begin{flalign*}
+&
+	u_n=1/(1-2\,n)\ \forall\,n\in\mathbb{N}
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+		n = 1 \implies
+			1/(1-2) = -1/1 = u_1
+		\\
+		n = m + 1 \implies
+			\frac{1}{1-2\,(m+1)}
+			= \frac{1}{-1-2\,m}
+			= \frac{1}{1-2\,m}
+			* \frac{1-2\,m}{1-2\,m-2}
+			= \\
+			= \frac{1/(1-2\,m)}{(1-2\,(1/(1-2\,m))}
+			= u_m/(1-2\,u_m)
+			= u_{m+1}
+	\end{array} \right.
+&
+\end{flalign*}
+
+\break
+
+% Q6
+\section{} \bm{
+	e_n:=\left( 1+ 1/n \right)^n && (n\in\mathbb{N})
+}
+
+% Q6 - a)
+\subsection{$
+	{n\choose k}\frac{1}{n^k}\leq \frac{1}{k!}
+	\quad
+		\forall\,n\in\mathbb{N},
+	\ \forall\,k\in\mathbb{N}\cap[0,n]
+$}
+
+\begin{flalign*}
+&
+	{n\choose k}\frac{1}{n^k}\leq \frac{1}{k!}
+	\quad
+		\forall\,n\in\mathbb{N},
+		\ \forall\,k\in\mathbb{N}\cap[0,n]
+	\iff &\\& \iff
+		{n\choose k}\frac{1}{n^k}
+	= 
+		\frac{1}{k!}\,\frac{n!}{(n-k)!n^k}
+	\leq  
+		\frac{1}{k!}
+	\implies
+		n!
+	\leq 
+		(n-k)!n^k
+	\implies &\\& \implies
+		\prod_{i=1}^{k-1}(n-i)
+	\leq 
+		n^k
+	\implies
+		\log_n\left( \prod_{i=1}^{k-1}(n-i) \right)
+	\leq 
+		k
+	\implies
+		\sum_{i=1}^{k-1} \log_n(n-i)
+	\leq &\\& \leq
+		\sum_{i=1}^{k-1} \log_n(n)
+	=
+		k-1
+	\leq k
+&	
+\end{flalign*}
+
+% Q6 - b)
+\subsection{$
+	\sum_{k=0}^{n}\frac{1}{k!}\leq 3-1/n
+	\quad\forall\,n\in\mathbb{N}\backslash\{0\}
+$}
+\begin{flalign*}
+&
+	\sum_{k=0}^{n}\frac{1}{k!}\leq 3-1/n
+	\quad\forall\,n\in\mathbb{N}\backslash\{0\}
+	\implies &\\& \implies
+		\sum_{k=2}^{n}\frac{1}{k!}
+		\leq 
+			1-1/n
+		= (n-1)!(n-1)/n!
+	\implies &\\& \implies
+		\sum_{k=2}^{n}\frac{n!}{k!}
+		= \sum_{k=0}^{n-2}\frac{n!}{(n-k)!}
+		= \sum_{k=0}^{n-2}\frac{n!}{(n-k)!}
+		\leq
+			n!-(n-1)!\cdots
+&
+\\\\
+&
+	\sum_{k=0}^{n}\frac{1}{k!}\leq 3-1/n
+	\quad\forall\,n\in\mathbb{N}\backslash\{0\}
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+		n = 1 \implies 
+			\sum_{k=0}^{1}1/k!
+			= 1
+			\leq 3-1/1
+			= 2
+		\\
+		n = m + 1 \implies
+			\sum_{k=0}^{m+1}1/k!
+		=
+			1/(m+1)!+\sum_{k=0}^{m}1/k!
+		\leq \\
+		\leq 
+			m^{-1}/(m+1) + 3 - 1/m
+		=
+			(1+m^{-1})/(m+1)- 1/(m+1) 
+		+ \\
+		+ 
+			3 - 1/m
+		\leq 
+			3-1/(m+1)
+		\implies
+			\frac{1}{m+1} + \frac{1}{m(m+1)} - \frac{1}{m}
+		\leq
+			0
+		\implies \\ \implies
+			1+1/m
+		\leq
+			1+1/m
+	\end{array} \right.
+&
+\end{flalign*}
+
+% Q6 - c)
+\subsection{$
+	e_m\leq 3\quad\forall\,n\in\mathbb{N}
+$ \color{red!60!}{Duvida}}
+\begin{flalign*}
+&
+	e_m\leq 3\quad\forall\,n\in\mathbb{N}
+	\iff 
+		(1+1/n)^n
+	=	\sum_{i=0}^{n}{n \choose i}\frac{1}{n^i} 1^{n-i}
+	= 	\sum_{i=0}^{n}\frac{n!}{i!(n-i)!}n^{-i}
+	=	&\\& =
+		1 
+	+
+		\sum_{i=1}^{n}\frac{n!\,n^{-i}}{i!(n-i)!}
+	\leq
+		3
+	\implies 
+		\sum_{i=1}^{n}\frac{n!\,n^{-i}}{i!(n-i)!} \leq 2
+	\iff &\\& \iff
+	\left\{ \begin{array}{ll}
+		n = 0 \implies
+			\sum_{i=1}^{0}\frac{0!\,0^{-i}}{i!(0-i)!} = 0 \leq 2
+		\\
+		n = m + 1 \implies
+			\sum_{i=1}^{m+1}\frac{(m+1)!\,(m+1)^{-i}}{i!(m+1-i)!}
+		=
+			\sum_{i=1}^{m+1}\frac{(m+1)\,(m!)\,(m+1)^{-i}}
+										{i!\,(m+1-i)\,(m-i)!}
+		= \\ =
+			(m+1)
+			\sum_{i=1}^{m+1}\frac{(m!)\,(m+1)^{-i}}
+										{(m+1-i)\,i!\,(m-i)!}
+		\leq 
+			(m+1)
+			\sum_{i=1}^{m+1}\frac{(m!)\,(m)^{-i}}
+										{i!\,(m-i)!}
+		\leq
+			\frac{(m+1)}{(m+1-i)}
+			2
+		\leq \\ \leq
+			2\cdots
+	\end{array} \right.
+&
+\end{flalign*} 
+
+
+
+
+%	\left\{ \begin{array}{ll}
+%		n = 0 \implies
+%		\\
+%		n = m + 1 \implies
+%	\end{array} \right.
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,22 @@
 % !TEX root = ./MWE.1.tex
-\documentclass["./MWE.tex"]{subfiles}
+\documentclass[
+  class=article,
+  multi={minipage},
+  border={3mm},
+]{standalone}
 
-\usepackage{sections}
+\usepackage{amsmath, amssymb}
 
 \begin{document}
 
-\begin{sectionBox}1{}
-  test
-\end{sectionBox}
+\begin{flalign*}
+  = \left(
+    \dots
+    + c_1\,\left(
+      e^{-x^2}
+      \,(-2\,x)
+    \right) other chars that disappear
+  \right) other chars that disappear
+\end{flalign*}
 
 \end{document}

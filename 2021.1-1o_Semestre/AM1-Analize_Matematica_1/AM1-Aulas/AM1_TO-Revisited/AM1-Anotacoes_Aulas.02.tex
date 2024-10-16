@@ -1,0 +1,91 @@
+% !TEX root = ./AM1-Anotacoes_Aulas.02.tex
+\providecommand\mainfilename{"./AM1-Anotacoes_Aulas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./AM1-Anotacoes_Aulas.02.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM1-Anotacoes_Aulas.02}}}
+% \tikzsetexternalprefix{./.build/figures/AM1-Anotacoes_Aulas.02/graphics/}
+
+\mymakesubfile{2}
+[AM1]
+{16/03 -- Conceitos Básicos II} % Subfile Title
+{16/03 -- Conceitos Básicos II} % Part Title
+
+% Conjunto aberto e fechado
+\begin{sectionBox}b{} % S
+    \begin{multicols}{2}
+
+        \begin{sectionBox}1{Conjunto Aberto} % S
+            \label{conjunto aberto}
+            
+            \begin{flalign*}
+                &
+                    X \text{ é um conjunto aberto}
+                    \iff &\\&
+                    \iff
+                    X=\interior(X)
+                    % \hyperref[interior]{\text{Int}}(X)
+                &
+            \end{flalign*}
+    
+        \end{sectionBox}
+    
+        % Conjunto Fechado
+        \begin{sectionBox}1{Conjunto Fechado} % S
+            \label{conjunto fechado}
+            
+            \begin{flalign*}
+                &
+                    X \text{ é um conjunto fechado}
+                    \iff &\\&
+                    \iff
+                    X
+                    = \interior(X)
+                    % \hyperref[interior]{\text{Int}(X)}
+                    \cup\fronteira(X)
+                    % \hyperref[fronteira]{\text{Fr}(X)}
+                &
+            \end{flalign*}
+        \end{sectionBox}
+
+    \end{multicols}
+\end{sectionBox}
+
+\begin{sectionBox}b{} % S
+    \begin{multicols}{2}
+
+        \begin{sectionBox}1{Feixe} % S
+            % Feixe de X
+            \label{feixe}
+            \begin{flalign*}
+                &
+                    \bar X
+                    =\interior(X)
+                    % \hyperref[interior]{\text{Int}(X)}
+                    \cup\fronteira(X)
+                    % \hyperref[fronteira]{\text{Fr}(X)}
+                &
+            \end{flalign*}
+        \end{sectionBox}
+        \begin{sectionBox}1{Ponto de Acumulação} % S
+            \label{ponto de acumulacao}
+            \begin{flalign*}
+                &
+                    x \text{ é um ponto de acumulação de } X
+                    \iff &\\&
+                    \iff
+                    \vizinhanca{x}\cap\left( X\backslash\{x\} \right)
+                    \neq \emptyset
+                &
+            \end{flalign*}
+        \end{sectionBox}
+    
+    \end{multicols}
+\end{sectionBox}
+
+\end{document}

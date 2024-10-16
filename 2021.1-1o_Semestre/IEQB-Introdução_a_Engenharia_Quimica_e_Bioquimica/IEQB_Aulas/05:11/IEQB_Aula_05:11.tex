@@ -1,0 +1,442 @@
+\documentclass[12pt]{article}
+
+
+
+% lua
+\usepackage{luacode}
+
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+%% Graphics
+%\usepackage{graphics}
+%\graphicspath{ {./resources/images} }
+
+
+
+% calc
+\usepackage{calc}
+
+
+
+% Table of contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}	% remove subsubsection from toc
+
+% part
+\renewcommand\cftpartfont{\bfseries}
+%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+\setlength\cftbeforepartskip{6mm}
+
+% sec
+\renewcommand\cftsecfont{\bfseries} % Font
+\renewcommand\cftsecpagefont{}	 % page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+\setlength\cftbeforesecskip{3mm}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+
+% subsec
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+
+% tab (table)
+\setlength\cfttabindent{0mm}
+
+
+
+% filecontents
+\usepackage{filecontents}	% Create files
+
+
+
+% Multicols
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+
+
+
+% enumitem
+%\usepackage{enumitem} % modify enumerate index
+
+
+
+%% titlesec
+%\usepackage{titlesec}
+%
+%% Part customization
+%\titleclass{\part}{straight}
+%\titleformat{\part}
+%	[block]							% shape
+%	{\huge\bfseries\color{Emph}}			% format
+%	{\thepart\hspace{5mm}{$|$}}			% label
+%	{5mm}							% sep
+%	{\huge\bfseries}					% before-code
+%	[\vspace{0.5mm}]					% after-code
+%\counterwithin*{section}{part} % Reset section on part
+%\@addtoreset{section}{part}
+%
+%% Chapter customization
+%\titleclass{\chapter}{straight}
+%\titleformat{\chapter}
+%	[block]
+%	{\Huge\bfseries\color{Emph}}
+%	{\thechapter\hspace{5mm}{$|$}}
+%	{5mm}
+%	{\Huge\bfseries}
+%	[\vspace{0.5mm}]
+
+
+
+%% Appendix
+%\usepackage{appendix}
+
+
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = false,	% scientific / engineering / false
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = places,		% figures/places
+	round-precision = 2,
+%	round-minimum = 0.01
+}
+
+
+
+%% Maths
+%\usepackage{amsmath, amssymb}
+%\usepackage{bm} % Boldmath
+%
+%\newcommand{\BM}[1]{{\large\boldmath\bfseries%
+%	\begin{align*}
+%		#1
+%	\end{align*}%
+%}}
+%
+%\newcommand\vizinhanca[2][\delta]{%
+%	\hyperref[vizinhanca]{V_{#1}(#2)}%
+%}
+%
+%\newcommand\converge{{\,\xrightarrow{\text{converge}}\,}}
+
+
+
+%% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+
+%% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+
+%%% pgf
+%% pgfmath
+%\usepackage{pgfmath}  	% calculations
+%
+%% pgfplots
+%\usepackage{pgfplots}
+%	\pgfplotsset{
+%		compat=newest,
+%		width=.90\textwidth,	% width
+%		heigth= .22\textheigth,	% heigth
+%		major grid style= {
+%			very thin, 
+%			color= White!60!Black
+%		},
+%		ticklabel style={
+%			/pgf/number format/.cd,
+%				set thousands separator={\,},
+%		tick style= {color= White!60!Black},
+%		% Extra ticks
+%		},
+%		every extra x tick/.style={
+%			tick style= {draw=none},
+%			major grid style= 
+%				{draw, thin, color= White!90!Black},
+%			ticklabel pos= top,
+%		},
+%		every extra y tick/.style={
+%			tick style= {draw=none},
+%			major grid style= 
+%				{draw, thin, color= White!90!Black},
+%			ticklabel pos= right,
+%		},
+%	}
+%
+% pgfplotstable
+%\usepackage{pgfplotstable}
+
+
+
+%% Tabular
+%\usepackage{multirow}
+%\usepackage{float}	% table position H(ere)
+%\restylefloat{table}
+%\usepackage{longtable}
+% 
+%\setlength\tabcolsep{6mm}		% Width
+%\renewcommand\arraystretch{1.25}	% Height
+%
+%% booktabs
+%\usepackage{booktabs}
+%\setlength\heavyrulewidth{.75pt} 	% Top and bottom rule
+%\setlength\lightrulewidth{.50pt} 	% Middle rule
+%\usepackage{colortbl} 			% Color Cells
+
+
+
+%% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+%\usepackage{modiagram}		% Molecular orbital diagram
+%\setmodiagram{
+%	names, 
+%	labels, 
+%	labels-fs=\tiny, 
+%	AO-width=6mm,
+%}
+%
+%\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}  {HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen} {HTML}{008675}
+
+\colorlet{White}{DarkGreen!20}
+\colorlet{Black}{DarkBlue!110}
+%\colorlet{Black}{DarkBlue!70!black}
+\colorlet{Emph}{ DarkGreen!70!White}
+\colorlet{Background}{White!5!Black}
+
+\pagecolor{Black}
+\color{White}
+
+%% mycolors
+%% Pallete
+%\definecolor{red}   {HTML}{FF0000}
+%\definecolor{orange}{HTML}{FF7300}
+%\definecolor{yellow}{HTML}{FFEA00}
+%\definecolor{green} {HTML}{2AFF00}
+%\definecolor{cyan}  {HTML}{00FFBF}
+%\definecolor{blue}  {HTML}{0055FF}
+%\definecolor{purple}{HTML}{9500FF}
+%\definecolor{pink}  {HTML}{FF0080}
+%% Light
+%\newcommand\Light{!63!White}
+%\colorlet{Red}   {red\Light}
+%\colorlet{Orange}{orange\Light}
+%\colorlet{Yellow}{yellow\Light}
+%\colorlet{Green} {green\Light}
+%\colorlet{Cyan}  {cyan\Light}
+%\colorlet{Blue}  {blue\Light}
+%\colorlet{Purple}{purple\Light}
+%\colorlet{Pink}  {pink\Light}
+%% Dark
+%\newcommand\Dark{!45!Black}
+%\colorlet{DRed}   {Red\Dark}
+%\colorlet{DOrange}{Orange\Dark}
+%\colorlet{DYellow}{Yellow\Dark}
+%\colorlet{DGreen} {Green\Dark}
+%\colorlet{DCyan}  {Cyan\Dark}
+%\colorlet{DBlue}  {Blue\Dark}
+%\colorlet{DPurple}{Purple\Dark}
+%\colorlet{DPink}  {Pink\Dark}
+
+
+
+% tcolorbox
+\usepackage{tcolorbox}
+\tcbset{
+	coltext=		White,		% text  color
+	coltitle=		White,		% title color
+	fonttitle=	\bfseries,	% title font
+	colback=		Background, 	% background color
+	colframe=		Background,	% border     color
+	arc=			3mm,			% Curvature
+	}
+%\newtcbox{\mybox}{on line,
+%  colframe=mycolor,colback=mycolor!10!white,
+%  boxrule=0.5pt,arc=4pt,boxsep=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle{{IEQB Aula 05/11}}
+\newcommand\myauthor{{Felipe Pinto 61387 - MIEQB}}
+
+
+
+% title, author and date
+\title{\bfseries\color{Emph}\mytitle}
+\author{\myauthor}
+\date{\today}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+	% Links customization
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=LightGreen!25!White,
+	% PDF customization
+	pdfpagelayout=OneColumn,
+	pdftitle=\mytitle,
+	pdfauthor=\myauthor
+	% fix hyperref links
+	hypertexnames=false
+}
+
+
+
+%% questions, subquestions and subsubquestions
+%
+%% question
+%\newcounter{question}[section]
+%\renewcommand{\thequestion}{Questão \arabic{question}}
+%\newcommand{\question}[1]{
+%     % reset inner counters
+%     \setcounter{subquestion}{0}
+%     \setcounter{subsubquestion}{0}
+%     % add section*
+%     \refstepcounter{question}
+%     \section*{\thequestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{section}{%
+%     	\thequestion\quad#1%
+%	}
+%}
+%
+%% subquestion
+%\newcounter{subquestion}[subsection]
+%\renewcommand\thesubquestion{%
+%	Q\arabic{question} - \alph{subquestion})%
+%}
+%\newcommand{\subquestion}[1]{
+%	% reset inner counters
+%	\setcounter{subsubquestion}{0}
+%	% add subsection*
+%     \refstepcounter{subquestion}
+%     \subsection*{\thesubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsection}{%
+%     	\thesubquestion\quad#1%
+%	}
+%}
+%
+%% subsubquestion
+%\newcounter{subsubquestion}[subsubsection]
+%\renewcommand{\thesubsubquestion}{(\roman{subsubquestion})}
+%\newcommand{\subsubquestion}[1]{
+%	% add subsubsection*
+%     \refstepcounter{subsubquestion}
+%     \subsubsection*{\thesubsubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsubsection}{%
+%     	\thesubsubquestion\quad#1%
+%	}
+%}
+
+
+
+%% Incompleto
+%
+%% Listoftemas: tema e subtema
+%\newlistof{temas}{prog}{}
+%%% Add to document
+%%\section*{Programa}
+%%\begin{multicols}{2} \listoftemas \end{multicols}
+%% tema
+%\newcounter{tema}[section]
+%\newcommand\tema[1]{%
+%	\refstepcounter{tema}%
+%	\addcontentsline{prog}{temas}{%
+%		\thetema\textsuperscript{o} Tema: #1%
+%	}%
+%}
+%% subtema
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%	\refstepcounter{subtema}%
+%	\addcontentsline{prog}{temas}{%
+%		\textbullet\quad#1%
+%	}
+%}
+
+
+
+%% subsubsection customization
+%\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+
+\begin{document}
+
+
+\newgeometry{left=25mm, right=25mm}
+
+
+\maketitle
+
+
+% Table of Contents
+
+\renewcommand{\contentsname}{} % remove title
+
+\section*{Conteúdo}
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+
+\restoregeometry
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

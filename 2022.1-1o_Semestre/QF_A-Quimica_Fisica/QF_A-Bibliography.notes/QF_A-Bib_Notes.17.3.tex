@@ -1,0 +1,253 @@
+% !TEX root = ./QF_A-Bib_Notes.17.3.tex
+\providecommand\mainfilename{"./QF_A-Bib_Notes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Bib_Notes.17.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Bib_Notes.17.3}}}
+\tikzsetexternalprefix{./.build/figures/QF_A-Bib_Notes.17.3/}
+
+\mymakesubfile{3}
+[QF A]
+{Reactions approaching equilibrium} % Subfile Title
+{Reactions approaching equilibrium} % Part Title
+
+%     88                            ,ad8888ba,                         88
+%   ,d88               ,d          d8"'    `"8b                        88
+% 888888               88         d8'        `8b                       88
+%     88  ,adPPYba,  MM88MMM      88          88  8b,dPPYba,   ,adPPYb,88
+%     88  I8[    ""    88         88          88  88P'   "Y8  a8"    `Y88
+%     88   `"Y8ba,     88         Y8,        ,8P  88          8b       88
+%     88  aa    ]8I    88,         Y8a.    .a8P   88          "8a,   ,d88
+%     88  `"YbbdP"'    "Y888        `"Y8888Y"'    88           `"8bbdP"Y8
+
+% 88888888888
+% 88
+% 88
+% 88aaaaa       ,adPPYb,d8
+% 88"""""      a8"    `Y88
+% 88           8b       88
+% 88           "8a    ,d88
+% 88888888888   `"YbbdP'88
+%                       88
+%                       88
+
+\begin{sectionBox}1{First-Order reactions approaching equilibrium} % S1
+    
+    \begin{center}\huge\color{Emph}\bfseries
+        \(\ch{A <=>[\(k\sb{r}\)][\(k'\sb{r}\)] P}\)
+    \end{center}
+    \begin{BM}
+        K
+        =\frac{\ch{[A]}\eq}{\ch{[P]}\eq}
+        =\frac{k_r}{k'_r}
+        \quad
+        \begin{cases}
+            \ch{[P]}=\ch{[A]}_0-\ch{[A]}
+            \\
+            \ch{[P]}_0=0
+        \end{cases}
+        \\
+        \ch{[A]}
+        = \frac{\ch{[A]}_0}{k'_r+k_r}
+        \left(
+            k'_r
+            +k_r
+            \,\exp{\left(
+                -(k'_r+k_r)t
+            \right)}
+        \right)
+        \\
+        \ch{[A]}\eq
+        =\frac{\ch{[A]}_0}{(k_r/k'_r)+1}
+        ;\quad
+        \ch{[P]}\eq
+        =\frac{\ch{[A]}_0}{(k'_r/k_r)+1}
+        \\
+        v
+        =-\odv{\ch{[A]}}{t}
+        =k_r\,\ch{[A]}-k'_r\,\ch{[B]}
+    \end{BM}
+
+    \begin{center}
+        \tikzset{external/remake next=true}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                domain=0:4,
+                xlabel={\((k_r+k'_r)\,t\)},
+                ylabel={\(\ch{[X]}/\ch{[X]}_0\)},
+            ]
+            % Legends
+            \addlegendimage{empty legend}
+            \addlegendentry{
+                {\color{Graph21}\ch{[A]}},
+                {\color{Graph22}\ch{[P]}}
+            }
+            
+            % Plot from equation
+            \addplot[
+                smooth,
+                thick,
+                Graph21,
+                samples=\mysampledensityFancy,
+            ] { (1+2)^(-1)+(1+1/2)^(-1)*e^(-x) };
+            \addplot[
+                smooth,
+                thick,
+                Graph22,
+                samples=\mysampledensityFancy,
+            ] { 1-((1+2)^(-1)+(1+1/2)^(-1)*e^(-x)) };
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+    \begin{sectionBox}*2{integration} % S
+        \vspace{-2ex}
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t}
+                = &\\&
+                =-k_r\,\ch{[A]}+k'_r\,\ch{[P]}
+                \underset{\ch{{P}}_0=0}{=}
+                -k_r\,\ch{[A]}+k'_r\,(\ch{[A]}_0-\ch{[A]})
+                =-(k'_r+k_r)\,\ch{[A]}
+                + k'_r\,\ch{[A]}_0
+                \implies &\\[3ex]&
+                \implies
+                \int_{\ch{[A]}_0}^{\ch{[A]}}{
+                    \frac{\odif{\ch{[A]}}}{
+                        -(k'_r+k_r)\ch{[A]}
+                        + k'_r\ch{[A]}_0
+                    }
+                }
+                = &\\&
+                =\int_{
+                    -(k'_r+k_r)\ch{[A]}_0
+                    +k'_r\ch{[A]}_0
+                }^{
+                    -(k'_r+k_r)\ch{[A]}
+                    +k'_r\ch{[A]}_0
+                }{
+                    \frac{
+                        \frac{\odif{\left(
+                            -(k'_r+k_r)\ch{[A]}
+                            +k'_r\ch{[A]}_0
+                        \right)}}{
+                            -(k'_r+k_r)
+                        }
+                    }{
+                        -(k'_r+k_r)\ch{[A]}
+                        + k'_r\ch{[A]}_0
+                    }
+                }
+                = &\\&
+                =
+                \frac{-1}{k'_r+k_r}
+                \adif{\left(
+                    \ln{
+                        -(k'_r+k_r)\ch{[A]}
+                        +k'_r\ch{[A]}_0
+                    }
+                \right)}
+                = &\\&
+                =
+                \frac{-1}{k'_r+k_r}
+                \left(
+                    \ln{\frac{
+                        -(k'_r+k_r)\ch{[A]}
+                        +k'_r\ch{[A]}_0
+                    }{
+                        -(k'_r+k_r)\ch{[A]}_0
+                        +k'_r\ch{[A]}_0
+                    }}
+                \right)
+                = &\\&
+                =
+                \frac{-1}{k'_r+k_r}
+                \left(
+                    \ln{\frac{
+                        -(k'_r+k_r)\frac{\ch{[A]}}{\ch{[A]}_0}
+                        +k'_r
+                    }{
+                        k_r
+                    }}
+                \right)
+                = &\\&
+                =
+                \frac{-1}{k'_r+k_r}
+                \left(
+                    \ln{\left(
+                        -(k'_r-k_r)\frac{\ch{[A]}}{\ch{[A]}_0}
+                        +k'_r
+                    \right)}
+                    -\ln{k_r}
+                \right)
+                = &\\[3ex]&
+                =\int_{0}^{t}{\odif{t}}
+                =t
+                \implies &\\[3ex]&
+                \implies
+                \exp\left(
+                    \ln{\left(
+                        -(k'_r+k_r)\frac{\ch{[A]}}{\ch{[A]}_0}
+                        +k'_r
+                    \right)}
+                \right)
+                =
+                -(k'_r+k_r)\frac{\ch{[A]}}{\ch{[A]}_0}
+                +k'_r
+                = &\\[1.5ex]&
+                = \exp{\left(
+                    -(k'_r+k_r)t+\ln{k_r}
+                \right)}
+                = k_r\exp{\left(
+                    -(k'_r+k_r)t
+                \right)}
+                \implies &\\[3ex]&
+                \implies
+                \ch{[A]}
+                =
+                \frac{\ch{[A]}_0}{k'_r+k_r}
+                \left(
+                    k'_r
+                    +k_r
+                    \,\exp{\left(
+                        -(k'_r+k_r)t
+                    \right)}
+                \right)
+                &\\[3ex]&
+                \lim_{t\to\infty}\ch{[A]}
+                = \frac{\ch{[A]}_0}{k'_r+k_r}
+                \left(
+                    k'_r
+                    +k_r
+                    *0
+                \right)
+                = \frac{\ch{[A]}_0\,k'_r}{k'_r+k_r}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+
+    \begin{sectionBox}2{Chain reactions} % S
+        
+        \begin{center}
+            {\huge\bfseries\color{Emph}
+                \ch{X_1 -> X_2 -> \dots -> X_{n+1}}
+            }
+            \begin{BM}
+                K=\prod_{i=1}^{n}{\frac{k_i}{k'_i}}
+            \end{BM}
+        \end{center}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\end{document}

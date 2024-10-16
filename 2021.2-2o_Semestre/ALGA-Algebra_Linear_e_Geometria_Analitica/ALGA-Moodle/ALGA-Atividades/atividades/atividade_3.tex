@@ -1,0 +1,60 @@
+% Atividade 3
+\setcounter{part}{2}
+\part{}
+
+
+
+\begin{questionBox}1{}
+    \begin{flalign*}
+        &
+            \begin{bmatrix}
+                 1 & -2 & 0 & 0   & \bigm| &   1 & 0 & 0 & 0
+            \\   0 &  1 & 0 & 0   & \bigm| &   0 & 1 & 0 & 0
+            \\  -2 &  4 & 1 & 0   & \bigm| &   0 & 0 & 1 & 0
+            \\   0 &  1 & 1 & 1   & \bigm| &   0 & 0 & 0 & 1
+            \end{bmatrix}
+            \xrightarrow[
+                \begin{array}{c}
+                    l_3 \mathrel{{+}{=}} 2\,l_1
+                \\  l_1 \mathrel{{+}{=}} 2\,l_2
+                \\  l_4 \mathrel{{+}{=}} -l_2
+                \\  l_4 \mathrel{{+}{=}} -l_3
+                \end{array}
+            ]{}
+            \begin{bmatrix}
+                1 &  0 & 0 & 0   & \bigm| &    1 &  2 &  0 & 0
+            \\  0 &  1 & 0 & 0   & \bigm| &    0 &  1 &  0 & 0
+            \\  0 &  0 & 1 & 0   & \bigm| &    2 &  0 &  1 & 0
+            \\  0 &  0 & 0 & 1   & \bigm| &   -2 & -1 & -1 & 1
+            \end{bmatrix}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+
+
+% Q7
+\setcounter{question}{6}
+\begin{questionBox}1{}
+    \begin{flalign*}
+        &
+            \begin{bmatrix}
+                1 &  2 & 0 & -1   & \bigm| & 0
+            \\  1 &  1 & 2 &  0   & \bigm| & 0
+            \\  1 &  2 & 0 &  0   & \bigm| & 1
+            \end{bmatrix}
+            \xrightarrow[
+                \begin{array}{c}
+                    l_3 \mathrel{{+}{=}} -l_1
+                \\  l_1 \mathrel{{+}{=}} l_3
+                \\  l_2 \mathrel{{+}{=}} -l_1
+                \end{array}
+            ]{}
+            \begin{bmatrix}
+                1 &   2 & 0 &  0   & \bigm| &  1
+            \\  0 &  -1 & 2 &  0   & \bigm| & -1
+            \\  0 &   0 & 0 &  1   & \bigm| &  1
+            \end{bmatrix}
+        &
+    \end{flalign*}
+\end{questionBox}

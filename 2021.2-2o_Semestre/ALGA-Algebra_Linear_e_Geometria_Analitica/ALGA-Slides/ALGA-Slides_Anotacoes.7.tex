@@ -1,0 +1,603 @@
+% !TEX root = ./ALGA-Slides_Anotacoes.7.tex
+% !TEX root = ./ALGA-Slides_Anotacoes.tex
+\providecommand\mainfilename{"./ALGA-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Slides_Anotacoes.7.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{7}[ALGA]
+{Produto Interno, Externo e Misto}
+{Produto Interno, Externo e Misto}
+
+\begin{sectionBox}1{Produto Interno}
+    \begin{BM}
+        a|b = \sum_{k=1}^{n}a_1\,b_1 = a\,b
+    \end{BM}
+
+    \begin{sectionBox}*2{Propriedades}
+        \begin{align*}
+            \bullet\quad & a|b = b|a                     & \bullet\quad & (\alpha a)|b = \alpha(a|b)
+        \\  \bullet\quad & (a+b)|c = a|c + b|c           & \bullet\quad & a|a\geq 0
+        \\  \bullet\quad & a|a=0\iff a=0_{\mathbb{R}^n}
+        \end{align*}
+    \end{sectionBox}
+\end{sectionBox}
+
+\begin{sectionBox}1{Norma}
+    \begin{BM}
+        \lVert{u}\rVert = \sqrt{u|u}
+    \end{BM}
+
+    \begin{sectionBox}*3{Propriedades}
+        \begin{align*}
+            \bullet\quad & \lVert{u}\rVert\geq0
+        &   \bullet\quad & \lVert{u}\rVert = 0 \iff u=0_{\mathbb{R}^n}
+        \\  \bullet\quad & ||\alpha\,u|| = |\alpha| \lVert{u}\rVert
+        \end{align*}
+    \end{sectionBox}
+
+    
+
+\end{sectionBox}
+
+\begin{multicols}{2}
+    
+    \begin{sectionBox}3{Vetor unitário (versor)}
+        \begin{BM}
+            \hat{u} = u/\lVert{u}\rVert
+        \end{BM}
+    \end{sectionBox}
+    
+    \begin{sectionBox}3{Desigualdade de Schwarz}
+        \begin{BM}
+            \lvert{u|v}\lvert\leq\lVert{u}\rVert\,\lVert{v}\rVert
+        \end{BM}
+    \end{sectionBox}
+    
+    \begin{sectionBox}3{Desigualdede triangular}
+        \begin{BM}
+            \lVert{u+v}\rVert \leq \lVert{u}\rVert + \lVert{v}\rVert
+        \end{BM}
+    \end{sectionBox}
+    
+\end{multicols}
+
+\begin{sectionBox}1{Angulo dentre vetores}
+    
+    \begin{BM}
+        \measuredangle(u,v)=\arccos\frac{u|v}{\lVert{u}\rVert\,\lVert{v}\rVert}
+    \end{BM}
+
+    \begin{sectionBox}*2{Demonstração}
+        \begin{flalign*}
+            &
+                |u|v|\leq\lVert{u}\rVert\,\lVert{v}\rVert:
+                u\neq0_{\mathbb{R}^n}\neq v
+            \implies
+                \frac{ |u|v| }{\lVert{u}\rVert\,\lVert{v}\rVert}\leq1
+            \implies &\\&
+            \implies
+                -1\leq\frac{ u|v }{\lVert{u}\rVert\,\lVert{v}\rVert}\leq1
+            \implies
+                \cos\measuredangle(u,v) = \frac{u|v}{\lVert{u}\rVert\,\lVert{v}\rVert}
+            \implies &\\&
+            \implies
+                \measuredangle(u,v)=\arccos\frac{u|v}{\lVert{u}\rVert\,\lVert{v}\rVert}
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+    \begin{sectionBox}*2{Propríedades}
+        \begin{BM}[align*]
+           \bullet\quad& \measuredangle(u,v)=\measuredangle(v,u)
+        &  \bullet\quad& u|v = \lVert{u}\rVert\lVert{v}\rVert\measuredangle(u,v)
+        \end{BM}
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        \measuredangle((1,0,0),(0,0,1))
+    \end{BM}
+
+    \begin{flalign*}
+        &
+        =   \arccos
+            \frac
+                {(1,0,0)|(0,0,1)}
+                {\lVert{(1,0,0)}\rVert\lVert{(0,0,1)}\rVert}
+        =   \arccos(0)=\pi/2
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        \measuredangle(u,v):
+        \{u,v\}\subset\mathbb{R}^3\backslash\{0\}
+    \land u=\alpha\,v:\alpha\in\mathbb{R}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \measuredangle(u,v)
+        =   \arccos\frac{u|v}{\lVert{u}\rVert\lVert{v}\rVert}
+        =   \arccos\frac{\alpha\,v|v}{\lVert{\alpha\,v}\rVert\lVert{v}\rVert}
+        =   \arccos\frac{\alpha}{\lvert{\alpha}\rvert}\frac{v|v}{\lVert{v}\rVert^2}
+        =   \arccos\pm1
+        =   \begin{cases}
+                0\\\pi
+            \end{cases}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{sectionBox}2{Ortogonalidade}
+    
+    \begin{BM}
+        \measuredangle(u,v)=0 \iff u|v=0
+    \end{BM}
+    
+    \begin{sectionBox}3{Proprieades}
+        \begin{BM}
+            \measuredangle(u,v)=0\iff 
+            \lVert{u+v}\rVert^2 
+            = \lVert{u}\rVert^2+\lVert{v}\rVert^2
+        \end{BM}
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}3{Sequencia Ortogonal}
+    
+    \begin{BM}
+        u\subset\mathbb{R}^n:u_i|u_j=0\quad\forall\,i\neq j
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}3{Sequencia Ortonormada}
+    \begin{BM}
+        u\subset\mathbb{R}^n:
+        u_i|u_j=
+        \begin{cases}
+            0: & i\neq j
+        \\  1: & i=j
+        \end{cases}
+    \end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}3{Base ortonormada}
+    \begin{BM}
+        \left\{
+            \begin{aligned}
+               & u|v = \sum_{i=1}^{n}\alpha_i\,\beta_i
+            \\ & \lVert{u}\rVert=\sqrt{\sum_{i=1}^{n}\alpha_i^2}
+            \\ & \alpha_i=u|e_i\quad\forall\,i
+            \iff 
+            \\ & 
+            \iff 
+                u=\sum_{i=1}^{n}(u|e_i)\,e_i
+            \end{aligned}
+        \right\}:
+        \left\{
+            \begin{aligned}
+            &
+                    u=e\,\alpha
+            \ldiv{} v=e\,\beta
+            \ldiv{} e\text{ base ortonormada }
+            \ldiv{} e\subset\mathbb{R}^n
+            &
+            \end{aligned}
+        \right\}
+    \end{BM}
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Determinar a sequencia de coodenadas do vetor \textit{v} na base \(\mathcal{B}\)
+
+    \begin{BM}
+        v=(a,b,c)
+    \\  \mathcal{B}=
+        \left(
+            \frac{(2,1,0)}{\sqrt{5}},\frac{(-1,2,0)}{\sqrt{5}},(0,0,1)
+        \right)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \left\{
+            \begin{aligned}
+                b_1 | b_1 &= 4/5 + 1/5 = 1
+            \\  b_2 | b_2 &= 1/5 + 4/5 = 1
+            \\  b_3 | b_3 &= 1
+            \\  b_1 | b_2 &= -2/5 + 2/5 = 0
+            \\  b_1 | b_3 &= 0
+            \\  b_2 | b_3 &= 0
+            \end{aligned}
+            \right\};
+        % &\\&
+            (v|b_1,v|b_2,v|b_3)
+        =   \left(
+                \frac{2\,a+b}{\sqrt{5}}
+            ,   \frac{2\,b-a}{\sqrt{5}}
+            ,   c
+            \right)
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{propositionBox}1{}
+    
+    \begin{BM}
+        \left\{
+            \begin{aligned}
+            &
+                    u\text{ é seq. orto.}
+            \ldiv{} u_i\neq0\quad\forall\,i
+            &
+            \end{aligned}
+        \right\}
+    =   \left\{
+            \begin{aligned}
+            &
+                    u_i|u_j=0\quad\forall\,i\neq j
+            \ldiv{} u_i\neq 0\quad\forall\,i
+            &
+            \end{aligned}
+        \right\}
+    \implies \\
+    \implies
+        \left\{
+            \begin{aligned}
+            &
+                u\text{ é l.i.}
+            \ldiv{} \#u\leq n
+            &
+            \end{aligned}
+        \right\}
+    = \\
+    =   \left\{
+            \begin{aligned}
+            &
+                \nexists\,\alpha\in\mathbb{R}^n\backslash\{I_i\}:u_i=\alpha\,u\quad\forall\,i
+            \ldiv{} \#u\leq n
+            &
+            \end{aligned}
+        \right\}
+    : \\
+        \left\{
+            \begin{aligned}
+            &
+                    u\subset\mathbb{R}^n
+            \ldiv{} u_i\neq0_{\mathbb{R}^n}\quad\forall\,i
+            &
+            \end{aligned}
+        \right\}
+    \end{BM}
+    
+\end{propositionBox}
+
+\begin{questionBox}1{}
+    
+    encontre uma base ortornomada para \(\mathbb{R}^3\) usando \textit{u}
+
+    \begin{BM}
+        u=
+        \left(
+            (2,1,0),
+            (-2,4,0),
+            (0,0,2)
+        \right)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                &
+                        u_1|u_2 = -4+4 = 0
+                \ldiv{} u_1|u_3 = 0
+                \ldiv{} u_2|u_3 = 0
+                &
+                \end{aligned}
+            \right\}
+        \implies
+            \left\{
+                \begin{aligned}
+                &
+                    u\text{ é l.i.}
+                \ldiv{}
+                    \#u = 3 = \dim{\mathbb{R}^3}
+                &
+                \end{aligned}
+            \right\}
+        \implies &\\&
+        \implies
+            \left(
+                \bigg(\frac{u_1}{\lVert{u_1}\rVert}\bigg),
+                \bigg(\frac{u_2}{\lVert{u_2}\rVert}\bigg),
+                \bigg(\frac{u_3}{\lVert{u_3}\rVert}\bigg)
+            \right)
+        =   \left(
+                \bigg(\frac{u_1}{\sqrt{5}} \bigg),
+                \bigg(\frac{u_2}{\sqrt{20}}\bigg),
+                \bigg(\frac{u_3}{2}        \bigg)
+            \right)
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Processo de Ortogonalização de Gram-Schmidt}
+    \begin{BM}
+        \left\{
+            \begin{aligned}
+            &
+                    v_i = u_i - \sum_{j=2}^{i} \frac{u_i|v_j}{\lVert{v_j}\rVert^2}\,v_j
+            \ldiv{} u\text{ é base de }\mathbb{R}^n
+            &
+            \end{aligned}
+        \right\}
+    \implies
+        v\text{ é base ortog. de }\mathbb{R}^n
+    \end{BM}
+
+    \paragraph{Objetivo:} Processo para encontrar uma base ortogonal a partir de uma base arbritraria de qualquer subespaço não nulo de \(\mathbb{R}^n\)
+
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Encontre a base ortogonal para o subespaço \(F\subset\mathbb{R}^n\) a partir de \textit{u}
+
+    \begin{BM}
+        u =
+        \bigl(
+            (1,1,1),
+            (1,3,2)
+        \bigr)
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            v=
+            \biggl(
+                (1,1,1),
+                (1,3,2) - \frac{(1,3,2)|(1,1,1)}{\lVert{(1,1,1)}\rVert}(1,1,1)
+            \biggr)
+        = &\\&
+        =   \biggl(
+                (1,1,1),
+                (1,3,2) - \frac{6}{\sqrt{3}^2}(1,1,1)
+            \biggr)
+        =   \bigl(
+                (1,1,1),
+                (-1,1,0)
+            \bigr)
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Encontre uma base ortogonal para \(\mathbb{R}^3\) usando a base do exemplo anterior
+
+    \begin{flalign*}
+        &
+            v
+        =
+            \left(
+                \begin{bmatrix}
+                    1\\1\\1
+                \end{bmatrix},
+                \begin{bmatrix}
+                    -1\\1\\0
+                \end{bmatrix},
+                \begin{bmatrix}
+                    0\\0\\1
+                \end{bmatrix}
+                - \frac{(0,0,1)|(1,1,1)}{\lVert{(1,1,1)}\rVert}
+                \begin{bmatrix}
+                    1\\1\\1
+                \end{bmatrix}
+                - \frac{(0,0,1)|(-1,1,0)}{\lVert{(-1,1,0)}\rVert}
+                \begin{bmatrix}
+                    -1\\1\\0
+                \end{bmatrix}
+            \right)
+        = &\\&
+        =
+            \left(
+                \begin{bmatrix}
+                    1\\1\\1
+                \end{bmatrix},
+                \begin{bmatrix}
+                    -1\\1\\0
+                \end{bmatrix},
+                \begin{bmatrix}
+                    0\\0\\1
+                \end{bmatrix}
+                - \frac{1}{3}
+                \begin{bmatrix}
+                    1\\1\\1
+                \end{bmatrix}
+                - \frac{0}{\lVert{(-1,1,0)}\rVert}
+                \begin{bmatrix}
+                    -1\\1\\0
+                \end{bmatrix}
+            \right)
+        = &\\&
+        =
+            \bigl(
+                (1,1,1),
+                (-1,1,0),
+                (-1/3,-1/3,2/3)
+            \bigr)
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Complemento Ortogonal}
+    
+    \begin{BM}
+        F^{\bot}=
+        \bigl\{
+            u\in\mathbb{R}^3:u|v=0\quad\forall\,v\in F
+        \bigr\}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{propositionBox}1{}
+    \begin{BM}
+        F\text{ subespaço de }\mathbb{R}^n\implies F^\bot\text{ sybespaço de } \mathbb{R}^n
+    \end{BM}
+\end{propositionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{multicols}{2}
+        \begin{questionBox}3{}
+            
+            \begin{BM}
+                F^\bot:F=\{(0,0,0)\}
+            \end{BM}
+
+            \begin{flalign*}
+                &
+                    u | (0,0,0) = 0 \quad\forall\,u
+                \implies &\\&
+                \implies
+                    F^\bot = \mathbb{R}^3
+                &
+            \end{flalign*}
+            
+        \end{questionBox}
+
+        \begin{questionBox}3{}
+            
+            \begin{BM}
+                F^\bot:F=\mathbb{R}^3
+            \end{BM}
+
+            \begin{flalign*}
+                &
+                    u|v=0\quad\forall\,v\in\mathbb{R}^3
+                \implies &\\&
+                \implies
+                    F^\bot=\{(0,0,0)\}
+                &
+            \end{flalign*}
+            
+        \end{questionBox}
+
+        \begin{questionBox}3{}
+            
+            \begin{BM}
+                F^\bot:\\F=
+                \left\{
+                    \begin{aligned}
+                        (x,y,z)\in\mathbb{R}^3:
+                    \\  x-2\,y+3\,z=0
+                    \end{aligned}
+                \right\}
+            \end{BM}
+
+            \begin{flalign*}
+                &
+                    u|(x,y,z) = 0 = x-2\,y+3\,z
+                \implies &\\&
+                \implies
+                    F^\bot=\{(1,-2,3)\}
+                &
+            \end{flalign*}
+            
+        \end{questionBox}
+    \end{multicols}
+\end{questionBox}
+
+\begin{propositionBox}1{}
+    \begin{BM}
+        w|u_i = 0\quad\forall\,i\implies
+        w\in\langle{u}\rangle^\bot:
+        \begin{cases}
+            w\in\mathbb{R}^n
+            u\subset\mathbb{R}^n
+        \end{cases}
+    \end{BM}
+\end{propositionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        F^\bot:F=\{(x,y,z)\in\mathbb{R}^3:x-2\,y+3\,z=0\}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            F
+        =   \{(x,y,z)\in\mathbb{R}^3:x-2\,y+3\,z=0\}
+        =   \{(2\,y-3\,z,y,z):\{y,z\}\subset\mathbb{R}\}
+        = &\\&
+        =   \langle{(2,1,0),(-3,0,1)}
+        \implies &\\&
+        \implies
+            F^\bot
+        =   \{(x,y,z)\in\mathbb{R}^3:
+                (x,y,z)|(2,1,0)=0
+            \land
+                (x,y,z)|(-3,0,1)=0
+            \}
+        = &\\&
+        =   \{(x,y,z)\in\mathbb{R}^3:
+                y=-2\,x
+            \land
+                z=3\,x
+            \}
+        =   \langle{(1,-2,3)}\rangle
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{propositionBox}1{}
+    \begin{BM}
+        F\oplus F^\bot=\mathbb{R}^3\land\dim \mathbb{R}^3=\dim F + \dim F^\bot
+    \end{BM}
+\end{propositionBox}
+
+\begin{propositionBox}1{}
+    \begin{BM}
+        F^\bot=\mathcal{L}(A):
+    \\  F\text{ subespaço de }\mathbb{R}^n\text{ das soluções}
+    \\  \text{de equações lineares homogêneo } AX=0
+    \end{BM}
+\end{propositionBox}
+
+\begin{sectionBox}1{Projeção Ortogonal}
+    
+    \begin{BM}
+        u = \proj_F{u} +\proj_{F^\bot}{u}:
+        \begin{cases}
+            \proj_{F\phantom{^\bot}}(u)\in F
+        \\  \proj_{F^\bot}(u)\in F^\bot
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\end{document}

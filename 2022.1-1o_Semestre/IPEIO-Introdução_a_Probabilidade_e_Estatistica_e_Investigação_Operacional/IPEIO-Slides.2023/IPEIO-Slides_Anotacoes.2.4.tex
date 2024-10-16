@@ -1,0 +1,108 @@
+% !TEX root = ./IPEIO-Slides_Anotações.2023.2.4.tex
+\providecommand\mainfilename{"./IPEIO-Slides_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Slides_Anotações.2023.2.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/IPEIO-Slides_Anotações.2023.2.4/}}}
+\tikzsetexternalprefix{./.build/figures/IPEIO-Slides_Anotações.2023.2.4/graphics/}
+
+\mymakesubfile{4}
+[IPEIO]
+{Gestão de Projetos} % Subfile Title
+{Gestão de Projetos} % Part Title
+
+\begin{sectionBox}1{Duração total de Projetos} % S
+    
+    % \tikzset{external/remake next=true}
+    \begin{center}
+        \begin{tikzpicture}[mygraphs]
+            \graph{
+                1 -> {3,2} -> {4,5} -> 6;
+            };
+        \end{tikzpicture}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{ % Q
+    Considere o projeto com as seguintes características:
+} % Q
+    \begin{center}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \vspace{1ex}
+        \begin{tabular}{*{2}{c} *{2}{C}}
+            \toprule
+            
+                Atividades
+                & \begin{tabular}{c}
+                    Precendencias\\Imediatas
+                \end{tabular}
+                & \multicolumn{1}{c}{
+                    \begin{tabular}{c}
+                        Duração Média\\(Dias)
+                    \end{tabular}
+                }
+                & \multicolumn{1}{c}{Desvio Padrão}
+            
+            \\\midrule
+            
+                   A & C     &  8 & 1
+                \\ B & D,F,G & 12 & 3
+                \\ C & K     &  9 & 1
+                \\ D & E,J   & 12 & 2
+                \\ E & --    & 10 & 3
+                \\ F & E     & 15 & 4
+                \\ G & --    & 18 & 4
+                \\ H & G     & 15 & 3
+                \\ I & B,C,H & 13 & 2
+                \\ J & --    &  9 & 1
+                \\ K & E     & 12 & 2
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q1.1
+        Desenhe a rede do projeto.
+    } % Q1.1
+
+        % \tikzset{external/remake next=true}
+        % \begin{tikzpicture}[]
+        %     \graph{
+        %         1 ->["Test"] 2;
+        %         % 1 ->["Test"] 2;
+        %         % 1 ->[E] 2;
+        %         % 1 ->[G] 3;
+        %         % 1 ->[J] 4;
+        %     };
+        % \end{tikzpicture}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Calcule a duração média mínima e o correspondente caminho crítico.
+    } % Q1.2
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.3
+        Calcule a probabilidade da duração do projeto: 
+    } % Q1.3
+        \subsubquestion{ser menor ou igual 45 dias}
+        \subsubquestion{ser maior ou igual a 55 dias.}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.4
+        Com probabilidade 99\%, qual é a duração mínima do projeto?
+    } % Q1.4
+    \end{questionBox}
+
+\end{questionBox}
+
+
+\end{document}

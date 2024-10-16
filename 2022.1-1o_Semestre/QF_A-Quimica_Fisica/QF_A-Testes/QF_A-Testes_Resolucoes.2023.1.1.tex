@@ -1,0 +1,333 @@
+% !TEX root = ./QF_A-Testes_Resoluções.2023.1.1.tex
+\providecommand\mainfilename{"./QF_A-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Testes_Resoluções.2023.1.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Testes_Resoluções.2023.1.1}}}
+
+\mymakesubfile{1}
+[QF A]
+{Teste 1} % Subfile Title
+{Teste 1} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A reação de decomposição do pentóxido de azoto, \ch{2 N2O5\gas{} -> 4 NO2\gas{} + O2\gas{}} foi seguida a 67\,\unit{\celsius}:
+} % Q1
+    \begin{itemize}
+        \item \ch{N2O5}\,=\,\chemalpha
+    \end{itemize}
+
+    \begin{center}
+        \setlength\tabcolsep{1.5mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+        \sisetup{
+            % scientific / engineering / input / fixed
+            exponent-mode           = fixed,
+            exponent-to-prefix      = false,          % 1000 g -> 1 kg
+            % exponent-product        = *,             % x * 10^y
+            % fixed-exponent          = 0,
+            round-mode              = places,        % figures/places/unsertanty/none
+            round-precision         = 4,
+            % round-minimum           = 0.01, % <x => 0
+            % output-exponent-marker  = {\,\mathrm{E}},
+        }
+        \begin{tabular}{c *{6}{c}}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{t/\unit{\minute}}
+                & 0 & 1 & 2 & 3 & 4 & 5
+                \\
+                \multicolumn{1}{c}{\ch{[\chemalpha]}/\unit{\M}}
+                & 1.000 & 0.705 & 0.497 & 0.349 & 0.246 & 0.173
+            
+            \\\midrule
+            
+                \multicolumn{1}{c}{t/\unit{\second}}
+                & 0
+                & 60
+                & 120
+                & 180
+                & 240
+                & 300
+                \\
+                \multicolumn{1}{c}{\(\ln{{[\chemalpha]}/{[\chemalpha]}_0}\)}
+                & 0
+                & \num{-0.34955747616986843}
+                & \num{-0.6991652528855083}
+                & \num{-1.0526833567797098}
+                & \num{-1.4024237430497744}
+                & \num{-1.7544636844843582}
+
+                % -0.34955747616986843, 60
+                % -0.6991652528855083, 120
+                % -1.0526833567797098, 180
+                % -1.4024237430497744, 240
+                % -1.7544636844843582, 300
+
+            \\\bottomrule
+            
+        \end{tabular}
+
+        \begin{tabular}{*{4}{c}}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{t}
+                & \multicolumn{1}{c@{\rightarrow}}
+                {\ch{2 N2O5\gas{}}}
+                & \multicolumn{1}{c@{\,+\,}}
+                {\ch{4 NO2\gas{}}}
+                & \multicolumn{1}{c}{\ch{O2\gas{}}}
+            
+            \\\midrule
+            
+                0 & \(x_0\) & \(0\) & \(0\)
+                \\
+                t & \(x_0-2\,x\) & \(4\,x\) & \(x\)
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{questionBox}3{ % Q1.1
+        Ordem da reação
+    } % Q1.1
+        \begin{flalign*}
+            &
+                \frac{
+                    \ln{{[\chemalpha]}_2/{[\chemalpha]}_0}
+                }{
+                    \ln{{[\chemalpha]}_1/{[\chemalpha]}_0}
+                }
+                \cong 2
+                \neq 
+                \frac{
+                    \ln{{[\chemalpha]}_5/{[\chemalpha]}_0}
+                }{
+                    \ln{{[\chemalpha]}_4/{[\chemalpha]}_0}
+                }
+                \cong 1.25
+            &
+        \end{flalign*}
+        Não é linear portanto 2a Ordem
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q1.2
+        Constante cinética
+    } % Q1.2
+        \begin{flalign*}
+            &
+                \ln\frac{{[\chemalpha]}}{{[\chemalpha]}_0}
+                =-k\,t
+                \implies
+                k 
+                = -\ln\frac{{[\chemalpha]}}{{[\chemalpha]}_0}/t
+                \cong -(-0.3496)/60
+                = \num{5.826666666666667e-3}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{ % Q1.3
+        Tempo de meia vida
+    } % Q1.3
+        \begin{flalign*}
+            &
+                t_{1/2}
+                = (k\,{[\chemalpha]}_0)^{-1}
+                \cong
+                ((\num{5.826666666666667e-3})*1.00)^{-1}
+                \cong
+                \num{171.624713958810059}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+} % Q2
+    \begin{center}
+        {\Large
+            \ch{HI\gas{} -> 1/2 H2\gas{} + 1/2 I2\gas{}}
+        }
+        \begin{tabular}{c *{3}{c}}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{T/\unit{\kelvin}}
+                & 558 
+                & 723 
+                & 781
+                \\
+                \multicolumn{1}{c}{\(\ln{k_2}\)/\unit{\second^{-1}}}
+                & -13.8155 
+                & -4.60517 
+                & -2.30259
+
+            \\\midrule
+
+                \multicolumn{1}{c}{T\(^{-1}\)/\unit{\kelvin}}
+                & \num{0.0017921146953405018}
+                & \num{0.0013831258644536654}
+                & \num{0.0012804097311139564}
+
+                % 0.0017921146953405018 ,-13.8155 
+                % 0.0013831258644536654 ,-4.60517 
+                % 0.0012804097311139564,-2.30259
+            
+            \\\bottomrule
+            
+        \end{tabular}
+        \begin{figure}\centering
+            \includegraphics[width=1\textwidth]{q2}
+            \caption{\(\ln{k_2} = -2.2505\e-4/t + 26.517\)}
+        \end{figure}
+    \end{center}
+
+    \begin{questionBox}2{ % Q2.1
+        Energia de Ativação da reação
+    } % Q2.1
+        \begin{flalign*}
+            &
+                E_a 
+                = k\,R
+                = 2.2505\e-4*\num{8.314462618}
+                = \num{18.711698121809e-4}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Prove que é de 2a Ordem
+    } % Q2.2
+        \begin{center}
+            \sisetup{
+                % scientific / engineering / input / fixed
+                exponent-mode           = fixed,
+                exponent-to-prefix      = false,          % 1000 g -> 1 kg
+                % exponent-product        = *,             % x * 10^y
+                % fixed-exponent          = 0,
+                round-mode              = places,        % figures/places/unsertanty/none
+                round-precision         = 4,
+                % round-minimum           = 0.01, % <x => 0
+                % output-exponent-marker  = {\,\mathrm{E}},
+            }
+            \begin{tabular}{c *{4}{c}}
+                
+                \\\toprule
+                
+                    \multicolumn{1}{c}{t/\unit{\hour}}
+                    & 0 & 48 & 96 & 144
+                    \\
+                    \multicolumn{1}{c}{\(p\)/\unit{\milli\bar}}
+                    & 100 & 93 & 87 & 82
+
+                \\\midrule
+
+                    \multicolumn{1}{c}{t/\unit{\second}}
+                    & 0 & 172800 & 345600 & 518400
+                    \\
+                    \multicolumn{1}{c}{\(\ln{(p/p_0)}\)}
+                    & 0
+                    & \num{-0.07257069283483537}
+                    & \num{-0.13926206733350766}
+                    & \num{-0.19845093872383818}
+
+                    %  0, 0 
+                    %  -0.07257069283483537 , 172800 
+                    %  -0.13926206733350766 , 345600 
+                    %  -0.19845093872383818, 518400
+                    
+                \\\bottomrule
+                \multicolumn{5}{r}{\(T=645\,\unit{\kelvin}\)}
+                
+            \end{tabular}
+            \begin{figure}\centering
+                \includegraphics[width=1\textwidth]{q2.2}
+                \caption{\(\ln{(p/p_0)} = 3.8313\e-7*t - 0.0033\)}
+            \end{figure}
+        \end{center}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Explique o grafico
+} % Q3
+    O grafico apresenta a relação energia e avanço da reação \ch{A <> B} Podemos perceber que uma quantidade de energia \(b\) é liberada ao decorrer da reação e A é necessário receber \(a\) de energia para que a reação seja efetivada, caso \ch{B -> A}, B deveria adquirir \(a+b\) de energia para efetivar.
+    Quando no topo do pico \(a+b\) a reação se encontra no complexo-ativado.
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+} % Q4
+    \begin{center}\Large
+        \ch{
+            A + A ->[K+1] A_* + A
+            \\
+            A_* + A ->[K-1] A + A
+            \\
+            A_* ->[K2] P\quad (Lento)
+        }
+    \end{center}
+
+    \begin{questionBox}2{ % Q4.1
+        Aplique o método do estado estacionário p mostrar que é de 1a ordem quando [A] elevado e 2a quando baixo
+    } % Q4.1
+        \begin{flalign*}
+            &
+                \odv{\ch{[A_*]}}{t}
+                = k_{+1}\ch{[A]}^2
+                - k_{-1}\ch{[A][A_*]}
+                - k_{2}\ch{[A_*]}
+                = 0
+                \implies &\\&
+                \implies
+                \ch{[A_*]}\left(
+                    k_{-1}\ch{[A]}
+                    +k_{2}
+                \right)
+                = k_{+1}\ch{[A]}^2
+                \implies &\\&
+                \implies
+                \ch{[A_*]}
+                = \frac{
+                    k_{+1}\ch{[A]}^2
+                }{
+                    k_{-1}\ch{[A]}
+                    +k_{2}
+                }
+                \implies &\\&
+                \implies 
+                \lim_{\ch{[A]}\gg}{\ch{[A_*]}}
+                = \frac{
+                    k_{+1}\ch{[A]}^2
+                }{
+                    k_{-1}\ch{[A]}
+                }
+                = \ch{[A]}\frac{k_{+1}}{k_{-1}}
+                &\\[3ex]&
+                \therefore
+                \ch{[A_*]}
+                = \begin{cases}
+                    \ch{[A]}\frac{k_{+1}}{k_{-1}} &\quad \ch{[A]}\gg
+                    \\
+                    \ch{[A]}^2\,\frac{
+                        k_{+1}
+                    }{
+                        k_{2}
+                    }
+                    & \quad \ch{[A]}\ll
+                \end{cases}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

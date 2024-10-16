@@ -1,0 +1,40 @@
+\part{26/03 - Demonstrações para sucessões}
+
+\section{Sucessão \hyperref[sucessao convergente]{convergente} $\implies$ \hyperref[sucessao limitada]{Limitada}}
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ é uma sucessão convergente}
+\iff
+	u_{(n)} \in \vizinhanca[\varepsilon]{l}
+	\quad\forall\,\varepsilon>0
+\iff
+	l-\varepsilon<u_{(n)}<l+\varepsilon
+\iff	&\\&
+\iff
+	\exists\,\{m_1, m_2\}\subset\mathbb{R}:
+	m_1<u_{(n)}<m_2\quad\forall\,n\in\mathbb{N}
+\iff
+	u_{(n)}\text{ é uma sucessão limitada}
+&
+\end{flalign*}
+
+\section{Sucessão é \hyperref[sucessao monotona]{monótona} e \hyperref[sucessao limitada]{limitada} $\implies$ \hyperref[sucessao convergente]{convergente}}
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ é uma sucessão monotona e limitada}
+\iff	&\\&
+\iff
+	(u_{(n)} < u_{(n+1)} \lor u_{(n)} > u_{(n+1)})
+	\land
+	\exists\,\{m_1,m_2\}\subset\mathbb{R}
+	: m_1<u_{(n)}<m_2\quad\forall\,n\in\mathbb{N}
+\implies	&\\&
+\implies
+	\exists\,\hyperref[supremo]{\text{Sup}(u_{(n)})}
+	\in\mathbb{R}\backslash u_{(n)}
+\iff
+	u_{(n)}\text{ é uma sucessão convergente}
+&
+\end{flalign*}

@@ -1,0 +1,258 @@
+% !TEX root = ./ALGA-Slides_Anotacoes.5.tex
+% !TEX root = ./ALGA-Slides_Anotacoes.tex
+\providecommand\mainfilename{"./ALGA-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Slides_Anotacoes.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{5}[ALGA]
+{Aplicações Lineares}
+{Aplicações Lineares}
+
+% \begin{sectionBox}1{Aplicação Linear}
+    
+\(f:E\to E'\) é aplicação linear (sobre \(\mathbb{K}\)) \(\iff\)
+
+\begin{BM}
+    \iff
+        \begin{cases}
+            f(u+v)=f(u)+f(v)
+        \\  f(\alpha\,u)=\alpha\,f(u)
+        \end{cases}
+    \quad
+        \begin{cases}
+            \forall\,\{u,v\}\in E
+        \\  \forall\,\alpha\in\mathbb{K}
+        \end{cases}
+\end{BM}
+
+\begin{sectionBox}1{Extenção das condições}
+    
+    \begin{BM}
+            f(\alpha\,u+\beta\,v)=\alpha\,f(u)+\beta\,f(v)
+        \quad
+            \begin{cases}
+                \forall\,\{\alpha,\beta\}\in\mathbb{K}
+            \\  \forall\,\{u,v\}\in E
+            \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+% Dizemos que uma aplicação \(f:E\to E'\) é aplicação linear (sobre \(\mathbb{K}\)) se, para quaisquer \(\{u,v\}\in E\) e qualquer \(\alpha\in\mathbb{K}\), satisfaz as duas condições seguintes:
+% \begin{itemize}
+%     \item \(f(u+v)=f(u)+f(v)\)
+%     \item \(\alpha\,u=\alpha\,f(u)\)
+% \end{itemize}
+
+\begin{sectionBox}1m{Categorização}
+    
+    \begin{sectionBox}*2{Homotetia}
+
+        \begin{BM}
+            f:
+            \begin{cases}
+                E\to E'
+            \\  f(w)=\beta\,w
+            \end{cases}
+        \quad
+            \begin{array}{l}
+                \forall\,w\in E
+            \\  \forall\,\beta\in\mathbb{K}
+            \end{array}
+        \end{BM}
+
+        \(f\) é uma aplicação \textcolor{Emph}{homotetia} de razão \(\beta\)
+
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Aplicação Nula}
+        
+        \begin{BM}
+                f:
+                \begin{cases}
+                    E\to E
+                \\  f(u)=0_E
+                \end{cases}
+            \quad 
+                \forall\,u\in E
+        \end{BM}
+
+        Uma aplicação \textcolor{Emph}{homotetia} de razão 0
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Aplicação Identidade}
+        
+        \begin{BM}
+                \id_E
+            \coloneqq 
+                f
+            :   \begin{cases}
+                    E\to E
+                \\  f(u)=u
+                \end{cases}
+            \quad
+                \forall\,u\in E
+        \end{BM}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{Derivada}
+        
+        \begin{BM}
+            D
+        \coloneqq
+            f
+        :   \begin{cases}
+                \mathbb{R}_n[x]\to\mathbb{R}_n[x]
+            \\  D
+                \left(
+                    \sum_{k=0}^n a_{k}\,x^{k}
+                \right)
+            =   \sum_{k=1}^n k\,a_k\,x^{k-1}
+            \end{cases}
+        \end{BM}
+        
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Inclusão do termo nulo}
+    
+    \begin{BM}
+        f(0_E)=0_{E'}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            f(u)+0_{E'} = f(u) = f(u+0_E) = f(u)+f(0_E)
+        \implies
+            0_{E'}=f(0_E)
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        f(-u)=-f(u)\quad\forall\,u\in E
+    \end{BM}
+
+    \begin{flalign*}
+        &
+        \implies
+            0_{E'} 
+        =   f(u) - f(u) 
+        =   f(u) + f(-u) 
+        =   f(u + (-u))
+        =   f(0_E)
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\section*{Operações com aplicações}
+
+\begin{sectionBox}1{Aplicação Soma}
+    
+    \begin{BM}
+            f+g
+        :   \begin{cases}
+                E\to E'
+            \\  (f+g)(u)=f(u)+g(u)
+            \end{cases}
+        \quad
+            \begin{array}{l}
+                \forall\,f:E\to E'
+            \\  \forall\,g:E\to E'
+            \\  \forall\,u\in E
+            \end{array}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Aplicação Produto}
+    
+    \begin{BM}
+            \alpha\,f
+        :   \begin{cases}
+                E\to E'
+            \\  (\alpha\,f)(u) = \alpha\,f(u)
+            \end{cases}
+        \quad
+            \begin{array}{l}
+                \forall\,f:E\to E'
+            \\  \forall\,\alpha\in\mathbb{K}
+            \\  \forall\,u\in E
+            \end{array}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Aplicação Composta}
+    
+    \begin{BM}
+            g\circ f
+        :   \begin{cases}
+                A\to C
+            \\  (g\circ f)(a) = g(f(a))
+            \end{cases}
+        \quad
+            \begin{array}{l}
+                \forall\,f:A\to B
+            \\  \forall\,g:B\to C
+            \\  \forall\,a\in A
+            \end{array}
+    \end{BM}
+
+    \paragraph{obs:}Tambem designada por ``\textit{g} \textcolor{Emph}{após} \textit{f}''
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Potencia de Expoente \(k\)}
+    
+    \begin{BM}
+            f^k
+        :   \begin{cases}
+                A\to A
+            \\  f^k
+            =   \begin{cases}
+                    \id_A         &: k=0
+                \\  f^{k-1}\circ f&: k\in\mathbb{N}
+                \end{cases}
+            \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Imagem}
+    
+    \begin{BM}
+        \Img F = \{f(a):a\in A\}\subseteq B
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Núcleo}
+    
+    \begin{BM}
+        \Nuc f = \Ker f = \{i\in E:f(u)=0_{E'}\}
+    \end{BM}
+
+    \begin{sectionBox}*2{\(\Nuc f\neq\emptyset\)}
+        \begin{flalign*}
+            &
+                f(0_E)=0_E'\implies 0_E\in\Nuc f
+            &
+        \end{flalign*}
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\end{document}

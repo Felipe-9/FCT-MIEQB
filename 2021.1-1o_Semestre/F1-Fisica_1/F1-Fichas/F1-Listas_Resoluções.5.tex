@@ -1,0 +1,268 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+%\usepackage{multicol}
+
+% Customize Chapter
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+\usepackage{tikz}		% Vector diagrams
+\usetikzlibrary{calc}  % Vector calculations
+\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Resolução de listas
+%\renewcommand\thepart{\arabic{part} }
+\renewcommand\thesubsection{\thesection\ - \alph{subsection}) }
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	F1 - Lista S5\\%
+	Força e Movimento II%
+}
+\author{Felipe Pinto - 61387}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+
+{\bfseries\color{DarkGreen!75!}	
+	\part{Questões}
+}
+\renewcommand\thesection{Q\arabic{section} }
+
+% Q1
+\section{}
+O ponto mais baixo pois sua normal será máxima igual a centrípeta mais gravidade
+
+% Q2
+\section{}
+Para girar o balde de agua de forma que ele percorra o circulo sua velocidade deve ser tal que a aceleração centrípeta seja no mínimo de mesmo modulo que a da gravidade, dessa forma no ponto mais alto sua velocidade vai ser tangencial seguindo o percurso do balde.
+
+
+
+% Problemas
+
+{\bfseries\color{DarkGreen!75!}	
+	\part{Problemas}
+}
+\renewcommand{\thesection}{P\arabic{section}}
+
+% P1
+\section{}
+
+\subsection{}
+\begin{flalign*}
+&
+		\vec a_{1} = a\,\hat\jmath
+	;\ 
+		\vec a_{2} = a\,\hat\imath
+	;\
+		\vec a_{3} = -a\,\hat\jmath
+	;\ a\,m_2\,\hat\imath 
+	= 
+		g\,m_2 - g\,m_1 - \mu\,(g\,m_2 - g\,m_1)
+&
+\end{flalign*}
+
+\setcounter{section}{8}
+
+% P9
+\section{}
+
+% P9 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\text{D}(|\vec{v}|) 
+	=
+		[v_{min},v_{max}]
+	; &\\& \left\{
+		v_{min}^2\,\hat{r}/R = \vec a_c
+	;\
+		\left| \sum \vec F \right|
+	=
+		m\,a_c\,\cos(\theta)
+		+\mu\,(
+			m\,g\,\cos(\theta)
+			+m\,a_c\,\sin(\theta)
+		) + \right. &\\& \left. -
+		m\,g\,\sin{\theta}
+	= 
+		0
+		\quad\forall\,\theta\in (0,90)
+	\implies
+		v_{min}
+	=
+		\sqrt{R\,
+			\frac{m\,g\,\sin(\theta)
+				 -\mu\,m\,g\,\cos(\theta)}
+				{m\,\cos(\theta)-\mu\,m\,\sin(\theta)}
+		}
+	= \right. &\\& \left. =
+		\sqrt{R\,g\,
+			\frac{\sin(\theta)-\mu\,\cos(\theta)}
+				{\cos(\theta)-\mu\,\sin(\theta)}
+		}
+		\quad\forall\,\theta\in (0,90)
+	\right\};
+&\\\\& 
+	\left\{
+		v_{max}^2\,\hat r/R=\vec a_c
+	;\
+		\left| \sum \vec F \right|
+	=
+		m\,a_c\,\cos(\theta)
+		-\mu\,(
+			m\,g\,\cos(\theta)
+			+m\,a_c\,\sin(\theta)
+	+ \right. &\\& \left. -
+		m\,g\,\sin(\theta)
+	=
+		0
+		\quad\forall\,\theta\in (0,90)
+	\implies
+		v_{max}
+	=
+		\sqrt{R\,
+			\frac{m\,g\,\sin(\theta)+\mu\,m\,g\cos(\theta)}
+				{m\,\cos(\theta)-\mu\,m\,\sin(\theta)}
+		}
+	= \right. &\\& \left. =
+		\sqrt{R\,g\,
+			\frac{\sin(\theta)+\mu\,\cos(\theta)}
+				{\cos(\theta)-\mu\,\sin(\theta)}
+		}
+		\quad\forall\,\theta\in (0,90)
+	\right\} 
+	\implies &\\& \implies
+		\text{D}(|\vec v|) 
+	=
+	\left\{ 
+		v\in\mathbb{R}: 
+		\sqrt{R\,g\,
+			\frac{\sin(\theta)-\mu\,\cos(\theta)}
+				{\cos(\theta)+\mu\,\sin(\theta)}
+		}
+		< v
+		< 
+			\sqrt{R\,g\,
+			\frac{\sin(\theta)+\mu\,\cos(\theta)}
+				{\cos(\theta)-\mu\,\sin(\theta)}
+		}
+	\right. &\\& \left.
+		\forall\,\theta\in (0,90)
+	\right\}
+&
+\end{flalign*}
+
+% P9 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\sqrt{R\,g\,
+			\frac{\sin(\theta)-\mu\,\cos(\theta)}
+				{\cos(\theta)+\mu\,\sin(\theta)}
+	} = v_{min} = 0
+	\implies
+		\mu = \sin(\theta)/\cos(\theta)=\tan(\theta)
+&
+\end{flalign*}
+
+\subsection{$
+	R=100\,m \quad \theta = 10^o \quad \mu=0.10	
+$}
+\begin{flalign*}
+&
+	\text{D}(|\vec v|) = [v_{min},v_{max}]
+	; &\\&
+	\left\{
+		v_{min} 
+		= 
+			\sqrt{R\,g\,
+				\frac{\sin(\theta)-\mu\,\cos(\theta)}
+					{\cos(\theta)+\mu\,\sin(\theta)}
+			}
+		\cong 8.6\,m/s
+	\right\} &\\& \left\{
+		v_{max}
+		=
+			\sqrt{R\,g\,
+				\frac{\sin(\theta)+\mu\,\cos(\theta)}
+					{\cos(\theta)-\mu\,\sin(\theta)}
+			}
+		\cong 17\,m/s
+	\right\} &\\& \implies
+		\text{D}(|\vec v|)=(8.6,16.6)
+&
+\end{flalign*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+

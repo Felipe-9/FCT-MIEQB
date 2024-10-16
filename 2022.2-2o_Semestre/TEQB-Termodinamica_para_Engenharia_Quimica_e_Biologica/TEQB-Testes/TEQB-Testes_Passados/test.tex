@@ -1,0 +1,278 @@
+\documentclass[
+    class={article},
+    multi={minipage},
+    border={1cm},
+]{standalone}
+
+
+
+% xparse - multiple optional arguments
+\usepackage{xparse}
+
+
+
+\setlength\textwidth{240mm}
+% % Geometry
+% \usepackage{geometry}
+% \geometry{
+%     % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
+%     % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
+%     % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
+%     papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
+%     % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
+%     % papersize = {320mm, 512mm}, % (16:10)
+%     % papersize = {280mm, 448mm}, % (16:10)
+%     % papersize = {240mm, 384mm}, % (16:10)
+%     % a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
+%     % papersize = {180mm, 1000mm}, % LONG ( 4:3 ) SVGA x 0.3
+%     top       = 21mm,
+%     bottom    = 21mm,
+%     left      = 5mm,
+%     right     = 5mm,
+%     portrait  = true,
+% }
+
+
+
+% fonts
+\usepackage[fontsize=12pt]{fontsize}
+\usepackage[T1]{fontenc}
+\usepackage{fontspec}
+
+
+
+% Linguagem
+\usepackage[portuguese]{babel} % Babel
+
+
+
+% Table of contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{1}    % remove subsubsection from toc
+
+% part
+\renewcommand\cftpartfont{\bfseries}
+%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+\setlength\cftbeforepartskip{1ex}
+
+% sec
+\renewcommand\cftsecfont{}                          % Font
+\renewcommand\cftsecpagefont{}                      % page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+\setlength\cftbeforesecskip{0.5ex}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm}                  % Fix section width
+
+% subsec
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+
+% tab (table)
+\setlength\cfttabindent{0mm}
+
+
+
+
+% Multicols
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+\multicoltolerance = 200
+
+% toggle multicols  on/off
+% \renewenvironment{multicols}[1]{}{\relax}
+
+
+% titlesec
+\usepackage{titlesec}
+
+% Reset section on part
+\counterwithin*{section}{part}
+
+% Spacing: \titlespacing*{<left>}{<before>}{<after>}[<right>]
+\titlespacing*{\part}      {0pt}{ 0pt}{0pt}
+\titlespacing*{\section}   {0pt}{10mm}{0pt}
+\titlespacing*{\subsection}{0pt}{ 5mm}{0pt}
+
+% Part customization
+\titleclass{\part}{straight}
+\titleformat{\part}
+    [block]                         % shape
+    {\Large\bfseries\color{green}}   % format
+    {\thepart\hspace{.5em}{--}}     % label
+    % {\thepart}                      % label without --
+    {.5em}                          % sep
+    {\Large\bfseries}               % before-code
+    [\vspace{1em}]                  % after  code
+
+
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+    % scientific / engineering / false / fixed
+    scientific-notation    = engineering,
+    exponent-to-prefix     = false,          % 1000 g -> 1 kg
+    % exponent-product       = *,             % x * 10^y
+    round-mode             = places,        % figures/places/none
+    round-precision        = 2,
+    output-exponent-marker = {\,\mathrm{E}},
+}
+% \DeclareSIUnit\atm{atm}
+% \DeclareSIUnit\calorie{cal}
+% \DeclareSIUnit\Torr{Torr}
+% \DeclareSIUnit\bar{bar}
+% \DeclareSIUnit\mmHg{mmHg}
+% \DeclareSIUnit\molar{M}
+
+
+
+% % Maths
+\usepackage{amsmath, amssymb, bm}
+\usepackage{derivative} % Derivative
+\usepackage{mathtools}
+
+
+
+% tcolorbox
+\usepackage{tcolorbox}
+\tcbuselibrary{
+    breakable,                % allow page break
+    % minted, xparse, listings, % code minted
+}
+\tcbset{ every box/.style = {
+    coltext      = black,           % text  color
+    % coltitle     = black,           % title color
+    % fonttitle    = \bfseries,       % title font
+    notitle,                        % Remove title
+    opacityfill  = 0.1,             % white opacity
+    opacityframe = 0,               % frame      opacity
+    colback      = black,      % white color
+    colframe     = black,      % border     color
+    arc          = 3mm,             % Curvature
+    width        = \linewidth,      % Width
+    top          = 3mm,             % Space between text and top
+    bottom       = 3mm,             % Space between text and bottom
+    before upper = {\parindent2ex}, % Paragraph indentation
+    before skip  = 0mm,             % Set vspace before box
+}}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle   {{title here}}
+\newcommand\myauthor  {{DJ}}
+\newcommand\mycreator {{DJ}}
+\newcommand\mysubject {{subject here}}
+\newcommand\mykeywords{{{Keywords}}}
+
+% title, author and date
+\title{\huge\bfseries\color{green}\mytitle}
+\author{\Large\myauthor}
+\date{\Large\today}
+
+
+
+% fancyhdr - Header and Footer customization
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhf{} % Clear
+% \fancyhead[R]{\normalsize\thepart}
+% \fancyfoot[L]{\normalsize\myauthor}
+% \fancyfoot[R]{\thepage}
+% \renewcommand\footrulewidth{.5pt}
+% Marks 
+% \renewcommand{\partmark}[1]{\markboth{}{\thepart#1}}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+    % Links customization
+    % hidelinks   = true,
+    colorlinks  = true,
+    linkcolor   = green,
+    anchorcolor = green,
+    urlcolor    = green,
+    % Metadata
+    pdfinfo = {
+        Title    = \mytitle,
+        Author   = \myauthor,
+        Creator  = \mycreator,
+        Subject  = \mysubject,
+        Keywords = \mykeywords,
+    },
+    % PDF display customization
+    pdfpagelayout      = {OneColumn},
+    pdfstartview       = {FitH},
+    pdfremotestartview = {FitH}
+    pdfdisplaydoctitle = true,
+}
+% Fix links when reseting section on part
+\renewcommand\theHsection{\theHpart.\arabic{section}}
+
+% Color targets
+\NewCommandCopy\oldhypertarget\hypertarget
+\renewcommand\hypertarget[3][Link]{\oldhypertarget{#2}{\textcolor{#1}{#3}}}
+
+
+
+
+% Divisions customization
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+% \renewcommand\thepart{Part \arabic{part}}
+
+
+
+\begin{document}
+
+% Title
+\begin{minipage}{\textwidth}
+    \maketitle
+
+    % Table of Contents
+    \renewcommand\contentsname{} % remove title
+
+    \begin{multicols}{2}[\section*{Conteúdo}]
+        \tableofcontents
+    \end{multicols}
+\end{minipage}
+
+    \noindent\begin{minipage}{\linewidth}
+        \section{Questão}
+        \begin{tcolorbox}
+            \subsection*{Calcule o trabalho posto em jogo no percurso 2\to3.}%
+            \vspace{2ex}
+            \begin{flalign*}
+                &
+                    W_{
+                        (30.2\to120.6)\unit{\celsius}
+                        P_{cnt}
+                    }
+                    = \int_{Vol_1}^{Vol_2} P_{ext}\odif{Vol}
+                    =  P_{ext}\int_{Vol_1}^{Vol_2}\odif{Vol}
+                    =  P_{ext}\adif{Vol}\big\rvert_{Vol_1}^{Vol_2}
+                    = &\\&
+                    =  P_{ext}\left(
+                        Vol_2 - Vol_1
+                    \right)
+                    % = &\\&
+                    =  P_{ext}\left(
+                        \frac{n\,R\,T_2}{P_2} 
+                        - \frac{n\,R\,T_1}{P_1}
+                    \right)
+                    =  n\,R\,\left(
+                        T_2 - T_1
+                    \right)
+                    = &\\&
+                    =  (1)\,(\num{8.314462618})\,\left(
+                        (120.6+273.15) - (30.2+273.15)
+                    \right)
+                    \cong
+                    \num{751.6274206672}
+                &
+            \end{flalign*}
+        \end{tcolorbox}
+    \end{minipage}
+
+\end{document}

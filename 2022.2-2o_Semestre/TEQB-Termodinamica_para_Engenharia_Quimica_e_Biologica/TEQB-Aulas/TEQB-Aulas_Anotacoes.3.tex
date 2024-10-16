@@ -1,0 +1,275 @@
+% !TEX root = ./TEQB-Aulas_Anotações.tex
+% !TEX root = ./TEQB-Aulas_Anotações.3.tex
+\providecommand\mainfilename{"./TEQB-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Aulas_Anotações.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[TEQB]
+{}
+{}
+
+\begin{sectionBox}1{Máquina Térmica (MT)}
+    
+    
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Gás perfeito em MT}
+    
+    \begin{BM}
+        -w = Q_q + Q_f
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \Delta Q 
+            = 0
+            = Q_q + W + Q_f + w
+            \cong
+            Q_q + W + Q_f
+            \implies
+            -w = Q_q + Q_f
+        &
+    \end{flalign*}
+
+
+    % \begin{BM}
+        
+    % \end{BM}
+    
+\end{sectionBox}
+
+\begin{definitionBox}1{Ciclo de Carnot}
+        
+    \begin{itemize}
+        \item 2 Isotérmicas
+        \item 2 Adiabaticas
+    \end{itemize}
+
+    \begin{BM}
+        0 = \oint \frac{\odif{q}}{T} + 0
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \Delta U = Q + W
+            \implies
+            \odif{U}
+            = \odif{q} + \odif{W}
+            = \odif{q} - P_{ext}\,\odif{V}
+            = \odif{q} - p\,\odif{V}
+            \land &\\&
+            \land p = \frac{n\,R\,T}{V}
+            % \implies &\\&
+            \implies
+            \frac{\odif{u}}{T}
+            = \frac{\odif{q}}{T}
+            - \frac{n\,R}{V}\,\odif{V}
+            \implies
+            \oint \frac{\odif{u}}{T}
+            = \oint \frac{\odif{q}}{T}
+            - \oint \frac{n\,R}{V}\,\odif{V}
+        &
+    \end{flalign*}
+    
+\end{definitionBox}
+
+
+\begin{sectionBox}1{Eficiencia}
+        
+    \begin{BM}
+        e 
+        = 1 - \frac{T_f}{T_q}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            e 
+            = -w / Q_q
+            = \frac{Q_q + Q_t}{Q_q}
+            = 1 + \frac{Q_t}{Q_q}
+        &
+    \end{flalign*}
+
+    
+    \begin{flalign*}
+        &
+            \Delta U = Q + W
+            \implies
+            \odif{U}
+            = \odif{q} + \odif{W}
+            = \odif{q} - P_{ext}\,\odif{V}
+            = \odif{q} - p\,\odif{V}
+            \land &\\&
+            \land p = \frac{n\,R\,T}{V}
+            % \implies &\\&
+            \implies
+            \frac{\odif{u}}{T}
+            = \frac{\odif{q}}{T}
+            - \frac{n\,R}{V}\,\odif{V}
+            \implies
+            0
+            = \oint \frac{\odif{u}}{T}
+            = &\\&
+            = \oint \frac{\odif{q}}{T}
+            - \oint \frac{n\,R}{V}\,\odif{V}
+            = \oint \frac{\odif{q}}{T}
+            = \int_1^2 \frac{\odif{q}}{T}
+            + \int_2^3 \frac{\odif{q}}{T}
+            + \int_3^4 \frac{\odif{q}}{T}
+            + \int_4^1 \frac{\odif{q}}{T}
+            = &\\&
+            = \int_1^2 \frac{\odif{q}}{T}
+            + \int_3^4 \frac{\odif{q}}{T}
+            = \frac{Q_q}{T_q}
+            + \frac{Q_f}{T_f}
+            \implies
+            \frac{Q_f}{Q_q}
+            = - \frac{T_f}{T_q}
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \therefore e 
+            = 1 - \frac{T_f}{T_q}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Um recipiente de 0.5\,\unit{\metre^3} contém 2\,\unit{\mole} de um gás perfeito a 300\,\unit{\kelvin}. Imagine que o gás sofre uma expanção até ocupar um volume total de 5.0\,\unit{\metre^3}.
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    Calcule \(\Delta U, Q, W, \Delta S\) e \(\Delta S_{tot}\) envolvidos ba expanção, na situação em que a mesma é realizada reversivelmente a T envolvidos na expanção, na situação em que a mesma é realizada reversivelmente a T constante.
+
+    \begin{flalign*}
+        &
+            \Delta U = Q + W = 0
+            \implies Q = -W
+            = \int P_{Ext}\,\odif{v}
+            = \int P\,\odif{v}
+            = \int \frac{n\,R\,T}{V}\,\odif{v}
+            = &\\&
+            = n\,R\,T\int \frac{\odif{V}}{V}
+            = n\,R\,T\,\ln\frac{V_2}{V_1}
+            = 2*8.314*300*\ln\frac{5}{0.5}
+            \,\unit{\joule}
+            \cong -\qty{11486.21547789149749}{\joule}
+        &
+    \end{flalign*}
+
+    \begin{questionBox}3{Entropia (\(\Delta S\))}
+        
+        \begin{flalign*}
+            &
+                \Delta S 
+                = \int \odif{S}
+                = \int \frac{\odif{q}_{rev}}{T}
+                = T^{-1}\int \odif{q}
+                = \frac{Q}{T}
+                \cong 
+                \frac{
+                    \qty{11486.21547789149749}{\joule}
+                }{
+                    300\,\unit{\kelvin}
+                }
+                \cong
+                \qty{38.287384926304992}{\joule\per\kelvin}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    Calcule os valores de \(\Delta U, Q, W, \Delta S\) e \(\Delta S_{total}\) quando o gás vai do mesmo estado inicial ao mesmo estado final irreversivelmente, da forma lustrada na figura nesse caso o gás expande por remoção súbita de uma parede móvel que o separa de um recipiente de 4.5\,\unit{\metre^3} sob vácuo
+
+    \begin{questionBox}3{Energia intérna}
+        
+        \begin{BM}
+            \Delta U = 0
+        \end{BM}
+
+        \paragraph{Nota:} Etado incial = a final, por manter mesma temperatura não varia a energia interna
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Trabalho e Calor}
+        
+        \begin{BM}
+            Q = -W = \int P_{ext}\,\odif{V} = 0
+        \end{BM}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Entalpia \(\Delta S\)}
+
+        A variação de entalpia é igual ao valor anterior.
+        
+        sistema começa e acaba no mesmo estado \textit{a}
+
+        \begin{flalign*}
+            &
+                \Delta S \cong \qty{38.287384926304992}{\joule\per\kelvin}\,\unit{\joule\per\kelvin}
+                &\\&
+                \Delta S_{viz} = 0
+                &\\&
+                \Delta S_{tot} 
+                = \Delta S + \Delta S_{viz}
+                \cong \qty{38.287384926304992}{\joule\per\kelvin}\,\unit{\joule\per\kelvin}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Entropia de um gás perfeito}
+    
+    \begin{BM}
+        \Delta S 
+        = \int n\,\frac{C_v}{T}\,\odif{T}
+        + n\,R\,\ln\frac{V_2}{V_1}
+        = \\
+        = \int n\,\frac{C_p}{T}\,\odif{T}
+        + n\,R\,\ln\frac{P_1}{P_2}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \odif{U}
+            = n\,C_v\,\odif{T}
+            = \odif{q}
+            + \odif{w}
+            = \odif{q}
+            + P_{ext}\,\odif{V}
+            = \odif{q}
+            + p\,\odif{V}
+            = \odif{q}
+            + \frac{n\,R\,T}{V}\,\odif{V}
+            \implies &\\&
+            \implies
+            \int \frac{\odif{q}}{T}
+            = \int \frac{n\,C_V}{T}\,\odif{T}
+            + \int \frac{n\,R}{V}\,\odif{V}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\end{document}

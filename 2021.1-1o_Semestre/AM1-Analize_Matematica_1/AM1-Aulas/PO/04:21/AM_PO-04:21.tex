@@ -1,0 +1,299 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{5em}
+\setlength{\cftsubsecnumwidth}{4em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsecafterpnum{\vskip0.05em}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{siunitx} % Column S: align on decimal
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section} }
+\renewcommand\thesubsection{\arabic{section} - \alph{subsection}) }
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	AM 1 - Ficha 5 Resolução\\
+	Limites e Continuidade de funções%
+}
+\author{Felipe Pinto - 61387}
+\date{21/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+{\color{DarkGreen!75}\part{Questões}}
+
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	Q\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\,\roman{subsubsection}\,)}
+
+% 
+\setcounter{section}{3}
+
+% Q4
+\section{}
+\bm{
+	H_{(x)} =
+	\left\{
+	\begin{array}{ll}
+	%
+		0 \quad & x <    0 \\
+		1 \quad & x \geq 0
+	%
+	\end{array}
+	\right.
+}
+
+% Q4 - a)
+\subsection{}
+\begin{flalign*}
+&
+\iff
+	\lim_{x\to0^-} H_{(x)} = 0 
+	\neq 
+	\lim_{x\to0^+} H_{(x)} = 1
+&
+\end{flalign*}
+
+% Q4 - b)
+\subsection{Incompleta}
+
+\begin{multicols}{2}
+
+% Q4 - b) (i)
+\subsubsection{$ H_{(x-1)} $}
+\begin{flalign*}
+&
+	y\in\mathbb{R}: 
+	\lim_{x\to y^-} H_{(x-1)}
+	\neq &\\& \neq
+	\lim_{x\to y^+} H_{(x-1)}
+\iff
+	y-1 = 0
+\iff &\\& \iff
+	y=1
+&
+\end{flalign*}
+
+% Q4 - b) (ii)
+\subsubsection{$ (H_{(x)} - H_{(x-1)})\,x $}
+\begin{flalign*}
+&
+	y\in\mathbb{R}: 
+	\lim_{x\to y^+} (H_{(x)} - H_{(x-1)})\,x
+	\neq &\\& \neq
+	\lim_{x\to y^-} (H_{(x)} - H_{(x-1)})\,x
+\implies &\\& \implies
+	y - 1 = 0
+\implies
+	y = 1
+&
+\end{flalign*}
+
+\end{multicols}
+
+\setcounter{section}{6}
+
+% Q7
+\section{}
+
+% Q7 - a)
+\subsection{$ 
+	f_{(x)} = \sin(x^2)/x,
+	\quad x\in\mathbb{R}\backslash\{0\}
+$}
+\begin{flalign*}
+&
+	\lim_{x\to 0^-} f_{(x)} = 0 
+	= \lim_{x\to 0^+} f_{(x)}= 0
+\quad \therefore
+	\bar f_{(x)} =
+	\left\{
+	\begin{array}{ll}
+	%
+		\sin(x^2)/x \quad & x\neq 0
+		\\
+		0 \quad & x=0
+	%
+	\end{array}
+	\right.
+&
+\end{flalign*}
+
+% Q7 - b)
+\subsection{$
+	g_{(x)} = e^{-1/(1-x^2)},
+	\quad x\in\,(-1,1)
+$}
+\begin{flalign*}
+&
+	\lim_{x\to -1^+} g_{(x)}
+=
+	e^{\lim_{x\to-1^+}\left(\frac{-1}{1-x^2}\right)}
+=
+	e^{-\infty} = 0
+; &\\&
+	\lim_{x\to 1^-} g_{(x)}
+=
+	e^{\lim_{x\to1^-}\left(\frac{-1}{1-x^2}\right)}
+=
+	e^{-\infty} = 0
+&\\& \therefore
+	\bar g_{(x)} =
+	\left\{
+	\begin{array}{ll}
+	%
+		e^{-1/(1-x^2)} \quad& x\in\,(-1,1)
+		\\
+		0	\quad& x=\{-1,1\}
+	%
+	\end{array}
+	\right.
+&
+\end{flalign*}
+
+
+% Q7 - c)
+\subsection{$ 
+	h_{(x)} = e^{\tan(x)},
+	\quad x\in\,(-\pi/2,\pi/2)
+$}
+\begin{flalign*}
+&
+	\lim_{x\to(-\pi/2)^+} h_{(x)}
+=
+	e^{\lim_{x\to(-\pi/2)^+}(\tan(x))}
+=
+	e^{-\infty} = 0
+; &\\&
+	\lim_{x\to(\pi/2)^-} h_{(x)}
+=
+	e^{\lim_{x\to(\pi/2)^-}(\tan(x))}
+=
+	e^{\infty} = \infty
+&\\& \therefore
+	\nexists\,\bar h_{(x)} \text{ pois função não é prolongavel por continuidade em }\pi/2
+&
+\end{flalign*}
+
+% Questões Extras
+{\color{DarkGreen!75}\part{Extras}}
+
+\renewcommand\thesection{Extra \arabic{section}}
+\renewcommand\thesubsection{%
+	E\arabic{section} - \alph{subsection})%
+}
+
+\section{$ \lim_{x\to0}x/\tan(x) $}
+\begin{flalign*}
+&
+=	\lim_{x\to0} \frac{x}{\sin(x)} \,\lim_{x\to0}\cos(x) = 1
+&
+\end{flalign*}
+
+\section{$ \lim_{x\to0}\sin(x)/\sqrt{x^2} $}
+\begin{flalign*}
+&
+=
+	\lim_{x\to0} = \sin(x)/|x|
+;\
+	\lim_{x\to0^+}\sin(x)/x = 1
+\neq	
+	\lim_{x\to0^+}\sin(x)/(-x) = -1
+&\\& \therefore
+	\nexists\,\lim_{x\to0}\sin(x)/\sqrt{x^2}
+&
+\end{flalign*}
+
+\section{$\lim_{x\to0} \sin^2(x)/\sqrt{x^4}$}
+\begin{flalign*}
+&
+=	\lim_{x\to0} \left( \frac{\sin(x)}{x} \right)^2 = 1
+&
+\end{flalign*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

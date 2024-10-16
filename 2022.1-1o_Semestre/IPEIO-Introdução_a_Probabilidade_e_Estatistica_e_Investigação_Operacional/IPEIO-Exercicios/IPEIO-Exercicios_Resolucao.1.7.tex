@@ -1,0 +1,140 @@
+% !TEX root = ./IPEIO-Exercicios_Resolução.7.tex
+\providecommand\mainfilename{"./IPEIO-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Exercicios_Resolução.7.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+
+\mymakesubfile{7}
+[IPEIO]
+{Exercicios: Testes de Hipóteses} % Subfile Title
+{Testes de Hipóteses} % Part Title
+
+\begin{questionBox}1{ % Q1
+    Uma fábrica de gelados afirma que a procura do gelado de chocolate no verão, por dia e em euros, é uma v.a. Normalmente distribuída com valor médio 200 EUR e desvio padrão 40 EUR. Numa amostra aleatória constituída por 10 dias seleccionados ao acaso do período de verão verificou-se que \(\bar{x}\cong 216\).
+} % Q1
+    \begin{questionBox}2{ % Q1.1
+        Teste, ao nível de significância 5\%, se de facto o consumo médio de gelado de chocolate no verão é de 200 EUR por dia.
+    } % Q1.1
+        \begin{flalign*}
+            &   
+                Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}
+                \sim N(0,1)
+                \begin{cases}
+                    H_0: \mu_0=200
+                    \\
+                    H_1: \mu_1\neq200
+                \end{cases}
+                &\\&
+                \frac{\bar{x}-\mu}{\sigma/\sqrt{n}}
+                =\frac{216-200}{40/\sqrt{10}}
+                \cong
+                \num{1.264911064067352}
+                \not\in
+                \left[
+                    -z_{\alpha/2},
+                    z_{\alpha/2}
+                \right]^c
+                = &\\&
+                = \left[
+                    -z_{5\%/2},
+                    z_{5\%/2}
+                \right]^c
+                = \left[
+                    -z_{0.025},
+                    z_{0.025}
+                \right]^c
+                = \left[
+                    -1.96,1.96
+                \right]^c
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Teste, ao ao nível de significância 5\%, se de facto o consumo médio de gelado de chocolate no verão é menor do que e200 por dia.
+    } % Q1.2
+        \begin{flalign*}
+            &   
+                Z = \frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}
+                \sim N(0,1)
+                \begin{cases}
+                    H_0: \mu_0\geq 200
+                    \\
+                    H_1: \mu_1<200
+                \end{cases}
+                &\\&
+                \frac{\bar{x}-\mu}{\sigma/\sqrt{n}}
+                =\frac{216-200}{40/\sqrt{10}}
+                \cong
+                \num{1.264911064067352}
+                \not\in
+                \left[
+                    -z_{\alpha},
+                    \infty
+                \right]^c
+                = \left[
+                    -z_{0.05},
+                    \infty
+                \right]^c
+                = \left[
+                    -1.645,
+                    \infty
+                \right]^c
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.3
+        Qual a potência do teste, da alínea anterior, se \(\mu = 190\).
+    } % Q1.3
+        \begin{flalign*}
+            &
+                1-\beta
+                = P(\text{Rejeitar }H_0\vert \mu=190)
+            &
+        \end{flalign*}
+    \end{questionBox}
+    \begin{questionBox}2{ % Q1.4
+        Resolva as duas primeiras alíneas usando o p-valor.
+    } % Q1.4
+        % ------------------------------------ (b) ----------------------------------- %
+        \subsubquestion{(b)}
+        \begin{flalign*}
+            &
+                \text{p-valor}
+                = P(Z<z_{observado}\vert H_0) 
+                = P(Z< 1.26 \vert H_0) 
+                = &\\&
+                = \Phi(1.26)\cong 0.8962 > 0.05 = \alpha
+                &\\&
+                \therefore \text{ não rejeita}
+            &
+        \end{flalign*}
+        % ------------------------------------ (a) ----------------------------------- %
+        \subsubquestion{(a)}
+        \begin{flalign*}
+            &
+                \text{p-valor}
+                = 2\,P(Z>z_{obs}\vert H_0)
+                = 2\,P(Z>1.26\vert H_0)
+                % = &\\&
+                = 2\,(1-P(Z<1.26\vert H_0))
+                = &\\&
+                = 2\,(1-\Phi(1.26))
+                = 2\,(1-0.8962)
+                = 0.2076 
+                = 0.05 > \alpha
+                &\\&
+                \therefore \text{ não rejeita}
+            &
+        \end{flalign*}
+        \paragraph*{Nota:} Como em (a) o \alpha{} possui duas regiões de rejeição de \(\alpha/2\) fazemos o p-valor ser o dobro da probabilidade para comparar com o valor de \alpha{} (sem dividir por 2), e como se refere ao valor da direita pegamos o valor da complementar da tabela da normal.
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

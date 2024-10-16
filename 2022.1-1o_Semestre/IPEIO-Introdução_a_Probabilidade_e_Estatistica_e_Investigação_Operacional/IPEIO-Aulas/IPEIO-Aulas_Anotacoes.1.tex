@@ -1,0 +1,145 @@
+% !TEX root = ./IPEIO-Aulas_Anotações.1.tex
+\providecommand\mainfilename{"./IPEIO-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Aulas_Anotações.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+
+\mymakesubfile{1}
+[IPEIO]
+{Anotações} % Subfile Title
+{Anotações} % Part Title
+
+\begin{questionBox}1{ % Q1
+    question
+} % Q1
+    \begin{flalign*}
+        &
+            P(A\cup B\cup C)
+            = P(A\cup (B\cup C))
+            = P(A) + P(B\cup C) - P(A\cap(B\cup C))
+            = &\\&
+            = P(A) + P(B\cup C) - P(A\cap B) - P(A\cup C) + P(A\cap B\cap C)
+            = &\\&
+            = P(A) + P(B) + P(C) - P(A\cap B) - P(A\cup C) - P(B\cup C) + P(A\cap B\cap C)
+            = &\\&
+            = P(A) + P(B) + P(C) - P(A) - P(\emptyset) + P(\emptyset)
+            = &\\&
+            = 0.2 + 0.4 + 0.1 - 0.2 - 0 + 0
+            = &\\&
+            = 0.5
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Para efeitos de controlo da poluição no rio Tejo, são recolhidas de forma periódica amostras de  ́agua em três localizações distintas L1, L2 e L3. Em L1 são recolhidas o dobro das amostras relativamente a qualquer uma das outras localizações (L2,L3). A percentagem de amostras com resultado positivo, para um certo tipo de poluente, é de 2\% em L1 e L2, enquanto que em L3 é de 4\%. Todas as amostras são guardadas e arquivadas num uníco lugar mas alguém eliminou todos os registos identificativos das amostras.
+} % Q2
+    \begin{questionBox}2{ % Q2.1
+        Escolhendo uma amostra ao acaso de entre todas as que estão arquivadas, qual a probabilidade desta ser positiva para o poluente?
+    } % Q2.1
+        \begin{flalign*}
+            &
+                P(1)
+                = P(1|L_1)\,P(L_1) 
+                + P(1|L_2)\,P(L_2) 
+                + P(1|L_3)\,P(L_3)
+                = &\\&
+                = 0.02*0.50
+                + 0.02*0.25
+                + 0.04*0.25
+                = 0.025
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Prob de ser A se for positiva
+    } % Q2.2
+        \begin{flalign*}
+            &
+                P(L_1|1)
+                = \frac{P(L_1\cap 1)}{P(P)}
+                = \frac{P(1|L_1)*P(L_1)}{P(1)}
+                = \frac{0.02*0.5}{0.025}
+                = 0.40
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\part{15/03/2023}
+
+\begin{questionBox}1{ % Q1
+} % Q1
+    \begin{flalign*}
+        &
+            P(X=x)
+            = \frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}
+            = \frac{\binom{5}{x}\binom{4}{3-x}}{\binom{9}{3}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{sectionBox}1{Distribuições} % S1
+    
+    \begin{sectionBox}2{Hipergeométrica} % S1.1
+        
+        \begin{BM}
+            X\sim H(N,M,n)
+            \implies
+            P(X=x)
+            = \frac{\binom{M}{x}\binom{N-M}{n-x}}{\binom{N}{n}}
+        \end{BM}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}2{Binomial} % S1.2
+        
+        \begin{BM}
+            X\sim Bin(n,p)
+            \implies
+            P(X=x)
+            = \binom{n}{x}
+            \, p^x
+            \, (1-p)^{n-x}
+            \\
+            E(X)=n\,p
+            \qquad
+            V(X)= n\,p\,(1-p)
+        \end{BM}
+        
+    \end{sectionBox}
+    
+    \begin{sectionBox}2{Bernouli} % S1.3
+        
+        \begin{BM}
+            X\sim Ber(p) = Bin(1,p)
+        \end{BM}
+        
+    \end{sectionBox}
+
+    \begin{sectionBox}2{Poisson} % S1.4
+        
+        \begin{BM}
+            X\sim Poi(\lambda)
+            \implies
+            \begin{Bmatrix}
+                P(X=k) = \frac{e^{-\lambda}\,\lambda^{k}}{k!}
+                \quad k\in\mathbb{N}
+                \\
+                E(X) = V(X) = \lambda
+            \end{Bmatrix}
+        \end{BM}
+        
+    \end{sectionBox}
+
+\end{sectionBox}
+
+
+\end{document}

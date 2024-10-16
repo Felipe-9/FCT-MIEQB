@@ -1,0 +1,63 @@
+% !TEX root = ./F1-Aulas.5.tex
+\providecommand\mainfilename{"./F1-Aulas.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F1-Aulas.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/F1-Aulas.5}}}
+% \tikzsetexternalprefix{./.build/figures/F1-Aulas.5/}
+
+\mymakesubfile{5}
+[Física 1]
+{Aula 04/15: Molas} % Subfile Title
+{Aula 04/15: Molas} % Part Title
+
+\begin{sectionBox}1{Bloco caindo em uma mola} % S
+    
+    \subsection{Trabalho pela graviade}
+    \begin{flalign*}
+        &
+            w_{F_g} = \int{\vv{F_g}\cdot\odif{\vv{d}}}
+            = m\,g\,d
+            \cong
+            \cdots
+        &
+    \end{flalign*}
+
+    \subsection{Trabalho pela mola}
+    \begin{flalign*}
+        &
+            w_{F_k} = \int{\vv{F_{k}}\cdot\odif{\vv{d}}}
+            = -k\,\int{d\odif{d}}
+            = -k\,d^2/2
+        &
+    \end{flalign*}
+
+    \subsection{Velocidade do bloco no momento que encosta na mola}
+    \begin{flalign*}
+    &
+        m\,v^2/2 
+        = k\,d^2/2
+        \implies
+        v = \sqrt{k\,d^2/m}
+    &
+    \end{flalign*}
+
+    \subsection{Altura que partil}
+    \begin{flalign*}
+    &
+        m\,g\,h = m\,v^2/2
+        \implies
+        h = v^2/(2\,g)
+    &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+
+
+\end{document}

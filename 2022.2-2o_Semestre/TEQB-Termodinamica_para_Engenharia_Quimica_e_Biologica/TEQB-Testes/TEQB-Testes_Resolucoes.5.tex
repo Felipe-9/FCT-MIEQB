@@ -1,0 +1,566 @@
+% !TEX root = ./TEQB-Testes_Resoluções.5.tex
+\providecommand\mainfilename{"./TEQB-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Testes_Resoluções.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\mymakesubfile{1}
+[TEQB]
+{Reslução Exame}
+{Reslução Exame}
+
+\sisetup{
+    % scientific / engineering / input / fixed
+    exponent-mode           = fixed,
+    exponent-to-prefix      = false,          % 1000 g -> 1 kg
+    % exponent-product        = *,             % x * 10^y
+    % fixed-exponent          = 0,
+    round-mode              = places,        % figures/places/unsertanty/none
+    round-precision         = 2,
+    % round-minimum           = 0.01, % <x => 0
+    % output-exponent-marker  = {\,\mathrm{E}},
+}
+
+\begin{questionBox}1{ % Q1
+    1\,\unit{\mole} gas perfeito num processo reversivel
+} % Q1
+    \begin{enumerate}
+        \begin{multicols}{4}
+            \item 2.1\,\unit{\bar}, 19\,\unit{\celsius}
+            \item 1.2\,\unit{\bar}
+            \item 0.86\,\unit{\bar}
+            \item .
+        \end{multicols}
+    \end{enumerate}
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\adif{H}_{1\to2} = 844\)
+            \item 2\to3: Adiabático \(P\,V^\gamma = Cte\)
+            \item \(W_{3\to4} = -1671\)
+            \item 3\to4: T constante
+        \end{multicols}
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.1
+    T em 2
+} % Q1.1
+    \begin{flalign*}
+        &
+            T_2
+            = T_1 + \frac{\adif{H}_{1\to2}}{n\,C_{P}}
+            = T_1 + \frac{\adif{H}_{1\to2}}{n\,(C_{V}+R)}
+            = (19+273.15) 
+            + \frac{844}{1*3.5*\num{8.314462618}}
+            \cong
+            \num{321.152819330837617}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    T em 3
+} % Q1.2
+    \begin{flalign*}
+        &
+            P_3\,V_3^{\gamma}
+            = P_3
+            \,\left(
+                \frac{n\,R\,T_3}{P_3}
+            \right)^{1.4}
+            = \frac{n^{1.4}\,R^{1.4}\,T_3^{1.4}}{P_3^{0.4}}
+            =P_2\,V_2^{\gamma}
+            = \frac{n^{1.4}\,R^{1.4}\,T_2^{1.4}}{P_2^{0.4}}
+            \implies &\\&
+            \implies
+            T_3
+            = \left(
+                \frac{
+                    n^{1.4}\,R^{1.4}\,T_2^{1.4}
+                    \,P_3^{0.4}
+                }{
+                    P_2^{0.4}
+                    \,n^{1.4}\,R^{1.4}
+                }
+            \right)^{1/1.4}
+            = T_2\left(
+                \frac{P_3}{P_2}
+            \right)^{0.4/1.4}
+            \cong \num{321.152819330837617}
+            \,\left(
+                \frac{0.86}{1.2}
+            \right)^{0.4/1.4}
+            \cong
+            \num{291.99391264520781}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.3
+    P em 4
+} % Q1.3
+    \begin{flalign*}
+        &
+            -\int{n\,R\,T\,\odif{V}/V}
+            = -n\,R\,T_3\,\ln(V_4/V_3)
+            = -n\,R\,T_3\,\ln\left(
+                \frac{n\,R\,T_4}{P_4}
+                - \frac{n\,R\,T_3}{P_3}
+            \right)
+            = W_{3\to4}
+            \implies &\\&
+            \implies
+            P_4
+            = \left(
+                \left(
+                    \exp\left(
+                        -\frac{W_{3\to4}}{n\,R\,T_3}
+                    \right)
+                    + \frac{n\,R\,T_3}{P_3}
+                \right)
+                \frac{1}{n\,R\,T_4}
+            \right)^{-1}
+            = &\\&
+            = \left(
+                \exp\left(
+                    -\frac{
+                        -1671
+                    }{
+                        1
+                        *\num{8.314462618}
+                        *\num{291.99391264520781}
+                    }
+                \right)
+                % 1.990299753413374
+                + \frac{
+                    1
+                    *\num{8.314462618}
+                    *\num{291.99391264520781}
+                }{
+                    0.86*10^5
+                }
+                % 0.028229912457816
+            \right)^{-1}
+            % 0.495410108113721
+            1
+            *\num{8.314462618}
+            *\num{291.99391264520781}
+            \cong
+            \num{1202.743022517987414}
+            % 0.01202743022518
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    Sistema n-octano+entanol
+} % Q2
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.1
+    Calcule \(\gamma_{etanol,I}\) quando \(x_{n-octano} = 0.65\) a 75\,\unit{\celsius}
+} % Q2.1
+    \begin{flalign*}
+        &
+            \gamma_{etanol,I}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    um pouco acima do ponto triplo (175.5\,\unit{\kelvin},\(1.86*10^{-6}\)\,\unit{\bar})
+} % Q3
+
+    \begin{BM}
+        P_{fus} = -1077.3 + 6.1309\,T
+        \\\gtrapprox (175.5\,\unit{\kelvin},1.86*10^{-6}\,\unit{\bar}) 
+        \land P<500\,\unit{\bar}
+    \end{BM}
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(V_{m,L} = 35.43\,\unit{\centi\metre^3\,\mole^{-1}}\)
+            \item \(V_{m,S} = 32.47\,\unit{\centi\metre^3\,\mole^{-1}}\)
+            \item \(P_{vap,L,215\,\unit{\kelvin}}=3.44*10^{-4}\,\unit{\bar}\)
+            \item \(C_{P,s} = 52.0 \,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(C_{P,l} = 70.8 \,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(C_{P,g} = 39.0 \,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.1
+    Calcule P de sub a 173\,\unit{\kelvin}
+} % Q3.1
+    \begin{flalign*}
+        &
+            P_{sub}
+            = (-1077.3+6.1309*T_t)
+            \,\exp\left(
+                \frac{-\adif{H}_{sub}}{R}
+                (T_1^{-1}-T_0^{-1})
+            \right)
+            = &\\&
+            = (-1077.3+6.1309*T_t)
+            \exp\left(
+                - \frac{T_1^{-1}-T_t^{-1}}{R}
+                (\adif{H}_{fus}+\adif{H}_{vap})
+            \right)
+            &\\[3ex]&
+            % -------------------------------- adif H fus -------------------------------- %
+            \adif{H}_{fus}
+            = T_t\,\adif{V}_{fus}\pdv{P}{T}_{fus}
+            = T_t\,(V_1-V_0)\,\pdv{P}{T}_{fus}
+            = &\\&
+            = T_t\,(V_1-V_0)
+            \,\pdv{}{T}\left(
+                -1077.3 + 6.1309\,T_t
+            \right)
+            *10^6
+            = &\\&
+            = T_t\,(V_1-V_0)
+            *6.1309
+            *10^6
+            = &\\&
+            = 175.5
+            *(35.43-32.47)*10^{-6}
+            * 6.1309*10^6
+            \cong
+            \num{3184.879932}
+            &\\[3ex]&
+            % ----------------------------------- P vap ---------------------------------- %
+            \ln{P_{vap,L}} = a + b/T
+            \implies
+            \ln{3.44*10} - b/215 = \ln{1.86*10^{-1}} - b/175.5
+            \implies &\\&
+            \implies
+            b = \frac{
+                \ln{(34.4/0.186)}
+                % 5.220065169648288
+            }{
+                175.5^{-1}-215^{-1}
+                % 0.001046842907308
+            }
+            \cong
+            \num{4986.483772500214754}
+            \implies &\\&
+            \implies
+            a \cong 
+            3.44*10-\num{4986.483772500214754}/215
+            \cong
+            \num{11.207052220929234}
+            \implies &\\&
+            \implies
+            \ln{P_{vap}} \cong \num{11.207052220929234} + \num{4986.483772500214754}/T
+            &\\[3ex]&
+            % -------------------------------- adif H vap -------------------------------- %
+            \adif{H}_{vap}
+            = R\,T^2\,\odv{\ln{P}}{T}
+            \cong
+            R\,T^2\,(\num{4986.483772500214754}/T_2)
+            \cong \num{41459.932921716654014}
+            &\\[5ex]&
+            % ----------------------------------- final ---------------------------------- %
+            P_{sub}
+            \cong &\\&
+            \cong
+            (-1077.3+6.1309*175.5) % 2153.27295
+            * &\\&
+            * \exp\left(
+                - \frac{173^{-1}-175.5^{-1}}{\num{8.314462618}} % 9.903360756627792e-6
+                (\num{3184.879932}+\num{41459.932921716654014})
+            \right)
+            % 0.642663713541241
+            \cong &\\&
+            \cong
+            \num{1383.830390314904}
+        &
+    \end{flalign*}
+
+    \paragraph*{Nota}: Sobre a equação do P vap encontrada, esta não está correta, ao fazer a aproximação usando uma curva log em 1/T gerou valores em P muito superiores que o esperando, talves seja melhor parametrizar em alguma outra curva como uma reta.
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.2
+    \(\adif{S} (180\,\unit{\kelvin},200\,\unit{\bar}) \to (300\,\unit{\kelvin},0.05\,\unit{\bar})\)
+} % Q3.2
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    & P_{fus,180\,\unit{\kelvin}}
+                    = (-1077.3+6.1309*180)*10^6
+                    \cong
+                    \num{262.62}*10^5>200*10^5
+                    \\
+                    & P_{vap,180\,\unit{\kelvin}}
+                    = (
+                        -\num{11.207052220929234}
+                        +\num{4986.483772500214754}/180
+                    )*10^5
+                    \cong
+                    \num{16.495635404072}*10^5>0.05*10^5
+                    \\
+                    & T_{fus,200\,\unit{\bar}}
+                    = 200+1077.3/6.1309
+                    \cong
+                    \num{375.716452723091226}>300
+                    \\
+                    & T_{vap,200\,\unit{\bar}}
+                    = \frac{4986.48}{\ln(200*10^5)-11.21}
+                    \cong
+                    \num{890.245281268830771}
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            \adif{S}
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \adif{S}(l,180\,\unit{\kelvin},(200\to\num{16.495635404072})\,\unit{\bar})
+                    &+\\+&
+                        \adif{S}((l\to g),180\,\unit{\kelvin},\num{16.495635404072}\,\unit{\bar})
+                    &+\\+&
+                        \adif{S}(g,(180\to300)\,\unit{\kelvin},(\num{16.495635404072}\to0.05)\,\unit{\bar})
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        0
+                    &+\\+&
+                        -n\,\adif{H}_{vap}/180
+                    &+\\+&
+                        \int{n\,C_{P,g}\,\odif{T}/T}
+                        - n\,R\,\ln(P_1/P_0)
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        -\num{41459.932921716654014}/180
+                        % 230.332960676203611
+                    &+\\+&
+                        39*\ln{300/175.5}
+                        - \num{8.314462618}
+                        *\ln(0.05/16.5)
+                        % 20.884398496994275
+                    &
+                \end{aligned}
+            \right)
+            \cong &\\&
+            \cong
+            \num{-209.448562179209325}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q3.3
+    \(
+        \adif{G} 
+        (300\,\unit{\kelvin,10\,\unit{\bar}})
+        \to
+        (300\,\unit{\kelvin,0.05\,\unit{\bar}})
+    \)
+} % Q3.3
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    & P_{fus,300\,\unit{\kelvin}} 
+                    = (1077.3 + 5.1309*300)*10^6
+                    \cong
+                    \num{2616.57}*10^6
+                    >10*10^5
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            % ---------------------------------- adif G ---------------------------------- %
+            \adif{G}
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \adif{G}(s,(10\to P_fus)\,\unit{\bar})
+                    &+\\+&
+                        \adif{G}((s\to l),P_{fus}\,\unit{\bar})
+                    &+\\+&
+                        \adif{G}(l,(P_{fus}\to P_{vap})\,\unit{\bar})
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \int_{P_1}^{P_2}{V\,\odif{P}}
+                    &+\\+&
+                        0
+                    &+\\+&
+                        \int_{P_0}^{P_1}{V\,\odif{P}}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                    V\,\int_{P_1}^{P_2}{\odif{p}}
+                    \quad(\text{vol liq constante em} \adif{P})
+                    &+\\+&
+                        \int_{P_0}^{P_1}{
+                            \frac{n\,R\,T}{P}
+                            \,\odif{P}
+                        }
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        V_{l}\,(P_2-P_1)
+                    &+\\+&
+                        \frac{n\,R\,T}
+                        \ln(P_3/P_2)
+                    &
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+
+    \paragraph*{Nota:} Continuo a sofrer com a ma parametrização da curva de P de vaporização
+\end{questionBox}
+
+\begin{questionBox}1{ % Q4
+} % Q4
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(P_{vap,sol,30\,\unit{\celsius}} = 0.1026\,\unit{\bar}\)
+            \item \(\ln{P_{vap,eta} = 14.502-5084.7/T}\)
+            \item \(M_{eta} =  46.07\,\unit{\gram\,\mole^{-1}}\)
+            \item \(M_{naf} = 128.17\,\unit{\gram\,\mole^{-1}}\)
+            \item \(\rho_{sol} \approx \rho_{eta} = 0.789\,\unit{\gram\,\centi\metre^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+
+\end{questionBox}
+
+\begin{questionBox}3{ % Q4.1
+    Pressão osmótica da sol a 20 C
+} % Q4.1
+    \begin{flalign*}
+        &
+            \Pi
+            = \frac{[i]\,P_{eta}}{n_{eta}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}3{ % Q4.2
+    T de vap sol a 0.951\,\unit{\bar}
+} % Q4.2
+    \begin{flalign*}
+        &
+            t_{vap,sol}
+            = \left(
+                t_{vap,eta}^{-1}
+                -\ln{x_{eta}}
+                \,\frac{R}{\adif{H}_{vap,eta}}
+            \right)^{-1}
+            = &\\&
+            = \left(
+                \left(
+                    \frac{5084.7}{14.502-\ln{P}}
+                \right)^{-1}
+                -\ln(x_{eta})
+                \,\frac{R}{\adif{H}_{vap,eta}}
+            \right)^{-1}
+            = &\\&
+            = \left(
+                \frac{14.502-\ln{P}}{5084.7}
+                -\frac{\ln(x_{eta})\,R}{\adif{H}_{vap,eta}}
+            \right)^{-1}
+            ; &\\[3ex]&
+            % -------------------------------- adif H vap -------------------------------- %
+            \odv{P}{T}_{vap}
+            = \frac{\adif{H}_{vap}}{T\,\adif{V}_{vap}}
+            = \frac{\adif{H_{vap}}}{T\,(V_{vap,g}-V_{vap\,l})}
+            \cong \frac{\adif{H_{vap}}}{T\,V_{vap,g}}
+            \cong \frac{\adif{H_{vap}}}{T\,\left(
+                R\,T/P
+            \right)}
+            =
+            \frac{P\,\adif{H_{vap}}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \frac{\odif{P}/P}{\odif{T}}
+            = \frac{\odif{\ln{P}}}{\odif{T}}
+            = \odv{}{T}\left(
+                14.502-5084.7\,T^{-1}
+            \right)
+            = 5084.7\,T^{-2}
+            = \frac{\adif{H_{vap}}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \adif{H}_{vap} = 5084.7\,R
+            % ----------------------------------- Final ---------------------------------- %
+            t_{vap,sol}
+            = \left(
+                \frac{14.502-\ln{P}}{5084.7}
+                -\frac{\ln(x_{eta})\,R}{5084.7\,R}
+            \right)^{-1}
+            = &\\&
+            = 
+            \frac{5084.7}
+            {14.502-\ln{(0.951*x_{eta})}}
+            \cong
+            % \num{349.410095969054907}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q5
+} % Q5
+    \begin{itemize}
+        \item \(T = 30\,\unit{\celsius}\)
+        \item \(n_{oct,tot} = 3\,\unit{\mole}\)
+        \item \(n_{agua,tot} = 2\,\unit{\mole}\)
+        \item \(x_{oct,1} = 0.744\)
+        \item \(x_{oct,2} = 0.002\)
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q5.1
+    Razão entre as quantidades (mol) da fase mais rica em n-octano e da fase mais rica em agua
+} % Q5.1
+    \begin{questionBox}3{ % Q5.1.1
+        Fase mais rica em n-Octano
+    } % Q5.1.1
+        % \begin{flalign*}
+        %     &
+                
+        %     &
+        % \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+
+\begin{minipage}{\textwidth}
+    \phantom{1}
+    \vspace{10cm}
+\end{minipage}
+
+\end{document}

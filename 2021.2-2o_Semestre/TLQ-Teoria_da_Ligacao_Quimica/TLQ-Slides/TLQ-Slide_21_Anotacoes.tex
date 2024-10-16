@@ -1,0 +1,111 @@
+% !TEX root = ./TLQ - Slides Anotações.tex
+% TLQ - Slide 21 Anotações
+
+\setcounter{part}{20}
+\part{Reatividade Química}
+
+\part*{Reatividade Química e Simetria Orbital}
+
+\begin{sectionBox}1{Requisitos de reação de duas moléculas segundo a TOF}
+    
+    Para duas moléculas reagirem fácilmente, devem obedecer as seguintes condições:
+    \begin{enumerate}[label = \Roman*]
+        \item \textbf{Fluxo de elétrons} da \HOMO{} do doador eletrônico para a \LUMO{} do aceitador eletrônico a medida que as duas moléculas reagentes se aproximam.
+        \item \textbf{Interação construtiva entre as OMs} da \HOMO{} do doador e a \LUMO{} do aceitador na aproximação.
+        \item \textbf{Energias próximas} dos orbitais \HOMO{} do doador e \LUMO{} do aceitador
+        \item \textbf{Formação e quebra de ligações químicas} é resultado da mistura \HOMO{}\rightarrow\LUMO{}
+    \end{enumerate}
+    
+    \paragraph{Reações que obedeçem as quatro regras} são ditas \textcolor{Emph}{permitidas por simetria} e, geralmente ocorrem com energias de ativação relativamente pequenas.
+
+\end{sectionBox}
+
+\begin{sectionBox}2{I Critério}
+    
+
+    \textbf{Fluxo de elétrons} da \HOMO{} do doador eletrônico para a \LUMO{} do aceitador eletrônico a medida que as duas moléculas reagentes se aproximam.
+
+    % TODO: desenho orbitais moleculáres
+    [Desenho]
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{II Critério}
+    
+    \textbf{Interação construtiva entre as OMs} da \HOMO{} do doador e a \LUMO{} do aceitador na aproximação.
+
+    % TODO: desenho orbitais moleculáres
+    [Desenho]
+    
+    Interação \textcolor{green\Light}{Positivo--Positivo} e \textcolor{red\Light}{Negativo--Negativo} dentre \HOMO{} e \LUMO{}
+
+    \begin{sectionBox}*3{Movimento de elétrons}
+        
+        Apresentando a seta que representa o movimento eletrônico temos um \textcolor{Emph}{aparente} impedimento por simetria.
+
+        [Desenho]
+
+        Como ambas as moléculas são independentes podemos inerter os sinais dos orbitais moleclares.
+        
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{III Critério}
+    
+    \textbf{Energias próximas} dos orbitais \HOMO{} do doador e \LUMO{} do aceitador
+
+    % TODO: desenho MO
+    \begin{center}
+        \begin{modiagram}
+            \setlength\AtomVScale{0.5cm}
+            % \setlength\MoleculeVScale{1.5cm}
+    
+            % C
+            \AO(1cm){s}{0\AtomVScale;}       % S2  AO1: -19.4
+            \AO(1cm){s}{5\AtomVScale;}       % S2  AO2: -19.4
+    
+            % O
+            \AO(5cm){s}{-2\AtomVScale;}       % S2  AO3: -32.3
+            \AO(5cm){s}{1\AtomVScale;}       % S2  AO4: -32.3
+    
+            \connect{
+                % left
+                AO1  & AO4,
+                AO2  & AO3,
+            }
+            
+            \node at (1cm, 0\AtomVScale)[below]{\LUMO};
+            \node at (1cm, 5\AtomVScale)[above]{\HOMO};
+            \node at (5cm,-2\AtomVScale)[below]{\LUMO};
+            \node at (5cm, 1\AtomVScale)[below]{\HOMO};
+
+            \node at (1cm, -4\AtomVScale){A};
+            \node at (5cm, -4\AtomVScale){B};
+    
+            \EnergyAxis[title=E, head=stealth]
+    
+        \end{modiagram}
+    \end{center}
+    
+    \paragraph{Catalizadores} são usados para promover as reações ajustando o sistema seguindo essa regra.
+
+\end{sectionBox}
+
+\begin{sectionBox}2{IV Critério}
+    
+    \textbf{Formação e quebra de ligações químicas} é resultado da mistura \HOMO{}\rightarrow\LUMO{}
+
+    [desenho?]
+    
+\end{sectionBox}
+
+\begin{questionBox}1{Tróca isotópica entre \ch{H2} e \ch{D2}}
+    
+    \begin{center}
+        \ch{H2 + D2 -> 2 HD}
+    \end{center}
+
+    ...
+    
+\end{questionBox}

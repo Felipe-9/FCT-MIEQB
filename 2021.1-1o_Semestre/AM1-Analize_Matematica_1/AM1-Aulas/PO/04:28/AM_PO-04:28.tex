@@ -1,0 +1,290 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{5em}
+\setlength{\cftsubsecnumwidth}{4em} % Fix subsection width
+% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} % useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{%
+	{\boldmath{\large{\begin{align*} #1 \end{align*}}}}%
+}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{siunitx} % Column S: align on decimal
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	AM 1 - Ficha 6 Resolução\\%
+	Teoremas da Continuidade e Função Inversa%%
+}
+\author{Felipe Pinto - 61387}
+\date{28/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+{\color{DarkGreen!75}\part{Questões}}
+
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	Q\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\,\roman{subsubsection}\,)}
+
+\setcounter{section}{5}
+
+% Q6
+\section{$ 
+	f:\mathbb{R}\mapsto\mathbb{R}\\
+	\quad \text{diferenciável em } x=1;\\
+	\quad f_{(1)} = 2\text{ e } {f'}_{(1)} = 3
+$}
+
+\setcounter{subsection}{3}
+
+% Q6 - d)
+\subsection{$ {f'}_{(e^{2\,x})};\quad x=0 $}
+
+% Q6 - e)
+\subsection{$ {f^{-1}}_{(x)};\quad x=2 $}
+
+
+% Q7
+\section{}
+
+% Q7 - a)
+\subsection{$ a_{(x)} = \ln(x) + \cos(2\,x) + e^{3\,x} + \arctan(5\,x) $}
+\begin{flalign*}
+&
+	a'_{(x)}
+=
+	\frac{1}{x} 
+	- 2\,\sin(2\,x) 
+	+ 3\,x\,e^{3\,x} 
+	+ \frac{5}{1+25\,x^2}
+&
+\end{flalign*}
+
+% Q7 - b)
+\subsection{$ b_{(x)} = (x^5+x)\,\sin(x) $}
+\begin{flalign*}
+&
+	b'_{(x)} = (5\,x^4+x)\,\sin(x) + (x^5+x)\,\cos(x)
+&
+\end{flalign*}
+
+% Q7 - c)
+\subsection{$ c_{(x)} = \ln(\cos(x)) $}
+\begin{flalign*}
+&
+	c'_{(x)} = \cdots
+&
+\end{flalign*}
+
+% Q7 - d)
+\subsection{$ d_{(x)} = e^{-x}/(x^2+1) $}
+\begin{flalign*}
+&
+	d'_{(x)} = \frac{-e^{-x}(x^2+1) - e^{-x}(2\,x)}
+			    {(x^2+1)^2}
+&
+\end{flalign*}
+
+% Q7 - e)
+\subsection{$ e_{(x)} = \tan(x) + \cot(x) $}
+\begin{flalign*}
+&
+	e'_{(x)} = \frac{1}{\cos^2(x)} - \frac{1}{\sin^2(x)}
+&
+\end{flalign*}
+
+% Q7 - f)
+\subsection{$ f_{(x)} = (x^2+1)\,\arctan(x) $}
+\begin{flalign*}
+&
+	f'_{(x)} = (2\,x)\,\arctan(x) + (x^2+1)\,\frac{1}{1+x^2}
+	= 2\,x\,\arctan(x) + 1
+&
+\end{flalign*}
+
+\setcounter{subsection}{7}
+
+% Q7 - h)
+\subsection{$ h_{(x)} = e^{\ln^2(x)} $}
+\begin{flalign*}
+&
+	h'_{(x)} = 2\,\ln(x)\,\frac{1}{x}\,e^{\ln^2(x)}
+&
+\end{flalign*}
+
+% Q7 - i)
+\subsection{$ i_{(x)} = \cos(\arcsin(x)) $}
+\begin{flalign*}
+&
+	i'_{(x)} = -\sin(\arcsin(x))\,\frac{1}{\sqrt{1-x^2}}
+	= \frac{-x}{\sqrt{1-x^2}}
+&
+\end{flalign*}
+
+% Q7 - j)
+\subsection{$ j_{(x)} = \sinh(x)/\cosh(x) $}
+\begin{flalign*}
+&
+	j'_{(x)} = \frac{\cosh^2(x) - \sinh^2(x)}{\cosh^2(x)}
+	= \cosh^{-2}(x)
+&
+\end{flalign*}
+
+% Nota
+\subsubsection{Nota:}
+\begin{flalign*}
+&
+	\sinh(x) = \frac{e^{x} - e^{-x}}{2}
+\qquad 
+	(\sinh(x))' = x'\,\cosh(x)
+&\\&
+	\cosh(x) = \frac{e^{x} + e^{-x}}{2}
+\qquad
+	(\cosh(x))' = x'\,\sinh(x)
+&
+\end{flalign*}
+
+% Q7 - k)
+\subsection{$ k_{(x)} = \arctan(\ln(1+x^2)) $}
+\begin{flalign*}
+&
+	k'_{(x)} = \frac{(2\,x)/(1+x^2)}
+			    {1+\ln^2(1+x^2)}
+&
+\end{flalign*}
+
+% Q7 - l)
+\subsection{$ l_{(x)} = x/(1+e^{1/x}) $}
+\begin{flalign*}
+&
+	l'_{(x)} 
+= 
+	\frac{1+e^{1/x} + x\,e^{1/x}/x^2}
+	     {(1+e^{1/x})^2}
+=
+	\frac{1+e^{1/x} + e^{1/x}/x}
+	     {(1+e^{1/x})^2}
+&
+\end{flalign*}
+
+% Q7 - m)
+\subsection{$ m_{(x)} = \ln(\ln(x)) $}
+\begin{flalign*}
+&
+	m'_{(x)} 
+= 
+	\frac{1}{\ln(x)}\,\frac{1}{x}
+&
+\end{flalign*}
+
+
+% Extras
+{\color{DarkGreen!75}\part{Questões}}
+
+\renewcommand\thesection{E\arabic{section}}
+\renewcommand\thesubsection{%
+	E\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\,\roman{subsubsection}\,)}
+
+% E1
+\section{$ f_{(x)} = e^{3\,x}/(e^x-2) $}
+\begin{flalign*}
+&
+	f'_{(x)} 
+= 
+	\frac{ 3\,e^{3\,x}(e^x-2) - e^{3\,x}\,e^x }
+	     { (e^x-2)^2 }
+&
+\end{flalign*}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

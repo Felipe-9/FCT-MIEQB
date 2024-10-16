@@ -1,0 +1,85 @@
+% Aula 3 - ...
+\part{}
+
+% Revisão aula passada
+    % Transposição
+
+    % Simetria          => A =  A^T
+    % hemi-simetria     => A = -A^T
+
+% Fim da revisão
+
+\begin{sectionBox}1{Matriz Conjugada}
+
+    \begin{sectionBox}2{Conjugado}
+        \begin{BM}
+            \overline{a + b\,i} = a - b\,i
+        \end{BM}
+    \end{sectionBox}
+
+    \begin{BM}
+        \overline{A} \implies a_{i,j} \to \overline{a_{i,j}}
+    \end{BM}
+
+    \begin{sectionBox}2{Propriedades}
+        \begin{itemize}
+            \item \( \overline{\overline{A}}     = A \)
+            \item \( \overline{A + B}            = \overline{A} + \overline{B} \)
+            \item \( \overline{\alpha\,A}        = \overline{\alpha}\,\overline{A} \)
+            \item \( \overline{A^k}              = \big(\overline{A}\big)^k \hfill : A\text{ é quadrada} \)
+            \item \( \big(\overline{A}\big)^{-1} = \overline{A^{-1}}        \hfill : \exists\,A^{-1} \)
+            \item \( \big(\overline{A}\big)^T    = \overline{A^T} \)
+        \end{itemize}
+    \end{sectionBox}
+
+
+\end{sectionBox}
+
+
+% Conjugado -> Inversão da parte imaginária do valor
+% a + b\,i -> a - b\,i
+% Matriz conjugada: \overline{A} -> a_{i,j} => \overline{a_{i,j}}
+% propriedades lineares do conjugado:
+    % \overline{\overline{A}} = A
+    % \overline{A + B}        = \overline{A} + \overline{B}
+    % \overline{\alpha\,A}    = \overline{\alpha}\,\overline{A}
+    % \overline{A^k}          = \big(\overline{A}\big)^k : A é quadrada
+    % (\overline{A})^{-1}     = \overline{A^{-1}}        : \quad\exists\,A^{-1}
+    % (\overline{A})^T        = \overline{A^T}
+
+% Matriz transconjugada -> A => \big(\overline{A}\big)^T = A^*
+
+
+% Simetria Hermítica:
+
+    % NOTA: puchar definição de simetria para junto daquí no material final
+    % NOTA: inserir link para simetria
+
+    % Hermítica      -> A =  A^*
+    % Hemi-Hermítica -> A = -A^*
+
+
+% Transformações Elementáres
+    %   I troca de linhas:                      i <=> j            : i \neq j
+    %  II multiplicação de linha por escalar:   i ==> \alpha\,i    : \alpha\in\mathbb{K}\backslash\{0\}
+    % III troca de colunas:                     i ==> i + \beta\,j : j \neq i
+
+    % OBS: II + III: i ==> \alpha\,i + \beta\,j : j \neq i \land \alpha\in\mathbb{K}\backslash\{0\}
+
+    % Notação de transformação: A \xrightarrow[T]{} B : T = transf. linear
+
+    % OBS: transformações elementares são revertiveis
+
+    % Matriz Elementar : Matriz q com uma op. elem. vira uma matriz identidade
+
+% Teoremas p matrizes elementares
+    % A \xrightarrow[T ]{} EA  : I \xrightarrow[T] {} E  (Troca de linhas  em A)
+    % A \xrightarrow[T']{} AE' : I \xrightarrow[T']{} E' (troca de colunas em A)
+
+    % Concl.: Matrizes elementares são operadores elementares
+
+    % Qualquer matriz elem. é invertível
+
+% Pivôt: Primeiro elemento não nulo da linha de uma matriz
+
+% Forma escada: organização da matriz c pivores formando um 'triangulo superior'

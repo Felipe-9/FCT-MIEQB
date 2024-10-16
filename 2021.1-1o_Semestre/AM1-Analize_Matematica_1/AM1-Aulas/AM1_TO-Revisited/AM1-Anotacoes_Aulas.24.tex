@@ -1,0 +1,152 @@
+\part{11/05 - Primitivação}\relax
+
+\begin{sectionBox}b[0mm]{}
+
+\begin{BM}[align*][\Large]
+	f:\mathrm{I}\to\mathbb{R}
+\quad
+	F \text{ é primitiva de } f
+\iff	F'=f
+\end{BM}\relax
+
+\vspace{-12mm}
+
+\begin{BM}[align*][\Huge]
+	\int f(x)\,\mathrm{d}x= F(x)+c
+\end{BM}\relax
+
+\end{sectionBox}
+
+
+
+\begin{multicols}{2}
+
+\begin{sectionBox}1{Exercício}
+
+\begin{BM}
+	F:
+	\begin{cases}
+		F(0)=0
+	\\	f=\sin(x)
+	\end{cases}
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	F=1-\cos(x)
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Propriedades de Primitivas}
+
+\begin{BM}[flalign*]
+&
+	\int (k\,f(x)+g(x))\,\mathrm{d}x\,
+=	&\\&
+=	\int k\,f(x)\,\mathrm{d}x
++	\int g(x)\,\mathrm{d}x\,
+=	&\\&
+=	k\,F(x) + C_f + G(x)+ C_g
+&
+\end{BM}\relax
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercicio}
+
+\begin{BM}
+	f(x)=1+x+x^2/2!+x^3/3!
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	F(x)
+=	x+x^2/2+x^3/6!+x^4/4!+C\,
+=	&\\&
+=	x+x^2/2+x^3/6!+x^4/4!+1
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Primitivas Imediatas}
+
+\begin{BM}
+	f(x)=e^{2\,x}
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	F(x)=\int e^{2\,x}\,\mathrm{d}x
+=	e^{2\,x}{\color{Red}/2}+c
+\impliedby &\\&
+\impliedby
+	F'(x)={\color{Red}2}\,e^{2\,x}{\color{Red}/2}=e^{2\,x}
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercicio}
+\begin{BM}
+	f(x)=\cos(2\,x)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	F(x)
+=	\int \cos(2\,x)\,\mathrm{d}x
+=	\sin(2\,x)/2+C
+\impliedby &\\&
+\impliedby
+	F'(x)=2\,\cos(2\,x)/2=f(x)
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}2{Exercicio}
+\begin{BM}
+	f(x)=2\,x/(1+x^2)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	F(x)
+=	\int 2\,x\,\mathrm{d}x/(1+x^2)
+=	\ln(1+x^2)+c
+\impliedby &\\&
+\impliedby
+	F'(x)=\frac{2\,x}{1+x^2}
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

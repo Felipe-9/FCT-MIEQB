@@ -1,0 +1,285 @@
+\part{32/05 - Teorema Fundamental do Cálculo}
+
+\section*{Area dentre funções}\relax
+
+\begin{multicols}{2}
+
+\begin{sectionBox}1[0mm]{Exercicio}
+\begin{BM}[align*][\normalsize]
+	f(x)=x+6;\ g(x)=x^2
+\end{BM}
+
+\begin{sectionBox}3{$\{a,b\}$}
+\begin{flalign*}
+&
+	x
+=	\frac{-1\pm\sqrt{1-4*6*(-1)}}{-1*2}
+=	\frac{1\mp5}{2}
+&\\&
+	\therefore
+	a=-2; b=3
+&
+\end{flalign*}
+\end{sectionBox}\relax
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	xmajorgrids= true,
+	legend pos= north west
+]
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry[Red]{$x+6$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Blue]{$x^2$}
+	
+	\addplot
+	[
+		name path= A,
+		smooth,
+		thick,
+		Red,
+		domain = -3:4,
+		samples = 2,
+	] {x+6};
+	
+	\addplot
+	[
+		name path= B,
+		smooth,
+		thick,
+		Blue,
+		domain = -3:4,
+		samples = 10,
+	] {x^2};
+	
+	\addplot
+	[
+		White,
+		opacity=.3,
+	]
+	fill between
+	[
+		of= A and B,
+		soft clip={domain=-2:3}
+	];
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}\relax
+
+\begin{flalign*}
+&
+	\int_{-2}^{3}(x+6-x^2)\,\mathrm{d}x
+	\Delta
+	\left(
+		x^2/2+6\,x-x^3/3
+	\right)\big|_{-2}^{3}
+=	&\\&
+=	5+30-11/3
+=	116/3
+&
+\end{flalign*}
+
+\end{sectionBox}\relax
+
+
+\vfill
+
+
+\begin{sectionBox}1[0mm]{Exercicio}
+
+\begin{BM}[align*][\normalsize]
+	f(x)=|x|;\ g(x)=x^3
+\end{BM}
+
+\begin{sectionBox}3{$\{a,b\}$}
+\begin{flalign*}
+&
+	x:f(x)-g(x)=|x|-x^3
+=	&\\&
+=	x(1-x^2)=0
+	\quad\forall\,x\geq0
+&\\&
+	\therefore
+	a=0;\ b=1
+&
+\end{flalign*}
+\end{sectionBox}
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	ymax=1.25, ymin=-0.25,
+	          xmin=-0.5,
+	xmajorgrids= true,
+	legend pos= north west,
+]
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry[Red]{$|x|$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Blue]{$x^3$}
+	
+	\addplot
+	[
+		name path= A,
+		thick,
+		Red,
+		domain = -1:2,
+		samples = 10,
+	] {abs(\x)};
+	
+	\addplot
+	[
+		name path= B,
+		smooth,
+		thick,
+		Blue,
+		domain = -1:2,
+		samples = 0.2\mysampledensity,
+	] {\x^3};
+	
+	\addplot
+	[
+		White,
+		opacity=.3,
+	]
+	fill between
+	[
+		of= A and B,
+		soft clip={domain=0:1}
+	];
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}\relax
+
+\begin{flalign*}
+&
+	\int_{0}^{1}(x-x^3)\,\mathrm{d}x
+=	\Delta
+	\left(
+		x^2/2-x^4/4
+	\right)\big|_{0}^{1}
+=	1/4
+&
+\end{flalign*}
+
+\end{sectionBox}\relax
+
+
+
+\newpage
+
+\section*{Integrais Indefinidas Compostas}
+
+\begin{sectionBox}1{Exemplo}
+
+\begin{BM}[align*][\normalsize]
+	H(x)=\int_{0}^{\ln(x)}\sin(e^t)\,\mathrm{d}t
+\end{BM}
+
+\begin{flalign*}
+&
+	H'(x)
+=	\sin(e^{\ln(x)})/x
+=	\sin(x)/x
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+
+
+\begin{sectionBox}1{Exemplo}
+
+\begin{BM}[align*][\normalsize]
+	F(x)=\int_{x}^{1}e^t\,\mathrm{d}t
+\end{BM}
+
+\begin{flalign*}
+&
+	F'(x)=-e^x
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+
+
+\begin{sectionBox}1{Exemplo}
+
+\begin{BM}[align*][\normalsize]
+	H(x)=\int_{x}^{x^2}f(t)\,\mathrm{d}t
+\end{BM}
+
+\begin{flalign*}
+&
+	H'(x)=f(x^2)\,2\,x-f(x)
+&
+\end{flalign*}
+
+\end{sectionBox}
+
+
+
+\begin{sectionBox}1{Exemplo}
+\begin{BM}
+	H(x)=\int_{x}^{\tan(x)}f(t)\,\mathrm{d}t
+\end{BM}
+
+\begin{flalign*}
+&
+	H'(x)=f(\tan(x))/(1+\tan^2(x))-f(x)
+&
+\end{flalign*}
+\end{sectionBox}
+
+
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

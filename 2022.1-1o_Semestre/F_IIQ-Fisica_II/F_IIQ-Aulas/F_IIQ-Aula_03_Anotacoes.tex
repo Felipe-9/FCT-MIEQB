@@ -1,0 +1,96 @@
+% !TEX root = ./F_IIQ_-_Aula_03_Anotações.tex
+% !TEX root = ./F_IIQ_-_Aulas_Anotações.tex
+\providecommand\mainfilename{"./F_IIQ_-_Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./F_IIQ_-_Aula_03_Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\tikzset{external/force remake=true}
+
+\begin{document}
+
+\mymakesubfile{3}{F IIQ 03/23}{F IIQ 03/23}
+
+\begin{sectionBox}1{Dipolo}
+    
+
+    \begin{center}
+        \begin{tikzpicture}[scale=2]
+            
+            \draw[blue\Light, fill=blue\Light] (-1,0) circle (0.2);
+            \draw[red\Light,  fill=red\Light]  (+1,0) circle (0.2);
+
+            \draw[->,thick]
+            ({-1+0.2},0) 
+            --node[above]{\(\vec{P}\)} 
+            ({+1-0.2},0);
+
+        \end{tikzpicture}
+    \end{center}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Torque}
+    
+    \begin{multicols}{2}
+
+        \begin{center}
+            \begin{tikzpicture}
+                
+                \coordinate (A) at (-1,-0.5);
+                \coordinate (B) at ( 1, 0.5);
+
+                \foreach\y in {2,3,4,5,6}{
+                    \draw[->,thin]
+                    (-2.5,-2+0.5*\y)
+                    --
+                    (+2.5,-2+0.5*\y);
+                }
+                \node at (2.7, 1){\(\vec{E}\)};
+
+                \draw[blue\Light, fill=blue\Light] (A) circle (0.2) node[below right=3pt]{\(+q\)};
+                \draw[red\Light,  fill=red\Light]  (B) circle (0.2) node[above left =3pt]{\(-q\)};
+
+                \draw[->,thick]
+                (A) 
+                --
+                node[below]{\(\vec{L}\)}
+                (B);
+
+                \draw[->,very thick, orange\Light]
+                ($ (A)!0.3!(B)+(0,0.2) $)
+                --
+                node[above]{\(\vec{P}\)}
+                ($ (A)!0.6!(B)+(0,0.2) $);
+
+                \draw[<-, thick, purple\Light]
+                (A)
+                --
+                node[above]{\(\vec{F}\)}
+                ++(-1,0);
+
+                \draw[->, thick, purple\Light]
+                (B)
+                --
+                node[above]{\(\vec{F}\)}
+                ++(1,0);
+                
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{BM}
+            \vec{\tau} = \vec{P}\times\vec{E}
+        \end{BM}
+
+    \end{multicols}
+
+    \begin{sectionBox}3{title}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+
+\end{document}

@@ -1,0 +1,244 @@
+% !TEX root = ./IPEIO-Exercicios_Resolução.5.tex
+\providecommand\mainfilename{"./IPEIO-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Exercicios_Resolução.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/IPEIO-Exercicios_Resolução.5}}}
+
+\mymakesubfile{5}
+[IPEIO]
+{Exercicios: Estimação Pontual} % Subfile Title
+{Estimação Pontual} % Part Title
+
+\setcounter{question}{1}
+\begin{questionBox}1{ % Q2
+    Considere que se seleccionou uma amostra aleatória (\(X_1, X_2,\dots, X_n\)) de uma população com valor médio \(\mu\) e variância \(\sigma^2\).
+} % Q2
+    \begin{questionBox}2{ % Q2.1
+        Mostre que \(\overline{X}\) é estimador centrado e consistente da média populacional.
+    } % Q2.1
+        \begin{BM}
+            \overline{X}=n^{-1}\sum_{i=1}^{n}{X_i}
+        \end{BM}
+        \begin{flalign*}
+            &
+                \esperanca(\overline{X})
+                =\esperanca\left(
+                    n^{-1}\sum_{i=1}^{n}{X_i}
+                \right)
+                =n^{-1}\esperanca\left(
+                    \sum_{i=1}^{n}{X_i}
+                \right)
+                =n^{-1}\sum_{i=1}^{n}{\esperanca(X_i)}
+                =n^{-1}n\mu
+                =\mu
+                ; &\\[3ex]&
+                \variancia(\overline{X})
+                = \variancia\left(n^{-1}\sum_{i=1}^{n}{X_i}\right)
+                = n^{-2}\variancia\left(\sum_{i=1}^{n}{X_i}\right)
+                % = &\\&
+                = n^{-2}\sum_{i=1}^{n}{\variancia(X_i)}
+                % = &\\&
+                = n^{-2}\sum_{i=1}^{n}{\sigma^2}
+                = &\\&
+                = \sigma^2/n
+                \implies &\\&
+                \implies
+                \lim_{n\to\infty}{EQB(\overline{X})}
+                =\lim_{n\to\infty}{\variancia(\overline{X})}
+                =\lim_{n\to\infty}{\sigma^2/n}=0
+            &
+        \end{flalign*}
+        \(\overline{X}\) é consistente em média quadrática de \(\mu\)
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Mostre que \(\hat{\theta}_1,\ \hat{\theta_2}\) também são estimadores centrados de \(\mu\). Qual é melhor? São consistentes?
+    } % Q2.2
+        \begin{BM}
+            \hat{\theta}_1
+            = \frac{X_1+X_n}{2}
+            \qquad
+            \hat{\theta}_2
+            = \frac{2\,X_1+3\,X_2+5\,X_3}{10}
+        \end{BM}
+        \begin{flalign*}
+            &
+                % --------------------------------- \theta_1 --------------------------------- %
+                % Esperanca
+                \esperanca(\hat{\theta}_1)
+                =\esperanca\left(\frac{X_1+X_n}{2}\right)
+                =2^{-1}\esperanca\left(X_1+X_n\right)
+                =2^{-1}(\esperanca(X_1)+\esperanca(X_n))
+                =2^{-1}(2\mu)
+                = &\\&
+                = \mu
+                ;&\\[3ex]&
+                % Variancia
+                \variancia(\hat{\theta}_1)
+                = \variancia\left(\frac{X_1+X_n}{2}\right)
+                = 4^{-1}\variancia\left(X_1+X_n\right)
+                = 4^{-1}(\variancia(X_1)+\variancia(X_n))
+                = &\\&
+                = 4^{-1}(\sigma^2+\sigma^2)
+                = \sigma^2/2
+                % EQM
+                ;&\\[3ex]&
+                \lim_{n\to\infty}{EQM(\hat{\theta}_1)}
+                =\lim_{n\to\infty}{\variancia(\hat{\theta}_1)}
+                =\lim_{n\to\infty}{\sigma^2/2}
+                = \sigma^2/2
+                \neq 0
+                ;&\\[6ex]&
+                % --------------------------------- \theta_2 --------------------------------- %
+                % Esperanca
+                \esperanca(\hat{\theta}_2)
+                =\esperanca\left(
+                    \frac{2\,X_1+3\,X_2+5\,X_3}{10}
+                \right)
+                =10^{-1}\esperanca\left(
+                    2\,X_1+3\,X_2+5\,X_3
+                \right)
+                = &\\&
+                =10^{-1}\left(
+                     2\,\esperanca(X_1)
+                    +3\,\esperanca(X_2)
+                    +5\,\esperanca(X_3)
+                \right)
+                =10^{-1}\left(
+                     2\,\mu
+                    +3\,\mu
+                    +5\,\mu
+                \right)
+                = &\\&
+                =10^{-1}\left(
+                    10\,\mu
+                \right)
+                = \mu
+                ;&\\[3ex]&
+                % Variancia
+                \variancia(\hat{\theta}_2)
+                = \variancia\left(
+                    \frac{2\,X_1+3\,X_2+5\,X_3}{10}
+                \right)
+                = 10^{-2}\variancia\left(
+                    2\,X_1
+                    +3\,X_2
+                    +5\,X_3
+                \right)
+                = &\\&
+                = 10^{-2}\left(
+                     2^2\,\variancia(X_1)
+                    +3^2\,\variancia(X_2)
+                    +5^2\,\variancia(X_3)
+                \right)
+                = 10^{-2}\left(
+                     2^2\,\sigma^2
+                    +3^2\,\sigma^2
+                    +5^2\,\sigma^2
+                \right)
+                = &\\&
+                = 0.38\,\sigma^2
+                ;&\\[3ex]&
+                % EQM
+                \lim_{n\to\infty}{EQM(\hat{\theta}_2)}
+                =\lim_{n\to\infty}{\variancia(\hat{\theta}_2)}
+                =\lim_{n\to\infty}{0.38\,\sigma^2}
+                = 0.38\,\sigma^2 \not 0
+                ;&\\[6ex]&
+                \therefore
+                EQM(\hat{\theta}_2) < EQM(\hat{\theta}_1)
+            &
+        \end{flalign*}
+        \(\hat{\theta}_2\) é mais preciso
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.3
+        Mostre que \(\bar{X}^2\) não é estimador centrado de \(μ^2\).
+    } % Q2.3
+        \begin{flalign*}
+            &
+                E(\bar{X}^2)
+                = V(\bar{X})+E^2(\bar{X})
+                = \sigma^2/n+\mu^2
+                \neq \mu
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1{ % Q3
+    Suponha que seleccionou uma amostra aleatória (\(X_1,X_2,\dots,X_n\)) de uma população com distribuição \(U(0,\theta)\), isto é, com função densidade:
+} % Q3
+    \begin{BM}
+        f(x)=\begin{cases}
+            \theta^{-1}\qquad& 0\leq x\leq \theta
+            \\
+            0\qquad& c.c.
+        \end{cases}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            E(X)
+            = \int_{0}^{\theta}{x\,\theta^{-1}\odif{\theta}}
+            = \theta^{-1}\,\theta^2/2
+            = \theta/2
+            ; &\\[1.5ex]&
+            \variancia(X)
+            = E(X^2) - E^2(X)
+            = \int_{0}^{\theta}{x^2\,\theta^{-1}\odif{\theta}} 
+            - \theta^2/4
+            = \theta^{-1}\,\theta^3/3 
+            - \theta^2/4
+            = \theta^2/12
+        &
+    \end{flalign*}
+
+    \begin{questionBox}2{ % Q3.1
+        Verifique se o estimador \(2\,\overline{X}\) é centrado e consistente.
+    } % Q3.1
+        \begin{flalign*}
+            &
+                % Esperanca
+                \esperanca(2\,\overline{X})
+                = 2\,\esperanca(\overline{X})
+                = 2\,\esperanca(X)
+                = 2\,\theta/2
+                = \theta
+                ; &\\[3ex]&
+                % EQM
+                \lim_{n\to\infty}{EQM(2\,\overline{X})}
+                = \lim_{n\to\infty}{V(2\,\overline{X})}
+                % = &\\&
+                = \lim_{n\to\infty}{4\,V(\overline{X})}
+                = \lim_{n\to\infty}{4\,V(X)/n}
+                = &\\&
+                = \lim_{n\to\infty}{4\,(\theta^2/12)/n}
+                = \lim_{n\to\infty}{\theta^2/3n}
+                = 0
+            &
+        \end{flalign*}
+        \(2\,\overline{X}\) é estimador consistente em média quadrática de \(\theta\)
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        Dada a amostra (\(1.215, 1.580, 0.726, 2.843, 3.394, 0.612, 2.621, 1.181, 2.930, 0.317\)), estime o valor de \(\theta\). Nota:\( \sum{x_i} = 17.42\).
+    } % Q3.2
+        \begin{flalign*}
+            &
+                \hat{\theta}
+                = 2\,\overline{x} 
+                = 2*17.42/10
+                = 3.484
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

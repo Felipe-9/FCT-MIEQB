@@ -1,0 +1,469 @@
+% !TEX root = ./BG.b-Testes_Resoluções.2021.2.tex
+% !TEX root = ./BG.b-Testes_Resoluções.tex
+\providecommand \subfilename{}
+\providecommand\mainfilename{"./BG.b-Testes_Resoluções.tex"}
+\renewcommand   \subfilename{"./BG.b-Testes_Resoluções.2021.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+\graphicspath{{\subfix{./.build/figures/BG.b-Testes_Resoluções.2021.2/}}}
+
+\begin{document}
+
+\mymakesubfile{2}[BG.b]
+{Teste 2021 Resolução}
+{Teste 2021 Resolução}
+
+\part*{Grupo 1 -- Problemas}
+\setcounter{question}{0}
+
+\begin{questionBox}1{}
+    
+    A purificação e caracterização de proteínas envolve necessariamente a determinação da quantidade total de proteína presente numa dada amostra. Apesar de existirem vários métodos muito rigorosos para efetuar essa quantificação, eles não são geralmente utilizados no trabalho de rotina num laboratório de bioquímica, devido à sua complexidade, exigência e custo. Em procedimentos de rotina utilizam-se métodos colorimétricos ou espectrofotométricos que, apesar de não serem tão rigorosos, fornecem bons resultados se forem aplicados corretamente. Métodos semelhantes podem ser utilizados para a quantificação direta de proteína em géis de poliacrilamida. A escolha do método mais adequado em cada caso depende da natureza da proteína, da presença de outros componentes na amostra e da rapidez, exatidão e sensibilidade desejadas.
+    
+    Este método baseia-se no método de Biureto, mas apresenta uma sensibilidade cerca de 100 vezes superior devido à utilização do reagente de Folin-Ciocalteau. A reação colorimétrica anterior produz \ch{Cu+} que neste caso é acoplada à redução de fosfomolibdato e fosfotungstato pelos resíduos de tirosina, triptofano e cisteína presentes na proteína formando-se um complexo de cor azul intensa (Comprimento de onda \(\max\lambda=680\,\unit{\nano\metre}\)). A cor desenvolvida por \unit{\milli\gram} de proteína depende da natureza específica da proteína. Deste modo, obtêm-se melhores resultados se a proteína utilizada como padrão na curva de calibração for semelhante à proteína a quantificar. Este método é muito mais sensível do que o anterior, mas é mais demorado, a cor é instável e depende da composição em tirosina e triptofano da proteína. Compostos mercapto e \ch{NH4+} interferem com a reação.
+
+    Foi preparado uma reta de calibração ultilizando uma solução mão de BSA de concentração 0.86\,\unit{\gram\per\milli\litre}, com os volumes indicados na tabela seguinte
+
+    \begin{center}
+        \begin{tabular}{c *{3}{r}}
+            
+            \toprule
+            
+                \multicolumn{1}{c}{Ensaio}
+               &\multicolumn{1}{c}{Vol. Padrão / \unit{\milli\liter}}
+               &\multicolumn{1}{c}{Vol. \ch{H2O}/\unit{\milli\liter}}
+               &\multicolumn{1}{c}{Abs}
+            
+            \\\midrule
+            
+                1 &   0 & 400 & 0.080
+             \\ 2 &  80 & 320 & 0.340
+             \\ 3 & 160 & 240 & 0.536
+             \\ 4 & 240 & 160 & 0.982
+             \\ 5 & 320 &  80 & 1.004
+             \\ 6 & 400 &   0 & 1.200
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    A cada dos ensaios da tabela anterior foram adicionados os reagentes necessários para o desenvolvimento de cor característico do ensaio de Lowry, prefazendo sempre um volume final de 1500\,\unit{\milli\liter}
+
+    250\,\unit{\milli\liter} de uma amostra de Citocromo C foi levada a um volume total final de 1550\,\unit{\milli\liter} incluindo os reagentes necessários para o desenvolvimento de cor característico do ensaio de Lowry
+
+    As absorvâncias medidas para as 4 replicas da amostra de citocromo C foram as seguintes (com o branco ja descontado)
+
+    \begin{center}
+        \begin{tabular}{c *{5}{c}}
+            
+            \toprule
+            
+            %     \multicolumn{1}{c}{}
+            
+            % \\\midrule
+            
+                1 & 0.771 & 0.762 & 0.785 & 0.773 & 0.555
+             \\ 2 & 0.823 & 0.854 & 0.698 & 0.855 & 0.833
+             \\ 3 & 0.772 & 0.801 & 0.812 & 0.830 & 0.820
+             \\ 4 & 0.250 & 0.240 & 0.265 & 0.230 & 0.230
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \paragraph{Abs 550\,\unit{\nano\metre}}
+    \begin{itemize}
+        \item 0.621
+        \item 0.633
+        \item 0.645
+        \item 0.644
+    \end{itemize}
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    Equação da reta utilizada e Respectivo \(R^2\)
+
+    
+
+    \paragraph{RS} 
+    \begin{itemize}
+        \item \(Abs = 4.76812\,\ch{[BSA]}_f + 0.03618\)
+        \item \( R^2 = 0.959189 \)
+    \end{itemize}
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    Aplicando o teste Q de Dixon para descartar outliers a 99\%, calcule a concentração de Citocromo C na amostra original de 250\,\unit{\milli\liter}
+    
+\end{questionBox}
+
+\begin{questionBox}2{}
+    
+    Sabendo que a amostra de Citocromo C reduzida com ditionito de sódio deu as seguintes absorvancias a 550\,\unit{\nano\metre}, (branco ja descontado) determine o coeficiente de absortividade desta proteína. O peso molecular do Citocromo C é 13000\,\unit{\dalton}.
+    
+\end{questionBox}
+
+\part*{Grupo 2}
+\setcounter{question}{0}
+
+\begin{questionBox}1{Cromatografia de exclusão molecular}
+    
+    O volume morto ou ``void volume'' é representada por:
+
+    \begin{enumerate}
+        \begin{multicols}{2}
+            \item Ve
+            \item V0
+            \item Vt
+            \item Vv
+        \end{multicols}
+    \end{enumerate}
+    
+    \paragraph{RS:} V0
+
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Uma coluna de poestireno tem um diâmetro de 7.8\,\unit{\milli\metre} e uma largura de 30\,\unit{\centi\metre}. As Partículas ocupam 20\% da coluna. O volume exterior as partículas do gel é o 40\% da coluna. As moléculas que não ficam retidas são logo excluídas no volume total de:
+
+    \begin{flalign*}
+        &
+            V_0
+            = 30\,\unit{\centi\metre}
+            * \pi\,((7.8/2)\,\unit{\centi\metre})^2
+            * 40\%
+            \cong
+            \qty{5.73}{\milli\liter}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{Cromatografia em Gel}
+    
+    O ditionito de sódio
+    \begin{enumerate}
+        \item Oxida ao \ch{Fe(CN)6^3-} que fica na coluna com cor amarelo
+        \item Oxida a proteína hemoglobina, que muda de castanho a purpura e a vermelho
+        \item Reduz ao \ch{Fe(CN)6^3-} que fica na coluna com cor amarelo
+        \item Reduz a proteína hemoglobina, que muda de castanho a purpura e a vermelho.
+    \end{enumerate}
+
+    Ditionito é um agente redutor
+
+    \paragraph{RS} 4
+    
+\end{questionBox}
+
+\begin{questionBox}1{Cromatografia de Exclusão molecular}
+    
+    Assinale as verdadeiras
+
+    O volume morto ou void volume corresponde a:
+
+    \begin{enumerate}
+        \item O volume de eluição da amostra
+        \item O volume no qual são eluídas as proteínas totalmente excluídas dos poros das resinas
+        \item Corresponde ao volume interno dos grãos de resina
+        \item Corresponde ao volume externo aos grão da resina
+        \item Corresponde ao volume total da coluna que não é utilizado na separação
+    \end{enumerate}
+
+    Volumr morto corresponde ao volume que é primeiramente eluido
+
+    Selecione uma ou mais opções de resposta:
+    \paragraph{RS:} 4
+    
+\end{questionBox}
+
+\begin{questionBox}1{Permuta Iónica}
+    
+    Assinale as verdadeiras. Na prática de permuta iónica
+
+    O citocromo C tem um pI de 9.6 e a catálase bovina de 5.42. Sendo que a solução de eluição tem um pH de 5.3 e a coluna é aniónica
+    \begin{enumerate}
+        \item A proteína retida foi o citocromo
+        \item A primeira proteína eluida foi o citocromo
+        \item A primeira proteína eluída foi a catálase bovina
+        \item A última proteína eluida foi a catálase bovina
+    \end{enumerate}
+
+    coluna aniónica retem cargas negatívas.
+
+    \begin{questionBox}3{Citocromo C}
+        \begin{flalign*}
+            &
+                pI_{citC} > pH
+                \implies
+                Carga_{citC}=+
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{Cataláse Bovina}
+        \begin{flalign*}
+            &
+                pI_{cat} \gtrapprox pH
+                \implies
+                Carga_{cat}\lessapprox +
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+    Selecione uma ou mais opções de resposta
+    \paragraph{RS:} 4 e 2
+    
+\end{questionBox}
+
+\begin{sectionBox}*1{Ponto de Inversão}
+    
+    valor de pH limite em que a proteína varia sua carga iónica.
+
+    \begin{itemize}[left={2em}]
+        \item[pH<pI] Proteína fica protonada, positíva
+        \item[pH>pI] Proteína fica desprotonada, negativa
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Uma coluna de poliestireno tem um diâmetro de 7.8\,\unit{\milli\metre} e uma largura de 30\,\unit{\centi\metre}. As partículas ocupam 20\% da coluna. O volume exterior as partículas de gel é o 40\% da coluna. Os poros são o 40\% do volume. As moléculas mais pequenas podem-se seprarar no volume total de:
+
+    \begin{flalign*}
+        &
+            V_t
+            = V_o + V_i
+            = \pi\,((7.8/2)\,\unit{\milli\metre})^2
+            * 30\,\unit{\centi\meter}
+            (
+                40\% + 40\%
+            )
+            \cong
+                \qty{1.15e-5}{\liter}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Encarregado de realizar a purificação de uma proteína de interesse farmacológico, você chegou a um protocolo de purificação que resulta em uma mistura de quatro proteínas, com a seguintes características:
+
+    \begin{center}
+        \begin{tabular}{c c c}
+            
+            \\\toprule
+            
+                \multicolumn{1}{c}{Proteína}
+              & \multicolumn{1}{c}{Peso/\unit{\kilo\dalton}}
+              & \multicolumn{1}{c}{pI}
+            
+            \\\midrule
+            
+                1 &  25 & 6.3
+              \\2 &  27 & 4.2
+              \\3 & 105 & 7.7
+              \\4 &  70 & 9.8
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    Visando purificar a proteína de interesse farmacológico (Proteína 2), você realizou cromatografia de gel filtração. Após acompanhar o perfil de eluição desta cromatografi, você indetificou uma sequencia de picos, que foram coletados e analizados. Com base nos seus conheicmentos sobre a separação de proteínas, assinale a alternativa que mlehor corresponde ao
+    
+    \begin{enumerate}[label=\roman*)]
+        \item Número de picos identificados na análise do cromatograma desta cromatografia
+        \item Qual seria o pico que conteria a proteína de interesse
+        \item no caso de existir a necessidade de passos adicionais em seu protocolo de purificação. Assinale a alternativa que indica uma opção viável de método subsequente a ser ultilizado para o isolamento da proteína 2
+    \end{enumerate}
+
+
+    
+    \begin{center}
+
+        \setlength\tabcolsep{2mm}        % width
+        \renewcommand\arraystretch{1.25} % height
+
+        \begin{tabular}{c c c l}
+            
+            \\\toprule
+            
+               &\multicolumn{1}{c}{Picos}
+               &\multicolumn{1}{c}{Pico da proteína}
+               &\multicolumn{1}{c}{Paço extra}
+            
+            \\\midrule
+            
+                A & 2 & 2o 
+                & Cromatografia de permuta iônica
+                \\
+                B & 3 & 3o 
+                & Cromatografia de permuta iônica
+                \\
+                C & 4 & 3o 
+                & Etapa de purificação adicional
+                \\
+                D & 4 & 3o 
+                & Coluna de troca iônica
+                \\
+                E & 4 & 2o
+                & Cromatografia de permuta iônica
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{questionBox}3{Resposta}
+        
+        \begin{itemize}
+            \item Cromatografia de gel separa por peso molecular como existem apenas duas proteínas com peso molecular próximo vamos observar 3 picos
+            \item Cromatografia de gel de filtração atrasa proteínas com menor peso molecular deixando a 1 e 2 por ultimo
+            \item As proteínas 1 e 2 possuem grande diferença no ponto isoelétrico podendo ser assim separadas por cromatografia ionica
+        \end{itemize}
+
+        \paragraph{RS} B
+        
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Assinale as verdadeiras
+
+    \begin{enumerate}
+        \item Na cromatografia de exclusão molecular -- filtração em gel 00 a fase estacionaria é um liquido
+        \item Em cromatografia de exclusão molecular as moléculas excluídas tem um volume de retenção igual ao volume morto
+        \item Em cromatografia de exclusão molecular o volume total da coluna é \(\pi\,r\,h\)
+        \item Em cromatografia de Exclusão molecular a maior massa maior volume de eluição.
+        \item Na pratica de cromatografia de exclusão molecular o ditioníto captura eletrões
+    \end{enumerate}
+
+    \begin{questionBox}*3{Resolução}
+        
+        \begin{enumerate}
+            \item A fase estacionária da cromatografia em gel é o gel
+            \item As moleculas excluidas são as maiores que não penetram no interior do gel, ocupando apenas o volume morto.
+            \item O volume total da couna de cromatografia de exclusão molecular equivale a todo o volume exceto o ocupado pelo gel \(Vol_t = Vol_i + Vol_0\)
+            \item O ditioníto é um agente redutor
+        \end{enumerate}
+    
+        \paragraph{RS} B
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q9
+    
+    Assinale as verdadeiras.
+
+    Na figura em anexo:
+    \begin{center}
+        \includegraphics[width=.5\textwidth]{q9.png}
+    \end{center}
+
+    Selecione uma ou mais opções de resposta
+    \begin{center}
+        \begin{tabular}{c c r r l}
+            
+            \toprule
+            
+               &\multicolumn{1}{c}{Vol. de eluição}
+               &\multicolumn{1}{c}{Tam. poro}
+               &\multicolumn{1}{c}{Volume}
+               &\multicolumn{1}{c}{ponto}
+            
+            \\\midrule
+            
+                1 
+                & \(V_0\) 
+                & 25\,\unit{\nano\metre}
+                & 5\,\unit{\milli\litre}
+                & Primeiro
+                \\
+                2 
+                & \(V_0\) 
+                & 25\,\unit{\nano\metre}
+                & 11.5\,\unit{\milli\litre}
+                & Ultimo
+                \\
+                3
+                & \(V_0 + V_i\) 
+                & 25\,\unit{\nano\metre}
+                & 11\,\unit{\milli\litre}
+                & penultimo
+                \\
+                4
+                & \(V_0 + V_i\) 
+                & 25\,\unit{\nano\metre}
+                & 11.5\,\unit{\milli\litre}
+                & Ultimo
+                \\
+                5
+                & \(V_0 + V_i\) 
+                & 12.5\,\unit{\nano\metre}
+                & 11\,\unit{\milli\litre}
+                & Ultimo
+                \\
+                6
+                & 10.000\,\unit{\dalton}
+                & 12.5\,\unit{\nano\metre}
+                & 11\,\unit{\milli\litre}
+                & 
+            
+            \\\bottomrule
+            
+        \end{tabular}
+    \end{center}
+
+    \begin{questionBox}*3{Resolução}
+        
+        \begin{itemize}
+            \item Ultimo ponto são residuos, podem ser excluidos
+            \item Primeiro ponto para \(25\,\unit{\nano\metre}\) corresponde a volume de eluição \(\approx 5\,\unit{\milli\litre}\)
+            \item Penultimo ponto para \(25\,\unit{\nano\metre}\) corresponde \(\approx 11\,\unit{\milli\litre}\)
+        \end{itemize}
+
+        \paragraph{RS} 1 e 3
+        
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Assinale as verdadeiras. Na cromatografia de permuta ionica
+
+    Se uma proteína com \(pI = 7\) fica retida numa coluna de permuta catiónica para a poder eluir precisa de:
+
+    \begin{enumerate}
+        \item Introduzir uma solução eluente a pH 7
+        \item Introduzir uma solução eluente a pH 4
+        \item Introduzir uma solução eluente a pH 10
+        \item Almentar a força iónica da solução eluente
+    \end{enumerate}
+
+    \begin{questionBox}*3{}
+        
+        Proteína ficar retida na coluna catiônica significa que possue carga positíva, para poder eluir precisa reduzir, inserindo ela num ambiente com pH básico acima de seu pI garante que ela se reduza, eluindo-a
+        
+        \paragraph{RS} 3
+        
+    \end{questionBox}
+
+    
+\end{questionBox}
+
+\end{document}

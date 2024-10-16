@@ -1,0 +1,365 @@
+% !TEX root = ./IPEIO_-_Aulas_Anotações.tex
+% !TEX root = ./IPEIO_-_Aula_TP.01_Anotações.tex
+\providecommand\mainfilename{"./IPEIO_-_Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO_-_Aula_TP.01_Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\mymakesubfile{1}
+{IPEIO 03/11}
+{IPEIO 03/11}
+
+\part*{Variáveis Discrétas}
+
+\begin{sectionBox}1{Partição}
+
+    
+    \begin{BM}
+        X\text{ é partição} \implies 
+        \begin{cases}
+            X_i\cap X_j = 0\quad\forall\,i\neq j
+        \\  \bigcup X_i = \Omega % todo o espaço?
+        \end{cases}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{BM}
+        B\text{ é uma partição}; A\implies
+        P(A) = \sum_{i}P(A|B_i)\,P(B_i)
+    \end{BM}
+    
+    \begin{questionBox}2{Demonstração}
+        \begin{flalign*}
+            &
+            P(A) 
+            = P(A\cap \Omega) 
+            = P\Bigl(A\cap \bigcup B_i\Bigr)
+            = P\Bigl(\bigcup (A\cap B_i)\Bigr)
+            = &\\&
+            = \sum_i P(A\cap B_i)
+            = \sum_i P(A|B_i)\,P(B_i)
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{sectionBox}2{}
+    
+    \begin{flalign*}
+        &
+        P(B_i|A) 
+        = \frac{P(B_i\cap A)}{P(A)}
+        = \frac{P(A|B_i)\,P(B)}{P(A)}
+        \implies
+        P(B_i|A)\,P(A) = P(A|B_i)\,P(B_i)
+        &
+    \end{flalign*}
+
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \( P(+ | L_1) = 2\% \)
+            \item \( P(+ | L_2) = 2\% \)
+            \item \( P(+ | L_3) = 4\% \)
+            \item \( P(L_1) = 2\,P(L_2) = 2\,P(L_3) \)
+            \item \( \sum P(L_i) = 1 \)
+        \end{multicols}
+    \end{itemize}
+    
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+            P(+)
+            = \sum P(+|L_i)\,(L_i)
+            = 2\%\,(1/2) + 2\%\,(1/4) + 4\%\,(1/4)
+            = &\\&
+            = 1\% + 0.5\% + 1\% 
+            = 2.5\%
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+            P(L_1|+)
+            = \frac
+                {P(+|L_1)\,P(L_1)}
+                {P(+)}
+            = 2\%\,(1/2)/2.5\%
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \( P(A) = 15\% \)
+            \item \( P(B) = 25\% \)
+            \item \( P(C) = 65\% \)
+            \item \( P(Def| A) = 5\% \)
+            \item \( P(Def| B) = 7\% \)
+            \item \( P(Def| C) = 4\% \)
+        \end{multicols}
+    \end{itemize}
+    
+    \begin{flalign*}
+        &
+            P(B\vert Def)
+            = \frac{P(Def\vert B)P(B)}{P(Def)}
+            = &\\&
+            = \frac
+                {P(Def\vert B)P(B)}
+                {
+                    P(Def\vert A)P(A)
+                   +P(Def\vert B)P(B)
+                   +P(Def\vert C)P(C)
+                }
+            = &\\&
+            =   \Bigl(
+                    \frac{
+                        P(Def\vert C)P(C)
+                       +P(Def\vert A)P(A)
+                    }{
+                        P(Def\vert B)P(B)
+                    }
+                   +1
+                \Bigr)^{-1}
+            = &\\&
+            =   \Bigl(
+                    \frac{
+                        4\%*65\%
+                       +5\%*15\%
+                    }{
+                        7\%*25\%
+                    }
+                   +1
+                \Bigr)^{-1}
+            \cong \num{34.313725490196078}\%
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+\section*{Funções de Probabilidade}
+
+\begin{sectionBox}1{Funções Discretas}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{Lançamento de uma modea just 2 vezes}
+    
+    \begin{table}[H]\centering
+        \begin{tabular}{c | *{4}{ c }}
+        
+        \hline
+            w & FF & FC & CF & CC
+     \\ \hline
+            X(w) & 2 & 1 & 1 & 0
+     \\ \hline
+            \multicolumn{5}{c}{\textit{X}: Numero de caras ser igual a 2}
+        
+        \end{tabular}
+    \end{table}
+    
+    \begin{flalign*}
+        &
+        \begin{array}{c}
+            P(X=0) = P(CC) = (1/2)^2 = 1/4
+        \\  P(X=2) = P(FF) = (1/2)^2 = 1/4
+        \\  P(X=3) = P(CF) + P(FC) = 2*(1/4) = 1/2
+        \end{array}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}2{Função de probabilidade da variável \textit{X}}
+    
+    \begin{flalign*}
+        &
+        X
+        \begin{cases}
+            \begin{matrix}
+                0 & 1 & 2
+            \\  1/4 & 1/2 & 1/4
+            \end{matrix}
+        \end{cases}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}3{}
+    
+    \begin{flalign*}
+        &
+        P(X>0) = 1-P(X\leq 0) = 1-1/4 = 3/4
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{Lançamento de dado}
+    
+    \begin{table}[H]\centering
+        \begin{tabular}{c *{5}{ c| }c}
+        
+        \hline
+            w & 1 & 2 & 3 & 4 & 5 & 6
+     \\ \hline
+            Y(w) & 1/6 & 1/6 & 1/6 & 1/6 & 1/6 & 1/6
+     \\ \hline
+            \multicolumn{7}{c}{\textit{X}: Numero de pontos no lançamento de um dado}
+        
+        \end{tabular}
+    \end{table}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{Função Distribuição}
+    
+    \begin{BM}
+        F(x) = P(X\leq x)
+    \end{BM}
+
+    Probabilidades aculmuladas
+    
+    \begin{sectionBox}*2{Propríedades}
+        
+        \begin{itemize}
+            \item \( \lim_{x\to \infty} F(x) = 1 \)
+            \item \( \lim_{x\to-\infty} F(x) = 0 \)
+            \item \( F(x) \) é continua a direita   
+            \item \( F(x)\leq F(y) \quad\forall\,\{x,y\}: x\leq y \)
+        \end{itemize}
+        
+    \end{sectionBox}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Função Probabilidade}
+    
+    \begin{BM}
+        f(x_i) = P(X=x_i) = p_i \geq 0
+     \\ \sum_i^{\infty} p_i = 1
+    \end{BM}    
+    
+\end{sectionBox}
+
+\part*{Variáveis continuas}
+
+\begin{sectionBox}1{Função Densidade (Probabilidade)}
+    
+    \begin{BM}
+        P(X\in I) = \int_I f(x)\,\delta x:
+        \begin{cases}
+            D = \{ a\in\mathbb{R}: P(X=a)>0 \}\neq\emptyset
+        \end{cases}
+    \end{BM}
+    
+    \begin{sectionBox}*2{Probabilidade de um Ponto}
+        
+        \begin{BM}
+            P(X=a) = 0
+        \end{BM}
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    % \begin{tikz}
+    %     \begin{axis}[]
+    %         \plot { (0,1), (1,1), (1,0), (2,0) };
+    %     \end{axis}
+    % \end{tikz}
+    
+    \begin{flalign*}
+        &
+        P(1/2\leq X \leq 3/4) 
+        = \int_{1/2}^{3/4}f(x)\,\delta x
+        = 3/4-1/2 = 1/4
+        \\
+        P(1/2\leq X)
+        = \int_{1/2}^{\infty} f(x)\,\delta x
+        = \int_{1/2}^{1} f(x)\,\delta x
+        = 1-1/2 = 1/2
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}{}
+    
+    \begin{BM}
+        f(x)=
+        \begin{cases}
+            k(1-x) & 0<x<1
+        \\  0      & cc
+        \end{cases}
+    \end{BM}
+    
+    \begin{flalign*}
+        &
+        \int_{-\infty}^{\infty} f(x)\,\delta x
+        = \int_{0}^{1} k(1-x)\,\delta x
+        = k\int_{0}^{1} \delta x
+        - k\int_{0}^{1} x\,\delta x
+        = k(1-0) - k(1/2)
+        = k/2 = 1
+        \implies
+        k = 2
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+        P(X>0.3|X<0.5)
+        = P(0.3<X<0.5) / P(X<0.5)
+        = \frac
+            {\int_{0.3}^{0.5} f(x)\,\delta x}
+            {\int_{-\infty}^{0.5} f(x)\,\delta x}
+        = \frac
+            {\int_{0.3}^{0.5} 2(1-x)\,\delta x}
+            {\int_{0}^{0.5} 2(1-x)\,\delta x}
+        = \frac
+            {
+                2\int_{0.3}^{0.5} \delta x
+            -   2\int_{0.3}^{0.5} x\,\delta x
+            }
+            {
+                2\int_{0}^{0.5} \delta x
+            -   2\int_{0}^{0.5} x\,\delta x
+            }
+        = \frac
+            {
+                2(0.5-0.3)
+            -   2(0.25-0.09)
+            }
+            {
+                2(0.5)
+            -   2(0.25)
+            }
+        = 0.16
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,352 @@
+\part{25/05 - Integração II}
+
+\begin{multicols}{2}
+
+\begin{sectionBox}1{Função monotona}
+
+{
+%\pgfplotsset{height=7cm, width= .45\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	legend pos= north west,
+	ymax= 20
+]
+	
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry{$f(x)$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Red]{$\underline{\mathrm{S}}(f,p)$}
+	\addlegendimage{empty legend}
+	\addlegendentry[Blue]{$\overline{\mathrm{S}}(f,p)$}
+	
+	\addplot
+	[	smooth,
+		thick,
+%		Red,
+		opacity= 0.3,
+		domain = 1:5,
+		samples = 0.4*\mysampledensity,
+	] {6*\x-2*\x^2+0.3*\x^3};
+	
+	\addplot
+	[
+		thick,
+		opacity=0.6,
+		Red,
+		ybar interval,
+		samples = 0.4*\mysampledensity,
+	] coordinates {
+		(1, 4.3)
+		(2, 6.4)
+		(3, 8.1)
+		(4, 11.2)
+		(5, 17.5)
+	};
+	
+	\addplot
+	[
+		thick,
+		opacity=0.6,
+		Blue,
+		ybar interval,
+		samples = 0.4*\mysampledensity,
+	] coordinates {
+		(1, 6.4)
+		(2, 8.1)
+		(3, 11.2)
+		(4, 17.5)
+		(5, 28.8)
+	};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}
+
+\begin{sectionBox}3{$\overline{ \mathrm{S}}(f,P_n)$}
+\begin{flalign*}
+&
+=	\sum_{k=0}^{n-1}\sup(f([k,k+1]))\frac{b-a}{n}
+=	&\\&
+=	\sum_{k=0}^{n-1}f(k+1)\frac{b-a}{n}
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}3{$\underline{ \mathrm{S}}(f,P_n)$}
+\begin{flalign*}
+&
+=	\sum_{k=0}^{n-1}\inf(f([k,k+1]))\frac{b-a}{n}
+=	\sum_{k=0}^{n-1}f(k)\frac{b-a}{n}
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{flalign*}
+&
+	\overline{ \mathrm{S}}(f,P_n)
+-	\underline{\mathrm{S}}(f,P_n)
+=	\frac{b-a}{n}
+	\sum_{k=1}^{n}
+	(f(k+1)-f(k))
+=	&\\&
+=	\frac{b-a}{n}
+	(f(b)-f(a))
+&
+\end{flalign*}
+
+\begin{sectionBox}3{Limite}
+\begin{flalign*}
+&
+	\lim_{n\to\infty}
+	\frac{b-a}{n}
+	(f(b)-f(a))
+=	0
+&\\&
+	f(x) \text{ é integrável por Rieman}
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{sectionBox}\relax
+
+\begin{sectionBox}1[0mm]{Contra Exemplo}
+\begin{BM}
+	f
+	\begin{cases}
+	f:[0,1]\to\mathbb{R}\,\land
+	\\	f(x)
+	=	\begin{cases}
+			1&\quad x\in\mathbb{Q}
+		\\	0&\quad x\not\in\mathbb{Q}
+		\end{cases}
+	\end{cases}
+\end{BM}
+
+\begin{flalign*}
+&
+	\sup(f([k,k+1]))=1
+	\land
+	\inf(f([k,k+1]))=0
+&\\&
+	\forall\,k\in P_n\text{ Partição de } [a,b]
+	\therefore
+	\overline{ \mathrm{S}}(f,P_n)
+-	\underline{\mathrm{S}}(f,P_n)
+	\neq 0
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}1{Diâmetro de uma partição}
+\begin{BM}
+	\delta(P)=\max(|x_{k+1}-x_k|)
+	\\
+	\quad\forall\,k\in[0,n-1]
+\end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}1{Soma de Riemam}
+\begin{BM}[flalign*]
+&
+	\int_{a}^{b} f(x)\,\mathrm{d}x
+=	&\\&
+=	\lim_{\delta(P)\to0}
+	\sum_{k=0}^{n-1}
+		f(x'_k)(f(x_{k+1})-f(x_k))
+	&\\& x'_k\in[x_k,x_{k+1}]
+&
+\end{BM}
+\end{sectionBox}
+
+\section*{Propriedades da soma de Rieman}
+
+\begin{sectionBox}3[0mm]{}
+\begin{BM}
+	\int_{a}^{b}(k\,f(x)+g(x))\,\mathrm{d}x
+=	\\
+=	k\int_{a}^{b}f(x)\,\mathrm{d}x
++	\int_{a}^{b}g(x)\,\mathrm{d}x
+\end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}3[0mm]{}
+\begin{BM}
+	\int_{a}^{b}f(x)\,\mathrm{d}x
+	\leq
+	\int_{a}^{b}g(x)\,\mathrm{d}x
+	\\
+	\quad\forall\,\{f,g\}:f(x)\leq g(x)\quad\forall\,x\in[a,b]
+\end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}3[0mm]{}
+\begin{BM}
+	\left|
+		\int_{a}^{b}
+		f(x)\,\mathrm{d}x
+	\right|
+	\leq
+	\int_{a}^{b}
+	\left|
+		f(x)\,\mathrm{d}x
+	\right|
+\end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}1{Exercicio}
+\begin{BM}
+	\int_{0}^{2}1\,\mathrm{d}x
+\end{BM}\relax
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	xmajorgrids= true,
+	legend pos= north west
+]
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry{$f(x)$}
+	
+	\addplot
+	[	smooth,
+		thick,
+%		Red,
+		domain = 0:2,
+		samples = 0.2*\mysampledensity,
+	] {1};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}\relax
+
+\begin{flalign*}
+&
+=	2
+&
+\end{flalign*}
+\end{sectionBox}\relax
+
+\begin{sectionBox}1[0mm]{Exercicio}
+\begin{BM}
+	\int_{0}^{1}x\,\mathrm{d}x
+\end{BM}
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	xmajorgrids= true,
+	legend pos= north west
+]
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry{$f(x)$}
+	
+	\addplot
+	[	smooth,
+		thick,
+%		Red,
+		domain = 0:1,
+		samples = 0.1*\mysampledensity,
+	] {x};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}\relax
+
+\begin{flalign*}
+&
+	0.5\Delta(x^2)\big|_{0}^{1}
+=	0.5
+&
+\end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}1{Exercicio}
+\begin{BM}
+	\int_{0}^{1}(1+x)\,\mathrm{d}x
+\end{BM}
+
+{
+%\pgfplotsset{height=7cm, width= .6\textwidth}
+
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+[	xmajorgrids= true,
+	legend pos= north west
+]
+	% Legends
+	\addlegendimage{empty legend}
+	\addlegendentry{$f(x)$}
+	
+	\addplot
+	[	smooth,
+		thick,
+%		Red,
+		domain = 0:2,
+		samples = 0.4*\mysampledensity,
+	] {1+x};
+	
+\end{axis}
+\end{tikzpicture}
+\end{center}
+}\relax
+
+\begin{flalign*}
+&
+	\Delta
+	\left(
+		x+x^2/2
+	\right)\big|_{0}^{1}
+=	1.5
+&
+\end{flalign*}
+\end{sectionBox}
+
+\end{multicols}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,100 @@
+\part{06/04 - Subsucessões}
+
+\BMold{
+&
+	u\circ i_{(n)} = u_{(i_{(n)})}
+\quad	
+	&u:\mathbb{N}\to\mathbb{R}
+\land
+	i:\mathbb{N}\to\mathbb{N}
+\,\land	&\\&&
+\land
+	i_{(n)}<i_{(n+1)}\quad\forall\,n\in\mathbb{N}
+&
+}
+
+\begin{multicols}{2}
+
+
+\section{Exemplo: $u_{(n)} = (-1)^n$}
+
+\subsubsection{$ i_{(n)} = 2\,n $}
+\begin{flalign*}
+&
+	u\circ i_{(n)} = (-1)^{2\,n}=1
+&
+\end{flalign*}
+
+\subsubsection{$ j_{(n)} = 2\,n-1 $}
+\begin{flalign*}
+&
+	u\circ j_{(n)} = (-1)^{2\,n-1}=-1
+&
+\end{flalign*}
+
+\section{Exemplo: $ u_{(n)} = \sin(n\,\pi/4) $}
+
+\subsubsection{$ i_{(n)} = 4\,n $}
+\begin{flalign*}
+&
+	u\circ i_{(n)} 
+= 	\sin(4\,n\,\pi/4)
+=	\sin(n\,\pi) = 0
+&
+\end{flalign*}
+
+
+\section{Subsusecção convergente}
+
+\begin{flalign*}
+&
+	u_{(n)}
+	\text{ é uma \hyperref[sucessao convergente]{sucessão convergente}}
+\implies	&\\&
+\implies
+	u_{(n)}\in\vizinhanca[\varepsilon]{l}
+	\quad\forall\,\{n,p\}\subset\mathbb{N}: n>p
+;\	&\\&
+	i_{(p)}\geq p
+\implies
+	u\circ i_{(n)}\in\vizinhanca[\varepsilon]{l}
+	&\\&
+	\forall\,\{n,p\}\subset\mathbb{N}: n>p
+\implies	&\\&
+\implies
+	u\circ i_{(n)}
+	\text{ é uma \hyperref[sucessao convergente]{sucessão convergente}}	
+&
+\end{flalign*}
+
+\section{Lema}
+
+\begin{flalign*}
+&
+	u\circ i_{(n)}
+	\text{ é uma \hyperref[sucessao monotona]{sucessão monotona}}
+\implies	&\\&
+\implies
+	u\circ i_{(n)}<u\circ i_{(m)}
+	\quad\forall\,\{m,n\}\in\mathbb{N}: m>n
+&
+\end{flalign*}
+
+
+\section{}
+``Qualquer Sucessão possui pelo menos uma \hyperref[sucessao monotona]{subsucessão monótona}''
+
+
+\section{}
+``Qualquer sucessão limitada possui pelo menos uma subsucessão \hyperref[sucessao monotona]{monótona} \hyperref[sucessao convergente]{convergente}''
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ é \hyperref[sucessao limitada]{limitada}}
+\implies	&\\&
+\implies
+	u\circ i_{(n)} \text{ é uma \hyperref[sucessao convergente]{sucessão convergente}}
+&
+\end{flalign*}
+
+\end{multicols}

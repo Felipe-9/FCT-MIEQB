@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+
+\usepackage{color}
+\pagecolor{black}
+\color{white}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\Fr}{ {\text{Fr}} }
+\newcommand{\Interior}{ {\text{Int}} }
+\newcommand{\Sup}{ {\text{Sup}} }
+\newcommand{\Ext}{ {\text{Ext}} }
+
+
+\title{AM 1}
+\author{}
+
+\begin{document}
+
+\maketitle
+\break
+%\tableofcontents
+\break
+
+\section{Visinhança}
+\begin{flalign*}
+&	V_\epsilon(x)=X\subset \mathbb{R} \iff \{ x\in X;\ X= [ x-\epsilon, x+\epsilon ] \} &
+\end{flalign*}
+
+\section{Feixe}
+\begin{flalign*}
+& 	\overline X=\Fr (X) \cup X &
+\end{flalign*}
+
+\section{Ponto Interior}
+
+\begin{flalign*}
+&	x \in \Interior(X) \iff \left\{ x\in X;\ \exists\ \epsilon\in \mathbb{R}: V_{\epsilon}(x) \subset X \right\} &
+\end{flalign*}
+
+\section{Ponto Fronteira}
+\begin{flalign*}
+&	x\in \Fr(X) \iff \left\{ \forall\ \epsilon \in \mathbb{R}: V_{\epsilon}(x) \not\subset X \wedge V_{\epsilon}(x) \cap X \neq \emptyset \right\} &
+\end{flalign*}
+
+\section{Supremo}
+\begin{flalign*}
+&	\Sup(X)= x \iff \left\{ \nexists\ y: \{x,y\}\in \overline X;\ y>x;\ y\neq x \right\} &
+\end{flalign*}
+
+\section{Ponto Exterior}
+\begin{flalign*}
+&	x\in \Ext(X) \iff \left\{ x\in\mathbb{R};\ \exists\ \epsilon \in\mathbb{R} : V_{\epsilon}(x) \cap X =  \emptyset  \right\} &
+\end{flalign*}
+
+\section{Ponto de Acumulação}
+
+\begin{flalign*}
+&	x\text{ é ponto de acumulação de }X
+	\iff \{ 
+		V_{\epsilon}(x)\cap X- \{ x \} \neq \emptyset 
+		: \forall\ \epsilon > 0
+	\} &
+\end{flalign*}
+
+\section{Derivada do conjunto}
+Conjunto dos pontos de acumulação de um conjunto
+\begin{flalign*}
+X' &= \{ x\in\mathbb{R}:V_{\epsilon}(x)\cap X- \{ x \} \neq \emptyset 
+		: \forall\ \epsilon > 0 \} &
+\end{flalign*}
+
+\section{Conjunto \underline{Aberto}}
+\begin{flalign*}
+A\text{ é um conjunto aberto} &\iff A=\text{int}(A) &
+\end{flalign*}
+
+\section{Conjunto \underline{Fechado}}
+\begin{flalign*}
+A\text{ é um conjunto fechado} &\iff \overline A= A &
+\end{flalign*}
+
+
+\end{document}
+
+
+
+
+
+

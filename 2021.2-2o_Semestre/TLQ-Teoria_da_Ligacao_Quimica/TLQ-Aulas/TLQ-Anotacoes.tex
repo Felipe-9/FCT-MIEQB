@@ -1,0 +1,722 @@
+\documentclass{article}
+
+
+
+% lua
+\usepackage{luacode}
+
+
+
+% xparse - multiple optional arguments
+\usepackage{xparse}
+
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+    % papersize = {300mm, 400mm}, % ( 4:3 ) SVGA x 0.5
+    % papersize = {150mm, 800mm}, % ( 2*4:3/2 ) SVGA x 0.5
+    % papersize = {240mm, 320mm}, % ( 4:3 ) SVGA x 0.4
+    % papersize = {120mm, 640mm}, % ( 2*4:3/2 )
+    papersize = {180mm, 240mm}, % ( 4:3 ) SVGA x 0.3
+    % papersize = {120mm, 160mm}, % ( 4:3 ) SVGA x 0.2
+    % papersize = {229mm, 305mm}, % ( 4:3 ) ArchA/Arch1
+    % papersize = {320mm, 512mm}, % (16:10)
+    % papersize = {280mm, 448mm}, % (16:10)
+    % papersize = {240mm, 384mm}, % (16:10)
+    % a4paper,  % {210mm, 297mm}, % (√2:1 ) A4
+    % a5paper,  % {149mm, 210mm}, % (√2:1 ) A5
+    top       = .12\paperheight,
+    bottom    = .12\paperheight,
+    left      = .06\paperwidth,
+    right     = .06\paperwidth,
+    portrait  = true,
+}
+
+
+
+% fonts
+\usepackage[fontsize=12pt]{fontsize}
+\usepackage[LGR, T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+
+% default style
+% \renewcommand{\familydefault}{\sfdefault} % sans serif
+
+% Set font family
+% \setmainfont{
+    % Handwritten fonts:
+    % DancingScript
+    % Apple Chancery
+    % Luminari
+    % PetitFormalScript
+    % Merienda
+    % LaBelleAurore
+    % Handlee
+        % BadScript
+        % Calligraffitti
+% }
+
+% Monofont
+% \setmonofont[Contextuals = {ligatures}]{FiraCode}
+% \makeatletter
+% \def\verbatim@nolig@list{}
+% \makeatother
+
+
+
+% Linguagem
+\usepackage[portuguese]{babel} % Babel
+%\usepackage{polyglossia}      % Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+% Graphics
+% \usepackage[draft, final]{graphics, graphicx}
+% \usepackage{graphicx}
+% \graphicspath{{./resources/imagens}}
+
+
+
+% calc
+\usepackage{calc}
+
+
+
+% Table of contents
+\usepackage{tocloft}
+\setcounter{tocdepth}{2}    % remove subsubsection from toc
+
+% part
+\renewcommand\cftpartfont{\bfseries}
+%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+\setlength\cftbeforepartskip{6mm}
+
+% sec
+\renewcommand\cftsecfont{\bfseries}                 % Font
+\renewcommand\cftsecpagefont{}                      % page number font
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
+\setlength\cftbeforesecskip{3mm}
+\setlength\cftsecindent{0mm}
+%\setlength{\cftsecnumwidth}{25mm}                  % Fix section width
+
+% subsec
+\setlength\cftsubsecindent{0mm}
+%\setlength{\cftsubsecnumwidth}{15mm}
+
+% tab (table)
+\setlength\cfttabindent{0mm}
+
+
+
+% filecontents
+%\usepackage{scontents}     % the better filecontents
+%\usepackage{filecontents}  % Create files
+
+
+
+% Multicols
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+\multicoltolerance = 200
+
+% toggle multicols  on/off
+% \renewenvironment{multicols}[1]{}{\relax}
+
+
+
+% enumitem
+%\usepackage{enumitem}  % modify enumerate index
+
+
+
+% titlesec
+\usepackage{titlesec}
+
+% Reset section on part
+\counterwithin*{section}{part}
+
+% Spacing: \titlespacing*{<left>}{<before>}{<after>}[<right>]
+\titlespacing*{\part}      {0pt}{ 0pt}{0pt}
+\titlespacing*{\section}   {0pt}{10mm}{0pt}
+\titlespacing*{\subsection}{0pt}{ 5mm}{0pt}
+
+% Part customization
+\titleclass{\part}{straight}
+\titleformat{\part}
+    [block]                         % shape
+    {\Large\bfseries\color{Emph}}   % format
+    {\thepart\hspace{5mm}{-}}       % label
+    {5mm}                           % sep
+    {\Large\bfseries}               % before-code
+
+% % Chapter customization
+% \titleclass{\chapter}{straight}
+% \titleformat{\chapter}
+%    [block]                         % shape
+%    {\huge\bfseries\color{Emph}}    % format
+%    {\thepart\hspace{5mm}{$|$}}     % label
+%    {5mm}                           % sep
+%    {\huge\bfseries}                % before-code
+%    [\vspace{0.5mm}]                % after-code
+
+
+
+% Appendix
+% \usepackage{appendix}
+
+
+
+% siunix: SI units
+\usepackage{siunitx}
+   \sisetup{
+       % scientific / engineering / false / fixed
+       scientific-notation = engineering,
+       exponent-to-prefix  = true,          % 1000 g -> 1 kg
+       exponent-product    = *,             % x * 10^y
+       round-mode          = places,        % figures/places/off
+       round-precision     = 2,
+      % round-minimum        = 0.01,
+      % fixed-exponent       = 0,
+   }
+   \DeclareSIUnit\atm{atm}
+   \DeclareSIUnit\calorie{cal}
+
+
+
+% Maths
+\usepackage{amsmath, amssymb, bm}
+\usepackage{derivative} % Derivative
+\usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
+% % Missing trigonometric math operators
+% \DeclareMathOperator{\sech}   {sech}
+% \DeclareMathOperator{\csch}   {csch}
+% \DeclareMathOperator{\arcsec} {arcsec}
+% \DeclareMathOperator{\arccot} {arccot}
+% \DeclareMathOperator{\arccsc} {arccsc}
+% \DeclareMathOperator{\arccosh}{arccosh}
+% \DeclareMathOperator{\arcsinh}{arcsinh}
+%
+% BM
+\NewDocumentEnvironment{BM}{ O{align*} O{\large} +b }{
+    #2\boldmath\bfseries
+    \begin{#1}
+        #3
+    \end{#1}\relax
+}  {\relax}
+%
+% % BM old
+% % \newcommand{\BM}[1]{{\large\boldmath\bfseries%
+% %     \begin{align*}
+% %         #1
+% %     \end{align*}%
+% % }}
+%
+% \newcommand\vizinhanca[2][\delta]{%
+%     \hyperref[vizinhanca]{V_{#1}(#2)}%
+% }
+%
+% \newcommand\converge{{\,\xrightarrow{\text{converge}}\,}}
+
+
+
+% Vectors
+% \usepackage{esvect}      % Vector over-arrow
+% \renewcommand{\vec}{\vv}
+
+
+
+% Tikz
+\usepackage{tikz}
+\usepackage{pgfmath}    % calculations
+% \usepackage{varwidth}   % List inside TikzPicture
+
+% Gradient text color
+% \newcommand\fadingtext[3][]{%
+%     \begin{tikzfadingfrompicture}[name=fading letter]
+%         \node[text=transparent!0,inner xsep=0pt,outer xsep=0pt,#1] {#3};
+%     \end{tikzfadingfrompicture}%
+%     \begin{tikzpicture}[baseline=(textnode.base)]
+%         \node[inner sep=0pt, outer sep=0pt,#1](textnode){\phantom{#3}};
+%         \shade[path fading=fading letter,#2,fit fading=false]%
+%             (textnode.south west) rectangle (textnode.north east);%
+%     \end{tikzpicture}%
+% }
+
+% \newcommand\fadingtext[2][]{%
+%   \setbox0=\hbox{{\special{pdf:literal 7 Tr }#2}}%
+%   \tikz[baseline=0]\path [#1] \pgfextra{\rlap{\copy0}} (0,-\dp0) rectangle (\wd0,\ht0);%
+% }
+%
+% \NewCommandCopy\oldsection\section
+% \renewcommand\section[1]{
+%     \oldsection{\fadingtext{
+%         left  color   = DarkGreen!00!White,
+%         right color   = DarkGreen!30!White,
+%         shading angle = 150 % 90 + 60
+%     }{ \relax\parbox[b]{\linewidth}{#1} }}
+% }
+%
+% \NewCommandCopy\oldpart\part
+% \renewcommand\part[1]{
+%     \oldpart{\fadingtext{
+%         left  color   = Emph,
+%         right color   = Emph!50!LightGreen,
+%         shading angle = 170 % 90 + 60
+%     }{ #1 }}
+% }
+
+% pgf
+    % pgfmath
+    % \usepackage{pgfmath}    % calculations
+
+    % pgfplots
+    % \usepackage{pgfplots}
+    % \usepgfplotslibrary{fillbetween}
+    %
+    % \newcommand\mysampledensity{1e2} % 1e4 is too damm high
+    % \pgfplotsset{
+    %     compat       = newest,
+    %     width        = .90\linewidth,    % width
+    %     height       = .22\textheight,    % height
+    %     samples      = \mysampledensity,
+    %     legend style = {
+    %         draw         = none,
+    %         fill         = White\Dark,
+    %         fill opacity = 0.3,
+    %         text opacity = 1,
+    %     },
+    %     major grid style = {
+    %         very thin,
+    %         color= White!60!Black
+    %     },
+    %     ticklabel style = {
+    %         /pgf/number format/.cd,
+    %         set thousands separator={\,},
+    %         tick style= {color= White!60!Black},
+    %     },
+    %     every extra x tick/.style = {
+    %         tick style       = {draw=none},
+    %         major grid style = {
+    %             draw, thin,
+    %             color = White!90!Black,
+    %         },
+    %         ticklabel pos    = top,
+    %     },
+    %     every extra y tick/.style = {
+    %         tick style       = {draw=none},
+    %         major grid style = {
+    %             draw, thin,
+    %             color= White!90!Black
+    %         },
+    %         ticklabel pos    = right,
+    %     },
+    % }
+
+    % pgfplotstable
+    % \usepackage{pgfplotstable}
+
+
+
+% Tabular
+% \usepackage{multirow}
+% \usepackage{float}  % table position H(ere)
+%     \restylefloat{table}
+% \usepackage{longtable}
+%
+% \setlength\tabcolsep{6mm}        % width
+% \renewcommand\arraystretch{1.25} % height
+
+% booktabs
+% \usepackage{booktabs}
+% \setlength\heavyrulewidth{.75pt} % Top and bottom rule
+% \setlength\lightrulewidth{.50pt} % Middle rule
+% \usepackage{colortbl}            % Colored Cells
+
+
+
+% Chem
+\usepackage{chemformula} % formulas quimicas
+% \usepackage{chemfig}     % Estruturas quimicas
+% \usepackage{modiagram}   % Molecular orbital diagram
+\usepackage{chemmacros}
+%     \setmodiagram {
+%         names,
+%         labels,
+%         labels-fs=\tiny, % label font
+%         AO-width=6mm,
+%     }
+%
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+% Constants
+%\usepackage{physconst, physunits}
+
+
+
+% Code
+% % Run on terminal: lualatex --shell-escape [file[.tex]]
+% \usepackage{shellesc, minted}
+% \setminted {
+%     linenos,     % line number
+%     autogobble,  % line trim
+%     tabsize = 4, % tab size
+%     obeytabs,    % tab alignment
+%     breaklines,  % break lines
+%     % python3,     % Python lexer or idk
+% }
+% \usemintedstyle{stata-dark}
+% % \usemintedstyle{fruity}
+% % \usemintedstyle{paraiso}
+% % \usemintedstyle{rainbow_dash}
+% % \usemintedstyle{solarized-dark}
+% % \usemintedstyle{native}
+
+
+
+% Colors
+\usepackage{xcolor}
+\newcommand\Light{!63!White}
+\newcommand\Dark{\Light!45!Black}
+% myPalette
+\definecolor{red}   {HTML}{FF0000} % #FF0000 - hsb(  0,100,100)
+\definecolor{orange}{HTML}{FF7300} % #FF7300 - hsb( 27,100,100)
+\definecolor{yellow}{HTML}{FFEA00} % #FFEA00 - hsb( 55,100,100)
+\definecolor{green} {HTML}{2AFF00} % #2AFF00 - hsb(110,100,100)
+\definecolor{cyan}  {HTML}{00FFBF} % #00FFBF - hsb(165,100,100)
+\definecolor{blue}  {HTML}{0055FF} % #0055FF - hsb(220,100,100)
+\definecolor{purple}{HTML}{9500FF} % #9500FF - hsb(275,100,100)
+\definecolor{pink}  {HTML}{FF0080} % #FF0080 - hsb(330,100,100)
+% Palette Special
+\definecolor{DarkBlue}  {HTML}{252A36} % #252A36 - hsv(222,  31%, 21%)
+\definecolor{LightGreen}{HTML}{7CCC6C} % #7CCC6C - hsv(110,  47%, 80%)
+\definecolor{DarkGreen} {HTML}{008675} % #008675 - hsv(172, 100%, 52%)
+% Palette Primaries
+\definecolor{Black}{HTML}{141A26} % #141A26 - hsv(222, 47%,  15%)
+\definecolor{White}{HTML}{DEFFFB} % #DEFFFB - hsv(172, 13%, 100%)
+% % Palette Primaries old
+% \colorlet{Black}{DarkBlue!110}
+% \colorlet{White}{DarkGreen!20!white}
+% Palette Secondaries
+\colorlet{Emph}  {DarkGreen!70!White}
+\colorlet{Link} {LightGreen!25!White}
+\colorlet{Comment}   {White!60!Black}
+\colorlet{Background}{White!27!Black}
+
+\pagecolor{Black}
+\color    {White}
+
+
+
+% tcolorbox
+\usepackage{tcolorbox}
+\tcbuselibrary{
+    breakable,                % allow page break
+    % minted, xparse, listings, % code minted
+}
+\tcbset{ every box/.style = {
+    coltext      = White,           % text  color
+    % coltitle     = White,           % title color
+    % fonttitle    = \bfseries,       % title font
+    notitle,                        % Remove title
+    opacityfill  = 0.1,             % background opacity
+    opacityframe = 0,               % frame      opacity
+    colback      = Background,      % background color
+    colframe     = Background,      % border     color
+    arc          = 3mm,             % Curvature
+    width        = \linewidth,      % Width
+    top          = 3mm,             % Space between text and top
+    bottom       = 3mm,             % Space between text and bottom
+    breakable    = true,            % Allow page break
+    before upper = {\parindent2ex}, % Paragraph indentation
+    before skip  = 0mm,             % Set vspace before box
+}}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle   {{TLQ - Anotações Aulas}}
+\newcommand\myauthor  {{Felipe B. Pinto 61387 - MIEQB}}
+\newcommand\mycreator {{Felipe B. Pinto}}
+\newcommand\mysubject {{Anotações das aulas de teoria da ligação química}}
+\newcommand\mykeywords{{{TLQ}, {Chemistry}, {Química}, {2021.2 - 2o Semestre}}}
+
+% title, author and date
+\title{\huge\bfseries\color{Emph}\mytitle}
+\author{\Large\myauthor}
+\date{\Large\today}
+
+
+
+% fancyhdr - Header and Footer customization
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \lhead{\normalsize\myauthor}
+% \rhead{\normalsize\today}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+    % Links customization
+    hidelinks   = true,
+    colorlinks  = true,
+    linkcolor   = Link,
+    anchorcolor = Link,
+    urlcolor    = Link,
+    % Metadata
+    pdfinfo = {
+        Title    = \mytitle,
+        Author   = \myauthor,
+        Creator  = \mycreator,
+        Subject  = \mysubject,
+        Keywords = \mykeywords,
+    },
+    % PDF display customization
+    pdfpagelayout      = {OneColumn},
+    pdfstartview       = {FitH},
+    pdfremotestartview = {FitH}
+    pdfdisplaydoctitle = true,
+    % pdfpagetransition  = Glitter, % wtf
+}
+% Fix links when reseting section on part
+\renewcommand\theHsection{\thepart.\thesection}
+
+\NewCommandCopy\oldhypertarget\hypertarget
+\renewcommand\hypertarget[3][Link]{\oldhypertarget{#2}{\textcolor{#1}{#3}}}
+
+
+
+% questions, subquestions and subsubquestions
+
+% % question
+% \newcounter{question}[part]
+% \renewcommand{\thequestion}{Questão \arabic{question}}
+% \newcommand{\question}[1]{
+%     % reset inner counters
+%     \setcounter{subquestion}{0}
+%     \setcounter{subsubquestion}{0}
+%     % add section*
+%     \refstepcounter{question}
+%     \section*{\thequestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{section}{\thequestion\quad#1}
+% }
+%
+% % subquestion
+% \newcounter{subquestion}[part]
+% \renewcommand\thesubquestion{%
+%     Q\arabic{question} - \alph{subquestion})%
+% }
+% \newcommand{\subquestion}[1]{
+%     % reset inner counters
+%     \setcounter{subsubquestion}{0}
+%     % add subsection*
+%     \refstepcounter{subquestion}
+%     \subsection*{\thesubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsection}{\thesubquestion\quad#1}
+% }
+%
+% % subsubquestion
+% \newcounter{subsubquestion}[part]
+% \renewcommand{\thesubsubquestion}{(\roman{subsubquestion})}
+% \newcommand{\subsubquestion}[1]{
+%     % add subsubsection*
+%     \refstepcounter{subsubquestion}
+%     \subsubsection*{\thesubsubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsubsection}{\thesubsubquestion\quad#1}
+% }
+
+
+
+% Questions environment
+
+% sectionBox
+\NewDocumentEnvironment{sectionBox}
+{
+    s       % #1 - Numbered
+    t1      % #2 - Section
+    t2      % #3 - Subsection
+    t3      % #4 - Subsubsection
+    tb      % #5 - Background
+    tm      % #6 - Minipage
+    O{5pt}  % #7 - vspace
+    m       % #8 - Title
+    +b      % #9 - Content
+}{
+        \vspace{#7}\relax
+        \IfBooleanF{#6}{\noindent\begin{minipage}{\linewidth}}
+            \IfBooleanTF{#1}{%
+                \IfBooleanT{#2}{      \section*{#8}\relax}
+                \IfBooleanT{#3}{   \subsection*{#8}\relax}
+                \IfBooleanT{#4}{\subsubsection*{#8}\relax}
+            }{%
+                \IfBooleanT{#2}{      \section {#8}\relax}
+                \IfBooleanT{#3}{   \subsection {#8}\relax}
+                \IfBooleanT{#4}{\subsubsection {#8}\relax}
+            }
+            \IfBooleanTF{#5}
+                { #9 }
+                { \begin{tcolorbox} #9 \end{tcolorbox}\relax }
+            \IfBooleanF{#6}{\end{minipage}\relax}
+    }{      \relax }
+
+% questionBox
+\NewDocumentEnvironment{questionBox}
+{
+    s       % #1 - Numbered
+    t1      % #2 - Question
+    t2      % #3 - Subquestion
+    t3      % #4 - Subsubquestion
+    tb      % #5 - Background
+    tm      % #6 - Minipage (samepage)
+    O{0pt}  % #7 - vspace
+    m       % #8 - title
+    +b      % #9 - content
+}{
+    \vspace{#7}\relax
+    \IfBooleanF{#6}{\noindent\begin{minipage}{\linewidth}}
+        \IfBooleanTF{#1}{%
+            \IfBooleanT{#2}{       \section*{#8}\relax}
+            \IfBooleanT{#3}{    \subsection*{#8}\relax}
+            \IfBooleanT{#4}{ \subsubsection*{#8}\relax}
+        }{%
+            \IfBooleanT{#2}{      \question {#8}\relax}
+            \IfBooleanT{#3}{   \subquestion {#8}\relax}
+            \IfBooleanT{#4}{\subsubquestion {#8}\relax}
+        }
+        \IfBooleanTF{#5}
+            { #9 }
+            { \begin{tcolorbox} #9 \end{tcolorbox}\relax }
+        \IfBooleanF{#6}{\end{minipage}\relax}
+}{      \relax }
+
+% % codeBox
+% \DeclareTCBListing{codeBox}
+%     { s t1 t2 t3 O{5mm} O{left=2.5em} m m }{
+%         \IfBooleanT{#1}{breakable,}%
+%         before = {
+%             \vspace{#5}
+%             \IfBooleanF{#1}{\noindent\begin{minipage}}
+%             \IfBooleanT{#2}{      \question{#8}}
+%             \IfBooleanT{#3}{   \subquestion{#8}}
+%             \IfBooleanT{#4}{\subsubquestion{#8}}
+%         },
+%         \IfBooleanF{#1}{after = {\end{minipage}},}%
+%         listing only,
+%         listing engine  = minted,
+%         minted language = #7,
+%         minted options  = {},
+%         #6
+%     }
+
+
+
+%% Incompleto
+%
+%% Listoftemas: tema e subtema
+%\newlistof{temas}{prog}{}
+%%% Add to document
+%%\section*{Programa}
+%%\begin{multicols}{2} \listoftemas \end{multicols}
+%% tema
+%\newcounter{tema}[section]
+%\newcommand\tema[1]{%
+%    \refstepcounter{tema}%
+%    \addcontentsline{prog}{temas}{%
+%        \thetema\textsuperscript{o} Tema: #1%
+%    }%
+%}
+%% subtema
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%    \refstepcounter{subtema}%
+%    \addcontentsline{prog}{temas}{%
+%        \textbullet\quad#1%
+%    }
+%}
+
+
+
+% subsubsection customization
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+
+\begin{document}
+
+\newgeometry{
+    top    = .12\paperheight,
+    bottom = .12\paperheight,
+    left   = .12\paperwidth,
+    right  = .12\paperwidth,
+}
+
+
+\maketitle
+
+
+% Table of Contents
+\renewcommand{\contentsname}{} % remove title
+
+\section*{Conteúdo}
+\begin{multicols}{2}
+    \tableofcontents
+\end{multicols}
+
+
+\restoregeometry
+
+
+
+% print files
+\begin{luacode*}
+
+    -- Files Directory
+    dir = "aulas/"
+
+    -- Files Prefix
+    prefix = "Aula "
+
+    -- Files
+    files = {
+        "1 2021:10:06", -- Aula 1 - Introdução a TLQ e Teoria Atômica I
+        "2 2021:10:11", -- Aula 2 - Teoria Atômica II
+        "3 2021:10:13", -- Aula 3 - Teoria Atômica III
+        "4 2021:10:18", -- Aula 4 - Teoria Atômica IV
+        "5 2021:10:20", -- Aula 5 - Teoria Atômica V
+        "6 2021:10:25", -- Aula 6 - Teoria Atômica VI
+        "7 2021:10:27", -- Aula 7 - Propriedades periódicas
+    }
+
+    -- Print some files
+    index = {1}
+
+    -- Loop
+    -- for v,i in ipairs(index) -- Generic some
+    -- for i,v in ipairs(files) -- Generic all
+
+    for i,v in ipairs(files) -- Generic all
+    do
+        tex.print(string.split(table.concat{
+        [[
+            \input{]], dir, prefix, files[i], [[}
+        ]]
+        },"\n"))
+    end
+
+\end{luacode*}
+
+
+
+
+
+\end{document}

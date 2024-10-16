@@ -1,0 +1,758 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+\usepackage{tikz}		
+\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}   % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+\usepackage{multirow}
+\usepackage{siunitx} % Column S: align on decimal
+%\usepackage{longtable}
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+\definecolor{Red}  {HTML}{FF7E79}
+\definecolor{Blue} {HTML}{6666FF}
+\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+%\renewcommand\thesection{Questão \arabic{section} }
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	Física 1 - Ficha S2\\
+	Movimento Unidimensional%
+}
+\author{Felipe Pinto - 61387}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+\part{Questões}
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection%
+{%
+	Q\arabic{section} - \alph{subsection})%
+}
+
+% Q1
+\section{}
+
+\begin{multicols}{2}
+
+% Q1 - a)
+\subsection{}
+\begin{tikzpicture}[
+	scale=0.25, font=\small, align=center, line width=1,
+	rotate=270
+]
+	
+	\def\minX {-2.5};
+	\def\maxX { 3.5};
+	\def\minY {-5.5};
+	\def\maxY { 16.5};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\draw[ultra thin, Black!75! , step=1]
+	(\minX,\minY) grid (\maxX,\maxY);
+	
+	\draw
+	(-1,\minY) -- (-1,\maxY)
+	(1, \maxY) -- (1, \minY);
+	
+	\node at (2,-4)
+	[above, circle, fill=Red, inner sep=2]{};
+	\node at (2,-4)
+	[below, circle, fill=Green, inner sep=2]{};
+	
+	\foreach \t in {0,1,2,3}
+		\draw[fill] 
+		(0,{0.5*\t*\t-4}) 
+		circle 
+		(0.1) node[above=6, font=\tiny]{\t};
+		
+	\foreach \t in {4,5,6}
+		\draw[fill] 
+		(0,{0.5*\t*\t-4})
+		circle 
+		(0.15) node[above=6, font=\tiny]{\t};
+	
+	\draw[thin] 
+	(0.7,4) 
+	-- 
+	++(0.9,0) node[below=-4, font=\tiny]{$\vec a = \vec 0$};
+		
+\end{tikzpicture}
+
+% Q1 - b)
+\subsection{}
+\begin{tikzpicture}[
+	scale=0.25, font=\small, align=center, line width=1,
+	rotate=270
+]
+	
+	\def\minX {-2.5};
+	\def\maxX { 3.5};
+	\def\minY {-5.5};
+	\def\maxY { 16.5};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\draw[ultra thin, Black!75! , step=1]
+	(\minX,\minY) grid (\maxX,\maxY);
+	
+	\draw[->] 
+	(\minX+0.5,\minY) 
+	-- 
+	(\minX+0.5,\maxY) node[below left]{$y$};
+	
+	\draw
+	(0,\minY) -- (0,\maxY)
+	(2, \maxY) -- (2, \minY);
+	
+	\draw[thin] (0.3,\maxY-0.5) rectangle (1.7,\maxY-2.5);
+	\draw (1,\maxY-0.5) -- +(0,0.5);
+	
+	\def\a{-1}
+	\def\0{\maxY-1.5}
+	
+	\foreach \t in {0,1,2,3}
+		\draw[fill] 
+		(1,{0.5*\a*\t*\t+\0}) 
+		circle 
+		(0.1) node[below=6, font=\tiny]{\t};
+	
+	\def\1{0.5*\a*3*3+\0}
+	
+	\foreach \t in {4,5,6}
+		\draw[fill] 
+		(1,{-3*(\t-3)+\1})
+		circle 
+		(0.1) node[below=6, font=\tiny]{\t};
+	
+	\def\2{-3*(6-3)+\1}
+
+	\foreach \t in {7,8,9}
+		\draw[fill] 
+		(1,{-\a*0.5*(\t-6)*(\t-6)-3*(\t-6)+\2}) 
+		circle 
+		(0.1) node[below=6, font=\tiny]{\t};
+	
+
+\end{tikzpicture}
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+% Q1 - c)
+\subsection{}
+\begin{tikzpicture}[
+	scale=0.25, font=\small, align=center, line width=1
+]
+	
+	\def\minX {-0.5};
+	\def\maxX { 21.5};
+	\def\minY {-0.5};
+	\def\maxY { 10.5};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\draw[ultra thin, Black!75! , step=1]
+	(\minX,\minY) grid (\maxX,\maxY);
+
+	\draw[thick]
+	(2,-1) -- (30:100);
+	
+	\fill[opacity=0.3]
+	(2,-1) -- (30:100) -| (\maxX,\minY);
+	
+	\draw[thin]
+	(3.5,0)
+	-- (7.5,0)
+	   (6.5,0)
+	arc (0:30:3) node[font=\tiny, below right]{$30^o$};
+	
+	\def\a{1}
+	
+	\foreach \t in {0,1,2,3,4,5,6}
+		\draw[fill, rotate=30] 
+		(20-0.5*\a*\t*\t,-1)
+		circle 
+		(0.1) node[above left, font=\tiny]{\t};
+
+
+\end{tikzpicture}
+
+% Q1 - d)
+\subsection{}
+\begin{tikzpicture}[
+	scale=0.25, font=\small, align=center, line width=1
+]
+	
+	\def\minX {-10.5};
+	\def\maxX { 10.5};
+	\def\minY {-5.5};
+	\def\maxY { 5.5};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\draw[ultra thin, Black!75! , step=1]
+	(\minX,\minY) grid (\maxX,\maxY);
+	
+	\def\ang{0.0027777777}
+
+	\draw(0,0) circle (4);
+	\fill[opacity=0.6](0,0) circle (4);
+	
+	\foreach \t in {0,1,2,7,8}
+		\draw[fill]
+		(0,0)
+		(\t*360/9:4.5)
+		circle
+		(0.1) node[right,font=\tiny]{\t};
+		
+		
+	\foreach \t in {3,...,6}
+		\draw[fill]
+		(0,0)
+		(\t*360/9:4.5)
+		circle
+		(0.1) node[left,font=\tiny]{\t};
+		
+	\node at (7,4)[font=\tiny]{$\Delta t=10m$};
+
+\end{tikzpicture}
+
+\end{multicols}
+
+% Q2
+\section{}
+
+\begin{multicols}{2}
+
+\subsection{}
+Movimento sobre superficie com atrito
+(movimento retilíneo com aceleração inversa ao movimento)
+
+\subsection{}
+Queda livre (movimento retilíneo acelerado para baixo)
+
+\subsection{}
+Movimento retilíneo uniforma para cima,\\
+Movimento circular desacelerado,\\
+movimento circular acelerado,\\
+movimento retilíneo uniforme para esquerda.
+
+\end{multicols}
+
+\setcounter{section}{3}
+
+% Q4
+\section{}
+
+\begin{multicols}{2}
+
+% Q4 - a)
+\subsection{}
+
+\begin{tabular}{| r| *{4}{c} |}
+	
+	\hline
+	
+	t & 2 & 4 & 6 & 10
+	
+	\\ \hline
+	
+	x & 10 & 20 & 20 & 40
+	
+	\\ \hline
+
+\end{tabular}
+
+% Q4 - b)
+\subsection{}
+\begin{flalign*}
+&
+	v=\Delta S/\Delta t
+	= &\\& =
+	(20-0)\,m/(4-0)\,s = 5\,m/s
+&
+\end{flalign*}
+
+% Q4 - c)
+\subsection{}
+\begin{flalign*}
+&
+	v=\Delta S/\Delta t
+	= &\\& =
+	(20-20)\,m/(6-4)\,s = 0\,m/s
+&
+\end{flalign*}
+
+% Q4 - d)
+\subsection{}
+\begin{flalign*}
+&
+	v=\Delta S/\Delta t 
+	= &\\& = 
+	(40-20)\,m/(10-6)\,s = 5\,m/s
+&
+\end{flalign*}
+
+% Q4 - e)
+\subsection{}
+\begin{flalign*}
+&
+	v=\Delta S/\Delta t
+	= &\\& =
+	(20-40)\,m/(12-10)\,s = -10\,m/s
+&
+\end{flalign*}
+
+\end{multicols}
+
+% Problemas
+\part{Problemas}
+\renewcommand\thesection{Problema \arabic{section}}
+\renewcommand\thesubsection%
+{%
+	P\arabic{section} - \alph{subsection})%
+}
+
+% P1
+\section{}
+
+\begin{multicols}{2}
+
+% P1 - a)
+\subsection{}
+\begin{tikzpicture}[
+	scale=0.25, font=\small, align=center, line width=1
+]
+	
+	\def\minX {-3.5};
+	\def\maxX {12.5};
+	\def\minY {-1.5};
+	\def\maxY {10.5};
+	
+	\clip (\minX,\minY) rectangle (\maxX,\maxY);
+	
+	\draw[ultra thin, Black!75! , step=1]
+	(\minX,\minY) grid (\maxX,\maxY);
+
+	\draw[->] 
+	(0,\minY) -- 
+	(0,\maxY) node[below right, font=\tiny]{$y(m)$};
+	\draw[->] 
+	(\minX,0) -- 
+	(\maxX,0) node[below=6, left=-4, font=\tiny]{$x(min)$};
+	
+	\def\yscale{ 1/2.5*20/12 }
+	
+	\foreach \y in {3,6,...,12}
+		\draw[thin]
+		(0.3,\y*\yscale) -- 
+		(-0.3,\y*\yscale)
+		node[font=\tiny, left=-3]{\y};
+		
+	\def\xscale{ 1/0.25 }
+
+	\foreach \x in {1,2,...,2}
+		\draw[thin]
+		(\x*\xscale, 0.3) -- 
+		(\x*\xscale,-0.3) 
+		node[font=\tiny, below=-3]{\x};
+	
+	\def\endline{12.621}
+	
+	\draw[dashed, thin]
+	(0,\endline*\yscale)
+	node[font=\tiny, above=2, left=-2]{$12.6\cong$}
+	%
+	-- node[font=\tiny, sloped, above=-2]{fim}
+	%
+	(\maxX,\endline*\yscale) node(endline){};
+	
+	\def\vT{ 10*60/100 }
+	\def\vL{ 20*\vT }
+
+	% Lebre
+	\path[draw, thin, Blue]
+	(0,0) 
+	-- node[font=\tiny, sloped, near end, above=-2]{Lebre}
+	(2*\xscale,0) --
+	(2*\xscale + 1*\xscale, 1*\vL*\yscale);
+	
+	% Tartaruga
+	\path[draw, thin, Red] 
+	(0,0) 
+	-- node[font=\tiny, sloped, near start, above=-2]{Tartaruga}
+	++(4*\xscale,4*\vT*\yscale);
+
+\end{tikzpicture}
+
+% P1 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta t*\frac{10.0\,c\,m}{s}\frac{60}{100}
+	-(\Delta t-2)20
+	* &\\& *
+	\frac{10.0\,c\,m}{s}\frac{60}{100}
+	\implies \Delta t\cong 2.1\,min
+&
+\end{flalign*}
+
+% P1 - c)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta S = \Delta t*v_{t}=2.1*6\cong 12.6\,m
+&
+\end{flalign*}
+
+\end{multicols}
+
+% P2
+\section{}
+
+\bm{x_{(t)} = 2.0+3.0\,t-1.0\,t^2}
+
+\begin{multicols}{2}
+
+% P2 - a)
+\subsection{}
+\begin{flalign*}
+&
+	x_{(3)}=2.0+3.0*3-1.0(3)^2= 2.0\,m
+&
+\end{flalign*}
+
+% P2 - b)
+\subsection{}
+\begin{flalign*}
+&
+	v_{(3)}=x'_{(3)} = 3.0+2*3=9\,m/s
+&
+\end{flalign*}
+
+% P2 - c)
+\subsection{}
+\begin{flalign*}
+&
+	a_{(3)}=x''_{(3)}=-1.0\,m/s^2
+&
+\end{flalign*}
+
+\end{multicols}
+
+% P3
+\section{}
+
+\begin{multicols}{2}
+
+% P3 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta t_{\text{min}}\,a_{\text{max}}
+	=|\Delta \vec v| = v_i
+	\implies &\\& \implies
+	\Delta t_{\text{min}}=100/5=20\,s
+&
+\end{flalign*}
+
+\subsection{}
+\begin{flalign*}
+&
+	\iff \frac{a_{\text{max}}\,(\Delta t_{\text{min}})^2}{2}
+	= \Delta S_{\text{max}} 
+	< &\\& <
+		0.80\,K\,m
+	\implies
+		\frac{5*(20)^2}{2}=1000\,m
+	= &\\& =
+		1\,K\,m \nleq 0.8\,K\,m
+&
+\end{flalign*}
+
+\end{multicols}
+
+% P4
+\section{}
+
+% P4 - a)
+\subsection{}
+%\begin{itemize}
+%	
+%	\item%
+%	\begin{flalign*}
+% 	&
+%		a_j = 
+%		\left\{
+%		\begin{array}{ll}
+%		%
+%			a_j\,m/s^2\quad&\forall\,t\in[0\,s,20.0\,s)
+%			\\
+%			-5.00\,c\,m/s^2\quad&\forall\,t\geq20.0\,s	
+%		%
+%		\end{array}
+%		\right.
+%	&
+%	\end{flalign*}
+%	
+%\end{itemize}
+
+\begin{flalign*}
+&
+	\Delta S 
+	= 
+		a_{0}(t_{0})^2/2
+		+ v_{1}\,t_{1} 
+		+ a_{1}(t_{1})^2/2
+	;\
+		t_{Total} = t_{0} + t_{1}
+	; &\\&
+		v_{1} = t_{0}\,a_{0}
+	\implies
+		\Delta S 
+	=
+		\frac{v_{1}}			 {t_{Total}-t_{1}}
+		\frac{(t_{Total}-t_{1})^2}{2}
+	+	v_1\,t_1 
+	+ 	a_1(t_1)^2/2
+	= &\\& =
+		\frac{10.0}	  {160-20}
+		\frac{(160-20)^2}{2}
+	+	10.0*20.0
+	-	5.00*10^{-2}(20.0)^2/2
+	\cong
+		890\,m
+&
+\end{flalign*}
+
+% P4 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\text{Maria ganha} \iff
+		t_M < t_J
+	;\
+		t_M = t_0+t_1
+	;\
+		a_0\,(t_0)^2/2 = l_1
+	\implies &\\& \implies
+		\sqrt{2\,l_1/a_0} + t_1
+	=
+		\sqrt{2*200/0.100} + 128
+	\cong 191\,s \not< 160\,s
+	&\\& \therefore	\text{João ganha}
+&
+\end{flalign*}
+
+% P5
+\section{}
+
+% P5 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\vec a = \Delta \vec v/\Delta t
+	;\
+		\Delta \vec S = \vec v_i\,\Delta t 
+			    + \vec a\,(\Delta t)^2/2
+	\implies
+		\vec v_i\,(\Delta v/a)
+		+ \vec a\,(\Delta v/a)^2/2
+		= \Delta \vec S
+	\implies &\\& \implies
+		\frac{\vec a}{a^2}
+		\,\frac{(\Delta v)^2}{2}
+	=
+		\Delta \vec S-\vec v_i\,\Delta v/a
+	\implies
+		a^2\,\hat\imath
+		- a\,v_i\,\hat\imath\,\Delta v/\Delta S
+		+a\hat\imath\,\frac{(\Delta v)^2}{2\,\Delta S}
+	=
+		\vec 0
+	\implies &\\& \implies
+		a\,\hat\imath\,
+		\left(
+			a
+			+ \frac{v_i\,\Delta v}{\Delta S}
+			- \frac{(\Delta v)^2}{2\,\Delta S}
+		\right)
+		= \vec 0
+	\implies
+		\vec a
+	= 
+		\frac{(\Delta v)(\Delta v-2\,v_i)}{2\,\Delta S}
+		\,\hat\imath
+	= &\\& =
+		\frac{(420-280)(420-280-2*420)}{2*0.10}
+	=
+		-490\,\hat\imath\,K\,m/s^2
+&
+\end{flalign*}
+
+% P5 - b)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta t = \Delta v/ a = \frac{420-280}{490\,K}
+	\cong 286*10^{-6}s
+&
+\end{flalign*}
+
+% P5 - c)
+\subsection{}
+\begin{flalign*}
+&
+	\Delta \vec S = \vec v_i\,\Delta t 
+			    + \vec a\,(\Delta t)^2/2
+	;\ 
+		\vec a = \Delta \vec v/\Delta t
+	;\
+		\Delta \vec v = -\vec v_i
+	\implies &\\& \implies
+		\Delta S\,\hat\imath
+	=
+		\frac{v_i^2}{a}\,\hat\imath
+		-\frac{v_i^2}{2\,a}\,\hat\imath
+	=
+		\frac{v_i^2}{2\,a}\,\hat\imath
+	=
+	\left(
+		\frac{420^2}{2*490\,K}
+	\right)\,\hat\imath
+	\cong
+		18\,\hat\imath\,c\,m
+&
+\end{flalign*}
+
+% P6
+\section{}
+
+\subsection{}
+\begin{flalign*}
+&
+	\Delta t_{Total} = \Delta t_1 + \Delta t_2
+	;\
+		a_1\,\Delta t_1 = a_2\,\Delta t_2
+	;\
+		\Delta S 
+	=
+		a_1\,(\Delta t_1)^2/2 
+		+ v_2\,\Delta t_2 
+		- a_2\,(\Delta t_2)^2/2
+	; &\\&
+		v_2 = a_1\,\Delta t_1
+	\implies
+		\Delta t_{Total} 
+	= 
+		\sqrt{ \frac{2\,a_2\,\Delta S}
+				  {a_2\,a_1+a_1^2} }
+		+ \frac{a_1}{a_2}\,
+		\sqrt{ \frac{2\,a_2\,\Delta S}
+				  {a_2\,a_1+a_1^2} }
+	= &\\& =
+		\left( 1 + \frac{0.100}{0.500} \right)
+		\sqrt{ \frac{2*0.500*1.00\,K}
+				  {0.500*0.100+0.100^2} }
+	\cong
+		155\,s;
+&\\\\&
+	\Delta t_1
+	=
+		\sqrt{ \frac{2\,a_2\,\Delta S}
+				  {a_2\,a_1+a_1^2} }
+	=
+		\sqrt{ \frac{2*0.500*1.00\,K}
+				  {0.500*0.100+0.100^2} }
+	\cong 129\,s
+&
+\end{flalign*}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

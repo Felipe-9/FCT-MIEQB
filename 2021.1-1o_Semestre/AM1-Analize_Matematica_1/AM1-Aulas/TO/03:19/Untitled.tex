@@ -1,0 +1,44 @@
+\documentclass[12pt]{report}
+
+\usepackage{color}
+\pagecolor{black}
+\color{white}
+
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\begin{document}
+
+
+
+\title{AM 1 - Análise Matemática}
+\date{19/03}
+
+\maketitle
+
+\tableofcontents
+
+\break
+
+\chapter{Demonstrações lógicas e matemáticas}
+
+\break
+
+\[ \sum_{k=1}^n 2\, k-1 = -n + 2\,\sum_{k=1}^n k = -n + 2\,(1+n)\, \frac{n}{2}=-n+n+n^2=n^2 \]
+
+\break
+
+\[ \sum_{k=0}^n 1/2^k = 2-1/2^n \iff \]
+\[ \sum_{k=0}^n 1/2^k =  \]
+
+
+\break
+
+
+\[ \sum_{k=0}^n 1/2^k = 2-1/2^n \iff \]
+\begin{flalign*} n=0 \implies \sum_{k=0}^n 1/2^k= 1 = 2-1/2^0 \end{flalign*}
+\begin{flalign*} n=m+1 \implies \sum_{k=0}^{m+1} 1/2^k = \sum_{k=0}^m (1/2^k) + 1/2^{m+1} = 2-1/2^m + 1/2^{m+1} = 2-1/2^{m+1} \end{flalign*}
+
+
+\end{document}

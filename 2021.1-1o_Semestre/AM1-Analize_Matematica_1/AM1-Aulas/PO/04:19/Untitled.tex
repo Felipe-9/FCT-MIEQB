@@ -1,0 +1,303 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{5em}
+\setlength{\cftsubsecnumwidth}{4em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsecafterpnum{\vskip0.05em}
+
+% Multicols
+%\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{siunitx} % Column S: align on decimal
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	AM 1 - Resolução Ficha 5\\
+	Limites e Continuidade de funções%
+}
+\author{Felipe Pinto - 61387}
+\date{19/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+% Questões
+{\color{DarkGreen!75}\part{Questões}}
+
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	Q\arabic{section} - \alph{subsection})%
+}
+
+\setcounter{section}{2}
+
+% Q3
+\section{}
+
+\setcounter{subsection}{6}
+
+% Q3 - g)
+\subsection{$\lim_{x\to0}\arcsin(3\,x)/x$}
+\begin{flalign*}
+&
+y = \arcsin(3\,x)
+\implies
+	\lim_{x\to0}\arcsin(3\,x)/x
+=	\lim_{x\to0}\frac{y}{\sin(y)/3}
+=	3\,\lim_{x\to0}\frac{y}{\sin(y)}
+=	3
+&
+\end{flalign*}
+
+% Questões Extras
+{\color{DarkGreen!75}\part{Extras}}
+
+\renewcommand\thesection{Extra \arabic{section}}
+\renewcommand\thesubsection{%
+	E\arabic{section} - \alph{subsection})%
+}
+
+% E1
+\section{Incompleto}
+\bm{
+f:\mathbb{R}\to\mathbb{R};\quad
+f(x) =
+\left\{
+\begin{array}{ll}
+	(1-\cos(x))/x\quad & x<0
+	\\
+	0\quad & x=0
+	\\
+	x\,\cos(1/x)\quad&x>0
+\end{array}
+\right.
+}
+\begin{flalign*}
+&
+f\text{ é continua em x=0}
+\iff	\lim_{x\to 0^-}f(x) = \lim_{x\to 0^+}f(x)
+;\	\lim_{x\to 0^-}f(x)
+=	\lim_{x\to 0^-}\frac{1-\cos(x)}{x}
+&\\&
+=	\lim_{x\to 0^-}\frac{\sin^2(x)}{x(1+\cos(x))}
+=	\lim_{x\to 0^-}\left(\frac{\sin(x)}{x}\right)^2
+	\,\lim_{x\to 0^-}\frac{x}{1+\cos(x)}
+=	0
+&\\&
+	\lim_{x\to 0^+}f(x)
+=	\cdots
+&
+\end{flalign*}
+
+% E2
+\section{$\lim_{x\to1} \sin(x-1)/|x-1| $}
+\begin{flalign*}
+&
+=	\lim_{x\to1}
+	\left\{
+	\begin{array}{ll}
+	%	
+		\sin(x-1)/x-1\quad & x>0
+		\\
+		\sin(x-1)/1-x\quad & x<0
+	%
+	\end{array}
+	\right.
+;\ &\\&	\lim_{x\to1^+} \sin(x-1)/|x-1| = 1
+;\		\lim_{x\to1^{-1}} \sin(x-1)/|x-1| = -1
+&\\&	\therefore \nexists \lim_{x\to1} \sin(x-1)/|x-1|
+&
+\end{flalign*}
+
+% E3
+\section{$ \lim_{x\to0} x\,\cos(1/x)/(x-\sqrt{x}) $ Incompleto}
+
+\begin{flalign*}
+&
+=	\lim_{x\to0} \frac{\cos(1/x)}{1-\sqrt{1/x}}
+=	\cdots
+=	0
+&
+\end{flalign*}
+
+% E4
+\section{$ \lim_{x\to0} \tan(x)/x\,\cos(x) $}
+\begin{flalign*}
+&
+=	\lim_{x\to0} \frac{\sin(x)}{x\,\cos(x)\,\cos(x)}
+=	\lim_{x\to0} (\sin(x)/x)
+	\, \lim_{x\to0} 1/\cos^2(x)
+=	1
+&
+\end{flalign*}
+
+% E5
+\section{$ 
+	\lim_{x\to+\infty} 
+	\frac {5^{x}  +2{x+1}}
+		{6^{x-1}+e^x} 
+$}
+\begin{flalign*}
+&
+=	\lim_{x\to+\infty}
+	\frac{(5/6)^x + 2(2/6)^x}
+	     {(1)^x/6 + (e/6)^x }
+=	\frac{0   + 0}
+	     {1/6 + 0}
+=	0
+&
+\end{flalign*}
+
+% E6
+\section{}
+\bm{
+	f(x) = 
+	\left\{
+	\begin{array}{lll}
+	%
+		\log(x^2+1) \quad & x<0
+		\\
+		a\,\arctan(x\,\pi/4) \quad & 0\leq x\leq 1
+		\\
+		(x^2-2\,x+1)/(x-1) \quad & x>1
+	%
+	\end{array}
+	\right.
+}
+\begin{flalign*}
+&
+	\lim_{x\to1^-} a\,\arctan(x\,\pi/4)
+=	\lim_{x\to1^+} (x^2-2\,x+1)/(x-1)
+=	\lim_{x\to1^+} (x-1)^2/(x-1)
+=	0
+&\\&
+\therefore a = 0
+&
+\end{flalign*}
+
+% E7
+\section{}
+\bm{
+	f(x) = 
+	\left\{
+	\begin{array}{ll}
+ 	%
+		-e^{1/x} \quad & x<0 
+		\\
+		\log(1/(1+x^2)) \quad & x>0
+	%
+	\end{array}
+	\right.
+}
+
+% E7 - a)
+\subsection{$
+	\lim_{x\to-\infty} f(x)
+$ e $
+	\lim_{x\to+\infty} f(x)
+$}
+
+\begin{flalign*}
+&
+	= -e^{\lim_{x\to+\infty}1/x} = -1
+&\\\\&
+	= \log\left( \lim_{x\to-\infty}\frac{1}{1+x^2} \right)
+	= -\infty
+&
+\end{flalign*}
+
+% E7 - b)
+\subsection{$f(x)$ é continua em 0}
+\begin{flalign*}
+&
+\iff
+	\exists\,x\in\mathbb{R} 
+	:\lim_{x\to0^-}f(x) = \lim_{x\to0^+}f(x)
+\iff
+	\lim_{x\to0^-} -e^{1/x}
+=	0
+= &\\& =
+	\lim_{x\to0^+} \log(1/(1+x^2))
+=	0
+&
+\end{flalign*}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

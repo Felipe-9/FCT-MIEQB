@@ -1,0 +1,267 @@
+\part{16/04}
+
+\begin{multicols}{2}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{}
+
+\BMold{
+	H(x)
+=	\begin{cases}
+		\phantom{-}1	& \quad x\geq0
+	\\	-1			& \quad x < 0
+	\end{cases}
+}
+
+\begin{tikzpicture}
+\begin{axis}
+	[]
+	
+	\addplot
+	[
+		Red,
+	] coordinates {
+		(-5, -1)
+		(-4, -1)
+		(-3, -1)
+		(-2, -1)
+		(-1, -1)
+		( 0, -1)
+	};
+	
+	\node [draw= Red, circle, minimum size= 1mm] at (axis cs:0,-1){};
+	
+	\addplot
+	[
+		Red,
+	] coordinates {
+		( 0,  1)
+		( 1,  1)
+		( 2,  1)
+		( 3,  1)
+		( 4,  1)
+		( 5,  1)
+	};
+	
+	\node [fill= Red, circle, minimum size= 1mm] at (axis cs:0,1){};
+	
+	
+\end{axis}
+\end{tikzpicture}
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Definição derivada}
+\BMold{
+	\lim_{x\to a}
+	\frac
+		{f(x) - f(a)}
+		{x-a}
+}
+
+\begin{enumerate}[label=(\roman{enumi})]
+\item $f$ não é obrigada a estar definida em $x=a$
+\item $(x_n)$ é uma sucessão que aproxima de a por valores
+	diferentes de a
+\end{enumerate}
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Existencia de limite}
+\BMold{
+	\exists \lim_{x\to a}f(x)
+\quad \iff
+}\relax
+
+\begin{flalign*}
+&
+\iff
+\begin{cases}
+	\exists \lim_{x\to a^-}f(x)
+\\	\exists \lim_{x\to a^+}f(x)
+\\	\lim\limits_{x\to a^+}f(x) = \lim\limits_{x\to a^-}f(x)
+\end{cases}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\vspace{5mm}
+\noindent
+\begin{minipage}{\linewidth}
+
+\section{Exemplo}
+
+\BMold{
+	g(a)
+=	\begin{cases}
+		x^2	& \quad x<0
+	\\	x	& \quad x\geq0
+	\end{cases}
+}\relax
+
+\begin{flalign*}
+&
+	\exists\lim_{x\to0} g(x)
+\iff
+	\lim_{x\to 0^-}g(x) = 0
+;\	\lim_{x\to 0^+}g(x) = 0
+&
+\end{flalign*}
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{Exemplo}
+
+\begin{tikzpicture}
+\begin{axis}
+	
+	\addlegendimage{empty legend}
+	\addlegendentry%
+	[
+		font=\boldmath\footnotesize,
+		Red,
+	] {$f(n)=\sin(1/n)$}
+	
+	\addplot
+	[	smooth,
+		Red,
+		domain= -0.2:0.2,
+		samples= 20*\mysampledensity,
+	] {
+		sin(deg(1/x))
+	};
+	
+\end{axis}
+\end{tikzpicture}
+
+\subsection{Usando sucessões para encontrar limites}
+
+\BMold{
+	x(n) = 1/(n\,\pi)\quad n\in\mathbb{N}\backslash\{0\}
+}\relax
+
+\begin{flalign*}
+&
+	f(x(n))
+=	\sin\left( \frac{1}{1/(n\,\pi)} \right)
+=	\sin(n\,\pi)\quad n\in\mathbb{N}\backslash\{0\}
+&
+\end{flalign*}
+
+\begin{tikzpicture}
+\begin{axis}
+	
+	\addlegendimage{empty legend}
+	\addlegendentry%
+	[
+		font=\boldmath\footnotesize,
+		Red,
+	] {$f(n)=\sin(1/x(n))$}
+	
+	\addplot
+	[	smooth,
+		DRed,
+		opacity= 0.6,
+		domain= 0:0.1,
+		samples= 5*\mysampledensity,
+	] {
+		sin(deg(1/x))
+	};
+	
+	\addplot
+	[
+		Red,
+		mark= o,
+		domain= 0:0.1,
+	] coordinates {
+		(0.0795774715459477,0)
+		(0.0636619772367581,0)
+		(0.0530516476972984,0)
+		(0.0454728408833987,0)
+		(0.0397887357729738,0)
+		(0.0353677651315323,0)
+		(0.0318309886183791,0)
+		(0.0289372623803446,0)
+		(0.0265258238486492,0)
+		(0.0244853758602916,0)
+		(0.0227364204416993,0)
+		(0.0212206590789194,0)
+		(0.0198943678864869,0)
+		(0.0187241109519877,0)
+		(0.0176838825657661,0)
+		(0.01675315190441,0)
+		(0.0159154943091895,0)
+		(0.0151576136277996,0)
+	};
+	
+\end{axis}
+\end{tikzpicture}
+
+
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\section{}
+
+\BMold{
+	h(x) = x\,\sin(1/x)\quad x\in\mathbb{R}\backslash\{0\}
+}\relax
+
+\begin{tikzpicture}
+\begin{axis}
+	
+	\addlegendimage{empty legend}
+	\addlegendentry%
+	[
+		font=\boldmath\footnotesize,
+		Red,
+	] {$h(n)=x\,\sin(1/x)$}
+	
+	\addplot
+	[	smooth,
+		Red,
+		domain= -0.1:0.1,
+		samples= 10*\mysampledensity,
+	] {
+		x*sin(deg(1/x))
+	};
+	
+\end{axis}
+\end{tikzpicture}
+
+\begin{flalign*}
+&
+	h(x)
+=	x\,\sin(1/x)
+=	\frac{\sin(1/x)}{1/x}
+&
+\end{flalign*}
+
+\end{minipage}
+
+\end{multicols}

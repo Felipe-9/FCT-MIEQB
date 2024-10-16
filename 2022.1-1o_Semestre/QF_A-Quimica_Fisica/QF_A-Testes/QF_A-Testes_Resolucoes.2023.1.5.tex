@@ -1,0 +1,977 @@
+% !TEX root = ./QF_A-Testes_Resolucoes.2023.1.5.tex
+\providecommand\mainfilename{"./QF_A-Testes_Resolucoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Testes_Resolucoes.2023.1.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Testes_Resolucoes.2023.1.5}}}
+\tikzsetexternalprefix{./.build/figures/QF_A-Testes_Resolucoes.2023.1.5/graphics/}
+
+\mymakesubfile{5}
+[QF A]
+{Exame epoca especial} % Subfile Title
+{Exame epoca especial} % Part Title
+
+
+%   ,ad8888ba,        88
+%  d8"'    `"8b     ,d88
+% d8'        `8b  888888
+% 88          88      88
+% 88          88      88
+% Y8,    "88,,8P      88
+%  Y8a.    Y88P       88
+%   `"Y8888Y"Y8a      88
+
+\begin{questionBox}1{ % Q1
+    A reação
+} % Q1
+    \begin{center}\large\bfseries
+        \ch{N2O2\gas{} -> 2 NO\gas{}}
+    \end{center}
+
+    É de primeira ordem em relação a \ch{N2O2}, derive uma expressão para a variação da pressão parcial de \ch{N2O2} em função do tempo e outra para a variação da pressão parcial de \ch{NO} em função do tempo
+
+    \answer{}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C C}
+            \toprule
+            
+                p_{\ch{N2O2}}
+                & p_{\ch{NO2}}
+            
+            \\\midrule
+            
+                \ch{[N2O2]}_0 & 0
+                \\ 
+                \ch{[N2O2]}_0-x & 2\,x
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \paragraph*{\ch{N2O2\gas{}}}
+    \begin{flalign*}
+        &
+            \odv{\ch{[N2O2]}}{t} = -k\,\ch{[N2O2]}^{1}
+            \implies &\\[3ex]&
+            \implies
+            \adif{\ln\ch{[N2O2]}}
+            = \ln\frac
+            {\ch{[N2O2]}}
+            {\ch{[N2O2]}_0}
+            = \ln\frac
+            {p_{\ch{N2O2}}/R\,T}
+            {p_{\ch{N2O2},0}/R\,T}
+            = \ln\frac
+            {p_{\ch{N2O2}}}
+            {p_{\ch{N2O2},0}}
+            = &\\&
+            =-k\,\adif{t}
+            =-k\,t
+            \implies &\\[3ex]&
+            \implies
+            p_{\ch{N2O2}}
+            = p_{\ch{N2O2},0}\,\exp(-k\,t)
+        &
+    \end{flalign*}
+
+    \paragraph*{\ch{NO2}\gas{}}
+    \begin{flalign*}
+        &
+            \ch{[NO2]}
+            = p_{\ch{NO2}}/R\,T
+            = &\\[2ex]&
+            = 2\,x
+            = 2\,\left(
+                \ch{[N2O2]}_0
+                -\ch{[N2O2]}
+            \right)
+            = 2\,\left(
+                \frac{p_{\ch{N2O2},0}}{R\,T}
+                -\frac{p_{\ch{N2O2}}}{R\,T}
+            \right)
+            &\\&
+            = \frac{2}{R\,T}\,\left(
+                p_{\ch{N2O2},0}
+                -p_{\ch{N2O2},0}\,\exp(-k\,t)
+            \right)
+            = \frac{2\,p_{\ch{N2O2},0}}{R\,T}\,\left(
+                1-\exp(-k\,t)
+            \right)
+            \implies &\\[3ex]&
+            \implies
+            p_{\ch{NO2}}
+            = 2\,p_{\ch{N2O2},0}\left(1-\exp(-k\,t)\right)
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\setcounter{question}{2}
+
+%   ,ad8888ba,     ad888888b,        ad888888b,
+%  d8"'    `"8b   d8"     "88       d8"     "88
+% d8'        `8b          a8P               a8P
+% 88          88       ,d8P"             ,d8P"
+% 88          88     a8P"              a8P"
+% Y8,    "88,,8P   a8P'              a8P'
+%  Y8a.    Y88P   d8"          888  d8"
+%   `"Y8888Y"Y8a  88888888888  888  88888888888
+
+\begin{questionBox}2{ % Q2.1
+    A decomposição de fosfina foi seguida através de medidaes de pressão, a 950\,\unit{\kelvin}
+} % Q2.1
+    \begin{center}
+        {\large\bfseries
+        \ch{4 PH3\gas{} -> P4\gas{} + 6 H2\gas{}}}
+
+        \vspace{1ex}
+        \begin{tabular}{L *{3}{C}}
+            \toprule
+            
+                p/\unit{\bar}
+                & 0.134 & 0.200 & 0.222
+                \\
+                t/\unit{\min}
+                & 0 & 40 & 80
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Calcule a ordem global da reação e a constante cinética a esta temperatura.
+
+    \answer{}
+    \begin{center}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \vspace{1ex}
+        \begin{tabular}{*{4}{C} L}
+            \toprule
+            
+                t/\unit{\min}
+                & p_{\ch{PH3}}/\unit{\bar}
+                & p_{\ch{P4}}/\unit{\bar}
+                & p_{\ch{H2}}/\unit{\bar}
+                & \multicolumn{1}{C}{p_{t}/\unit{\bar}}
+            
+            \\\midrule
+            
+                0
+                & p_{\ch{PH3},0}
+                & 0 & 0 & 0.134=p_{\ch{PH3},0}
+                \\
+                t
+                & p_{\ch{PH3},0}-4\,x
+                & x & 6\,x 
+                & p_t = p_{\ch{PH3},0}+3\,x
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    \begin{flalign*}
+        &
+            p_{\ch{[PH3]}}
+            = p_{\ch{[PH3]},0}-4\,x
+            = p_{\ch{[PH3]},0}-4\,\left(
+                (p_t-p_{\ch{[PH3]},0})/3
+            \right)
+            = p_{\ch{[PH3]},0}\,7/3-p_t\,4/3
+            ; &\\[6ex]&
+            \odv{{\ch{[PH3]}}}{t}
+            =-k\,{\ch{[PH3]}}^n
+            &\\&
+            \left\{
+                \begin{aligned}
+                    0: & \adif{\ch{[PH3]}} &= -k\,\adif{t}
+                    \\
+                    1: & \adif{\ln\ch{[PH3]}} &= -k\,\adif{t}
+                    \\
+                    2: & \adif{-\ch{[PH3]}^{-1}} &= -k\,\adif{t}
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    0: & \frac{\adif{p_{\ch{PH3}}}}{R\,T} &= -k\,\adif{t}
+                    \\
+                    1: & \adif{\ln{p_{\ch{PH3}}}} &= -k\,\adif{t}
+                    \\
+                    2: & R\,T\,\adif{-\ch{[PH3]}^{-1}} &= -k\,\adif{t}
+                \end{aligned}
+            \right\}
+        &
+    \end{flalign*}
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{2mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{R | *{4}{C}}
+            \toprule
+            
+                t/\unit{\min}
+                & 0 
+                & 40 
+                & 80
+                \\
+                p_{\ch{PH3}}/\unit{\bar}
+                & 0.134
+                & 0.046
+                & 0.0167
+                \\ -\frac{\adif{p_{\ch{PH3}}}}{R\,T}/\unit{\M}
+                & 0
+                & \num{0.0011141018151326198}
+                & \num{0.001485469086843493}
+                \\ -\adif{\ln{p_{\ch{PH3}}}}
+                & 0
+                & \num{1.0691984034618156}
+                & \num{2.084429083190872}
+                \\ -R\,T\adif{-(p_{\ch{PH3}})^{-1}}/\unit{\M^{-1}}
+                & 0
+                & \num{1127.6591091460252}
+                & \num{4149.785521657364}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    % \tikzset{external/remake next=true}
+    % {\Large\bfseries{Solução 1}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+        xmajorgrids=true,
+        ymajorgrids=true,
+        minor tick num=3,
+        xminorgrids=true,
+        yminorgrids=true,
+        legend pos={south east},
+        % axis on top,
+        % ylabel={}
+        % xlabel={}
+    ]
+        
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Graph]{\(
+                -\adif{\ln{p_{\ch{PH3}}}}
+                =0.0261\,t+0.009
+                ;\quad 
+                R =1
+        \)}
+
+        % ================= Interpolation ================ %
+        \addplot[
+            no marks,
+            dashed,
+            samples=2,
+        ] expression [
+            domain=0:80
+        ] {
+            0.0261*x+0.009
+        };
+        % ==================== 1 Order =================== %
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            ( 0,  0)
+            (40, 1.0691984034618156)
+            (80, 2.084429083190872)
+        };
+    
+    \end{axis}
+    \end{tikzpicture}
+
+    % Fazer graficos.
+
+    \begin{flalign*}
+        &
+            \therefore
+            \begin{cases}
+                \text{Ordem global:} 1
+                \\
+                \bar{k} \cong \qty{0.0261}{\min^{-1}}
+            \end{cases}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+
+%   ,ad8888ba,     ad888888b,        ad888888b,
+%  d8"'    `"8b   d8"     "88       d8"     "88
+% d8'        `8b          a8P               a8P
+% 88          88       ,d8P"             ,d8P"
+% 88          88     a8P"              a8P"
+% Y8,    "88,,8P   a8P'              a8P'
+%  Y8a.    Y88P   d8"          888  d8"
+%   `"Y8888Y"Y8a  88888888888  888  88888888888
+
+\begin{questionBox}2{ % Q2.2
+    Os valores obtidos para a constante cinética desta reação foram os seguintes:
+} % Q2.2
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{2}{C}}
+            \toprule
+            
+                T/\unit{\celsius}
+                & k/\unit{\min^{-1}}
+            
+            \\\midrule
+            
+                   267 & 0.005
+                \\ 297 & 0.020
+                \\ 327 & 0.072
+                \\ 357 & 0.225
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Calcule o valor de \(\adif{G}^{\ddagger}\) a 350\,\unit{\celsius}. Comente o resultado obtido
+
+    \answer{}
+    \begin{flalign*}
+        &
+            \adif{G}^{\ddagger}
+            = \adif{H}^{\ddagger}
+            - T\,\adif{S}^{\ddagger}
+            = \left(
+                Ea-R\,T
+            \right)
+            - T\,\left(
+                R\left(
+                    \ln\frac{A}{B}-1
+                \right)
+            \right)
+            = Ea-R\,T\,\ln\frac{A}{\left(
+                \frac{k_b\,T}{R}
+            \right)}
+            = &\\&
+            = Ea-R\,T\,\ln\frac{A\,R}{k_b\,T}
+            ; &\\[3ex]&
+            \ln{k} = \ln{A} - \frac{Ea}{R}\,T^{-1}
+        &
+    \end{flalign*}
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{2}{C}}
+            \toprule
+            
+                T^{-1}/\unit{\kelvin^{-1}}
+                & \ln{k}/\unit{\second^{-1}}
+            
+            \\\midrule
+            
+               \num{0.0018513375914097937} & \num{-9.392661928770137}
+            \\ \num{0.0017539244058581076} & \num{-8.006367567650246}
+            \\ \num{0.0016662501041406316} & \num{-6.725433722188183}
+            \\ \num{0.0015869237483138936} & \num{-5.585999438999817}
+            
+            % 0.0018513375914097937,-9.392661928770137
+            % 0.0017539244058581076,-8.006367567650246
+            % 0.0016662501041406316,-6.725433722188183
+            % 0.0015869237483138936,-5.585999438999817
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+        % \begin{center}
+        %     \includegraphics[width=.8\textwidth]{Screenshot 2023-07-24 at 11.57.07.png}
+        % \end{center}
+    \end{center}
+
+    % \tikzset{external/remake next=true}
+    % {\Large\bfseries{Solução 1}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+        xmajorgrids=true,
+        ymajorgrids=true,
+        minor tick num=3,
+        xminorgrids=true,
+        yminorgrids=true,
+        % legend pos={north west}
+        % axis on top,
+        ylabel={\(\ln{k}/\unit{\second^{-1}}\)},
+        xlabel={\(T^{-1}/\unit{\kelvin^{-1}}\)},
+    ]
+        
+        % % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Graph]{\(\ln{k}=17.2904-1.4416e4*T^{-1}\)}
+        % ================= Interpolation ================ %
+        \addplot[
+            no marks,
+            dashed,
+            samples=2,
+        ] expression [
+            domain=0.001587:0.00185
+        ] {
+            -1.4416e4*x+17.2904
+        };
+        % ==================== Points ==================== %
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (0.0018513375914097937,-9.392661928770137)
+            (0.0017539244058581076,-8.006367567650246)
+            (0.0016662501041406316,-6.725433722188183)
+            (0.0015869237483138936,-5.585999438999817)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+
+    \begin{flalign*}
+        &
+            \begin{cases}
+                A 
+                &\cong \exp(17.2904) 
+                \cong \num{32294257.951819125410651}
+                \\
+                Ea 
+                & \cong 1.4416\E4*\num{0.0831446261815324}
+                \cong \num{1198.612931032971078}
+            \end{cases}
+            &\\[3ex]&
+            \therefore
+            \adif{G}^{\ddagger}
+            = Ea-R\,T\,\ln\frac{A\,R}{k_b\,T}
+            \cong &\\&
+            \cong 
+            \num{1198.612931032971078}
+            -\num{0.0831446261815324}
+            *(350+273.15)
+            \ln\frac{
+                \num{32294257.951819125410651}
+                * \num{0.0831446261815324}
+            }{
+                \num{1.380649e-23}
+                *(350+273.15)
+            }
+            % -44.913571781042906
+            % 2327.042839180654102
+            \cong &\\&
+            \cong 
+            \num{3525.655770213625102}
+        &
+    \end{flalign*}
+
+    \(\adif{G}^{\ddagger}>0\implies\) reação não endotérmica e não expontânea
+
+    % \begin{BM}
+    %     \adif{G}^{\ddagger}
+    %     \begin{cases}
+    %         <0: & \text{Reação exotermica, processo expontâneo e estável}
+    %         \\
+    %         =0: & \text{Equilíbrio, taxa de form= a reversar}
+    %         \\
+    %         >0: & \text{Reação endotermica, não expontanea e instavel}
+    %     \end{cases}
+    % \end{BM}
+    
+\end{questionBox}
+
+
+%   ,ad8888ba,     ad888888b,
+%  d8"'    `"8b   d8"     "88
+% d8'        `8b          a8P
+% 88          88       aad8"
+% 88          88       ""Y8,
+% Y8,    "88,,8P          "8b
+%  Y8a.    Y88P   Y8,     a88
+%   `"Y8888Y"Y8a   "Y888888P'
+
+
+
+\begin{questionBox}1{ % Q3
+    Um exemplo da chamada dependencia anti-Arrhenius da temperatura é o que se observa na reação entre o oxido nitrico e oxigênio molecular, sendo a cinética de 3ª ordem global.
+} % Q3
+    \begin{center}\large\bfseries
+        \ch{2 NO\gas{} + O2\gas{} -> 2 NO2\gas{}}
+    \end{center}
+    
+    Um dos mecanismos propostos para esta reação foi o seguinte:
+
+    % \begin{center}
+        \begin{BM}[align*]
+            \ch{
+                2 NO ->[k1] N2O2
+                \\ N2O2 ->[k-1] 2 NO
+                \\ N2O2 + O2 ->[k2] 2 NO2 &\quad \text{(lento)}
+            }
+        \end{BM}
+    % \end{center}
+    Sabendo
+    \begin{itemize}
+        \item \(E_{1}=79.5\,\unit{\kilo\joule.\mole^{-1}}\)
+        \item \(E_{-1}=205\,\unit{\kilo\joule.\mole^{-1}}\)
+        \item \(E_{2}=84\,\unit{\kilo\joule.\mole^{-1}}\)
+    \end{itemize}
+
+    Calc a \textit{Ea} global segundo o mec, just
+    \answer{}
+    \begin{flalign*}
+        &
+            k_g
+            = A_g\,\exp(-Ea_g/R\,T)
+            ; &\\[3ex]&
+            v_g
+            = v_2
+            = k_2\,\ch{[O2]}\,\ch{[N2O2]}
+            ; &\\[3ex]&
+            \odv{\ch{[N2O2]}}{t}
+            = 0
+            = \left\{
+                \begin{aligned}
+                    &
+                        v_1
+                    &+\\-&
+                        v_{-1}
+                    &+\\-&
+                        v_{2}
+                    &
+                \end{aligned}
+            \right\}
+            = \left\{
+                \begin{aligned}
+                    &
+                        k_{1}\,\ch{[NO]}^2
+                    &+\\-&
+                        k_{-1}\,\ch{[N2O2]}
+                    &+\\-&
+                        k_{2}\,\ch{[O2]}\ch{[N2O2]}
+                    &
+                \end{aligned}
+            \right\}
+            = &\\&
+            = -(k_{-1}+k_2\,\ch{[O2]})\ch{[N2O2]}
+            + k_{1}\,\ch{[NO]}^2
+            \implies &\\&
+            \implies
+            \ch{[N2O2]}
+            = \frac{k_1\,\ch{[NO]}^2}{k_{-1}+k_2\,\ch{[O2]}}
+            % ============================================ %
+            \implies &\\[3ex]&
+            \implies
+            v_g
+            = k_2\,\ch{[O2]}\,\ch{[N2O2]}
+            = k_2\,\ch{[O2]}\,\left(
+                \frac{k_1\,\ch{[NO]}^2}{k_{-1}+k_2\,\ch{[O2]}}
+            \right)
+            = \frac{
+                k_2\,k_1
+            }{
+                k_{-1}+k_2\,\ch{[O2]}
+            }
+            \,\ch{[O2]}
+            \,\ch{[NO]}^2
+            = &\\&
+            = \frac{k_2\,k_1}{k_{-1}}
+            \,\ch{[O2]}
+            \,\ch{[NO]}^2
+            = k_g
+            \,\ch{[O2]}
+            \,\ch{[NO]}^2
+            % ============================================ %
+            \implies &\\[3ex]&
+            \implies
+            A_g\,\exp(-Ea_g/R\,T)
+            = k_g
+            = \frac{k_2\,k_1}{k_{-1}}
+            = &\\&
+            = \frac{
+                  A_2\,\exp(-Ea_2/R\,T)
+                \,A_1\,\exp(-Ea_1/R\,T)
+            }{
+                A_{-1}\,\exp(-Ea_{-1}/R\,T)
+            }
+            = &\\&
+            = \frac{A_2\,A_1}{A_{-1}}
+            \exp\left(
+                -(Ea_2+Ea_1-Ea_{-1})/R\,T
+            \right)
+            % ============================================ %
+            \implies &\\[3ex]&
+            \implies
+            Ea_g
+            = Ea_2+Ea_1-Ea_{-1}
+            = 84+79.5-205
+            = -41.5\,\unit{\kilo\joule.\mole^{-1}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+
+%   ,ad8888ba,            ,d8
+%  d8"'    `"8b         ,d888
+% d8'        `8b      ,d8" 88
+% 88          88    ,d8"   88
+% 88          88  ,d8"     88
+% Y8,    "88,,8P  8888888888888
+%  Y8a.    Y88P            88
+%   `"Y8888Y"Y8a           88
+
+\begin{questionBox}1{ % Q4
+    Se a t.sup de uma sol aq sal dep da C de tensoativo (Tens) como indicado. \(\dim(\ch{Tens})=\unit{\deci\metre^3}\) e a t.sup em \unit{\newton.\metre^{-1}}, calc a A.sup ocupada por uma molec a 25\,\unit{\celsius} para C de 0.001\,\unit{\M} de tens
+} % Q4
+    \begin{BM}
+        \gamma = 0.085-5.88\,\ch{[Tens]}
+    \end{BM}
+    \answer{}
+    \begin{flalign*}
+        &  
+            \Gamma
+            = -\frac{\ch{[Tens]}}{R\,T}
+            \,\odv{\gamma}{\ch{[Tens]}}
+            = -\frac{\ch{[Tens]}}{R\,T}
+            \,\odv{(0.085-5.88\,\ch{[Tens]})}{\ch{[Tens]}}
+            = -\frac{\ch{[Tens]}}{R\,T}\,5.88
+            = &\\&
+            = -\frac{0.001}{
+                \num{8.314462618}
+                *(25+273.15)
+            }\,(-5.88)
+            \cong
+            \qty{2.371965278095801e-6}{\mole.\metre^{-2}}
+            ; &\\[3ex]&
+            A \cong
+            \frac{\unit{\metre^2}}{\qty{2.371965278095801e-6}{\mole}}
+            \,\frac{\unit{\mole}}{\qty{6.02214076e23}{molec}}
+            \,\frac{10^{20}\unit{\angstrom^2}}{\unit{\metre}^{2}}
+            = \qty{0.070006887643268e3}{\angstrom^2.molec^{-1}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+
+%   ,ad8888ba,    8888888888
+%  d8"'    `"8b   88
+% d8'        `8b  88  ____
+% 88          88  88a8PPPP8b,
+% 88          88  PP"     `8b
+% Y8,    "88,,8P           d8
+%  Y8a.    Y88P   Y8a     a8P
+%   `"Y8888Y"Y8a   "Y88888P"
+
+\begin{questionBox}1{ % Q5
+    Tabela forn os val obs de vol de az (racalculado para 0\,\unit{\celsius} e 1.013\,\unit{\bar} de press) ads numa amo de carv ativ com cerca de 1.7789\,\unit{\gram} a 77\,\unit{\kelvin} para uma série de p aplicadas:
+} % Q5
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{C | *{5}{C}}
+            \toprule
+                p/\unit{\pascal}
+                & 524
+                & 1731
+                & 3058
+                & 4534
+                & 7497
+                \\
+                V/\unit{\centi\metre^3}
+                & 1.351
+                & 4.161
+                & 6.954
+                & 9.637
+                & 14.113
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    Sabendo que cada molécula de azoto ocupa 16\,\unit{\angstrom^2} calcule a área de superfície de carvão ativado usada para formar uma monocamad, usando a teoria de Langmuir.
+
+    \answer{}
+    \begin{flalign*}
+        &
+            n^{-1}
+            = \left(
+                \frac{p\,V}{R\,T}
+            \right)^{-1}
+            = \frac{R\,T}{p\,V}
+            = n_{max}^{-1}
+            + (k\,n_{max}\,p)^{-1}
+            % \qty{0.0831446261815324e8}{10^3\centi\metre^3.\pascal.\mole^{-1}.\kelvin^{-1}}
+        &
+    \end{flalign*}
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{2.5mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{C | *{5}{C}}
+            \toprule
+                
+                \frac{R\,T}{V\,p}/\unit{\mole^{-1}}
+                & \num{904353.6051861491}
+                & \num{88885.3376602994}
+                & \num{30105.978199531495}
+                & \num{14652.156052481876}
+                & \num{6050.873280158796}
+                \\
+                p_a^{-1}/\unit{\pascal^{-1}}
+                & \num{0.0019083969465648854}
+                & \num{0.0005777007510109763}
+                & \num{0.0003270111183780249}
+                & \num{0.00022055580061755624}
+                & \num{0.00013338668800853674}
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \tikzset{external/remake next=true}
+    % {\Large\bfseries{Solução 1}}\par\medskip
+    \begin{tikzpicture}
+    \begin{axis}
+    [
+        xmajorgrids=true,
+        ymajorgrids=true,
+        minor tick num=3,
+        xminorgrids=true,
+        yminorgrids=true,
+        legend pos={south east},
+        % axis on top,
+        % ylabel={},
+        % xlabel={},
+    ]
+        
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry[Graph]{\(n^{-1}=5.2719e8*p^{-1}-1.2512e5\)}
+        % ================= Interpolation ================ %
+        \addplot[
+            no marks,
+            dashed,
+            samples=2,
+        ] expression [
+            domain=1.9e-3:1.3e-4
+        ] {
+            5.2719e8*x-1.2512e5
+        };
+        % ==================== Points ==================== %
+        \addplot[
+            mark=*,
+            only marks,
+        ] coordinates {
+            (0.0019083969465648854,  904353.6051861491)
+            (0.0005777007510109763, 88885.3376602994)
+            (0.0003270111183780249, 30105.978199531495)
+            (0.00022055580061755624, 14652.156052481876)
+            (0.00013338668800853674, 6050.873280158796)
+        };
+        
+    \end{axis}
+    \end{tikzpicture}
+    \begin{flalign*}
+        &
+            \theta
+            =\frac{n}{n_{max}}
+            =(1+(K\,p)^{-1})^{-1}
+            \implies &\\&
+            \implies
+            =n^{-1}
+            =\frac{1}{n_{max}}
+            +\frac{1}{n_{max}\,K\,p}
+            &\\[3ex]&
+            n_{max} 
+            = (-1.2512\E5)^{-1}\,\unit{\mole}
+            \,\frac{\num{6.02214076e23}\unit{molec}}{\unit{\mole}}
+            \,\frac{16\,\unit{\angstrom^2}}{\unit{molec}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+%   ,ad8888ba,      ad8888ba,
+%  d8"'    `"8b    8P'    "Y8
+% d8'        `8b  d8
+% 88          88  88,dd888bb,
+% 88          88  88P'    `8b
+% Y8,    "88,,8P  88       d8
+%  Y8a.    Y88P   88a     a8P
+%   `"Y8888Y"Y8a   "Y88888P"
+
+\begin{questionBox}1{ % Q6
+    A cinética de reação entre \ch{CO} e \ch{O2} catalizada por platina ou quartzo segue uma cinemática tal que a velocidade é diretamente proporcional a \(p_{\ch{O2}}\) e inversamente prop a \(p_{\ch{CO}}\). proponha um mecanismo para essa reação
+} % Q6
+    \answer{}
+    \begin{center}\large\bfseries
+        \ch{2 CO + O2 -> 2 CO2}
+        \\[3ex] \ch{
+            2 CO ->[k1] 2 C + O2
+            \\
+            2 C + O2 ->[k-1] 2 CO
+            \\
+            C + O2 ->[k2] CO2
+        }
+    \end{center}
+\end{questionBox}
+
+
+%   ,ad8888ba,    888888888888
+%  d8"'    `"8b           ,8P'
+% d8'        `8b         d8"
+% 88          88       ,8P'
+% 88          88      d8"
+% Y8,    "88,,8P    ,8P'
+%  Y8a.    Y88P    d8"
+%   `"Y8888Y"Y8a  8P'
+
+\begin{questionBox}1{ % Q7
+    Considere a monécula de ciclobutadieno e as combinaçòes lineares das orbitais atómicas 2pz dos carbonos que dão origem às orbitais moleculares \chempi
+} % Q7
+\end{questionBox}
+
+\begin{questionBox}2{ % Q7.1
+    Escreva a equação secular na forma de matriz para a molécula.
+} % Q7.1
+    \answer{}
+    \begin{flalign*}
+        &
+            % forma matriz
+            \begin{bmatrix}
+                   x & 1 & 0 & 1
+                \\ 1 & x & 1 & 0
+                \\ 0 & 1 & x & 1
+                \\ 1 & 0 & 1 & x
+            \end{bmatrix}
+            % eq secular na forma matricial
+            = \beta^{-1}\begin{bmatrix}
+                   \alpha-E & \beta & 0 & \beta
+                \\ \beta & \alpha-E & \beta & 0
+                \\ 0 & \beta & \alpha-E & \beta
+                \\ \beta & 0 & \beta & \alpha-E
+            \end{bmatrix}
+            % alpha: integral de culomb, referente a um átomo
+            % beta: integral de ressonancia, referencia a interação entre dois átomos diff
+            % E: energia do nível
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q7.2q
+    question
+} % Q7.2
+    \begin{flalign*}
+        &
+            x_i = (\alpha-E_i)/\beta
+            \implies
+            E_i = \alpha-\beta\,x_i
+        &
+    \end{flalign*}
+\end{questionBox}
+
+
+
+\begin{questionBox}1{ % Q8
+    O dióxido de enxofre \ch{SO4} é um poluente com origem em fontes antropogénicas que envolvam processos de combustão de combustíveis contendo enxofre (\ch{S}), como a produção de eletricidade ou a combustão de suporte a processos fabris, comercial e residencial.
+} % Q8
+    \begin{center}
+        \tikzset{external/remake next=true}
+        \chemfig[angle increment=30]{
+            S
+            (=[-1]O)
+            (=[7]O)
+        }
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q8.1
+    Quantos modos vibracionais normais tem a molécula de dióxido de enxofre?
+} % Q8.1
+    \answer{}
+    \begin{flalign*}
+        &
+            \begin{cases}
+                \text{Linear:} & 3*n-5
+                \\
+                \lnot\text{Linear:} & 3*n-6
+            \end{cases}
+            &\\&
+            \implies 
+            3*3-6=3
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q8.2
+    question
+} % Q8.2
+    body
+\end{questionBox}
+
+\begin{questionBox}2{ % Q8.3
+    Sabendo que o estiramento simétrico do \ch{SO2} aparece 1152\,\unit{\centi\metre^{-1}} (\(3.45\E13\,\unit{\second^{-1}}\)), qual a constante de força (em \unit{\newton.\metre^{-1}}) da ligação \unit{SO}?
+} % Q8.3
+    \answer{}
+    \begin{flalign*}
+        &
+            \nu
+            = \frac{1}{2\,\pi}\sqrt{k/\mu}
+            ; &\\&
+            \mu 
+            = \frac{m_1\,m_2}{m_1+m_2}
+            = \frac{
+                1
+            }{
+                m_1^{-1}
+                +m_2^{-1}
+            }
+            = \frac{
+                1
+            }{
+                \left(
+                    32\,\unit{\gram.\mole^{-1}}
+                    \,\frac{\unit{\mole}}{\qty{6.02214076e23}{molec}}
+                \right)^{-1}
+                +\left(
+                    16\,\unit{\gram.\mole^{-1}}
+                    \,\frac{\unit{\mole}}{\qty{6.02214076e23}{molec}}
+                \right)^{-1}
+            }
+            = \frac{
+                1
+            }{
+                \left(
+                    32\,\unit{\gram.\mole^{-1}}
+                    \,\frac{\unit{\mole}}{\qty{6.02214076e23}{molec}}
+                \right)^{-1}
+                +\left(
+                    16\,\unit{\gram.\mole^{-1}}
+                    \,\frac{\unit{\mole}}{\qty{6.02214076e23}{molec}}
+                \right)^{-1}
+            }
+            \cong
+            \qty{1.771241671652103e-26}{\kilo\gram}
+            &\\[3ex]&
+            k
+            = \mu\,(\nu*2\,\pi)^2
+            \cong 
+            \num{1.771241671652103e-26}
+            \,(
+                3.45\E13
+                *2\,\pi
+            )^2
+            % 469.891865535864364
+            \cong
+            \num{832.292053407469601}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

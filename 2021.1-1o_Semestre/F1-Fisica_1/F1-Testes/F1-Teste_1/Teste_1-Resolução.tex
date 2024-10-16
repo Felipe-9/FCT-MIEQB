@@ -1,0 +1,399 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{6em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip10em}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+\usepackage{multirow}
+\usepackage{siunitx} % Column S: align on decimal
+
+\usepackage{graphicx} % Imagens
+\graphicspath{ {./} }
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+\definecolor{Red}  {HTML}{FF7E79}
+\definecolor{Blue} {HTML}{6666FF}
+\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	Física 1 - Teste 1%
+}
+\author{Felipe Pinto - 61387 MIEQB}
+\date{21/04 - 2021.1}
+
+\maketitle
+
+
+\begin{enumerate}
+\begin{multicols}{3}
+
+	 \item D
+	 \item B
+	 \item C
+	 \item A
+	 \item A
+	 \item B
+	 \item C
+	 \item D
+	 \item C
+	 \item B
+	 \item C
+	 
+\end{multicols}
+\end{enumerate}
+
+
+\break
+\noindent Felipe Pinto - 61387 MIEQB\\
+
+\begin{tabular}{|c|c|l|}
+	
+	\hline
+	
+	Problema 1 &  & Unidades
+	
+	\\ \hline
+	
+	a) & 557 & N
+	
+	\\ \hline
+	
+	b) & 1.17 & K\,N
+	
+	\\ \hline
+
+\end{tabular}
+
+\vspace{10px}
+
+\begin{tabular}{|c|c|l|}
+	
+	\hline
+	
+	Problema 2 &  & Unidades
+	
+	\\ \hline
+	
+	a) & Desenho &
+	
+	\\ \hline
+	
+	b) & 60 & N
+	
+	\\ \hline
+	
+	c) & -6.00 & $\hat\imath\,m/s^2$
+	
+	\\ \hline
+
+\end{tabular}
+
+%\break
+%Felipe Pinto - 61387 MIEQB\\
+%
+%\section{}
+%\begin{flalign*}
+%&
+%	\theta 
+%=
+%	\arccos
+%	\left( 
+%		\frac{a_i + b_i}
+%		     {\sqrt{(a_i + b_i)^2+(a_j+b_j)^2}} 
+%	\right)
+%= &\\& =
+%	\arccos
+%	\left( 
+%		\frac{10\,\cos(30^o) + 10\,\cos(135^o)}
+%		     {\sqrt{
+%		     	(10\,\cos(30^o)+ 10\,\cos(135^o))^2
+%			+(10\,\sin(30^o)+10\,\sin(135^o))^2
+%			}} 
+%	\right)
+%\cong 82.5^o
+%&
+%\end{flalign*}
+%
+%\section{}
+%A1
+%
+%\section{}
+%\begin{flalign*}
+%&	
+%	v_{a\,t} = -22\,K\,m/s\,\hat\jmath;\ 
+%	v_{b\,t} = (45^o:40\,K\,m/s);\
+%&\\&
+%	\vec v_{a\,b} = \vec v_{a\,t} - \vec v_{b\,t}
+%=
+%	- 22\,\hat\jmath 
+%	- (40\,\cos(45^o)\,\hat\imath + 40\,\sin(45^o)\,\hat\jmath)
+%&\\&
+%\therefore C
+%&
+%\end{flalign*}
+%
+%% 4
+%\section{A}
+%
+%% 5
+%\section{A}
+%
+%% 6
+%\section{B}
+%
+%% 7
+%\section{C}
+%
+%% 8
+%\section{D}
+%
+%% 9
+%\section{C}
+%
+%% 10
+%\section{B}
+%
+%% 11
+%\section{D}
+%
+%% 12
+%\section{C}
+%\begin{flalign*}
+%&
+%	a_c = v^2/R;\ v = v_0 + a\,t
+%\implies
+%	a_c  
+%=
+%	(10 + 5*10)^2/400
+%\cong 9.00\,m/s^2
+%&
+%\end{flalign*}
+
+
+
+\break
+\setcounter{section}{0}
+\renewcommand\thesection{Problema \arabic{section}}
+\renewcommand\thesubsection{%
+	P\arabic{section} - \alph{subsection})%
+}
+
+% Problemas
+
+\noindent Felipe Pinto - 61387 MIEQB
+
+% P1
+\section{}
+
+% P1 - a)
+\subsection{$557\,N$}
+
+\begin{flalign*}
+&
+	F = F_1/\cos(\theta);\ F_1 = m\,g\,\cos(60^o)
+\implies
+	F 
+=	
+	\frac{m\,g\,\cos(60^o)}{\cos(30^o)}
+=	
+	\frac{100*10\,\cos(60^o)}{\cos(30^o)}
+\cong
+	557\,N
+&
+\end{flalign*}
+
+% P1 - b)
+\subsection{$1.17\,K\,N$}
+\begin{flalign*}
+&
+	F_{N} = F\,\cos(60^o) + m\,g\,\cos(30^o)
+=
+	600\,\cos(60^o) + 100*10\,\cos(30^o)
+\cong 1.17\,K\,N
+&
+\end{flalign*}
+
+\break
+
+\noindent Felipe Pinto - 61387 MIEQB
+
+% P2
+\section{}
+
+\subsection{}
+\begin{multicols}{2}
+
+\begin{tikzpicture}[%
+	scale=0.4, font=\small, align=center, line width=1%
+]
+	\draw (-2,-2) rectangle (2,2);
+	\fill[opacity = 0.3] (-2,-2) rectangle (2,2);
+	
+	\node at (0,0){$m_1$};
+	
+	\draw[->, Blue] 
+	(0,1) -- +(0,2) node[above]{$\vec F_{\text{Normal}}$};
+	
+	\draw[->, Green] 
+	(0,-1) -- +(0,-2) node[below]{$\vec F_{\text{Grav}}$};
+	
+	\draw[->] 
+	(-1,0) -- +(-4,0) node[left]{$\vec F$};
+	
+	\draw[->, Red] 
+	(1,0) -- +(3,0) node[right]{$\vec F_{\text{Atrito}}$};
+
+
+\end{tikzpicture}
+
+\begin{tikzpicture}[%
+	scale=0.4, font=\small, align=center, line width=1%
+]
+	\draw (-4,-2) rectangle (4,2);
+	\fill[opacity = 0.3] (-4,-2) rectangle (4,2);
+	
+	\node at (0,0){$m_2$};
+	
+	\draw[->, Blue] 
+	(0,1) -- +(0,2) node[above]{$\vec F_{\text{Normal}}$};
+	
+	\draw[->, Green] 
+	(0,-1) -- +(0,-2) node[below]{$\vec F_{\text{Grav}}$};
+	
+	\draw[->, Red]
+	(-3,0) -- +(-3,0) node[left]{$\vec F_{\text{Atrito}}$};
+
+
+\end{tikzpicture}
+
+\end{multicols}
+
+% P2 - b)
+\subsection{$60\,N$}
+\begin{flalign*}
+&
+	F_{M} = \mu_{e}\,F_{N} = \mu_{e}\,m_1\,g
+=
+	0.60*10*10 = 60\,N
+&
+\end{flalign*}
+
+% P2 - c)
+\subsection{$-6.00\,\hat\imath\,m/s^2$}
+\begin{flalign*}
+&
+	\vec a_{m_1}\,m_1
+=
+	\vec F - \vec F_{\text{atrito}}
+;\ 
+	F_{\text{atrito}} = \mu_c\,m_1\,g
+\implies
+	\vec a_{m_1}
+= 
+	-\frac{F-\mu_c\,m_1\,g}{m_1}\,\hat\imath
+= &\\& =
+	-\frac{100-0.40*10*10}{10}\,\hat\imath
+\cong 
+	-6.00\,\hat\imath\,m/s^2
+&
+\end{flalign*}
+
+
+
+\end{document}
+
+%\begin{tabular}{|c|c|l|}
+%	
+%	\hline
+%	
+%	Problema 1 &  & Unidades
+%	
+%	\\ \hline
+%	
+%	a) & &
+%	
+%	\\
+%	
+%	b) & &
+%	
+%	\\ \hline
+%
+%\end{tabular}
+
+
+
+
+
+
+
+
+

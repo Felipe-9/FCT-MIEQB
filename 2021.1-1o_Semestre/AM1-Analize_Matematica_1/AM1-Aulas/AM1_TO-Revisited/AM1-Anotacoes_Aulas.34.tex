@@ -1,0 +1,50 @@
+\part{15/06 - Exercícios para o Teste}
+
+\begin{multicols}{2}
+
+\vspace{5mm}
+
+\noindent%
+\begin{minipage}{\linewidth}
+
+\subquestion{}
+\begin{BM}
+	\int\limits_{\varepsilon^3}^{8\,\pi^3}
+	\frac{\cos(\sqrt[3]{x})}{3\,\sqrt[3]{x}}\mathrm{d}x
+=	\int\limits_{\varepsilon}^{2\,\pi}
+	t\,\cos(t)\,\mathrm{d}t
+\\	(x=t^3)
+\end{BM}\relax
+
+\begin{flalign*}
+&
+	\int\limits_{\varepsilon^3}^{8\,\pi^3}
+	\frac
+		{\cos(\sqrt[3]{x})}
+		{3\,\sqrt[3]{x}}
+	\mathrm{d}x
+=	
+	\int\limits_{\sqrt[3]{\varepsilon^3}}^{\sqrt[3]{8\,\pi^3}}
+	\frac
+		{\cos\left(\sqrt[3]{t^3}\right)}
+		{3\,\sqrt[3]{t^3}}
+	\mathrm{d}\left(t^3\right)
+=	&\\&
+=	\int\limits_{\varepsilon}^{2\,\pi}
+	\frac
+		{\cos(t)}
+		{3\,t}
+	3\,t^2
+	\mathrm{d}t
+=	
+	\int\limits_{\varepsilon}^{2\,\pi}
+	t\,\cos(t)\mathrm{d}t
+&
+\end{flalign*}
+
+
+\end{minipage}
+
+
+
+\end{multicols}

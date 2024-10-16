@@ -1,0 +1,87 @@
+% !TEX root = ./ALGA-Slides_Anotacoes.tex
+\providecommand\mainfilename{"./ALGA-Slides_Anotacoes.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Slides_Anotacoes.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\mymakesubfile{1}[ALGA]
+{ALGA}
+{Matrizes}
+
+\begin{definitionBox}1{Menor de uma Matriz} % DEF
+    
+    Determinante de uma submatriz formada ao remover uma linha e uma coluna da matriz original
+
+    \begin{exampleBox}1{} % E
+        
+        \begin{BM}
+            A = \begin{pmatrix}
+                     1 & 4 & 7
+                \\   3 & 0 & 5
+                \\  -1 & 9 & 11
+            \end{pmatrix}
+            % \\
+            \implies
+            M_{2,3} = \begin{vmatrix}
+                1 & 4\\
+                -1 & 9
+            \end{vmatrix}
+            =13
+        \end{BM}
+        
+    \end{exampleBox}
+
+\end{definitionBox}
+
+\begin{definitionBox}1{Matriz Cofatora} % S1
+    
+    \begin{BM}
+        C(A)\in\mathcal{M}_{m\times m}:
+        (C(A))_{i,j}=(-1)^{i+j}\,M_{i,j}
+        \\
+        A\in\mathcal{M}_{m\times m}
+    \end{BM}
+
+    \begin{definitionBox}*2{Cofator} % DEF
+        
+        O menor de uma matriz multiplicada por \(\pm1\)
+
+        \begin{BM}
+            C_{i,j} = (-1)^{i+j}*M_{i,j}
+        \end{BM}
+        
+    \end{definitionBox}
+    
+\end{definitionBox}
+
+\begin{definitionBox}1{Matriz Adjunta} % S2
+    
+    \begin{BM}
+        \adj{A} = C^T(A)
+        \\
+        \adj{A}\in\mathcal{M}_{m\times m}:
+        (\adj{A})_{i,j}=(C_{(A)})_{j,i}=(-1)^{i+j}\,(M_{(A)})_{j,i}
+        \\
+        A\in\mathcal{M}_{m\times m}
+    \end{BM}
+
+    \begin{definitionBox}*2{Determinação da invérsa} % S2.1
+        
+        \begin{BM}
+            \adj{A}*A = A*\adj{A} = \det{A}*I
+            \\
+            A^{-1} = (\det A)^{-1}*\adj{A}
+        \end{BM}
+        
+    \end{definitionBox}
+    
+\end{definitionBox}
+
+\end{document}
+
+
+

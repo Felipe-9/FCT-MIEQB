@@ -1,0 +1,251 @@
+% !TEX root = ./Main_File.tex
+% !TEX root = ./Sub_File.tex
+\providecommand\mainfilename{"././Main_File.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./Sub_File.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[IQF]
+{Lista}
+{Lista}
+
+
+
+\end{document}
+
+% L1
+\part{}
+
+\section{Problemas retirados dos fundamentos}
+
+% Q1.3
+\setcounter{question}{2}
+\begin{questionBox}1{}
+
+    \begin{flalign*}
+        &
+        =   \frac
+                {\unit{\litre\of{\ch{He\gas}}}}
+                {0.17685\,\unit{\gram\of{\ch{He\gas}}}}
+        \,  10\,\unit{\gram\of{\ch{He\gas}}}
+        \cong
+            \qty{56.545094713}{\litre\of{\ch{He\gas}}}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+% Q1.31
+\setcounter{question}{30}
+\begin{questionBox}1{}
+    \begin{center}
+        \ch{
+            C14H18N2O5 + 12 O2 <=> 14 CO2 + 9 H2O + N2
+        }
+    \end{center}
+\end{questionBox}
+
+% Q1.35
+\setcounter{question}{34}
+\begin{questionBox}1{}
+
+    \begin{center}
+        \ch{Fe2O3\sld + 3 CO\gas -> 2 Fe\sld + 3 CO2\gas}
+    \end{center}
+
+    \begin{flalign*}
+        &
+        =   \frac{55.85\,\unit{\gram\of{\ch{Fe\sld}}}}
+                 {       \unit{\mole\of{\ch{Fe\sld}}}}
+        \,  \frac{2\,\unit{\mole\of{\ch{Fe\sld}}}}
+                 {1\,\unit{\mole\of{\ch{Fe2O3\sld}}}}
+        \,  \frac{1\,    \unit{\mole\of{\ch{Fe2O3\sld}}}}
+                 {159.7\,\unit{\gram\of{\ch{Fe2O3\sld}}}}
+        \,  10.00\,\unit{\gram\of{\ch{Fe2O3\sld}}}
+        \cong &\\&
+        \cong
+            \qty{6.994364433312461}{\gram\of{\ch{Fe\sld}}}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+
+% Q1.41
+\setcounter{question}{40}
+\begin{questionBox}1{}
+
+    \begin{center}
+        \ch{
+            CaC2\sld{} + 2  H2O\lqd{} -> Ca(OH)2\aq{} + C2H2\gas{}
+        }
+    \end{center}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+                1.00 * 10^2\,\unit{\gram\of{\ch{H2O\aq}}}
+            *   \frac{          \unit{\mole\of{\ch{H2O\aq}}}}
+                     {\qty{18.01528}{\gram\of{\ch{H2O\aq}}}}
+            *   \frac{   \unit{\mole\of{\ch{CaC2\sld}}}}
+                     {2\,\unit{\mole\of{\ch{H2O\aq}}}}
+            *   \frac{\qty{64.0994}{\gram\of{\ch{CaC2\sld}}}}
+                     {         \unit{\mole\of{\ch{CaC2\sld}}}}
+            \cong &\\&
+            \cong
+                \qty{177.902869119991474}{\gram\of{\ch{CaC2\sld}}}
+            >
+                1.00*10^2\,\unit{\gram\of{\ch{CaC2\sld}}}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+            =   \frac
+                    {\qty{74.09268}{\gram\of{\ch{Ca(OH)2\aq{}}}}}
+                    {\unit{\mole\of{\ch{Ca(OH)2\aq{}}}}}
+            \,  \frac
+                    {\unit{\mole\of{\ch{Ca(OH)2\aq{}}}}}
+                    {\unit{\mole\of{\ch{CaC2\sld{}}}}}
+            \,  \frac
+                    {         \unit{\mole\of{\ch{CaC2\sld{}}}}}
+                    {\qty{64.0994}{\gram\of{\ch{CaC2\sld{}}}}}
+            \,  1.00*10^2\,\unit{\gram\of{\ch{CaC2\sld{}}}}
+            \cong &\\&
+            \cong
+                \qty{115.590286336533571}{\gram\of{\ch{Ca(OH)2\aq{}}}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+            =   (\num{177.902869119991474} - 1.00*10^2)\unit{\mole\of{\ch{CaC2\sld{}}}}
+                \cong \qty{77.902869119991474}{\mole\of{\ch{CaC2\sld{}}}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+\end{questionBox}
+
+
+
+
+
+
+\section{Problemas de estequiometria e concetrações}
+
+% Q2.1
+\begin{questionBox}1{}
+
+    \begin{center}
+        \ch{
+            m CaCO3\aq{} + (1 - m) MgCO3\aq{} ->[\Delta] \\ m CaO\aq{} + (1 - m) MgO\aq{} + CO2\gas{}
+        }
+    \end{center}
+
+    \begin{flalign*}
+        &
+            \left(
+                m\,\unit{\mole\of{\ch{CaCO3\aq{}}}\per\mole\of{sys}}
+            \,  \frac
+                    {\qty{100.0869}{\gram\of{\ch{CaCO3\aq{}}}}}
+                    {          \unit{\mole\of{\ch{CaCO3\aq{}}}}}
+            +
+                (1-m)\,\unit{\mole\of{\ch{MgCO3\aq{}}}\per\mole\of{sys}}
+            \,  \frac
+                    {\qty{84.3139}{\gram\of{\ch{MgCO3\aq{}}}}}
+                    {         \unit{\mole\of{\ch{MgCO3\aq{}}}}}
+            \right)\,\unit{\mole\of{sys}}
+        =   15.22\,\unit{\gram\of{sys}}
+        \implies &\\&
+        \implies
+            m\,\unit{\mole\of{\ch{CaCO3\aq{}}}}
+        =   \left(
+                15.22\,\unit{\gram\of{sys}}
+            -   \num{84.3139}
+            \right)
+        /   (\num{100.0869} - \num{84.3139})
+        &
+    \end{flalign*}
+
+    % CaCO3 g/mole -> 100.0869  = 40.078 + 12.0107 + 3 * 15.9994
+    % CO2   g/mole ->  44.0095  = 12.0107 + 2 * 15.9994
+    % MgCO3 g/mole ->  84.3139  = 24.305 + 12.0107 + 3 * 15.9994
+
+    % \begin{flalign*}
+    %     &
+    %         \unit{\percent n_{\chem{CaCO3}}}
+    %     =   X / (X+Y);
+    %     &\\&
+    %         (X+Y)
+    %     \,  \frac{100\,\unit{\gram}}{\unit{\mole_{\ch{CO2}}}}
+    %     &
+    % \end{flalign*}
+
+    % incompleto ...
+
+\end{questionBox}
+
+
+% Q2.3
+\setcounter{question}{2}
+\begin{questionBox}1{}
+
+    \begin{BM}
+        0.094\,\unit{\gram\of{\ch{CuSO4 . 5 H2O}}}
+    \end{BM}
+
+    \begin{questionBox}3{\ch{[CuSO4]}}
+
+        % [CuSO4]
+        \begin{flalign*}
+            &
+            =   0.094\,\unit{\gram\of{\ch{CuSO4 . 5 H2O\aq{}}}}
+            \,  \frac
+                    {       \unit{\mole\of{\ch{CuSO4 . 5 H2O\aq{}}}}}
+                    {159.5\,\unit{\gram\of{\ch{CuSO4 . 5 H2O\aq{}}}}}
+            \,  (500\,\unit{\cubic\centi\meter\of{sys_1}})^{-1}
+            \,  \frac
+                    {2.00\,\unit{\cubic\centi\meter\of{sys_1}}}
+                    {500\, \unit{\cubic\centi\meter\of{sys_2}}}
+            \cong &\\&
+            \cong
+                \qty [scientific-notation = engineering]
+                    {0.000000004714734}
+                    {\mole\of{\ch{CuSO4 . 5 H2O\aq{}}}\per\cubic\centi\meter\of{sys_2}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{}
+        \begin{flalign*}
+            &
+            =   \qty [scientific-notation = engineering]
+                    {0.000000004714734}
+                    {\mole\of{\ch{CuSO4 . 5 H2O\aq{}}}\per\cubic\centi\meter\of{sys_2}}
+            \,  \frac
+                    {159.5\,\unit{\gram\of{\ch{CuSO4 . 5 H2O\aq{}}}}}
+                    {       \unit{\mole\of{\ch{CuSO4 . 5 H2O\aq{}}}}}
+            \,  500\,\unit{\cubic\centi\meter\of{sys_2}}
+            \cong &\\&
+            \cong
+                \qty [scientific-notation = engineering]
+                    {0.0003760000365}
+                    {\gram\of{\ch{CuSO4 . 5 H2O\aq{}}}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}

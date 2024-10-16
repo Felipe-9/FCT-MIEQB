@@ -1,0 +1,255 @@
+% !TEX root = ./ALGA-Fichas_formativas_resoluções.4.tex
+\providecommand\mainfilename{"./ALGA-Fichas_formativas_resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./ALGA-Fichas_formativas_resoluções.4.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{4}
+[ALGA]
+{Ficha Formativa}
+{Ficha Formativa}
+
+
+\begin{questionBox}1{}
+
+
+\end{questionBox}
+
+\begin{questionBox}2m{}
+
+    % A
+    \begin{questionBox}3{A}
+        \begin{flalign*}
+            &
+            =   -\det
+                \begin{pmatrix}
+                    3 & 1 & -1
+                \\  2 & 5 &  1
+                \\  2 & 3 &  1
+                \end{pmatrix}
+            =   \left\{
+                \begin{aligned}
+                    & {
+                        \det
+                        \begin{pmatrix}
+                            2 & 5
+                        \\  2 & 3
+                        \end{pmatrix}
+                    } \\ +1 & {
+                        \det
+                        \begin{pmatrix}
+                            3 & 1
+                        \\  2 & 3
+                        \end{pmatrix}
+                    } \\ -1 & {
+                        \det
+                        \begin{pmatrix}
+                            3 & 1
+                        \\  2 & 5
+                        \end{pmatrix}
+                    }
+                \end{aligned}
+            \right\}
+            =   \left\{
+                \begin{aligned}
+                    & { 6-10 }
+                    \\ + & { (9-2) }
+                    \\ - & { (15-2) }
+                \end{aligned}
+            \right\}
+            =   -10
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % D
+    \begin{questionBox}3{D}
+        \begin{flalign*}
+            &
+            = \left\{
+                \begin{aligned}
+                    & {   
+                        \det
+                        \begin{pmatrix}
+                            3 & 3 & 5
+                        \\  6 & 1 & 2
+                        \\  4 & 1 & 6
+                        \end{pmatrix}
+                    } \\ - & {
+                        \det
+                        \begin{pmatrix}
+                            3 & 1 & 5
+                        \\  6 & 1 & 2
+                        \\  4 & 1 & 6
+                        \end{pmatrix}
+                    } \\ -2\, & {  
+                        \det
+                        \begin{pmatrix}
+                            3 & 1 & 5
+                        \\  3 & 3 & 5
+                        \\  4 & 1 & 6
+                        \end{pmatrix}
+                    } \\ - & {  
+                        \det
+                        \begin{pmatrix}
+                            3 & 1 & 5
+                        \\  3 & 3 & 5
+                        \\  6 & 1 & 2
+                        \end{pmatrix}
+                    }
+                \end{aligned}
+            \right\}
+            =   \left\{
+                \begin{aligned}
+                    & {
+                        \left\{
+                            \begin{aligned}
+                                & {3*(6*6-2*4)} 
+                                \\ - & {3*6-5*4 }
+                                \\ + & { 3*2-5*6 }
+                            \end{aligned}
+                        \right\}
+                    } \\ - &  {
+                        \left\{
+                            \begin{aligned}
+                                & { 6*6-2*4 }
+                                \\ - & { 3*6-5*4 }
+                                \\ + & { 3*2-5*6 }
+                            \end{aligned}
+                        \right\}
+                    } \\ - &  {
+                        \left\{
+                            \begin{aligned}
+                                & { 3*6-5*4 }
+                                \\ - & { 3*(3*6-5*4) }
+                                \\ + & { 3*5-5*3 }
+                            \end{aligned}
+                        \right\}
+                    } \\ - & {
+                        \left\{
+                            \begin{aligned}
+                                & { 3*2-5*6 }
+                                \\ - & { 3*(3*2-5*6) }
+                                \\ + & { 3*5-3*5 }
+                            \end{aligned}
+                        \right\}
+                    }
+                \end{aligned}
+            \right\}
+            =   4
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    % E
+    \begin{questionBox}3{E}
+        \begin{flalign*}
+            &
+            =   7 * 2 * -1 * -2 = 28
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}3{C}
+        \begin{flalign*}
+            &
+            =   -\det
+                \begin{pmatrix}
+                    1 & 0 & 1
+                \\  0 & 0 & 1
+                \\  0 & 2 & 1
+                \end{pmatrix}
+            =   -2\,\det
+                \begin{pmatrix}
+                    1 & 1
+                \\  0 & 1
+                \end{pmatrix}
+            =   -2*1 = -2
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\setcounter{subquestion}{5}
+\begin{questionBox}2{}
+    \begin{flalign*}
+        &
+        =   -\det
+            \begin{pmatrix}
+                4 & 1 & 0
+            \\  2 & 5 & 2
+            \\  2 & 5 & 2
+            \end{pmatrix}
+        =   0
+        &
+    \end{flalign*}
+\end{questionBox}
+
+
+
+\begin{questionBox}1{}
+
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+            =   15 * (-1) * (1/5)
+            =   -3
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+            =   -\det
+                \begin{pmatrix}
+                    1 & -1 & 0
+                \\  3 &  1 & 0
+                \\  0 &  1 & 1
+                \end{pmatrix}
+            =   -\det
+                \begin{pmatrix}
+                    1 & -1
+                \\  3 &  1
+                \end{pmatrix}
+            =   -(1-(-3))
+            =   -4
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+            =   \det
+                \begin{pmatrix}
+                    3 & -1 & 0
+                \\  2 &  1 & 0
+                \\  2 &  1 & 0
+                \end{pmatrix}
+            =   0
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{}
+        \begin{flalign*}
+            &
+                \alpha
+            =   \frac{\det B}{\det A}
+            =   \frac{4\,\det B(1|1)}{3\,\det A(1|1)}
+            =   4/3
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,607 @@
+\documentclass[12pt]{report}
+
+% Linguagem
+\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip2pt}
+\renewcommand\cftsecafterpnum{\vskip2pt}
+\setlength{\cftbeforesecskip}{3pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Appendix
+\usepackage{appendix}
+
+% Maths
+%\usepackage{amssymb} 		
+%\usepackage{amsmath} 
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+\usepackage{chemfig} 		% Estruturas quimicas
+										
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\definecolor{Red}  {hsb}{0  ,.6,1}
+\definecolor{Blue} {hsb}{0.6,.6,1}
+\definecolor{Green}{hsb}{0.3,.6,1}
+
+\pagecolor{DarkBlue!110}
+\color{DarkGreen!20!}
+
+% Resolução de listas
+%\renewcommand\thesection{Questão \arabic{section} }
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+% Fix sections, sub_sections and sub_sub_sections
+%\setcounter{secnumdepth}{3}
+\renewcommand \thesection {\arabic{section}}
+
+% Customize Chapter
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+
+\setcounter{chapter}{-1}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!} Química Inorgânica I}
+\author{Felipe Pinto - 61387}
+\date{$1^o$ Semestre - $2021.1$}
+
+\maketitle
+\tableofcontents
+
+\chapter{Introdução}
+
+\section{Programa}
+\begin{enumerate}
+\item Interesse da Química Inorgânica. 
+\item Definições
+	\begin{itemize}
+ 	\item 
+		\hyperlink{composto de coordenacao}%
+					 {Composto de Coordenação}
+	\item \hyperlink{elemento central}{Elemento Central}
+	\item \hyperlink{ligando}{Ligando}
+	\item 
+		\hyperlink{numero de coordenacao}{Número de coordenação}
+	\item 
+		\hyperlink{esfera de coordenacao}{Esfera de coordenação}
+	\end{itemize}
+\item \hyperlink{tipos de ligandos}{Tipos de Ligandos}.
+\item 
+	\hyperlink{nomenclatura complexos de coordenacao}%
+	{Regras de nomenclatura dos Complexos de Coordenação}
+\item Afinidade de metais para ligandos.
+\item Classificação de HSAB.
+\item Estabilidade de compostos de coordenação.
+\item Efeito de quelação.
+\item Números de coordenação mais prováveis em compostos de coordenação.
+\item Isomeria.
+\item Teorias de ligação química em compostos de coordenação.
+\item Teoria do Enlace de Valência.
+\item Teoria do Campo Cristalino.
+\item Interpretação de propriedades
+	\begin{itemize}
+	\item Magnéticas, 
+	\item Espectros electrónicos 
+	\item Propriedades termodinâmicas.
+	\end{itemize}
+\item Diagramas de Orgel e Tanabe-Sugano.
+\item Reactividade Química de Complexos.
+\end{enumerate}
+
+% Interesse da Química Inorgânica.
+% Definições - composto de coordenação, elemento central, ligando, número e esfera de coordenação.
+% Tipos de ligandos.
+% Regras de nomenclatura dos compostos de coordenação.
+% Afinidade de metais para ligandos.
+% Classificação de HSAB.
+% Estabilidade de compostos de coordenação.
+% Efeito de quelação.
+% Números de coordenação mais prováveis em compostos de coordenação.
+% Isomeria.
+% Teorias de ligação química em compostos de coordenação; Teoria do Enlace de Valência; Teoria do Campo Cristalino.
+% Interpretação de propriedades 
+% 	magnéticas, 
+% 	espectros electrónicos 
+% 	propriedades termodinâmicas.
+% Diagramas de Orgel e Tanabe-Sugano.
+% Reactividade Química de Complexos. 
+
+\section{Química Inorgânica}
+A química se divide em dois ramos, química orgânica e inorgânica.
+Química inorgânica compreendem todos os compostos que não possuem ligações de carbono do tipo \ch{C-H}
+
+\begin{appendices}
+\setcounter{chapter}{1}
+\chapter{Background}
+
+\hypertarget{lewis}{}%
+\section{Reações Ácidos-Base de Lewis}
+
+\hypertarget{ligacoes covalentes coordenadas}{}%
+\section{Ligações Covalentes Coordenadas}
+
+\hypertarget{ligacao sigma}{}
+\section{Ligações $\sigma$}
+
+\end{appendices}
+
+\chapter{Complexos e Compostos de Coordenação}
+
+\section{Complexos de Coordenação}%
+%
+São produtos de \hyperlink{lewis}{reações acido-base de Lewis}  onde um ou mais \hyperlink{elemento central}{átomos / elementos centrais}, geralmente átomos metálicos, se ligam a um arranjo de \hyperlink{ligandos}{ligandos} por \hyperlink{ligacoes covalentes coordenadas}{\textbf{ligações covalentes coordenadas}}.\\\\
+Para ser considerado um complexo de coordenação, se deve ter o \hyperlink{indice de coordenacao}{índice de coordenação} superior a seu \hyperlink{estadodeoxidacao}{estado de oxidação}
+
+\hypertarget{composto de coordeancao}{}%
+\subsection{Compostos de Coordenação}
+
+Compostos que possuem complexos de coordenação.\\
+Compostos de coordenação e complexos são especies químicas distintas, suas propriedades e comportamentos químicos são diferentes dos seus componentes
+
+\subsection{Estrutura de um Complexo de Coordenação}
+\begin{center}
+	\huge \ch{[A\,B]^C}
+\end{center}
+
+\renewcommand{\theenumi}{\Alph{enumi}}
+
+\begin{enumerate}
+\item 
+	\hyperlink{elemento central}{\bf{Átomo / Elemento Central}}
+\item \hyperlink{ligandos}{\bf{Ligandos}}
+\item \textbf{Carga} do complexo de coordenação
+\end{enumerate}
+
+%\begin{enumerate}
+%\item \hypertarget{ElementoCentral}{\textbf{Atomos/Ions metálicos centrais}}, são ácidos de Lewis
+%\item \textbf{moléculas ou ions} ligados aos átomos centrais por \hyperlink{LigacoesCovalentesCoordenadas}{ligações covalentes coordenadas}, \hypertarget{Ligando}{\textbf{Ligandos}}, são bases de Lewis
+%\item \textbf{Carga} do complexo de coordenação
+%\end{enumerate}
+
+\subsection{Caracteristicas}
+
+\hypertarget{elemento central}{}%
+\subsubsection{Átomo / Elemento Central}
+
+Elemento metálico que ocupa o centro do complexo, considerado \hyperlink{Lewis}{ácido de Lewis}, existem complexos com \hyperlink{complexo polinuclear}{multiplos átomos / elementos centrais}.
+
+\hypertarget{ligando}{}%
+\subsubsection{Ligandos}
+
+Elementos diretamente ligado ao \hyperlink{elemento central}{elemento central}, de natureza ionica ou molecular, são considerados \hyperlink{lewis}{bases de lewis}
+
+\hypertarget{indice de coordenacao}{}%
+\subsubsection{Índice / Numero de Coordenação}
+
+É o numero de \hyperlink{ligacao sigma}{ligações $\sigma$} entre os \hyperlink{ligando}{ligandos} e o \hyperlink{elemento central}{elemento central}
+
+\hypertarget{estado de oxidacao}{}%
+\subsubsection{Estado de Oxidação}
+
+Carga do \hyperlink{elemento central}{elemento central} representado em numeros romanos.\\
+É definido como a carga que o átomo central teria se todos seus \hyperlink{ligando}{ligandos} e pares eletrônicos compartilhados fossem removidos
+
+\hypertarget{quelacao}{}%
+\subsubsection{Quelação e Ligandos Polidentados}
+
+\hyperlink{ligando}{Ligandos} podem formar mais de uma ligação com o átomo central, formando um, ou mais anéis quelatos.\\
+O numero de átomos de um ligando que se ligam ao mesmo tempo com o \hyperlink{elemento central}{átomo central} é indicado pelos adjetivos:
+\textbf{Bi}dentado;
+\textbf{Tri}dentado;
+\textbf{Tetra}dentado;
+\textbf{Penta}dentado;
+$\cdots$
+\paragraph{Exemplos de ligandos polidentados:}
+
+\begin{itemize}
+
+% Bidentados
+	
+	\item \ch{SO4^{-2}}: Bidentado instável\\
+			Sulfato
+	
+	\item \ch{C2H4(NH2)2}: Bidentado\\
+			Etilenodiamina $\to$ Etilenodiamino (en)
+	
+	\item \ch{C2O4^{2-}} = \ch{(CO2)2^{2-}}: Bidentado\\
+			Oxalato $\to$ Oxalato
+	
+	\item \ch{C10H8N2}: Bidentado\\
+			Dipiridina $\to$ Bipiridino (bipy)
+
+	\item \ch{CH3COCHCOCH3^-}: Bidentado\\
+			Acetilacetonato $\to$ Acetilacetonato (ACAC)
+		
+	\item \ch{OCC(CH3)3CHCOC3F7}: Bidentado\\
+			Heptafluoro\,dimetil\,octanedionato (fod)
+		
+	\item \ch{C12H8N2}: Bidentado\\
+			Fenatrolina $\to$ Fenatrolina (phen)\\
+			Garante grande estabilidade, tambem é conhecido por 			emitir luz
+		
+% Tridentados
+		
+% Tetradentados
+
+% Hexadentado
+
+	\item \ch{diaza - 18 - crown - 6} = \ch{C12H26N2O4}:
+			Hexadentado\\
+			diaza-18-crown-6\\
+			Forma um anél que rodeia todo o perímetro do átomo 			central o garantindo grande estabilidade
+	
+	\item \ch{C10H16N2O8} = \ch{(C2OOH)2NC2N(C2OOH)2}:
+			Hexadentado\\
+			etileno\,diamino\,tetra\,acetato $\to$
+			etileno\,diamino\,tetra\,acetato (EDTA)
+	
+% Octadentado
+	
+	\item
+		\ch{C14H23N2O10^{5-}} =
+		\ch{(C2OOH)N(C2N(C2OOH)2)2^{5-}}: Octadentado\\
+		dietileno\,triamino\,penta\,acetato $\to$
+		dietileno\,triamino\,penta\,acetato (DTPA)
+		
+\end{itemize}
+
+\paragraph{Ligandos Ambidentados}
+Alguns ligandos polidentados podem fazer apenas algumas de suas ligações por vês com o \hyperlink{elemento central}{elemento central}, esses são caracterisados como ambidentados. por possuirem essa característica, sua presença em um complexo o atribui \hyperlink{isomeria de ligacao}{isomeria de ligação}
+
+%\vspace{0.5cm}\noindent\begin{minipage}{\textwidth}
+\paragraph{Exemplos de Ligandos Ambidentados}%
+\begin{itemize}
+
+	\item \ch{SCN^-} / \ch{NCS^-}: Tiocianato / Isotiocianato
+
+\begin{multicols}{2}
+
+	\item \ch{NO2^-} / \ch{ONO^-}: Nitro / Nitrito
+
+\end{multicols}
+
+\end{itemize}
+%\end{minipage}
+
+
+%\begin{itemize}
+%\item \textbf{Complexos Iónicos} (ou sais complexos) são complexos de coordenação que possuem carga
+%\item \textbf{Adultos} são complexos que apresentam carga elétrica nula
+%\item \textbf{Átomo doador} é o átomo do ligando que está diretamente ligado ao átomo central
+%\item \hypertarget{NumerodeCoordenacao}{\textbf{Índice/Numero de Coordenação}} é a quantidade de átomos doadores do complexo
+%\item \hypertarget{EsferadeCoordenacao}{\textbf{Esfera de Coordenação}} é o conjunto formado pelos elementos centrais e seus ligandos
+%\end{itemize}
+
+\subsection{Exemplos:}
+
+\begin{itemize}
+\begin{multicols}{3}
+
+	\item \ch{ [Ag(NH3)2]^{+ } }
+	\item \ch{ [Fe(CO)5] }
+	\item \ch{ [Pt(CN)4]^{-2} }
+	\item \ch{ [Cl3BNH3] }
+	\item \ch{ [Co(NH3)6]^{+3} }
+	\item \ch{ [Ni(CO)4] }
+
+\end{multicols}
+\end{itemize}
+
+\hypertarget{NomenclaturaComplexosdeCoordenacao}{}%
+\section{Regras de Nomenclatura: Complexos de Coordenação}
+
+\subsection{Estrutura}
+\begin{center}
+	\huge \ch
+{ 
+	[ \textcolor{Red}{A}\,\textcolor{Blue}{B} ] 
+}: 
+\textcolor{Blue}{B}\,\textcolor{Red}{A}
+\end{center}
+
+\begin{enumerate}
+\color{Red} \item \color{Red!20} Nome do elemento central
+\color{Blue}\item \color{Blue!20}Nome dos ligandos
+\end{enumerate}
+
+\subsection{Regras}
+
+\renewcommand{\theenumi}{\arabic{enumi}}
+\noindent\begin{multicols}{2}
+	
+	\begin{enumerate}
+	\item \hyperlink{regras1}{Complexos Aniônicos}
+	\item \hyperlink{regras2}{Multiplos ligandos}
+	\item \hyperlink{regras3}%
+		{Prefixos numéricos (di, tri, tetra, $\cdots$)}
+	\item \hyperlink{regras4}{Regra geral para sufixos}
+	\item \hyperlink{regras5}{Aniões terminados em ``eto''}
+	\item \hyperlink{regras6}{Aniões terminados em ``ido''}
+	\item \hyperlink{regras7}{Aniões terminados em ``ato''}
+	\item \hyperlink{regras8}%
+		{Ligandos radicais derivados de hidrocarbonetos}
+	\item \hyperlink{regras9}%
+		{Ligandos moleculares terminados em ``a''}
+	\item \hyperlink{regras10}{Ligandos com nomes específicos}
+	\item \hyperlink{regras11}%
+		{Ligando que atua entre dois centros de coordenação}
+	\end{enumerate}
+	
+\end{multicols}
+
+\hypertarget{regras1}{}%
+\subsubsection{Complexos Aniônicos*}
+
+recebem a terminação ``ato'' seguido do seu numero de oxidação em formato romano entre parenteses\\
+* aniônico: portador de carga negativa
+
+\hypertarget{regras2}{}%
+\subsubsection{Multiplos ligandos}
+
+são nomeados na seguinte ordem:\\
+neutros (moleculares), aniônicos (negativos), catiônicos (positivos).\\
+ligantes de mesma natureza se ordena alfabeticamente.
+
+\hypertarget{regras3}{}%
+\subsubsection{Prefixos numéricos (di, tri, tetra, $\cdots$)}
+
+indica a quantidade de ligandos iguais.\\
+variação dos prefixos numericos para: ``dis, tris, tetrakis, pentakis, $\cdots$'' em ligandos que possuem prefixos numéricos em seu nome (ex: ligandos orgânicos, dipiridina, trifosfina)\\
+
+\noindent\begin{minipage}{\linewidth}
+
+\paragraph{Exemplos:}\hfill\vspace{0.3cm}
+\begin{multicols}{2}
+
+	\begin{itemize}
+	
+	\item \ch{[CoF\textcolor{LightGreen}{6}]^{3-}}:
+		\textcolor{LightGreen}{Hex}fluorocobaltato(III)
+		
+	\item \ch{[Ag(NH3)\textcolor{LightGreen}{2}]^+}:
+		\textcolor{LightGreen}{Di}aminprata(I)
+		
+	\item \ch{[Ni(CO)\textcolor{LightGreen}{4}]^+}:
+		\textcolor{LightGreen}{Tetra}carbonilniquel(0)
+		
+	\item \ch{[Mn(CO)\textcolor{LightGreen}{5}]^+}:
+		\hbox{%
+			\textcolor{LightGreen}{Penta}carbonilmanganato(-I)
+		}
+	\end{itemize}
+	
+\end{multicols}
+
+\end{minipage}
+
+\hypertarget{regras4}{}%
+\subsubsection{Regra geral para sufixos}
+
+\begin{multicols}{2}
+	\begin{itemize}
+	\item 
+		``\textcolor{LightGreen}{eto}'' 
+		$\to$ ``\textcolor{LightGreen}{o}''
+	\item 
+		``\textcolor{LightGreen}{ito}''
+		$\to$ ``\textcolor{LightGreen}{o}''
+	\item 
+		``\textcolor{LightGreen}{ido}''
+		$\to$ ``\textcolor{LightGreen}{o}''
+	\item 
+		``\textcolor{LightGreen}{ato}''
+		$\to$ ``\textcolor{LightGreen}{ato}''
+	\end{itemize}
+\end{multicols}
+
+\hypertarget{regras5}{}%
+\subsubsection{Aniões terminados em ``eto''}
+
+\begin{multicols}{2}
+	
+	\begin{itemize}
+	\item 
+		Fluor\textcolor{LightGreen}{eto} (\ch{F^-})
+		$\to$ Fluor\textcolor{LightGreen}{o}
+ 	\item 
+		Clor\textcolor{LightGreen}{eto} (\ch{Cl^-})
+		$\to$ Clor\textcolor{LightGreen}{o}
+	\item 
+		Brom\textcolor{LightGreen}{eto} (\ch{Br^-})
+		$\to$ Brom\textcolor{LightGreen}{o}
+	\item
+		Iod\textcolor{LightGreen}{eto} (\ch{I^-})
+		$\to$ Iod\textcolor{LightGreen}{o}
+	\item
+		Cian\textcolor{LightGreen}{eto} (\ch{CN^-})
+		$\to$ Cian\textcolor{LightGreen}{o}
+	\item
+		Amid\textcolor{LightGreen}{eto} (\ch{NH2^-})
+		$\to$ Amid\textcolor{LightGreen}{o}
+	\end{itemize}
+
+\end{multicols}
+
+Com exceção do \textbf{hidreto (\ch{H^-})} que ou não sofre alteração ou se usa hidr\textcolor{LightGreen}{o}
+
+\hypertarget{regras6}{}%
+\subsubsection{Aniões terminados em ``ido''}
+
+\begin{multicols}{2}
+	
+	\begin{itemize}
+	\item 
+		Hidróx\textcolor{LightGreen}{ido} (\ch{OH^-})
+		$\to$ Hidrox\textcolor{LightGreen}{o}
+	\item 
+		Óx\textcolor{LightGreen}{ido} (\ch{O^{2-}})
+		$\to$ Ox\textcolor{LightGreen}{o}
+	\item
+		Peróx\textcolor{LightGreen}{ido} (\ch{O2^{-2}})
+		$\to$ Perox\textcolor{LightGreen}{o}
+	\end{itemize}
+
+\end{multicols}
+
+\hypertarget{regras7}{}%
+\subsubsection{Aniões terminados em ``ato''}
+
+\begin{itemize}
+	\begin{multicols}{2}
+	\item
+		Carbon\textcolor{LightGreen}{ato} (\ch{CO3^{2-}})
+		$\to$ Carbon\textcolor{LightGreen}{ato}
+	\item
+		Nitr\textcolor{LightGreen}{ato} (\ch{NO3^-})
+		$\to$ Nitr\textcolor{LightGreen}{ato}
+	\item 
+		Sulf\textcolor{LightGreen}{ato} (\ch{SO4^{2-}})
+		$\to$ Sulf\textcolor{LightGreen}{ato}
+	\item
+		Oxal\textcolor{LightGreen}{ato} (\ch{C2O4^{2-}})
+		$\to$ Oxal\textcolor{LightGreen}{ato}
+	\end{multicols}\vspace{-0.5cm}
+	\item
+		Acet\textcolor{LightGreen}{ato} (\ch{CH3COO^-})
+		$\to$ Acet\textcolor{LightGreen}{ato}
+	\item
+		Acetilaceton\textcolor{LightGreen}{ato} (\ch{CH3COCHCOCH3^-})
+		$\to$ Acetilaceton\textcolor{LightGreen}{ato} (ACAC)
+	\end{itemize}
+
+\hypertarget{regras8}{}%
+\subsubsection{Ligandos radicais derivados de hidrocarbonetos}
+
+matem o nome do radical
+
+\begin{itemize}
+	\begin{multicols}{2}
+ 	\item Metil (\ch{CH3}) $\to$ Metil (Me)
+	\item Etil (\ch{C2H5}) $\to$ Etil (et)
+	\item Fenil (\ch{C6H5}) $\to$ Fenil (Ph ou \O)
+	\end{multicols} \vspace{-0.5cm}
+	\item 
+		Ciclopentadienil (\ch{C5H5})
+		$\to$ Ciclopentadienil (Cp)
+\end{itemize}
+
+\vspace{0.5cm}\noindent%
+\begin{minipage}{\textwidth}
+
+\hypertarget{regras9}{}%
+\subsubsection{Ligandos moleculares terminados em ``a''}%
+
+o substituem por ``o''
+\vspace{0.25cm}
+
+\begin{itemize}
+ 	\item 
+		Piridin\textcolor{LightGreen}{a} (\ch{C5H5N})
+		$\to$ Piridin\textcolor{LightGreen}{o} (Py)
+	\item
+		Dipiridin\textcolor{LightGreen}{a} (\ch{C10H5N})
+		$\to$ \textcolor{LightGreen}{B}%
+				ipiridin%
+				\textcolor{LightGreen}{o}
+				(Bipy)
+	\item
+		Etilenodiamin\textcolor{LightGreen}{a} (\ch{C2H8N2})
+		$\to$	Etilenodiamin\textcolor{LightGreen}{o} (En)
+	\item
+		Trifenilfosfin\textcolor{LightGreen}{a} (\ch{P(C6H5)3})
+		$\to$ Trifenilfosfin\textcolor{LightGreen}{o} 
+				(PPh$_3$ ou P\O$_3$)
+\end{itemize}
+
+\end{minipage}
+
+\hypertarget{regras10}{}%
+\subsubsection{Ligandos com nomes específicos}
+
+\begin{itemize}
+	
+	\item Água (\ch{H2O}) $\to$ Aquo
+	\item Amónia (\ch{NH3}) $\to$ Amino ou Amin
+	\item Monóxiodo de carbono (\ch{CO}) $\to$ Carbonilo
+	\item Monóxido de azoto (\ch{NO}) $\to$ Nitrosil
+	\item 
+		Oxigénio (molecular) (\ch{O2})\hyperlink{o2n2}{*}
+		$\to$ Dioxigénio
+	\item 
+		Azoto(molecular) (\ch{N2})\hyperlink{o2n2}{*}
+		$\to$ Diazoto
+	\item Hidreto (\ch{H^-}) $\to$ Hidro ou Hidreto
+\end{itemize}
+
+\hypertarget{o2n2}{*} Nas formulas esses ligandos devem ser escritos entre parênteses
+
+\hypertarget{regras11}{}%
+\subsubsection{Ligando que atua entre dois centros de coordenação}
+
+\hyperlink{compolinucleares}{complexos polinucleares} quando o ligado atua entre os dois centros de coordenação, recebe a letra $\mu$ separada por hífens
+
+\subsubsection{Exemplo Complexos de coordenação:}
+
+\begin{multicols}{2}
+
+	\begin{itemize}
+	\item \ch{[Co\textcolor{LightGreen}{F}6]^{3-}}:
+		Hex\textcolor{LightGreen}{fluoro}cobaltato(III)
+	\item \ch{[Fe(S\textcolor{LightGreen}{CN})6]^{3-}}:
+		Hexatio\textcolor{LightGreen}{cianato}ferrato(III)
+	\end{itemize}
+	
+\end{multicols}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,405 @@
+% !TEX root = ./TEQB-Testes_Resoluções.1.tex
+\providecommand\mainfilename{"./TEQB-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Testes_Resoluções.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[TEQB]
+{Teste 1 Resolução}
+{Teste Resolução}
+
+\begin{questionBox}1{} % Q1
+    
+    Considere que tem 1\,\unit{\mole} de um gás perfeito (\(C_V=R\,5/2\))
+    \\\dots
+    transições reversiveis entre eles.
+    \\\dots
+    \(P_1=6.1\,\unit{\bar}\) e \(T_1=400.8\,\unit{\kelvin}\).
+    \\\dots
+    3\to1 é adiabática, e a 2\to3 é feita a \(P=1.5\,\unit{\bar}\),
+    com o trabálho associaido \(W_{2\to3}=1400\,\unit{\joule}\).
+    
+    \begin{enumerate}
+        \item \(
+            P_1 = 6.1\,\unit{\bar},
+            T_1 = 400.8\,\unit{\kelvin}
+        \)
+        \item \(
+            P_2 = 1.5\,\unit{\bar},
+        \)
+        \item \(
+            P_3 = 1.5\,\unit{\bar}
+        \)
+    \end{enumerate}
+
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.1
+    
+    Calcule \(T_3\).
+
+    \begin{flalign*}
+        &
+            T_3
+            = \frac{P_3\,V_3}{n\,R}
+            = \frac{
+                P_3
+                \,V_1\sqrt[\gamma]{P_1/P_3}
+            }{
+                n\,R
+            }
+            = \frac{
+                P_3
+                \frac{n\,R\,T_1}{P_1}
+                \,\sqrt[\gamma]{\frac{P_1}{P_3}}
+            }{
+                n\,R
+            }
+            =
+            P_3
+            \frac{T_1}{P_1}
+            \,\sqrt[C_p/C_V]{\frac{P_1}{P_3}}
+            = &\\&
+            = 
+            P_3
+            \frac{T_1}{P_1}
+            \,\sqrt[C_p/C_V]{\frac{P_1}{P_3}}
+            % = &\\&
+            = 
+            P_3
+            \frac{T_1}{P_1}
+            \,\sqrt[7/5]{\frac{P_1}{P_3}}
+            = 
+            (1.5\E5)
+            \frac{400.8}{6.1\E5}
+            \,\sqrt[7/5]{\frac{6.1\E5}{1.5\E5}}
+            \cong
+            \num{268.447614033612209}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{\(W_{1\to3}\)} % Q1.2
+    
+    \begin{flalign*}
+        &
+            W_{1\to3}
+            = W_{1\to2}
+            + W_{2\to3}
+            = \int_{1}^{2}{P_{ext}\,\odif{V}}
+            + W_{2\to3}
+            = P_2\left(
+                V_1\left(\frac{P_1}{P_2}\right)^{5/7}
+                -V_1
+            \right)
+            + W_{2\to3}
+            = &\\&
+            = P_2
+            \,\frac{n\,R\,T_1}{P_1}
+            \,\left(
+                1\left(\frac{P_1}{P_2}\right)^{5/7}
+                -1
+            \right)
+            + W_{2\to3}
+            = &\\&
+            = (1.5\E5)
+            \,\frac{(1)\,(8.314)\,(400.8)}{6.1\E5}
+            \,\left(
+                1\left(\frac{6.1\E5}{1.5\E5}\right)^{5/7}
+                -1
+            \right)
+            + 1400
+            \cong
+            \num{2812.467430288566657}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{\(T_2\)} % Q1.3
+    
+    
+    
+\end{questionBox}
+
+\setcounter{question}{2}
+\setcounter{subquestion}{0}
+
+\begin{questionBox}2{} % Q2.1
+    
+    Calcule \(\adif{S}\) e \(\adif{U}\) associados a passagem de 150\,\unit{\gram} de n-hexano do estado (177.83\,\unit{\kelvin}, (l), 1.01\,\unit{\bar}) ao estado (348.0\,\unit{\kelvin}, (g), 1.01\,\unit{\bar}). (4 val)
+
+    \begin{questionBox}3{\(\adif{S}\)} % Q2.1 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{S}_{
+                    (177.83\to348.0)\,\unit{\kelvin}, (l\to g), 1.01\,\unit{\bar}
+                }
+                % = &\\&
+                = \left(
+                    \begin{aligned}
+                        & \adif{S}_{(l),(1.77.83\to341.48)\,\unit{\kelvin}}
+                        \\
+                        + & \adif{S}_{(l\to g),(341.48)\,\unit{\kelvin}}
+                        \\
+                        + & \adif{S}_{(g),(341.48\to348.0)\,\unit{\kelvin}}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        & \int{n\,C_{p,(l)}\,\odif{T}/T}
+                        \\
+                        + & n\,\adif{H}_{vap}/T_{vap}
+                        \\
+                        + & \int{n\,C_{p,(g)}\,\odif{T}/T}
+                    \end{aligned}
+                \right)
+                % = &\\&
+                = \frac{m}{M}
+                \,\left(
+                    \begin{aligned}
+                        & C_{p,(l)}\ln\frac{341.48}{177.83}
+                        \\
+                        + & \adif{H}_{vap}/341.48
+                        \\
+                        + & C_{p,(g)}\,ln\frac{348.0}{341.48}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \frac{150}{84.17}
+                \,\left(
+                    \begin{aligned}
+                        & (197)\ln\frac{341.48}{177.83}
+                        \\
+                        + & (28.9\E3)/341.48
+                        \\
+                        + & (169)\,ln\frac{348.0}{341.48}
+                    \end{aligned}
+                \right)
+                \cong
+                \num{385.581788746304043}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\adif{U}\)} % Q2.1 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{U}
+                = \adif{H}
+                - \adif{(P\,V)}
+                = \adif{H}
+                - P\,\left(
+                    V_{(s)}
+                    - V_{(l)}
+                \right)
+                = &\\&
+                = \adif{H}
+                - P\,\left(
+                    \left(
+                        \frac{n\,R\,T}{P}
+                    \right)
+                    - \left(
+                        \frac{m}{\rho_{(l)}}
+                    \right)
+                \right)
+                = \adif{H}
+                - m\left(
+                    \left(
+                        \frac{R\,T}{M}
+                    \right)
+                    - \left(
+                        \frac{P}{\rho_{(l)}}
+                    \right)
+                \right)
+                \cong &\\&
+                \cong \num{385.581788746304043}
+                - (150\E-3)\left(
+                    \left(
+                        \frac{(8.314)\,348.0}{84.17\E-3}
+                    \right)
+                    - \left(
+                        \frac{1.01\E5}{0.640\E-3}
+                    \right)
+                \right)
+                = &\\&
+                = \num{385.581788746304043}
+                - (150)\left(
+                    \left(
+                        \frac{8.314*348.0}{84.17}
+                    \right)
+                    - \left(
+                        \frac{1.01\E5}{0.640}
+                    \right)
+                \right)
+                \cong
+                \num{23667104.459654969423919}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q2.2
+    
+    Calcule o \(\adif{U}\) e \(\adif{G}\) associados à passagem de 150\,\unit{\gram} de n-hexano do estado (341.48\,\unit{\kelvin}, (g), 0.3\,\unit{\bar}) ao estado (341.48\,\unit{\kelvin}, (l), 20\,\unit{\bar}). (3.5 val)
+
+    \begin{questionBox}3{\(\adif{U}\)} % Q2.2 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{U}
+                = \adif{H}
+                - \adif{(P\,V)}
+                % = &\\&
+                = \left(
+                    \begin{aligned}
+                        & \adif{H}_{(g),(0.3\to1.01)\,\unit{\bar}}
+                        \\
+                        + & \adif{H}_{(g\to l),1.01\,\unit{\bar}}
+                        \\
+                        + & \adif{H}_{(l),(1.01\to20)\,\unit{\bar}}
+                    \end{aligned}
+                \right)
+                - \left(
+                    P_f\,V_f
+                    - P_i\,V_i
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                        & 0\text{ (gás pft a T cnt)}
+                        \\
+                        + & n\,(-\adif{H}_{vap})
+                        \\
+                        + & \int{\pdv{H}{P}_T\,\odif{P}}
+                    \end{aligned}
+                \right)
+                + P_i\,V_i
+                - P_f\,V_f
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                          & n\,(-\adif{H}_{vap})
+                        \\
+                        + & \int{V(1-\alpha_P\,T)\,\odif{P}}
+                    \end{aligned}
+                \right)
+                + P_i\,\left(
+                    \frac{m}{\rho_{(l)}}
+                \right)
+                - P_f\,\left(
+                    \frac{n\,R\,T}{P}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                          & \left(\frac{m}{M}\right)\,(-\adif{H}_{vap})
+                        \\
+                        + & \left(\frac{m}{\rho_{l}}\right)(1-\alpha_P\,T)\,\adif{P}
+                        \\
+                        & \text{(assume V cnt para liq)}
+                    \end{aligned}
+                \right)
+                + P_i\,\left(
+                    \frac{m}{\rho_{(l)}}
+                \right)
+                - \frac{m}{M}\,R\,T
+                = &\\&
+                = m\,\left(
+                    \begin{aligned}
+                        - & \frac{\adif{H}_{vap}}{M}
+                        \\
+                        + & \frac{(1-\alpha_P\,T)\,\adif{P}}{\rho_{(l)}}
+                        \\
+                        + & \frac{P_i}{\rho_{(l)}}
+                        % \\
+                        - \frac{R\,T}{M}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = 150\,\left(
+                    \begin{aligned}
+                        - & \frac{28.9\E3}{84.17}
+                        \\
+                        + & \frac{(1-(1.2\E-3)\,(341.48))\,(20-1.01)\E5}{0.640\E6}
+                        \\
+                        + & \frac{0.3\E5}{0.640\E6}
+                        % \\
+                        - \frac{(8.314)\,(341.48)}{84.17}
+                    \end{aligned}
+                \right)
+                % \cong
+                % \num{-343.352738505405727}
+                % \num{1.751305275}
+                % \num{-33.683251173220863}
+                \cong
+                \num{-56292.702660543988357}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+    \begin{questionBox}3{\(\adif{G}\)} % Q2.2 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{G}
+                = \adif{H}
+                - \adif{(T\,S)}
+                = \adif{H}
+                - T\adif{S}
+                = \adif{H}
+                - T\left(
+                    S_f
+                    -S_i
+                \right)
+                = &\\&
+                = \adif{H}
+                - T\left(
+                    S_{(g),348.0\,\unit{\kelvin}}
+                    + \adif{S}_{(g),(341.48\to348.0)\unit{\kelvin}}
+                    \right)
+                + T\,\left(
+                    S_{(g),348.0\,\unit{\kelvin}}
+                    + \adif{S}_{(g\to l),341.48\unit{\kelvin}}
+                \right)
+                = &\\&
+                = \adif{H}
+                - T\left(
+                    \begin{aligned}
+                        & 0 \text{(gás pft a T cnt)}
+                        \\
+                        + & \adif{H}/T
+                        \\
+                        + & \adif{S}_{(l),(1.01\to20)\,\unit{\bar}}
+                    \end{aligned}
+                \right)
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q2.3
+    
+    Calcule o \(\adif{H}\) de fusão do n-hexano a 177.83\,\unit{\kelvin} e 1.01\,\unit{\bar}. (2 val)
+
+
+    
+\end{questionBox}
+
+\end{document}

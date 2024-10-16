@@ -1,0 +1,141 @@
+% !TEX root = ./TEQB-Aulas_Anotações.5.tex
+\providecommand\mainfilename{"./TEQB-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Aulas_Anotações.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{5}
+[TEQB]
+{Aula Anotações: 14/11} % Subfile Title
+{Aula Anotações: 14/11} % Part Title
+
+\begin{sectionBox}1{something something chemistry} % S
+    
+    \paragraph*{Lei de Reynold? Henry?}
+    \begin{BM}
+        y_i\,P = P_i = k_i\,x_i
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{???} % S1
+    
+    \begin{BM}
+        \ln{K_1}
+        = \ln{P_{0}}
+        + \frac{\mu_{i,\theta}-\mu_{i,0}}{R\,T}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \pdv{\ln{k_i}}{P}_T
+            = (R\,T)^{-1}
+            \pdv{\mu_i^{\theta}}{P}_T
+            =V_{i,m}^{\theta}
+            = V_{i,m}^{\infty}
+        &
+    \end{flalign*}
+    
+    \begin{flalign*}
+        &
+            \pdv{\ln{k_i}}{P}_P
+            = (R)^{-1}
+            \,\pdv{\adif{G}_{Sol.i}}{T}_P
+            =-\frac{\adif{H}_{Sol.i}}{R\,T^2}
+        &
+    \end{flalign*}
+
+    \paragraph*{Lei de Ragult? Raoult? Rasult? (\(\gamma_{i,I}\)) e Henry (\(\gamma_{i,II}\))}
+    \begin{flalign*}
+        &
+            \adif{\ln{K}}
+            = \frac{\adif{H}_{Sol.i}}{R}
+            \adif{T_i^{-1}}
+        &
+    \end{flalign*}
+
+    Coeficientes de atividade na concentração
+    \begin{enumerate}[label=\Roman{enumi}.]
+        \begin{multicols}{2}
+            \item Simétrica
+            \item Assimétrica
+        \end{multicols}
+    \end{enumerate}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Quanto mais tempo passa menos entendo} % S1
+    
+    \begin{align*}
+        k_i\,x_i\,\gamma_{i,II}
+        =P_i
+        =P_{i,*}\,x_i\,\gamma_{i,I}
+        \implies \\
+        \implies
+        k_i\,\gamma_{i,II}
+        =P_{i,*}\,\gamma_{i,I}
+        \implies \\
+        \implies
+        \gamma_{i,I,\infty}\,\gamma_{i,II}
+        = \gamma_{i,I}
+    \end{align*}
+
+    \begin{BM}
+        k_i
+        =\lim_{x_i\to0}\frac{P_{i,*}\,\gamma_{i,I}}{\gamma_{i,II}}
+        =P_{i,*}\,\gamma_{i,I,\infty}
+        \\ \dots
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{} % S
+    
+    \begin{flalign*}
+        &
+            \adif{G}_{mist}
+            = R\,T
+            \,\sum_i n_i\,\ln{x_i}
+            = \sum_i n_i\left(
+                \mu_{i,*}
+                + R\,T\,\ln{(x_i\,\gamma_{i,I})}
+            \right)
+            - \sum_i{n_i\,\mu_{i,*}}
+            = &\\&
+            = R\,T
+            \,\sum_i{
+                n_i\,\ln(x_i\,\gamma_{i,I})
+            }
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{} % S
+    
+    \begin{flalign*}
+        &
+            \adif{G}_{mist}
+            =G_{e}
+            = G-G_{ideal}
+            = &\\&
+            =\sum_i{\left(
+                \mu_{i,*}
+                + R\,T\,\ln{(x_i\,\gamma_{i,I})}
+            \right)}
+            -\sum_i{n_i\left(
+                \mu_{i,*}
+                +R\,T\,\ln{x_i}
+            \right)}
+            =R\,T\,\sum_i{n_i\,\ln\gamma_{i,I}}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\end{document}

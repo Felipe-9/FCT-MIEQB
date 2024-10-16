@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}	{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+\begin{document}
+
+\title{AM 1 - TO}
+\date{30/03}
+
+\maketitle
+\tableofcontents
+\break
+
+\section{Def de sussão q tende p + inf}
+\begin{flalign*}
+& u_n\to\infty\iff \forall\ M\exists\ p:n>p\implies U_n>M &
+\end{flalign*}
+
+\section{indeterminação de zero * inf}
+\begin{flalign*}
+&	u_n\to\infty;\ v_n\to0 &\\
+&	u_n\,v_n &
+\end{flalign*}
+
+\section{Exercicios}
+
+% E1
+\subsection{E1}
+\bm{ u_n=\sqrt{n^2+2n}-n }
+\begin{flalign*}
+&	u_n= n(\sqrt{1+2/n}-1)
+		= \frac{n(1+2/n-1)}{\sqrt{1+2/n}+1}
+		= \frac{2}{\sqrt{1+2/n}+1}
+		\to 1 &
+\end{flalign*}
+
+% E2
+\subsection{E2}
+\bm{ a_n=\frac{n+\cos(n)}{n\,\ln(n+1)};\ 
+	  b_n=\left(\frac{n^2-2\,n+1}{n^2+2n+1}\right)^n }
+\begin{flalign*}
+&	a_n = \frac{n+\cos(n)}{n\,\ln(n+1)}
+		 = \frac{1+\cos(n)/n}{\ln(n+1)}
+		 \to \infty &\\
+&	b_n = \left(\frac{n^2-2\,n+1}{n^2+2n+1}\right)^n
+		 = \left( \frac{(n+1)^2}{(n-1)^2} \right)
+		 = \left( \frac{n+1}{n-1}  \right)^{2\,n}
+		 = \left( \frac{n-1+2}{n-1}\right)^{2\,n} = &\\
+&		 = \left( 1+\frac{2}{n-1}  \right)^{2\,n} 
+		 = \left(\left( 1+\frac{2}{n-1} \right)^{n-1}\right)^2
+		 	\,\left( 1+\frac{2}{n-1} \right)^2
+		 \to e^4 &
+\end{flalign*}
+
+\end{document}

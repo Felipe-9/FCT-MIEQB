@@ -1,0 +1,1267 @@
+% !TEX root = ./TEQB-Exercicios_Resolvidos.tex
+\providecommand\mainfilename{"./TEQB-Exercicios_Resolvidos.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Exercicios_Resolvidos.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+% \renewcommand\thequestion{Questão \arabic{part}\,--\,\arabic{question}}
+% \renewcommand\thesubquestion{\thequestion\ \alph{subquestion})}
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/TEQB-Exercicios_Resolvidos.1}}}
+
+\mymakesubfile{2}
+[TEQB]
+{Resolução dos Exercícios}
+{Exercicios}
+
+\sisetup{round-precision=3}
+\setcounter{question}{9}
+
+\begin{questionBox}1m{} % Q10
+    
+    Suponha que submete 1\,\unit{\mole} de uma data substância A ao seguinte processo a temperatura constante (200\,\unit{\kelvin}): compressão de (1\to19.7)\unit{\bar} até um volume de 24.2\,\unit{\centi\metre^3\per\mole}, compressão de (19.7\to50)\unit{\bar}, Tome para a entalpia de vaporização a 19.7\,\unit{\bar} o valor \(\adif{H}_{vap} = 27.8\,\unit{\kilo\joule\per\mole}\), assuma \(\alpha_{P,liq} = 3.25\E-4\,\unit{\kelvin^{-1}}\), e calcule as variações de entropia, entalpia e energia de Gibbs associadas ao processo.
+
+    \begin{questionBox}3{Entalpia Compressão} % Q10 (i)
+        \begin{flalign*}
+            &
+                \adif{H} 
+                = \int n\,C_P\,\odif{T}
+                = 0
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}3{Entropia Compressão} % Q10 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{S}
+                = \int \frac{n\,C_P\,\odif{T}}{T}
+                + n\,R\,\ln\frac{P_1}{P_2}
+                = 1*\num{8.314462618}*\ln\frac{1}{3.7}
+                \cong -\num{10.87808432088394}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Gibbs Compressão} % Q10 (iii)
+        
+        \begin{flalign*}
+            &
+                \adif{G}
+                = \int\pdv{G}{P}_T
+                \odif{P}
+                = \int V\,\odif{P}
+                = \int n\,R\,T\frac{\odif{P}}{P}
+                = n\,R\,T\,\ln\frac{P_2}{P_1}
+                \cong &\\&
+                \cong
+                1
+                * \num{8.314462618}
+                * 200
+                \ln\frac{3.7}{1}
+                \cong
+                \num{2175.616864176789428}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Entalpia condensação} % Q10 (iv)
+        
+        \begin{flalign*}
+            &
+                \adif{H}_{cond}
+                = \int{
+                    \pdv{H}{P}_T
+                    \odif{P}
+                }
+                = \int{
+                    V(1-\alpha_P\,T)
+                    \odif{P}
+                }
+                = &\\&
+                = 24.2\E-6*(1-3.25\E-4*200)(50-3.7)\E-5
+                \cong 
+                -27800\,\unit{\joule}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Entropia condensação} % Q10 (v)
+        
+        \begin{flalign*}
+            &
+                \adif{S}_{cond}
+                = \frac{\adif{H}_{cond}}{T}
+                = \frac{-27800}{200}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Gibbs Condensação} % Q10 (vi)
+        
+        \begin{flalign*}
+            &
+                \adif{G}_{cond}
+                = 0
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q11
+    
+    Calcule \(\adif{U}, \adif{H},\adif{S}\text{ e }\adif{G}\) para as seguintes transformações
+    
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q11.1
+    
+    Passagem de 20\,\unit{\gram} de água do estado (sólido, 0\,\unit{\celsius}, 1\,\unit{\atm}), ao estado (gás, 110\,\unit{\celsius}, 1\,\unit{\atm})
+
+    \begin{questionBox}3{\(\adif{H}\)} % Q11.1 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{H}
+                = \left(
+                    \begin{aligned}
+                              & \adif{H}_{(s\to l), 0\unit{\celsius}}
+                        \\  + & \adif{H}_{(l), (0\to100)\unit{\celsius}}
+                        \\  + & \adif{H}_{(l\to g), 100\unit{\celsius}}
+                        \\  + & \adif{H}_{(g), (100\to110)\unit{\celsius}}
+                    \end{aligned}
+                \right)
+                % = &\\&
+                = \left(
+                    \begin{aligned}
+                              & n*\adif{H}_{fus,0\unit{\celsius},1\unit{\atm}}
+                        \\  + & n\int C_{p,(l)}\odif{T}
+                        \\  + & n*\adif{H}_{vap,100\unit{\celsius},1\unit{\atm}}
+                        \\  + & n\int C_{p,(g)}\odif{T}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \frac{m}{M}
+                \left(
+                    \begin{aligned}
+                              & \adif{H}_{fus,0\unit{\celsius},1\unit{\atm}}
+                        \\  + & C_{p,(l)}\adif{T}
+                        \\  + & \adif{H}_{vap,100\unit{\celsius},1\unit{\atm}}
+                        \\  + & C_{p,(g)}\adif{T}
+                    \end{aligned}
+                \right)
+                % = &\\&
+                = \frac{20}{18}*\left(
+                    \begin{aligned}
+                              & 6.01\E3
+                        \\  + & 75(373.15-273.15)
+                        \\  + & 40.7\E3
+                        \\  + & 36(383.15-373.15)
+                    \end{aligned}
+                \right)
+                \cong &\\&
+                \cong 
+                \num{60633.333333333333333}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\adif{S}\)} % Q11.1 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{S}
+                = \left(
+                    \begin{aligned}
+                              & \adif{S}_{(s\to l), 0\unit{\celsius}}
+                        \\  + & \adif{S}_{(l), (0\to100)\unit{\celsius}}
+                        \\  + & \adif{S}_{(l\to g), 100\unit{\celsius}}
+                        \\  + & \adif{S}_{(g), (100\to110)\unit{\celsius}}
+                    \end{aligned}
+                \right)
+                = \left(
+                    \begin{aligned}
+                            &
+                            n*\adif{H}_{fus}/T_{fus}
+                            \\ + & 
+                            \int{
+                                \pdv{S}{T}_P\odif{T}
+                            }
+                            \\ + & 
+                            n*\adif{H}_{vap}/T_{vap}
+                            \\ + & 
+                            \int{
+                                \pdv{S}{T}_P\odif{T}
+                            }
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \left(
+                    \begin{aligned}
+                            &
+                            n*\adif{H}_{fus}/T_{fus}
+                            \\ + & 
+                            n\int{
+                                C_{p,(l)}\frac{\odif{T}}{T}
+                            }
+                            \\ + & 
+                            n*\adif{H}_{vap}/T_{vap}
+                            \\ + & 
+                            n\int{
+                                C_{p,(g)}\frac{\odif{T}}{T}
+                            }
+                    \end{aligned}
+                \right)
+                % = &\\&
+                = \frac{m}{M}
+                \left(
+                    \begin{aligned}
+                        & 
+                        \adif{H}_{fus}/T_{fus}
+                        \\  + & 
+                        C_{p,l}\ln\frac{100+273.15}{0+273.15}
+                        \\  + & 
+                        \adif{H}_{vap}/T_{vap}
+                        \\  + & 
+                        C_{p,(g)}\ln\frac{110+273.15}{100+273.15}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \frac{20}{18}\left(
+                    \begin{aligned}
+                        & 
+                        6.01\E3/(0+273.15)
+                        \\  + & 
+                        75\ln\frac{100+273.15}{0+273.15}
+                        \\  + & 
+                        40.7\E3/(100+273.15)
+                        \\  + & 
+                        36\ln\frac{110+273.15}{100+273.15}
+                    \end{aligned}
+                \right)
+                % \cong &\\&
+                \cong
+                \num{172.692216120302258}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\adif{U}\)} % Q11.1 (iii)
+        
+        \begin{flalign*}
+            &
+                \adif{U}
+                = \adif{H}
+                - \adif{P\,V}
+                = \adif{H}
+                - P\adif{V}
+                = \adif{H}
+                - P\left(
+                    \frac{n\,R\,T_f}{P}
+                    - n*\frac{M}{\rho}
+                \right)
+                = &\\&
+                = \adif{H}
+                - n\left(
+                    R\,T_f
+                    - \frac{P\,M}{\rho}
+                \right)
+                = \adif{H}
+                - \frac{m}{M}\left(
+                    R\,T_f
+                    - \frac{P\,M}{\rho}
+                \right)
+                = &\\&
+                = (\num{60633.333333333333333})
+                - \frac{20}{18}
+                \left(
+                    \num{8.314462618}
+                    *(110+273.15)
+                    -\frac{(1.01\E5)(18)}{0.92\E6}
+                \right)
+                \cong
+                \num{57095.877483188690821}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\adif{G}\)} % Q11.1 (iv)
+        
+        \begin{flalign*}
+            &
+                \adif{G}
+                = \adif{H}
+                - \adif{(T\,S)}
+                = \adif{H}
+                + T_i\,S_i
+                - T_f\,S_f
+                = &\\&
+                = \adif{H}
+                + T_i\,\left(
+                    \begin{aligned}
+                        & n\,S_{(l),25\unit{\celsius}}
+                        \\ + &
+                        \adif{S}_{(l),(25\to0)\unit{\celsius}}
+                        \\ + &
+                        \adif{S}_{(l\to s),0\unit{\celsius}}
+                    \end{aligned}
+                \right)
+                - T_f\,\left(
+                    \begin{aligned}
+                        & n\,S_{(l),25\unit{\celsius}}
+                        \\ + &
+                        \adif{S}_{(l),(25\to100)\unit{\celsius}}
+                        \\ + &
+                        \adif{S}_{(l\to g),100\unit{\celsius}}
+                        \\ + &
+                        \adif{S}_{(g),(100\to110)\unit{\celsius}}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \adif{H}
+                + T_i\,\left(
+                    \begin{aligned}
+                        & n\,S_{(l),25\unit{\celsius}}
+                        \\ + &
+                        \int{n\,C_{p\,(l)}\,\odif{T}/T}
+                        \\ + &
+                        n\,(-\adif{H}_{fus})/T_{fus}
+                    \end{aligned}
+                \right)
+                % - &\\&
+                - T_f\,\left(
+                    \begin{aligned}
+                        & n\,S_{(l),25\unit{\celsius}}
+                        \\ + &
+                        \int{n\,C_{p\,(l)}\,\odif{T}/T}
+                        \\ + &
+                        n\,\adif{H}_{vap}/T_{vap}
+                        \\ + &
+                        \int{n\,C_{p\,(g)}\,\odif{T}/T}
+                    \end{aligned}
+                \right)
+                = &\\&
+                = \adif{H}
+                + \frac{T_i\,m}{M}\,\left(
+                    \begin{aligned}
+                        & S_{(l),25\unit{\celsius}}
+                        \\ + &
+                        C_{p\,(l)}\ln\frac{0+273.15}{25+273.15}
+                        \\ + &
+                        -\adif{H}_{fus}/T_{fus}
+                    \end{aligned}
+                \right)
+                - &\\&
+                - \frac{T_f\,m}{M}\,\left(
+                    \begin{aligned}
+                        & S_{(l),25\unit{\celsius}}
+                        \\ + &
+                        C_{p\,(l)}\ln\frac{100+273.15}{25+273.15}
+                        \\ + &
+                        \adif{H}_{vap}/T_{vap}
+                        \\ + &
+                        C_{p\,(g)}\ln\frac{110+273.15}{100+273.15}
+                    \end{aligned}
+                \right)
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}{} % Q11.1 (iv)
+
+        \begin{flalign*}
+            &
+                = (\num{60633.333333333333333})
+                + \frac{(0+273.15)\,(20)}{(18)}\,\left(
+                    \begin{aligned}
+                        & 69.95
+                        \\ + &
+                        75\ln\frac{0+273.15}{25+273.15}
+                        \\ + &
+                        (-6.01\E3)/(0+273.15)
+                    \end{aligned}
+                \right)
+                - &\\&
+                - \frac{
+                    (110+273.15)\,(20)
+                }{(18)}
+                \,\left(
+                    \begin{aligned}
+                        & 69.95
+                        \\ + &
+                        75\ln\frac{100+273.15}{25+273.15}
+                        \\ + &
+                        40.7\E3/(100+273.15)
+                        \\ + &
+                        36\ln\frac{110+273.15}{100+273.15}
+                    \end{aligned}
+                \right)
+                % \cong
+                % \num{60633.333333333333333}
+                % +\num{12558.607155415047099}
+                % +\num{-83783.095575914550613}
+                \cong &\\&
+                \cong
+                \num{-10591.155087166170181}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q11.2
+    
+    Passagem de 20\,\unit{\gram} de água do estado (gás, 100\,\unit{\celsius}, 0.5\,\unit{\bar}), ao estado (liquido, 100\,\unit{\celsius}, 50\,\unit{\bar}).
+
+    \begin{questionBox}3{\(\adif{H}\)} % Q11.2 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{H}_{
+                    20\unit{\gram\of{\ch{H2O}}},
+                    100\unit{\celsius},
+                    (g\to l),
+                    (0.5\to50)\unit{\bar}
+                }
+                = \left\{
+                    \begin{aligned}
+                        & \adif{H}_{(g),(0.5\to1)\unit{\bar}}
+                        \\ +
+                        & \adif{H}_{(g\to l),1\unit{\bar}}
+                        \\ +
+                        & \adif{H}_{(l),(1\to50)\unit{\bar}}
+                    \end{aligned}
+                \right\}
+                = &\\&
+                = \left\{
+                    \begin{aligned}
+                        & 0 \text{ (gás pft a T cnt.)}
+                        \\ +
+                        & n\,(-\adif{H}_{vap})
+                        \\ +
+                        & \int{\pdv{H}{P}_T\,\odif{P}}
+                    \end{aligned}
+                \right\}
+                % = &\\&
+                = \left\{
+                    \begin{aligned}
+                        - & n\,\adif{H}_{vap}
+                        \\ 
+                        + & \int{
+                            \left(
+                                vol
+                                -T\,\pdv{vol}{T}_P
+                            \right)
+                            \,\odif{P}
+                        }
+                    \end{aligned}
+                \right\}
+                = &\\&
+                = \left\{
+                    \begin{aligned}
+                        - & n\,\adif{H}_{vap}
+                        \\
+                        + & \int{
+                            vol\,
+                            \left(
+                                1-\alpha_P\,T
+                            \right)
+                            \,\odif{P}
+                        }
+                        \\
+                        & \text{(assumimos liq pouco sensível a pressão)}
+                    \end{aligned}
+                \right\}
+                = &\\&
+                = \left\{
+                    \begin{aligned}
+                        - & n\,\adif{H}_{vap}
+                        \\ +
+                        & \left(
+                            \frac{n\,M}{\rho}
+                        \right)
+                        \,\left(
+                            1-\alpha_P\,T
+                        \right)
+                        \,\adif{P}
+                    \end{aligned}
+                \right\}
+                % = &\\&
+                = n\left\{
+                    \begin{aligned}
+                        - & \adif{H}_{vap}
+                        \\ +
+                        & \left(
+                            \frac{M}{\rho}
+                        \right)
+                        \,\left(
+                            1-\alpha_P\,T
+                        \right)
+                        \,\adif{P}
+                    \end{aligned}
+                \right\}
+                \dots
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\setcounter{question}{14}
+
+\begin{questionBox}1{ % Q15
+    Calcula a pressão de vapor da água a 120\,\unit{\celsius} (\(\adif{H}_{vap}(100\unit{\celsius},1\,\unit{\atm}) = 40.7\,\unit{\kilo\joule\per\mole}\))
+} % Q15
+    
+    \begin{flalign*}
+        &
+            \odv{P}{T}
+            = T^{-1}\adv{H_m}{V_m}
+            = \frac{\adif{H_m}}{T\,(V_{m,g}-V_{m\,l})}
+            \cong \frac{\adif{H_m}}{T\,V_{m,g}}
+            \cong \frac{\adif{H_m}}{T\,\left(
+                R\,T/P
+            \right)}
+            =
+            \frac{P\,\adif{H_m}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \int{\frac{\odif{P}}{P}}
+            = \adif{\ln P}
+            = \ln P_g/P_l
+            = &\\&
+            = \int{
+                \frac{\adif{H_m}}{R\,T^2}
+                \,\odif{T}
+            }
+            = \frac{\adif{H_m}}{R}
+            \int{
+                \frac{\odif{T}}{T^2}
+            }
+            % = &\\& 
+            = \frac{P\,\adif{H_m}}{R}
+            \adif{(-T^{-1})}
+            \implies &\\&
+            \implies
+            P_g 
+            \cong P_l\,\exp\left(
+                \frac{\adif{H_m}}{R}
+                \left(
+                    T_{l}^{-1}
+                    -T_{g}^{-1}
+                \right)
+            \right)
+            = &\\&
+            = 1.01*10^5\exp\left(
+                \frac{40.7*10^3}{\num{8.314462618}}
+                \left(
+                    (100+273.15)^{-1}
+                    -(120+273.15)^{-1}
+                \right)
+            \right)
+            \cong &\\&
+            \cong 
+            \qty{1.968540460362481e5}{\pascal}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{ % Q16
+    Calcule a temperatura de fusão da água a 500\,\unit{\bar}.
+} % Q16
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\rho_L = 1\,\unit{\gram/\centi\metre^3}\)
+            \item \(\rho_S = 0.92\,\unit{\gram/\centi\metre^3}\)
+            \item \(\adif{H}_{fus}(0\,\unit{\celsius},1\,\unit{\atm})= 6.01\,\unit{\kilo\joule\per\mole}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            \odv{P}{T}
+            =T^{-1}\adv{H_{m}}{V_{m}}
+            \implies
+            \int\odif{P}
+            =\adif{P}
+            = \int\adv{H_m}{V_m}\frac{\odif{T}}{T}
+            \cong &\\&
+            \cong 
+            \adv{H_m}{V_m}\int{\frac{\odif{T}}{T}}
+            =\frac{\adif{H_m}}{\adif{18/\rho}}
+            \adif{\ln(T)}
+            =\frac{\adif{H_m}}{18(\rho_l^{-1}-\rho_s^{-1})}
+            \ln\frac{T_s}{T_l}
+            \implies &\\&
+            \implies
+            T_l 
+            = T_g\,\exp\left(
+                \frac{
+                    \adif{P}
+                    \,18(\rho_l^{-1}-\rho_s^{-1})
+                }{
+                    \adif{H}_m
+                }
+            \right)
+            \cong &\\&
+            \cong 273.15\,\exp\left(
+                \frac{
+                    (500-1.01)*10^{5}
+                    \,18((10^{6})^{-1}-(0.92*10^{6})^{-1})
+                }{
+                    6.01*10^3
+                }
+            \right)
+            = &\\&
+            = 273.15\,\exp\left(
+                \frac{
+                    (500-1.01)
+                    \,18(1-(0.92)^{-1})
+                }{
+                    6.01
+                }*10^{-4}
+            \right)
+            \cong
+            \qty{269.62325251655724}{\kelvin}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q17
+    À temperatura de 0.01\,\unit{\celsius}, o gelo absorve 333.5\,\unit{\joule\per\gram} durante a fusão e a água liquida absorve 2490\,\unit{\joule\per\gram} na vaporização. A 0.01\,\unit{\celsius}, a pressão de vapor tanto do gelo como da água liquida é de 611\,\unit{\pascal}. Estime os valores da derivada \(\odv{P}{T}\) para a vaporização e para a sublimação da água a esta temperatura.
+} % Q17
+
+    \begin{questionBox}3{} % Q17 (i)
+        
+        \begin{flalign*}
+            &
+                \left(
+                    \odv{P}{T}
+                \right)_{vap}
+                = \frac{\adif{H}_{vap,m}}{T\,\adif{V}_{vap}}
+                = \frac{\adif{H}_{vap}\,M}{T\,\left(
+                    V_{g} - V_{l}
+                \right)}
+                \cong \frac{\adif{H}_{vap}\,M}{T\,\left(
+                    V_{g}
+                \right)}
+                = \frac{\adif{H}_{vap}\,M}{T\,\left(
+                    \frac{R\,T}{P}
+                \right)}
+                = &\\&
+                = \frac{\adif{H}_{vap}\,M\,P}{T^2\,R}
+                = \frac{
+                    2490*18*611
+                }{
+                    (0.01+273.15)^2
+                    *\num{8.314462618}
+                }
+                \cong
+                \num{44.141254254921421}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{} % Q17 (ii)
+        
+        \begin{flalign*}
+            &
+                \left(
+                    \odv{P}{T}
+                \right)_{sub}
+                = \frac{
+                    \adif{H}_{sub,m}
+                }{
+                    T\,\adif{V}_{sub}
+                }
+                = \frac{
+                    \adif{H}_{fus,m}+\adif{H}_{vap,m}
+                }{
+                    T\,(V_g - V_s)
+                }
+                \cong \frac{
+                    M(\adif{H}_{fus,g}+\adif{H}_{vap,g})
+                }{
+                    T\,V_g
+                }
+                = &\\&
+                = \frac{
+                    M(\adif{H}_{fus,g}+\adif{H}_{vap,g})
+                }{
+                    T\,\frac{R\,T}{P}
+                }
+                = \frac{
+                    M(\adif{H}_{fus,g}+\adif{H}_{vap,g})\,P
+                }{
+                    R\,T^2
+                }
+                = &\\&
+                = \frac{
+                    18(2490+333.5)*611
+                }{
+                    (0.01+273.15)^2*\num{8.314462618}
+                }
+                \cong
+                \num{50.053345939265314}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{definitionBox}1{} % DEF 4
+    
+    Aproximações
+    \begin{BM}
+        \odv{P}{T}
+        = \frac{\adif{H}}{T\,\adif{V}}
+        \implies \\[1.5ex]
+        \stackrel{\text{vap, sub, 2 approx}}{\implies}
+        \odv{\ln P}{T}
+        = \frac{\adif{H}}{R\,T^2}
+        \stackrel{\text{3a Approx}}{\implies}
+        \adif{\ln P}
+        = -\frac{\adif{H}}{R}
+        + \adif{T^{-1}}
+        \\[1.5ex]
+        \stackrel{\text{fus, 1 approx}}{\implies}
+        \adif{P} = \adv{H}{V}\adif{\ln T}
+    \end{BM}
+    
+\end{definitionBox}
+
+\begin{questionBox}1{ % Q18
+    As curvas de vaporização e sublimação de uma dada substãncia \textit{A} a temperaturas não muito afastadas do ponto triplo obedecem às equações I e II, respectivamente, com \(P/\unit{\pascal}\text{ e }T/\unit{\kelvin}\).
+} % Q18
+    
+    \begin{BM}[align*]
+         I:\quad & \ln P = 22.403-2045.5/T\\
+        II:\quad & \ln P = 24.049 - 2308.2/T
+    \end{BM}
+
+    \begin{itemize}
+        \begin{multicols}{3}
+           \item \(C_{p,S} = 25\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+           \item \(V_{m,S} = 33.3\,\unit{\centi\metre^3/\mole}\)
+           \item \(C_{p,L} = 56\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+           \item \(V_{m,L} = 35.2\,\unit{\centi\metre^3/\mole}\)
+           \item \(C_{p,G} = 29\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+           \item \(\alpha_{p,L} = 4.25\E{-4}\,\unit{\kelvin}\)
+        \end{multicols}
+    \end{itemize}
+
+    % \begin{questionBox}3{Temp do P triplo} % Q18 (i)
+        
+    %     \begin{flalign*}
+    %         &
+    %             \ln P
+    %             = 22.403-2045.5/T_t
+    %             = 24.049-2308.2/T_t
+    %             \implies &\\&
+    %             \implies
+    %             T_t 
+    %             = \frac{
+    %                 2045.5 - 2308.2
+    %             }{
+    %                 22.403 - 24.049
+    %             }
+    %             \cong \num{159.59902794653706}
+    %             \land &\\&
+    %             \land
+    %             P
+    %             \cong \exp\left(
+    %                 22.403-\frac{2045.5}{\num{159.59902794653706}}
+    %             \right)
+    %             \cong \num{14566.882369291699714}
+    %         &
+    %     \end{flalign*}
+        
+    % \end{questionBox}
+
+    
+\end{questionBox}
+
+\begin{questionBox}2{ % Q18.1
+    Calcule a pressão de fusão da substância \textit{A} a 166\,\unit{\kelvin}.
+} % Q18.1
+    
+    \begin{flalign*}
+        &
+            % 
+            % P fus
+            % 
+            \odv{P}{T}_{fus}
+            = \frac{\adif{H}_{fus}}{T\,\adif{V}}
+            = \frac{
+                \adif{H}_{sub}-\adif{H}_{vap}
+            }{
+                T\,(\adif{V}_{l}-\adif{V}_{s})
+            }
+            = \frac{
+                \adif{H}_{sub}-\adif{H}_{vap}
+            }{
+                T\,(\adif{V}_{l}-\adif{V}_{s})
+            }
+            \implies &\\&
+            \implies 
+            \int{\odif{P}}
+            = \adif{P}
+            = \int{
+                \frac{
+                    \adif{H}_{sub}-\adif{H}_{vap}
+                }{
+                    T\,(\adif{V}_{l}-\adif{V}_{s})
+                }
+                \odif{T}
+            }
+            = \frac{
+                \adif{H}_{sub}-\adif{H}_{vap}
+            }{
+                \adif{V}_{l}-\adif{V}_{s}
+            }
+            \adif{\ln{T}}
+            ; &\\[2ex]&
+            % 
+            % T p-triplo
+            % 
+            22.403-2045.5/T
+            \cong 24.049-2308.2/T
+            \implies
+            T 
+            \cong \frac{2308.2-2045.5}{24.049-22.403}
+            % T = 159.59902794653706
+            ; &\\[2ex]&
+            % 
+            % P p-triplo
+            % 
+            P
+            \cong
+            \exp{(22.403-2045.5/T)}
+            \cong 
+            \exp{\left(
+                22.403
+                -2045.5
+                \frac{24.049-22.403}{2308.2-2045.5}
+            \right)}
+            % P = 14566.882369291699714
+            ; &\\[2ex]&
+            % 
+            % H vap
+            % 
+            \odv{P}{T}_{vap}
+            = \frac{\adif{H}_{vap}}{T\,\adif{V}_{vap}}
+            = \frac{\adif{H_{vap}}}{T\,(V_{vap,g}-V_{vap\,l})}
+            \cong \frac{\adif{H_{vap}}}{T\,V_{vap,g}}
+            \cong \frac{\adif{H_{vap}}}{T\,\left(
+                R\,T/P
+            \right)}
+            =
+            \frac{P\,\adif{H_{vap}}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \frac{\odif{P}/P}{\odif{T}}
+            = \frac{\odif{\ln{P}}}{\odif{T}}
+            = \frac{\adif{H}_{vap}}{R\,T^2}
+            = \odv{}{T}\left(
+                22.403-2045.5/T
+            \right)
+            = 2045.5\,T^{-2}
+            \implies &\\&
+            \implies
+            \adif{H}_{vap}
+            \cong 
+            2045.5\,R\,T^2/T^2
+            =2045.5\,R
+            ; &\\[2ex]&
+            % 
+            % H sub
+            % 
+            \odv{P}{T}_{sub}
+            = \frac{\adif{H}_{sub}}{T\,\adif{V}_{sub}}
+            = \frac{\adif{H_{sub}}}{T\,(V_{sub,g}-V_{sub\,s})}
+            \cong \frac{\adif{H_{sub}}}{T\,V_{sub,g}}
+            \cong \frac{\adif{H_{sub}}}{T\,\left(
+                R\,T/P
+            \right)}
+            =
+            \frac{P\,\adif{H_{sub}}}{R\,T^2}
+            \implies &\\&
+            \implies
+            \frac{\odif{P}/P}{\odif{T}}
+            = \frac{\odif{\ln{P}}}{\odif{T}}
+            = \frac{\adif{H}_{sub}}{R\,T^2}
+            = \odv{}{T}\left(
+                24.049-2308.2/T
+            \right)
+            = 2308.2\,T^{-2}
+            \implies &\\&
+            \implies
+            \adif{H}_{sub}
+            \cong 
+            2308.2\,R\,T^2/T^2
+            =2308.2\,R
+            ; &\\[3ex]&
+            % 
+            % Final
+            % 
+            \therefore
+            P \cong
+            \exp{\left(
+                22.403
+                -2045.5
+                \frac{24.049-22.403}{2308.2-2045.5}
+            \right)}
+            % 14566.882369291699714
+            + &\\&
+            + \frac{
+                2308.2\,R-2045.5\,R
+            }{
+                (35.2-33.3)*10^{-6}
+            }
+            \ln\cfrac{166}{
+                \left(
+                    \cfrac{2308.2-2045.5}{24.049-22.403}
+                \right)
+            }
+            % 452.053089660095986
+            % 45205308.966009598592236
+            \cong
+            \num{45219875.848378890292236}
+            % R = \num{8.314462618}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2m{ % Q18.2
+    Calcule a variação de entropia associada à passagem de 1\,\unit{\mole} de \textit{A} de 0.1 a 250\,\unit{\bar}, a 165\,\unit{\kelvin}.
+} % Q18.2
+    
+    \begin{flalign*}
+        &
+            \adif{S}=\sum_i \adif{S}_i
+            ; &\\[2ex]&
+            % 
+            % P de vap a 165 K
+            % 
+            P_{vap}
+            \cong \exp{\left(
+                22.403
+                -\frac{2045.5}{165}
+            \right)}
+            \cong
+            \num{22159.693355788527735}
+            \in[
+                10*10^3,25000*10^3
+            ]
+            ; &\\[2ex]&
+            % 
+            % P de fus a 165 K
+            % 
+            P_{fus}
+            = P_l
+            + \frac{\adif{H}}{\adif{V}}
+            \,\ln\frac{T}{T_0}
+            \cong &\\&
+            \cong 
+            \num{14566.882369291699714}
+            + \frac{
+                (2308.2-2045.5)\,\num{8.314462618}
+            }{
+                (35.2-33.3)*10^{-6}
+            }
+            \,\ln{
+                \cfrac{165}{
+                    \left(
+                        \cfrac{2308.2-2045.5}{24.049-22.403}
+                    \right)
+                }
+            }
+            \cong &\\&
+            \cong
+            \num{38273728.686279439933846}
+            \notin[
+                0.01*10^6,25*10^6
+            ]
+            ; &\\[3ex]&
+        &
+    \end{flalign*}
+
+    % 
+    % SI setup 1
+    % 
+    \sisetup{
+        exponent-mode={fixed},
+        fixed-exponent={0}
+    }
+
+    \begin{flalign*}
+        &
+            % 
+            % Final
+            % 
+            \therefore
+            \adif{S}_{(0.1\to250)\unit{\bar}}
+            =\left(
+                \begin{aligned}
+                    &
+                        \adif{S}_{(0.1\to\num{.22159693355788527735})\unit{\bar}}
+                        & + \\ + &
+                        \adif{S}_{\num{.22159693355788527735}\unit{\bar},(g\to l)}
+                        & + \\ + &
+                        \adif{S}_{(\num{.22159693355788527735}\to250)\unit{\bar}}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            =\left(
+                \begin{aligned}
+                    &
+                        \int_{165}^{165}{
+                            n\,C_{p,g}\,\frac{\odif{T}}{T}
+                        }
+                        + n\,R\,\ln\frac{0.1}{\num{.22159693355788527735}}
+                        & + \\ - &
+                        {\adif{H}_{vap}}/{T_{vap}}
+                        & + \\ + &
+                        \int_{\num{.22159693355788527735}}^{250}{
+                            \pdv{S}{P}_T\,\odif{P}
+                        }
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            % 
+            % SI setup 2
+            % 
+            \sisetup{
+                exponent-mode={fixed},
+                fixed-exponent={0}
+            }
+            =\left(
+                \begin{aligned}
+                    &
+                        n\,R\,\ln\frac{0.1}{\num{.22159693355788527735}}
+                        & + \\ - &
+                        {2045.5\,R}/{T_{vap}}
+                        & + \\ + &
+                        \int_{\num{.22159693355788527735}}^{250}{
+                            -\pdv{V}{T}_P\,\odif{P}
+                        }
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            =\left(
+                \begin{aligned}
+                    &
+                        n\,R\,\ln\frac{0.1}{\num{.22159693355788527735}}
+                        & + \\ - &
+                        {2045.5\,R}/{T_{vap}}
+                        & + \\ - &
+                        \left(
+                            \alpha_P\,V
+                        \right)
+                        \,\int_{\num{.22159693355788527735}}^{250}{
+                            \odif{P}
+                        }
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            =\left(
+                \begin{aligned}
+                    &
+                        n\,R\,\ln\frac{0.1}{\num{.22159693355788527735}}
+                        & + \\ - &
+                        {2045.5\,R}/{T_{vap}}
+                        & + \\ - &
+                        (\alpha_P\,V)
+                        (250-\num{.22159693355788527735})
+                        *10^5
+                    &
+                \end{aligned}
+            \right)
+            \cong &\\&
+            \cong
+            \left(
+                \begin{aligned}
+                    &
+                        1*\num{8.314462618}\,\ln\frac{0.1}{\num{.22159693355788527735}}
+                        % -6.615734187268481
+                        & + \\ - &
+                        {2045.5*\num{8.314462618}}/{165}
+                        % -103.048945780666667
+                        & + \\ - &
+                        (4.25*10^{-4}*35.2*10^{-6})
+                        (250-\num{.22159693355788527735})
+                        *10^5
+                        % -0.373668490987397
+                    &
+                \end{aligned}
+            \right)
+            % \cong &\\&
+            \cong
+            \num{-110.038348458922545}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+
+
+\begin{questionBox}2{} % Q18.3
+    
+    Calcule a variação de entropia associada à passagem de 1\,\unit{\mole} de \textit{A} de 162 a 168\,\unit{\kelvin}, a 0.22\,\unit{\bar}.
+
+    \begin{flalign*}
+        &
+            \adif{S}
+            = \left(
+                \begin{aligned}
+                    &       
+                        \adif{S}_{l,(162\to165)\unit{\kelvin}}
+                    & + \\ + &  
+                        \adif{S}_{(l\to g),165\unit{\kelvin}}
+                    & + \\ + &  
+                        \adif{S}_{g,(165\to168\unit{\kelvin})}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &       
+                        \int_{162}^{165}{
+                            \pdv{S}{T}_P
+                            \odif{T}
+                        }
+                    & + \\ + &  
+                        \adif{H}_{vap}/165
+                    & + \\ + &  
+                        \int_{165}^{168}{
+                            n\,C_{p,g}\,\frac{\odif{T}}{T}
+                        }
+                        + n\,R\,\ln\frac{P_1}{P_2}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &       
+                        \int_{162}^{165}{
+                            (C_{p\,l}/T)
+                            \odif{T}
+                        }
+                    & + \\ + &  
+                        \adif{H}_{vap}/165
+                    & + \\ + &  
+                        \int_{165}^{168}{
+                            n\,C_{p,g}\,\frac{\odif{T}}{T}
+                        }
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &       
+                        C_{p\,l}\,\ln\frac{165}{162}
+                    & + \\ + &  
+                        \adif{H}_{vap}/165
+                    & + \\ + &  
+                        n\,C_{p,g}\ln\frac{168}{165}
+                    &
+                \end{aligned}
+            \right)
+            \cong &\\&
+            \cong 
+            \left(
+                \begin{aligned}
+                    &       
+                        56\ln\frac{165}{162}
+                        % 1.027551765419006
+                    & + \\ + &  
+                        2045.5*\num{8.314462618}/165
+                        % 103.074141121933333
+                    & + \\ + &  
+                        1*29\ln\frac{168}{165}
+                        % 0.522536659577671
+                    &
+                \end{aligned}
+            \right)
+            % \cong &\\&
+            \cong
+            \num{104.62422954693001}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{ % Q19
+    Com base na informação que segue para a substância X, calcule a entalpia de fusão de X a 81.64\,\unit{\kelvin}.
+} % Q19
+
+    \begin{BM}
+        P_{fus}
+        = (-142.94 + 0.019561\,T^{2.1075})\,10^6
+    \end{BM}
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(V_{m,l} = 31.318\,\unit{\centi\metre^3\,\mole^{-1}}\)
+            \item \(V_{m,s} = 29.413\,\unit{\centi\metre^3\,\mole^{-1}}\)
+            \item \(T = 81.64\,\unit{\kelvin}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            \adif{H}_{fus}
+            = T\,\adif{V}_{fus}
+            \,\odv{P}{T}
+            = T\,(V_{l}-V_{s})
+            \,\odv{}{T}\left(
+                (-142.94 + 0.019561\,T^{2.1075})\,10^6
+            \right)
+            = &\\&
+            = T\,(V_{l}-V_{s})
+            \left(
+                0.019561*10^6*2.1075*T^{2.1075-1}
+            \right)
+            = &\\&
+            = 81.64\,(31.318-29.413)*10^{-6}
+            *0.019561*10^6*2.1075*(81.64)^{1.1075}
+            \cong &\\&
+            \cong
+            \num{840.212581678643483}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\end{document}

@@ -1,0 +1,70 @@
+\part{09/04 - Limites}
+
+\BMold{
+&
+	\limsup u_{(n)} 
+= 	\hyperref[supremo]{\text{Sup}}
+	\{
+	l: l\text{ é sublimite de } u
+	\}
+&\\&
+	\liminf u_{(n)} 
+= 	\hyperref[infimo]{\text{Inf}}
+	\{
+	l: l\text{ é sublimite de } u
+	\}
+&
+}
+
+\begin{flalign*}
+&
+	u_{(n)}\to l
+\iff
+	\limsup u_{(n)} = \liminf u_{(n)} = l
+&
+\end{flalign*}
+
+
+\section{Lema geral das funções enquadradas}
+
+\begin{align*}
+&
+	\{ u_{(n)}, v_{(n)}, w_{(n)}\}: \mathbb{N}\to\mathbb{R}
+:	w_{(n)}\leq u_{(n)}\leq v_{(n)}
+\implies	&\\&
+\implies
+	\liminf w_{(n)}
+\leq 
+	\liminf u_{(n)}
+\leq	\limsup u_{(n)}
+\leq 
+	\limsup v_{(n)}
+&
+\end{align*}
+
+
+\begin{multicols}{2}
+
+
+\subsection{Exemplo}
+\begin{align*}
+&
+	u_{(n)}= \left( 1+\frac{1+(-1)^n}{n} \right)^n
+&
+\end{align*}
+
+\begin{flalign*}
+&
+	1^n=1
+\leq	u_{(n)}
+\leq	\left( 1+\frac{2}{n} \right)^n
+\to e^2
+&
+\end{flalign*}
+
+\vfill
+
+\section{Lema}
+``Se $u_{(n)}\to l$  então a sucessão \\$s_{(n)}=\frac{\sum_{i=0}^{n}u_{(n)}}{n}\to l$''
+
+\end{multicols}

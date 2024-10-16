@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+%\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+%\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{%
+	{\boldmath{\large{%
+		\begin{align*} #1 \end{align*}%
+	}}}%
+}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+\definecolor{Red}  {hsb}{0  ,.6,1}
+\definecolor{Blue} {hsb}{0.6,.6,1}
+\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Resolução de listas
+%\renewcommand\thesection{Questão \arabic{section} }
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\title{IEQB\\Sistemas sem reação}
+\author{Felipe Pinto - 61387}
+\date{08/05 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+\section{Exemplos de exercícios de sistemas sem reação(?)}
+
+% 3.4)
+\setcounter{section}{3}
+\setcounter{subsection}{3}
+\subsection{}
+\begin{flalign*}
+&
+	\implies
+		m_2+m_3 = 1000\,kg/h;\ 
+		m_1\,B_1 = m_2\,B_2 + m_3\,B_3
+	\implies &\\& \implies 
+		1000*0.50 = m_2\,0.95 + (1000-m_2)0.905
+	\implies &\\& \implies
+		m_2 = \frac{1000*0.5-1000*0.905}{0.95 + 0.905}
+			 = \cdots
+&
+\end{flalign*}
+
+% 3.5
+\subsection{}
+\bm{
+	x_{i1} &= 0.025 \text{ açucar};\\
+	y_{i1} &= 0.5	\text{ agua};\\
+	z_{i1} &= 1-0.025-0.5 \text{ solidos};\\
+	a_{i2} &= 0.50 \text{ sucrose};\\
+	x_{i2} &= 0.01 \text{ açucar};\\
+	y_{i2} &= 0.18 \text{ agua};\\
+	z_{i2} &= 1-0.5-0.01-0.18 \text{ solidos};\\
+	y_{i3} &\ \text{agua}; \\
+	x_{o1} &= 0.02 \text{ açucar};\\
+	m_{i1} &= 125\, kg/h;\\
+	m_{i2} &= 45\, kg/h; \\
+	m_{i3} &\ kg/h
+}
+\begin{flalign*}
+&
+	m_{i1}\,y_{i1} + m_{i2}\,y_{i2} + m_{i3}\,y_{i3} 
+	= m_{o1}\,y_{o1};
+	\ m_{o1} = m_{i1} + m_{i2} + m_{i3}
+	\implies &\\& \implies
+		m_{i3}
+	= 
+		\frac{
+			(m_{i1} + m_{i2} + m_{i3})\,y_{o1}
+			- m_{i1}\,y_{i1} - m_{i2}\,y_{i2}
+		}{y_{i2}}
+	= &\\& =
+		\cdots
+&
+\end{flalign*}
+
+% 3.6
+\subsection{}
+\bm{
+	x_{i1} &= 0.10 \text{ etanol}; \\
+	y_{i1} &= 0.90 \text{ água}; \\
+	m_{i1} &= 1000\,kg/h; \\
+	x_{o1} &= 0.60 \text{ etanol}; \\
+	m_{o1} &= 0.10 * m_{i1}\,kg/h
+}
+\begin{flalign*}
+&
+	m_{o2} = m_{i1} - m_{o1}
+	= 1000 - 0.10 * 1000
+	= 900 Kg/h
+&\\&
+	x_{o2}\,m_{o2} = x_{i1}\,m_{i1} - x_{o1}\,m_{o1}
+	\implies
+		x_{o2} 
+	= 
+		\frac{0.10*1000-100*0.60}{900}
+	\cong	
+		0.0444\,p/p
+&\\&
+	y_{o2}\,m_{o2} 
+	= y_{i1}\,m_{i1}-y_{o1}\,m_{o1}
+	\implies
+		y_{o2} 
+	= 
+		\frac{0.90*1000-0.40*100}{900}
+	\cong
+		0.956\,p/p
+&
+\end{flalign*}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

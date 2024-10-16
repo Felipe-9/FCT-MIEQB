@@ -1,0 +1,142 @@
+% !TEX root = ./IPEIO-Exercicios_Resolução.3.tex
+\providecommand\mainfilename{"./IPEIO-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Exercicios_Resolução.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+
+\mymakesubfile{3}
+[IPEIO]
+{Exercicios PE - Principais Distribuições} % Subfile Title
+{Principais Distribuições} % Part Title
+
+\setcounter{question}{2}
+
+\begin{questionBox}1{ % Q3
+    O senhor Sousa tem uma empresa que compra e vende selos e outros artigos de colecionismo. Ele guarda 20 selos dentro de uma bolsa preta, estando ainda cada um deles metido num envelope opaco. 6 destes selos valem 100 euros cada um e os restantes nada valem. O senhor Sousa, para promover a venda, cobra 20 euros por cada selo, mas não permitindo que o cliente veja o conteúdo do envelope. Suponha que um cliente compra 5 selos.
+} % Q3
+    \begin{questionBox}2{ % Q3.1
+        Qual a probabilidade dos cinco selos nada valerem?
+    } % Q3.1
+        \begin{flalign*}
+            &
+                P(X=0)
+                = \frac{
+                    \binom{6}{0}
+                    \binom{20-6}{5}
+                }{
+                    \binom{20}{5}
+                }
+                = \frac{
+                    \frac{6!}{0!*6!}
+                    \binom{20-6}{5}
+                }{
+                    \binom{20}{5}
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        Qual a probabilidade do cliente não perder nem ganhar dinheiro com a compra?
+    } % Q3.2
+        \begin{flalign*}
+            &
+                P(X=1)
+                = \frac{
+                    \binom{6}{1}
+                    \binom{14}{4}
+                }{
+                    \binom{20}{5}
+                }
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{4}
+
+\begin{questionBox}1{ % Q5
+    Determinado exame é constituído por 5 questões de escolha múltipla, em que cada questão tem 4 opções de resposta possíveis - apenas uma sendo a correcta. Supondo que um aluno que vai fazer o exame responde a tudo ao acaso
+} % Q5
+    \begin{questionBox}2{ % Q5.1
+        qual é a probabilidade de ele acertar a mais de metade das questões?
+    } % Q5.1
+        \begin{flalign*}
+            &
+                P(X\geq3)
+                = \sum_{n=3}^{5}{P(X=n)}
+                = \sum_{n=3}^{5}{\binom{5}{n}\,0.25^{n}\,0.75^{5-n}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q5.2
+        Qual é o número médio de respostas correctas?
+    } % Q5.2
+        \begin{flalign*}
+            &
+                E(X)
+                = n*p 
+                = 5*0.25
+                = 1.25
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q5.3
+        E o seu desvio padrão?
+    } % Q5.3
+        \begin{flalign*}
+            &
+                \rho
+                = \sqrt{V(X)}
+                = \sqrt{n*p*(1-p)}
+                = 0.9682
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\setcounter{question}{9}
+
+\begin{questionBox}1{ % Q10
+    Suponha que, o número de pessoas que utilizam uma caixa multibanco é um processo de Poisson de taxa \(\lambda = 10/\unit{\hour}\). Calcule;
+} % Q10
+    \begin{questionBox}2{ % Q10.1
+        a probabilidade de não ir ninguém à caixa multibanco durante 1 hora.
+    } % Q10.1
+        \begin{flalign*}
+            &
+                P(X=0)
+                = \frac{e^{-10}\,10^{0}}{0!}
+                = e^{-10}
+                \cong \num{4.539992976248485e-5}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q10.2
+        a probabilidade de irem 20 pessoas à referida caixa durante 4 horas.
+    } % Q10.2
+        \begin{flalign*}
+            &
+                P(X=20)
+                = \frac{e^{-40}\,40^{20}}{20!}
+                = \num{1.919976590469239e-4}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q10.3
+        O número médio de visitas à caixa multibanco durante 4 horas e o seu coeficiente de variação.
+    } % Q10.3
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

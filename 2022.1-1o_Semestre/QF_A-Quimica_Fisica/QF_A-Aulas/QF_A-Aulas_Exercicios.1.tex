@@ -1,0 +1,352 @@
+% !TEX root = ./QF_A-Aulas_Exercicios.1.tex
+\providecommand\mainfilename{"./QF_A-Aulas_Exercicios.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Aulas_Exercicios.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/QF_A-Aulas_Exercicios.1}}}
+% \tikzsetexternalprefix{./.build/figures/QF_A-Aulas_Exercicios.1/graphics/}
+
+\mymakesubfile{1}
+[QF A]
+{Exercicios Cinética} % Subfile Title
+{Exercicios Cinética} % Part Title
+
+
+%   ,ad8888ba,        88
+%  d8"'    `"8b     ,d88
+% d8'        `8b  888888
+% 88          88      88
+% 88          88      88
+% Y8,    "88,,8P      88
+%  Y8a.    Y88P       88
+%   `"Y8888Y"Y8a      88
+
+\begin{questionBox}1{ % Q1
+    Para a reação obtiveram os seguintes dados cinéticos:
+} % Q1
+    \begin{center}\large\bfseries
+    \ch{2 ICl\gas{} + H2\gas{} -> I2\gas{} + 2 HCl\gas{}}
+    \end{center}
+
+    \begin{center}
+        \vspace{1ex}
+        \setlength\tabcolsep{3mm}        % width
+        % \renewcommand\arraystretch{1.25} % height
+        \begin{tabular}{*{3}{C} R}
+            \toprule
+            
+                \multicolumn{1}{c}{Experiencia}
+                & [\ch{ICl\gas{}}]_0/\unit{\milli\mole.\litre^{-1}}
+                & [\ch{H2\gas{}}]_0/\unit{\milli\mole.\litre^{-1}}
+                & v_0/\unit{\mole.\litre^{-1}.\second^{-1}}
+
+            \\\midrule
+            
+               1 & 1.4 & 1.5 &  3.7\E{-7}
+            \\ 2 & 3.0 & 1.5 &  3.7\E{-7}
+            \\ 3 & 3.0 & 4.5 & 33.2\E{-7}
+            \\ 4 & 4.7 & 2.7 & \text{?}
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q1.1
+        Determine a lei de velocidade da reação.
+    } % Q1.1
+        \answer{}
+        \begin{flalign*}
+            &
+                v=k\,\ch{[ICl]}^{\alpha}\,\ch{[H2]}^{\beta}
+                ; &\\[3ex]&
+                \frac{v_1}{v_2}
+                = \frac
+                {3.7\E-4}
+                {3.7\E-4}
+                = 1
+                = &\\&
+                = \frac
+                {k\,\ch{[ICl]}_{1}^{\alpha}\,\ch{[H2]}_{1}^{\beta}}
+                {k\,\ch{[ICl]}_{2}^{\alpha}\,\ch{[H2]}_{2}^{\beta}}
+                = \frac
+                {1.4^{\alpha}*1.5^{\beta}}
+                {3.0^{\alpha}*1.5^{\beta}}
+                =
+                \left(
+                    \frac{1.4}{3.0}
+                \right)^{\alpha}
+                \implies &\\&
+                \implies
+                \alpha
+                = \log_{(1.4/3.0)}{1}
+                = 0
+                ; &\\[3ex]&
+                \frac{v_2}{v_3}
+                = \frac{3.7\E-4}{33.2\E-4}
+                = \frac{3.7}{33.2}
+                = &\\&
+                = \frac
+                {k\,\ch{[ICl]}_{2}^{\alpha}\,\ch{[H2]}_{2}^{\beta}}
+                {k\,\ch{[ICl]}_{3}^{\alpha}\,\ch{[H2]}_{3}^{\beta}}
+                = \left(
+                    \frac{1.5}{4.5}
+                \right)^{\beta}
+                = \left(
+                    \frac{1}{3}
+                \right)^{\beta}
+                \implies &\\&
+                \implies
+                \beta 
+                = \log_{(1/3)}{\frac{3.7}{33.2}}
+                \cong \num{1.997262436352681}
+            &
+        \end{flalign*}
+        \begin{BM}
+            \therefore
+            v\cong k\,\ch{[H2]}^{2}
+        \end{BM}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.2
+        Calcule a constante de velocidade da reação.
+    } % Q1.2
+        \answer{}
+        \begin{flalign*}
+            &
+                \bar{k} 
+                = 3^{-1}\sum_{i=1}^{3}{k_i}
+            &
+        \end{flalign*}
+        \begin{center}
+            \vspace{1ex}
+            \setlength\tabcolsep{3mm}        % width
+            % \renewcommand\arraystretch{1.25} % height
+            \begin{tabular}{*{4}{C}}
+                \toprule
+                
+                    \multicolumn{1}{c}{Experiencia}
+                    & \ch{[H2\gas{}]}_0/\unit{\milli\mole.\litre^{-1}}
+                    & v_0/\unit{\milli\mole.\litre^{-1}.\second^{-1}}
+                    & k_i/\unit{\milli\mole^{-1}.\litre.\second^{-1}}
+                
+                \\\midrule
+                
+                       1 & 1.5 &  3.7\E{-4} & \num{1.6444444444444446e-4}
+                    \\ 2 & 1.5 &  3.7\E{-4} & \num{1.6444444444444446e-4}
+                    \\ 3 & 4.5 & 33.2\E{-4} & \num{1.6395061728395064e-4}
+
+                \\\bottomrule
+            \end{tabular}
+            % \vspace{2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                \therefore \bar{k} 
+                \cong 
+                \qty{1.6427983539094653e-4}{\milli\mole^{-1}.\litre.\second^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q1.3
+        A partir dos dados experimentais estime a velocidade inicial para a experiência 4.
+    } % Q1.3
+        \begin{flalign*}
+            &
+                v_4
+                \cong k\,\ch{[H2]}_{4}^{2}
+                \cong 
+                \num{1.6427983539094653e-4}
+                *{2.7}^{2}
+                \cong
+                \qty{11.976e-4}{\milli\mole.\litre^{-1}.\second^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+%   ,ad8888ba,     ad888888b,
+%  d8"'    `"8b   d8"     "88
+% d8'        `8b          a8P
+% 88          88       aad8"
+% 88          88       ""Y8,
+% Y8,    "88,,8P          "8b
+%  Y8a.    Y88P   Y8,     a88
+%   `"Y8888Y"Y8a   "Y888888P'
+
+\setcounter{question}{2}
+\begin{questionBox}1{ % Q3
+    A velocidade de uma dada reação aumenta de um fator de 1000 na presença de um catalisador a 25\,\unit{\celsius}. A energia de ativação pelo mecanismo reacional na ausencia de catalisador é 98\,\unit{\kilo\joule.\mole^{-1}}. Qual será a nova energia de ativação na presença de um catalisador, mantendo todos os outros fatores constantes?
+} % Q3
+    \answer{}
+    \begin{flalign*}
+        &
+            k_{cat}
+            = A\,\exp(-Ea_{cat}/R\,T)
+            = 1000\,k
+            = 1000\,A\,\exp(-Ea/R\,T)
+            \implies &\\&
+            \implies
+            \frac
+            {\exp(-Ea_{cat}/R\,T)}
+            {\exp(-Ea/R\,T)}
+            = \exp\left(
+                -\frac{Ea_{cat}}{R\,T}+\frac{Ea}{R\,T}
+                \right)
+            = \exp\left(
+                \frac{Ea-Ea_{cat}}{R\,T}
+            \right)
+            =1000
+            \implies &\\&
+            \implies
+            Ea_{cat}
+            = Ea-R\,T\,\ln{1000}
+            \cong &\\&
+            \cong 98\E3
+            -\num{8.314462618}
+            *(25+273.15)
+            *\ln{1000}
+            \cong &\\&
+            \cong
+            \qty{80.875971492709828026}{\kilo\joule.\mole^{-1}}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+%   ,ad8888ba,    8888888888
+%  d8"'    `"8b   88
+% d8'        `8b  88  ____
+% 88          88  88a8PPPP8b,
+% 88          88  PP"     `8b
+% Y8,    "88,,8P           d8
+%  Y8a.    Y88P   Y8a     a8P
+%   `"Y8888Y"Y8a   "Y88888P"
+
+\setcounter{question}{4}
+\begin{questionBox}1{ % Q5
+    Para uma dada reação do tipo \ch{A -> P} registrou-se, 42\,\unit{\celsius}, a seguinte evolução:
+} % Q5
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*2{C}}
+            \toprule
+            
+                \ch{[A]}/\unit{\molar}
+                & t/\unit{\hour}
+            
+            \\\midrule
+            
+                   0.500 & 0
+                \\ 0.469 & 1
+                \\ 0.440 & 2
+                \\ 0.340 & 6
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q5.1
+        Determine a lei da velocidade da reação.
+    } % Q5.1
+        \answer{}
+        \begin{flalign*}
+            &
+                \odv{\ch{[A]}}{t} = -k\,\ch{[A]}^n
+                \left\{
+                    \begin{aligned}
+                        0: & \adif{\ch{[A]}} &= -k\,\adif{t}
+                        \\
+                        1: & \adif{\ln\ch{[A]}} &=-k\,\adif{t}
+                        \\
+                        2: & \adif{-\ch{[A]}^{-1}} &= -k\,\adif{t}
+                    \end{aligned}
+                \right\}
+            &
+        \end{flalign*}
+        \begin{center}
+            \vspace{1ex}
+            \begin{tabular}{C | *{3}{C}}
+                \toprule
+                
+                    \adif{t}/\unit{\hour}
+                    & -\adv{\ch{[A]}}{t}/\unit{\M.\hour^{-1}}
+                    & -\adv{\ln\ch{[A]}}{t}/\unit{\hour^{-1}}
+                    & -\adv{-\ch{[A]}^{-1}}{t}/\unit{\M^{-1}.\hour^{-1}}
+                
+                \\\midrule
+                
+                       1 & 0.031                     & \num{0.06400532997591243} & \num{0.13219616204690832}
+                    \\ 2 & 0.03                      & \num{0.06391668575494244} & \num{0.13636363636363646}
+                    \\ 6 & \num{0.02666666666666666} & \num{0.06427708013533076} & \num{0.15686274509803919}
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+        \begin{flalign*}
+            &
+                \therefore
+                \bar{k}
+                = 3^{-1}\sum_{i=1}^{3}{k_i}
+                = \qty{0.06406636528872856}{\hour^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q5.2
+        Sabendo que a energia de ativação da reação é de 87\,\unit{\kilo\joule.\mole^{-1}}, calcule a velocidade da reação a 50\,\unit{\celsius} para uma concentração de \ch{A} de 0.457\,\unit{\molar}.
+    } % Q5.2
+        \answer{}
+        \begin{flalign*}
+            &
+                v
+                =k\,\ch{[A]}
+                ; &\\[3ex]&
+                k=A\,\exp(-E_a/R\,T)
+                \implies &\\&
+                \implies
+                \frac{k_1}{k_2}
+                = \frac
+                {\exp(-E_a/R\,T_1)}
+                {\exp(-E_a/R\,T_2)}
+                =\exp\left(
+                    \frac{E_a}{R}\,(T_2^{-1}-T_1^{-1})
+                \right)
+                \implies &\\&
+                \implies
+                k_1
+                =k_2\,\exp\left(
+                    \frac{E_a}{R}\,(T_2^{-1}-T_1^{-1})
+                \right)
+                \implies &\\[3ex]&
+                \implies
+                v
+                =k_2\,\exp\left(
+                    \frac{E_a}{R}\,(T_2^{-1}-T_1^{-1})
+                \right)
+                \,\ch{[A]}
+                \cong &\\&
+                \cong
+                \num{0.06406636528872856}
+                \,\exp\left(
+                    \frac{87\E3}{\num{8.314462618}}
+                    \,((42+273.15)^{-1}-(50+273.15)^{-1})
+                \right)
+                % 2.274966864957952
+                \,0.457
+                \cong &\\&
+                \cong
+                \qty{0.066607228192898}{\M.\hour^{-1}}
+            &
+        \end{flalign*}
+    \end{questionBox}
+\end{questionBox}
+
+\end{document}

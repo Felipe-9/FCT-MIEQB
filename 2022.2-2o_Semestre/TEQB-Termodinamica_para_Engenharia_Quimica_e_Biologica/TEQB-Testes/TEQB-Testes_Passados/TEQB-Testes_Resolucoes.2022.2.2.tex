@@ -1,0 +1,269 @@
+% !TEX root = ./TEQB-Testes_Resoluções.2022.2.2.tex
+\providecommand\mainfilename{"./TEQB-Testes_Resoluções.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Testes_Resoluções.2022.2.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/TEQB-Testes_Resoluções.2022.2.2/}}}
+
+\mymakesubfile{1}
+[TEQB]
+{Teste 2022.2.2}
+{Teste 2022.2.2}
+
+\begin{questionBox}1{ % Q1
+    A temperaturas a partir de 85.5\,\unit{\kelvin}, pressão de fusão do propano obedece à equação \(P = -717.99 + 2.3856\,T^{1.283}\), com P/\unit{\mega\pascal} e T/\unit{\kelvin}. Entre a temperatura do ponto triplo sól-líq-gás e 200\,\unit{\kelvin}, a pressão de vapor do líquido obedece à equação \(\ln P = 11.842 - 2735.41/T\), com P/\unit{bar} e T/\unit{\kelvin}. Calcule:
+} % Q1
+    \begin{BM}[align*]
+        P_{fus} &= -717.99 + 2.3856\,T^{1.283} 
+        \quad &: T>85.5
+        \\
+        \ln P_{vap} &= 11.842 - 2735.41/T
+        \quad &:T_t<T<200
+    \end{BM}
+
+    \begin{center}
+        \includegraphics[width=.4\textwidth]{Screenshot 2023-01-07 at 04.51.16}
+    \end{center}
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(T_{triplo} = 85.47\,\unit{\kelvin}\)
+            \item \(\alpha_{P,L}   = 1.93*10^{-3}\,\unit{\kelvin^{-1}} \)
+            \item \(\alpha_{P,sól} = 5.0 *10^{-4}\,\unit{\kelvin^{-1}} \)
+            \item \(C_{p,S} = 156\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}} \)
+            \item \(C_{p,L} = 99\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+            \item \(C_{p,G} = 63 \,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}} \)
+        \end{multicols}
+        \item \(V_{m,S} \text{(ponto triplo sól-líq-gás)} = 56.31\,\unit{\centi\metre^3\,\mole^{-1}}\)
+        \item \(V_{m,L} \text{(ponto triplo sól-líq-gás)} = 60.13\,\unit{\centi\metre^3\,\mole^{-1}}\)
+    \end{itemize}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.1
+    A pressão de sublimação do propano a 81.0\,\unit{\kelvin}.
+} % Q1.1
+    \begin{flalign*}
+        &
+            P_{sub}
+            = \exp\left(
+                \ln{P_t}
+                +   \frac{-\adif{H}_{sub}}{R}
+                (T_1^{-1}-T_0^{-1})
+            \right)
+            = &\\&
+            = \exp\left(
+                (11.842-2735.41/T_t)
+                - \frac{T_1^{-1}-T_t^{-1}}{R}
+                (\adif{H}_{fus}+\adif{H}_{vap})
+            \right)
+            &\\[3ex]&
+            % -------------------------------- adif H fus -------------------------------- %
+            \adif{H}_{fus}
+            = T_t\,\adif{V}_{fus}\pdv{P}{T}
+            = T_t\,(V_1-V_0)\,\pdv{P}{T}
+            \underset{T\gtrapprox85.5}
+            {=} T_t\,(V_1-V_0)\,\pdv{P}{T}_{fus}
+            = &\\&
+            = T_t\,(V_1-V_0)
+            \,\pdv{}{T}\left(
+                -717.99 + 2.3856\,T_t^{1.283} 
+            \right)
+            *10^6
+            = &\\&
+            = (V_1-V_0)
+            \,2.3856\,T_t^{1.283} 
+            \,10^6
+            = &\\&
+            = (60.13-56.31)*10^{-6}
+            * 2.3856*1.283*85.47^{1.283}*10^6
+            \cong
+            \num{3518.88138304754445}
+            &\\[3ex]&
+            % -------------------------------- adif H vap -------------------------------- %
+            \adif{H}_{vap}
+            = R\,T^2\,\odv{\ln{P}}{T}
+            = R\,T^2\,(2735.41/T^2)
+            = \num{8.314462618}*2735.41
+            \cong
+            \num{22743.46418990338}
+            &\\[5ex]&
+            % ----------------------------------- final ---------------------------------- %
+            P_{sub}
+            \cong &\\&
+            \cong\exp\left(
+                (11.842-2735.41/85.47) % -20.162329004329004
+                - \frac{81.0^{-1}-85.47^{-1}}{\num{8.314462618}}
+                (\num{3518.88138304754445}+\num{22743.46418990338}) % -2.039426822963121
+            \right)
+            *10^5
+            \cong &\\&
+            \cong
+            \num{2.279816831432937e-5}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.2
+    \(\adif{S}\) associado à passagem do butano do estado (150.0\,\unit{\kelvin}, \(5*10^{-4}\)\,\unit{\bar}) ao estado (100.0\,\unit{\kelvin}, 1000\,\unit{\bar}).
+} % Q1.2
+
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    & P_{vap,150\,\unit{\kelvin}}
+                    = \exp(11.842-2735.41/150)
+                    \cong
+                    \num{1.671445151358621e-3}
+                    > 5*10^{-4}
+                    \\
+                    & P_{vap,100\,\unit{\kelvin}}
+                    = \exp(11.842 - 2735.41/100)
+                    \cong
+                    \num{1.833076404883025e-7}
+                    \\
+                    & P_{fus,100\,\unit{\kelvin}}
+                    = (-717.99 + 2.3856*100^{1.283})*10^6
+                    \cong
+                    \num{160.218479521622995e6}
+                    <1000*10^6
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            % ---------------------------------- adif s ---------------------------------- %
+            \adif{S}
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \adif{S}{(g,(150\to100)\,\unit{\kelvin},(5*10^{-4}\to\num{1.833076404883025e-7})\,\unit{\bar})}
+                    &+\\+&
+                        \adif{S}{((g\to l),100\,\unit{\kelvin},\num{1.833076404883025e-7}\,\unit{\bar})}
+                    &+\\+&
+                        \adif{S}{(l,100\,\unit{\kelvin},(\num{1.833076404883025e-7}\to1000)\,\unit{\bar})}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \int{n\,C_{P,g}\,\odif{T}/T}
+                        - n\,R\,\ln(P_1/P_0)
+                    &+\\+&
+                        -n\,\adif{H}_{vap}/T_{1}
+                    &+\\+&
+                        \int{-\alpha_{p,l}\,V\,\odif{P}}
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        n\,C_{P,g}\,\ln{T_1/T_0}
+                        - n\,R\,\ln(P_1/P_0)
+                    &+\\+&
+                        - n\,\adif{H}_{vap}/T_{1}
+                    &+\\+&
+                        -\alpha_{p,l}\,V\,(P_2-P_1)
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        1*63*\ln{100/150}
+                        - 1*\num{8.314462618}
+                        * \ln\frac{\num{1.833076404883025e-7}}{5*10^{-4}}
+                    &+\\-&
+                        1*\num{22743.46418990338}/100
+                    &+\\-&
+                    -1.93*10^{-3}
+                    *60.13*10^{-6}
+                    *(1000-\num{1.833076404883025e-7})
+                    *10^5
+                    &
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.3
+    \(\adif{H}\) associado à passagem do butano do estado (170.0\,\unit{\kelvin}, 0.0777\,\unit{\bar}) ao estado (200.0\,\unit{\kelvin}, 0.002\,\unit{\bar}).
+} % Q1.3
+    \begin{flalign*}
+        &
+            \left\{
+                \begin{aligned}
+                    & T_{vap,0.0777\,\unit{\bar}}
+                    = \frac{-2735.41}{\ln(0.0777)-11.842}
+                    \cong
+                    \num{189.999930255428585}
+                \end{aligned}
+            \right\}
+            &\\[3ex]&
+            \adif{H}
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        \adif{H}(l,(170.0\to190.0)\unit{\kelvin},0.0777\,\unit{\bar})
+                    &\\&
+                        \adif{H}((l\to g),190.0\unit{\kelvin},0.0777\,\unit{\bar})
+                    &\\&
+                        \adif{H}(g,(190.0\to200.0)\unit{\kelvin},0.0777\,\unit{\bar})
+                    &\\&
+                        \adif{H}(g,200.0\unit{\kelvin},(0.0777\to0.002)\,\unit{\bar})
+                    &
+                \end{aligned}
+            \right)
+            = &\\&
+            = \left(
+                \begin{aligned}
+                    &
+                        n\,C_{P,l}\,(T_1-T_0)
+                    &\\&
+                        n*\adif{H}_{vap}
+                    &\\&
+                        n*C_{P,g}\,(T_2-T_1)
+                    &\\&
+                        0 \text{(gas perfeito a T constante)}
+                    &
+                \end{aligned}
+            \right)
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q1.4
+    O diagrama de fases esquematizado na figura pode ser de uma substância pura, ou teria de ser de uma mistura? Justifique
+} % Q1.4
+\end{questionBox}
+
+\begin{questionBox}1{ % Q2
+    A figura representa os volumes parciais molares do metanol (MeOH) e do acetonitrilo (ACN) nas soluções que formam a 25\,\unit{\celsius} e 1\,\unit{\bar}.
+} % Q2
+    \begin{center}
+        \includegraphics[width=.6\textwidth]{Screenshot 2023-01-07 at 12.18.55}
+    \end{center}
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.1
+    Calcule o volume de solução que se obtém quando se mistura 1\,\unit{\litre} de MeOH e 1\,\unit{\litre} de ACN, a 25\,\unit{\celsius} e 1\,\unit{\bar}, bem como o respectivo volume de mistura.
+} % Q2.1
+\end{questionBox}
+
+\begin{questionBox}2{ % Q2.2
+    Adicionou-se à solução da anterior uma dada quantidade de MeOH, de modo a obter uma outra com \(x_{MeOH} = 0.90\). Que volume da nova solução se obteve?
+} % Q2.2
+\end{questionBox}
+\end{document}

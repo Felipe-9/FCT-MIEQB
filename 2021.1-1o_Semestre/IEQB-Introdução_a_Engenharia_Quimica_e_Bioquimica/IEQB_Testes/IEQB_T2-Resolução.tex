@@ -1,0 +1,1134 @@
+\documentclass{article}
+
+
+
+% lua
+\label{pkg: luacode}
+\usepackage{luacode}
+
+
+
+% xparse - multiple optional arguments
+\label{pkg: xparse}
+\usepackage{xparse}
+
+
+
+% Geometry
+\label{pkg: geometry}
+\usepackage{geometry}
+\geometry{
+	papersize=	{300mm, 400mm},	% ( 4:3 )	SVGA x 0.5
+	top=		.12\paperheight,
+	bottom=		.12\paperheight,
+	left=		.06\paperwidth,
+	right=		.06\paperwidth,
+	portrait=	true,
+}
+%	papersize=	{300mm, 400mm},	% ( 4:3 )	SVGA x 0.5
+%	papersize=	{240mm, 320mm},	% ( 4:3 )	SVGA x 0.4
+%	papersize=	{180mm, 240mm},	% ( 4:3 )	SVGA x 0.3
+%	papersize=	{229mm, 305mm},	% ( 4:3 )	ArchA/Arch1
+%	papersize=	{320mm, 512mm},	% (16:10)
+%	papersize=	{280mm, 448mm},	% (16:10)
+%	papersize=	{240mm, 384mm},	% (16:10)
+%	a4paper, %	{210mm, 297mm},	% (√2:1)	A4
+
+
+
+% Font size
+\label{pkg: fontsize}
+\usepackage[fontsize=12pt]{fontsize}
+
+
+
+% Linguagem
+\label{pkg: babel}
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+% Graphics
+\label{pkg: graphics}
+%\usepackage
+%	[
+%		draft,
+%%		final,
+%	]
+%	{
+%		graphics	% simple
+%%		graphicx	% extended
+%	}
+%\graphicspath{{./imagens}}
+
+
+
+% calc
+\label{pkg: calc}
+\usepackage{calc}
+
+
+
+% Table of contents
+\label{pkg: tocloft}
+%\usepackage{tocloft}
+%\setcounter{tocdepth}{2}	% remove subsubsection from toc
+%
+%% part
+%\renewcommand\cftpartfont{\bfseries}
+%%\renewcommand\cftpartafterpnum{\vspace{0mm}}
+%\setlength\cftbeforepartskip{6mm}
+%
+%% sec
+%\renewcommand\cftsecfont{\bfseries}	% Font
+%\renewcommand\cftsecpagefont{}	% page number font
+%\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}	% Dots
+%\setlength\cftbeforesecskip{3mm}
+%\setlength\cftsecindent{0mm}
+%%\setlength{\cftsecnumwidth}{25mm}	% Fix section width
+%
+%% subsec
+%\setlength\cftsubsecindent{0mm}
+%%\setlength{\cftsubsecnumwidth}{15mm}
+%
+%% tab (table)
+%\setlength\cfttabindent{0mm}
+
+
+
+% filecontents
+\label{pkg: filecontents}
+%\usepackage{filecontents}	% Create files
+
+
+
+% Multicols
+\label{pkg: multicol}
+\usepackage{multicol}
+\setlength{\columnsep}{.05\textwidth}
+
+
+
+% enumitem
+\label{pkg: enumitem}
+%\usepackage{enumitem}	% modify enumerate index
+
+
+
+% titlesec
+\label{pkg: titlesec}
+%\usepackage{titlesec}
+%
+%% Part customization
+%\titleclass{\part}{straight}
+%\titleformat{\part}
+%	[block]							% shape
+%	{\huge\bfseries\color{Emph}}	% format
+%	{\thepart\hspace{5mm}{$|$}}		% label
+%	{5mm}							% sep
+%	{\huge\bfseries}				% before-code
+%	[\vspace{0.5mm}]				% after-code
+%\counterwithin*{section}{part}		% Reset section on part
+%\@addtoreset{section}{part}
+%
+%% Chapter customization
+%\titleclass{\chapter}{straight}
+%\titleformat{\chapter}
+%	[block]
+%	{\Huge\bfseries\color{Emph}}
+%	{\thechapter\hspace{5mm}{$|$}}
+%	{5mm}
+%	{\Huge\bfseries}
+%	[\vspace{0.5mm}]
+
+
+
+% Appendix
+\label{pkg: appendix}
+%\usepackage{appendix}
+
+
+
+% siunix: SI units
+\label{pkg: siunitx}
+\usepackage{siunitx}
+	\sisetup{
+		% scientific / engineering / false / fixed
+		scientific-notation =	engineering,
+		exponent-to-prefix =	true,			% 1000 g -> 1 kg
+		exponent-product =		*,				% x * 10^y
+		round-mode =			places,			% figures/places/off
+		round-precision =		2,
+	%	round-minimum =			0.01,
+	%	fixed-exponent =		0,
+	}
+	\DeclareSIUnit\atm{atm}
+	\DeclareSIUnit\calorie{cal}
+
+
+
+% Maths
+\label{pkg: amsmath, amssymb, bm}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{derivative}		% Derivatives
+%% Missing trigonometric math operators
+%\DeclareMathOperator{\arcsec}{arcsec}
+%\DeclareMathOperator{\arccot}{arccot}
+%\DeclareMathOperator{\arccsc}{arccsc}
+%
+% BM
+\NewDocumentEnvironment{BM}{ O{\large} O{align*} +b }
+{
+	#1\boldmath\bfseries
+	\begin{#2}
+		#3
+	\end{#2}\relax
+} {\relax}
+%
+%% BM old
+%%\newcommand{\BM}[1]{{\large\boldmath\bfseries%
+%%	\begin{align*}
+%%		#1
+%%	\end{align*}%
+%%}}
+%
+%\newcommand\vizinhanca[2][\delta]{%
+%	\hyperref[vizinhanca]{V_{#1}(#2)}%
+%}
+%
+%\newcommand\converge{{\,\xrightarrow{\text{converge}}\,}}
+
+
+
+% Vectors
+\label{pkg: esvect}
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+
+% Tikz
+\label{pkg: tikz}
+%\usepackage{tikz}
+%\usepackage{pgfmath}	% calculations
+%\usepackage{varwidth}	% List inside TikzPicture
+
+
+% pgf
+% pgfmath
+\label{pkg: pgfmath}
+%\usepackage{pgfmath}	% calculations
+%
+% pgfplots
+\label{pkg: pgfplots}
+%\usepackage{pgfplots}
+%	\pgfplotsset
+%	{
+%		compat= newest,
+%		width=	.90\linewidth,	% width
+%		height=	.22\textheight,	% height
+%		legend style=
+%		{
+%			draw=	none,
+%			fill=	White\Dark,
+%			fill opacity=	0.3,
+%			text opacity=	1,
+%		},
+%		major grid style=
+%		{
+%			very thin, 
+%			color= White!60!Black
+%		},
+%		ticklabel style=
+%		{
+%			/pgf/number format/.cd,
+%			set thousands separator={\,},
+%			tick style= {color= White!60!Black},
+%		},
+%		every extra x tick/.style=
+%		{
+%			tick style= {draw=none},
+%			major grid style=
+%				{ draw, thin, color= White!90!Black },
+%			ticklabel pos= top,
+%		},
+%		every extra y tick/.style=
+%		{
+%			tick style= {draw=none},
+%			major grid style=
+%				{ draw, thin, color= White!90!Black },
+%			ticklabel pos= right,
+%		},
+%	}
+%
+% pgfplotstable
+\label{pkg: pgfplotstable}
+%\usepackage{pgfplotstable}
+
+
+
+% Tabular
+\label{pkg: multirow, float, longtable}
+%\usepackage{multirow}		% multirow cell
+\usepackage{float}			% table position H(ere)
+	\restylefloat{table}
+%\usepackage{longtable}		% multipage table
+
+\setlength\tabcolsep{6mm}			% width
+\renewcommand\arraystretch{1.25}	% height
+
+% booktabs
+\label{pkg: booktabs}
+\usepackage{booktabs}
+\setlength\heavyrulewidth{.75pt}	% Top and bottom rule
+\setlength\lightrulewidth{.50pt}	% Middle rule
+%\usepackage{colortbl}				% Colored Cells
+
+
+
+% Chem
+\label{pkg: chemformula, chemfig, modiagram}
+\usepackage{chemformula}	% formulas quimicas
+%\usepackage{chemfig}		% Estruturas quimicas
+%\usepackage{modiagram}		% Molecular orbital diagram
+%	\setmodiagram
+%	{
+%		names,
+%		labels,
+%		labels-fs=\tiny,	% label font
+%		AO-width=6mm,
+%	}
+%
+\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+% Code
+\label{pkg: shellesc, minted}
+%% Run on terminal: lualatex --shell-escape [file[.tex]]
+%\usepackage{shellesc, minted}
+%	\usemintedstyle{stata-dark}
+%%	\usemintedstyle{fruity}
+%%	\usemintedstyle{paraiso}
+%%	\usemintedstyle{rainbow_dash}
+%%	\usemintedstyle{solarized-dark}
+%%	\usemintedstyle{native}
+
+%% minted environment
+%\NewDocumentEnvironment{myminted}
+%	{ o O{2.5em} O{linenos} M{python} +b }
+%	{
+%		\begin{listing}[H]
+%		\begin{tcolorbox}[left= #2]
+%			\begin{minted}[#3]{#4} #5 \end{minted}
+%		\end{tcolorbox}
+%		\IfNoValueTF{#1}
+%			{}
+%			{\caption{#1}}
+%		\end{listing}\relax
+%	}
+%	{\relax}
+
+
+% Colors
+\label{pkg: xcolor}
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}  {HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen} {HTML}{008675}
+
+\colorlet{White}{DarkGreen!20}
+\colorlet{Black}{DarkBlue!110}
+%\colorlet{Black}{DarkBlue!70!black}
+\colorlet{Emph}{ DarkGreen!70!White}
+\colorlet{Background}{White!40!Black}
+
+\pagecolor{Black}
+\color{White}
+
+%% mycolors
+%% Pallete
+%\definecolor{red}   {HTML}{FF0000}
+%\definecolor{orange}{HTML}{FF7300}
+%\definecolor{yellow}{HTML}{FFEA00}
+%\definecolor{green} {HTML}{2AFF00}
+%\definecolor{cyan}  {HTML}{00FFBF}
+%\definecolor{blue}  {HTML}{0055FF}
+%\definecolor{purple}{HTML}{9500FF}
+%\definecolor{pink}  {HTML}{FF0080}
+%% Light
+%\newcommand\Light{!63!White}
+%\colorlet{Red}   {red\Light}
+%\colorlet{Orange}{orange\Light}
+%\colorlet{Yellow}{yellow\Light}
+%\colorlet{Green} {green\Light}
+%\colorlet{Cyan}  {cyan\Light}
+%\colorlet{Blue}  {blue\Light}
+%\colorlet{Purple}{purple\Light}
+%\colorlet{Pink}  {pink\Light}
+%% Dark
+%\newcommand\Dark{!45!Black}
+%\colorlet{DRed}   {Red\Dark}
+%\colorlet{DOrange}{Orange\Dark}
+%\colorlet{DYellow}{Yellow\Dark}
+%\colorlet{DGreen} {Green\Dark}
+%\colorlet{DCyan}  {Cyan\Dark}
+%\colorlet{DBlue}  {Blue\Dark}
+%\colorlet{DPurple}{Purple\Dark}
+%\colorlet{DPink}  {Pink\Dark}
+
+
+
+% tcolorbox
+\label{pkg: tcolorbox}
+\usepackage{tcolorbox}
+	\tcbuselibrary
+	{
+		breakable,	% allow page break
+%		listings,	% code listings
+%		minted,		% code minted
+	}
+	\tcbset%
+	{	every box/.style= {
+		coltext=		White,		% text  color
+		coltitle=		White,		% title color
+		fonttitle=		\bfseries,	% title font
+		opacityfill=	0.1,		% background opacity
+		opacityframe=	0,			% frame      opacity
+		colback=		Background, % background color
+		colframe=		Background,	% border     color
+		arc=			3mm,		% Curvature
+		width=			\linewidth,	% Width
+%		breakable=		false,		% Allow page break
+	}}
+%% Mybox - Incomplete
+%\newtcbox{\mybox}{on line,
+%  colframe=mycolor,colback=mycolor!10!white,
+%  boxrule=0.5pt,arc=4pt,boxsep=0pt,left=6pt,right=6pt,top=6pt,bottom=6pt}
+
+
+
+% mytitle and myauthor
+\label{Set: title, author}
+\newcommand\mytitle{{IEQB - Teste 2}}
+\newcommand\myauthor{{Felipe B. Pinto 61387 - MIEQB}}
+
+
+
+% title, author and date
+\title{\huge\bfseries\color{Emph}\mytitle}
+\author{\Large\myauthor}
+\date{\Large\today}
+
+
+
+% fancyhdr - Header and Footer customization
+\label{pkg: fancyhdr}
+\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\lhead{\normalsize\myauthor}
+	\rhead{\normalsize\today}
+
+
+
+% hyperref
+\label{pkg: hyperref}
+\usepackage{hyperref}
+	\hypersetup
+	{
+		% Links customization
+		hidelinks=true,
+		colorlinks=true,
+		linkcolor=LightGreen!25!White,
+		% PDF customization
+		pdfpagelayout=OneColumn,
+		pdftitle=\mytitle,
+		pdfauthor=\myauthor
+	}
+% Fix links when reseting section on part
+\renewcommand\theHsection{\thepart.\thesection}
+
+
+
+%% questions, subquestions and subsubquestions
+\label{sec: question, subq, subsubq}
+
+% question
+\newcounter{question}
+\renewcommand{\thequestion}{Questão \arabic{question}}
+\newcommand{\question}[1]{
+	% reset inner counters
+	\setcounter{subquestion}{0}
+	\setcounter{subsubquestion}{0}
+	% add section*
+	\refstepcounter{question}
+	\section*{\thequestion\quad#1}
+	% add to toc
+	\addcontentsline{toc}{section}{%
+		\thequestion\quad#1%
+	}
+}
+
+% subquestion
+\newcounter{subquestion}
+\renewcommand\thesubquestion{%
+	Q\arabic{question} - \alph{subquestion})%
+}
+\newcommand{\subquestion}[1]{
+	% reset inner counters
+	\setcounter{subsubquestion}{0}
+	% add subsection*
+	\refstepcounter{subquestion}
+	\subsection*{\thesubquestion\quad#1}
+	% add to toc
+	\addcontentsline{toc}{subsection}{%
+		\thesubquestion\quad#1%
+	}
+}
+
+% subsubquestion
+\newcounter{subsubquestion}
+\renewcommand{\thesubsubquestion}{(\roman{subsubquestion})}
+\newcommand{\subsubquestion}[1]{
+	% add subsubsection*
+	\refstepcounter{subsubquestion}
+	\subsubsection*{\thesubsubquestion\quad#1}
+	% add to toc
+	\addcontentsline{toc}{subsubsection}{%
+		\thesubsubquestion\quad#1%
+	}
+}
+
+
+% Questions environment
+\label{env: question, subq and susubq}
+% question
+\NewDocumentEnvironment{questionBox}
+	{ s O{5mm} m +b }
+	{
+		\vspace{#2}\relax
+		\noindent\begin{minipage}{\linewidth}
+			\IfBooleanF{#1}{\question{#3}\relax}
+			\begin{tcolorbox} #4 \end{tcolorbox}\relax
+		\end{minipage}\relax
+	} {\relax}
+% subquestion
+\NewDocumentEnvironment{subquestionBox}
+	{ O{5mm} m +b }
+	{
+		\vspace{#1}\relax
+		\noindent\begin{minipage}{\linewidth}
+			\subquestion{#2}\relax
+			\begin{tcolorbox} #3 \end{tcolorbox}\relax
+		\end{minipage}\relax
+	
+	} {\relax}
+% subsubquestion
+\NewDocumentEnvironment{subsubquestionBox}
+	{ O{5mm} m +b }
+	{
+		\vspace{#1}\relax
+		\noindent\begin{minipage}{\linewidth}
+			\subsubquestion{#2}\relax
+			\begin{tcolorbox} #3 \end{tcolorbox}\relax
+		\end{minipage}\relax
+	
+	} {\relax}
+
+
+
+%% Incompleto
+%
+%% Listoftemas: tema e subtema
+%\newlistof{temas}{prog}{}
+%%% Add to document
+%%\section*{Programa}
+%%\begin{multicols}{2} \listoftemas \end{multicols}
+%% tema
+%\newcounter{tema}[section]
+%\newcommand\tema[1]{%
+%	\refstepcounter{tema}%
+%	\addcontentsline{prog}{temas}{%
+%		\thetema\textsuperscript{o} Tema: #1%
+%	}%
+%}
+%% subtema
+%\newcounter{subtema}[subsection]
+%\newcommand\subtema[1]{%
+%	\refstepcounter{subtema}%
+%	\addcontentsline{prog}{temas}{%
+%		\textbullet\quad#1%
+%	}
+%}
+
+
+
+%% subsubsection customization
+%\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+
+\begin{document}
+
+
+%\newgeometry{
+%	top=	.12\paperheight,
+%	bottom=	.12\paperheight,
+%	left=	.12\paperwidth, 
+%	right=	.12\paperwidth,
+%}
+%
+%
+%\maketitle
+%\label{Title}
+%
+%
+%% Table of Contents
+%
+%\renewcommand{\contentsname}{} % remove title
+%
+%\section*{Conteúdo}
+%\begin{multicols}{2} \tableofcontents \end{multicols}
+%
+%
+%\restoregeometry
+
+\begin{questionBox}{$
+	\Delta\widehat{\mathrm{H}}\cong
+	\qty{-78.5}{\kilo\joule\per\mole}
+$}
+\begin{center}
+\ch{	HCl_{(g)} + NaNO2_{(s)} -> HNO2_{(l)} + NaCl_{(s)} }\\
+\vspace{5mm}
+\ch{	HCl_{(g)} + NaNO2_{(s)}
+->		HCl_{(g)} + 1/2 NO_{(g)} + 1/2 NO2_{(g)} + 1/2 Na2O_{(s)}
+->		1/2 NO_{(g)} + 1/2 NO2_{(g)} + 1/2 H2O_{(l)} + NaCl_{(s)}
+->		\\
+->		1/2 NO2_{(g)} + 1/2 O2_{(g)} + 1/2 H2O_{(l)} + NaCl_{(s)}
+->		HNO2_{(l)} + NaCl_{(s)}
+}
+\end{center}
+\begin{flalign*}
+&
+=	\left(
+-	0.5*(-427)
+-	0.5*(507)
++	0.5*(-43)
+-	0.5*(34)
+	\right)\unit{\kilo\joule\per\mole}
+\cong
+	\qty[round-precision=0]{-78.5}{\kilo\joule\per\mole}
+&
+\end{flalign*}
+\end{questionBox}
+
+
+\begin{questionBox}{$
+	\widehat{\mathrm{Q}}\cong
+	\qty{1925222.077053}{\joule\per\second}
+$}
+\begin{flalign*}
+&
+=	
+	\dot{\mathrm{M}}_i
+	\left(
+		\ch{[T]}_{i}\,\Delta\widehat{\mathrm{H}}_{(\ch{T_l}, (25\to70)\unit{\celsius})}
+	+	\ch{[B]}_{i}\Delta\widehat{\mathrm{H}}_{(\ch{B_l}, (25\to70)\unit{\celsius})}
+	\right)
++	\dot{\mathrm{M}}_{o1}
+	\left(
+		\ch{[T]}_{o1}
+		\left(
+			\Delta\widehat{\mathrm{H}}_{(\ch{T_l}, (70\to110.6)\unit{\celsius})}
+		+	\Delta\widehat{\mathrm{H}}_{(\ch{T_l}\to\ch{T_g}, 110.6\unit{\celsius})}
+		+	\Delta\widehat{\mathrm{H}}_{(\ch{T_g}, (110.6\to70)\unit{\celsius})}
+		\right)
+	\right.
+	+	&\\&
+	\left.
+	+	\ch{[B]}_{o1}
+		\left(
+			\Delta\widehat{\mathrm{H}}_{(\ch{B_l}, (70\to80.1)\unit{\celsius})}
+		+	\Delta\widehat{\mathrm{H}}_{(\ch{B_l}\to\ch{B_g}, 80.1\unit{\celsius})}
+		+	\Delta\widehat{\mathrm{H}}_{(\ch{B_g}, (80.1\to70)\unit{\celsius})}
+		\right)
+	\right)
+=	
+	\left(
+	100
+\,	\left(
+		0.5
+		\left(
+			148.8\,\Delta t
+		\right)\big|_{298}^{343}
+	+	0.5
+		\left(
+			62.55\,\Delta t
+		\right)\big|_{298}^{343}
+	\right)
+	\right.
++	&\\&
+	\left.
++	\num{42.857142857142857}
+	\left(
+		35\,\unit{\percent}
+		\left(
+			\left(
+				148.8\,\Delta t
+			\right)\big|_{343}^{383.6}
+		+	37.47\,\unit{\kilo}
+		-	\left(
+				94.18\,\Delta t
+			\right)\big|_{343}^{383.6}
+		\right)
+	+	65\,\unit{\percent}
+		\left(
+			\left(
+				62.55\,\Delta t
+			\right)\big|_{343}^{353.1}
+		+	30.77\,\unit{\kilo}
+		-	\left(
+				74.06\,\Delta t
+			\right)\big|_{343}^{353.1}
+		\right)
+	\right)
+	\right)\unit{\joule\per\second}
+\cong &\\&
+\cong
+	\qty{1925222.077053}{\joule\per\second}
+&
+\end{flalign*}
+
+\begin{multicols}{2}
+
+\begin{subsubquestionBox}{$
+	\dot{\mathrm{M}}_{o1}\cong
+	\qty{42.857142857142857}{\mole\per\second}
+$}
+\begin{flalign*}
+&
+=	\dot{\mathrm{M}}_{i} - \dot{\mathrm{M}}_{o2}
+=	
+	\ch{[T]}_{o1}^{-1}
+	\left(
+		\ch{[T]}_{i }\,\dot{\mathrm{M}}_{i}
+	-	\ch{[T]}_{o2}\,\dot{\mathrm{M}}_{o2}
+	\right)
+\implies &\\&
+\implies
+	\dot{\mathrm{M}}_{o1}
+=	
+	\dot{\mathrm{M}}_{i}
+	\left(
+		1
+	-	\frac
+			{\ch{[T]}_{o1} - \ch{[T]}_{i }}
+			{\ch{[T]}_{o1} - \ch{[T]}_{o2}}
+	\right)
+=	&\\&
+=	
+	\left(
+	100
+	\left(
+		1
+	-	\frac
+			{0.3 - 0.5     }
+			{0.3 - (1-0.35)}
+	\right)
+	\right)\unit{\mole\per\second}
+\cong
+	\qty{42.857142857142857}{\mole\per\second}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+%\begin{subquestionBox}{$
+%	\dot{\mathrm{M}}_{o2}\cong
+%	\qty{42.857142857142857}{\mole\per\second}
+%$}
+%\begin{flalign*}
+%&
+%=	\dot{\mathrm{M}}_{i}-\dot{\mathrm{M}}_{o1}
+%\cong
+%	\left(
+%		100-\num{57.142857142857143}
+%	\right)\,\unit{\mole\per\second}
+%\cong
+%	\qty{42.857142857142857}{\mole\per\second}
+%&
+%\end{flalign*}
+%\end{subquestionBox}
+
+\end{multicols}
+
+\end{questionBox}
+
+\newpage
+
+\question{}
+\begin{tcolorbox}[breakable]
+
+\begin{multicols}{2}
+\begin{itemize}
+\begin{multicols}{3}
+\item 1 = 1i1
+\item 2 = 1i2 = 2o1
+\item 3 = 1o = 2i1
+\item 4 = 2o2
+\item 5 = 2i2
+\end{multicols}
+\end{itemize}
+\end{multicols}
+
+{
+%\setlength\tabcolsep{6mm}
+%\renewcommand\arraystretch{1.25}
+
+\begin{table}[H]\centering
+\resizebox{.8\linewidth}{!}{
+\begin{tabular}{r *{5}{c}}
+
+	\multicolumn{1}{c}{\unit{\percent\mole/\mole}}
+	& \multicolumn{1}{c}{1i1}
+	& \multicolumn{1}{c}{\underline{1i2\quad2o1}}
+	& \multicolumn{1}{c}{\underline{1o \quad2i1}}
+	& \multicolumn{1}{c}{2o2}
+	& \multicolumn{1}{c}{2i2}
+	
+	\\ \toprule
+	
+	\ch{C2H6}
+	& 100
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	
+	\\
+	
+	\ch{O2}
+	& \multicolumn{1}{c}{-}
+	& 100
+	& 28
+	& 28
+	& 100
+	
+	\\
+	
+	\ch{CO2}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& 32
+	& 32
+	& \multicolumn{1}{c}{-}
+	
+	\\
+	
+	\ch{H2O}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& 48
+	& 48
+	& \multicolumn{1}{c}{-}
+	
+	\\ \bottomrule
+	
+	Total
+	& 100
+	& \num{525}
+	& \num{625}
+	& \num{625}
+	& \num{525}
+	
+	\\
+	
+	Temp (\unit{\celsius})
+	& 30
+	& 
+	& 350
+	& 150
+	& 25
+	
+
+\end{tabular}
+}
+\end{table}
+}
+
+\begin{center}\Large
+\ch{C2H6_{(g)} + 7/2 O2_{(g)} -> 2 CO2_{(g)} + 3 H2O_{(g)}}
+\end{center}
+
+
+
+\vspace{5mm}
+
+
+
+\begin{multicols}{2}
+
+
+
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{1i2}\cong
+	\qty{525}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\ch{[O2]}_{1i2}^{-1}
+	\left(
+		\ch{[C2H6]}_{1i1}\,\widehat{\mathrm{M}}_{1i1}
+		(7/2)*1.5
+	\right)
+=	&\\&
+=
+	\left(100\,\unit{\percent}\right)^{-1}
+	\left(
+		100\,\unit{\percent}*100\,\unit{\percent}
+		(7/2)*1.5
+	\right)\unit{\mole/\mole}
+\cong
+	\qty{525}{\percent\frac{\mole}{\mole}}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{2i2}\cong
+	\qty{525}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_{2o1}
+\cong
+	\qty{525}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{1o}\cong
+	\qty{625}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_{1i1}
++	\widehat{\mathrm{M}}_{1i2}
+\cong
+	\left(
+	100+\num{525}
+	\right)\unit{\percent\mole/\mole}
+\cong
+	\qty{625}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+
+\begin{subsubquestionBox}{$
+	\widehat{\mathrm{M}}_{2o2}\cong
+	\qty{625}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_{2i1}
+\cong
+	\qty{625}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+
+\begin{subsubquestionBox}{$
+	\ch{[CO2]}_{1o}\cong
+	\qty{32}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	
+	2*\ch{[C2H6]}_{1i1}
+\,	\frac
+		{\widehat{\mathrm{M}}_{1i1}}
+		{\widehat{\mathrm{M}}_{1o }}
+=
+	\left(
+	2*100\,\unit{\percent}
+\,	\frac
+		{100\,\unit{\percent}}
+		{\qty{625}{\percent}}
+	\right)\unit{\mole/\mole}
+\cong &\\&
+\cong
+	\qty{32}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+
+\begin{subsubquestionBox}{$
+	\ch{[H2O]}_{1o}\cong
+	\qty{48}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	3*\ch{[C2H6]}_{1i1}
+\,	\frac
+		{\widehat{\mathrm{M}}_{1i1}}
+		{\widehat{\mathrm{M}}_{1o }}
+=
+	\left(
+	3*100\,\unit{\percent}
+\,	\frac
+		{100\,\unit{\percent}}
+		{\qty{625}{\percent}}
+	\right)\unit{\mole/\mole}
+\cong &\\&
+\cong
+	\qty{48}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+
+\begin{subsubquestionBox}{$
+	\ch{[O2]}_{1o}\cong
+	\qty{28}{\percent\mole/\mole}
+$}
+\begin{flalign*}
+&
+=	\widehat{\mathrm{M}}_{1o}^{-1}
+	\left(
+		\ch{[O2]}_{1i2}\,\widehat{\mathrm{M}}_{1i2}
+	-	\ch{[C2H6]}_{1i1}\,\widehat{\mathrm{M}}_{1i1}
+	\,	(7/2)
+	\right)
+\cong &\\&
+\cong
+	\left(
+	\left(\qty{625}{\percent}\right)^{-1}
+	\left(
+		100\,\unit{\percent}*\qty{525}{\percent}
+	-	100\,\unit{\percent}*100\,\unit{\percent}
+	\,	(7/2)
+	\right)
+	\right)\unit{\mole/\mole}
+\cong &\\&
+\cong
+	\qty{28}{\percent\mole/\mole}
+&
+\end{flalign*}
+\end{subsubquestionBox}
+
+
+\end{multicols}
+
+\begin{subquestionBox}{$
+	\mathrm{t}_{1i2}
+$}
+\begin{flalign*}
+&
+=	
+	\mathrm{t}_{1i2}
++	\left(
+		\widehat{\mathrm{M}}_{2i2}
+	\,	\ch{[O2]}_{2i2}
+	\,	\mathrm{C}_{(p, \ch{O2})}
+	\right)^{-1}
+	\left(
+		\widehat{\mathrm{H}}_{(2i1,\ch{O2} , (350\to150)\unit{\celsius})}
+	+	\widehat{\mathrm{H}}_{(2i1,\ch{CO2}, (350\to150)\unit{\celsius})}
+	+	\widehat{\mathrm{H}}_{(i1, \ch{H2O}, (350\to150)\unit{\celsius})}
+	\right)
+=	&\\&
+=	
+	\left(
+	298
++	\left(
+	525\,\unit{\percent}
+*	100\,\unit{\percent}
+*	30.5
+	\right)^{-1}
+	\left(
+	-	625\,\unit{\percent}
+		\left(
+			28\,\unit{\percent}*30.5
+		+	32\,\unit{\percent}*42.2
+		+	48\,\unit{\percent}*40.6
+		\right)\,\Delta t\big|_{423}^{623}
+	\right)
+	\right)\unit{\kelvin}
+\cong &\\&
+\cong
+&
+\end{flalign*}
+\end{subquestionBox}
+
+\begin{subquestionBox}{$
+	\widehat{\mathrm{Q}}
+$}
+\begin{flalign*}
+&
+=	\Delta\widehat{\mathrm{H}}_{\ch{C2H6}, (30\to350)\unit{\celsius}}
++	\Delta\widehat{\mathrm{H}}_{\ch{O2}, (\mathrm{t}_{1i2}\to350)\unit{\celsius}}
++	\widehat{\mathrm{M}}_{1i1}
+\,	\ch{[C2H6]}_{1i1}
+\,	(-\Delta\widehat{\mathrm{H}}_{f \ch{C2H6}})
++	\widehat{\mathrm{M}}_{1o}
+	\left(
+		\ch{[H2O]}_{1o}
+	\,	\Delta\widehat{\mathrm{H}}_{f \ch{H2O}}
+	+	\ch{[CO2]}_{1o}
+	\,	\Delta\widehat{\mathrm{H}}_{f \ch{CO2}}
+	\right)
+=	&\\&
+=	
+	\left(
+	100\,\unit{\percent}
+*	100\,\unit{\percent}
+*	49.3\,\Delta t\big|_{303}^{623}
++
+	100\,\unit{\percent}
+*	525\,\unit{\percent}
+*	40.6\,\Delta t\big|_{\mathrm{t}_{1i2}}^{623}
++	100\,\unit{\percent}
+*	100\,\unit{\percent}
+*	84.67\,\unit{\kilo}
++	625\,\unit{\percent}
+%:
+	\left(
+		28
+	*	(-241.6\,\unit{\kilo})
+	+	32
+	*	(-393.1\,\unit{\kilo})
+	\right)
+	\right)\unit{\frac{\joule}{{\left(\frac{\mole}{\mole}\right)}}}
+\cong &\\&
+\cong
+&
+\end{flalign*}
+\end{subquestionBox}
+
+\end{tcolorbox}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,306 @@
+\documentclass[12pt]{article}
+
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+
+%% Graphics
+%\usepackage{graphics}
+
+
+
+% calc
+\usepackage{calc}
+
+
+
+%% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+%\setlength{\cftsubsecnumwidth}{15mm}
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+%
+\setcounter{tocdepth}{2}	% remove subsubsection from toc
+
+
+
+% Multicols
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+
+
+
+%% titlesec
+%\usepackage{titlesec}
+%
+%% Part customization
+%\titleformat{\part}
+%	[block]							% shape
+%	{\Huge\bfseries\color{DarkGreen!75!}}	% format
+%	{\thepart\hspace{5mm}{$|$}\hspace{5mm}}	% label
+%	{0pt}							% sep
+%	{\Huge\bfseries}					% before-code
+%\counterwithin*{section}{part} % Reset section on part
+%
+%% Chapter customization
+%\titleformat{\chapter}
+%	[hang]
+%	{\Huge\bfseries\color{DarkGreen!75!}}
+%	{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}
+%	{0pt}
+%	{\Huge\bfseries}
+
+
+
+%% Appendix
+%\usepackage{appendix}
+
+
+
+%% siunix: SI units
+%\usepackage{siunitx}
+%\sisetup{
+%	scientific-notation = engineering,
+%	exponent-to-prefix = true,
+%	exponent-product = *,
+%	round-mode = figures,
+%%	round-precision = 3,
+%%	round-minimum = 0.01
+%}
+
+
+
+%% Maths
+%\usepackage[fleqn]{amsmath}
+%\usepackage{amssymb}
+%
+%\newcommand{\BM}[1]{{\large%
+%	\begin{align*}
+%		\bm{#1}
+%	\end{align*}%
+%}}
+%
+%\newcommand\vizinhanca[1]{V_{\epsilon}(#1)}
+
+
+
+%% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+
+%% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+
+
+%% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+%
+%\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+
+%% Tabular
+%\usepackage{multirow}
+
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}	{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+
+
+% mytitle and myauthor
+\newcommand\mytitle{{Química Inorgânica 1\\Cores de Complexos}}
+\newcommand\myauthor{{Felipe Pinto - 61387}}
+
+
+
+% title, author and date
+\title{\bfseries\color{DarkGreen!75!}%
+	\mytitle%
+}
+\author{\myauthor}
+\date{\today.1}
+
+
+
+% hyperref
+\usepackage{hyperref}
+\hypersetup{
+	% Links customization
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!,
+	% PDF customization
+	pdfpagelayout=OneColumn,
+	pdftitle=\mytitle,
+	pdfauthor=\myauthor
+}
+
+
+
+%% questions, subquestions and subsubquestions
+%
+%% question
+%\newcounter{question}[section]
+%\renewcommand{\thequestion}{Questão \arabic{question}}
+%\newcommand{\question}[1]{
+%     % reset inner counters
+%     \setcounter{subquestion}{0}
+%     \setcounter{subsubquestion}{0}
+%     % add section*
+%     \refstepcounter{question}
+%     \section*{\thequestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{section}{%
+%     	\thequestion\quad#1%
+%	}
+%}
+%
+%% subquestion
+%\newcounter{subquestion}[subsection]
+%\renewcommand\thesubquestion{%
+%	Q\arabic{question} - \alph{subquestion})%
+%}
+%\newcommand{\subquestion}[1]{
+%	% reset inner counters
+%	\setcounter{subsubquestion}{0}
+%	% add subsection*
+%     \refstepcounter{subquestion}
+%     \subsection*{\thesubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsection}{%
+%     	\thesubquestion\quad#1%
+%	}
+%}
+%
+%% subsubquestion
+%\newcounter{subsubquestion}[subsubsection]
+%\renewcommand{\thesubsubquestion}{(\roman{subsubquestion})}
+%\newcommand{\subsubquestion}[1]{
+%	% add subsubsection*
+%     \refstepcounter{subsubquestion}
+%     \subsubsection*{\thesubsubquestion\quad#1}
+%     % add to toc
+%     \addcontentsline{toc}{subsubsection}{%
+%     	\thesubsubquestion\quad#1%
+%	}
+%}
+
+
+
+\begin{document}
+
+
+\newgeometry{left=25mm, right=25mm}
+
+
+\maketitle
+
+
+% Table of Contents
+
+\renewcommand{\contentsname}{} % remove title
+
+\section*{Conteúdo}
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+
+\restoregeometry
+
+
+\section{Estado eletronico: 3 Tipos:}
+
+\begin{enumerate}
+
+	\item estado A - Estado fundamental não degenerado
+	\item estado E - Duplamente degenerado
+	\item estado T - Triplamente degenerado
+	
+\end{enumerate}
+
+\paragraph{Multiplicidade}
+= Numero de elentrons desemparelhados + 1
+
+\paragraph{Orbitais degenerados:}
+Se referencia ao numero de possibilidades de configuração eletrônica no orbital de menor energia
+
+\begin{multicols}{2}
+
+\subsection{Estado A}
+Exitado ou não exitado sem differentes configurações
+
+\subsection{Estado E}
+Exita eletron da camada mais energetica sem differentes configurações
+
+\subsection{Estado T}
+Triplamente degenerado, 2 ou 1 eletron nos 3 orbitais de menor energia\\
+excita com estado final eletronico com diferentes configurações nos orbitais de menor energia
+
+\end{multicols}
+
+\section{Intencidade de Bandas}
+
+\begin{multicols}{2}
+
+\subsection{Regra de Laporte}
+a luz q interage c a molecula é absorvida e ha mudanca de momento dipolar\\
+quando não é absorvida não ha alteração de momento dipolar
+
+\subsection{Regra de Spin}
+Sempre que haja multiplicidade variavel, As mudanças que envolvem multiplicidade são proibidas
+
+\end{multicols}
+
+\section{Para a prova}
+Tudo até magnetismo
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

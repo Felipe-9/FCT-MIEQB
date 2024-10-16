@@ -1,0 +1,437 @@
+% !TEX root = ./QF_A-Listas_Resolucao.5.tex
+\providecommand\mainfilename{"./QF_A-Listas_Resolucao.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QF_A-Listas_Resolucao.5.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/QF_A-Listas_Resolucao.5}}}
+\tikzsetexternalprefix{./.build/figures/QF_A-Listas_Resolucao.5/}
+
+\mymakesubfile{5}
+[QF A]
+{Lista Superficies} % Subfile Title
+{Lista Superficies} % Part Title
+
+\begin{questionBox}1{ % Q1
+    A tensão superficial da água é de 72\,\unit{\milli\newton.\metre^{-1}} a 298\,\unit{\kelvin}. Calcule a elevação capilar num tubo de 0.5\,\unit{\milli\metre} de diâmetro para um ângulo de contacto de 30\unit{\degree}. 
+    (\(\rho_{\ch{H2O}}=1.0\,\unit{\gram.\centi\metre^{-3}}\))
+} % Q1
+    \answer{}
+    \begin{flalign*}
+        &
+            \rho\,g\,h
+            =\adif{P}
+            =\frac{2\,\gamma}{r}
+            =\frac{2\,\gamma}{a/\cos\theta}
+            \implies &\\&
+            \implies
+            h
+            =\frac{
+                2\,\gamma\,\cos(\theta)
+            }{
+                a\,\rho\,g
+            }
+            =\frac{
+                2
+                *(72\E-3)
+                *\cos(30^\circ)
+                % 124.707658144959165
+            }{
+                (0.5\E-3/2)
+                *(1.0\E3)
+                *\num{9.780327}
+                % 2.44508175
+            }
+            \cong &\\&
+            \cong
+            \qty{51.003471824596116e-3}{\metre}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q2
+    Medidas de tensão superficial de soluções aquosas do tensoativo CTAB16, a 20\unit{\celsius}, deram os seguintes resultados:
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{6}{C}}
+            \toprule
+            
+                C*10^4/\unit{\M}
+                & 1 & 2 & 5 & 10 & 50 & 100
+            \\  \gamma/\unit{\milli\newton.\metre^{-1}}
+                & 68 & 60 & 48 & 39 & 36 & 36
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q2.1
+        Usando a isotérmica de adsorção de Gibbs, calcule a área ocupada por molécula de CTAB16 à superfície da solução
+    } % Q2.1
+        \answer{}
+
+        \begin{center}
+            \setlength\tabcolsep{3mm}        % width
+            % \renewcommand\arraystretch{1.25} % height
+            \vspace{1ex}
+            \begin{tabular}{L *{6}{C}}
+                \toprule
+                
+                    \ln C/\unit{\M}
+                    & \num{-9.210340371976182}
+                    & \num{-8.517193191416238}
+                    & \num{-7.600902459542082}
+                    & \num{-6.907755278982137}
+                    & \num{-5.298317366548036}
+                    & \num{-4.605170185988091}
+                \\  \gamma/\unit{\newton.\metre^{-1}}
+                    & 0.068
+                    & 0.06
+                    & 0.048
+                    & 0.039
+                    & 0.036
+                    & 0.036
+
+                    % 0.068   ,-9.210340371976182
+                    % 0.06    ,-8.517193191416238
+                    % 0.048   ,-7.600902459542082
+                    % 0.039   ,-6.907755278982137
+                    % 0.036   ,-5.298317366548036
+                    % 0.036   ,-4.605170185988091
+            
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+
+        \begin{center}
+            % \tikzset{external/remake next=true}
+            % \pgfplotsset{height=7cm, width= .6\textwidth}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    % legend pos  = north west
+                    xlabel={\(\ln C/\unit{\M}\)},
+                    ylabel={\(\gamma/\unit{\newton.\metre^{-1}}\)},
+                    extra x ticks={-6.637795275590551}
+                ]
+                % Legends
+                \addlegendimage{empty legend}
+                \addlegendentry[Graph]{\(\gamma=-0.0127\ln{C}-0.0483\)}
+                \addlegendimage{empty legend}
+                \addlegendentry[GraphC]{\(\gamma=0.036\)}
+                
+                \addplot[
+                    % smooth,
+                    domain={-9.22:-6},
+                    dashed,
+                    opacity=.5,
+                    samples=\mysampledensityDouble,
+                ] { -0.0127*x-0.0483 };
+
+                \addplot[
+                    mark=*,
+                    only marks,
+                ] coordinates {
+                    (-9.210340371976182, 0.068)
+                    (-8.517193191416238, 0.060)
+                    (-7.600902459542082, 0.048)
+                    (-6.907755278982137, 0.039)
+                    % (-5.298317366548036, 0.036)
+                    % (-4.605170185988091, 0.036)
+                };
+
+                \addplot[
+                    % smooth,
+                    mark=*,
+                    only marks,
+                    GraphC,
+                    mark options={
+                        fill=GraphC,
+                        fill opacity=1
+                    },
+                    % domain  = -2:2,
+                    % samples = \mysampledensityDouble,
+                ] coordinates {
+                    % (-9.210340371976182, 0.068)
+                    % (-8.517193191416238, 0.060)
+                    % (-7.600902459542082, 0.048)
+                    % (-6.907755278982137, 0.039)
+                    (-5.298317366548036, 0.036)
+                    (-4.605170185988091, 0.036)
+                };
+
+                \addplot[
+                    domain={-7:-4.62},
+                    dashed,
+                    GraphC,
+                    opacity=.5,
+                    samples=\mysampledensityDouble,
+                ] { 0.036 };
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+        \begin{flalign*}
+            &
+                \Gamma
+                =\frac{-1}{R\,T}
+                \,\odv{\gamma}{\ln{C}}
+                \cong\frac{-1}{
+                    \num{8.314462618}
+                    *(20+273.15)
+                }
+                (-0.0127)
+                \cong
+                \qty{5.210502845e-6}{\mole.\metre^{-2}}
+                \implies &\\&
+                \implies
+                A
+                \cong\frac{\unit{\metre^2}}{\qty{5.210502845e-6}{\mole}}
+                \,\frac{1\,\unit{\mole}}{\num{6.02214076e23}\unit{moleculas}}
+                \cong
+                \qty{3.1869075146313e-19}{\metre^2.molecule^{-1}}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q2.2
+        Calcule a concentração micelar crítica
+    } % Q2.2
+        \begin{flalign*}
+            &
+                -0.0127\ln(CMC)-0.0483=0.036
+                \implies &\\&
+                \implies
+                CMC
+                \cong\exp{\left(
+                    -\frac{0.036+0.0483}{0.0127}
+                \right)}
+                % \cong &\\&
+                \cong
+                \qty{1.309912057646e-3}{\M}
+            &
+        \end{flalign*}
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q3
+    A tabela seguinte dá o volume de azoto (a 0\unit{\celsius} e 1\unit{.\bar}) adsorvido por grama de carvão ativado a diferentes pressões:
+
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{L *{5}{C}}
+            \toprule
+            
+                p/\unit{\milli\bar}
+                &  5.17
+                & 17.08
+                & 30.18
+                & 44.75
+                & 73.99
+            \\  V/\unit{\centi\metre^3.\gram^{-1}}
+                & 0.987
+                & 3.04
+                & 5.08
+                & 7.04
+                & 10.31
+            
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{questionBox}2{ % Q3.1
+        Construa um gráfico de forma a verificar a aplicabilidade da isotérmica de Langmuir
+    } % Q3.1
+        \answer{}
+
+        \begin{flalign*}
+            &
+                n^{-1}
+                =\frac{R\,T}{P\,V}
+                \cong\frac{\num{8.314462618}*273.15}{1\E5*V*10^{-2}}
+                \cong\frac{\num{2271.0954641067e-3}}{V}
+            &
+        \end{flalign*}
+
+        \begin{center}
+            \vspace{1ex}
+            \setlength\tabcolsep{1mm}        % width
+            % \renewcommand\arraystretch{1.25} % height
+            \begin{tabular}{L *{5}{C}}
+                \toprule
+                
+                    p^{-1}/\unit{\pascal^{-1}}
+                    & \num{19342359.767891683}
+                    & \num{5854800.936768151}
+                    & \num{3313452.617627568}
+                    & \num{2234636.87150838}
+                    & \num{1351533.9910798757}
+                \\  n^{-1}/\unit{\mole^{-1}.\gram}
+                    & \num{2.301008575589362}
+                    & \num{0.7470708763508882}
+                    & \num{0.4470660362414764}
+                    & \num{0.32259878751515625}
+                    & \num{0.22028084035952472}
+                
+                \\\bottomrule
+            \end{tabular}
+            \vspace{2ex}
+        \end{center}
+
+        \begin{center}
+            % \tikzset{external/remake next=true}
+            \pgfplotsset{height=7cm, width= .8\textwidth}
+            \begin{tikzpicture}
+            \begin{axis}
+                [
+                    % xmajorgrids = true,
+                    legend pos=south east,
+                    % domain=0:4,
+                    xlabel={\(p^{-1}/\unit{\pascal^{-1}}\)},
+                    ylabel={\(n^{-1}/\unit{\mole^{-1}.\gram}\)},
+                    extra y ticks={0.0653},
+                ]
+                % Legends
+                \addlegendimage{empty legend}
+                \addlegendentry[Graph]{\( n^{-1}=1.1564\E-7*p^{-1}+0.0653\)}
+
+                \addplot[
+                    Graph,dashed,
+                    domain={0:19342359.767891683},
+                    samples=\mysampledensityDouble,
+                    opacity=0.5,
+                ]{ 1.1564e-7*x+0.0653 };
+                
+                % Plot from equation
+                \addplot[
+                    mark=*,
+                    only marks,
+                    Graph,
+                    % domain  = -2:2,
+                    % samples = \mysampledensityDouble,
+                ] coordinates {
+                    (19342359.767891683, 2.301008575589362)
+                    (5854800.936768151,  0.7470708763508882)
+                    (3313452.617627568,  0.4470660362414764)
+                    (2234636.87150838,   0.32259878751515625)
+                    (1351533.9910798757, 0.22028084035952472)
+                };
+                
+            \end{axis}
+            \end{tikzpicture}
+        \end{center}
+
+    \end{questionBox}
+
+    \begin{questionBox}2{ % Q3.2
+        Determine a área superficial por grama de carvão, admitindo que a área ocupada por molecula de azoto é 16\unit{\AA^2} \((\AA^2=10^{-20}\))
+    } % Q3.2
+        \begin{flalign*}
+            &
+                A
+                =\frac{N_{av}}{n_{\max}}
+                \,16*10^{-20}
+                \cong\frac{\num{6.02214076e23}}{0.0653}
+                \,16*10^{-20}
+                \cong
+                \num{147556.282021439509954e-3}
+            &
+        \end{flalign*}
+    \end{questionBox}
+
+\end{questionBox}
+
+\begin{questionBox}1{} % Q4
+    Mediu-se a adsorção de metano em carvão ativado, a 20\unit{\celsius}, obtendo-se os seguintes resultados:
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{2}{C}}
+            \toprule
+            
+                n_{a}/\unit{\mole.\gram^{-1}}
+                & p/\unit{\bar}
+            
+            \\\midrule
+        
+                   4.20\E-4 & 0.133 
+                \\ 6.38\E-4 & 0.267 
+                \\ 8.01\E-4 & 0.400 
+                \\ 9.25\E-4 & 0.533
+                
+            \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+    Utilizando a isotérmica de adsorção de Langmuir, calcule a fração de área ocupada pelo metano, \(q\ch{CH4}\), à pressão de 0.4\,\unit{\bar}.
+
+    \answer{}
+    \begin{center}
+        \vspace{1ex}
+        \begin{tabular}{*{2}{C}}
+            \toprule
+            
+                n_{a}^{-1}/\unit{\mole^{-1}.\gram}
+                & p^{-1}/\unit{\bar^{-1}}
+            
+            \\\midrule
+        
+                   \num{0.23809523809523808e4} & \num{7.518796992481203}
+                \\ \num{0.15673981191222572e4} & \num{3.745318352059925}
+                \\ \num{0.12484394506866417e4} & \num{2.5}
+                \\ \num{0.10810810810810811e4} & \num{1.8761726078799248 }
+
+                \\\bottomrule
+        \end{tabular}
+        \vspace{2ex}
+    \end{center}
+
+    \begin{center}
+        \tikzset{external/remake next=true}
+        % \pgfplotsset{height=7cm, width= .6\textwidth}
+        \begin{tikzpicture}
+        \begin{axis}
+            [
+                % xmajorgrids = true,
+                % legend pos  = north west
+                % domain=0:4,
+                % xlabel={},
+                % ylabel={},
+            ]
+            % Legends
+            % \addlegendimage{empty legend}
+            % \addlegendentry[Red]{\( x \)}
+
+            % Plot from equation
+            \addplot[
+                only marks,mark=*,
+                % smooth,
+                % thick,
+                Graph,
+                % domain  = -2:2,
+                samples = \mysampledensityDouble,
+            ] coordinates {
+                (7.518796992481203,  0.23809523809523808e4)
+                (3.745318352059925,  0.15673981191222572e4)
+                (2.5,                0.12484394506866417e4)
+                (1.8761726078799248, 0.10810810810810811e4)
+            };
+            
+        \end{axis}
+        \end{tikzpicture}
+    \end{center}
+
+\end{questionBox}
+
+\end{document}

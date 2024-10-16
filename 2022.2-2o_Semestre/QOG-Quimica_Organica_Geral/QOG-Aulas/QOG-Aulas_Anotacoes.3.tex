@@ -1,0 +1,93 @@
+% !TEX root = ./QOG-Aulas_Anotações.3.tex
+\providecommand\mainfilename{"./QOG-Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Aulas_Anotações.3.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{3}
+[QOG]
+{Aula 24/10/2022} % Subfile Title
+{Aula 24/10/2022} % Part Title
+
+\begin{sectionBox}1{Forças Intermoleculares} % S1
+
+    \paragraph*{Ion--Ion:} 
+    \begin{itemize}
+        \item Força elétrica entre ions
+        \item 
+        \item Forte
+        \item Sais
+    \end{itemize}
+    \paragraph*{Dipolo--Dipolo:} 
+    \begin{itemize}
+        \item Força entre Moléculas polares
+        \item media
+        \item Moléculas poáres
+    \end{itemize}
+    \paragraph*{Dipolo--Dipolo:}
+    \begin{itemize}
+        \item Força entre moléculas apolares adquirem momentanea polaridade
+        \item Fracas
+        \item Alkanos
+    \end{itemize} 
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Dinamicas: Rotações do Etano} % S2
+    
+    \begin{center}
+        \newman[
+            atoms={fill=red\Dark, inner sep=2mm, rounded corners},
+            back-atoms={fill=blue\Dark, inner sep=2mm, rounded corners}
+        ](1*60+15){H, H, H, H, H, H}
+        Eclipsada
+        \qquad
+        \newman[
+            atoms={fill=red\Dark, inner sep=2mm, rounded corners},
+            back-atoms={fill=blue\Dark, inner sep=2mm, rounded corners}
+        ](0*60){H, H, H, H, H, H}
+        Interpolada
+    \end{center}
+
+    \paragraph*{Interpolada (Estrela):} quando não ta eclipsada
+    \paragraph*{Eclipsada:} quando não ta Interpolada
+
+    \begin{center}
+        \newman(0*60){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+        \newman(1*60+15){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+        \newman(2*60){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+        \newman(3*60+15){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+        \newman(4*60){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+        \newman(5*60+15){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+        \newman(6*60){\hspace*{3mm} 
+            {\color{red\Light}\ce{CH3}},  H,H,
+            {\color{blue\Light}\ce{CH3}}, H,H
+        }
+    \end{center}
+    
+\end{sectionBox}
+
+\end{document}

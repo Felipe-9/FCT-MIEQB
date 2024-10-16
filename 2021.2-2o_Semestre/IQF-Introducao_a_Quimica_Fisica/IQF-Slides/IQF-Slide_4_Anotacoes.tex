@@ -1,0 +1,322 @@
+% !TEX root = ./IQF - Slides Anotações.tex
+% IQF - Anotações do slide 4
+
+\setcounter{part}{3}
+\part{Variações de Entalpia}
+
+\begin{sectionBox}1m{Capacidades Caloríficas}
+    
+    \begin{BM}
+        C = Q/\adif T
+    \end{BM}
+
+    \begin{sectionBox}*2{A volume constante}
+        
+        \begin{BM}
+            C_V = \adv{U}{T}
+        \end{BM}
+        
+        \begin{flalign*}
+            &
+                \left.
+                    \begin{aligned}
+                    &   C = Q / \adif T
+                    \,\land\\\land\,
+                    &   Q + W = \adif U
+                    \,\land\\\land\,
+                    &   W = 0
+                    \end{aligned}
+                \right\}
+            % \implies &\\&
+            \implies 
+                C = \adv{U}{T}
+            &
+        \end{flalign*}
+
+    \end{sectionBox}
+
+    \begin{sectionBox}*2{A pressão constante}
+        
+        \begin{BM}
+            C_P = \adv{H}{T}
+        \end{BM}
+        
+        \begin{flalign*}
+            &
+                \left.
+                    \begin{aligned}
+                    &   C = Q / \adif T
+                    \,\land\\\land\,
+                    &   Q + W = \adif U
+                    \,\land\\\land\,
+                    &   \adif U = \adif H + P\,\adif V
+                    \,\land\\\land\,
+                    &   W = P_{\text{ext}}\,\adif V
+                    \,\land\\\land\,
+                    &   P_{\text{ext}} = P
+                    \end{aligned}
+                \right\}
+            % \implies &\\&
+            \implies 
+                C = \adv{H}{T}
+            &
+        \end{flalign*}
+
+    \end{sectionBox}
+    
+    \begin{sectionBox}*2{Para gases ideais}
+        
+        \begin{BM}
+            C_P = C_V + N\,R
+        \end{BM}
+
+        \begin{flalign*}
+            &
+                \left.
+                    \begin{aligned}
+                    &   C_P = \adv{H}{T}
+                    \,\land\\\land\,
+                    &   H \coloneqq U + P\,V
+                    \,\land\\\land\,
+                    &   P\,V = N\,R\,T
+                    \end{aligned}
+                \right\}
+            \implies &\\& 
+            \implies 
+                C_P = \adv{U}{T} + N\,R
+            =   C_V + N\,R
+            &
+        \end{flalign*}
+        
+    \end{sectionBox}
+
+    \paragraph{Capacidade Calorífica molar} se obtem quando divide a respectiva capacidade calorífica pela quantidade da substancia, denotando por exemplo: \(C_{P\,m}\)
+
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    Calcule a temperatura final resultante da mistura de 20\,\unit{\gram} de vapor de água a 100\,\unit{\celsius} e de 20\,\unit{\gram} de gelo a 0\,\unit{\celsius}
+    
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(\adif H^{\circ}_{\text{fus}} (\ch{H2O}) =  6.01\,\unit{\kilo\joule\per\mole}\)
+            \item \(\adif H^{\circ}_{\text{vap}} (\ch{H2O}) = 40.7 \,\unit{\kilo\joule\per\mole}\)
+            \item \(C_P (\ch{H2O}) = 4.2\,\unit{\joule\per\kelvin\per\gram}\)
+        \end{multicols}
+    \end{itemize}
+
+    % M O = 15.9994
+    % M H = 1.00794
+    % M H2O = 18.01528 = 15.9994 + 2*1.00794
+
+    \sisetup{
+        % scientific-notation = engineering,  % scientific/engineering/fixed/false
+        % output-exponent-marker = {\,\mathrm{E}},
+        % round-precision     = 2,
+        % round-mode          = places,       % figures/places/none
+        % exponent-to-prefix  = false,        % 1000 g -> 1 kg
+        % round-minimum       = 0.01,
+        % fixed-exponent      = 0,
+        per-mode = fraction
+    }
+
+    \begin{flalign*}
+        &
+            \adif H
+        =   0
+        =   \left(
+            \begin{array}{ll}
+                  &   \adif H_{20\,\unit{\gram},sld \to liq}
+            \,+\\+&   \adif H_{20\,\unit{\gram},liq, (0\to100)\,\unit{\celsius}}
+            \,+\\+&   \adif H_{20\,\unit{\gram},liq\to vap}
+            \,+\\+&   \adif H_{40\,\unit{\gram},vap\to liq}
+            \,+\\+&   \adif H_{40\,\unit{\gram},liq, (100\to t)\,\unit{\celsius}}
+            \end{array}
+            \right)
+        = &\\&
+        =   20\,\unit{\gram\of{\ch{H2O}}}
+        \,  \left(
+                \frac{\unit{\mole\of{\ch{H2O}}}}{\qty{18.01528}{\gram\of{\ch{H2O}}}}
+                \left(
+                    \frac{6.01\,\unit{\kilo\joule}}{\unit{\mole\of{\ch{H2O}}}}
+                +   \frac{40.7\,\unit{\kilo\joule}}{\unit{\mole\of{\ch{H2O}}}}
+                \right)
+        %     \right.
+        % &\\&
+        %     \left.
+            +   \frac{4.2\,\unit{\joule}}{\unit{\kelvin\kilo\gram\of{\ch{H2O}}}}
+            \,  (100-0)\,\unit{\kelvin}
+            \right)
+        \,+ &\\&
+        +   40\,\unit{\gram\of{\ch{H2O}}}
+        \,  \left(
+                \frac{\unit{\mole\of{\ch{H2O}}}}{\qty{18.01528}{\gram\of{\ch{H2O}}}}
+            \,  \left(
+                    \frac{-40.7\,\unit{\kilo\joule}}{\unit{\mole\of{\ch{H2O}}}}
+                \right)
+            +   \frac{4.2\,\unit{\joule}}{\unit{\kelvin\gram\of{\ch{H2O}}}}
+            \,  (t-100)\,\unit{\kelvin}
+            \right)
+        \implies &\\&
+        \implies 
+            t\,\unit{\celsius}
+        =   \left(
+            -   20
+            \,  \left(
+                    \frac
+                        {
+                            6.01\,\text{k}
+                        +   40.7\,\text{k}
+                        }
+                        {\num{18.01528}}
+                +   (100+273)*4.2/\text{k}
+                \right)
+            \right.
+        \,+ &\\&
+            \left.
+            +   40
+            \,  \left(
+                    \frac{40.7\,\text{k}}{\num{18.01528}}
+                +   (100+273)*4.2/\text{k}
+                \right)
+            \right)
+            (
+                4.2
+            *   40
+            )^{-1}
+        \,  \unit{\celsius}
+        -   273\,\unit{\celsius}
+        \cong &\\&
+        % \cong
+        %     \qty{}{\celsius}
+        &
+    \end{flalign*}
+
+\end{questionBox}
+
+\begin{questionBox}1{}
+    
+    Uma peça de ferro com 150\,\unit{\gram} foi aquecida até 500\,\unit{\celsius} é introduzida rapidamente num recipiente isolado com 25\,\unit{\gram} de gelo a -25\,\unit{\celsius} o qual foi imediatamente selado.
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(C_P(\ch{Fe}) = 25.1\,\unit{\joule\per\kelvin\per\mole}\)
+            \item \(M  (\ch{Fe}) = 55.85\,\unit{\gram\per\mole}\)
+            \item \(\adif H^{\circ}_{\text{fus}} (\ch{H2O}) =  6.0\,\unit{\kilo\joule\per\mole}\)
+            \item \(\adif H^{\circ}_{\text{vap}} (\ch{H2O}) = 40.7\,\unit{\kilo\joule\per\mole}\)
+            \item \(C_P(\ch{H2O\sld}) = 1.94\,\unit{\joule\per\kelvin\per\gram}\)
+            \item \(C_P(\ch{H2O\lqd}) = 4.18\,\unit{\joule\per\kelvin\per\gram}\)
+            \item \(C_P(\ch{H2O\gas}) = 2.01\,\unit{\joule\per\kelvin\per\gram}\)
+        \end{multicols}
+    \end{itemize}
+
+    % \begin{flalign*}
+    %     &
+    %         \begin{array}{@{\bullet\enspace} l @{\quad\bullet\enspace} l @{}}
+    %             C_P(\ch{Fe}) = 25.1\,\unit{\joule\per{\kelvin\mole}}
+    %         &   C_P(\ch{H2O\sld}) = 1.94\,\unit{\joule\per{\kelvin\gram}}
+    %         \\  M  (\ch{Fe}) = 55.85\,\unit{\gram\per\mole}
+    %         &   C_P(\ch{H2O\lqd}) = 4.18\,\unit{\joule\per{\kelvin\gram}}
+    %         \\  \adif H^{\circ}_{\text{fus}} (\ch{H2O}) =  6.0\,\unit{\kilo\joule\per\mole}
+    %         &   C_P(\ch{H2O\gas}) = 2.01\,\unit{\joule\per{\kelvin\gram}}
+    %         \\  \adif H^{\circ}_{\text{vap}} (\ch{H2O}) = 40.7\,\unit{\kilo\joule\per\mole}
+    %         \end{array}
+    %     &
+    % \end{flalign*}
+
+\end{questionBox}
+\begin{questionBox}{}
+
+    \begin{questionBox}2m{}
+        
+        Admitindo que não há percas de energia para o exterior, qual a temperatura final do sistema?
+        
+
+        \begin{flalign*}
+            &
+                \adif H
+            =   0
+            =   \left(
+                    \begin{array}{ll}
+                            &   \adif H_{\ch{H2O},sld       ,(-25\to  0)\unit{\celsius}}
+                    \,+\\+\,&   \adif H_{\ch{H2O},sld\to lqd,0\,        \unit{\celsius}}
+                    \,+\\+\,&   \adif H_{\ch{H2O},lqd       ,(  0\to100)\unit{\celsius}}
+                    \,+\\+\,&   \adif H_{\ch{H2O},lqd\to gas,100\,      \unit{\celsius}}
+                    % \,+\\+\,&   \adif H_{\ch{H2O},gas       ,(  0\to  t)\unit{\celsius}}
+                    \,+\\+\,&   \adif H_{\ch{Fe}            ,(500\to100)\unit{\celsius}}
+                    \end{array}
+                \right)
+            = &\\&
+            =   25\,\unit{\gram\of{\ch{H2O}}}
+            \,  \left(
+                    \begin{array}{ll}
+                            &    
+                                \frac{1.94\,\unit{\joule}}{\unit{\kelvin\gram\of{\ch{H2O}}}}
+                            \,  (0-(-25))\,\unit{\kelvin}
+                    \,+\\+\,&   
+                                \frac{4.18\,\unit{\joule}}{\unit{\kelvin\gram\of{\ch{H2O}}}}
+                            \,  (100-0)\,\unit{\kelvin}
+                    % \,+\\+\,&   
+                    %             \frac{2.02\,\unit{\joule}}{\unit{\kelvin\gram\of{\ch{H2O}}}}
+                    %         \,  ((t+273)-(100+273))\,\unit{\kelvin}
+                    \,+\\+\,&   
+                                \frac{\unit{\mole\of{\ch{H2O}}}}{\qty{18.01528}{\gram\of{\ch{H2O}}}}
+                            \,  \frac{ 6.0\,\unit{\kilo\joule}}{\unit{\mole\of{\ch{H2O}}}}
+                    \end{array}
+                \right)
+            +   m\,\unit{\gram\of{\ch{H2O}}}
+            \,  \frac{\unit{\mole\of{\ch{H2O}}}}{\qty{18.01528}{\gram\of{\ch{H2O}}}}
+            \,  \frac{40.7\,\unit{\kilo\joule}}{\unit{\mole\of{\ch{H2O}}}}
+            \,+ &\\&
+            +   150\,\unit{\gram\of{\ch{Fe}}}
+            \,  \frac{\unit{\mole\of{\ch{Fe}}}}{55.85\,\unit{\gram\of{\ch{Fe}}}}
+            \,  \frac{25.1\,\unit{\joule}}{\unit{\kelvin\mole\of{\ch{Fe}}}}
+            \,  (100-500)\,\unit{\kelvin}
+            \implies &\\&
+            \implies
+                x
+            =   
+                \left(
+                    \begin{array}{ll}
+                    -\,&
+                        25
+                        \,  \left(
+                                \begin{array}{ll}
+                                        &   1.94*25
+                                \,+\\+\,&   4.18*100
+                                \,+\\-\,&   2.02\,(100+273)
+                                \,+\\+\,&   \frac{6.0\,\text{h}+40.7\,\text{h}}{\num{18.01528}}
+                                \end{array}
+                            \right)
+                        % \,+ &\\&
+                    \,+\\+\,&
+                        \frac{150*25.1\,(500+273)}{55.85}
+                    \end{array}
+                \right)
+            &\\&
+                \left(
+                    \begin{array}{ll}
+                                &   2.02*25
+                        \,+\\+\,&   \frac{25.1*150}{55.85}
+                    \end{array}
+                \right)^{-1}
+            \,  \unit{\celsius}
+            -   273\,\unit{\celsius}
+            \cong &\\&
+            \cong 
+                \qty{}{\celsius}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}2{}
+        
+        No equílibrio, em que fases estará presente a água?
+
+        \paragraph{Rs:} Liquido e gás a 100\,\unit{\celsius}
+        
+    \end{questionBox}
+    
+\end{questionBox}

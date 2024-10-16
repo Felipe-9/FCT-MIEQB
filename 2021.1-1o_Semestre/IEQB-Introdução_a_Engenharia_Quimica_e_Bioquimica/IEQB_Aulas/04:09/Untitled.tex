@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+
+% Linguagem
+%\usepackage[portuguese]{babel}
+
+% Clickable Table of contents
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+%\usepackage{tocloft}
+%\setlength{\cftsubsecnumwidth}{3em} % Fix subsection width
+% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\usepackage{tikz}		% Vector diagrams
+%\usetikzlibrary{calc}  % Vector calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+\usepackage{chemfig} 		% Estruturas quimicas
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\pagecolor{DarkBlue!110!}
+\color{DarkGreen!20!}
+
+
+%\definecolor{Red}  {hsb}{0  ,.6,1}
+%\definecolor{Blue} {hsb}{0.6,.6,1}
+%\definecolor{Green}{hsb}{0.3,.6,1}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Resolução de listas
+%\renewcommand\thesection{Questão \arabic{section} }
+%\renewcommand\thesubsection{\arabic{section}-\alph{subsection}) }
+
+\begin{document}
+
+\title{IEQB - Recicladores e novos modelos de diagrama}
+\author{Felipe Pinto - 61387}
+\date{09/04 - 2021.1}
+
+\maketitle
+\tableofcontents
+\break
+
+\setcounter{section}{3}
+\setcounter{subsection}{6}
+
+\subsection{}
+\begin{itemize}
+\begin{multicols}{3}
+
+\item $ m_{	  1i1}	= 4500Kg/h $
+\item	$ A_{1i1} 		= 0.33 $
+\item $ H2O_{ 1i1} 	= 0.67 $
+
+\item $ A_{1i2} 		= 0.3636 $
+\item $ H2O_{ 1i2} 	= 0.6364 $
+
+\item $ A_{1o1} 		= 0.494 $ 
+\item $ H2O_{ 1o1}	= 0.506 $
+
+\item $ A_{1o2} 		= 0 		$
+\item $ H2O_{ 1o2} 	= 1 		$
+
+\item $ A_{2i} 		= A_{1o1} $
+\item $ H2O_{ 2i} 	= H2O_{ 1o1} $
+
+\item $ A_{2o1} 	= 0.95 $
+\item $ H2O_{2o1}	= 0.05 $
+
+\item $ A_{2o2} 	= A_{1i2} $
+\item $ H2O_{2o2} = H2O_{1i2} $
+
+\end{multicols}
+\end{itemize}
+
+\begin{flalign*}
+&
+	\sum x_i - \sum x_o 
+	= 
+		(A_{1i1}+ H2O_{1i1})\,m_{1i1}
+	-  (A_{1o1}+ H2O_{1o1})\,m_{1o1}
+	-	(A_{2o1}+ H2O_{2o1})\,m_{2o1}
+&\\&
+	\cdots
+&
+\end{flalign*}
+
+\subsection{}
+% Indices
+\paragraph{indices}
+\begin{itemize}
+\begin{multicols}{4}
+
+\item 1 = i1
+\item 2 = o1
+\item 4 = o2
+\item 3 = o2.1
+\item 5 = i2
+\item 6 = i2.1
+\item 7 = i2.2 
+
+\end{multicols}
+\end{itemize}
+% Dados
+\paragraph{Dados}
+\begin{itemize}
+\begin{multicols}{3}
+
+\item $S_{i1}	= 0.15$
+\item $H2O_{i1}= 0.85$
+
+\item $S_{o1}	= 0.93$
+\item $H2O_{o1}= 0.07$
+
+\item $H2O_{i2}= 0.01$
+\item $Ar_{i2}	= 0.99$
+
+\item $H2O_{i2.1} = 0.0909$
+\item $Ar_{ i2.1} = 0.9091$
+
+\item $H2O_{i2.2}= H2O_{o2.1}$
+\item $Ar_{ i2.2} = Ar_{o2.1}$
+
+\item $H2O_{o2} = 0.0909$
+\item $Ar_{ o2} = 0.9091$
+
+\item $H2O_{o2.1} = H2O_{o2}$
+\item $Ar_{ o2.1} = Ar_{o2}$
+
+\item $H2O_{o2.2} = H2O_{o2}$
+\item $Ar_{ o2.2} = Ar_{o2}$
+
+\end{multicols}
+\end{itemize}
+% Resolução
+\begin{flalign*}
+&
+	\sum m_i - \sum m_o
+	=
+		m_{i1} + m_{i2} - m_{o1} - m_{o2}
+&\\&
+	\sum H2O_{i}\,m_i - \sum H2O_{o}\,m_o
+	=
+		H2O_{i1}\,m_{o1} + H2O_{i2}\,m_{i2}
+	+ &\\& - 
+		H2O_{o1}\,m_{o1} - H2O_{o2}\,m_{o2} 
+&\\& 
+	\cdots
+&
+\end{flalign*}
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+

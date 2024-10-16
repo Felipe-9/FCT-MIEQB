@@ -1,0 +1,1164 @@
+% !TEX root = ./TEQB-Exercicios_Resolvidos.1.tex
+\providecommand\mainfilename{"./TEQB-Exercicios_Resolvidos.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB-Exercicios_Resolvidos.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+% \renewcommand\thequestion{Questão \arabic{part}\,--\,\arabic{question}}
+\renewcommand\thesubquestion{\thequestion\ \alph{subquestion})}
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/TEQB-Exercicios_Resolvidos.1}}}
+
+\mymakesubfile{1}
+[TEQB]
+{Exercicios}
+{Exercicios}
+
+\sisetup{round-precision=3}
+
+
+\begin{questionBox}1{} % Q1
+    
+    1\,\unit{\mole} de um gás perfeito, inicialmente a 25\,\unit{\celsius} e 1\,\unit{\bar}, sofre uma expansão. No estado final, \(T = 25\,\unit{\celsius}\) e \(P = 0.5\,\unit{\bar}\).
+
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q1.1
+    
+    Calcule o trabalho de expansão posto em jogo quando o processo se dá seguindo dois percursos diferentes:
+    
+
+    \begin{questionBox}3{} % Q1.1 (i)
+
+        Processo reversível a T constante
+
+        \begin{flalign*}
+            &
+                w_{(1\to0.5)\unit{\bar}}
+                = w_{(1\to0.5)\E5\unit{\pascal}}
+                = -\int_{Vol_1}^{Vol_2}{
+                    p_{ext}\,\odif{vol}
+                }
+                = -\int_{Vol_1}^{Vol_2}{
+                    p\,\odif{vol}
+                }
+                = &\\&
+                = -\int_{Vol_1}^{Vol_2}{
+                    \left(
+                        \frac{n\,R\,T}{vol}
+                    \right)
+                    \,\odif{vol}
+                }
+                % = &\\&
+                = -n\,R\,T
+                \int_{Vol_1}^{Vol_2}{
+                    \frac{\odif{Vol}}{Vol}
+                }
+                = -n\,R\,T\,\ln\frac{Vol_2}{Vol_1}
+                &\\&
+                = -n\,R\,T\,\ln\frac{
+                    n\,R\,T/p_2
+                }{
+                    n\,R\,T/p_1
+                }
+                = &\\&
+                = -n\,R\,T\,\ln\frac{p_1}{p_2}
+                \cong -(1)*(\num{8.314462618})*(25+273.15)*\ln\frac{1\E5}{0.5\E5}
+                \cong -\num{1.718282075766483616e3}
+            &
+        \end{flalign*}
+
+    \end{questionBox}
+
+    \begin{questionBox}3{} % Q1.1 (ii)
+        
+        processo irreversível, mediante alívio súbito da pressão exterior para 0.5\,\unit{\bar}, seguida de expansão do gás contra essa pressão.
+
+        \begin{flalign*}
+            &
+                w_{(1\to0.5)\unit{\bar}}
+                = w_{(1\to0.5)\E5\unit{\pascal}}
+                = - \int p_{ext}\odif{V}
+                = - p_{ext}\int\odif{V}
+                = - p_2\,\adif{V}
+                = &\\&
+                = - p_2\,(Vol_2-Vol_1)
+                % = &\\&
+                = - p_2
+                \,\left(
+                    \left(\frac{n\,R\,T}{p_2}\right)
+                    -\left(\frac{n\,R\,T}{p_1}\right)
+                \right)
+                = &\\&
+                = - n\,R\,T
+                \,\left(
+                    1
+                    -\frac{p_2}{p_1}
+                \right)
+                % \cong &\\&
+                \cong - (1)\,(\num{8.314462618})\,(25+273.15)
+                \,\left(
+                    1
+                    -\frac{0.5\E5}{1\E5}
+                \right)
+                \cong &\\&
+                \cong \num{-1.23947851477835e3}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q1.2
+    
+    Represente ambas as transformações num diagrama \(P\times V\).
+    
+
+    \begin{flalign*}
+        &
+            Vol_i
+            = \frac{n\,R\,T}{p_i}
+            = \frac{(1)\,(\num{8.314462618})\,(25+273.15)}{p_i}
+            \cong 
+            \frac{\num{2478.9570295567}}{p_i}
+            \implies &\\&
+            \implies
+            \begin{cases}
+                \begin{aligned}
+                    Vol_1 &\cong \num{2478.9570295567}/1\E5 = \num{2.4789570295567e-2}
+                    \\
+                    Vol_2 &\cong \num{2478.9570295567}/0.5\E5 \cong \num{4.9579140591134e-2}
+                \end{aligned}
+            \end{cases}
+        &
+    \end{flalign*}
+
+    \begin{center}
+        \includegraphics[width=.8\textwidth]{./.build/figures/IMG_7940.png}
+    \end{center}
+    
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q1.3
+
+    Calcule \(\adif{U}\) e \textit{Q} para as alineas a.i e a.ii.
+    
+    \begin{questionBox}3{} % Q1.3 (i)
+        
+        \(\adif{U}\) de um gás perfeito depende apenas da temperatura 
+        \begin{flalign*}
+            &
+                \adif{U}_{(i)}
+                = \adif{U}_{(ii)}
+                = 0
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{} % Q1.3 (ii)
+        
+        \begin{flalign*}
+            &
+                Q = \adif{U}-W = -W
+                \implies
+                \begin{cases}
+                    \begin{aligned}
+                        Q_{(i)}  & = \num{1.718282075766483616e3}
+                        \\
+                        Q_{(ii)} & = \num{1.23947851477835e3}
+                    \end{aligned}
+                \end{cases}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{definitionBox}1{} % D1
+    
+    \begin{BM}
+        Q
+        = \int_{T_1}^{T_2}{n\,C_{Vol}\,\adif{T}}
+    \end{BM}
+
+    \begin{itemize}
+        \item Gás perfeito
+        \item Independe da variação (ou não?) do volume
+    \end{itemize}
+    
+\end{definitionBox}
+
+\begin{questionBox}2m{} % Q1.4
+    
+    Deduza as expressões para \(\adif{U}\) e \(\adif{H}\) associados a cada um dos passos do percurso a.II
+
+    \begin{questionBox}3{} % Q1.4 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{U}_{
+                    (1\to0.5)\unit{\bar},
+                    Vol_1\to Vol_2
+                } = 0 \text{ (Temperatura constante)}
+                &\\[1.5ex]&
+                \adif{U}_{(1\to0.5)\unit{\bar},Vol_1}
+                = Q + W
+                = Q_v - \int P_{ext}\,\odif{v}
+                = Q_v - (0)
+                = \int_{T_1}^{T_2}{
+                    n\,C_v\,\odif{T}
+                }
+                = &\\&
+                = n\,C_v\,\adif{T}\big\rvert_{T_1}^{T_2}
+                = n\,C_v\,(T_2-T_1)
+                = n\,C_v\,\left(
+                    \frac{P_2\,V_1}{n\,R}
+                    -T_1
+                \right)
+                = C_v\,\left(
+                    \frac{P_2\,V_1}{R}
+                    -n\,T_1
+                \right)
+                &\\[1.5ex]&
+                \adif{U}_{0.5\unit{\bar},(Vol_1\to Vol_2)}
+                = \adif{U}_{
+                    (1\to0.5)\unit{\bar},
+                    Vol_1\to Vol_2
+                }
+                - \adif{U}_{(1\to0.5)\unit{\bar},Vol_1}
+                = &\\&
+                = 0 
+                - C_v\,\left(
+                    \frac{P_2\,V_1}{R}
+                    -n\,T_1
+                \right)
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{} % Q1.4 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{H}
+                = \int_{T_1}^{T_2}{
+                    n\,C_p\,\odif{T}
+                }
+                \implies 
+                &\\[1.5ex]&
+                \implies
+                \adif{H}_{
+                    (1\to0.5)\unit{\bar},
+                    (Vol_1\to Vol_2)
+                } = 0 \text{ (Temperatura constante)}
+                &\\[1.5ex]&
+                \implies
+                \adif{H}_{(1\to 0.5)\unit{\bar}}
+                = \int_{T_1}^{T_2}{
+                    n\,C_p\,\odif{T}
+                }
+                = n\,C_p\,\adif{T}\big\rvert_{T_1}^{T_2}
+                = n\,C_p\,\left(
+                    \frac{P_2\,V_1}{n\,R} - T_1
+                \right)
+                = &\\&
+                = C_p\,\left(
+                    \frac{P_2\,V_1}{R} - n\,T_1
+                \right)
+                &\\[1.5ex]&
+                \implies
+                \adif{H}_{
+                    0.5\,\unit{\bar},
+                    (Vol_1\to Vol_2)
+                }
+                = \int_{T_1}^{T_2}{
+                    n\,C_p\,\odif{T}
+                }
+                = C_p\,\left(
+                    n\,T_1 - \frac{P_2\,V_1}{R}
+                \right)
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \paragraph{Nota:} Apenas para gases perfeitos (\(C_V \text{ e } C_p\) constantes)
+    
+\end{questionBox}
+
+
+\begin{questionBox}1m{} % Q2
+    
+    Um \unit{\mole} de um gás perfeito, inicialmente à pressão de 8\,\unit{\bar} e à temperatura de 140\,\unit{\celsius}, é expandido adiabaticamente contra a atmosfera, até se estabelecer o equilíbrio de pressões. Tome \(C_v = 5/2\,R\) para o gás e calcule \(\Delta U\) e \(\Delta H\) para a tranformação.
+
+    \paragraph*{Adiabático:} Sem troca de calor, Não ha variação de entropia, processo termodinâmico reversível
+
+    \begin{questionBox}3{\(\adif{U}\)} % Q2 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{U}_{
+                    (8\to 1)\,\unit{\bar}
+                }
+                = &\\[1.5ex]&
+                = \int_{T_1}^{T_2}{
+                    n\,C_V\,\odif{T}
+                }
+                = n\,C_V\,\int_{T_1}^{T_2}{
+                    \odif{T}
+                }
+                = n\,C_V\,\adif{T}\big\rvert_{T_1}^{T_2}
+                = n\,C_V\,\left(
+                    T_2-T_1
+                \right)
+                = &\\[1.5ex]&
+                = Q+W
+                = W
+                = -\int_{Vol_1}^{Vol_2}{
+                    P_{ext}\,\odif{Vol}
+                }
+                = -P_{ext}
+                \,\int_{Vol_1}^{Vol_2}{
+                    \odif{Vol}
+                }
+                = &\\&
+                = -P_2\,\adif{Vol}\big\rvert_{Vol_1}^{Vol_2}
+                = -P_2\,\left(
+                    Vol_2-Vol_1
+                \right)
+                = P_2\,\left(
+                    Vol_1-Vol_2
+                \right)
+                = &\\&
+                = P_2\,\left(
+                    \frac{n\,R\,T_1}{P_1}-\frac{n\,R\,T_2}{P_2}
+                \right)
+                % = &\\&
+                = n\,R\,\left(
+                    T_1\frac{P_2}{P_1}-T_2
+                \right)
+                \implies &\\[1.5ex]&
+                \implies
+                \adif{U}_{(8\to1)\unit{\bar}}
+                = n\,R\,\left(
+                    T_1\frac{P_2}{P_1}
+                    -\left(
+                        \frac{
+                            \adif{U}_{(8\to1)\unit{\bar}}
+                        }{n\,(R\,5/2)}
+                        +T_1
+                    \right)
+                \right)
+                \implies &\\&
+                \implies
+                \adif{U}_{(8\to1)\unit{\bar}}
+                = \frac{5}{7}
+                R\,n\,T_1\left(
+                    \frac{P_2}{P_1}
+                    -1
+                \right)
+                \cong &\\&
+                \cong 
+                \frac{5}{7}
+                (\num{8.314462618})\,(1)\,(140+273.15)
+                \,\left(
+                    \frac{1.01\E5}{8\E5}
+                    -1
+                \right)
+                \cong
+                \num{-2143.883072507199375}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\adif{H}\)} % Q2 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{H}_{(8\to 1)\,\unit{\bar}}
+                = \int_{T_1}^{T_2}{
+                    n\,C_p\,\odif{T}
+                }
+                = n\,C_p\,\int_{T_1}^{T_2}{
+                    \odif{T}
+                }
+                = n\,(C_V+R)\,\adif{T}\big\rvert_{T_1}^{T_2}
+                = &\\&
+                = n\,(C_V+R)\,(T_2-T_1)
+                = n\,((R\,5/2)+R)\,\left(
+                    \left(
+                        \frac{
+                            \adif{U}_{(8\to1)\unit{\bar}}
+                        }{
+                            n\,(R\,5/2)
+                        }
+                        + T_1
+                    \right)
+                    -T_1
+                \right)
+                = &\\&
+                = n\,R\,\frac{7}{2}\,\left(
+                    \frac{
+                        \adif{U}_{(8\to1)\unit{\bar}}
+                    }{
+                        n\,(R\,5/2)
+                    }
+                \right)
+                = \adif{U}_{(8\to1)\unit{\bar}}
+                \,\frac{7}{5}
+                \cong &\\&
+                \cong 
+                (\num{-2143.883072507199375})
+                \,\frac{7}{5}
+                \num{8.314462618}
+                \cong
+                \num{-3.001436301510079125e3}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+
+\begin{questionBox}1{} % Q3
+    
+    Um \unit{\mol} de um gás perfeito, inicialmente à pressão de 8\,\unit{\bar} e à temperatura de 140\,\unit{\celsius}, é expandido a
+    diabaticamente até à pressão de 1\,\unit{\bar}. Tome \(C_V = 5/2\,R\) para o gás e calcule \(\Delta U\) e \(\Delta H\) para a transformação.
+    
+    \paragraph*{Nota:} Para verificarmos qual caminho será percorrido podemos usar a seguinte equação
+    \begin{BM}
+        \adif{(P\,Vol^\gamma)}=0
+        \qquad
+        \gamma = C_p/C_v
+    \end{BM}
+
+    \begin{questionBox}3{\(\adif{U}\)} % Q3 (i)
+        
+        \begin{flalign*}
+            &
+                \adif{U}
+                = n\,R\,\frac{5}{2}\,(T_2-T_1)
+                = n\,R\,\frac{5}{2}\,\left(
+                    \frac{P_2\,V_2}{n\,R}
+                    -T_1
+                \right)
+                = &\\&
+                = n\,R\,\frac{5}{2}\,\left(
+                    \frac{
+                        P_2\,\left(
+                            V_1\,\sqrt[\gamma]{P_1/P_2}
+                        \right)
+                    }{
+                        n\,R
+                    }
+                    -T_1
+                \right)
+                = &\\&
+                = n\,R\,\frac{5}{2}\,\left(
+                    \frac
+                    {
+                        P_2\,(n\,R\,T_1/P_1)\,(P_1/P_2)^{5/7}
+                    }
+                    {
+                        n\,R
+                    }
+                    -T_1
+                \right)
+                = n\,R\,\frac{5}{2}\,T_1\,\left(
+                    (P_2/P_1)^{2/7}
+                    -1
+                \right)
+                = &\\&
+                = (1)\,(\num{8.314462618})\,\frac{5}{2}\,(140+273.15)
+                \,\left(
+                    (1\E5/8\E5)^{2/7}
+                    -1
+                \right)
+                \cong
+                \num{-3846.950295512115899}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{\(\adif{H}\)} % Q3 (ii)
+        
+        \begin{flalign*}
+            &
+                \adif{H}
+                = n\,R\,\frac{7}{2}\,(T_2-T_1)
+                = n\,R\,\frac{7}{2}\,\left(
+                    T_1(P_2/P_1)^{2/7}
+                    -T_1
+                \right)
+                = &\\&
+                = n\,R\,\frac{7}{2}\,T_1\left(
+                    (P_2/P_1)^{2/7}
+                    -1
+                \right)
+                = &\\&
+                = (1)\,(\num{8.314462618})\,\frac{7}{2}\,(140+273.15)
+                \,\left(
+                    (1\E5/8\E5)^{2/7}
+                    -1
+                \right)
+                \cong
+                \num{-5385.730413716962259}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+
+\begin{questionBox}1{} % Q4
+    
+    Exalar ar durante o processo de respiração envolve empurrar o ar contra a pressão atmosférica. Um adulto médio exala cerca de 0.5\,\unit{\deci\meter^3} de ar quando expira. Imagine que o ar exalado é admitido num cilindro fechado com um êmbolo, e desloca o êmbolo de 0.5\,\unit{\deci\meter^3} contra a atmosfera.
+
+\end{questionBox}
+
+\begin{questionBox}2{} % Q4.1
+    
+    Calcule o trabalho associado ao processo.
+
+    \begin{flalign*}
+        &
+            w
+            = -\int P_{ext}\,\odif{V}
+            = -P_{ext}\,\adif{V}
+            \cong 
+            -1.01\E{5}\,\unit{\pascal} 
+            * 0.5\E{-3}\,\unit{\meter^3}
+            = -50.5\,\unit{\joule}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q4.2
+    
+    Se um trabalho equivalente fosse utilizado para elevar um garrafão de água de 7\,\unit{\liter}, a que altura seria possível elevar o garrafão?
+
+    \begin{flalign*}
+        &
+            w 
+            = \int \vec F \cdot \vec{\odif{d}}
+            = m\,g\,\adif{H}
+            \implies
+            \adif{H} = \frac{
+                50.5
+            }{
+                7*\num{9.80665}
+            }
+            \cong
+            \num{0.73565241079122}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{sectionBox}1{} % S1
+    
+    Em processos espontaneos:
+    \begin{BM}
+        \Delta S_{tot} > 0
+    \end{BM}
+    Critério de espontanedade.
+
+    \begin{BM}
+        \odif{q_{rev}} > \odif{q_{irrev}}
+    \end{BM}
+
+    Desigualdade de Clausius
+    \begin{BM}[align*]
+        T\,\odif{S}&>\odif{q_{irrev}}
+        \\ 
+        T\,\odif{S}&\geq\odif{q}
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{definitionBox}1{Energia de Helmholtz} % D1
+    
+    \begin{BM}
+        A\equiv U-T\,S
+    \end{BM}
+    
+\end{definitionBox}
+
+\begin{sectionBox}1{} % S2
+    
+    \begin{BM}
+        \odif{A}\leq\odif{w}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            A\equiv U-T\,S
+            \implies
+            % &\\[1.5ex]&
+            \odif{A} 
+            = \odif{U}
+            - T\,\odif{S}
+            - S\,\odif{T}
+            = \odif{q}
+            + \odif{w}
+            - T\,\odif{S}
+            - S\,\odif{T}
+            \implies &\\&
+            \implies
+            \odif{q}
+            = \odif{A}
+            - \odif{w}
+            - T\,\odif{S}
+            \leq
+            T\,\odif{S}
+            % \implies &\\&
+            \implies
+            \odif{A}\leq\odif{w}
+        &
+    \end{flalign*}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{} % S3
+    
+    \begin{BM}
+        \odif{G}\leq\odif{w_{adia}}
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            G
+            = H-T\,S
+            \implies
+            \odif{G}
+            = \odif{H}
+            - \odif{T\,S}
+            = \odif{U}
+            + \odif{P\,V}
+            - T\,\odif{S}
+            - S\,\odif{T}
+            = &\\&
+            = \odif{q}
+            + \odif{w}
+            + P\,\odif{V}
+            + V\,\odif{P}
+            - T\,\odif{S}
+            - S\,\odif{T}
+            = &\\&
+            = \odif{q}
+            + \odif{w}
+            + P\,\odif{V}
+            + V\,\odif{P}
+            - T\,\odif{S}
+            &\\&
+            w
+            = w_{adia}
+            + w_{exp}
+            = w_{adia}
+            - \int P_{ext}\odif{V}
+            \implies
+            \odif{w}
+            = \odif{w_{adia}}
+            - p\,\odif{V}
+            \implies &\\&
+            \implies
+            \odif{G}
+            = \odif{q}
+            + \odif{w_{adia}}
+            - p\,\odif{V}
+            + P\,\odif{V}
+            + V\,\odif{P}
+            - T\,\odif{S}
+            = \odif{q}
+            + \odif{w_{adia}}
+            - T\,\odif{S}
+            \implies &\\&
+            \implies
+            \odif{q} 
+            = \odif{G} 
+            - \odif{w_{adia}}
+            + T\,\odif{S}
+            \leq T\,\odif{S}
+            \implies
+            \odif{G}\leq \odif{w_{adia}}
+        &
+    \end{flalign*}
+
+    \paragraph*{Conclusão}
+    \(\adif{G}\equiv f()\) energia livre, do que?
+    Do \textit{w} de expansão que muitas vezes não é relevante
+
+    \(\adif{G}\) nos dá o \textit{w} maximo exceto o trabalho de expanão associado ao processo a \textit{T} e \textit{P} constantes do sistema fechado.
+
+    \begin{sectionBox}2{}
+        
+        Se so for possível trabalho expansivo \(\odif{w_{adia}}=0\implies\odif{G}\leq 0\)
+        Em sistema fechado a \textit{T} e \textit{P} constantes, com apenas trabalho expansivo possível o processo evoluem espontanea no sentido de minimisar \textit{G}. no equilíbrio: \textit{G} é constante
+        
+    \end{sectionBox}
+    
+\end{sectionBox}
+
+
+\begin{questionBox}1{} % Q5
+    
+    Um recipiente de 0.5\,\unit{\metre^3} contém 2\,\unit{\mole} de um gás perfeito a 300\,\unit{\kelvin}. Imagine que o gás sofre uma expanção até ocupar um volume total de 5.0\,\unit{\metre^3}.
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q5.1
+    
+    Calcule \(\Delta U, Q, W, \Delta S\) e \(\Delta S_{tot}\) envolvidos ba expanção, na situação em que a mesma é realizada reversivelmente a T envolvidos na expanção, na situação em que a mesma é realizada reversivelmente a T constante.
+
+    \begin{flalign*}
+        &
+            \Delta U = Q + W = 0
+            \implies Q = -W
+            = \int P_{Ext}\,\odif{v}
+            = \int P\,\odif{v}
+            = \int \frac{n\,R\,T}{V}\,\odif{v}
+            = &\\&
+            = n\,R\,T\int \frac{\odif{V}}{V}
+            = n\,R\,T\,\ln\frac{V_2}{V_1}
+            = 2*8.314*300*\ln\frac{5}{0.5}
+            \,\unit{\joule}
+            \cong -\qty{11486.21547789149749}{\joule}
+        &
+    \end{flalign*}
+
+    \begin{questionBox}3{Entropia (\(\Delta S\))} % Q5.1 (i)
+        
+        \begin{flalign*}
+            &
+                \Delta S 
+                = \int \odif{S}
+                = \int \frac{\odif{q}_{rev}}{T}
+                = T^{-1}\int \odif{q}
+                = \frac{Q}{T}
+                \cong 
+                \frac{
+                    \qty{11486.21547789149749}{\joule}
+                }{
+                    300\,\unit{\kelvin}
+                }
+                \cong
+                \qty{38.287384926304992}{\joule\per\kelvin}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q5.2
+    
+    Calcule os valores de \(\Delta U, Q, W, \Delta S\) e \(\Delta S_{total}\) quando o gás vai do mesmo estado inicial ao mesmo estado final irreversivelmente, da forma lustrada na figura nesse caso o gás expande por remoção súbita de uma parede móvel que o separa de um recipiente de 4.5\,\unit{\metre^3} sob vácuo
+
+    \begin{questionBox}3{Energia intérna} % Q5.2 (i)
+        
+        \begin{BM}
+            \Delta U = 0
+        \end{BM}
+
+        \paragraph{Nota:} Etado incial = a final, por manter mesma temperatura não varia a energia interna
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Trabalho e Calor} % Q5.2 (ii)
+        
+        \begin{BM}
+            Q = -W = \int P_{ext}\,\odif{V} = 0
+        \end{BM}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{Entalpia \(\Delta S\)} % Q5.2 (iii)
+
+        A variação de entalpia é igual ao valor anterior.
+        
+        sistema começa e acaba no mesmo estado \textit{a}
+
+        \begin{flalign*}
+            &
+                \Delta S \cong \qty{38.287384926304992}{\joule\per\kelvin}\,\unit{\joule\per\kelvin}
+                &\\&
+                \Delta S_{viz} = 0
+                &\\&
+                \Delta S_{tot} 
+                = \Delta S + \Delta S_{viz}
+                \cong \qty{38.287384926304992}{\joule\per\kelvin}\,\unit{\joule\per\kelvin}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q6
+    
+    Considere que submete 1\,\unit{\mole} de um gás perfeito (\(C_v = 5/2\,R\)) ao processor reversível esquematizado.
+
+    \begin{enumerate}
+        \begin{multicols}{4}
+            \item 57\,\unit{\celsius}
+            \item 11.5\,\unit{\deci\meter^3}
+            \item 17.0\,\unit{\celsius}
+            \item 1.2\,\unit{\bar}, 22.1\unit{\celsius}
+        \end{multicols}
+    \end{enumerate}
+
+    \begin{itemize}[left=3em]
+        \begin{multicols}{3}
+            \item[1 \to{} 2] P constante
+            \item[2 \to{} 3] T constante
+            \item[3 \to{} 4] Adiabático
+        \end{multicols}
+    \end{itemize}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.1
+    
+    Calcule o trabalho e o calor postos em jogo em cada um dos percursos 1 \to{} 2 e 2 \to{} 3.
+
+    \begin{questionBox}3{1 \to{} 2} % Q6.1 (i)
+        
+        \begin{flalign*}
+            &
+                Q_p
+                = \int n\,C_p\,\odif{T}
+                = n\,C_v\,R\,\Delta T
+                = 1*\frac{7}{2}*8.314(17.0-57.0)
+                \cong \num{-1163.96}
+            &
+        \end{flalign*}
+
+        \begin{flalign*}
+            &
+                W
+                = \adif{U} - Q
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+
+    \begin{questionBox}3{2 \to{} 3} % Q6.1 (i)
+        
+        \begin{flalign*}
+            &
+                -Q = w 
+                = -\int P_{ext}\,\odif{V}
+                = -\int p\,\odif{V}
+                = -\int \frac{n\,R\,T}{V}\,\odif{V}
+                = -n\,R\,T\,\log\frac{V_3}{V_2}
+            &
+        \end{flalign*}
+        
+    \end{questionBox}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.2
+    
+    Calcule \(\Delta H\) para o percurso 1 \to{} 4
+
+    \begin{flalign*}
+        &
+            \adif{H}_{1\to{}4}
+            = \int_1^4 n\,C_p\,\odif{t}
+            = n\,C_p\,\adif{t}
+            = 1*3.5
+            * \left(
+                \frac{12*22.1}{1*0.08314}
+                - 330.15
+            \right)
+            \cong
+            -321\,\unit{\joule}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.3
+    
+    Calcule \(\Delta S\) para o percurso 4 \to{} 1.
+
+    \begin{flalign*}
+        &
+            \adif{S}_{4\to1}
+            = \int_4^1 \frac{n\,C_v}{T}\,\odif{T}
+            + n\,R\,\ln\frac{V_1}{V_4}
+            = \int_4^1 \frac{n\,C_v}{T}\,\odif{T}
+            + n\,R\,\ln\frac{P_4}{P_1}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.4
+    
+    Imagine uma forma irreversível de ir do estado 2 ao estado 3, e calcule o trabalho e \(\Delta U\) associados.
+
+    Comente o resutado.
+    
+\end{questionBox}
+
+
+\begin{questionBox}1{} % Q7
+    
+    
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q7.1
+    
+    Calcule a variação de energia interna associada à passagem de 5\,\unit{\mole} de metanol do estado (20\,\unit{\celsius}, liq, 1\,\unit{\bar}) ao estado (80\,\unit{\celsius}, gas, 1\,\unit{\bar})
+
+    \begin{flalign*}
+        &
+            \Delta H_{(20\to80)\unit{\celsius}}
+            = \sum\adif{H}
+            = \int_{20}^{64.65} n\,C_p\,\odif{T}
+            + n\,\adif{H_{vap}}
+            + \int_{64.65}^{80} n\,C_p\,\odif{T}
+            = &\\&
+            = 5*80(64.65-20)
+            + 5*37.6\E{3}
+            + 5*48*(80-64.65)
+            \cong
+            \qty{209.544}{\kilo\joule}
+            % 209.544\,\unit{\kilo\joule}
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \adif{V_{l\to g}}
+            = \frac{
+                5*0.08314
+                * (80+273.15) % = 146.804455
+            }{
+                1
+            }
+            - 5*\frac{1}{0.792}*32\E-3 % = 0.202020202020202
+            \cong
+            \num{146.602434797979798}
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \adif{U}
+            \cong 
+            \num{209544}
+            - 1\E5*\num{0.146602434797979798}
+            \cong
+            \num{194883.7565202020202}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q7.2
+    
+    Calcule a entropia molar do metanol sólido a -97.55\,\unit{\celsius} e 1\,\unit{\bar}.
+
+    \begin{itemize}
+        \begin{multicols}{2}
+            \item \(C_{\rho,l} = 80\,\unit{\joule/\kelvin\mole}\)
+            \item \(C_{\rho,g} = 48\,\unit{\joule/\kelvin\mole}\)
+            \item \(\rho_{liq} = 0.792\,\unit{\gram\per\centi\meter^3}\)
+            \item \(\Delta H_{l\to g,-97.55\,\unit{\celsius},1\,\unit{\bar}} = 3.2\,\unit{\kilo\joule\per\mole}\)
+            \item \(\Delta H_{l\to g,64.65\,\unit{\celsius},1\,\unit{\bar}} = 37.6\,\unit{\kilo\joule\per\mole}\)
+            \item \(\ch{CH3OH} = 32\,\unit{\gram\per\mole}\)
+            \item \(S(g,80\,\unit{\celsius},1\,\unit{\bar}) = 247.9\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}\)
+        \end{multicols}
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            \adif{S}
+            =\sum_i\adif{S_i}
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \int \frac{n\,C_p\,\odif{T}}{T}
+            =n\,C_p\int \frac{\odif{T}}{T}
+            =n\,C_p\ln\frac{T_f}{T_i}
+        &
+    \end{flalign*}
+
+    \begin{flalign*}
+        &
+            \int\frac{\odif{H}}{T} \dots
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q8
+    
+    Calcule o trabalho máximo associado à condensação da água a 1.01\,\unit{\bar} e 100\,\unit{\celsius}
+    \begin{itemize}
+        \item \(\Delta H_{vap, 100\,\unit{\celsius}, 1\,\unit{\atm}} = 40.7\,\unit{\kilo\joule\per\mole}\)
+    \end{itemize}
+
+    \begin{flalign*}
+        &
+            \max{w}
+            = \adif{A}_{gás\to liq}
+            = \adif{U}
+            - \adif{T\,S}
+            = \adif{H}
+            - P\,\adif{V}
+            - T\,\adif{S}
+            = - P\,\adif{V}
+            = &\\&
+            = - P\,(V_{liq} - V_{gas})
+            \land
+            V_{gás}/n
+            = \frac{R\,T}{P}
+            \cong 
+            \frac{
+                \num{8.314462618}\E-2*373.15
+            }{
+                1.01
+            }
+            \cong
+            \qty{30.718234909967327}{\centi\metre^3\per\mole}
+            \,
+            \land &\\&
+            \land
+            V_{liq}
+            \to 0
+            % \implies &\\&
+            \implies
+            \max w
+            \cong -1.01*(-\num{30.718234909967327}\E-3)
+            \cong \num{3.102541725906e2}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\begin{questionBox}1{} % Q9
+    
+    Um gás perfeito(\(C_V=R\,5/2\)) realiza o ciclo reversível 1-2-3-4-1 representado na figura. Calcule:
+
+    \paragraph*{Dados}
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item 1\to2, 3\to4: isotérmicos
+            \item 2\to3, 4\to1: Adiabáticos
+        \end{itemize}
+    
+        \begin{minipage}{\textwidth}
+            \begin{enumerate}
+                \item 0.5\,\unit{\deci\metre^3}
+                \item 6.2\,\unit{\bar}, 5.0\,\unit{\deci\metre^3}, 100\,\unit{\celsius}
+                \item 10.8\,\unit{\deci\metre^3}
+                \item \(S = 175\)\,\unit{\joule\,\kelvin^{-1}\,\mole^{-1}}
+            \end{enumerate}
+        \end{minipage}
+    \end{multicols}
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q9.1
+    
+    A pressão do gás em 3.
+    
+    \paragraph*{Nota}
+    Se não for gás perfeito ex: liquido, sólido\dots
+    Para dar conta de 1 percurso alvo, combinar passos a \textit{T} e \textit{P} constante
+
+    \begin{BM}
+        \adif{H}
+        -\int n\,C_p\,\odif{t}
+        :\adif{P}=0
+    \end{BM}
+
+    Mas nós \dots
+    \begin{BM}
+        \adif{P}=0\implies
+        \adif{H}
+        = \int\pdv{H}{T}_P\odif{T}
+        = \int C_P\odif{T}
+        \\
+        \adif{P}=0\implies
+        \adif{S}
+        = \int\pdv{S}{T}_P\odif{T}
+        = \int C_P\frac{\odif{T}}{T}
+    \end{BM}
+    
+\end{questionBox}
+
+\begin{definitionBox}1{} % D3
+    
+    Coeficiente de expanção a pressão constante
+
+    \begin{BM}
+        \pdv{V}{T}_P
+        = \alpha_P\,V
+    \end{BM}
+
+    \begin{BM}
+        \odif{G}
+        = -S\,\odif{T}
+        + V\,\odif{P}
+        \\
+        \pdv{G}{T}_P = -S
+        \qquad
+        \pdv{G}{P}_T = V
+        \\
+        \pdv{\pdv{G}{T}_P}{P}_T
+        = \pdv{G}{T,P}_T
+        = \pdv{G}{P,T}_P
+        = n\pdv{\pdv{G}{P}_T}{T}_P
+    \end{BM}
+
+    \begin{flalign*}
+        &
+            \pdv{H}{P}_T
+            = T\pdv{S}{P}_T
+            + V\pdv{S}{P}_T
+            = V
+            - T\pdv{V}{T}_P
+            = V
+            - \alpha_P\,V\,T
+            = V(
+                1-\alpha_P\,T
+            )
+        &
+    \end{flalign*}
+    
+\end{definitionBox}
+
+\begin{questionBox}2{} % Q9.2
+    
+    O trabalho posto em jogo no percurso 2\to3
+    
+\end{questionBox}
+
+\begin{questionBox}2{} % Q9.3
+    
+    \(\adif{G}\) no percurso 4\to1.
+    
+\end{questionBox}
+
+\end{document}

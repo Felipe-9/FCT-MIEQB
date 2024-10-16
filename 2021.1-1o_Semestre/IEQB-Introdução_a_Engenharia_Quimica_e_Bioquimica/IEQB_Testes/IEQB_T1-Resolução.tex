@@ -1,0 +1,701 @@
+\documentclass[12pt]{article}
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+% Graphics
+\usepackage{graphics}
+
+
+% calc
+\usepackage{calc}
+
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+\setlength{\cftsubsecnumwidth}{13mm}
+% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip1mm}
+
+
+% Multicols
+\usepackage{multicol}
+
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+
+% Appendix
+%\usepackage{appendix}
+
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = figures,
+%	round-precision = 3,
+%	round-minimum = 0.01
+}
+
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+
+
+% Tabular
+\usepackage{booktabs}
+%\usepackage{multirow}
+
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	Q\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB Teste 1%
+}
+\author{Felipe Pinto - 61387}
+\date{08/05 - 2021.1}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents 
+\section*{Conteúdo}
+\renewcommand{\contentsname}{}
+%\setcounter{tocdepth}{2}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+
+
+% Q1
+\section{}
+\sisetup{round-mode=places, round-precision=1}
+
+\begin{flalign*}
+&
+= 	10.4\,\unit{\metre\of{\ch{H2O}}} 
++ 	25\,\unit{\metre\of{\ch{H2O}}}
+=	\qty{35.4}{\metre\of{\ch{H2O}}}
+&
+\end{flalign*}
+
+
+
+% Q2 - (i)
+\section{}
+\sisetup{round-mode=figures, round-precision=2}
+
+\subsubsection{\unit{\mole\of{Tot}/\mole\of{Tot}}}
+\begin{flalign*}
+&
+=	\frac{67\,\unit{\gram\of{\ch{N2}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{N2}}{28\,\unit{\gram\of{\ch{N2}}}}
++	
+	\frac{14\,\unit{\gram\of{\ch{CO2}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{CO2}}{44\,\unit{\gram\of{\ch{CO2}}}}
++	
+	\frac{16\,\unit{\gram\of{\ch{O2}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{O2}}{32\,\unit{\gram\of{\ch{O2}}}}
++	
+	\frac{3\,\unit{\gram\of{\ch{CO}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{CO}}{28\,\unit{\gram\of{\ch{CO}}}}
+\cong
+	\qty{0.033181818181818}{\mole\of{Tot}\per\gram\of{Tot}}
+&
+\end{flalign*}
+
+
+\vspace{5mm}
+\begin{multicols}{2}
+
+
+% Q2 - (ii)
+\subsubsection{[\ch{N2}]}
+\begin{flalign*}
+&
+\cong
+	\frac{67\,\unit{\gram\of{\ch{N2}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{N2}}{28\,\unit{\gram\of{\ch{N2}}}}
+\,	\frac{\unit{\gram\of{Tot}}}
+		{
+		\qty{0.033181818181818}{\mole\of{Tot}}
+	}
+\cong &\\&
+\cong
+	\qty[]
+	{72.113502935420744}
+	{\percent.\mole_{\ch{N2}}\per\mole_{Tot}}
+&
+\end{flalign*}
+
+
+% Q2 - (iii)
+\subsubsection{[\ch{CO2}]}
+\begin{flalign*}
+&
+\cong
+	\frac{14\,\unit{\gram\of{\ch{CO2}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{CO2}}{44\,\unit{\gram\of{\ch{CO2}}}}
+\,	\frac{\unit{\gram\of{Tot}}}
+	{
+		\qty{0.033181818181818}{\mole\of{Tot}}
+	}
+\cong &\\&
+\cong
+	\qty{9.589041095890464}
+	{\percent.\mole_{\ch{CO2}}/\mole_{Tot}}
+&
+\end{flalign*}
+
+
+% Q2 - (iv)
+\subsubsection{[\ch{O2}]}
+\begin{flalign*}
+&
+\cong
+	\frac{16\,\unit{\gram\of{\ch{O2}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{O2}}{32\,\unit{\gram\of{\ch{O2}}}}
+\,	\frac{\unit{\gram\of{Tot}}}
+	{
+		\qty{0.033181818181818}{\mole\of{Tot}}
+	}
+\cong &\\&
+\cong
+	\qty{15.068493150685014}
+	{\percent.\mole_{\ch{O2}}/\mole_{Tot}}
+&
+\end{flalign*}
+
+
+% Q2 - (iv)
+\subsubsection{[\ch{CO}]}
+\begin{flalign*}
+&
+\cong
+	\frac{3\,\unit{\gram\of{\ch{CO}}}}
+		{100\,\unit{\gram\of{Tot}}}
+\,	\frac{\mol{CO}}{28\,\unit{\gram\of{\ch{CO}}}}
+\,	\frac{\unit{\gram\of{Tot}}}
+	{
+		\qty{0.033181818181818}{\mole\of{Tot}}
+	}
+\cong &\\&
+\cong
+	\qty{3.228962818003932}
+	{\percent.\mole_{\ch{CO}}/\mole_{Tot}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\break
+
+
+
+% Q3
+\section{}
+
+\begin{center}
+\begin{tabular}{r *{3}{r} }
+	
+	\multicolumn{1}{c}{\unit{\percent.\mole\per\mole}}
+	& \multicolumn{1}{c}{i}
+	& \multicolumn{1}{c}{\unit{\mole_{o}/\mole_{i\ Tot}}}
+	& \multicolumn{1}{c}{o}
+	
+	\\ \midrule
+	
+	\ch{CH4}
+	& 9
+	& 1.4
+	& 1.6
+	
+	\\
+	
+	\ch{O2}
+	& 19
+	& 4.4
+	& 5.1
+	
+	\\
+	
+	\ch{CO}
+	& \multicolumn{1}{c}{-}
+	& 1.4
+	& 1.6
+	
+	\\
+	
+	\ch{CO2}
+	& \multicolumn{1}{c}{-}
+	& 6.3
+	& 7.3
+	
+	\\
+	
+	\ch{N2}
+	& 72
+	& 72
+	& 84
+	
+	\\ \midrule
+	
+	Total
+	& 100
+	& 86
+	&
+	
+\end{tabular}
+\end{center}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+% Q3 - (i)
+\subsubsection{}
+\begin{flalign*}
+&
+=	9\,\%\,\mol{CH4}
+\,	\frac{(7/2)\,\mol{O2}}{2\,\mol{CH4}}
+\cong
+	\qty{15.75}{\percent}
+>	16\,\%^*
+&
+\end{flalign*}
+
+\paragraph{*} Aqui era 19 mas escrevi 16 na hora sem pensar
+
+
+% Q3 - (ii)
+\subsubsection{$ [\ch{CH4}]_o $}
+\begin{flalign*}
+&
+=	[\ch{CH4}]_i 
+- 	
+	[\ch{CH4}]_i
+\,	\frac{ 15\,\%\,\mol{CH4} }{ \mol{CH4} }
+\,+	&\\&
+-
+	[\ch{CH4}]_i
+\,	\frac{ 70\,\%\,\mol{CH4} }{ \mol{CH4} }
+=	&\\&
+=	[\ch{CH4}]_i(1-15\,\%-70\,\%)
+=	&\\&
+=	9\,\%\,(1-0.15-0.70)
+\cong
+	\qty{1.35}{\percent.\mole_{\ch{CH4}}/\mole_{Tot}}
+&
+\end{flalign*}
+
+
+% Q3 - (iii)
+\subsubsection{$ [\ch{CO}]_o $}
+\begin{flalign*}
+&
+=	\frac{9\,\%\,\mol{CH4}}{\mol{Tot}}
+\,	\frac{15\,\%\,\mol{CH4}}{\mol{CH4}}
+\,	\frac{1\,\mol{CO}}{1\,\mol{CH4}}
+\cong &\\&
+\cong
+	\qty{1.35}{\percent.\mole_{\ch{CO}/\mole_{Tot}}}
+&
+\end{flalign*}
+
+
+% Q3 - (iv)
+\subsubsection{$ [\ch{CO2}]_o $}
+\begin{flalign*}
+&
+=	\frac{9\,\%\,\mol{CH4}}{\mol{Tot}}
+\,	\frac{70\,\%\,\mol{CH4}}{\mol{CH4}}
+\,	\frac{1\,\mol{CO2}}{1\,\mol{CH4}}
+\cong &\\&
+\cong
+	\qty{6.3}{\percent.\mole_{\ch{CO2}/\mole_{Tot}}}
+&
+\end{flalign*}
+
+
+% Q3 - (v)
+\subsubsection{$ [\ch{N2}]_o $}
+\begin{flalign*}
+&
+=	[\ch{N2}]_i 
+= 	72\,\unit{\percent.\mole_{\ch{N2}}/\mole_{Tot}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+% Q3 - (vi)
+\subsubsection{$ [\ch{O2}]_o $}
+\begin{flalign*}
+&
+=	[\ch{O2}]_i
+-
+	\frac{9\,\%\,\mol{CH4}}{\mol{Tot}}
+\,	\frac{(3/2)\,\mol{O2}}{\mol{CH4}}
+\,	\frac{15\,\%\,\mol{O2}}{\mol{O2}}
+-
+	\frac{9\,\%\,\mol{CH4}}{\mol{Tot}}
+\,	\frac{2\,\mol{O2}}{\mol{CH4}}
+\,	\frac{70\,\%\,\mol{O2}}{\mol{O2}}
+\cong &\\&
+\cong
+	\qty{4.375}{\percent.\mole_{\ch{O2}}/\mole_{Tot}}
+&
+\end{flalign*}
+
+
+
+\break
+
+
+
+% Q4
+\section{}
+
+\begin{center}
+
+{\bfseries
+	\ch{ 2 C2H4 + O2 ->[70\,\unit{\percent.(et)}] 2 C2H4O }
+}
+
+\vspace{5mm}
+
+\begin{itemize}
+\begin{multicols}{4}
+
+	\item 1 = 1i.1
+	\item 2 = 1i
+	\item 3 = 1o = 2i
+	\item 4 = 2o1
+	\item 5 = 2o2
+	\item 6 = 2o2.1 = 1i.2
+	\item 7 = 2o2.2
+
+\end{multicols}
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{tabular}{r *{7}{r} }
+
+	\multicolumn{1}{c}{\unit{\percent.\mole\per\mole}}
+	& \multicolumn{1}{c}{1i.1}
+	& \multicolumn{1}{c}{1i}
+	& \multicolumn{1}{c}{\underline{1o\quad 2i}}
+	& \multicolumn{1}{c}{2o1}
+	& \multicolumn{1}{c}{2o2}
+	& \multicolumn{1}{c}{\underline{2o2.1\quad 1i.2}}
+	& \multicolumn{1}{c}{2o2.2}
+	
+	\\ \midrule
+	
+	\ch{C2H4}
+	&
+	& 46
+	& 14
+	& \multicolumn{1}{c}{-}
+	&
+	&
+	&
+	
+	\\
+	
+	\ch{O2}
+	&
+	& 52
+	&
+	& \multicolumn{1}{c}{-}
+	&
+	&
+	&
+	
+	\\
+	
+	\ch{C2H4O}
+	&
+	& \multicolumn{1}{c}{-}
+	&
+	& 100
+	&
+	&
+	&
+	
+	\\
+	
+	Inértes
+	& 0.4
+	& 2
+	&
+	& \multicolumn{1}{c}{-}
+	&
+	&
+	& 
+	
+	\\ \midrule
+	
+	Total\,(\unit{\kilo\mole\per\hour})
+	&
+	&
+	&
+	& 1600
+	&
+	&
+	&
+
+\end{tabular}
+
+\end{center}
+
+
+\vspace{5mm}
+
+
+\begin{multicols}{2}
+
+
+% Q4 - (i)
+\subsubsection{Reagente Limitante}
+\begin{flalign*}
+&
+	\frac{46\,\%\,\mol{et}}{\mol{tot}}
+\,	\frac{\mol{O2}}{2\,\mol{et}}
+=	\qty{26}{\percent.\mole_{\ch{O2}}/\mole_{Tot}}
+<	&\\&
+<	52\,\unit{\percent.\mole_{\ch{O2}}/\mole_{Tot}}
+&\\& \therefore
+	\text{ etileno é o reag limitante}
+&
+\end{flalign*}
+
+
+% Q4 - (ii)
+\subsubsection{$ m_{1o}\,[et]_{1o} $}
+\begin{flalign*}
+&
+=	m_{1i}[et]_{1i}
+\,	\frac{30\,\%\,\mol{et}}{\mol{et}}
+=	m_{1i}\,46\,\% * 30\,\%
+\cong &\\&
+\cong
+	m_{1i}\,\qty{13.8}{\percent.\mole_{et}}
+&
+\end{flalign*}
+
+
+% Q4 - (iii)
+\subsubsection{$ m_{1o}\,[\ch{O2}]_{1o} $}
+\begin{flalign*}
+&
+=	m_{1i}\,[\ch{O2}]_{1i}
+-	
+	m_{1i}\,[et]_{1i}
+\,	\frac{70\,\%\,\mol{et}}{\mol{et}}
+\,	\frac{\mol{O2}}{2\,\mol{et}}
+=	&\\&
+=
+	m_{11}
+	\left(
+	52\,\%\,\mol{O2}
+-	46\,\%\mol{et}
+\,	\frac{70\,\%\,\mol{et}}{\mol{et}}
+\,*	\right. &\\& \left.
+*	\frac{\mol{O2}}{2\,\mol{et}}
+	\right)
+=
+	m_{1i}\,\qty{20}{\percent.\mole_{\ch{O2}}}
+&
+\end{flalign*}
+
+
+% Q4 - (iv)
+\subsubsection{$ [\ch{C2H4O}]_{1o} $}
+\begin{flalign*}
+&
+=	m_{1o}\,[et]_{1o}
+\,	\frac{70\,\%\,\mol{et}}{\mol{et}}
+\,	\frac{2\,\mol{et}}{\mol{et}}
+%=	&\\&
+=	m_{1o}\,\qty{32}{\percent.\mole_{\ch{C2H4O}}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+\vspace{5mm}
+
+
+% Q4 - a)
+\subsection{}
+\begin{multicols}{2}
+
+
+% Q4 - a) (i)
+\subsubsection{$ [\text{et}]_{1o} $}
+\begin{flalign*}
+&
+=	[\text{et}]_{1i}
+\,	\frac{30\,\%\,\mol{et}}{\mol{et}}
+\,	\frac{m_{1o}}{m_{1i}}
+=
+	46\,\%
+\,	\frac{30\,\%\,\mol{et}}{\mol{et}}
+\cong &\\&
+\cong
+	\qty{13.8}{\percent.\mole_{et}/\mole_{Tot\,i}}
+&
+\end{flalign*}
+
+
+% Q4 - a) (ii)
+\subsubsection{$ [\ch{O2}]_{1o} $}
+\begin{flalign*}
+&
+=	\left(
+	[\ch{O2}]_{1i}
+-	
+	[et]_{1o}
+\,	\frac{70\,\%\mol{et}}{\mol{et}}
+\,	\frac{\mol{O2}}{2\,\mol{et}}
+	\right)
+\,	\frac{m_{1o}}{m_{1i}}
+=	&\\&
+=
+	52\,\%\,\mol{O2} 
+- 	46\,\%\,\mol{et}
+\,	\frac{70\,\%\,\mol{et}}{\mol{et}}
+\,	\frac{\mol{O2}}{2\,\mol{et}}
+\cong &\\&
+\cong
+	\qty{35.9}{\percent.\mole_{\ch{O2}}/\mole_{Tot\,i}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+% Q4 - a) (iii)
+\subsubsection{$ [\text{Inértes}]_{1o} $}
+\begin{flalign*}
+&
+=
+&
+\end{flalign*}
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

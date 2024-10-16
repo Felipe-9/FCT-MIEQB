@@ -1,0 +1,110 @@
+\part{23/03 - Sucessões}
+
+\BMold{ u_{(n)}: \mathbb{N}\to \text{Imagem} }
+
+
+\section{Sucessão monótona}
+\label{sucessao monotona}
+
+
+\begin{multicols}{2}
+
+
+\subsection{Decrescente}
+\label{sucessao decrescente}
+
+\begin{flalign*}
+&
+	u_{(n)}\geq u_{(n+1)}
+	\quad\forall\,n\in\mathbb{N}
+&
+\end{flalign*}
+
+
+% \vfill
+
+
+\subsection{Crescente}
+\label{sucessao crescente}
+
+\begin{flalign*}
+&
+	u_{(n)}\leq u_{(n+1)}
+	\quad\forall\,n\in \mathbb{N}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+\begin{multicols}{2}
+
+
+\section{Sucessão limitada}
+\label{sucessao limitada}
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ é limitada}
+\iff &\\&
+\iff
+	m_1 \leq u_{(n)} \leq m_2
+\quad\forall\,n\in\mathbb{N}
+&
+\end{flalign*}
+
+
+
+\section{Sucessão Convergente}
+\label{sucessao convergente}
+
+\begin{flalign*}
+&
+	u_{(n)} \text{ converge para } l\in\mathbb{R}
+\iff &\\&
+\iff
+	\exists\,p\in\mathbb{N}: u_{(n)}\in\vizinhanca{l}
+	\quad\forall\,n>p
+&
+\end{flalign*}
+
+\paragraph{Nota:}
+
+\begin{flalign*}
+&
+	u_{(n)}\in\vizinhanca{l}
+\iff	|u_{(n)}-l| < \delta
+\iff &\\&
+\iff	l-\delta < u_{(n)} < l+\delta
+&
+\end{flalign*}
+
+
+\subsection{Exemplo}
+\BMold{
+&
+	u_{(n)} = 1/\sqrt{2\,n-1}
+;\ &\\&
+	u_{(n)} > 0
+;\ 	\delta = 1/10
+&
+}
+
+\begin{flalign*}
+&
+\iff	0 < \frac{1}{\sqrt{2\,n-1}} < \frac{1}{10}
+\iff	&\\&
+\iff	0 < \frac{1}{2\,n-1} < \frac{1}{100}
+;\
+	2\,n-1>100
+\implies	&\\&
+\implies
+	\lfloor101/2\rfloor<n
+&
+\end{flalign*}
+
+%\vspace{10cm}
+\vfill
+
+\end{multicols}

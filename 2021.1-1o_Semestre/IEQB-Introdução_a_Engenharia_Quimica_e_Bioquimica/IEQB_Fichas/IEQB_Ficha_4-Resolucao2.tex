@@ -1,0 +1,306 @@
+\documentclass[12pt]{article}
+
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+
+% Graphics
+%\usepackage{graphics}
+
+
+% calc
+\usepackage{calc}
+
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+\setlength{\cftsubsecnumwidth}{14mm}
+% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip1mm}
+
+
+% Multicols
+\usepackage{multicol}
+
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+
+% Appendix
+%\usepackage{appendix}
+
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = places,
+	round-precision = 1,
+%	round-minimum = 0.01
+}
+
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} }
+
+
+% Tabular
+%\usepackage{multirow}
+
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB Ficha 4 - Resolução
+\\	Balanços Materiais com Reacção Química%
+}
+\author{Felipe Pinto - 61387}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents 
+\section*{Conteúdo}
+\renewcommand{\contentsname}{}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+
+
+% Q1
+\section{}
+\sisetup{round-mode=figures, round-precision=2}
+
+\begin{center}\bfseries
+
+	\ch{ 2 C2H4 + O2 -> 2 C2H4O }
+ 
+\end{center}
+
+\begin{multicols}{2}
+
+% Q1 - (i)
+\subsubsection{\mol{C2H4}}
+\begin{flalign*}
+&
+=	100\,\unit{\kg\of{\ch{C2H4}}}
+\,	\frac{\mol{C2H4}}{28\,\unit{\gram\of{\ch{C2H4}}}}
+\cong
+	\qty{3571.428571428571429}{\mole\of{\ch{C2H4}}}
+&
+\end{flalign*}
+
+\end{multicols}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+
+% Q1 - a)
+\subsection{}
+\begin{flalign*}
+&
+	\qty{3571.428571428571429}{\mole\of{\ch{C2H4}}}
+\,	\frac{\mol{O2}}{2\,\mol{C2H4}}
+\,	\frac{32\,\unit{\g_{\ch{O2}}}}{\mol{O2}}
+\cong &\\& \cong
+	\qty{57.142857142857143}{\kg\of{\ch{O2}}}
+<
+	100\,\unit{\kg\of{\ch{O2}}}
+&\\& \therefore
+	\ch{C2H4} \text{ é o reagente limitante}
+&
+\end{flalign*}
+
+
+% Q1 - b)
+\subsection{Excesso$\,\%$}
+\begin{flalign*}
+&
+\cong	
+	1
+-	\frac{
+		100\,\unit{\kg\of{\ch{O2}}}
+	}
+	{	
+		\qty{57.142857142857143}{\kg\of{\ch{O2}}} 
+	}
+\cong
+	\qty{75}{\percent}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+% Q1 - c)
+\subsection{}
+
+\begin{multicols}{2}
+
+
+% Q1 - c) (i)
+\subsubsection{}
+\begin{flalign*}
+&
+	\qty{57.142857142857143}{\kg\of{\ch{O2}}}
+&
+\end{flalign*}
+
+
+% Q1 - c) (ii)
+\subsubsection{}
+\begin{flalign*}
+&
+	\qty{3571.428571428571429}{\mole\of{\ch{C2H4}}}
+\,	\frac{2\,\mol{C2H4O}}{2\,\mol{C2H4}}
+\cong
+	\qty{3571.428571428571429}{\mole\of{\ch{C2H4O}}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+\begin{multicols}{2}
+
+
+% Q1 - d) 
+\subsection{}
+\begin{flalign*}
+&
+	\qty{3571.428571428571429}{\mole\of{\ch{C2H4}}}
+\,	\frac{0.30\,\mol{C2H4}}{\mol{C2H4}}
+\,	\frac{2\,\mol{C2H4O}}{2\,\mol{C2H4}}
+\cong &\\&
+\cong	
+	\qty{1071.428571428571429}{\mole\of{\ch{C2H4O}}}
+&
+\end{flalign*}
+
+
+% Q1 - e)
+\subsection{K}
+\begin{flalign*}
+&
+\cong
+	\frac{
+		40\,\unit{\kg\of{\ch{O2}}}
+	\,	\cfrac{\mol{O2}}{32\,\unit{\g\of{\ch{O2}}}}
+	\,	\cfrac{2\,\mol{C2H4}}{1\,\mol{O2}}
+	}
+	{	\qty{3571.428571428571429}{\mole\of{\ch{C2H4}}} }
+\cong	
+	\qty{70}{\percent}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Q2
+\section{}
+
+\begin{center}\bfseries
+
+	\ch{ C3H6 + NH3 + 3/2 O2 -> C3H3N + 3 H2O }
+
+\end{center}
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

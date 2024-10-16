@@ -1,0 +1,253 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{28mm}		% Fix section width
+\setlength{\cftsubsecnumwidth}{15mm}
+\setlength{\cftsubsubsecnumwidth}{6mm}
+%% Fix space between subsection items on toc
+%\renewcommand\cftsubsecafterpnum{\vskip5pt}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = figures,
+%	round-precision = 3,
+%	round-minimum = 0.01
+}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vector over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+%\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+%\usepackage{multirow}
+%\usepackage{booktabs}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	F1 - Ficha SA
+\\	Energia%
+}
+\author{Felipe Pinto - 61387}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents 
+\section*{Conteúdo}
+\renewcommand{\contentsname}{}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+% Problemas
+{\bfseries\color{DarkGreen!75}
+	\part{Problemas}
+}
+
+\renewcommand\thesection{Problema \arabic{section}}
+\renewcommand\thesubsection{%
+	P\arabic{section} - \alph{subsection})%
+}
+
+
+
+% P12
+\setcounter{section}{11}
+\section{}
+
+\sisetup{round-mode=places, round-precision=2}
+
+\begin{multicols}{2}
+
+
+% P12 - (i)
+\subsubsection{$ v_{a} $}
+\begin{flalign*}
+&
+=	\sqrt{2\,\Delta E_{k}/m} - v_0
+;\	
+	v_0 = 0
+;\	&\\&
+	\Delta E_{k} = \Delta E_{g} = m\,g\,\Delta h
+\implies &\\& \implies
+	v_{a}
+=	\sqrt{2\,m\,g\,\Delta h/m}
+=	&\\&
+=	\sqrt{2*g*(3.5-2)R}
+=	\sqrt{3\,g\,R}
+&
+\end{flalign*}
+
+
+% P12 - (ii)
+\subsubsection{$ \vec{F}_{N} $}
+\begin{flalign*}
+&
+=	\vv{a}\,m - \vv{F_{g}}
+;\	a = v^2/R
+\implies &\\& \implies
+	\vv{F_{N}}
+=	(m\,(\sqrt{3\,g\,R})^2/R-m\,g)\,-\hat\jmath
+=	&\\&
+=	-2\,m\,g\,\hat\jmath
+=	-2*5.00*\num{9.80665}
+\cong
+	\qty{-0.0980665}{\newton}\,\hat\jmath
+&
+\end{flalign*}
+
+
+
+\end{multicols}
+
+% g = \num{9.80665}
+
+% P13
+\section{$\Delta S_2$}
+
+\sisetup{round-mode=figures, round-precision=3}
+
+\begin{flalign*}
+&
+=	\Delta U_2/F_{\text{2 atrito}}
+;\	
+	F_{\text{2 atrito}} = \mu\,m\,g
+;\	
+	\Delta U_2 
+= 	
+	\Delta E_{\text{Gravidade}} 
+- 	W_{\text{1 Atrito}}
+=	
+	m\,g\,\Delta h 
+- 	\frac{F_{\text{1 atrito}}\,\Delta h}{\sin(30^\circ)}
+\implies &\\& \implies
+	\Delta S_2
+=	
+	\frac%
+	{
+		m\,g\,\Delta h 
+	- 	\mu\,m\,g\,\cos(30^\circ)\,\Delta h/\sin(30^\circ)
+	}
+	{\mu\,m\,g}
+=
+	\left(
+	\frac{1}{\mu}
+-
+	\frac{1}{\tan(\theta)}
+	\right)
+	\Delta h	
+= 	&\\& 
+=	\left(
+	\frac{1}{0.20}
+-
+	\frac{1}{\tan(30^\circ)}
+	\right)
+	60\unit{\,\cm}
+\cong
+	\qty{196.076951545867362}{\cm}
+&
+\end{flalign*}
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

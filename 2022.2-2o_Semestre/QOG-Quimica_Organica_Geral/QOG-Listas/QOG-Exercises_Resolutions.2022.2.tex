@@ -1,0 +1,69 @@
+% !TEX root = ./QOG-Exercises_Resolutions.2.tex
+\providecommand\mainfilename{"./QOG-Exercises_Resolutions.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./QOG-Exercises_Resolutions.2.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{2}
+[QOG]
+{Lista 2 Resolução} % Subfile Title
+{Resolução} % Part Title
+
+\group{P}
+
+\setcounter{question}{3}
+\begin{questionBox}1{ % QP.4
+    Desenhe a conformação mais estável do seguinte composto
+} % QP.4
+    
+    \setchemfig{
+        angle increment=30
+    }
+
+    \begin{center}
+        \chemfig{
+            (<:[3]Br)
+            ([-3]*6(
+                -(<[5]CH3)
+                -
+                -
+                -(<[-1,,,1]C(CH3)3)
+                -
+                -
+            ))
+        }
+    \end{center}
+
+    \begin{answerBox}{}\centering % RS 
+        \chemfig{
+            ?
+            (-[3]CH3)
+            -[:-50]
+            -[:10]
+            -[:-10]
+            (-[3]{C(CH3)3})
+            -[:130]
+            -[:190]?
+            (-[-3,,,,dash pattern=on 2pt off 2pt]Br)
+        }\quad
+        \chemfig{
+            ?
+            (-[3]CH3)
+            -[: 50]
+            (-[-3,,,,dash pattern=on 2pt off 2pt]Br)
+            -[:-10]
+            -[: 10]
+            (-[3]{C(CH3)3})
+            -[:-130]
+            -[:-190]?
+        }
+    \end{answerBox}
+
+\end{questionBox}
+
+\end{document}

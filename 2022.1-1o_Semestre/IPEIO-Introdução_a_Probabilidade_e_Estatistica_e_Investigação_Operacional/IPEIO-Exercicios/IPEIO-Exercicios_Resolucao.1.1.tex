@@ -1,0 +1,43 @@
+% !TEX root = ./IPEIO-Exercicios_Resolução.1.tex
+\providecommand\mainfilename{"./IPEIO-Exercicios_Resolução.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./IPEIO-Exercicios_Resolução.1.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/}}}
+
+\mymakesubfile{1}
+[IPEIO]
+{Exercicios PE - Introdução à Teoria da Probabilidade} % Subfile Title
+{Introdução à Teoria da Probabilidade} % Part Title
+
+
+
+\setcounter{question}{17}
+\begin{questionBox}1{ % Q18
+    Considere os acontecimentos A e B de um espaço de resultados tais que \(P(A\cup B)=0.8\), e \(P(A-B)=0.3\). Qual o valor da \(P(B)\)
+} % Q18
+    \begin{flalign*}
+        &
+            P(B) = P(B\cup A) - P(A-B) = 0.8-0.3 = 0.5
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{26}
+\begin{questionBox}1{ % Q27
+    Um aluno conhece bem 60\% da matéria dada. Num exame com cinco perguntas, sorteadas ao acaso, sobre toda a matéria, qual a probabilidade de vir a responder correctamente a duas perguntas?
+} % Q27
+    \begin{flalign*}
+        &
+            P(X=2) 
+            = \binom{5}{2}*0.6^n*(1-0.6)^{5-2}
+        &
+    \end{flalign*}
+\end{questionBox}
+
+\end{document}

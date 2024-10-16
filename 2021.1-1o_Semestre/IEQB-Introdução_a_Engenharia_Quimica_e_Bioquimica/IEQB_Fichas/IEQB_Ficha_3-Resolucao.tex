@@ -1,0 +1,1828 @@
+\documentclass[12pt]{article}
+
+% Geometry
+\usepackage{geometry}
+\geometry{
+	a4paper, % 210mm por 297mm
+	top=15mm,
+	left=15mm,
+	right=15mm
+}
+
+% Linguagem
+\usepackage[portuguese]{babel}	% Babel
+%\usepackage{polyglossia}		% Polyglossia
+%\setdefaultlanguage[variant=brazilian]{portuguese}
+
+% Graphics
+%\usepackage{graphics}
+
+% calc
+\usepackage{calc}
+
+% Clickable Table of contents
+\usepackage{hyperref}
+\hypersetup{
+	hidelinks=true,
+	colorlinks=true,
+	linkcolor=DarkGreen!20!LightGreen!25!
+}
+
+% Table of contents
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{25mm}		% Fix section width
+\setlength{\cftsubsecnumwidth}{13mm}
+% Fix space between subsection items on toc
+\renewcommand\cftsubsecafterpnum{\vskip1mm}
+
+% Table of contents depth
+\setcounter{tocdepth}{2}
+
+% Multicols
+\usepackage{multicol}
+
+% Customize Chapter
+%\usepackage{titlesec}
+%\titleformat{\chapter}[hang]{\Huge\bfseries\color{DarkGreen!75!}}{\thechapter\hspace{20pt}{$|$}\hspace{20pt}}{0pt}{\Huge\bfseries}
+
+% Appendix
+%\usepackage{appendix}
+
+% siunix: SI units
+\usepackage{siunitx}
+\sisetup{
+	scientific-notation = engineering,
+	exponent-to-prefix = true,
+	exponent-product = *,
+	round-mode = figures,
+%	round-precision = 3,
+%	round-minimum = 0.01
+}
+
+% Maths
+\usepackage{amssymb} 		
+\usepackage{amsmath} 
+
+%\newcommand{\bm}[1]{{\boldmath{\large{\begin{align*} #1 \end{align*}}}}}
+
+% Vectors
+%\usepackage{esvect} 	% Vector over-arrow
+%\renewcommand{\vec}{\vv} % Vecto over-arrow
+
+% Tikz
+%\usepackage{tikz}		
+%\usepackage{pgfmath}  	% calculations
+%\usepackage{varwidth}  % List inside TikzPicture
+
+% Chem
+\usepackage{chemformula} 	% formulas quimicas
+%\usepackage{chemfig} 		% Estruturas quimicas
+
+%\newcommand{\mol}[1]{ \text{mol}_{\ch{ #1 }} } % mol
+
+% Tabular
+\usepackage{multirow}
+\usepackage{booktabs}
+
+% Colors
+\usepackage{xcolor}
+
+\definecolor{DarkBlue}	{HTML}{252A36}
+\definecolor{LightGreen}{HTML}{7CCC6C}
+\definecolor{DarkGreen}	{HTML}{008675}
+
+\colorlet{White}{DarkGreen!20!}
+\colorlet{Black}{DarkBlue!110!}
+
+\pagecolor{Black}
+\color{White}
+
+%\definecolor{Red}  {HTML}{FF7E79}
+%\definecolor{Blue} {HTML}{6666FF}
+%\definecolor{Green}{HTML}{66FF66}
+
+% Counters
+%\counterwithin*{section}{part} % Reset section on part
+
+% Section and Subsection Customization
+\renewcommand\thesection{Questão \arabic{section}}
+\renewcommand\thesubsection{%
+	\arabic{section} - \alph{subsection})%
+}
+\renewcommand\thesubsubsection{(\roman{subsubsection})}
+
+\begin{document}
+
+\title{\bfseries\color{DarkGreen!75!}%
+	IEQB - Ficha 3\\
+	Balanços Materiais sem Reacção Química%
+}
+\author{Felipe Pinto - 61387}
+
+\newgeometry{left=25mm, right=25mm}
+
+\maketitle
+
+% Remove contents title inside of \tableofcontents
+\renewcommand{\contentsname}{}
+\section*{Conteúdo}
+
+\begin{multicols}{2} \tableofcontents \end{multicols}
+
+\restoregeometry
+
+\break
+
+% Q1
+\section{}
+
+\begin{multicols}{2}
+
+
+% Q1 (i)
+\subsubsection{$m_{\unit{final}}$}
+\begin{flalign*}
+&
+= 	(150 + 200)\unit{.\kg.\hour^{-1}}
+=	350\unit{.\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q1 (ii)
+\subsubsection{$[\text{met}]$}
+\begin{flalign*}
+&
+= 	\frac{ 40\,\%*200 + 70\,\%*150 }{ 350 }
+	\unit{\,\frac{\kg_{met}}{\kg_{total}}}
+\cong
+	\qty[round-precision=3]
+	{52.857142857142857}{\,\frac{\kg_{met}}{\kg_{total}}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+% Q2
+\section{}
+
+\begin{center}
+\begin{tabular}{r *{3}{r r c}}
+	
+	\multicolumn{1}{c}{\unit{\mole}}
+	& \multicolumn{2}{c}{i}  &
+	& \multicolumn{2}{c}{o1} &
+	& \multicolumn{2}{c}{o2} &
+	
+	\\ \cmidrule{2-3} \cmidrule{5-6} \cmidrule{8-9}
+	
+	\multicolumn{1}{c}{Total:}
+	& 100.0 	& 1250.0	&
+	& 50.0 	&  650.0	&
+	& 50.0 	&  650.0	&
+	
+	\\ \midrule
+	
+	$X_A:$
+	& 0.60	& 0.60	&
+	& 0.95	& 0.95	&
+	& 0.25	& 0.25	&
+	
+	\\
+	
+	$X_B:$
+	& 0.40	& 0.40	&
+	& 0.05	& 0.05	&
+	& 0.75	& 0.75	&
+	
+	\\ \midrule
+	
+\end{tabular}
+\end{center}
+
+
+
+% Q2
+\section{}
+
+\sisetup{round-mode=places}
+\begin{multicols}{2}
+
+
+% Q2 - (i)
+\subsubsection{$m_1$}
+\begin{flalign*}
+&
+=	(100-40)\unit{\,\kg.\hour^{-1}}
+=	60\unit{\,\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q2 - (ii)
+\subsubsection{$A_1$}
+\begin{flalign*}
+&
+=	\left(
+		\frac{0.5*100-0.9*40}{60}
+	\right)
+	\unit{\,\frac{\kg_{A}}{\kg}}
+\cong
+	\qty[scientific-notation=false]
+	{0.233333333333333}{\,\frac{\kg_{A}}{\kg}}
+&
+\end{flalign*}
+
+
+% Q2 - (iii)
+\subsubsection{$B_1$}
+\begin{flalign*}
+&
+=	\left(
+		\frac{0.5*100-0.1*40}{60}
+	\right)
+	\unit{\,\frac{\kg_{B}}{\kg}}
+\cong
+	\qty[scientific-notation=false]
+	{0.766666666666667}{\,\frac{\kg_{A}}{\kg}}
+&
+\end{flalign*}
+
+
+% Q2 - (iv)
+\subsubsection{$m_2$}
+\begin{flalign*}
+&
+=	(60+30)\unit{\,\kg.\hour^{-1}}
+=	90\unit{\,\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q2 - (v)
+\subsubsection{$A_2$}
+\begin{flalign*}
+&
+\cong	
+	\left(
+		\frac{0.23*60+0.3*30}{90}
+	\right)
+	\unit{\,\frac{\kg_{A}}{\kg}}
+\cong
+	\qty[scientific-notation=false]
+	{0.255555555555555}{\,\frac{\kg_{A}}{\kg}}
+&
+\end{flalign*}
+
+
+% Q2 - (vi)
+\subsubsection{$B_2$}
+\begin{flalign*}
+&
+\cong	
+	\left(
+		\frac{0.77*60+0.7*30}{90}
+	\right)
+	\unit{\,\frac{\kg_{B}}{\kg}}
+\cong
+	\qty[scientific-notation=false]
+	{0.744444444444445}{\,\frac{\kg_{B}}{\kg}}
+&
+\end{flalign*}
+
+
+% Q2 - (vii)
+\subsubsection{$m_3$}
+\begin{flalign*}
+&
+=	(90-30)\unit{\,\kg.\hour^{-1}}
+=	60\unit{\,\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q2 - (viii)
+\subsubsection{$A_3$}
+\begin{flalign*}
+&
+\cong	
+	\left(
+		\frac{0.26*90-0.6*30}{60}
+	\right)
+	\unit{\,\frac{\kg_{A}}{\kg}}
+\cong
+	\qty[scientific-notation=false]
+	{0.083333333333333}{\,\frac{\kg_{A}}{\kg}}
+&
+\end{flalign*}
+
+
+% Q2 - (ix)
+\subsubsection{$B_3$}
+\begin{flalign*}
+&
+\cong	
+	\left(
+		\frac{0.74*90-0.4*30}{60}
+	\right)
+	\unit{\,\frac{\kg_{B}}{\kg}}
+\cong
+	\qty[scientific-notation=false]
+	{0.916666666666668}{\,\frac{\kg_{B}}{\kg}}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\break
+
+
+
+% Q4
+\section{}
+\sisetup{round-mode=places, round-precision=0}
+
+\begin{multicols}{2}
+
+
+% Q4 - (i)
+\subsubsection{$m_{o1}$}
+\begin{flalign*}
+&
+=	\frac{1000*50\,\%-m_{o2}\,9.5\,\%}{95\,\%}
+	\unit{\,\frac{\kg}{\hour}}
+;\	&\\&
+	m_{o2} = 1000-m_{o1}
+\implies &\\& \implies
+	m_{o1}
+= 	\frac{1000*50\,\% - 1000*9.5\,\%}{95\,\%-9.5\,\%}
+\cong &\\& \cong
+	\qty{473.684210526315789}{\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q4 - (ii)
+\subsubsection{$m_{o2}$}
+\begin{flalign*}
+&
+\cong
+	1000-\num{473.684210526315789}
+\cong
+	\qty{526.315789473684211}{\kg\per\hour}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Q5
+\section{}
+\sisetup{round-mode=places, round-precision=1}
+
+\begin{center}
+\begin{tabular}{r r r r r}
+
+	\multicolumn{1}{c}{\unit{\percent.\kg}}
+	& \multicolumn{1}{c}{i1}
+	& \multicolumn{1}{c}{i2}
+	& \multicolumn{1}{c}{i3}
+	& \multicolumn{1}{c}{o}
+	
+	\\ \midrule
+	
+	Açucar
+	& 2.5
+	& 1
+	& \multicolumn{1}{c}{-}
+	& 2
+	
+	\\
+	
+	\ch{H2O}
+	& 50.0
+	& 18
+	& 100
+	
+	\\
+	
+	Sucrose
+	& \multicolumn{1}{c}{-}
+	& 50
+	& \multicolumn{1}{c}{-}
+	& \num{12.587412587412587}
+	
+	\\
+	
+	Solidos
+	& 47.7
+	& 31
+	& \multicolumn{1}{c}{-}
+	
+	\\ \midrule
+	
+	Total (\unit{\kg})
+	& 125
+	&  45
+	& \num{8.75}
+	& \num{178.75}
+
+\end{tabular}
+\end{center}
+
+% Q5 - a)
+\subsection{$m_{i3}$}
+\begin{flalign*}
+&
+=	m_o - m_{i1} - m_{i2}
+;\	m_o = \frac{m_{i1}\,2.5\,\% + m_{i2}\,1\,\%}{2\,\%}
+\implies
+	m_{i3}
+=	\frac{125\,(2.5-2)\,\% + 45\,(1-2)\,\%}{2\,\%}
+\cong
+	\num{8.75}
+&
+\end{flalign*}
+
+% Q5 - b)
+\subsection{$[\text{Sucrose}]_{o}$}
+\begin{flalign*}
+&
+=	\frac{m_{i2}*50\,\%}{m_o}
+;\	m_{o} = m_{i1} + m_{i2} + m_{i3}
+=	125 + 45 + \num{8.75}
+\cong
+	\num{178.75}
+\implies
+	[\text{Sucrose}]_{o}
+\cong	
+	\frac{45*50\,\%}{\num{178.75}}
+\cong
+	\num{12.587412587412587}\,\%
+&
+\end{flalign*}
+
+
+
+% Q6
+\section{}
+\begin{center}
+\begin{tabular}{r *{3}{r}}
+	
+	\multicolumn{1}{c}{\unit{\percent.\kg\per\kg}}
+	& \multicolumn{1}{c}{i}
+	& \multicolumn{1}{c}{o1}
+	& \multicolumn{1}{c}{o2}
+	
+	\\ \midrule
+	
+	et
+	& 10
+	& 60
+	& \num{4.444444444444444}
+	
+	\\
+	
+	\ch{H2O}
+	& 90
+	& 40
+	& \num{95.555555555555556}
+	
+	\\ \midrule
+	
+	Total\,(\unit{\kg\per\hour})
+	& 1000
+	& 100
+	& 900
+	
+\end{tabular}
+\end{center}
+
+\begin{multicols}{2}
+
+
+% Q6 - (i)
+\subsubsection{$m_{o2}$}
+\begin{flalign*}
+&
+=	m_i - m_{o1}
+=	(1000 - 100)\unit{\,\kg\per\hour}
+=	900\unit{\,\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q6 - (ii)
+\subsubsection{$[\text{et}]_{o2}$}
+\begin{flalign*}
+&
+=	\frac{1000*10\,\% - 100*60\,\%}{900}\,\unit{\kg\per\kg}
+\cong
+	\qty{4.444444444444444}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q6 - (iii)
+\subsubsection{$[\ch{H2O}]_{o2}$}
+\begin{flalign*}
+&
+=	1 - \num{4.444444444444444}\,\%
+\cong
+	\qty{95.555555555555556}{\percent}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+% Q7
+\section{}
+\sisetup{round-mode=places, round-precision=1}
+
+\begin{center}
+
+\begin{multicols}{3}
+\begin{itemize}
+	
+	\item 1 = 1i.1
+	\item 2 = 1i
+	\item 3 = 1o1
+	\item 4 = 1o2 = 2i
+	\item 5 = 2o1
+	\item 6 = 2o2 = 1i.2
+	
+\end{itemize}
+\end{multicols}
+
+\vspace{5mm}
+
+\begin{tabular}{r *{6}{r}}
+
+	\multicolumn{1}{c}{\unit{\percent.\kg/\kg}}
+	& \multicolumn{1}{c}{1i.1}
+	& \multicolumn{1}{c}{1i}
+	& \multicolumn{1}{c}{1o1}
+	& \multicolumn{1}{c}{\underline{1o2 2i}}
+	& \multicolumn{1}{c}{2o1}
+	& \multicolumn{1}{c}{\underline{2o2 1i.2}}
+	
+	\\ \midrule
+	
+	\ch{K2Cr2O7}
+	& 33
+	& \num{34.842880886426593}
+	& \multicolumn{1}{c}{-}
+	& 49.4
+	& 95
+	& 36.36
+	
+	
+	\\
+	
+	\ch{H2O}
+	& 67
+	& \num{65.157119113573407}
+	& 100
+	& 50.6
+	& 5
+	& 63.64
+
+	
+	\\ \midrule
+	
+	Total (\unit{\kg.\hour^{-1}})
+	& 4500
+	& \num[scientific-notation=false]{9966.257668711656441}
+	& \num[scientific-notation=false]{2936.842105263157895}
+	& \num[scientific-notation=false]{7029.415563448498546}
+	& \num[scientific-notation=false]{1563.157894736842105}
+	& \num[scientific-notation=false]{5466.257668711656441}
+	
+	\\
+	
+\end{tabular}
+
+\end{center}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+
+% Q7 - (i)
+\subsubsection{$m_{2o1}$}
+\begin{flalign*}
+&
+=	\frac{m_{1i.1}\,[\ch{K2Cr2O7}]_{1i.1}}
+		{[\ch{K2Cr2O7}]_{2o1}}
+=	\frac{4500*33\,\%}{95\,\%}\unit{\kg.\hour^{-1}}
+\cong &\\& \cong
+	\qty[scientific-notation=false]
+	{1563.157894736842105}{\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q7 - (ii)
+\subsubsection{$ m_{1o1} $}
+\begin{flalign*}
+&
+=	m_{1i.1} - m_{2o1}
+=	(
+	4500 
+- 	\num[scientific-notation=false]{1563.157894736842105}
+	)\unit{\kg.\hour^{-1}}
+\cong &\\& \cong
+	\qty[scientific-notation=false]
+	{2936.842105263157895}{\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q7 - (iii)
+\subsubsection{$ m_{2i} $}
+\begin{flalign*}
+&
+=	m_{2o1} + m_{2o2}
+;\	&\\&
+	m_{2o2}
+=	
+	\frac{
+		m_{2i}\,[\ch{H2O}]_{2i}
+	-	m_{2o1}\,[\ch{H2O}]_{2o1}
+	}
+	{	[\ch{H2O}]_{2o2} }
+\implies &\\& \implies
+	m_{2i}
+=	
+	m_{2o1}
+	\frac{
+     	[\ch{H2O}]_{2o2}
+     -	[\ch{H2O}]_{2o1}	
+	}
+	{	[\ch{H2O}]_{2o2}-[\ch{H2O}]_{2i} }
+=	&\\&
+	\num[scientific-notation=false]{1563.157894736842105}
+\,	\frac{
+     	63.64\,\%
+     -	5\,\%
+	}
+	{	63.64\,\%-50.6\,\% }
+	\unit{\kg.\hour^{-1}}
+\cong
+	\qty[scientific-notation=false]
+	{7029.415563448498546}{\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q7 - (iv)
+\subsubsection{$ m_{2o2} $}
+\begin{flalign*}
+&
+=	m_{2i} - m_{2o1}
+=	(
+	\num[scientific-notation=false]{7029.415563448498546}
+-	\num[scientific-notation=false]{1563.157894736842105}
+	)
+	\unit{\kg.\hour^{-1}}
+\cong &\\& \cong
+	\qty[scientific-notation=false]
+	{5466.257668711656441}{\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q7 - (v)
+\subsubsection{$ m_{1i} $}
+\begin{flalign*}
+&
+=	m_{1i.1} + m_{1i.2}
+=	(
+	4500
++	\num[scientific-notation=false]{5466.257668711656441}
+	)
+\,	\unit{\kg.\hour^{-1}}
+\cong &\\& \cong
+	\qty[scientific-notation=false]
+	{9966.257668711656441}{\kg.\hour^{-1}}
+&
+\end{flalign*}
+
+
+% Q7 - (vi)
+\subsubsection{$ [\ch{K2Cr2O7}]_{1i} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i.1}\,[\ch{K2Cr2O7}]_{1i.1}
+	+	m_{1i.2}\,[\ch{K2Cr2O7}]_{1i.2}
+	}{	m_{1i}}
+=	&\\&
+=	\frac{
+		4500*33\,\%
+	+	\num[scientific-notation=false]
+		{5466.257668711656441}
+	*	36.36\,\%
+	}{	
+		\num[scientific-notation=false]
+		{9966.257668711656441}
+	}
+\,	\unit{\kg/\kg}
+\cong &\\& \cong
+	\qty{34.842880886426593}{\percent\,\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q7 - (vii)
+\subsubsection{$ [\ch{H2O}]_{1i} $}
+\begin{flalign*}
+&
+=	(100\,\% - [\ch{K2Cr2O7}]_{1i})\,\unit{\kg\per\kg}
+=	&\\&
+=	(100\,\% - \num{34.842880886426593}\,\%)
+\,	\unit{\kg\per\kg}
+\cong
+	\qty{65.157119113573407}{\percent\,\kg\per\kg}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+
+
+
+
+
+\break
+
+
+
+% Q8
+\section{}
+\sisetup{round-mode=places, round-precision=2}
+
+\begin{center}
+
+\begin{itemize}
+\begin{multicols}{4}
+	
+	\item 1 = i1
+	\item 2 = o1
+	\item 3 = i2.1
+	\item 4 = i2
+	\item 5 = o2
+	\item 6 = o2.1
+	\item 7 = o2.2 = i2.2
+	
+\end{multicols}
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{tabular}{r *{7}{r} }
+
+	\multicolumn{1}{c}{\unit{\percent.\kg\per\kg}}
+	& \multicolumn{1}{c}{i1}
+	& \multicolumn{1}{c}{o1}
+	& \multicolumn{1}{c}{i2.1}
+	& \multicolumn{1}{c}{i2}
+	& \multicolumn{1}{c}{o2}
+	& \multicolumn{1}{c}{o2.1}
+	& \multicolumn{1}{c}{\underline{o2.2 i2.2}}
+	
+	\\ \midrule
+	
+	Solidos
+	& 85
+	& 93
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	
+	
+	\\
+	
+	Agua
+	& 15
+	& 7
+	& \num[scientific-notation=false]{0.99009900990099}
+	& \num{2.912621359223301}
+	& \num{9.090909090909091}
+	& \num{9.090909090909091}
+	& \num{9.090909090909091}
+	
+	\\
+	
+	Ar Seco
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \num{99.00990099009901}
+	& \num{97.087378640776699}
+	& \num{90.909090909090909}
+	& \num{90.909090909090909}
+	& \num{90.909090909090909}
+	
+	\\ \midrule
+	
+	Total (\unit{\kg})
+	& 100
+	& \num[round-precision=1]{91.397849462365591}
+	& \num[round-precision=1]{96.535244922341694}
+	& 
+	& 
+	& 
+	& 
+
+\end{tabular}
+
+\end{center}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+
+% Q8 - (i)
+\subsubsection{$ [\text{Agua}]_{i2.1} $}
+\begin{flalign*}
+&
+=	\frac{1\,\%}{0.01 + 1}\unit{\kg\per\kg}
+\cong 
+	\qty[scientific-notation=false]
+	{0.99009900990099}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q8 - (ii)
+\subsubsection{$ [\text{Agua}]_{i2.2} $}
+\begin{flalign*}
+&
+=	\frac{10\,\%}{0.10 + 1}\unit{\kg\per\kg}
+\cong 
+	\qty{9.090909090909091}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q8 - (iii)
+\subsubsection{$ [\text{Agua}]_{i2} $}
+\begin{flalign*}
+&
+=	\frac{3\,\%}{0.3 + 1}\unit{\kg\per\kg}
+\cong 
+	\qty{2.912621359223301}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q8 - (iv)
+\subsubsection{$ [\text{Agua}]_{o2.1} $}
+\begin{flalign*}
+&
+=	[\text{Agua}]_{o2.2}
+=	\qty{9.090909090909091}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q8 - (iv)
+\subsubsection{$ [\text{Agua}]_{o2} $}
+\begin{flalign*}
+&
+=	[\text{Agua}]_{o2.2}
+=	\qty{9.090909090909091}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+%% Q8 - (iv)
+%\subsubsection{$ m_{o1} $}
+%\begin{flalign*}
+%&
+%=	\frac{m_{i1}\,[\text{Sólidos}]_{i1}}{[\text{Sólidos}]_{o1}}
+%=	\frac{100*85\,\%}{93\,\%}
+%\cong
+%	\num[round-precision=1]{91.397849462365591}
+%&
+%\end{flalign*}
+
+
+\end{multicols}
+
+\vspace{5mm}
+
+
+% Q8 - a)
+\subsection{$m_{i2.1}$}
+\begin{flalign*}
+&
+=	m_{o1} + m_{o2.1} - m_{i1}
+;\	
+	m_{o2.1}
+=
+	\frac{
+		m_{i1}\,[\text{Agua}]_{i1}
+	+	m_{i2.1}\,[\text{Agua}]_{i2.1}
+	-	m_{o1}\,[\text{Agua}]_{o1}
+	}
+	{	[\text{Agua}]_{o2.1} }
+\implies &\\& \implies
+	m_{i2.1}
+=
+	\frac{
+     	m_{o1}\,([\text{Agua}]_{o2.1}-[\text{Agua}]_{o1})
+     + 	m_{i1}\,([\text{Agua}]_{i1}-  [\text{Agua}]_{o2.1})
+	}
+	{	[\text{Agua}]_{o2.1}-[\text{Agua}]_{i2.1} }
+=	&\\&
+=	\frac{
+     	\num[round-precision=1]{91.397849462365591}
+	*	(
+		\num{9.090909090909091}\,\%
+	-	7\,\%
+		)
+     + 	100
+     *	(
+     	15\,\%
+	-	\num{9.090909090909091}\,\%
+		)
+	}
+	{	
+		\num{9.090909090909091}\,\%
+	-	\num[scientific-notation=false]
+		{0.99009900990099}\,\%
+	}
+	\unit{\kg\per\hour}
+\cong
+	\qty[round-precision=1]
+	{96.535244922341694}{\kg}
+&
+\end{flalign*}
+
+
+% Q8 - b)
+\subsection{$m_{i2.2} / m_{i2.1}$}
+\begin{flalign*}
+&
+=	\frac{ m_{i2} - m_{i2.1} }{ m_{i2.1} }
+;\	
+	m_{i2}
+=
+	\frac{
+		m_{i2.1}\,[\text{Agua}]_{i2.1}
+	+	m_{i2.2}\,[\text{Agua}]_{i2.2}
+	}
+	{	[\text{Agua}]_{i2} }
+\implies &\\& \implies
+	\frac{ m_{i2.2} }{ m_{i2.1} }
+=
+	\cfrac{
+     	[\text{Agua}]_{i2.1}
+	-	[\text{Agua}]_{i2}
+	}
+	{
+		[\text{Agua}]_{i2}
+     -	[\text{Agua}]_{i2.2}
+	}
+=
+	\cfrac{
+     	\num[scientific-notation=false]{0.99009900990099}
+	-	\num{2.912621359223301}
+	}
+	{
+		\num{2.912621359223301}
+     -	\num{9.090909090909091}
+	}
+\cong
+	\num[scientific-notation=false]{0.311173974540311}	
+&
+\end{flalign*}
+
+\break
+
+% Q9
+\section{}
+\sisetup{scientific-notation=false}
+
+\begin{center}
+
+\begin{itemize}
+\begin{multicols}{3}
+
+	\item 1 = i.1
+	\item 2 = i = i.1.1
+	\item 3 = i.1.2 = o2.1.2
+	\item 4 = o1
+	\item 5 = o2 = o2.1.1
+	\item 6 = o2.1
+	
+\end{multicols}
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{tabular}{ r *{6}{r} }
+
+	\multicolumn{1}{c}{\unit{\percent.\kg\per\kg}}
+	& \multicolumn{1}{c}{i.1}
+	& \multicolumn{1}{c}{\underline{i\quad i.1.1}}
+	& \multicolumn{1}{c}{\underline{i.1.2\quad o2.1.1}}
+	& \multicolumn{1}{c}{o1}
+	& \multicolumn{1}{c}{\underline{o2\quad o2.1.2}}
+	& \multicolumn{1}{c}{o2.1}
+	
+	\\ \midrule
+	
+	Crómio
+	& 5.15
+	& 5.15
+	& 5.15
+	& 100
+	& 
+	& \num{0.270746260810136}
+	
+	\\
+	
+	Agua
+	& 
+	& 
+	& 
+	& \multicolumn{1}{c}{-}
+	& 
+	& 
+	
+	\\ \midrule
+	
+	Total (\unit{\kg\per\hour})
+	& 6000
+	& 4500
+	& 1500
+	& \num[round-precision=1]{220.1625}
+	& \num[round-precision=1]
+		 {4279.8375}
+	& \num[round-precision=1]
+		 {5779.8375}
+
+\end{tabular}
+
+\end{center}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+
+% Q9 - (i)
+\subsubsection{$ m_{o1} $}
+\begin{flalign*}
+&
+=	\frac{
+		95\,\%
+	\,	m_{i}\,[\text{Crómio}]_{i}
+	}
+	{	[\text{Crómio}]_{o1} }
+=	&\\&
+=	
+	\frac{
+     	95\,\%
+     *	4500
+     *	5.15\,\%
+	}
+	{	100\,\% }
+\,	\unit{\kg\per\hour}
+\cong % &\\& \cong
+	\qty[round-precision=1]
+	{220.1625}{\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q9 - (ii)
+\subsubsection{$ m_{i} $}
+\begin{flalign*}
+&
+=	4500
++	(m_{i.1}-4500)
+\,*	&\\&
+*	\left(
+		\frac{
+			1
+		+	\left(
+			\cfrac{4500 - m_{i1}}
+				 {|4500 - m_{i1}|}
+			\right)
+		}
+		{	2 }
+	\right)
+=	&\\&
+=
+	\frac{
+		13500
+	- 	m_{i1}
+	+	|4500 - m_{i1}|
+	}
+	{	2 }
+= 	&\\&
+=
+	\frac{
+		13500
+	- 	6000
+	+	|4500 - 6000|
+	}
+	{	2 }
+	\,\unit{\kg\per\hour}
+=	&\\&
+=
+	4500\,\unit{\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q9 - (iii)
+\subsubsection{$ m_{i1.2} $}
+\begin{flalign*}
+&
+=	m_{i1} - m_{i1.1}
+=	
+	(6000 - 4500)
+\,	\unit{\kg\per\hour}
+=	
+	1500
+\,	\unit{\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q9 - (iv)
+\subsubsection{$ m_{o2} $}
+\begin{flalign*}
+&
+=	m_{i} - m_{o1}
+\cong
+	(4500 - \num[round-precision=1]{220.1625})
+\,	\unit{\kg\per\hour}
+\cong
+	\qty[round-precision=1]
+	{4279.8375}{\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q9 - (v)
+\subsubsection{$ m_{o2.1} $}
+\begin{flalign*}
+&
+=	m_{o2.1.1} + m_{o2.1.2}
+\cong
+	(
+	1500
++	\num[round-precision=1]
+	{4279.8375}
+	)
+	\unit{\kg\per\hour}
+\cong &\\& \cong
+	\qty[round-precision=1]
+	{5779.8375}{\kg\per\hour}
+&
+\end{flalign*}
+
+% Q9 - (vi)
+\subsubsection{$ [\text{Crómio}]_{o2.1} $}
+\begin{flalign*}
+&
+=
+	\frac{
+		m_{i.1}\,[\text{Crómio}]_{i.1}
+	-	m_{o1}\,[\text{Crómio}]_{o1}
+	}
+	{	m_{o2.1} }
+\cong &\\& \cong
+	\frac{
+		6000 * 5.15\,\%
+	-	\num[round-precision=1]{220.1625}
+	*	100\,\%
+	}
+	{	
+		\num[round-precision=1]
+		{5779.8375}
+	}
+\cong
+	\qty{1.537024181043152}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+
+\break
+
+
+
+% Q10
+\section{}
+
+\begin{center}
+
+\begin{itemize}
+\begin{multicols}{4}
+
+	\item 1 = 1i
+	\item 2 = 1o1
+	\item 3 = 1o2 = 2i
+	\item 4 = 2o1
+	\item 5 = 2o2
+
+\end{multicols}
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{tabular}{r *{5}{r} }
+
+	\multicolumn{1}{c}{\unit{\percent.\mole\per\mole}}
+	& \multicolumn{1}{c}{1i}
+	& \multicolumn{1}{c}{1o1}
+	& \multicolumn{1}{c}{\underline{1o2\quad 2i}}
+	& \multicolumn{1}{c}{2o1}
+	& \multicolumn{1}{c}{2o2}
+	
+	\\ \midrule
+	
+	B
+	& 20
+	& 90
+	& 2.5
+	& 8
+	& \multicolumn{1}{c}{-}
+	
+	\\
+	
+	T
+	& 30
+	& 10
+	& 35
+	& 72
+	& \num{18.181818181818182}
+	
+	\\
+	
+	X
+	& 50
+	& \multicolumn{1}{c}{-}
+	& 62.5
+	& 20
+	& \num{81.818181818181818}
+	
+	\\ \midrule
+	
+	Total (\unit{\mole\per\hour})
+	& 1000
+	& 200
+	& 800
+	& 250
+	& 550
+
+\end{tabular}
+
+\end{center}
+
+\vspace{5mm}
+
+\begin{multicols}{2}
+
+
+% Q10 - (i)
+\subsubsection{$ m_{1o2} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i}\,[X]_{1i}
+	-	m_{1o1}\,[X]_{1o1}
+	}
+	{	[X]_{1o2} }
+=	&\\&
+=
+	\frac{
+		1000*50\,\%
+	-	m_{1o1}*0
+	}
+	{	62.5\,\% }
+	\unit{\mole\per\hour}
+=	&\\&
+=
+	\qty{800}{\mole\per\hour}
+&
+\end{flalign*}
+
+
+% Q10 - (ii)
+\subsubsection{$ m_{1o1} $}
+\begin{flalign*}
+&
+=	m_{1i} - m_{1o2}
+=	(1000 - 800)\,\unit{\mole\per\hour}
+=	&\\&
+=	200\,\unit{\mole\per\hour}
+&
+\end{flalign*}
+
+
+% Q10 - (iii)
+\subsubsection{$ [B]_{1o1} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i}\,[B]_{1i}
+	-	m_{1o2}\,[B]_{1o2}
+	}
+	{	m_{1o1} }
+=	&\\&
+=
+	\frac{
+		1000	* 20 \,\%
+	-	800	* 2.5\,\%
+	}
+	{	200 }
+\,	\unit{\mole\per\mole}
+= &\\&
+=
+	\qty{90}{\percent.\mole\per\mole}
+&
+\end{flalign*}
+
+
+% Q10 - (iv)
+\subsubsection{$ [T]_{1o1} $}
+\begin{flalign*}
+&
+=	100\,\%-[B]_{1o1}
+=
+	\qty{10}{\percent.\mole\per\mole}
+&
+\end{flalign*}
+
+
+% Q10 - (v)
+\subsubsection{$ m_{2o1} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i}\,[B]_{1i}
+	-	m_{1o1}\,[B]_{1o1}
+	-	m_{2o2}\,[B]_{2o2}
+	}
+	{	[B]_{2o1} }
+=	&\\&
+=
+	\frac{
+		1000	* 20\,\%
+	-	200	* 90\,\%
+	-	m_{2o2} * 0\,\%
+	}
+	{	8\,\% }
+\,	\unit{\mole\per\hour}
+=	&\\&
+=
+	\qty[]
+	{250}{\mole\per\hour}
+&
+\end{flalign*}
+
+
+% Q10 - (vi)
+\subsubsection{$ m_{2o2} $}
+\begin{flalign*}
+&
+=	m_{2i} - m_{2o1}
+=	(800 - 250)\,\unit{\mole\per\hour}
+=	&\\&
+=	550\,\unit{\mole\per\hour}
+&
+\end{flalign*}
+
+
+
+% Q10 - (vii)
+\subsubsection{$ [T]_{2o2} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{2i}\,[T]_{2i} 
+	- 	m_{2o1}\,[T]_{2o1}
+	}
+	{	m_{2o2} }
+=	&\\&
+=	\frac{
+		800 * 35\,\%
+	-	250 * 72\,\%
+	}
+	{	550 }
+\,	\unit{\mole\per\mole}
+\cong &\\&
+\cong
+	\qty{18.181818181818182}{\percent.\mole\per\mole}
+&
+\end{flalign*}
+
+
+
+% Q10 - (viii)
+\subsubsection{$ [X]_{2o2} $}
+\begin{flalign*}
+&
+=	100\,\% - [T]_{2o2}
+=	(100\,\% - \num{18.181818181818182}\,\%)
+\,	\unit{\mole\per\mole}
+\cong &\\&
+\cong
+	\qty{81.818181818181818}{\percent.\mole\per\mole}
+&
+\end{flalign*}
+
+
+\end{multicols}
+
+
+\break
+
+
+% Q11
+\section{}
+
+\begin{center}
+
+\begin{itemize}
+\begin{multicols}{3}
+
+	\item 1 = 1i1
+	\item 2 = 1o1
+	\item 3 = 1i2
+	\item 4 = 1o2 = 2i
+	\item 5 = 2o1
+	\item 6 = 2o2
+
+\end{multicols}
+\end{itemize}
+
+\vspace{5mm}
+
+\begin{tabular}{r *{6}{r} }
+
+	\multicolumn{1}{c}{\unit{\percent.\kg\per\kg}}
+	& \multicolumn{1}{c}{1i1}
+	& \multicolumn{1}{c}{1o1}
+	& \multicolumn{1}{c}{1i2}
+	& \multicolumn{1}{c}{\underline{1o2\quad 2i}}
+	& \multicolumn{1}{c}{2o1}
+	& \multicolumn{1}{c}{2o2}
+
+	\\ \midrule
+	
+	Glic
+	& \multicolumn{1}{c}{-}
+	& 1
+	& 10
+	& \num{69.506329113924051}
+	& 25
+	& \multicolumn{1}{c}{-}
+	
+	\\
+	
+	\ch{NaCl}
+	& \multicolumn{1}{c}{-}
+	& \num[round-precision=0]{5.011111111111111}
+	& 3
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	& \multicolumn{1}{c}{-}
+	
+	\\
+	
+	Álcool
+	& 98
+	& 1
+	& \multicolumn{1}{c}{-}
+	& \num{6.708860759493671}
+	& \multicolumn{1}{c}{-}
+	& 95
+	
+	\\
+	
+	Água
+	& 2
+	& \num[round-precision=0]{92.988888888888889}
+	& 87
+	& \num{23.784810126582278}
+	& 75
+	& 5
+	
+	\\ \midrule
+	
+	Total\,(\unit{\kg\per\hour})
+	& 1000
+	& \num[round-precision=1]{598.669623059866962}
+	& 1000
+	& \num[round-precision=1]{1401.330376940133038}
+	&
+	&
+
+\end{tabular}
+
+\end{center}
+
+\vspace{5mm}
+
+
+
+% Q11 - (i)
+\subsubsection{$ m_{1o1} $}
+\begin{flalign*}
+&
+=	m_{1i1} + m_{1i2} - m_{2o1} - m_{2o2}
+;\	
+	m_{2o1}
+=	
+	\frac{
+		m_{1i1}\,[\text{Glic}]_{1i1}
+	+	m_{1i2}\,[\text{Glic}]_{1i2}
+	-	m_{1o1}\,[\text{Glic}]_{1o1}
+	-	m_{2o2}\,[\text{Glic}]_{2o2}
+	}{	[\text{Glic}]_{2o2} }
+;\	&\\&
+	m_{2o2}
+=
+	\frac{
+		m_{1i1}\,[\text{Álcool}]_{1i1}
+	+	m_{1i2}\,[\text{Álcool}]_{1i2}
+	-	m_{1o1}\,[\text{Álcool}]_{1o1}
+	-	m_{2o1}\,[\text{Álcool}]_{2o2}
+	}{	[\text{Álcool}]_{2o2} }
+\implies &\\&
+\implies
+	m_{1o1}
+=
+	\frac{
+     	m_{1i1}
+	\,	[\text{Glic}]_{2o1}
+	\,	(
+		[\text{Álcool}]_{2o2}
+     -	[\text{Álcool}]_{1i1}
+     	)
+     + 	m_{1i2}
+     \,	[\text{Álcool}]_{2o2}
+     \,	(
+     	[\text{Glic}]_{2o1}
+	-	[\text{Glic}]_{1i2}	
+		)
+     }
+     {	
+     	[\text{Glic}]_{2o1}\,[\text{Álcool}]_{2o2}
+     -	[\text{Glic}]_{1o1}\,[\text{Álcool}]_{2o2}
+     -	[\text{Álcool}]_{1o1}\,[\text{Glic}]_{2o1}
+     }
+=	&\\&
+=
+	\frac{
+     	1000
+	*	25\,\%
+	\,	(
+		95\,\%
+     -	98\,\%
+     	)
+     + 	1000
+     *	95\,\%
+     \,	(
+     	25\,\%
+	-	10\,\%
+		)
+     }
+     {	
+     	25\,\%	* 95\,\%
+     -	1\,\%	* 95\,\%
+     -	1\,\%	* 25\,\%
+     }
+\,	\unit{\kg\per\hour}
+\cong
+	\qty[round-precision=1]
+	{598.669623059866962}{\kg\per\hour}
+&
+\end{flalign*}
+
+\vspace{2.5mm}
+
+\begin{multicols}{2}
+
+
+% Q11 - (ii)
+\subsubsection{$ [\ch{NaCl}]_{1o1} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i2}\,[\ch{NaCl}]_{1i2}
+	}
+	{	m_{1o1} }
+\cong
+	\frac{
+		1000*3\,\%
+	}
+	{
+		\num[round-precision=1]{598.669623059866962}
+	}
+\,	\unit{\kg\per\kg}
+\cong &\\&
+\cong
+	\qty{5.011111111111111}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q11 - (iii)
+\subsubsection{$ [\text{Água}]_{1o1} $}
+\begin{flalign*}
+&	
+=	100\,\% 
+- 	[\text{Glic}]_{1o1} 
+- 	[\text{Álcool}]_{1o1}
+-	[\ch{NaCl}]_{1o1}
+\cong &\\&
+\cong
+	(
+	100\,\% 
+- 	1\,\% 
+- 	1\,\%
+-	\num{5.011111111111111}\,\%
+	)
+\,	\unit{\kg\per\kg}
+\cong &\\&
+\cong
+	\qty{92.988888888888889}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q11 - (iv)
+\subsubsection{$ m_{1o2} $}
+\begin{flalign*}
+&
+=	m_{1i1} + m_{1i2} - m_{1o1}
+\cong &\\&
+\cong
+	(
+	1000 + 1000 
+- 	\num[round-precision=1]{598.669623059866962}
+	)
+\,	\unit{\kg\per\hour}
+\cong
+	\qty[round-precision=1]
+	{1401.330376940133038}{\kg\per\hour}
+&
+\end{flalign*}
+
+\end{multicols}
+
+\vspace{5mm}
+
+% Q11 - a)
+\subsection{$ m_{2o1}\,[\text{Glic}]_{2o1} $}
+\begin{flalign*}
+&
+=	m_{1i1}\,[\text{Glic}]_{1i1}
++	m_{1i2}\,[\text{Glic}]_{1i2}
+-	m_{1o1}\,[\text{Glic}]_{1o1}
+-	m_{2o2}\,[\text{Glic}]_{2o2}
+=	&\\&
+=	
+	(
+	1000	* 0 \,\%
++	1000	* 10\,\%
+-	
+	\num[round-precision=1]{598.669623059866962}
+*	1\,\%
+-	
+	m_{2o2}	*0\,\%
+	)
+\,	\unit{\kg\per\hour}
+\cong
+	\qty[round-precision=1]
+	{94.01330376940133}{\kg\per\hour}
+&
+\end{flalign*}
+
+
+% Q11 - b)
+\subsection{}
+
+
+% Q11 - b) (i) 
+\subsubsection{$ [\ch{NaCl}]_{2i} $}
+\begin{flalign*}
+&
+=	0\,\unit{\percent.\mole\per\mole}
+&
+\end{flalign*}
+
+
+% Q11 - b) (ii) 
+\subsubsection{$ [\text{Agua}]_{2i} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i1}\,[\text{Agua}]_{1i1}
+	-	m_{1o1}\,[\text{Agua}]_{1o1}
+	+	m_{1i2}\,[\text{Agua}]_{1i2}
+	}
+	{	m_{1o2} }
+\cong &\\&
+\cong 
+	\frac{
+		1000	*2\,\%
+	-	\num[round-precision=1]{598.669623059866962}
+	*	\num[round-precision=0]{92.988888888888889}\,\%
+	+	1000	*87\,\%
+	}
+	{	\num[round-precision=1]{1401.330376940133038} }
+\,	\unit{\kg\per\kg}
+\cong
+	\qty{23.784810126582278}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q11 - b) (iii) 
+\subsubsection{$ [\text{Glic}]_{2i} $}
+\begin{flalign*}
+&
+=	\frac{
+		m_{1i1}\,[\text{Glic}]_{1i1}
+	-	m_{1o1}\,[\text{Glic}]_{1o1}
+	+	m_{1i2}\,[\text{Glic}]_{1i2}
+	}
+	{	m_{1o2} }
+\cong &\\&
+\cong 
+	\frac{
+		1000	*98\,\%
+	-	\num[round-precision=1]{598.669623059866962}
+	*	1\,\%
+	+	1000	*0\,\%
+	}
+	{	\num[round-precision=1]{1401.330376940133038} }
+\,	\unit{\kg\per\kg}
+\cong
+	\qty{69.506329113924051}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+% Q11 - b) (iv) 
+\subsubsection{$ [\text{Álcool}]_{2i} $}
+\begin{flalign*}
+&
+=	100\,\% 
+- 	[\text{Água}]_{2i} 
+- 	[\text{Glic}]_{2i}
+-	[\ch{NaCl}]_{2i}
+\cong
+	(	
+	100\,\% 
+- 	\num{23.784810126582278}\,\%
+- 	\num{69.506329113924051}\,\%
+-	0\,\%
+	)
+\,	\unit{\percent.\kg\per\kg}
+\cong
+	\qty{6.708860759493671}{\percent.\kg\per\kg}
+&
+\end{flalign*}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

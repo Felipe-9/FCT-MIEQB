@@ -1,0 +1,98 @@
+% !TEX root = ./TEQB_-_Aula_1_Anotações.tex
+% !TEX root = ./Sub_File.tex
+\providecommand\mainfilename{"./TEQB_-_Aulas_Anotações.tex"}
+\providecommand \subfilename{}
+\renewcommand   \subfilename{"./TEQB_-_Aula_1_Anotações.tex"}
+\documentclass[\mainfilename]{subfiles}
+
+% \graphicspath{{\subfix{../images/}}}
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\mymakesubfile{1}
+[TEQB]
+{Aula}
+{Aula}
+
+\begin{definitionBox}1{Sistema}
+    
+    Objeto de estudo que pode interagir com a vizinhança
+
+    \begin{itemize}
+        \item Aberto: Tora massa e energia com a vizinhança
+        \item Fexado: Troca energia com a vizinhança
+        \item Isolado: Não interage com a vizinhança
+    \end{itemize}
+    
+\end{definitionBox}
+
+\begin{sectionBox}1{Processos}
+    
+    \begin{itemize}
+        \item T constante: Isotérmicos
+        \item P constante: Isobáricos
+        \item V constante: Isocóricos
+    \end{itemize}
+
+    \paragraph{Adiabáticos:} Não ha troca de calor com a vizinhaça
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Propríedades}
+    
+    \begin{itemize}
+        \item Extensivas: dependem da extenção (volume, massa, tamanho)
+        \item Intensívas: não dependem da extençao (preção ou propriedades Ext. dividida por massa ou N de mol)
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{Leis da Termodinâmica}
+    
+    \begin{enumerate}
+        \item Concervação de Energia
+    \end{enumerate}
+    
+\end{sectionBox}
+
+\begin{sectionBox}2{Concervação de Energia}
+    
+    \begin{BM}
+        \Delta E + \Delta E_{viz} = 0
+    \end{BM}
+    
+\end{sectionBox}
+
+\begin{sectionBox}1{}
+    
+    \begin{itemize}
+        \item \(q>0\) - Sistema recebe Q da viz
+        \item \(q>0\) - Sistema cede Q da viz
+        \item \(w<0\) - W realizado sobre vizinhança
+        \item \(w>0\) - W realizado sobre Sistema
+    \end{itemize}
+    
+\end{sectionBox}
+
+\begin{questionBox}1{}
+    
+    trabalho expansivo
+
+    \begin{flalign*}
+        &
+            w
+            = -\int P_{ext}\,\delta v
+            = -\int {\frac{n\,R\,T}{V}}\,\delta v
+            = -n\,R\,T\int \frac{\delta v}{V}
+            = -n\,R\,T\ln\frac{V_f}{V_i}
+            = -n\,R\,T\ln\frac{2\,V_i}{V_i}
+            = 1\,\unit{\mole}
+            * 8.314\,\unit{\joule\kelvin^{-1}\mole^{-1}}
+            * 298.15\,\unit{\kelvin}
+        &
+    \end{flalign*}
+    
+\end{questionBox}
+
+\end{document}
