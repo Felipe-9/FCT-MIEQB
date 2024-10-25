@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script type="module" src="./app.js"></script>
+    <div class="container">
+        <canvas id="gl-canvas" width="512" height="512"></canvas>
+        <div class="legend">
+            <ul>
+                <li><span style="color: rgb(0, 0, 0);">"Z"</span>: Termina a edição da curva atual</li>
+                <li><span style="color: rgb(0, 0, 0);">"C"</span>: Limpa todas as curvas</li>
+                <li><span style="color: rgb(0, 0, 0);">" "</span>: Pausa ou retoma a animação</li>
+                <li><span style="color: rgb(0, 0, 0);">"P"</span>: Alterna a visibilidade dos pontos</li>
+                <li><span style="color: rgb(0, 0, 0);">"L"</span>: Alterna a visibilidade das curvas</li>
+                <li><span style="color: rgb(0, 0, 0);">"+"</span>: Aumenta o número de segmentos por troço</li>
+                <li><span style="color: rgb(0, 0, 0);">"-"</span>: Diminui o número de segmentos por troço</li>
+                <li><span style="color: rgb(0, 0, 0);">"&lt;"</span>: Diminui a velocidade de animação</li>
+                <li><span style="color: rgb(0, 0, 0);">">"</span>: Aumenta a velocidade de animação</li>
+            </ul>
+        </div>
+        <div class="sliders">
+            <label for="segmentSlider">Segmentos por troço: <span id="segmentValue">10</span></label>
+            <input type="range" id="segmentSlider" min="1" max="50" value="5">
+            <label for="speedSlider">Velocidade de animação: <span id="speedValue">1</span></label>
+            <input type="range" id="speedSlider" min="1" max="20" step="1" value="1">
+        </div>
+        <form class="form">
+            <label for="buttonMatrix1">B-Spline</label>
+            <input id="buttonMatrix1" type="radio" name="r" value="1" checked="">
+            <label for="buttonMatrix2">Catmull-Rom</label>
+            <input id="buttonMatrix2" type="radio" name="r" value="2">
+            <label for="buttonMatrix3">Bézier</label>
+            <input id="buttonMatrix3" type="radio" name="r" value="3">
+        </form>
+    </div>
+</body>
+
+</html>

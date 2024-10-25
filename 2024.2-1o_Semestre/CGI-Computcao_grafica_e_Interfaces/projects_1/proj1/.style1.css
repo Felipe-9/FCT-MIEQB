@@ -1,0 +1,78 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  border: 0;
+  overflow: hidden;
+  display: block;
+}
+
+.container {
+  position: relative;
+}
+
+.legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(228, 223, 223, 0.367);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  max-width: 330px;
+  max-height: 180px;
+  z-index: 10;
+}
+
+.sliders {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(228, 223, 223, 0.367);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  max-width: 200px;
+  z-index: 10;
+}
+
+.legend ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.legend li {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 2px 0;
+}
+
+.form {
+  position: absolute;
+  z-index: 10;
+  background: rgba(228, 223, 223, 0.367);
+  width: 110px;
+  height: 78px;
+  border-radius: 5px;
+  color: #ffffff;
+  top: 10px;
+  right: 235px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: auto 20px;
+  align-items: center;
+  font-size: 14px;
+  line-height: 0.9;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 2px 0;
+}

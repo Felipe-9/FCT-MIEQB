@@ -1,5 +1,5 @@
 % !TEX root = ./OSF-Notebook.2.tex
-\documentclass["OSF-Notebook.tex"]{subfiles}
+\documentclass[OSF-Notebook.tex]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -8,418 +8,461 @@
 
 \begin{document}
 
-\mymakesubfile{5}[OSF]
-{Particle Size Reduction and Enlargement} % Subfile Title
-{Particle Size Reduction and Enlargement} % Part Title
+\mymakesubfile{2}[OSF]
+{Particulate Solids} % Subfile Title
+{Particulate Solids} % Part Title
 
 \begin{sectionBox}1{Introduction} % S1
-  Our objective is to take a \emph{feed} spend energy applying \emph{unit operations} to it so that we get a \emph{product} with smaller particles
-\end{sectionBox}
-
-\begin{sectionBox}*2{Unit operations} % S1.0.1
-  Normally a crusher or a mill is an unitary operation that receives a feed and spends energy to reduce to a product
-
-  The whole process takes several stages of size reduction each specifying on reducing its specific feed particle sizes:
-  \begin{enumerate}
-    \item Coarse reduction
-    \item intermediate reduction
-    \item Fine reduction
-  \end{enumerate}
-\end{sectionBox}
-
-\begin{sectionBox}*2{Particle properties} % S1.0.2
-
-  \begin{itemize}
-    \item \emph{Size of the feed:} energy needed is very different, caracterizes reduction in:
-      \vspace{-2ex}
+  The key characteristics of an individual particle include composition, size, shape, density, and hardness.
+  \paragraph*{Composition} determines properties such as \emph{density and conductivity} if the particle is \emph{uniform}. However, in many cases the particle is porous or it may consist of a continuous matrix in which small particles of a second material are distributed.
+  \paragraph*{Particle size} is important because it affects properties such as the \emph{surface per unit volume and the rate at which a particle will settle in a fluid}
+  \paragraph*{A Particle Shape} A particle shape may \emph{be regular}, such as spherical or cubic, or it may be \emph{irregular} like a piece of broken glass.
+  \begin{description}[
+    leftmargin=!,
+    labelwidth=\widthof{Irregular} % Longest item
+  ]
+    \item[Regular] can be defined by mathematical equations
       \begin{itemize}
-        \begin{multicols}{3}
-          \item coarse 
-          \item interediate 
-          \item fine
-        \end{multicols}
+        \begin{multicols}{4}
+          \item Sphere
+          \item Cylinder
+          \item Cube\dots
+          \end{multicols}
       \end{itemize}
-    \item \emph{Compressive strength:} minimum compressive strength that causes solid fracture,
-    \item \emph{Brittleness (fragilidade):} Poor capacity to resistst impact and vibration of load
-    \\Most of inorganic non-metalic materials are brittle materials (ex: glass)
-    \vspace{-2ex}
-    \begin{itemize}
-      \begin{multicols}{2}
-        \item High compressive strength
-        \item low tensile strength
+
+    \item[Irregular] and properties of irregular particles are usually found by \emph{comparison to} specific characteristics of \emph{a regularly shaped particle}.
+  \end{description}
+
+  \subsection*{Single particles:}
+  \begin{itemize}
+    \begin{multicols}{2}
+      \item Shape
+      \item hardness
+      \item compressive resistence
+      \item electrical charge
+      \item (intraparticle) porosity
       \end{multicols}
-    \end{itemize}
-    \item \emph{Stickiness:} adherence to equipment
-      \\ causes considerable difficulty in size reduction
-    \item \emph{Soapiness:} how low is the friction coefficient of the material surface
-    \item \emph{Humidity:} how wet (water) is the solid
-    \\between \(\qtyrange*{5}{50}{\percent}\) solids tend to cake
-  \item \emph{Friability:} Measures the tendency for a solid to break when handling
-    \begin{itemize}
-      \item A \emph{crystaline} material will break along well defined planes
-      \item Energy to break \(\propto\) Size\(^{-1}\)
-    \end{itemize}
+  \end{itemize}
+
+  \subsection*{Bulk solids:}
+  \begin{itemize}
+    \begin{multicols}{2}
+      \item Particle size distribution
+      \item (interparticle) porosity
+      \item humidity
+      \item agglomeration
+      \item flowability
+      \item \dots
+      \end{multicols}
+  \end{itemize}
+
+  \subsection*{Solids suspensions (heterogenius mixture in a fluid, gás or
+  liquid)}
+  \begin{itemize}
+    \begin{multicols}{2}
+      \item Particle size distribution
+      \item Concentration of solids
+      \item viscosity of suspension
+      \item flocculation
+\item settleability
+      \item \dots
+      \end{multicols}
   \end{itemize}
 \end{sectionBox}
 
-\begin{sectionBox}*2{Types of forces} % S1.0.3
-  Prasher suggest that four \emph{basic patterns} may be identified. 
-  \begin{description}[
-    leftmargin=!,
-    labelwidth=\widthof{} % Longest item
-    ]
-    \item[Impact:] Particle concussion by a single rigid force.
-    \item[Compression:] Particle disintegration by two rigid forces.
-    \item[Shear:]  Produced by a fluid or by particle-particle interaction.
-    \item[Attrition:] Arising from particles scrapping against one another or against a rigid surface.
-  \end{description}
+\section{Particle Characterization} % S2
+
+\begin{sectionBox}2{Single Particles} % S2.1
+The \emph{simplest shape of a particle is the sphere}. Because of its \emph{symmetry}, the particle looks exactly the same from whatever direction it is viewed, and behaves in the same manner in fluid, regardless of its orientation. No other particle shape has this characteristic. However, \emph{perfect spheres are rarely found} and, generally, a typical particle may not be of any regular known shape. In fact, \emph{irregular-shaped particles are common}. They are typically observed in nature and regularly handled and processed in many industries. Frequently, \emph{the size of a particle of an irregular shape is defined in terms of the size of an equivalent sphere}, although the particle is represented by a sphere of a different size according to the property that is selected. Some of the important sizes of equivalent spheres are that the spheres have the same:
+  \begin{itemize}
+    \item Volume as the particle
+    \item surface area as the particle.
+    \item surface area per unit volume (i.e. specific surface area) as the particle.
+    \item area as the particle when projected onto a plane perpendicular to its direction of motion.
+    \item projected area as the particle, as viewed from above, when lying in its position of
+    \item maximum stability such as on a microscope slide, for example.
+    \item ability to pass through the same size of square aperture as the particle, such as on a screen for example.
+    \item same settling velocity as the particle in a specified fluid.
+  \end{itemize}
+  Depending on the process of interest, the relevant particle size is typically chosen as the method to define the particle size. A measure of particle shape that is frequently used is the sphericity, \(\psi\), defined as:
+  \begin{BM}
+    \psi=\frac
+    {surface area of sphere of same volume as particle}
+    {surface area of particle}
+  \end{BM}
 \end{sectionBox}
 
-\section{Size reduction of Solids} % S2
-\setcounter{subsection}{2}
+\begin{sectionBox}*2{Regular shapes} % S2.1.1
+  \paragraph*{Sphere}
 
-\begin{sectionBox}2{Energy Requirement for Size Reduction} % S2.1
-  Although its impossible to estimate the accurate amount of energy required in order to effect size reduction of a given material, a number of empirical laws have been proposed:
+  \begin{BM}[align*]
+    \text{Volume:}\quad&
+    \pi\,d^3/6
+    = 4\,\pi\,r^3/3
+    \\
+    \text{Surface Area:}\quad&
+    \pi\,d^2
+    = 4\,\pi\,r^2
+    \\
+    \text{Projected area in a plane:}\quad&
+    \pi\,d^2/2
+    = \pi\,r^2
+  \end{BM}
+  \paragraph*{Note:} Spheres are special as its compleetely symmetrical whilist the others depend on the orientation
+\end{sectionBox}
+
+\begin{sectionBox}*2{Irregular shapes} % S2.1.2
+
+  \begin{itemize}
+    \item Cannot be identified by math equations
+    \item Characteristic dimension \textit{d}
+      \begin{itemize}
+        \item Sphere Diameter with same volume 
+          \\ \(V_{\text{particle}}=V_{\text{sphere}}\)
+        \item Sphere Diameter with same Surface area
+          \\ \(S_{\text{particle}}=S_{\text{sphere}}\)
+        \item Sphere Diameter with same Surface per volume
+          \\\(
+            \frac
+            {S_{\text{particle}}}
+            {V_{\text{particle}}}
+            = \frac
+            {S_{\text{Sphere}}}
+            {V_{\text{Sphere}}}
+          \)
+      \end{itemize}
+  \end{itemize}
+  \subsection*{Derivando propriedades:}
+  \begin{description}[
+      leftmargin=!,
+      labelwidth=\widthof{Surface area} % Longest item
+    ]
+    \begin{multicols}{2}
+      \item[Length]       \( L=d\)
+      \item[Surface area] \( S=\dot{k}\,d^2\)
+      \item[Volume]       \( V=\ddot{k}\,d^3\)
+      \item[Mass]         \( m=\rho_S\,V=\rho_S\,\ddot{k}\,d^3\)
+      \end{multicols}
+  \end{description}
+  \begin{itemize}
+    \begin{multicols}{2}
+      \item Surface factor: \(\dot{k}_{\text{sphere}}=\pi\)
+      \item Volume factor: \(\ddot{k}_{\text{sphere}}=\pi/6\)
+      \end{multicols}
+  \end{itemize}
+\end{sectionBox}
+
+\subsection{Measurement of Particle Size} % S2.2
+\begin{sectionBox}*2{Sieving \(>\qty*{50}{\micro\m}\)} % S2.3.0.1
+  Sieve analysis may be carried out using a \emph{nest of sieves, each lower sieve being of smaller aperture size}. Generally, sieve series is arranged so that the ratio of aperture sizes on consecutive sieves is \(2\), \(2^{1/2}\), or \(2^{1/4}\) according to the closeness of sizing that is required. \emph{The sieves may either be hand-shaken or mounted on a vibrator}, which should be designed to give a degree of vertical movement and horizontal vibration.
+  \begin{center}
+    \includegraphics[width=0.6\textwidth]{sieves.png}
+  \end{center}
+\end{sectionBox}
+
+\begin{sectionBox}2{Particle Size Distribution (PSD)} % S2.3
+  \vspace{-3ex}
+  \begin{BM}
+    \text{Cumulative} \iff \text{Frequency}
+  \end{BM}
+  \begin{center}
+    \includegraphics[width=.6\textwidth]{psdcurves.png}
+  \end{center}
+  Most particulate systems of practical interest consist of particles of a wide range of sizes and it is necessary to give a \emph{quantitative indication of the mean size and of the spread of sizes}. The results of a size analysis can most conveniently be represented by means of a \emph{cumulative mass fraction curve, in which the proportion of particles (\textit{x}) smaller than a certain size (\textit{d}) is plotted against that size (\textit{d})}.\\
+
+  When the particle sizes are determined by image analysis, the results are represented by a cumulative number fraction curve, from which the mass fraction curve can be obtained
+
+  The distribution of particle sizes can be seen more readily by \emph{plotting a size frequency curve}, in which the slope (\(\odv{x}{d}\)) of the cumulative curve is plotted against particle size (\textit{d}). The most frequently occurring size is then shown by the maximum of the curve.
+\end{sectionBox}
+
+\begin{sectionBox}*2{PSD Distribution base} % S2.3.0.1
   \begin{center}
     \vspace{1ex}
-    \setlength\tabcolsep{3mm}        % width
-    % \renewcommand\arraystretch{1.25} % height
-    \begin{tabular}{l @{\ } l @{} C C C}
+    % \setlength\tabcolsep{6mm}        % width
+    \renewcommand\arraystretch{2.00} % height
+    \begin{tabular}{l@{\quad} LL}
       \toprule
 
-        \multicolumn{1}{c}{Law}
-        & \multicolumn{1}{c}{\begin{tabular}{c}
-          Accurate for
-          \\type of grinding
-        \end{tabular}}
-        & p & L_0 & L
+      \multicolumn{1}{c}{Property}
+      & \multicolumn{1}{c}{Whole}
+      & \multicolumn{1}{c}{Fraction}
 
       \\\midrule
-
-        Kick's & Coarse
-        & -1.0 
-        & \qtyrange*{50}{1500}{\mm}
-        & \qtyrange*{5}{50}{\mm}
-
-        \\ Bonds & Intermediate
-        & -1.5
-        & \qtyrange*{2}{50}{\mm}
-        & \qtyrange*{0.1}{5}{\mm}
-
-        \\ Rittinger's & Fine
-        & -2.0
-        & \qtyrange*{2}{5}{\mm}
-        & < \qty*{0.1}{\mm}
+      Number
+      & n_i,d_i
+      & n_i
+      % 
+      \\Length (\unit{\metre})
+      & l=n_i\,d_i
+      & l_i=\frac{n_i\,d_i}{\sum{n_j\,d_j}}
+      % 
+      \\Surface (\unit{\metre^2})
+      & s = n_i\,\dot{k}\,d_i^2
+      & s_i = \frac{n_i\,d_i^2}{\sum{n_j\,d_j^2}}
+      % 
+      \\Volume (\unit{\metre^3})
+      & v = n_i\,\ddot{k}\,d_i^3
+      & v_i = \frac{n_i\,d_i^3}{\sum{n_j\,d_j^3}}
+      % 
+      \\Mass (\unit{\kilo\gram})
+      & x   = n_i\,\rho\,\ddot{k}\,d_i^3
+      & x_i = \frac{n_i\,d_i^3}{\sum{n_j\,d_j^3}}
 
       \\\bottomrule
     \end{tabular}
     \vspace{2ex}
   \end{center}
-  These laws may all derive from the basic differential equation:
-  \begin{BM}
-    \odv{E}{L} = -C\,L^p
-  \end{BM}
-  Which states that the \emph{energy \(\odif{E}\)} required to effect a small change in \emph{size \(\odif{L}\)} of unit mass of material is a simple \emph{power function of the size (\(-C\,L^p\))}
-\end{sectionBox}
-
-\begin{sectionBox}*2{Rittinger's Law} % S2.1.0.1
-  \begin{BM}
-    E
-    = C\,\adif{\left( L^{-1} \right)}
-    = k_r\,f_c\,\adif{\left( L^{-1} \right)}
-  \end{BM}
-
-  Since \emph{surface} of unit mass of material \emph{\(\propto L^{-1}\)}, the interpretation of this law is that \emph{\(E\propto\) increase of surface area}
   
-  Rittinger's law is applicable mainly to that part of the process where a new surface is being created and holds most accurately for \emph{fine grinding (\(L_0=\qtyrange*{2}{5}{\mm}\land L<\qty*{0.1}{\mm}\))} where increase in surface per unit mass of material is large.
-
-  \begin{flalign*}
-    &
-      \odv{E}{L} = -C\,L^p \land p = -2.0
-      \implies &\\&
-      \implies
-      \int{\odif{E}}
-      = E
-      = \int{-C\,L^{-2}\,\odif{L}}
-      = C\,\adif{( L^{-1} )}
-      = K_R\,f_c\,\adif{( L^{-1} )}
-    &
-  \end{flalign*}
-\end{sectionBox}
-
-\begin{sectionBox}*2{Kick's Law} % S2.1.0.2
+  \subsection*{Mean diameter:}
+  Can be based on different properties of solid like weight, number or volume.
   \begin{BM}
-    E 
-    = -C\,\adif{\ln{ L }}
-    = -K_K\,f_C\,\adif{\ln{ L }}
+    \bar{d_{\alpha}}
+    = \frac{\int{d\,\odif{\alpha}}}{\int{\odif{\alpha}}}
+    = \frac{\sum{d_i\,\alpha_i}}{\sum{\alpha_i}}
+    : \quad\alpha
+    \begin{cases}
+      x: & \text{Weight}
+      \\ n: & \text{Number}
+      \\ v: & \text{Volume}
+      \\ s: & \text{Surface}
+      \\ l: & \text{Lenght}
+    \end{cases}
   \end{BM}
 
-  This supposes that \emph{energy required is directly related} to the \emph{reduction ratio \(L_0/L\)}
-
-  Kick's law more closely relates to the energy required to effect elatic deformation before fracure occurs, and is \emph{more accurate} than Rittinger's law for \emph{coarse crushing} where the amount of surface produced is considerably less.
-
-  \begin{flalign*}
+  \begin{BM}[flalign*]
     &
-      \odv{E}{L} = -C\,L^p \land p = -1.0
-      \implies &\\&
+    % ------------------------------------------------ %
+    %                 Weight and Number                %
+    % ------------------------------------------------ %
+    \text{Weight and Number}
+    &\\&
+    \begin{cases}
+      \text{Measured in number }n\\
+      \bar{d_{x}}
+      = \bar{d_{v}}
+      = \cfrac
+      {\int{d\,\odif{x}}}
+      {\int{\odif{x}}}
+      = \cfrac
+      {\int{d\,\odif{(n\,\rho\,\ddot{k}\,d^3)}}}
+      {\int{   \odif{(n\,\rho\,\ddot{k}\,d^3)}}}
+      = {\color{Emph}
+        \cfrac
+        {\int{n\,d^3\odif{d}}}
+        {\int{n\,d^2\odif{d}}}
+      }
+      = \\
+      = \cfrac
+      {\sum{d_i\,(n_i\,\rho\,\ddot{k}\,d_i^3)}}
+      {\sum{     (n_i\,\rho\,\ddot{k}\,d_i^3)}}
+      = {\color{Emph}
+        \cfrac
+        {\sum{n_i\,d_i^4}}
+        {\sum{n_i\,d_i^3}}
+      }
+      = \\
+      \text{Measured in Weight }x\\
+      = \cfrac
+      {\sum{x_i\,d_i}}
+      {\sum{x_i}}
+      = {\color{Emph}
+       \sum{x_i\,d_i}
+      }
+    \end{cases}
+    % ------------------------------------------------ %
+    %                      Surface                     %
+    % ------------------------------------------------ %
+    &\\[3ex]&
+    \text{Surface}
+    &\\&
+    \begin{cases}
+      \text{Measured in number }n\\
+      \bar{d}_S
+      = \cfrac
+      {\int{d\,\odif{s}}}
+      {\int{\odif{s}}}
+      = \cfrac
+      {\int{d\,\odif{(n\,\dot{k}\,d^2)}}}
+      {\int{   \odif{(n\,\dot{k}\,d^2)}}}
+      = {\color{Emph}
+        \cfrac
+        {\int{d^2\,n_i\odif{d}}}
+        {\int{d  \,n_i\odif{d}}}
+      }
+      = \\
+      = \cfrac
+      {\sum{d_i\,(n_i\,\dot{k}\,d_i^2)}}
+      {\sum{     (n_i\,\dot{k}\,d_i^2)}}
+      = {\color{Emph}
+        \cfrac
+        {\sum{n_i\,d_i^3}}
+        {\sum{n_i\,d_i^2}}
+      }
+      = \\
+      \text{Measured in Weight }x\\
+      = \cfrac
+      {\sum{
+          \left(
+            \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+      \right)\,d_i^3}}
+      {\sum{\left(
+            \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+      \right)\,d_i^2}}
+      = \cfrac
+      {\sum{x_i}}
+      {\sum{x_i/d_i}}
+      = {\color{Emph}
+        \cfrac
+        {1}
+        {\sum{x_i/d_i}}
+      }
+    \end{cases}
+    % ------------------------------------------------ %
+    %                      Lenght                      %
+    % ------------------------------------------------ %
+    &\\[3ex]&
+    \text{Lenght}&\\&
+    \begin{cases}
+      \text{Measured in number }n\\
+      \bar{d}_L
+      = \cfrac
+      {\int{d\,\odif{(n\,d)}}}
+      {\int{   \odif{(n\,d)}}}
+      = {\color{Emph}
+        \cfrac
+        {\int{d\,n\,\odif{d}}}
+        {\int{   n\,\odif{d}}}
+      }
+      = \\
+      = \cfrac
+      {\sum{d_i\,(n_i\,d_i)}}
+      {\sum{     (n_i\,d_i)}}
+      = {\color{Emph}
+        \cfrac
+        {\sum{n_i\,d_i^2}}
+        {\sum{n_i\,d_i  }}
+      }
+      =\\
+      \text{Measured in Weight }x\\
+      = \cfrac
+      {\sum{\left(
+            \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+      \right)\,d_i^2}}
+      {\sum{\left(
+            \frac{x_i}{\rho\,\ddot{k}\,d_i^3}
+      \right)\,d_i  }}
+      = {\color{Emph}
+        \cfrac
+        {\sum{x_i/d_i  }}
+        {\sum{x_i/d_i^2}}
+      }
+    \end{cases}
+    &\\[3ex]&
+    \text{Volume}&\\&
+    \begin{cases}
+      \bar{d}_V
+      = \cfrac
+      {\int{d\,\odif{n\,\ddot{k}\,d^3}}}
+      {\int{   \odif{n\,\ddot{k}\,d^3}}}
+      = {\color{Emph}
+        \cfrac
+        {\int{n\,d^3\odif{d}}}
+        {\int{n\,d^2\odif{d}}}
+      }
+      = \\
+      = \cfrac
+      {\sum{d_i\,(n_i\,\ddot{k}\,d_i^3)}}
+      {\sum{     (n_i\,\ddot{k}\,d_i^3)}}
+      = \cfrac
+      {\sum{n_i\,d_i^4}}
+      {\sum{n_i\,d_i^3}}
+      \\\text{Assuming all particles have the same size}\\
+      \sum{n_i\,\ddot{k}\,\bar{d}_V^3}
+      =\ddot{k}\,\bar{d}_V^3\,\sum{n_i}
+      = \sum{n_i\,\ddot{k}\,d_i^3}
+      \implies\\
       \implies
-      \int{\odif{E}} = E
-      = \int{-C\,L^{-1}\,\odif{L}}
-      = -C\,\adif{\ln{L}}
-      = -K_K\,f_c\,\adif{\ln{L}}
-    &
-  \end{flalign*}
-\end{sectionBox}
-
-\begin{sectionBox}*2{Bond's Law} % S2.1.0.3
-  \begin{BM}
-    E
-    = 2\,C\,\adif{(1/\sqrt{L})}
-    = E_i
-    \,\sqrt{ \frac{100}{L} }
-    \,\left(1-\frac{1}{\sqrt{q}}\right)
-    ;\quad q = \frac{L_0}{L}
+      \bar{d}_V
+      = {\color{Emph}
+        \sqrt{
+          \frac
+          {\sum{n_i\,d_i^3}}
+          {\sum{n_i}}
+        }
+      }
+    \end{cases}
   \end{BM}
 
-  Bond calls \emph{\(E_i\) the work index}, and express it as the amoun t of \emph{energy required to reduce} the unit mass of material from size \emph{\(\infty\to\qty*{100}{\micro\metre}\)}, that is \(q=\infty\). the size of the material is take as the size of the square hole through 80\% if the material will pass.
-
-  \begin{flalign*}
-    &
-      \odv{E}{L} = -C\,L^p \land p=-1.5
-      \implies &\\&
-      \implies
-      \int{\odif{E}} = E
-      = \int{-C\,L^{-1.5}\,\odif{L}}
-      = 2\,C
-      \,\adif{\left(
-        \frac{1}{\sqrt{L}}
-      \right)}
-      ; \quad 
-      C=5\,E_i
-      \land
-      q  = \frac{L_0}{L}
-      \implies &\\&
-      \implies
-      E
-      = 2*5\,E_i\,\left(
-        \frac{1}{\sqrt{L}}
-        -\frac{1}{\sqrt{q\,L}}
-      \right)
-      = E_i
-      \,\sqrt{\frac{100}{L}}
-      \left(1-\frac{1}{\sqrt{q}}\right)
-    &
-  \end{flalign*}
 \end{sectionBox}
 
 \begin{exampleBox}1{} % E1
-  A material is crushed in a blake jaw cruser such that the average size of particle is reduced from \qtyrange{50}{10}{\mm} with the consumption of energy of \qty*{13.0}{\kW/(\kg/\s)}. What would be the consumption of energy needed to crush the same material of an average size of \qty*{75}{\mm} to an average size of \qty{25}{\mm}
-
-  which of these results would be regarded as more reliable and why?
-  \answer{}
-  Kick's law for the average sizes being grinded are common for fine reduction which's kick's law is more accurate
-\end{exampleBox}
-\begin{exampleBox}2{} % E1.1
-  Assuming Rittinger's law applies?
-  \answer{}
-  \begin{flalign*}
-    &
-      E
-      = K_R\,f_c\,\adif{L^{-1}}
-      = &\\&
-      = 162.5*(
-        25^{-1}-75^{-1}
-      )
-      \,\unit{\kW/(\kg/\s)}
-      = \qty
-      {4.333333333333333}
-      {{\kW/(\kg/\s)}}
-      %
-      %
-      %
-      ; &\\[3ex]&
-      K_R\,f_c
-      = \frac{E}{L^{-1}-L_0^{-1}}
-      = \frac{13.0}{10^{-1}-50^{-1}}
-      \,\unit{\frac{\kW/(\kg/\s)}{\mm}}
-      = 162.5
-      \,\unit{\frac{\kW/(\kg/\s)}{\mm}}
-    &
-  \end{flalign*}
-\end{exampleBox}
-\begin{exampleBox}2{} % E1.2
-  Assuming Kick's law applies?
+  The size analysis of a powdered material on a mass basis is represented by a straight line from 0\% mass at \qty*{1}{\micro\m} particle size to 100\% mass at \qty*{101}{\micro\m} particle size. Calculate the surface mean diameter of the particles constituting the system.
+  \begin{center}
+    \includegraphics[width=.4\textwidth]{example.1.png}
+    % Straight ascending line going from (1,0) to (101,1), 
+    % y title: Mass fraction (x)
+    % x title: Size, d(\micro\metre)
+  \end{center}
   \answer{}
   \begin{flalign*}
     &
-      E
-      =-K_K\,f_c\,\adif{\ln{L}}
-      \cong &\\&
-      \cong \num{-8.077354149274954}
-      \,\ln{25/75}
-      \,\unit{\kW/(\kg/\s)}
-      \cong\qty
-      {8.873880528317809}
-      {\kW/(\kg/\s)}
-      %
-      %
-      %
-      ; &\\[3ex]&
-      -K_K\,f_c
-      = \frac{E}{\ln{L/L_0}}
-      = \frac{13.0}{\ln{10/50}}
-      \,\unit{\kW/(\kg/\s)}
-      \cong \qty
-      {-8.077354149274954}
-      {\kW/(\kg/\s)}
-    &
-  \end{flalign*}
-\end{exampleBox}
-
-\begin{sectionBox}1{Types of Crushing Equipment} % S3
-  \begin{center}
-    \vspace{1ex}
-    \setlength\tabcolsep{2mm}        % width
-    % \renewcommand\arraystretch{1.25} % height
-    \begin{tabular}{*3{l}}
-      \toprule
-
-      Coarse Crushers
-      & Intermediate Crushers
-      & Fine Crushers
-
-      \\\midrule
-      
-      % Coarse Crushers
-      \begin{tabular}{l}
-        \emph{Stag Jaw crusher}  
-        \\ Dodge jaw crusher 
-        \\ Gyratory crusher  
-        \\ \dots             
-      \end{tabular}
-      & 
-
-      % Intermediate Crushers
-      \begin{tabular}{l}
-          \emph{Crushing rolls} 
-        \\ Disc crusher        
-        \\ Edge runner mill    
-        \\ Hammer mill         
-        \\ Single roll crusher 
-        \\ Pin mill            
-        \\ symons disc crusher 
-        \\ \dots               
-      \end{tabular}
-      & 
-
-      % Fine Crushers
-      \begin{tabular}{l}
-          Buhrstone mill
-        \\ Roller mill
-        \\ NEI pendulum mill
-        \\ Griffin mill
-        \\ Ring roller mill (lopulco)
-        \\ \emph{Ball mill}
-        \\ Tube mill
-        \\ Hardinge mill
-        \\ Babcock mill 
-        \\ \dots
-      \end{tabular}
-
-
-      \\\bottomrule
-    \end{tabular}
-    \vspace{2ex}
-  \end{center}
-\end{sectionBox}
-
-
-\subsection{Coarse Crushers} % S3.1
-
-\begin{sectionBox}*2{Jaw Crushers} % S3.1.0.1
-  The Stag jaw crusher has a fixed jaw and a moving jaw pivoted at the
-top with the crushing faces formed of manganese steel.
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{jawcrusher.png}
-  \end{center}
-\end{sectionBox}
-
-\subsection{Intermediate Crushers} % S3.2
-
-\begin{sectionBox}*2{Crushing rolls} % S3.2.0.1
-  Two rolls, one in adjustable bearings, rotate in opposite directions, and the clearance between them can be adjusted according to the size of feed and the required size of product. \emph{Main forces: compressive/attrition}
-  \begin{center}
-    \includegraphics[width=.6\textwidth]{crushingrolls.png}
-  \end{center}
-  
-  \subsection*{Nip angle}
-  \begin{BM}
-    \cos{\alpha/2}
+    \bar{d}_s
     = \frac
-    {r_{roll}+b/2}
-    {r_{roll}+r_0}
-    \leq31^\circ
-  \end{BM}
-  \begin{description}
-    \item[\(r_{roll}\):] Roll radius
-    \item[\(r_0\):] Feed particle size
-    \item[\(b\):] Distance between rolls
-    \item[\(\alpha\leq31^\circ\):] Maximum value for nip angle
-    \item \(\tan{\alpha}=\mu\) The coefficient of friction
-  \end{description}
-  \begin{center}
-    \includegraphics[width=0.4\textwidth]{nipangle.png}
-  \end{center}
-\end{sectionBox}
-
-\subsection{Fine Crushers} % S3.3
-
-\begin{sectionBox}*2{Ball Mill} % S3.3.0.1
-  In its simplest form, \emph{the ball mill consists of a rotating hollow cylinder, partially filled with balls}, with its axis either horizontal or at a small angle to the horizontal. The material to be ground may be fed in throughja hollow trunnion at one end, and the product leaves through a similar trunnion at the other end. The gutlet is normally covered with a coarse screen to prevent the escape of the balls.
-  \begin{center}
-    \includegraphics[width=.6\textwidth]{ballmill.png}
-  \end{center}
-During grinding, the \emph{balls wear and are constantly replaced by new ones} so that the mill contains balls of various ages, and, hence, of various sizes. This is advantageous because the large balls deal effectively with the feed, and the small ones are responsible for giving a fine product.
-
-  \subsection*{Rotation speed}
-  A ball mill has a \emph{critical rotation} speed (\([w_c]=\unit{\radian/\s}\)) that must be avoided. At the critical point, the ball (with mass \textit{m}) is subject to a centrifugal force (\(m\,u/r^2\)) equal to the gravitational force (\(m\,g\))
-  \begin{BM}
-    w_c=g/r
-  \end{BM}
-  The \emph{optimal rotation} speed (\([w_o]=\unit{\radian/\s}\)) is choosen below \(w_c\) for optimal efficiency
-  \begin{BM}
-    w_o\sim\alpha\,w_c;\quad 
-    \alpha\in\myrange{0.50,0.75}
-  \end{BM}
-\end{sectionBox}
-
-\begin{exampleBox}1{} % E3
-  A ball mill, \qty*{1.2}{\m} in diameter, is operated at \qty*{0.80}{\hertz}, and it is found that the mill is not working properly. Should any modification in the conditions of operation be suggested
-  \answer{}
-  \begin{flalign*}
-    &
-      w_o \in\myrange{0.50\,w_c,0.75\,w_c}
-      \cong &\\&
-      \cong\myrange{
-        \num{0.321285553812258},
-        \num{0.481928330718387}
-      }\,\unit{\hertz}
-      %
-      %
-      %
-      ; &\\[3ex]&
-      w_c
-      = \sqrt{\frac{g}{r}}
-      \cong \sqrt{\frac{\num{ 9.780327 }}{0.6}}
-      \cong \qty
-      {4.037393342244473}
-      {\radian/\s}
-      \cong \qty
-      {0.642571107624516}
-      {\hertz}
+    {\sum{s\,d}}
+    {\sum{s}}
+    = &\\[3ex]&
+    = \frac
+    {\sum{
+        x
+        \,\frac
+        {\dot{k}}
+        {\rho\,\ddot{k}\,d}
+        \,d
+    }}
+    {\sum{
+        x
+        \,\frac
+        {\dot{k}}
+        {\rho\,\ddot{k}\,d}
+    }}
+    = \frac
+    {\sum{
+        x
+    }}
+    {\sum{
+        \frac{x}{d}
+    }}
+    = \frac
+    {1}
+    {\sum{ \frac{x}{d} }}
+    = \frac
+    {1}
+    {\int{ \frac{\odif{x}}{100\,x+1} }}
+    = \frac
+    {100}
+    {\int{ \frac{\odif{100\,x+1}}{100\,x+1} }}
+    = \frac
+    {100}
+    {\ln{101/1}}
+    \cong \qty
+    {21.667906533553168}
+    {\micro\metre}
+    %
+    %
+    %
+    ; &\\[3ex]&
+    s
+    = n\,\dot{k}\,d^2
+    = \left(
+      \frac{x}{\rho\,\ddot{k}\,d^3}
+    \right)
+    \,\dot{k}\,d^2
+    = x
+    \,\frac
+    {\dot{k}}
+    {\rho\,\ddot{k}\,d}
     &
   \end{flalign*}
-  rotation speed should be reduced to optimal \(w_o\) values
 \end{exampleBox}
 
 \end{document}
