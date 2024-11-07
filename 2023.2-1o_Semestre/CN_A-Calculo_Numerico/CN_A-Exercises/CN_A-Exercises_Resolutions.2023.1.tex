@@ -1,86 +1,83 @@
-% !TEX root = ./CN_A-Exercises_Resolutions.1.tex
-\providecommand\mainfilename{"./CN_A-Exercises_Resolutions.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./CN_A-Exercises_Resolutions.1.tex"}
-\documentclass[\mainfilename]{subfiles}
+% !TEX root = ./CN_A-Exercises_Resolutions.2023.1.tex
+\documentclass["CN_A-Exercises_Resolutions.tex"]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
 \begin{document}
 
-% \graphicspath{{\subfix{./.build/figures/CN_A-Exercises_Resolutions.1}}}
-% \tikzsetexternalprefix{./.build/figures/CN_A-Exercises_Resolutions.1/graphics/}
+% \graphicspath{{\subfix{./.build/figures/CN_A-Exercises_Resolutions.2023.1}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Exercises_Resolutions.2023.1/graphics/}
 
-\mymakesubfile{1}
-[CN A]
-{Exercicios} % Subfile Title
-{Exercicios} % Part Title
 
-\begin{questionBox}1{ % Q1
-    Considere os seguintes valores aproximados
-} % Q1
-    \setcounter{subquestion}{2}
-    \begin{questionBox}2{ % Q1.3
-        61.124(0.5)
-    } % Q1.3
-        \answer{}
-        \begin{flalign*}
-            &
-                \begin{cases}
-                    \hat{X}=61.124
-                    \\
-                    \myvert{\eta_X}=0.5\E-3
-                    \\
-                    \text{Casas decimais significativas}
-                    = 3
-                \end{cases}
-            &
-        \end{flalign*}
-    \end{questionBox}
-    \setcounter{subquestion}{4}
-    \begin{questionBox}2{ % Q1.5
-        206.1\pm 0.02
-    } % Q1.5
-        \answer{}
-        \begin{flalign*}
-            &
-                \begin{cases}
-                    \hat{X}=206.1
-                    \\
-                    \myvert{\eta_X}=0.02\leq 0.5\E-2
-                    \\
-                    \text{Casas decimais significativas}
-                    =2
-                \end{cases}
-            &
-        \end{flalign*}
-    \end{questionBox}
+\mymakesubfile{1}[CN A]
+{Exercicios: Teoria de Erros} % Subfile Title
+{Teoria de Erros} % Part Title
 
-    \begin{questionBox}{ % Q
-        717.0
-    } % Q
-        \answer{}
-        \begin{flalign*}
-            &
-                \begin{cases}
-                    \hat{X}=717.0
-                    \\
-                    \myvert{\eta_X}=0.5\E-1
-                    \\
-                    \text{Casas decimais significativas}
-                    =1
-                \end{cases}
-            &
-        \end{flalign*}
-    \end{questionBox}
-\end{questionBox}
+\begin{questionBox}1{} % Q1
+  Indique, justificando, o número de casas decimais significativas e o número de algarismos significativos que se pode garantir para cada uma das aproximações seguintes.
 
-\setcounter{question}{9}
+  \begin{enumerate}[label=\alph{enumi})]
+    \begin{multicols}{3}
+      \item 108.1
+      \item 94.23 (8)
+      \item 61.124 (0.5)
+      \item 5.03 (20)
+      \item 206.1\pm0.02
+    \end{multicols}
+  \end{enumerate}
 
-\begin{questionBox}1{ % Q10
-    question
-} % Q10
-    body
+  \answer{}
+
+  \setcounter{subquestion}{2}
+  \begin{questionBox}2b{ 61.124(0.5) } % Q1.3
+    \begin{flalign*}
+      &
+      \begin{cases}
+        \hat{X}=61.124
+        \\
+        \myvert{\eta_X}=0.5\E-3
+        \\
+        \text{Casas decimais significativas}
+        = 3
+      \end{cases}
+      &
+    \end{flalign*}
+  \end{questionBox}
+  \setcounter{subquestion}{4}
+
+  \begin{answerBox}{test} % RS
+    teste
+  \end{answerBox}
+
+  \begin{questionBox}2b{ 206.1\pm 0.02 } % Q1.5
+    \begin{flalign*}
+      &
+      \begin{cases}
+        \hat{X}=206.1
+        \\
+        \myvert{\eta_X}=0.02\leq 0.5\E-2
+        \\
+        \text{Casas decimais significativas}
+        =2
+      \end{cases}
+      &
+    \end{flalign*}
+  \end{questionBox}
+
+  \begin{questionBox}2b{ 717.0 } % Q
+    \begin{flalign*}
+      &
+      \begin{cases}
+        \hat{X}=717.0
+        \\
+        \myvert{\eta_X}=0.5\E-1
+        \\
+        \text{Casas decimais significativas}
+        =1
+      \end{cases}
+      &
+    \end{flalign*}
+  \end{questionBox}
 \end{questionBox}
 
 \end{document}
