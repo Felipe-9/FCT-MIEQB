@@ -1,0 +1,210 @@
+% !TEX root = ./EB-Notebook.12.8.tex
+\documentclass["EB-Notebook.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/EB-Notebook.12.8}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Notebook.12.8/graphics/}
+
+\setcounter{bookone}{12}
+\setcounter{booktwo}{8}
+
+\mymakesubfile{1}[EB]
+{12.8 Bioreactor Kinetics} % Subfile Title
+{Bioreactor Kinetics} % Part Title
+
+\begin{sectionBox}1{Batch Growth} % S1
+      
+  When cells are grown in batch culture, \emph{several phases} of cell growth are observed.
+  The different phases of growth are more \emph{readily distinguished} when the \emph{logarithm of viable cell concentration is plotted against time}
+
+  \begin{center}
+    \includegraphics[height=20ex]{cellGrowthPhases.png}
+    \includegraphics[height=20ex]{cellGrowthPhases.1.png}
+  \end{center}
+  \begin{center}
+    \setlength\tabcolsep{2mm}        % width
+    % \renewcommand\arraystretch{1.25} % height
+    \vspace{1ex}
+    \begin{tabular}{l @{\hspace{1em}} L p{ 20em } @{} }
+      \toprule
+
+       Phase
+       & \begin{tabular}{@{}c}
+         Specific\\growth rate
+       \end{tabular}
+       & Description
+
+       \\\midrule
+
+       Lag & \mu\approx0
+       & Cells adapting to new environment
+
+       \\ Acceleration & \mu<\mu_{\max{}}
+       & Cell population starts growing
+
+       \\ Growth & \mu\approx\mu_{\max{}}
+       & Growth achieve maximum rate
+
+       \\ Decline & \mu<\mu_{\max{}}
+       & Culture reaches limitant in nutrients or build-up of products
+
+       \\ Stationary & \mu=0
+       & Cell death and birth equalize
+
+       \\ Death & \mu<0
+       & Cells dying faster than they can multiply
+
+       \\\bottomrule
+       \multicolumn{3}{r}{Growth rate: \(r_X = \odv{x}{t} = \mu\,x\)}
+     \end{tabular}
+     \vspace{2ex}
+   \end{center}
+\end{sectionBox}
+
+\begin{sectionBox}*2{Growth rate} % S1.0.1
+  The cell growth rate (\(r_X\)) measures the change in volumetric concentration of viable cells (\(\unitof{( x )}=\unit{\gram/\metre^3}\))
+  \begin{BM}
+    r_X = \odv{x}{t} = \mu\,x
+    \implies 
+    \adif{\ln{x}}
+    = \mu\,t
+    % 
+    \\    \dim{x}=M/L^3
+    \quad\dim{\mu=T^{-1}}
+  \end{BM}
+
+  \paragraph{Doubling time \(t_d\)}
+  Cell growth rates are often expressed in terms of the time it takes to duplicate the population.
+  \begin{BM}
+    x=2\,x_0 : t=t_d = \frac{\log{2}}{\mu}
+  \end{BM}
+  \begin{flalign*}
+    &
+      t_d
+      \implies
+      \adif{\ln{x}}
+      =\ln{\frac{x}{x_0}}
+      =\ln{\frac{2\,x_0}{x_0}}
+      =\ln{2}
+      = \mu\,t_d
+    &
+  \end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Balanced Growth} % S2
+  In an environment favourable for growth, cells regulate their metabolism and adjust the rates of various internal reactions so that a condition of balanced growth occurs. During balanced growth, \emph{the composition of the biomass remains constant}. For the biomass composition to remain constant during growth, the specific rate of production of each component in the culture must be equal to the cell specific growth rate \(\mu\).\\
+  In most cultures, balanced growth occurs at the same time as exponential growth.
+  \begin{BM}
+    r_P = \mu\,p
+  \end{BM}
+  Another point is that the cell consumption is also constant
+  \begin{BM}
+    \odv{x}{t}=r_X
+  \end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}1{Effect of Substrate Concentration} % S3
+  \emph{During the growth and decline phases of batch culture}, the specific growth rate of the cells depends on the concentration of nutrientes in the medium.\\[1ex]
+  Often a \emph{single substrate} exerts a \emph{dominant influence on the rate of growth}; this component is know as the \emph{growth-rate-limiting substrate (\textit{S})}.\\[1ex]
+  During balanced growth, the specific growth rate is related to the concentration of the growth limiting substrate by a homologue of the \textit{Michaelis--Menten} expresion, the \emph{Monod equation:}
+  \begin{BM}
+    \mu 
+    = \frac
+    {\mu_{\max{}}\,s}
+    {K_S+s}
+    = \frac
+    {\mu_{\max{}}}
+    {1+K_S/s}
+    \\
+    \unitof{(s)} = \unit{\frac{\gram\of{S}}{\litre}}
+  \end{BM}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{monadEquationGraph.png}
+    % Annotation: s=K_S => \mu = \mu_{max}/2
+  \end{center}
+
+  \subsection*{Rate behavious based on concentration of substrate}
+
+  if \(\mu\) is dependent on the substrate concentration as indicated by the Monod equation, how can \(\mu\) remain constant during the growth phase? Typical values for the substrate constant (\(K_S\)) are very small in order of \unit{\mg/\L} for carbonhydrate substrates and \unit{\micro\g/\litre} for other compounds such as aminoacids.\\
+
+  The behaviour of specific growth rate (\(\mu\)) with the concentration of substrate in relation to the substrate constant \(K_S\) follows:
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{l L @{} L @{\(\implies\)} L}
+      \toprule
+
+        Growth        & s\gtrsim  &  K_S\,10             & \mu\approx\mu_{\max}
+      \\ Decline Start & s\in      &  K_S *\myrange{10,1} & \mu = \mu_{\max}/(1+K_S/s)
+      \\ Decline       & s\approx  &  K_S                 & \mu \approx \mu_{\max{}}/2
+      \\ Decline End   & s <       &  K_S                 & \mu = \mu_{\max{}}/(1+K_S/s)
+      \\ Statinoary    & s\ll      &  K_S                 & \mu \approx 0
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+
+  Some examples for the substrate constant \(K_S\):
+
+  \begin{center}
+    \vspace{-1ex}
+    \begin{tabular}{>{\itshape}l l S}
+      \toprule
+
+      \multicolumn{1}{l}{Microoragnism (genus)}
+      & Limiting Substrate
+      & \multicolumn{1}{C}{K_S / (\unit{\mg/\L})}
+
+      \\\midrule
+
+      \multirow[t]{1}{*}{Saccgaromyces} 
+      & Glucose & 25
+
+      \\[1ex] \multirow[t]{3}{*}{Escherichia} 
+      & Glucose & 4.0
+      \\& Lactose & 20
+      \\& Phosphate & 1.6
+
+      \\[1ex] \multirow[t]{1}{*}{Aspergillus} 
+      & Glucose & 5.0
+
+      \\[1ex] \multirow[t]{2}{*}{Candida} 
+      & Glycerol & 4.5
+      \\ & Oxygen & \numrange{0.042}{0.45}
+      % \\ & Oxygen & \multicolumn{1}{C}{\numrange{0.042}{0.45}}
+
+      \\[1ex] \multirow[t]{2}{*}{Pseudomonas} 
+      & Methanol & 0.7
+      \\& Methane & 0.4
+
+      \\[1ex] \multirow[t]{4}{*}{Klebsiella} 
+      & Carbon dioxide & 0.4
+      \\& Magnesium & 0.56
+      \\& Potassium & 0.39
+      \\& Sulphate & 2.7
+
+      \\[1ex] \multirow[t]{2}{*}{Hansenula} 
+      & Methanol & 120.0
+      \\& Ribose & 3.0
+      
+      \\[1ex] \multirow[t]{1}{*}{Cryptococcus} 
+      & Thiamine & 1.4e-7
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+
+
+  \subsection*{Limit of Monod equation}
+  The Monod equation is by far the most frequently used expression relating to growth rate to substrate concentration. However, it is \emph{valid only for balanced growth} and should not be applied when growth conditions are changing rapidly. There are also other restrictions; for example, the Monod equations has been found to have limited applicability at \emph{extremely low substrate levels}. \emph{When growth is inhibited by high substrate or product concentrations, extra terms can be added to the Monod equation} to account for these effects.\\
+  Several other kinetic expressions has been developed for cell growth these provide better correlations for experimental data in centain situations
+\end{sectionBox}
+
+
+
+\end{document}
