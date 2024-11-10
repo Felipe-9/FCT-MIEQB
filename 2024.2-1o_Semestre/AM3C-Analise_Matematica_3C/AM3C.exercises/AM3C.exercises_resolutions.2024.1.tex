@@ -110,41 +110,41 @@
 	Determine explicitamente a solução que verifica a condição \(y(0)=1\).
 	} % Q2
 	\answer{}
-	% \begin{flalign*}
-	%   &
-	%     0
-	%     = (x^2-y)\,\odiv{y}{x}+2\,x\,y
-	%     ; &\\[3ex]&
-	%     \odv{}{x}\left(2\,x^2\,y - y^2 + 1\right)
-	%     = \left(
-	%       2*2\,x\,y
-	%       + 2\,x^2\,y'
-	%     \right)
-	%     - \left(
-	%       2\,y\,\odiv{y}{x}
-	%     \right)
-	%     = 4\,x\,y
-	%     + 2\,\odiv{y}{x}(
-	%       x^2-y
-	%     )
-	%     = 0
-	%     \implies &\\&
-	%     \implies
-	%     2\,x\,y
-	%     + odiv{y}{x}(
-	%       x^2-y
-	%     )
-	%     = 0
-	%     % \odiv{y}{x} = \frac{-4\,x\,y}{2\,(x^2-y)}
-	%     % 
-	%     % 
-	%     % 
-	%     ; &\\[3ex]&
-	%     \text{Equação de 2º grau em }y:
-	%     &\\&
-	%     \dots
-	%   &
-	% \end{flalign*}
+	\begin{flalign*}
+	  &
+	    0
+	    = (x^2-y)\,\odv{y}{x}+2\,x\,y
+	    ; &\\[3ex]&
+	    \odv{}{x}\left(2\,x^2\,y - y^2 + 1\right)
+	    = \left(
+	      2*2\,x\,y
+	      + 2\,x^2\,y'
+	    \right)
+	    - \left(
+	      2\,y\,\odv{y}{x}
+	    \right)
+	    = 4\,x\,y
+	    + 2\,\odv{y}{x}(
+	      x^2-y
+	    )
+	    = 0
+	    \implies &\\&
+	    \implies
+	    2\,x\,y
+	    + odv{y}{x}(
+	      x^2-y
+	    )
+	    = 0
+	    % \odiv{y}{x} = \frac{-4\,x\,y}{2\,(x^2-y)}
+	    % 
+	    % 
+	    % 
+	    ; &\\[3ex]&
+	    \text{Equação de 2º grau em }y:
+	    &\\&
+	    \dots
+	  &
+	\end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}1{ % MARK: Q3
@@ -486,12 +486,16 @@
 	\end{flalign*}
 \end{questionBox}
 
-\setcounter{question}{10}
+
+\begin{questionBox}1{} % Q10
+  Considere as seguintes eq dif de prim ordem não lin
+\end{questionBox}
 \setcounter{subquestion}{1}
 
 \begin{questionBox}2{ % Q10.2
 	\begin{BM}
 		y'+x\,y^2-(2\,x^2+1)\,y+x^3+x-1=0
+    \\ y_1(x) = x
 	\end{BM}
 	} % Q10.2
 	\answer{}
@@ -756,11 +760,18 @@
 	\end{BM}
 	} % Q16
 	\answer{}
-	% \begin{flalign*}
-	% 	 &
-	% 	ee
-	% 	 &
-	% \end{flalign*}
+	\begin{flalign*}
+		 &
+       y = c_1\,x^{-3/2} + c_2\,x^{-1} + \frac{\sqrt{x}}{6}
+       &\\[3ex]&
+       \mdif[2]{x}{y} 
+       + \frac{7}{2\,x}
+       \,\mdif[1]{x}{y}
+       + \frac{3}{2\,x^2}
+       \,y
+       = x^{-3/2}/2
+		 &
+	\end{flalign*}
 	\begin{center}
 		\includegraphics[width=.4\textwidth]{16.1.jpeg}
 		\includegraphics[width=.4\textwidth]{16.2.jpeg}
@@ -773,7 +784,27 @@
 \setcounter{subquestion}{1}
 
 \begin{questionBox}2{} % Q28.2
+  A equação
+  \begin{BM}
+    (x\,y^2 + x^2\,y^2 + 3)\,\odif{x} + x^2\,y\,\odif{y} = 0
+  \end{BM}
+  Admite fatores que são apenas funções de x. det um desses fatores integrantes e o integral geral dessa equação, Determine a solução particular que passa pelo ponto (1,0)
   \answer{}
+  \begin{flalign*}
+    &
+    % fatores integ
+    \varphi(x) = c\,e^{2\,x}
+    &\\&
+    % um fator integ
+    \varphi_i(x) = e^{2\,x}.
+    &\\&
+    % ingegral geral
+    e^{2\,x}(x^2\,y^2+3) = e
+    &\\&
+    % Solução particular
+    e^{2\,x}(x^2\,y^2+3) = 3\,e^2
+    &
+  \end{flalign*}
   \begin{center}
     \includegraphics[width=.4\textwidth]{28.2.1.jpeg}
     \includegraphics[width=.4\textwidth]{28.2.2.jpeg}

@@ -1,0 +1,208 @@
+% !TEX root = ./AM3C-Slides_annotations.0.tex
+\documentclass["AM3C-Slides_annotations.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM3C-Slides_annotations.0}}}
+% \tikzsetexternalprefix{./.build/figures/AM3C-Slides_annotations.0/graphics/}
+
+\mymakesubfile{0}[AM 3C]
+{Apendice} % Subfile Title
+{Apendice} % Part Title
+
+\begin{sectionBox}1{Identidades Trigonométricas} % S2
+  \begin{multicols}{2}
+    \begin{align}
+        \sin^2(x) + \cos^2(x) &= 1
+      \\ 1 + \tan^2(x)         &= \sec^2(x)
+      \\ 1 + \cot^2(x)         &= \csc^2(x)
+    \end{align}
+    \begin{align}
+         \sin^2(x)             &= \frac{1-\cos(2\,x)}{2}
+      \\ \cos^2(x)             &= \frac{1+\cos(2\,x)}{2}
+      \\ \sin(2x)              &= 2 \sin(x)\,\cos(x)
+    \end{align}
+  \end{multicols}
+  \begin{align}
+       2\,\sin(x)\,\cos(y)   &= \sin(x - y) + \sin(x + y)
+    \\ 2\,\sin(x)\,\sin(y)   &= \cos(x - y) - \cos(x + y)
+    \\ \cos(x)\,\cos(y)      &= \cos(x - y) + \cos(x + 1)
+    \\ 1 \pm \sin(x)           &= 1 \pm \cos(\pi/2 - x)
+  \end{align}
+\end{sectionBox}
+
+\begin{sectionBox}1{Trigonometria Hiperbólica} % S3
+  \begin{multicols}{2}
+    \begin{align}
+         \sinh(x) &= \frac{e^{x}-e^{-x}}{2}
+      \\ \cosh(x) &= \frac{e^{x}+e^{-x}}{2}
+      \\ \tanh(x) &= \frac{\sinh(x)}{\cosh(x)}=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}
+    \end{align}
+    \begin{align}
+         \coth(x) &= 1/\tanh(x)
+      \\ \sech(x) &= 1/\cosh(x)
+      \\ \csch(x) &= 1/\sinh(x)
+    \end{align}
+  \end{multicols}
+\end{sectionBox}
+
+\begin{sectionBox}1{Tabela de Derivadas} % S4
+  \begin{multicols}{2}
+
+    \subsection*{Basic}
+    \begin{align}
+      % Basic
+        \left(u^n\right)'     &= n\,u^{n-1}\,u'
+      \\ \left(u\phantom{/}v\right)' &= \phantom{(}u'\,v + v'\,u
+      \\ \left(u/v\right)'    &=   \left(  u'\,v - v'\,u\right)/v^2
+    \end{align}
+
+    \subsection*{Exponentials}
+    \begin{align}
+      % exponentials
+         \left(a^u\right)'&= a^u\,\ln(a)\,u'; \qquad (a>0 \land a\neq1) 
+      \\ \left(e^u\right)'&= e^u\,u' 
+      \\ \log'_{a} (u)    &= \frac{u'}{u}\,\log_{a}(e) 
+      \\ \ln'(u)          &= \frac{1}{u}\,u' 
+      \\ (u^v)'           &= v\,u^{v-1}\,u' + u^v\,\ln(u)\,v' 
+    \end{align}
+
+    \subsection*{Trigonométric}
+    \begin{align}
+      % trigonometric
+         \sin'(u)&= \phantom{-}u'\,\cos(u) 
+      \\ \cos'(u)&=   - u'\,\sin(u) 
+      \\ \tan'(u)&= \phantom{-}u'\,\sec^2(u) 
+      \\ \cot'(u)&=   - u'\,\csc^2(u) 
+      \\ \sec'(u)&= \phantom{-}u'\,\sec(u)\,\tan(u) 
+      \\ \csc'(u)&=   - u'\,\csc(u)\,\cot(u) 
+    \end{align}
+
+    \subsection*{Hyperbolic}
+    \begin{align}
+      % hyperbolic
+        \sinh'(u)&= \cosh(u) 
+      \\ \cosh'(u)&= \sinh(u) 
+      \\ \tanh'(u)&= 1-\tanh^2(u) 
+      \\ \coth'(u)&= 1-\coth^2(u) 
+      \\ \sech'(u)&= -\tanh(u)\,\sech(u) 
+      \\ \csch'(u)&= -\coth(u)\,\csch(u) 
+    \end{align}
+
+    \subsection*{Arcs}
+    \begin{align}
+      % arcs
+        \arcsin'(u)&= \phantom{-}\frac{u'}{\sqrt{1-u^2}} 
+      \\ \arccos'(u)&=           -\frac{u'}{\sqrt{1-u^2}} 
+      \\ \arctan'(u)&= \phantom{-}\frac{u'}{1+u^2}  
+      \\ \arccot'(u)&=           -\frac{u'}{1+u^2}  
+      \\ \arcsec'(u)&= \phantom{-}\frac{u'}{|u|\,\sqrt{u^2-1}};(|u| > 1) 
+      \\ \arccsc'(u)&=           -\frac{u'}{|u|\,\sqrt{u^2-1}};(|u| > 1) 
+    \end{align} 
+
+  \end{multicols}
+\end{sectionBox}
+
+\begin{sectionBox}1{Tabela de Integrais} % S6
+  \subsection*{Basics}
+  \begin{align}
+       \int       \odif{u}    &= c + u 
+    \\ \int   u^n \odif{u}    &= c + \frac{u^{n+1}}{n+1} ;& (n \neq -1) 
+    \\ \int \odif{u}/u        &= c + \ln\myvert{u}
+    \\ \int   a^u \odif{u}    &= c + \frac{a^u}{\ln{a}} ;& (a > 0 \land a \neq 1)
+    \\ \int   e^u \odif{u}    &= c + e^u
+  \end{align}
+
+  \subsection*{trigonometric}
+  % \begin{multicols}{1}
+    \begin{align}
+         \int \sin(u)\,         \odif{u}&= c - \cos{u}
+      \\ \int \cos(u)\,         \odif{u}&= c + \sin{u}
+      \\ \int \tan(u)\,         \odif{u}&= c + \ln|\sec(u)          |
+      \\ \int \cot(u)\,         \odif{u}&= c + \ln|\sin(u)          |
+      \\ \int \sec(u)\,         \odif{u}&= c + \ln|\sec(u) + \tan(u)|
+      \\ \int \csc(u)\,         \odif{u}&= c + \ln|\csc(u) - \cot(u)|
+      \\ \int \sec(u)\,\tan(u)\,\odif{u}&= c + \sec(u)
+      \\ \int \csc(u)\,\cot(u)\,\odif{u}&= c - \csc(u)
+      \\ \int \sec^2(u)\,       \odif{u}&= c + \tan(u)
+      \\ \int \csc^2(u)\,       \odif{u}&= c - \cot(u)
+    \end{align}
+  % \end{multicols}
+  \subsection*{expressions}
+  \begin{align}
+       \int \odif{u}/     (u^2 + a^2) &= \arctan(u/a)/a + c 
+    \\ \int \odif{u}/     (u^2 - a^2) &= \ln\left|\frac{u-a}{u+a}\right|/2\,a + c ;& (u^2 > a^2) 
+    \\ \int \odif{u}/    \sqrt{u^2 + a^2} &= \ln{|u + \sqrt{u^2+a^2}|} + c 
+    \\ \int \odif{u}/    \sqrt{u^2 - a^2} &= \arcsin(u/a) + c ;& (u^2 < a^2) 
+    \\ \int \odif{u}/    \sqrt{a^2 - u^2} &= \arcsin(u/a) + c ;& (u^2 < a^2) 
+    \\ \int \odif{u}/\left(u\,\sqrt{a^2 - u^2}\right)&= \arcsec|u/a|/a + c  
+  \end{align}
+
+  \subsection*{Uncommon Integrals}
+  \begin{align}
+    \int{\sin^n(a\,u)\,\odif{u}}
+    &= 
+    - \frac
+    { \sin^{n-1}(a\,u)\,\cos(a\,u)}
+    {a\,n}
+    + \frac{n-1}{n}
+    \,\int{\sin^{n-2}(a\,u)\,\odif{u}}
+    % 
+    % 
+    % 
+    \\
+    \int{\cos^n(a\,u)\,\odif{u}}
+    &= \phantom{-} 
+    \frac
+    { \sin(a\,u)\,\cos^{n-1}(a\,u)}
+    {a\,n}
+    +\frac{n-1}{n}
+    \,\int{\cos^{n-2}(a\,u)\,\odif{u}}
+    %
+    %
+    %
+    \\
+    \int{\tan^n(a\,u)\,\odif{u}}
+    &= \phantom{-} 
+    \frac
+    { \tan^{n-1}(a\,u) }
+    {a(n-1)}
+    -\int{\tan^{n-2}(a\,u)\,\odif{u}}
+    %
+    %
+    %
+    \\
+    \int{\cot^n(a\,u)\,\odif{u}}
+    &=
+    - \frac
+    {\cot^{n-1}(a\,u)}
+    {a(n-1)}
+    -\int{\cot^{n-2}(a\,u)\,\odif{u}}
+    %
+    %
+    %
+    \\
+    \int{\sec^n(a\,u)\,\odif{u}}
+    &= \phantom{-}
+    \frac
+    {\sec^{n-2}(a\,u) \tan(a\,u)}
+    {a\,(n-1)}
+    + \frac{n-2}{n-1}
+    \,\int{\sec^{n-2}(a\,u)\,\odif{u}}
+    %
+    %
+    %
+    \\
+    \int{\csc^n(a\,u)\,\odif{u}}
+    &=
+    - \frac
+    {\csc^{n-2}(a\,u) \cot(a\,u)}
+    {a\,(n-1)}
+    + \frac{n-2}{n-1}
+    \,\int{\csc^{n-2}(a\,u)\,\odif{u}}
+  \end{align}
+\end{sectionBox}
+
+\end{document}
