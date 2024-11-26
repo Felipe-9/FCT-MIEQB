@@ -1,52 +1,62 @@
-% !TEX root = ./AM3C.Slides_annotations.3.tex
-\documentclass["./AM3C.Slides_annotations.tex"]{subfiles}
+% !TEX root = ./AM3C-Slides_annotations.3.tex
+\documentclass["AM3C-Slides_annotations.tex"]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
 \begin{document}
 
-% \graphicspath{{\subfix{./.build/figures/AM3C.Slides_annotations.3}}}
-% \tikzsetexternalprefix{./.build/figures/AM3C.Slides_annotations.3/graphics/}
+% \graphicspath{{\subfix{./.build/figures/AM3C-Slides_annotations.3}}}
+% \tikzsetexternalprefix{./.build/figures/AM3C-Slides_annotations.3/graphics/}
 
-\mymakesubfile{3}[AM 3C]
-{Slides Anotações 3} % Subfile Title
-{Slides Anotações 3} % Part Title
+\mymakesubfile{3}[AM3C]
+{Series} % Subfile Title
+{Series} % Part Title
 
-\begin{sectionBox}1{Equações diff com termos imaginários}
+\begin{sectionBox}1{Notas:} % S1
+  Inicialmente queremos saber se as series convergem ou divergem,
+  aprender os diversos casos espeçificos que nos provam limites espeçificos
+  \begin{center}
+    \vspace{1ex}
+    \setlength\tabcolsep{3mm}        % width
+    % \renewcommand\arraystretch{1.25} % height
+    \begin{tabular}{l L C C}
+      \toprule
 
+        \multirow[c]{2}{*}{Critérios} 
+        & \multirow[c]{2}{*}{Teste} 
+        & \multicolumn{2}{c}{Casos}
+        \\\cline{3-4} & 
+        & \multicolumn{1}{l}{Divergente}
+        & \multicolumn{1}{l}{Convergente}
+
+      \\\midrule
+
+        Comparação
+        & \lim_{n\to\infty}{\frac{b_n}{a_n}}
+        & > 1 & < 1
+        \\ A'lamberk
+        & \lim_{n\to\infty}{\frac{a_{n+1}}{a_n}}
+        & > 1 & < 1
+        \\ Raiz 
+        & \limsup_{n\to\infty}{\sqrt[n]{a_n}}
+        & > 1 & < 1
+        \\ Integral
+        & \int_1^{\infty}{f(x)\,\odif{x}}: f(n)=a_n
+        & > 1 & < 1
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+  \subsection*{Critério do Integral}
+  \begin{BM}
+    \int_1^{\infty}{f(x)\,\odif{x}} : f(n) = n
+  \end{BM}
+  \begin{itemize}
+    \item \(f(x)\) é continua em \(\myrange r{1,\infty}\)
+    \item Testar \textit{f} para saber se converge ou diverge, \(a_n\) segue o mesmo comportamento
+    \item \(\odv{f(x)}{x}\) Aponta con/divergencia de \textit{f}
+  \end{itemize}
 \end{sectionBox}
 
-\setcounter{example}{3}
-% \begin{exampleBox}1{ % E4
-%     \begin{BM}
-%       (D+5)^3\,y=0
-%     \end{BM}
-% } % E4
-% \end{exampleBox}
-
-\begin{exampleBox}1{}
-  \begin{equation*}
-    (D+5)^3\,y=0
-  \end{equation*}
-  
-\end{exampleBox}
-
-\begin{exampleBox}1{}
-  \begin{equation*}
-    (D^2-4\,D+5)^2\,y=0
-  \end{equation*}
-  \answer{} 
-  \begin{flalign*}
-    &
-      (D^2-4\,D+5)^2\,y
-      = Py
-      \implies &\\&
-      \implies
-      (r^2-4\,r+5)^2
-      \implies &\\&
-      \implies
-      \dots
-    &
-  \end{flalign*}
-\end{exampleBox}
 \end{document}

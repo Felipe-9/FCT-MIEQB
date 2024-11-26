@@ -1,8 +1,5 @@
-b% !TEX root = ./AM_2C-Testes_Resolucoes.2023.2.3.tex
-\providecommand\mainfilename{"./AM_2C-Testes_Resolucoes.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./AM_2C-Testes_Resolucoes.2023.2.3.tex"}
-\documentclass[\mainfilename]{subfiles}
+% !TEX root = ./AM_2C-Testes_Resolucoes.2023.2.3.tex
+\documentclass["./AM_2C-Testes_Resolucoes.tex"]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -11,1295 +8,1279 @@ b% !TEX root = ./AM_2C-Testes_Resolucoes.2023.2.3.tex
 \graphicspath{{\subfix{./.build/figures/AM_2C-Testes_Resolucoes.2023.2.3}}}
 \tikzsetexternalprefix{./.build/figures/AM_2C-Testes_Resolucoes.2023.2.3/graphics/}
 
-\mymakesubfile{3}
-[AM 2C]
+\mymakesubfile{3} [AM 2C]
 {Exame Resolução} % Subfile Title
 {Exame Resolução} % Part Title
 
-\begin{questionBox}1{ % Q1
-    A equação do plano angente à superfície de equação
-} % Q1
-    \begin{BM}
-        e^{x,y}
-        +y\,\sin{x}
-        -y^2+z^2+2\,x=2\,\pi
-    \end{BM}
-
-    \answer{B.}
+\begin{questionBox}1{} % Q1
+  A equação do plano angente à superfície de equação
+  \begin{BM}
+    e^{x,y}
+    +y\,\sin{x}
+    -y^2+z^2+2\,x=2\,\pi
+  \end{BM}
+  \answer{B.}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q2
-    Considere f, a curva de nível em 1/2 de f é
-} % Q2
-    \begin{BM}
-        f(x,y)
-        = \frac{y^2-4}{4\,x^2+y^2-4}
-    \end{BM}
+\begin{questionBox}1{} % Q2
+  Considere f, a curva de nível em 1/2 de f é
+  \begin{BM}
+    f(x,y)
+    = \frac{y^2-4}{4\,x^2+y^2-4}
+  \end{BM}
 
-    \answer{D.}
-    \begin{flalign*}
-        &
-            f(x,y)
-            = \frac{y^2-4}{4\,x^2+y^2-4}
-            = 1/2
-            \implies
-            y^2 = 4\,x^2+4
-            ; &\\[3ex]&
-            0
-            \neq 
-            4\,x^2+y^2-4
-            % \implies &&
-            \implies
-            y^2
-            \neq 
-            4-4\,x^2
-            \implies &\\&
-            \implies
-            4-4\,x^2\neq 4+4\,x^2
-            \implies
-            0\neq x
-            \implies
-            y\neq\pm2
-            ; &\\[3ex]&
-            \therefore
-            \left\{
-                (x,y)\in\mathbb{R}^2\backslash\{(0,2),(0,-2)\}:
-                y^2/4-x^2=1
-            \right\}
-        &
-    \end{flalign*}
+  \answer{D.}
+  \begin{flalign*}
+    &
+    f(x,y)
+    = \frac{y^2-4}{4\,x^2+y^2-4}
+    = 1/2
+    \implies
+    y^2 = 4\,x^2+4
+    ; &\\[3ex]&
+    0
+    \neq 
+    4\,x^2+y^2-4
+    % \implies &&
+    \implies
+    y^2
+    \neq 
+    4-4\,x^2
+    \implies &\\&
+    \implies
+    4-4\,x^2\neq 4+4\,x^2
+    \implies
+    0\neq x
+    \implies
+    y\neq\pm2
+    ; &\\[3ex]&
+    \therefore
+    \left\{
+      (x,y)\in\mathbb{R}^2\backslash\{(0,2),(0,-2)\}:
+      y^2/4-x^2=1
+    \right\}
+    &
+  \end{flalign*}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q3
-} % Q3
-    \answer{A.}
+\begin{questionBox}1{} % Q3
+  \answer{A.}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q4
-    Considere a curva \textit{C} em \(\mathbb{R}^2\) no sentido horario
-} % Q4
-    \begin{BM}
-        C = \left\{
-            (x,y,z)\in\mathbb{R}^3:
-            \left\{
-                \begin{aligned}
-                    z+x^2+3\,y^2=3
-                    \\
-                    z=6\,y
-                \end{aligned}
-            \right\}
-        \right\}
-    \end{BM}
+\begin{questionBox}1{} % Q4
+  Considere a curva \textit{C} em \(\mathbb{R}^2\) no sentido horario
+  \begin{BM}
+    C = \left\{
+      (x,y,z)\in\mathbb{R}^3:
+      \left\{
+        \begin{aligned}
+          z+x^2+3\,y^2=3
+          \\
+          z=6\,y
+        \end{aligned}
+      \right\}
+    \right\}
+  \end{BM}
 
-    \answer{}
-    \begin{flalign*}
-        &
-            x=0
-            \implies\begin{cases}
-                z=3-3\,y^2
-                \\
-                z=6\,y
-            \end{cases}
-            &\\&
-            6\,y=3-3\,y^2
-            \implies
-            0=3\,y^2+6\,y-3
-            \begin{cases}
-                a=(4*3)^{-1}=1/12
-                \\
-                y'
-                =-6*2*1/12
-                =-1
-                \\
-                x'
-                = -3-(-1)^2/(4*1/12)
-                = -6
-            \end{cases}
-            &\\&
-            \therefore
-            0=3(y+1)^2-6
-            \implies
-            y=\pm\sqrt{2}-1
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                % legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
-            
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph,
-                domain={-2.5:.5},
-                samples = \mysampledensitySimple,
-            ]{ 3-3*x^2 };
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain={-2.5:.5},
-                samples = \mysampledensityDouble,
-            ]{ 6*x };
-            % % ================ fillbetween =============== %
-            % \addplot [
-            %     fill opacity=0.1,
-            %     foreground,
-            % ] fill between [
-            %     of={A and B},
-            %     soft clip={domain={0:1}},
-            % ];
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
+  \answer{}
+  \begin{flalign*}
+    &
+    x=0
+    \implies\begin{cases}
+      z=3-3\,y^2
+      \\
+      z=6\,y
+    \end{cases}
+    &\\&
+    6\,y=3-3\,y^2
+    \implies
+    0=3\,y^2+6\,y-3
+    \begin{cases}
+      a=(4*3)^{-1}=1/12
+      \\
+      y'
+      =-6*2*1/12
+      =-1
+      \\
+      x'
+      = -3-(-1)^2/(4*1/12)
+      = -6
+    \end{cases}
+    &\\&
+    \therefore
+    0=3(y+1)^2-6
+    \implies
+    y=\pm\sqrt{2}-1
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          % legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
+
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph,
+          domain={-2.5:.5},
+          samples = \mysampledensitySimple,
+        ]{ 3-3*x^2 };
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain={-2.5:.5},
+          samples = \mysampledensityDouble,
+        ]{ 6*x };
+        % % ================ fillbetween =============== %
+        % \addplot [
+        %     fill opacity=0.1,
+        %     foreground,
+        % ] fill between [
+        %     of={A and B},
+        %     soft clip={domain={0:1}},
+        % ];
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q5
-} % Q5
-    \answer{D.}
+\begin{questionBox}1{} % Q5
+  \answer{D.}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q6
-    O valor do limite é
-} % Q6
-    \begin{BM}
-        \lim_{(x,y)\to(1,-1)}{
-            \frac{
-                (x-1)(y+1)\,e^{(x-1)^2}
-            }{
-                \sqrt{
-                    (x-1)^2+(y+1)^2
-                }
-            }
+\begin{questionBox}1{} % Q6
+  O valor do limite é
+  \begin{BM}
+    \lim_{(x,y)\to(1,-1)}{
+      \frac{
+        (x-1)(y+1)\,e^{(x-1)^2}
+      }{
+        \sqrt{
+          (x-1)^2+(y+1)^2
         }
-    \end{BM}
-    \answer{D.}
+      }
+    }
+  \end{BM}
+  \answer{D.}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q7
-    Considere a função real de duas variáveis reais, definida por
-} % Q7
-    \begin{BM}
-        f(x,y)
-        =\begin{cases}
-            \frac{3\,x^2\,y+2\,x^5}{x^4+y^2}
-            \quad&\text{se }(x,y)\neq(0,0)
-            \\0
-            \quad&\text{se }(x,y)=(0,0)
-        \end{cases}
-    \end{BM}
+\begin{questionBox}1{} % Q7
+  Considere a função real de duas variáveis reais, definida por
+  \begin{BM}
+    f(x,y)
+    =\begin{cases}
+      \frac{3\,x^2\,y+2\,x^5}{x^4+y^2}
+      \quad&\text{se }(x,y)\neq(0,0)
+      \\0
+      \quad&\text{se }(x,y)=(0,0)
+    \end{cases}
+  \end{BM}
 
-    Relativamente a \textit{f} temos:
-    \answer{C.}
+  Relativamente a \textit{f} temos:
+  \answer{C.}
 
-    \begin{flalign*}
+  \begin{flalign*}
+    &
+    \pdv{f}{x}(0,0)
+    =\pdv{}{x}{(0,0)}
+    \left(
+      \frac{3\,x^2\,y+2\,x^5}{x^4+y^2}
+    \right)
+    = &\\&
+    =\pdv{}{x}{(0,0)}
+    \left(
+      \frac{3\,x^2\,y}{x^4+y^2}
+      + \frac{2\,x^5}{x^4+y^2}
+    \right)
+    = &\\&
+    =3\,y\pdv{}{x}{(0,0)}
+    \left(
+      \frac{x^2}{x^4+y^2}
+    \right)
+    + 2\pdv{}{x}{(0,0)}
+    \left(
+      \frac{x^5}{x^4+y^2}
+    \right)
+    = &\\&
+    =\left\{
+      \begin{aligned}
+        & 
+        3\,y
+        \frac{
+          \left(
+            \pdv{}{x}{(0,0)}(x^2)(x^4+y^2)
+            - \pdv{}{x}{(0,0)}(x^4+y^2)(x^2)
+          \right)
+        }
+        {(x^4+y^2)^2}
+        &+\\+&
+        2\pdv{}{x}{(0,0)}
+        \frac{
+          \left(
+            \pdv{}{x}{(0,0)}(x^5)(x^4+y^2)
+            - \pdv{}{x}{(0,0)}(x^4+y^2)(x^5)
+          \right)
+        }{(x^4+y^2)^2}
         &
-            \pdv{f}{x}(0,0)
-            =\pdv{}{x}{(0,0)}
-            \left(
-                \frac{3\,x^2\,y+2\,x^5}{x^4+y^2}
-            \right)
-            = &\\&
-            =\pdv{}{x}{(0,0)}
-            \left(
-                \frac{3\,x^2\,y}{x^4+y^2}
-                + \frac{2\,x^5}{x^4+y^2}
-            \right)
-            = &\\&
-            =3\,y\pdv{}{x}{(0,0)}
-            \left(
-                \frac{x^2}{x^4+y^2}
-            \right)
-            + 2\pdv{}{x}{(0,0)}
-            \left(
-                \frac{x^5}{x^4+y^2}
-            \right)
-            = &\\&
-            =\left\{
-                \begin{aligned}
-                    & 
-                        3\,y
-                        \frac{
-                            \left(
-                                \pdv{}{x}{(0,0)}(x^2)(x^4+y^2)
-                                - \pdv{}{x}{(0,0)}(x^4+y^2)(x^2)
-                            \right)
-                        }
-                        {(x^4+y^2)^2}
-                    &+\\+&
-                        2\pdv{}{x}{(0,0)}
-                        \frac{
-                            \left(
-                                \pdv{}{x}{(0,0)}(x^5)(x^4+y^2)
-                                - \pdv{}{x}{(0,0)}(x^4+y^2)(x^5)
-                            \right)
-                        }{(x^4+y^2)^2}
-                    &
-                \end{aligned}
-            \right\}
-            = &\\&
-            =\left\{
-                \begin{aligned}
-                    & 
-                        3\,y
-                        \frac{
-                            \left(
-                                2\,x\,(x^4+y^2)
-                                - 4\,x^3\,(x^2)
-                            \right)
-                        }
-                        {(x^4+y^2)^2}
-                    &+\\+&
-                        2\pdv{}{x}{(0,0)}
-                        \frac{
-                            \left(
-                                5\,x^4(x^4+y^2)
-                                - 5\,x^3(x^5)
-                            \right)
-                        }{(x^4+y^2)^2}
-                    &
-                \end{aligned}
-            \right\}
-            = &\\&
-            =\left\{
-                \begin{aligned}
-                    & 
-                        3\,y
-                        \frac{
-                            +2\,x\,y^2
-                            -2\,x^5
-                        }
-                        {(x^4+y^2)^2}
-                    &+\\+&
-                        \frac{
-                            10\,x^4\,y^2
-                        }{(x^4+y^2)^2}
-                    &
-                \end{aligned}
-            \right\}
-            = &\\&
-            =
-            \frac{6\,x\,y^3}
-            {
-                x^8
-                +2x^4\,y^2
-                + y^4
-            }
-            -\frac{2\,x^5\,y}
-            {
-                x^8
-                +2x^4\,y^2
-                + y^4
-            }
-            + \frac{5\,x^4\,y^2}
-            {
-                x^8
-                +2x^4\,y^2
-                + y^4
-            }
-            ; &\\&
-            \lim_{(x\to0),(y\to x^2)}{
-                \frac{
-                    6\,x\,y^3
-                    -2\,x^5\,y
-                    +5\,x^4\,y^2
-                }
-                {
-                    x^8
-                    +2x^4\,y^2
-                    + y^4
-                }
-            }
-            = &\\&
-            = \lim_{(x\to0)}{
-                \frac{
-                    6\,x\,x^6
-                    -2\,x^5\,x^2
-                    +5\,x^4\,x^4
-                }
-                {
-                    x^8
-                    +2x^4\,x^4
-                    + x^8
-                }
-            }
-            = &\\&
-            = \lim_{(x\to0)}{
-                \frac{
-                    6\,x^7
-                    -2\,x^7
-                    +5\,x^8
-                }
-                {
-                    4x^8
-                }
-            }
-            = &\\&
-            = \lim_{(x\to0)}{
-                \frac{
-                    6
-                    -2
-                    +5\,x
-                }
-                {
-                    4x
-                }
-            }
+      \end{aligned}
+    \right\}
+    = &\\&
+    =\left\{
+      \begin{aligned}
+        & 
+        3\,y
+        \frac{
+          \left(
+            2\,x\,(x^4+y^2)
+            - 4\,x^3\,(x^2)
+          \right)
+        }
+        {(x^4+y^2)^2}
+        &+\\+&
+        2\pdv{}{x}{(0,0)}
+        \frac{
+          \left(
+            5\,x^4(x^4+y^2)
+            - 5\,x^3(x^5)
+          \right)
+        }{(x^4+y^2)^2}
         &
-    \end{flalign*}
+      \end{aligned}
+    \right\}
+    = &\\&
+    =\left\{
+      \begin{aligned}
+        & 
+        3\,y
+        \frac{
+          +2\,x\,y^2
+          -2\,x^5
+        }
+        {(x^4+y^2)^2}
+        &+\\+&
+        \frac{
+          10\,x^4\,y^2
+        }{(x^4+y^2)^2}
+        &
+      \end{aligned}
+    \right\}
+    = &\\&
+    =
+    \frac{6\,x\,y^3}
+    {
+      x^8
+      +2x^4\,y^2
+      + y^4
+    }
+    -\frac{2\,x^5\,y}
+    {
+      x^8
+      +2x^4\,y^2
+      + y^4
+    }
+    + \frac{5\,x^4\,y^2}
+    {
+      x^8
+      +2x^4\,y^2
+      + y^4
+    }
+    ; &\\&
+    \lim_{(x\to0),(y\to x^2)}{
+      \frac{
+        6\,x\,y^3
+        -2\,x^5\,y
+        +5\,x^4\,y^2
+      }
+      {
+        x^8
+        +2x^4\,y^2
+        + y^4
+      }
+    }
+    = &\\&
+    = \lim_{(x\to0)}{
+      \frac{
+        6\,x\,x^6
+        -2\,x^5\,x^2
+        +5\,x^4\,x^4
+      }
+      {
+        x^8
+        +2x^4\,x^4
+        + x^8
+      }
+    }
+    = &\\&
+    = \lim_{(x\to0)}{
+      \frac{
+        6\,x^7
+        -2\,x^7
+        +5\,x^8
+      }
+      {
+        4x^8
+      }
+    }
+    = &\\&
+    = \lim_{(x\to0)}{
+      \frac{
+        6
+        -2
+        +5\,x
+      }
+      {
+        4x
+      }
+    }
+    &
+  \end{flalign*}
 \end{questionBox}
 
 \begin{minipage}{1\textwidth}
-    \question{D.} % Q8
-    \question{C.} % Q9
-    \question{B.} % Q10
-    \question{D.} % Q11
+  \question{D.} % Q8
+  \question{C.} % Q9
+  \question{B.} % Q10
+  \question{D.} % Q11
 \end{minipage}
 
-\begin{questionBox}1{ % Q12
-    Considere a função \textit{f}. Escolha a afirm correta
-} % Q12
-    \begin{BM}
-        f(x,y)
-        = x^3+x^2\,y-y^2-4\,y
-    \end{BM}
+\begin{questionBox}1{} % Q12
+  Considere a função \textit{f}. Escolha a afirm correta
+  \begin{BM}
+    f(x,y)
+    = x^3+x^2\,y-y^2-4\,y
+  \end{BM}
 
-    \answer{E.}
-    \begin{flalign*}
-        &
-            \begin{cases}
-                \pdv{f}{x}
-                = 3\,x^2+2\,x\,y
-                \\
-                \pdv{f}{y}
-                = x^2-2\,y-4
-            \end{cases}
-            &\\&
-            \det\hessiana{f(x,y)}
-            = \begin{pmatrix}
-                \pdv{f(x,y)}{x,x} 
-                & \pdv{f(x,y)}{x,y}
-                \\
-                \pdv{f(x,y)}{y,x} 
-                & \pdv{f(x,y)}{y,y}
-            \end{pmatrix}
-            = \begin{pmatrix}
-                6\,x+2\,y & 2\,x
-                \\
-                2\,x & -2
-            \end{pmatrix}
-            = &\\&
-            = -2(6\,x+2\,y)
-            -4\,x^2
-            = -4\,x^2
-            -12\,x
-            +4\,y
-            ; &\\[3ex]&
-            \left\{
-                \begin{aligned}
-                    \det\hessiana(f)(0,-2)
-                    & = -8
-                    \quad& \text{Ponto de sela}
-                    \\ \det\hessiana(f)(-4,6)
-                    & = 8
-                    \quad& \text{Critico local}
-                    \\ \det\hessiana(f)(1,-3/2)
-                    & = -10
-                    \quad& \text{Ponto de sela}
-                    \\ \det\hessiana(f)(0,0)
-                    &= 0
-                    \quad& \text{Indeterminável}
-                \end{aligned}
-            \right\}
-            &\\&
-            \pdv[order=2]{f}{x}(1,-3/2)
-            = 6+2\,(-3/2)
-            = 6-3
-            = 3
-            \therefore\text{Mínimo local}
-        &
-    \end{flalign*}
+  \answer{E.}
+  \begin{flalign*}
+    &
+    \begin{cases}
+      \pdv{f}{x}
+      = 3\,x^2+2\,x\,y
+      \\
+      \pdv{f}{y}
+      = x^2-2\,y-4
+    \end{cases}
+    &\\&
+    \det\hessiana{f(x,y)}
+    = \begin{pmatrix}
+      \pdv{f(x,y)}{x,x} 
+      & \pdv{f(x,y)}{x,y}
+      \\
+      \pdv{f(x,y)}{y,x} 
+      & \pdv{f(x,y)}{y,y}
+    \end{pmatrix}
+    = \begin{pmatrix}
+      6\,x+2\,y & 2\,x
+      \\
+      2\,x & -2
+    \end{pmatrix}
+    = &\\&
+    = -2(6\,x+2\,y)
+    -4\,x^2
+    = -4\,x^2
+    -12\,x
+    +4\,y
+    ; &\\[3ex]&
+    \left\{
+      \begin{aligned}
+        \det\hessiana(f)(0,-2)
+        & = -8
+        \quad& \text{Ponto de sela}
+        \\ \det\hessiana(f)(-4,6)
+        & = 8
+        \quad& \text{Critico local}
+        \\ \det\hessiana(f)(1,-3/2)
+        & = -10
+        \quad& \text{Ponto de sela}
+        \\ \det\hessiana(f)(0,0)
+        &= 0
+        \quad& \text{Indeterminável}
+      \end{aligned}
+    \right\}
+    &\\&
+    \pdv[order=2]{f}{x}(1,-3/2)
+    = 6+2\,(-3/2)
+    = 6-3
+    = 3
+    \therefore\text{Mínimo local}
+    &
+  \end{flalign*}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q13
-    Seja \textit{D}, calcule o integral
-} % Q13
-    \begin{BM}
-        D = \left\{
-            (x,y)\in\mathbb{R}^2
-            : y\leq x\leq 2-y^2
-            \land y\geq0
-        \right\}
+\begin{questionBox}1{} % Q13
+  Seja \textit{D}, calcule o integral
+  \begin{BM}
+    D = \left\{
+      (x,y)\in\mathbb{R}^2
+      : y\leq x\leq 2-y^2
+      \land y\geq0
+    \right\}
+    \\
+    \iint_D{4\,y\,\odif{x,y}}
+  \end{BM}
+  \answer{B.}
+  \begin{flalign*}
+    &
+    \begin{cases}
+      y\leq x
+      \\
+      y^2\geq 2-x
+      \\
+      y\geq0
+    \end{cases}
+    &\\&
+    x^2=2-x
+    \implies
+    x^2+x-2=0
+    \implies &\\&
+    \implies
+    \left\{
+      \begin{aligned}
+        a=1/4
         \\
-        \iint_D{4\,y\,\odif{x,y}}
-    \end{BM}
-    \answer{B.}
-    \begin{flalign*}
-        &
-            \begin{cases}
-                y\leq x
-                \\
-                y^2\geq 2-x
-                \\
-                y\geq0
-            \end{cases}
-            &\\&
-            x^2=2-x
-            \implies
-            x^2+x-2=0
-            \implies &\\&
-            \implies
-            \left\{
-                \begin{aligned}
-                    a=1/4
-                    \\
-                    x'=-1/2
-                    \\
-                    y'=-9/4
-                \end{aligned}
-            \right\}
-            \implies
-            (x+1/2)^2=9/4
-            \implies &\\&
-            \implies
-            x=\pm(3/2)-1/2;
-            X=\{(1,1),(-2,-2)\}
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
-            
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph,
-                domain={-0.1:1.1},
-                samples = \mysampledensitySimple,
-            ]{ x };
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain={0.9:2},
-                samples = 10\mysampledensitySimple,
-            ]{ sqrt(2-x) };
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    \begin{flalign*}
-        &
-            \int_{0}^{1}{
-                \int_{y}^{2-y^2}{
-                    4\,y\,\odif{x,y}
-                }
-            }
-            = \int_{0}^{1}{
-                4\,y((2-y^2)-y)\,\odif{y}
-            }
-            = &\\&
-            = \adif(8\,y^2/2-4\,y^4/4-4\,y^3/3)\big\vert_0^1
-            = 4-1-4/3
-            = 5/3
-        &
-    \end{flalign*}
+        x'=-1/2
+        \\
+        y'=-9/4
+      \end{aligned}
+    \right\}
+    \implies
+    (x+1/2)^2=9/4
+    \implies &\\&
+    \implies
+    x=\pm(3/2)-1/2;
+    X=\{(1,1),(-2,-2)\}
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
+
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph,
+          domain={-0.1:1.1},
+          samples = \mysampledensitySimple,
+        ]{ x };
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain={0.9:2},
+          samples = 10\mysampledensitySimple,
+        ]{ sqrt(2-x) };
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{flalign*}
+    &
+    \int_{0}^{1}{
+      \int_{y}^{2-y^2}{
+        4\,y\,\odif{x,y}
+      }
+    }
+    = \int_{0}^{1}{
+      4\,y((2-y^2)-y)\,\odif{y}
+    }
+    = &\\&
+    = \adif(8\,y^2/2-4\,y^4/4-4\,y^3/3)\big\vert_0^1
+    = 4-1-4/3
+    = 5/3
+    &
+  \end{flalign*}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q14
-    Seja \textit{f} uma função contínua em \(\mathbb{R}^2\). Considere a igualdade
-} % Q14
-    \begin{BM}
-        \iint_{\mathcal{R}}{
-            f(x,y)\,\odif{x,y}
+\begin{questionBox}1{} % Q14
+  Seja \textit{f} uma função contínua em \(\mathbb{R}^2\). Considere a igualdade
+  \begin{BM}
+    \iint_{\mathcal{R}}{
+      f(x,y)\,\odif{x,y}
+    }
+    = \left\{
+      \begin{aligned}
+        &
+        \int_{0}^{1}{
+          \int_{-\sqrt{x}}^{\sqrt{x}}{
+            f(x,y)\,\odif{y,x}
+          }
         }
-        = \left\{
-            \begin{aligned}
-                &
-                    \int_{0}^{1}{
-                        \int_{-\sqrt{x}}^{\sqrt{x}}{
-                            f(x,y)\,\odif{y,x}
-                        }
-                    }
-                &+\\+&
-                    \int_{1}^{\sqrt{2}}{
-                        \int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}{
-                            f(x,y)\,\odif{y,x}
-                        }
-                    }
-                &
-            \end{aligned}
-        \right\}
-    \end{BM}
-    
-    \answer{C.}
-    \begin{flalign*}
+        &+\\+&
+        \int_{1}^{\sqrt{2}}{
+          \int_{-\sqrt{2-x^2}}^{\sqrt{2-x^2}}{
+            f(x,y)\,\odif{y,x}
+          }
+        }
         &
-            \left\{
-                \begin{aligned}
-                    x \leq y^2
-                    \quad& x\in\myrange{0,1}
-                    \\
-                    2-x^2\leq y^2
-                    \quad& x\in\myrange{1,\sqrt{2}}
-                \end{aligned}
-            \right\}
-            = \left\{
-                \begin{aligned}
-                    x \leq y^2
-                    \quad& y\in\myrange{0,1}
-                    \\
-                    x^2\leq 2-y^2
-                    \quad& y\in\myrange{0,1}
-                \end{aligned}
-            \right\}
-            % ; &\\[3ex]&
-            % 0=x^2+x-2
-            % \implies &\\&
-            % \implies
-            % \left\{
-            %     \begin{aligned}
-            %         a=1/4
-            %         \\
-            %         x'=-1/2
-            %         \\
-            %         y'=-9/4
-            %     \end{aligned}
-            % \right\}
-            % \implies
-            % (x+1/2)^2=9/4
-            % \implies &\\&
-            % \implies
-            % x=\pm(3/2)-1/2;
-            % X=\{(1,1),(-2,-2)\}
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={left}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
-            
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                Graph,
-                domain  = 1:1.5,
-                samples = 50\mysampledensitySimple,
-            ]{ sqrt(2-x^2) };
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                Graph,
-                domain  = 1:1.5,
-                samples = 50\mysampledensitySimple,
-            ]{ -sqrt(2-x^2) };
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain  = 0:1.1,
-                samples = 50\mysampledensitySimple,
-            ]{ sqrt(x) };
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain  = 0:1.1,
-                samples = 50\mysampledensitySimple,
-            ]{ -sqrt(x) };
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    \begin{flalign*}
-        &
-            \therefore \int_{-1}^{1}{
-                \int_{y^2}^{\sqrt{2-y^2}}{
-                    f(x,y)\odif{x,y}
-                }
-            }
-        &
-    \end{flalign*}
-\end{questionBox}
+      \end{aligned}
+    \right\}
+  \end{BM}
 
-\begin{questionBox}1{ % Q15
-    Considere o domínio de \(\mathbb{R}^2\) definido por
-} % Q15
-    \begin{BM}
-        D=\left\{
-            (x,y)\in\mathbb{R}^2
-            : x\geq0,y\geq0,x+y\leq1
-        \right\}
-    \end{BM}
-    Usando transformação de variáveis:
-    \begin{BM}
-        \begin{cases}
-            y-x=u
-            \\
-            x+y=v
-        \end{cases}
-    \end{BM}
-
-    Determine:
-    \begin{BM}
-        I = \iint_D{3(y-x)^2\sqrt{y+x}\,\odif{x,y}}
-    \end{BM}
-
-    \answer{D.}
-    \begin{flalign*}
-        &
-            \begin{cases}
-                x\geq0
-                \\
-                y\geq0
-                \\
-                x+y\leq1
-            \end{cases}
-            &\\&
-            X=\left\{
-                (0,0),
-                (0,1),
-                (1,0)
-            \right\}
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={north east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                xmin={-0.1},
-                xmax={1.1},
-                ymin={-0.1},
-                ymax={1.1},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            \addlegendimage{empty legend}
-            \addlegendentry{\( 
-                {\color{Graph31}C_1},
-                {\color{Graph32}C_2}, 
-                {\color{Graph33}C_3}, 
-            \)}
-            
-            \draw[Graph31,thick] (0,0) -- (0,1);
-            \draw[Graph32,thick] (0,0) -- (1,0);
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph33,
-                domain  = 0:1,
-                samples = \mysampledensitySimple,
-            ]{ 1-x };
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    \begin{flalign*}
-        &
-            \left\{
-                \begin{aligned}
-                    x-y=u
-                    \\
-                    x+y=v
-                \end{aligned}
-            \right\}
-            = \left\{
-                \begin{aligned}
-                    x=(u+v)/2
-                    \\
-                    y=(v-u)/2
-                \end{aligned}
-            \right\}
-            &\\&
-            \left\{
-                \begin{aligned}
-                    C_1 & = \{x=0,y\in\myrange{0,1}\},
-                    \\
-                    C_2 & = \{y=0,x\in\myrange{0,1}\},
-                    \\
-                    C_3 & = \{y=1-x,x\in\myrange{0,1}\},
-                \end{aligned}
-            \right\}
-            ; &\\[6ex]&
-            % ================== C_{1,*} ================= %
-            C_{1,*} 
-            = \{u+v=0,u-v\in\myrange{0,1}\}
-            = \{u=-v,v\in\myrange{-1/2,0}\}
-            ; &\\[3ex]&
-            % ================== C_{2,*} ================= %
-            C_{2,*}
-            = \left\{ u-v=0,u+v\in\myrange{0,1} \right\}
-            = \left\{ u=v,v\in\myrange{0,1/2} \right\}
-            ; &\\[3ex]&
-            % ================== C_{3,*} ================= %
-            C_{3,*}
-            = \left\{ u-v=1-u-v,u+v\in\myrange{0,1} \right\}
-            = \left\{ u=1/2,1/2+v\in\myrange{0,1} \right\}
-            = &\\&
-            = \left\{ u=1/2,v\in\myrange{-1/2,1/2} \right\}
-            &\\[3ex]&
-            \implies
-            \left\{
-                \begin{aligned}
-                    C_{1,*} & = \{u=-v,v\in\myrange{-1/2,0}\},
-                    \\
-                    C_{2,*} & = \{u=v,v\in\myrange{0,1/2}\},
-                    \\
-                    C_{3,*} & = \{ u=1/2,v\in\myrange{-1/2,1/2}\}
-                \end{aligned}
-            \right\}
-        &
-    \end{flalign*}
-
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                xmin={-0.6},
-                xmax={0.6},
-                ymin={-0.1},
-                ymax={0.6},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            \addlegendimage{empty legend}
-            \addlegendentry{\( 
-                {\color{Graph31}C_{1,*}},
-                {\color{Graph32}C_{2,*}},
-                {\color{Graph33}C_{3,*}} 
-            \)}
-            
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph31,
-                domain={-.5:0},
-                samples = \mysampledensitySimple,
-            ]{ -x };
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph32,
-                domain={0:.5},
-                samples = \mysampledensitySimple,
-            ]{ x };
-
-            \draw[Graph33,thick]
-            (-0.5,.5) -- (0.5,.5);
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
-
-    \begin{flalign*}
-        &
-            % ================= Jacobiana ================ %
-            &\\[6ex]&
-            \det\jacobiana{f}
-            =\begin{pmatrix}
-                \pdv{x}{u} & \pdv{x}{v}
-                \\
-                \pdv{y}{u} & \pdv{y}{v}
-            \end{pmatrix}
-            =\begin{pmatrix}
-                1/2 & 1/2
-                \\
-                -1/2 & 1/2
-            \end{pmatrix}
-            = 1/4+1/4 = 1/2
-            ; &\\[3ex]&
-            I 
-            = \iint_D{3(y-x)^2\sqrt{y+x}\,\odif{x,y}}
-            = \int_{0}^{0.5}{
-                \int_{-v}^{v}{
-                    3\,u^2\sqrt{v}
-                    (1/2)
-                    \odif{u,v}
-                }
-            }
-            = &\\&
-            = \int_{0}^{0.5}{
-                (3/2)\,(v^3+v^3)(1/3)\sqrt{v}
-                \odif{v}
-            }
-            = (1/2)\int_{0}^{0.5}{
-                v^{7/2}
-                \odif{v}
-            }
-            = \frac{(1/2)(0.5)^{9/2}}{9/2}
-            = \frac{(0.5)^{9/2}}{9}
-        &
-    \end{flalign*}
-\end{questionBox}
-
-\begin{questionBox}1{ % Q16
-    Denote por \(\lambda\) a área do domínio \textit{D} no plano, Tem-se:
-} % Q16
-    \begin{BM}
-        D = \left\{
-            (x,y)\in\mathbb{R}^2
-            : x^2+y^2\geq1
-            \land
-            x^2+y^2\leq2\,x
-        \right\}
-    \end{BM}
-
-    \answer{D.}
-    \begin{flalign*}
-        &
-            \left\{
-                \begin{aligned}
-                    y^2=1-x^2
-                    \\
-                    y^2=2\,x-x^2
-                \end{aligned}
-            \right\}
-            ; &\\[3ex]&
-            1-x^2=2\,x-x^2
-            \implies
-            1/2=x
-            \implies
-            X'=\left\{
-                (1/2, \sqrt{3}/2),
-                (1/2,-\sqrt{3}/2)
-            \right\}
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
-            
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph,
-                domain  = .4:1,
-                samples = 50\mysampledensitySimple,
-            ]{ sqrt(1-x^2) };
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph,
-                domain  = .4:1,
-                samples = 50\mysampledensitySimple,
-            ]{ -sqrt(1-x^2) };
-
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain  = .4:2,
-                samples = 50\mysampledensitySimple,
-            ]{ sqrt(2*x-x^2) };
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain={0.4:2},
-                samples = 50\mysampledensitySimple,
-            ]{ -sqrt(2*x-x^2) };
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    \begin{flalign*}
-        &
-            \begin{cases}
-                x=r\cos\theta
-                \\
-                y=r\sin\theta
-                \\
-                r=\sqrt{x^2+y^2}
-                \\
-                \theta
-                =\tan^{-1}{y/x}
-            \end{cases}
-            &\\&
-            r^2\,\cos^2\theta
-            + r^2\,\sin^2\theta
-            = 2\,r\,\cos\theta
-            \implies &\\&
-            \implies
-            r = 2\,\cos\theta
-            &\\&
-            \left\{
-                \begin{aligned}
-                    (x,y)=(1/2,\sqrt{3}/2)
-                    \iff
-                    (r,\theta) = (1,\pi/3)
-                \end{aligned}
-            \right\}
-            ; &\\[3ex]&
-            \lambda
-            =\int_{0}^{\pi/3}{
-                \int_{1}^{2\,\cos\theta}{
-                    \odif{r,\theta}
-                }
-            }
-            +\int_{\pi\,5/3}^{2\,\pi}{
-                \int_{1}^{2\,\cos\theta}{
-                    \odif{r,\theta}
-                }
-            }
-        &
-    \end{flalign*}
-\end{questionBox}
-
-\begin{questionBox}1{ % Q17
-    Considere o sólido \(\mathcal{E}\) sabendo que tem por função de densidade \(d(x,y,z)\). a massa desse sóldio é
-} % Q17
-    \begin{BM}
-        \mathcal{E}
-        = \left\{
-            (x,y,z)\in\mathbb{R}^3
-            : x^2+y^2+z^2\leq9,
-            z\leq\sqrt{x^2+y^2},
-            z\leq0
-        \right\}
+  \answer{C.}
+  \begin{flalign*}
+    &
+    \left\{
+      \begin{aligned}
+        x \leq y^2
+        \quad& x\in\myrange{0,1}
         \\
-        d(x,y,z) = z
-    \end{BM}
+        2-x^2\leq y^2
+        \quad& x\in\myrange{1,\sqrt{2}}
+      \end{aligned}
+    \right\}
+    = \left\{
+      \begin{aligned}
+        x \leq y^2
+        \quad& y\in\myrange{0,1}
+        \\
+        x^2\leq 2-y^2
+        \quad& y\in\myrange{0,1}
+      \end{aligned}
+    \right\}
+    % ; &\\[3ex]&
+    % 0=x^2+x-2
+    % \implies &\\&
+    % \implies
+    % \left\{
+    %     \begin{aligned}
+    %         a=1/4
+    %         \\
+    %         x'=-1/2
+    %         \\
+    %         y'=-9/4
+    %     \end{aligned}
+    % \right\}
+    % \implies
+    % (x+1/2)^2=9/4
+    % \implies &\\&
+    % \implies
+    % x=\pm(3/2)-1/2;
+    % X=\{(1,1),(-2,-2)\}
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={left}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
 
-    \answer{A.}
-    \begin{flalign*}
-        &
-            \left\{
-                \begin{aligned}
-                       x & =\rho\sin\phi\cos\theta
-                    \\ y & =\rho\sin\phi\sin\theta
-                    \\ z & =\rho\cos\phi
-                \end{aligned}
-            \right\}
-            y=0\implies
-            \begin{cases}
-                z^2\leq 9-x^2
-                \\
-                z\leq x
-            \end{cases}
-            &\\&
-            x^2=9-x^2
-            \implies
-            X' = \left\{
-                ( 3\sqrt{2}/2, 3\sqrt{2}/2),
-                (-3\sqrt{2}/2,-3\sqrt{2}/2)
-            \right\}
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
-            
-            % Plot from equation
-            \addplot[
-                name path={A},
-                smooth,
-                thick,
-                Graph,
-                domain  = 0:3,
-                samples = 50\mysampledensitySimple,
-            ]{ sqrt(9-x^2) };
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                GraphC,
-                domain  = 0:2.2,
-                samples = \mysampledensityDouble,
-            ]{ x };
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          Graph,
+          domain  = 1:1.5,
+          samples = 50\mysampledensitySimple,
+        ]{ sqrt(2-x^2) };
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          Graph,
+          domain  = 1:1.5,
+          samples = 50\mysampledensitySimple,
+        ]{ -sqrt(2-x^2) };
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain  = 0:1.1,
+          samples = 50\mysampledensitySimple,
+        ]{ sqrt(x) };
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain  = 0:1.1,
+          samples = 50\mysampledensitySimple,
+        ]{ -sqrt(x) };
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{flalign*}
+    &
+    \therefore \int_{-1}^{1}{
+      \int_{y^2}^{\sqrt{2-y^2}}{
+        f(x,y)\odif{x,y}
+      }
+    }
+    &
+  \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q15
+  Considere o domínio de \(\mathbb{R}^2\) definido por
+  \begin{BM}
+    D=\left\{
+      (x,y)\in\mathbb{R}^2
+      : x\geq0,y\geq0,x+y\leq1
+    \right\}
+  \end{BM}
+  Usando transformação de variáveis:
+  \begin{BM}
+    \begin{cases}
+      y-x=u
+      \\
+      x+y=v
+    \end{cases}
+  \end{BM}
+
+  Determine:
+  \begin{BM}
+    I = \iint_D{3(y-x)^2\sqrt{y+x}\,\odif{x,y}}
+  \end{BM}
+
+  \answer{D.}
+  \begin{flalign*}
+    &
+    \begin{cases}
+      x\geq0
+      \\
+      y\geq0
+      \\
+      x+y\leq1
+    \end{cases}
+    &\\&
+    X=\left\{
+      (0,0),
+      (0,1),
+      (1,0)
+    \right\}
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={north east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          xmin={-0.1},
+          xmax={1.1},
+          ymin={-0.1},
+          ymax={1.1},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry{\( 
+            {\color{Graph31}C_1},
+            {\color{Graph32}C_2}, 
+            {\color{Graph33}C_3}, 
+        \)}
+
+        \draw[Graph31,thick] (0,0) -- (0,1);
+        \draw[Graph32,thick] (0,0) -- (1,0);
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph33,
+          domain  = 0:1,
+          samples = \mysampledensitySimple,
+        ]{ 1-x };
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{flalign*}
+    &
+    \left\{
+      \begin{aligned}
+        x-y=u
+        \\
+        x+y=v
+      \end{aligned}
+    \right\}
+    = \left\{
+      \begin{aligned}
+        x=(u+v)/2
+        \\
+        y=(v-u)/2
+      \end{aligned}
+    \right\}
+    &\\&
+    \left\{
+      \begin{aligned}
+        C_1 & = \{x=0,y\in\myrange{0,1}\},
+        \\
+        C_2 & = \{y=0,x\in\myrange{0,1}\},
+        \\
+        C_3 & = \{y=1-x,x\in\myrange{0,1}\},
+      \end{aligned}
+    \right\}
+    ; &\\[6ex]&
+    % ================== C_{1,*} ================= %
+    C_{1,*} 
+    = \{u+v=0,u-v\in\myrange{0,1}\}
+    = \{u=-v,v\in\myrange{-1/2,0}\}
+    ; &\\[3ex]&
+    % ================== C_{2,*} ================= %
+    C_{2,*}
+    = \left\{ u-v=0,u+v\in\myrange{0,1} \right\}
+    = \left\{ u=v,v\in\myrange{0,1/2} \right\}
+    ; &\\[3ex]&
+    % ================== C_{3,*} ================= %
+    C_{3,*}
+    = \left\{ u-v=1-u-v,u+v\in\myrange{0,1} \right\}
+    = \left\{ u=1/2,1/2+v\in\myrange{0,1} \right\}
+    = &\\&
+    = \left\{ u=1/2,v\in\myrange{-1/2,1/2} \right\}
+    &\\[3ex]&
+    \implies
+    \left\{
+      \begin{aligned}
+        C_{1,*} & = \{u=-v,v\in\myrange{-1/2,0}\},
+        \\
+        C_{2,*} & = \{u=v,v\in\myrange{0,1/2}\},
+        \\
+        C_{3,*} & = \{ u=1/2,v\in\myrange{-1/2,1/2}\}
+      \end{aligned}
+    \right\}
+    &
+  \end{flalign*}
+
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          xmin={-0.6},
+          xmax={0.6},
+          ymin={-0.1},
+          ymax={0.6},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        \addlegendimage{empty legend}
+        \addlegendentry{\( 
+            {\color{Graph31}C_{1,*}},
+            {\color{Graph32}C_{2,*}},
+            {\color{Graph33}C_{3,*}} 
+        \)}
+
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph31,
+          domain={-.5:0},
+          samples = \mysampledensitySimple,
+        ]{ -x };
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph32,
+          domain={0:.5},
+          samples = \mysampledensitySimple,
+        ]{ x };
+
+        \draw[Graph33,thick]
+        (-0.5,.5) -- (0.5,.5);
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{flalign*}
+    &
+    % ================= Jacobiana ================ %
+    &\\[6ex]&
+    \det\jacobiana{f}
+    =\begin{pmatrix}
+      \pdv{x}{u} & \pdv{x}{v}
+      \\
+      \pdv{y}{u} & \pdv{y}{v}
+    \end{pmatrix}
+    =\begin{pmatrix}
+      1/2 & 1/2
+      \\
+      -1/2 & 1/2
+    \end{pmatrix}
+    = 1/4+1/4 = 1/2
+    ; &\\[3ex]&
+    I 
+    = \iint_D{3(y-x)^2\sqrt{y+x}\,\odif{x,y}}
+    = \int_{0}^{0.5}{
+      \int_{-v}^{v}{
+        3\,u^2\sqrt{v}
+        (1/2)
+        \odif{u,v}
+      }
+    }
+    = &\\&
+    = \int_{0}^{0.5}{
+      (3/2)\,(v^3+v^3)(1/3)\sqrt{v}
+      \odif{v}
+    }
+    = (1/2)\int_{0}^{0.5}{
+      v^{7/2}
+      \odif{v}
+    }
+    = \frac{(1/2)(0.5)^{9/2}}{9/2}
+    = \frac{(0.5)^{9/2}}{9}
+    &
+  \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q16
+  Denote por \(\lambda\) a área do domínio \textit{D} no plano, Tem-se:
+  \begin{BM}
+    D = \left\{
+      (x,y)\in\mathbb{R}^2
+      : x^2+y^2\geq1
+      \land
+      x^2+y^2\leq2\,x
+    \right\}
+  \end{BM}
+
+  \answer{D.}
+  \begin{flalign*}
+    &
+    \left\{
+      \begin{aligned}
+        y^2=1-x^2
+        \\
+        y^2=2\,x-x^2
+      \end{aligned}
+    \right\}
+    ; &\\[3ex]&
+    1-x^2=2\,x-x^2
+    \implies
+    1/2=x
+    \implies
+    X'=\left\{
+      (1/2, \sqrt{3}/2),
+      (1/2,-\sqrt{3}/2)
+    \right\}
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
+
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph,
+          domain  = .4:1,
+          samples = 50\mysampledensitySimple,
+        ]{ sqrt(1-x^2) };
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph,
+          domain  = .4:1,
+          samples = 50\mysampledensitySimple,
+        ]{ -sqrt(1-x^2) };
+
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain  = .4:2,
+          samples = 50\mysampledensitySimple,
+        ]{ sqrt(2*x-x^2) };
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain={0.4:2},
+          samples = 50\mysampledensitySimple,
+        ]{ -sqrt(2*x-x^2) };
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{flalign*}
+    &
+    \begin{cases}
+      x=r\cos\theta
+      \\
+      y=r\sin\theta
+      \\
+      r=\sqrt{x^2+y^2}
+      \\
+      \theta
+      =\tan^{-1}{y/x}
+    \end{cases}
+    &\\&
+    r^2\,\cos^2\theta
+    + r^2\,\sin^2\theta
+    = 2\,r\,\cos\theta
+    \implies &\\&
+    \implies
+    r = 2\,\cos\theta
+    &\\&
+    \left\{
+      \begin{aligned}
+        (x,y)=(1/2,\sqrt{3}/2)
+        \iff
+        (r,\theta) = (1,\pi/3)
+      \end{aligned}
+    \right\}
+    ; &\\[3ex]&
+    \lambda
+    =\int_{0}^{\pi/3}{
+      \int_{1}^{2\,\cos\theta}{
+        \odif{r,\theta}
+      }
+    }
+    +\int_{\pi\,5/3}^{2\,\pi}{
+      \int_{1}^{2\,\cos\theta}{
+        \odif{r,\theta}
+      }
+    }
+    &
+  \end{flalign*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q17
+  Considere o sólido \(\mathcal{E}\) sabendo que tem por função de densidade \(d(x,y,z)\). a massa desse sóldio é
+  \begin{BM}
+    \mathcal{E}
+    = \left\{
+      (x,y,z)\in\mathbb{R}^3
+      : x^2+y^2+z^2\leq9,
+      z\leq\sqrt{x^2+y^2},
+      z\leq0
+    \right\}
+    \\
+    d(x,y,z) = z
+  \end{BM}
+
+  \answer{A.}
+  \begin{flalign*}
+    &
+    \left\{
+      \begin{aligned}
+        x & =\rho\sin\phi\cos\theta
+        \\ y & =\rho\sin\phi\sin\theta
+        \\ z & =\rho\cos\phi
+      \end{aligned}
+    \right\}
+    y=0\implies
+    \begin{cases}
+      z^2\leq 9-x^2
+      \\
+      z\leq x
+    \end{cases}
+    &\\&
+    x^2=9-x^2
+    \implies
+    X' = \left\{
+      ( 3\sqrt{2}/2, 3\sqrt{2}/2),
+      (-3\sqrt{2}/2,-3\sqrt{2}/2)
+    \right\}
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
+
+        % Plot from equation
+        \addplot[
+          name path={A},
+          smooth,
+          thick,
+          Graph,
+          domain  = 0:3,
+          samples = 50\mysampledensitySimple,
+        ]{ sqrt(9-x^2) };
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          GraphC,
+          domain  = 0:2.2,
+          samples = \mysampledensityDouble,
+        ]{ x };
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
 \end{questionBox}
 
 \begin{minipage}{1\textwidth}
-    \question{D.} % Q18
-    \question{C.} % Q19
-    \question{D.} % Q20
+  \question{D.} % Q18
+  \question{C.} % Q19
+  \question{D.} % Q20
 \end{minipage}
 
-\begin{questionBox}1{ % Q21
-    Volume do sólido
-} % Q21
-    \begin{BM}
-        E=\left\{
-            (x,y,z)
-            \in\mathbb{R}^3
-            :0\leq z\leq x^2+y^2
-            \land
-            x^2+y^2\leq 1
-            \land
-            y\geq0
-        \right\}
-    \end{BM}
-    \answer{D.}
-    \begin{flalign*}
-        &
-            y=0\implies
-            \begin{cases}
-                z\geq0
-                \\
-                z\leq x^2
-                \\
-                x^2\leq 1
-                \implies x\in\myrange{-1,1}
-                \\
-                y\geq 0
-            \end{cases}
-        &
-    \end{flalign*}
-    \begin{center}
-        % \tikzset{external/remake next=true}
-        % \pgfplotsset{height=7cm, width= .6\textwidth}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
+\begin{questionBox}1{} % Q21
+  Volume do sólido
+  \begin{BM}
+    E=\left\{
+      (x,y,z)
+      \in\mathbb{R}^3
+      :0\leq z\leq x^2+y^2
+      \land
+      x^2+y^2\leq 1
+      \land
+      y\geq0
+    \right\}
+  \end{BM}
+  \answer{D.}
+  \begin{flalign*}
+    &
+    y=0\implies
+    \begin{cases}
+      z\geq0
+      \\
+      z\leq x^2
+      \\
+      x^2\leq 1
+      \implies x\in\myrange{-1,1}
+      \\
+      y\geq 0
+    \end{cases}
+    &
+  \end{flalign*}
+  \begin{center}
+    % \tikzset{external/remake next=true}
+    % \pgfplotsset{height=7cm, width= .6\textwidth}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
 
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                Graph31,
-                domain  = -1:1,
-                samples = \mysampledensitySimple,
-            ]{ x^2 };
-            
-        \end{axis}
-        \end{tikzpicture}
-        % \tikzset{external/remake next=true}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          Graph31,
+          domain  = -1:1,
+          samples = \mysampledensitySimple,
+        ]{ x^2 };
 
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                Graph32,
-                domain  = 0:1,
-                samples = \mysampledensitySimple,
-            ]{ x^2 };
-            
-        \end{axis}
-        \end{tikzpicture}
-        % \tikzset{external/remake next=true}
-        \begin{tikzpicture}
-        \begin{axis}
-            [
-                % xmajorgrids = true,
-                legend pos={south east},
-                % domain=0:4,
-                % xlabel={},
-                % ylabel={},
-                axis lines={center}, % left|right|center|box
-            ]
-            % Legends
-            % \addlegendimage{empty legend}
-            % \addlegendentry[Graph]{\( 
-            %     {\color{Graph}x},
-            %     {\color{GraphC}x^2} 
-            % \)}
+      \end{axis}
+    \end{tikzpicture}
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
 
-            % Plot from equation
-            \addplot[
-                name path={B},
-                smooth,
-                thick,
-                Graph33,
-                domain  = -1:1,
-                samples = 50\mysampledensitySimple,
-            ]{ sqrt(1-x^2) };
-            
-        \end{axis}
-        \end{tikzpicture}
-    \end{center}
-    \begin{flalign*}
-        &
-            \int_{0}^{1}{
-                \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
-                    \int_{x^2+y^2}^{1}{
-                        \odif{z,x,y}
-                    }
-                }
-            }
-            = &\\&
-            = \int_{0}^{1}{
-                \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
-                    x^2\odif{x,y}
-                }
-                +\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
-                    (y^2-1)\odif{x,y}
-                }
-                -\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
-                    \odif{x,y}
-                }
-            }
-            = &\\&
-            = \int_{0}^{1}{
-                (2/3)((\sqrt{1-y^2})^3)\odif{y}
-                +(y^2-1)(2\sqrt{1-y^2})\odif{y}
-                -2\sqrt{1-y^2}\odif{y}
-            }
-        &
-    \end{flalign*}
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          Graph32,
+          domain  = 0:1,
+          samples = \mysampledensitySimple,
+        ]{ x^2 };
+
+      \end{axis}
+    \end{tikzpicture}
+    % \tikzset{external/remake next=true}
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          % xmajorgrids = true,
+          legend pos={south east},
+          % domain=0:4,
+          % xlabel={},
+          % ylabel={},
+          axis lines={center}, % left|right|center|box
+        ]
+        % Legends
+        % \addlegendimage{empty legend}
+        % \addlegendentry[Graph]{\( 
+        %     {\color{Graph}x},
+        %     {\color{GraphC}x^2} 
+        % \)}
+
+        % Plot from equation
+        \addplot[
+          name path={B},
+          smooth,
+          thick,
+          Graph33,
+          domain  = -1:1,
+          samples = 50\mysampledensitySimple,
+        ]{ sqrt(1-x^2) };
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{flalign*}
+    &
+    \int_{0}^{1}{
+      \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
+        \int_{x^2+y^2}^{1}{
+          \odif{z,x,y}
+        }
+      }
+    }
+    = &\\&
+    = \int_{0}^{1}{
+      \int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
+        x^2\odif{x,y}
+      }
+      +\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
+        (y^2-1)\odif{x,y}
+      }
+      -\int_{-\sqrt{1-y^2}}^{\sqrt{1-y^2}}{
+        \odif{x,y}
+      }
+    }
+    = &\\&
+    = \int_{0}^{1}{
+      (2/3)((\sqrt{1-y^2})^3)\odif{y}
+      +(y^2-1)(2\sqrt{1-y^2})\odif{y}
+      -2\sqrt{1-y^2}\odif{y}
+    }
+    &
+  \end{flalign*}
 \end{questionBox}
 
 \begin{minipage}{1\textwidth}
-    \question{A.} % Q22
-    \question{A.} % Q23
-    \question{B.} % Q24
-    \question{C.} % Q25
+  \question{A.} % Q22
+  \question{A.} % Q23
+  \question{B.} % Q24
+  \question{C.} % Q25
 \end{minipage}
 
 \end{document}

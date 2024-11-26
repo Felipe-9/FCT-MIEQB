@@ -1,0 +1,175 @@
+% !TEX root = ./AM3C.exercises_resolutions.2024.3.tex
+\documentclass["AM3C.exercises_resolutions.2024.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/AM3C.exercises_resolutions.2024.3}}}
+% \tikzsetexternalprefix{./.build/figures/AM3C.exercises_resolutions.2024.3/graphics/}
+
+\mymakesubfile{3}[AM3C]
+{Sucessões} % Subfile Title
+{Sucessões} % Part Title
+
+\setcounter{question}{3}
+\setcounter{subquestion}{3}
+\begin{questionBox}2{} % Q3.4
+  \answer{}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Q3.4.jpeg}
+  \end{center}
+\end{questionBox}
+
+\setcounter{question}{4}
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{} % Q4.2
+  \answer{}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Q4.2.jpeg}
+  \end{center}
+\end{questionBox}
+
+
+\setcounter{question}{5}
+\setcounter{subquestion}{2}
+
+\begin{questionBox}2{} % Q5.3
+  \answer{}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Q5.3.jpeg}
+  \end{center}
+\end{questionBox}
+
+\setcounter{question}{6}
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{} % Q6.2
+  Estudar a convergencia de:
+  \begin{BM}
+    \int_{n=1}^{\infty}{ \frac
+      {\sqrt{n+1} - \sqrt{n}}
+      {\sqrt{}}
+    }
+  \end{BM}
+  \answer{}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Q6.2.jpeg}
+  \end{center}
+  \begin{flalign*}
+    &
+      \sum_{n=1}^{\infty}{ \frac
+        {\sqrt{n+1} - \sqrt{n}}
+        {\sqrt{n^2+n}}
+      }
+      % 
+      % 
+      % 
+      &\\[3ex]&
+      \frac
+      {\sqrt{n+1} - \sqrt{n}}
+      {\sqrt{n^2+1}}
+      = \frac
+      {\sqrt{n+1} - \sqrt{n}}
+      {\sqrt{n}\,\sqrt{n+1}}
+      = \frac{1}{\sqrt{n}}
+      - \frac{1}{\sqrt{n+1}}
+      = a_n - a_{n+k} : a_n = \frac{1}{\sqrt{n}} \land k=1
+      % 
+      % 
+      % 
+      &\\[3ex]&
+      \text{Serie telescópica:} &\\&
+      \sum_{n=1}^{\infty}{(a_n - a_{n+k})}
+      \text{ Converge se } a_n\to0
+    &
+  \end{flalign*}
+\end{questionBox}
+
+\setcounter{question}{7}
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{} % Q7.2
+  Estudar o qudro de divergencia de
+  \begin{BM}
+    \sum_{n=1}^{\infty}{
+      (-1)^{n}
+      \,\frac{n^2}{(n+1)(n+2)}
+    }
+  \end{BM}
+  \answer{}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Q7.2.jpeg}
+  \end{center}
+\end{questionBox}
+
+\setcounter{question}{9}
+\setcounter{subquestion}{1}
+
+\begin{questionBox}2{} % Q9.2
+  Use o critério do integral para estudar a convergencia de
+  \begin{BM}
+    \sum_{n=1}^{\infty}{
+      \frac{1}{n\,\sqrt{\log{n}-1}}
+    }
+  \end{BM}
+  \answer{}
+  \begin{flalign*}
+    &
+      \sum_{n=1}^{\infty}{
+        \frac{1}{n\,\sqrt{\log{n}-1}}
+      }
+      % 
+      % 
+      % 
+      &\\[3ex]&
+      \text{Converge se} &\\&
+      \int_3^{\infty}{
+        \frac{\odif{x}}{x\,\sqrt{\log{x}-1}}
+      }
+      = \int_3^{\infty}{
+        2\,\left(
+          \sqrt{\log(x)-1}
+        \right)'
+        \,\odif{x}
+      }
+      = 2\,\left(
+        \sqrt{\log(\infty)-1}
+        - \sqrt{\log(3)-1}
+      \right)
+      = + \infty
+      &\\&
+      \therefore \text{Não converge}
+      % 
+      % 
+      % 
+      &\\[3ex]&
+      \odv{}{x}
+      \sqrt{\log(x)-1}
+      = \dots
+      = \frac{1}{2}
+      \,\frac{1}{\sqrt{\log{x}-1}}
+    &
+  \end{flalign*}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Q9.2.jpeg}
+  \end{center}
+\end{questionBox}
+
+\setcounter{question}{10}
+\setcounter{subquestion}{2}
+
+\begin{questionBox}2{} % Q10.3
+  \begin{BM}
+    \sum_{n=3}^{\infty}{
+      \frac{1}{\log(n)}
+    }
+  \end{BM}
+  \answer{}
+  Comparar com \(1/n\)
+  usando o criterio da comparação
+\end{questionBox}
+
+
+\end{document}
