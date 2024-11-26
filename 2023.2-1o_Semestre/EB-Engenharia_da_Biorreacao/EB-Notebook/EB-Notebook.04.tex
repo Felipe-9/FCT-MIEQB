@@ -1,0 +1,391 @@
+% !TEX root = ./EB-Notebook.04.tex
+\documentclass["EB-Notebook.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/EB-Notebook.04}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Notebook.04/graphics/}
+
+\mymakesubfile{4}[EB]
+{4 Material Balances} % Subfile Title
+{Material Balances} % Part Title
+
+\setcounter{subpart}{5}
+\subpart{Stoichiometry of Cell Growth and Production Formation}
+
+\begin{sectionBox}*{} % S0
+  When a cell growth occurs, cells are a product of reaction and must be represented in the reaction equation. A widely used term for cells in fermentation process is textit{biomass}.\\[1ex]
+  In this section we discuss how reaction equations for biomass growth and product synthesis are formulated.\\[1ex]
+  Metabolic stoichiometry has many applications in bioprocessing: as well as in mass and energy balances, it can be used to compare theoretical and actual product yields, check the consistency of experimental fermntation data, and formulate nutrient media.
+\end{sectionBox}
+
+\begin{sectionBox}1{Growth Stoichiometry and Elemental Balances} % S1
+  Despite its complexity and the thousand of intracellylar reactions involved, \emph{cell growth obeys the law of conservation of matter}.
+
+  \paragraph{Aerobic cell growth:} if only extracellular products formed are \ch{CO2} and \ch{H2O} we can write the general equation for aerobic cell growth:
+  \begin{center}\Large\bfseries
+    \ch{
+      C_wH_xO_yN_z 
+      + {a\,} O2 
+      + {b\,} H_gO_hN_i
+      -> {c\,} CH_{\alpha}O_{\beta}N_{\delta}
+      + {d\,} CO2 + {e\,} H2O
+    }
+  \end{center}
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{l l}
+      \toprule
+
+      \multicolumn{1}{l}{Formula}
+      & \multicolumn{1}{l}{For}
+
+      \\\midrule
+
+      \ch{C_wH_xO_yN_z} & Carbon Source
+      \\ \ch{H_gO_hN_i} & Nitrogen Source
+      \\ \ch{CH_{\alpha}O_{\beta}N_{\delta}} & dry cells
+
+      \\\bottomrule
+      \multicolumn{2}{r}{Descriptio for formula}
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+  \begin{itemize}
+    \item Results are remarcably similar for different cells and conditions; \emph{\ch{CH_{1.8}O_{0.5}N_{0.2}} can be used as a general formula for cell biomass} when composition analysis is not available.
+    \item The average `molecular weight' of cells based on C, H, O and N content is therefore 24.6, although \qtyrange*{5}{10}{\percent} residual ash is often added to account for those elements not included in the formula
+  \end{itemize}
+
+  \paragraph*{Balancing Aerobical cell growth}
+  \begin{center}
+    \vspace{1ex}
+
+    \begin{tabular}{l C}
+      \toprule
+
+      \multicolumn{1}{l}{Element}
+      & \multicolumn{1}{c}{Balance}
+
+      \\\midrule
+
+        C & w=c+d
+      \\ H & x + b\,g = c\,\alpha + 2\,e
+      \\ O & y + 2\,a + b\,h = c\,\beta + 2\,d + e
+      \\ N & z + b\,i = c\,\delta
+
+      \\\midrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+  Notice that we have \emph{five unknown coefficients but only four balance equations}, this means that an \emph{addition information is required} before the equations can be solved. Usually this information is obtained from experiments.\\[1ex]
+  A useful measurable parameter is the \emph{respiratory quotient, \textit{RQ}}:
+  \begin{BM}[align]
+    RQ = \unit{\frac
+      {\mole\of{\ch{CO2}\ Produced}}
+      {\mole\of{\ch{O2}\ Consumed}}
+    }
+    = \frac{d}{a}
+  \end{BM}
+
+  \paragraph*{limit of chemical balance}
+  Although elemental balances are usefull, the presence of water cause some problems in pratical application. Becausewater is usually present in great excess and changes in water concentration are incovenient to measure or experimentally verify, H and O balances can present difficulties.
+\end{sectionBox}
+
+\setcounter{example}{6}
+\begin{exampleBox}1{} % E4.7
+  Production of single-cell protein ffrom hexadecane is descibed by the following equation:
+  \begin{center}\Large\bfseries
+    \ch{
+      C16H34 + {a\,} O2 + {b\,} NH3 
+      -> {c\,} CH_{1.66}O_{0.27}N_{0.20}
+      + {d\,} CO2 + {e\,} H2O
+    }
+  \end{center}
+  Where \ch{CH_{1.66}O_{0.77}N_{0.20}} represents the biomass. if \(RQ = 0.43\), determine the scoichiometric coefficients.
+  \answer{}
+  % \begin{center}
+  %   \ch{
+  %     C_{16}H_{34}O_{0}N_{0}
+  %     + {a} O2
+  %     + {b} NH3
+  %     -> {c} CH_{1.66}O_{0.27}N_{0.20}
+  %     + {d} CO2
+  %     + {e} H2O
+  %   }
+  % \end{center}
+
+  Balancing
+  \begin{flalign*}
+    &
+    \begin{cases}
+          C: & 16 = c + d
+      \\  H: & 34 + b\,3 = c\,1.66 + 2\,e
+      \\  O: & 2\,a = c\,0.27 + 2\,d + e
+      \\  N: & b = c\,0.20
+      \\  RQ: & 0.43 = d/a
+    \end{cases}
+    &\\&
+    \begin{Bmatrix}
+          c &=& 16 - d
+      \\  a &=& d / 0.43
+      \\  b &=& (16-d)\,0.20
+      \\  e &=& \frac{1}{2}(34 + 3\,((16-d)\,0.20) - (16-d)\,1.66)
+      \\  2\,a &=& c\,0.27 + 2\,d + e
+    \end{Bmatrix}
+    % = &\\&
+    = \begin{Bmatrix}
+          c &\cong \num{10.630227582182455}
+      \\  a &\cong \num{12.487842832133826}
+      \\  b &\cong \num{53.151137910912274}
+      \\  e &\cong \num{11.365979381443299}
+      \\  d &\cong 0\num{5.369772417817545}
+    \end{Bmatrix}
+    % 
+    % 
+    % 
+    &\\[3ex]&
+    d: &\\&
+    2\,a 
+    = 2\,(d/0.43) 
+    = &\\&
+    = c\,0.27 + 2\,d + e
+    = &\\&
+    = (16-d)\,0.27 + 2\,d + \frac{1}{2}(34 + 3\,((16-d)\,0.20) - (16-d)\,1.66)
+    \implies &\\&
+    \implies
+    d = 
+    \frac{
+      16 * 0.27 
+      + 17
+      + \frac{1}{2}( 3 * 16 * 0.20 - 16*1.66)
+    }
+    {
+      \frac{2}{0.43}
+      +0.27
+      -2
+      +(3 * 0.20-1.66)/2
+      % 0.418206574596382
+    }
+    \cong \num{5.369772417817545} 
+    &
+  \end{flalign*}
+\end{exampleBox}
+
+\begin{sectionBox}1{Electron Balance} % S4.6.2
+  A usefull principle is conservation of reducting power or available electrons, which can be applied to determine quantitative relationships between substrates and products. \emph{An electron balance shows how available electrons from the substrate are distributed during reaction}.\\[1ex]
+  \emph{Available electrons (\textit{ae})} refers to the number of electrons availabe for transfer to oxygen on combustion of a substance to \ch{CO2\text{, }H2O} and nitrogen-containing compounds.\\[1ex]
+  The number of available electrons is calculated from the valence of the various elements of the molecule.
+  \begin{center}
+    \vspace{1ex}
+    \sisetup{ round-mode={none} }
+    \begin{tabular}{l c @{} S}
+      \toprule
+
+      \multicolumn{1}{c}{Molecule}
+      &\multicolumn{1}{c@{}}{Element}
+      &\multicolumn{1}{c}{\begin{tabular}{c}
+          valence or\\reference state
+      \end{tabular}}
+
+      \\\midrule
+
+        Ammonia           & N       & -3
+      \\ Nitrogen (molec) & \ch{N2} & 0
+      \\ Nitrate          & N       & 5
+      \\ \multirow[t]{5}{*}{Organics} 
+         & C & 4
+      \\ & H & 1
+      \\ & O & -2
+      \\ & P & 5
+      \\ & S & 6
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+
+  \paragraph{Degree of reduction \(\gamma\)} is defined as the number of equivalents of available electrons that quantity of material containing \qty*{1}{\gram\of{\text{Atom of }\ch{C}}}.
+
+  For the substrate (\ch{C_wH_xO_yN_z}):
+  \begin{BM}[align]
+    \gamma_S
+    = \frac{ae_{S}}{w}
+    = \frac{4\,w+x-2\,y-3\,z}{w}
+  \end{BM}
+
+  \paragraph*{Note that} the number of available electrons and the degree of reduction of \emph{\ch{CO2}, \ch{H2O}, and \ch{NH3} are zero}, This means that  the stoichiometric coefficients for these componds do not appear in the electron balance, thus simplifying balance calculations.
+  % 
+  \paragraph*{Available electrons are conserved during metabolism.} In a balanced growth equation, the number of available electrons is conserved by virtue of the fact that the amounts of each chemical element are coserved.
+
+  \paragraph{Available electron balance considering}
+  \begin{itemize}
+    \item Conservation of available electrons during metabolism
+    \item With ammonia as the nitrogen source
+    \item \(ae_{\ch{CO2}}=ae_{\ch{H2O}}=ae_{\ch{NH3}}=0\)
+    \item \(S = \ch{C_w\,H_x\,O_y\,N_z}\)
+    \item \(B = \ch{CH_{\alpha}O_{\beta}N_{\delta}}\)
+  \end{itemize}
+  \begin{center}
+    \ch{
+      S
+      + {a\,} O2 
+      + {b\,} NH3
+      -> {c\,} B
+      + {d\,} CO2 + {e\,} H2O
+    }
+  \end{center}
+  \begin{BM}[align]
+    w\,\gamma_{S\text{ubstrate}}
+    + a\,(-2*2)
+    = w\,\gamma_{S\text{ubstrate}}
+    -4\,a
+    = c\,\gamma_{B\text{iomass}}
+  \end{BM}
+  % \begin{flalign*}
+  %   &
+  %     = w * (
+  %       \gamma_S
+  %       - a\,2
+  %       - c\,\gamma_B
+  %     )
+  %     = 0
+  %     \implies
+  %     \gamma_S = 
+  %   &
+  % \end{flalign*}
+\end{sectionBox}
+
+\begin{sectionBox}1{Biomass Yield} % S4.6.3
+  Typically, the equation for electron balance is used with carbon and nitrogen balances, elemental balances and the value of respiratory quotient, \textit{RQ}, for evaluation os stoichiometric coefficients. However, as those are inadequate information for solution of five unkown coefficients, another experimental quantity is required.\\[1ex]
+  During cell growth there is, as a general approximation, a \emph{linear relationship between the amount of biomass produced and the amount of substrate consumed}. This relationship is expressed quantittively using the \emph{biomass yield, \(Y_{XS}\)}
+  \begin{BM}[align]
+    Y_{XS} = \unit{\frac
+      {\gram\of{\text{Cells produced}}}
+      {\gram\of{\text{Substrate consumed}}}
+    }
+  \end{BM}
+  A large number of factors influence biomass yield, including:
+  \begin{itemize}
+    \begin{multicols}{2}
+      \item Medium composition
+      \item pH and Temperature
+      \item \(Y_{XS, \text{Aerobic culture}}>Y_{XS, \text{Anaerobic culture}}\)
+      \item Nature of the carbon source
+      \item Nature of the nitrogen source
+      \item Choice of Electron receptor\\(eg: \ch{O2}, nitrate, or sulphate)
+    \end{multicols}
+  \end{itemize}
+
+  \subsection*{Elemental balance using Yield}
+  When \(Y_{XS}\) is constant throught growth, its experimentally determined value can be used to evaluate the stoichiometric coeficient for biomass produced (\textit{c})
+  \begin{BM}[align]
+    Y_{XS} = \frac
+    {c*(MW_{\text{Cells}}+r)}
+    {MW_{\text{Substrate}}}
+  \end{BM}
+  \textit{MW} stands for Molecular Weight; \textit{r} stands for residual ash
+
+
+  \paragraph*{Limits:} We must be sure that the substrate is fully used to produce biomass. One complication with real cultures is that some fraction of substrate consumed is always used for maintenance activities. These metabolic functions require subtrate but do not necessarily produce cell biomass, \ch{CO2}, and \ch{H2O} in the way described by the element balance. (check Chapter 12 for further discussion)
+\end{sectionBox}
+
+\begin{sectionBox}1{Product Stoichiometry} % S4.6.4
+  In many fermentations, extracellular products are formed during growth in addition to biomass. When this occurs, the stoichiometric equation can be modified to reflect product synthesis.\\[1ex]
+  Consider the formation of an extracellular product \ch{C_{j}H_{k}O_{l}N_{m}}, the elemental balance can be extended to include the product:
+  \begin{center}\Large\bfseries
+    \ch{
+      C_wH_xO_yN_z 
+      + {a\,} O2 
+      + {b\,} H_gO_hN_i
+      -> {c\,} CH_{\alpha}O_{\beta}N_{\delta}
+      + {d\,} CO2 + {e\,} H2O
+      + {f\,} C_{j}H_{k}O_{l}N_{m}
+    }
+  \end{center}
+  Product synthesis introduces one extra unknown stoichiometric coefficient to the equation; thus an \emph{additional relationship between the determinants and products is required}. This is usually provided as another \emph{experimentally determined} yield coefficient, \emph{the product yield from substrate, \(Y_{PS}\)}
+  \begin{BM}[align]
+    Y_{PS} 
+    = \unit{\frac
+      {\gram\of{\text{Product formed}}}
+      {\gram\of{\text{Substract consumed}}}
+    }
+    = \frac
+    {f\,MW_{P\text{roduct}}}
+    {MW_{S\text{ubstract}}}
+  \end{BM}
+  \paragraph*{Limits:} \emph{this does not hold if product formation is not directly linked to growth}; thus \emph{it can not be applied for secondary metabolite production} such as penicillin fermentation, or for biotransformations such as steroid hydroxylation tha involve only a small number of enzymes in cells. In these cases independent reaction equations must be used to describe growth and product synthesys
+\end{sectionBox}
+
+\begin{sectionBox}1{Theorical Oxygen Demand} % S4.6.5
+  As oxygen is often the limiting substrate in aerobic fermentations, oxygen demand is an important parameter in bioprocessing. Oxygen demand is represented by the stoichiometric coefficient \textit{a} in the balance equations.\\[1ex]
+  The required oxygen demand is related directly to the electrons available for transfer to oxygen; deriving from appropriate \emph{electron balance:}
+  \begin{itemize}
+    \begin{multicols}{3}
+      \item S: \ch{C_wH_xO_yN_z}
+      \item B: \ch{CH_{\alpha}O_{\beta}N_{\gamma}}
+      \item P: \ch{C_jH_kO_lN_m}
+    \end{multicols}
+  \end{itemize}
+  \begin{center}
+    \ch{
+      S
+      + {a\,} O2 
+      + {b\,} NH3
+      -> {c\,} B
+      + {d\,} CO2 + {e\,} H2O
+      + {f\,} P
+    }
+  \end{center}
+  \begin{BM}[align]
+    a = \frac{1}{4}(w\,\gamma_S-c\,\gamma_B-f\,j\,\gamma_{P})
+    \\\impliedby
+    w\,\gamma_{S}
+    + a\,\gamma_{\ch{O2}}
+    = w\,\gamma_{S}
+    - 4\,a
+    = c\,\gamma_{B}
+    + f\,j\,\gamma_{P}
+    \notag
+  \end{BM}
+
+  \paragraph*{Note:} this is easier to calculate as is does not require that the quantities for \ch{NH3}, \ch{CO2} and \ch{H2O} involved in the reaction to be known.
+\end{sectionBox}
+
+\begin{sectionBox}1{Maximum Possible Yield} % S4.6.6
+  Consider de the fractional allocation of available electrons in the substrate for defining \emph{\(c_{\max{}}\) and \(f_{\max}\)}
+  \begin{BM}[align]
+    1
+    = \frac{4\,a}{w\,\gamma_S}
+    + \frac{c\,\gamma_B}{w\,\gamma_S}
+    + \frac{f\,j\,\gamma_P}{w\,\gamma_S}
+  \end{BM}
+
+  \paragraph{Let us define \(\zeta_B\)} as the fraction of available electrons in the substrate transfered to biomass
+  \begin{BM}[align]
+    \zeta_B = \frac{c\,\gamma_B}{w\,\gamma_S}
+  \end{BM}
+  In the abscense of product formation, if all vailable electrons were used for biomass synthesis, \(\zeta_B\) would equal unity.\\[1ex]
+
+  \subsection*{Defining \(c_{\max{}}\)} 
+  Under these conditions, the maximum value of the stoichiometric coefficient \textit{c} is:
+  \begin{BM}[align]
+    c_{\max} = w\,\gamma_S/\gamma_B
+  \end{BM}
+  \begin{itemize}
+    \item The \(c_{\max{}}\) can be converted to biomass yield with mass units using \(Y_{XS} = \frac{c\,(MW_{\text{Cells}}+r)}{MW_{\text{Substrate}}}\). Therefore if we do not know the stoichiometry of growth, we can quickly \emph{calculate an upper limit for biomass yield} from the molecular formulae for the substrate and product
+    \item If the compostion of the cells is unknown, \(\gamma_B\) can be taken as 4.2 corresponding to the average biomass formula (\ch{CH_{1.8}O_{0.5}N_{0.2}})
+    \item The maximum biomass yield can be expressed in therms of mass (\(Y_{XS,\max{}}\)), or as the number of C atoms in the biomass per substrate C-atom consumed (\(c_{\max{}}/w\)). These quantities are sometimes know an \textit{thermodynamic maximum biomass yields.}
+    \item Substrates with high energy content, indicated by high \(Y_{S}\) values, give high maximum biomass yields.
+  \end{itemize}
+
+  \subsection*{Maximum possible product yield \(f_{\max}\)} 
+  In the abscensse of biomass synthesis can be determined
+  \begin{BM}[align]
+    f_{\max{}} = w\,\gamma_S/j\,\gamma_P
+  \end{BM}
+  Allows us to quickly calculate an upper limit for the product yield from the molecular formulae for the substrate and product
+\end{sectionBox}
+
+\end{document}

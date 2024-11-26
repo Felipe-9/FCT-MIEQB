@@ -1,0 +1,295 @@
+% !TEX root = ./EB-Notebook.12.tex
+\documentclass["EB-Notebook.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/EB-Notebook.12}}}
+% \tikzsetexternalprefix{./.build/figures/EB-Notebook.12/graphics/}
+
+\mymakesubfile{12}[EB]
+{12 Homogeneous Reactions} % Subfile Title
+{Homogeneous Reactions} % Part Title
+
+\setcounter{subpart}{7}
+\subpart{Bioreactor Kinetics}
+
+
+\begin{sectionBox}1{Batch Growth} % S1
+      
+  When cells are grown in batch culture, \emph{several phases} of cell growth are observed.
+  The different phases of growth are more \emph{readily distinguished} when the \emph{logarithm of viable cell concentration is plotted against time}
+
+  \begin{center}
+    \includegraphics[height=20ex]{cellGrowthPhases.png}
+    \includegraphics[height=20ex]{cellGrowthPhases.1.png}
+  \end{center}
+  \begin{center}
+    \setlength\tabcolsep{2mm}        % width
+    % \renewcommand\arraystretch{1.25} % height
+    \vspace{1ex}
+    \begin{tabular}{l @{\hspace{1em}} L p{ 20em } @{} }
+      \toprule
+
+       Phase
+       & \begin{tabular}{@{}c}
+         Specific\\growth rate
+       \end{tabular}
+       & Description
+
+       \\\midrule
+
+       Lag & \mu\approx0
+       & Cells adapting to new environment
+
+       \\ Acceleration & \mu<\mu_{\max{}}
+       & Cell population starts growing
+
+       \\ Growth & \mu\approx\mu_{\max{}}
+       & Growth achieve maximum rate
+
+       \\ Decline & \mu<\mu_{\max{}}
+       & Culture reaches limitant in nutrients or build-up of products
+
+       \\ Stationary & \mu=0
+       & Cell death and birth equalize
+
+       \\ Death & \mu<0
+       & Cells dying faster than they can multiply
+
+       \\\bottomrule
+       \multicolumn{3}{r}{Growth rate: \(r_X = \odv{x}{t} = \mu\,x\)}
+     \end{tabular}
+     \vspace{2ex}
+   \end{center}
+\end{sectionBox}
+
+\begin{sectionBox}*2{Growth rate} % S1.0.1
+  The cell growth rate (\(r_X\)) measures the change in volumetric concentration of viable cells (\(\unitof{( x )}=\unit{\gram/\metre^3}\))
+  \begin{BM}[equation]\label{eq:growRateInGrowthAndDecline}
+    r_X = \odv{x}{t} = \mu\,x
+    \implies 
+    \adif{\ln{x}}
+    = \mu\,t
+  \end{BM}\vspace{-3ex}
+  \begin{equation*}
+          \dim{x} = \unit{M/L^3}
+    ;\quad\dim{\mu} = \unit{T^{-1}}
+  \end{equation*}
+
+  \paragraph{Doubling time \(t_d\)}
+  Cell growth rates are often expressed in terms of the time it takes to duplicate the population.
+  \begin{BM}[equation]
+    x=2\,x_0 : t=t_d = \frac{\log{2}}{\mu}
+  \end{BM}
+  \begin{flalign*}
+    &
+      t_d
+      \implies
+      \adif{\ln{x}}
+      =\ln{\frac{x}{x_0}}
+      =\ln{\frac{2\,x_0}{x_0}}
+      =\ln{2}
+      = \mu\,t_d
+    &
+  \end{flalign*}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Balanced Growth} % S2
+  In an environment favourable for growth, cells regulate their metabolism and adjust the rates of various internal reactions so that a condition of balanced growth occurs. During balanced growth, \emph{the composition of the biomass remains constant}. For the biomass composition to remain constant during growth, the specific rate of production of each component in the culture must be equal to the cell specific growth rate \(\mu\).\\
+  In most cultures, balanced growth occurs at the same time as exponential growth.
+  \begin{BM}[equation]
+    r_P = \mu\,p
+  \end{BM}
+  Another point is that the cell consumption is also constant
+  \begin{BM}
+    \odv{x}{t}=r_X
+  \end{BM}
+\end{sectionBox}
+
+\begin{sectionBox}1{Effect of Substrate Concentration} % S3
+  \emph{During the growth and decline phases of batch culture}, the specific growth rate of the cells depends on the concentration of nutrientes in the medium.\\[1ex]
+  Often a \emph{single substrate} exerts a \emph{dominant influence on the rate of growth}; this component is know as the \emph{growth-rate-limiting substrate (\textit{S})}.\\[1ex]
+  During balanced growth, the specific growth rate is related to the concentration of the growth limiting substrate by a homologue of the \textit{Michaelis--Menten} expresion, the \emph{Monod equation:}
+  \begin{BM}[equation]
+    \mu 
+    = \frac
+    {\mu_{\max{}}\,s}
+    {K_S+s}
+    = \frac
+    {\mu_{\max{}}}
+    {1+K_S/s}
+  \end{BM}\vspace{-3ex}
+  \begin{equation*}
+    \dim{s} = \unit{\frac{M\of{S}}{L^3}}
+  \end{equation*}
+  \begin{center}
+    \includegraphics[width=.5\textwidth]{monadEquationGraph.png}
+    % Annotation: s=K_S => \mu = \mu_{max}/2
+  \end{center}
+
+  \subsection*{Rate behavious based on concentration of substrate}
+
+  if \(\mu\) is dependent on the substrate concentration as indicated by the Monod equation, how can \(\mu\) remain constant during the growth phase? Typical values for the substrate constant (\(K_S\)) are very small in order of \unit{\mg/\L} for carbonhydrate substrates and \unit{\micro\g/\litre} for other compounds such as aminoacids.\\
+
+  The behaviour of specific growth rate (\(\mu\)) with the concentration of substrate in relation to the substrate constant \(K_S\) follows:
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{l L @{} L @{\(\implies\)} L}
+      \toprule
+
+          Growth        & s\gtrsim  &  K_S\,10             & \mu\approx\mu_{\max}
+      \\  Decline Start & s\in      &  K_S *\myrange{10,1} & \mu = \mu_{\max}/(1+K_S/s)
+      \\  Decline       & s\approx  &  K_S                 & \mu \approx \mu_{\max{}}/2
+      \\  Decline End   & s <       &  K_S                 & \mu = \mu_{\max{}}/(1+K_S/s)
+      \\  Statinoary    & s\ll      &  K_S                 & \mu \approx 0
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+
+  Some examples for the substrate constant \(K_S\):
+
+  \begin{center}
+    \vspace{-1ex}
+    \sisetup{
+      round-mode={none}, % figures/places/unsertanty/none
+    }
+    \begin{tabular}{>{\itshape}l l S}
+      \toprule
+
+      \multicolumn{1}{l}{Microoragnism (genus)}
+      & Limiting Substrate
+      & \multicolumn{1}{C}{K_S / (\unit{\mg/\L})}
+
+      \\\midrule
+
+      \multirow[t]{1}{*}{Saccgaromyces} 
+      & Glucose & 25
+
+      \\[1ex] \multirow[t]{3}{*}{Escherichia} 
+      & Glucose & 4.0
+      \\& Lactose & 20
+      \\& Phosphate & 1.6
+
+      \\[1ex] \multirow[t]{1}{*}{Aspergillus} 
+      & Glucose & 5.0
+
+      \\[1ex] \multirow[t]{2}{*}{Candida} 
+      & Glycerol & 4.5
+      \\ & Oxygen & \numrange{0.042}{0.45}
+      % \\ & Oxygen & \multicolumn{1}{C}{\numrange{0.042}{0.45}}
+
+      \\[1ex] \multirow[t]{2}{*}{Pseudomonas} 
+      & Methanol & 0.7
+      \\& Methane & 0.4
+
+      \\[1ex] \multirow[t]{4}{*}{Klebsiella} 
+      & Carbon dioxide & 0.4
+      \\& Magnesium & 0.56
+      \\& Potassium & 0.39
+      \\& Sulphate & 2.7
+
+      \\[1ex] \multirow[t]{2}{*}{Hansenula} 
+      & Methanol & 120.0
+      \\& Ribose & 3.0
+      
+      \\[1ex] \multirow[t]{1}{*}{Cryptococcus} 
+      & Thiamine & 1.4e-7
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+
+
+  \subsection*{Limit of Monod equation}
+  The Monod equation is by far the most frequently used expression relating to growth rate to substrate concentration. However, it is \emph{valid only for balanced growth} and should not be applied when growth conditions are changing rapidly. There are also other restrictions; for example, the Monod equations has been found to have limited applicability at \emph{extremely low substrate levels}. \emph{When growth is inhibited by high substrate or product concentrations, extra terms can be added to the Monod equation} to account for these effects.\\
+  Several other kinetic expressions has been developed for cell growth these provide better correlations for experimental data in centain situations
+\end{sectionBox}
+
+\setcounter{subpart}{9}
+\subpart{Production Kinetics in Cell Culture}
+
+\begin{sectionBox}*1{Rate of Product Formation} % S1
+  \begin{BM}[equation]\label{eq:rateOfProductFormation}
+    r_P = q_P\,x
+  \end{BM}\vspace{-3ex}
+  \begin{align*}
+          \dim{r_P} = \unit{\frac{M/L^{3}}{T}}
+    ;\quad\dim{x}   = \unit{M\of{B}/L^{3}}
+    ;\quad\dim{q_P} = \unit{\frac{1}{T}}
+  \end{align*}
+  \begin{description}[
+    leftmargin=!,
+    labelwidth=\widthof{\(q_P\)} % Longest item
+  ]
+    \item[\(r_P\)] is the volumetric rate of production formation
+    \item[\(x\)]   is the biomass concentration
+    \item[\(q_P\)] is the \textit{specific rate of product formation}
+  \end{description}
+
+  \subsection*{Production rate \(q_P\)}
+  \begin{itemize}
+    \item can be evaluated at any time during fermentation as the \emph{ratio of the production rate and biomass concentration}.
+    \item Is \emph{not necersarly constant} during batch culture
+    \item We can develop equations for \(q_P\) as a \emph{function of growth rate and other metabolic parameters} (Depending on wheter the product is linked to energy metabolism or not)
+  \end{itemize}
+
+\end{sectionBox}
+
+\begin{sectionBox}1{Product Formation \emph{Directly} Coupled with Energy Metabolism} % S12.10.1
+  For products formed using pathways that generate ATP, the \emph{rate of production is related to the cellular energy demand}. Growth is usually the major energy-requiring function of cells; therefore, if production is coupled to energy metabolism, product will be formed whenever there is growth. However, ATP is also required for other activites called \textit{maintenance}. \emph{Maintenance activities are carried out by living cells even in the absence of growth}. \emph{Products synthetised in energy pathways will be produced whenever maintenance functions are carried out} because ATP is required.
+  \subsubsection*{Examples of maintenance:}
+  \begin{itemize}
+    \item Cell motility
+    \item Turnover of cellular components
+    \item Adjustment of menbrane potential and internal pH
+  \end{itemize}
+  Kinetic expressions for the rate of product formation must account for \textcolor{Emph32}{growth-associated} and \textcolor{Emph33}{maintenance-associated} production, as in the following equation
+  \begin{BM}[equation]\label{eq:rateOfProductFormation2}
+    r_P 
+    = \textcolor{Emph32}{Y_{PX}\,r_X} 
+    + \textcolor{Emph33}{m_P\,x}
+  \end{BM}
+  \begin{equation*}
+    \dim{m_P} = \unit{\frac{1}{T\,M\of{B}}}
+  \end{equation*}
+  \begin{description}[
+    leftmargin=!,
+    labelwidth=\widthof{\(Y_{PX}\)} % Longest item
+  ]
+    \item[\(r_X\)] is the volumetric rate of biomass formation.
+    \item[\(Y_{PX}\)] is the theoretical or true yield of product from biomass
+    \item[\(m_P\)] is the \textit{specific rate of product formation due to maintenance}
+    \item[\(x\)] is the biomass concentration
+  \end{description}
+
+  \begin{BM}[equation]
+    q_P = Y_{PX}\,\mu + m_P
+  \end{BM}
+  Using \eqref{eq:rateOfProductFormation2}
+  ,     \eqref{eq:rateOfProductFormation}
+  and   \eqref{eq:growRateInGrowthAndDecline}
+  \begin{flalign*}
+    &
+      q_P 
+      = \frac{r_P}{x}
+      = \frac{Y_{PX}\,r_X + m_P\,x}{x}
+      = \frac{Y_{PX}\,(\mu\,x) + m_P\,x}{x}
+      = Y_{PX}\,\mu + m_P
+    &
+  \end{flalign*}
+
+\end{sectionBox}
+
+\stepcounter{section}
+
+\begin{sectionBox}1{Product Formation \emph{Not} Coupled with Energy Metabolism} % S4
+  Production not involving energy metabolism is difficult to relate to growth because growth and product synthesis are somewhat dissociated. However, \emph{in some cases}, the rate of formation of nongrowth-associated products is directly proportional to biomass concentration, so that \emph{the production rate defined in \eqref{eq:rateOfProductFormation} can be applied with constant \(q_P\)}. Sometimes \(q_P\) is a complex function of the growth rate and must be expressed using empirical equations derived from experiment.
+\end{sectionBox}
+
+\end{document}

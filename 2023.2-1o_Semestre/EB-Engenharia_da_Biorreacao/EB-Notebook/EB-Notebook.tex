@@ -8,8 +8,9 @@
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
-\usepackage[hyperref]{xcolor} % Options: gray - dark and light
+\usepackage{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
+\usepackage{myEmphPalette}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
 % \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
@@ -114,7 +115,7 @@
 \renewcommand\cftsecleader{\cftdotfill{\cftdotsep}} % Dots
 \setlength\cftbeforesecskip{0.5ex}
 \setlength\cftsecindent{0mm}
-%\setlength{\cftsecnumwidth}{25mm} % Fix section width
+\setlength{\cftsecnumwidth}{04em} % Fix section width
 % ======================== subsec ======================== %
 \setlength\cftsubsecindent{0mm}
 %\setlength{\cftsubsecnumwidth}{15mm}
@@ -431,11 +432,26 @@
 % %                  Divisions customization                 %
 % % -------------------------------------------------------- %
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
-% \renewcommand\thepart{Part \arabic{part}}
-\newcounter{bookone}
-\newcounter{booktwo}
-\renewcommand\thepart{\arabic{bookone}.\arabic{booktwo}}
-\renewcommand\theexample{Example \arabic{bookone}.\arabic{example}}
+\renewcommand\thepart{\arabic{part}}
+
+% subpart
+\newcounter{subpart}[part]
+\renewcommand\thesubpart{{\arabic{part}.\arabic{subpart}}}
+\renewcommand\theHsubpart{{\theHpart.\arabic{subpart}}}
+\numberwithin{section}{subpart}
+\newcommand\subpart[1]{
+  % \setcounter{section}{0}
+  \refstepcounter{subpart}
+  \part*{\thesubpart\quad#1}
+  % add to toc
+  \addcontentsline{toc}{section}{\thesubpart\quad#1}
+}
+
+% Equation
+\numberwithin{equation}{part}
+\renewcommand\theequation{\arabic{part}.\arabic{equation}}
+\renewcommand\theHequation{\arabic{part}.\arabic{subpart}.\arabic{section}.\arabic{equation}}
+\renewcommand\theexample{Example \arabic{part}.\arabic{example}}
 % 88                                    88
 % 88                                    \"\"
 % 88
@@ -448,8 +464,8 @@
 %                            \"Y8bbdP\"
 \begin{document}
 \mymaketitle
-\subfile{./EB-Notebook.4.6.tex}
-\subfile{./EB-Notebook.12.8.tex}
+\subfile{./EB-Notebook.04.tex}
+\subfile{./EB-Notebook.12.tex}
 % print files
 % \begin{luacode*}
 %   -- Files Directory
