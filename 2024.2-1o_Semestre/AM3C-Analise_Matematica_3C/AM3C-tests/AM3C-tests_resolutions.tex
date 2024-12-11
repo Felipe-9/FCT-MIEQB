@@ -8,7 +8,7 @@
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
-\usepackage[hyperref]{xcolor} % Options: gray - dark and light
+\usepackage{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
@@ -201,6 +201,7 @@
 % %                           Maths                          %
 % % -------------------------------------------------------- %
 \usepackage{amsmath, amssymb, bm}
+\usepackage{mleftright}\mleftright % better left-right
 \usepackage{derivative} % Derivative
 % \DeclareDifferential{\gdif}{\nabla} % Gradient
 % \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
@@ -247,6 +248,14 @@
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
+% \NewDocumentCommand\tagthiseq{m}{%
+%   \refstepcounter{equation}%
+%   \IfValueT{\label{#1}}%
+%   \tag{\theequation}%
+% }
+\makeatletter
+\newcommand*\yesnumber{\incr@eqnum\tag{\theequation}}
+\makeatother
 \usepackage{mathBM}
 \usepackage{myLogicOperators}
 % \lxor, \lnand
@@ -430,6 +439,7 @@
 % %                  Divisions customization                 %
 % % -------------------------------------------------------- %
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
+\renewcommand\theequation{\arabic{group}.{\arabic{equation}}}
 % \renewcommand\thepart{Part \arabic{part}}
 % 88                                    88
 % 88                                    \"\"
