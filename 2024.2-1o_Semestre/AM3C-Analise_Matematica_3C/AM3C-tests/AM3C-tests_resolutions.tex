@@ -200,7 +200,9 @@
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
-\usepackage{amsmath, amssymb, bm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb, bm}
+\setlength\mathindent{0em} % remove left indent
 \usepackage{mleftright}\mleftright % better left-right
 \usepackage{derivative} % Derivative
 % \DeclareDifferential{\gdif}{\nabla} % Gradient
@@ -248,14 +250,11 @@
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
-% \NewDocumentCommand\tagthiseq{m}{%
-%   \refstepcounter{equation}%
-%   \IfValueT{\label{#1}}%
-%   \tag{\theequation}%
-% }
-\makeatletter
-\newcommand*\yesnumber{\incr@eqnum\tag{\theequation}}
-\makeatother
+\usepackage{mymathref} % \usingref{ref1,...} and mathText{} command for referencing inside math
+% \yesnumber to add reference (without label)
+% \tagthis to add reference and label
+% \mathText{text} short command to add intextext with hfill
+% \usingref{eq:1,...}
 \usepackage{mathBM}
 \usepackage{myLogicOperators}
 % \lxor, \lnand
@@ -439,7 +438,6 @@
 % %                  Divisions customization                 %
 % % -------------------------------------------------------- %
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
-\renewcommand\theequation{\arabic{group}.{\arabic{equation}}}
 % \renewcommand\thepart{Part \arabic{part}}
 % 88                                    88
 % 88                                    \"\"
