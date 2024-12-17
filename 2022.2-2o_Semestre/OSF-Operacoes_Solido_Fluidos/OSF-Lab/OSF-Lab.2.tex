@@ -1,0 +1,90 @@
+% !TEX root = ./OSF-Lab.2.tex
+\documentclass["OSF-Lab.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/OSF-Lab.2}}}
+% \tikzsetexternalprefix{./.build/figures/OSF-Lab.2/graphics/}
+
+\begin{minipage}{06em}
+  \begin{BM}
+    v = \frac{l_A}{V}
+  \end{BM}
+  
+\end{minipage}
+\begin{minipage}{16em}
+  \begin{BM}
+    \odv{V}{t}
+    = \frac{A^2\,(-\adif{P})}{r\,\mu\,v(V+L_a/v)}
+  \end{BM}
+\end{minipage}
+
+\begin{minipage}{18em}
+  \begin{BM}[equation]
+    \mu_C = \mu_0\,\left(
+      1-\frac{C}{C_{\max}}
+    \right)^\alpha
+  \end{BM}
+\end{minipage}
+
+\begin{minipage}{31em}
+  \begin{BM}[equation]
+    \frac{r\,\mu\,v}{2\,(-\adif{P})}
+    \left(
+      \frac{ V_1+V_0 }{ A^2 }
+      + \frac{ L }{ A }
+    \right)
+    = 
+    \frac
+    {t_1-t_0}
+    {V_1-V_0}
+  \end{BM}
+  \begin{gather*}
+    \odv{V}{t}
+    = \frac{A^2\,(-\adif{P})}{r\,\mu\,v(V+L\,A/v)}
+    \implies \\ \implies 
+    \int_{V_0}^{V_1}{
+      r\,\mu\,v(V+L\,A/v)
+      \,\odif{V}
+    }
+    = 
+    r\,\mu\,v
+    \left(
+      \int_{V_0}^{V_1}{
+        V\,\odif{V}
+      }
+      + L\,A/v \int_{V_0}^{V_1}{
+        \odif{V}
+      }
+    \right)
+    = \\
+    = r\,\mu\,v
+    \left(
+      \frac{V_1^2}{2}
+      - \frac{V_0^2}{2}
+      + \frac{L\,A}{v}
+      ( V_1-V_0)
+    \right)
+    = \\[1ex]
+    = \int_{t_0}^{t_1}{A^2\,(-\adif{P})\,\odif{t}}
+    = A^2\,(-\adif{P})\,(t_1-t_0)
+    % 
+    % 
+    % 
+    \implies \\ \implies
+    \frac{r\,\mu\,v}{2\,(-\adif{P})}
+    \left(
+      \frac{ V_1+V_0 }{ A^2 }
+      + \frac{ L }{ A }
+    \right)
+    = 
+    \frac
+    {t_1-t_0}
+    {V_1-V_0}
+  \end{gather*}
+\end{minipage}
+
+\end{document}

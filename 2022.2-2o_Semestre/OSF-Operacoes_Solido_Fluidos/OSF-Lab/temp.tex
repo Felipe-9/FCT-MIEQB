@@ -1,4 +1,4 @@
-% !TEX root = ./OSF-Lab.tex
+% !TEX root = ./OSF-Lab.2.tex
 % \documentclass{article}
 \documentclass[
   class=article,
@@ -8,12 +8,10 @@
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
-\usepackage{xcolor} % Options: gray - dark and light
+\usepackage[hyperref]{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
-% \colorlet{foreground}{light}
-% \colorlet{background}{dark}
-\colorlet{foreground}{black}
-\colorlet{background}{white}
+\colorlet{foreground}{light}
+\colorlet{background}{dark}
 % \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
@@ -202,9 +200,7 @@
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
-\usepackage[fleqn]{amsmath}
-\usepackage{amssymb, bm}
-\setlength\mathindent{0em} % remove left indent
+\usepackage{amsmath, amssymb, bm}
 \usepackage{mleftright}\mleftright % better left-right
 \usepackage{derivative} % Derivative
 % \DeclareDifferential{\gdif}{\nabla} % Gradient
@@ -252,11 +248,9 @@
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
-\usepackage{mymathref} % \usingref{ref1,...} and mathText{} command for referencing inside math
-% \yesnumber to add reference (without label)
-% \tagthis to add reference and label
-% \mathText{text} short command to add intextext with hfill
-% \usingref{eq:1,...}
+\makeatletter
+\newcommand*\yesnumber{\incr@eqnum\tag{\theequation}}
+\makeatother
 \usepackage{mathBM}
 \usepackage{myLogicOperators}
 % \lxor, \lnand
@@ -346,7 +340,7 @@
 % % -------------------------------------------------------- %
 % %                           Chem                           %
 % % -------------------------------------------------------- %
-\usepackage{chemformula} % formulas quimicas
+% \usepackage{chemformula} % formulas quimicas
 % \usepackage{chemfig}     % Estruturas quimicas
 % \usepackage{modiagram}   % Molecular orbital diagram
 % % ======================= modiagram ====================== %
@@ -358,9 +352,9 @@
 % \newlength\AtomVScale    \setlength\AtomVScale{1cm}
 % \newlength\MoleculeVScale\setlength\MoleculeVScale{1cm}
 % % ====================== chemmacros ====================== %
-\usepackage{chemmacros}
-\chemsetup[phases]{pos=sub}
-\newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
+% \usepackage{chemmacros}
+% \chemsetup[phases]{pos=sub}
+% \newcommand{\mol}[1]{ \unit{\mole\of{\ch{ #1 }}} } % mol
 % % -------------------------------------------------------- %
 % %                          Biology                         %
 % % -------------------------------------------------------- %
@@ -430,7 +424,6 @@
 \usepackage{sections}
 % \usepackage{questions}
 % \usepackage{answers}
-% \usepackage{qgroups}
 % \usepackage{examples}
 % \usepackage{definitions}
 % ================= My title and subfile ================= %
@@ -454,30 +447,30 @@
 \begin{document}
 \mymaketitle
 % print files
-% \begin{luacode*}
-%   -- Files Directory
-%   dir = "./"
-%   -- Prefix and sufix
-%   prefix = "OSF-Lab."
-%   sufix  = ""
-%   -- Print file range
-%   firstFile = 1 -- first file number
-%   lastFile  = 1 -- last  file number
-%   -- Print specific files by number
-%   index = {1}
-%   -- % ---------------------------------------------------- %
-%   -- %                         Loop                         %
-%   -- % ---------------------------------------------------- %
-%   -- for i=firstFile,lastFile,1 -- Print range
-%   -- for v,i in ipairs(index)   -- Print specific
-%   for i=firstFile,lastFile,1 -- Print range
-%   do
-%     tex.print(string.split(table.concat{
-%     \[\[
-%       \subfile{\]\], dir, prefix, string.format("%d", i), sufix, \[\[}\newpage
-%     \]\]
-%     },"\n"))
-%   end
-%   -- % ==================================================== %
-% \end{luacode*}
+\begin{luacode*}
+  -- Files Directory
+  dir = "./"
+  -- Prefix and sufix
+  prefix = "OSF-Lab.2."
+  sufix  = ""
+  -- Print file range
+  firstFile = 1 -- first file number
+  lastFile  = 1 -- last  file number
+  -- Print specific files by number
+  index = {1}
+  -- % ---------------------------------------------------- %
+  -- %                         Loop                         %
+  -- % ---------------------------------------------------- %
+  -- for i=firstFile,lastFile,1 -- Print range
+  -- for v,i in ipairs(index)   -- Print specific
+  for i=firstFile,lastFile,1 -- Print range
+  do
+    tex.print(string.split(table.concat{
+    \[\[
+      \subfile{\]\], dir, prefix, string.format("%d", i), sufix, \[\[}\newpage
+    \]\]
+    },"\n"))
+  end
+  -- % ==================================================== %
+\end{luacode*},
 \end{document}
