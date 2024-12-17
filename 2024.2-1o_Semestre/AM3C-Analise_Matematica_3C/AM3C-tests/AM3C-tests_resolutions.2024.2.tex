@@ -1,0 +1,369 @@
+% !TEX root = ./AM3C-tests_resolutions.2024.2.tex
+\documentclass["AM3C-tests_resolutions.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM3C-tests_resolutions.2024.2}}}
+% \tikzsetexternalprefix{./.build/figures/AM3C-tests_resolutions.2024.2/graphics/}
+
+\mymakesubfile{2}[AM3C]
+{Teste 2024.2 Resolução} % Subfile Title
+{Teste 2024.2 Resolução} % Part Title
+
+\group{}
+
+\begin{questionBox}1{} % Q1
+  Avalie a convergencia das seguintes séries numéricas
+  \begin{BM}
+    \sum_{n=1}^{\infty}{
+      \frac{
+        \sqrt{n+2}
+        - \sqrt{n+1}
+      }{
+        \sqrt{n}
+      }
+    }
+    ;\quad
+    \sum_{n=1}^{\infty}{
+      \frac{
+        (-1)^n\,\cos(n\,\pi)
+      }{
+        \sqrt{n^2+1}
+      }
+    }
+    \\
+    \sum_{n=1}^{\infty}{
+      \frac{1}{n!}
+      \prod_{k=1}^{n}{(2\,k-1)}
+    }
+  \end{BM}
+  \answer{}
+  Using {
+    \eqref{eq:1.1-sqrt},
+    \eqref{eq:1.1-(-1)^n},
+    \eqref{eq:1.1-cos(n*pi)},
+    \eqref{eq:1.1-prod(2n-1)}
+  } \(\implies\) B e C divergentes e A convergente
+
+  \begin{gather*}
+    \frac{
+      \sqrt{n+2}
+      - \sqrt{n+1}
+    }{
+      \sqrt{n}
+    }
+    = \sqrt{\frac{ n+2 }{ n }}
+    - \sqrt{\frac{ n+1 }{ n }}
+    = \sqrt{ 1+2/n }
+    - \sqrt{ 1+1/n }
+    \yesnumber\label{eq:1.1-sqrt}
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    (-1)^n
+    = \begin{cases}
+      +1 &\quad n=2*m
+      \\
+      -1 &\quad n=2*m-1
+    \end{cases}
+    \yesnumber\label{eq:1.1-(-1)^n}
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    \cos(n\},\pi)
+    = \begin{cases}
+      +1 &\quad n=2*m
+      \\
+      -1 &\quad n=2*m-1
+    \end{cases}
+    \yesnumber\label{eq:1.1-cos(n*pi)}
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    \frac{
+      \prod_{k=1}^{n}{(2\,k-1)}
+    }{n!}
+    = \frac{
+      \prod_{k=1}^{n}{(2\,k-1)}
+    }{
+      \prod_{k=1}^n{k}
+    }
+    = \prod_{k=1}^{n}{
+      \frac{ 2\,k-1 }{ k }
+    }
+    = \prod_{k=1}^{n}{
+      2-1/k
+    }
+    \yesnumber\label{eq:1.1-prod(2n-1)}
+  \end{gather*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q2
+  Considere a série de funções redútivel e avalie sua convergencia
+  \begin{BM}
+    \sum_{n=1}^{\infty}{\left(
+      \frac{1}{n\,x+2}
+      - \frac{1}{(n+1)\,x+2}
+    \right)}
+    ,\quad x\in\myrange{0,1}
+  \end{BM}
+  \answer{}
+  Usando \eqref{eq:1.2-ans} A série converge uniformemente para a função identicamente nula 
+  \begin{gather*}
+    \sum_{n=1}^{\infty}{\left(
+      \frac{1}{n\,x+2}
+      - \frac{1}{(n+1)\,x+2}
+    \right)}
+    = \sum_{n=1}^{\infty}{\left(
+      \frac{
+        n\,x+2 + x
+        - (n\,x+2)
+      }{
+        (n\,x+2)^2
+        +(n\,x+2)\,x
+      }
+    \right)}
+    = \\
+    = \sum_{n=1}^{\infty}{\left(
+      \frac{
+        x
+      }{
+        (
+          n^2\,x^2
+          + 4\,n\,x
+          + 4
+        )
+        + (n\,x^2+2\,x)
+      }
+    \right)}
+    = \\
+    = \sum_{n=1}^{\infty}{\left(
+      \frac{
+        1
+      }{
+        n^2\,x
+        + 4\,n
+        + x + 2 + 4/x
+      }
+    \right)}
+    \yesnumber\label{eq:1.2-ans}
+  \end{gather*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q3
+  A equação diferencial \(x^2\,y"+y"-4\,x\,y'+6\,y=0\) admite uma solução da forma \(y=\sum_{n=0}^{\infty}{a_n\,x^n}\). Então a sucessão (\(a_n\)) verifica a relação de recorrencia\dots
+  \answer{}
+  \begin{gather*}
+    a_{n+2} = \frac{n-3}{n+1}\,a_n,\quad n=2,3,\dots
+  \end{gather*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q4
+  A função \(f(x)\) é par, periódica de período \(p=2\) e no intervalo \(\myrange*{0,1}\) está definida por \(f(x)=x\). Então a sua série de Fourrier é:
+  \answer{}
+  \begin{gather*}
+    \frac{1}{2}
+    - \frac{2}{\pi}
+    \sum_{n=1}^{\pi}{
+      \frac{\cos(n\,\pi\,x)}{ n^2 }
+    }
+  \end{gather*}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q5
+  A equação com derivadas parciais
+  \begin{BM}
+    \pdv{u}{y} = y\,\pdv{u}{x}
+  \end{BM}
+  com as condições \(u(1,1)=e\) e \(u(0,0)=1\) admite uma solução da forma \(u(x,y)=X(x)\,Y(y)\). Então \(u(1,0)=?\)
+  \answer{}
+  \begin{gather*}
+    u(0,1) = \sqrt{e}
+  \end{gather*}
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{} % Q1
+  Estude a convergencia da série:
+  \begin{BM}
+    \sum_{n=1}^{\infty}{
+      \frac{n^n\,n!}{(2\,n)!}
+    }
+  \end{BM}
+  \answer{}
+  \begin{gather*}
+    \frac{n^n\,n!}{(2\,n)!}
+    = \frac{
+      \prod_{k=1}^{n}{n}
+      \,\prod_{k=1}^{k}
+    }{
+      \prod_{k=1}^{2\,n}{k}
+    }
+    = \frac{
+      \prod_{k=1}^{n}{n}
+      \,\prod_{k=1}^{n}{k}
+    }{
+      \prod_{k=1}^{n}{k}
+      \prod_{k=n+1}^{2\,n}{k}
+    }
+    = \frac{
+      \prod_{k=1}^{n}{n}
+    }{
+      \prod_{k=n+1}^{2\,n}{k}
+    }
+    = \prod_{n+1}^{2\,n}{
+      \frac{n}{k}
+    }
+    % = \prod_{n+1}^{2\,n}{
+    %   \frac{1}{k/n}
+    % }
+    % = \\
+    % = \prod_{n+1}^{2\,n}{
+    %   \frac{1}{1+k/n}
+    % }
+    = \\
+    = \frac{n}{n+1}
+    * \frac{n}{n+2}
+    * \dots
+    * \frac{n}{2\,n-1}
+    * \frac{1}{2}
+    = \\
+    = \frac{1}{1+1/n}
+    * \frac{1}{1+2/n}
+    * \dots
+    * \frac{1}{1+(n-1)/n}
+    * \frac{1}{2}
+    = \prod_{k=1}^{n}{
+      \frac{1}{1+k/n}
+    }
+    \implies \\ 
+    \implies
+    \lim_{n\to\infty}{
+      \frac{n^2\,n!}{(2\,n)!}
+    }
+    = \lim_{n\to\infty}{
+      \prod_{k=1}^{n}{
+        \frac{1}{1+k/n}
+      }
+    }
+    \approx \left(\frac{1}{2}\right)^{\infty} = 0
+  \end{gather*}
+  A série converge uniformemente para zero
+\end{questionBox}
+
+\begin{questionBox}1{} % Q2
+  Determine o intervalo de convêrgencia da série de potências
+  \begin{BM}
+    \sum_{n=0}^{\infty}{
+      \frac{(-1)^n}{4^n}
+      \,x^{2\,n}
+    }
+    ,\qquad
+    \text{sug: Faça } t=x^2
+  \end{BM}
+  Determine a soma de série no ponto \(x=-1\). Designando por \(f(x)\) a função que a série representa no seu intervalo de convergencia, determine, justificando, o valor de \(f^{(21)}(0)\)
+  \answer{}
+  \begin{gather*}
+    \frac{(-1)^n}{4^n}
+    \,x^{2\,n}
+    = \frac{(-1)^n}{4^n}
+    \,t^{n}
+    = (-1)^n\,(t/4)^{n}
+    \\
+    \begin{Bmatrix}
+      \pm\infty\text{(diverge)} &\quad: t>4
+      \\\pm 1 &\quad: t=4
+      \\ 0 &\quad: t<4
+    \end{Bmatrix}
+    = \begin{Bmatrix}
+      \pm\infty\text{(diverge)} &\quad: \myvert{x}>2
+      \\\pm 1 &\quad: \myvert{x}=2
+      \\ 0 &\quad: \myvert{x}<2
+    \end{Bmatrix}
+  \end{gather*}
+  
+  \begin{gather*}
+    \sum_{n=0}^{\infty}{
+      \frac{(-1)^n}{4^n}
+      \,(-1)^{2\,n}
+    }
+    = \sum_{n=0}^{\infty}{
+      \frac{(-1)^n}{4^n}
+      \,1^{n}
+    }
+    = \sum_{n=0}^{\infty}{
+      \frac{(-1)^n}{4^n}
+    }
+    = \sum_{k=0}^{\infty}{
+      -\frac{1}{4^{2\,k+1}}
+    }
+    + \sum_{k=0}^{\infty}{
+      \frac{1}{4^{2\,k}}
+    }
+    = \\
+    = \sum_{k=0}^{\infty}{
+      \frac{-1+4}{4*4^{2\,k}}
+    }
+    = \frac{3}{4}
+    \,\sum_{k=0}^{\infty}{
+      \frac{1}{16^{k}}
+    }
+  \end{gather*}
+
+  \begin{gather*}
+    f^{(21)}(x)
+    = \frac{(-1)^{21}}{4^{21}}\,0^{2\,n}
+    = \frac{-1}{4^{21}}
+  \end{gather*}
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}1{} % Q1
+  Acerca de uma função periódica \(f(x)\) sabe-se que é contínua, tem derivada seccionalmente contínua e tem por série de Fourrier
+  \begin{BM}
+    \frac{2}{\pi}
+    + \sin(2\,\pi\,x)
+    -\frac{4}{\pi}
+    \,\sum_{n=1}^{\infty}{
+      \frac{1}{(2\,n-1)(2\,n+1)}
+      \,\cos(2\,n\,\pi\,x)
+    }
+  \end{BM}
+  Diga justificando, a pariaridade e o período positivo mínimo da função \(f(x)\). Sabendo que no ponto \(x=1/2\) a função toma o valor um, determine a soma da série
+  \begin{BM}
+    \sum_{n=1}^{\infty}{
+      \frac{ (-1)^n }{
+        (2\,n-1)
+        (2\,n+1)
+      }
+    }
+  \end{BM}
+\end{questionBox}
+
+\group{} % G4
+
+\begin{questionBox}1{} % Q1
+  Seja  \(f(x,y)\) uma solução da equação com derivadas parciais
+  \begin{BM}
+    x^2\,\pdv[order=2]{f}{x}
+    + y^2\,\pdv[order=2]{f}{y}
+    + x\,\pdv{f}{x}
+    + y\,\pdv{f}{y}
+    = 0
+  \end{BM}
+  e seja \(g(s,t) = f(x,y)\) em que \(x=e^s\) e \(y=e^t\). Mostre que \(g\) é solução da equação de Laplace, isto é, satisfaz a equação
+  \begin{BM}
+    \pdv[order=2]{g}{s}
+    +\pdv[order=2]{g}{t}
+    = 0 
+  \end{BM}
+\end{questionBox}
+
+\end{document}
