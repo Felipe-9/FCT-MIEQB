@@ -8,7 +8,7 @@
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
-\usepackage[hyperref]{xcolor} % Options: gray - dark and light
+\usepackage{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
@@ -201,7 +201,10 @@
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
-\usepackage{amsmath, amssymb, bm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb, bm}
+\setlength\mathindent{0em} % remove left indent
+\usepackage{mleftright}\mleftright % better left-right
 \usepackage{derivative} % Derivative
 \DeclareDifferential{\gdif}{\nabla} % Gradient
 % \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
@@ -248,6 +251,11 @@
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
+\usepackage{mymathref} % \usingref{ref1,...} and mathText{} command for referencing inside math
+% \yesnumber to add reference (without label)
+% \tagthis to add reference and label
+% \mathText{text} short command to add intextext with hfill
+% \usingref{eq:1,...}
 \usepackage{mathBM}
 \usepackage{myLogicOperators}
 % \lxor, \lnand
@@ -421,6 +429,7 @@
 \usepackage{sections}
 \usepackage{questions}
 \usepackage{answers}
+% \usepackage{qgroups}
 \usepackage{examples}
 % \usepackage{definitions}
 % ================= My title and subfile ================= %

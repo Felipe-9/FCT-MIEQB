@@ -1,4 +1,4 @@
-% !TEX root = ./CN_A-Tests_Resolutions.2024.1.tex
+% !TEX root = ./CN_A-Tests_Resolutions.tex
 % \documentclass{article}
 \documentclass[
   class=article,
@@ -8,11 +8,12 @@
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
-\usepackage[hyperref]{xcolor} % Options: gray - dark and light
+\usepackage{xcolor} % Options: gray - dark and light
 \usepackage{mypallete}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
-% \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
+\usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
+\usepackage{myEmphPalette}
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
 \colorlet{Link}      {LightGreen!25!foreground}
@@ -200,7 +201,10 @@
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
-\usepackage{amsmath, amssymb, bm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb, bm}
+\setlength\mathindent{0em} % remove left indent
+\usepackage{mleftright}\mleftright % better left-right
 \usepackage{derivative} % Derivative
 % \DeclareDifferential{\gdif}{\nabla} % Gradient
 % \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
@@ -247,6 +251,11 @@
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
+\usepackage{mymathref} % \usingref{ref1,...} and mathText{} command for referencing inside math
+% \yesnumber to add reference (without label)
+% \tagthis to add reference and label
+% \mathText{text} short command to add intextext with hfill
+% \usingref{eq:1,...}
 \usepackage{mathBM}
 \usepackage{myLogicOperators}
 % \lxor, \lnand
@@ -269,11 +278,12 @@
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
-% \usepackage{tikz}\usetikzlibrary{babel}
-% \usetikzlibrary{
+\usepackage{tikz}\usetikzlibrary{babel}
+\usetikzlibrary{
+  calc,
 %     % perspective,
 %     % 3d,
-% }
+}
 % % ===================== External lib ===================== %
 % \usepackage{tikz-external-setup}
 % \tikzexternalize[
@@ -320,10 +330,10 @@
 \setlength\heavyrulewidth{.75pt} % Top and bottom rule
 \setlength\lightrulewidth{.30pt} % Middle rule
 % % ======================= Mathtable ====================== %
-% \usepackage{array} % for \newcolumntype macro
-% \newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
-% \newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
-% \newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
+\usepackage{array} % for \newcolumntype macro
+\newcolumntype{C}{>{$}c<{$}} % math-mode version of c column type
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of l column type
+\newcolumntype{R}{>{$}r<{$}} % math-mode version of r column type
 % % ===================== Table Caption ==================== %
 % \newcounter{tablecounter}
 % % \newcommand\thetable{Tabela \arabic{tablecounter}:}
@@ -420,6 +430,7 @@
 \usepackage{sections}
 \usepackage{questions}
 \usepackage{answers}
+% \usepackage{qgroups}
 % \usepackage{examples}
 % \usepackage{definitions}
 % ================= My title and subfile ================= %

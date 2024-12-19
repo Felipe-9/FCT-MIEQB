@@ -1,8 +1,5 @@
 % !TEX root = ./CN_A-Tests_Resolutions.2022.1.tex
-\providecommand\mainfilename{"./CN_A-Tests_Resolutions.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./CN_A-Tests_Resolutions.2022.1.tex"}
-\documentclass[\mainfilename]{subfiles}
+\documentclass[./CN_A-Tests_Resolutions.tex]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -11,264 +8,261 @@
 % \graphicspath{{\subfix{./.build/figures/CN_A-Tests_Resolutions.2022.1}}}
 % \tikzsetexternalprefix{./.build/figures/CN_A-Tests_Resolutions.2022.1/graphics/}
 
-\mymakesubfile{1}
-[CN A]
-{Teste 2022 Resolução} % Subfile Title
-{Teste 2022 Resolução} % Part Title
+\mymakesubfile{1}[CN A]
+{Teste 2022.1 Resolução} % Subfile Title
+{Teste 2022.1 Resolução} % Part Title
 
-\begin{questionBox}1{ % Q1
-    Considere o seguinte integral impróprio:
-    \begin{BM}
-        I=\int_0^1{\frac{1}{\sqrt{1-x^2}}\,\odif{x}}
-    \end{BM}
-    O valor da aproximação dado pela regra de Gauss com 2 pontos simples arredondado com 6 casas decimais é:
-} % Q1
-    \answer{}
-    \begin{flalign*}
-        &
-            I
-            =1/2
-            \,\int_{-1}^{1}{
-                f(y/2+1/2)\,\odif{y}
-            }
-            =1/2
-            \,\int_{-1}^{1}{
-                \frac{1}{\sqrt{1-(y/2+1/2)^2}}
-                \,\odif{y}
-            }
-        &
-    \end{flalign*}
+\begin{questionBox}1{} % Q1
+  Considere o seguinte integral impróprio:
+  \begin{BM}
+    I=\int_0^1{\frac{1}{\sqrt{1-x^2}}\,\odif{x}}
+  \end{BM}
+  O valor da aproximação dado pela regra de Gauss com 2 pontos simples arredondado com 6 casas decimais é:
+
+  \answer{}
+
+  \begin{gather*}
+    I
+    =1/2
+    \,\int_{-1}^{1}{
+      f(y/2+1/2)\,\odif{y}
+    }
+    =1/2
+    \,\int_{-1}^{1}{
+      \frac{1}{\sqrt{1-(y/2+1/2)^2}}
+      \,\odif{y}
+    }
+  \end{gather*}
 \end{questionBox}
 
 \setcounter{question}{2}
+\begin{questionBox}1{} % Q3
+  Seja \(\alpha\in\myrange{0,1}\) a raiz única da equação não linear \(f(x)=0\), sendo \(f(x)\) uma função contínua em \(\myrange{0,1}\). Sabe-se que
+  
+  \begin{BM}
+    f(0)>0
+    \quad f(1/2)>0
+    \quad f(3/4)<0
+    \quad f(5/8)>0
+    \quad f(1)<0
+  \end{BM}
 
-\begin{questionBox}1{ % Q3
-    Seja \(\alpha\in\myrange{0,1}\) a raiz única da equação não linear \(f(x)=0\), sendo \(f(x)\) uma função contínua em \(\myrange{0,1}\). Sabe-se que
-    \begin{BM}
-        f(0)>0
-        \quad f(1/2)>0
-        \quad f(3/4)<0
-        \quad f(5/8)>0
-        \quad f(1)<0
-    \end{BM}
-    Considere a sucessão gerada pelo método da bissecação para boter uma aproximação para \(\alpha\), então tem-se
-} % Q3
-    \answer{}
-    \begin{flalign*}
-        &
-            \begin{cases}
-                x_0=\frac{0+1}{2}=1/2
-                \land f(1/2)>0\land f(1)<0
-                \implies &\alpha\in\myrange{1/2,1}
-                \\
-                x_1=\frac{1/2+1}{2}=3/4
-                \land f(3/4)<0
-                \land f(1/2)>0
-                \implies &\alpha\in\myrange{1/2,3/4}
-                \\
-                x_2=\frac{1/2+3/4}{2}=5/8
-                \land f(5/8)>0
-                \land f(3/4)<0
-                \implies &\alpha\in\myrange{3/4,5/8}
-            \end{cases}
-            &\\&
-            x_3=\frac{5/8+3/4}{2}=11/16
-            \implies
-            \myvert{\alpha-x_3}=\frac{1}{2^{3+1}}=0.0625
-        &
-    \end{flalign*}
+  Considere a sucessão gerada pelo método da bissecação para boter uma aproximação para \(\alpha\), então tem-se
+
+  \answer{}
+
+  \begin{gather*}
+    \begin{cases}
+      x_0=\frac{0+1}{2}=1/2
+      \land f(1/2)>0\land f(1)<0
+      \implies &\alpha\in\myrange{1/2,1}
+      \\
+      x_1=\frac{1/2+1}{2}=3/4
+      \land f(3/4)<0
+      \land f(1/2)>0
+      \implies &\alpha\in\myrange{1/2,3/4}
+      \\
+      x_2=\frac{1/2+3/4}{2}=5/8
+      \land f(5/8)>0
+      \land f(3/4)<0
+      \implies &\alpha\in\myrange{3/4,5/8}
+    \end{cases}
+    \\
+    x_3=\frac{5/8+3/4}{2}=11/16
+    \implies
+    \myvert{\alpha-x_3}=\frac{1}{2^{3+1}}=0.0625
+  \end{gather*}
 \end{questionBox}
 
 \setcounter{question}{3}
+\begin{questionBox}1{} % Q4
+  Considere a seguinte regra de integração numérica
 
-\begin{questionBox}1{ % Q4
-    Considere a seguinte regra de integração numérica
-    \begin{BM}
-        \int_{-1}^{1}{
-            f_{(x)}\,\odif{x}
-        }
-        = c_1\,f_{(-1/3)}
-        + c_2\,f_{(0)}
-        + c_3\,f_{(1/3)}
-        ;\quad \{c_1,c_2,c_3\}\in\mathbb{R}
-    \end{BM}
-    Quais dos valores que \(c_1,c_2,c_3\) devem assumir para que a regra seja exata para polinómios básicos de grau o mais elevado possível?
-} % Q4
-    \answer{}
-    \begin{flalign*}
-        &
-            \begin{cases}
-                f(x)=x^0
-                \\
-                f(x)=x^1
-                \\
-                f(x)=x^2
-            \end{cases}
-            \implies &\\&
-            \implies
-            \begin{cases}
-                c_1+c_2+c_3 
-                = \int_{-1}^{1}{x^0\,\odif{x}}
-                =2
-                \\
-                -c_1/3+c_2*0+c_3/3
-                =\int_{-1}^{1}{x^1\,\odif{x}}
-                = (1-1)/2=0
-                \\
-                c_1/9+c_2*0+c_3/9
-                =\int_{-1}^{1}{x^2\,\odif{x}}
-                = (1+1)/3=2/3
-            \end{cases}
-            \implies &\\&
-            \implies
-            \begin{cases}
-                c_1+c_2+c_3=2
-                \\
-                -c_1+c_3=0
-                \\
-                c_1+c_3=18/3=6
-            \end{cases}
-            \implies
-            \begin{cases}
-                c_1=3
-                \\
-                c_2=-4
-                \\
-                c_3=3
-            \end{cases}
-        &
-    \end{flalign*}
+  \begin{BM}
+    \int_{-1}^{1}{
+      f_{(x)}\,\odif{x}
+    }
+    = c_1\,f_{(-1/3)}
+    + c_2\,f_{(0)}
+    + c_3\,f_{(1/3)}
+    ;\quad \{c_1,c_2,c_3\}\in\mathbb{R}
+  \end{BM}
+
+  Quais dos valores que \(c_1,c_2,c_3\) devem assumir para que a regra seja exata para polinómios básicos de grau o mais elevado possível?
+
+  \answer{}
+
+  \begin{gather*}
+    \begin{cases}
+      f(x)=x^0
+      \\
+      f(x)=x^1
+      \\
+      f(x)=x^2
+    \end{cases}
+    \implies \\
+    \implies
+    \begin{cases}
+      c_1+c_2+c_3 
+      = \int_{-1}^{1}{x^0\,\odif{x}}
+      =2
+      \\
+      -c_1/3+c_2*0+c_3/3
+      =\int_{-1}^{1}{x^1\,\odif{x}}
+      = (1-1)/2=0
+      \\
+      c_1/9+c_2*0+c_3/9
+      =\int_{-1}^{1}{x^2\,\odif{x}}
+      = (1+1)/3=2/3
+    \end{cases}
+    \implies \\
+    \implies
+    \begin{cases}
+      c_1+c_2+c_3=2
+      \\
+      -c_1+c_3=0
+      \\
+      c_1+c_3=18/3=6
+    \end{cases}
+    \implies
+    \begin{cases}
+      c_1=3
+      \\
+      c_2=-4
+      \\
+      c_3=3
+    \end{cases}
+  \end{gather*}
 \end{questionBox}
 
 \setcounter{question}{5}
-\begin{questionBox}1{ % Q6
+\begin{questionBox}1{} % Q6
     Considere a equação não linear \(\sin(x)\,\cos(x)=x-1\). a qual tem \emph{uma única raiz \(\alpha\)} no intervalo [1,1.5].
-} % Q6
-    \begin{questionBox}2{ % Q6.1
-        Verifique que \(\alpha\) é um ponto fixo da função \(\phi(x)=\cos(x)\,\sin(x)+1\).
-    } % Q6.1
-        \answer{}
-        \begin{flalign*}
-            &
-                f(x)=0\implies
-                \sin(\alpha)\cos(\alpha)-\alpha+1=0
-                \implies
-                \sin(\alpha)\cos(\alpha)+1=\alpha
-                \implies &\\&
-                \implies
-                \phi(\alpha)
-                = \sin(\alpha)\cos(\alpha)+1
-                = \alpha
-                &\\&
-                \therefore
-                x\text{ é ponto fixo de }\phi(x)\text{ em }\myrange{1,1.5}
-            &
-        \end{flalign*}
-    \end{questionBox}
-    \begin{questionBox}2{ % Q6.2
-        Mostre que a sucessão
-        \begin{BM}
-            \begin{cases}
-                x_0\in\myrange{1,1.5}
-                \\
-                x_{n+1}=\phi{x_n}\quad n=0,1,2,...
-            \end{cases}
-        \end{BM}
-        converge para \(\alpha\) e classifique o ponto fixo \(\alpha\) justificando conveninentemente.
-    } % Q6.2
-        \answer{}
-        \begin{flalign*}
-            &
-                % 1
-                \phi(x)\text{ esta bem def e continua em }\mathbb{R}
-                &\\[6ex]&
-                % 2
-                \begin{cases}
-                    \phi(1)=\dots=1.4546\dots\in\myrange{1,1.5}
-                    \phi(1.5)
-                    =\dots=1.07056\in\myrange{1,1.5}
-                \end{cases}
-                ; &\\&
-                \phi'(x)=\cos^2(x)-\sin^2(x)<0
-                \quad\forall x\in\myrange{1,1.5}
-                &\\&
-                \therefore
-                1<1.07056\leq\phi(x)\leq1.4546<1.5
-                &\\&
-                \therefore
-                \phi(x)\in\myrange{1,1.5}\forall\,x\in\myrange{1,1.5}
-                % 3
-                &\\[3ex]&
-                \myvert{\phi'(x)}
-                = \dots 
-                = \myvert{\cos(2\,x)}
-                \leq\myvert{-0.99}
-                =0.99=M<1
-            &
-        \end{flalign*}
-    \end{questionBox}
-    \begin{questionBox}2{ % Q6.3
-        Considerando \(x_0=1\) e a sucessão definida em b. diga quantas casas decimais significativas pode garantir para a iterada \(n=700\). Justifique devidamente.
-    } % Q6.3
-    \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.1
+  Verifique que \(\alpha\) é um ponto fixo da função \(\phi(x)=\cos(x)\,\sin(x)+1\).
+
+  \answer{}
+
+  \begin{gather*}
+    f(x)=0\implies
+    \sin(\alpha)\cos(\alpha)-\alpha+1=0
+    \implies
+    \sin(\alpha)\cos(\alpha)+1=\alpha
+    \implies \\
+    \implies
+    \phi(\alpha)
+    = \sin(\alpha)\cos(\alpha)+1
+    = \alpha
+    \\
+    \therefore
+    x\text{ é ponto fixo de }\phi(x)\text{ em }\myrange{1,1.5}
+  \end{gather*}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.2
+  Mostre que a sucessão
+
+  \begin{BM}
+    \begin{cases}
+      x_0\in\myrange{1,1.5}
+      \\
+      x_{n+1}=\phi{x_n}\quad n=0,1,2,...
+    \end{cases}
+  \end{BM}
+
+  converge para \(\alpha\) e classifique o ponto fixo \(\alpha\) justificando conveninentemente.
+
+  \answer{}
+
+  \begin{gather*}
+    % 1
+    \phi(x)\text{ esta bem def e continua em }\mathbb{R}
+    \\[1ex]
+    % 2
+    \begin{cases}
+      \phi(1)=\dots=1.4546\dots\in\myrange{1,1.5}
+      \phi(1.5)
+      =\dots=1.07056\in\myrange{1,1.5}
+    \end{cases}
+    ; \\
+    \phi'(x)=\cos^2(x)-\sin^2(x)<0
+    \quad\forall x\in\myrange{1,1.5}
+    \\
+    \therefore
+    1<1.07056\leq\phi(x)\leq1.4546<1.5
+    \\
+    \therefore
+    \phi(x)\in\myrange{1,1.5}\forall\,x\in\myrange{1,1.5}
+    % 3
+    \\[1ex]
+    \myvert{\phi'(x)}
+    = \dots 
+    = \myvert{\cos(2\,x)}
+    \leq\myvert{-0.99}
+    =0.99=M<1
+  \end{gather*}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.3
+  Considerando \(x_0=1\) e a sucessão definida em b. diga quantas casas decimais significativas pode garantir para a iterada \(n=700\). Justifique devidamente.
 \end{questionBox}
 
 \setcounter{question}{7}
+\begin{questionBox}1{} % Q8
 
-\begin{questionBox}1{ % Q8
-    Seja \textit{S} a função definida por
-    \begin{BM}
-        S(x)
-        = \begin{cases}
-            a\,x^3+b\,x^2+x\,5/3-1,\quad& -1\leq x<0
-            \\ 
-            -2\,a\,x^3+b\,x^2+x\,5/3-1,\quad& 0\leq x<1
-            \\ 
-            a\,x^3-2\,b\,x^2+x\,41/3-5,\quad& 1\leq x<2
-        \end{cases}
-    \end{BM}
-    e que passa nos pontos \((-1,y_0),(0,y_1),(1,y_2),(2,y_2)\). Determine as constantes reais \textit{a}, \textit{b} de forma que \textit{S(x)} seja spline cúbico interpolador e diga se \textit{S(x)} pode ser um spline natural?
-} % Q8
-    \answer{}
-    \paragraph{Continuidade}
-    \begin{flalign*}
-        &
-            S(x)
-            &\\[3ex]&
-            \lim_{x\to0^-}{S(x)}
-            =\lim_{x\to0^+}{S(x)}
-            &\\[3ex]&
-             \lim_{x\to1^-}{S(x)}
-            =\lim_{x\to1^+}{S(x)}
-            &\\[6ex]&
-            \odv[order=1]{S(x)}{x}=\dots
-            &\\[3ex]&
-             \lim_{x\to0^-}{\odv[order=1]{S(x)}{x}}
-            =\lim_{x\to0^+}{\odv[order=1]{S(x)}{x}}
-            &\\[3ex]&
-             \lim_{x\to1^-}{\odv[order=1]{S(x)}{x}}
-            =\lim_{x\to1^+}{\odv[order=1]{S(x)}{x}}
-            &\\[6ex]&
-            \odv[order=2]{S(x)}{x}=\dots
-            &\\[3ex]&
-             \lim_{x\to0^-}{\odv[order=2]{S(x)}{x}}
-            =\lim_{x\to0^+}{\odv[order=2]{S(x)}{x}}
-            &\\[3ex]&
-             \lim_{x\to1^-}{\odv[order=2]{S(x)}{x}}
-            =\lim_{x\to1^+}{\odv[order=2]{S(x)}{x}}
-        &
-    \end{flalign*}
+  Seja \textit{S} a função definida por
+  \begin{BM}
+    S(x)
+    = \begin{cases}
+      a\,x^3+b\,x^2+x\,5/3-1,\quad& -1\leq x<0
+      \\ 
+      -2\,a\,x^3+b\,x^2+x\,5/3-1,\quad& 0\leq x<1
+      \\ 
+      a\,x^3-2\,b\,x^2+x\,41/3-5,\quad& 1\leq x<2
+    \end{cases}
+  \end{BM}
+  e que passa nos pontos \((-1,y_0),(0,y_1),(1,y_2),(2,y_2)\). Determine as constantes reais \textit{a}, \textit{b} de forma que \textit{S(x)} seja spline cúbico interpolador e diga se \textit{S(x)} pode ser um spline natural?
+
+  \answer{}
+
+  \paragraph{Continuidade}
+  \begin{gather*}
+    S(x)
+    \\[1ex]
+    \lim_{x\to0^-}{S(x)}
+    =\lim_{x\to0^+}{S(x)}
+    \\[1ex]
+    \lim_{x\to1^-}{S(x)}
+    =\lim_{x\to1^+}{S(x)}
+    \\[1ex]
+    \odv[order=1]{S(x)}{x}=\dots
+    \\[1ex]
+    \lim_{x\to0^-}{\odv[order=1]{S(x)}{x}}
+    =\lim_{x\to0^+}{\odv[order=1]{S(x)}{x}}
+    \\[1ex]
+    \lim_{x\to1^-}{\odv[order=1]{S(x)}{x}}
+    =\lim_{x\to1^+}{\odv[order=1]{S(x)}{x}}
+    \\[1ex]
+    \odv[order=2]{S(x)}{x}=\dots
+    \\[1ex]
+    \lim_{x\to0^-}{\odv[order=2]{S(x)}{x}}
+    =\lim_{x\to0^+}{\odv[order=2]{S(x)}{x}}
+    \\[1ex]
+    \lim_{x\to1^-}{\odv[order=2]{S(x)}{x}}
+    =\lim_{x\to1^+}{\odv[order=2]{S(x)}{x}}
+  \end{gather*}
 \end{questionBox}
 
-\begin{sectionBox}1{Erro quadratico} % S
-    
-    \begin{BM}
-        (E_m)^2
-        = \sum_0^m{
-            (f_{(x_i)}-p_{m\,(x_i)})^2
-        }
-    \end{BM}
-    
+\begin{sectionBox}1{} % Q9
+  Erro quadratico
+  \begin{BM}
+    (E_m)^2
+    = \sum_0^m{
+      (f_{(x_i)}-p_{m\,(x_i)})^2
+    }
+  \end{BM}
 \end{sectionBox}
 
 \end{document}

@@ -13,59 +13,63 @@
 {Resolução Teste 2024.1} % Part Title
 
 \begin{questionBox}1{} % Q1
+
   Erro relativo para approx \(\hat{I}\)
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
       r_{\hat{I}}
       = \frac{\myvert{\hat{I}-I}}{\myvert{I}}
       \leq \frac{\myvert{M}}{\myvert{I}}
       \therefore\text{ Alternativa d)}
-    &
-  \end{flalign*}
+    \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q2
+
   \begin{itemize}
     \item \textit{f} def no intervalo \(\myrange{0,3}\)
     \item \(p_2(x)=2\,x^2\,3\,x\) Pol de grau \(\leq 2\) interp de f em \(\{0,1,2\}\)
     \item \(f\myrange{x_0,\dots,x_4}=4; x_3 = 3\)
   \item \(p_3(x)=?\) interp de f em \((x_i,f(x_i)),i=\{0,1,2,3\}\)
   \end{itemize}
+
   \answer{}
-  \begin{flalign*}
-    &
-      % n: 3
-      p_{3\,(x)}
-      = f(x_0)
-      + \sum_{i=0}^{3-1}{
-        \left(\prod_{j=0}^{i}{x-x_j}\right)
-        \,f\myrange{x_0,\dots,x_{i+1}}
-      }
-      = &\\&
-      = p_{2\,(x)}
-      + f[x_0,x_1,x_2,x_3]
-      \,( x-x_0)
-      \,( x-x_1)
-      \,( x-x_2)
-      = &\\&
-      = 2\,x^2+3\,x
-      + 4
-      \,( x-0)
-      \,( x-1)
-      \,( x-2)
-      = &\\&
-      = 2\,x^2+3\,x
-      +4(
-        x^3-2\,x^2
-        -x^2+2\,x
-      )
-      = &\\&
-      =x^3*4
-      -x^2*10
-      +x^1*11
-    &
-  \end{flalign*}
+
+  \begin{gather*}
+    % n: 3
+    p_{3\,(x)}
+    = f(x_0)
+    + \sum_{i=0}^{3-1}{
+      \left(\prod_{j=0}^{i}{x-x_j}\right)
+      \,f\myrange{x_0,\dots,x_{i+1}}
+    }
+    = \\
+    = p_{2\,(x)}
+    + f[x_0,x_1,x_2,x_3]
+    \,( x-x_0)
+    \,( x-x_1)
+    \,( x-x_2)
+    = \\
+    = 2\,x^2+3\,x
+    + 4
+    \,( x-0)
+    \,( x-1)
+    \,( x-2)
+    = \\
+    = 2\,x^2+3\,x
+    +4(
+      x^3-2\,x^2
+      -x^2+2\,x
+    )
+    = \\
+    =x^3*4
+    -x^2*10
+    +x^1*11
+  \end{gather*}
+
   Resposta: aliena c)
 
   % \begin{center}
@@ -95,71 +99,80 @@
   %   \end{tabular}
   %   \vspace{2ex}
   % \end{center}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q3
+  
   \begin{itemize}
     \item \(I=int_0^1{f(x)\,\odif{x}}\)
     \item \(I_T= 6.5\)
     \item \(I_{PM}=4.25\)
     \item \(I_{S}=?\)
   \end{itemize}
+
   \answer{}
-  \begin{flalign*}
-    &
-      % integração
-      \hat{i}
-      \approx\int_{a=0}^{b=1}{f_{(x)}\,\odif{x}}
-      =\frac{h}{3}\,(f_0+4\,f_1+f_2)
-      = \frac{1}{3}\,(
-        2\,\left(\frac{h}{2}(f(0)+f(1))\right)
-        + 4\,( h\,f(0.5))
-      )
-      = &\\&
-      = \frac{1}{3}\,(
-        2\,I_T
-        + 4\,I_{PM}
-      )
-      = &\\&
-      = \frac{1}{3}\,(
-        2*6.5
-        + 4* 4.25
-      )
-      = 10
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      % integração
-      I_{PM}
-      \approx h\,f_{\left(\frac{0+1}{2}\right)}
-      = h\,f(0.5)
-      = 4.25
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      % integração
-      I_T
-      \approx \frac{h}{2}\,(f(0)+f(1))
-      = 6.5
-    &
-  \end{flalign*}
+
   Resposta b)
+
+  \begin{gather*}
+    % integração
+    \hat{i}
+    \approx\int_{a=0}^{b=1}{f_{(x)}\,\odif{x}}
+    =\frac{h}{3}\,(f_0+4\,f_1+f_2)
+    = \frac{1}{3}\,(
+      2\,\left(\frac{h}{2}(f(0)+f(1))\right)
+      + 4\,( h\,f(0.5))
+    )
+    = \\
+    = \frac{1}{3}\,(
+      2\,I_T
+      + 4\,I_{PM}
+    )
+    = \\
+    = \frac{1}{3}\,(
+      2*6.5
+      + 4* 4.25
+    )
+    = 10
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    % integração
+    I_{PM}
+    \approx h\,f_{\left(\frac{0+1}{2}\right)}
+    = h\,f(0.5)
+    = 4.25
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    % integração
+    I_T
+    \approx \frac{h}{2}\,(f(0)+f(1))
+    = 6.5
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q4
+
   \begin{itemize}
     \item \(p_4(x)\)
     \item \(x=\{0,1,\dots,4\}\)
-    \item S spline cubic de f em \numlist*{0,2,4}
+    \item S spline cubic de f em \numlist*{0;2;4}
     \item q é pol grau 4 por min quadrados
   \end{itemize}
+
   \answer{}
+
   Resposta alinea b)
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q5
+
   \begin{itemize}
     \item \(f'(0)=5\)
     \item \(f"(2)=-1\)
@@ -181,62 +194,65 @@
       \\ 4\,x^3 - 18\,x^2 + 23\,x ,\quad& 1 \leq x \leq 2
     \end{cases}
   \end{BM}
+
   \answer{}
-  \begin{flalign*}
-    &
-      S(0) 
-      = -2\,(0)^3 + 5*0 + 6
-      = 6
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      S(1) 
-      = -2\,(1)^3 + 5\,(1) 6
-      = 9
-      = &\\&
-      = 4\,(1)^3 - 18*(1)^2 + 23*(1)
-      = 9
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      S(2) 
-      = 4\,(2)^3 - 18*(2)^2 + 23*(2)
-      = 6
-      % 
-      % 
-      % 
-      &\\[3ex3ex3ex]&
-      \therefore S\text{ interpola }f
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      \odv{S(x)}{x}
-      \begin{cases}
-        -4\,x + 5 ,\quad& 0 \leq x < 1
-        \\ 12\,x^2 - 36\,x + 23 ,\quad& 1 \leq x \leq 2
-      \end{cases}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      \lim_{x\to 1^-}{\odv{S(x)}{x}}
-      = -4*1 + 5
-      = 1
-      = &\\&
-      \neq \lim_{x\to 1^+}{\odv{S(x)}{x}}
-      = 12 - 36 + 23
-      = -1
-      ; &\\&
-      S\text{ Não é spline}
-    &
-  \end{flalign*}
+
   Resposta b)
+
+  \begin{gather*}
+    S(0) 
+    = -2\,(0)^3 + 5*0 + 6
+    = 6
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    S(1) 
+    = -2\,(1)^3 + 5\,(1) 6
+    = 9
+    = \\
+    = 4\,(1)^3 - 18*(1)^2 + 23*(1)
+    = 9
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    S(2) 
+    = 4\,(2)^3 - 18*(2)^2 + 23*(2)
+    = 6
+    % 
+    % 
+    % 
+    \\[3ex]
+    \therefore S\text{ interpola }f
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    \odv{S(x)}{x}
+    \begin{cases}
+      -4\,x + 5 ,\quad& 0 \leq x < 1
+      \\ 12\,x^2 - 36\,x + 23 ,\quad& 1 \leq x \leq 2
+    \end{cases}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    \lim_{x\to 1^-}{\odv{S(x)}{x}}
+    = -4*1 + 5
+    = 1
+    = \\
+    \neq \lim_{x\to 1^+}{\odv{S(x)}{x}}
+    = 12 - 36 + 23
+    = -1
+    ; \\
+    S\text{ Não é spline}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q6
+
   Considere a tab com val f
   \begin{center}
     \vspace{1ex}
@@ -249,154 +265,161 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q6.1
+
   Dete o pol de lagrange inter da tab
+
   \answer{}
-  \begin{flalign*}
-    &
-      % n: 3
-      p_{3}(x)
-      = \sum_{i=0}^{3}{ y_i\,L_{i}(x) }
-      = -42*L_0
-      - 2\,L_1
-      + 3\,L_2
-      = &\\[3ex]&
-      = -42*\frac{1}{2}( x^2 -3\,x +2)
-      - 2\,(-( x^2-2\,x))
-      + 3\,\left(\frac{1}{2}( x^2-x )\right)
-      % 
-      % 
-      % 
-      ;&\\[3ex]&
-      L_i(x)
-      =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
-      \,\prod_{j=i+1}^{3}{\frac{x-x_j}{x_i-x_j}}
-      % 
-      % 
-      % 
-      ;&\\[3ex]&
-      L_0(x)
-      =\prod_{j=0}^{0-1}{\frac{x-x_j}{0-x_j}}
-      \,\prod_{j=0+1}^{3}{\frac{x-x_j}{0-x_j}}
-      = \frac{x-1}{0-1}
-      \,\frac{x-2}{0-2}
-      = \frac{1}{2}( x^2 -3\,x +2)
-      % 
-      % 
-      % 
-      ;&\\[3ex]&
-      L_1(x)
-      =\prod_{j=0}^{1-1}{\frac{x-x_j}{1-x_j}}
-      \,\prod_{j=1+1}^{3}{\frac{x-x_j}{1-x_j}}
-      = \frac{x-0}{1-0}
-      \,\frac{x-2}{1-2}
-      = -( x^2-2\,x)
-      % 
-      % 
-      % 
-      ;&\\[3ex]&
-      L_2(x)
-      =\prod_{j=0}^{2-1}{\frac{x-x_j}{2-x_j}}
-      \,\prod_{j=2+1}^{3}{\frac{x-x_j}{2-x_j}}
-      = \frac{x-0}{2-0}
-      \,\frac{x-1}{2-1}
-      = \frac{1}{2}( x^2-x )
-    &
-  \end{flalign*}
+
+  \begin{gather*}
+    % n: 3
+    p_{3}(x)
+    = \sum_{i=0}^{3}{ y_i\,L_{i}(x) }
+    = -42*L_0
+    - 2\,L_1
+    + 3\,L_2
+    = \\[1ex]
+    = -42*\frac{1}{2}( x^2 -3\,x +2)
+    - 2\,(-( x^2-2\,x))
+    + 3\,\left(\frac{1}{2}( x^2-x )\right)
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    L_i(x)
+    =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
+    \,\prod_{j=i+1}^{3}{\frac{x-x_j}{x_i-x_j}}
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    L_0(x)
+    =\prod_{j=0}^{0-1}{\frac{x-x_j}{0-x_j}}
+    \,\prod_{j=0+1}^{3}{\frac{x-x_j}{0-x_j}}
+    = \frac{x-1}{0-1}
+    \,\frac{x-2}{0-2}
+    = \frac{1}{2}( x^2 -3\,x +2)
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    L_1(x)
+    =\prod_{j=0}^{1-1}{\frac{x-x_j}{1-x_j}}
+    \,\prod_{j=1+1}^{3}{\frac{x-x_j}{1-x_j}}
+    = \frac{x-0}{1-0}
+    \,\frac{x-2}{1-2}
+    = -( x^2-2\,x)
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    L_2(x)
+    =\prod_{j=0}^{2-1}{\frac{x-x_j}{2-x_j}}
+    \,\prod_{j=2+1}^{3}{\frac{x-x_j}{2-x_j}}
+    = \frac{x-0}{2-0}
+    \,\frac{x-1}{2-1}
+    = \frac{1}{2}( x^2-x )
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q6.2
+
   Approx p \(f(-1)\) e majorante absoluto para f(-1)
   \begin{itemize}
     \item \(\myvert{f^{3}(x)}\leq 1, \forall\,x\in\myrange{-2,1}\)
   \end{itemize}
+
   \answer{}
-  \begin{flalign*}
-    &
-      f(-1)
-      \approx p_3(-1)
-      = &\\&
-      = -42*\frac{1}{2}( (-1)^2 -3\,(-1) +2)
-      - 2\,(-( (-1)^2-2\,(-1)))
-      + 3\,\left(\frac{1}{2}( (-1)^2-(-1) )\right)
-      = &\\&
-      = 57
-      % 
-      % 
-      % 
-      &\\[3ex]&
-      \eta_{f(-1)} \leq 1
-      % 
-      % 
-      % 
-      &\\[3ex]&
-      r_{f(-1)}
-      = \frac
-      { \myvert{f(-1)-p_3(-1)} }
-      { \myvert{f(-1)} }
-    &
-  \end{flalign*}
+
+  \begin{gather*}
+    f(-1)
+    \approx p_3(-1)
+    = \\
+    = -42*\frac{1}{2}( (-1)^2 -3\,(-1) +2)
+    - 2\,(-( (-1)^2-2\,(-1)))
+    + 3\,\left(\frac{1}{2}( (-1)^2-(-1) )\right)
+    = \\
+    = 57
+    % 
+    % 
+    % 
+    \\[1ex]
+    \eta_{f(-1)} \leq 1
+    % 
+    % 
+    % 
+    \\[1ex]
+    r_{f(-1)}
+    = \frac
+    { \myvert{f(-1)-p_3(-1)} }
+    { \myvert{f(-1)} }
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q6.3
+
   Pol de grau 1 por min quadrad
+
   \answer{}
-  \begin{flalign*}
-    &
-      p_{1,(x)} 
-      = \sum_{i=0}^1{\alpha_i\,x^i}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      \begin{bmatrix}
-        \sum_{i=0}^1{\left(
-            \alpha_i\,\sum_{j=0}^{n}{x_{j}^{i+k}}
-        \right)}
-        = \sum_{i=0}^{n}{x_i^k\,y_i}
-        \\
-        k\in\myrange{0,1}
-      \end{bmatrix}
-      = &\\&
-      = \begin{bmatrix}
-        \left(
-          \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+0}}
-          +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+0}}
-        \right)
-        = x_0^0\,y_0
-        + x_1^0\,y_1
-        + x_2^0\,y_2
-        \\
-        \left(
-          \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+1}}
-          +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+1}}
-        \right)
-        = x_0^1\,y_0
-        + x_1^1\,y_1
-        + x_2^1\,y_2
-      \end{bmatrix}
-      = &\\&
-      = \begin{bmatrix}
-        \left(
-          \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+0}}
-          +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+0}}
-        \right)
-        = x_0^0\,y_0
-        + x_1^0\,y_1
-        + x_2^0\,y_2
-        \\
-        \left(
-          \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+1}}
-          +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+1}}
-        \right)
-        = x_0^1\,y_0
-        + x_1^1\,y_1
-        + x_2^1\,y_2
-      \end{bmatrix}
-    &
-  \end{flalign*}la
+
+  \begin{gather*}
+    p_{1,(x)} 
+    = \sum_{i=0}^1{\alpha_i\,x^i}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    \begin{bmatrix}
+      \sum_{i=0}^1{\left(
+          \alpha_i\,\sum_{j=0}^{n}{x_{j}^{i+k}}
+      \right)}
+      = \sum_{i=0}^{n}{x_i^k\,y_i}
+      \\
+      k\in\myrange{0,1}
+    \end{bmatrix}
+    = \\
+    = \begin{bmatrix}
+      \left(
+        \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+0}}
+        +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+0}}
+      \right)
+      = x_0^0\,y_0
+      + x_1^0\,y_1
+      + x_2^0\,y_2
+      \\
+      \left(
+        \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+1}}
+        +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+1}}
+      \right)
+      = x_0^1\,y_0
+      + x_1^1\,y_1
+      + x_2^1\,y_2
+    \end{bmatrix}
+    = \\
+    = \begin{bmatrix}
+      \left(
+        \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+0}}
+        +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+0}}
+      \right)
+      = x_0^0\,y_0
+      + x_1^0\,y_1
+      + x_2^0\,y_2
+      \\
+      \left(
+        \alpha_0\,\sum_{j=0}^{3}{x_{j}^{0+1}}
+        +\alpha_1\,\sum_{j=0}^{3}{x_{j}^{1+1}}
+      \right)
+      = x_0^1\,y_0
+      + x_1^1\,y_1
+      + x_2^1\,y_2
+    \end{bmatrix}
+  \end{gather*}
+
 \end{questionBox}
 
 \end{document}

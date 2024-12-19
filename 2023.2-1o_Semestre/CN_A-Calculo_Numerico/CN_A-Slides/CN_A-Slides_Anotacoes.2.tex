@@ -1,8 +1,5 @@
 % !TEX root = ./CN_A-Slides_Anotacoes.2.tex
-\providecommand\mainfilename{"./CN_A-Slides_Anotacoes.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./CN_A-Slides_Anotacoes.2.tex"}
-\documentclass[\mainfilename]{subfiles}
+\documentclass[./CN_A-Slides_Anotacoes.tex]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -11,184 +8,181 @@
 % \graphicspath{{\subfix{./.build/figures/CN_A-Slides_Anotacoes.2}}}
 % \tikzsetexternalprefix{./.build/figures/CN_A-Slides_Anotacoes.2/graphics/}
 
-\mymakesubfile{2}
-[CN A]
+\mymakesubfile{2}[CN A]
 {Interpolação e Aproximação Polinomial} % Subfile Title
 {Interpolação e Aproximação Polinomial} % Part Title
 
 \begin{sectionBox}1{Interpolação} % S
-    
-    Dado o conjunto \(\Omega\), se põe em questão existir um polinómio \textit{p} com menor grau possível que passa por todos os pontos
 
-    \begin{BM}
-        p: p_{(x_i)}=y_i\quad\forall\,i\in\myrange{0,n}
-        \\[2ex]
-        \Omega=\{
-            (x_0,y_0),
-            (x_1,y_1),
-            \dots,
-            (x_n,y_n),
-        \}
-        ;\\ 
-        x_i\neq x_j\quad\forall\,\{i,j\}\in\mathbb{N}:i\neq j
-    \end{BM}
-    
+  Dado o conjunto \(\Omega\), se põe em questão existir um polinómio \textit{p} com menor grau possível que passa por todos os pontos
+  \begin{BM}
+    p: p_{(x_i)}=y_i\quad\forall\,i\in\myrange{0,n}
+    \\[2ex]
+    \Omega=\{
+      (x_0,y_0),
+      (x_1,y_1),
+      \dots,
+      (x_n,y_n),
+    \}
+    ;\\ 
+    x_i\neq x_j\quad\forall\,\{i,j\}\in\mathbb{N}:i\neq j
+  \end{BM}
+
 \end{sectionBox}
 
 \begin{sectionBox}2{Grau do polinomio} % S
-    
-    \begin{BM}
-        \text{grau de } p\leq n
-        \\
-        p_{n\,(x)}
-        = \sum_{i=0}^{n}{a_0\,x^i}
-        \implies \\
-        \implies
-        S\equiv\begin{cases}
-            \sum_{i=0}^{n}{a_i\,x_j^i}=y_j
-            \\
-            j\in\myrange{0,n}
-        \end{cases}
-    \end{BM}
-    
+
+  \begin{BM}
+    \text{grau de } p\leq n
+    \\
+    p_{n\,(x)}
+    = \sum_{i=0}^{n}{a_0\,x^i}
+    \implies \\
+    \implies
+    S\equiv\begin{cases}
+      \sum_{i=0}^{n}{a_i\,x_j^i}=y_j
+      \\
+      j\in\myrange{0,n}
+    \end{cases}
+  \end{BM}
+
 \end{sectionBox}
 
 \begin{sectionBox}2{Matriz de Vandermonde} % S
-    
-    Representação matricial das equações \textit{S}
-    \begin{BM}
-        V\,A=Y:
-        \begin{cases}
-            V\in\mathcal{M}_{n+1\times n+1}:v_{i,j}=x^{i}_{j}
-            \\
-            \{A,Y\}\in\mathcal{R}^n
-        \end{cases}
-    \end{BM}
 
-    \begin{sectionBox}*3{Prova?} % S
-        \begin{flalign*}
-            &
-                \myvert{V}
-                = \prod_{\stackrel{i,j=1}{i>j}}^{n}{(x_i-x_j)}
-                = \prod_{i=1}^{n-1}{\left(
-                    \prod_{j=i+1}^{n}{(x_j-x_i)}
-                \right)}
-                \neq0
-                &\\&
-                :x_j-x_i\neq0\forall\,\{i,j\}\in\mathbb{N}:i\neq j
-            &
-        \end{flalign*}
-    \end{sectionBox}
-    
+  Representação matricial das equações \textit{S}
+  \begin{BM}
+    V\,A=Y:
+    \begin{cases}
+      V\in\mathcal{M}_{n+1\times n+1}:v_{i,j}=x^{i}_{j}
+      \\
+      \{A,Y\}\in\mathcal{R}^n
+    \end{cases}
+  \end{BM}
+
+  \begin{sectionBox}*3{Prova?} % S
+    \begin{gather*}
+      \myvert{V}
+      = \prod_{\stackrel{i,j=1}{i>j}}^{n}{(x_i-x_j)}
+      = \prod_{i=1}^{n-1}{\left(
+          \prod_{j=i+1}^{n}{(x_j-x_i)}
+      \right)}
+      \neq0
+      \\
+      :x_j-x_i\neq0\forall\,\{i,j\}\in\mathbb{N}:i\neq j
+      \end{gather*}
+  \end{sectionBox}
+
 \end{sectionBox}
 
 \begin{sectionBox}2{Funções de Lagrange} % S
-    
-    \begin{BM}
-        L_{k\,(x)}
-        = \left(
-            \prod_{i=0}^{k-1}{\frac{x-x_i}{x_k-x_i}}
-        \right)
-        \,\left(
-            \prod_{i=k+1}^{n}{\frac{x-x_i}{x_k-x_i}}
-        \right)
-        \\
-        k\in\myrange{0,n}:
-        \\[2ex]
-        \left\{
-            L_{i\,(x_j)}=\delta_{i,j}=\begin{cases}
-                0,\quad& i\neq j
-                \\
-                1,\quad& i=j
-            \end{cases}
-        \right.
-        ;\{i,j\}\in\myrange{0,n}
-    \end{BM}
 
-    As funções \(L_{k\,(x)}\) são \emph{funções base} pois tem-se
-    \begin{BM}
-        p_{n\,(x)} = \sum_{i=0}^{n}{L_{i\,(x)}\,y_i}
-    \end{BM}
-    
+  \begin{BM}
+    L_{k\,(x)}
+    = \left(
+      \prod_{i=0}^{k-1}{\frac{x-x_i}{x_k-x_i}}
+    \right)
+    \,\left(
+      \prod_{i=k+1}^{n}{\frac{x-x_i}{x_k-x_i}}
+    \right)
+    \\
+    k\in\myrange{0,n}:
+    \\[2ex]
+    \left\{
+      L_{i\,(x_j)}=\delta_{i,j}=\begin{cases}
+        0,\quad& i\neq j
+        \\
+        1,\quad& i=j
+      \end{cases}
+    \right.
+    ;\{i,j\}\in\myrange{0,n}
+  \end{BM}
+
+  As funções \(L_{k\,(x)}\) são \emph{funções base} pois tem-se
+  \begin{BM}
+    p_{n\,(x)} = \sum_{i=0}^{n}{L_{i\,(x)}\,y_i}
+  \end{BM}
+
 \end{sectionBox}
 
-\begin{exampleBox}1{ % E
-    Determine a expressão analítica do polinómio de Lagrange de grau \(\leq2, p_{2\,(x)}\), interpolador de f nos nodos \(\{0.2,0.5,1\}\).
-    \begin{BM}
-        f_{(x)}=1/x
-    \end{BM}
-} % E
-    \answer{}
-    \begin{flalign*}
+\begin{exampleBox}1{} % E
+
+  Determine a expressão analítica do polinómio de Lagrange de grau \(\leq2, p_{2\,(x)}\), interpolador de f nos nodos \(\{0.2,0.5,1\}\).
+  \begin{BM}
+    f_{(x)}=1/x
+  \end{BM}
+
+  \answer{}
+
+  \begin{gather*}
+    p_{2\,(x)}
+    = \sum_{i=0}^{2}{y_i\,L_{i\,(x)}}
+    = \sum_{i=0}^{2}{
+      f(x_i)
+      \,\left(
+        \prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
+        \,\prod_{j=i+1}^{n}{\frac{x-x_j}{x_i-x_j}}
+      \right)
+    }
+    = \\
+    = \left(
+      \begin{aligned}
+        & % 0
+        f_{(x_0)}
+        \,\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}
+        &+\\+& % 1
+        f_{(x_1)}
+        \,\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}
+        &+\\+& % 2
+        f_{(x_2)}
+        \,\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
         &
-            p_{2\,(x)}
-            = \sum_{i=0}^{2}{y_i\,L_{i\,(x)}}
-            = \sum_{i=0}^{2}{
-                f(x_i)
-                \,\left(
-                    \prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
-                    \,\prod_{j=i+1}^{n}{\frac{x-x_j}{x_i-x_j}}
-                \right)
-            }
-            = &\\&
-            = \left(
-                \begin{aligned}
-                    & % 0
-                        f_{(x_0)}
-                        \,\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}
-                    &+\\+& % 1
-                        f_{(x_1)}
-                        \,\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}
-                    &+\\+& % 2
-                        f_{(x_2)}
-                        \,\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
-                    &
-                \end{aligned}
-            \right)
-            = &\\&
-            = \left(
-                \begin{aligned}
-                    &
-                        \frac{1}{0.2}
-                        \,\frac{(x-0.5)(x-1)}{(0.2-0.5)(0.2-1)}
-                    &+\\+& 
-                        \frac{1}{0.5}
-                        \,\frac{(x-0.2)(x-1)}{(0.5-0.2)(0.5-1)}
-                    &+\\+& 
-                        \frac{1}{1}
-                        \,\frac{(x-0.2)(x-0.5)}{(1-0.2)(1-0.5)}
-                    &
-                \end{aligned}
-            \right)
-            = &\\&
-            = 10\,x^2
-            - 17\,x
-            + 8
+      \end{aligned}
+    \right)
+    = \\
+    = \left(
+      \begin{aligned}
         &
-    \end{flalign*}
+        \frac{1}{0.2}
+        \,\frac{(x-0.5)(x-1)}{(0.2-0.5)(0.2-1)}
+        &+\\+& 
+        \frac{1}{0.5}
+        \,\frac{(x-0.2)(x-1)}{(0.5-0.2)(0.5-1)}
+        &+\\+& 
+        \frac{1}{1}
+        \,\frac{(x-0.2)(x-0.5)}{(1-0.2)(1-0.5)}
+        &
+      \end{aligned}
+    \right)
+    = \\
+    = 10\,x^2
+    - 17\,x
+    + 8
+  \end{gather*}
+
 \end{exampleBox}
 
 \begin{sectionBox}1{Erro de Interpolação} % S
-    
-    \begin{BM}
-        E_{n\,(x)} = g_{(x)}-p_{n\,(x)}=g_{(x)}-\widehat{g_{(x)}}
-    \end{BM}
 
-    \begin{BM}
-        g_{(\tilde{x})} - p_{n\,(\tilde{x})}
-        = \odv[order=n+1]{g_{(\gamma)}}{x}
-        \,\frac{1}{(n+1)!}
-        \,\prod_{i=0}^{n}(\tilde{x}-x_i)
-        \\[2ex]
-        \begin{cases}
-            \gamma\in\myrange*{a,b};
-            \\ g\in C^{n+1}(\myrange{a,b})
-            \\ \Omega=\{(x_0,y_0),\dots,(x_n,y_n)\}
-            \\ \{x_k\}_{k=0,1,\dots,n}\text{ um conjunto de nodos distintos entre si}
-            \\ y_k=g(x_k), k=0,1,\dots,n
-        \end{cases}
-    \end{BM}
-    
+  \begin{BM}
+    E_{n\,(x)} = g_{(x)}-p_{n\,(x)}=g_{(x)}-\widehat{g_{(x)}}
+  \end{BM}
+
+  \begin{BM}
+    g_{(\tilde{x})} - p_{n\,(\tilde{x})}
+    = \odv[order=n+1]{g_{(\gamma)}}{x}
+    \,\frac{1}{(n+1)!}
+    \,\prod_{i=0}^{n}(\tilde{x}-x_i)
+    \\[2ex]
+    \begin{cases}
+      \gamma\in\myrange*{a,b};
+      \\ g\in C^{n+1}(\myrange{a,b})
+      \\ \Omega=\{(x_0,y_0),\dots,(x_n,y_n)\}
+      \\ \{x_k\}_{k=0,1,\dots,n}\text{ um conjunto de nodos distintos entre si}
+      \\ y_k=g(x_k), k=0,1,\dots,n
+    \end{cases}
+  \end{BM}
+
 \end{sectionBox}
 
 \end{document}

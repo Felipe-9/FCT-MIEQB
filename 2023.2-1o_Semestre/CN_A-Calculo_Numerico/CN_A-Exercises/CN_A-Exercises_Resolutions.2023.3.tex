@@ -13,6 +13,7 @@
 {Integração Numérica} % Part Title
 
 \begin{questionBox}1{} % Q1
+
   Considere o Integral:
   \begin{BM}
     I = \int_{\pi/6}^{\pi/2}{
@@ -20,13 +21,16 @@
       \,\odif{x}
     }
   \end{BM}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q1.1
+
   Determine uma aproximação de \textit{I}, utilizando a regra dos trapézios simples. Obtenha uma estimativa do erro absoluto cometido na aproximação de \textit{I} obtida.
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     g(x)
     = e^{\sin(x)}
     ; \hat{I}
@@ -35,7 +39,7 @@
     \,g(\pi/3)=\pi/3\,e^{\sin(\pi/3)}
     \approx
     2.489652
-    ; &\\&
+    ; \\
     \myvert{\varepsilon}
     = \myvert{
       \frac{h^3}{24}
@@ -47,9 +51,9 @@
       0.0130068
     }
     , \gamma\in\myrange*{\pi/6,\pi/2}
-    ; &\\[3ex]&
+    ; \\[1ex]
     g'(x) = \cos(x)\,e^{\sin{x}}
-    &\\&
+    \\
     g"(x)
     =-\sin(x)\,e^{\sin{x}}
     + \cos^2 (x)\,e^{\sin{x}}
@@ -58,21 +62,25 @@
       \cos^2(x)
       -\sin^2(x)
     \right)
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q1.2
-    Repita as regras mas para o ponto médio de Simpson
+
+  Repita as regras mas para o ponto médio de Simpson
+
 \end{questionBox}
 
 \begin{exampleBox}1{} % E1
+
   \begin{BM}
     I=\int_1^2{\ln{x}\,\odif{x}}
   \end{BM}
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     \hat{I}
     = \frac{h}{3}\left(
       g(a)+4\,g((a+b)/2)+g(b)
@@ -80,17 +88,17 @@
     = \frac{\frac{b-a}{2}}{3}\left(
       g(a)+4\,g((a+b)/2)+g(b)
     \right)
-    = &\\&
+    = \\
     = \frac{\frac{2-1}{2}}{3}\left(
       g(1)+4\,g((1+2)/2)+g(2)
     \right)
     = \frac{1}{6}\left(
       0+4\,(0.405465)+(0.693147)
     \right)
-    \approx &\\&
+    \approx \\
     \approx
     0.385835
-    ; &\\[3ex]&
+    ; \\[1ex]
     \myvert{E}
     = \myvert{
       -\frac{h^2}{90}
@@ -108,7 +116,7 @@
       -\frac{h^2}{90}
       \,\odv[order=2]{-1/\gamma^2}{x}
     }
-    = &\\&
+    = \\
     = \myvert{
       -\frac{h^2}{90}
       \,\odv[order=1]{2/\gamma^3}{x}
@@ -124,31 +132,35 @@
     }
     \leq
     0.002084
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{exampleBox}
 
 \begin{questionBox}1{} % Q2
+
   Considere o Integral
   \begin{BM}
     I = \int_{0.7}^{1.7}{ \pi^x\,\odif{x} }
   \end{BM}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q2.1
+
   Determina uma aproximação \(\hat{I}\), de \textit{I} ultizilando a regra dos trapézios compostos com \(h=0.25\).
   \\ Obtenha um majorante do erro absoluto cometido no cálculo do valor aproximado \(\hat{I}\)
   \paragraph*{Nota:} Nos cálculos intermédios utilize 6 casas decimais, devidamente arrendondadas.
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     h=\frac{b-a}{2\,n}
     \implies
     n 
     = \frac{b-a}{2\,h}
     = \frac{1}{2*0.25}
     = 2
-    \implies &\\[3ex]&
+    \implies \\[1ex]
     \implies
     I_{S,2}
     = \frac{h}{3}
@@ -158,7 +170,7 @@
       + 2\,f_{(x_2)}
       + f_{(x_4)}
     \right)
-    = &\\&
+    = \\
     = \frac{0.25}{3}
     \,\left(
       \pi^{0.7}
@@ -166,22 +178,25 @@
       + 2\,\pi^{1.2}
       + \pi^{1.7}
     \right)
-    \implies &\\[3ex]&
+    \implies \\[1ex]
     \implies
     \myvert{I-I_{S,2}}
     \leq n\,\frac{h^5}{90}\,M_4
     = 2\,\frac{0.25^5}{90}*12.021728
     \cong\num{0.000260888194444}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
-\begin{questionBox}2{ % Q2.2
-    Repita a alínea anterior para a regra de Simpson.
-  } % Q2.2
+
+\begin{questionBox}2{} % Q2.2
+
+  Repita a alínea anterior para a regra de Simpson.
+
 \end{questionBox}
-\begin{questionBox}2{ % Q2.3
-    Quantos subintervalos teria que considerar se pretendesse calcular um valor aproxiumade de \textit{I} com um erro inferiror a \(10^{-6}\) usando
-  } % Q2.3
+
+\begin{questionBox}2{} % Q2.3
+
+  Quantos subintervalos teria que considerar se pretendesse calcular um valor aproxiumade de \textit{I} com um erro inferiror a \(10^{-6}\) usando
 
   \begin{questionBox}3bm{ A regra do ponto médio } % Q2.3.1
   \end{questionBox}
@@ -189,10 +204,12 @@
   \end{questionBox}
   \begin{questionBox}3bm{ A regra de Simpson. } % Q2.3.3
   \end{questionBox}
-\end{questionBox}
-\setcounter{question}{7}
 
+\end{questionBox}
+
+\setcounter{question}{7}
 \begin{questionBox}1{} % Q8
+
   Seja \(I = \int_0^4{f(x)\,\odif{x}}\) onde \(f(x)\in C^n (\myrange{0, 4})\) é uma função que verifica \(\myvert{f^{(n)}(x)} ≤ \frac{2^n}{n!}, \forall\,x \in \myrange{ 0, 4 } e n \in\mathbb{N}\).
   \begin{BM}
     I = \int_{0}^{4}{f_{(x)}\,\odif{x}}
@@ -203,7 +220,9 @@
     \land n\in\mathbb{N}
   \end{BM}
   Se pretendesse determinar um valor aproximado de I com, pelo menos, 4 casas decimais significativas, utilizando a regra de Simpson, qual o menor número de subintervalos de igual amplitude em que teria de dividir o intervalo \(\myrange{0, 4}\)? Justifique.
+
   \answer{}
+
   \sisetup{
     % scientific / engineering / input / fixed
     exponent-mode           = engineering,
@@ -211,8 +230,7 @@
     round-mode              = places,        % figures/places/unsertanty/none
     round-precision         = 4,
   }
-  \begin{flalign*}
-    &
+  \begin{gather*}
     \myvert{I-\hat{I}_S}
     \leq
     \myvert{
@@ -226,30 +244,32 @@
       \right)^5}{90}
       \,\frac{2^4}{4!}
     }
-    = &\\&
+    = \\
     = n\,\frac{\left(
         \frac{4-0}{2\,n}
     \right)^5}{90}
     \,\frac{2^4}{4!}
     = \frac{4^4}{2*n^4*3!*90}
     \leq 0.5\E-4
-    \implies &\\&
+    \implies \\
     \implies
     n = \ceil{\num{8.29777303051304}}
     = 9
-    &\\&
+    \\
     \therefore 18
-    % &\\&
+    % \\
     \text{ Numero de aplicações da regra de Simpson}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}{Questão de algum teste} % Q1
+
   Seja \(I=\int_{-1}^{1}{f(x)\,\odif{x}},\hat{I}_{P\,M,2}=5.85\) sua aproximação de I dada pela regra do ponto médio com \(n=2\) e \(\hat{I}_{T,2}=6.45\) a aproximação do \textit{I} pela regra de trapézios com \(n=3\). Qual o valor da aproximação por \textit{I} dadaa pela regrad e simpson com \(n=2\)
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     \hat{I}_{S}
     = \frac{h}{3}\left(
       f(x_0)
@@ -260,7 +280,7 @@
       + 2\,f(x_2)
       + f(x_4)
     \right)
-    = &\\&
+    = \\
     = \frac{0.5}{3}\left(
       f(-1)
       + 4\,(
@@ -270,7 +290,7 @@
       + 2\,f(0)
       + f(1)
     \right)
-    = &\\&
+    = \\
     = \frac{0.5}{3}\left(
       4\,( 5.85)
       + ( 12.90)
@@ -279,7 +299,7 @@
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     x_i 
     = -1+h*i
     = \{
@@ -288,7 +308,7 @@
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     h 
     = \frac{b-a}{2\,n}
     = \frac{1-(-1)}{2*2}
@@ -296,7 +316,7 @@
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     \hat{I}_{PM,2}
     =h\left(
       f\left(\frac{-1+0}{2}\right)
@@ -309,7 +329,7 @@
     % 
     % 
     % 
-    ;&\\[3ex]&
+    ;\\[1ex]
     \hat{I}_{T,2}
     = \frac{h}{2}\left(
       f(-1)+2\,f(0)+f(1)
@@ -318,17 +338,17 @@
       f(-1)+2\,f(0)+f(1)
     \right)
     =6.45
-    \implies &\\&
+    \implies \\
     \implies
     f(-1)+2\,f(0)+f(1)
     =12.90
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \setcounter{question}{10}
-
 \begin{questionBox}1{} % Q11
+
   Seja
   \begin{BM}
     I=\int_1^5{f_{(X)}\,\odif{x}}
@@ -345,28 +365,36 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
 
-\begin{questionBox}2{ % Q11.1
-    Recorrendo à regra dos trapézios, com duas aplicações, determine um valor aproximado de \textit{I} e o valor exato de \textit{I}.
-  } % Q11.1
+\begin{questionBox}2{} % Q11.1
+
+  Recorrendo à regra dos trapézios, com duas aplicações, determine um valor aproximado de \textit{I} e o valor exato de \textit{I}.
+
 \end{questionBox}
-\begin{questionBox}2{ % Q11.2
-    Recorrendo à regra do ponto médio, com \(n = 2\), determine um valor aproximado de \textit{I} e o valor de \textit{I} comofunção de \(\alpha\).
-  } % Q11.2
+
+\begin{questionBox}2{} % Q11.2
+
+  Recorrendo à regra do ponto médio, com \(n = 2\), determine um valor aproximado de \textit{I} e o valor de \textit{I} comofunção de \(\alpha\).
+
 \end{questionBox}
-\begin{questionBox}2{ % Q11.3
-    Recorrendo às alíneas anteriores, determine o valor de \(\alpha\).
-  } % Q11.3
+
+\begin{questionBox}2{} % Q11.3
+  
+  Recorrendo às alíneas anteriores, determine o valor de \(\alpha\).
+
 \end{questionBox}
-\begin{questionBox}2{ % Q11.4
-    Utilize duas aplicações da regra de Simpson para determinar um valor aproximado de \textit{I}.
-  } % Q11.4
+
+\begin{questionBox}2{} % Q11.4
+  
+  Utilize duas aplicações da regra de Simpson para determinar um valor aproximado de \textit{I}.
+
 \end{questionBox}
 
 \setcounter{question}{12}
-
 \begin{questionBox}1{} % Q13
+
   Cosidere a seguinte tabela para a função \textit{f}:
   \begin{center}
     \vspace{1ex}
@@ -383,32 +411,36 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     h 
     = \frac{b-a}{n}
     = \frac{3-(-3)}{n}
     < 3
-    % \implies &\\&
+    % \implies \\
     \implies
     n > 2 \land n<4 
     \implies
     n=3
     \land 
     h = 2
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
+
 \begin{questionBox}2{} % Q13.1
+
   Ultilizando a regra dos trapézios composta, obtenha uma proximação de \(\hat{I}_T\) de
   \begin{BM}
     I = \int_{-3}^{3}{f_{(x)}\,\odif{x}}
     ,\quad h<3\land n<4
   \end{BM}
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     \hat{I}_T
     = \frac{h}{2}
     \left(
@@ -426,50 +458,56 @@
     \right)
     = \left( 40 + 2*8 + 2*0 + 16 \right)
     = 72
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
+
 \begin{questionBox}2{} % Q13.2
+
   Utilizando a regra do ponto médio, obtenha outra aproximação \(\widehat{I_{PM}}\) de \textit{I}, com \(h=2\)
+  
   \answer{}
-  \begin{flalign*}
-    &
+  
+  \begin{gather*}
     \hat{I}_{pm}
     = 2\,\left(
       f_{\left( \frac{-1+x_0}{2} \right)}
       + f_{\left( \frac{-1+x_4}{2} \right)}
       + f_{\left( \frac{1+x_6}{2} \right)}
     \right)
-    = &\\&
+    = \\
     = 2\,\left(
       f_{(-3)}
       + f_{(0)}
       + f_{(2)}
     \right)
     = 2\,( 21 + 1 + 5 )
-    % = &\\&
+    % = \\
     = 54
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
+
 \begin{questionBox}2{} % Q13.3
+
   Sabendo que o erro de quadratura, para \(\widehat{I_{PM}}\), é igual a 6 e que \(f"(x)\) é constante, \(\forall\,x\in\mathbb{R}\), determine o erro de quadratura para \(\widehat{I}_{T}\).
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     I - \hat{I}_{pm}
     = n\,\frac{h^3}{24}
     \,f"_{(\theta)}
     = 3\,\frac{2^3}{24}
     \,k
     = 6
-    % \implies &\\&
+    % \implies \\
     \implies
     k = 6
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     I-\hat{I}_{T}
     = -n\,\frac{h^3}{12}
     \,f"_{(\theta)}
@@ -478,8 +516,8 @@
     = -3\,\frac{2^3}{12}
     \,6
     = - 12
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \end{document}

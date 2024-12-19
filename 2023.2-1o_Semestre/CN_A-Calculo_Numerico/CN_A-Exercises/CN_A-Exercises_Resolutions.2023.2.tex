@@ -13,25 +13,26 @@
 {Interpolação e Aproximação Polinomial} % Part Title
 
 \setcounter{question}{1}
-
 \begin{questionBox}1{} % Q2
+
   Determine os polinómios de Lagrange, de grau menor ou igual a 2, interpoladores das seguintes funções:
-  \begin{enumerate}[label=\alph{enumi})]
-    \begin{multicols}{2}
-      \item \(f_1(x) = 1/x\) nos pontos: \numlist*{1;2;4}
-      \item \(f_2(x) = e^x\) nos pontos: \numlist*{0;1;2}
-      \item \(f_3(x) = \ln{\sqrt{x}}\) nos pontos: \(1,e,e^2\)
-      \item \(f_4(x) = \sin{x\frac{\pi}{6}}\) nos pontos: \numlist*{1;2;3}
-      \item \(f_5(x) = e^{-x}\) nos pontos: \numlist*{0;0.5;1}
-      \item \(f_6(x) = \cosh{x}\) nos pontos: \numlist*{-1;0;1}
+\begin{enumerate}[label=\alph{enumi})]
+  \begin{multicols}{2}
+    \item \(f_1(x) = 1/x\) nos pontos: \numlist*{1;2;4}
+    \item \(f_2(x) = e^x\) nos pontos: \numlist*{0;1;2}
+    \item \(f_3(x) = \ln{\sqrt{x}}\) nos pontos: \(1,e,e^2\)
+    \item \(f_4(x) = \sin{x\frac{\pi}{6}}\) nos pontos: \numlist*{1;2;3}
+    \item \(f_5(x) = e^{-x}\) nos pontos: \numlist*{0;0.5;1}
+    \item \(f_6(x) = \cosh{x}\) nos pontos: \numlist*{-1;0;1}
     \end{multicols}
-  \end{enumerate}
+\end{enumerate}
+
 \end{questionBox}
 
 \begin{questionBox}2{\(f_1(x)=1/x;\{1,2,4\}\)} % Q2.1
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     % n: 2
     p_{2}(x)
     = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
@@ -41,27 +42,27 @@
     = \frac{1}{1}\,L_0
     + \frac{1}{2}\,L_1
     + \frac{1}{4}\,L_2
-    = &\\& 
+    = \\ 
     = 
     \frac{1}{3} ( x^2 -6\,x +8 )
     + \frac{1}{2}\left(-\frac{1}{2} ( x^2 -5\,x +4 )\right)
     + \frac{1}{4} \left( \frac{1}{6} ( x^2 -3\,x +2 )\right)
     % 
-    = &\\&
+    = \\
     x^2\frac{ 1 }{ 8 }
     - x\frac{ 7 }{ 8 }
     + \frac{ 7 }{ 4 }
     % 
     % 
     % 
-    ;&\\[3ex]&
+    ;\\[1ex]
     L_i(x)
     =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
     \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
     % 
     % 
     % 
-    ;&\\[3ex]&
+    ;\\[1ex]
     L_0(x)
     =\prod_{j=0}^{0-1}{\frac{x-x_j}{1-x_j}}
     \,\prod_{j=0+1}^{2}{\frac{x-x_j}{1-x_j}}
@@ -71,7 +72,7 @@
     % 
     % 
     % 
-    ;&\\[3ex]&
+    ;\\[1ex]
     L_1(x)
     =\prod_{j=0}^{1-1}{\frac{x-x_j}{2-x_j}}
     \,\prod_{j=1+1}^{2}{\frac{x-x_j}{2-x_j}}
@@ -81,21 +82,19 @@
     % 
     % 
     % 
-    ;&\\[3ex]&
+    ;\\[1ex]
     L_2(x)
     =\prod_{j=0}^{2-1}{\frac{x-x_j}{4-x_j}}
     \,\prod_{j=2+1}^{2}{\frac{x-x_j}{4-x_j}}
     = \frac{x-1}{4-1}
     \,\frac{x-2}{4-2}
     = \frac{1}{6} ( x^2 -3\,x +2 )
-    &
-  \end{flalign*}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}2{\(f_2(x)=e^x;\{0,1,2\}\)} % Q2.2
   \answer{}
-  \begin{flalign*}
-    &
+  \begin{gather*}
     % n: 2
     p_{2}(x)
     = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
@@ -106,19 +105,17 @@
     % 
     % 
     % 
-    ;&\\&
+    ;\\
     L_{i}(x)
     =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
     \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
     \dots
-    &
-  \end{flalign*}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}2{\(f_3(x)=\ln\sqrt{x};\{1,e,e^2\}\)} % Q2.3
   \answer{}
-  \begin{flalign*}
-    &
+  \begin{gather*}
     % n: 2
     p_{2}(x)
     = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
@@ -129,19 +126,17 @@
     % 
     % 
     % 
-    ;&\\&
+    ;\\
     L_{i}(x)
     =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
     \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
     \dots
-    &
-  \end{flalign*}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}2{\(f_4(x)=\sin{x\frac{\pi}{6}}; \{1,2,3\}\)} % Q2.4
   \answer{}
-  \begin{flalign*}
-    &
+  \begin{gather*}
     % n: 2
     p_{2}(x)
     = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
@@ -152,18 +147,16 @@
     % 
     % 
     % 
-    ;&\\&
+    ;\\
     L_{i}(x)
     =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
     \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
-    &
-  \end{flalign*}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}2{\(f_5(x)=e^{-x}; \{0.0,0.5,1.0\}\)} % Q2.5
   \answer{}
-  \begin{flalign*}
-    &
+  \begin{gather*}
     % n: 2
     p_{2}(x)
     = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
@@ -174,73 +167,68 @@
     % 
     % 
     % 
-    ;&\\&
+    ;\\
     L_{i}(x)
     =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
     \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
-    &
-  \end{flalign*}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}2{\(f_6(x)=\cosh{x}; \{-1,0,1\}\)} % Q2.6
   \answer{}
-  \begin{flalign*}
-    &
-      % n: 2
-      p_{2}(x)
-      = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
-      = \dots
-      = x^2\,(\cosh{1}-1)
-      + 1
-      % 
-      % 
-      % 
-      ;&\\&
-      L_{i}(x)
-      =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
-      \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
-    &
-  \end{flalign*}
+  \begin{gather*}
+    % n: 2
+    p_{2}(x)
+    = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
+    = \dots
+    = x^2\,(\cosh{1}-1)
+    + 1
+    % 
+    % 
+    % 
+    ;\\
+    L_{i}(x)
+    =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
+    \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}1{} % Q3
   Construa o polinómio de Lagrange do segundo grau, interpolador da função \(h(x) = \cos( \pi\,4\,x)\) nos pontos \(x_0 = 0, x_1 = 1 e x_2 = 4\). Determine um valor aproximado de \(h(0.5)\) e um majorante para o erro absoluto cometido (arredondado a 6 casas decimais e tão pequeno quanto possı́vel). Compare-o com o erro efetivamente cometido.
   \answer{}
-  \begin{flalign*}
-    &
-      % n: 2
-      p_{2}(x)
-      = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
-      % 0, 1, 4
-      = h(0)\,L_0(0)
-      + h(1)\,L_1(1)
-      + h(4)\,L_2(4)
-      = &\\&
-      = \dots
-      = x^2\,\left( \frac{1}{6} -\frac{1}{3\sqrt{2}} \right)
-      + x^1\,\left(-\frac{7}{6}+\frac{2\sqrt{2}}{3}\right)
-      + 1
-      % 
-      % 
-      % 
-      ;&\\&
-      \widehat{h(0.5)}
-      \cong p_2(0.5)
-      = (1/2)^2\,\left( \frac{1}{6} -\frac{1}{3\sqrt{2}} \right)
-      % -0.017258898432212
-      + (1/2)^1\,\left(-\frac{7}{6}+\frac{2\sqrt{2}}{3}\right)
-      % -0.111928812542302
-      + 1
-      \cong\num{0.870812289025486}
-      % 
-      % 
-      % 
-      ;&\\[3ex]&
-      L_{i}(x)
-      =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
-      \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
-    &
-  \end{flalign*}
+  \begin{gather*}
+    % n: 2
+    p_{2}(x)
+    = \sum_{i=0}^{2}{ y_i\,L_{i}(x) }
+    % 0, 1, 4
+    = h(0)\,L_0(0)
+    + h(1)\,L_1(1)
+    + h(4)\,L_2(4)
+    = \\
+    = \dots
+    = x^2\,\left( \frac{1}{6} -\frac{1}{3\sqrt{2}} \right)
+    + x^1\,\left(-\frac{7}{6}+\frac{2\sqrt{2}}{3}\right)
+    + 1
+    % 
+    % 
+    % 
+    ;\\
+    \widehat{h(0.5)}
+    \cong p_2(0.5)
+    = (1/2)^2\,\left( \frac{1}{6} -\frac{1}{3\sqrt{2}} \right)
+    % -0.017258898432212
+    + (1/2)^1\,\left(-\frac{7}{6}+\frac{2\sqrt{2}}{3}\right)
+    % -0.111928812542302
+    + 1
+    \cong\num{0.870812289025486}
+    % 
+    % 
+    % 
+    ;\\[1ex]
+    L_{i}(x)
+    =\prod_{j=0}^{i-1}{\frac{x-x_j}{x_i-x_j}}
+    \,\prod_{j=i+1}^{2}{\frac{x-x_j}{x_i-x_j}}
+  \end{gather*}
 \end{questionBox}
 
 \setcounter{question}{6}
@@ -260,7 +248,7 @@
   \begin{center}
     \vspace{1ex}
     \begin{tabular}{C || *{3}{C}}
-      
+
       x     & 0.3    & 0.5    & 1.1
       \\ \hline
       f(x)  & 0.5917 & 0.4444 & 0.2268
@@ -310,34 +298,32 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
-  \begin{flalign*}
-    &
-      f(0.65) 
-      = p_2(0.65)
-      \cong &\\[1ex]&
-      \cong 0.5917
-      + ((0.65)-0.3)( -0.7365 )
-      + ((0.65)^2-0.5\,(0.65)+0.25)( \num{0.467291666666667} )
-      \cong &\\&
-      \cong 0.3585
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      p_2(x)
-      = f(x_0)
-      + (x-x_0)f\myrange{x_0,x_1}
-      + (x-x_0)(x-x_1)f\myrange{x_0,x_1,x_2}
-      = &\\&
-      = f(0.3)
-      + (x-0.3)f\myrange{0.3,0.5}
-      + (x-0.3)(x-0.5)f\myrange{0.3,0.5,1.1}
-      \cong &\\&
-      \cong 0.5917
-      + (x-0.3)\num{0.467291666666667}
-      + (x^2-0.5\,x+0.25)\num{-0.362666666666667}
-    &
-  \end{flalign*}
+  \begin{gather*}
+    f(0.65) 
+    = p_2(0.65)
+    \cong \\[1ex]
+    \cong 0.5917
+    + ((0.65)-0.3)( -0.7365 )
+    + ((0.65)^2-0.5\,(0.65)+0.25)( \num{0.467291666666667} )
+    \cong \\
+    \cong 0.3585
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    p_2(x)
+    = f(x_0)
+    + (x-x_0)f\myrange{x_0,x_1}
+    + (x-x_0)(x-x_1)f\myrange{x_0,x_1,x_2}
+    = \\
+    = f(0.3)
+    + (x-0.3)f\myrange{0.3,0.5}
+    + (x-0.3)(x-0.5)f\myrange{0.3,0.5,1.1}
+    \cong \\
+    \cong 0.5917
+    + (x-0.3)\num{0.467291666666667}
+    + (x^2-0.5\,x+0.25)\num{-0.362666666666667}
+  \end{gather*}
 \end{questionBox}
 
 \begin{questionBox}2{} % Q8.2
@@ -349,20 +335,21 @@
     ,n\in\mathbb{N}
     ,x\in\myrange{0.3,1.1}
   \) determine majorantes do erro absoluto e do erro relativo (arredondados a 4 casas decimais e tão pequenos quanto possı́vel) associados à aproximação de \(f(0.65)\) calculada em a).
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     % p_2(0.65) \cong 0.3585
-    \text{Erro absoluto:} &\\&
+    \text{Erro absoluto:} \\
     \eta_{f(0.65)}
     = \myvert{f(0.65)-p_2(0.65)}
-    \leq \dots &\\&
+    \leq \dots \\
     \leq 0.0255
     % 
     % 
     % 
-    ;&\\[3ex]&
-    \text{Erro relativo:} &\\&
+    ;\\[1ex]
+    \text{Erro relativo:} \\
     r_{f(0.65)}
     = \frac
     { \myvert{f(0.65)-p_2(0.65)} }
@@ -370,29 +357,28 @@
     \leq \frac
     { \myvert{f(0.65)-p_2(0.65)} }
     { 0.333 }
-    \cong \dots &\\&
+    \cong \dots \\
     \cong \num{0.0766}
     % 
     % 
     % 
-    ;&\\[3ex]&
+    ;\\[1ex]
     f(0.65) \in I
     = \myrange{
       p_2(0.65)-\eta_{f(0.65)},
       p_2(0.65)+\eta_{f(0.65)}
     }
-    = &\\&
+    = \\
     = \myrange{
       p_2(0.65)-\eta_{f(0.65)},
       p_2(0.65)+\eta_{f(0.65)}
     }
-    = \dots &\\&
+    = \dots \\
     = \myrange{
       0.3330,
       0.3840
     }
-    &
-  \end{flalign*}
+  \end{gather*}
 
   % \begin{center}
   %   \includegraphics[width=.8\textwidth]{IMG_8548.png}
@@ -401,6 +387,7 @@
 \end{questionBox}
 
 \begin{questionBox}1{} % Q9
+
   Seja \(f\) uma função não negativa da qual se conhece a seguinte tabela de valores:
   \begin{center}
     \vspace{1ex}
@@ -422,7 +409,7 @@
       \item \(A,B\in\mathbb{R}\)
       \item \(f\myrange{3,6}=A^2-1\)
       \item \(f\myrange{3,6,7}=3\)
-    \end{multicols}
+      \end{multicols}
   \end{itemize}
 
   Determine os valores de \textit{A} e \textit{B}
@@ -454,8 +441,8 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     f\myrange{3,6}
     = A^2-1
     = \frac{21-A}{6-3}
@@ -465,7 +452,7 @@
     %
     %
     %
-    ; &\\[3ex]&
+    ; \\[1ex]
     f[3,6,7]
     = 3
     = \frac
@@ -474,11 +461,12 @@
     {B-21-(8/3)^2+1}{4}
     \implies
     B=352/9
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q10
+
   Considere-se uma função real de variável real, \textit{g}, cujos valores se conhecem nos nodos \(x_0=-2, x_1 =-1\text{ e }x_2=1\):
   \begin{center}
     \vspace{1ex}
@@ -495,9 +483,11 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q11
+
   Seja \(g(x)\) uma função contı́nua e invertı́vel no intervalo \(\myrange{2,4}\) e da qual se conhecem os seguintes valores (arredondados a 6 casas decimais):
   \begin{center}
     \vspace{1ex}
@@ -510,78 +500,71 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q11.1
+
   A função \textit{g} admite um único zero real, \(\alpha\), no intervalo \(\myrange{ 2, 4 }\). Considerando a função inversa de \(g, g^{−1}\), e utilizando a teoria de interpolação polinomial, determine um valor aproximado, \(\widehat{\alpha}\), de \(\alpha\). (Apresente o valor de \(\alpha\) com 6 casas decimais, devidamente arredondados utilizando o mesmo procedimento nos cálculos intermédios).
+
   \answer{}
+
   \sisetup{
-    % input / scientific / engineering / input / fixed
     exponent-mode={input},
-    % exponent-to-prefix={false}, % 1000 g -> 1 kg
-    % exponent-product={*}, % x * 10^y
-    % fixed-exponent={0},
-    % round-mode={places}, % figures/places/unsertanty/none
     round-precision={6},
-    % round-minimum={0.01}, % < x => 0
-    % output-exponent-marker={\,\mathrm{E}},
   }
-  \begin{flalign*}
-    &
-      \widehat{\alpha} 
-      = p_{3,g^{-1}}(0)
-      = &\\[3ex]&
-      \cong 2.0
-      + \left(\begin{aligned}
-          (0-1.409297)
-          \,(\num{-1.178365214658863})
-          % 1.660666561923092
-          \\+ (0-1.409297)
-          \,(0-0.900117)
-          \,(\num{-0.25529061546065})
-          % -0.323844362942087
-          \\+ (0-1.409297)
-          \,(0-0.900117)
-          \,(0-0.474453)
-          \,(\num{-0.162685891577465})
-          % 0.097913952087755
-      \end{aligned}\right)
-      \cong&\\&
-      \cong\num{3.43473615106876}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      p_{3,g^{-1}}(y)
-      = g^{-1}(y_0)
-      + \sum_{i=0}^{3-1}{
-        \left(\prod_{j=0}^{i}{y-y_j}\right)
-        \,g^{-1}_{[y_0,\dots,y_{i+1}]}
-      }
-      = &\\&
-      = g^{-1}(y_0)
-      + \left(\begin{aligned}
-             (y-y_0)               & g^{-1}\myrange{y_0,y_1}
-          \\+ (y-y_0)(y-y_1)        & g^{-1}\myrange{y_0,y_1,y_2}
-          \\+ (y-y_0)(y-y_1)(y-y_2) & g^{-1}\myrange{y_0,y_1,y_2,y_3}
-      \end{aligned}\right)
-      = &\\&
-      = 2.0
-      + \left(\begin{aligned}
-          (y-1.409297)
-          \,(\num{-1.178365214658863})
-          \\+ (y-1.409297)
-          \,(y-0.900117)
-          \,(\num{-0.25529061546065})
-          \\+ (y-1.409297)
-          \,(y-0.900117)
-          \,(y-0.474453)
-          \,(\num{-0.162685891577465})
-      \end{aligned}\right)
-    &
-  \end{flalign*}
-
-
+  \begin{gather*}
+    \widehat{\alpha} 
+    = p_{3,g^{-1}}(0)
+    = \\[1ex]
+    \cong 2.0
+    + \left(\begin{aligned}
+        (0-1.409297)
+        \,(\num{-1.178365214658863})
+        % 1.660666561923092
+        \\+ (0-1.409297)
+        \,(0-0.900117)
+        \,(\num{-0.25529061546065})
+        % -0.323844362942087
+        \\+ (0-1.409297)
+        \,(0-0.900117)
+        \,(0-0.474453)
+        \,(\num{-0.162685891577465})
+        % 0.097913952087755
+    \end{aligned}\right)
+    \cong\\
+    \cong\num{3.43473615106876}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    p_{3,g^{-1}}(y)
+    = g^{-1}(y_0)
+    + \sum_{i=0}^{3-1}{
+      \left(\prod_{j=0}^{i}{y-y_j}\right)
+      \,g^{-1}_{[y_0,\dots,y_{i+1}]}
+    }
+    = \\
+    = g^{-1}(y_0)
+    + \left(\begin{aligned}
+        (y-y_0)               & g^{-1}\myrange{y_0,y_1}
+        \\+ (y-y_0)(y-y_1)        & g^{-1}\myrange{y_0,y_1,y_2}
+        \\+ (y-y_0)(y-y_1)(y-y_2) & g^{-1}\myrange{y_0,y_1,y_2,y_3}
+    \end{aligned}\right)
+    = \\
+    = 2.0
+    + \left(\begin{aligned}
+        (y-1.409297)
+        \,(\num{-1.178365214658863})
+        \\+ (y-1.409297)
+        \,(y-0.900117)
+        \,(\num{-0.25529061546065})
+        \\+ (y-1.409297)
+        \,(y-0.900117)
+        \,(y-0.474453)
+        \,(\num{-0.162685891577465})
+    \end{aligned}\right)
+  \end{gather*}
 
   \begin{center}
     \setlength\tabcolsep{3mm}        % width
@@ -612,76 +595,73 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
-  \begin{flalign*}
-    &
-      g^{-1}\myrange{y_0,y_1}
-      = \frac{2.6-2.0}{0.900117-1.409297}
-      \cong\num{-1.178365214658863}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      g^{-1}\myrange{y_1,y_2}
-      = \frac{3.0-2.6}{0.474453-0.900117}
-      \cong \num{-0.939708314539167}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      g^{-1}\myrange{y_2,y_3}
-      = \frac{4.0-3.0}{-0.506802-0.474453}
-      \cong \num{-1.019103087372803}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      g^{-1}\myrange{y_0,y_1,y_2}
-      = \frac{
-        \num{-0.939708314539167}
-        +\num{1.178365214658863}
-      }{0.474453-1.409297}
-      \cong \num{-0.25529061546065}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      g^{-1}\myrange{y_1,y_2,y_3}
-      = \frac{
-        \num{-1.019103087372803}
-        +\num{0.939708314539167}
-      }{−0.506802-0.900117}
-      \cong \num{0.05643165870504}
-      % 
-      % 
-      % 
-      ; &\\[3ex]&
-      g^{-1}\myrange{y_0,y_1,y_2,y_3}
-      = \frac{
-        \num{0.05643165870504}
-        +\num{0.25529061546065}
-      }{−0.506802-1.409297}
-      \cong \num{-0.162685891577465}
-    &
-  \end{flalign*}
+
+  \begin{gather*}
+    g^{-1}\myrange{y_0,y_1}
+    = \frac{2.6-2.0}{0.900117-1.409297}
+    \cong\num{-1.178365214658863}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    g^{-1}\myrange{y_1,y_2}
+    = \frac{3.0-2.6}{0.474453-0.900117}
+    \cong \num{-0.939708314539167}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    g^{-1}\myrange{y_2,y_3}
+    = \frac{4.0-3.0}{-0.506802-0.474453}
+    \cong \num{-1.019103087372803}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    g^{-1}\myrange{y_0,y_1,y_2}
+    = \frac{
+      \num{-0.939708314539167}
+      +\num{1.178365214658863}
+    }{0.474453-1.409297}
+    \cong \num{-0.25529061546065}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    g^{-1}\myrange{y_1,y_2,y_3}
+    = \frac{
+      \num{-1.019103087372803}
+      +\num{0.939708314539167}
+    }{−0.506802-0.900117}
+    \cong \num{0.05643165870504}
+    % 
+    % 
+    % 
+    ; \\[1ex]
+    g^{-1}\myrange{y_0,y_1,y_2,y_3}
+    = \frac{
+      \num{0.05643165870504}
+      +\num{0.25529061546065}
+    }{−0.506802-1.409297}
+    \cong \num{-0.162685891577465}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q11.2
+
   Sabendo que \(g(x) = sin(x) + 1/x\) e que \(\alpha = 3.436828912\dots\), indique majorantes (com 6 casas decimais e tão pequenos quanto possı́vel), para \(\myvert{\epsilon_\alpha}\text{ e }r_\alpha\)
+
   \answer{}
+
   \sisetup{
-    % input / scientific / engineering / input / fixed
     exponent-mode={fixed},
-    % exponent-to-prefix={false}, % 1000 g -> 1 kg
-    % exponent-product={*}, % x * 10^y
     fixed-exponent={0},
-    % round-mode={places}, % figures/places/unsertanty/none
     round-precision={6},
     round-direction={up},
-    % round-minimum={0.01}, % < x => 0
-    % output-exponent-marker={\,\mathrm{E}},
   }
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     \myvert{\epsilon_\alpha} 
     = \myvert{\widehat{\alpha}-\alpha}
     \leq \myvert{\num{3.43473615106876}-\num{3.436828912}}
@@ -689,7 +669,7 @@
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     r_{\alpha}
     = \frac
     { \myvert{\epsilon_\alpha} }
@@ -699,34 +679,35 @@
     {\num{3.436828912}}
     \cong
     \num{0.608922057171055e-3}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \setcounter{question}{13}
-
 \begin{questionBox}1{} % Q14
+
   Considere a função seccionalmente polinomial, \(S(x)\), definida por:
   \begin{BM}
     \begin{cases}
-        x^2                ,\quad& -1\leq x<0
+      x^2                ,\quad& -1\leq x<0
       \\ a\,x^3+b\,x^2+c\,x ,\quad&  0\leq x<1
       \\ 2-x                ,\quad&  1\leq x\leq 2
     \end{cases}
   \end{BM}
   Onde \(a, b\text{ e }c\) são constantes reais.
-  \\
-  Diga, justificando, se \(S(x)\) pode ser um spline cúbico.
+  \\ Diga, justificando, se \(S(x)\) pode ser um spline cúbico.
+
   \answer{}
+
   % TODO: Conferir e terminar o paco a paco da questão
   % TODO: Fazer snippet para resolução
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     S\text{ é Spline Cúbico}
     \impliedby
     \exists\{a,b,c\}:
     \begin{cases}
-        \color{EmphA22}\lim_{x\to0^-}{                 S(x) }     &\color{EmphA22}= \lim_{x\to0^+}{               S(x) }
+      \color{EmphA22}\lim_{x\to0^-}{                 S(x) }     &\color{EmphA22}= \lim_{x\to0^+}{               S(x) }
       \\ \color{EmphA11}\lim_{x\to1^-}{                 S(x) }     &\color{EmphA11}= \lim_{x\to1^+}{               S(x) }
       \\ \color{EmphA13}\lim_{x\to0^-}{\odv{            S(x) }{x}} &\color{EmphA13}= \lim_{x\to0^+}{\odv{          S(x) }{x}}
       \\ \color{EmphA15}\lim_{x\to1^-}{\odv{            S(x) }{x}} &\color{EmphA15}= \lim_{x\to1^+}{\odv{          S(x) }{x}}
@@ -736,47 +717,47 @@
     %
     %
     %
-    &\\[3ex]& \color{EmphA22}
+    \\[1ex] \color{EmphA22}
     % 1
     \lim_{x\to0^-}{S(x)}
     = 0^2
     = 0
-    = &\\& \color{EmphA22}
+    = \\ \color{EmphA22}
     = \lim_{x\to0^+}{S(x)}
     = a\,0^3+b\,0^2+c\,0
     = 0
     % 
     % 
     % 
-    ; &\\[3ex]& \color{EmphA11}
+    ; \\[1ex] \color{EmphA11}
     % 2
     \lim_{x\to1^-}{S(x)}
     = a\,1^3+b\,1^2+c\,1
     = a+b+c
-    = &\\& \color{EmphA11}
+    = \\ \color{EmphA11}
     = \lim_{x\to1^+}{S(x)}
     = 2-1
     = 1
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     % 
     \odv{S(x)}{x}
     = \begin{cases}
-        2\,x                ,\quad& -1\leq x<0
+      2\,x                ,\quad& -1\leq x<0
       \\ 3\,a\,x^2+2\,b\,x+c ,\quad& 0\leq x<1
       \\ -1                  ,\quad& 1\leq x\leq 2
     \end{cases}
     % 
     % 
     % 
-    &\\[3ex]& \color{EmphA13}
+    \\[1ex] \color{EmphA13}
     % 3
     \lim_{x \to 0^-}{\odv{S(x)}{x}}
     = 2*0
     = 0
-    = &\\& \color{EmphA13}
+    = \\ \color{EmphA13}
     % 
     = \lim_{x \to 0^+}{\odv{S(x)}{x}}
     = 3\,a\,0^2+2\,b\,0+c
@@ -785,35 +766,35 @@
     % 
     % 
     % 
-    ; &\\[3ex]& \color{EmphA15}
+    ; \\[1ex] \color{EmphA15}
     % 4
     \lim_{x\to1^-}{\odv{S(x)}{x}}
     = 3\,a\,1^2+2\,b\,1+c
     = 3\,a+2\,b
     % 
-    = &\\& \color{EmphA15}
+    = \\ \color{EmphA15}
     %
     = \lim_{x\to1^+}{\odv{S(x)}{x}}
     = -1
-    \implies &\\& \color{EmphA15}
+    \implies \\ \color{EmphA15}
     \implies
     3\,a+2\,b
     =-1
     % 
     % 
     % 
-    ; &\\[3ex]&
+    ; \\[1ex]
     % 
     \odv[order=2]{S(x)}{x}
     = \begin{cases}
-        2            ,\quad& -1\leq x<0
+      2            ,\quad& -1\leq x<0
       \\ 6\,a\,x+2\,b ,\quad& 0\leq x<1
       \\ 0            ,\quad& 1\leq x\leq 2
     \end{cases}
     % 
     % 
     % 
-    &\\[3ex]& \color{EmphA17}
+    \\[1ex] \color{EmphA17}
     % 5
     \lim_{x\to0^-}{\odv[order=2]{S(x)}{x}}
     = 2
@@ -824,7 +805,7 @@
     % 
     % 
     % 
-    % ; &\\[3ex]& \color{EmphA19}
+    % ; \\[1ex] \color{EmphA19}
     % % 
     % \lim_{x\to1^-}{\odv[order=2]{S(x)}{x}}
     % = 6\,a\,1+2\,b
@@ -833,9 +814,9 @@
     % =0
     % \implies
     % a=-1/3
-    &\\[3ex]&
+    \\[1ex]
     \implies\begin{cases}
-        \color{EmphA11} a+b+c=1
+      \color{EmphA11} a+b+c=1
       \\ \color{EmphA13} c=0 \implies b=1-a
       \\ \color{EmphA15} 3\,a+2\,b = -1
       \implies \begin{cases}
@@ -847,13 +828,14 @@
       % \\ b=1
       % \\ 6\,a+2\,b=0 \implies 2=0
     \end{cases}
-    &\\& 
+    \\ 
     \therefore S(x)\text{ não pode ser spline}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q15
+
   Considere a seguinte tabela de valores de uma função \textit{g}
   \begin{center}
     \vspace{1ex}
@@ -873,9 +855,9 @@
     \vspace{2ex}
   \end{center}
   Determine a expressão do spline cúbico natural, \(S(x)\), interpolador de \(g(x)\) nos pontos tabelados.
+
   \answer{}
-  \begin{flalign*}
-    &
+  \begin{gather*}
     \left\{
       \begin{aligned}
         h_0\,m_0
@@ -908,7 +890,7 @@
         y_3= 40
       \end{aligned}
     \right\}
-    = &\\&
+    = \\
     = \left\{
       \begin{aligned}
         2*(1+2)\,m_1
@@ -926,7 +908,7 @@
         \right)
       \end{aligned}
     \right\}
-    = &\\&
+    = \\
     = \left\{
       \begin{aligned}
         6\,m_1
@@ -938,7 +920,7 @@
         = 69
       \end{aligned}
     \right\}
-    \implies &\\&
+    \implies \\
     \implies
     \begin{bmatrix}
       6 & 2
@@ -950,16 +932,15 @@
     = \begin{bmatrix}
       -60\\69
     \end{bmatrix}
-    &
-  \end{flalign*}
-  \begin{flalign*}
-    &
+  \end{gather*}
+
+  \begin{gather*}
     S_i(x)
     = -\frac{(x-x_{i+1})^3}{6\,h_i}
     \,m_i
     + \frac{(x-x_i)^3}{6\,h_i}
     \,m_{i+1}
-    + &\\&
+    + \\
     + \left(
       f_i
       - \frac{h_i^2}{6}m_{i}
@@ -970,7 +951,7 @@
       - \frac{h_i^2}{6}m_{i+1}
     \right)
     \,\frac{x-x_{i}}{h_i}
-    ;&\\[6ex]&
+    ;\\[1ex]
     \begin{cases}
       h_0\,m_0
       + 2\,(h_0+h_1)\,m_1
@@ -988,13 +969,13 @@
         -\frac{y_2-y_1}{h_1}
       \right)
     \end{cases}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \setcounter{question}{18}
-
 \begin{questionBox}1{} % Q19
+
   Considere a tabela de valores da função \textit{f}
   \begin{center}
     \vspace{1ex}
@@ -1010,13 +991,16 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q19.1
+
   Determine o polinómio de grau menor ou igual a 1 que melhor aproxima a função tabelada no sentido dos mínimos quadrados, no intervalo \(\myrange{-3,2}\)
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     \begin{cases}
       a_0\,\sum_{i=0}^{2}{1}
       + a_1\,\sum_{i=0}^{2}{x_i}
@@ -1035,20 +1019,22 @@
       + a_1\,(13)
       = 18
     \end{cases}
-    = &\\&
+    = \\
     = \begin{cases}
       a_0 = 126/19
       \\
       a_1 = 36/19
     \end{cases}
-    \implies &\\&
+    \implies \\
     \implies
     p_1(x)
     = 126/19 + x\,36/19
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
+
 \begin{questionBox}2{} % Q19.2
+
   Mostre que
   \begin{BM}
     \sum_{i=0}^2{
@@ -1059,9 +1045,10 @@
     }\geq 200/19
     ,\forall\,\gamma_0,\gamma_1\in\mathbb{R}
   \end{BM}
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     \sum_0^2{
       \left(
         f(x_i)
@@ -1069,13 +1056,17 @@
       \right)^2
     }
     = \dots
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
+
 \begin{questionBox}2{} % Q19.3
+
   Seja \(p_2(x)\) o polinomio de grau menor ou igual a 2 interpolador de \textit{f} nos pontos tabelados.\\
   Justifique que a aproximação quadrática que melhor aproxima o conjunto de pontos \(\left\{ (-3,2), (0,4), (2,12)\right\}\) , no sentido dos mínimos quadrados, é o polinómio \(p_2\).
+
   \answer{}
+
   \begin{center}
     \vspace{1ex}
     \begin{tabular}{*{4}{C}}
@@ -1106,20 +1097,20 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     p_2(x)
     = 2
     + (x+3)\,2/3
     + (x+3)\,(x-0)\,2/3
     \text{ é polinómio de 2 grau}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \setcounter{question}{17}
-
 \begin{questionBox}1{} % Q18
+
   A seguinte tabela represetna a população da China (em milhares de milhões de habitantes) arredondada a 5 dígitos:
   \begin{center}
     \vspace{1ex}
@@ -1141,16 +1132,17 @@
     \vspace{2ex}
   \end{center}
   Suponha que há uma relação linear entre a data \textit{t} (em anos) e a população \(P(t)\), isto é, que se verifica a relação \(p_1(t) = \alpha\,t + \beta\), onde \(\alpha\) e \(\beta\) são constantes reais (\(\alpha\neq0\)). Com base nestes dados, utilize o método dos mínimos quadrados para obter uma estimativa da população chinesa em 2015.
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     t\begin{cases}
       0: 1990,
       \\ 1: 2000,
       \\ 2: 2010,
       \\ 3: 2020,
     \end{cases}
-    ;&\\[3ex]&
+    ;\\[1ex]
     N\,C
     = \begin{bmatrix}
       \sum_{i=0}^{3}{t_i^0}
@@ -1170,7 +1162,7 @@
     \,\begin{bmatrix}
       \beta\\\alpha
     \end{bmatrix}
-    = &\\[2ex]&
+    = \\[1ex]
     = B
     = \begin{bmatrix}
       \sum_{i=0}^{3}{P(t_i)}
@@ -1180,19 +1172,20 @@
       5.2756
       \\ 10581.905
     \end{bmatrix}
-    ; &\\[3ex]&
+    ; \\[1ex]
     \therefore
     \begin{cases}
       \alpha\approx  0.00865
       \\ \beta\approx-16.0324
     \end{cases}
-    ; &\\[3ex]&
+    ; \\[1ex]
     p_1(2015) \approx 1.39735
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q19
+
   Considere a tabela de valores da função \textit{f}
   \begin{center}
     \vspace{1ex}
@@ -1215,15 +1208,18 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q19.1
+
   Determine o polinómio de grau menor ou igual a 1 que melhor aproxima a função tabelada, no sentido dos mínimos quadrados, no intervalo \(\myrange{-3,2}\).
+
   \answer{}
-  \begin{flalign*}
-    &
+
+  \begin{gather*}
     p_i(x)= c_o+c_1\,x
-    ; &\\[3ex]&
+    ; \\[1ex]
     N\,C
     = \begin{bmatrix}
       \sum_{i=0}^{2}{x_i^0}
@@ -1243,7 +1239,7 @@
     \,\begin{bmatrix}
       c_0 & c_1
     \end{bmatrix}
-    = &\\[2ex]&
+    = \\[1ex]
     = B
     = \begin{bmatrix}
       \sum_{i=0}^{2}{f(x_i)}
@@ -1252,21 +1248,22 @@
     = \begin{bmatrix}
       18 \\ 18
     \end{bmatrix}
-    % \implies &\\&
+    % \implies \\
     \implies
     c\begin{cases}
       0: 126/19
       \\ 1:36/19
     \end{cases}
-    &\\[3ex]&
+    \\[1ex]
     \therefore
     p_1(x)
     = 126/19 + x\,36/19
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q19.2
+
   Mostre que
   \begin{BM}
     \sum_{i=0}^{2}{\left(
@@ -1276,15 +1273,16 @@
     \geq 200/19,
     \quad\forall\,\gamma_0,\gamma_1\in\mathbb{R}
   \end{BM}
+
   \answer{}
+
   \sisetup{
     % scientific / engineering / input / fixed
     exponent-mode           = fixed,
     round-mode              = places,        % figures/places/unsertanty/none
     round-precision         = 6,
   }
-  \begin{flalign*}
-    &
+  \begin{gather*}
     % \sum_{i=0}^{2}{\left(
     %     f(x_i)
     %     - (\gamma_1\,x_i+\gamma_0)
@@ -1293,10 +1291,10 @@
     p_1(x)\in\left\{
       \gamma_1\,x+\gamma_0,\gamma_0\in\mathbb{R}
     \right\}
-    % ; &\\&
+    % ; \\
     ;\quad
     p_1\text{ Minimiza o erro quadrático } E^2
-    &\\[3ex]&
+    \\[1ex]
     E^2
     = \sum_{i=0}^{2}{\left(
         f(x_i)-p_i(x_i)
@@ -1310,14 +1308,17 @@
       \end{aligned}
     \right)
     \cong \num{10.526315789473689}
-    &
-  \end{flalign*}
+  \end{gather*}
+
 \end{questionBox}
 
 \begin{questionBox}2{} % Q19.3
+
   Seja \(p_2(x)\) o polinómio de grau menor ou igual a 2 interpolador de \textit{f} nos pontos tabelados.\\
   Justifique que a aproximação quadrática que melhor aproxima o conjunto de pontos \(\{(-3,2),(0,4),(2,12)\}\), no sentido dos mínimos quadrados, é o polinomio \(p_2\)
+
   \answer{}
+
   \begin{center}
     \vspace{1ex}
     \begin{tabular}{C *{3}{C}}
@@ -1343,5 +1344,7 @@
     \end{tabular}
     \vspace{2ex}
   \end{center}
+
 \end{questionBox}
+
 \end{document}

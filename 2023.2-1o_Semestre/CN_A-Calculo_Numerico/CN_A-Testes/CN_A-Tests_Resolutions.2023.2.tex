@@ -1,0 +1,295 @@
+% !TEX root = ./CN_A-Tests_Resolutions.2023.2.tex
+\documentclass["CN_A-Tests_Resolutions.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CN_A-Tests_Resolutions.2023.2}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Tests_Resolutions.2023.2/graphics/}
+
+\mymakesubfile{2}[CN A]
+{Test 2023.2 Resolution} % Subfile Title
+{Test 2023.2 Resolution} % Part Title
+
+\begin{questionBox}1{} % Q1
+  
+  Considere o integral \(I=\int_0^2{f(x)\,\odif{x}}\) onde \(1-1/\sqrt{3}\) é o ponto fixo de \(f\) e \(1+1/\sqrt{3}\) é razi da equação \(f(x)=0\).
+  \\ O valor da aproximação dada pela regra de Gauss com 2 pontos simples é:
+
+  \begin{enumerate}[label={\alph{enumi})}]
+    \begin{multicols}{2}
+      \item \(I_G = 0\) 
+      \item \(I_G = f(-1/\sqrt{3}) + f(1/\sqrt{3})\) 
+      \item \(I_G = 1-1/\sqrt{3}\)
+      \item \(I_G = 2\)
+    \end{multicols}
+  \end{enumerate} 
+
+  \answer{}
+
+  % tag: 1
+  % a = 0
+  % b = 2
+
+  \begin{gather*}
+    I_{G,2}
+    = \int_0^2{f(x)\,\odif{x}}
+    = \mathText{Using simple gauss rule (\(n=2\))}
+    = \frac{2-0}{2}
+    \,\int_{-1}^{1}{g(x)\,\odif{x}}
+    \approx
+    g(-1/\sqrt{3})
+    +g(1/\sqrt{3})
+    = \mathText{Using \eqref{eq:1-g(x)}}
+    f(1-1/\sqrt{3})
+    + f(1+1/\sqrt{3})
+    = \left(1-1/\sqrt{3}\right)
+    + 0
+  \end{gather*}
+
+  % g(x)
+  \begin{gather*}
+    g(x)
+    = f\left(
+      \frac{b-a}{2}\,y
+      +\frac{b+a}{2}
+    \right)
+    = f\left(
+      \frac{2-0}{2}\,y
+      +\frac{2+0}{2}
+    \right)
+    = f( y+1 )
+    %
+    \yesnumber\label{eq:1-g(x)}
+  \end{gather*}
+
+\end{questionBox}
+
+\begin{questionBox}1{} % Q2
+  
+  Considere \(\alpha\in\myrange{a,b}\) e uma função \(G \in C^1(\myrange{a,b}) : G'(\alpha) = -0.5\). Considere ainda \(x_n=G(x_{n-1}),n\in\mathbb{N}\) uma sucessão de iteradas.
+  \\ Qual das seguintes afirmações é verdadeira?
+  \begin{enumerate}[label={\alph{enumi})}]
+    \begin{multicols}{2}
+      \item \(x_n\) converge para \(\alpha\) se e só se \(x_0=\alpha\)
+      \item \(x_n\) converge para \(\alpha\) qualquer que seja \(x_0\in\myrange{a,b}\) suficientemente proximo de \(\alpha\)
+      \item \(x_n\) converge para \(\alpha\) com ordem de convergência \(p=2\)
+      \item \(x_n\) converge para qualquer que seja \(x_0\in\mathbb{R}\)
+    \end{multicols}
+  \end{enumerate}
+
+  \answer{b)}
+
+\end{questionBox}
+
+\begin{questionBox}1{} % Q3
+  
+  Seja \(\alpha\in\myrange{1,3}\) a raiz única da equação  não linear \(f(x)=0\), sendo \(f(x)\) uma função continua em \(\myrange{1,3}\) tal que \(f(2)>0\) e \(f(2.25)>0\). Considere a sucessão \(x_n,n=0,1,2,\dots\) gerada pelo método da bissecção para obter uma aproximação para \(\alpha\), em que \(x_2\in\myrange{2,2.5}\).
+  \\ Assinale a opção correta:
+  \begin{enumerate}[label={\alph{enumi})}]
+    \begin{multicols}{2}
+      \item \({\color{Emph41}x_3 = 2.125} 
+        \text{ e } {\color{Emph43}\myvert{\alpha-x_{21}} < 0.5\E{-6}}\)
+      \item \({\color{Emph41}x_3 = 2.125} 
+        \text{ e } {\color{Emph44}\myvert{\alpha-x_{20}} < 0.5\E{-6}}\)
+      \item \({\color{Emph42}x_3 = 2.375} 
+        \text{ e } {\color{Emph43}\myvert{\alpha-x_{21}} < 0.5\E{-6}}\)
+      \item \({\color{Emph42}x_3 = 2.375} 
+        \text{ e } {\color{Emph44}\myvert{\alpha-x_{20}} < 0.5\E{-6}}\)
+    \end{multicols}
+  \end{enumerate}
+
+  \answer{d)}
+
+  Usando 
+  \eqref{eq:3-f(1)f(3)}
+  \eqref{eq:3-x_0}
+  \eqref{eq:3-x_1}
+  \eqref{eq:3-f(x_1)}
+  \eqref{eq:3-x_2}
+  \eqref{eq:3-x_3}
+  \begin{center}
+    \begin{tikzpicture}[
+        xscale=6,
+        yscale=0.5,
+      ]
+      \draw[->, thick] (1,0) +(-.1,0) -- (3,0) -- +(0.1,0);
+
+      \newcommand\drawLine[4]{\draw[dotted] (#1,0.5) +(0,-#4) node[below]{\(#2=#1\)} -- (#1,0.5) node[above]{\(#3\)}}
+        \drawLine{1}{a_0}{+}{1};
+        \drawLine{3}{b_0}{-}{1};
+        \drawLine{2}{x_0=a_1}{+}{3};
+        \drawLine{2.5}{x_1=b_1}{-}{4};
+        \drawLine{2.25}{x_2=a_2}{+}{2};
+        \drawLine{2.375}{x_3}{}{1};
+
+
+    \end{tikzpicture}
+  \end{center}
+
+  Encontramos \(x_3\) iterando \(x_n\) de 0 a 3
+  \begin{gather*}
+    \alpha\in\myrange{1,3}\text{ Raiz única }f(x)=0
+    \implies f(1)*f(3)<0
+    \implies \begin{cases}
+      f(1)>0
+      \\ f(3)<0
+    \end{cases}
+    % 
+    \yesnumber\label{eq:3-f(1)f(3)}
+    % 
+    % 
+    % 
+    \\[3ex]
+    x_0 
+    = \frac{a_0+b_0}{2}
+    = \frac{1+3}{2}=2
+    \land f(2)>0
+    %
+    \yesnumber\label{eq:3-x_0}
+    % 
+    % 
+    % 
+    \\[3ex]
+    x_1 
+    = \frac{a_1+b_1}{2}
+    = \frac{2+3}{2}=2.5
+    % 
+    \yesnumber\label{eq:3-x_1}
+    % 
+    \mathText{como \(x_2=2.25\) e \(f(2.25)>0\)}
+    \land f(2.5)<0
+    %
+    \yesnumber\label{eq:3-f(x_1)}
+    % 
+    % 
+    % 
+    \\[3ex]
+    x_2 
+    = \frac{a_2+b_2}{2}
+    = \frac{2+2.5}{2}=2.25
+    \land f(2.25)>0
+    %
+    \yesnumber\label{eq:3-x_2}
+    % 
+    % 
+    % 
+    \\[3ex]
+    x_3
+    = \frac{a_3+b_3}{2}
+    = \frac{2.25+2.5}{2}=2.375
+    %
+    \yesnumber\label{eq:3-x_3}
+  \end{gather*}
+
+  % |α-x_n|
+  \begin{gather*}
+    \myvert{\alpha-x_n}
+    \leq \frac{b-a}{2^{n+1}}
+    = \frac{3-1}{2^{n+1}}
+    = 2^{-n}
+    < 0.5\E{-6}
+    \implies \\
+    \implies n
+    =-\log_2{0.5\E{-6}}
+    = \num{20.931568569324174}
+    \cong 21
+  \end{gather*}
+
+\end{questionBox}
+
+\begin{questionBox}1{} % Q4
+  Seja \(\alpha\in\myrange{a,b}\) raíz unica da equação \(f(x)=0\) com \(f \in C^2(\myrange{a,b})\), em que \(f'(x)<0\) e \(f"(x)>0,\forall\,x\in\myrange{a,b}\). Considere ainda uma função iteradora \(\phi(x)=x-\frac{f(x)}{f'(x)}\) com \(\phi'(\alpha)=0\). Seja \(x_n=\phi(x_{n-1}),n\in\mathbb{N}\) uma sucessão de iteradas tal que \(f(x_0)=1\).
+  \\ Qual das seguintes afimações é verdadeira?
+  \begin{enumerate}[label={\arabic{enumi})}]
+    \item Não se conseguie garantir a convergencia de \(x_n\) para \(\alpha\)
+    \item \(x_n\) converge para \(\alpha\) com ordem de convergência \(p>1\)
+    \item \(x_n\) não converge qualquer que seja \(x_0\in\myrange{a,b}\).
+    \item \(x_n\) converge para \(\alpha\) com ordem de convergência \(p=1\)
+  \end{enumerate}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q5
+  Considere o seguinte sistema de equações lineares \(A\,X=B\) com \textit{n} incógnitas e \textit{n} equações e a sucessão de vetores obtida pelo método iterativo geral \(X^{(k)}=G\,X^{(k-1)}+H, k=1,2,\dots\), onde \(G \in \mathbb{R}^n\times\mathbb{R}^n\) é a matriz de iteração e \(H\in\mathbb{R}^n\). Sabe-se que \(\myVert{G}_1=2/3\) e \(\myVert{G}_{\infty}=3/2\)
+  \\Assinale a opção correta
+  \begin{enumerate}[label={\alph{enumi})}]
+    \item A sucessão não converge se a matriz \textit{A} do sistema não for de diagonal estritamente dominante
+    \item A sucessão não converge porque \(\myVert{G}_{\infty}>1\).
+    \item A sucessão converge qualquer que seja \(X^{(0)}\in\mathbb{R}^n\)
+    \item Nada se pode concluir quanto à convergência da sucessão.
+    \item Se a matriz A do sistema for de diagonal estritamente dominante então é certo que a sucessão converge.
+  \end{enumerate}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q6
+  Considere a sucessão
+  \begin{BM}
+    \begin{cases}
+      x_0\in\myrange{0,\pi/2}
+      \\ x_{n+1} = \varphi_c(x_n),&\quad n=0,1,2,\dots
+    \end{cases}
+  \end{BM}
+  onde \(\varphi_{c}(x) = \frac{1+\sin(x)}{c}\), com \(c>0\)
+
+  \paragraph*{Nota:} Apresente os cálculos com 6 casas decimais convenientemente arredondadas
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.1
+  Prove que \(\alpha\) é raiz de equação \(1+\sin(x)-c\,x=0\) se e só se \(\alpha\) é ponto fixo de \(\varphi_c(x)\)
+  \sisetup{round-precision={6}}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.2
+  Sendo \(\alpha\) a raiz unica em \(\myrange{0,\pi/2}\), prove que se \(c \geq 4/\pi\) então \(x_n\) converge para \(\alpha\) e a ordem de convergência é \(p=1\) se \(\alpha\neq\pi/4\)
+  \sisetup{round-precision={6}}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.3
+  Considerando \(c=2\text{ e }x_0=0\) determine \(x_2\) e uma estimativa para o erro absoluto associado a \(x_2\).
+  \sisetup{round-precision={6}}
+\end{questionBox}
+
+\begin{questionBox}2{} % Q6.4
+  Nas mesmas condições da alinea anterior diga quantas iteradas teria de calcular para ter uma estimativa para o erro absoluto inferior a \(10^{-6}\).
+  \sisetup{round-precision={6}}
+\end{questionBox}
+
+\begin{questionBox}1{} % Q7
+  Considere o seguinte sistema de equações lineares \(A\,X=B\), com \(
+    A
+    = \begin{bsmallmatrix*}[r]
+         5 & 1 &  2
+      \\ 1 & 2 &  0
+      \\ 1 & 6 & -4
+    \end{bsmallmatrix*}
+  \) e \(b=[1\,1\,1]^T\).
+\end{questionBox}
+
+\begin{questionBox}2{} % Q7.1
+  Mostre que o método de Gauss-Seidel converge para a solução de \(A\,X=B\), qualquer que seja a iterada \(X^{(0)}\in\mathbb{R}^3\) que se considere.
+\end{questionBox}
+
+\begin{questionBox}2{} % Q7.2
+  Usando o método de Gauss-seidel obtenha a iterada \(x^{(2)}\) partindo de \(X^{(0)}=[0\,0\,0]^T\) e diga quantas casas decimais significativas no mínimo pode garantir para cada componente de \(X^{(2)}\). Justifique
+\end{questionBox}
+
+\begin{questionBox}2{} % Q7.3
+  Sem calcular a iterada \(X^{(10)}\) diga quantas casas decimais significativas no mínimo pode garantir para cada componente \(X^{(10)}\). Justifique.
+\end{questionBox}
+
+\begin{questionBox}1{} % Q8
+  Considere o problema de valor inicial bem posto
+  \begin{BM}
+    \begin{cases}
+      y'(t) = 1 + (t-y(t))^2,&\quad t\in\myrange{2,3}
+      \\ y(2)=1
+    \end{cases}
+  \end{BM}
+  Determine um valor paroximado para \(y(2.4)\) pelo método de Taylor de ordem 2 com \(h=0.2\). Justifique devidamente os cálculos.
+  \paragraph*{Nota:} Apresente os cálculos com 6 casas decimais conveninentemente arredondadas 
+
+  \sisetup{round-precision={6}}
+\end{questionBox}
+
+\end{document}
