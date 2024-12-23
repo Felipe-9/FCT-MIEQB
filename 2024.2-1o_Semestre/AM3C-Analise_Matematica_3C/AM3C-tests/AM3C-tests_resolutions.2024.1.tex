@@ -14,13 +14,25 @@
 
 \group{}
 
-\begin{questionBox}1{edo ord 1} % Q1
-  A equação dif lin ord 1
-  \begin{BM}[align*]
+\begin{questionBox}1{} % Q1
+  A equação diferencial linear de primeira ordem
+  \begin{BM}
     \odv{y}{x} + \frac{\cos(x)}{\sin(x)}\,y
-    &= -x
-    ;& x &\in \myrange*{0,\pi}
+    = -x
+    ;\quad x 
+    \quad \in \myrange*{0,\pi}
   \end{BM}
+  Tem como solução geral
+  \begin{itemize}[label=\Box]
+    \begin{multicols}{3}
+      \item \(y = \frac{c}{\cos x} + x\,\frac{\cos x}{\sin x} -1\)
+      \item \(y = \frac{c}{\cos x} + x\,\frac{\sin x}{\cos x} -1\)
+      \item \(y = \frac{c}{\sin x} - x\,\frac{\cos x}{\sin x} +1\)
+      \item \(y = \frac{c}{\cos x} - x\,\frac{\cos x}{\sin x} +1\)
+      \item \(y = \frac{c}{\sin x} + x\,\frac{\sin x}{\cos x} -1\)
+      \item \(y = \frac{c}{\sin x} - x\,\frac{\cos x}{\sin x}\)
+    \end{multicols}
+  \end{itemize}
   \answer{}
   \begin{BM}
     y = \frac{c}{\sin(x)} - \frac{\cos(x)}{\sin(x)}
@@ -119,12 +131,22 @@
   \end{flalign*}
 \end{questionBox}
 
-\begin{questionBox}1{bernoulli} % Q2
-  A solução da eq de bernoulli
+\begin{questionBox}1{} % Q2
+  A solução da equação de Bernoulli
   \begin{BM}
     \odv{y}{x} + y = \frac{1}{y'}
   \end{BM}
-  que satisfaz a condição \(y(0)=2\) é
+  que satisfaz a condição \(y(0)=2\), é:
+  \begin{itemize}[label=\square]
+    \begin{multicols}{3}
+      \item \(y=\sqrt{e^{+2\,x}+3}\)
+      \item \(y=\sqrt{e^{-2\,x}+3}\)
+      \item \(y=\sqrt{3\,e^{+2\,x}+1}\)
+      \item \(y=\sqrt{3\,e^{-2\,x}+1}\)
+      \item \(y=\sqrt{2\,e^{+2\,x}+2}\)
+      \item \(y=\sqrt{2\,e^{-2\,x}+2}\)
+    \end{multicols}
+  \end{itemize}
   \answer{}
   \begin{BM}
     y = \sqrt{e^{-2\,x}\,3 + 1}
@@ -214,21 +236,69 @@
 \begin{questionBox}1{fator int} % Q3
   A equação differencial
   \begin{BM}
-    (5\,x\,y^2 - 2\,y)\,\odif{x} + (3\,x^2\,y-x)=0
+    (5\,x\,y^2 - 2\,y)\,\odif{x} + (3\,x^2\,y-x)\,\odif{y}=0
   \end{BM}
-  Admite um fator integrante na forma \(\phi(x,y)=x^m\,y^n\), com \(m,n \in \mathbb{N}\). então
+  Admite um fator integrante na forma \(\phi(x,y)=x^m\,y^n\), com \(m,n \in \mathbb{N}\). Então:
+  \begin{itemize}[label=\square]
+    \begin{multicols}{3}
+      \item \(m=3,n=2\)
+      \item \(m=1,n=1\)
+      \item \(m=2,n=2\)
+      \item \(m=2,n=1\)
+      \item \(m=1,n=3\)
+      \item \(m=3,n=1\)
+    \end{multicols}
+  \end{itemize}
   \answer{}
   \begin{BM}
     m=3,n=2
   \end{BM}
 \end{questionBox}
 
-\begin{questionBox}1{met var const arb} % Q4
-  A eq dif hom
+\begin{questionBox}1{} % Q4
+  A equação diferencial linear homogénea
   \begin{BM}
-    x\,y" + x^2\,y' + 4\,y = x^3
+    x\,y'' + x^2\,y' + 4\,y = 0,\quad x>0
   \end{BM}
-  Tem como solução geral a função \(y(x) = c_1(x)\,y_1(x) + c_1(x)\,y_2(x)\). \dots
+  Tem como solução geral a função \(y(x) = c_1\,y_1(x) + c_2\,y_2(x)\). Então a equação não homogénea
+  \begin{BM}
+    x\,y'' + x^2\,y' + 4\,y = x^3
+  \end{BM}
+  admite como solução geral a função \(y(x) = c_1(x)\,y_1(x) + c_2(x)\,y_2(x)\), onde as funções \(c_1(x),c_2(x)\) são determinadas a partir do sistema
+  \begin{itemize}[label=\square]
+    \begin{multicols}{2}
+      \item[\blacksquare] \(\begin{cases}
+        c_1'(x)\,y_1 + c_2'(x)y_2 = 0
+        \\
+        c_1'(x)\,y_1' + c_2'(x)y_2' = x^2
+      \end{cases}\)
+      \item \(\begin{cases}
+        c_1'(x)\,y_1 + c_2'(x)y_2 = 0
+        \\
+        c_1'(x)\,y_1' + c_2'(x)y_2' = x
+      \end{cases}\)
+      \item \(\begin{cases}
+        c_1'(x)\,y_1 + c_2'(x)y_2 = 0
+        \\
+        c_1'(x)\,y_1' + c_2'(x)y_2' = 1
+      \end{cases}\)
+      \item \(\begin{cases}
+        c_1(x)\,y_1 + c_2(x)y_2 = 0
+        \\
+        c_1'(x)\,y_1' + c_2'(x)y_2' = x^2
+      \end{cases}\)
+      \item \(\begin{cases}
+        c_1(x)\,y_1 + c_2(x)y_2 = 0
+        \\
+        c_1'(x)\,y_1' + c_2'(x)y_2' = x
+      \end{cases}\)
+      \item \(\begin{cases}
+        c_1(x)\,y_1 + c_2(x)y_2 = 0
+        \\
+        c_1'(x)\,y_1' + c_2'(x)y_2' = 1
+      \end{cases}\)
+    \end{multicols}
+  \end{itemize}
   \answer{}
   \begin{flalign*}
     &
@@ -264,9 +334,21 @@
   \end{flalign*}
 \end{questionBox}
 
-\begin{questionBox}1{Transf laplace} % Q5
-  \begin{itemize}
-    \item \(f(t)\) def em ord ate 2 em \(\mathbb{R}^+_0\)
+\begin{questionBox}1{} % Q5
+  Acerca de uma função \(f(x)\) definida e com derivadas até à segunda ordem em \(\mathbb{R}^+_0\) sabe-se que admite transformada de Laplace \(F(s)\), que \(f(0)=1,f'(0)=-2\). Então a trasnformada de Laplace da função
+  \begin{BM}
+    e^{-t}\,f''(t)+t\,f'(t)
+  \end{BM}
+  é:
+  \begin{itemize}[label=\square]
+    \begin{multicols}{2}
+      \item \((s+1)^2\,F(s+1)-s+2+s\,F'(s)\)\phantom{\(-F(s)\)}
+      \item \((s+1)^2\,F(s+1)-s+1-s\,F'(s)-F(s)\)
+      \item \((s+1)^2\,F(s+1)-s+1+s\,F'(s)+F(s)\)
+      \item \(s^2\,F(s)-s+1+s\,F'(s)-F(s)\)\phantom{\(+1+1\)}
+      \item \(s^2\,F(s)-s+1+s\,F'(s+1)-F(s+1)\)
+      \item \(s^2\,F(s)-s+1+s\,F'(s+1)+F(s+1)\)
+    \end{multicols}
   \end{itemize}
   \answer{}
   \begin{BM}
@@ -277,7 +359,7 @@
 \group{}
 
 \begin{questionBox}*1{} % II Q
-  Det sol ger da eq lin hom de coef const.
+  Determine a solução geral da equação diferencial linear homogénea e de coeficientes constantes
   \begin{BM}
     \odv[2]{y}{x}
     + \odv{y}{x}
@@ -343,14 +425,16 @@
 \end{questionBox}
 
 \begin{questionBox}*1{met ver const arb} % II Q2
-  util o met da var das const arb det a sol ger da eq n homog
+  Utilizando o método da variação das constantes arbitrárias, determine a solução geral da equação não homogénea
   \begin{BM}
     \odv[2]{y}{x}
     + \odv{y}{x}
-    -y\,6 
-    = -5\,e^{2\,x}\,\cos(x)
+    -y\,6
+    = -5\,e^{2\,x}\,\cos{x}
   \end{BM}
+
   \answer{}
+
   \begin{flalign*}
     &
       % a_0(x) = -6
@@ -452,28 +536,78 @@
 \end{questionBox}
 
 \group{}
+
 \setcounter{question}{1}
 
-\begin{questionBox}2{} % III Q1.1
-  Det todas as sol de cliraut
+\begin{questionBox}2{} % 3 Q1.1
+  \label{qbox:3.1.1}
+  Determine todas as soluções da equação de Clairaut
   \begin{BM}
     y = x\,\odv{y}{x} - \left(\odv{y}{x}\right)^3
   \end{BM}
 \end{questionBox}
 
-\begin{questionBox}2{question} % III Q1.2
-  mud de var \(x=1/t\) resolva
+\begin{questionBox}2{} % 3 Q1.2
+  Utilizando a mudança de variável definida por \(x=1/t\), resolva a equação
   \begin{BM}
     y = -x\,\odv{y}{x} + x^6\,\left(\odv{y}{x}\right)^3
-    \qquad x>0
+    ,\quad x>0
   \end{BM}
+  \paragraph*{Sug:} Após a mudança de variável utilize (\ref{qbox:3.1.1}).
 \end{questionBox}
 
-\setcounter{group}{4}
 \group{}
 
-\begin{questionBox}1{} % III
-  
+\begin{questionBox}*1{} % 4 Q1
+  Utilize a transformada de Laplace para resolver o problema de valores iniciais
+  \begin{BM}
+    y''+y'+y\,5/2 = \fdif{( t-2 )}
+    ,\quad y(0)=0
+    ,\quad y'(0)=1
+  \end{BM}
+  \paragraph*{Sug:} tenha em contra que \(s^2+s+5/2=(s+1/2)^2+9/4\).
+\end{questionBox}
+
+\group{}
+
+\begin{questionBox}*1{} % 5 Q1
+  Considere a equação diferencial lienar de ordem \(n\) e coeficientes constantes
+  \begin{BM}
+    \left(
+      \mdif[n]{x}
+      + \sum_{k=0}^{n-1}{
+        \alpha_{k}\,\mdif[k]{x}
+      }
+    \right)\,y
+    % \left(
+    %   \mdif[n]{x}
+    %   + \alpha_{n-1}\,\mdif[n-1]{x}
+    %   + \alpha_{n-2}\,\mdif[n-2]{x}
+    %   + \dots
+    %   + \alpha_{1}\,\mdif[1]{x}
+    % \right)y
+    = e^{\alpha\,x}
+    , \alpha\in\mathbb{R}
+    \yesnumber\label{eq:5.1-enunciado}
+  \end{BM}
+  Seja \(P(r)=r_n+\sum_{k=0}^{n-1}{a_k\,r^{k}}\). admitimos que \(r=\alpha\) é raiz da equação \(P(r)=0\) com grau de multiplicidade um. Justifique \(P'(\alpha)=0\).
+\end{questionBox}
+
+\begin{questionBox}*1{} % 5 Q2
+  A equação \eqref{eq:5.1-enunciado} tem uma solução particular da forma
+  \begin{BM}
+    \bar{y}=\frac{c}{2\,P'(\alpha)}\,x\,e^{\alpha\,x}
+    ,\quad c\in\mathbb{R}
+  \end{BM}
+  Sabendo que
+  \begin{BM}
+    \mdif[k]{x}\,(x\,e^{\alpha\,x})
+    = k\,\alpha^{k-1}\,e^{\alpha\,x}
+    + \alpha^{k}\,x\,e^{\alpha\,x}
+    ,\quad \forall\,k\in\mathbb{N}
+    ,\quad \mdif[k]{x}=\odv[k]{}{x}
+  \end{BM}
+  Determine, justificando detalhadamente, o valor de \emph{c}.
 \end{questionBox}
 
 \end{document}
