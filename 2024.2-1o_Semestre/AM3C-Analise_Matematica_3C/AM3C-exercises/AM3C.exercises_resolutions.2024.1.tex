@@ -113,49 +113,82 @@
     ,\quad \odv{y}{x}+2\,x\,y=1
   \end{BM}
 
-  \begin{BM}
-    \odv{}{x}
-    \int_{a(x)}^{b(x)}{
-      f(t)\,\odif{t}
-    }
-    = b'(x)\,f(b(x))
-    - a'(x)\,f(a(x))
-  \end{BM}
+
+  \answer{}
 
   \begin{gather*}
-    1
-    = \odv{y}{x} + 2\,x\,y
-    = \odv{\left(
-        e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
-        + c_1\,e^{-x^2}
-    \right)}{x}
-    + 2\,x\,\left(
+    y
+    = \frac{1}{2\,x}\left(
+      1-\odv{y}{x}
+    \right)
+    = \mathText{using \eqref{eq:1.2-y'}}
+    = \frac{1}{2\,x}\left(
+      1
+      - \left(
+        -2\,x\,e^{-x^2}\left(
+          c_1
+          + \int_{0}^{x}{e^{t^2}\,\odif{t}}
+        \right)
+        + x 
+      \right)
+    \right)
+    \\
+    = \frac{1}{2\,x}
+    + e^{-x^2}\left(
+      c_1
+      + \int_{0}^{x}{e^{t^2}\,\odif{t}}
+    \right)
+    - 1/2 
+  \end{gather*}
+  Portanto \(y(x)\) não é solução da edo
+
+  \begin{gather*}
+    \odv{y}{x}
+    = \odv{}{x}
+    \left(
       e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
       + c_1\,e^{-x^2}
     \right)
-    = \left(
-      (
-        e^{-x^2}\,(-2\,x)
-        \,\int_0^x{e^{t^2}\,\odif{t}}
-      )
-      + (
-        e^{-x^2}
-        (
-          1*e^{x^2}
-          -0*(e^{0^2}\,\odif{0})
-        )
-      )
-      + c_1\,(
-        e^{-x^2}
-        \,(-2\,x)
-      )
+    = \\
+    = -2\,x\,e^{-x^2}\,\int_{0}^{x}{e^{t^2}\,\odif{t}}
+    + e^{-x^2}\,\odv{}{x}\left(
+      \int_{0}^{x}{e^{t^2}\,\odif{t}}
     \right)
-    + 2\,x\,(
-      e^{-x^2}\int_0^x{e^{t^2}\,\odif{t}}
-      + c_1\,e^{-x^2}
+    - c_1\,2\,x\,e^{-x^2}
+    = \mathText{using \eqref{eq:1.2-ddx(Pf)}}
+    = -2\,x\,e^{-x^2}\left(
+      c_1
+      + \int_{0}^{x}{e^{t^2}\,\odif{t}}
+    \right)
+    + e^{-x^2}(
+      x\,e^{x^2}
+      -0*e^{0^2}
     )
     = \\
-    = \dots
+    = -2\,x\,e^{-x^2}\left(
+      c_1
+      + \int_{0}^{x}{e^{t^2}\,\odif{t}}
+    \right)
+    + x 
+    % 
+    \yesnumber\label{eq:1.2-y'}
+  \end{gather*}
+  % ddx(Pf)
+  \begin{gather*}
+    \odv{}{x}
+    \left(
+      \int_{a(x)}^{b(x)}{
+        f(t)\,\odif{t}
+      }
+    \right)
+    = \odv{}{x}\left(
+      P(f(b(x)))
+      -P(f(a(x)))
+    \right)
+    = b'(x)\,f(b(x))
+    - a'(x)\,f(a(x))
+    %
+    \yesnumber\label{eq:1.2-ddx(Pf)}
   \end{gather*}
 
 \end{questionBox}
@@ -170,39 +203,29 @@
 
   \answer{}
 
+  Verificando a funcção implicita
   \begin{gather*}
-    0
-    = (x^2-y)\,\odv{y}{x}+2\,x\,y
-    ; \\[1ex]
-    \odv{}{x}\left(2\,x^2\,y - y^2 + 1\right)
-    = \left(
-      2*2\,x\,y
-      + 2\,x^2\,y'
+    \odv{}{x}
+    \left(
+      2\,x^2\,y - y^2 + 1
     \right)
-    - \left(
-      2\,y\,\odv{y}{x}
-    \right)
+    = 2*2\,x\,y
+    +2\,x^2\,y'
+    -2\,y\,y'
     = 4\,x\,y
-    + 2\,\odv{y}{x}(
-      x^2-y
-    )
+    +\left(2\,x^2-2\,y\right)\,y'
+    = \mathText{using \(a=b \implies a'=b'\)}
+    = \odv{0}{x}
     = 0
-    \implies \\
     \implies
     2\,x\,y
-    + odv{y}{x}(
-      x^2-y
-    )
+    +\left(x^2-y\right)\,y'
     = 0
-    % \odiv{y}{x} = \frac{-4\,x\,y}{2\,(x^2-y)}
-    % 
-    % 
-    % 
-    ; \\[1ex]
-    \text{Equação de 2º grau em }y:
-    \\
-    \dots
   \end{gather*}
+
+  Encontrando solução explicita em que \(y(0)=1\)
+  \\\dots
+
 \end{questionBox}
 
 \begin{questionBox}1{} % Q3
@@ -211,10 +234,43 @@
 
 \begin{questionBox}2{} % Q3.1
 
-  \(y(x)=\exp{(k\,x)}\) é solução da equação
+  \(y(x)=e^{(k\,x)}\) é solução da equação
   \begin{BM}
     y''-y'+6\,y=0
   \end{BM}
+
+  \answer{}
+  \begin{gather*}
+    y''-y'+6\,y
+    = \odv[order=2]{}{x}\left(
+      e^{k\,x}
+    \right)
+    - \odv{}{x}\left(
+      e^{k\,x}
+    \right)
+    + 6\,x
+    = k^2\,e^{k\,x}
+    - k\,e^{k\,x}
+    + 6\,e^{k\,x}
+    = 0
+  \end{gather*}
+
+  \begin{gather*}
+    k^2-k+6 = 0
+    \lor e^{k\,x}=0
+    % \implies \\
+    \implies
+    k
+    = \frac{1\pm\sqrt{1-4*1*6}}{2*1}
+    = \frac{1\pm\sqrt{-23}}{2*1}
+  \end{gather*}
+
+  \begin{gather*}
+    e^{k\,x}=0
+    \implies k\to-\infty
+  \end{gather*}
+
+  Não existe \(k\) exceto \((k=-\infty\land x>0)\land(k=\infty\land x<0)\)
 
 \end{questionBox}
 
