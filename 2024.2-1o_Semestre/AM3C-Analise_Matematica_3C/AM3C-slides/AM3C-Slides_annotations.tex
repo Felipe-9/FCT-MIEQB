@@ -196,11 +196,17 @@
   range-phrase={\,\to\,},
   range-units={bracket},
   range-exponents={combine-bracket},
+  % Units
+  inter-unit-product=\ensuremath{{}\,{}}
+  % inter-unit-product=\ensuremath{{}\cdot{}}
 }
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
-\usepackage{amsmath, amssymb, bm}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb, bm}
+\setlength\mathindent{0em} % remove left indent
+\usepackage{mleftright}\mleftright % better left-right
 \usepackage{derivative} % Derivative
 \DeclareDifferential{\gdif}{\nabla} % Gradient
 % \usepackage{mathrsfs}   % more symbols \mathscr{} (Hamiltonian)
@@ -217,7 +223,7 @@
 \newcommand\E[1]{\,\mathrm{E}^{#1}}
 \newcommand\e[1]{\,\mathrm{e}^{#1}}
 \DeclareMathOperator\sign{sign}
-% % ========= Missing trigonometric math operators ========= %
+% ========= Missing trigonometric math operators ========= %
 \DeclareMathOperator\sech   {sech}
 \DeclareMathOperator\csch   {csch}
 \DeclareMathOperator\arcsec {arcsec}
@@ -226,12 +232,15 @@
 \DeclareMathOperator\arccosh{arccosh}
 \DeclareMathOperator\arcsinh{arcsinh}
 % % ================== Calculus operators ================== %
+% \DeclareMathOperator\LagrangeTransform{\mathcal{L}}
+% \DeclareMathOperator\prim{\mathcal{P}}
 % \DeclareMathOperator\fronteira {fr}
 % \DeclareMathOperator\interior  {int}
 % \DeclareMathOperator\exterior  {ext}
 % \DeclareMathOperator\grafico   {Graf}
 % \DeclareMathOperator\dominio   {D}
 % \DeclareMathOperator\visinhanca{\mathcal{V}}
+% \DeclareMathOperator\erf{erf}
 % % =================== Algebra operators ================== %
 % \DeclareMathOperator\adj{adj}
 % \DeclareMathOperator\id{id}
@@ -249,6 +258,11 @@
 % % ======================================================== %
 % % ======================================================== %
 % =================== My math functions ================== %
+\usepackage{mymathref} % \usingref{ref1,...} and mathText{} command for referencing inside math
+% \yesnumber to add reference (without label)
+% \tagthis to add reference and label
+% \mathText{text} short command to add intextext with hfill
+% \usingref{eq:1,...}
 \usepackage{mathBM}
 \usepackage{myLogicOperators}
 % \lxor, \lnand
@@ -279,9 +293,9 @@
 % % ===================== External lib ===================== %
 % \usepackage{tikz-external-setup}
 % \tikzexternalize[
-%     up to date check = {simple}, % faster check
-%     figure list = true, % generate list of figures file
-%     prefix = ./.build/figures/graphics/
+%     up to date check={simple}, % faster check
+%     figure list={true}, % generate list of figures file
+%     prefix={./.build/figures/graphics/}
 % ] % turn externalization on/off
 % % Fix background
 % \NewCommandCopy\oldtikzpicture\tikzpicture
@@ -423,6 +437,7 @@
 \usepackage{sections}
 \usepackage{questions}
 \usepackage{answers}
+% \usepackage{qgroups}
 \usepackage{examples}
 % \usepackage{definitions}
 % ================= My title and subfile ================= %

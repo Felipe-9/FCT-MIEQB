@@ -19,18 +19,17 @@
   \begin{BM}
     \odv{y}{x} + \frac{\cos(x)}{\sin(x)}\,y
     = -x
-    ;\quad x 
-    \quad \in \myrange*{0,\pi}
+    ;\quad x \in \myrange*{0,\pi}
   \end{BM}
   Tem como solução geral
   \begin{itemize}[label=\Box]
     \begin{multicols}{3}
-      \item \(y = \frac{c}{\cos x} + x\,\frac{\cos x}{\sin x} -1\)
-      \item \(y = \frac{c}{\cos x} + x\,\frac{\sin x}{\cos x} -1\)
       \item \(y = \frac{c}{\sin x} - x\,\frac{\cos x}{\sin x} +1\)
       \item \(y = \frac{c}{\cos x} - x\,\frac{\cos x}{\sin x} +1\)
       \item \(y = \frac{c}{\sin x} + x\,\frac{\sin x}{\cos x} -1\)
+      \item \(y = \frac{c}{\cos x} + x\,\frac{\cos x}{\sin x} -1\)
       \item \(y = \frac{c}{\sin x} - x\,\frac{\cos x}{\sin x}\)
+      \item \(y = \frac{c}{\cos x} + x\,\frac{\sin x}{\cos x}\)
     \end{multicols}
   \end{itemize}
 
@@ -49,21 +48,28 @@
     %
     %
     %
-    = \usingref{eq:1.1-phi_x}
+    = \mathText{Using \eqref{eq:1.1-phi_x}}
     = \frac{c_0}{C_2\,\sin{x}}
     + \frac{1  }{C_2\,\sin{x}}
     \,\int{(-x)\,C_2\,\sin{x}\,\odif{x}}
     %
     %
     %
-    = \usingref{eq:1.1-prim}
+    = \mathText{Using \eqref{eq:1.1-prim}}
     = \frac{c_0}{C_2\,\sin{x}}
     + \frac{1  }{C_2\,\sin{x}}
-    \,C_2 (
-      x\,\cos{(x)}
-      -\sin{x}
+    \, C_2\,(
+      x\,\cos{x}
+      - \sin{x}
+      - C_3
     )
-    = \frac{c_3}{\sin{x}}
+    = \\
+    = \frac{C_4}{\sin{x}}
+    + x\,\frac{\cos{x}}{\sin{x}}
+    - 1
+    - \frac{C_3}{\sin{x}}
+    % = \\
+    = \frac{C_5}{\sin{x}}
     + x\,\frac{\cos{x}}{\sin{x}}
     - 1
   \end{gather*}
@@ -74,16 +80,12 @@
       \int{\frac{\cos{x}}{\sin{x}}\,\odif{x}}
     \right)}
     = \exp{\left(
-        \int{
-          \frac{\odif{(\sin{x})}}{\sin{x}}
-        }
+        \int{\frac{\odif{(\sin{x})}}{\sin{x}}}
     \right)}
     = \exp{\left(
-        \ln(\sin{x})+C_1
+        \ln{(\sin{x})}+C_1
     \right)}
-    % = \\
-    = 
-    C_2\,\sin{x} 
+    = C_2\,\sin{x}
     %
     \yesnumber\label{eq:1.1-phi_x}
   \end{gather*}
@@ -92,118 +94,26 @@
     P\left(
       -x\,C_2\,\sin{x}
     \right)
-    = C_2
-    \,P\left(
+    = C_2\,P\left(
       x\,(-\sin{x})
     \right)
-    \mathText{Using \(P(u\,v') = u\,v - P(u'\,v)\)}
-    = C_2
-    (
+    = C_2\,P\left(
+      x\,\odif{\cos{x}}
+    \right)
+    = \mathText{using \(P(u\,v')=u\,v-P(u'\,v)\)}
+    = C_2\,(
       x\,\cos{(x)}
       - P(\cos{x})
     )
-    = C_2 (
+    = C_2\,(
       x\,\cos{(x)}
-      -\sin{x}
+      - \sin{x}
+      - C_3
     )
     %
     \yesnumber\label{eq:1.1-prim}
   \end{gather*}
 
-  % \answer{}
-  %
-  % \begin{flalign*}
-  %   &
-  %     \left(
-  %       \mdif[1]{x} + \frac{\cos(x)}{\sin(x)}
-  %     \right)\,y = -x
-  %     % 
-  %     % 
-  %     % 
-  %     &\\[3ex]&
-  %     % a(x) = \frac{\cos(x)}{\sin(x)}
-  %     % b(x) = -1
-  %     % y    = y
-  %     % x    = x
-  %     y
-  %     = \frac{c_0}{\varphi(x)}
-  %     + \frac{1  }{\varphi(x)}
-  %     \,\int{-1\,\varphi(x)\,\odif{x}}
-  %     %
-  %     %
-  %     %
-  %     = &\\[3ex]&
-  %     = \frac{c_0}{c_2}
-  %     + \frac{1  }{c_2}
-  %     \,\int{-1\,c_2\,\odif{x}}
-  %     %
-  %     %
-  %     %
-  %     ; &\\[3ex]&
-  %     \varphi(x) 
-  %     = \exp{\left(
-  %       \int{\frac{\cos(x)}{\sin(x)}\,\odif{x}}
-  %     \right)}
-  %     = e^{1/2 + c_1}
-  %     = c_2
-  %     %
-  %     %
-  %     %
-  %     &\\[3ex]&
-  %     \odif{\cos(x)} = -\sin(x)\,\odif{x}
-  %     % 
-  %     % 
-  %     % 
-  %     &\\[1ex]&
-  %     \odif{\left(\frac{1}{\sin(x)}\right)}
-  %     = \frac{1}{-2\,\sin^2(x)} (\cos(x))
-  %     \,\odif{x}
-  %     \implies &\\&
-  %     \implies
-  %     \odif(x)
-  %     = \frac{-2\,\sin^2(x)}{\cos(x)}
-  %     \,\odif{\left(\frac{1}{\sin(x)}\right)}
-  %     %
-  %     %
-  %     %
-  %     &\\[3ex]&
-  %     \int{u\,v'\,\odif{x}}
-  %     = u\,v + \int{u'\,v\,\odif{x}}
-  %     %
-  %     %
-  %     %
-  %     &\\[3ex]&
-  %     \int{
-  %       \frac{1}{\sin(x)}
-  %       \,\cos(x)
-  %       \,\odif{x}
-  %     }
-  %     = \int{
-  %       \frac{1}{\sin(x)}
-  %       \,\odv{}{x}{\left(\sin(x)\right)}
-  %       \,\odif{x}
-  %     }
-  %     = &\\&
-  %     = \frac{\sin(x)}{\sin(x)}
-  %     + \int{
-  %       \odv{}{x}{\left(\frac{1}{\sin(x)}\right)}
-  %       \,\sin(x)
-  %       \,\odif{x}
-  %     }
-  %     = 1
-  %     + \int{
-  %       \left(
-  %         -\frac{\cos(x)}{\sin^2(x)}
-  %       \right)
-  %       \,\sin(x)
-  %       \,\odif{x}
-  %     }
-  %     \implies &\\&
-  %     \implies
-  %     \int{\frac{\cos(x)}{\sin(x)}\,\odif{x}}
-  %     = 1/2
-  %   &
-  % \end{flalign*}
 \end{questionBox}
 
 \begin{questionBox}1{} % Q2
@@ -476,7 +386,7 @@
     \left(5\,x\,y^2-2\,y\right)
     = (x^m\,y^{n-1}\,n)
     \left(5\,x\,y^2-2\,y\right)
-    = ''
+    = \\
     =
     \pdv{}{x}
     \left(x^m\,y^n\right)
