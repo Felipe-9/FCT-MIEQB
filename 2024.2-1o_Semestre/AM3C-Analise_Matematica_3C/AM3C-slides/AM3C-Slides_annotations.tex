@@ -233,7 +233,7 @@
 \DeclareMathOperator\arcsinh{arcsinh}
 % % ================== Calculus operators ================== %
 % \DeclareMathOperator\LagrangeTransform{\mathcal{L}}
-% \DeclareMathOperator\prim{\mathcal{P}}
+\DeclareMathOperator\prim{\mathrm{P}}
 % \DeclareMathOperator\fronteira {fr}
 % \DeclareMathOperator\interior  {int}
 % \DeclareMathOperator\exterior  {ext}
@@ -447,6 +447,7 @@
 % %                  Divisions customization                 %
 % % -------------------------------------------------------- %
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
+\renewcommand\theequation{\arabic{part}.\arabic{equation}}
 % \renewcommand\thepart{Part \arabic{part}}
 % 88                                    88
 % 88                                    ""

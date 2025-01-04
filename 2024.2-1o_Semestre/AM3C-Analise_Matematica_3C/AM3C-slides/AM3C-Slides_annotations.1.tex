@@ -403,244 +403,346 @@
 
 \begin{sectionBox}*2{Solução geral de equações lineáres de primeira ordem} % S
   \begin{BM}
-    y' + p(x)\,y = q(x)
-    \implies y 
-    = \frac{c}{\varphi(x)}
-    + \frac{1}{\varphi(x)}
-    \,\int{\varphi(x)\,q(x)\,\odif{x}}
-    \\
-    \varphi(x) = \exp{\int{p(x)\,\odif{x}}}
-    \\[3ex]
-    y 
-    = \frac{c}{\varphi(x)}
-    : q(x) = 0 \text{ (eq Homogênea)}
+    y' + a(x)\,y = b(x)
   \end{BM}
+
+  % tag  = 3.w
+  % a(x) = a(x)
+  % b(x) = b(x)
+  % y    = y
+  % x    = x
+
+  General solution
+  \begin{gather*}
+    y
+    = \frac{c_0}{\varphi(x)}
+    + \frac{1  }{\varphi(x)}
+    \,\int{b(x)\,\varphi(x)\,\odif{x}}
+    %
+    %
+    %
+    = \mathText{using 
+      \eqref{eq:3.w phi_x}
+      \eqref{eq:3.w prim}
+    }
+    = \dots
+    %
+    \yesnumber\label{eq:3.w answer}
+  \end{gather*}
+
+  Finding \(\varphi(x)\)
+  \begin{gather*}
+    \varphi(x) 
+    = \exp{\left(
+        \int{a(x)\,\odif{x}}
+    \right)}
+    = \dots
+    %
+    \yesnumber\label{eq:3.w phi_x}
+  \end{gather*}
+
+  Integrating
+  \begin{gather*}
+    \prim_x{\left(
+        b(x)\,\varphi(x)
+    \right)}
+    = \mathText{using \eqref{eq:3.w phi_x}}
+    = \dots
+    %
+    \yesnumber\label{eq:3.w prim}
+  \end{gather*}
   \vspace{-3ex}
   \begin{sectionBox}*3m{Demonstração} % Sindex
     \begin{gather*}
-        y' + p(x)\,y = q(x)
-        \implies
-        \left(
-          y' + p(x)\,y 
-        \right)\,\varphi(x)
-        = \\
-        = y'\,\exp{\left(\int{p(x)\,\odif{x}}\right)}
-        + p(x)\,y\,\exp{\left( \int{p(x)\,\odif{x}} \right)}
-        = \left(
-          y\,\exp{\int{p(x)\,\odif{x}}}
-        \right)'
-        = \\
-        = q(x)\,\varphi(x)
-        = q(x)\,\exp{\int{p(x)\,\odif{x}}}
-        \implies \\
-        \implies y\,\exp{\int{p(x)\,\odif{x}}}
-        = c+\int{
-          q(x)\,\exp{\left(\int{p(x)\,\odif{x}}\right)}
-          \,\odif{x}
-        }
-        \implies \\
-        \implies y
-        = \frac{c}{\exp{\int{p(x)\,\odif{x}}}}
-        + \frac{1}{\exp{\int{p(x)\,\odif{x}}}}
-        \,\int{
-          q(x)\,\exp{\left(\int{p(x)\,\odif{x}}\right)}
-          \,\odif{x}
-        }
-        = \\
-        = \frac{c}{\varphi(x)}
-        + \frac{1}{\varphi(x)}
-        \,\int{q(x)\,\varphi(x)\,\odif{x}}
-      \end{gather*}
+      y' + p(x)\,y = q(x)
+      \implies
+      \left(
+        y' + p(x)\,y 
+      \right)\,\varphi(x)
+      = \\
+      = y'\,\exp{\left(\int{p(x)\,\odif{x}}\right)}
+      + p(x)\,y\,\exp{\left( \int{p(x)\,\odif{x}} \right)}
+      = \left(
+        y\,\exp{\int{p(x)\,\odif{x}}}
+      \right)'
+      = \\
+      = q(x)\,\varphi(x)
+      = q(x)\,\exp{\int{p(x)\,\odif{x}}}
+      \implies \\
+      \implies y\,\exp{\int{p(x)\,\odif{x}}}
+      = c+\int{
+        q(x)\,\exp{\left(\int{p(x)\,\odif{x}}\right)}
+        \,\odif{x}
+      }
+      \implies \\
+      \implies y
+      = \frac{c}{\exp{\int{p(x)\,\odif{x}}}}
+      + \frac{1}{\exp{\int{p(x)\,\odif{x}}}}
+      \,\int{
+        q(x)\,\exp{\left(\int{p(x)\,\odif{x}}\right)}
+        \,\odif{x}
+      }
+      = \\
+      = \frac{c}{\varphi(x)}
+      + \frac{1}{\varphi(x)}
+      \,\int{q(x)\,\varphi(x)\,\odif{x}}
+    \end{gather*}
   \end{sectionBox}
+
 \end{sectionBox}
 
 \begin{exampleBox}1{} % E
   Considere a equação
-  \begin{BM}[align*]
-    y' + (1-1/x)\,y &= 2\,x ,& x &< 0
+  \begin{BM}
+    y' + (1-1/x)\,y = 2\,x 
+    ,\quad x < 0
   \end{BM}
   Encontre a solução para a equação acima e a equação homgénea associada
-  \answer{}
-  \begin{gather*}
-      % a(x) = (1-1/x)
-      % b(x) = (2\,x)
-      y
-      = \frac{c_0}{\varphi(x)}
-      + \frac{1}{\varphi(x)}
-      \,\int{(2\,x)\,\varphi(x)\,\odif{x}}
-      % 
-      % 
-      % 
-      = \\[1ex]
-      = c_0\,\frac{x}{c_3\,e^x}
-      +\,\frac{c_3\,x}{e^x}
-      \,\int{(2\,x)\,\frac{e^x}{c_3\,x}\,\odif{x}}
-      = \\
-      = \frac{c_0}{c_3}
-      \,\frac{x}{e^x}
-      + \frac{x}{e^x}
-      \,2
-      \,\int{e^x\,\odif{x}}
-      = \\
-      = \frac{c_0}{c_3}
-      \,\frac{x}{e^x}
-      + \frac{2\,x}{e^x}
-      \,(c_4 + e^x)
-      = c\,\frac{x}{e^x}
-      + 2\,x
-      % 
-      % 
-      % 
-      ;\\ 
-      c = \frac{c_0}{c_3}+2\,c_4
-      %
-      %
-      %
-      ; \\[1ex]
-      \varphi(x) 
-      = \exp{\left(
-        \int{(1-1/x)\,\odif{x}}
-      \right)}
-      = \exp{\left(
-          c_1+x
-          -(c_2+\ln{x})
-      \right)}
-      = \\
-      = c_3\,\frac{\exp{x}}{x}
-      = c_3\,\frac{e^x}{x}
-      % 
-      % 
-      % 
-      ; \\ c_3 = \exp{(c_1-c_2)}
-    \end{gather*}
 
-  \subsection*{Equação homgénea}
+  \answer{}
+
+  % tag  = 7
+  % a(x) = (1-1/x)
+  % b(x) = 2\,x
+  % y    = y
+  % x    = x
   \begin{gather*}
-      % a(x) = (1-1/x)
-      % b(x) = 0
-      % \varphi(x) = c_3\,\frac{e^x}{x}
-      y' + (1-1/x)\,y = 0
-      % \implies \\
-      \implies
-      y
-      = \frac{c_0}{\varphi(x)}
-      %
-      %
-      %
-      % = \\[1ex]
-      = c_0\,\frac{x}{c_3\,e^x}
-      = c_5\,\frac{x}{e^x}
-      % 
-      % ; \\ 
-      ; c_5=c_0/c_3
-    \end{gather*}
+    y
+    = \frac{c_0}{\varphi(x)}
+    + \frac{1  }{\varphi(x)}
+    \,\int{2\,x\,\varphi(x)\,\odif{x}}
+    %
+    %
+    %
+    = \mathText{using \eqref{eq:7-phi_x}}
+    = \frac{c_0}{(e^{x}\,c_2/x)}
+    + \frac{1  }{(e^{x}\,c_2/x)}
+    \,\int{2\,x\,(e^{x}\,c_2/x)\,\odif{x}}
+    %
+    %
+    %
+    = \mathText{using \eqref{eq:7-prim}}
+    = c_3\,x\,e^{-x}
+    + \frac{x  }{e^{x}\,c_2}
+    \,2\,c_2\,e^{x}
+    = c_3\,x\,e^{-x}
+    + 2\,x
+  \end{gather*}
+
+  % φ(x)
+  \begin{gather*}
+    \varphi(x) 
+    = \exp{\left(
+      \int{(1-1/x)\,\odif{x}}
+    \right)}
+    = \exp{
+      x
+      - \ln{x}
+      + c_1
+    }
+    = e^{x}\,c_2/x
+    %
+    \yesnumber\label{eq:7-phi_x}
+  \end{gather*}
+
+  % prim
+  \begin{gather*}
+    P\left(
+      2\,x\,\varphi(x)
+    \right)
+    = \mathText{using \eqref{eq:7-phi_x}}
+    = P\left(
+      2\,x\,e^{x}\,c_2/x
+    \right)
+    = 2\,c_2\,e^{x}
+    %
+    \yesnumber\label{eq:7-prim}
+  \end{gather*}
+
 \end{exampleBox}
 
 \begin{exampleBox}1{} % E8
-   Na investigação de um homicídio, é, muitas vezes importante estimar o instante em que a morte ocorreu. A partir de observações experimentais, a lei de arrefecimento de Newton estabelece, com uma exatidão satisfatória, que a taxa de variação da temperatura \(T(t)\) de um corpo em arrefecimento é proporcional à diferença entre a temperatura desse corpo e a temperatura constante \(T_a\) do meio ambiente, isto é:
-   \begin{BM}
-     \odv{T}{t} = -k\,(T-T_a)
-   \end{BM}
-   Suponhamos que duas horas depois a temperatura é novamente medida e o valor encontrado é \(T_1 = \qty*{23}{\celsius}\). O crime parece ter ocorrido durante a madrugada e corpo foi encontrado pela manhã bem cedo, pelas 6 horas e 17 minutos. A perícia então faz a suposição adicional de que a temperatura do meio ambiente entre a hora da morte e a hora em que o cadáver foi encontrado se manteve mais ou menos constante nos 20°C. A perícia sabe também que a temperatura normal de um ser humano vivo é de 37°C. Vejamos como, com os dados considerados, a perícia pode determinar a hora em que ocorreu o crime.
-   \answer{}
-   \begin{gather*}
-       t:T(t) = 37
-       \implies \\[1ex]
-       \implies
-       T(t)
-       = c\,e^{-k\,t} + 20
-       = \\[1ex]
-       \cong 10\,e^{-\num{0.601986402162968}*t} + 20
-       = 37
-       \implies \\
-       \implies
-       t
-       \cong -\frac{1}{\num{0.601986402162968}}\ln(17/10)
-       \cong \qty{-0.881462187776328}{\hour}
-       \cong \qty{-52.8877312665797}{\min}
-       % 
-       % 
-       % 
-       ; \\[1ex]
-       T(0) 
-       = c\,e^{-k*0} + 20
-       = 30
-       \implies c=30-20=10
-       % 
-       % 
-       % 
-       ; \\[1ex]
-       T(2)
-       = c\,e^{-k*2} + 20
-       = 10\,e^{-k*2} + 20
-       = 23
-       \implies \\
-       \implies
-       k = -0.5\ln(3/10)
-       \cong \num{0.601986402162968}
-       % 
-       % 
-       % 
-       ; \\[1ex]
-       \odv{T}{t} = -k\,(T-20)
-       % \implies \\
-       \implies T' + k\,t = k\,20
-       \implies \\
-       \implies
-       % a(x) = (k)
-       % b(x) = k\,20
-       y
-       = \frac{c_0}{\varphi(t)}
-       + \frac{1  }{\varphi(t)}
-       \,\int{k\,20\,\varphi(t)\,\odif{t}}
-       %
-       %
-       %
-       = \\[1ex]
-       = \frac{c_0}{c_2\,e^{k\,t}}
-       + \frac{1  }{c_2\,e^{k\,t}}
-       \,\int{k\,20\,c_2\,e^{k\,t}\,\odif{t}}
-       = \frac{c_0}{c_2}\,e^{-k\,t}
-       + \frac{1  }{c_2}\,e^{-k\,t}
-       \frac{k\,20\,c_2}{k}
-       \,\int{e^{k\,t}\,\odif{(k\,t)}}
-       = \\
-       = \frac{c_0}{c_2}\,e^{-k\,t}
-       + 20\,c_3\,e^{-k\,t}
-       + 20\,e^{-k\,t}\,e^{k\,t}
-       = \\
-       = c\,e^{-k\,t}
-       + 20
-       ; \\
-       c = \frac{c_0}{c_2}+20\,c_3
-       %
-       %
-       %
-       ; \\[1ex]
-       \varphi(t) 
-       = \exp{\left(
-         \int{(k)\,\odif{t}}
-       \right)}
-       = \exp{\left(
-           k\,t+c_1
-       \right)}
-       = e^{k\,t}\,c_2
-       ; \\
-       c_2=e^{c_1}
-     \end{gather*}
+  Na investigação de um homicídio, é, muitas vezes importante estimar o instante em que a morte ocorreu. A partir de observações experimentais, a lei de arrefecimento de Newton estabelece, com uma exatidão satisfatória, que a taxa de variação da temperatura \(T(t)\) de um corpo em arrefecimento é proporcional à diferença entre a temperatura desse corpo e a temperatura constante \(T_a\) do meio ambiente, isto é:
+  \begin{BM}
+    \odv{T}{t} = -k\,(T-T_a)
+    %
+    \yesnumber\label{eq:8-dTdt}
+  \end{BM}
+  Suponhamos que duas horas depois a temperatura é novamente medida e o valor encontrado é \(T_1 = \qty*{23}{\celsius}\). O crime parece ter ocorrido durante a madrugada e corpo foi encontrado pela manhã bem cedo, pelas 6 horas e 17 minutos. A perícia então faz a suposição adicional de que a temperatura do meio ambiente entre a hora da morte e a hora em que o cadáver foi encontrado se manteve mais ou menos constante nos 20°C. A perícia sabe também que a temperatura normal de um ser humano vivo é de 37°C. Vejamos como, com os dados considerados, a perícia pode determinar a hora em que ocorreu o crime.
+
+  \answer{}
+
+  \begin{gather*}
+    t:T(t) = 37
+    %
+    \yesnumber\label{eq:8-T=37}
+    \cong \mathText{using \eqref{eq:8 t(t)}}
+    \cong 10\,e^{-t\,\num{0.601986402162968}}
+    + 20
+    \implies
+    t 
+    \cong -\ln(1.7)/\num{0.601986402162968}
+    \cong \qty{-0.881462187776328}{\hour}
+    \cong \qty{-52.887731266579699}{\minute}
+  \end{gather*}
+  Desenvolvendo \eqref{eq:8-dTdt}
+  \begin{gather*}
+    \odv{T}{t} 
+    = -k\,(T-T_a)
+    = -k\,T+k\,T_a
+    = -k\,T+k\,20
+    \implies
+    \odv{T}{t}
+    + k\,T
+    = k\,20
+    %
+    \yesnumber\label{eq:8-dTdt 2}
+  \end{gather*}
+
+  Encontrando \(T(t)\) a partir de \eqref{eq:8-dTdt 2}
+
+  % tag  = 8
+  % a(x) = k
+  % b(x) = k\,20
+  % y    = T
+  % x    = t
+  \begin{gather*}
+    T
+    = \frac{c_0}{\varphi(t)}
+    + \frac{1  }{\varphi(t)}
+    \,\int{k\,20\,\varphi(t)\,\odif{t}}
+    %
+    %
+    %
+    = \mathText{using 
+      \eqref{eq:8 phi_x}
+      \eqref{eq:8-prim}
+    }
+    = \frac{c_0}{c_1\,e^{k\,t}}
+    + \frac{1  }{c_1\,e^{k\,t}}
+    k\,20\,c_1\,\left(
+      c_2+e^{k\,t}/k
+    \right)
+    = (c_0/c_1)\,e^{-k\,t}
+    + c_2\,k\,20\,e^{-k\,t}
+    + 20
+    = \\
+    = c_3\,e^{-k\,t}
+    + 20
+    %
+    \yesnumber\label{eq:8 T(t c_3 k)}
+    \cong \mathText{using \eqref{eq:8 c_3}\eqref{eq:8 k}}
+    \cong 10\,e^{-t\,\num{0.601986402162968}}
+    + 20
+    %
+    \yesnumber\label{eq:8 t(t)}
+  \end{gather*}
+
+  % k
+  \begin{gather*}
+    T(2) = 23
+    = \mathText{using \eqref{eq:8 T(t c_3 k)}\eqref{eq:8 c_3}}
+    = 10\,e^{-k\,2}
+    + 20
+    \implies
+    k 
+    = -\ln(0.3)/2
+    \cong \num{0.601986402162968}
+    %
+    \yesnumber\label{eq:8 k}
+  \end{gather*}
+
+  % c_3
+  \begin{gather*}
+    T(0) = 30
+    = \mathText{using \eqref{eq:8 T(t c_3 k)}}
+    = c_3\,e^{-k*0}
+    + 20
+    = c_3
+    + 20
+    \implies
+    c_3 = 10
+    % 
+    \yesnumber\label{eq:8 c_3}
+  \end{gather*}
+
+  % φ(x)
+  \begin{gather*}
+    \varphi(t) 
+    = \exp{\left(
+      \int{k\,\odif{t}}
+    \right)}
+    = c_1\,e^{ k\,t }
+    %
+    \yesnumber\label{eq:8 phi_x}
+  \end{gather*}
+  % prim
+  \begin{gather*}
+    P\left(
+      k\,20\,\varphi(t)
+    \right)
+    = \mathText{using \eqref{eq:8 phi_x}}
+    = P\left(
+      k\,20\,c_1\,e^{k\,t}
+    \right)
+    = k\,20\,c_1\,\left(
+      c_2+e^{k\,t}/k
+    \right)
+    %
+    \yesnumber\label{eq:8-prim}
+  \end{gather*}
+
 \end{exampleBox}
 
-\begin{sectionBox}1{Método de Variação das constantes} % S
+\begin{sectionBox}1{Método de Variação das constantes Eq Diff de ordem 1} % S
+  Um metodo alternativo para resolver a mesma equação diferencial linear de primeira ordem
   \begin{BM}
-    y = \frac{c_0(x)}{\varphi(x)}
-    : \left(\frac{c_0(x)}{\varphi(x)}\right) 
-    + p(x)\left(\frac{c_0(x)}{\varphi(x)}\right)
-    = q(x)
-    \\
-    y_h' + p(x)\,y_h = q(x) 
-    \iff y_h = \frac{c_0}{\varphi{x}} 
-    \implies y = \frac{c_0(x)}{\varphi{x}}
+    y' + a(x)\,y = b(x)
   \end{BM}
+
+  Solução geral
+  \begin{gather*}
+    y 
+    = \frac{C(x)}{\varphi(x)}
+    %
+    \yesnumber\label{eq:4 y(C(x))}
+    = \mathText{using
+      \eqref{eq:4 C(x)}
+      \eqref{eq:4 phi_x}
+    }
+    = \dots
+  \end{gather*}
+
+  Finding \(C(x)\)
+  \begin{gather*}
+    y' + a(x)\,y 
+    = \mathText{using \eqref{eq:4 y(C(x))}}
+    = \mdif{x}{\left(
+        \frac{C(x)}{\varphi(x)}
+    \right)}
+    + a(x)
+    \,\frac{C(x)}{\varphi(x)}
+    = b(x)
+    \implies C'(x) = \dots
+    \implies
+    C(x) = \dots
+    %
+    \yesnumber\label{eq:4 C(x)}
+  \end{gather*}
+
+  Finding \(\varphi(x)\)
+  \begin{gather*}
+    \varphi(x)
+    = \exp{\left(
+        \prim_x{\left(
+            a(x)
+        \right)}
+    \right)}
+    = \dots
+    %
+    \yesnumber\label{eq:4 phi_x}
+  \end{gather*}
+
   Podemos resolver a equação homogênea associada \(y_h\) substituir \(c_0 \to c_0(x)\) e aplicar \(y=c_0(x)/\varphi(x)\) na equação linear original, dessa forma podemos obter \(c_0(x)\) e por sequencia \(y=c_0(x)/\varphi{x}\)
 
   \section*{Método usando solução particular}
@@ -659,70 +761,163 @@
 \end{sectionBox}
 
 \begin{exampleBox}1{} % E
+
   \begin{BM}
     y' - \frac{2x}{x^2+1}\,y = 1
   \end{BM}
   Encontre a solução geral usando o método de variação das constantes
+  
   \answer{}
+
+  Solução geral
   \begin{gather*}
-      y: y' - \frac{2x}{x^2+1}\,y = 1
-      % 
-      % 
-      % 
-      \implies \\[1ex]
-      \implies
-      y = c_0(x)\,(x^2+1)
-      = \\
-      = (\arctan(x)+c_2)\,(x^2+1)
-      % 
-      % 
-      % 
-      ; \\[1ex]
-      y' - \frac{2x}{x^2+1}\,y
-      = (c_0(x)\,(x^2+1))' 
-      - \frac{2x}{x^2+1}\,(c_0(x)\,(x^2+1)) 
-      = \\
-      = c_0'(x)\,(x^2+1)
-      + c_0(x)\,2\,x
-      - 2\,x\,c_0(x)
-      % = \\
-      = c_0'(x)\,(x^2+1)
-      = 1
-      \implies \\
-      \implies c_0'(x) = \frac{1}{x^2+1}
-      \implies \mathemph{
-        c_0(x)
-        = \int{\frac{1}{x^2+1}\,\odif{x}}
-        = \arctan{x}+c_1
-      }
-      % 
-      % 
-      % 
-      ; \\[1ex]
-      y' + \frac{2x}{x^2+1}\,y = 0
-      % \implies \\
-      \implies
-      % a(x) = \frac{2x}{x^2+1}
-      % b(x) = 0
-      y
-      = \frac{c_0}{\varphi(x)}
-      %
-      %
-      %
-      % = \\[1ex]
-      = \mathemph{
-        c_0\,(x^2+1)
-      }
-      %
-      %
-      %
-      ; \\[1ex]
-      \varphi(x) 
-      = \exp{\left(
-        \int{\frac{2x}{x^2+1}\,\odif{x}}
-      \right)}
-      = \frac{1}{x^2+1}
-      \end{gather*}
+    y
+    = \frac{C(x)}{\varphi(x)}
+    %
+    \yesnumber\label{eq:e.9 y(C(x))}
+    = \mathText{using
+      \eqref{eq:e.9 C(x)}
+      \eqref{eq:e.9 phi_x}
+    }
+    = \frac{
+      c_1\,(
+      \arctan{x}+c_2
+    )    
+    }{
+      \frac{c_1}{x^2+1}
+    }
+    = \left(x^2+1\right)
+    \,\left(
+      \arctan{x}
+      + c_2
+    \right)
+  \end{gather*}
+
+  Finding \(C(x)\)
+  \begin{gather*}
+    y'-\frac{2\,x}{x^2+1}
+    = \mathText{using 
+      \eqref{eq:e.9 y(C(x))}
+      \eqref{eq:e.9 phi_x}
+    }
+    = \mdif{x}{\left(
+        \frac{C(x)}{\frac{c_1}{x^2+1}}
+    \right)}
+    - \frac{2\,x}{x^2+1}
+    \,\frac{C(x)}{\frac{c_1}{x^2+1}}
+    % = \\
+    = \frac{1}{c_1}\left(
+      C'(x)
+      (x^2+1)
+      + C(x)\,2\,x
+    \right)
+    - \frac{C(x)\,2\,x}{c_1}
+    = \\
+    = C'(x)\,\frac{x^2+1}{c_1}
+    = 1
+    % \implies \\
+    \implies
+    C'(x) 
+    = \frac{c_1}{x^2+1}
+    \implies \\
+    \implies
+    C(x)
+    = \prim_x{\left(
+      \frac{c_1}{x^2+1}
+    \right)}
+    = c_1\,(
+      \arctan{x}+c_2
+    )    
+    %
+    \yesnumber\label{eq:e.9 C(x)}
+  \end{gather*}
+
+  Finding \(\varphi(x)\)
+  \begin{gather*}
+    \varphi(x)
+    = \exp{\left(
+        \prim_x{\left(
+            -\frac{2\,x}{x^2+1}
+        \right)}
+    \right)}
+    = \exp{\left(
+        -\int{\left(
+            \frac{\odif{x^2+1}}{x^2+1}
+        \right)}
+    \right)}
+    = \\
+    = \exp{\left(
+        -(
+          \ln(x^2+1)+c_0
+        )
+    \right)}
+    = 
+    \frac{c_1}{x^2+1}
+    %
+    \yesnumber\label{eq:e.9 phi_x}
+  \end{gather*}
+
+
+  \answer{\eqref{eq:9.2 answer}}
+
+  % tag  = 9
+  % a(x) = \left(\frac{-2\,x}{x^2+1}\right)
+  % b(x) = 1
+  % y    = y
+  % x    = x
+
+  \begin{gather*}
+    y
+    = \frac{c_0}{\varphi(x)}
+    + \frac{1  }{\varphi(x)}
+    \,\int{1\,\varphi(x)\,\odif{x}}
+    %
+    %
+    %
+    = \mathText{using 
+      \eqref{eq:9.2 phi_x}
+      \eqref{eq:9.2 prim}
+    }
+    = \frac{c_0}{\frac{1}{c_2\,(x^2+1)}}
+    + \frac{1  }{\frac{1}{c_2\,(x^2+1)}}
+      (c_3 + \arctan{x})/c_2
+    = (x^2+1)(c_5 + \arctan{x})
+    %
+    \yesnumber\label{eq:9.2 answer}
+  \end{gather*}
+
+  % φ(x)
+  \begin{gather*}
+    \varphi(x) 
+    = \exp{\left(
+      \int{\left(\frac{-2\,x}{x^2+1}\right)\,\odif{x}}
+    \right)}
+    = \exp{\left(
+        -\int{\frac{\odif{(x^2+1)}}{x^2+1}}
+    \right)}
+    = \\
+    = \exp{-\left(
+        c_1 + \ln{(x^2+1)}
+    \right)}
+    = \frac{1}{c_2\,(x^2+1)}
+    %
+    \yesnumber\label{eq:9.2 phi_x}
+  \end{gather*}
+
+  % prim
+  \begin{gather*}
+    P\left(
+      1\,\varphi(x)
+    \right)
+    = \mathText{using \eqref{eq:9.2 phi_x}}
+    = P\left(
+      \frac{1}{c_2\,(x^2+1)}
+    \right)
+    = (c_3 + \arctan{x})/c_2
+    %
+    \yesnumber\label{eq:9.2 prim}
+  \end{gather*}
+
 \end{exampleBox}
 
 \begin{sectionBox}1{Equação de Bernoulli e a equação de Riccati} % S5
@@ -730,95 +925,217 @@
 
   \subsection{Eq de Bernoulli}
   \begin{BM}
+    \shortintertext{A atribuição}
+    y = z^{1/(1-k)}
+    \shortintertext{Transforma a eq diferencial}
     y' + a(x)\,y = b(x)\,y^k
+    \implies
+    z' + (1-k)\,a(x)\,z = (1-k)\,b(x)
+    \shortintertext{onde \(z\) pode ser encontrado por}
+    z 
+    = \frac{c_0}{\varphi(x)}
+    + \frac{1  }{\varphi(x)}
+    \,\int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
     ; \\
-    z=y^{1-k}
-    \implies z' + (1-k)\,a(x)\,z = (1-k)\,b(x)
+    \varphi(x)
+    = \exp{\left(
+        \int{(1-k)\,a(x)\,\odif{x}}
+    \right)}
   \end{BM}
   Quando encontramos uma EDO que possa ser escrita na forma acima, podemos realizar a substituiçãp de \(z=y^{1-k}\) transformando a EDO em uma equação linear, assim podemos encontrar a solução geral para \textit{z} que pode ser substituida para encontrar a solução de \textit{y} que é a equação original.
 
-  \subsection{Eq de Ricatti}
+  \begin{sectionBox}*3m{workflow} % S
+    \begin{BM}
+      y' + a(x)\,y = b(x)\,y^k
+    \end{BM}
+
+    Solução geral
+    \begin{gather*}
+      y = z^{1/(1-k)}
+      = \left(
+        \frac{c_0}{\varphi(x)}
+        + \frac{1}{\varphi(x)}
+        \,\int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
+      \right)^{1/(1-k)}
+      = \mathText{using 
+        \eqref{eq:w 5.1 phi_x}
+        \eqref{eq:w 5.1 prim}
+      }
+      = \dots
+    \end{gather*}
+
+    Encontrando \(\varphi(x)\)
+    \begin{gather*}
+      \varphi(x)
+      = \exp{\left(
+          \int{(1-k)\,a(x)\,\odif{x}}
+      \right)}
+      = \dots
+      %
+      \yesnumber\label{eq:w 5.1 phi_x}
+    \end{gather*}
+
+    Resolvendo integral
+    \begin{gather*}
+      \int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
+      = \mathText{using \eqref{eq:w 5.1 phi_x}}
+      = \dots
+      %
+      \yesnumber\label{eq:w 5.1 prim}
+    \end{gather*}
+  \end{sectionBox}
+
+  \subsection{Eq de Riccati}
   \begin{BM}
+    \shortintertext{A substituição}
+    y = y_1 + 1/z
+    \shortintertext{Transforma a eq diferencial}
     y' + a(x)\,y = b(x) + c(x)\,y^2
-    ; \\
-    y(x)=y_1(x) + \frac{1}{z(x)}
+    \implies \\
     \implies z' + (2\,c(x)\,y_1-a(x))z = -c(x)
+    \shortintertext{onde \(z\) pode ser encontrado por}
+    z
+    = \frac{c_0}{\varphi(x)}
+    + \frac{  1}{\varphi(x)}
+    \,\int{
+      -c(x)\,\varphi(x)\,\odif{x}
+    }
+    ; \\
+    \varphi(x)
+    = \exp{\left(
+        \int{
+          \left(
+            2\,c(x)\,y_1
+            -a(x)
+          \right)
+          \,\varphi(x)
+          \,\odif{x}
+        }
+    \right)}
   \end{BM}
 \end{sectionBox}
 
 \begin{exampleBox}1{Eq de Bernoulli} % E
   Considere o problma de valores iniciais (PVI)
   \begin{BM}[align*]
-    y' - x\,y &= x\,y^3 ,& y(0) &= 1
+    y' - x\,y = x\,y^3 
+    ,\quad 
+    y(0) = 1
   \end{BM}
+
+  \answer{\eqref{eq:e.10 answer}}
+
+  % tag= e.10
+  % a(x) = (-x)
+  % b(x) = x
+  % k    = 3
+
+  Substituição de Bernoulli
   \begin{gather*}
-      % a(x) = (-x)
-      % b(x) = (x)
-      % k    = 3
-      y: y' + -x\,y = x\,y^3
-      %
-      %
-      %
-      ; \\[1ex]
-      y 
-      = z^{-1/2}
-      = \frac{1}{\sqrt{
-          c_{z,0}\,e^{-x^2}-1
-      }}
-      = \frac{1}{\sqrt{
-          2\,e^{-x^2}-1
-      }}
-      %
-      %
-      %
-      ; \\[1ex]
-      c_{z,0} :
-      y(0)
-      = (z(0))^{-1/2}
-      = (c_{z,0}\,e^{-0^2}-1)^{-1/2}
-      = (c_{z,0}-1)^{-1/2}
-      = 1
-      \implies \\
-      \implies
-      c_{z,0} = 2
-      %
-      %
-      %
-      ; \\[1ex]
-      z=y^{1-3} = y^{-2}
-      \implies \\
-      \implies
-      z' + 2\,x\,z = -2\,x     
-      % 
-      % 
-      % 
-      \\
-      % a(x) = (2\,x)
-      % b(x) = -2
-      % y    = z
-      % x    = x
-      z
-      = \frac{c_{z,0}}{\varphi_{z}(x)}
-      + \frac{1  }{\varphi_{z}(x)}
-      \,\int{-2\,\varphi_{z}(x)\,\odif{x}}
-      %
-      %
-      %
-      = \\[1ex]
-      = \frac{c_{z,0}}{e^{x^2}}
-      + \frac{-2     }{e^{x^2}}
-      \,\int{e^{x^2}\,\odif{x}}
-      = c_{z,0}\,e^{-x^2} - 1
-      %
-      %
-      %
-      ; \\[1ex]
-      \varphi_{z}(x) 
-      = \exp{\left(
-        \int{(2\,x)\,\odif{x}}
-      \right)}
-      = e^{ x^2 }
-    \end{gather*}
+    y = z^{1/(1-3)}
+    \implies
+    y' - x\,y = x\,y^3 
+    % \implies \\
+    \implies
+    z' + (1-k)\,(-x)\,z = (1-k)\,3
+  \end{gather*}
+
+  Solução geral
+  \begin{gather*}
+    y 
+    = z^{1/(1-3)}
+    = \left(
+      \frac{c_0}{\varphi(x)}
+      +\frac{1 }{\varphi(x)}
+      \,\int{
+        (1-3)\,x
+        \,\varphi(x)
+        \,\odif{x}
+      }
+    \right)^{-1/2}
+    = \mathText{using
+      \eqref{eq:e.10 phi_x}
+      \eqref{eq:e.10 prim}
+    }
+    = \left(
+      \frac{c_0}{c_2\,e^{x^2}}
+      +\frac{1 }{c_2\,e^{x^2}}
+      (-c_2)
+      \,\left(
+        e^{x^2}+c_3
+      \right)
+    \right)^{-1/2}
+    = \left(
+      c_5\,e^{-x^2}
+      -1
+    \right)^{-1/2}
+    %
+    \yesnumber\label{eq:e.10 y(x c_5)}
+    = \mathText{using \eqref{eq:e.10 c_5}}
+    = \left(
+      2\,e^{-x^2}
+      -1
+    \right)^{-1/2}
+    %
+    \yesnumber\label{eq:e.10 answer}
+  \end{gather*}
+
+  Encontrando \(c_5\)
+  \begin{gather*}
+    y(0)=1
+    = \mathText{using \eqref{eq:e.10 y(x c_5)}}
+    = \left(
+      c_5\,e^{-0^2}
+      -1
+    \right)^{-1/2}
+    \implies \\
+    \implies
+    c_5 = 1+1^2 = 2
+    %
+    \yesnumber\label{eq:e.10 c_5}
+  \end{gather*}
+
+  Encontrando \(\varphi(x)\)
+  \begin{gather*}
+    \varphi(x)
+    = \exp{\left(
+        \prim_x\left(
+          (1-3)\,(-x)
+        \right)
+    \right)}
+    = \exp{\left(
+        2(c_1+x^2/2)
+    \right)}
+    = c_2\,e^{x^2}
+    % 
+    \yesnumber\label{eq:e.10 phi_x}
+  \end{gather*}
+
+  Integrando
+  \begin{gather*}
+    \int{
+      (1-3)\,x
+      \,\varphi(x)
+      \,\odif{x}
+    }
+    = \mathText{using \eqref{eq:e.10 phi_x}}
+    = -\int{
+      2\,x
+      \,c_2\,e^{x^2}
+      \,\odif{x}
+    }
+    = -c_2
+    \,\int{
+      e^{x^2}
+      \,\odif{\left( x^2 \right)}
+    }
+    = -c_2
+    \,\left(
+      e^{x^2}+c_3
+    \right)
+    % 
+    \yesnumber\label{eq:e.10 prim}
+  \end{gather*}
 \end{exampleBox}
 
 \begin{exampleBox}1{Eq Bernoulli} % E
@@ -838,6 +1155,7 @@
     ;& k &> 0
     ;& y(0) = y_0
   \end{BM}
+
   Incompleta:
   \begin{gather*}
       y: 
@@ -919,59 +1237,137 @@
     \end{gather*}
 \end{exampleBox}
 
-\begin{exampleBox}1{Eq Ricatti} % E11
+\begin{exampleBox}1{Eq Riccati} % E11
+
   Determine a solução do PVI
-  \begin{BM}[align*]
-    y' - y &= -2\,x + \frac{1}{2\,x^2}\,y^2
-    ,& y(1) &= -2
-    ,& x &> 0
+  \begin{BM}
+    y' - y = -2\,x + \frac{1}{2\,x^2}\,y^2
+    ,\quad y(1) = -2
+    ,\quad x > 0
   \end{BM}
   Sabendo que a equação admite a solução \(y=2\,x\)
-  \answer{}
+
+  % tag  = e.12
+  % a(x) = (-1)
+  % b(x) = (-2\,x)
+  % c(x) = \frac{1}{2\,x^2}
+  % y_1(x) = 2\,x
+
+  \answer{\eqref{eq:e.12 answer}}
+
+  Riccati substitution
   \begin{gather*}
-      % a(x) = (-1)
-      % b(x) = (-2\,x)
-      % c(x) = \frac{1}{2\,x^2}
-      % y_1(x) = (-2)
-      y'
-      + (-1)\,y
-      = (-2\,x)
-      + \frac{1}{2\,x^2}\,y^2
-      %
-      %
-      %
-      ; \\[1ex]
-      y(x)
-      = y_1(x)
-      + z^{-1}
-      = -2 + z^{-1}
-      = -2 + (
-        \frac{c-e^x}{2\,x^2\,e^x}
-      )^{-1}
-      = \mathemph{
-        -2 + \frac{2\,x^2\,e^x}{c-e^x}
-      }
-      %
-      %
-      %
-      ; \\[1ex]
-      z: 
-      z' + \left(
-        2
-        \,\frac{1}{2\,x^2}
-        \,(-2)
-        - (-1)
-      \right)\,z
-      z' + \left(
-        1-\frac{2}{x^2}
-      \right)\,z
-      = - \frac{1}{2\,x^2}
-      % 
-      % 
-      % 
-      \\[1ex]
-      z = \dots = \frac{c-e^x}{2\,x^2\,e^x}
-    \end{gather*}
+    y = 2\,x + z^{-1}
+    \implies
+    y' + (-1)\,y = (-2\,x) + \frac{1}{2\,x^2}\,y^2
+    \implies \\
+    \implies
+    z' + \left(2\,\frac{1}{2\,x^2}\,2\,x - (-1)\right)\,z 
+    = z' + (1+2/x)\,z 
+    = -\frac{1}{2\,x^2}
+  \end{gather*}
+
+  General solution
+  \begin{gather*}
+    y
+    = 2\,x + z^{-1}
+    = 2\,x + \left(
+      \frac{c_0}{\varphi(x)}
+      + \frac{1}{\varphi(x)}
+      \,\prim_x{\left(
+        -\frac{1}{2\,x^2}
+        \,\varphi(x)
+      \right)}
+    \right)^{-1}
+    = \mathText{using
+      \eqref{eq:e.12 phi_x}
+      \eqref{eq:e.12 prim}
+    }
+    = 2\,x + \left(
+      \frac{c_0}{e^x\,x^2\,c_3}
+      + \frac{1}{e^x\,x^2\,c_3}
+      \frac{-c_3}{2}\,\left( e^x+c_4 \right)
+    \right)^{-1}
+    = 2\,x + \left(
+      \frac{c_6}{e^{x}\,x^{2}}
+      - \frac{1}{2\,x^2}
+    \right)^{-1}
+    %
+    \yesnumber\label{eq:e.12 y(x c_6)}
+    = \mathText{using \eqref{eq:e.12 c_6}}
+    = 2\,x + \left(
+      \frac{e/4}{e^{x}\,x^{2}}
+      - \frac{1}{2\,x^2}
+    \right)^{-1}
+    %
+    \yesnumber\label{eq:e.12 answer}
+  \end{gather*}
+
+  Finding \(c_6\)
+  \begin{gather*}
+    y(1)=-2
+    = \mathText{using \eqref{eq:e.12 y(x c_6)}}
+    = 2*1 + \left(
+      \frac{c_6}{e^{1}\,1^{2}}
+      - \frac{1}{2*1^2}
+    \right)^{-1}
+    = 2 + \left(
+      \frac{c_6}{e}
+      - \frac{1}{2}
+    \right)^{-1}
+    \implies \\
+    \implies
+    c_6
+    = e\left(
+      (-2-2)^{-1}
+      + \frac{1}{2}
+    \right)
+    = \frac{e}{4}
+    % 
+    \yesnumber\label{eq:e.12 c_6}
+  \end{gather*}
+
+  Finding \(\varphi(x)\)
+  \begin{gather*}
+    \varphi(x)
+    = \exp{\left(
+      \prim_x{(
+        1+2/x
+      )}
+    \right)}
+    = \exp{\left(
+      x
+      +c_1
+      +2\,(
+        c_2 + \ln{x}
+      )
+    \right)}
+    = 
+    e^x\,x^2\,c_3
+    %
+    \yesnumber\label{eq:e.12 phi_x}
+  \end{gather*}
+
+  Integrating
+  \begin{gather*}
+    \prim_x{\left(
+      -\frac{1}{2\,x^2}
+      \,\varphi(x)
+    \right)}
+    = \mathText{using \eqref{eq:e.12 phi_x}}
+    = \prim_x{\left(
+      -\frac{1}{2\,x^2}
+      \,e^x\,x^2\,c_3
+    \right)}
+    = -\frac{c_3}{2}
+    \,\prim_x{\left(
+      e^x
+    \right)}
+    = 
+    -\frac{c_3}{2}\,\left( e^x+c_4 \right)
+    %
+    \yesnumber\label{eq:e.12 prim}
+  \end{gather*}
 \end{exampleBox}
 
 \begin{sectionBox}1{Operador de Derivação \(\mdif{}\)} % S
@@ -1075,98 +1471,107 @@
 
 \begin{exampleBox}1{Baixamento de grau de uma Eq lin homogenea} % Eindex
   Determine a solução geral da equação
-  \begin{BM}[align*]
-    P\,y &= 0
-    ;& P &= (\mdif[2]{x}+\frac{1}{x^2}\mdif[1]{x}-\frac{1}{x^2})
-    ;& x &> 0
+  \begin{BM}
+    y'' + y'/x-y/x^2 = 0
+    ,\quad x>0
   \end{BM}
   Sabendo que \(\varphi(x) = x\) é uma solução.
+  
   \answer{}
+
+  Solução geral
   \begin{gather*}
-      % P = \mdif[2]{x}+\frac{1}{x}\mdif[1]{x}-\frac{1}{x^2}
-      % φ(x) = x
-      P\,y
-      = \left(
-        \mdif[2]{x}+\frac{1}{x}\mdif[1]{x}-\frac{1}{x^2}
-      \right)
-      \,y
-      = 0
-      %
-      %
-      %
-      ; \\[1ex]
-      y 
-      = \varphi(x)\,\int{z(x)\,\odif{x}}
-      = x\,\int{
-        \frac{c}{x^3}\odif{x}
-      }
-      = x
-      \,c
-      \,\left(
-        c_1
-        + \frac{x^{-2}}{-2}
-      \right)
-      = x \,c_2
-      + \frac{c_3}{x}
-      %
-      %
-      %
-      ; \\[1ex]
-      z = \frac{c}{x^3}
-      ; \\ c \in \mathbb{R}
-      %
-      %
-      %
-      ; \\[1ex]
-      P\,y
-      = \left(
-        \mdif[2]{x}+\frac{1}{x}\mdif[1]{x}-\frac{1}{x^2}
-      \right)
-      \,\left(
-        x\,\int{ z(x)\,\odif{x} }
-      \right)
-      = \\ 
-      = 
-      (2\,z + x\,z')
-      +\frac{1}{x}
-      \,\left(
-        \int{z(x)\,\odif{x}}
-        + x\,z
-      \right)
-      -\frac{1}{x^2}
-      \,\left(
-        x\,\int{ z(x)\,\odif{x} }
-      \right)
-      = \\ 
-      = 3\,z + x\,z'
-      = 0
-      %
-      %
-      %
-      ; \\[1ex]
-      \mdif[1]{x}{y}
-      = \mdif[1]{x}{\left(
-        \varphi(x)
-        \,\int{z(x)\,\odif{x}}
+    y
+    = \varphi(x)\,\prim_x{(z)}
+    = x\,\prim_x{(z)}
+    % 
+    \yesnumber\label{eq:e.13 y->z}
+    = \mathText{using \eqref{eq:e.13 z(x)}}
+    = x\,\prim_x{\left(
+        \frac{c_3}{x^3} 
+    \right)}
+    = x\,c_3\,\left(\frac{1}{2\,x^2}+c_4\right)
+    = \frac{c_5}{x}+x\,c_6
+  \end{gather*}
+
+  Substitution \(y \to z\)
+  \begin{gather*}
+    y'' + y'/x-y/x^2 = 0
+    \implies \mathText{using
+      \eqref{eq:e.13 y->z}
+      \eqref{eq:e.13 Dx(y)}
+      \eqref{eq:e.13 D2x(y)}
+    }
+    \implies
+    (
+      2\,z + x\,z'
+    )
+    + \frac{1}{x}(
+      \prim_x{(z)} + x\,z
+    )
+    - \frac{1}{x^2}(
+      x\,\prim_x{(z)} 
+    )
+    = \\
+    = 2\,z 
+    + x\,z'
+    + \prim_x{(z)}/x
+    + z
+    - \prim_x{(z)}/x
+    % = \\
+    = x\,z' + 3\,z 
+    = 0
+    \implies
+    z' + \frac{3}{x}\,z = 0
+    % 
+    \yesnumber\label{eq:e.13 eq z}
+  \end{gather*}
+  
+  Finding \(\mdif[1]{x}{y},\mdif[2]{x}{y}\)
+  \begin{gather*}
+    \mdif{x}{y}
+    = \mathText{using \eqref{eq:e.13 y->z}}
+    = \mdif{x}{\varphi(x)}
+    \,\prim_x{(z)}
+    + \varphi(x)\,z
+    = \mdif{x}{\varphi(x)}
+    \,\prim_x{(z)}
+    + \varphi(x)\,z
+    = 
+    \prim_x{(z)} + x\,z
+    % 
+    \yesnumber\label{eq:e.13 Dx(y)}
+    ;\\
+    \mdif[2]{x}{y}
+    = \mathText{using \eqref{eq:e.13 Dx(y)}}
+    = \mdif{x}{(\prim_x{(z)} + x\,z)}
+    = 
+    2\,z + x\,z'
+    % 
+    \yesnumber\label{eq:e.13 D2x(y)}
+  \end{gather*}
+
+  Solving \eqref{eq:e.13 eq z}
+  \begin{gather*}
+    z
+    = c_0\,(\varphi_z(x))^{-1}
+    = c_0\,\left(
+      \exp{\left(
+          \int{(3/x)\,\odif{x}}
       \right)}
-      = \mdif[1]{x}{\left(
-        x
-        \,\int{z(x)\,\odif{x}}
-      \right)}
-      = \int{z(x)\,\odif{x}}
-      + x\,z
-      %
-      %
-      %
-      ; \\[1ex]
-      \mdif[2]{x}{y}
-      = \mdif[2]{x}{\left(
-        \varphi(x)
-        \,\int{z(x)\,\odif{x}}
-      \right)}
-      = z + z + x\,z'
-      = 2\,z + x\,z'
-    \end{gather*}
+    \right)^{-1}
+    = c_0\,\left(
+      e^{3\,(\ln{(x)}+c_1)}
+    \right)^{-1}
+    = c_0\,(
+      c_2\,x^3
+    )^{-1}
+    = \\
+    = 
+    \frac{c_3}{x^3} 
+    %
+    \yesnumber\label{eq:e.13 z(x)}
+  \end{gather*}
 \end{exampleBox}
 
 \begin{sectionBox}1{Wronskiano: check dependencia linear} % Sindex
@@ -1245,35 +1650,35 @@
     y" + 9\,y = 1/\cos(3\,x)
     ;\quad x\in\myrange*{-\pi/6,\pi/6}
   \end{BM}
-  As funções \(\cos{(3\,x)}\text{ e }\sin{(3\,x)}\) são duas soluções linearmente idependentes da equação homogénea
-  \begin{BM}
-    y'' + 9\,y = 0
-  \end{BM}
-  Pelo que seu integral geral será dado por
-  \begin{BM}
-    y = c_1\,\cos{(3\,x)} + c_2\,\sin{(3\,x)}
-    ;\quad c_1,c_2\in\mathbb{R}
-  \end{BM}
+  % As funções \(\cos{(3\,x)}\text{ e }\sin{(3\,x)}\) são duas soluções linearmente idependentes da equação homogénea
+  % \begin{BM}
+  %   y'' + 9\,y = 0
+  % \end{BM}
+  % Pelo que seu integral geral será dado por
+  % \begin{BM}
+  %   y = c_1\,\cos{(3\,x)} + c_2\,\sin{(3\,x)}
+  %   ;\quad c_1,c_2\in\mathbb{R}
+  % \end{BM}
   Utilizemos o método da variação das constantes arbitrárias para determinar o integral geral da equação completa
 
   \answer{}
-
   % tag    = 14
   % a_0(x) = 9
   % a_1(x) = 0
   % a_2(x) = 1
   % f(x)   = \frac{1}{\cos{(3\,x)}}
-  % y_1(x) = \cos{(3\,x)}
-  % y_2(x) = \sin{(3\,x)}
+
+  Solução geral
   \begin{gather*}
     y
+    = \mathText{using \eqref{eq:e.14 y_h}}
     = c_1(x)\,y_1(x)
     + c_2(x)\,y_2(x)
     = 
     \mathText{using
-      \eqref{eq:14-y_1 y_2}
-      \eqref{eq:14-c_1}
-      \eqref{eq:14-c_2}
+      \eqref{eq:e.14.2 y_1 y_2}
+      \eqref{eq:e.14.2 c_1}
+      \eqref{eq:e.14.2 c_2}
     }
     = \left(
       \cos{(3\,x)}
@@ -1289,6 +1694,97 @@
     \right)
   \end{gather*}
 
+  Solução da equação homogenea análoga
+  \begin{sectionBox}*3m{Solução da equação homogenea análoga} % Sindex
+    \begin{BM}
+      y'' + 9\,y = 0
+    \end{BM}
+
+    % tag  = 14.1
+    % P    = \mdif[2] + 9
+
+    % \answer{\eqref{eq:e.14.1 answer}}
+
+    General Solution
+    \begin{gather*}
+      y 
+      = \varphi(x)\,\prim_x{(z)}
+      = \,\prim_x{(z)}
+      %
+      \yesnumber\label{eq:e.14.1 y->z}
+      %
+      = \mathText{using \eqref{eq:e.14.1 z}}
+      = \,\prim_x{\left(
+        z
+      \right)}
+      %
+      \yesnumber\label{eq:e.14 y_h}
+    \end{gather*}
+
+    Substitution \(y \to z\)
+    \begin{gather*}
+      P(x)\,y 
+      = \mathText{using \eqref{eq:e.14.1 y->z}}
+      = \mdif[2] + 9
+      \,(
+        y
+      )
+      = \mathText{using 
+        \eqref{eq:e.14.1 D1x(y)}
+        \eqref{eq:e.14.1 D2x(y)}
+      }
+      = 0
+      %
+      \yesnumber\label{eq:e.14.1 eq z}
+    \end{gather*}
+
+    Finding \(
+      \mdif{x}{y},
+      \mdif[2]{x}{y}
+    \)
+    \begin{gather*}
+      \mdif{x}{y}
+      = \mdif{x}{(
+        \,\prim_x{(z)}
+      )}
+      = \mdif{x}{(
+        \,\prim_x{(z)}
+      )}
+      %
+      \yesnumber\label{eq:e.14.1 D1x(y)}
+      %
+      %
+      %
+      ;\\
+      \mdif[2]{x}{y}
+      = \mathText{using \eqref{eq:e.14.1 D1x(y)}}
+      = \mdif{x}{\left(
+        \mdif{x}{y}
+      \right)}
+      %
+      \yesnumber\label{eq:e.14.1 D2x(y)}
+      % %
+      % %
+      % %
+      % ;\\
+      % \mdif[3]{x}{y}
+      % = \mathText{using \eqref{eq:e.14.1 D2x(y)}}
+      % = \mdif{x}{\left(
+      %   \mdif[2]{x}{y}
+      % \right)}
+      % %
+      % \yesnumber\label{eq:e.14.1 D3x(y)}
+    \end{gather*}
+
+    Solving \eqref{eq:e.14.1 eq z}
+    \begin{gather*}
+      z
+      %
+      \yesnumber\label{eq:e.14.1 z}
+    \end{gather*}
+    
+  \end{sectionBox}
+
   % y_1 y_2
   \begin{gather*}
     \begin{cases}
@@ -1296,14 +1792,14 @@
       \\
       y_2 = \sin{(3\,x)}
     \end{cases}
-    \yesnumber\label{eq:14-y_1 y_2}
+    \yesnumber\label{eq:e.14.2 y_1 y_2}
   \end{gather*}
 
   % c_1,c_2
   \begin{gather*}
     c_1(x) 
     = \int{c_1'(x)\,\odif{x}}
-    = \mathText{Using \eqref{eq:14-c_1'}}
+    = \mathText{using \eqref{eq:e.14.2 c_1'}}
     = \int{\left(
         3\,\frac{\sin{(3\,x)}}{\cos{(3\,x)}}
     \right)\,\odif{x}}
@@ -1312,22 +1808,22 @@
     }
     = -\ln{(\cos{(3\,x)})}-c_3
     % 
-    \yesnumber\label{eq:14-c_1}
+    \yesnumber\label{eq:e.14.2 c_1}
     %
     %
     ; \\[1ex]
     c_2(x) 
     = \int{c_2'(x)\,\odif{x}}
-    = \mathText{Using \eqref{eq:14-c_2'}}
+    = \mathText{using \eqref{eq:e.14.2 c_2'}}
     = \int{( 1/3)\,\odif{x}}
     = x/3 + c_4
     % 
-    \yesnumber\label{eq:14-c_2}
+    \yesnumber\label{eq:e.14.2 c_2}
   \end{gather*}
 
   % c_1',c_2'
   \begin{gather*}
-    \mathText{Using \eqref{eq:14-eq_sytem}}
+    \mathText{using \eqref{eq:e.14.2 eq_sytem}}
     c_1'(x)
     = \frac{1}{W(y_1,y_2)}
     \,\begin{vmatrix}
@@ -1338,8 +1834,8 @@
     \end{vmatrix}
     = 
     \mathText{using 
-      \eqref{eq:14-w}
-      \eqref{eq:14-D_x(y_2)}
+      \eqref{eq:e.14.2 w}
+      \eqref{eq:e.14.2 D_x(y_2)}
     }
     = \frac{1}{3}
     \,\begin{vmatrix}
@@ -1349,12 +1845,12 @@
       &  3\,\cos{(3\,x)}
     \end{vmatrix}
     = 3\,\frac{\sin{(3\,x)}}{\cos{(3\,x)}}
-    \yesnumber\label{eq:14-c_1'}
+    \yesnumber\label{eq:e.14.2 c_1'}
     %
     %
     %
     \\[3ex]
-    \mathText{Using \eqref{eq:14-eq_sytem}}
+    \mathText{using \eqref{eq:e.14.2 eq_sytem}}
     c_2'(x)
     = \frac{1}{W(y_1,y_2)}
     \,\begin{vmatrix}
@@ -1365,8 +1861,8 @@
     \end{vmatrix}
     =
     \mathText{using 
-      \eqref{eq:14-w}
-      \eqref{eq:14-D_x(y_1)}
+      \eqref{eq:e.14.2 w}
+      \eqref{eq:e.14.2 D_x(y_1)}
     }
     = \frac{1}{3}
     \,\begin{vmatrix}
@@ -1377,7 +1873,7 @@
     \end{vmatrix}
     = 1/3
     % 
-    \yesnumber\label{eq:14-c_2'}
+    \yesnumber\label{eq:e.14.2 c_2'}
   \end{gather*}
 
   % Wronskiano
@@ -1391,8 +1887,8 @@
     \end{bmatrix}
     =
     \mathText{using 
-      \eqref{eq:14-D_x(y_1)}
-      \eqref{eq:14-D_x(y_2)}
+      \eqref{eq:e.14.2 D_x(y_1)}
+      \eqref{eq:e.14.2 D_x(y_2)}
     }
     = \det\begin{bmatrix}
       \cos{(3\,x)}
@@ -1404,7 +1900,7 @@
     +3\,\sin^2{(3\,x)}
     = 3
     % 
-    \yesnumber\label{eq:14-w}
+    \yesnumber\label{eq:e.14.2 w}
   \end{gather*}
 
   % Sistema de equações da regra de crammer
@@ -1419,7 +1915,7 @@
         + c_2'(x)\,\mdif[1]{x}\,y_2(x)
       } &=& \frac{1}{\cos{(3\,x)}}
     \end{Bmatrix}
-    \yesnumber\label{eq:14-eq_sytem}
+    \yesnumber\label{eq:e.14.2 eq_sytem}
   \end{gather*}
 
   % y_1',y_2'
@@ -1427,14 +1923,14 @@
     \mdif[1]{x}\,y_1
     = \mdif[1]{x}\,\cos{(3\,x)}
     = -3\,\sin{(3\,x)}
-    \yesnumber\label{eq:14-D_x(y_1)}
+    \yesnumber\label{eq:e.14.2 D_x(y_1)}
     %
     %
     ; \\[1ex]
     \mdif[1]{x}\,y_2
     = \mdif[1]{x}\,\sin{(3\,x)}
     = +3\,\cos{(3\,x)}
-    \yesnumber\label{eq:14-D_x(y_2)}
+    \yesnumber\label{eq:e.14.2 D_x(y_2)}
   \end{gather*}
 
 \end{exampleBox}
