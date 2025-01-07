@@ -12,7 +12,8 @@
 {Equações Diferenciais Ordinárias (EDO)} % Subfile Title
 {Equações Diferenciais Ordinárias (EDO)} % Part Title
 
-\begin{sectionBox}1{EDO de Primeira Ordem} % S1
+\begin{sectionBox}1m{EDO de Primeira Ordem} % S1
+
   \begin{BM}
     F(x,y(x),y'(x)) = 0
   \end{BM} 
@@ -22,11 +23,11 @@
     \item \((x,\phi(x),\phi'(x))\in D, \quad \forall\,x\in I\)
     \item \(F(x,\phi(x),\phi'(x)) = 0, \quad \forall\,x\in I\)
   \end{enumerate}
-
+  
   \paragraph*{Ordem de uma equação diferencial} é a ordem da derivada mais elevada referida na equação
 
   \begin{multicols}{2}
-    \begin{exampleBox}1{} % E1.1
+    \begin{exampleBox}1b{} % E1.1
       A equação
       \begin{BM}
         y' - \frac{y}{x} = x\,e^x
@@ -38,7 +39,7 @@
       são soluções em \(\myrange*{0,\infty}\) desta equação.
     \end{exampleBox}
 
-    \begin{exampleBox}1{} % E1.2
+    \begin{exampleBox}1b{} % E1.2
       A equação
       \begin{BM}
         y" + 4\,y = 0
@@ -60,11 +61,11 @@
   \end{BM}
   Com \textit{f} definida no conjunto aberto \(A\subset\mathbb{R}^2\).
   As equações de primeira ordem na forma normal admitem uma interpretação geométricas relativamente simples e que \emph{permite ter uma ideia aproxiamada dos gráficos das soluções} destas esquações.
-
+  
   \subsection*{Campo de direções da equação}
   Com uma equação diferencial de primeira ordem na forma normal definida no conjunto aberto \(A\subset\mathbb{R}^2\), se a cada ponto \((x,y)\) de \textit{A} se associar a direção das retas de declive igual a \(f(x,y)\), se obtem aquilo a que usualmente se chama de campo de direções da equação.
 
-  \begin{exampleBox}1{Campo de direções da equação} % E1.3
+  \begin{exampleBox}1b{Campo de direções da equação} % E1.3
     \begin{BM}
       y'=-y
     \end{BM}
@@ -107,7 +108,7 @@
   \end{exampleBox}
 \end{sectionBox}
 
-\begin{sectionBox}1{Equação autonoma} % S2
+\begin{sectionBox}1m{Equação autonoma} % S2
   Uma EDO em que não aparece explicitamente a variável independente.
   Se for \textit{y} a função icógnita e \textit{x} a variável independente, uma equa;cão diferencial autónoma de primeira ordem é uma equação da forma \(F(y,y')=0\) ou na forma normal:
   \begin{BM}
@@ -132,7 +133,7 @@
   \end{align*}
 \end{sectionBox}
 
-\begin{exampleBox}1{Pontos de equilíbrio} % E4
+\begin{exampleBox}1m{Pontos de equilíbrio} % E4
   Considere-se a equação autónoma
   \begin{BM}
     \odv{y}{x}=y(a-b\,y); a,b\in\mathbb{R}^+
@@ -266,7 +267,7 @@
   \end{align*}
   Podemos dizer que \(y(x)=0\) é um ponto de equilíbrio instável e que \(y(x)=a/b\) é um ponto de equilíbrio estável
 \end{exampleBox}
-\begin{exampleBox}1{Equilíbrio semiestável} % E6
+\begin{exampleBox}1m{Equilíbrio semiestável} % E6
   A equação autónoma
   \begin{BM}
     \odv{y}{x} = (y-1)^2
@@ -324,16 +325,16 @@
   Podemos caracterizar esse ponto como \emph{ponto de equilíbrio semiestável}
 \end{exampleBox}
 
-\begin{sectionBox}*2{Soluções implicitas e explicitas} % S
+\begin{sectionBox}*2m{Soluções implicitas e explicitas} % S
   \begin{multicols}{2}
-    \begin{sectionBox}*2b{Soluções explicitas}
+    \begin{sectionBox}*2{Soluções explicitas}
       \begin{BM}
         y = f(x)
       \end{BM}
       \textit{y} isolado
     \end{sectionBox}
 
-    \begin{sectionBox}*2b{Soluções implicitas}
+    \begin{sectionBox}*2{Soluções implicitas}
       \begin{BM}
         G(x,y)=0
       \end{BM}
@@ -341,9 +342,7 @@
     \end{sectionBox}
   \end{multicols}
 
-  \vspace{-3ex}
-
-  \begin{exampleBox}1m{} % E
+  \begin{exampleBox}1b{} % E
     Da equação
     \begin{BM}
       y^2\,y'=x^2
@@ -367,7 +366,7 @@
   \end{exampleBox}
 \end{sectionBox}
 
-\begin{sectionBox}*2{Famílias de Soluções} % S
+\begin{sectionBox}*2m{Famílias de Soluções} % S
   \begin{BM}
     G(x,y,z) = 0
   \end{BM}
@@ -380,14 +379,14 @@
   \paragraph*{Integral Geral} Uma família de soluções que define todas as soluções de uma EDO para um intervalo \textit{I}
 \end{sectionBox}
 
-\begin{sectionBox}1{Equação Linear de Primeira Ordem} % S2
+\begin{sectionBox}1m{Equação Linear de Primeira Ordem} % S2
   \begin{BM}
     y' = f(x,y)
     \iff y' + p(x)y = q(x)
   \end{BM}
   Com \(p(x)\) e \(q(x)\) funções contínuas num intervalo aberto \(I \subseteq \mathbb{R}\)
 
-  \begin{exampleBox}*1{Exemplo} % E
+  \begin{exampleBox}*1b{Exemplo} % E
     \begin{flalign*}
       y' + 2\,x\,y = x^3
       \begin{cases}
@@ -401,7 +400,7 @@
   Equação linear em que \(q(x) = 0\), quando em uma equação linear completa (\(q(x) \neq 0 \land p(x) \neq 0\)) substituirmos \(q(x)\) por 0, obtemos a equação linear homogénea associada.
 \end{sectionBox}
 
-\begin{sectionBox}*2{Solução geral de equações lineáres de primeira ordem} % S
+\begin{sectionBox}*2m{Solução geral de equações lineáres de primeira ordem} % S
   \begin{BM}
     y' + a(x)\,y = b(x)
   \end{BM}
@@ -413,46 +412,52 @@
   % x    = x
 
   General solution
-  \begin{gather*}
-    y
-    = \frac{c_0}{\varphi(x)}
-    + \frac{1  }{\varphi(x)}
-    \,\int{b(x)\,\varphi(x)\,\odif{x}}
-    %
-    %
-    %
-    = \mathText{using 
-      \eqref{eq:3.w phi_x}
-      \eqref{eq:3.w prim}
-    }
-    = \dots
-    %
-    \yesnumber\label{eq:3.w answer}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = \frac{c_0}{\varphi(x)}
+      + \frac{1  }{\varphi(x)}
+      \,\int{b(x)\,\varphi(x)\,\odif{x}}
+      %
+      %
+      %
+      = \mathText{using 
+        \eqref{eq:3.w phi_x}
+        \eqref{eq:3.w prim}
+      }
+      = \dots
+      %
+      \yesnumber\label{eq:3.w answer}
+    \end{gather*}
+  \end{tcolorbox}
 
   Finding \(\varphi(x)\)
-  \begin{gather*}
-    \varphi(x) 
-    = \exp{\left(
-        \int{a(x)\,\odif{x}}
-    \right)}
-    = \dots
-    %
-    \yesnumber\label{eq:3.w phi_x}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \varphi(x) 
+      = \exp{\left(
+          \int{a(x)\,\odif{x}}
+      \right)}
+      = \dots
+      %
+      \yesnumber\label{eq:3.w phi_x}
+    \end{gather*}
+  \end{tcolorbox}
 
   Integrating
-  \begin{gather*}
-    \prim_x{\left(
-        b(x)\,\varphi(x)
-    \right)}
-    = \mathText{using \eqref{eq:3.w phi_x}}
-    = \dots
-    %
-    \yesnumber\label{eq:3.w prim}
-  \end{gather*}
-  \vspace{-3ex}
-  \begin{sectionBox}*3m{Demonstração} % Sindex
+  \begin{tcolorbox}
+    \begin{gather*}
+      \prim_x{\left(
+          b(x)\,\varphi(x)
+      \right)}
+      = \mathText{using \eqref{eq:3.w phi_x}}
+      = \dots
+      %
+      \yesnumber\label{eq:3.w prim}
+    \end{gather*}
+  \end{tcolorbox}
+
+  \begin{sectionBox}*3b{Demonstração} % Sindex
     \begin{gather*}
       y' + p(x)\,y = q(x)
       \implies
@@ -491,7 +496,7 @@
 
 \end{sectionBox}
 
-\begin{exampleBox}1{} % E
+\begin{exampleBox}1m{} % E
   Considere a equação
   \begin{BM}
     y' + (1-1/x)\,y = 2\,x 
@@ -561,7 +566,7 @@
 
 \end{exampleBox}
 
-\begin{exampleBox}1{} % E8
+\begin{exampleBox}1m{} % E8
   Na investigação de um homicídio, é, muitas vezes importante estimar o instante em que a morte ocorreu. A partir de observações experimentais, a lei de arrefecimento de Newton estabelece, com uma exatidão satisfatória, que a taxa de variação da temperatura \(T(t)\) de um corpo em arrefecimento é proporcional à diferença entre a temperatura desse corpo e a temperatura constante \(T_a\) do meio ambiente, isto é:
   \begin{BM}
     \odv{T}{t} = -k\,(T-T_a)
@@ -572,129 +577,146 @@
 
   \answer{}
 
-  \begin{gather*}
-    t:T(t) = 37
-    %
-    \yesnumber\label{eq:8-T=37}
-    \cong \mathText{using \eqref{eq:8 t(t)}}
-    \cong 10\,e^{-t\,\num{0.601986402162968}}
-    + 20
-    \implies
-    t 
-    \cong -\ln(1.7)/\num{0.601986402162968}
-    \cong \qty{-0.881462187776328}{\hour}
-    \cong \qty{-52.887731266579699}{\minute}
-  \end{gather*}
-  Desenvolvendo \eqref{eq:8-dTdt}
-  \begin{gather*}
-    \odv{T}{t} 
-    = -k\,(T-T_a)
-    = -k\,T+k\,T_a
-    = -k\,T+k\,20
-    \implies
-    \odv{T}{t}
-    + k\,T
-    = k\,20
-    %
-    \yesnumber\label{eq:8-dTdt 2}
-  \end{gather*}
+  Encontrando tempo de morte
+  \begin{tcolorbox}
+    \begin{gather*}
+      t:T(t) = 37
+      %
+      \yesnumber\label{eq:8-T=37}
+      \cong \mathText{using \eqref{eq:8 t(t)}}
+      \cong 10\,e^{-t\,\num{0.601986402162968}}
+      + 20
+      \implies
+      t 
+      \cong -\ln(1.7)/\num{0.601986402162968}
+      \cong \qty{-0.881462187776328}{\hour}
+      \cong \qty{-52.887731266579699}{\minute}
+    \end{gather*}
+  \end{tcolorbox}
 
-  Encontrando \(T(t)\) a partir de \eqref{eq:8-dTdt 2}
+  Desenvolvendo \eqref{eq:8-dTdt}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \odv{T}{t} 
+      = -k\,(T-T_a)
+      = -k\,T+k\,T_a
+      = -k\,T+k\,20
+      \implies
+      \odv{T}{t}
+      + k\,T
+      = k\,20
+      %
+      \yesnumber\label{eq:8-dTdt 2}
+    \end{gather*}
+  \end{tcolorbox}
 
   % tag  = 8
   % a(x) = k
   % b(x) = k\,20
   % y    = T
   % x    = t
-  \begin{gather*}
-    T
-    = \frac{c_0}{\varphi(t)}
-    + \frac{1  }{\varphi(t)}
-    \,\int{k\,20\,\varphi(t)\,\odif{t}}
-    %
-    %
-    %
-    = \mathText{using 
-      \eqref{eq:8 phi_x}
-      \eqref{eq:8-prim}
-    }
-    = \frac{c_0}{c_1\,e^{k\,t}}
-    + \frac{1  }{c_1\,e^{k\,t}}
-    k\,20\,c_1\,\left(
-      c_2+e^{k\,t}/k
-    \right)
-    = (c_0/c_1)\,e^{-k\,t}
-    + c_2\,k\,20\,e^{-k\,t}
-    + 20
-    = \\
-    = c_3\,e^{-k\,t}
-    + 20
-    %
-    \yesnumber\label{eq:8 T(t c_3 k)}
-    \cong \mathText{using \eqref{eq:8 c_3}\eqref{eq:8 k}}
-    \cong 10\,e^{-t\,\num{0.601986402162968}}
-    + 20
-    %
-    \yesnumber\label{eq:8 t(t)}
-  \end{gather*}
 
-  % k
-  \begin{gather*}
-    T(2) = 23
-    = \mathText{using \eqref{eq:8 T(t c_3 k)}\eqref{eq:8 c_3}}
-    = 10\,e^{-k\,2}
-    + 20
-    \implies
-    k 
-    = -\ln(0.3)/2
-    \cong \num{0.601986402162968}
-    %
-    \yesnumber\label{eq:8 k}
-  \end{gather*}
+  Solução geral \(T(t)\) a partir de \eqref{eq:8-dTdt 2}
+  \begin{tcolorbox}
+    \begin{gather*}
+      T
+      = \frac{c_0}{\varphi(t)}
+      + \frac{1  }{\varphi(t)}
+      \,\int{k\,20\,\varphi(t)\,\odif{t}}
+      %
+      %
+      %
+      = \mathText{using 
+        \eqref{eq:8 phi_x}
+        \eqref{eq:8-prim}
+      }
+      = \frac{c_0}{c_1\,e^{k\,t}}
+      + \frac{1  }{c_1\,e^{k\,t}}
+      k\,20\,c_1\,\left(
+        c_2+e^{k\,t}/k
+      \right)
+      = (c_0/c_1)\,e^{-k\,t}
+      + c_2\,k\,20\,e^{-k\,t}
+      + 20
+      = \\
+      = c_3\,e^{-k\,t}
+      + 20
+      %
+      \yesnumber\label{eq:8 T(t c_3 k)}
+      \cong \mathText{using \eqref{eq:8 c_3}\eqref{eq:8 k}}
+      \cong 10\,e^{-t\,\num{0.601986402162968}}
+      + 20
+      %
+      \yesnumber\label{eq:8 t(t)}
+    \end{gather*}
+  \end{tcolorbox}
 
-  % c_3
-  \begin{gather*}
-    T(0) = 30
-    = \mathText{using \eqref{eq:8 T(t c_3 k)}}
-    = c_3\,e^{-k*0}
-    + 20
-    = c_3
-    + 20
-    \implies
-    c_3 = 10
-    % 
-    \yesnumber\label{eq:8 c_3}
-  \end{gather*}
+  Encontrando constantes \(k,c_3\)
+  \begin{tcolorbox}
+    % k
+    \begin{gather*}
+      T(2) = 23
+      = \mathText{using \eqref{eq:8 T(t c_3 k)}\eqref{eq:8 c_3}}
+      = 10\,e^{-k\,2}
+      + 20
+      \implies
+      k 
+      = -\ln(0.3)/2
+      \cong \num{0.601986402162968}
+      %
+      \yesnumber\label{eq:8 k}
+      % 
+      % 
+      % 
+      ;\\
+      T(0) = 30
+      = \mathText{using \eqref{eq:8 T(t c_3 k)}}
+      = c_3\,e^{-k*0}
+      + 20
+      = c_3
+      + 20
+      \implies
+      c_3 = 10
+      % 
+      \yesnumber\label{eq:8 c_3}
+    \end{gather*}
+  \end{tcolorbox}
 
-  % φ(x)
-  \begin{gather*}
-    \varphi(t) 
-    = \exp{\left(
-      \int{k\,\odif{t}}
-    \right)}
-    = c_1\,e^{ k\,t }
-    %
-    \yesnumber\label{eq:8 phi_x}
-  \end{gather*}
-  % prim
-  \begin{gather*}
-    P\left(
-      k\,20\,\varphi(t)
-    \right)
-    = \mathText{using \eqref{eq:8 phi_x}}
-    = P\left(
-      k\,20\,c_1\,e^{k\,t}
-    \right)
-    = k\,20\,c_1\,\left(
-      c_2+e^{k\,t}/k
-    \right)
-    %
-    \yesnumber\label{eq:8-prim}
-  \end{gather*}
+  Resolvendo \(\varphi(x)\)
+  \begin{tcolorbox}
+    % φ(x)
+    \begin{gather*}
+      \varphi(t) 
+      = \exp{\left(
+          \int{k\,\odif{t}}
+      \right)}
+      = c_1\,e^{ k\,t }
+      %
+      \yesnumber\label{eq:8 phi_x}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Integrando
+  \begin{tcolorbox}
+    \begin{gather*}
+      P\left(
+        k\,20\,\varphi(t)
+      \right)
+      = \mathText{using \eqref{eq:8 phi_x}}
+      = P\left(
+        k\,20\,c_1\,e^{k\,t}
+      \right)
+      = k\,20\,c_1\,\left(
+        c_2+e^{k\,t}/k
+      \right)
+      %
+      \yesnumber\label{eq:8-prim}
+    \end{gather*}
+  \end{tcolorbox}
 
 \end{exampleBox}
 
-\begin{sectionBox}1{Método de Variação das constantes Eq Diff de ordem 1} % S
+\begin{sectionBox}1m{Método de Variação das constantes Eq Diff de ordem 1} % S
   Um metodo alternativo para resolver a mesma equação diferencial linear de primeira ordem
   \begin{BM}
     y' + a(x)\,y = b(x)
@@ -760,7 +782,7 @@
   Mesmo \(y_i\) aparecer como uma solução particular em que \(c_0=1\), por estarmos trabalhando com uma solução arbitrária, isso não impede de ser qualquer solução particular, da no mesmo ao final das contas
 \end{sectionBox}
 
-\begin{exampleBox}1{} % E
+\begin{exampleBox}1m{} % E
 
   \begin{BM}
     y' - \frac{2x}{x^2+1}\,y = 1
@@ -770,157 +792,102 @@
   \answer{}
 
   Solução geral
-  \begin{gather*}
-    y
-    = \frac{C(x)}{\varphi(x)}
-    %
-    \yesnumber\label{eq:e.9 y(C(x))}
-    = \mathText{using
-      \eqref{eq:e.9 C(x)}
-      \eqref{eq:e.9 phi_x}
-    }
-    = \frac{
-      c_1\,(
-      \arctan{x}+c_2
-    )    
-    }{
-      \frac{c_1}{x^2+1}
-    }
-    = \left(x^2+1\right)
-    \,\left(
-      \arctan{x}
-      + c_2
-    \right)
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = \frac{C(x)}{\varphi(x)}
+      %
+      \yesnumber\label{eq:e.9 y(C(x))}
+      = \mathText{using
+        \eqref{eq:e.9 C(x)}
+        \eqref{eq:e.9 phi_x}
+      }
+      = \frac{
+        c_1\,(
+          \arctan{x}+c_2
+        )    
+      }{
+        \frac{c_1}{x^2+1}
+      }
+      = \left(x^2+1\right)
+      \,\left(
+        \arctan{x}
+        + c_2
+      \right)
+    \end{gather*}
+  \end{tcolorbox}
 
   Finding \(C(x)\)
-  \begin{gather*}
-    y'-\frac{2\,x}{x^2+1}
-    = \mathText{using 
-      \eqref{eq:e.9 y(C(x))}
-      \eqref{eq:e.9 phi_x}
-    }
-    = \mdif{x}{\left(
-        \frac{C(x)}{\frac{c_1}{x^2+1}}
-    \right)}
-    - \frac{2\,x}{x^2+1}
-    \,\frac{C(x)}{\frac{c_1}{x^2+1}}
-    % = \\
-    = \frac{1}{c_1}\left(
-      C'(x)
-      (x^2+1)
-      + C(x)\,2\,x
-    \right)
-    - \frac{C(x)\,2\,x}{c_1}
-    = \\
-    = C'(x)\,\frac{x^2+1}{c_1}
-    = 1
-    % \implies \\
-    \implies
-    C'(x) 
-    = \frac{c_1}{x^2+1}
-    \implies \\
-    \implies
-    C(x)
-    = \prim_x{\left(
-      \frac{c_1}{x^2+1}
-    \right)}
-    = c_1\,(
-      \arctan{x}+c_2
-    )    
-    %
-    \yesnumber\label{eq:e.9 C(x)}
-  \end{gather*}
-
+  \begin{tcolorbox}
+    \begin{gather*}
+      y'-\frac{2\,x}{x^2+1}
+      = \mathText{using 
+        \eqref{eq:e.9 y(C(x))}
+        \eqref{eq:e.9 phi_x}
+      }
+      = \mdif{x}{\left(
+          \frac{C(x)}{\frac{c_1}{x^2+1}}
+      \right)}
+      - \frac{2\,x}{x^2+1}
+      \,\frac{C(x)}{\frac{c_1}{x^2+1}}
+      % = \\
+      = \frac{1}{c_1}\left(
+        C'(x)
+        (x^2+1)
+        + C(x)\,2\,x
+      \right)
+      - \frac{C(x)\,2\,x}{c_1}
+      = \\
+      = C'(x)\,\frac{x^2+1}{c_1}
+      = 1
+      % \implies \\
+      \implies
+      C'(x) 
+      = \frac{c_1}{x^2+1}
+      \implies \\
+      \implies
+      C(x)
+      = \prim_x{\left(
+          \frac{c_1}{x^2+1}
+      \right)}
+      = c_1\,(
+        \arctan{x}+c_2
+      )    
+      %
+      \yesnumber\label{eq:e.9 C(x)}
+    \end{gather*}
+  \end{tcolorbox}
+  
   Finding \(\varphi(x)\)
-  \begin{gather*}
-    \varphi(x)
-    = \exp{\left(
-        \prim_x{\left(
-            -\frac{2\,x}{x^2+1}
-        \right)}
-    \right)}
-    = \exp{\left(
-        -\int{\left(
-            \frac{\odif{x^2+1}}{x^2+1}
-        \right)}
-    \right)}
-    = \\
-    = \exp{\left(
-        -(
-          \ln(x^2+1)+c_0
-        )
-    \right)}
-    = 
-    \frac{c_1}{x^2+1}
-    %
-    \yesnumber\label{eq:e.9 phi_x}
-  \end{gather*}
-
-
-  \answer{\eqref{eq:9.2 answer}}
-
-  % tag  = 9
-  % a(x) = \left(\frac{-2\,x}{x^2+1}\right)
-  % b(x) = 1
-  % y    = y
-  % x    = x
-
-  \begin{gather*}
-    y
-    = \frac{c_0}{\varphi(x)}
-    + \frac{1  }{\varphi(x)}
-    \,\int{1\,\varphi(x)\,\odif{x}}
-    %
-    %
-    %
-    = \mathText{using 
-      \eqref{eq:9.2 phi_x}
-      \eqref{eq:9.2 prim}
-    }
-    = \frac{c_0}{\frac{1}{c_2\,(x^2+1)}}
-    + \frac{1  }{\frac{1}{c_2\,(x^2+1)}}
-      (c_3 + \arctan{x})/c_2
-    = (x^2+1)(c_5 + \arctan{x})
-    %
-    \yesnumber\label{eq:9.2 answer}
-  \end{gather*}
-
-  % φ(x)
-  \begin{gather*}
-    \varphi(x) 
-    = \exp{\left(
-      \int{\left(\frac{-2\,x}{x^2+1}\right)\,\odif{x}}
-    \right)}
-    = \exp{\left(
-        -\int{\frac{\odif{(x^2+1)}}{x^2+1}}
-    \right)}
-    = \\
-    = \exp{-\left(
-        c_1 + \ln{(x^2+1)}
-    \right)}
-    = \frac{1}{c_2\,(x^2+1)}
-    %
-    \yesnumber\label{eq:9.2 phi_x}
-  \end{gather*}
-
-  % prim
-  \begin{gather*}
-    P\left(
-      1\,\varphi(x)
-    \right)
-    = \mathText{using \eqref{eq:9.2 phi_x}}
-    = P\left(
-      \frac{1}{c_2\,(x^2+1)}
-    \right)
-    = (c_3 + \arctan{x})/c_2
-    %
-    \yesnumber\label{eq:9.2 prim}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \varphi(x)
+      = \exp{\left(
+          \prim_x{\left(
+              -\frac{2\,x}{x^2+1}
+          \right)}
+      \right)}
+      = \exp{\left(
+          -\int{\left(
+              \frac{\odif{x^2+1}}{x^2+1}
+          \right)}
+      \right)}
+      = \\
+      = \exp{\left(
+          -(
+            \ln(x^2+1)+c_0
+          )
+      \right)}
+      = 
+      \frac{c_1}{x^2+1}
+      %
+      \yesnumber\label{eq:e.9 phi_x}
+    \end{gather*}
+  \end{tcolorbox}
 
 \end{exampleBox}
 
-\begin{sectionBox}1{Equação de Bernoulli e a equação de Riccati} % S5
+\begin{sectionBox}1m{Equação de Bernoulli e a equação de Riccati} % S5
   São equações não lineares que, após mudanças de variáveis apropriadas, se transformam em equações lineares:
 
   \subsection{Eq de Bernoulli}
@@ -944,45 +911,52 @@
   \end{BM}
   Quando encontramos uma EDO que possa ser escrita na forma acima, podemos realizar a substituiçãp de \(z=y^{1-k}\) transformando a EDO em uma equação linear, assim podemos encontrar a solução geral para \textit{z} que pode ser substituida para encontrar a solução de \textit{y} que é a equação original.
 
-  \begin{sectionBox}*3m{workflow} % S
+  \begin{sectionBox}*3b{workflow} % S
     \begin{BM}
       y' + a(x)\,y = b(x)\,y^k
     \end{BM}
 
     Solução geral
-    \begin{gather*}
-      y = z^{1/(1-k)}
-      = \left(
-        \frac{c_0}{\varphi(x)}
-        + \frac{1}{\varphi(x)}
-        \,\int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
-      \right)^{1/(1-k)}
-      = \mathText{using 
-        \eqref{eq:w 5.1 phi_x}
-        \eqref{eq:w 5.1 prim}
-      }
-      = \dots
-    \end{gather*}
-
+    \begin{tcolorbox}
+      \begin{gather*}
+        y = z^{1/(1-k)}
+        = \left(
+          \frac{c_0}{\varphi(x)}
+          + \frac{1}{\varphi(x)}
+          \,\int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
+        \right)^{1/(1-k)}
+        = \mathText{using 
+          \eqref{eq:w 5.1 phi_x}
+          \eqref{eq:w 5.1 prim}
+        }
+        = \dots
+      \end{gather*}
+    \end{tcolorbox}
+    
     Encontrando \(\varphi(x)\)
-    \begin{gather*}
-      \varphi(x)
-      = \exp{\left(
-          \int{(1-k)\,a(x)\,\odif{x}}
-      \right)}
-      = \dots
-      %
-      \yesnumber\label{eq:w 5.1 phi_x}
-    \end{gather*}
+    \begin{tcolorbox}
+      \begin{gather*}
+        \varphi(x)
+        = \exp{\left(
+            \int{(1-k)\,a(x)\,\odif{x}}
+        \right)}
+        = \dots
+        %
+        \yesnumber\label{eq:w 5.1 phi_x}
+      \end{gather*}
+    \end{tcolorbox}
 
     Resolvendo integral
-    \begin{gather*}
-      \int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
-      = \mathText{using \eqref{eq:w 5.1 phi_x}}
-      = \dots
-      %
-      \yesnumber\label{eq:w 5.1 prim}
-    \end{gather*}
+    \begin{tcolorbox}
+      \begin{gather*}
+        \int{(1-k)\,b(x)\,\varphi(x)\,\odif{x}}
+        = \mathText{using \eqref{eq:w 5.1 phi_x}}
+        = \dots
+        %
+        \yesnumber\label{eq:w 5.1 prim}
+      \end{gather*}
+    \end{tcolorbox}
+    
   \end{sectionBox}
 
   \subsection{Eq de Riccati}
@@ -1015,7 +989,7 @@
   \end{BM}
 \end{sectionBox}
 
-\begin{exampleBox}1{Eq de Bernoulli} % E
+\begin{exampleBox}1m{Eq de Bernoulli} % E
   Considere o problma de valores iniciais (PVI)
   \begin{BM}[align*]
     y' - x\,y = x\,y^3 
@@ -1031,114 +1005,125 @@
   % k    = 3
 
   Substituição de Bernoulli
-  \begin{gather*}
-    y = z^{1/(1-3)}
-    \implies
-    y' - x\,y = x\,y^3 
-    % \implies \\
-    \implies
-    z' + (1-k)\,(-x)\,z = (1-k)\,3
-  \end{gather*}
-
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = z^{1/(1-3)}
+      \implies
+      y' - x\,y = x\,y^3 
+      % \implies \\
+      \implies
+      z' + (1-k)\,(-x)\,z = (1-k)\,3
+    \end{gather*}
+  \end{tcolorbox}
+  
   Solução geral
-  \begin{gather*}
-    y 
-    = z^{1/(1-3)}
-    = \left(
-      \frac{c_0}{\varphi(x)}
-      +\frac{1 }{\varphi(x)}
-      \,\int{
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = z^{1/(1-3)}
+      = \left(
+        \frac{c_0}{\varphi(x)}
+        +\frac{1 }{\varphi(x)}
+        \,\int{
+          (1-3)\,x
+          \,\varphi(x)
+          \,\odif{x}
+        }
+      \right)^{-1/2}
+      = \mathText{using
+        \eqref{eq:e.10 phi_x}
+        \eqref{eq:e.10 prim}
+      }
+      = \left(
+        \frac{c_0}{c_2\,e^{x^2}}
+        +\frac{1 }{c_2\,e^{x^2}}
+        (-c_2)
+        \,\left(
+          e^{x^2}+c_3
+        \right)
+      \right)^{-1/2}
+      = \left(
+        c_5\,e^{-x^2}
+        -1
+      \right)^{-1/2}
+      %
+      \yesnumber\label{eq:e.10 y(x c_5)}
+      = \mathText{using \eqref{eq:e.10 c_5}}
+      = \left(
+        2\,e^{-x^2}
+        -1
+      \right)^{-1/2}
+      %
+      \yesnumber\label{eq:e.10 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Encontrando \(c_5\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y(0)=1
+      = \mathText{using \eqref{eq:e.10 y(x c_5)}}
+      = \left(
+        c_5\,e^{-0^2}
+        -1
+      \right)^{-1/2}
+      \implies \\
+      \implies
+      c_5 = 1+1^2 = 2
+      %
+      \yesnumber\label{eq:e.10 c_5}
+    \end{gather*}
+  \end{tcolorbox}
+  
+  Encontrando \(\varphi(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \varphi(x)
+      = \exp{\left(
+          \prim_x\left(
+            (1-3)\,(-x)
+          \right)
+      \right)}
+      = \exp{\left(
+          2(c_1+x^2/2)
+      \right)}
+      = c_2\,e^{x^2}
+      % 
+      \yesnumber\label{eq:e.10 phi_x}
+    \end{gather*}
+  \end{tcolorbox}
+  
+  Integrando
+  \begin{tcolorbox}
+    \begin{gather*}
+      \int{
         (1-3)\,x
         \,\varphi(x)
         \,\odif{x}
       }
-    \right)^{-1/2}
-    = \mathText{using
-      \eqref{eq:e.10 phi_x}
-      \eqref{eq:e.10 prim}
-    }
-    = \left(
-      \frac{c_0}{c_2\,e^{x^2}}
-      +\frac{1 }{c_2\,e^{x^2}}
-      (-c_2)
+      = \mathText{using \eqref{eq:e.10 phi_x}}
+      = -\int{
+        2\,x
+        \,c_2\,e^{x^2}
+        \,\odif{x}
+      }
+      = -c_2
+      \,\int{
+        e^{x^2}
+        \,\odif{\left( x^2 \right)}
+      }
+      = -c_2
       \,\left(
         e^{x^2}+c_3
       \right)
-    \right)^{-1/2}
-    = \left(
-      c_5\,e^{-x^2}
-      -1
-    \right)^{-1/2}
-    %
-    \yesnumber\label{eq:e.10 y(x c_5)}
-    = \mathText{using \eqref{eq:e.10 c_5}}
-    = \left(
-      2\,e^{-x^2}
-      -1
-    \right)^{-1/2}
-    %
-    \yesnumber\label{eq:e.10 answer}
-  \end{gather*}
-
-  Encontrando \(c_5\)
-  \begin{gather*}
-    y(0)=1
-    = \mathText{using \eqref{eq:e.10 y(x c_5)}}
-    = \left(
-      c_5\,e^{-0^2}
-      -1
-    \right)^{-1/2}
-    \implies \\
-    \implies
-    c_5 = 1+1^2 = 2
-    %
-    \yesnumber\label{eq:e.10 c_5}
-  \end{gather*}
-
-  Encontrando \(\varphi(x)\)
-  \begin{gather*}
-    \varphi(x)
-    = \exp{\left(
-        \prim_x\left(
-          (1-3)\,(-x)
-        \right)
-    \right)}
-    = \exp{\left(
-        2(c_1+x^2/2)
-    \right)}
-    = c_2\,e^{x^2}
-    % 
-    \yesnumber\label{eq:e.10 phi_x}
-  \end{gather*}
-
-  Integrando
-  \begin{gather*}
-    \int{
-      (1-3)\,x
-      \,\varphi(x)
-      \,\odif{x}
-    }
-    = \mathText{using \eqref{eq:e.10 phi_x}}
-    = -\int{
-      2\,x
-      \,c_2\,e^{x^2}
-      \,\odif{x}
-    }
-    = -c_2
-    \,\int{
-      e^{x^2}
-      \,\odif{\left( x^2 \right)}
-    }
-    = -c_2
-    \,\left(
-      e^{x^2}+c_3
-    \right)
-    % 
-    \yesnumber\label{eq:e.10 prim}
-  \end{gather*}
+      % 
+      \yesnumber\label{eq:e.10 prim}
+    \end{gather*}
+  \end{tcolorbox}
+  
 \end{exampleBox}
 
-\begin{exampleBox}1{Eq Bernoulli} % E
+\begin{exampleBox}1m{Eq Bernoulli} % E
   Suponhamos que numa comunidade constituida por \textit{N} individuos
   \begin{itemize}
     \item \(y(t)\) representa o número de intectados pelo vírus da gripe A
@@ -1155,6 +1140,8 @@
     ;& k &> 0
     ;& y(0) = y_0
   \end{BM}
+
+  \answer{}
 
   Incompleta:
   \begin{gather*}
@@ -1237,7 +1224,7 @@
     \end{gather*}
 \end{exampleBox}
 
-\begin{exampleBox}1{Eq Riccati} % E11
+\begin{exampleBox}1m{Eq Riccati} % E12
 
   Determine a solução do PVI
   \begin{BM}
@@ -1256,121 +1243,132 @@
   \answer{\eqref{eq:e.12 answer}}
 
   Riccati substitution
-  \begin{gather*}
-    y = 2\,x + z^{-1}
-    \implies
-    y' + (-1)\,y = (-2\,x) + \frac{1}{2\,x^2}\,y^2
-    \implies \\
-    \implies
-    z' + \left(2\,\frac{1}{2\,x^2}\,2\,x - (-1)\right)\,z 
-    = z' + (1+2/x)\,z 
-    = -\frac{1}{2\,x^2}
-  \end{gather*}
-
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = 2\,x + z^{-1}
+      \implies
+      y' + (-1)\,y = (-2\,x) + \frac{1}{2\,x^2}\,y^2
+      \implies \\
+      \implies
+      z' + \left(2\,\frac{1}{2\,x^2}\,2\,x - (-1)\right)\,z 
+      = z' + (1+2/x)\,z 
+      = -\frac{1}{2\,x^2}
+    \end{gather*}
+  \end{tcolorbox}
+  
   General solution
-  \begin{gather*}
-    y
-    = 2\,x + z^{-1}
-    = 2\,x + \left(
-      \frac{c_0}{\varphi(x)}
-      + \frac{1}{\varphi(x)}
-      \,\prim_x{\left(
-        -\frac{1}{2\,x^2}
-        \,\varphi(x)
-      \right)}
-    \right)^{-1}
-    = \mathText{using
-      \eqref{eq:e.12 phi_x}
-      \eqref{eq:e.12 prim}
-    }
-    = 2\,x + \left(
-      \frac{c_0}{e^x\,x^2\,c_3}
-      + \frac{1}{e^x\,x^2\,c_3}
-      \frac{-c_3}{2}\,\left( e^x+c_4 \right)
-    \right)^{-1}
-    = 2\,x + \left(
-      \frac{c_6}{e^{x}\,x^{2}}
-      - \frac{1}{2\,x^2}
-    \right)^{-1}
-    %
-    \yesnumber\label{eq:e.12 y(x c_6)}
-    = \mathText{using \eqref{eq:e.12 c_6}}
-    = 2\,x + \left(
-      \frac{e/4}{e^{x}\,x^{2}}
-      - \frac{1}{2\,x^2}
-    \right)^{-1}
-    %
-    \yesnumber\label{eq:e.12 answer}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = 2\,x + z^{-1}
+      = 2\,x + \left(
+        \frac{c_0}{\varphi(x)}
+        + \frac{1}{\varphi(x)}
+        \,\prim_x{\left(
+            -\frac{1}{2\,x^2}
+            \,\varphi(x)
+        \right)}
+      \right)^{-1}
+      = \mathText{using
+        \eqref{eq:e.12 phi_x}
+        \eqref{eq:e.12 prim}
+      }
+      = 2\,x + \left(
+        \frac{c_0}{e^x\,x^2\,c_3}
+        + \frac{1}{e^x\,x^2\,c_3}
+        \frac{-c_3}{2}\,\left( e^x+c_4 \right)
+      \right)^{-1}
+      = 2\,x + \left(
+        \frac{c_6}{e^{x}\,x^{2}}
+        - \frac{1}{2\,x^2}
+      \right)^{-1}
+      %
+      \yesnumber\label{eq:e.12 y(x c_6)}
+      = \mathText{using \eqref{eq:e.12 c_6}}
+      = 2\,x + \left(
+        \frac{e/4}{e^{x}\,x^{2}}
+        - \frac{1}{2\,x^2}
+      \right)^{-1}
+      %
+      \yesnumber\label{eq:e.12 answer}
+    \end{gather*}
+  \end{tcolorbox}
 
   Finding \(c_6\)
-  \begin{gather*}
-    y(1)=-2
-    = \mathText{using \eqref{eq:e.12 y(x c_6)}}
-    = 2*1 + \left(
-      \frac{c_6}{e^{1}\,1^{2}}
-      - \frac{1}{2*1^2}
-    \right)^{-1}
-    = 2 + \left(
-      \frac{c_6}{e}
-      - \frac{1}{2}
-    \right)^{-1}
-    \implies \\
-    \implies
-    c_6
-    = e\left(
-      (-2-2)^{-1}
-      + \frac{1}{2}
-    \right)
-    = \frac{e}{4}
-    % 
-    \yesnumber\label{eq:e.12 c_6}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y(1)=-2
+      = \mathText{using \eqref{eq:e.12 y(x c_6)}}
+      = 2*1 + \left(
+        \frac{c_6}{e^{1}\,1^{2}}
+        - \frac{1}{2*1^2}
+      \right)^{-1}
+      = 2 + \left(
+        \frac{c_6}{e}
+        - \frac{1}{2}
+      \right)^{-1}
+      \implies \\
+      \implies
+      c_6
+      = e\left(
+        (-2-2)^{-1}
+        + \frac{1}{2}
+      \right)
+      = \frac{e}{4}
+      % 
+      \yesnumber\label{eq:e.12 c_6}
+    \end{gather*}
+  \end{tcolorbox}
 
   Finding \(\varphi(x)\)
-  \begin{gather*}
-    \varphi(x)
-    = \exp{\left(
-      \prim_x{(
-        1+2/x
-      )}
-    \right)}
-    = \exp{\left(
-      x
-      +c_1
-      +2\,(
-        c_2 + \ln{x}
-      )
-    \right)}
-    = 
-    e^x\,x^2\,c_3
-    %
-    \yesnumber\label{eq:e.12 phi_x}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \varphi(x)
+      = \exp{\left(
+          \prim_x{(
+              1+2/x
+          )}
+      \right)}
+      = \exp{\left(
+          x
+          +c_1
+          +2\,(
+            c_2 + \ln{x}
+          )
+      \right)}
+      = 
+      e^x\,x^2\,c_3
+      %
+      \yesnumber\label{eq:e.12 phi_x}
+    \end{gather*}
+  \end{tcolorbox}
 
   Integrating
-  \begin{gather*}
-    \prim_x{\left(
-      -\frac{1}{2\,x^2}
-      \,\varphi(x)
-    \right)}
-    = \mathText{using \eqref{eq:e.12 phi_x}}
-    = \prim_x{\left(
-      -\frac{1}{2\,x^2}
-      \,e^x\,x^2\,c_3
-    \right)}
-    = -\frac{c_3}{2}
-    \,\prim_x{\left(
-      e^x
-    \right)}
-    = 
-    -\frac{c_3}{2}\,\left( e^x+c_4 \right)
-    %
-    \yesnumber\label{eq:e.12 prim}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \prim_x{\left(
+          -\frac{1}{2\,x^2}
+          \,\varphi(x)
+      \right)}
+      = \mathText{using \eqref{eq:e.12 phi_x}}
+      = \prim_x{\left(
+          -\frac{1}{2\,x^2}
+          \,e^x\,x^2\,c_3
+      \right)}
+      = -\frac{c_3}{2}
+      \,\prim_x{\left(
+          e^x
+      \right)}
+      = 
+      -\frac{c_3}{2}\,\left( e^x+c_4 \right)
+      %
+      \yesnumber\label{eq:e.12 prim}
+    \end{gather*}
+  \end{tcolorbox}
+  
 \end{exampleBox}
 
-\begin{sectionBox}1{Operador de Derivação \(\mdif{}\)} % S
+\begin{sectionBox}1m{Operador de Derivação \(\mdif{}\)} % S
   \begin{BM}
     \mdif[n]{x} = \odv[n]{}{x}
     \\
@@ -1379,7 +1377,7 @@
   \end{BM}
 \end{sectionBox}
 
-\begin{sectionBox}1{Equação Diferencial Linear de ordem \textit{n}} % S
+\begin{sectionBox}1m{Equação Diferencial Linear de ordem \textit{n}} % S
   \begin{BM}[align*]
     \sum_{i=0}^n{
       a_i\,\mdif[i]{x}(y)
@@ -1396,7 +1394,7 @@
     \item Forma normal é quando esta escrita de forma que \(a_n=1\)
   \end{itemize}
 
-  \begin{exampleBox}*1m[-4ex]{Example} % Eindex
+  \begin{exampleBox}*1b[-4ex]{Example} % Eindex
     \begin{BM}
       \mdif[3]{x}(y) + x^2\,\mdif[2]{x}(y) - 5\,x\,\mdif[1]{x}(y) + y = x\,\cos(x)
     \end{BM}
@@ -1404,7 +1402,7 @@
   \end{exampleBox}
 \end{sectionBox}
 
-\begin{sectionBox}*2{Operador P} % Sindex
+\begin{sectionBox}*2m{Operador P} % Sindex
 
   \begin{BM}
     P = \mdif[n]{x} + \sum_{i=0}^{n-1}{
@@ -1459,7 +1457,7 @@
 
 \end{sectionBox}
 
-\begin{sectionBox}1{Abaixando a ordem de uma EDO} % Sindex
+\begin{sectionBox}1m{Abaixando a ordem de uma EDO} % Sindex
   \begin{BM}
     z(x) : y = \varphi(x)\,\int{(z)\,\odif{x}}
     ;\\ P\,y=0
@@ -1469,7 +1467,7 @@
   \end{itemize}
 \end{sectionBox}
 
-\begin{exampleBox}1{Baixamento de grau de uma Eq lin homogenea} % Eindex
+\begin{exampleBox}1m{Baixamento de grau de uma Eq lin homogenea} % E13
   Determine a solução geral da equação
   \begin{BM}
     y'' + y'/x-y/x^2 = 0
@@ -1480,101 +1478,110 @@
   \answer{}
 
   Solução geral
-  \begin{gather*}
-    y
-    = \varphi(x)\,\prim_x{(z)}
-    = x\,\prim_x{(z)}
-    % 
-    \yesnumber\label{eq:e.13 y->z}
-    = \mathText{using \eqref{eq:e.13 z(x)}}
-    = x\,\prim_x{\left(
-        \frac{c_3}{x^3} 
-    \right)}
-    = x\,c_3\,\left(\frac{1}{2\,x^2}+c_4\right)
-    = \frac{c_5}{x}+x\,c_6
-  \end{gather*}
-
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = \varphi(x)\,\prim_x{(z)}
+      = x\,\prim_x{(z)}
+      % 
+      \yesnumber\label{eq:e.13 y->z}
+      = \mathText{using \eqref{eq:e.13 z(x)}}
+      = x\,\prim_x{\left(
+          \frac{c_3}{x^3} 
+      \right)}
+      = x\,c_3\,\left(\frac{1}{2\,x^2}+c_4\right)
+      = \frac{c_5}{x}+x\,c_6
+    \end{gather*}
+  \end{tcolorbox}
+  
   Substitution \(y \to z\)
-  \begin{gather*}
-    y'' + y'/x-y/x^2 = 0
-    \implies \mathText{using
-      \eqref{eq:e.13 y->z}
-      \eqref{eq:e.13 Dx(y)}
-      \eqref{eq:e.13 D2x(y)}
-    }
-    \implies
-    (
-      2\,z + x\,z'
-    )
-    + \frac{1}{x}(
-      \prim_x{(z)} + x\,z
-    )
-    - \frac{1}{x^2}(
-      x\,\prim_x{(z)} 
-    )
-    = \\
-    = 2\,z 
-    + x\,z'
-    + \prim_x{(z)}/x
-    + z
-    - \prim_x{(z)}/x
-    % = \\
-    = x\,z' + 3\,z 
-    = 0
-    \implies
-    z' + \frac{3}{x}\,z = 0
-    % 
-    \yesnumber\label{eq:e.13 eq z}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y'' + y'/x-y/x^2 = 0
+      \implies \mathText{using
+        \eqref{eq:e.13 y->z}
+        \eqref{eq:e.13 Dx(y)}
+        \eqref{eq:e.13 D2x(y)}
+      }
+      \implies
+      (
+        2\,z + x\,z'
+      )
+      + \frac{1}{x}(
+        \prim_x{(z)} + x\,z
+      )
+      - \frac{1}{x^2}(
+        x\,\prim_x{(z)} 
+      )
+      = \\
+      = 2\,z 
+      + x\,z'
+      + \prim_x{(z)}/x
+      + z
+      - \prim_x{(z)}/x
+      % = \\
+      = x\,z' + 3\,z 
+      = 0
+      \implies
+      z' + \frac{3}{x}\,z = 0
+      % 
+      \yesnumber\label{eq:e.13 eq z}
+    \end{gather*}
+  \end{tcolorbox}
   
   Finding \(\mdif[1]{x}{y},\mdif[2]{x}{y}\)
-  \begin{gather*}
-    \mdif{x}{y}
-    = \mathText{using \eqref{eq:e.13 y->z}}
-    = \mdif{x}{\varphi(x)}
-    \,\prim_x{(z)}
-    + \varphi(x)\,z
-    = \mdif{x}{\varphi(x)}
-    \,\prim_x{(z)}
-    + \varphi(x)\,z
-    = 
-    \prim_x{(z)} + x\,z
-    % 
-    \yesnumber\label{eq:e.13 Dx(y)}
-    ;\\
-    \mdif[2]{x}{y}
-    = \mathText{using \eqref{eq:e.13 Dx(y)}}
-    = \mdif{x}{(\prim_x{(z)} + x\,z)}
-    = 
-    2\,z + x\,z'
-    % 
-    \yesnumber\label{eq:e.13 D2x(y)}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \mdif{x}{y}
+      = \mathText{using \eqref{eq:e.13 y->z}}
+      = \mdif{x}{\varphi(x)}
+      \,\prim_x{(z)}
+      + \varphi(x)\,z
+      = \mdif{x}{\varphi(x)}
+      \,\prim_x{(z)}
+      + \varphi(x)\,z
+      = 
+      \prim_x{(z)} + x\,z
+      % 
+      \yesnumber\label{eq:e.13 Dx(y)}
+      ;\\
+      \mdif[2]{x}{y}
+      = \mathText{using \eqref{eq:e.13 Dx(y)}}
+      = \mdif{x}{(\prim_x{(z)} + x\,z)}
+      = 
+      2\,z + x\,z'
+      % 
+      \yesnumber\label{eq:e.13 D2x(y)}
+    \end{gather*}
+  \end{tcolorbox}
 
   Solving \eqref{eq:e.13 eq z}
-  \begin{gather*}
-    z
-    = c_0\,(\varphi_z(x))^{-1}
-    = c_0\,\left(
-      \exp{\left(
-          \int{(3/x)\,\odif{x}}
-      \right)}
-    \right)^{-1}
-    = c_0\,\left(
-      e^{3\,(\ln{(x)}+c_1)}
-    \right)^{-1}
-    = c_0\,(
-      c_2\,x^3
-    )^{-1}
-    = \\
-    = 
-    \frac{c_3}{x^3} 
-    %
-    \yesnumber\label{eq:e.13 z(x)}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather*}
+      z
+      = c_0\,(\varphi_z(x))^{-1}
+      = c_0\,\left(
+        \exp{\left(
+            \int{(3/x)\,\odif{x}}
+        \right)}
+      \right)^{-1}
+      = c_0\,\left(
+        e^{3\,(\ln{(x)}+c_1)}
+      \right)^{-1}
+      = c_0\,(
+        c_2\,x^3
+      )^{-1}
+      = \\
+      = 
+      \frac{c_3}{x^3} 
+      %
+      \yesnumber\label{eq:e.13 z(x)}
+    \end{gather*}
+  \end{tcolorbox}
+  
 \end{exampleBox}
 
-\begin{sectionBox}1{Wronskiano: check dependencia linear} % Sindex
+\begin{sectionBox}1m{Wronskiano: check dependencia linear} % Sindex
   \begin{BM}[align*]
     W(f_1,f_2,\dots,f_n)(x)
     &= \det(w)
@@ -1593,7 +1600,7 @@
 
 \end{sectionBox}
 
-\begin{sectionBox}1{Método de variação das constantes abitrárias para equação linear de ordem \textit{n}} % Sindex
+\begin{sectionBox}1m{Método de variação das constantes abitrárias para equação linear de ordem \textit{n}} % Sindex
   \begin{BM}[gather*]
       % a_0(x) = a_1(x)
       % a_1(x) = a_1(x)
@@ -1644,295 +1651,918 @@
   \end{BM}
 \end{sectionBox}
 
-\begin{exampleBox}1{Metodo das var const arb} % Eindex
+\begin{exampleBox}1m{Metodo das var const arb} % E14
+
   Considere a equação
   \begin{BM}
     y" + 9\,y = 1/\cos(3\,x)
     ;\quad x\in\myrange*{-\pi/6,\pi/6}
   \end{BM}
-  % As funções \(\cos{(3\,x)}\text{ e }\sin{(3\,x)}\) são duas soluções linearmente idependentes da equação homogénea
-  % \begin{BM}
-  %   y'' + 9\,y = 0
-  % \end{BM}
-  % Pelo que seu integral geral será dado por
-  % \begin{BM}
-  %   y = c_1\,\cos{(3\,x)} + c_2\,\sin{(3\,x)}
-  %   ;\quad c_1,c_2\in\mathbb{R}
-  % \end{BM}
+  As funções \(\cos{(3\,x)}\text{ e }\sin{(3\,x)}\) são duas soluções linearmente idependentes da equação homogénea
+  \begin{BM}
+    y'' + 9\,y = 0
+  \end{BM}
+  Pelo que seu integral geral será dado por
+  \begin{BM}
+    y = c_1\,\cos{(3\,x)} + c_2\,\sin{(3\,x)}
+    ;\quad c_1,c_2\in\mathbb{R}
+    \yesnumber\label{eq:e.14 y_h}
+  \end{BM}
   Utilizemos o método da variação das constantes arbitrárias para determinar o integral geral da equação completa
 
-  \answer{}
   % tag    = 14
   % a_0(x) = 9
   % a_1(x) = 0
   % a_2(x) = 1
   % f(x)   = \frac{1}{\cos{(3\,x)}}
 
-  Solução geral
-  \begin{gather*}
-    y
-    = \mathText{using \eqref{eq:e.14 y_h}}
-    = c_1(x)\,y_1(x)
-    + c_2(x)\,y_2(x)
-    = 
-    \mathText{using
-      \eqref{eq:e.14.2 y_1 y_2}
-      \eqref{eq:e.14.2 c_1}
-      \eqref{eq:e.14.2 c_2}
-    }
-    = \left(
-      \cos{(3\,x)}
-    \right)
-    \,\left(
-      -\ln{(\cos{(3\,x)})}-c_3
-    \right)
-    + \left(
-      \sin{(3\,x)}
-    \right)
-    \,\left(
-      x/3 + c_4
-    \right)
-  \end{gather*}
+  \answer{\eqref{eq:e.14 answer}}
 
-  Solução da equação homogenea análoga
-  \begin{sectionBox}*3m{Solução da equação homogenea análoga} % Sindex
-    \begin{BM}
-      y'' + 9\,y = 0
-    \end{BM}
-
-    % tag  = 14.1
-    % P    = \mdif[2] + 9
-
-    % \answer{\eqref{eq:e.14.1 answer}}
-
-    General Solution
+  General solution
+  \begin{tcolorbox}
     \begin{gather*}
-      y 
-      = \varphi(x)\,\prim_x{(z)}
-      = \,\prim_x{(z)}
-      %
-      \yesnumber\label{eq:e.14.1 y->z}
-      %
-      = \mathText{using \eqref{eq:e.14.1 z}}
-      = \,\prim_x{\left(
-        z
-      \right)}
-      %
-      \yesnumber\label{eq:e.14 y_h}
-    \end{gather*}
-
-    Substitution \(y \to z\)
-    \begin{gather*}
-      P(x)\,y 
-      = \mathText{using \eqref{eq:e.14.1 y->z}}
-      = \mdif[2] + 9
-      \,(
-        y
-      )
-      = \mathText{using 
-        \eqref{eq:e.14.1 D1x(y)}
-        \eqref{eq:e.14.1 D2x(y)}
+      y
+      = \mathText{using \eqref{eq:e.14 y_h}}
+      = C_1(x)\,y_1(x)
+      + C_2(x)\,y_2(x)
+      = \mathText{using
+        \eqref{eq:e.14 C_1}
+        \eqref{eq:e.14 C_2}
       }
-      = 0
+      = \left(
+        - \ln{(\cos(3\,x))} - c_3
+      \right)
+      \cos(3\,x)
+      + \left(
+        x/3 + c_4
+      \right)
+      \sin(3\,x)
       %
-      \yesnumber\label{eq:e.14.1 eq z}
+      \yesnumber\label{eq:e.14 answer}
     \end{gather*}
+  \end{tcolorbox}
 
-    Finding \(
-      \mdif{x}{y},
-      \mdif[2]{x}{y}
-    \)
+  Finding \(C_1(x),C_2(x)\)
+  \begin{tcolorbox}
     \begin{gather*}
-      \mdif{x}{y}
-      = \mdif{x}{(
-        \,\prim_x{(z)}
-      )}
-      = \mdif{x}{(
-        \,\prim_x{(z)}
-      )}
-      %
-      \yesnumber\label{eq:e.14.1 D1x(y)}
-      %
-      %
-      %
-      ;\\
-      \mdif[2]{x}{y}
-      = \mathText{using \eqref{eq:e.14.1 D1x(y)}}
-      = \mdif{x}{\left(
-        \mdif{x}{y}
+      C_1(x) 
+      = \prim_x{(C_1'(x))}
+      = \mathText{using \eqref{eq:e.14 C_1'}}
+      = \prim_x{\left(
+          3\,\frac
+          {\sin{(3\,x)}}
+          {\cos{(3\,x)}}
       \right)}
-      %
-      \yesnumber\label{eq:e.14.1 D2x(y)}
-      % %
-      % %
-      % %
-      % ;\\
-      % \mdif[3]{x}{y}
-      % = \mathText{using \eqref{eq:e.14.1 D2x(y)}}
-      % = \mdif{x}{\left(
-      %   \mdif[2]{x}{y}
-      % \right)}
-      % %
-      % \yesnumber\label{eq:e.14.1 D3x(y)}
+      = \mathText{using \(
+          \odif{(\cos(3\,x))}
+          = -\sin(3\,x)\,3\,\odif{x}
+      \)}
+      = -\int{\left(
+          \frac
+          {\odif{(\cos{(3\,x)})}}
+          {\cos{(3\,x)}}
+      \right)}
+      = 
+      - \ln{(\cos(3\,x))} - c_3
+      % 
+      \yesnumber\label{eq:e.14 C_1}
+      % 
+      % 
+      % 
+      ;\\
+      C_2(x) 
+      = \prim_x{(C_2'(x))}
+      = \mathText{using \eqref{eq:e.14 C_2'}}
+      = \prim_x{\left(
+          1/3
+      \right)}
+      = x/3 + c_4
+      % 
+      \yesnumber\label{eq:e.14 C_2}
     \end{gather*}
+  \end{tcolorbox}
 
-    Solving \eqref{eq:e.14.1 eq z}
+  Finding \(C_1'(x),C_2'(x)\)
+  \begin{tcolorbox}
     \begin{gather*}
-      z
-      %
-      \yesnumber\label{eq:e.14.1 z}
+      C_1'(x)
+      = \mathText{using \eqref{eq:e.14 eq system}}
+      = \left(
+        W_{y_1,y_2}
+      \right)^{-1}
+      \,\begin{vmatrix}
+        0 
+        &  \mdif[0]{x}y_2
+        \\ \frac{1}{\cos{(3\,x)}}
+        &  \mdif[1]{x}y_2
+      \end{vmatrix}
+      = \mathText{using
+        \eqref{eq:e.14 w}
+        \eqref{eq:e.14 D1x(y_2)}
+      }
+      = \frac{1}{3}
+      \,\begin{vmatrix}
+        0 
+        &  \sin{(3\,x)}
+        \\ \frac{1}{\cos{(3\,x)}}
+        &  3\,\cos{(3\,x)}
+      \end{vmatrix}
+      = 3\,\frac{\sin{(3\,x)}}{\cos{(3\,x)}}
+      % 
+      \yesnumber\label{eq:e.14 C_1'}
+      % 
+      % 
+      % 
+      ; \\
+      C_2'(x)
+      = \mathText{using \eqref{eq:e.14 eq system}}
+      = \left(
+        W_{y_1,y_2}
+      \right)^{-1}
+      \,\begin{vmatrix}
+        \mdif[0]{x}y_1
+        &  0 
+        \\ \mdif[1]{x}y_1
+        &  \frac{1}{\cos{(3\,x)}}
+      \end{vmatrix}
+      = \mathText{using
+        \eqref{eq:e.14 w}
+        \eqref{eq:e.14 D1x(y_1)}
+      }
+      = \frac{1}{3}
+      \,\begin{vmatrix}
+        \cos{(3\,x)}
+        &  0 
+        \\ -3\,\sin{(3\,x)}
+        &  \frac{1}{\cos{(3\,x)}}
+      \end{vmatrix}
+      = 1/3
+      % 
+      \yesnumber\label{eq:e.14 C_2'}
     \end{gather*}
-    
-  \end{sectionBox}
+  \end{tcolorbox}
 
-  % y_1 y_2
-  \begin{gather*}
-    \begin{cases}
-      y_1 = \cos{(3\,x)}
-      \\
-      y_2 = \sin{(3\,x)}
-    \end{cases}
-    \yesnumber\label{eq:e.14.2 y_1 y_2}
-  \end{gather*}
+  Wronskiano
+  \begin{tcolorbox}
+    \begin{gather*}
+      W(y_1,y_2)
+      = \det\begin{bmatrix}
+        \mdif[0]{x}\,y_1
+        &  \mdif[0]{x}\,y_2
+        \\ \mdif[1]{x}\,y_1
+        &  \mdif[1]{x}\,y_2
+      \end{bmatrix}
+      =
+      \mathText{using 
+        \eqref{eq:e.14 D1x(y_1)}
+        \eqref{eq:e.14 D1x(y_2)}
+      }
+      = \det\begin{bmatrix}
+        \cos{(3\,x)}
+        &  \sin{(3\,x)}
+        \\ -3\,\sin{(3\,x)}
+        &  +3\,\cos{(3\,x)}
+      \end{bmatrix}
+      = 3\,\cos^2{(3\,x)}
+      +3\,\sin^2{(3\,x)}
+      = 3
+      % 
+      \yesnumber\label{eq:e.14 w}
+    \end{gather*}
+  \end{tcolorbox}
+  
+  Equation system from Crammer's rule
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{Bmatrix}
+        {
+          c_1'(x)\,\mdif[0]{x}\,y_1(x) 
+          + c_2'(x)\,\mdif[0]{x}\,y_2(x)
+        } &=& 0
+        \\ {
+          c_1'(x)\,\mdif[1]{x}\,y_1(x) 
+          + c_2'(x)\,\mdif[1]{x}\,y_2(x)
+        } &=& \frac{1}{\cos{(3\,x)}}
+      \end{Bmatrix}
+      \yesnumber\label{eq:e.14 eq system}
+    \end{gather*}
+  \end{tcolorbox}
 
-  % c_1,c_2
-  \begin{gather*}
-    c_1(x) 
-    = \int{c_1'(x)\,\odif{x}}
-    = \mathText{using \eqref{eq:e.14.2 c_1'}}
-    = \int{\left(
-        3\,\frac{\sin{(3\,x)}}{\cos{(3\,x)}}
-    \right)\,\odif{x}}
-    = -\int{
-      \frac{\odif{\cos{(3\,x)}}}{\cos{(3\,x)}}
-    }
-    = -\ln{(\cos{(3\,x)})}-c_3
-    % 
-    \yesnumber\label{eq:e.14.2 c_1}
-    %
-    %
-    ; \\[1ex]
-    c_2(x) 
-    = \int{c_2'(x)\,\odif{x}}
-    = \mathText{using \eqref{eq:e.14.2 c_2'}}
-    = \int{( 1/3)\,\odif{x}}
-    = x/3 + c_4
-    % 
-    \yesnumber\label{eq:e.14.2 c_2}
-  \end{gather*}
-
-  % c_1',c_2'
-  \begin{gather*}
-    \mathText{using \eqref{eq:e.14.2 eq_sytem}}
-    c_1'(x)
-    = \frac{1}{W(y_1,y_2)}
-    \,\begin{vmatrix}
-      0 
-      &  \mdif[0]{x}y_2
-      \\ \frac{1}{\cos{(3\,x)}}
-      &  \mdif[1]{x}y_2
-    \end{vmatrix}
-    = 
-    \mathText{using 
-      \eqref{eq:e.14.2 w}
-      \eqref{eq:e.14.2 D_x(y_2)}
-    }
-    = \frac{1}{3}
-    \,\begin{vmatrix}
-      0 
-      &  \sin{(3\,x)}
-      \\ \frac{1}{\cos{(3\,x)}}
-      &  3\,\cos{(3\,x)}
-    \end{vmatrix}
-    = 3\,\frac{\sin{(3\,x)}}{\cos{(3\,x)}}
-    \yesnumber\label{eq:e.14.2 c_1'}
-    %
-    %
-    %
-    \\[3ex]
-    \mathText{using \eqref{eq:e.14.2 eq_sytem}}
-    c_2'(x)
-    = \frac{1}{W(y_1,y_2)}
-    \,\begin{vmatrix}
-      \mdif[0]{x}y_1
-      &  0 
-      \\ \mdif[1]{x}y_1
-      &  \frac{1}{\cos{(3\,x)}}
-    \end{vmatrix}
-    =
-    \mathText{using 
-      \eqref{eq:e.14.2 w}
-      \eqref{eq:e.14.2 D_x(y_1)}
-    }
-    = \frac{1}{3}
-    \,\begin{vmatrix}
-      \cos{(3\,x)}
-      &  0 
-      \\ -3\,\sin{(3\,x)}
-      &  \frac{1}{\cos{(3\,x)}}
-    \end{vmatrix}
-    = 1/3
-    % 
-    \yesnumber\label{eq:e.14.2 c_2'}
-  \end{gather*}
-
-  % Wronskiano
-  \begin{gather*}
-    W(y_1,y_2)
-    = \det\begin{bmatrix}
-      \mdif[0]{x}\,y_1
-      &  \mdif[0]{x}\,y_2
-      \\ \mdif[1]{x}\,y_1
-      &  \mdif[1]{x}\,y_2
-    \end{bmatrix}
-    =
-    \mathText{using 
-      \eqref{eq:e.14.2 D_x(y_1)}
-      \eqref{eq:e.14.2 D_x(y_2)}
-    }
-    = \det\begin{bmatrix}
-      \cos{(3\,x)}
-      &  \sin{(3\,x)}
-      \\ -3\,\sin{(3\,x)}
-      &  +3\,\cos{(3\,x)}
-    \end{bmatrix}
-    = 3\,\cos^2{(3\,x)}
-    +3\,\sin^2{(3\,x)}
-    = 3
-    % 
-    \yesnumber\label{eq:e.14.2 w}
-  \end{gather*}
-
-  % Sistema de equações da regra de crammer
-  \begin{gather*}
-    \begin{Bmatrix}
-      {
-        c_1'(x)\,\mdif[0]{x}\,y_1(x) 
-        + c_2'(x)\,\mdif[0]{x}\,y_2(x)
-      } &=& 0
-      \\ {
-        c_1'(x)\,\mdif[1]{x}\,y_1(x) 
-        + c_2'(x)\,\mdif[1]{x}\,y_2(x)
-      } &=& \frac{1}{\cos{(3\,x)}}
-    \end{Bmatrix}
-    \yesnumber\label{eq:e.14.2 eq_sytem}
-  \end{gather*}
-
-  % y_1',y_2'
-  \begin{gather*}
-    \mdif[1]{x}\,y_1
-    = \mdif[1]{x}\,\cos{(3\,x)}
-    = -3\,\sin{(3\,x)}
-    \yesnumber\label{eq:e.14.2 D_x(y_1)}
-    %
-    %
-    ; \\[1ex]
-    \mdif[1]{x}\,y_2
-    = \mdif[1]{x}\,\sin{(3\,x)}
-    = +3\,\cos{(3\,x)}
-    \yesnumber\label{eq:e.14.2 D_x(y_2)}
-  \end{gather*}
+  Solving \(\mdif{x}{(y_1,y_2)}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \mdif[1]{x}{y_1}
+      = \mdif[1]{x}\,\cos{(3\,x)}
+      = -3\,\sin{(3\,x)}
+      \yesnumber\label{eq:e.14 D1x(y_1)}
+      %
+      %
+      ; \\
+      \mdif[1]{x}{y_2}
+      = \mdif[1]{x}\,\sin{(3\,x)}
+      = +3\,\cos{(3\,x)}
+      \yesnumber\label{eq:e.14 D1x(y_2)}
+    \end{gather*}
+  \end{tcolorbox}
 
 \end{exampleBox}
+
+\begin{sectionBox}1m{A equação linear de ordem \textit{n} de coeficientes consntantes} % S
+  To find the solution for a diferential equation this method searches for the solutions for an associated polynom \(P(x) \to r\)
+
+  \begin{BM}
+    P(x)\,y = f(x)\,e^{\alpha\,x}
+  \end{BM}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = y_h + \bar{y}
+      = \mathText{using
+        \eqref{eq:s.11 map polynom -> solution y}
+        \land
+        (
+          \eqref{eq:s.11.1 bar y}
+          \lor
+          \eqref{eq:s.11.2 bar y}
+        )
+      }
+      = \dots
+    \end{gather*}
+  \end{tcolorbox}
+
+  Case 1: \(f(x) = P_k(x)\) polynom of order \(k\)
+  \begin{tcolorbox}
+    Solving for \(\bar{y}\)
+    \begin{tcolorbox}
+      \begin{gather*}
+        \bar{y}
+        = x^p\,e^{\alpha\,x}
+        \,Q_k(x)
+        = x^p\,e^{\alpha\,x}
+        \,\sum_{i=0}^{k}{
+          x^i\,\rho_i
+        }
+        = x^p\,e^{\alpha\,x}
+        \,\left(
+          x^0\,\rho_0
+          x^1\,\rho_1
+          x^2\,\rho_2
+          x^3\,\rho_3
+        \right)
+        %
+        \yesnumber\label{eq:s.11 bar y (x rho)}
+        %
+        = \mathText{using \eqref{eq:s.11 rho of bar y}}
+        = \dots
+        % 
+        \yesnumber\label{eq:s.11.1 bar y}
+      \end{gather*}
+    \end{tcolorbox}
+
+    Finding constants of \eqref{eq:s.11 bar y (x rho)}
+    \begin{tcolorbox}
+      \begin{gather*}
+        \bar{y}\,P(x)
+        = x^p\,e^{\alpha\,x}\,Q_k(x)
+        \,P(x)
+        = f(x)\,e^{\alpha\,x}
+        \implies
+        \begin{cases}
+          \rho_0 = \dots
+          \\ \rho_1 = \dots
+          \\ \dots
+        \end{cases}
+        %
+        \yesnumber\label{eq:s.11 rho of bar y}
+      \end{gather*}
+    \end{tcolorbox}
+  \end{tcolorbox}
+
+  Case 2: \(f(x) = (a\,\cos(w\,x)+b\,\cos(w\,x))\,e^{\alpha\,x}\)
+  \begin{tcolorbox}
+    Finding \(\bar{y}\)
+    \begin{tcolorbox}
+      \begin{gather*}
+        \bar{y}
+        = x^p\,(
+          a_0\,\cos(w\,x)
+          + b_0\,\sin(w\,x)
+        )
+        % 
+        \yesnumber\label{eq:s.11 bar y of x a0 b0}
+        = \mathText{using \eqref{eq:s.11 a0 b0 of bar y}}
+        = \dots
+        %
+        \yesnumber\label{eq:s.11.2 bar y}
+      \end{gather*}
+    \end{tcolorbox}
+
+    Finding constants of \eqref{eq:s.11 bar y of x a0 b0}
+    \begin{tcolorbox}
+      \begin{gather*}
+        \bar{y}\,P(x)
+        = x^p\,e^{\alpha\,x}\,(
+          a_0\,\cos(w\,x)
+          + b_0\,\sin(w\,x)
+        )\,P(x)
+        = \\
+        = e^{\alpha\,x}\,\left(
+          a\,\cos(w\,x)
+          +b\,\cos(w\,x)
+        \right)
+        \implies \\
+        \begin{cases}
+          x^p\,a_0 = a 
+          &\implies a_0 = \dots
+          \\
+          x^p\,b_0 = b
+          & \implies
+          b_0 = \dots
+        \end{cases}
+        % 
+        \yesnumber\label{eq:s.11 a0 b0 of bar y}
+      \end{gather*}
+    \end{tcolorbox}
+  \end{tcolorbox}
+
+  Mapping \eqref{eq:s.11 roots} roots to solution of \(y_h\)
+  \begin{tcolorbox}
+    \label{sec:11 mapping roots to solution of y_h}
+    \begin{gather*}
+      \left\{
+      \begin{align*}
+        r_i &= \alpha_i
+        & \to && 
+        (\mdif[i]{x}-\alpha_i)^{q_i}
+        && \to &&
+        e^{r_i\,x}
+        &
+        \,\sum_{j=0}^{i-1}{
+          a_{i,j}\,x^j
+        }
+        \\
+        r_i &= \alpha_i \pm i\,\beta_i
+        & \to &&
+        ((\mdif[i]{x}-\alpha_i)^2-\beta_i^2)^{q_i}
+        && \to &&
+        e^{r_i\,x}
+        &
+        \,\begin{pmatrix}
+          \cos(\beta_i\,x)
+          \,\sum_{j=0}^{i-1}{
+            a_{i,j,0}\,x^j
+          }
+          \\
+          \sin(\beta_i\,x)
+          \,\sum_{j=0}^{i-1}{
+            a_{i,j,1}\,x^j
+          }
+        \end{pmatrix}
+      \end{align*}
+      \right.
+      \vspace{10ex}
+    \end{gather*}
+    Examples
+    \begin{gather*}
+      \left\{
+      \begin{align*}
+        r_0 &= 2
+        & \to && 
+        (\mdif[i]{x}-2)^{1}
+        && \to &&
+        e^{2\,x}
+        &
+        \,a_{0,0}
+        \\
+        r_1 &= 3
+        & \to && 
+        (\mdif[i]{x}-3)^{4}
+        && \to &&
+        e^{3\,x}
+        &
+        \,\left(
+          a_{1,0}\,x^0
+          + a_{1,1}\,x^1
+          + a_{1,2}\,x^2
+          + a_{1,3}\,x^3
+        \right)
+        \\
+        r_2 &= 4 \pm i\,1
+        & \to &&
+        ((\mdif[i]{x}-4)^2-1^2)^{1}
+        && \to &&
+        e^{4\,x}
+        &
+        \,\begin{pmatrix}
+          \cos(1\,x) a_{2,0,0}
+          \\
+          \sin(1\,x) a_{2,0,1}
+        \end{pmatrix}
+        \\
+        r_3 &= 2 \pm i\,2
+        & \to &&
+        ((\mdif[i]{x}-2)^2-2^2)^{2}
+        && \to &&
+        e^{2\,x}
+        &
+        \,\begin{pmatrix}
+          \cos(2\,x)
+          (
+            a_{3,0,0}\,x^0
+            + a_{3,1,0}\,x^1
+          )
+          \\
+          \sin(2\,x)
+          (
+            a_{3,0,1}\,x^0
+            + a_{3,1,1}\,x^1
+          )
+        \end{pmatrix}
+      \end{align*}
+      \right.
+      % 
+      \yesnumber\label{eq:s.11 map polynom -> solution y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Associated polynom roots
+  \begin{tcolorbox}
+    \begin{gather*}
+      P(x)
+      = \mdif[n]{x}
+      + \sum_{i=0}^{n-1}{\left(
+          a_i\,\mdif[i]{x}
+      \right)}
+      \implies \\
+      \implies
+      r^n
+      + \sum_{i=0}^{n-1}{\left(
+          a_i\,r^i
+      \right)}
+      \implies \shortintertext{Finding solutions for \(r\)}
+      \implies
+      r = \begin{cases}
+        \alpha_1 \pm i\,\beta_1,
+        \\ \alpha_2 \pm i\,\beta_2,
+        \\ \dots,
+        \\ \alpha_n \pm i\,\beta_n,
+      \end{cases}
+      %
+      \yesnumber\label{eq:s.11 roots}
+      \implies \shortintertext{The solutions for \(r\) allows to rewrite the differential equation like so}
+      \implies
+      P(x)\,y
+      = y
+      \,\prod_{i=0}^n{
+        (\mdif{i}-\alpha_i)
+      }
+      = f(x)\,e^{\alpha\,x}
+    \end{gather*}
+  \end{tcolorbox}
+  In this format looking at \(\alpha\) and \(f(x)\) whe can find the general solution for \(y\) for specific cases, which include
+  \begin{itemize}
+    \item Homogeneous equation \(P(x)\,y=0\) \ref{sec:linear equation y_h}
+  \end{itemize}
+\end{sectionBox}
+
+\begin{sectionBox}2m{Quando \(f(x)=0\)} % Sindex
+  \label{sec:linear equation y_h}
+
+  \begin{BM}
+    P(x)\,y = 0
+  \end{BM}
+
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P(x)\,y
+      = \mathText{using 
+        \eqref{eq:s.11 map polynom -> solution y}
+        \eqref{eq:s.11.2 r_i}
+      }
+      = y
+      \,\prod_i{\left(
+          \mdif[i]{x}-\alpha_i
+      \right)^{q_{r_i}}}
+      \,\prod_i{\left(
+          \left(\mdif[i]{x}-\alpha_i\right)^2
+          -\beta_i^2
+      \right)^{q_{r_i}}}
+      \implies \mathText{using \eqref{eq:s.11 map polynom -> solution y}}
+      \implies
+      \dots
+    \end{gather*}
+  \end{tcolorbox}
+
+  Map for polynom root \(\to\) solution for \(y\)
+  
+
+  Finding solutions for \eqref{eq:s.11.2 r polynom}
+  \begin{tcolorbox}
+    \begin{gather*}
+      r = \{
+        \alpha_1 \pm \beta_1,
+        \alpha_2 \pm \beta_2,
+        \dots,
+        \alpha_n \pm \beta_n,
+      \}
+      % 
+      \yesnumber\label{eq:s.11.2 r_i}
+    \end{gather*}
+    
+  \end{tcolorbox}
+
+  Associated polynom
+  \begin{tcolorbox}
+    \begin{gather}
+      P(x)
+      = \mdif[n]{x}
+      + \sum_{i=0}^{n-1}{
+        a_i\,\mdif[i]{x}
+      }
+      \implies
+      r^n
+      + \sum_{i=0}^{n-1}{
+        a_i\,r^i
+      }
+      %
+      \yesnumber\label{eq:s.11.2 r polynom}
+    \end{gather}
+  \end{tcolorbox}
+
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  A equação diferencial linear de coeficientes constantes
+  \begin{BM}
+    (\mdif[2]{x}-2)
+    (
+      (\mdif{x}-2)^2
+      + 9
+    )^2
+    \,y
+    = 0
+  \end{BM}
+  Encontre a solução geral
+
+  \answer{\eqref{eq:e.15 answer}}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = \mathText{using \eqref{eq:e.15 mapped roots}}
+      = 
+        e^{+\sqrt{2}\,x}\,c_1
+      + e^{-\sqrt{2}\,x}\,c_2
+      + e^{2\,x}
+      \,\begin{pmatrix}
+        + \cos(3\,x)
+        (c_{3,0,0}+c_{3,1,0}\,x)
+        \\
+        + \sin(3\,x)
+        (c_{3,0,1}+c_{3,1,1}\,x)
+      \end{pmatrix}
+      % 
+      \yesnumber\label{eq:e.15 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots \eqref{eq:e.15 roots} to solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \yesnumber\label{eq:e.15 mapped roots}
+      r_1 = +\sqrt{2}
+      \implies
+      e^{+\sqrt{2}\,x}
+      \,c_1
+      ; \\
+      r_2 = -\sqrt{2}
+      \implies
+      e^{-\sqrt{2}\,x}
+      \,c_2
+      ; \\
+      r_3 = r_4 
+      = 2\pm i\,3
+      \implies
+      e^{2\,x}
+      \,\begin{pmatrix}
+        + \cos(3\,x)
+        (c_{3,0,0}+c_{3,1,0}\,x)
+        \\
+        + \sin(3\,x)
+        (c_{3,0,1}+c_{3,1,1}\,x)
+      \end{pmatrix}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Associated polynom
+  \begin{tcolorbox}
+    \begin{gather*}
+      P(x)
+      = (\mdif[2]{x}-2)
+      (
+        (\mdif{x}-2)^2
+        + 9
+      )^2
+      \implies \\
+      \implies
+      (r^2-2)
+      (
+        (r-2)^2
+        + 9
+      )^2
+      = (r-\sqrt{2})
+      (r+\sqrt{2})
+      (
+        (r-2)^2
+        + 3^2
+      )^2
+      \implies \\
+      \implies
+      r = \begin{cases}
+            r_1 &= +\sqrt{2}
+        ,\\ r_2 &= -\sqrt{2}
+        ,\\ r_3 = r_4 &= 2 \pm i\,3
+      \end{cases}
+      % 
+      \yesnumber\label{eq:e.15 roots}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{sectionBox}2m{Quando \(f(x)=P_k(x)\)} % Sindex
+  In the case that \(f(x)\) is a polynom of \textit{x} with order \(k\)
+  \begin{BM}
+    y\,P(x) = P_k(x)
+    \implies
+    y\,\mdif[k+1]{x}\,P(x) = 0
+  \end{BM}
+  Solve \(y_h\) as in \ref{sec:linear equation y_h} from here we can expect two cases
+  \begin{itemize}
+    \item \(r=0\) is \phantom{not} root of \(P(x)\)
+    \item \(r=0\) is not root of \(P(x)\)
+  \end{itemize}
+  for both cases we just need to multiply \(x^q\) to \(Q_k(x)\) where \(q\) is how many roots equal to zer are in \(y_h\) (homogeneous equation)
+
+  Solução geral
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = y_h 
+      + x^p\,Q_k(x)
+    \end{gather*}
+    Here \(p\) comes from the number of roots found in \eqref{eq:s.11.2 roots} that are equal to 0
+  \end{tcolorbox}
+
+  Finding \(Q_k(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      Q_k(x)
+      = \sum_{i=0}^{1+k}{
+        c_{0,i}\,x^i
+      }
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots to solution
+  \begin{tcolorbox}
+    See \ref{eq:s.11 map polynom -> solution y}
+    \begin{gather*}
+      r_i \to \dots \to \dots
+    \end{gather*}
+  \end{tcolorbox}
+
+  Associated polynom of homogeneous equation \(y_h\)
+  \begin{tcolorbox}
+    See \ref{sec:linear equation y_h}
+    \begin{gather*}
+      P(x)
+      \implies \text{Polynom in } r
+      \implies \text{roots}
+      \yesnumber\label{eq:s.11.2 roots}
+    \end{gather*}
+  \end{tcolorbox}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  \begin{BM}
+    \mdif[5]{x}{y}
+    -3\,y'''
+    -2\,y''
+    = x^2-3\,x+1
+  \end{BM}
+
+  \answer{}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = y_h + x^p\,Q_3(x)
+      = \mathText{using 
+        \eqref{eq:e.16 mapped roots for y_h}
+        \eqref{eq:e.16 Q(x)}
+      }
+      = e^{ 0\,x}\,(c_0 + c_1\,x)
+      + e^{-1\,x}\,(c_2 + c_3\,x)
+      + e^{-2\,x}\,(c_4)
+      - 5/2 
+      + x^1\,1/2 
+      + x^2\,3
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(Q_2(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      Q_2(x)
+      = \sum_{i=0}^{2}{\rho_i\,x^i}
+      = \rho_0+\rho_1\,x+\rho_2\,x^2
+      % 
+      \yesnumber\label{eq:e.16 Q(x c)}
+      = \mathText{using \eqref{eq:e.16 c of Q(x)}}
+      = -5/2 
+      +x^1\,1/2 
+      +x^2\,3
+      % 
+      \yesnumber\label{eq:e.16 Q(x)}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding coeficients of \(Q_3(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      x^2\,Q_2(x)\,P(x)
+      = \mathText{using \eqref{eq:e.16 Q(x c)}}
+      = x^2
+      \,\left(\rho_0+\rho_1\,x+\rho_2\,x^2\right)
+      \,\left(\mdif[5]{x} -3\,\mdif[3]{x} -2\,\mdif[2]{x}\right)
+      = \\
+      = \begin{pmatrix}
+      - 3\,\left(\rho_1\,3*2+\rho_2\,4*3*2\,x^1\right)
+      \\ - 2\,\left(\rho_0\,2+\rho_1\,3*2\,x+\rho_2\,4*3\,x^2\right)
+      \end{pmatrix}
+      = \begin{pmatrix}
+      -\rho_0\,4
+      -\rho_1\,18
+      \\
+      -\rho_1\,12\,x
+      -\rho_2\,72\,x
+      \\
+      -\rho_2\,24\,x^2
+      \end{pmatrix}
+      = \\
+      = P_k(x)
+      = x^2-3\,x+1
+      \implies \\
+      \begin{cases}
+        -\rho_2\,24 = 1
+        &\implies \rho_2 = -1/24
+        ; \\
+        -\rho_1\,12
+        -(-1/24)\,72
+        =-3
+        &\implies 
+        \rho_1
+        = ( 3 + 72/24 )/12
+        = 1/2 
+        ; \\
+        -\rho_0\,4
+        -(1/2)\,18
+        = 1
+        &\implies
+        \rho_0 
+        = (-1-18/2)/4
+        = -5/2 
+      \end{cases}
+      \yesnumber\label{eq:e.16 c of Q(x)}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping \eqref{eq:e.16 roots for y_h} for solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        r_1 = r_2 = 0
+        &\implies 
+        e^{+0\,x}\,(c_0 + c_1\,x)
+        \\
+        r_3 = r_4 = -1
+        &\implies 
+        e^{-1\,x}\,(c_2 + c_3\,x)
+        \\
+        r_5 = 2
+        & \implies
+        e^{-2\,x}\,(c_4)
+      \end{cases}
+      % 
+      \yesnumber\label{eq:e.16 mapped roots for y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic linear equation for \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P(x)
+      = \mdif[5]{x} -3\,\mdif[3]{x} -2\,\mdif[2]{x}
+      \implies
+      r^5 -3\,r^3 -2\,r^2
+      \implies
+      r = \begin{cases}
+        r_1 = r_2 &= 0
+        \\ r_3 = r_4 &= -1
+        \\ r_5 &= 2
+      \end{cases}
+      % 
+      \yesnumber\label{eq:e.16 roots for y_h}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{sectionBox}2m{Quando \(f(x)=a\,\cos(w\,x)+b\,\sin(w\,x)\)} % Sindex
+  \begin{BM}
+    P\,y 
+    = e^{\alpha\,x}\,f(x)
+    = e^{\alpha\,x}\,(
+      a\,\cos(w\,x)
+      + b\,\sin(w\,x)
+    )
+  \end{BM}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = y_h+\bar{y}
+      = \mathText{using
+        \eqref{eq:s.11.3 bar y}
+        \eqref{eq:s.11.3 y_h}
+      }
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(\bar{y}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}
+      = x^p\,e^{\alpha\,x}
+      \,(
+        a_0\,\cos(w\,x)
+        + b_0\,\sin(w\,x)
+      )
+      %
+      \yesnumber\label{eq:s.11.3 bar y a0 b0}
+      = \mathText{using \eqref{eq:s.11.3 a0 b0 of bar y}}
+      = \dots
+      \yesnumber\label{eq:s.11.3 bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(a_0,b_0\)
+  \begin{tcolorbox}
+    \begin{gather}
+      \bar{y}P
+      = x^p\,e^{\alpha\,x}
+      \,(
+        a_0\,\cos(w\,x)
+        + b_0\,\sin(w\,x)
+      )
+      = e^{\alpha\,x}\,(
+        a\,\cos(w\,x)
+        +b\,\sin(w\,x)
+      )
+      \implies \\
+      \implies
+      \begin{cases}
+        a_0 = a\,x^{-p}
+        = \dots
+        \\
+        b_0 = b\,x^{-p}
+        = \dots
+      \end{cases}
+      %
+      \yesnumber\label{eq:s.11.3 a0 b0 of bar y}
+    \end{gather}
+  \end{tcolorbox}
+
+  Finding \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y_h
+      = 
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots of characteristic polynom of \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather}
+      P(x)
+      = \dots
+      \implies \mathText{\(\mdif[i]{x}\to r^i\)}
+      \implies
+    \end{gather}
+  \end{tcolorbox}
+\end{sectionBox}
 
 \end{document}
