@@ -2175,7 +2175,7 @@
 
   Associated polynom
   \begin{tcolorbox}
-    \begin{gather}
+    \begin{gather*}
       P(x)
       = \mdif[n]{x}
       + \sum_{i=0}^{n-1}{
@@ -2188,7 +2188,7 @@
       }
       %
       \yesnumber\label{eq:s.11.2 r polynom}
-    \end{gather}
+    \end{gather*}
   \end{tcolorbox}
 
 \end{sectionBox}
@@ -2491,14 +2491,30 @@
     )
   \end{BM}
 
-  General solution
+  % tag   = s.11.3
+  % P     = P
+  % alpha = \alpha
+  % Pk    = P_k(x)
+  % k     = k
+  % a     = a
+  % b     = b
+  % w     = w
+
+  \answer{\eqref{eq:s.11.3 answer}}
+
+  General solution for \(y\)
   \begin{tcolorbox}
     \begin{gather*}
-      y = y_h+\bar{y}
-      = \mathText{using
+      y
+      = y_h + \bar{y}
+      = \mathText{using 
         \eqref{eq:s.11.3 bar y}
-        \eqref{eq:s.11.3 y_h}
+        \eqref{eq:s.11.3 mapped roots for y_h}
       }
+      = y_h 
+      + \bar{y}
+      %
+      \yesnumber\label{eq:s.11.3 answer}
     \end{gather*}
   \end{tcolorbox}
 
@@ -2506,63 +2522,1260 @@
   \begin{tcolorbox}
     \begin{gather*}
       \bar{y}
-      = x^p\,e^{\alpha\,x}
+      = x^p
+      \,e^{\alpha\,x}
       \,(
         a_0\,\cos(w\,x)
-        + b_0\,\sin(w\,x)
+        + b_0\,\cos(w\,x)
       )
       %
-      \yesnumber\label{eq:s.11.3 bar y a0 b0}
-      = \mathText{using \eqref{eq:s.11.3 a0 b0 of bar y}}
-      = \dots
+      \yesnumber\label{eq:s.11.3 bar y (const)}
+      = \mathText{using \eqref{eq:s.11.3 const of bar y}}
+      \,(
+        a_0\,\cos(w\,x)
+        + b_0\,\cos(w\,x)
+      )
+      %
       \yesnumber\label{eq:s.11.3 bar y}
     \end{gather*}
   \end{tcolorbox}
 
-  Finding \(a_0,b_0\)
-  \begin{tcolorbox}
-    \begin{gather}
-      \bar{y}P
-      = x^p\,e^{\alpha\,x}
-      \,(
-        a_0\,\cos(w\,x)
-        + b_0\,\sin(w\,x)
-      )
-      = e^{\alpha\,x}\,(
-        a\,\cos(w\,x)
-        +b\,\sin(w\,x)
-      )
-      \implies \\
-      \implies
-      \begin{cases}
-        a_0 = a\,x^{-p}
-        = \dots
-        \\
-        b_0 = b\,x^{-p}
-        = \dots
-      \end{cases}
-      %
-      \yesnumber\label{eq:s.11.3 a0 b0 of bar y}
-    \end{gather}
-  \end{tcolorbox}
-
-  Finding \(y_h\)
+  Finding constants of \eqref{eq:s.11.3 bar y (const)}
   \begin{tcolorbox}
     \begin{gather*}
-      y_h
-      = 
+      \bar{y}\,P
+      = x^p
+      \,(
+        a_0\,\cos(w\,x)
+        + b_0\,\cos(w\,x)
+      )
+      \,P
+      = x^p
+      \,(
+        a_0\,\cos(w\,x)
+        + b_0\,\cos(w\,x)
+      )
+      \,P
+      = \\
+      = a\,\cos(w\,x)
+      + b\,\cos(w\,x)
+      \implies \\
+      \begin{cases}
+        %
+        & \implies a_0 = 
+        \\
+        %
+        & \implies b_0 = 
+      \end{cases}
+      %
+      \yesnumber\label{eq:s.11.3 const of bar y}
     \end{gather*}
   \end{tcolorbox}
 
-  Roots of characteristic polynom of \(y_h\)
+  Mapping roots of \eqref{eq:s.11.3 roots of y_h} to solution
   \begin{tcolorbox}
-    \begin{gather}
-      P(x)
-      = \dots
-      \implies \mathText{\(\mdif[i]{x}\to r^i\)}
+    \begin{gather*}
+      \begin{cases}
+        r_i = \alpha_i
+        \implies
+        e^{\alpha_i\,x}
+        \,(c_0+c_1\,x+\dots)
+        ;\\
+        r_i = \alpha_i \pm i\,\beta_i
+        \implies
+        e^{r_i\,x}
+        \begin{pmatrix}
+          \cos(\beta_i\,x)
+          \,(c_0+c_1\,x+\dots)
+          \\
+          \sin(\beta_i\,x)
+          \,(c_2+c_3\,x+\dots)
+        \end{pmatrix}
+      \end{cases}
+      %
+      \yesnumber\label{eq:s.11.3 mapped roots for y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic equation for \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = P
+      \implies \mathText{\(\mdif[i]{x} \to r^i\)}
+      P
       \implies
-    \end{gather}
+      \begin{cases}
+        r_0 = \dots
+      \end{cases}
+      %
+      \yesnumber\label{eq:s.11.3 roots of y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E17
+  Encontre a solução geral da equação
+  \begin{BM}
+    y' + 2\,y = \cos(x)
+  \end{BM}
+  
+  % tag   = e.17
+  % P     = \mdif{x} + 2
+  % alpha = 0
+  % Pk    = P_k(x)
+  % k     = k
+  % a     = 1
+  % b     = 0
+  % w     = 1
+
+  \answer{\eqref{eq:e.17 answer}}
+
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = y_h + \bar{y}
+      = \mathText{using 
+        \eqref{eq:e.17 bar y}
+        \eqref{eq:e.17 mapped roots for y_h}
+      }
+      = e^{-2\,x}\,c_0
+      + 1/5( 2\,\cos(x) + \sin(x))
+      %
+      \yesnumber\label{eq:e.17 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(\bar{y}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}
+      = x^p
+      \,(
+        a_0\,\cos(x)
+        + b_0\,\sin(x)
+      )
+      %
+      \yesnumber\label{eq:e.17 bar y (const)}
+      = \mathText{using \eqref{eq:e.17 const of bar y}}
+      = 1/5( 2\,\cos(x) + \sin(x))
+      %
+      \yesnumber\label{eq:e.17 bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants of \eqref{eq:e.17 bar y (const)}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}\,P
+      = 
+      \,(
+        a_0\,\cos(1\,x)
+        + b_0\,\sin(1\,x)
+      )
+      \,(\mdif{x} + 2)
+      = \\
+      = 
+      - a_0\,\sin(x)
+      + b_0\,\cos(x)
+      + 2\,a_0\,\cos(x)
+      + 2\,b_0\,\sin(x)
+      = \\
+      = \cos(x)
+      \implies \\
+      \begin{cases}
+        a_0 = 2\,b_0 = 2/5
+        \\
+        2\,(2\,b_0)+b_0 = 1
+        %
+        & \implies b_0 = 1/5
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.17 const of bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots of \eqref{eq:e.17 roots of y_h} to solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        r_i = -2
+        \implies
+        e^{-2\,x}\,c_0
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.17 mapped roots for y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic equation for \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = \mdif{x} + 2
+      \implies \mathText{\(\mdif[i]{x} \to r^i\)}
+      r + 2
+      = 0
+      \implies
+      \begin{cases}
+        r_0 = -2
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.17 roots of y_h}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{exampleBox}1m{} % E
+  Considere a equação
+  \begin{BM}
+    y'' + y' = 1 + \cos(2\,x)
+  \end{BM}
+  Encontre a solução geral
+
+  % tag   = e.18
+  % P     = \mdif[2]{x} + \mdif{x}
+
+  \answer{\eqref{eq:e.18 answer}}
+
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = y_h 
+      + \bar{y}_1
+      + \bar{y}_2
+      = \mathText{using 
+        \eqref{eq:e.18 bar y_1}
+        \eqref{eq:e.18 bar y_2}
+        \eqref{eq:e.18 mapped roots for y_h}
+      }
+      = e^{+0\,x}\,c_0
+      + e^{-1\,x}\,c_1
+      + x
+      + (-1/2)\,\cos(2\,x)
+      + (+1/4)\,\sin(2\,x)
+      = \\
+      = c_0
+      + e^{-1\,x}\,c_1
+      + x
+      - \cos(2\,x)/2
+      + \sin(2\,x)/4
+      %
+      \yesnumber\label{eq:e.18 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  % solve bar y here
+
+  % tag   = e.18
+  % i     = _1
+  % P     = \mdif[2]{x} + \mdif{x}
+  % alpha = 0
+  % Pk    = 1
+  % k     = 0
+
+  % y
+  % (\mdif[2]{x} + \mdif{x})
+  % = e^{0 x}
+  % ( 1 )
+
+  Finding \(\bar{y}_1\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}_1
+      = x^1
+      \,Q_0(x)
+      = x
+      \,\sum_{i=0}^{0}{
+        \rho_i\,x^i
+      }
+      = x\,\rho_0
+      %
+      \yesnumber\label{eq:e.18 bar y_1 (const)}
+      = \mathText{using \eqref{eq:e.18 const of bar y_1}}
+      = x
+      %
+      \yesnumber\label{eq:e.18 bar y_1}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants of \eqref{eq:e.18 bar y_1 (const)}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}_1\,P
+      = x\,\rho_0
+      \,\left(
+        \mdif[2]{x} + \mdif{x}
+      \right)
+      = \rho_0
+      = 1
+      %
+      \yesnumber\label{eq:e.18 const of bar y_1}
+    \end{gather*}
+  \end{tcolorbox}
+
+  % tag = e.18
+  % i = _2
+  % P = \mdif[2]{x} + \mdif{x}
+  % alpha = 0
+  % a = 1 
+  % b = 0
+  % w = 2
+
+  % y (\mdif[2]{x} + \mdif{x})
+  % = e^{0 x}(
+  %   1 cos(2 x)
+  % + 0 sin(2 x)
+  % )
+
+  Finding \(\bar{y}_2\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}_2
+      = a_0\,\cos(2\,x)
+      + b_0\,\sin(2\,x)
+      %
+      \yesnumber\label{eq:e.18 bar y_2 (const)}
+      = \mathText{using \eqref{eq:e.18 const of bar y_2}}
+      = (-1/2)\,\cos(2\,x)
+      + (+1/4)\,\sin(2\,x)
+      %
+      \yesnumber\label{eq:e.18 bar y_2}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants of \eqref{eq:e.18 bar y_2 (const)}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}_2\,P
+      = (
+        a_0\,\cos(2\,x)
+        + b_0\,\sin(2\,x)
+      )
+      \,P
+      = (
+        a_0\,\cos(2\,x)
+        + b_0\,\sin(2\,x)
+      )
+      \,\left(
+        \mdif[2]{x} + \mdif{x}
+      \right)
+      = \\
+      = (
+        - a_0\,2*2\,\cos(2\,x)
+        - b_0\,2*2\,\sin(2\,x)
+      )
+      + (
+        - a_0\,2\,\sin(2\,x)
+        + b_0\,2\,\cos(2\,x)
+      )
+      = \\
+      =
+      (
+        - a_0\,4
+        + b_0\,2
+      )
+      \,\cos(2\,x)
+      + (
+        - b_0\,4
+        - a_0\,2
+      )
+      \,\sin(2\,x)
+      = \\
+      = 1\,\cos(2\,x)
+      + 0\,\sin(2\,x)
+      \implies \\
+      \begin{cases}
+        -b_0\,4-a_0\,2 = 0
+        & \implies
+        a_0 = -b_0\,2
+        = -(1/4)\,2 = -1/2
+        \\
+        -(-b_0/2)\,4+b_0\,2 = 1
+        & \implies
+        b_0 = 1/4
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.18 const of bar y_2}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots of \eqref{eq:e.18 roots of y_h} to solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        r_0 = 0
+        \implies
+        e^{0\,x}\,c_0
+        \\
+        r_1 = -1
+        \implies
+        e^{-1\,x}\,c_1
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.18 mapped roots for y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic equation for \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = \mdif[2]{x} + \mdif{x}
+      \implies \mathText{\(\mdif[i]{x} \to r^i\)}
+      \implies r^2 + r
+      = r(r + 1)
+      = 0
+      \implies
+      \begin{cases}
+        r_0 = 0
+        \\ r_1 = -1
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.18 roots of y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{sectionBox}1m{Equação de Euler} % Sindex
+  Its called an Euler's equation the following:
+  \begin{BM}
+    \sum_{i=0}^{n}{
+      a_i\,x^i\,\mdif[i]{x}{y}
+    }
+    = f(x)
+  = \mathText{\(
+      x \to e^t
+      ;
+      \mdif{x}{y}=\odv{y}{t}\odv{t}{x}=\frac{1}{x}\mdif{t}{y}
+  \)}
+    = \sum_{i=0}^n{
+      b_i\,\mdif[i]{t}{y}
+    }
+    = f(e^t)
+  \end{BM}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E19
+  Encontre a solução geral da equação:
+  \begin{BM}
+    \frac{x^3}{4}
+    \,\odv[3]{y}{x}
+    + \frac{x^2}{4}
+    \,\odv[2]{y}{x}
+    - x
+    \,\odv{y}{x}
+    = \frac{1}{4}
+  \end{BM}
+
+  % - 3\,\mdif[1]{t}{y}
+  % - 2\,\mdif[2]{t}{y}
+  % + \mdif[3]{t}{y}
+  % = 1
+
+  % tag   = e.19
+  % P     = \mdif[3]{t} - 2\mdif[2]{t} - 3\,\mdif[1]{t}
+
+  \answer{\eqref{eq:e.19 answer}}
+
+  General solution for \eqref{eq:e.19 eulers eq}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = y_h 
+      + \bar{y}
+      = \mathText{using 
+        \eqref{eq:e.19 bar y}
+        \eqref{eq:e.19 mapped roots for y_h}
+      }
+      = e^{ 0\,t}\,c_0
+      + e^{ 3\,t}\,c_1
+      + e^{-1\,t}\,c_2
+      - t/3
+      = \mathText{\(t=\ln(x)\)}
+      = e^{ 0\,\ln(x)}\,c_0
+      + e^{ 3\,\ln(x)}\,c_1
+      + e^{-1\,\ln(x)}\,c_2
+      - \ln(x)/3
+      = c_0
+      + x^3\,c_1
+      + x^{-1}c_2
+      - \ln(x)/3
+      %
+      \yesnumber\label{eq:e.19 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  % solve bar y here
+  % tag   = e.19
+  % i     = 
+  % P     = \mdif[3]{t} - 2\mdif[2]{t} - 3\mdif{t}
+  % alpha = 0
+  % Pk    = 1
+  % k     = 0
+
+  % y
+  % (\mdif[3]{t} - 2\mdif[2]{t} - 3\mdif{t})
+  % = e^{0 t}
+  % ( 1 )
+
+  Finding \(\bar{y}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}
+      = t^1
+      \,Q_0(t)
+      = t^1
+      \,\sum_{i=0}^{0}{
+        \rho_i\,t^i
+      }
+      = t\,\rho_0
+      %
+      \yesnumber\label{eq:e.19 bar y (const)}
+      = \mathText{using \eqref{eq:e.19 const of bar y}}
+      = -t/3
+      %
+      \yesnumber\label{eq:e.19 bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants of \eqref{eq:e.19 bar y (const)}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}\,P
+      = t^1\,\rho_0
+      \,\left(
+        \mdif[3]{t} - 2\mdif[2]{t} - 3\mdif{t}
+      \right)
+      = -3\,\rho_0
+      = 1
+      \implies 
+      \rho_0 = -1/3
+      %
+      \yesnumber\label{eq:e.19 const of bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots of \eqref{eq:e.19 roots of y_h} to solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        r_0 = 0
+        \implies
+        e^{0\,t}\,c_0
+        \\
+        r_1 = 3
+        \implies
+        e^{3\,t}\,c_1
+        \\
+        r_2 = -1
+        \implies
+        e^{-1\,t}\,c_2
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.19 mapped roots for y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic equation for \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = \mdif[3]{t} - 2\mdif[2]{t} - 3\,\mdif[1]{t}
+      \implies \mathText{\(\mdif[i]{t} \to r^i\)}
+      \implies
+      r^3 - 2\,r^2 - 3\,r
+      = r(r^2 - 2\,r^1 - 3)
+      = 0
+      \implies \\
+      \begin{cases}
+        r_0 = 0
+        \\
+        % a = 1
+        % b = (-2)
+        % c = -3
+        % 1 t^2 + (-2) t + -3 = 0
+        r
+        = \frac{
+          - (-2)
+          \pm \sqrt{
+            (-2)^2
+            -4\,1\,-3
+          }
+        } {2\,1}
+        = 1 \pm 2
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.19 roots of y_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding linear equation of constant coefficients using euler's equation
+  \begin{tcolorbox}
+    \begin{gather*}
+      \frac{x^3}{4}
+      \,\odv[3]{y}{x}
+      + \frac{x^2}{4}
+      \,\odv[2]{y}{x}
+      - x
+      \,\odv{y}{x}
+      = 1/4
+      \implies
+      x^3
+      \,\odv[3]{y}{x}
+      + x^2
+      \,\odv[2]{y}{x}
+      - 4\,x
+      \,\odv{y}{x}
+      = 1
+      = \mathText{using 
+        \eqref{eq:e.19 D123x(y)}
+        ,\(x \to e^t\)
+      }
+      = 
+      x^3
+      \,\frac{1}{x^2}\left(
+        + 2\,\mdif[1]{t}{y}
+        - 3\,\mdif[2]{t}{y}
+        + \mdif[3]{t}{y}
+      \right)
+      + x^2
+      \,\frac{1}{x^2}(
+        - \mdif[1]{t}{y}
+        + \mdif[2]{t}{y}
+      )
+      - 4\,x
+      \,\frac{1}{x}\mdif[1]{t}{y}
+      = \\
+      = 
+      - 3\,\mdif[1]{t}{y}
+      - 2\,\mdif[2]{t}{y}
+      + \mdif[3]{t}{y}
+      = 1
+      %
+      \yesnumber\label{eq:e.19 eulers eq}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(
+    \mdif[1]{x}{y},
+    \mdif[2]{x}{y},
+    \mdif[3]{x}{y}
+  \)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        \mdif[1]{x}{y}
+        = \frac{1}{x}\mdif[1]{t}{y}
+        ; \\
+        \mdif[2]{x}{y}
+        = \mdif[1]{x}{\left(
+            \frac{1}{x}\mdif[1]{t}{y}
+        \right)}
+        =
+        - \frac{1}{x^2}\mdif[1]{t}{y}
+        + \frac{1}{x}\mdif[2]{t}{y}\mdif[1]{x}{t}
+        =
+        \frac{1}{x^2}(
+          - \mdif[1]{t}{y}
+          + \mdif[2]{t}{y}
+        )
+        ; \\
+        \mdif[3]{x}{y}
+        = \mdif[1]{x}{\left(
+          \frac{1}{x^2}(
+            - \mdif[1]{t}{y}
+            + \mdif[2]{t}{y}
+          )
+        \right)}
+        = \\
+        =
+        - \frac{2}{x^3}\left(
+          - \mdif[1]{t}{y}
+          + \mdif[2]{t}{y}
+        \right)
+        + \frac{1}{x^2}\left(
+          - \mdif[2]{t}{y}\mdif[1]{x}{t}
+          + \mdif[3]{t}{y}\mdif[1]{x}{t}
+        \right)
+        = \\
+        = \frac{1}{x^3}\left(
+          + 2\,\mdif[1]{t}{y}
+          - 3\,\mdif[2]{t}{y}
+          + \mdif[3]{t}{y}
+        \right)
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.19 D123x(y)}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\part*{Equações diferenciais não lineares}
+
+\begin{sectionBox}1m{Equações diferenciais Exatas}
+  \begin{BM}
+    \mathText{Forma normal}
+    u(x,y) + v(x,y)y' = 0
+    \iff \mathText{Forma diferencial}
+    \iff
+    u(x,y)\,\odif{x} + v(x,y)\,\odif{y} = 0
+  \end{BM}
+  An differential equation is said to be exact in \(\mdif{}\) if the pair of functions (\(u,v\)) is a gradient of some function continiously derivable in \(\mdif{}\), that is
+  \begin{BM}
+    \exists\,f(x,y):
+    \pdv{f}{x}=u(x,y)
+    \land
+    \pdv{f}{y}=v(x,y)
+  \end{BM}
+
+  \begin{sectionBox}2b{Theorem}
+    Be \(u(x,y),v(x,y)\) two functions continiously derivable in the rectangle \(
+      R=\{
+        (x,y)\in\mathbb{R}^2:
+        \myvert{x-a}<\alpha \land \myvert{y-b}<\beta
+      \}
+    \)
+    Is a necessary and sufficient condition for the equation \(
+      u(x,y)\,\odif{x} + v(x,y)\,\odif{y} = 0
+    \) be exact and:
+    \begin{BM}
+      \pdv{u}{y} = \pdv{v}{x}
+    \end{BM}
+  \end{sectionBox}
+  \begin{sectionBox}2b{Theorem} % Sindex
+    \dots
+  \end{sectionBox}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E20
+  Verifique que a equação diferencial em baixo é exata
+  \begin{BM}
+    (6\,x+2\,y^2)\,\odif{x}
+    +4\,x\,y\,\odif{y} = 0
+  \end{BM}
+
+  \answer{}
+
+  Finding \(f(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      f(x)
+      = \prim_x(u)
+      = \prim_y(v)
+      = \mathText{using 
+        \eqref{eq:e.20 Px(u)}
+        \eqref{eq:e.20 Py(v)}
+        \eqref{eq:e.20 const c0 of Px(u)}
+      }
+      = 6\,x^2
+      + 2\,x\,y^2
+    \end{gather*}
+  \end{tcolorbox}
+
+  Solving \(\prim_x(u),\prim_y(v)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \prim_x{u}
+      = \prim_x{(
+          6\,x+2\,y^2
+      )}
+      = 6\,(c_0+x^2)
+      + 2\,y^2(c_1+x)
+      %
+      \yesnumber\label{eq:e.20 Px(u) const}
+      = \mathText{using \eqref{eq:e.20 const of Px(u)}}
+      = 6\,(c_0+x^2)
+      + 2\,y^2\,x
+      %
+      \yesnumber\label{eq:e.20 Px(u)}
+      % 
+      ; \\
+      \prim_y{v}
+      = \prim_y{(
+          4\,x\,y
+      )}
+      = 4\,x\,(c_2+y^2/2)
+      %
+      \yesnumber\label{eq:e.20 Py(v) const}
+      = \mathText{using \eqref{eq:e.20 const of Py(v)}}
+      = 4\,x\,(3\,x/2+y^2/2)
+      = 2\,x^2\,3
+      + 2\,x\,y^2
+      %
+      \yesnumber\label{eq:e.20 Py(v)}
+      % 
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants in
+  \eqref{eq:e.20 Px(u) const}
+  \eqref{eq:e.20 Py(v) const}
+  \begin{tcolorbox}
+    \begin{gather*}
+      u
+      = 6\,x+2\,y^2
+      = \pdv{}{x}{
+        \prim_y{v}
+      }
+      = \pdv{}{x}{
+        4\,x\,(c_2+y^2/2)
+      }
+      = 4\,(c_2+y^2/2)
+      \implies
+      c_2 = 3\,x/2
+      % 
+      \yesnumber\label{eq:e.20 const of Py(v)}
+      % 
+      % 
+      ; \\
+      v
+      = 4\,x\,y
+      = \pdv{}{y}\prim_x{u}   
+      = \pdv{}{y}{(
+          6\,(c_0+x^2)
+          + 2\,y^2(c_1+x)
+      )}
+      = 4\,y\,(c_1+x)
+      \implies c_1 = 0
+      %
+      \yesnumber\label{eq:e.20 const of Px(u)}
+      %
+      %
+      ; \\
+      f(x)
+      = \prim_x{u}
+      = \mathText{using \eqref{eq:e.20 Px(u)}}
+      = 6\,(c_0+x^2)
+      + 2\,y^2\,x
+      = \prim_y{v}
+      = \mathText{using \eqref{eq:e.20 Py(v)}}
+      = 2\,x^2\,3
+      + 2\,x\,y^2
+      \implies
+      c_0
+      = (
+        2\,x^2\,3
+        - 6\,x^2
+      )/6
+      = 0
+      %
+      \yesnumber\label{eq:e.20 const c0 of Px(u)}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Consider the differential equation
+  \begin{BM}
+    u(x,y)\,\odif{x}+v(x,y)\odif{y}
+    = \\
+    = (2\,e^{2\,x}\,y + 2\,x\,y^2)\odif{x}
+    + (e^{2\,x} + 2\,x^2\,y)\odif{y}
+    = 0
+  \end{BM}
+  Check if its exact and find the implicit solution of the equation
+
+  \answer{\eqref{eq:e.21 answer}}
+
+  Finding implicit solution \(f(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      f(x)
+      = \prim_x(u)
+      = \prim_y(v)
+      = \mathText{using
+        \eqref{eq:e.21 Px(u) c3}
+        \eqref{eq:e.21 Py(v) c3}
+      }
+      = 2\,c_3\,(x+x^2)
+      + e^{2\,x}\,y
+      + x^2\,y^2
+      %
+      \yesnumber\label{eq:e.21 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Solving \(\prim_x{u},\prim_y{v}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \prim_x{u}
+      = \prim_x{(
+          2\,e^{2\,x}\,y + 2\,x\,y^2
+      )}
+      = 2\,y\,\left(c_0 + e^{2\,x}/2\right)
+      + 2\,y^2(c_1 + x^2/2)
+      %
+      \yesnumber\label{eq:e.21 Px(u) const}
+      %
+      = \mathText{using 
+        \eqref{eq:e.21 const c0(c3) of Px(u)}
+        \eqref{eq:e.21 const c1(c3) of Px(u)}
+      }
+      = 2\,y\,\left(\left(
+          c_3\,\frac
+          {(x+x^2)\,2}
+          {y}
+      \right) + e^{2\,x}/2\right)
+      + 2\,y^2\left(\left(
+          - c_3\,\frac
+          {(x+x^2)\,2}
+          {2\,y^2}
+      \right) + x^2/2\right)
+      = \\
+      = y\,e^{2\,x}
+      + 4\,c_3\,(x+x^2)
+      - c_3\,(x+x^2)\,2
+      + y^2\,x^2
+      = y\,e^{2\,x}
+      + 2\,c_3\,(x+x^2)
+      + y^2\,x^2
+      %
+      \yesnumber\label{eq:e.21 Px(u) c3}
+      %
+      %
+      ; \\
+      \prim_y{v}
+      = \prim_y{(
+          e^{2\,x} + 2\,x^2\,y
+      )}
+      = e^{2\,x}(c_2+y)
+      + 2\,x^2\,(c_3+y^2/2)
+      %
+      \yesnumber\label{eq:e.21 Py(v) const}
+      %
+      = \mathText{using \eqref{eq:e.21 const c2(c3) of Py(v)}}
+      = e^{2\,x}((
+          c_3\,2\,x\,e^{-2\,x}
+      )+y)
+      + 2\,x^2\,(c_3+y^2/2)
+      = 2\,c_3\,(x+x^2)
+      + e^{2\,x}\,y
+      + x^2\,y^2
+      %
+      \yesnumber\label{eq:e.21 Py(v) c3}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants in 
+  \eqref{eq:e.21 Px(u) const}
+  \eqref{eq:e.21 Py(v) const}
+  \begin{tcolorbox}
+    \begin{gather*}
+      u
+      = 2\,e^{2\,x}\,y + 2\,x\,y^2
+      = \odv{}{x}{\prim_y{v}}
+      = \mathText{using \eqref{eq:e.21 Py(v) const}}
+      = \odv{}{x}{(
+          e^{2\,x}(c_2+y)
+          + 2\,x^2\,(c_3+y^2/2)
+      )}
+      = 2\,e^{2\,x}(c_2+y)
+      + 4\,x\,(c_3+y^2/2)
+      \implies \\
+      \implies
+      2\,e^{2\,x}\,c_2
+      + 4\,x\,c_3
+      = 0
+      \implies
+      c_2 = c_3\,2\,x\,e^{-2\,x}
+      %
+      \yesnumber\label{eq:e.21 const c2(c3) of Py(v)}
+      % 
+      % 
+      % 
+      ; \\
+      v
+      = e^{2\,x} + 2\,x^2\,y
+      = \odv{}{y}{\prim_x{u}}
+      = \mathText{using \eqref{eq:e.21 Px(u) const}}
+      = \odv{}{y}{\left(
+          2\,y\,\left(c_0 + e^{2\,x}/2\right)
+          + 2\,y^2(c_1 + x^2/2)
+      \right)}
+      = 2\,\left(c_0 + e^{2\,x}/2\right)
+      + 4\,y(c_1 + x^2/2)
+      \implies \\
+      \implies
+      0
+      = 2\,c_0
+      + 4\,y\,c_1
+      \implies
+      c_0 
+      = -2\,y\,c_1
+      %
+      \yesnumber\label{eq:e.21 const c0(c1) of Px(u)}
+      %
+      = \mathText{using \eqref{eq:e.21 const c1(c3) of Px(u)}}
+      = -2\,y\,\left(
+        - c_3\,\frac
+        {(x+x^2)\,2}
+        {2\,y^2}
+      \right)
+      = c_3\,\frac
+      {(x+x^2)\,2}
+      {y}
+      %
+      \yesnumber\label{eq:e.21 const c0(c3) of Px(u)}
+      %
+      %
+      ; \\
+      f(x)
+      = \prim_x{u}
+      = \mathText{using 
+        \eqref{eq:e.21 Px(u) const}
+        \eqref{eq:e.21 const c0(c1) of Px(u)}
+      }
+      = 2\,y\,\left(( -2\,y\,c_1) + e^{2\,x}/2\right)
+      + 2\,y^2(c_1 + x^2/2)
+      = \prim_y{u}
+      = \mathText{using 
+        \eqref{eq:e.21 Py(v) const}
+        \eqref{eq:e.21 const c2(c3) of Py(v)}
+      }
+      = e^{2\,x}\left(\left(
+          c_3\,2\,x\,e^{-2\,x}
+      \right)+y\right)
+      + 2\,x^2\,(c_3+y^2/2)
+      \implies \\
+      \implies
+      - 4\,y^2\,c_1
+      + y\,e^{2\,x}
+      + 2\,y^2\,c_1
+      + y^2\,x^2
+      =
+      e^{2\,x}\,c_3\,2\,x\,e^{-2\,x}
+      + e^{2\,x}\,y
+      + 2\,x^2\,c_3
+      + x^2\,y^2
+      \implies \\
+      \implies
+      - 2\,y^2\,c_1
+      =
+      c_3\,2\,x
+      + 2\,x^2\,c_3
+      \implies 
+      c_1
+      = - c_3\,\frac
+      {(x+x^2)\,2}
+      {2\,y^2}
+      %
+      \yesnumber\label{eq:e.21 const c1(c3) of Px(u)}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{sectionBox}2m{Fator integrante} % S13.1
+  Its a function that multiplies a non exact function making it exact
+  \begin{BM}
+    \phi(x,y):
+    \begin{pmatrix}
+      \pdv{u(x,y)}{y}
+      &\neq&
+      \pdv{v(x,y)}{x}
+      \land \\
+      \land
+      \pdv{\phi(x,y)\,u(x,y)}{y}
+      &=& 
+      \pdv{\phi(x,y)\,v(x,y)}{x}
+    \end{pmatrix}
+  \end{BM}
+
+  finding the integrating factor
+  \begin{tcolorbox}
+    Its not always possible but when its possible:
+    \begin{gather*}
+      \phi(x,y)_1 
+      = \exp{\left(
+          \prim_y{\left(
+              \frac{
+                \pdv{v}{x}
+                -\pdv{u}{y}
+              }{u}
+          \right)}
+      \right)}
+      ; \quad
+      \phi(x,y)_2
+      = \exp{\left(
+          \prim_x{\left(
+              \frac{
+                \pdv{u}{y}
+                -\pdv{v}{x}
+              }{v}
+          \right)}
+      \right)}
+    \end{gather*}
   \end{tcolorbox}
 \end{sectionBox}
+
+\begin{exampleBox}1m{} % E22
+  The equation
+  \begin{BM}
+    u(x,y)\,\odif{x}
+    + v(x,y)\,\odif{y}
+    = \\
+    = (e^x+5\,e^{-y})\odif{x}
+    + (e^x-4\,e^{-y})\odif{y}
+    = 0
+    \yesnumber\label{eq:e.22 equation}
+  \end{BM}
+  Check if its exact and find the Integral factor if needed
+
+  \answer{}
+
+  Checking if its exact
+  \begin{tcolorbox}
+    \begin{gather*}
+      \pdv{u}{y}
+      = \mathText{using \eqref{eq:e.22 ddy(u)}}
+      = -5\,e^{-y}
+      \neq \\
+      \neq \pdv{v}{x}
+      = \mathText{using \eqref{eq:e.22 ddx(v)}}
+      = e^x
+    \end{gather*}
+    \eqref{eq:e.22 equation} is not exact
+  \end{tcolorbox}
+
+  Finding the integral factor \(\phi(x,y)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \phi_1(x,y)
+      = \exp{\left(
+          \prim_y{\left(
+              \frac{
+                \pdv{v}{x}
+                -\pdv{u}{y}
+              }{u}
+          \right)}
+      \right)}
+      = \mathText{using
+        \eqref{eq:e.22 ddy(u)}
+        \eqref{eq:e.22 ddx(v)}
+      }
+      = \exp{\left(
+          \prim_y{\left(
+              \frac{
+                e^x+5\,e^{-y}
+              }{
+                e^x+5\,e^{-y}
+              }
+          \right)}
+      \right)}
+      = e^{y+c_0}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Solving \(\pdv{v}{x},\pdv{u}{y}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \pdv{u}{y}
+      = \pdv{}{y}{\left(
+          e^x+5\,e^{-y}
+      \right)}
+      = -5\,e^{-y}
+      %
+      \yesnumber\label{eq:e.22 ddy(u)}
+      % 
+      % 
+      ; \\
+      \pdv{v}{x}
+      = \pdv{}{x}{(
+          e^x-4\,e^{-y}
+      )}
+      = e^x
+      %
+      \yesnumber\label{eq:e.22 ddx(v)}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{sectionBox}2m{Equations with separable variables} % Sindex
+  \begin{BM}
+    y'=f(x)
+    \iff
+    u(x)\odif{x}
+    +v(y)\odif{y}
+    \\
+    \pdv{u}{y}
+    = \pdv{v}{x}
+    = 0
+  \end{BM}
+
+  Finding general solution
+  \begin{BM}
+    \prim_x{u(x)}
+    + \prim_y{v(y)}
+    = const
+  \end{BM}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E23
+  \begin{BM}
+    y'=\frac{2\,x}{3\,y^2+4}
+  \end{BM}
+
+  Write in the \(u(x,y)\odif{x}+v(x,y)\odif{y}\) form and find the general integral of the equation
+
+  \answer{
+    \eqref{eq:e.23 exactdiffeq}
+  }
+
+  Writting in the exact differential equation form
+  \begin{tcolorbox}
+    \begin{gather*}
+      - 2\,x\,\odif{x}
+      + (3\,y^2+4)\odif{y}
+      = 0
+      %
+      \yesnumber\label{eq:e.23 exactdiffeq}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding general solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      f(x,y)
+      = \prim_x{(u(x))}
+      + \prim_y{(v(y))}
+      = \mathText{using \eqref{eq:e.23 exactdiffeq}}
+      = \prim_x{(
+          -2\,x
+      )}
+      + \prim_y{(
+          3\,y^2+4
+      )}
+      = - 2\,(c_0+x^2/2)
+      + 3\,(c_1+y^3/3)
+      + 4\,(c_2+y)
+      = \\
+      = - 2\,c_0
+      - x^2
+      + 3\,c_1
+      + y^3
+      + 4\,c_2
+      + 4\,y
+      = 0
+      \implies \\
+      \implies
+      - x^2 + y^3 + 4\,y
+      =
+      + 2\,c_0
+      - 4\,c_2
+      - 3\,c_1
+      = c_3
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+ 
 
 \end{document}
