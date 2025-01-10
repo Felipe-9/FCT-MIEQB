@@ -14,7 +14,7 @@
 
 \group{}
 
-\begin{questionBox}1{} % Q1
+\begin{questionBox}1m{} % Q1
   A equação diferencial linear de primeira ordem
   \begin{BM}
     \odv{y}{x} + \frac{\cos(x)}{\sin(x)}\,y
@@ -24,7 +24,7 @@
   Tem como solução geral
   \begin{itemize}[label=\Box]
     \begin{multicols}{3}
-      \item \(y = \frac{c}{\sin x} - x\,\frac{\cos x}{\sin x} +1\)
+      \item[\blacksquare] \(y = \frac{c}{\sin x} - x\,\frac{\cos x}{\sin x} +1\)
       \item \(y = \frac{c}{\cos x} - x\,\frac{\cos x}{\sin x} +1\)
       \item \(y = \frac{c}{\sin x} + x\,\frac{\sin x}{\cos x} -1\)
       \item \(y = \frac{c}{\cos x} + x\,\frac{\cos x}{\sin x} -1\)
@@ -33,95 +33,113 @@
     \end{multicols}
   \end{itemize}
 
-  \answer{}
-
-  % tag  = 1.1
+  % tag  = 1
   % a(x) = \frac{\cos{x}}{\sin{x}}
-  % b(x) = (-x)
+  % b(x) = -x
   % y    = y
   % x    = x
-  \begin{gather*}
-    y
-    = \frac{c_0}{\varphi(x)}
-    + \frac{1  }{\varphi(x)}
-    \,\int{(-x)\,\varphi(x)\,\odif{x}}
-    %
-    %
-    %
-    = \mathText{Using \eqref{eq:1.1-phi_x}}
-    = \frac{c_0}{C_2\,\sin{x}}
-    + \frac{1  }{C_2\,\sin{x}}
-    \,\int{(-x)\,C_2\,\sin{x}\,\odif{x}}
-    %
-    %
-    %
-    = \mathText{Using \eqref{eq:1.1-prim}}
-    = \frac{c_0}{C_2\,\sin{x}}
-    + \frac{1  }{C_2\,\sin{x}}
-    \, C_2\,(
-      x\,\cos{x}
-      - \sin{x}
-      - C_3
-    )
-    = \\
-    = \frac{C_4}{\sin{x}}
-    + x\,\frac{\cos{x}}{\sin{x}}
-    - 1
-    - \frac{C_3}{\sin{x}}
-    % = \\
-    = \frac{C_5}{\sin{x}}
-    + x\,\frac{\cos{x}}{\sin{x}}
-    - 1
-  \end{gather*}
-  % φ(x)
-  \begin{gather*}
-    \varphi(x) 
-    = \exp{\left(
-      \int{\frac{\cos{x}}{\sin{x}}\,\odif{x}}
-    \right)}
-    = \exp{\left(
-        \int{\frac{\odif{(\sin{x})}}{\sin{x}}}
-    \right)}
-    = \exp{\left(
-        \ln{(\sin{x})}+C_1
-    \right)}
-    = C_2\,\sin{x}
-    %
-    \yesnumber\label{eq:1.1-phi_x}
-  \end{gather*}
-  % prim
-  \begin{gather*}
-    P\left(
-      -x\,C_2\,\sin{x}
-    \right)
-    = C_2\,P\left(
-      x\,(-\sin{x})
-    \right)
-    = C_2\,P\left(
-      x\,\odif{\cos{x}}
-    \right)
-    = \mathText{using \(P(u\,v')=u\,v-P(u'\,v)\)}
-    = C_2\,(
-      x\,\cos{(x)}
-      - P(\cos{x})
-    )
-    = C_2\,(
-      x\,\cos{(x)}
-      - \sin{x}
-      - C_3
-    )
-    %
-    \yesnumber\label{eq:1.1-prim}
-  \end{gather*}
 
+  \answer{\eqref{eq:q.1.1 answer}}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = \frac{c_0}{\varphi(x)}
+      + \frac{1  }{\varphi(x)}
+      \,\prim_x{\left(
+          -x\,\varphi(x)
+      \right)}
+      %
+      %
+      %
+      = \mathText{using 
+        \eqref{eq:q.1.1 phi_x}
+        \eqref{eq:q.1.1 prim}
+      }
+      = \frac{c_0}{ c_1\,\sin{x} }
+      + \frac{1  }{ c_1\,\sin{x} }
+      \,\left(
+        -c_1\,(
+          x\,\cos{x} - (c_2+\sin{x})
+        )
+      \right)
+      = \\
+      = \frac{c_0}{c_1\,\sin{x}}
+      + \frac{c_2}{\sin{x}}
+      - x\,\frac{\cos{x}}{\sin{x}}
+      + 1
+      = \frac{c_4}{\sin{x}}
+      - x\,\frac{\cos{x}}{\sin{x}}
+      + 1
+      %
+      \yesnumber\label{eq:q.1.1 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(\varphi(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \varphi(x) 
+      = \exp{\left(
+          \prim_x{\left(
+              \frac{\cos{x}}{\sin{x}}\,\odif{x}
+          \right)}
+      \right)}
+      = \mathText{\(\odif{(\sin{x})} = \cos{x}\odif{x}\)}
+      = \exp{\left(
+          \int{\left(
+              \frac{\odif{(\sin{x})}}{\sin{x}}
+          \right)}
+      \right)}
+      = \exp{\left(
+          c_0 + \ln{(\sin{x})}
+      \right)}
+      = c_1\,\sin{x} 
+      %
+      \yesnumber\label{eq:q.1.1 phi_x}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Integrating
+  \begin{tcolorbox}
+    \begin{gather*}
+      \prim_x{\left(
+          -x\,\varphi(x)
+      \right)}
+      = \mathText{using \eqref{eq:q.1.1 phi_x}}
+      = \prim_x{\left(
+          -x\,c_1\,\sin{x} 
+      \right)}
+      = \mathText{\(
+          \prim_x{(u\,v')}=u\,v-\prim_x{(u'\,v)}
+          \begin{cases}
+            u=x
+            \\
+            v=\cos{x}
+          \end{cases}
+      \)}
+      = x\,\cos{x}
+      - \prim_x{(
+          \cos{x}
+      )}
+      = -c_1\,(
+        x\,\cos{x} - (c_2+\sin{x})
+      )
+      %
+      \yesnumber\label{eq:q.1.1 prim}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
-\begin{questionBox}1{} % Q2
+\begin{questionBox}1m{} % Q2
+
   A solução da equação de Bernoulli
   \begin{BM}
     \odv{y}{x} + y = \frac{1}{y}
   \end{BM}
   que satisfaz a condição \(y(0)=2\), é:
+
   \begin{itemize}[label=\square]
     \begin{multicols}{3}
       \item \(y=\sqrt{e^{+2\,x}+3}\)
@@ -130,206 +148,116 @@
       \item[\blacksquare]\(y=\sqrt{3\,e^{-2\,x}+1}\)
       \item \(y=\sqrt{2\,e^{+2\,x}+2}\)
       \item \(y=\sqrt{2\,e^{-2\,x}+2}\)
-    \end{multicols}
+      \end{multicols}
   \end{itemize}
 
-  \answer{}
-
-  \begin{gather*}
-    y
-    = \sqrt{z}
-    % 
-    \yesnumber\label{eq:1.2-y=z}
-    = \mathText{Using \eqref{eq:1.2.0.1-z(x)}}
-    = \sqrt{
-      c_6\,e^{-2\,x}
-      +1
-    }
-    \yesnumber\label{eq:1.2-y(x c)}
-    = \mathText{Using \eqref{eq:1.2-c_6}}
-    = \sqrt{3\,e^{-2\,x}+1}
-  \end{gather*}
-  % y(0)
-  Using \eqref{eq:1.2-y(x c)}
-  \begin{gather*}
-    y(0)
-    = \sqrt{
-      c_6\,e^{-2*0}
-      + 1
-    }
-    = \sqrt{
-      c_6
-      + 1
-    }
-    = 2
-    \implies
-    c_6=3
-    \yesnumber\label{eq:1.2-c_6}
-  \end{gather*}
-
-  % tag  = 1.2
+  % tag  = q.1.2
   % a(x) = 1
   % b(x) = 1
-  % k    = (-1)
-  \begin{gather*}
-    y' + y = \frac{1}{y}
-    \implies \mathText{Using \eqref{eq:1.2-y=z}}
-    \implies 
-    z' + 2\,z = 2
-    \yesnumber\label{eq:1.2-z(z')}
-  \end{gather*}
+  % k    = {-1}
 
-  \begin{questionBox}*3m{Solving \(z\)} % Q
-    % tag  = 1.2.0.1
-    % a(x) = 2
-    % b(x) = 2
-    % y    = z
-    % x    = x
-    Using \eqref{eq:1.2-z(z')}
+  % y' + y(
+  %   1
+  % )
+  % = y^{-1} (
+  %   1
+  % )
+
+  \answer{\eqref{eq:q.1.2 answer}}
+
+  General solution
+  \begin{tcolorbox}
     \begin{gather*}
-      z
-      = \frac{c_0}{\varphi(x)}
-      + \frac{1  }{\varphi(x)}
-      \,\int{2\,\varphi(x)\,\odif{x}}
+      y 
+      = z^{1/2}
       %
+      \yesnumber\label{eq:q.1.2 y->z}
       %
+      = \\
+      = \left(
+        \frac{c_0}{\varphi(x)}
+        + \frac{1}{\varphi(x)}
+        \,\prim_x{(
+            2*1\,\varphi(x)
+        )}
+      \right)^{1/2}
+      = \mathText{using
+        \eqref{eq:q.1.2 phi_x}
+        \eqref{eq:q.1.2 prim}
+      }
+      = \left(
+        \frac{c_0}{c_1\,e^{2\,x}}
+        + \frac{1}{c_1\,e^{2\,x}}
+        \,c_1\,e^{2\,x}
+      \right)^{1/2}
+      = \left(
+        \frac{c_0}{c_1\,e^{2\,x}}
+        + 1
+      \right)^{1/2}
+      = \left( c_2\,e^{-2\,x} + 1 \right)^{1/2}
       %
-      = \mathText{Using \eqref{eq:1.2.0.1-phi_x}}
-      = \frac{c_0}{c_2\,e^{2\,x}}
-      + \frac{1  }{c_2\,e^{2\,x}}
-      \,\int{2\,c_2\,e^{2\,x}\,\odif{x}}
-      = c_4\,e^{-2\,x}
-      + \frac{1  }{c_2\,e^{2\,x}}
-      \,\int{2\,c_2\,e^{2\,x}\,\odif{x}}
+      \yesnumber\label{eq:q.1.2 y const}
       %
+      = \mathText{using \eqref{eq:q.1.2 c2}}
+      = \left( 3\,e^{-2\,x} + 1 \right)^{1/2}
       %
-      %
-      = \mathText{Using \eqref{eq:1.2.0.1-prim}}
-      = c_4\,e^{-2\,x}
-      + \frac{1  }{c_2\,e^{2\,x}}
-      \,c_2\,(e^{2\,x}+c_3)
-      = c_4\,e^{-2\,x}
-      + 1
-      + c_5\,e^{-2\,x}
-      = c_6\,e^{-2\,x}
-      + 1
-      %
-      \yesnumber\label{eq:1.2.0.1-z(x)}
+      \yesnumber\label{eq:q.1.2 answer}
     \end{gather*}
-    % φ(x)
+  \end{tcolorbox}
+
+  Finding \(c_2\)
+  \begin{tcolorbox}
     \begin{gather*}
-      \varphi(x) 
+      y(0) = 2
+      = \mathText{using \eqref{eq:q.1.2 y const}}
+      = \left( c_2\,e^{-2*0} + 1 \right)^{1/2}
+      \implies
+      c_2 = 4 - 1 = 3
+      %
+      \yesnumber\label{eq:q.1.2 c2}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Bernoulli's substitution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y' + y = y^{-1}
+      \implies \mathText{using \eqref{eq:q.1.2 y->z}}
+      \implies
+      z' + 2\,z = 2
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(\varphi(x)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \varphi(x)
       = \exp{\left(
-        \int{2\,\odif{x}}
+          \prim_x{(2)}
       \right)}
-      = \exp{2\,(x+c_1)}
-      = c_2\,e^{2\,x}
+      = 
+      c_1\,e^{2\,x}
       %
-      \yesnumber\label{eq:1.2.0.1-phi_x}
+      \yesnumber\label{eq:q.1.2 phi_x}
     \end{gather*}
-    % prim
-    \begin{gather*}
-      P\left(
-        2\,\varphi(x)
-      \right)
-      \mathText{Using \eqref{eq:1.2.0.1-phi_x}}
-      = P\left(
-        2\,c_2\,e^{2\,x}
-      \right)
-      = c_2\,(e^{2\,x}+c_3)
-      %
-      \yesnumber\label{eq:1.2.0.1-prim}
-    \end{gather*}  
-  \end{questionBox}
+  \end{tcolorbox}
 
-  % \answer{}
-  %
-  % \begin{BM}
-  %   y = \sqrt{e^{-2\,x}\,3 + 1}
-  % \end{BM}
-  % \begin{flalign*}
-  %   &
-  %     % a(x) = 1
-  %     % b(x) = 1
-  %     % k    = -1
-  %     y' + y = y^{-1}
-  %     %
-  %     %
-  %     %
-  %     &\\[3ex]&
-  %     y
-  %     = \sqrt{z}
-  %     = \sqrt{
-  %       e^{-2\,x}\,3 + 1
-  %     }
-  %     % 
-  %     % 
-  %     % 
-  %     ; &\\[3ex]&
-  %     c: y(0)
-  %     = \sqrt{
-  %       z(0)
-  %     }
-  %     = \sqrt{
-  %       e^{-2* 0}\,c + 1
-  %     }
-  %     = \sqrt{ c + 1 }
-  %     = 2
-  %     \implies
-  %     c = 4-1 = 3
-  %     % 
-  %     % 
-  %     % 
-  %     ; &\\[3ex]&
-  %     z=y^{2} 
-  %     \implies &\\&
-  %     \implies
-  %     z' + (1+1)1\,z = z' + 2\,z 
-  %     = (1+ 1) = 2
-  %     &\\[3ex]&
-  %     % 
-  %     % a(x) = 2
-  %     % b(x) = 2
-  %     % y    = z
-  %     % x    = x
-  %     z
-  %     = \frac{c_0}{\varphi(x)}
-  %     + \frac{1  }{\varphi(x)}
-  %     \,\int{2\,\varphi(x)\,\odif{x}}
-  %     %
-  %     %
-  %     %
-  %     = &\\[3ex]&
-  %     = \frac{c_0}{c_2\,e^{2\,x}}
-  %     + \frac{1  }{c_2\,e^{2\,x}}
-  %     \,\int{2\,c_2\,e^{2\,x}\,\odif{x}}
-  %     = &\\&
-  %     = e^{-2\,x}\,\frac{c_0}{c_2}
-  %     + \frac{2\,c_2}{c_2\,e^{2\,x}}
-  %     \left(
-  %       \frac{e^{2\,x}}{2} + c_3
-  %     \right)
-  %     = e^{-2\,x}\,\frac{c_0}{c_2}
-  %     + 1
-  %     + \frac{2}{e^{2\,x}}\,c_3
-  %     = e^{-2\,x}\,c + 1
-  %     %
-  %     %
-  %     %
-  %     ; &\\[3ex]&
-  %     \varphi(x) 
-  %     = \exp{\left(
-  %       \int{2\,\odif{x}}
-  %     \right)}
-  %     = \exp{\left(
-  %         2\,x + c_1
-  %     \right)}
-  %     = c_2\,e^{2\,x}
-  %   &
-  % \end{flalign*}
+  Integrating
+  \begin{tcolorbox}
+    \begin{gather*}
+      \prim_x{\left(
+          2*1\,\varphi(x)
+      \right)}
+      = \mathText{using \eqref{eq:q.1.2 phi_x}}
+      = 2\,c_1\,e^{2\,x}/2 
+      = c_1\,e^{2\,x}
+      %
+      \yesnumber\label{eq:q.1.2 prim}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
-\begin{questionBox}1{} % Q3
+\begin{questionBox}1m{} % Q3
   A equação differencial
   \begin{BM}
     (5\,x\,y^2 - 2\,y)\,\odif{x} + (3\,x^2\,y-x)\,\odif{y}=0
@@ -342,63 +270,62 @@
       \item \(m=2,n=2\)
       \item \(m=2,n=1\)
       \item \(m=1,n=3\)
-      \item \(m=3,n=1\)
+      \item[\blacksquare] \(m=3,n=1\)
     \end{multicols}
   \end{itemize}
-  \answer{}
-  \begin{BM}
-    m=3,n=2
-  \end{BM}
 
-  \answer{}
+  % tag = q.1.3
+  % u = 5\,x\,y^2-2\,y
+  % v = 3\,x^2\,y-x
 
-  % f1:  (5\,x\,y^2-2\,y)
-  % f2:  (3\,x^2\,y-x)
-  % φ:   x^m\,y^n
-  \begin{gather*}
-    (5\,x\,y^2-2\,y)\,\odif{x}
-    + (3\,x^2\,y-x)\,\odif{y}
-    = 0
-    ;\quad
-    % ;\\
-    \varphi(x,y)
-    = x^m\,y^n
-    %
-    %
-    %
-    \implies \\
-    \implies
-    \left(x^m\,y^n\right)
-    \left(5\,x\,y^2-2\,y\right)
-    \,\odif{x}
-    + 
-    \left(x^m\,y^n\right)
-    \left(3\,x^2\,y-x\right)
-    \,\odif{y}
-    = 0
-    %
-    %
-    %
-    \implies \\
-    \implies
-    \pdv{}{y}
-    \left(x^m\,y^n\right)
-    \left(5\,x\,y^2-2\,y\right)
-    = (x^m\,y^{n-1}\,n)
-    \left(5\,x\,y^2-2\,y\right)
-    = \\
-    =
-    \pdv{}{x}
-    \left(x^m\,y^n\right)
-    \left(3\,x^2\,y-x\right)
-    = 
-    (m\,x^{m-1}\,y^n)
-    \left(3\,x^2\,y-x\right)
-  \end{gather*}
+  \answer{\eqref{eq:q.1.3 answer}}
 
+  Finding \(m,n\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \pdv{u\,\varphi(x)}{y}
+      = \pdv{}{y}{\left(
+          x^m\,y^n
+          \,\left(
+            5\,x\,y^2-2\,y
+          \right)
+      \right)}
+      = \pdv{}{y}{\left(
+          5\,x^{m+1}\,y^{n+2}-2\,y^{n+1}\,x^m
+      \right)}
+      = \\
+      = 5\,x^{m+1}\,(n+2)\,y^{n+1}-2\,(n+1)\,y^{n}\,x^m
+      = \\
+      = \pdv{v\,\varphi(x)}{x}
+      = \pdv{}{x}{\left(
+          x^m\,y^n\,\left(
+            3\,x^2\,y-x
+          \right)
+      \right)}
+      = \pdv{}{x}{\left(
+          3\,x^{2+m}\,y^{n+1}-x^{m+1}\,y^n
+      \right)}
+      = \\
+      = 3\,(2+m)\,x^{1+m}\,y^{n+1}
+      - (m+1)\,x^{m}\,y^n
+      \implies \\
+      \implies
+      \begin{cases}
+        2(n+1)=m+1
+        \implies
+        m = 2\,n+1 = 3
+        \\
+        5\,(n+2)=3(m+2)
+        \implies
+        n = 1
+      \end{cases}
+      %
+      \yesnumber\label{eq:q.1.3 answer}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
-\begin{questionBox}1{} % Q4
+\begin{questionBox}1m{} % Q4
   A equação diferencial linear homogénea
   \begin{BM}
     x\,y'' + x^2\,y' + 4\,y = 0,\quad x>0
@@ -442,42 +369,45 @@
       \end{cases}\)
     \end{multicols}
   \end{itemize}
-  \answer{}
-  \begin{flalign*}
-    &
-      % a_0(x) = 4
-      % a_1(x) = x^2
-      % a_2(x) = x
-      % f(x)   = x^3
-      % y_1(x) = y_1(x)
-      % y_2(x) = y_2(x)
-      y:
-      \begin{pmatrix}
-          4
-        \\ + x^2\,\mdif[1]{x}
-        \\ + x\,\mdif[2]{x}
-      \end{pmatrix}
-      \,y
-      = x^3
-      %
-      %
-      %
-      &\\[3ex]&
+
+  % tag    = q.1.4
+  % a_0(x) = 4
+  % a_1(x) = x^2
+  % a_2(x) = x
+  % f(x)   = x^3
+
+  %  y:
+  %  \begin{pmatrix}
+  %         4
+  %    \\ + x^2\,\mdif[1]{x}
+  %    \\ + x\,\mdif[2]{x}
+  %  \end{pmatrix}
+  %  \,y
+  %  = x^3
+
+  \answer{\eqref{eq:q.1.4 eq_sytem}}
+
+  Crammers equation system
+  \begin{tcolorbox}
+    \begin{gather*}
       \begin{Bmatrix}
         {
-            c_1'(x)\,\mdif[0]{x}y_1(x) 
-          + c_2'(x)\,\mdif[0]{x}y_2(x)
-        } = 0
+            c_1'(x)\,\mdif[0]{x}\,y_1(x) 
+          + c_2'(x)\,\mdif[0]{x}\,y_2(x)
+        } &=& 0
         \\ {
             c_1'(x)\,\mdif[1]{x}\,y_1(x) 
           + c_2'(x)\,\mdif[1]{x}\,y_2(x)
-        } = \frac{x^3}{x} = x^2
+        } &=& \frac{x^3}{x} = x^2
       \end{Bmatrix}
-    &
-  \end{flalign*}
+      %
+      \yesnumber\label{eq:q.1.4 eq_sytem}
+    \end{gather*}
+  \end{tcolorbox}
+
 \end{questionBox}
 
-\begin{questionBox}1{} % Q5
+\begin{questionBox}1m{} % Q5
   Acerca de uma função \(f(x)\) definida e com derivadas até à segunda ordem em \(\mathbb{R}^+_0\) sabe-se que admite transformada de Laplace \(F(s)\), que \(f(0)=1,f'(0)=-2\). Então a trasnformada de Laplace da função
   \begin{BM}
     e^{-t}\,f''(t)+t\,f'(t)
@@ -499,75 +429,87 @@
   \end{BM}
 \end{questionBox}
 
-\group{}
+\group{} % G2
 
-\begin{questionBox}*1{} % II Q
+\begin{questionBox}*1m{} % II Q
   Determine a solução geral da equação diferencial linear homogénea e de coeficientes constantes
   \begin{BM}
     \odv[2]{y}{x}
     + \odv{y}{x}
     -y\,6 = 0
   \end{BM}
+
   \answer{}
-  \begin{flalign*}
-    &
-    % P = \mdif[2]{x} + \mdif[1]{x} -6
-      % φ(x) = \varphi(x)
-      P\,y
-      = \left(
-        \mdif[2]{x} + \mdif[1]{x} -6
-      \right)
-      \,y
-      = 0
-      %
-      %
-      %
-      ; &\\[3ex]&
-      y 
-      = \varphi(x)\,\int{z(x)\,\odif{x}}
-      = \varphi(x)\,\int{
-        z(x)
-        \,\odif{x}
+
+  % tag   = q.2.1
+  % P     = \mdif[2]{x} + \mdif{x} - 6
+
+  \answer{\eqref{eq:q.2.1 answer}}
+
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y
+      = \mathText{using 
+        \eqref{eq:q.2.1 mapped roots for y}
       }
+      = e^{+2\,x}\,c_0
+      + e^{-3\,x}\,c_1
       %
+      \yesnumber\label{eq:q.2.1 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots of \eqref{eq:q.2.1 roots of y} to solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        r_0 = +2
+        \implies
+        e^{+2\,x}\,c_0
+        ;\\
+        r_1 = -3
+        \implies
+        e^{-3\,x}\,c_1
+      \end{cases}
       %
+      \yesnumber\label{eq:q.2.1 mapped roots for y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic equation for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = \mdif[2]{x} + \mdif{x} - 6
+      \implies \mathText{\(\mdif[i]{x} \to r^i\)}
+      \implies
+      r^2 + r - 6 = 0
+      \implies
+      % a = 1
+      % b = 1
+      % c = -6
+      % 1 x^2 + 1 x + -6 = 0
+      r
+      = \frac{
+        - 1 \pm \sqrt{ 1 -4*-6 }
+      } {2}
+      = \frac{ - 1 \pm 5 } {2}
+      \implies \\
+      \implies
+      \begin{cases}
+        r_0 = +2
+        \\
+        r_1 = -3
+      \end{cases}
       %
-      ; &\\[3ex]&
-      P\,y
-      = \left(
-        \mdif[2]{x} + \mdif[1]{x} -6
-      \right)
-      \,\left(
-        \varphi(x)\,\int{
-          z(x)\,\odif{x}
-        }
-      \right)
-      % = &\\&
-      = 0
-      %
-      %
-      %
-      ; &\\[3ex]&
-      \mdif[1]{x}{y}
-      = \mdif[1]{x}{\left(
-        \varphi(x)
-        \,\int{z(x)\,\odif{x}}
-      \right)}
-      %
-      %
-      %
-      ; &\\[3ex]&
-      \mdif[2]{x}{y}
-      = \mdif[2]{x}{\left(
-        \varphi(x)
-        \,\int{z(x)\,\odif{x}}
-      \right)}
-    &
-  \end{flalign*}
-  
+      \yesnumber\label{eq:q.2.1 roots of y}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
-\begin{questionBox}*1{met ver const arb} % II Q2
+\begin{questionBox}*1m{} % II Q2
+
   Utilizando o método da variação das constantes arbitrárias, determine a solução geral da equação não homogénea
   \begin{BM}
     \odv[2]{y}{x}
@@ -576,113 +518,276 @@
     = -5\,e^{2\,x}\,\cos{x}
   \end{BM}
 
-  \answer{}
+  % tag    = q.2.2
+  % a_0(x) = -6
+  % a_1(x) = 1
+  % a_2(x) = 1
+  % f(x)   = -5\,e^{2\,x}\,\cos{x}
+  % y_1(x) = y_1(x)
+  % y_2(x) = y_2(x)
 
-  \begin{flalign*}
-    &
-      % a_0(x) = -6
-      % a_1(x) = 1
-      % a_2(x) = 1
-      % f(x)   = \left(-5\,e^{2\,x}\,\cos(x)\right)
-      % y_1(x) = y_1(x)
-      % y_2(x) = y_2(x)
-      y:
-      \begin{pmatrix}
-          -6
-        \\ + 1\,\mdif[1]{x}
-        \\ + 1\,\mdif[2]{x}
-      \end{pmatrix}
-      \,y
-      = \left(-5\,e^{2\,x}\,\cos(x)\right)
-      %
-      %
-      %
-      &\\[3ex]&
+  %  y:
+  %  \begin{pmatrix}
+  %         -6
+  %    \\ + 1\,\mdif[1]{x}
+  %    \\ + 1\,\mdif[2]{x}
+  %  \end{pmatrix}
+  %  \,y
+  %  = -5\,e^{2\,x}\,\cos{x}
+
+  \answer{\eqref{eq:q.2.2 answer}}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
       y
-      = c_1(x)\,y_1(x)
-      + c_2(x)\,y_2(x)
+      = \mathText{using \eqref{eq:q.2.1 answer}}
+      = c_1(x)\,e^{+2\,x}
+      + c_2(x)\,e^{-3\,x}
+      = \mathText{using 
+        \eqref{eq:q.2.2 c_1}
+        \eqref{eq:q.2.2 c_2}
+      }
+      = \left( c_3+\sin{x} \right)\,e^{+2\,x}
+      + \left(
+        \frac{e^{5\,x}}{26}
+        \,(5\,\cos{x}+\sin{x})
+      \right)\,e^{-3\,x}
+      = \\
+      = e^{2\,x}
+      \,\left(
+        \frac{5}{26}\,\cos{x}
+        + \frac{27}{26}\sin{x}
+        + c_3
+      \right)
       %
+      \yesnumber\label{eq:q.2.2 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  \(y_1,y_2\) comes from \eqref{eq:q.2.1 answer} which is the homogeneous analogus equation for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        y_1 = e^{+2\,x}
+        \\
+        y_2 = e^{-3\,x}
+      \end{cases}
       %
-      %
-      ; &\\[3ex]&
-      % Regra de Crammer
+      \yesnumber\label{eq:q.2.2 y1 y2}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(c_1,c_2\)
+  \begin{tcolorbox}
+    \begin{gather*}
       c_1(x) 
-      = \int{c_1'(x)\,\odif{x}}
+      = \prim_x{(c_1'(x))}
+      = \mathText{Using \eqref{eq:q.2.2 c_1'}}
+      = \prim_x{(
+          -\cos{x}
+      )}
+      = c_3+\sin{x}
+      %
+      \yesnumber\label{eq:q.2.2 c_1}
       %
       %
-      ; &\\[1ex]&
+      ; \\[1ex]
       c_2(x) 
-      = \int{c_2'(x)\,\odif{x}}
+      = \prim_x{(
+          c_2'(x)
+      )}
+      = \mathText{Using \eqref{eq:q.2.2 c_2'}}
+      = \prim_x{(
+        e^{5\,x}\,\cos{x}
+      )}
+      = \mathText{\(
+          \prim_x{(u\,v')}
+          = u\,v
+          - \prim_x{(u'\,v)}
+          \begin{cases}
+            u = e^{5\,x}
+            \\
+            v = \sin{x}
+          \end{cases}
+      \)}
+      = e^{5\,x}\,\sin{x}
+      - \prim_x{(
+        5\,e^{x}\,\sin{x}
+      )}
+      = e^{5\,x}\,\sin{x}
+      + 5\,\prim_x{(
+        e^{5\,x}\,(-\sin{x})
+      )}
+      = \mathText{\(
+          \prim_x{(u\,v')}
+          = u\,v
+          - \prim_x{(u'\,v)}
+          \begin{cases}
+            u = e^{5\,x}
+            \\
+            v = \cos{x}
+          \end{cases}
+      \)}
+      = e^{5\,x}\,\sin{x}
+      + 5\,(
+        e^{5\,x}\,\cos{x}
+        -\prim_x{(
+            5\,e^{5\,x}\,\cos{x}
+        )}
+      )
+      = e^{5\,x}\,\sin{x}
+      + 5\,e^{5\,x}\,\cos{x}
+      - 25\,\prim_x{(
+          e^{5\,x}\,\cos{x}
+      )}
+      \implies \\
+      \implies
+      c_1 = \prim_x{(e^{5\,x}\,\cos{x})}
+      = \frac{e^{5\,x}}{26}
+      \,(5\,\cos{x}+\sin{x})
       %
-      %
-      %
-      &\\[3ex]&
+      \yesnumber\label{eq:q.2.2 c_2}
+    \end{gather*}
+  \end{tcolorbox}
+
+  \solving \(\mdif[1]{x}{(c_1,c_2)}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \mathText{Using \eqref{eq:q.2.2 eq_sytem}}
       c_1'(x)
-      = \frac{1}{W(y_1(x),y_2(x))}
+      = \frac{1}{W(y_1,y_2)}
       \,\begin{vmatrix}
         0 
-        &  \mdif[0]{x}y_2(x)
-        \\ -5\,e^{2\,x}\,\cos(x)
-        &  \mdif[1]{x}y_2(x)
+        &  \mdif[0]{x}y_2
+        \\ \frac{-5\,e^{2\,x}\,\cos{x}}{1}
+        &  \mdif[1]{x}y_2
       \end{vmatrix}
-      %
-      %
-      %
-      &\\[3ex]&
-      c_2'(x)
-      = \frac{1}{W(y_1(x),y_2(x))}
+      = \mathText{using 
+        \eqref{eq:q.2.2 w}
+        \eqref{eq:q.2.2 D_x(y_2)}
+      }
+      = \frac{1}{- 5\,e^{-x}}
       \,\begin{vmatrix}
-           \mdif[0]{x}y_1(x)
-        &  0 
-        \\ \mdif[1]{x}y_1(x)
-        &  -5\,e^{2\,x}\,\cos(x)
+        0 
+        &  e^{-3\,x}
+        \\ -5\,e^{2\,x}\,\cos{x}
+        &  -3\,e^{-3\,x}
       \end{vmatrix}
+      = \frac{
+        5\,e^{-x}\,\cos{x}
+      }{- 5\,e^{-x}}
+      = -\cos{x}
+      %
+      \yesnumber\label{eq:q.2.2 c_1'}
       %
       %
       %
-      &\\[3ex]&
-      % Wronskiano
-      W(y_1(x),y_2(x))
+      ; \\[2ex]
+      \mathText{Using \eqref{eq:q.2.2 eq_sytem}}
+      c_2'(x)
+      = \frac{1}{W(y_1,y_2)}
+      \,\begin{vmatrix}
+           \mdif[0]{x}y_1
+        &  0 
+        \\ \mdif[1]{x}y_1
+        &  \frac{-5\,e^{2\,x}\,\cos{x}}{1}
+      \end{vmatrix}
+      = \mathText{using 
+        \eqref{eq:q.2.2 w}
+        \eqref{eq:q.2.2 D_x(y_1)}
+      }
+      = \frac{1}{- 5\,e^{-x}}
+      \,\begin{vmatrix}
+            e^{+2\,x}
+        &   0 
+        \\  2\,e^{+2\,x}
+        &   -5\,e^{2\,x}\,\cos{x}
+      \end{vmatrix}
+      = \frac
+      {-5\,e^{4\,x}\,\cos{x}}
+      {-5\,e^{-x}}
+      = e^{5\,x}\,\cos{x}
+      %
+      \yesnumber\label{eq:q.2.2 c_2'}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Solving Wronskiano
+  \begin{tcolorbox}
+    \begin{gather*}
+      W(y_1,y_2)
       = \det\begin{bmatrix}
-           \mdif[0]{x}\,y_1(x)
-        &  \mdif[0]{x}\,y_2(x)
-        \\ \mdif[1]{x}\,y_1(x)
-        &  \mdif[1]{x}\,y_2(x)
+           y_1
+        &  y_2
+        \\ \mdif[1]{x}\,y_1
+        &  \mdif[1]{x}\,y_2
       \end{bmatrix}
+      = \mathText{using 
+        \eqref{eq:q.2.2 D_x(y_1)}
+        \eqref{eq:q.2.2 D_x(y_2)}
+      }
+      = \det\begin{bmatrix}
+           +e^{+2\,x}
+        &  +e^{-3\,x}
+        \\ +2\,e^{+2\,x}
+        &  -3\,e^{-3\,x}
+      \end{bmatrix}
+      = - 3\,e^{-x}
+      - 2\,e^{-x}
+      = - 5\,e^{-x}
       %
-      %
-      %
-      &\\[3ex]&
+      \yesnumber\label{eq:q.2.2 w}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Crammers equation system
+  \begin{tcolorbox}
+    \begin{gather*}
       \begin{Bmatrix}
         {
-            c_1'(x)\,\mdif[0]{x}y_1(x) 
-          + c_2'(x)\,\mdif[0]{x}y_2(x)
+            c_1'(x)\,\mdif[0]{x}\,y_1(x) 
+          + c_2'(x)\,\mdif[0]{x}\,y_2(x)
         } &=& 0
         \\ {
             c_1'(x)\,\mdif[1]{x}\,y_1(x) 
           + c_2'(x)\,\mdif[1]{x}\,y_2(x)
-        } &=& -5\,e^{2\,x}\,\cos(x)
+        } &=& \frac{-5\,e^{2\,x}\,\cos{x}}{1}
       \end{Bmatrix}
       %
+      \yesnumber\label{eq:q.2.2 eq_sytem}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Solving \(\mdif[1]{x}{(y_1,y_2)}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \mdif[1]{x}\,y_1
+      = \mdif[1]{x}{\left(
+          e^{+2\,x}
+      \right)}
+      = + 2\,e^{+2\,x}
+      %
+      \yesnumber\label{eq:q.2.2 D_x(y_1)}
       %
       %
-      ; &\\[3ex]&
-      \mdif[1]{x}\,y_1(x)
-      = \mdif[1]{x}\,y_1(x)
+      ; \\[1ex]
+      \mdif[1]{x}\,y_2
+      = \mdif[1]{x}{\left(
+          e^{-3\,x}
+      \right)}
+      = -3\,e^{-3\,x}
       %
-      %
-      ; &\\[1ex]&
-      \mdif[1]{x}\,y_2(x)
-      = \mdif[1]{x}\,y_2(x)
-    &
-  \end{flalign*}
+      \yesnumber\label{eq:q.2.2 D_x(y_2)}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
-\group{}
+\group{} % G3
 
 \setcounter{question}{1}
 
-\begin{questionBox}2{} % 3 Q1.1
+\begin{questionBox}2m{} % 3 Q1.1
   \label{qbox:3.1.1}
   Determine todas as soluções da equação de Clairaut
   \begin{BM}
@@ -690,7 +795,7 @@
   \end{BM}
 \end{questionBox}
 
-\begin{questionBox}2{} % 3 Q1.2
+\begin{questionBox}2m{} % 3 Q1.2
   Utilizando a mudança de variável definida por \(x=1/t\), resolva a equação
   \begin{BM}
     y = -x\,\odv{y}{x} + x^6\,\left(\odv{y}{x}\right)^3
@@ -699,9 +804,9 @@
   \paragraph*{Sug:} Após a mudança de variável utilize (\ref{qbox:3.1.1}).
 \end{questionBox}
 
-\group{}
+\group{} % G4
 
-\begin{questionBox}*1{} % 4 Q1
+\begin{questionBox}*1m{} % 4 Q1
   Utilize a transformada de Laplace para resolver o problema de valores iniciais
   \begin{BM}
     y''+y'+y\,5/2 = \fdif{( t-2 )}
@@ -711,9 +816,9 @@
   \paragraph*{Sug:} tenha em contra que \(s^2+s+5/2=(s+1/2)^2+9/4\).
 \end{questionBox}
 
-\group{}
+\group{} % G5
 
-\begin{questionBox}*1{} % 5 Q1
+\begin{questionBox}*1m{} % 5 Q1
   Considere a equação diferencial lienar de ordem \(n\) e coeficientes constantes
   \begin{BM}
     \left(
@@ -736,7 +841,7 @@
   Seja \(P(r)=r_n+\sum_{k=0}^{n-1}{a_k\,r^{k}}\). admitimos que \(r=\alpha\) é raiz da equação \(P(r)=0\) com grau de multiplicidade um. Justifique \(P'(\alpha)=0\).
 \end{questionBox}
 
-\begin{questionBox}*1{} % 5 Q2
+\begin{questionBox}*1m{} % 5 Q2
   A equação \eqref{eq:5.1-enunciado} tem uma solução particular da forma
   \begin{BM}
     \bar{y}=\frac{c}{2\,P'(\alpha)}\,x\,e^{\alpha\,x}
