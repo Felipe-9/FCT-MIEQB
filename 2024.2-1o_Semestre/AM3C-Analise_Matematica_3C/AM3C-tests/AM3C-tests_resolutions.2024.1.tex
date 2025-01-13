@@ -651,7 +651,7 @@
     \end{gather*}
   \end{tcolorbox}
 
-  \solving \(\mdif[1]{x}{(c_1,c_2)}\)
+  solving \(\mdif[1]{x}{(c_1,c_2)}\)
   \begin{tcolorbox}
     \begin{gather*}
       \mathText{Using \eqref{eq:q.2.2 eq_sytem}}
@@ -781,6 +781,7 @@
       \yesnumber\label{eq:q.2.2 D_x(y_2)}
     \end{gather*}
   \end{tcolorbox}
+
 \end{questionBox}
 
 \group{} % G3
@@ -793,6 +794,101 @@
   \begin{BM}
     y = x\,\odv{y}{x} - \left(\odv{y}{x}\right)^3
   \end{BM}
+
+  \answer{\eqref{eq:q.3.1 answer}}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = \sum_i{y_i}
+      = \mathText{using
+        \eqref{eq:q.3.1 y0}
+        \eqref{eq:q.3.1 y1 y2}
+      }
+      = \begin{cases}
+        x\,c-c^3 
+        &\quad \text{General solution}
+        \\
+        \pm 2\,(x/3)^{3/2} 
+        &\quad \text{Singular solutions}
+      \end{cases}
+      %
+      \yesnumber\label{eq:q.3.1 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(y_i\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y_0
+      = \mathText{using 
+        \eqref{eq:q.3.1 y to p}
+        \eqref{eq:q.3.1 p_i}
+        \(p = c\)
+      }
+      = x\,c - c^3
+      % 
+      \yesnumber\label{eq:q.3.1 y0}
+      % 
+      % 
+      ; \\
+      y_1
+      = \mathText{using 
+        \eqref{eq:q.3.1 y to p}
+        \eqref{eq:q.3.1 p_i}
+        \(p = \pm\sqrt{x/3}\)
+      }
+      = x\,(\pm\sqrt{x/3}) - (\pm\sqrt{x/3})^3
+      = \pm x\,(x/3)^{1/2}
+      \pm (-(x/3)^{3/2})
+      = \\
+      = \pm (x/3)^{1/2}(
+        x - x/3
+      )
+      = \pm x\,(x/3)^{1/2}(3/3 - 1/3)
+      = \pm 2\,(x/3)^{3/2}
+      % 
+      \yesnumber\label{eq:q.3.1 y1 y2}
+      % 
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(p\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y'
+      = \mdif{x}{y}
+      = p
+      = \mathText{using \eqref{eq:q.3.1 y to p}}
+      = \mdif{x}{\left(
+        x\,p - p^3
+      \right)}
+      = p + x\,\mdif{x}{p} - 3\,p^2\,\mdif{x}{p}
+      \implies
+      (x - 3\,p^2)\,\mdif{x}{p} = 0
+      \implies \\
+      \implies
+      \begin{cases}
+        \mdif{x}{p} = 0 \implies p = c
+        \\
+        p = \pm\sqrt{x/3}
+      \end{cases}
+      % 
+      \yesnumber\label{eq:q.3.1 p_i}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Clairut's substitution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = x\,\odv{y}{x} - \left(\odv{y}{x}\right)^3
+      = \mathText{\(\mdif[i]{x}{y} = \mdif[i-1]{x}{p}\)}
+      = x\,p - p^3
+      %
+      \yesnumber\label{eq:q.3.1 y to p}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
 \begin{questionBox}2m{} % 3 Q1.2
@@ -802,6 +898,48 @@
     ,\quad x>0
   \end{BM}
   \paragraph*{Sug:} Após a mudança de variável utilize (\ref{qbox:3.1.1}).
+
+  \answer{\eqref{eq:q.3.2 answer}}
+
+  General solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = \mathText{using \eqref{eq:q.3.2 y to t}}
+      = \odv{y}{t}\,t
+      - \left(\odv{y}{t}\right)^3
+      = \mathText{using \eqref{eq:q.3.1 answer}}
+      = \begin{cases}
+        t\,c-c^3
+        \\
+        \pm 2(t/3)^{3/2}
+      \end{cases}
+      %
+      \yesnumber\label{eq:q.3.2 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Variable change \(x=1/t\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = -x\,\odv{y}{x} + x^6\,\left(\odv{y}{x}\right)^3
+      = \mathText{\(x=1/t\)}
+      = -(1/t)\,\odv{y}{t}\,\odv{t}{x}
+      + (1/t)^6\,\left(
+        \odv{y}{t}\,\odv{t}{x}
+      \right)^3
+      = \mathText{\(\odv{t}{x} = -1/x^2 = -1/(1/t)^2 = -t^2\)}
+      = -(1/t)\,\odv{y}{t}\,(-t^2)
+      + (1/t)^6\,\left(
+        \odv{y}{t}(-t^2)
+      \right)^3
+      = \odv{y}{t}\,t
+      - \left(\odv{y}{t}\right)^3
+      % 
+      \yesnumber\label{eq:q.3.2 y to t}
+    \end{gather*}
+  \end{tcolorbox}
 \end{questionBox}
 
 \group{} % G4
@@ -838,7 +976,137 @@
     , \alpha\in\mathbb{R}
     \yesnumber\label{eq:5.1-enunciado}
   \end{BM}
-  Seja \(P(r)=r_n+\sum_{k=0}^{n-1}{a_k\,r^{k}}\). admitimos que \(r=\alpha\) é raiz da equação \(P(r)=0\) com grau de multiplicidade um. Justifique \(P'(\alpha)=0\).
+  Seja \(P(r)=r^n+\sum_{k=0}^{n-1}{a_k\,r^{k}}\). admitimos que \(r=\alpha\) é raiz da equação \(P(r)=0\) com grau de multiplicidade um. Justifique \(P'(\alpha)=0\).
+
+  \answer{}
+
+  Solving \(P'(\alpha)=0\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P'(\alpha)
+      = 
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(P'(r)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P'(r)
+      = \mathText{using \eqref{eq:q.5.1 P(r)}}
+      = \mdif{r}{\left(
+        (r-\alpha)
+      \right)}
+      = 1
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(P(r)\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = \mdif[n]{x}
+      + \sum_{k=0}^{n-1}{a_k\,\mdif[k]{x}}
+      \implies \mathText{\(\mdif[n]{x} \to r^n\)}
+      \implies
+      P(r)
+      = r^n
+      + \sum_{k=0}^{n-1}{a_k\,r^k}
+      = r^n
+      + a_0
+      + \sum_{k=1}^{n-1}{a_k\,r^k}
+      % 
+      \yesnumber\label{eq:q.5.1 P(r) 1}
+      % 
+      = \mathText{Since \(\alpha\) is the only root with multiplicity 1 we can write \(P(r)\) as follows}
+      = r-\alpha
+      %
+      \yesnumber\label{eq:q.5.1 P(r) 2}
+      %
+      \implies \\
+      \implies
+      \begin{cases}
+        a_0 = -\alpha
+        \\
+        n=1
+      \end{cases}
+      %
+      \yesnumber\label{eq:q.5.1 n a0}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping \(P(r)\) roots to general solution of \(y_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      r_0 = 0 \implies e^{0\,x}\,c_0
+      %
+      \yesnumber\label{eq:q.5.1 mapped roots}
+    \end{gather*}
+  \end{tcolorbox}
+
+  \answer{}
+
+  % tag   = q.5.1
+  % i     = 
+  % P     = \mdif[n]{x} + \sum_{k=0}^{n-1}{a_k\,\mdif[k]{x}}
+  % alpha = \alpha
+  % Pk    = 1
+  % k     = 0
+
+  % y
+  % (\mdif[n]{x} + \sum_{k=0}^{n-1}{a_k\,\mdif[k]{x}})
+  % = e^{\alpha x}
+  % ( 1 )
+
+  Finding \(\bar{y}\)
+  \begin{tcolorbox}
+    \(p=1\) from given roots of \(P(r)\)
+    \begin{gather*}
+      \bar{y}
+      = x^p
+      \,e^{\alpha\,x}
+      \,Q_0(x)
+      = x^1
+      \,e^{\alpha\,x}
+      \,\sum_{i=0}^{0}{
+        \rho_i\,x^i
+      }
+      = x^1\,e^{\alpha\,x}\,\rho_0
+      %
+      \yesnumber\label{eq:q.5.1 bar y (const)}
+      = \mathText{using \eqref{eq:q.5.1 const of bar y}}
+      = x^p
+      \,e^{\alpha\,x}
+      \,\rho_0
+      %
+      \yesnumber\label{eq:q.5.1 bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants of \eqref{eq:q.5.1 bar y (const)}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{y}\,P
+      = x^1
+      \,\rho_0
+      \,\left(
+        \mdif[n]{x} + \sum_{k=0}^{n-1}{a_k\,\mdif[k]{x}}
+      \right)
+      = a_0\,x + a_1\,\rho_0
+      = \\
+      = 1
+      \implies \\
+      \begin{cases}
+        %
+        & \implies \rho_0 = 
+        \\
+        %
+        & \implies \rho_1 = 
+      \end{cases}
+      %
+      \yesnumber\label{eq:q.5.1 const of bar y}
+    \end{gather*}
+  \end{tcolorbox}
+
 \end{questionBox}
 
 \begin{questionBox}*1m{} % 5 Q2
