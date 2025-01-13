@@ -12,6 +12,186 @@
 {Equações Diferenciais Ordinárias (EDO)} % Subfile Title
 {Equações Diferenciais Ordinárias (EDO)} % Part Title
 
+\begin{minipage}{60em}
+  \begin{sectionBox}*1{All differential equation methods} % Sindex
+
+    \begin{minipage}{40em}
+      \subsection*{Ordinary first order equations}
+      \begin{tcolorbox}
+        \begin{align*}
+          % \formulas-AM3C-EDO-linear-ordem-1
+          y' + a(x)\,y &= b(x)
+          & \text{EDO ord:1 (\ref{sec:edo ord:1 simple method})}
+          ; \\
+          % \formulas-AM3C-EDO-linear-ordem-1
+          y' + a(x)\,y &= b(x)
+          & \text{Method varying of arbitrary constants for edo ord:1 (\ref{sec:met solve diffeq ord:1 constvar})}
+          ; \\
+          % \formulas-AM3C-EDO-bernoulli
+          y' + a(x)\,y &= b(x)\,y^k
+          & \text{Bernoulli's equation (\ref{sec:bernoullis equation})}
+          ; \\
+          % \formulas-AM3C-EDO-Riccati
+          y' + a(x)\,y &= b(x) + c(x)\,y^2
+          & \text{Riccati's equation (\ref{sec:riccatis equation})}
+        \end{align*}
+      \end{tcolorbox}
+    \end{minipage}
+    
+    \begin{minipage}{60em}
+      \subsection*{General differential equations}
+      \begin{tcolorbox}
+        \begin{align*}
+          P\,y &= 0
+          ;&
+          y &= \varphi(x)\,\prim_x{z}
+          & \text{Order reduction of diffeq (\ref{sec:met order reduction})}
+          % 
+          % 
+          % 
+          ; \\
+          P\,y &= 0
+          &&& \text{Method of variation of arbitrary constants for n (\ref{sec:met arbconstvar ord:n})}
+          % 
+          % 
+          % 
+          ; \\
+          P\,y &= e^{\alpha\,x}\,f(x)
+          ; &
+          y &= y_h + \bar{y}
+          ; & \text{linear diffeq ord:n \(\mdif[n]{x} \to r^i\) (\ref{sec:linear diffeq ord:n constcoeff})}
+          % 
+          % 
+          % 
+          ; \\
+          P\,y &= 0
+          ; &
+          y &= y_h
+          ; & \text{linear diffeq ord:n \(\mdif[n]{x} \to r^i; f(x)=0\) (\ref{sec:linear diffeq constcoeff f=0})}
+          % 
+          % 
+          % 
+          ; \\
+          P\,y &= e^{\alpha\,x}\,P_k(x)
+          ; &
+          \bar{y} &= x^p\,e^{\alpha\,x}\,Q_k(x)
+          ; & \text{linear diffeq ord:n \(\mdif[n]{x} \to r^i; f=P_k(x)\) (\ref{sec:linear diffeq constcoef f=Pk})}
+          % 
+          % 
+          % 
+          ; \\
+          P\,y &= e^{\alpha\,x}\,(a\,\cos(w\,x)+b\,\sin(w\,x))
+          ; &
+          \bar{y} &= x^p\,e^{\alpha\,x}\,(a_0\,\cos(w\,x)+b_0\,\sin(w\,x))
+          ; & \text{linear diffeq ord:n \(\mdif[n]{x} \to r^i\) (\ref{sec:linear diffeq constcoef ord:n f=acos(wx)+bsin(wx)})}
+          % 
+          % 
+          % 
+          ;\\
+          P\,y
+          &= y\,\sum_{i=0}^{n}{a_i\,x^i\,\mdif[i]{x}}
+          = f(x)
+          = &
+          = & y\,\sum_{i=0}^{n}{b_i\,\mdif[i]{t}}
+          = f(e^t)
+          ; x=e^t
+          ; &
+          \text{Eulers equation (\ref{sec:eulers equation})}
+        \end{align*}
+      \end{tcolorbox}
+    \end{minipage}
+    
+    \begin{minipage}{60em}
+      \subsection*{non-linear exact/non-exact equations}
+      \begin{tcolorbox}
+        \begin{align*}
+          \begin{pmatrix}
+            + u(x,y)\,\odif{x} 
+            \\
+            + v(x,y)\,\odif{y}
+          \end{pmatrix}
+          &= 0
+          ; &
+          \pdv{u}{y} &= \pdv{v}{x}
+          ; &
+          &&
+          \text{exact (\ref{sec:nlinear exact diffeq})}
+          % 
+          % 
+          % 
+          ; \\
+          \phi(x,y)
+          \,\begin{pmatrix}
+            + u(x,y)\,\odif{x} 
+            \\
+            + v(x,y)\,\odif{y}
+          \end{pmatrix}
+          &= 0
+          ; &
+          \pdv{(u\,\phi)}{y} &= \pdv{(v\,\phi)}{x}
+          ; &
+          &&
+          \text{non-exact w integrating factor (\ref{sec:nlinear nexact diffeq integrating factor})}
+          % 
+          % 
+          % 
+          ; \\
+          \begin{pmatrix}
+            + u(x)\,\odif{x} 
+            \\
+            + v(y)\,\odif{y}
+          \end{pmatrix}
+          &= 0
+          ; &
+          \pdv{u}{y} &= \pdv{v}{x}
+          ; & 
+          \prim_x{u(x)} + \prim_y{v(y)} &= \text{const}
+          ; & 
+          \text{exact w sep variables (\ref{sec:nlinear exact diffeq separable variables})}
+        \end{align*}
+      \end{tcolorbox}
+    \end{minipage}
+
+    \begin{minipage}{40em}
+      \subsection*{First order equations not solved by the derivative}
+      \begin{tcolorbox}
+        \begin{align*}
+          y &= x\,\alpha(y') + \beta(y')
+          ; &
+          \alpha(y') &\neq y'
+          ; &
+          y'&=p
+          ; & \text{Lagrange's equation (\ref{sec:lagranges equation})}
+          % 
+          % 
+          % 
+          ; \\
+          y &= x\,y' + \beta(y')
+          && &
+          y'&=p
+          ; & \text{Clairaut's equation (\ref{sec:clairauts equation})}
+        \end{align*}
+      \end{tcolorbox}
+    \end{minipage}
+
+    
+    \begin{minipage}{30em}
+    \subsection*{linear eqsystem of constcoeff} % Sindex
+      \begin{tcolorbox}
+        \begin{align*}
+          \begin{Bmatrix}
+            P_{x,0}\,x + P_{y,0}\,y &=& f_0(t)
+            \\
+            P_{x,1}\,x + P_{y,1}\,y &=& f_1(t)
+            \\
+            \dots
+          \end{Bmatrix}
+        \end{align*}
+      \end{tcolorbox}
+    \end{minipage}
+
+  \end{sectionBox}\end{minipage}
+
 \begin{sectionBox}1m{EDO de Primeira Ordem} % S1
 
   \begin{BM}
@@ -380,6 +560,7 @@
 \end{sectionBox}
 
 \begin{sectionBox}1m{Equação Linear de Primeira Ordem} % S2
+  \label{sec:edo ord:1 simple method}
   \begin{BM}
     y' = f(x,y)
     \iff y' + p(x)y = q(x)
@@ -717,6 +898,7 @@
 \end{exampleBox}
 
 \begin{sectionBox}1m{Método de Variação das constantes Eq Diff de ordem 1} % S
+  \label{sec:met solve diffeq ord:1 constvar}
   Um metodo alternativo para resolver a mesma equação diferencial linear de primeira ordem
   \begin{BM}
     y' + a(x)\,y = b(x)
@@ -891,6 +1073,7 @@
   São equações não lineares que, após mudanças de variáveis apropriadas, se transformam em equações lineares:
 
   \subsection{Eq de Bernoulli}
+  \label{sec:bernoullis equation}
   \begin{BM}
     \shortintertext{A atribuição}
     y = z^{1/(1-k)}
@@ -960,6 +1143,7 @@
   \end{sectionBox}
 
   \subsection{Eq de Riccati}
+  \label{sec:riccatis equation}
   \begin{BM}
     \shortintertext{A substituição}
     y = y_1 + 1/z
@@ -990,6 +1174,7 @@
 \end{sectionBox}
 
 \begin{exampleBox}1m{Eq de Bernoulli} % E
+  
   Considere o problma de valores iniciais (PVI)
   \begin{BM}[align*]
     y' - x\,y = x\,y^3 
@@ -1458,6 +1643,7 @@
 \end{sectionBox}
 
 \begin{sectionBox}1m{Abaixando a ordem de uma EDO} % Sindex
+  \label{sec:met order reduction}
   \begin{BM}
     z(x) : y = \varphi(x)\,\int{(z)\,\odif{x}}
     ;\\ P\,y=0
@@ -1601,6 +1787,7 @@
 \end{sectionBox}
 
 \begin{sectionBox}1m{Método de variação das constantes abitrárias para equação linear de ordem \textit{n}} % Sindex
+  \label{sec:met arbconstvar ord:n}
   \begin{BM}[gather*]
       % a_0(x) = a_1(x)
       % a_1(x) = a_1(x)
@@ -1868,6 +2055,7 @@
 \end{exampleBox}
 
 \begin{sectionBox}1m{A equação linear de ordem \textit{n} de coeficientes consntantes} % S
+  \label{sec:linear diffeq ord:n constcoeff}
   To find the solution for a diferential equation this method searches for the solutions for an associated polynom \(P(x) \to r\)
 
   \begin{BM}
@@ -2122,12 +2310,12 @@
   \end{tcolorbox}
   In this format looking at \(\alpha\) and \(f(x)\) whe can find the general solution for \(y\) for specific cases, which include
   \begin{itemize}
-    \item Homogeneous equation \(P(x)\,y=0\) \ref{sec:linear equation y_h}
+    \item Homogeneous equation \(P(x)\,y=0\) \ref{sec:linear diffeq constcoeff f=0}
   \end{itemize}
 \end{sectionBox}
 
 \begin{sectionBox}2m{Quando \(f(x)=0\)} % Sindex
-  \label{sec:linear equation y_h}
+  \label{sec:linear diffeq constcoeff f=0}
 
   \begin{BM}
     P(x)\,y = 0
@@ -2293,13 +2481,14 @@
 \end{exampleBox}
 
 \begin{sectionBox}2m{Quando \(f(x)=P_k(x)\)} % Sindex
+  \label{sec:linear diffeq constcoef f=Pk}
   In the case that \(f(x)\) is a polynom of \textit{x} with order \(k\)
   \begin{BM}
     y\,P(x) = P_k(x)
     \implies
     y\,\mdif[k+1]{x}\,P(x) = 0
   \end{BM}
-  Solve \(y_h\) as in \ref{sec:linear equation y_h} from here we can expect two cases
+  Solve \(y_h\) as in \ref{sec:linear diffeq constcoeff f=0} from here we can expect two cases
   \begin{itemize}
     \item \(r=0\) is \phantom{not} root of \(P(x)\)
     \item \(r=0\) is not root of \(P(x)\)
@@ -2336,7 +2525,7 @@
 
   Associated polynom of homogeneous equation \(y_h\)
   \begin{tcolorbox}
-    See \ref{sec:linear equation y_h}
+    See \ref{sec:linear diffeq constcoeff f=0}
     \begin{gather*}
       P(x)
       \implies \text{Polynom in } r
@@ -2482,6 +2671,7 @@
 \end{exampleBox}
 
 \begin{sectionBox}2m{Quando \(f(x)=a\,\cos(w\,x)+b\,\sin(w\,x)\)} % Sindex
+  \label{sec:linear diffeq constcoef ord:n f=acos(wx)+bsin(wx)}
   \begin{BM}
     P\,y 
     = e^{\alpha\,x}\,f(x)
@@ -2942,6 +3132,7 @@
 \end{exampleBox}
 
 \begin{sectionBox}1m{Equação de Euler} % Sindex
+  \label{sec:eulers equation}
   Its called an Euler's equation the following:
   \begin{BM}
     \sum_{i=0}^{n}{
@@ -3219,6 +3410,7 @@
 \part*{Equações diferenciais não lineares}
 
 \begin{sectionBox}1m{Equações diferenciais Exatas}
+  \label{sec:nlinear exact diffeq}
   \begin{BM}
     \mathText{Forma normal}
     u(x,y) + v(x,y)y' = 0
@@ -3573,6 +3765,7 @@
 \end{exampleBox}
 
 \begin{sectionBox}2m{Fator integrante} % S13.1
+  \label{sec:nlinear nexact diffeq integrating factor}
   Its a function that multiplies a non exact function making it exact
   \begin{BM}
     \phi(x,y):
@@ -3699,6 +3892,7 @@
 \end{exampleBox}
 
 \begin{sectionBox}2m{Equations with separable variables} % Sindex
+  \label{sec:nlinear exact diffeq separable variables}
   \begin{BM}
     y'=f(x)
     \iff
@@ -3714,7 +3908,7 @@
   \begin{BM}
     \prim_x{u(x)}
     + \prim_y{v(y)}
-    = const
+    = \text{const}
   \end{BM}
 \end{sectionBox}
 
@@ -3777,5 +3971,386 @@
 
 \end{exampleBox}
  
+\part*{First order equations not solved by the derivative}
+
+\begin{sectionBox}1m{Lagrange's equation} % Sindex
+  \label{sec:lagranges equation}
+  \begin{BM}
+    y = x\,\alpha(y') + \beta(y')
+    ; \alpha(y')\neq y'
+  \end{BM}
+
+  \subsection*{Method}
+
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = x\,\alpha(y') + \beta(y')
+      = \mathText{using 
+        \eqref{eq:s.14 g}
+      }
+      = g(p,c)\,\alpha(p)+\beta(p)
+    \end{gather*}
+  \end{tcolorbox}
+
+  General solution for \eqref{eq:s.14 diffeq for x}
+  \begin{tcolorbox}
+    \begin{gather*}
+      x 
+      = \dots
+      = g(p,c)
+      \yesnumber\label{eq:s.14 g}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Linear differential equation for \(x\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \mdif{p}{x}
+      - \frac{\alpha'(p)}{p-\alpha(p)}
+      \,x
+      = \frac{\beta'(p)}{p-\alpha(p)}
+      %
+      \yesnumber\label{eq:s.14 diffeq for x}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Substitution \(y'=p\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = x\,\alpha(y')+\beta(y')
+      = \mathText{y'=p}
+      = x\,\alpha(p)+\beta(p)
+      %
+      \yesnumber\label{eq:s.14 y' to p}
+      %
+      = \mathText{using \eqref{eq:s.14 p}}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding \(p\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y'
+      = \mdif{x}{(
+          x\,\alpha(p)
+          + \beta(p)
+      )}
+      = \alpha(p)
+      + \mdif{x}{p}
+      \,\left(
+        x\,\alpha'(p)
+        + \beta'(p)
+      \right)
+      %
+      \yesnumber\label{eq:s.14 p}
+    \end{gather*}
+  \end{tcolorbox}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E24
+  Considere o PVI
+  \begin{BM}
+    y = x\,(1+y') + y'
+    ,\quad y(0)=1
+  \end{BM}
+
+  Solving general solutio for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = x\,(1+y') + y'
+      = \mathText{using \eqref{eq:e.24 y to p}}
+      = x\,(1+p) + p
+      = \mathText{using \eqref{eq:e.24 x solution}}
+      = x\,\left(1+\left(
+          \ln{
+            \frac{c_0}{ x+1 }
+          }
+      \right)\right) 
+      +\ln{
+        \frac{c_0}{ x+1 }
+      }
+      = x\,\left(1+\left(
+          \ln{ c_0 }
+          -\ln{ x+1 }
+      \right)\right) 
+      +\ln{
+        \frac{c_0}{ x+1 }
+      }
+      % 
+      \yesnumber\label{eq:e.24 y w constants}
+      % 
+      = \mathText{using \eqref{eq:e.24 constants in y}}
+      = \left(
+        e^{-1}\,c_0 - 1
+      \right)\,x\,(1+1)
+      + 1
+      = c_1\,x - 1
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants in \eqref{eq:e.24 y w constants}
+  \begin{tcolorbox}
+    \begin{gather*}
+      y(0) = 1
+      = \mathText{using \eqref{eq:e.24 y w constants}}
+      = \left(
+        e^{-0}\,c_0 - 1
+      \right)\,(1+0)
+      + 0
+      = c_0 - 1
+      \implies c_0 = 2
+      %
+      \yesnumber\label{eq:e.24 constants in y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  % tag   = q.24
+  % P     = \mdif{p}+1
+
+  Solving general solution for \eqref{eq:e.24 diffeq x}
+  \begin{tcolorbox}
+    \begin{gather*}
+      x
+      = x_h 
+      + \bar{x}
+      = \mathText{using 
+        \eqref{eq:e.24 bar x}
+        \eqref{eq:e.24 mapped roots for x_h}
+      }
+      = e^{-p}\,c_0 - 1
+      \iff
+      p
+      = \ln{
+        \frac{c_0}{ x+1 }
+      }
+      %
+      \yesnumber\label{eq:e.24 x solution}
+    \end{gather*}
+  \end{tcolorbox}
+
+  % solve bar x here
+  % tag   = e.24
+  % i     = 
+  % P     = \mdif{p}+1
+  % alpha = 0
+  % Pk    = 1
+  % k     = 0
+
+  % x
+  % (\mdif{p}+1)
+  % = e^{0 p}
+  % ( -1 )
+
+  Finding \(\bar{x}\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{x}
+      = Q_0(p)
+      = \rho_0
+      %
+      \yesnumber\label{eq:e.24 bar x (const)}
+      = \mathText{using \eqref{eq:e.24 const of bar x}}
+      = -1
+      %
+      \yesnumber\label{eq:e.24 bar x}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants of \eqref{eq:e.24 bar x (const)}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \bar{x}\,P
+      = (\rho_0)
+      \,\left(
+        \mdif{p}+1
+      \right)
+      = \rho_0
+      = -1
+      %
+      \yesnumber\label{eq:e.24 const of bar x}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Mapping roots of \eqref{eq:e.24 roots of x_h} to solution
+  \begin{tcolorbox}
+    \begin{gather*}
+      \begin{cases}
+        r_i = -1
+        \implies
+        e^{-1\,p}\,c_0
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.24 mapped roots for x_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Roots for characteristic equation for \(x_h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      P
+      = \mdif{p}+1
+      \implies \mathText{\(\mdif[i]{p} \to r^i\)}
+      \implies
+      r+1
+      = 0
+      \implies
+      \begin{cases}
+        r_0 = -1
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.24 roots of x_h}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding diff equation for \(x\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y'= p
+      = \mathText{using \eqref{eq:e.24 y to p}}
+      = \mdif{x}{(
+          x\,(1+p) + p
+      )}
+      = (1+p)
+      + x\,\mdif{x}{p}
+      + \mdif{x}{p}
+      = 1+p
+      + (x+1)\,\mdif{x}{p}
+      \implies \\
+      \implies
+      \mdif{p}{x} + x = -1
+      %
+      \yesnumber\label{eq:e.24 diffeq x}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Subsitution \(y'=p\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = x\,(1+y') + y'
+      = \mathText{\(y'=p\)}   
+      = x\,(1+p) + p
+      %
+      \yesnumber\label{eq:e.24 y to p}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{sectionBox}1m{Clairut's equation} % Sindex
+  \label{sec:clairauts equation}
+  \begin{BM}
+    y = x\,y' + \beta(y')
+  \end{BM}
+
+  \subsection*{Method}
+  
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = x\,y' + \beta(y')
+      = \mathText{using \eqref{eq:s. y to p}}
+      = x\,p + \beta(p)
+      = \mathText{using \eqref{eq:s. solutions for x}}
+      = \dots
+    \end{gather*}
+  \end{tcolorbox}
+
+  Substitution \(y'=p\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = x\,y' + \beta(y')
+      = \mathText{\(y'=p\)}
+      = x\,p + \beta(p)
+      %
+      \yesnumber\label{eq:s. y to p}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding differential equation for \(x\)
+  \begin{tcolorbox}
+    \begin{gather}
+      y' = p
+      = \mathText{using \eqref{eq:s. y to p}}
+      = \mdif{x}{\left(
+          x\,p + \beta(p)
+      \right)}
+      = p 
+      + x\,p'
+      + \beta'(p)\,p'
+      \implies
+      p'(x+\beta'(p)) = 0
+      \implies \\
+      \implies
+      \begin{cases}
+        p' = 0
+        \\
+        x=-\beta'(p)
+      \end{cases}
+      \yesnumber\label{eq:s. solutions for x}
+    \end{gather}
+  \end{tcolorbox}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E25
+  Find the singular and general solutions for the following Clairut's equation
+  \begin{BM}
+    y 
+    = x\,y' + (y')^2
+  \end{BM}
+
+  \answer{\eqref{eq:e.25 answer}}
+
+  General and singluar solutions for \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y 
+      = x\,y' + (y')^2
+      = \mathText{\(y'=p\)}
+      = x\,p + p^2
+      %
+      \yesnumber\label{eq:e.25 y to p}
+      % 
+      = \mathText{using \eqref{eq:e.25 solutions for y}}
+      = \begin{cases}
+        y = x\,c + c^2
+        & \text{general solution}
+        \\
+        \begin{cases}
+          x= -2\,p
+          \\
+          y = -p^2
+        \end{cases}
+        & \text{singular solution parametric}
+        \\
+        y = -x^2/4
+        & \text{singular solution cartesian}
+      \end{cases}
+      %
+      \yesnumber\label{eq:e.25 answer}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Solutions for \(y'\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y' = p
+      = \mathText{using \eqref{eq:e.25 y to p}}
+      = \mdif{x}{\left(x\,p + p^2\right)}
+      \implies x\,p' + 2\,p\,p' = 0
+      \implies
+      \begin{cases}
+        p' = 0
+        \\
+        x = -2\,p
+      \end{cases}
+      \yesnumber\label{eq:e.25 solutions for y}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
 
 \end{document}
