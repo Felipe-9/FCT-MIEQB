@@ -1,0 +1,1369 @@
+% !TEX root = ./AM3C-Slides_annotations.2.tex
+\documentclass["AM3C-Slides_annotations.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/AM3C-Slides_annotations.2}}}
+% \tikzsetexternalprefix{./.build/figures/AM3C-Slides_annotations.2/graphics/}
+
+\mymakesubfile{2}[AM3C]
+{Laplace Transform} % Subfile Title
+{Laplace Transform} % Part Title 
+
+\begin{sectionBox}*1m{Tables} % Sindex
+  
+  \begin{sectionBox}*2b{Proprierties} % Sindex
+    \begin{align*}
+      e^{a\,t}\,\sin{w\,t}
+      &\xrightarrow{\Lapl} 
+      \frac{w}{(s-a)^2+w^2}
+      % 
+      \\
+      % 
+      e^{a\,t}\,\cos{w\,t}
+      &\xrightarrow{\Lapl} 
+      \frac{s-a}{(s-a)^2+w^2}
+      % 
+      &
+      % 
+      t
+      &\xrightarrow{\Lapl} 
+      \frac{n!}{s^{n+1}}
+      % 
+      \\
+      % 
+      t^n\,e^{a\,t}, n\in\mathbb{N}^+
+      &\xrightarrow{\Lapl} 
+      \frac{n!}{(s-a)^{n+1}}
+      % 
+      &
+      % 
+      t\,\sin{w\,t}
+      &\xrightarrow{\Lapl} 
+      \frac{2\,s\,w}{(s^2+w^2)^2}
+      % 
+      \\
+      % 
+      t\,\cos{w\,t}
+      &\xrightarrow{\Lapl} 
+      \frac{s^2-w^2}{(s^2+w^2)^2}
+      % 
+      &
+      % 
+      t\,\sinh{w\,t}
+      &\xrightarrow{\Lapl} 
+      \frac{2\,s\,w}{(s^2-w^2)^2}
+      % 
+      \\
+      % 
+      t\,\cosh{w\,t}
+      &\xrightarrow{\Lapl} 
+      \frac{s^2+w^2}{(s^2-w^2)^2}
+      % 
+      &
+      % 
+      \frac{\sin{w\,t}}{t}
+      &\xrightarrow{\Lapl} 
+      \frac{\pi}{2}-\tan^{-1}{s/w}
+      % 
+      \\
+      % 
+      a\,f + b\,g 
+      &\xrightarrow{\Lapl} 
+      a\,F(s) + b\,G(s)
+      % 
+      &
+      % 
+      f(\lambda\,t) 
+      &\xrightarrow{\Lapl} 
+      \frac{1}{\lambda}F\left(\frac{s}{\lambda}\right)
+      % 
+      \\
+      % 
+      \Heavi(t-\tau)\,f(t-\tau) 
+      &\xrightarrow{\Lapl} 
+      e^{-s\,\tau}\,F(s)
+      % 
+      &
+      % 
+      e^{-\lambda\,t}\,f(t) 
+      &\xrightarrow{\Lapl} 
+      F(s+\lambda)
+      % 
+      \\
+      % 
+      f(t)/t 
+      &\xrightarrow{\Lapl} 
+      \int_{s}^{\infty}{F(p)\,\odif{p}}
+      % 
+      &
+      % 
+      (f \cdot g)(t) 
+      &\xrightarrow{\Lapl} 
+      F(s)\,G(s)
+    \end{align*}
+    Derivative transform
+    \begin{align*}
+      \Lapl(f')
+      &=  s\,\Lapl(f) - f(0)
+      \\
+      \Lapl(\mdif[n]{t}f(t))
+      &= s^n\,\Lapl(f)
+      - \sum_{k=0}^{n-1}{
+        s^{n-1-k}\,\mdif[k]{t}{f}(0)
+      }
+    \end{align*}
+    Translations
+    \begin{align*}
+      \Lapl(e^{a\,t}\,f(t)) &= F(s-a)
+      & \eqref{eq:Lapl(e^(a t) f(t))}
+      ; \\
+      \Lapl-1(F(s-a)) &= e^{a\,t}\,f(t)
+      & \eqref{eq:Lapl-1(F(s-a))}
+      ;\\
+      \Lapl(f(t-a)\,\Heavi(t-a)) = e^{-a\,s}\,F(s)
+      & \eqref{eq:Lapl(f(t-a) Heavi(t-a))}
+      ; \\
+      \Lapl^{-1}(e^{-a\,s}\,F(s)) = f(t-a)\,\Heavi(t-a)
+      & \eqref{eq:Lapl-1(e^(-a s) F(s))}
+    \end{align*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*2b{Basic transforms} % Sindex
+    \begin{align*}
+      \Lapl(1)           & = 1/s ,                 & s & > 0;             &
+      \Lapl(e^{a\,t})    & = \frac{1}{s-a} ,       & s & > a;            \\
+      \Lapl(\cos(w\,t))  & = \frac{s}{s^2+w^2} ,   & s & > 0;             &
+      \Lapl(\cosh(w\,t)) & = \frac{s}{s^2-w^2} ,   & s & > \max{(-w,w)}; \\
+      \Lapl(\sin(w\,t))  & = \frac{w}{s^2+w^2} ,   & s & > 0;             &
+      \Lapl(\sinh(w\,t)) & = \frac{w}{s^2-w^2} ,   & s & > \max{(-w,w)}; \\
+    \end{align*}
+    \begin{align*}
+      \Lapl(t^n)         & = \frac{n!}{{s^{n+1}}}, & s & >0\land n\in\mathbb{N}^+;
+    \end{align*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*2b{Inverse Transforms} % Sindex
+    \begin{align*}
+      \Lapl^{-1}{\left(\frac{1}{(s-a)(s-b)}\right)} &= \frac{e^{a\,t}-e^{b\,t}}{a-b}
+      ,& a \neq b \land s> \max{(a,b)}
+    \end{align*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*2b{Derivative Transforms} % Sindex
+    \begin{align*}
+      \Lapl(f') &= s\,\Lapl(f) - f(0)
+      ; & s>\rho:\rho\text{ is the exponential order \ref{exponential order} of } f(x)
+    \end{align*}
+  \end{sectionBox}
+\end{sectionBox}
+
+\begin{sectionBox}*2m{Solving notable transforms} % Sindex
+
+  \begin{sectionBox}*3b{Auxiliar demonstrations} % Sindex
+    \begin{gather*}
+      \prim_t{(e^{a\,t}\,\cos(b\,t))}
+      =\frac{1}{b}\prim_t{(e^{a\,t}\,(b\,\cos(b\,t)))}
+      = \mathText{\(
+          \prim_t(u\,v')
+          = u\,v - \prim_t(u'\,v)
+          \begin{cases}
+            u = e^{a\,t}
+            \\
+            v = \sin(b\,t)
+          \end{cases}
+      \)}
+      = \frac{1}{b}
+      (
+        e^{a\,t}\,\sin(b\,t)
+        - a\,\prim_t{\left(e^{a\,t}\,\sin(b\,t)\right)}
+      )
+      = \\
+      = \frac{1}{b}
+      \left(
+        e^{a\,t}\,\sin(b\,t)
+        + \frac{a}{b}\,\prim_t{\left(e^{a\,t}\,(-b\,\sin(b\,t))\right)}
+      \right)
+      = \mathText{\(
+          \prim_t(u\,v')
+          = u\,v - \prim_t(u'\,v)
+          \begin{cases}
+            u = e^{a\,t}
+            \\
+            v = \cos(e^{b\,t})
+          \end{cases}
+      \)}
+      = \\
+      = \frac{1}{b}
+      \left(
+        e^{a\,t}\,\sin(b\,t)
+        + \frac{a}{b}\,\left(
+          e^{a\,t}\,\cos(b\,t)
+          - a\,\prim_t{(e^{a\,t}\,\cos(b\,t))}
+        \right)
+      \right)
+      = \\
+      =
+      \frac{1}{b}\,e^{a\,t}\,\sin(b\,t)
+      + \frac{a}{b^2}\,e^{a\,t}\,\cos(b\,t)
+      - \frac{a^2}{b^2}\,\prim_t{(e^{a\,t}\,\cos(b\,t))}
+      \implies \\
+      \implies
+      \prim_t{(e^{a\,t}\,\cos(b\,t))}
+      = e^{a\,t}
+      \,\frac{
+        a\,\cos(b\,t)
+        + b\,\sin(b\,t) 
+      }{
+        a^2+b^2
+      }
+      % 
+      \yesnumber\label{eq:prim e^at cos(bt)}
+    \end{gather*}
+
+    \begin{gather*}
+      \prim_t{\left(e^{a\,t}\,\sin(b\,t)\right)}
+      = - \frac{1}{b}\prim_t{\left(e^{a\,t}\,(-b\,\sin(b\,t))\right)}
+      = \mathText{\(
+          \prim_t(u\,v')
+          = u\,v - \prim_t(u'\,v)
+          \begin{cases}
+            u = e^{a\,t}
+            \\
+            v = \cos(b\,t)
+          \end{cases}
+      \)}
+      = - \frac{1}{b}
+      \left(
+        e^{a\,t}\,\cos(b\,t)
+        - a\,\prim_t{\left(e^{a\,t}\,\cos(b\,t)\right)}
+      \right)
+      = \\
+      = - \frac{1}{b}
+      \left(
+        e^{a\,t}\,\cos(b\,t)
+        - \frac{a}{b}\,\prim_t{\left(e^{a\,t}\,(b\,\cos(b\,t))\right)}
+      \right)
+      = \mathText{\(
+          \prim_t(u\,v')
+          = u\,v - \prim_t(u'\,v)
+          \begin{cases}
+            u = e^{a\,t}
+            \\
+            v = \sin(b\,t)
+          \end{cases}
+      \)}
+      = - \frac{1}{b}
+      \left(
+        e^{a\,t}\,\cos(b\,t)
+        - \frac{a}{b}\,\left(
+          e^{a\,t}\,\sin(b\,t)
+          - a\,\prim_t{\left(e^{a\,t}\,\sin(b\,t)\right)}
+        \right)
+      \right)
+      = \\
+      = 
+      - \frac{1}{b}\,e^{a\,t}\,\cos(b\,t)
+      + \frac{a}{b^2}\,e^{a\,t}\,\sin(b\,t)
+      - \frac{a^2}{b^2}\,\prim_t{\left(e^{a\,t}\,\sin(b\,t)\right)}
+      \implies \\
+      \implies
+      \prim_t{\left(e^{a\,t}\,\sin(b\,t)\right)}
+      =
+      e^{a\,t}
+      \,\frac{
+        a\,\sin(b\,t)
+        - b\,\cos(b\,t)
+      }{
+        a^2+b^2
+      }
+      % 
+      \yesnumber\label{eq:prim e^at sin(bt)}
+    \end{gather*}
+  \end{sectionBox}
+
+  \subsection*{Transforms}
+
+  \begin{sectionBox}*3b{\(\Lapl(1)\)} % Sindex
+    \begin{gather*}
+      \Lapl(1) 
+      = \int_0^{\infty}{(
+          e^{-s\,t}\,1\,\odif{t}
+      )}
+      = \lim_{k\to\infty}{
+        \int_0^k{(
+            e^{-s\,t}\,1\,\odif{t}
+        )}
+      }
+      = \lim_{k\to\infty}{
+        \left(
+          -\frac{1}{s}\,e^{-s\,t}
+        \right)
+        \Big\vert_0^k
+      }
+      = \\
+      = \lim_{k\to\infty}{ \left(
+          -\frac{1}{s}\,e^{-s\,k}
+          +\frac{1}{s}\,e^{-s\,0}
+      \right) }
+      = \frac{1}{s}
+      %
+      \yesnumber\label{eq:Lapl(1)}
+    \end{gather*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*3b{\(\Lapl\left(e^{a\,t}\right)\)} % Sindex
+    \begin{gather*}
+      \Lapl(e^{a\,t})
+      = \lim_{k\to\infty}{\left(
+        \int_{0}^{k}{
+          e^{-s\,t}
+          \,e^{a\,t}
+          \,\odif{t}
+        }
+      \right)}
+      = \lim_{k\to\infty}{\left(
+        \int_{0}^{k}{
+          e^{(a-s)\,t}
+          \,\odif{t}
+        }
+      \right)}
+      = \lim_{k\to\infty}{
+        \left(
+          \frac{e^{(a-s)\,t}}{a-s}
+        \right)\Big\vert_0^k
+      }
+      = \\
+      = \lim_{k\to\infty}{\left(
+          \frac{e^{(a-s)\,k}}{a-s}
+          - \frac{e^{(a-s)\,0}}{a-s}
+      \right)}
+      = \mathText{\(s>a\)}
+      = -\frac{1}{a-s}
+      = \frac{1}{s-a}
+      %
+      \yesnumber\label{eq:Lapl(e^(a t))}
+      %
+      ; \\
+      \Lapl^{-1}(1/(s-a))
+      = e^{a\,t}
+      % 
+      \yesnumber\label{eq:Lapl-1(1/(s-a))}
+    \end{gather*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*3b{\(\Lapl(\cos(w\,t))\)} % Sindex
+    \begin{gather*}
+      \Lapl(\cos(w\,t))
+      = \lim_{k\to\infty}{\left(
+          \int_0^k{
+            e^{-s\,t}
+            \,\cos(w\,t)
+            \,\odif{t}
+          }
+      \right)}
+      = \mathText{using \eqref{eq:prim e^at cos(bt)}}
+      = \lim_{k\to\infty}{
+        \left(
+          e^{-s\,t}
+          \,\frac{
+            -s\,\cos(w\,t)
+            + w\,\sin(w\,t) 
+          }{
+            s^2+w^2
+          }
+        \right)\Big\vert_0^k
+      }
+      = \\
+      = \lim_{k\to\infty}{
+        \left(
+          e^{-s\,k}
+          \,\frac{
+            -s\,\cos(w\,k)
+            + w\,\sin(w\,k) 
+          }{
+            s^2+w^2
+          }
+          - e^{-s\,0}
+          \,\frac{
+            -s\,\cos(w\,0)
+            + w\,\sin(w\,0) 
+          }{
+            s^2+w^2
+          }
+        \right)
+      }
+      = \mathText{\(s>0\)}
+      = \frac{ s }{ s^2+w^2 }
+      % 
+      \yesnumber\label{eq:Lapl(cos(w t))}
+      % 
+      ; \\
+      \Lapl^{-1}{\left(
+          \frac{ s }{ s^2+w^2 } 
+      \right)}
+      = \cos{w\,t}
+      % 
+      \yesnumber\label{eq:Lapl-1(s/(s^2+w^2))}
+    \end{gather*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*3b{\(\Lapl(\sin(w\,t))\)} % Sindex
+    \begin{gather*}
+      \Lapl(\sin(w\,t))
+      = \lim_{k\to\infty}{\left(
+          \int_0^k{
+            e^{-s\,t}
+            \,\sin(w\,t)
+            \,\odif{t}
+          }
+      \right)}
+      = \mathText{using \eqref{eq:prim e^at sin(bt)}}
+      = \lim_{k\to\infty}{
+        \left(
+          e^{-s\,t}
+          \,\frac{
+            - s\,\sin(w\,t)
+            - w\,\cos(w\,t)
+          }{
+            s^2+w^2
+          }
+        \right)\Big\vert_0^k
+      }
+      = \\
+      = \lim_{k\to\infty}{
+        \left(
+          e^{-s\,k}
+          \,\frac{
+            - s\,\sin(w\,k)
+            - w\,\cos(w\,k)
+          }{
+            s^2+w^2
+          }
+          - e^{-s\,0}
+          \,\frac{
+            - s\,\sin(w\,0)
+            - w\,\cos(w\,0)
+          }{
+            s^2+w^2
+          }
+        \right)
+      }
+      = \mathText{\(s>0\)}
+      = \frac{ w }{ s^2+w^2 }
+      % 
+      \yesnumber\label{eq:Lapl(sin(w t))}
+    \end{gather*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*3b{\(\Lapl{(\cosh(a\,t))}\)} % Sindex
+    \begin{gather*}
+      \Lapl(\cosh(a\,t))
+      = \Lapl{(
+          \frac{1}{2} \left( e^{a\,t} + e^{-a\,t} \right)
+      )}
+      = \frac{1}{2}\left(
+        \Lapl{\left(e^{a\,t}\right)}
+        + \Lapl{\left(e^{-a\,t}\right)}
+      \right)
+      = \mathText{using \eqref{eq:Lapl(e^(a t))}}
+      = \frac{1}{2}\left(
+        \frac{1}{s-a} +\frac{1}{s+a}
+      \right)
+      = \frac{s}{s^2-a^2}
+      % 
+      \yesnumber\label{eq:Lapl(cosh(a t))}
+    \end{gather*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*3b{\(\Lapl{(\sinh(a\,t))}\)} % Sindex
+    \begin{gather*}
+      \Lapl(\cosh(a\,t))
+      = \Lapl{(
+          \frac{1}{2} \left( e^{a\,t} - e^{-a\,t} \right)
+      )}
+      = \frac{1}{2}\left(
+        \Lapl{\left(e^{a\,t}\right)}
+        - \Lapl{\left(e^{-a\,t}\right)}
+      \right)
+      = \mathText{using \eqref{eq:Lapl(e^(a t))}}
+      = \frac{1}{2}\left(
+        \frac{1}{s-a} -\frac{1}{s+a}
+      \right)
+      = \frac{a}{s^2-a^2}
+      % 
+      \yesnumber\label{eq:Lapl(sinh(a t))}
+    \end{gather*}
+  \end{sectionBox}
+
+  \subsection*{Inverse Laplace transform}
+
+  \begin{sectionBox}*3b{\(\Lapl^{-1}\left(1/(s-a)(s-b)\right)\)}
+    \begin{gather*}
+      \Lapl^{-1}\left(
+        \frac{1}{(s-a)(s-b)}
+      \right)
+      = \Lapl^{-1}\left(
+        \frac{1}{a-b}
+        \left(
+          \frac{a-b+s-s}{(s-a)(s-b)}
+        \right)
+      \right)
+      = \\
+      = \frac{1}{a-b}
+      \,\Lapl^{-1}\left(
+        \left(
+          \frac{s-b}{(s-a)(s-b)}
+          - \frac{s-a}{(s-a)(s-b)}
+        \right)
+      \right)
+      = \\
+      = \frac{1}{a-b}
+      \left(
+        \Lapl^{-1}\left( \frac{1}{s-a} \right)
+        - \Lapl^{-1}\left( \frac{1}{s-b} \right)
+      \right)
+      = \mathText{using 
+        \eqref{eq:Lapl(e^(a t))}
+        \(\land\, s>\max{(a,b)} \land a \neq b\)
+      }
+      = \frac{ e^{a\,t}-e^{b\,t} }{a-b}
+      %
+      \yesnumber\label{eq:Lapl-1(1/(s-a)(s-b))}
+    \end{gather*}
+  \end{sectionBox}
+
+  \begin{sectionBox}*3b{\(\Lapl(t^n)\)} % Sindex
+
+    \begin{gather*}
+      \Lapl(t^n)
+      = \lim_{k=\infty}{
+        \int_0^k\left(
+          e^{-s\,t}
+          \,t^n
+          \,\odif{t}
+        \right)
+      }
+      = \mathText{\(
+        \prim(u\,v')   
+        = u\,v
+        - \prim(u'\,v)
+        \begin{cases}
+          u = t^n
+          \\
+          v = -e^{-s\,t}/s
+        \end{cases}
+      \)}
+      = \lim_{k=\infty}{
+        \left(
+          - \left(
+            \frac{t^n\,e^{-s\,t}}{s}
+          \right)\Bigg\vert_0^k
+          - \int_0^k\left(
+            \frac{e^{-s\,t}}{-s}
+            \,n\,t^{n-1}
+            \,\odif{t}
+          \right)
+        \right)
+      }
+      = \\
+      = \lim_{k=\infty}{
+        \left(
+          - \frac{k^n\,e^{-s\,k}}{s}
+          + \frac{0^n\,e^{-s\,0}}{s}
+          - \int_0^k\left(
+            \frac{e^{-s\,t}}{-s}
+            \,n\,t^{n-1}
+            \,\odif{t}
+          \right)
+        \right)
+      }
+      = \mathText{\(s>0\)}
+      = \frac{n}{s}
+      \lim_{k=\infty}{
+        \left(
+          \int_0^k\left(
+            e^{-s\,t}
+            \,t^{n-1}
+            \,\odif{t}
+          \right)
+        \right)
+      }
+      = \frac{n}{s}
+      \,\Lapl\left(t^{n-1}\right)
+      = \frac{n}{s}
+      \,\frac{n-1}{s}
+      \,\Lapl\left(t^{n-2}\right)
+      = \\
+      = \prod_{i=0}^{n-1}{\left(
+          \frac{n-i}{s}
+      \right)}
+      \,\Lapl(t^{n-n})
+      = \frac{n!}{s^{n}}
+      \,\Lapl(1)
+      = \mathText{using \eqref{eq:Lapl(1)}}
+      = \frac{n!}{s^{n}}
+      \,\frac{1}{s}
+      = \frac{n!}{s^{n+1}}
+      % 
+      \yesnumber\label{eq:Lapl(t^n)}
+    \end{gather*}
+  \end{sectionBox}
+  
+\end{sectionBox}
+
+\begin{sectionBox}1m{Introduction} % Sindex
+  
+  \begin{BM}
+    \Lapl{f(x)} = F(x)
+  \end{BM}
+
+  Let \(f(t)\) be a function of the real variable \(t\), for all \(t\in\mathbb{R}\); the values of \(f(t)\) may be either real or complex, although in our applications they will be real. The function \(f\) is said to be differetiable at tpnly finitely many points of \(I\), and all its points of discotinuity are jumps (i.e. there are right and left limits of the function at those points).
+
+  \subsection*{Exploring the existence of the transform}
+  We now introduce a class of functions for which the transformatio will be defined. We assume that the following three conditions are satisfied:\label{laplace conditions}
+  \begin{enumerate}[label=(\arabic{enumi})]
+    \item\label{laplace cond.1} \(t=0 \implies f(t)=0\)
+    \item\label{laplace cond.2} \(f\) is piecewise differentialbe
+    \item\label{laplace cond.3} there exist real numbers \(M,\rho\) such that
+      \begin{BM}
+        \myvert{f(t)} \leq M\,e^{\rho\,t}
+        \quad \forall\,t\in\mathbb{R}
+      \end{BM}
+  \end{enumerate}
+  \paragraph{note:} here \(\rho\) is said to be the \textit{exponential order} of \(f\) \label{exponential order}
+
+  \begin{exampleBox}*2b{Checking if transform exists} % Eindex
+    \begin{BM}[align*]
+      \cosh{t}; && \sinh{t}; && t^n
+    \end{BM}
+    \answer{}
+    \begin{gather*}
+      \myvert{\cosh{t}} 
+      = \myvert{\frac{e^t+e^{-t}}{2}}
+      = \frac{e^t+e^{-t}}{2}
+      \leq \frac{e^t+e^{t}}{2}
+      = e^t
+      ;\\
+      \myvert{\sinh{t}}
+      = \myvert{\frac{e^t-e^{-t}}{2}}
+      \leq \frac{1}{2}\left(
+        \myvert{e^t} + \myvert{e^{-t}}
+      \right)
+      = \frac{1}{2}\left(
+        e^t + e^{-t}
+      \right)
+      \leq \frac{1}{2}\left(
+        e^t + e^{t}
+      \right)
+      = e^t
+      ; \\
+      \myvert{t^n}
+      = n!\,\frac{t^n}{n!}
+      \leq n!\sum_{i=0}^{\infty}{
+        \frac{t^i}{i!}
+      }
+      = n!\,e^t
+    \end{gather*}
+  \end{exampleBox}
+  
+  \begin{sectionBox}2b{The Heaviside function} % Sindex
+    \begin{BM}
+      \Heavi(t) = \begin{cases}
+        0, & t < 0
+        \\
+        1, & t \geq 0
+      \end{cases}
+      % 
+      \yesnumber\label{eq:heaviside function}
+    \end{BM} 
+    
+    \begin{center}
+      \pgfplotsset{
+        width={.5\linewidth},
+        height={15ex},
+      }
+      \begin{tikzpicture}
+        \begin{axis}
+          [
+            minor tick=false,
+            ytick={0,0.5,1},
+            % legend pos={north west},
+            axis on top,
+            axis lines=left,
+            ylabel={\(\Heavi(t)\)},
+            xlabel={\(t\)},
+          ]
+
+          \addplot[
+              const plot, no marks, thick
+            ] coordinates {
+              ( 0,0.0)
+              ( 1,1.0)
+              ( 2,1.0)
+            };
+
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+
+    Like any bounded function, this satisfies condition \ref{laplace cond.3} with \(\rho=0\).  
+    Any function \(\phi(t)\) that fails to satisfy conditions \ref{laplace cond.1}, but does satisfy conditions \ref{laplace cond.2} and \ref{laplace cond.3}, then the function \(f(t)=\Heavi(t)\,\phi(t)\) will satisfy all three conditions.
+    for Example
+    \begin{BM}[align*]
+      \Heavi(t)\,\sin{w\,t}
+      ,&& \Heavi(t)\,t^n
+      ,&& \Heavi(t)\,e^{a\,t}
+    \end{BM}
+    For simplicity we usually omit the factor \(\Heavi(t)\)
+
+    \begin{sectionBox}*2b{} % Sindex
+      \begin{BM}
+        \tilde{f}(t) = f(t-a)\,\Heavi(t-a)
+      \end{BM}
+    \end{sectionBox}
+  \end{sectionBox}
+
+
+  \subsection*{Uses for the Heaviside function}
+  Let \(f(t)\) be a function on the interval \(t\geq0\), and let \(f_1(t)\) be a ``piece'' of \(f(t)\) on the interval \(\myrange r{a,b}, a \geq 0\), that is
+  \begin{BM}
+    f_1(t)
+    \begin{cases}
+      f(t), & t\in\myrange r{a,b}
+      \\
+      0, & c.c.
+    \end{cases}
+  \end{BM}
+  To set the value of \(f_1(t)\) to zero for \(t<0\), we multiply \(f(t)\) by \(\Heavi(t-a)\). To get zero for \(t \geq b\) we can substrac from \(f(t)\) the values \(f(t)\) as \(t \geq b\), that is subtract \(\Heavi(t-b)\,f(t)\). thus
+  \begin{BM}
+    f_1(t) = (\Heavi(t-a)-\Heavi(t-b))f(t)
+  \end{BM}
+
+  \begin{center}
+    \pgfplotsset{
+      width={.5\linewidth},
+      height={15ex},
+    }
+    \begin{tikzpicture}
+      \begin{axis}
+        [
+          minor tick=false,
+          xtick=\empty,
+          ytick=\empty,
+          % legend pos={north west},
+          % hide axis,
+          axis on top,
+          axis lines=left,
+          ylabel={\(f_1(t)/f(t)\)},
+          xlabel={\(t\)},
+        ]
+
+        \addplot[
+            const plot, no marks, thick, Graph
+          ] coordinates {
+            ( 0.0,0.0)
+            ( 0.3,1.0)
+            ( 0.8,0.0)
+            ( 1.0,0.0)
+          };
+          \node[above,rotate=90] at (0.3,0.5) {a};
+          \node[above,rotate=90] at (0.8,0.5) {b};
+
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Using the Heaviside function, write down the piecewise definition of the function
+  \begin{BM}
+    f(t)
+    \begin{cases}
+      0,   & 0\leq t< 2 \\
+      3\,t & 2\leq t< 4, \\
+      2,   & t \geq 4
+    \end{cases}
+  \end{BM}
+
+  \answer{}
+  \begin{tcolorbox}
+    \begin{gather*}
+      f(t) = 
+      \begin{pmatrix}
+        + 3\,t(\Heavi(t-2)-\Heavi(t-4))
+        \\
+        + 2\,(\Heavi(t-4))
+      \end{pmatrix}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{sectionBox}1m{Laplace Transform of the Derivative} % Sindex
+  
+  \subsection*{For the first derivative}
+  Suppose that \(f(x)\) follows all three laplace conditions \ref{laplace conditions} and has exponential order \ref{exponential order} \(\gamma\)
+  \begin{align*}
+    \Lapl(f') = s\,\Lapl(f) - f(0), \quad s>\gamma
+  \end{align*}
+
+  \subsection*{For the n-th derivative}
+  Suppose that \(\mdif[i]{t}{f}\,\forall\,i\) follows all three laplace conditions \ref{laplace conditions} and has exponential order \ref{exponential order} \(\gamma\)
+  \begin{BM}
+    \Lapl\left(\mdif[n]{t}{f}\right) 
+    = s^n\,\Lapl(f) 
+    - \sum_{i=1}^{n}{
+      s^{n-i}\,\mdif[i-1]{t}{f}(0)
+    }
+    \yesnumber\label{eq:laplace transform derivative}
+  \end{BM}
+
+
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Find the transforms using the derivative method
+  \begin{BM}[align*]
+    t^n; && \sin{w\,t} && \sin^2{t}
+  \end{BM}
+
+  \answer{}
+
+  Solving for \(t^n\)
+  \begin{gather*}
+    \Lapl(\mdif[n+1]{t}{t^n})
+    = \Lapl(0) = 0
+    = \mathText{using \eqref{eq:laplace transform derivative}}
+    = s^{n+1}\,\Lapl(t^n)
+    - \sum_{i=1}^{n+1}{
+      s^{n-i}\,\mdif[i-1]{t}{t^n}(0)
+    }
+    = s^{n+1}\,\Lapl(t^n)
+    - n!
+    \implies
+    \Lapl(t^n)
+    = \frac{n!}{s^{n+1}}
+  \end{gather*}
+
+  Solving for \(\sin{w\,t}\)
+  \begin{gather*}
+    \Lapl(\mdif[2]{t}\sin{w\,t})
+    = \Lapl(
+      -w^2\,\sin(w\,t)
+    )
+    = -w^2\,\Lapl(\sin(w\,t))
+    = \mathText{using \eqref{eq:laplace transform derivative}}
+    = s^2\,\Lapl(\sin{w\,t})
+    - s\,\sin{w * 0}
+    - w\,\cos{w*0}
+    \implies
+    \Lapl(\sin{w\,t}) = \frac{w}{s^2+w^2}
+  \end{gather*}
+
+  Solving for \(\sin^2(t)\)
+  \begin{gather*}
+    \Lapl(
+      \mdif{t}{\sin^2{t}}
+    )
+    = \Lapl(
+      2\,\sin(t)\,\cos(t)
+    )
+    = \Lapl(
+      \sin(2\,t)
+    )
+    = \mathText{using \eqref{eq:Lapl(sin(w t))}}
+    = \frac{2}{s^2+4}
+    = \mathText{using \eqref{eq:laplace transform derivative}}
+    = s\,\Lapl(\sin^2{t})-\sin(2*0)
+    = s\,\Lapl(\sin^2{t})
+    \implies
+    \Lapl(\sin^2{t})
+    = \frac{2/s}{s^2+4}
+  \end{gather*}
+\end{exampleBox}
+
+\begin{exampleBox}1m{Applying to differential equations} % Eindex
+  Considere o PVI
+  \begin{BM}
+    y'' + 4\,y' +3\,y = 0, \quad y(0)=3, y'(0)=1
+  \end{BM}
+
+  \answer{}
+
+  Finding general solution
+  \begin{tcolorbox}
+    \begin{gather}
+      y 
+      = \Lapl^{-1}{Y}
+      = \mathText{using \eqref{eq:e.3 Y}}
+      = \Lapl^{-1}{\left(
+          \frac{5}{s+1} + \frac{-2}{s+3}
+      \right)}
+      = 5\Lapl(1/(s+1)) -2\Lapl(1/(s+3))
+      = \mathText{using \eqref{eq:Lapl(e^(a t))}}
+      = 5\,e^{-1\,t} -2\,e^{-3\,t}
+    \end{gather}
+  \end{tcolorbox}
+
+  Checking existence of Laplace transform
+  \begin{tcolorbox}
+    \begin{gather*}
+      y_1 = 5\,e^{-t}
+      \\
+      y_2 = -2\,e^{-3\,t}
+      \\
+      s>\max{(-1,-3)} = -1
+      \\
+      \lambda =\max{(-1,-3)} = -1
+    \end{gather*}
+    Both follow the conditions \ref{laplace conditions} with greater exponential being \(-1\)
+  \end{tcolorbox}
+
+  Finding \(Y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \Lapl(
+        y'' + 4\,y' +3\,y
+      )
+      = \Lapl(y'')
+      + 4\,\Lapl(y')
+      + 3\,\Lapl(y)
+      = \\
+      = s^2\,\Lapl(y) - s\,y(0) - y'(0)
+      + 4\,(s\,\Lapl(y) - y(0))
+      + 3\,\Lapl(y)
+      = \\
+      = s^2\,\Lapl(y) 
+      + 4\,s\,\Lapl(y) 
+      - 13 - s\,3
+      + 3\,\Lapl(y)
+      = 0
+      \implies \\
+      \implies
+      \Lapl(y) 
+      = \frac{13 + s\,3}{ s^2 + 4\,s + 3 }
+      = \mathText{\(
+          s
+          = \frac{
+            - 4
+            \pm \sqrt{
+              4^2
+              -4*1*3
+            }
+          } {2\,1}
+          = - 2 \pm 1
+      \)}
+      = \frac{13 + s\,3}{(s+1)(s+3)}
+      = \frac{A}{s+1}
+      + \frac{B}{s+3}
+      %
+      \yesnumber\label{eq:e.3 Y constants}
+      %
+      = \mathText{using \eqref{eq:e.3 const of Y}}
+      = 
+      \frac{5}{s+1} + \frac{-2}{s+3}
+      % 
+      \yesnumber\label{eq:e.3 Y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants in \eqref{eq:e.3 Y constants}
+  \begin{tcolorbox}
+    \begin{gather*}
+      13 + s\,3
+      = A(s+3)
+      + B(s+1)
+      = (A+B)s+3\,A+B
+      \implies \\
+      \implies
+      \begin{cases}
+        B  = 13-3\,A = 13-15 = -2
+        \\
+        A + (13-3\,A) = 3 \implies A=10/2=5
+      \end{cases}
+      \yesnumber\label{eq:e.3 const of Y}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{sectionBox}1m{Laplace transform of an Integral} % Sindex
+  \begin{BM}
+    \Lapl{\left(
+        \int_0^t{f(x)\,\odif{x}}
+    \right)}
+    = \frac{1}{s}\,\Lapl(f(t))
+    % 
+    \yesnumber \label{eq:Lapl(int_0^t(f))}
+    % 
+    ; \\
+    \Lapl^{-1}(f(t)/s)
+    = \int_0^t{\left(f(x)\,\odif{x}\right)}
+    % 
+    \yesnumber\label{eq:Lapl-1(F(s)/s)}
+  \end{BM}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Find the inverse Laplace transform of
+  \begin{BM}
+    F(s) 
+    = \frac{1}{s(s^2+w^2)}
+  \end{BM}
+
+  \answer{}
+
+  \begin{tcolorbox}
+    \begin{gather*}
+      \Lapl^{-1}{(F(s))}
+      = \Lapl^{-1}\left(
+        \frac{1}{s(s^2+w^2)}
+      \right)
+      = \Lapl^{-1}\left(
+        \frac{1}{s}
+        \,\frac{1}{w}
+        \,\frac{w}{s^2+w^2}
+      \right)
+      = \mathText{using \eqref{eq:Lapl(sin(w t))}}
+      = \Lapl^{-1}\left(
+        \frac{1}{s}
+        \frac{1}{w}
+        \Lapl{(
+            \sin{w\,t}
+        )}
+      \right)
+      = \mathText{using \eqref{eq:Lapl(int_0^t(f))}}
+      = \frac{1}{w}
+      \,\int_0^t{(
+          \sin{w\,x}\odif{x}
+      )}
+      = \frac{1}{w}
+      \,(
+        -\cos(w\,x)/w
+      )\Bigg\vert_0^t
+      = \\
+      = \frac{1}{w^2}
+      \,(
+        -\cos(w\,t)
+        +\cos(w\,0)
+      )
+      = \frac{1-\cos{w\,t}}{w^2}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{sectionBox}1m{Translação da variavel \(s\)} % Sindex
+  \begin{BM}
+    \Lapl(f(t))
+    =F(s), \quad s\in\myrange*{\gamma,\infty}
+    \implies
+    \Lapl(e^{a\,t}\,f(t))
+    = F(s-a), \quad s\in\myrange*{a+\gamma,\infty}
+    %
+    \yesnumber\label{eq:Lapl(e^(a t) f(t))}
+    %
+    ; \\
+    \Lapl^{-1}(F(s-a)) = e^{a\,t}\,f(t)
+    \yesnumber\label{eq:Lapl-1(F(s-a))}
+  \end{BM}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Consider the problem with inital values
+  \begin{BM}
+    y'' + 2\,y' + 5\,y = 0, \quad y(0)=2,\quad y'(0)=-4
+  \end{BM}
+  Find the general solution
+
+  \answer{}
+  
+  General solution for \(y\)
+  \begin{tcolorbox}
+    \begin{gather}
+      y = \Lapl^{-1}{Y}
+      = \mathText{using \eqref{eq:e.4 Y}}
+      = \Lapl^{-1}{\left(
+          2\,\frac{s + 1}{
+            (s + 1)^2 + 2^2
+          }
+          - \frac{2}{
+            (s + 1)^2 + 2^2
+          }
+      \right)}
+      = \\
+      = 2\,\Lapl^{-1}{\left(
+          \frac{s + 1}{ (s + 1)^2 + 2^2 }
+      \right)}
+      - \Lapl^{-1}{\left(
+          \frac{2}{ (s + 1)^2 + 2^2 }
+      \right)}
+      = \mathText{using \eqref{eq:Lapl-1(s/(s^2+w^2))}}
+      = 2\,e^{-t}\,\cos(2\,t)
+      - e^{-t}\,\sin(2\,t)
+    \end{gather}
+  \end{tcolorbox}
+
+  Finding \(Y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \Lapl\left(
+        y'' + 2\,y' + 5\,y
+      \right)
+      = \Lapl( y'' )
+      +2\,\Lapl( y' )
+      + 5\,\Lapl( y )
+      = \mathText{using \eqref{eq:laplace transform derivative}}
+      = s^2\,Y-s\,y(0)-y'(0)
+      +2\,(s\,Y-y(0))
+      + 5\,Y
+      = \\
+      = s^2\,Y
+      - s\,(2)
+      - (-4)
+      + 2\,s\,Y
+      - 2\,(2)
+      + 5\,Y
+      = 0
+      \implies \\
+      \implies
+      = 
+      Y
+      = \frac{s\,2}{
+        s^2 + 2\,s + 5
+      }
+      = \frac{2\,(s + 1 - 1)}{
+        (s + 1)^2 + 4
+      }
+      = 2\,\frac{s + 1}{
+        (s + 1)^2 + 2^2
+      }
+      - \frac{2}{
+        (s + 1)^2 + 2^2
+      }
+      % 
+      \yesnumber\label{eq:e.4 Y}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{sectionBox}1m{Translation of the variable \(t\)} % Sindex
+  \begin{BM}
+    \Lapl(f(t)) = F(s), s\in\myrange*{\gamma,\infty}
+    \implies
+    \Lapl\left(
+      f(t-a)\,\Heavi(t-a)
+    \right) = e^{-a\,s}\,F(s)
+    % 
+    \yesnumber\label{eq:Lapl(f(t-a) Heavi(t-a))}
+    % 
+    ; \\
+    \Lapl^{-1}(e^{-a\,s}\,F(s))
+    = f(t-a)\,\Heavi(t-a)
+    % 
+    \yesnumber\label{eq:Lapl-1(e^(-a s) F(s))}
+  \end{BM}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % Eindex
+  \begin{BM}
+    F(s) 
+    = \frac{e^{-3\,s}}{s^3}
+  \end{BM}
+
+  \answer{}
+  
+
+  \begin{tcolorbox}
+    \begin{gather*}
+      \Lapl^{-1}(F(s))
+      = \Lapl^{-1}{\left(
+          \frac{e^{-3\,s}}{s^3}
+      \right)}
+      = \Lapl^{-1}{\left(
+          \frac{e^{-3\,s}}{2}
+          \,\frac{2}{s^3}
+      \right)}
+      = \mathText{using \eqref{eq:Lapl(t^n)}}
+      = \frac{1}{2}
+      \,\Lapl^{-1}{\left(
+          e^{-3\,s}
+          \Lapl(t^2)
+      \right)}
+      = \mathText{using \eqref{eq:Lapl-1(e^(-a s) F(s))}}
+      = 
+      \frac{
+        (t-3)^2\,\Heavi(t-3)
+      }{2}
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Find the laplace transform of the function
+  \begin{BM}
+    f(t)
+    = \begin{cases}
+      1, & 0<t<\pi \\
+      0, & \pi<t<2\,\pi \\
+      \sin{t}, & t>2\,pi
+    \end{cases}
+  \end{BM}
+
+  \answer{}
+
+  Solving lagplace transform of \(f\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      \Lapl(f(t))
+      = \Lapl(
+        1(\Heavi(t-0)-\Heavi(t-\pi))
+        + \sin(t)\Heavi(t-2\,\pi)
+      )
+      = \\
+      = \Lapl( 1)
+      - \Lapl( \Heavi(t-\pi) )
+      + \Lapl( \sin(t)\Heavi(t-2\,\pi))
+      = \mathText{using \eqref{eq:Lapl(sin(w t))}}
+      = \frac{1}{s}
+      - \frac{e^{-\pi\,s}}{s}
+      + \frac{e^{-2\,\pi\,s}}{s^2+1}
+    \end{gather*}
+  \end{tcolorbox}
+
+\end{exampleBox}
+
+\begin{exampleBox}1m{} % Eindex
+  Consider the problem of initial values
+  \begin{BM}
+    y'' + 3\,y' +2\,y = r(t)
+    , \quad y(0) = 0, y'(0) = 0
+    ; \\
+    r(t) = \begin{cases}
+      1, & 0<t<1
+      \\
+      0, & t>1
+    \end{cases}
+  \end{BM}
+
+  \answer{}
+
+  Finding \(y\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      y = \Lapl^{-1}{Y}
+      = \mathText{using \eqref{eq:e.8 Y}}
+      = \Lapl^{-1}{\left(
+          (1-e^{-s})\left(
+            \frac{1/2}{s}
+            + \frac{-1}{s+1}
+            + \frac{1/2}{s+2}
+          \right)
+      \right)}
+      = \\
+      = \Lapl^{-1}{\left(
+          \frac{1/2}{s}
+          + \frac{-1}{s+1}
+          + \frac{1/2}{s+2}
+          -e^{-s}\left(
+            \frac{1/2}{s}
+            + \frac{-1}{s+1}
+            + \frac{1/2}{s+2}
+          \right)
+      \right)}
+      = \mathText{using 
+        \eqref{eq:Lapl-1(1/(s-a))}
+        \eqref{eq:Lapl-1(e^(-a s) F(s))}
+      }
+      = \frac{1}{2}
+      - e^{-1\,t}
+      + \frac{1}{2}\,e^{-2\,t}
+      -\Heavi(t-1)\left(
+        \frac{1}{2}
+        -e^{-1\,t}
+        + \frac{1}{2}\,e^{-2\,t}
+      \right)
+    \end{gather*}
+  \end{tcolorbox}
+
+  
+  \begin{tcolorbox}
+    \begin{gather*}
+      \Lapl(
+        y'' + 3\,y' +2\,y 
+      )
+      = \Lapl( y'')
+      + 3\,\Lapl( y' )
+      + 2\,\Lapl( y )
+      = \mathText{using \eqref{eq:laplace transform derivative}}
+      = s^2\,Y - s\,y(0) - y'(0)
+      + 3\,(s\,Y - y(0))
+      + 2\,Y
+      = Y( s^2 + 3\,s + 2)
+      = \\
+      = \Lapl(r(t))
+      = \Lapl(
+        \Heavi(t-0)
+        -\Heavi(t-1)
+      )
+      = \Lapl( 1 -\Heavi(t-1))
+      = \frac{1}{s}
+      - \frac{e^{-1\,s}}{s}
+      \implies \\
+      \implies
+      Y
+      = \frac{1-e^{-s}}{
+        s(s^2 + 3\,s + 2)
+      }
+      = \frac{1-e^{-s}}{
+        s(s(s + 1)+ 2(s + 1))
+      }
+      = \\
+      = \frac{1-e^{-s}}{
+        s(s+2)(s+1)
+      }
+      = (1-e^{-s})\left(
+        \frac{A}{s}
+        + \frac{B}{s+1}
+        + \frac{C}{s+2}
+      \right)
+      %
+      \yesnumber\label{eq:e.8 Y const}
+      %
+      = \mathText{using \eqref{eq:e.8 const of Y}}
+      = (1-e^{-s})\left(
+        \frac{1/2}{s}
+        + \frac{-1}{s+1}
+        + \frac{1/2}{s+2}
+      \right)
+      \yesnumber\label{eq:e.8 Y}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding constants in \eqref{eq:e.8 Y const}
+  \begin{tcolorbox}
+    \begin{gather*}
+      1
+      = (A+C+B)\,s^2
+      + s\,(3\,A+2\,B+C)
+      + A\,2
+      \implies \\
+      \begin{cases}
+        A = 1/2
+        \\
+        C = -B-A = -B-1/2 = -(-1)-1/2 = 1/2
+        \\
+        3\,(1/2)+2\,B+(-B-1/2) = 0
+        \implies
+        B = -1
+      \end{cases}
+      \yesnumber\label{eq:e.8 const of Y}
+    \end{gather*}
+  \end{tcolorbox}
+
+
+\end{exampleBox}
+
+\end{document}
