@@ -1,8 +1,5 @@
 % !TEX root = ./OSF-Exercises_Resolutions.2.tex
-\providecommand\mainfilename{"./OSF-Exercises_Resolutions.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./OSF-Exercises_Resolutions.2.tex"}
-\documentclass[\mainfilename]{subfiles}
+\documentclass["./OSF-Exercises_Resolutions.tex"]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -11,57 +8,174 @@
 % \graphicspath{{\subfix{./.build/figures/OSF-Exercises_Resolutions.2}}}
 % \tikzsetexternalprefix{./.build/figures/OSF-Exercises_Resolutions.2/graphics/}
 
-\mymakesubfile{2}
-[OSF]
+\mymakesubfile{2}[OSF]
 {Redução da granulometria de sólidos} % Subfile Title
 {Redução da granulometria de sólidos} % Part Title
 
-\begin{questionBox}1{ % Q4
-    Se se regularem uns rolos de moagem de 1\,\unit{\metre} de diâmetro de tal modo que as superfícies de moagem fiquem à distância de 12.5\,\unit{\milli\metre} e o ângulo de presa for \ang[round-precision=0]{31}
-} % Q4
-    \begin{questionBox}2{ % Q4.1
-        qual é o tamanho máximo de partículas que se deveria introduzir nos rolos?
-    } % Q4.1
-        \answer{}
-        \begin{flalign*}
-            &
-                \cos\alpha
-                = \cos(31/2)
-                =\frac{r_1+b}{r_1+r_2}
-                =\frac{
-                    (1.0/2)+(12.5/2)
-                }{
-                    (1.0/2)+r_2
-                }
-                \implies &\\&
-                \implies
-                r_2
-                =\frac{
-                    0.5+6.25
-                }{
-                    \cos(31/2)
-                }-0.5
-                =\frac{
-                    0.5+6.25
-                }{
-                    \cos(31/2)
-                }-0.5
-                \cong
-                \qty{6.504759944566266}{\metre}
-            &
-        \end{flalign*}
-    \end{questionBox}
-    \begin{questionBox}2{ % Q4.2
-        Se a capacidade real da máquina é 12\% da teórica, calcular o ritmo de produção em \unit{\kilo\gram\per\second}, quando a funcionar a 2.0\,\unit{\hertz}, se a superfície de trabalho dos rolos tiver 0.4\,\unit{\metre} de comprimento e se a alimentação pesar 2500\,\unit{\kilo\gram/\metre^3}.
-    } % Q4.2
-        \answer{}
-        \begin{flalign*}
-            &
-                \dot{m}
-                = z\,A\,\mu\,\rho
-            &
-        \end{flalign*}
-    \end{questionBox}
+\begin{questionBox}1m{} % Q1
+  A material is crushed in a Blake jaw crusher and the average size of particle reduced from \qty*{50}{\mm} to \qty*{10}{\mm} with the consumption of energy at the rate of \qty*{13.0}{\kilo\W/\kg.\s}. What will be the consumption of energy needed to crush the same material of average size \qty*{75}{\mm} to an average size of \qty*{25}{\mm}:
+
+  \begin{questionBox}2{Assuming Rittinger's law applies?} % Q1.1
+    \answer{\eqref{eq:q2.1 answer}}
+    
+    Energy comsumption
+    \begin{tcolorbox}
+      \begin{gather*}
+        E(75,25)/\unit{\kilo\W/\kg.\s}
+        = \mathText{Rittinger's Law}
+        = K_R\,f_c
+        \,\left( (25)^{-1}-(75)^{-1} \right)
+        \cong \num{5.128205128205128e-3}
+        \,\left( (25)^{-1}-(75)^{-1} \right)
+        \cong \num{1.367521367521368e-4}
+        % 
+        \yesnumber\label{eq:q2.1 answer}
+        % 
+        ; \\
+        E(30,10)/\unit{\kilo\W/\kg.\s}
+        = 13.0
+        = \mathText{Rittinger's Law}
+        = K_R\,f_c
+        \,\left( (10)^{-1}-(30)^{-1} \right)
+        \implies 
+        K_3\,f_c
+        \cong \num{5.128205128205128e-3}
+      \end{gather*}
+    \end{tcolorbox}
+
+  \end{questionBox}
+  \begin{questionBox}2{Assuming Kick's law applies?} % Q1.2
+    \answer{\eqref{eq:q2.2 answer}}
+
+    Calculating energy comsumption
+    \begin{tcolorbox}
+      \begin{gather*}
+        E(75,25)/\unit{\kilo\W/\kg.\s}
+        = \mathText{Kick's law}
+        = K_k\,f_c\,\ln{
+          \frac{L_1}{L_2}
+        }
+        \cong \num{8.077354149274954}
+        \,\ln{
+          \frac{75}{25}
+        }
+        \cong \num{8.873880528317809}
+        % 
+        \yesnumber\label{eq:q2.2 answer}
+        % 
+        ; \\
+        E(50,10)/\unit{\kilo\W/\kg.\s}
+        = 13.0
+        = \mathText{Kick's law}
+        = K_k\,f_c\,\ln{
+          \frac{L_1}{L_2}
+        }
+        = K_k\,f_c\,\ln{
+          \frac{50}{10}
+        }
+        \implies
+        K_k\,f_c
+        = \frac{13}{\ln(50/10)}
+        \cong \num{8.077354149274954}
+      \end{gather*}
+    \end{tcolorbox}
+  \end{questionBox}
+
+  \begin{questionBox}*2{Which of these results would be regarded as being more reliable and why?} % Qindex
+    \answer{}
+    A reductiong of \((75\to25)\unit{\mm}\) can be considered coarse for which Kick's law is more accurate
+  \end{questionBox}
 \end{questionBox}
+
+\begin{questionBox}2m{} % Qindex
+  A crusher was used to crush a material whose compressive strength was \qty*{22.5}{\mega\N/\m^2}. The size of the feed was \textit{minus} \qty*{50}{\mm}, plus \qty*{40}{mm}, and the power required was \qty*{13.0}{\kilo\W/\kg/\s}. The screen analysis of the product was as follows:
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{l S S[round-precision=0]}
+      \toprule
+
+      \multicolumn{2}{c}{Minimum size/\unit{\mm}}
+      & \multicolumn{1}{c}{Quantity Product/\%}
+
+      \\\midrule
+
+      Through & 6     & 100 \\
+      On      & 4     & 26  \\
+      On      & 2     & 18  \\
+      On      & 0.75  & 23  \\
+      On      & 0.50  & 8   \\
+      On      & 0.25  & 17  \\
+      On      & 0.125 & 3   \\
+      Through & 0     & 5
+
+      \\\bottomrule
+    \end{tabular}
+  \end{center}
+  What would be the power required to crush \qty*{1}{\kg/s} of a material of compressive strength \qty*{45}{\MN/\m^2} from a feed \textit{minus} \qty*{45}{\mm}
+  
+  \answer{}
+
+  Calculating energy required
+  \begin{tcolorbox}
+    Reduction from \textit{minus} \qty{45}{\mm} can be considered
+  \end{tcolorbox}
+
+\end{questionBox}
+
+\setcounter{question}{3}
+\begin{questionBox}1m{} % Q4
+  Se se regularem uns rolos de moagem de 1\,\unit{\metre} de diâmetro de tal modo que as superfícies de moagem fiquem à distância de 12.5\,\unit{\milli\metre} e o ângulo de presa for \ang[round-precision=0]{31}
+
+  \begin{questionBox}2{} % Q4.1
+    qual é o tamanho máximo de partículas que se deveria introduzir nos rolos?
+
+    \answer{}
+
+    \begin{flalign*}
+      &
+      \cos\alpha
+      = \cos(31/2)
+      =\frac{r_1+b}{r_1+r_2}
+      =\frac{
+        (1.0/2)+(12.5/2)
+      }{
+        (1.0/2)+r_2
+      }
+      \implies &\\&
+      \implies
+      r_2
+      =\frac{
+        0.5+6.25
+      }{
+        \cos(31/2)
+      }-0.5
+      =\frac{
+        0.5+6.25
+      }{
+        \cos(31/2)
+      }-0.5
+      \cong
+      \qty{6.504759944566266}{\metre}
+      &
+    \end{flalign*}
+
+  \end{questionBox}
+
+  \begin{questionBox}2{ } % Q4.2
+    Se a capacidade real da máquina é 12\% da teórica, calcular o ritmo de produção em \unit{\kilo\gram\per\second}, quando a funcionar a 2.0\,\unit{\hertz}, se a superfície de trabalho dos rolos tiver 0.4\,\unit{\metre} de comprimento e se a alimentação pesar 2500\,\unit{\kilo\gram/\metre^3}.
+
+    \answer{}
+
+    \begin{flalign*}
+      &
+      \dot{m}
+      = z\,A\,\mu\,\rho
+      &
+    \end{flalign*}
+
+  \end{questionBox}
+
+\end{questionBox}
+
 
 \end{document}

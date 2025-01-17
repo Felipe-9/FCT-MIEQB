@@ -1,8 +1,5 @@
 % !TEX root = ./OSF-Exercises_Resolutions.Colson.1.tex
-\providecommand\mainfilename{"./OSF-Exercises_Resolutions.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./OSF-Exercises_Resolutions.Colson.1.tex"}
-\documentclass[\mainfilename]{subfiles}
+\documentclass["./OSF-Exercises_Resolutions.tex"]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -11,300 +8,457 @@
 % \graphicspath{{\subfix{./.build/figures/OSF-Exercises_Resolutions.Colson.1}}}
 % \tikzsetexternalprefix{./.build/figures/OSF-Exercises_Resolutions.Colson.1/graphics/}
 
-\mymakesubfile{1}
-[OSF]
+\mymakesubfile{1}[OSF]
 {Colson Exercises: Particulate Solids} % Subfile Title
 {Colson Exercises: Particulate Solids} % Part Title
 
-\begin{questionBox}1{ % Q1
-    The size analysis of a powdered material on a weight basis is represented by a straight line from 0\% weight at \qty{1}{\micro\metre} particle size to 100\% weight at \qty{101}{\micro\metre} particle size. Calculate the mean surface diameter of the particles constituting the system.
-} % Q1
-    \answer{}
-    \begin{flalign*}
-        &
-            d_s
-            = \left(
-                \sum{x_i/d_i}
-            \right)^{-1}
-            = \left(
-                \int{\frac{\odif{x}}{d_{(x)}}}
-            \right)^{-1}
-            ; &\\[3ex]&
-            d_{(x)}
-            = (d_{(1)}-d_{(0)})\,x
-            + d_{(0)}
-            = (101-1)\,x+1
-            = 100\,x+1
-            \implies &\\[3ex]&
-            \implies 
-            d_s
-            = \left(
-                \int{\frac{\odif{x}}{d_{(x)}}}
-            \right)^{-1}
-            = \left(
-                \int_0^1{
-                    \frac{\odif{x}}{100\,x+1}
-                }
-            \right)^{-1}
-            = &\\&
-            = \left(
-                \int_{1}^{101}{
-                    \frac{\odif{(100\,x+1)}/100}{100\,x+1}
-                }
-            \right)^{-1}
-            = \left(
-                \frac{\adif\ln(100\,x+1)}{100}
-            \right)^{-1}
-            = &\\&
-            = \frac{100}{\ln(101/1)}
-            \cong 
-            \qty{21.667906533553168}{\micro\metre}
-        &
-    \end{flalign*}
+\begin{questionBox}1m{} % Q1
+  The size analysis of a powdered material on a weight basis is represented by a straight line from 0\% weight at \qty{1}{\micro\metre} particle size to 100\% weight at \qty{101}{\micro\metre} particle size. Calculate the mean surface diameter of the particles constituting the system.
+
+  \answer{}
+
+  Calculating \(d_s\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      d_s 
+      = \left(
+        \int{
+          \frac{\odif{x}}{d}
+        }
+      \right)^{-1}
+      = \mathText{using \eqref{eq:q1 d(x)}}
+      = \left(
+        \int{
+          \frac{\odif{x}}{
+            100\,x+1
+          }
+        }
+      \right)^{-1}
+      = \left(
+        0.01
+        \,\int{
+          \frac{\odif{(100\,x+1)}}{
+            x\,100+1
+          }
+        }
+      \right)^{-1}
+      = \left(
+        0.01
+        \ln{\frac
+          {1*100+1}
+          {0*100+1}
+        }
+      \right)^{-1}
+      \cong \\
+      \cong \qty{21.667906533553168}{\micro\m}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Finding equation for \(d\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      d=a\,x+b
+      = \\
+      = x\,100+1
+      \yesnumber\label{eq:q1 d(x)}
+      ; \\
+      d(0\%)/\unit{\micro\m} = 1
+      = a\,0\%+b = 0
+      \implies 
+      \myvert{b} = 1
+      ; \\
+      d(100\%)/\unit{\micro\m} = 101
+      = a\,100\%+1
+      \implies a=100
+    \end{gather*}
+  \end{tcolorbox}
+
 \end{questionBox}
 
-\begin{questionBox}1{ % Q2
-    The equations giving the number distribution curve for a powdered material are \(\odv{n}/{d} = d\) for the size range \qtyrange{0}{10}{\micro\metre} and \(\odv{n}/{d} = 1\E5/d^4\) for the size range \qtyrange{10}{100}{\micro\metre}. Sketch the number, surface, and weight distribution curves. Calculate the surface mean diameter for the powder.
-    \\Explain briefly how the data for the construction of these curves would be obtained experimentally.
-} % Q2
-    \answer{}
-    \subsubquestion{Trace the graph \(n\times d\)}
-    \begin{flalign*}
-        &
-            n(d)
-            = \left\{
-                \begin{aligned}
-                    &
-                    \odv{n}/{d}=d
-                    \quad& \qtyrange{0}{10}{\micro\metre}
-                    \\ &
-                    \odv{n}/{d}=1\E5/d^4
-                    \quad& \qtyrange{10}{100}{\micro\metre}
-                \end{aligned}
-            \right\}
-            = &\\&
-            = \left\{
-                \begin{aligned}
-                    & 
-                    n
-                    =\int{d\,\odif{d}}
-                    =d^2/2+C_0
-                    \quad&
-                    \qtyrange{0}{10}{\micro\metre}
-                    \\ & 
-                    n
-                    =\int{1\E5\odif{d}/d^4}
-                    =-1\E5/3\,d^3
-                    + C_1
-                    \quad&
-                    \qtyrange{10}{100}{\micro\metre}
-                \end{aligned}
-            \right\}
-            &\\[3ex]&
-            \begin{cases}
-                d=n=0\implies 0=0^2/2+C_0\implies C_0=0
-                \\
-                d=10\,\unit{\micro\metre}
-                \implies \begin{cases}
-                    n=10^2/2=50
-                    \implies\\
-                    \implies
-                    50=-1E^5/3*10^3+C_1
-                    \implies\\
-                    \implies
-                    C_1
-                    =50+\frac{1\E5}{3*10^3}
-                    \cong
-                    \num{83.333333333333333}
-                \end{cases}
-            \end{cases}
-        &
-    \end{flalign*}
+\begin{questionBox}1m{} % Q2
+
+  The equations giving the number distribution curve for a powdered material are \(\odv{n}/{d} = d\) for the size range \qtyrange*{0}{10}{\micro\metre} and \(\odv{n}/{d} = 1\E5/d^4\) for the size range \qtyrange*{10}{100}{\micro\metre}. Sketch the number, surface, and weight distribution curves. Calculate the surface mean diameter for the powder. \\Explain briefly how the data for the construction of these curves would be obtained experimentally.
+
+  \answer{
+    \eqref{graph:q2 number}
+    % \eqref{graph:q2 surface}
+    % \eqref{graph:q2 weight}
+  }
+
+  Graphing number curve
+  \begin{tcolorbox}
+
     \begin{center}
+      \begin{multicols}{2}
         \vspace{1ex}
-        \begin{tabular}{*4{C}}
-            \toprule
-            
-                d(\unit{\micro\metre})
-                & n
-                & d(\unit{\micro\metre})
-                & n
-            
-            \\\midrule
-            
-               0.0  & 0.00  &  10.0 & 50.00
-            \\ 2.5  & 3.13  &  32.5 & 528.13
-            \\ 5.0  & 12.50 &  55.0 & 1512.5
-            \\ 7.5  & 28.13 &  77.5 & 3003.13
-            \\ 10.0 & 50.00 & 100.0 & 500.00
-            
-            \\\bottomrule
+        \begin{tabular}{S[round-precision=1] S}
+          \toprule
+
+          \multicolumn{1}{C}{d/\unit{\micro\m}} 
+          & \multicolumn{1}{C}{n \eqref{eq:q2 n}} 
+
+          \\\midrule
+
+          % 0 to 10
+          0.0 & 00.000 \\
+          2.5 &   03.125 \\
+          5.0 &   12.500 \\
+          7.5 &   28.125 \\
+          10.0 &   50.000 
+
+          \\\bottomrule
+          \multicolumn{2}{R}{\text{step}=(10-0)/4=2.5}
+        \end{tabular}
+        \columnbreak
+        \begin{tabular}{S[round-precision=1] S}
+          \toprule
+
+          \multicolumn{1}{C}{d/\unit{\micro\m}} 
+          & \multicolumn{1}{C}{n \eqref{eq:q2 n}} 
+
+          \\\midrule
+
+          % 10 to 100
+          10 & 50.0000000000 \\
+          15 & 73.4567901234 \\
+          20 & 79.1666666666 \\
+          25 & 81.2000000000 \\
+          30 & 82.0987654321 \\
+          65 & 83.2119556971 \\
+          100.0 & 83.3000000000
+
+          \\\bottomrule
+          \multicolumn{2}{R}{\text{step}_1=(30-10)/4=5}\\
+          \multicolumn{2}{R}{\text{step}_2=(100-30)/2=35}\\
         \end{tabular}
         \vspace{2ex}
+      \end{multicols}
+
+      %\pgfplotsset{height=7cm, width= .6\textwidth}
+      \begin{tikzpicture}
+        \begin{axis}
+          [
+            % xtick distance={10},
+            % xminorticks=false,
+            % xmajorticks=false,
+            xlabel= {\(d/\unit{\micro\m}\)},
+            ylabel= {\(n\)},
+          ]
+
+          \addplot[smooth,tension={0.3}] coordinates {
+              (0.0,00.000)
+              (2.5,03.125)
+              (5.0,12.500)
+              (7.5,28.125)
+              (10,50.0000000000)
+              (15,73.4567901234)
+              (20,79.1666666666)
+              (25,81.2000000000)
+              (30,82.0987654321)
+              (65,83.2119556971)
+              (100.0,83.3000000000)
+            };
+
+        \end{axis}
+        \end{tikzpicture}
+        \label{graph:q2 number}
     \end{center}
-    \subsubquestion{Traçar gráfico \((s,x)\times d\)}
-    \begin{flalign*}
+  \end{tcolorbox}
+
+  Finding equation for number distribution
+  \begin{tcolorbox}
+    \begin{gather*}
+      n = \begin{cases}
+        n_{0\to10} & d\in\numrange*{0}{10}
+        \\
+        n_{10\to100} & d\in\numrange*{10}{100}
+      \end{cases}
+      = \begin{cases}
+        d^2/2
+        & d\in\numrange*{0}{10}
+        \\
+        \frac{1}{3}\left( 250 - 1\E{5}/d^3\right)
+        & d\in\numrange*{10}{100}
+      \end{cases}
+      %
+      \yesnumber\label{eq:q2 n}
+      % 
+      % 
+      % 
+      ; \intertext{finding singular equations}
+      n_{0\to10}
+      = \prim_d{d}
+      = c_0+d^2/2
+      = \\
+      = d^2/2
+      ; \\
+      n_{10\to100}
+      = \prim_d{(1\E{5}/d^4)}
+      = 1\E{5}\,d^{-3}/(-3)
+      = c_1-1\E{5}/3\,d^3
+      = \\
+      = \frac{250}{3} -1\E{5}/3\,d^3
+      = \frac{1}{3}\left(
+        250 - 1\E{5}/d^3
+      \right)
+      % 
+      % 
+      % 
+      ; \intertext{finding constants}
+      n(0) = n_{0\to10}(0)
+      = c_0+(0)^2/2
+      = c_0
+      \implies c_0=0
+      ; \\
+      n(10) 
+      = n_{10\to100}
+      = c_1 + 1\E{5}/3*(10)^3
+      = c_1 + 100/3
+      = \\
+      = n_{0\to10}(10)
+      = 10^2/2 = 50
+      \implies c_1 = 250/3
+    \end{gather*}
+  \end{tcolorbox}
+
+
+  
+  \begin{flalign*}
+    &
+    n(d)
+    = \left\{
+      \begin{aligned}
         &
-            s_i
-            = \frac{n_i\,d_i^2}{\sum_j{n_j\,d_j^2}}
-            \implies
-            s(d)=\sum_0^d{s_i}
-            ; &\\[3ex]&
-            x_i
-            = \frac{n_i\,d_i^3}{\sum_j{x_j\,d_j^3}}\implies
-            x(d)=\sum_0^d{x_i}
-            ; &\\[3ex]&
-            n_i=\adif{n_{(d)}}\big\vert_{i-1}^{i}
-        &
-    \end{flalign*}
-    Das equações de \(n\text{ e }d\), 
-    conseguimos \(n_i\)
-    que são usadas para encontrar \(s_i\text{ e }x_i\)
-    que são usados para encontrar \(s\text{ e }x\),
-    então é so plotar em \textit{d}
-    \subsubquestion{Surface mean diameter:}
-    \def\eqA{\textcolor{Graph41\Light}}
-    \def\eqB{\textcolor{Graph42\Light}}
-    \def\eqC{\textcolor{Graph43\Light}}
-    \def\eqD{\textcolor{Graph44\Light}}
-    \begin{flalign*}
-        &
-            d_s/\unit{\micro\metre}
-            = &\\&
-            = \frac
-            {\sum{n_i\,d_i^3}}
-            {\sum{n_i\,d_i^2}}
-            = \frac
-            {\sum{
-                \left(
-                    \frac{x_i}
-                    {d_i^3\,\rho_s\,\ddot{k}}
-                \right)
-                \,d_i^3
-            }}
-            {\sum{
-                \left(
-                    \frac{x_i}
-                    {d_i^3\,\rho_s\,\ddot{k}}
-                \right)
-                \,d_i^2
-            }}
-            = \frac
-            {\rho_s\,\ddot{k}}
-            {\rho_s\,\ddot{k}}
-            \,\frac
-            {\sum{
-                x_i
-            }}
-            {\sum{
-                x_i/d_i
-            }}
-            = \frac
-            {\sum{
-                x_i
-            }}
-            {\sum{
-                x_i/d_i
-            }}
-            = \frac
-            {1}
-            {\sum{
-                x_i/d_i
-            }}
-            % ?????
-            = &\\&
-            = \frac
-            {\int{d^3\,\odif{n}}}
-            {\int{d^2\,\odif{n}}}
-            = &\\&
-            = \frac
-            {
-                \eqA
-                {\int_{0}^{10}{d^3\,\odif{n}}}
-                + \eqB
-                {\int_{10}^{100}{d^3\,\odif{n}}}
-            }
-            {
-                \eqC
-                {\int_{0}^{10}{d^2\,\odif{n}}}
-                + \eqD
-                {\int_{10}^{100}{d^2\,\odif{n}}}
-            }
-            = &\\&
-            = \frac
-            {
-                \eqA
-                {\int_{0}^{10}{d^3\,(d\,\odif{d})}}
-                + \eqB
-                {\int_{10}^{100}
-                {d^3\,(1\E5\,\odif{d}/d^4)}}
-            }
-            {
-                \eqC
-                {\int_{0}^{10}{d^2\,(d\,\odif{d})}}
-                + \eqD
-                {\int_{10}^{100}
-                {d^2\,(1\E5\,\odif{d}/d^4)}}
-            }
-            = &\\&
-            = \frac
-            {
-                \eqA
-                {\int_{0}^{10}{d^4\,\odif{d}}}
-                + \eqB
-                {1\E5\,\int_{10}^{100}{\odif{d}/d}}
-            }
-            {
-                \eqC
-                {\int_{0}^{10}{d^3\,\odif{d}}}
-                + \eqD
-                {1\E5\,\int_{10}^{100}{\odif{d}/d^2}}
-            }
-            = &\\&
-            = \frac
-            {
-                \eqA
-                {\adif{(d^5/5)}\big\vert_{0}^{10}}
-                + \eqB
-                {1\E5\,\adif{\ln{d}}\big\vert_{10}^{100}}
-            }
-            {
-                \eqC
-                {\adif{(d^4/4)}\big\vert_{0}^{10}}
-                + \eqD
-                {1\E5\adif{(-d^{-1})}\big\vert_{10}^{100}}
-            }
-            = &\\&
-            = \frac
-            {
-                \eqA{10^5/5}
-                + \eqB{1\E5\,\ln{10}}
-                % 2.502585092994046
-            }
-            {
-                \eqC{10^4/4}
-                + \eqD{1\E5(10^{-1}-100^{-1})}
-                % 0.115
-            }
-            \cong &\\&
-            \cong 
-            \num{21.761609504296049}
-        &
-    \end{flalign*}
+        \odv{n}/{d}=d
+        \quad& \qtyrange{0}{10}{\micro\metre}
+        \\ &
+        \odv{n}/{d}=1\E5/d^4
+        \quad& \qtyrange{10}{100}{\micro\metre}
+      \end{aligned}
+    \right\}
+    = &\\&
+    = \left\{
+      \begin{aligned}
+        & 
+        n
+        =\int{d\,\odif{d}}
+        =d^2/2+C_0
+        \quad&
+        \qtyrange{0}{10}{\micro\metre}
+        \\ & 
+        n
+        =\int{1\E5\odif{d}/d^4}
+        =-1\E5/3\,d^3
+        + C_1
+        \quad&
+        \qtyrange{10}{100}{\micro\metre}
+      \end{aligned}
+    \right\}
+    &\\[3ex]&
+    \begin{cases}
+      d=n=0\implies 0=0^2/2+C_0\implies C_0=0
+      \\
+      d=10\,\unit{\micro\metre}
+      \implies \begin{cases}
+        n=10^2/2=50
+        \implies\\
+        \implies
+        50=-1E^5/3*10^3+C_1
+        \implies\\
+        \implies
+        C_1
+        =50+\frac{1\E5}{3*10^3}
+        \cong
+        \num{83.333333333333333}
+      \end{cases}
+    \end{cases}
+    &
+  \end{flalign*}
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{*4{C}}
+      \toprule
+
+      d(\unit{\micro\metre})
+      & n
+      & d(\unit{\micro\metre})
+      & n
+
+      \\\midrule
+
+      0.0  & 0.00  &  10.0 & 50.00
+      \\ 2.5  & 3.13  &  32.5 & 528.13
+      \\ 5.0  & 12.50 &  55.0 & 1512.5
+      \\ 7.5  & 28.13 &  77.5 & 3003.13
+      \\ 10.0 & 50.00 & 100.0 & 500.00
+
+      \\\bottomrule
+    \end{tabular}
+    \vspace{2ex}
+  \end{center}
+  \subsubquestion{Traçar gráfico \((s,x)\times d\)}
+  \begin{flalign*}
+    &
+    s_i
+    = \frac{n_i\,d_i^2}{\sum_j{n_j\,d_j^2}}
+    \implies
+    s(d)=\sum_0^d{s_i}
+    ; &\\[3ex]&
+    x_i
+    = \frac{n_i\,d_i^3}{\sum_j{x_j\,d_j^3}}\implies
+    x(d)=\sum_0^d{x_i}
+    ; &\\[3ex]&
+    n_i=\adif{n_{(d)}}\big\vert_{i-1}^{i}
+    &
+  \end{flalign*}
+  Das equações de \(n\text{ e }d\), 
+  conseguimos \(n_i\)
+  que são usadas para encontrar \(s_i\text{ e }x_i\)
+  que são usados para encontrar \(s\text{ e }x\),
+  então é so plotar em \textit{d}
+  \subsubquestion{Surface mean diameter:}
+  \def\eqA{\textcolor{Emph41}}
+  \def\eqB{\textcolor{Emph42}}
+  \def\eqC{\textcolor{Emph43}}
+  \def\eqD{\textcolor{Emph44}}
+
+  \begin{flalign*}
+    &
+    d_s/\unit{\micro\metre}
+    = &\\&
+    = \frac
+    {\sum{n_i\,d_i^3}}
+    {\sum{n_i\,d_i^2}}
+    = \frac
+    {\sum{
+        \left(
+          \frac{x_i}
+          {d_i^3\,\rho_s\,\ddot{k}}
+        \right)
+        \,d_i^3
+    }}
+    {\sum{
+        \left(
+          \frac{x_i}
+          {d_i^3\,\rho_s\,\ddot{k}}
+        \right)
+        \,d_i^2
+    }}
+    = \frac
+    {\rho_s\,\ddot{k}}
+    {\rho_s\,\ddot{k}}
+    \,\frac
+    {\sum{
+        x_i
+    }}
+    {\sum{
+        x_i/d_i
+    }}
+    = \frac
+    {\sum{
+        x_i
+    }}
+    {\sum{
+        x_i/d_i
+    }}
+    = \frac
+    {1}
+    {\sum{
+        x_i/d_i
+    }}
+    % ?????
+    = &\\&
+    = \frac
+    {\int{d^3\,\odif{n}}}
+    {\int{d^2\,\odif{n}}}
+    = &\\&
+    = \frac
+    {
+      \eqA
+      {\int_{0}^{10}{d^3\,\odif{n}}}
+      + \eqB
+      {\int_{10}^{100}{d^3\,\odif{n}}}
+    }
+    {
+      \eqC
+      {\int_{0}^{10}{d^2\,\odif{n}}}
+      + \eqD
+      {\int_{10}^{100}{d^2\,\odif{n}}}
+    }
+    = &\\&
+    = \frac
+    {
+      \eqA
+      {\int_{0}^{10}{d^3\,(d\,\odif{d})}}
+      + \eqB
+      {\int_{10}^{100}
+      {d^3\,(1\E5\,\odif{d}/d^4)}}
+    }
+    {
+      \eqC
+      {\int_{0}^{10}{d^2\,(d\,\odif{d})}}
+      + \eqD
+      {\int_{10}^{100}
+      {d^2\,(1\E5\,\odif{d}/d^4)}}
+    }
+    = &\\&
+    = \frac
+    {
+      \eqA
+      {\int_{0}^{10}{d^4\,\odif{d}}}
+      + \eqB
+      {1\E5\,\int_{10}^{100}{\odif{d}/d}}
+    }
+    {
+      \eqC
+      {\int_{0}^{10}{d^3\,\odif{d}}}
+      + \eqD
+      {1\E5\,\int_{10}^{100}{\odif{d}/d^2}}
+    }
+    = &\\&
+    = \frac
+    {
+      \eqA
+      {\adif{(d^5/5)}\big\vert_{0}^{10}}
+      + \eqB
+      {1\E5\,\adif{\ln{d}}\big\vert_{10}^{100}}
+    }
+    {
+      \eqC
+      {\adif{(d^4/4)}\big\vert_{0}^{10}}
+      + \eqD
+      {1\E5\adif{(-d^{-1})}\big\vert_{10}^{100}}
+    }
+    = &\\&
+    = \frac
+    {
+      \eqA{10^5/5}
+      + \eqB{1\E5\,\ln{10}}
+      % 2.502585092994046
+    }
+    {
+      \eqC{10^4/4}
+      + \eqD{1\E5(10^{-1}-100^{-1})}
+      % 0.115
+    }
+    \cong &\\&
+    \cong 
+    \num{21.761609504296049}
+    &
+  \end{flalign*}
 \end{questionBox}
 
-\begin{questionBox}1{ % Q3
-    The fineness characteristic of a powder on a cumulative basis is represented by a straight line from the origin to 100\% undersize at a particle size of \qty{50}{\micro\metre}. If the powder is initially dispersed uniformly in a column of liquid, calculate the proportion by mass which remains in suspension in the time from commencement of settling to that at which \qty{40}{\micro\metre} particle falls the total height of the column. It may be assumed that Stokes' law is applicable to the settling of the particles over the whole size range.
-} % Q3
-    \answer{}
-    \begin{flalign*}
-        &
-            \text{Stokes:}&\\&
-            t 
-            = \frac{h}{d^2\,k}
-            = \frac{h}{40^2\,k}
-        &
-    \end{flalign*}
+\begin{questionBox}1m{} % Q3
+  The fineness characteristic of a powder on a cumulative basis is represented by a straight line from the origin to 100\% undersize at a particle size of \qty{50}{\micro\metre}. If the powder is initially dispersed uniformly in a column of liquid, calculate the proportion by mass which remains in suspension in the time from commencement of settling to that at which \qty{40}{\micro\metre} particle falls the total height of the column. It may be assumed that Stokes' law is applicable to the settling of the particles over the whole size range.
+  \answer{}
+  \begin{flalign*}
+    &
+    \text{Stokes:}&\\&
+    t 
+    = \frac{h}{d^2\,k}
+    = \frac{h}{40^2\,k}
+    &
+  \end{flalign*}
 \end{questionBox}
 
 \end{document}
