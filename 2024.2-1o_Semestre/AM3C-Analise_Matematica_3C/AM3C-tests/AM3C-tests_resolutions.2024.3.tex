@@ -15,10 +15,21 @@
 \group{}
 
 \begin{questionBox}1m{} % 1Q1
+  A solução da equação diferencial linear de primeira ordem
   \begin{BM}
     \odv{y}{x} +2\,\sin(2\,x)\,y = \sin(2\,x)
-    ; y(\pi/2) = 3/2
   \end{BM} 
+  Que verifica a condição inicial \(y(\pi/2)=3/2\)
+  \begin{itemize}[label=\square]
+    \begin{multicols}{3}
+      \item \(y=e^{\sin(2\,x)+1}+1/2\)
+      \item \(y=e^{\cos(2\,x)+1}+1/2\)
+      \item \(y=e^{\sin(2\,x)-1}+1/2\)
+      \item \(y=e^{\cos(2\,x)-1}+1/2\)
+      \item \(y=e^{\sin(2\,x)+1}+1\)
+      \item \(y=e^{\cos(2\,x)+1}+1\)
+      \end{multicols}
+  \end{itemize}
 
   % tag  = 1q1
   % a(x) = 2\,\sin(2\,x)
@@ -131,10 +142,22 @@
   \end{tcolorbox}
 \end{questionBox}
 
-\begin{questionBox}1m{} % Qindex
+\begin{questionBox}1m{} % 1Q2
+  A equação diferencial linear não homogenea de coeficientes constantes
   \begin{BM}
     (\mdif[3]{x} + \mdif[2]{x})\,y = -4
   \end{BM}
+  tem como solução geral
+  \begin{itemize}[label=\square]
+    \begin{multicols}{2}
+      \item \(y=c_1+c_2\,x+c_3\,x^2+c_4\,e^{-x}+2\,x^2\)
+      \item \(y=c_1+c_2\,x+c_3\,e^{x}-2\,x^2\)
+      \item[\blacksquare] \(y=c_1+c_2\,x+c_3\,e^{-x}-2\,x^2\)
+      \item \(y=c_1+c_2\,x+c_3\,x^2+c_4\,e^{-x}-2\,x^2\)
+      \item \(y=c_1+c_2\,x+c_3\,e^{x}+2\,x^2\)
+      \item \(y=c_1+c_2\,x+c_3\,e^{-x}+2\,x^2\)
+      \end{multicols}
+  \end{itemize}
 
   % tag   = 1q2
   % P     = \mdif[3]{x} + \mdif[2]{x}
