@@ -8,15 +8,14 @@
 % \graphicspath{{\subfix{./.build/figures/CN_A-Tests_Resolutions.2022.3}}}
 % \tikzsetexternalprefix{./.build/figures/CN_A-Tests_Resolutions.2022.3/graphics/}
 
-\mymakesubfile{3}[CN\,A]
-{Exame 2022.3 Resolução} % Subfile Title
-{Exame 2022.3 Resolução} % Part Title
+\mymakesubfile{3}[CN A]
+{Exam 2022.3 Resolution} % Subfile Title
+{Exam 2022.3 Resolution} % Part Title
 
-\begin{questionBox}1{} % Q1
+\begin{questionBox}1m{} % Q1
 
   Considere o intervalo \([a,b]\), com \(a=x_0 < x_1 < \dots< x_{10}=b\) e uma função não linear, \textit{f}, da qual se conhece a seguinte tabela:
   \begin{center}
-    \vspace{1ex}
     \begin{tabular}{C | C C @{\quad\dots\quad} C}
       x
       & x_0
@@ -28,7 +27,6 @@
       & y_1
       & y_{10}
     \end{tabular}
-    \vspace{2ex}
   \end{center}
   Pretende-se aproximar \textit{f} por uma função interpoladora nos pontos da tabela de forma a que esta tenha poucas ou nenhumas oscilações junto das extremidades do intervalo \([a,b]\). Para o efeito deve utilizar-se:
   \begin{enumerate}[label=\alph{enumi}.]
@@ -38,128 +36,150 @@
     \item O \emph{spline cúbico natural}, interpolador de \textit{f} dos pontos da tabela.
   \end{enumerate}
 
-  \answer{d}
+  \answer{d.}
 
 \end{questionBox}
 
-\begin{questionBox}1{} % Q2
+\begin{questionBox}1m{} % Q2
   Seja \(f(x)\in C^2{[1,3]}\) uma função que verifica \(f^{n}(x) = x^n/3, \forall\,x\in {[1,3]}\). Se pretendesse calcular um valor aproximado de \(I= \int_1^3{f(x)\,\odif{x}}\) utilizando a regra dos trapézios, qual o menor número de sub-intervalos de igual amplitude em que teria de dividir o intervalo \([1,3]\), por forma a garantir pelo menos 1 casa decimal significativa para do erro absoluto da aproximação?
 
-  \answer{7}
+  % tag = q2
+  % n = n
+  % x0 = 1
+  % xn = 3
 
-  \begin{gather*}
-    n:
-    \myvert{I-I_{t,n}}
-    = \myvert{-n\,\frac{h^3}{12}\,f^{(2)}(x)}
-    = \myvert{
-      -n
-      \,\frac{\left(
-          \frac{3-1}{n}
-      \right)^3}{12}
-      \,\frac{3^2}{3}
-    }
-    % = \\
-    = \frac{2}{n^2}
-    \leq 0.5\E{-1}
-    \implies \\
-    \implies
-    n
-    =\ceil{\sqrt{\frac{2}{0.5\E{-1}}}}
-    =\ceil{\num{6.324555320336759}}
-    =7
-  \end{gather*}
+  \answer{\eqref{eq:q2 answer}}
 
-\end{questionBox}
-
-\begin{questionBox}1{} % Q3
-
-  Considere a função \(f(x)=\frac{x}{e^x}\text{ e }S(x)\) o spline cúbico natural interpolador de \textit{f} nos pontos \(0=x_0<x_1<x_2<x_3<x_4=1\). Qual o valor da expressão \(S(0)-S"(0)-2\,S(1)+2\,S"(1)\)?
-
-  \answer{}
-
-  \begin{gather*}
-    \text{Spline natural interpolador de } f
-    \implies \\
-    \implies
-    S"(x_0)=S"(0)=S"(x_4)=S"(1)=0
-    % Spline natural a deriv 2 no começo e fim = 0
-    \\[1ex]
-    S(0)-S"(0)-2\,S(1)+2\,S"(1)
-    = S(0)-2\,S(1)
-    = f(0)-2\,f(1)
-    = \\
-    = \frac{0}{e^0}
-    - 2\,\frac{1}{e^1}
-    = -\frac{2}{e}
-  \end{gather*}
+  Finding subdivisions number \(n\)
+  \begin{tcolorbox}
+    \begin{gather}
+      \abs{R_{n}}
+      = \abs*{
+        \frac{-h^3}{12}
+        \,n\,f''(\xi)
+      }
+      = \mathText{\(h=(3-1)/n;\,f^{(n)}(x)=x^n/3\)}
+      = \abs*{
+        \frac{-((3-1)/n)^3}{12}
+        \,n\,\xi^2/3
+      }
+      = \abs*{
+        \frac{-2}{n^2\,9}\,\xi^2
+      }
+      = \frac{2}{n^2\,9}\,\xi^2
+      \leq \mathText{\(k=1\) casa decimal}
+      \leq 5\E{-1-1}
+      = 5\E{-2}
+      \implies
+      n
+      \geq
+      \sqrt{
+        \frac{2\,\xi^2}{9*5\E{-2}}
+      }
+      = \frac{2\,\xi\,\sqrt{10}}{3}
+      \leq \mathText{\(\xi\in\myrange{1,3}\)}
+      \leq \frac{2*3\,\sqrt{10}}{3}
+      = 2\sqrt{10}
+      \implies
+      n 
+      = \ceil{2\sqrt{10}} 
+      = 7
+      %
+      \yesnumber\label{eq:q2 answer}
+    \end{gather}
+  \end{tcolorbox}
 
 \end{questionBox}
 
-\begin{questionBox}1{} % Q4
+\begin{questionBox}1m{} % Q3
+
+  Considere a função \(f(x)=x/e^x\text{ e }S(x)\) o spline cúbico natural interpolador de \(f\) nos pontos \(0=x_0<x_1<x_2<x_3<x_4=1\). Qual o valor da expressão \(S(0)-S''(0)-2\,S(1)+2\,S''(1)\)?
+
+  \answer{\eqref{eq:q3 answer}}
+
+  Solving expression
+  \begin{tcolorbox}
+    \begin{gather}
+      S(0)-S"(0)-2\,S(1)+2\,S"(1)
+      = \mathText{spline natural: \(y''_0(x_0) = y''_n(x_n) = 0\)}
+      = S(0)-2\,S(1)
+      = \mathText{\(S_{k}(k) = f_k\)}
+      = f(0) -2\,f(1)
+      = \frac{0}{e^0} -2\,\frac{1}{e^1}
+      = \frac{-2}{e}
+      \yesnumber\label{eq:q3 answer}
+    \end{gather}
+  \end{tcolorbox}
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q4
 
   Seja \(\alpha\) a raiz única da equação não linear \(f(x)=0\) no intervalo \([a,b]\). Considere as sucessões definidas por recorrência \(x_n=g_1(x_{n-1})\text{ e }y_n=g_2(y_{n-1}),n\in\mathbb{N}\), ambas convergentes para \(\alpha\), com \(g_1\text{ e }g_2\) duas funções definidas e continuas em \([a,b]\) tais que \(g_1(\alpha)=\alpha\text{ e }g_2(x)=x-f(x)/f'(x)\). Além disso tem-se \(0\neq\myvert{g'_1(\alpha)}<1\text{ e }g'_2(\alpha)=0\). Considerando que \(x_0=y_0\in{[a,b]}\), qual das opções seguintes é correta
   \begin{enumerate}[label=\alph{enumi}.]
-    \item A sucessão \textcolor{GraphA11}{\(x_n\)} tem ordem de convergencia \textcolor{GraphA15}{\(p>1\)}
-    \item A sucessão \textcolor{GraphA11}{\(x_n\)} converge mais rapidamente que \textcolor{GraphA17}{\(y_n\)}
-    \item A sucessão \textcolor{GraphA13}{\(y_n\)} converge mais rapidamente que \textcolor{GraphA19}{\(x_n\)}
-    \item A sucessão \textcolor{GraphA13}{\(y_n\)} tem ordem de convergencia \textcolor{GraphA15}{\(p>1\)}
+    \item A sucessão \cemph{greenR1}{\(x_n\)} tem ordem de convergencia \cemph{greenR3}{\(p>1\)}
+    \item A sucessão \cemph{greenR1}{\(x_n\)} converge mais rapidamente que \cemph{greenR4}{\(y_n\)}
+    \item A sucessão \cemph{greenR2}{\(y_n\)} converge mais rapidamente que \cemph{greenR5}{\(x_n\)}
+    \item A sucessão \cemph{greenR2}{\(y_n\)} tem ordem de convergencia \cemph{greenR3}{\(p>1\)}
   \end{enumerate}
 
   \answer{c.}
 
 \end{questionBox}
 
-\begin{questionBox}1{} % Q5
+\begin{questionBox}1m{} % Q5
 
   Considere a matrix \textit{A} do sistema de equações lineares \(A\,X=B\) com \(a\in\mathbb{R} \textit{ e } X,B\in\mathbb{R}^3\). De forma a garantir a vonvergência do método de Gauss-Siedel para a solução de \(A\,X=B\), qual dos seguintes valores pode ser assumido por \textit{a}?
-  \begin{BM}
-    A=\begin{bmatrix}
-      a/2 & -2 & 0
-      \\ 0 & 7 & -a
-      \\ 0 & -3 & a
-    \end{bmatrix}
-  \end{BM}
-  \begin{enumerate}[label=\alph{enumi}.]
-    \begin{multicols}{4}
-      \item 4
-      \item 5.5
-      \item -3
-      \item 8
-      \end{multicols}
-  \end{enumerate}
+  \begin{multicols}{2}
+    \begin{BM}
+      A=\begin{bmatrix}
+        a/2 & -2 & 0
+        \\ 0 & 7 & -a
+        \\ 0 & -3 & a
+      \end{bmatrix}
+    \end{BM}
+    \begin{enumerate}[label=\alph{enumi}.]
+      % \begin{multicols}{2}
+        \sisetup{round-mode=none}
+        \item \num{4}
+        \item \num{5.5}
+        \item \num{-3}
+        \item \num{8}
+        % \end{multicols}
+    \end{enumerate}
+  \end{multicols}
 
-  \answer{5.5}
+  \answer{\eqref{eq:q5 answer}}
 
-  \begin{gather*}
-    % Metodo de Gauss-Stidel: A precisa ser diagonal estritamente dominante para o método convergir
-    A
-    \left\{
-      \begin{aligned}
-        \myvert{a/2} &>\myvert{-2}+0
+  % Metodo de Gauss-Stidel: A precisa ser diagonal estritamente dominante para o método convergir
+  Finding \(a\) bounds
+  \begin{tcolorbox}
+    \begin{gather}
+      a
+      \begin{Bmatrix}
+        \myvert{a/2} &> \myvert{-2}+0
         \\
         7 &> 0 + \myvert{-a}
         \\ 
         \myvert{a} &> 0 + \myvert{-3}
-      \end{aligned}
-    \right\}
-    = \left\{
-      \begin{aligned}
+      \end{Bmatrix}
+      =
+      \begin{Bmatrix}
         \myvert{a} &> 4
         \\
-        7 &> \myvert{a}
+        \myvert{a} &< 7
         \\ 
         \myvert{a} &> 3
-      \end{aligned}
-    \right\}
-    = 4<\myvert{a}<7
-    \implies \\
-    \implies
-    a\in\myrange*{-7,-4}\cup\myrange*{4,7}
-    \therefore a=5.5
-  \end{gather*}
+      \end{Bmatrix}
+      = 4<\abs{a}<7
+      \shortintertext{Closest option}
+      a = 5.5
+      \label{eq:q5 answer}
+    \end{gather}
+  \end{tcolorbox}
+
 \end{questionBox}
 
-\begin{questionBox}1{} % Q6
+\begin{questionBox}1m{} % Q6
   Seja \textit{f} uma função da qual se conhece a seguinte tabela de valores
   \begin{center}
     \vspace{1ex}
@@ -172,109 +192,129 @@
   \end{center}
 \end{questionBox}
 
-\begin{questionBox}2{} % Q6.1
+\begin{questionBox}2m{} % Q6.1
   
+  \label{q6.1}
   Construa uma tabela de diferenças divididas e o correspondente polinómio de Newton interpolador de \textit{f} na tabela dada. Determine um valor aproximado de \(f(-0.5)\) (Não necessita apresentar o polinómio na forma simplificada).
 
-  \answer{}
+  \answer{
+    Tabela \ref{tab:q6.2 divdiff},
+    \eqref{eq:q6.1 answer}
+  }
 
-  \begin{center}
-    \vspace{1ex}
-    \begin{tabular}{C C *2{C}}
-      \toprule
+  Construindo tabela de diferencas divididas
+  \begin{tcolorbox}
+    \begin{table}\centering
+      \begin{tabular}{C C *{2}{C}}
+        \toprule
 
-      x_i & f(x_i) 
-      & f[\cdot,\cdot]
-      & f[\cdot,\cdot,\cdot]
+        x_i & f(x_i) 
+        & f[\cdot,\cdot]
+        & f[\cdot,\cdot,\cdot]
+        % f[x_{k+1},x_k]
+        % \frac{\adif{f_{k+1}-f_k}}{x_{k+1}-x_k}
 
-      \\\midrule
-      -1 & 10
-      & \multirow{2}{*}{-7}
-      & \multirow{3}{*}{11/2}
-      \\
-      0 & 3
-      & \multirow{2}{*}{4}
-      \\
-      1 & 7
+        \\\midrule
+        -1 & 10
+        & \multirow{2}{*}{\(-7\)}
+        & \multirow{3}{*}{\(11/2\)}
+        \\
+        0 & 3
+        & \multirow{2}{*}{\(4\)}
+        \\
+        1 & 7
 
-      \\\bottomrule
-    \end{tabular}
-    \vspace{2ex}
-  \end{center}
+        \\\bottomrule
+      \end{tabular}
+      \caption{Diferencas divididas \ref{q6.1}}
+      \label{tab:q6.2 divdiff}
+    \end{table}
+  \end{tcolorbox}
 
-  \begin{gather*}
-    f(-0.5) \approx p_2(-0.5): \\[1ex]
-    p_2(x)
-    = \\
-    = f(x_0)
-    + (x-x_0)
-    \,f{[x_0,x_1]}
-    + (x-x_0)(x-x_1)
-    \,f{[x_0,x_1,x_2]}
-    = \\
-    = 10
-    + (x-(-1))
-    \,-7
-    + (x-(-1))(x-0)
-    \,11/2
-    = \\
-    = 10 + (x+1)(-7+x\,11/2)
-    \implies \\[1ex]
-    \implies
-    f(-0.5)
-    \approx
-    10 + (-0.5+1)(-7-0.5*11/2)
-    =5.125
-  \end{gather*}
+  Calculando valor aproximado \(f(-0.5)\)
+  \begin{tcolorbox}
+    \begin{gather}
+      f(-0.5) \approx p_2(-0.5)
+      = 10 + (-0.5+1)(-7-0.5*11/2)
+      = 5.125
+      ; \\
+      p_2(x)
+      = f(x_0)
+      + (x-x_0)
+      \,f{[x_0,x_1]}
+      + (x-x_0)(x-x_1)
+      \,f{[x_0,x_1,x_2]}
+      = \mathText{using table \ref{tab:q6.2 divdiff}}
+      = 10
+      + (x-(-1))
+      \,-7
+      + (x-(-1))(x-0)
+      \,11/2
+      = \\
+      = 10 + (x+1)(-7+x\,11/2)
+      % 
+      \label{eq:q6.1 answer}
+    \end{gather}
+  \end{tcolorbox}
+
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q6.2
+
+  Sabendo que \(f^{(3)}(x) = 12\), determine um majorante do erro absoluto para a aproximação de \(f(-0.5)\) obtida em \ref{q6.1}.
+
+  \answer{\eqref{eq:q6.2 answer}}
+
+  Calculating error
+  \begin{tcolorbox}
+    \begin{gather}
+      \abs{f(-0.5)-p_2(-0.5)}
+      = \mathText{using \eqref{eq:q6.2 error formula}}
+      = 2\abs{
+        (-0.5-(-1))
+        (-0.5-0)
+        (-0.5-1)
+      }
+      = \\
+      = 0.75
+      % 
+      \label{eq:q6.2 answer}
+    \end{gather}
+  \end{tcolorbox}
+
+  Finding error formula
+  \begin{tcolorbox}
+    \begin{gather}
+      \error_{abs}
+      = \abs*{f(x^*)-p_2(x^*)}
+      = \\
+      = \abs*{
+        (x^*-x_0)
+        (x^*-x_1)
+        (x^*-x_2)
+        f^{(3)}(\theta)/3!
+      }
+      = \\
+      = \abs*{
+        (x^*-x_0)
+        (x^*-x_1)
+        (x^*-x_2)
+        12/6
+      }
+      = \\
+      = 2\abs*{
+        (x^*-x_0)
+        (x^*-x_1)
+        (x^*-x_2)
+      }
+      \label{eq:q6.2 error formula}
+    \end{gather}
+  \end{tcolorbox}
   
 \end{questionBox}
 
-\begin{questionBox}2{} % Q6.2
 
-  Sabendo que \(f^{(3)}(x) = 12\), determine um majorante do erro absoluto para a aproximação de \(f(-0.5)\) obtida em a.
-
-  \answer{}
-
-  \begin{gather*}
-    \varepsilon_{abs}
-    = \myvert{f(x^*)-p_2(x^*)}
-    = \\
-    = \myvert{
-      (x^*-x_0)
-      (x^*-x_1)
-      (x^*-x_2)
-      f^{(3)}(\theta)/3!
-    }
-    = \\
-    = \myvert{
-      (x^*-x_0)
-      (x^*-x_1)
-      (x^*-x_2)
-      12/6
-    }
-    = \\
-    = 2\myvert{
-      (x^*-x_0)
-      (x^*-x_1)
-      (x^*-x_2)
-    }
-    \implies\\[1ex]
-    \implies
-    \myvert{f(-0.5)-p_2(-0.5)}
-    = \\
-    = 2\myvert{
-      (-0.5-(-1))
-      (-0.5-0)
-      (-0.5-1)
-    }
-    = \\
-    = 0.75
-  \end{gather*}
-
-\end{questionBox}
-
-
-\begin{questionBox}1{} % Q7
+\begin{questionBox}1m{} % Q7
 
   Considere a seguinte tabela relativa a uma função \textit{f}
   \begin{center}
@@ -293,215 +333,242 @@
 
 \end{questionBox}
 
-\begin{questionBox}2{} % Q7.1
+\begin{questionBox}2m{} % Q7.1
 
   Determine uma aproximação de \textit{I} usando a regra de Simpson simples.
 
-  \answer{}
+  \answer{\eqref{eq:q7.1 answer}}
 
-  \begin{gather*}
-    I\approx
-    \hat{I}_S
-    \approx 
-    \frac{h}{3}\,(f_0+4\,f_1+f_2)
-    = \frac{4/2}{3}\,(-2+4\,(-6)+22)
-    = -\frac{8}{3}
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather}
+      I\approx
+      \hat{I}_S
+      \approx \frac{h}{3}\,(f_0+4\,f_2+f_4)
+      = \mathText{\(h=(3-(-1))/3=2\)}
+      = \frac{2}{3}\,(-2+4\,(-6)+22)
+      = -\frac{8}{3}
+      \label{eq:q7.1 answer}
+    \end{gather}
+  \end{tcolorbox}
 
 \end{questionBox}
 
-\begin{questionBox}2{} % Q7.2
+\begin{questionBox}2m{} % Q7.2
 
   Determine uma aproximação de \textit{I} usando a regra de Simpson composta em função de \textit{k}.
 
-  \answer{}
+  \answer{\eqref{eq:q7.2 answer}}
 
-  \begin{gather*}
-    I\approx \hat{I}
-    = \frac{h}{3}\left(
-      f(x_0)
-      + 4\,\sum_{j=1}^{n  }{f(x_{2\,j-1})}
-      + 2\,\sum_{j=1}^{n-1}{f(x_{2\,j  })}
-      + f(x_{2\,n})
-    \right)
-    = \\
-    = \frac{2/2}{3}\left(
-      f(x_0)
-      + 4\,(f(x_1)+f(x_3))
-      + 2\,(f(x_2))
-      + f(x_{4})
-    \right)
-    = \\
-    = \frac{1}{3}\left(
-      -2
-      + 4\,(-5+k)
-      + 2\,(-6)
-      + 22
-    \right)
-    = \\
-    = k\,4/3-4
-  \end{gather*}
-\end{questionBox}
-
-\begin{questionBox}2{} % Q7.3
-
-  Usando as alineas anteriores determine \textit{k}
-
-  \answer{}
-
-  \begin{gather*}
-    f \text{ é Poli de grau 4 com } a=1\
-    \implies
-    f^{(4)}(x)=4! =24\quad\forall\,x\in\mathbb{R}
-    ; \\[1ex]
-    \text{Erro simpson simples:} \\
-    % Integração
-    \varepsilon_{I,s}
-    = I-\hat{I}_s
-    = I-(-8/3)
-    = -\frac{h^5}{90}\,f^{(4)}(\xi)
-    = -\frac{2^5}{90}\,24
-    \implies \\
-    \implies
-    I = 11.2
-    ; \\[1ex]
-    % 
-    % 
-    % 
-    \text{Erro simpson composta:} \\
-    \varepsilon_{I,c}
-    = I-\hat{I}_c
-    = I-(k\,4/3-4)
-    = -n\,\frac{h^5}{90}\,f^{(4)}(\sigma)
-    = -2\,\frac{1^5}{90}\,24
-    = \\
-    = -\frac{8}{15}
-    \implies \\
-    \implies 
-    k
-    = -5
-  \end{gather*}
-
-\end{questionBox}
-
-\begin{questionBox}1{} % Q8
-
-  Considere a equação \(1-x-\sin(x)=0\) a qual tem uma \emph{única solução} \(
-  \alpha\) no intervalo {[0.1,1]}.
+  Finding approximation
+  \begin{tcolorbox}
+    \begin{gather}
+      I \approx \hat{I}
+      = \frac{h}{3}\left(
+        f(x_0)
+        + 4\,\sum_{j=1}^{n  }{f(x_{2\,j-1})}
+        + 2\,\sum_{j=1}^{n-1}{f(x_{2\,j  })}
+        + f(x_{2\,n})
+      \right)
+      = \mathText{\(h=\frac{3-(-1)}{2\,n}=4/4=1\)}
+      = \frac{1}{3}\left(
+        f(x_0)
+        + 4\,(f(x_1)+f(x_3))
+        + 2\,(f(x_2))
+        + f(x_{4})
+      \right)
+      = \\
+      = \frac{1}{3}\left(
+        -2
+        + 4\,(-5+k)
+        + 2\,(-6)
+        + 22
+      \right)
+      = \\
+      = k\,4/3-4
+      \label{eq:q7.2 answer}
+    \end{gather}
+  \end{tcolorbox}
   
 \end{questionBox}
 
-\begin{questionBox}2{} % Q8.1
+\begin{questionBox}2m{} % Q7.3
+
+  Usando as alineas anteriores determine \textit{k}
+
+  \answer{\eqref{eq:q7.3 answer}}
+
+  Encontrando valor de \(k\)
+  \begin{tcolorbox}
+    \begin{gather}
+      I
+      \approx \hat{I}_c + \error_{I,c}
+      = \mathText{formula error simson composta e usando \eqref{eq:q7.2 answer}}
+      = k\,4/3-4
+      - n\,\frac{h^5}{90}\,f^{(4)}(\sigma)
+      = \mathText{\( f^{(4)}(x) = 4! = 24 \)}
+      = k\,4/3-4
+      - 2\,\frac{1^5}{90}\,24
+      = k\,4/3
+      - \frac{68}{15}
+      = \\
+      = \hat{i}_s + \error_{I,s} 
+      \approx \mathText{formula erro simpson simples e usando \eqref{eq:q7.1 answer}}
+      \approx (-8/3)
+      -\frac{h^5}{90}\,f^{(4)}(\xi)
+      = \mathText{\( f^{(4)}(x) = 4! = 24 \)}
+      = - 8/3
+      -\frac{2^5}{90}\,24
+      = -\frac{56}{5}
+      \implies \\
+      \implies
+      k
+      = \frac{3}{4}
+      \left(
+        -\frac{56*3}{5*3}
+        +\frac{68}{15}
+      \right)
+      = \frac{3}{4}
+      \left(
+        -\frac{100}{15}
+      \right)
+      = -5
+      \label{eq:q7.3 answer}
+    \end{gather}
+  \end{tcolorbox}
+
+\end{questionBox}
+
+% fixed point
+% Ponto fixo
+\begin{questionBox}1m{} % Q8
+  Considere a equação \(1-x-\sin(x)=0\) a qual tem uma \underline{única solução} \(\alpha\) no intervalo \(\myrange{0.1,1}\).
+\end{questionBox}
+
+\begin{questionBox}2m{} % Q8.1
 
   Prove que \(\alpha\) é o ponto fixo de \(\varphi(x)=1-\sin(x)\)
 
   \answer{}
 
-  \begin{gather*}
-    \alpha\text{ é raíz de } 1-x-\sin(x)=0
-    \iff \\
-    \iff
-    1-\alpha-\sin(\alpha)=0
-    \iff \\
-    \iff
-    1-\sin(\alpha)=\alpha=\varphi(\alpha)
-    \iff \\
-    \iff
-    \alpha \text{ é ponto fixo de }
-    \varphi(x)=1-\sin(x)
-  \end{gather*}
+  \begin{tcolorbox}
+    \begin{gather}
+      \varphi(\alpha)-\alpha
+      = 1-\sin(\alpha) - \alpha
+      = \mathText{\alpha \in I}
+      = 0
+      \implies
+      \varphi(\alpha) = \alpha, \alpha \in I
+    \end{gather}
+    \(\alpha\) é ponto fixo de \(\varphi(x)\)
+  \end{tcolorbox}
 
 \end{questionBox}
 
-\begin{questionBox}2{} % Q8.2
+% convergence of sucession on fixed point
+\begin{questionBox}2m{} % Q8.2
 
-  Prove que a sucessão \(x_n=\varphi(x_{n-1}),n=1,2,\dots\text{ que }x_0=0.5\) converge para \(\alpha\).
+  Prove que a sucessão \(x_n=\varphi(x_{n-1}),n=1,2,\dots\) em que \(x_0=0.5\) converge para \(\alpha\).
 
-  \answer{}
+  \answer{\(x_n\) converges to \(\alpha\)}
 
-  \begin{gather*}
-    \begin{cases}
-      x_0=0.5
-      \\
-      x_n=\varphi(x_{n-1}),n=1,2,\dots
-    \end{cases}
-    \\[1ex]
-    \text{Condições de convergencia:}\\
-    \begin{cases}
-      \varphi(x)\text{ é continua em } I
-      \\
-      \varphi(x)\in I,\forall\,x\in I
-      \\
-      \myvert{\varphi'(x)}\leq\myvert{\varphi'(\alpha)}
-    \end{cases}
-    \\[1ex]
-    \begin{cases}
-      % Lembrar de usar rad
-      \varphi(1)=1-\sin(1)
-      \cong \num{0.158529015192103}
-      \in I
-      \\
-      \varphi(0.1)=1-\sin(0.1)
-      \cong\num{0.900166583353172}
-      \in I
-      \\
-      \varphi'(x)=-\cos(x)<0\quad\forall\,x\in\mathbb{R}
-    \end{cases}
-    \\
-    \implies
-    0.1 
-    < \varphi(1)
-    \leq \varphi(x)
-    \leq \varphi(0.1)
-    < 1
-    \implies \\
-    \implies
-    \varphi(x)\in I\quad\forall\,x\in I
-    ; \\[1ex]
-    % 
-    % 
-    % 
-    \myvert{\varphi'(x)}
-    =\myvert{-\cos(x)}
-    =\cos(x)
-    \leq
-    \myvert{-\cos(0.1)}
-    = \cos(0.1)
-    < k < 1
-  \end{gather*}
+  Condições de convergencia do metodo do ponto fixo:
+  \begin{enumerate}
+    \item\label{enu:q8.2 cond 1} \(\varphi(x),\varphi'(x)\) é continua no intervalo \(I\)
+    \item\label{enu:q8.2 cond 2} \(\varphi(x) \in I, \forall\,x \in I\)
+    \item\label{enu:q8.2 cond 3} \(\abs{\varphi'(x)} \leq \lambda < 1, \forall\,x \in I\)
+  \end{enumerate}
+
+  Checking condition \ref{enu:q8.2 cond 3}
+  \begin{tcolorbox}
+    \begin{gather}
+      \abs{\varphi'(x)}
+      = \abs{-\cos(x)}
+      = \mathText{\(x\in\myrange{0.1,1}\)}
+      = \cos(x)
+      \leq \cos(0.1)
+      \cong \num{0.995004165278026}
+      < 0.996 = \lambda < 1
+      % 
+      \label{eq:q8.2 lambda}
+    \end{gather}
+    condition \ref{enu:q8.2 cond 3} is verified
+  \end{tcolorbox}
+
+  Checking condition \ref{enu:q8.2 cond 1}
+  \begin{tcolorbox}
+    % Lembrar de usar rad
+    \begin{gather}
+      \varphi(1) 
+      = 1-\sin(1) 
+      \cong \num{0.158529015192103} \in \myrange{0.1,1}=I
+      ; \\
+      \varphi(0.1)
+      = 1-\sin(0.1)
+      \cong \num{0.900166583353172} \in \myrange{0.1,1}=I
+      ; \\
+      \varphi'(x)
+      = -\cos(x)
+      < \mathText{\(\cos(x)>0,\forall\,x\in\myrange{0.1,1}\)}
+      < 0
+      \implies \varphi(x_1)>\varphi(x_2)\,\forall\,(x_1,x_2)\in I:x_1<x_2
+      \mathText{\(\varphi(x)\) é extritamente decrescente e \(\varphi'(x)\) é continua em \(I\)}
+    \end{gather}
+  \end{tcolorbox}
 
 \end{questionBox}
 
-\begin{questionBox}2{} % Q8.3
+\begin{questionBox}2m{} % Q8.3
 
   Determine \(x_2\). Quantas casas decimais significativas pode garantir para \(x_2\). Justifique
 
-  \answer{}
+  \answer{\eqref{eq:q8.3 x2}}
 
-  \begin{gather*}
-    \begin{cases}
-      x_0= 0.5
-      \\ x_1= \varphi(0.5)=1-\sin(0.5)\cong\num{0.520574461395797}
-      \\ x_2= \varphi(\num{0.520574461395797})
-      =1-\sin(\num{0.520574461395797})\cong\num{0.502621415553111}
-    \end{cases}
-    \\[1ex]
-    % Formula do erro a posteriori
-    \myvert{\alpha-x_2}
-    \leq
-    \frac{k}{1-k}\myvert{x_2-x_1}
-    \cong \frac{0.996}{1-0.996}\myvert{\num{0.502621415553111}-\num{0.520574461395797}}
-    = \\
-    = \frac{0.996}{1-0.996}\myvert{\num{0.502621415553111}-\num{0.520574461395797}}
-    \cong\num{4.470308414828814}
-    <0.5\E1
-    \\
-    \therefore\text{ Não tem casas decimais significativas}
-  \end{gather*}
+  Finding \(x_2\) by sucession
+  \begin{tcolorbox}
+    \begin{gather}
+      x_2 = \varphi(x_1)
+      \cong \varphi(\num{0.520574461395797})
+      = 1-\sin(\num{0.520574461395797})
+      \cong \num{0.502621415553111}
+      % 
+      \label{eq:q8.3 x2}
+      % 
+      ; \\
+      x_1 = \varphi(x_0)
+      = \varphi(0.5)
+      = 1-\sin(0.5)
+      \cong \num{0.520574461395797}
+      % 
+      \label{eq:q8.3 x1}
+    \end{gather}
+  \end{tcolorbox}
+
+  Finding uncertainty
+  \begin{tcolorbox}
+    \begin{gather}
+      \error_{x_2}
+      = \abs{\alpha-x_2}
+      \leq \mathText{Error a posteriori}
+      \leq \frac{\lambda}{1-\lambda}\abs{x_2-x_1}
+      \cong \mathText{using 
+        \eqref{eq:q8.2 lambda}
+        \eqref{eq:q8.3 x2}
+        \eqref{eq:q8.3 x1}
+      }
+      \cong \frac{0.996}{1-0.996}
+      \,\abs{
+        \num{0.502621415553111}
+        - \num{0.520574461395797}
+      }
+      \cong \num{4.470308414828814}
+      < 5\E{-1+1}
+    \end{gather}
+    Não tem casas decimais significativas
+  \end{tcolorbox}
 
 \end{questionBox}
 
-\begin{questionBox}1{} % Q9
+\begin{questionBox}1m{} % Q9
 
   Considere o sistema de equações lineares \(A\,X=B\)
   \begin{BM}
@@ -518,24 +585,196 @@
     \end{bmatrix}
   \end{BM}
   \paragraph*{Nota:} Em todas as alíneas utilize 3 casas decimais convenientemente arredondadas.
+  \sisetup{round-precision=3}
 
-  
-  
-  \begin{questionBox}2{ % Q9.3
-      Sabendo que 
-      \begin{BM}
-        X^{(9)}=\begin{bmatrix}
-          0.372\\-0.270\\-472
-        \end{bmatrix}
-        ; \qquad
-        X^{(10)}=\begin{bmatrix}
-          0.365\\-0.271\\-0.478
-        \end{bmatrix}
-      \end{BM}
-      São iteradas obtidas por aplicação do método de \emph{jacobi} com 3 casas decimais davidamente arredondadas, quantas casas decimais significativas pode garantir \(X^{(10)}\)? Justifique
-    } % Q9.3
+  \begin{questionBox}2b{} % Q9.1
+    Obtenha a matriz de iteração para o método de Jacobi e com base nessa matriz verifique a convergencia da sucessão definida pelo mesmo método para a solução \(A\,X=B\)
+
     \answer{}
-    \begin{gather*}
+
+    Checando convergencia
+    \begin{tcolorbox}
+      \begin{gather}
+        \norm{G_J}_{\infty}
+        = \mathText{using \eqref{eq:Q9.1 GJ}}
+        = \begin{Vmatrix}
+          0     & 0.5 & 0   \\
+          0.6   & 0   & 0.2 \\
+          -0.25 & 0.5 & 0
+        \end{Vmatrix}_{\infty}
+        = \max(0.5,0.8,0.75)
+        = 0.8 < 1
+      \end{gather}
+      Converge para a solução de \(A\,X=B\)
+    \end{tcolorbox}
+
+    Método de Jacobi
+    \begin{tcolorbox}
+      \begin{gather}
+        G_J
+        = -D^{-1}(L+U)
+        = \mathText{using 
+          \eqref{eq:Q9.1 DLU}
+          \eqref{eq:Q9.1 -D-1}
+        }
+        = 
+        \begin{bmatrix}
+          -1/2 &  0 & 0
+          \\ 0 & +1/5 & 0
+          \\ 0 &  0 & -1/4
+        \end{bmatrix}
+        \left(
+          \begin{bmatrix}
+            0 &  0 & 0
+            \\ 3 &  0 & 0
+            \\ 1 & -2 & 0
+          \end{bmatrix}
+          + \begin{bmatrix}
+            0 & -1 & 0
+            \\ 0 &  0 & 1
+            \\ 0 &  0 & 0
+          \end{bmatrix}
+        \right)
+        = \\
+        = \begin{bmatrix}
+          -1/2 & 0    & 0 \\
+          0    & +1/5 & 0 \\
+          0    & 0    & -1/4
+        \end{bmatrix}
+        \begin{bmatrix}
+          0    & -1   & 0 \\
+          3    & 0    & 1 \\
+          1    & -2   & 0
+        \end{bmatrix}
+        = \begin{bmatrix}
+          0     & 0.5 & 0   \\
+          0.6   & 0   & 0.2 \\
+          -0.25 & 0.5 & 0
+        \end{bmatrix}
+        \label{eq:Q9.1 GJ}
+      \end{gather}
+    \end{tcolorbox}
+
+    Matrizes do método de Jacobi
+    \begin{tcolorbox}
+      \begin{gather}
+        \begin{bmatrix}
+          2 & -1 & 0
+          \\ 3 & -5 & 1
+          \\ 1 & -2 & 4
+        \end{bmatrix}
+        \hspace{-.5em}
+        \implies
+        \hspace{-.5em}
+        \begin{cases}
+          D = \begin{bmatrix}
+            2 &  0 & 0
+            \\ 0 & -5 & 0
+            \\ 0 &  0 & 4
+          \end{bmatrix}
+          ; 
+          L
+          = \begin{bmatrix}
+            0 &  0 & 0
+            \\ 3 &  0 & 0
+            \\ 1 & -2 & 0
+          \end{bmatrix}
+          ;
+          U  = \begin{bmatrix}
+            0 & -1 & 0
+            \\ 0 &  0 & 1
+            \\ 0 &  0 & 0
+          \end{bmatrix}
+        \end{cases}
+        \label{eq:Q9.1 DLU}
+        ; \\
+        -D^{-1}
+        = -\begin{bmatrix}
+          2 &  0 & 0
+          \\ 0 & -5 & 0
+          \\ 0 &  0 & 4
+        \end{bmatrix}^{-1}
+        = -\frac{1}{2-5+4}
+        \begin{bmatrix}
+          1/2 &  0 & 0
+          \\ 0 & -1/5 & 0
+          \\ 0 &  0 & 1/4
+        \end{bmatrix}^{-1}
+        = 
+        \begin{bmatrix}
+          -1/2 &  0 & 0
+          \\ 0 & +1/5 & 0
+          \\ 0 &  0 & -1/4
+        \end{bmatrix}
+        % 
+        \label{eq:Q9.1 -D-1}
+      \end{gather}
+    \end{tcolorbox}
+
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q9.2
+    Considerando como aproximação inicial 
+    \begin{BM}
+      X^{(0)} = \begin{bmatrix}
+        1 &  1 &  1
+      \end{bmatrix}^T
+    \end{BM}
+    obtenha \(X^{(2)}\)
+    \answer{\eqref{eq:Q9.2 answer}}
+
+    Encontrando \(X^{(2)}\)
+    \begin{tcolorbox}
+      \begin{gather}
+        X^{(2)}
+        = G_J\,X^{(1)}+H_J
+        = \mathText{using \eqref{eq:Q9.1 GJ}\eqref{eq:Q9.2 HJ}}
+        = \dots
+        = \begin{bmatrix}
+          0.365 \\ 0.2 \\ -0.3
+        \end{bmatrix}
+        %
+        \label{eq:Q9.2 answer}
+        %
+        ; \\
+        X^{(1)}
+        = G_J\,X^{(0)} + H_J
+        = \begin{bmatrix}
+          1 \\ 0.4 \\ 0
+        \end{bmatrix}
+      \end{gather}
+    \end{tcolorbox}
+
+    Encontrando \(H_J\)
+    \begin{tcolorbox}
+      \begin{gather}
+        H_J = D^{-1}\,B 
+        = \mathText{using \eqref{eq:Q9.1 -D-1}}
+        = \dots
+        = \begin{bmatrix}
+          0.5 \\ -0.4 \\ -0.25
+        \end{bmatrix}
+        \label{eq:Q9.2 HJ}
+      \end{gather}
+    \end{tcolorbox}
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q9.3
+    Sabendo que 
+    \begin{BM}[align]
+      X^{(9)}&=\begin{bmatrix}
+        0.372 \\ -0.270 \\ -472
+      \end{bmatrix}
+      ; &
+      X^{(10)}&=\begin{bmatrix}
+        0.365 \\ -0.271 \\ -0.478
+      \end{bmatrix}
+    \end{BM}
+    São iteradas obtidas por aplicação do método de \emph{jacobi} com 3 casas decimais davidamente arredondadas, quantas casas decimais significativas pode garantir \(X^{(10)}\)? Justifique
+
+    \answer{}
+
+    \begin{gather}
       X^{(10)}-X^{(9)}
       =\begin{bmatrix}
         -0.007\\-0.001\\-0.006
@@ -555,20 +794,19 @@
       \\[1ex]
       \therefore
       \text{ Garante pelo menos 1 casa decimal}
-    \end{gather*}
+    \end{gather}
   \end{questionBox}
-  \begin{questionBox}2{ % Q9.4
-      Sabendo que a solução exata do sistema é
-      \begin{BM}
-        X^*
-        =\begin{bmatrix}
-          0.36&-0.28&-0.48
-        \end{bmatrix}^T
-      \end{BM}
-      Determine o erro relativo associado a cada componente de \(X^{(10)}\)
-    } % Q9.4
+  \begin{questionBox}2b{} % Q9.4
+    Sabendo que a solução exata do sistema é
+    \begin{BM}
+      X^*
+      =\begin{bmatrix}
+        0.36 &  -0.28 &  -0.48
+      \end{bmatrix}^{T}
+    \end{BM}
+    Determine o erro relativo associado a cada componente de \(X^{(10)}\)
     \answer{}
-    \begin{gather*}
+    \begin{gather}
       % Erro relativo
       r_{x^*}=\frac{\myvert{x^*-\tilde{x}}}{\myvert{x^*}}\
       \begin{cases}
@@ -587,18 +825,18 @@
         {\myvert{-0.48+0.478}}
         {\myvert{-0.48}}
       \end{cases}
-    \end{gather*}
+    \end{gather}
   \end{questionBox}
 
 \end{questionBox}
 
-\begin{questionBox}2{} % Q9.1
+\begin{questionBox}2m{} % Q9.1
 
   Obtenha a matriz de iteração para o método de Jacobi e com base nessa matriz verifique a convergência da sucessão definida pelo mesmo método para a solução de \(A\,X=B\).
 
   \answer{}
 
-  \begin{gather*}
+  \begin{gather}
     \myVert{G_J}<1:
     G_J
     =-D^{-1}(L+U):\\
@@ -652,17 +890,17 @@
     =0.8<1
     \therefore
     \text{o método converge}
-  \end{gather*}
+  \end{gather}
 
 \end{questionBox}
 
-\begin{questionBox}2{} % Q9.2
+\begin{questionBox}2m{} % Q9.2
 
   Considerando como aproximação inicial \(X^{(0)} = \begin{bmatrix}1&1&1\end{bmatrix}^T\) obtenha \(X^{(3)}\).
 
   \answer{}
 
-  \begin{gather*}
+  \begin{gather}
     H_J=D^{-1}\,B
     =\begin{bmatrix}
       0.5\\-0.4\\-0.25
@@ -722,7 +960,7 @@
       0.5\\-0.4\\-0.25
     \end{bmatrix}
     =\dots
-  \end{gather*}
+  \end{gather}
 
 \end{questionBox}
 

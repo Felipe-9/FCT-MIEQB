@@ -1,0 +1,178 @@
+% !TEX root = ./CNA-Notebook.6.tex
+\documentclass["CNA-Notebook.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CNA-Notebook.6}}}
+% \tikzsetexternalprefix{./.build/figures/CNA-Notebook.6/graphics/}
+
+\mymakesubfile{6}[CNA]
+{Interpolation and Extrapolation} % Subfile Title
+{Interpolation and Extrapolation} % Part Title
+
+\setcounter{section}{3}
+\begin{sectionBox}1m{Cubic spline interpolation} % Sindex
+  A function composed of \cemph{greenA0}{low-order piecewise polynomials} is frequently referred to as a \cemph{greenA0}{spline}. A \cemph{greenA1}{data point where two splines are joined} is called a \cemph{greenA1}{knot}. Conventionally, a data interval is divided into more than one interval, where a \cemph{greenR2}{linear}, \cemph{greenR3}{quadratic}, or \cemph{greenR4}{cubic} polynomial is employed for each interval. In this respect, spline methods present a different approach than the polynomial interpolations covered so far. \par
+  The simplest spline method is a \cemph{greenR2}{\textit{linear spline}}, where two data points are joined by a \cemph{greenR2}{line}\par
+  The use of \cemph{greenR4}{cubic} polynomials is the most common choice in literature, The reason for this is that \cemph{greenR4}{cubic} splines can be joined in different ways to produce an overall interpolating curve. At this stage, we shall consider non-uniformly spaced data and will employ a \cemph{greenR4}{cubic} polynomial \cemph{greenR4}{\(y_k(x)\)}, which has a different set of coefficients for each interval, \(\myrange{x_k,x_{k+1}}\). Each \cemph{greenR4}{cubic} polynomial is then joined to its neighboring cubic polynomials at the \cemph{greenA1}{knots} by matching the slopes and curvatures \(y',y''\). cubic polynomials for each interval is written as
+  \begin{BM}
+    y(x) = \begin{bmatrix}
+      \sum_{i=0}^{3}{c_{0,i}(x-x_i)^i}
+      \\ 
+      \sum_{i=0}^{3}{c_{1,i}(x-x_i)^i}
+      \\ 
+      \vdots
+      \\
+      \sum_{i=0}^{3}{c_{n,i}(x-x_i)^i}
+    \end{bmatrix}
+  \end{BM}
+  The following conditions will then be imposed to determine the unknows
+  \begin{BM}[align*]
+    \text{Continuity of }& y(x) &
+    y_{i-1}(x_i) 
+    &= y_i(x_i) 
+    = f_i
+    & i\in\myrange{1,n-1}
+    \\ 
+    \text{Continuity of }& y'(x) &
+    y'_{i-1}(x_i) 
+    &= y'_i(x_i)
+    & i\in\myrange{1,n-1}
+    \\
+    \text{Continuity of }& y''(x) &
+    y''_{i-1}(x_i) 
+    &= y''_i(x_i) 
+    & i\in\myrange{1,n-1}
+    \\
+    \text{End conditions}
+  \end{BM}
+  From those conditions we can conclude
+  \begin{BM}
+    \begin{cases}
+      y_{i}(x_{i+1})
+      = c_{i,3}\adif{x}_i^3 + c_{i,2}\,\adif{x}_i^2 + c_{i,1}\,\adif{x}_i + c_0 
+      = y_{i+1}
+      = c_{i+1,0}
+      \\
+      y'_{i}(x_{i+1})
+      = 3\,c_{i,3}\adif{x}^2 + 2\,c_{i,2}\adif{x} + c_{i,1} 
+      = y'_{i+1}(x_{i+1})
+      = c_{i+1,1}
+      \\
+      y''_{i}(x_{i+1}) 
+      = 6\,c_{i,3}\adif{x} + 2\,c_{i,2} 
+      = y''_{i+1}(x_{i+1}) 
+      = 2\,c_{i+1,2}
+    \end{cases}
+  \end{BM}
+
+  Merging the conditions and defining a few constructs we can organize all equations as follows
+  \begin{BM}[gather*][\normalsize]
+    \begin{Bmatrix}
+      \begin{pmatrix}
+        \adif{x_0}\,S_0 
+        + \adif{x_{1}}\,S_{1+1}
+        \\
+        + 2\,(\adif{x_1}+\adif{x_0})\,S_{1} 
+      \end{pmatrix}
+      = 6\,\left(
+        f\myrange{x_{1},x_{2}}
+        - f\myrange{x_{0},x_{1}}
+      \right)
+      \\
+      \vdots
+      \\
+      \begin{pmatrix}
+        \adif{x_{k-1}}\,S_{k-1} 
+        + \adif{x_{k}}\,S_{k+1}
+        \\
+        + 2\,(\adif{x_k}+\adif{x_{k-1}})\,S_{k} 
+      \end{pmatrix}
+      = 6\,\left(
+        f\myrange{x_{k},x_{k+1}}
+        - f\myrange{x_{k-1},x_{k}}
+      \right)
+      \\
+      \vdots
+      \\
+      \begin{pmatrix}
+        \adif{x_{n-1}}\,S_{n-1} 
+        + \adif{x_{n}}\,S_{n+1}
+        \\
+        + 2\,(\adif{x_n}+\adif{x_{n-1}})\,S_{n} 
+      \end{pmatrix}
+      = 6\,\left(
+        f\myrange{x_{n},x_{n+1}}
+        - f\myrange{x_{n-1},x_{n}}
+      \right)
+    \end{Bmatrix}
+  \end{BM}
+  \begin{BM}[align*]
+    S_{k+a} &= y''_k(x_{k+a})
+    &
+    \adif{x_k}&=x_{k+1}-x_{k}
+    &
+    f\myrange{x_{k},x_{k+1}} 
+    &= \frac{f_{k+1}-f_{k}}{x_{k+1}-x_{k}}
+  \end{BM}
+  Up to the third condition we can achieve \(2(n-2)\) equations but we still have \(3\,n-5\) variables, with two more equations we can compleete a system of linear equations, those are the \emph{end conditions} and there are several spline formulations that are developed through the curvature estimations, we will consider only two cases: \cemph{greenA0}{natural splines} and \cemph{greenA2}{linear extrapolation end conditions}
+
+  \begin{sectionBox}2b{Natural splines} % Sindex
+    \begin{BM}
+      S_0 = 0
+      \quad S_n = 0
+    \end{BM}
+    Applying this two equations to the previous system gives
+    \begin{BM}[gather*][\normalsize]
+      \begin{bmatrix}
+        b_1 & c_1
+        \\
+        a_2 & b_2 & c_2
+        \\
+        & a_3 & b_3 & c_3
+        \\
+        && \ddots & \ddots & \ddots
+        \\
+        &&& a_{n-2} & b_{n-2} & c_{n-2}
+        \\
+        &&&& a_{n-1} & b_{n-1} & c_{n-1}
+      \end{bmatrix}
+      \begin{bmatrix} S_1 \\ S_2 \\ S_3 \\ \vdots \\ S_{n-2} \\ S_{n-1} \end{bmatrix}
+      =
+      \begin{bmatrix} d_1 \\ d_2 \\ d_3 \\ \vdots \\ d_{n-2} \\ d_{n-1} \end{bmatrix}
+    \end{BM}
+    Where
+    \begin{BM}
+      a_k = \adif{x}_{k-1}
+      \quad
+      b_k = 2(\adif{x}_{k-1}+\adif{x}_{k})
+      \quad
+      c_k = \adif{x}_{k}
+      \\
+      d_k = 6\,(f\myrange{x_k,x_{k+1}} - f\myrange{x_{k-1},x_{k}})
+    \end{BM}
+  \end{sectionBox}
+  \begin{sectionBox}2b{Linear extrpolation end condition} % Sindex
+    This is one of the most frenquenty used end-conditions. the end point values are estimated by linear extrapolation.\par
+    linear extrapolation for the knots \(1,n-1\) yelds
+    \begin{BM}[align*][\normalsize]
+      \frac{S_1-S_0}{\adif{x}_0} 
+      &= \frac{S_2-S_1}{\adif{x_1}}
+      &\hspace{-1em}\iff
+      S_0
+      &= S_1\,\left(1+\frac{\adif{x_1}}{\adif{x_2}}\right)
+      - S_2\,\frac{\adif{x_1}}{\adif{x_2}}
+      \\
+      \frac{S_{n}-S_{n-1}}{\adif{x}_{n-1}} 
+      &= \frac{S_{n-1}-S_{n-2}}{\adif{x_{n-2}}}
+      &\hspace{-1em}\iff
+      S_n
+      &= S_{n-1}\,\left(1+\frac{\adif{x_{n-1}}}{\adif{x_{n-2}}}\right)
+      - S_{n-2}\,\frac{\adif{x_{n-1}}}{\adif{x_{n-2}}}
+    \end{BM}
+  \end{sectionBox}
+\end{sectionBox}
+
+\end{document}

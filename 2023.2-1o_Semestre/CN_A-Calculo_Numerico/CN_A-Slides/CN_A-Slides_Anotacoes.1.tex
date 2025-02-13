@@ -12,7 +12,7 @@
 {Teoria dos Erros} % Subfile Title
 {Teoria dos Erros} % Part Title
 
-\begin{sectionBox}1{Definindo Erros} % S
+\begin{sectionBox}1m{Definindo Erros} % S
 
   \paragraph{Erros iniciais do problema:}
   erros iniciais independentes do processo de cálculo
@@ -30,7 +30,7 @@
 
 \end{sectionBox}
 
-\begin{sectionBox}2{Definições} % S
+\begin{sectionBox}2m{Definições} % S
 
   \begin{BM}
     x\approx\hat{x}
@@ -48,16 +48,16 @@
     \\
     \varepsilon_x
     \begin{cases}
-      >0,\therefore\hat{x}\text{ é um valor aproximado por \textcolor{red\Light}{defeito}}
+      >0,\therefore\hat{x}\text{ é um valor aproximado por \textcolor{\Emph{green}}{defeito}}
       \\
-      <0,\therefore\hat{x}\text{ é um valor aproximado por \textcolor{green\Light}{excesso}}
+      <0,\therefore\hat{x}\text{ é um valor aproximado por \textcolor{\Emph{red}}{excesso}}
     \end{cases}
   \end{BM}
   \paragraph{Erro relativo:} Mede a precisão do valor aproximado \(\hat{x}\)
 
 \end{sectionBox}
 
-\begin{sectionBox}2{Intervalo que contem \(x\)} % S
+\begin{sectionBox}2m{Intervalo que contem \(x\)} % S
 
   \begin{BM}
     I_x=\myrange{\hat{x}-\eta_x,\hat{x}+\eta_x}
@@ -79,7 +79,7 @@
   \end{BM}
 
   \begin{multicols}{2}
-    \begin{exampleBox}1{ 12.3 } % E1
+    \begin{exampleBox}*2b{ 12.3 } % E1
       \answer{}
       \begin{gather*}
         \myvert{x-\hat{x}}
@@ -98,7 +98,7 @@
         }
       \end{gather*}
     \end{exampleBox}
-    \begin{exampleBox}1{ \(87.9\pm0.07\) } % E2
+    \begin{exampleBox}*2b{ \(87.9\pm0.07\) } % E2
       \answer{}
       \begin{gather*}
         \myvert{x-\hat{x}}
@@ -115,7 +115,7 @@
         =\myvert{87.83,87.97}
       \end{gather*}
     \end{exampleBox}
-    \begin{exampleBox}1{ \(400.32\,(6)\) } % E3
+    \begin{exampleBox}*2b{ \(400.32\,(6)\) } % E3
       \answer{}
       \begin{gather*}
         \myvert{x-\hat{x}}
@@ -129,7 +129,7 @@
     \end{exampleBox}
   \end{multicols}
 
-  \begin{exampleBox}1{\( 
+  \begin{exampleBox}*2b{\( 
       x=1/17 \qquad \hat{x}=0.059
   \) } % E4
     \answer{}
@@ -157,7 +157,7 @@
 
 \end{sectionBox}
 
-\begin{sectionBox}1{Significancia} % S
+\begin{sectionBox}1m{Significancia} % S
 
   Disemos que \(\hat{x}\) se aproxima de \textit{x} com, no mínimo \textit{k} \emph{casas decimais significativas} \(\iff\)
   \begin{BM}
@@ -177,7 +177,7 @@
 
 \end{sectionBox}
 
-\begin{exampleBox}1{} % E
+\begin{exampleBox}1m{} % E
 
   Na determinação de \textit{x} obteve-se o resultado \num{0.001773(8)}.\\
 
@@ -212,7 +212,7 @@
 
 \part*{Condicionamento de um problema}
 
-\begin{sectionBox}1{Propagação de erro absoluto} % S
+\begin{sectionBox}1m{Propagação de erro absoluto} % S
 
   \paragraph{Fórmula fundamental do cálculo dos erros}
   \begin{BM}
@@ -221,7 +221,7 @@
     : \myvert{\odv{g_{(z)}}{x}}\leq M_1,z\in V_{\delta\,(x)}
   \end{BM}
 
-  \begin{sectionBox}*2{Desenvolvimento} % S
+  \begin{sectionBox}*2b{Desenvolvimento} % S
     Seja \textit{g} uma função diferenciável numa vizinhança \(V_{\delta\,(x)}\) de \textit{x}.\\
     Utilizando a fórmula de Taylor tem-se:
     \begin{gather*}
@@ -244,7 +244,7 @@
 
 \end{sectionBox}
 
-\begin{sectionBox}1{Propagação do erro relativo} % S
+\begin{sectionBox}1m{Propagação do erro relativo} % S
 
   \begin{BM}
     r_{g(x)}
@@ -252,7 +252,7 @@
     C_{g\,(x)}\,r_x
   \end{BM}
 
-  \begin{sectionBox}*3{Desenvolvimento} % S
+  \begin{sectionBox}*3b{Desenvolvimento} % S
 
     Considerando novamente \textit{g}, mas de classe \(C^2(V_{\delta\,(x)})\), aplicando a formula de Taylor:
     \begin{gather*}
@@ -305,12 +305,14 @@
 
 \end{sectionBox}
 
-\begin{exampleBox}1{} % E
+\begin{exampleBox}1m{} % E
 
   \begin{BM}
     g_{1\,(x)} = x^2\quad (x>0).
   \end{BM}
   % \vspace{-10ex}
+
+  \answer{}
 
   \begin{gather*}
     C_{g_1\,(x)}
@@ -327,28 +329,28 @@
 
 \end{exampleBox}
 
-\begin{sectionBox}1{Condicionamento de uma função/problema} % S
+\begin{sectionBox}1m{Condicionamento de uma função/problema} % S
 
   Uma função diz-se:
   \begin{itemize}
-    \item \textcolor{green\Light}{Bem condicionado:} Pequenas variações nos dados iniciais/parametros implicam em pequenas variações nos resultados
-    \item \textcolor{red\Light}{Mal condicionado:} Situação inversa
+    \item \textcolor{\Emph{green}}{Bem condicionado:} Pequenas variações nos dados iniciais/parametros implicam em pequenas variações nos resultados
+    \item \textcolor{\Emph{red}}{Mal condicionado:} Situação inversa
   \end{itemize}
   \paragraph{Nota:} \emph{Independe} do método numérico utilizado
 
 \end{sectionBox}
 
-\begin{sectionBox}1{Estabilidade de um método numérico} % S
+\begin{sectionBox}1m{Estabilidade de um método numérico} % S
 
   Um método numérico diz-se
   \begin{itemize}
-    \item \textcolor{green\Light}{Estável:} Acumulação dos erros não afeta significativamente o resultado final;
-    \item \textcolor{red\Light}{Instável: } Caso contrário
+    \item \textcolor{\Emph{green}}{Estável:} Acumulação dos erros não afeta significativamente o resultado final;
+    \item \textcolor{\Emph{red}}{Instável: } Caso contrário
   \end{itemize}
 
 \end{sectionBox}
 
-\begin{exampleBox}1{} % E
+\begin{exampleBox}1m{} % E
 
   Considere as duas funções matematicamente idênticas:
   \begin{BM}
@@ -365,9 +367,7 @@
   
   \begin{center}
     \vspace{1ex}
-    \sisetup{
-      round-precision={9},
-    }
+    \sisetup{round-precision={9}}
     \begin{tabular}{*{3}{C}}
       \toprule
 
@@ -395,9 +395,9 @@
 
   \begin{BM}
     \therefore\begin{cases}
-      f_{(\theta)}:&\text{\textcolor{green\Light}{estável}}
+      f_{(\theta)}:&\text{\textcolor{\Emph{green}}{estável}}
       \\
-      g_{(\theta)}:&\text{\textcolor{red\Light}{instável}}
+      g_{(\theta)}:&\text{\textcolor{\Emph{red}}{instável}}
     \end{cases}
   \end{BM}
 

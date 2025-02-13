@@ -1,0 +1,248 @@
+% !TEX root = ./CNA-Notebook.3.tex
+\documentclass["CNA-Notebook.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+\graphicspath{{\subfix{./.build/figures/CNA-Notebook.3}}}
+% \tikzsetexternalprefix{./.build/figures/CNA-Notebook.3/graphics/}
+
+\mymakesubfile{6}[CN A]
+{Numerical Integration} % Subfile Title
+{Numerical Integration} % Part Title
+
+\begin{sectionBox}1m{Trapezoidal Rule} % Sindex
+
+  \begin{center}
+    \includegraphics[width=0.65\textwidth]{trapezoidal rule.png}
+  \end{center}
+  \begin{BM}
+    I = \int_{x_0}^{x_n}{f(x)\,\odif{x}}
+    \approx \\
+    \approx T_n = h\,\left(
+      \frac{f_{n}+f_{0}}{2}
+      + \sum_{i=1}^{n-1}{f_i}
+    \right)
+    ; h=\adif{x}=\frac{x_n-x_0}{n}
+    %
+    \yesnumber\label{eq:trapezoidal rule}
+  \end{BM}
+  \begin{gather*}
+    I 
+    = \int_{x_0}^{x_n}{f(x)\,\odif{x}}
+    = \begin{pmatrix}
+      + \int_{x_0}^{x_1}{f(x)\,\odif{x}}
+      \\ + \int_{x_1}^{x_2}{f(x)\,\odif{x}}
+      \\ \vdots
+      \\ + \int_{x_{n-1}}^{x_n}{f(x)\,\odif{x}}
+    \end{pmatrix}
+    % \approx \\
+    \approx
+    \begin{pmatrix}
+      + (x_1-x_0)\frac{f(x_1)+f(x_0)}{2}
+      \\ + (x_2-x_1)\frac{f(x_2)+f(x_1)}{2}
+      \\ \vdots
+      \\ + (x_n-x_{n-1})\frac{f(x_n)+f(x_(n-1))}{2}
+    \end{pmatrix}
+    = \\
+    = \sum_{i=0}^{n-1}{\left(
+        (x_{i+1}-x_i)
+        \frac{f_{i+1}+f_{i}}{2}
+    \right)}
+    = \mathText{\(h=x_{i+1}-x_{i}=(x_{n}-x_0)/n\)}
+    = \sum_{i=0}^{n-1}{\left(
+        h\,\frac{f_{i+1}+f_{i}}{2}
+    \right)}
+    = h\,\left(
+      \frac{f_{0}+f_{1}}{2}
+      + \frac{f_{1}+f_{2}}{2}
+      + \dots
+      + \frac{f_{n-1}+f_{n}}{2}
+    \right)
+    = \\
+    = h\,\left(
+      \frac{f_{0}+f_{n}}{2}
+      + f_1
+      + f_2
+      + \dots
+      + f_{n-1}
+    \right)
+  \end{gather*}
+
+  \subsection{Trapezoidal rule with end correction}
+  \begin{BM}
+    I \approx
+    CT_n
+    = T_n + R_n
+    = \\
+    = h\left(
+      \frac{f(x_n)+f(x_0)}{2}
+      + \sum_{i=1}^{n-1}{f_i}
+    \right)
+    - \frac{h^2}{2}
+    \,(f'(x_n)-f'(x_0))
+  \end{BM}
+  \begin{gather*}
+    R_n
+    \equiv \frac{-h^3}{12}
+    \,\sum_{i=0}^{n}{f''_i}
+    = \frac{-h^2}{12}(x_n-x_0)\,f''(\xi)
+    = \frac{-h^2}{12}(f'(x_n)-f'(x_0))
+  \end{gather*}
+\end{sectionBox}
+
+\begin{exampleBox}1m{} % E1
+  The tendency of a gas to escape or expand is explained by the fugacity property of the gas. For ideal gases, fugacity \(f\) is equal to its pressure, but in real gases, it is computed by the following integral:
+  \begin{BM}
+    \ln\left(\frac{f}{P}\right)
+    = \int_0^P{\frac{Z(x)-1}{x}\,\odif{x}}
+  \end{BM}
+  where \(P\) is the pressure, \(Z\) is the \textit{compressibility factor}, and \(f/P\) is referred to as the \textit{fugacity coefficient}. The data on the compressibility factor of a real gas at a constant temperature are ﬁtted to the curve given below:
+  \begin{BM}
+    Z(p)
+    = 1-5\E{-4}\,p\,e^{-p/50}
+    ,\quad 0 < p < \qty*{400}{\atm}
+  \end{BM}
+  Estimate \(\ln(f/P)\) for \(p=\qty*{400}{\atm}\) using the 8-panel Trapezoiadl rule \textit{with} and \textit{without} end correction. Calculate the true error and global error bounds for both cases
+
+  \answer{}
+
+  \sisetup{
+    round-precision={4},
+    round-mode={places}, % figures/places/unsertanty/none
+  }
+
+  Preparing equation to use trapezoidal rule
+  \begin{tcolorbox}
+    \begin{gather*}
+      \ln\left(\frac{f}{P}\right)
+      = \int_0^P{\frac{Z(x)-1}{x}\,\odif{x}}
+      = \int_0^P{
+        \frac{
+          \left(1-5\E{-4}\,x\,e^{-x/50}\right)
+          -1
+        }{x}
+        \,\odif{x}
+      }
+      = \dots
+      = \\
+      = -5\E{-4}
+      \,\int_0^P{
+        x\,e^{-x/50}\,\odif{x}
+      }
+      % 
+      \yesnumber\label{eq:e.1 f}
+      % 
+    \end{gather*}
+  \end{tcolorbox}
+
+  Calculating the value of \eqref{eq:e.1 f}
+  \begin{tcolorbox}
+    \begin{gather*}
+      \ln\left(\frac{f}{P}\right)
+      = -5\E{-4}
+      \,\int_0^P{
+        x\,e^{-x/50}\,\odif{x}
+      }
+      = \mathText{\(
+        \prim{u\,v'}
+        = u\,v
+        - \prim{u'\,v}
+        \begin{cases}
+          u = p
+          \\
+          v = e^{-p/50}
+        \end{cases}
+      \)}
+      = 1\E{-3}
+      \left(
+        \left(
+          x\,e^{-x/50}
+        \right)\Big\vert_0^P
+        - \prim_x{(
+            e^{-x/50}
+        )}
+      \right)
+      = \\
+      = 1\E{-3}
+      \left(
+        P\,e^{-P/50}
+        - 0\,e^{-0/50}
+        - \left(
+          - 50\,e^{-x/50}
+        \right)\Big\vert_0^P
+      \right)
+      = \\
+      = 1\E{-3}
+      \left(
+        P\,e^{-P/50}
+        + 50\,e^{-P/50}
+        - 50\,e^{-0/50}
+      \right)
+      = 1\E{-3}
+      \left(
+        (P+50)\,e^{-P/50} - 50
+      \right)
+      \cong \\
+      \cong 
+      \num{2492.4521}
+    \end{gather*}
+  \end{tcolorbox}
+
+  Calculating \(f_i\) for all points
+  \begin{tcolorbox}
+    \begin{gather*}
+      T_n 
+      = \sum_{i=0}^{n}{w_i\,F(i)}
+      ; \\
+      F(i) = e^{-x/50}
+      ; \\
+      w = \begin{cases}
+        h/2 = 25 & i=\{1,8\}
+        \\
+        h = 50 & i=\{2,3,4,5,6,7\}
+      \end{cases}
+    \end{gather*}
+    \begin{center}
+      \vspace{1ex}
+      \begin{tabular}{C C S S}
+
+        \toprule
+        
+        i & x_i 
+        & \multicolumn{1}{C}{F_i}
+        & \multicolumn{1}{C}{w_i\,F_i}
+
+        \\\midrule
+
+        0 & 0 & 0 & 0 \\
+        1 & 50 & 18.393972058572118 & 919.6986029286059 \\
+        2 & 100 & 13.53352832366127 & 676.6764161830636 \\
+        3 & 150 & 7.468060255179592 & 373.40301275897957 \\
+        4 & 200 & 3.6631277777468356 & 183.1563888873418 \\
+        5 & 250 & 1.6844867497713667 & 84.22433748856834 \\
+        6 & 300 & 0.7436256529999076 & 37.18128264999538 \\
+        7 & 350 & 0.3191586879440807 & 15.957934397204035 \\
+        8 & 400 & 0.13418505116100474 & 3.3546262790251182
+
+        \\\bottomrule
+
+        &&\multicolumn{1}{r}{sum:} & 2293.6526015727836
+
+      \end{tabular}
+    \end{center}
+  \end{tcolorbox}
+
+  Calculating interval \(h\)
+  \begin{tcolorbox}
+    \begin{gather*}
+      h/\unit{\atm} 
+      = \frac{P-0}{8} 
+      = 400/8 
+      = 50
+    \end{gather*}
+  \end{tcolorbox}
+\end{exampleBox}
+
+\end{document}

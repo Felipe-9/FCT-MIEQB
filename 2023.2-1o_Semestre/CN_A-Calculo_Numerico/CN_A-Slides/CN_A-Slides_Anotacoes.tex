@@ -9,15 +9,17 @@
 %                          Colors                          %
 % -------------------------------------------------------- %
 \usepackage{xcolor} % Options: gray - dark and light
-\usepackage{mypallete}
+\usepackage{mypalette}
 \colorlet{foreground}{light}
 \colorlet{background}{dark}
-% \usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
+% tinting for emph and graph
+\def\Emph#1{#1!50!foreground}
+\def\Graph#1{#1!98!foreground}
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
 \colorlet{Link}      {LightGreen!25!foreground}
 \colorlet{Comment}   {foreground!60!background}
-\colorlet{Background}{foreground!27!background}
+\colorlet{Background}{foreground!15!background}
 % ======================= setcolor ======================= %
 \pagecolor{background}
 \color    {foreground}
@@ -79,8 +81,8 @@
   % Merienda
   % LaBelleAurore
   % Handlee
-  % BadScript
-  % Calligraffitti
+    % BadScript
+    % Calligraffitti
 }
 % % ======================= Monofont ======================= %
 % \setmonofont[Contextuals = {ligatures}]{FiraCode}
@@ -196,16 +198,10 @@
   range-phrase={\,\to\,},
   range-units={bracket},
   range-exponents={combine-bracket},
+  % Units
+  inter-unit-product=\ensuremath{{}\,{}}
+  % inter-unit-product=\ensuremath{{}\cdot{}}
 }
-% % ==================== Declaring units =================== %
-% \DeclareSIUnit\atm{atm}
-% \DeclareSIUnit\calorie{cal}
-% \DeclareSIUnit\Torr{Torr}
-% \DeclareSIUnit\bar{bar}
-% \DeclareSIUnit\mmHg{mmHg}
-% \DeclareSIUnit\molar{M}
-% \DeclareSIUnit\M{M}
-% \DeclareSIUnit\angstrom{\textup{\AA}}
 % % -------------------------------------------------------- %
 % %                           Maths                          %
 % % -------------------------------------------------------- %
@@ -223,10 +219,12 @@
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclareDocumentCommand\mathemph{m}{{\color{Emph}\boldmath{#1}}}
 % ======================================================== %
 % ============== MathOperators Declarations ============== %
 \newcommand\E[1]{\,\mathrm{E}^{#1}}
 \newcommand\e[1]{\,\mathrm{e}^{#1}}
+% \DeclareMathOperator\sign{sign}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
 % \DeclareMathOperator\csch   {csch}
@@ -236,12 +234,17 @@
 % \DeclareMathOperator\arccosh{arccosh}
 % \DeclareMathOperator\arcsinh{arcsinh}
 % % ================== Calculus operators ================== %
+% \DeclareMathOperator\Heavi{\mathcal{H}}
+% \DeclareMathOperator\Lagr{\mathcal{L}}
+% \DeclareMathOperator\Lapl{\mathcal{L}}
+% \DeclareMathOperator\prim{\mathcal{P}}
 % \DeclareMathOperator\fronteira {fr}
 % \DeclareMathOperator\interior  {int}
 % \DeclareMathOperator\exterior  {ext}
 % \DeclareMathOperator\grafico   {Graf}
 % \DeclareMathOperator\dominio   {D}
 % \DeclareMathOperator\visinhanca{\mathcal{V}}
+% \DeclareMathOperator\erf{erf}
 % % =================== Algebra operators ================== %
 % \DeclareMathOperator\adj{adj}
 % \DeclareMathOperator\id{id}
@@ -273,8 +276,8 @@
 % [<r>right column]
 % [<division>]
 % [<space>]
-% [<before column>]
-\usepackage{mathEnclosings} 
+% [<beforecolumn>]
+\usepackage{mathEnclosings}
 % \myvert[*scale]{<content>}
 % \myVert[*scale]{<content>}
 % \myrange[<*>invert all][<l>invert left][<r>invert right]{<content>}
@@ -311,14 +314,6 @@
 % \usepackage{pgf,pgfmath,pgfplots}
 % \usepackage{pgfplotstable}
 % \usepgfplotslibrary{fillbetween}
-% % ========================= Setup ======================== %
-% % 1e4 too much
-% % 1e3 fancy
-% % 1e2 simple
-% % 1e1 draft
-% \newcommand\mysampledensityDouble{2}
-% \newcommand\mysampledensitySimple{1e1}
-% \newcommand\mysampledensityFancy{1e2}
 % \usepackage{myPGFSetup}
 % -------------------------------------------------------- %
 %                          Tables                          %
@@ -329,6 +324,7 @@
 % % ==================== Color commands ==================== %
 % \newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
 % \newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
+% \newcommand\cellC[2]{\cellcolor{#1!70!grey!20!background}{#2}}
 % \newcommand\cellemph[1]{\cellcolor{Emph!20!background}{#1}}
 % \usepackage{multirow}
 % \usepackage{longtable}
@@ -449,16 +445,7 @@
 % % -------------------------------------------------------- %
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
 % \renewcommand\thepart{Part \arabic{part}}
-% 88                                    88
-% 88                                    ""
-% 88
-% 88,dPPYba,    ,adPPYba,   ,adPPYb,d8  88  8b,dPPYba,
-% 88P'    "8a  a8P_____88  a8"    `Y88  88  88P'   `"8a
-% 88       d8  8PP"""""""  8b       88  88  88       88
-% 88b,   ,a8"  "8b,   ,aa  "8a,   ,d88  88  88       88
-% 8Y"Ybbd8"'    `"Ybbd8"'   `"YbbdP"Y8  88  88       88
-%                           aa,    ,88
-%                            "Y8bbdP"
+
 \begin{document}
 \mymaketitle
 % print files
@@ -481,8 +468,8 @@
   for i=firstFile,lastFile,1 -- Print range
   do
   tex.print(string.split(table.concat{
-        [[
-          \subfile{]], dir, prefix, string.format("%d", i), sufix, [[}\newpage
+      [[
+        \subfile{]], dir, prefix, string.format("%d", i), sufix, [[}\newpage
       ]]
 },"\n"))
 end

@@ -1,4 +1,4 @@
-% !TEX root = ./CN_A-Tests_Resolutions.tex
+% !TEX root = ./CNA-Notebook.tex
 % \documentclass{article}
 \documentclass[
   class=article,
@@ -10,15 +10,18 @@
 % -------------------------------------------------------- %
 \usepackage{xcolor} % Options: gray - dark and light
 \usepackage{mypalette}
+\usepackage{mypalette-greenA}
 \usepackage{mypalette-greenR}
-\colorlet{foreground}{tdgreen-5}
-\colorlet{background}{tblue-0}
+% \usepackage{mypalette-tdgreenA}
+\colorlet{foreground}{light}
+\colorlet{background}{dark}
 % tinting emph and graph
 \def\Emph#1{#1!80!foreground}
 \def\Graph#1{#1!98!foreground}
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
-\colorlet{Background}{grey-1}
+\colorlet{Comment}   {foreground!60!background}
+\colorlet{Background}{foreground!15!background}
 % ======================= setcolor ======================= %
 \pagecolor{background}
 \color    {foreground}
@@ -214,16 +217,15 @@
 % \usepackage[math-style=ISO]{unicode-math} % change math font
 % \usepackage{firamath-otf}
 % % ======================================================== %
-\usepackage{mathtools}\mathtoolsset{showonlyrefs}
+\usepackage{mathtools}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
 \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
-\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
-\DeclareDocumentCommand\mathemph{m}{{\color{Emph}\boldmath{#1}}}
-% ======================================================== %
-% ============== MathOperators Declarations ============== %
+% \DeclareDocumentCommand\mathemph{m}{{\color{Emph}\boldmath{#1}}}
+% % ======================================================== %
+% % ============== MathOperators Declarations ============== %
 \newcommand\E[1]{\,\mathrm{E}^{#1}}
-\newcommand\e[1]{\,\mathrm{e}^{#1}}
+% \newcommand\e[1]{\,\mathrm{e}^{#1}}
 % \DeclareMathOperator\sign{sign}
 % % ========= Missing trigonometric math operators ========= %
 % \DeclareMathOperator\sech   {sech}
@@ -291,12 +293,11 @@
 % % -------------------------------------------------------- %
 % %                           Tikz                           %
 % % -------------------------------------------------------- %
-\usepackage{tikz}\usetikzlibrary{babel}
-\usetikzlibrary{
-  calc,
-% % perspective,
-% % 3d,
-}
+% \usepackage{tikz}\usetikzlibrary{babel}
+% \usetikzlibrary{
+%     % perspective,
+%     % 3d,
+% }
 % % ===================== External lib ===================== %
 % \usepackage{tikz-external-setup}
 % \tikzexternalize[
@@ -322,13 +323,13 @@
 % -------------------------------------------------------- %
 \setlength\tabcolsep{6mm}        % width
 \renewcommand\arraystretch{1.25} % height
-\usepackage{colortbl} % Colored Cells
-% ==================== Color commands ==================== %
-\newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
-\newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
-\newcommand\cellC[2]{\cellcolor{#1!70!grey!20!background}{#2}}
-\newcommand\cellemph[1]{\cellcolor{Emph!20!background}{#1}}
-\usepackage{multirow}
+% \usepackage{colortbl} % Colored Cells
+% % ==================== Color commands ==================== %
+% \newcommand\cellT[1]{\cellcolor{green!70!grey!20!background}{#1}}
+% \newcommand\cellF[1]{\cellcolor{red!70!grey!20!background}{#1}}
+% \newcommand\cellC[2]{\cellcolor{#1!70!grey!20!background}{#2}}
+% \newcommand\cellemph[1]{\cellcolor{Emph!20!background}{#1}}
+% \usepackage{multirow}
 % \usepackage{longtable}
 % \usepackage{float}\restylefloat{table}  % table position H(ere)
 % ======================= booktabs ======================= %
@@ -401,12 +402,12 @@
 % % -------------------------------------------------------- %
 % %                         Metadata                         %
 % % -------------------------------------------------------- %
-\newcommand\mytitle   {{CNA -- Tests resolutions}}
+\newcommand\mytitle   {{CN A -- Notebook}}
 % \newcommand\myauthor  {{Felipe B. Pinto 61387 -- EQB}}
 \newcommand\myauthor  {{Felipe B. Pinto 71951 -- EQB}}
 \newcommand\mycreator {{Felipe B. Pinto}}
-\newcommand\mysubject {{subject here}}
-\newcommand\mykeywords{{{Keywords}}}
+\newcommand\mysubject {{Notes taken from Numerical Methods for Scientist and Engineers with pseudocodes -- Zekeriya Altaç}}
+\newcommand\mykeywords{{{CN A},{FCT},{UNL},{PT},{EQB}}}
 % ================ title, author and date ================ %
 \title{\huge\bfseries\color{Emph}\mytitle}
 \author{\Large\myauthor}
@@ -437,7 +438,7 @@
 \usepackage{questions}
 \usepackage{answers}
 % \usepackage{qgroups}
-% \usepackage{examples}
+\usepackage{examples}
 % \usepackage{definitions}
 % ================= My title and subfile ================= %
 \usepackage{mytitle}    % \mymaketitle
@@ -450,30 +451,30 @@
 \begin{document}
 \mymaketitle
 % print files
-% \begin{luacode*}
-%   -- Files Directory
-%   dir = "./"
-%   -- Prefix and sufix
-%   prefix = "CN_A-Tests_Resolutions.2024.1."
-%   sufix  = ""
-%   -- Print file range
-%   firstFile = 1 -- first file number
-%   lastFile  = 1 -- last  file number
-%   -- Print specific files by number
-%   index = {1}
-%   -- % ---------------------------------------------------- %
-%   -- %                         Loop                         %
-%   -- % ---------------------------------------------------- %
-%   -- for i=firstFile,lastFile,1 -- Print range
-%   -- for v,i in ipairs(index)   -- Print specific
-%   for i=firstFile,lastFile,1 -- Print range
-%   do
-%     tex.print(string.split(table.concat{
-%     \[\[
-%       \subfile{\]\], dir, prefix, string.format("%d", i), sufix, \[\[}\newpage
-%     \]\]
-%     },"\n"))
-%   end
-%   -- % ==================================================== %
-% \end{luacode*}
+\begin{luacode*}
+  -- Files Directory
+  dir = "./"
+  -- Prefix and sufix
+  prefix = "CNA-Notebook."
+  sufix  = ""
+  -- Print file range
+  firstFile = 1 -- first file number
+  lastFile  = 1 -- last  file number
+  -- Print specific files by number
+  index = {1}
+  -- % ---------------------------------------------------- %
+  -- %                         Loop                         %
+  -- % ---------------------------------------------------- %
+  -- for i=firstFile,lastFile,1 -- Print range
+  -- for v,i in ipairs(index)   -- Print specific
+  for i=firstFile,lastFile,1 -- Print range
+  do
+    tex.print(string.split(table.concat{
+    [[
+      \subfile{]], dir, prefix, string.format("%d", i), sufix, [[}\newpage
+    ]]
+    },"\n"))
+  end
+  -- % ==================================================== %
+\end{luacode*}
 \end{document}

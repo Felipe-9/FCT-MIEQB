@@ -1,0 +1,701 @@
+% !TEX root = ./CN_A-Tests_Resolutions.2024.3.tex
+\documentclass["CN_A-Tests_Resolutions.tex"]{subfiles}
+
+% \tikzset{external/force remake=true} % - remake all
+
+\begin{document}
+
+% \graphicspath{{\subfix{./.build/figures/CN_A-Tests_Resolutions.2024.3}}}
+% \tikzsetexternalprefix{./.build/figures/CN_A-Tests_Resolutions.2024.3/graphics/}
+
+\mymakesubfile{3}[CNA]
+{Exam 2024.3 Resolution} % Subfile Title
+{Exam 2024.3 Resolution} % Part Title
+
+\begin{questionBox}1m{} % Q1
+  Encotrar iesia iterada pelo met da bisexão
+  \answer{a)}
+
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q2
+  Sucessõa jacobi
+  \begin{BM}
+    AX=B
+    \\
+    X_1^{(0)} = X_2^{(0)}
+    \\
+    \norm{G_1}_{\infty} = 4/5
+    \\
+    \norm{G_1}_1 = 7/6
+    \\
+    \norm{G_2}_{\infty} = 6/5
+    \\
+    \norm{G_2}_1 = 2
+  \end{BM}
+
+  \answer{a)}
+
+  Convergencia
+  \begin{tcolorbox}
+    \begin{align}
+      \norm{G_{1}}_{\infty} = 4/5 < 1 & \text{Converge}
+      \\
+      \norm{G_{2}}_{\infty} = 6/5 > 1 & \text{não Converge}
+    \end{align}
+  \end{tcolorbox}
+  
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q3
+  Considere a tab
+  \begin{center}
+    \vspace{1ex}
+    \begin{tabular}{C | *{4}{C}}
+
+      x_i
+      & -1 & 0 & 2 & 5
+      \\\hline
+      f(x_i)
+      & -6 & 2 & 5 & 8
+
+    \end{tabular}
+  \end{center}
+
+  \answer{d)}
+
+  Encontrando \(p_1(-1)\)
+  \begin{tcolorbox}
+    % tag = q3
+    % n = 1
+
+    \answer{eq:q3 L}
+
+    Lagrange's polynom
+    \begin{tcolorbox}
+      \begin{gather}
+        p_{1}(x)
+        = y_{1}\,l_1(x)
+        + y_{3}\,l_3(x)
+        = \mathText{using \eqref{eq:q3 li}}
+        = \dots
+        %
+        \yesnumber\label{eq:q3 L}
+      \end{gather}
+    \end{tcolorbox}
+
+    Finding singular \(l_i\)
+    \begin{tcolorbox}
+      \begin{gather}
+        \begin{cases}
+          l_1
+          = 
+          % 
+          % 
+          % 
+          ; \\
+          l_2
+          = 
+        \end{cases}
+        %
+        \yesnumber\label{eq:q3 li}
+      \end{gather}
+    \end{tcolorbox}
+  \end{tcolorbox}
+
+  Newton's polynom \(q_2\)
+  \begin{tcolorbox}
+    % tag = q3
+    % n = 2
+    \begin{tcolorbox}
+      \begin{gather}
+        q_{2\,(x)}
+        = f(x_0)
+        + (x-x_0)
+        \,f\myrange{x_0,x_{1}}
+        + ( x-x_0 ) ( x-x_1 )
+        \,f\myrange{x_0,x_1,x_{3}}
+        = \\
+        = -6
+        + (x-(-1))8
+        + ( x-(-1) ) ( x-2 )
+        \,\frac{34}{30}
+        = \\
+        = -48 + (x+1)
+        + ( x+1 ) ( x-2 )
+        \,\frac{34}{30}
+        %
+        \yesnumber\label{eq:q3 newtons polynom}
+      \end{gather}
+    \end{tcolorbox}
+
+    Solving \(f[\cdot,\cdot]\)
+    \begin{tcolorbox}
+      \begin{gather}
+        f\myrange{x_0,x_{1}}
+        = \frac{2-(-6)}{0-(-1)}
+        = 8
+        ; \\
+        f\myrange{x_0,x_1,x_{3}}
+        = \frac{6/5-8}{5-(-1)}
+        = \frac{34}{30}
+        ;\\ 
+        f\myrange{x_1,x_{3}}
+        = \frac{8-2}{5-0}
+        = 6/5
+      \end{gather}
+    \end{tcolorbox}
+  \end{tcolorbox}
+\end{questionBox}
+
+\begin{questionBox}1m{} % Qindex
+  \begin{BM}
+    I=\int_0^1{f(x)\,\odif{x}}
+    ; f(x) \in C^4([0,1])
+    \\
+    \abs{f^{(k)}(x)} \leq \sqrt[k]{\cos(x)+2^k-1}
+    ,\forall\,x\in\mathbb{R}, k\in\mathbb{N}
+  \end{BM}
+  Qual o numero de app da regra de simp p garantir pelo menos 6 casas dec
+
+  \answer{\eqref{eq:q4 answer} b)}
+  % erro de quadratura
+  \begin{tcolorbox}
+    \begin{gather}
+      \abs{ \varepsilon_i }
+      = \abs*{
+        -\frac{h^5}{90}\,f^{(4)}(\xi)
+      }
+      = \mathText{\(h=(1-0)/n=1/n\)}
+      = \abs*{
+        -\frac{(1/n)^5}{90}\,
+      }
+      \abs{ f^{(4)}(\xi) }
+      = \abs*{
+        -\frac{1}{90\,n^5}
+      }
+      \,\sqrt[4]{\cos(\xi)+2^{\xi}-1}
+      = \mathText{\(n\in\mathbb{N}_0^+\)}
+      \frac{1}{90\,n^5}
+      \,\sqrt[4]{\cos(\xi)+2^{\xi}-1}
+      \leq \mathText{\(k=6\) casas decimais}
+      \leq 5\E{-1-6} = 5\E{-7}
+      \implies
+      n
+      \geq 
+      \left(
+        \frac
+        {\sqrt[4]{\cos(\xi)+2^{\xi}-1}}
+        {90*5\E{-7}}
+      \right)^{1/5}
+      \leq \mathText{\(\xi\in\myrange{0,1}\)}
+      \leq
+      \left(
+        \frac
+        {\sqrt[4]{\cos(1)+2^{1}-1}}
+        {90*5\E{-7}}
+      \right)^{1/5}
+      \cong \num{7.563760964934167}
+      \implies
+      n = \ceil{\num{7.563760964934167}} = 8
+      \shortintertext{Closest alternative}
+      n = 7
+      \label{eq:q4 answer}
+    \end{gather}
+  \end{tcolorbox}
+
+  \begin{tcolorbox}
+    \begin{gather}
+      \cos(\xi)+2^{\xi}
+      \begin{cases}
+        \cos(0)+2^{0} = 2
+        \\
+        \cos(1) + 2^{1}
+        \cong \num{0.54030230586814}+2 
+        = \num{2.54030230586814}
+      \end{cases}
+    \end{gather}
+  \end{tcolorbox}
+  
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q5
+  \answer{d)}
+  % tag: q5
+  % a = -6
+  % b = 10
+
+  \begin{gather}
+    I_{G,2}
+    = \int_{-6}^{10}{f(x)\,\odif{x}}
+    = \mathText{Using simple gauss rule (\(n=2\))}
+    = \frac{10-(-6)}{2}
+    \,\int_{-1}^{1}{g(y)\,\odif{y}}
+    = 8\,\int_{-1}^{1}{g(y)\,\odif{y}}
+    = \mathText{Using \eqref{eq:q5-g(x)}}
+  \end{gather}
+
+  % g(x)
+  \begin{gather}
+    g(y)
+    = f\left(
+      \frac{b-a}{2}\,y
+      +\frac{b+a}{2}
+    \right)
+    = f\left(
+      \frac{10-(-6)}{2}\,y
+      +\frac{10+(-6)}{2}
+    \right)
+    = f(8\,y +2)
+    = 
+    %
+    \yesnumber\label{eq:q5-g(x)}
+  \end{gather}
+
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q6
+  \begin{table}\centering
+    \begin{tabular}{C | *{4}{C}}
+
+      x_i
+      & -2 &-1 & 0 & 1
+      \\\hline
+      f(x_i)
+      & 19 & 1 & 1 & 1
+
+    \end{tabular}
+    \label{q6.1}
+  \end{table}
+
+
+
+  \begin{questionBox}2b{} % Q6.1
+    Obtenha o pol de newton e aproxime \(f(0.01)\)
+
+    \answer{}
+
+    % tag = q6.1
+    % n = 3
+
+    \answer{\eqref{eq:q6.1 newtons polynom},\eqref{eq:q6.1 approx}}
+
+    Construindo tabela de diferencas divididas
+    \begin{tcolorbox}
+      \begin{table}\centering
+        \begin{tabular}{C C *{3}{C}}
+          \toprule
+
+          x_i & f(x_i) 
+          & f[\cdot,\cdot]
+          & f[\cdot,\cdot,\cdot]
+          & f[\cdot,\cdot,\cdot,\cdot]
+          % f[x_{k+1},x_k]
+          % \frac{\adif{f_{k+1}-f_k}}{x_{k+1}-x_k}
+
+          \\\midrule
+          -2 & 19
+          & \multirow{2}{*}{\(-18\)}
+          & \multirow{3}{*}{\(9\)}
+          & \multirow{4}{*}{\(-3\)}
+          \\
+          -1 & 1
+          & \multirow{2}{*}{\(0\)}
+          & \multirow{3}{*}{\(0\)}
+          \\
+          0 & 1
+          & \multirow{2}{*}{\(0\)}
+          \\
+          1 & 1
+
+          \\\bottomrule
+        \end{tabular}
+        \caption{Diferencas divididas \ref{q6.1}}
+        \label{tab:q6.1 divdiff}
+      \end{table}
+    \end{tcolorbox}
+
+    Newton's polynom
+    \begin{tcolorbox}
+      \begin{gather}
+        p_{3\,(x)}
+        = 19
+        + \begin{pmatrix}
+          + (x-x_0)\,f\myrange{x_0,x_{1}}
+          \\
+          + (x-x_0)(x-x_1)\,f\myrange{x_0,\dots,x_{2}}
+          \\
+          + (x-x_0)(x-x_1)(x-x_2)\,f\myrange{x_0,\dots,x_{3}}
+        \end{pmatrix}
+        = \mathText{using tabela \ref{tab:q6.1 divdiff}}
+        = 19
+        + \begin{pmatrix}
+          + (x-(-2))\,18
+          \\
+          + (x-(-2))(x-(-1))\,9
+          \\
+          + (x-(-2))(x-(-1))(x-0)\,(-3)
+        \end{pmatrix}
+        = \\
+        = 19
+        + \begin{pmatrix}
+          + (x+2)\,18
+          \\
+          + (x+2)(x+1)\,9
+          \\
+          + (x+2)(x+1)(x)\,(-3)
+        \end{pmatrix}
+        %
+        \yesnumber\label{eq:q6.1 newtons polynom}
+      \end{gather}
+    \end{tcolorbox}
+
+    approx para \(f(0.01)\)
+    \begin{tcolorbox}
+      \begin{gather}
+        f(0.01)
+        \cong 
+        p_{3}(0.01)
+        = \mathText{using \eqref{eq:q6.1 newtons polynom}}
+        = 19
+        + \begin{pmatrix}
+          + (0.01+2)\,18
+          \\
+          + (0.01+2)(0.01+1)\,9
+          \\
+          + (0.01+2)(0.01+1)(0.01)\,(-3)
+        \end{pmatrix}
+        \cong \num{73.389997}
+        \label{eq:q6.1 approx}
+      \end{gather}
+    \end{tcolorbox}
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q6.2
+    f(x) é pol ord 4, coeff \(x^4\) é 1, det maj erro abs
+    \answer{}
+
+    \sisetup{round-precision=4}
+
+    \begin{tcolorbox}
+      \begin{gather}
+        \abs{\error_{p}}
+        = \abs{
+          f(x)
+          - p(x)
+        }
+        = \mathText{using \eqref{eq:q6.1 newtons polynom}}
+        = \abs*{
+          a_0 + a_1\,x + a_2\,x^2 + a_3\,x^3 + x^4
+          - 19
+          - \begin{pmatrix}
+            + (x+2)\,18
+            \\
+            + (x+2)(x+1)\,9
+            \\
+            + (x+2)(x+1)(x)\,(-3)
+          \end{pmatrix}
+        }
+        \dots
+      \end{gather}
+    \end{tcolorbox}
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q6.3
+    \begin{BM}
+      S(x)
+      = \begin{cases}
+        \frac{9}{2}\,x^3 + 27\,x^2 + \frac{63}{2}\,x + 10
+        ,& x\in\myrange*l{-2,1}
+        \\
+        \frac{-9}{2}\,x^3+\frac{9}{2}\,x+1
+        ,& x\in\myrange{-1,0}
+      \end{cases}
+    \end{BM}
+    verif se é spline natural de f
+    \answer{}
+    \begin{tcolorbox}
+      Pra ser spline natural
+      \begin{enumerate}
+        \item \(S_{k}(x_{k+1})=S_{k+1}{x_{k+1}}\)
+        \item \(S'_{k}(x_{k+1})=S'_{k+1}{x_{k+1}}\)
+        \item \(S''_{k}(x_{k+1})=S''_{k+1}{x_{k+1}}\)
+        \item \(S''_{0}(x_{0})=S''_{n}{x_{n}}=0\)
+      \end{enumerate}
+      \begin{gather}
+        S_1(-1) 
+        = \frac{9}{2}\,(-1)^3 + 27\,(-1)^2 + \frac{63}{2}\,(-1) + 10
+        = \frac{74-9-63}{2}
+        = 1
+        = \\
+        = S_2(-1)
+        = \frac{-9}{2}\,(-1)^3+\frac{9}{2}\,(-1)+1
+        = \frac{9}{2}-\frac{9}{2}+1
+        = 1
+        ; \\
+        S'_1(-1)
+        = \frac{3*9}{2}\,(-1)^2 + 2*27\,(-1) + \frac{63}{2}
+        = \frac{-4*27+3*9+63}{2}
+        = -9
+        = \\
+        = S'_2(-1)
+        = \frac{-3*9}{2}\,(-1)^2+\frac{9}{2}
+        = \frac{-2*9}{2}
+        = -9
+        ; \\
+        S''_1(-1)
+        = \frac{9*3*2}{2}\,(-1) + 27*2*1
+        = 27
+        = \\
+        = S''_2(-1)
+        = \frac{-9*3*2}{2}\,(-1)
+        = 27
+        ;\\ 
+        S''(-2)
+        = \frac{9*3*2}{2}\,(-2) + 27*2*1
+        = 0
+        ; \\
+        S''(0)
+        = \frac{-9*3*2}{2}\,(0)
+        = 0
+      \end{gather}
+      Todas as condições são verificadas, é spline cubico natural de f
+    \end{tcolorbox}
+  \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q7
+  \setlength\tabcolsep{1em}        % width
+  \begin{center}
+    \begin{tabular}{C | *{7}{C}}
+
+      x_i
+      & 0 & 0.5 & 1 & 1.5 & 2 & 2.5 & 3
+      \\\hline
+      f(x_i)
+      & 5 & 6.1875 & 5 & f(1.5) & -3 & -5.3125 & -1
+
+    \end{tabular}
+  \end{center}
+
+  \begin{questionBox}2b{} % Q7.1
+    Sabendo a approx \(\hat{I}_{PM}\) de \(I=\int_0^3{f(x)\,\odif{x}}\) com \(h=1\) é 2.3125, obtenha \(f(1.5)\)
+    \answer{}
+    \begin{tcolorbox}
+      \begin{gather}
+        \int_{0}^{3}{f_{(x)}\,\odif{x}}
+        = 2.3125
+        \approx 
+        h\,f_{\left(\frac{0+3}{2}\right)}
+        = 1*f(1.5)
+        \implies
+        f(1.5)=2.3125
+      \end{gather}
+    \end{tcolorbox}
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q7.2
+    Regra de simp c 3 app obtenha approx \(\hat{I}_S\)
+    \answer{}
+    % integração
+    \begin{gather}
+      \int_{0}^{3}{f_{(x)}\,\odif{x}}
+      \approx \\
+      \approx \hat{I}
+      = \frac{h}{3}\left(
+        f(x_0)
+        + 4\left(
+          f(x_{1})
+          + f(x_{3})
+          + f(x_{5})
+        \right)
+        + 2(
+          f(x_{2})
+          + f(x_{4})
+        )
+        + f(x_{6})
+      \right)
+      = \mathText{\(h=(3-0)/3=1\)}
+      = \frac{1}{3}\left(
+        5
+        + 4\left(
+          6.1875
+          + 2.3125
+          + (-5.3125)
+        \right)
+        + 2(
+          5
+          + (-3)
+        )
+        + (-1)
+      \right)
+      = \\
+      = \frac{1}{3}\left(
+        5
+        + 4\left(
+          6.1875
+          + 2.3125
+          + (-5.3125)
+        \right)
+        + 2(
+          5
+          + (-3)
+        )
+        + (-1)
+      \right)
+      \cong
+      \num{6.916666666666667}
+      \label{eq:q7.2 answer}
+    \end{gather}
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q7.3
+    Supondo \(f^{(4)}=0,\forall\,x\in\mathbb{R}\) det o val exato de \(I\)
+    \answer{}
+
+
+
+    % erro de quadratura
+    \begin{gather}
+      I
+      = \hat{I}_S + \varepsilon_i
+      = \hat{I}_S
+      -n\,\frac{h^5}{90}\,f^{(4)}(\sigma)
+      = \mathText{using \eqref{eq:q7.2 answer}}
+      \cong \num{6.916666666666667}
+      - 3*\frac{1^5}{90}*0
+      = \num{6.916666666666667}
+    \end{gather}
+
+  \end{questionBox}
+\end{questionBox}
+
+\begin{questionBox}1m{} % Q8
+  \begin{BM}[gather][\normalsize]
+    x_{n+1} = F(x_n)
+    \quad
+    y_{n+1} = G(y_n)
+    ;\quad
+    \{x_0,y_0\} \in \myrange{0.1,1}, n=1,2,\dots
+    \\
+    F(x) = e^{\frac{x-4}{2}}
+    \quad
+    G(x) = 4+2\,\ln(x)
+  \end{BM}
+
+  \answer{}
+
+  \begin{questionBox}2b{} % Qindex
+    Prove que \(\alpha\) é raiz da eq \(2+\ln(x)-x/2\) se e so se é ponto fixo de \(F(x),G(x)\)
+    \answer{}
+    \begin{tcolorbox}
+      \begin{gather}
+        G(\alpha)
+        = 4+2\,\ln(\alpha)
+        = 2*(2+\ln(\alpha)-\alpha/2) + \alpha
+        = \mathText{\(2+\ln(\alpha)-\alpha/2=0\)}
+        = \alpha
+        ; \\
+        F(\alpha)
+        = e^{\frac{\alpha-4}{2}}
+        = e^{\frac{G(\alpha)-4}{2}}
+        = e^{\frac{4+2\,\ln(\alpha)-4}{2}}
+        = e^{\ln(\alpha)}
+        = \alpha
+      \end{gather}
+      Assim \(\alpha\) é ponto médio de \(G(x)\) e \(f(x)\)
+    \end{tcolorbox}
+  \end{questionBox}
+
+  \begin{questionBox}2b{} % Q8.2
+    Convergencia de \(x_{i+1},y_{i+1}\) para \(\alpha\in I\), calss \(\alpha\) rel as func F e G, just
+    \answer{}
+
+    \begin{tcolorbox}
+      Condições de convergencia do metodo do ponto fixo:
+      \begin{enumerate}
+        \item\label{enu:q8.2 cond 1} \(\varphi(x),\varphi'(x)\) é continua no intervalo \(I\)
+        \item\label{enu:q8.2 cond 2} \(\varphi(x) \in I, \forall\,x \in I\)
+        \item\label{enu:q8.2 cond 3} \(\abs{\varphi'(x)} \leq \lambda < 1, \forall\,x \in I\)
+      \end{enumerate}
+      \begin{gather}
+        F'(x)
+        = e^{\frac{x-4}{2}}
+        \,(1/2)
+        ; \\
+        G'(x)
+        = 2/x
+        ; \\
+        \abs{F'(x)}
+        = e^{\frac{x-4}{2}}/2
+        \leq \mathText{\(x\in\myrange{0.1,1}\)}
+        \leq e^{\frac{1-4}{2}}/2
+        = e^{-3/2}/2
+        \cong \num{-2.240844535169032}
+        \leq -2.24
+        = \lambda < 1
+        \label{eq:8.2 lambda}
+        ; \\
+        \abs{G'(x)}
+        = \abs{2/x}
+        = 2/x
+        \leq \mathText{\(x\in\myrange{0.1,1}\)}
+        \leq 2/0.1
+        = 20 = \lambda > 1
+      \end{gather}
+      F converge e G diverge para \(\alpha\)
+    \end{tcolorbox}
+
+  \end{questionBox}
+  
+  \begin{questionBox}2b{} % Qindex
+    \(x_0=1\) quantas casas decimais garante para \(x_2\)
+    \answer{}
+
+    Casas decimais
+    \begin{tcolorbox}
+      \begin{gather}
+        \abs{\error_{x_2}}
+        = \abs{\alpha-x_2}
+        \leq \mathText{erro a posteriori}
+        \leq \abs*{\frac{\lambda}{1-\lambda}}\abs{x_2-x_1}
+        \cong \mathText{using \eqref{eq:8.2 lambda}}
+        \cong \frac{-2.24}{1-(-2.24)}
+        \abs*{
+          \num{-69.466493969825554}
+          -\num{-4.481689070338065}
+        }
+        \cong 
+        \num{44.927766350262955}
+        < 5\E{-1+3}
+      \end{gather}
+      Não pode se garantir nenhuma casa decimal
+    \end{tcolorbox}
+
+    \(x_2\)
+    \begin{tcolorbox}
+      \begin{gather}
+        x_2 = F(x_1)
+        \cong \\
+        \cong F(\num{-4.481689070338065})
+        = e^{\frac{\num{-4.481689070338065}-4}{2}}
+        \cong
+        \num{-69.466493969825554}
+        ; \\
+        x_1 = F(x_0)
+        = F(1)
+        = e^{\frac{1-4}{2}}
+        = e^{-3/2}
+        \cong \num{-4.481689070338065}
+      \end{gather}
+    \end{tcolorbox}
+  \end{questionBox}
+
+
+
+\end{questionBox}
+
+% Q1: y(2.5) -> y(0.25)
+
+
+\end{document}
