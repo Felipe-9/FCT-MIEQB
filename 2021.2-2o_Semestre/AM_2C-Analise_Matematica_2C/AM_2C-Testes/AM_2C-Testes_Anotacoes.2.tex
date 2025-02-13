@@ -1,8 +1,5 @@
 % !TEX root = ./AM_2C-Testes_Anotacoes.2.tex
-\providecommand\mainfilename{"./AM_2C-Testes_Anotacoes.tex"}
-\providecommand \subfilename{}
-\renewcommand   \subfilename{"./AM_2C-Testes_Anotacoes.2.tex"}
-\documentclass[\mainfilename]{subfiles}
+\documentclass["./AM_2C-Testes_Anotacoes.tex"]{subfiles}
 
 % \tikzset{external/force remake=true} % - remake all
 
@@ -11,60 +8,59 @@
 % \graphicspath{{\subfix{./.build/figures/AM_2C-Testes_Anotacoes.2}}}
 % \tikzsetexternalprefix{./.build/figures/AM_2C-Testes_Anotacoes.2/}
 
-\mymakesubfile{2}
-[AM 2C]
+\mymakesubfile{2}[AM2C]
 {Anotações Teste 2} % Subfile Title
 {Anotações Teste 2} % Part Title
 
-\begin{sectionBox}1{Produto Interno}
+\begin{sectionBox}1m{Produto Interno}
 
-    \begin{BM}
-        p(X,Y) = X\vert Y = \sum_{k=1}^{n} x_k\,y_k \quad\{X,Y\}\in E
-        \\ P:E\times E\to\mathbb{R}
-    \end{BM}
+  \begin{BM}
+    p(X,Y) = X\vert Y = \sum_{k=1}^{n} x_k\,y_k \quad\{X,Y\}\in E
+    \\ P:E\times E\to\mathbb{R}
+  \end{BM}
 
-    \begin{itemize}
-        \item \( X\vert X\geq 0 \land (X\vert X=0\iff X=0) \)
-        \item \( X\vert Y = Y\vert X \cftdotfill{\cftdotsep}\forall\,\{X,Y\}\in E \)
-        \item \(
-            \lambda\,X\vert Y = \lambda\,(X\vert Y)\cftdotfill{\cftdotsep}
-                 \forall\,\lambda\in\mathbb{R}
-            \land\forall\,\{X,Y\}\in E
-        \)
-        \item \( (X+Y)\vert Z = (X\vert Z) + (Y\vert Z) \cftdotfill{\cftdotsep}\forall\,\{X,Y,Z\}\in E \)
-    \end{itemize}
-
-\end{sectionBox}
-
-\begin{sectionBox}1{Norma}
-
-    \begin{BM}
-            N(X)_p
-        =   ||X||_p
-        :=  \left(\sum_{k=1}^n |x_i|^p\right)^{1/p}
-        =   \sqrt{X\vert X}
-            \quad X\in\mathbb{R}^n
-        \\
-            N(\cdot): E\to\mathbb{R}
-    \end{BM}
-
-    \begin{itemize}
-        \item \( N(X)\geq 0 \left(\land N(X)=0\iff x=0 \right)\)
-        \item \( N(\lambda\,X) = \myvert{\lambda}\,N(X) \quad\forall\,\lambda\in\mathbb{R} \)
-        \item \( N(X+Y)\leq N(X)+N(Y) \quad \forall\,\{X,Y\}\in E \)
-    \end{itemize}
+  \begin{itemize}
+    \item \( X\vert X\geq 0 \land (X\vert X=0\iff X=0) \)
+    \item \( X\vert Y = Y\vert X \cftdotfill{\cftdotsep}\forall\,\{X,Y\}\in E \)
+    \item \(
+        \lambda\,X\vert Y = \lambda\,(X\vert Y)\cftdotfill{\cftdotsep}
+        \forall\,\lambda\in\mathbb{R}
+        \land\forall\,\{X,Y\}\in E
+      \)
+    \item \( (X+Y)\vert Z = (X\vert Z) + (Y\vert Z) \cftdotfill{\cftdotsep}\forall\,\{X,Y,Z\}\in E \)
+  \end{itemize}
 
 \end{sectionBox}
 
-\begin{sectionBox}1{Multiplicadores de Lagrange} % S
-    
-    \begin{BM}
-        \gdif{f(x_0,y_0)}
-        = \lambda\,\gdif{g(x_0,y_0)}
-    \end{BM}
+\begin{sectionBox}1m{Norma}
 
-    \paragraph*{Motivação} Pretende-se maximizar a função \(f(x_0,y_0)\) sugeita a restrição \(g(x_0,y_0)=0\), o ponto \((x_0,y_0)\) pertençe tanto a uma curva de nível de \textit{f} quanto a \textit{g} onde a reta tangente das curvas é igual, coincidentemente os vetores normáis tambem coencidem 
-    
+  \begin{BM}
+    N(X)_p
+    =   ||X||_p
+    :=  \left(\sum_{k=1}^n |x_i|^p\right)^{1/p}
+    =   \sqrt{X\vert X}
+    \quad X\in\mathbb{R}^n
+    \\
+    N(\cdot): E\to\mathbb{R}
+  \end{BM}
+
+  \begin{itemize}
+    \item \( N(X)\geq 0 \left(\land N(X)=0\iff x=0 \right)\)
+    \item \( N(\lambda\,X) = \myvert{\lambda}\,N(X) \quad\forall\,\lambda\in\mathbb{R} \)
+    \item \( N(X+Y)\leq N(X)+N(Y) \quad \forall\,\{X,Y\}\in E \)
+  \end{itemize}
+
+\end{sectionBox}
+
+\begin{sectionBox}1m{Multiplicadores de Lagrange} % S
+
+  \begin{BM}
+    \gdif{f(x_0,y_0)}
+    = \lambda\,\gdif{g(x_0,y_0)}
+  \end{BM}
+
+  \paragraph*{Motivação} Pretende-se maximizar a função \(f(x_0,y_0)\) sugeita a restrição \(g(x_0,y_0)=0\), o ponto \((x_0,y_0)\) pertençe tanto a uma curva de nível de \textit{f} quanto a \textit{g} onde a reta tangente das curvas é igual, coincidentemente os vetores normáis tambem coencidem 
+
 \end{sectionBox}
 
 \end{document}
