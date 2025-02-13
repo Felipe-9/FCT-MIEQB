@@ -2,22 +2,23 @@
 \documentclass[
   class=article,
   multi={minipage},
-  border={6mm},
+  border={3mm},
 ]{standalone}
 % -------------------------------------------------------- %
 %                          Colors                          %
 % -------------------------------------------------------- %
 \usepackage{xcolor} % Options: gray - dark and light
-\usepackage{mypallete}
-\colorlet{foreground}{light}
-\colorlet{background}{dark}
-\usepackage{myEmphPalette} % Emph, EmphXY, EmphSplitX, EmphSplitCX
-\usepackage{myGraphPallete} % Graph, GraphXY, GraphSplitX, GraphSplitCX
+\usepackage{mypalette}
+\usepackage{mypalette-graph}
+% \usepackage{mypalette-greenR}
+\colorlet{foreground}{tdgreen-5}
+\colorlet{background}{tblue-0}
+% tinting emph and graph
+\def\Emph#1{#1!80!foreground}
+\def\Graph#1{#1!98!foreground}
 % ================== Palette Secondaries ================= %
 \colorlet{Emph}       {DarkGreen!70!foreground}
-\colorlet{Link}      {LightGreen!25!foreground}
-\colorlet{Comment}   {foreground!60!background}
-\colorlet{Background}{foreground!27!background}
+\colorlet{Background}{grey-1}
 % ======================= setcolor ======================= %
 \pagecolor{background}
 \color    {foreground}
@@ -60,6 +61,7 @@
 % Redeclare emph
 \let\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries\color{Emph}}
+\NewDocumentCommand\cemph{m m}{\textcolor{\Emph{#1}}{\bfseries{#2}}}
 % % ==================== Set font family =================== %
 \setmainfont[
   Ligatures = TeX,
@@ -136,9 +138,7 @@
 %                         enumitem                         %
 % -------------------------------------------------------- %
 \usepackage{enumitem}  % modify enumerate index
-\setlist[description]{
-  format={\color{Emph}}
-}
+\setlist[description]{format={\color{Emph}}}
 % -------------------------------------------------------- %
 %                         titlesec                         %
 % -------------------------------------------------------- %
@@ -214,9 +214,10 @@
 % \usepackage[math-style=ISO]{unicode-math} % change math font
 % \usepackage{firamath-otf}
 % % ======================================================== %
-\usepackage{mathtools}
+\usepackage{mathtools}\mathtoolsset{showonlyrefs}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 \DeclareDocumentCommand\mathemph{m}{{\color{Emph}\boldmath{#1}}}
 % % ======================================================== %
 % ============== MathOperators Declarations ============== %
@@ -451,16 +452,6 @@
 \renewcommand\thesubsubsection{(\roman{subsubsection})}
 \renewcommand\theequation{\arabic{part}.\arabic{equation}}
 % \renewcommand\thepart{Part \arabic{part}}
-% 88                                    88
-% 88                                    ""
-% 88
-% 88,dPPYba,    ,adPPYba,   ,adPPYb,d8  88  8b,dPPYba,
-% 88P'    "8a  a8P_____88  a8"    `Y88  88  88P'   `"8a
-% 88       d8  8PP"""""""  8b       88  88  88       88
-% 88b,   ,a8"  "8b,   ,aa  "8a,   ,d88  88  88       88
-% 8Y"Ybbd8"'    `"Ybbd8"'   `"YbbdP"Y8  88  88       88
-%                           aa,    ,88
-%                            "Y8bbdP"
 \begin{document}
 \mymaketitle
 % print files
@@ -471,7 +462,7 @@
   prefix = "AM3C-Slides_annotations."
   sufix  = ""
   -- Print file range
-  firstFile = 3 -- first file number
+  firstFile = 0 -- first file number
   lastFile  = 3 -- last  file number
   -- Print specific files by number
   index = {1}
